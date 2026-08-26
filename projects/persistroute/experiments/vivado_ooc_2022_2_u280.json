@@ -1,0 +1,54 @@
+{
+  "run_date": "2026-08-17",
+  "tool": "Vivado 2022.2 build 3671981",
+  "part": "xcu280-fsvh2892-2L-e",
+  "target_clock_ns": 4.0,
+  "stage": "out-of-context synth_design plus opt_design",
+  "kernels": [
+    {
+      "top": "search_hbm_kernel",
+      "timing_met": true,
+      "wns_ns": 0.427,
+      "tns_ns": 0.0,
+      "failing_endpoints": 0,
+      "total_endpoints": 95712,
+      "clb_luts": 31685,
+      "clb_registers": 42457,
+      "bram_tiles": 31.0,
+      "dsps": 13,
+      "drc": {
+        "errors": 0,
+        "warnings": 23,
+        "warning_rules": {
+          "DPIP-2": 9,
+          "DPOP-3": 4,
+          "DPOP-4": 10
+        }
+      },
+      "dcp": "build/vivado_ooc/search_hbm_kernel/search_hbm_kernel_ooc.dcp",
+      "dcp_sha256": "15f9a3362c18755a3a8d9833ebdb8f882ca4bb33c50a370edc4cad7a496c93b2"
+    },
+    {
+      "top": "commit_hbm_kernel",
+      "timing_met": false,
+      "wns_ns": -0.694,
+      "tns_ns": -21.498,
+      "failing_endpoints": 114,
+      "total_endpoints": 34400,
+      "clb_luts": 10866,
+      "clb_registers": 14636,
+      "bram_tiles": 21.5,
+      "dsps": 0,
+      "drc": {
+        "errors": 0,
+        "warnings": 0
+      },
+      "critical_path": "HLS-generated task0 AXI read-buffer address/control logic",
+      "critical_data_path_delay_ns": 4.628,
+      "dcp": "build/vivado_ooc/commit_hbm_kernel/commit_hbm_kernel_ooc.dcp",
+      "dcp_sha256": "4b9f30b5896683f02a58e30cd06bdcf1069443f69c668867d59ebc18b2a007e7"
+    }
+  ],
+  "scope_note": "OOC synthesis and optimization of the HLS-generated production RTL only. No U280 shell, HBM controllers, placement, routing, v++ platform link, power analysis, hardware emulation, or board execution is included. OOC clock insertion delay is not the final platform clock tree.",
+  "next_blocker": "Install a matching U280 XPFM and XRT, then run v++ platform link and full implementation; independently reduce or pipeline the commit task0 AXI adapter critical path for the 250 MHz target."
+}

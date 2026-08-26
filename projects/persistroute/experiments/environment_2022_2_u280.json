@@ -1,0 +1,64 @@
+{
+  "verified_at": "2026-08-17T17:17:00+08:00",
+  "host": {
+    "os": "Ubuntu 22.04.5 LTS",
+    "kernel": "5.15.0-187-generic",
+    "virtualization": "VMware Virtual Platform",
+    "physical_u280_passthrough": false
+  },
+  "tools": {
+    "vitis_vpp": {
+      "version": "2022.2",
+      "build": "3671529",
+      "root": "/tools/Xilinx/Vitis/2022.2"
+    },
+    "vitis_hls": {
+      "version": "2022.2",
+      "build": "3670227",
+      "ip_build": "3669848"
+    },
+    "vivado": {
+      "version": "2022.2",
+      "build": "3671981",
+      "ip_build": "3669848",
+      "root": "/tools/Xilinx/Vivado/2022.2"
+    },
+    "xrt": {
+      "version": "2.14.354",
+      "branch": "2022.2",
+      "hash": "43926231f7183688add2dccfd391b36a1f000bea",
+      "root": "/opt/xilinx/xrt",
+      "package_status": "install ok installed",
+      "dkms": "xrt/2.14.354 installed for 5.15.0-187-generic x86_64"
+    }
+  },
+  "platform": {
+    "name": "xilinx_u280_gen3x16_xdma_1_202211_1",
+    "xpfm": "/opt/xilinx/platforms/xilinx_u280_gen3x16_xdma_1_202211_1/xilinx_u280_gen3x16_xdma_1_202211_1.xpfm",
+    "xpfm_sha256": "33ffbb50935e524e4feafd0cb3b8c39429a7f911b0c42dff065e2f3097fe2bc6",
+    "hw_xsa_sha256": "11c9e4acdfdb6e98e136df84c4af806d1d01a8d69a8e0c7b20477a6692010c91",
+    "platform_version": "202211.1",
+    "generated_version": "2022.1.1",
+    "device": "xcu280-fsvh2892-2L-e",
+    "family": "virtexuplusHBM",
+    "clocks_mhz": [300, 500, 100],
+    "memory": {
+      "hbm_pseudo_channels": 32,
+      "ddr_banks": 2,
+      "plram_banks": 6
+    },
+    "packages": {
+      "base": "xilinx-u280-gen3x16-xdma-base 1-3585717",
+      "development": "xilinx-u280-gen3x16-xdma-1-202211-1-dev 1-3585755",
+      "validation": "xilinx-u280-gen3x16-xdma-validate 1-3585755"
+    }
+  },
+  "checks": {
+    "settings_scripts_source_success": true,
+    "platforminfo_parse_success": true,
+    "xrt_native_host_compile_success": true,
+    "xbutil_examine_success": true,
+    "devices_found": 0,
+    "device_note": "Expected in this VMware guest because no physical U280 PCIe passthrough is configured; board execution is not validated."
+  }
+}

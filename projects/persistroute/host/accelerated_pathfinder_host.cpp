@@ -1,0 +1,46 @@
+#include "accelerated_pathfinder.hpp"
+
+#include <algorithm>
+#include <chrono>
+#include <cstdint>
+#include <cstdlib>
+#include <fstream>
+#include <iomanip>
+#include <iostream>
+#include <stdexcept>
+#include <string>
+#include <type_traits>
+#include <vector>
+
+using namespace persistroute;
+static_assert(sizeof(Node)==8&&sizeof(Edge)==8&&sizeof(Resource)==16&&sizeof(Task)==32,
+              "host/kernel ABI mismatch");
+
+template<typename T>std::vector<T> read_array(const std::string& path){
+ static_assert(std::is_trivially_copyable<T>::value,"binary records must be trivially copyable");
+ std::ifstream input(path,std::ios::binary|std::ios::ate);if(!input)throw std::runtime_error("cannot open "+path);
+ const auto end=input.tellg();if(end<0||static_cast<std::uint64_t>(end)%sizeof(T))throw std::runtime_error("misaligned "+path);
+ std::vector<T> values(static_cast<std::size_t>(end)/sizeof(T));input.seekg(0);if(!values.empty())input.read(reinterpret_cast<char*>(values.data()),values.size()*sizeof(T));if(!input)throw std::runtime_error("cannot read "+path);return values;
+}
+template<typename T>void write_array(const std::string& path,const std::vector<T>& values){std::ofstream out(path,std::ios::binary);if(!out)throw std::runtime_error("cannot create "+path);if(!values.empty())out.write(reinterpret_cast<const char*>(values.data()),values.size()*sizeof(T));if(!out)throw std::runtime_error("cannot write "+path);}
+std::uint32_t env_u32(const char* name,std::uint32_t fallback){const char* text=std::getenv(name);if(!text)return fallback;std::size_t used=0;const unsigned long value=std::stoul(text,&used,0);if(text[used]||value>0xffffffffUL)throw std::runtime_error(std::string("bad ")+name);return value;}
+std::uint16_t env_u16(const char* name,std::uint16_t fallback){const auto value=env_u32(name,fallback);if(value>65535U)throw std::runtime_error(std::string("bad ")+name);return value;}
+
+int main(int argc,char** argv){try{
+ if(argc!=3){std::cerr<<"usage: persistroute_accelerated_cmodel <input-prefix> <output-prefix>\n";return 2;}
+ const auto begin=std::chrono::steady_clock::now();const std::string input=argv[1],output=argv[2];
+ const auto nodes=read_array<Node>(input+".nodes");const auto edges=read_array<Edge>(input+".edges");
+ const auto initial=read_array<Resource>(input+".resources");const auto tasks=read_array<Task>(input+".tasks");
+ PathfinderConfig config;config.max_iterations=env_u32("PERSISTROUTE_MAX_ITERATIONS",config.max_iterations);config.present_start_q=env_u16("PERSISTROUTE_PRESENT_START_Q",config.present_start_q);config.present_multiplier_q=env_u16("PERSISTROUTE_PRESENT_MULTIPLIER_Q",config.present_multiplier_q);config.history_increment_q=env_u16("PERSISTROUTE_HISTORY_INCREMENT_Q",config.history_increment_q);
+ const std::uint32_t pes=env_u32("PERSISTROUTE_PE_COUNT",4),issue_width=env_u32("PERSISTROUTE_ISSUE_WIDTH",pes),queue_depth=env_u32("PERSISTROUTE_QUEUE_DEPTH",0),tx_capacity=env_u32("PERSISTROUTE_TX_CAPACITY",0);
+ KernelBatchExecutor executor=[=](const auto& n,const auto& e,auto& r,const auto& t,const auto& s,bool over){return execute_hbm_cmodel_batch(n,e,r,t,s,over,pes,queue_depth,tx_capacity);};
+ const auto accelerated=route_accelerated_pathfinder(nodes,edges,initial,tasks,executor,config,issue_width);const auto routed=std::chrono::steady_clock::now();const auto& result=accelerated.routing;
+ std::ofstream paths(output+".paths.csv");paths<<"task_id,path_index,resource_id\n";for(const auto& task:result.tasks)for(std::size_t i=0;i<task.path.size();++i)paths<<task.task.id<<','<<i<<','<<task.path[i]<<'\n';
+ std::ofstream trees(output+".route_trees.csv");trees<<"net_id,source,parent,child\n";for(const auto& tree:result.route_trees)for(const auto& edge:tree.edges)trees<<tree.net_id<<','<<tree.source<<','<<edge.parent<<','<<edge.child<<'\n';
+ std::ofstream iterations(output+".iterations.csv");iterations<<"iteration,routed_nets,failed_connections,overused_resources,present_factor_q\n";for(const auto& item:result.iteration_log)iterations<<item.iteration<<','<<item.routed_nets<<','<<item.failed_connections<<','<<item.overused_resources<<','<<item.present_factor_q<<'\n';
+ std::ofstream audit(output+".accelerated_iterations.csv");audit<<"iteration,waves,launched,committed,failed,overused_resources,resource_hash,route_hash\n";for(const auto& item:accelerated.audit)audit<<std::dec<<item.iteration<<','<<item.waves<<','<<item.launched<<','<<item.committed<<','<<item.failed<<','<<item.overused_resources<<','<<std::hex<<std::setw(16)<<std::setfill('0')<<item.resource_hash<<','<<std::setw(16)<<item.route_hash<<'\n';
+ write_array(output+".resources",result.resources);paths.close();trees.close();iterations.close();audit.close();if(!paths||!trees||!iterations||!audit)throw std::runtime_error("failed writing accelerated outputs");
+ const auto end=std::chrono::steady_clock::now();const auto ms=[](auto a,auto b){return std::chrono::duration<double,std::milli>(b-a).count();};const auto count=std::count_if(result.tasks.begin(),result.tasks.end(),[](const auto& task){return task.routed;});
+ std::cout<<"{\"backend\":\"hbm_cmodel\",\"legal\":"<<(result.legal?"true":"false")<<",\"tasks\":"<<tasks.size()<<",\"routed_tasks\":"<<count<<",\"iterations\":"<<result.metrics.iterations<<",\"searches\":"<<result.metrics.searches<<",\"expanded\":"<<result.metrics.expanded<<",\"edge_visits\":"<<result.metrics.edge_visits<<",\"overused_resources\":"<<result.metrics.overused_resources<<",\"route_ms\":"<<ms(begin,routed)<<",\"wall_ms\":"<<ms(begin,end)<<"}\n";
+ return result.legal?0:3;
+ }catch(const std::exception& error){std::cerr<<"error: "<<error.what()<<'\n';return 1;}}

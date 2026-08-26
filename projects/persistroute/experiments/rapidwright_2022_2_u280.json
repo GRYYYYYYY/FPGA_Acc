@@ -1,0 +1,76 @@
+{
+  "schema": "PERSISTROUTE_RAPIDWRIGHT_2022_2_U280_V1",
+  "verified_at": "2026-08-24T20:30:42+08:00",
+  "environment": {
+    "rapidwright": "2022.2.0-beta",
+    "rapidwright_jar": "/home/gry/.local/opt/rapidwright-2022.2.0/rapidwright-2022.2.0-standalone-lin64.jar",
+    "rapidwright_jar_sha256": "d1fc70d051453e259d8f2e79259ba942431f6c24028bda5cf135969745c4c854",
+    "java": "OpenJDK 11.0.11 bundled with Vivado 2022.2",
+    "java_home": "/tools/Xilinx/Vivado/2022.2/tps/lnx64/jre11.0.11_9",
+    "vivado": "2022.2 build 3671981",
+    "device": "xcu280",
+    "device_database_sha256": "b76fa36a9b8f2797ef5274129564326ab832b2e7528ce53679a571a8d80aed69",
+    "parts_database_sha256": "e184c727752027190283a326b778885a9d924d56f76b7b80a19094c7d0ac541e",
+    "unisim_database_sha256": "9342df0e54cc4dde09c1ab878d795261573740dbe0c30d159f565aefcbc14c89"
+  },
+  "bridge": {
+    "source": "rapidwright/src/main/java/edu/fpgaacc/persistroute/RapidWrightBridge.java",
+    "source_sha256": "7303c13d2969ac2233c7bc47bf87e1089b225322a20b67dd7b61cf31aecae9aa",
+    "class_sha256": "30119c7ab7a32f304fb21e42e0d30d8077d8983ffe1eb72388faae9976dc8f79",
+    "linux_build": "rapidwright/build.sh",
+    "linux_run": "rapidwright/run.sh",
+    "compile_status": "pass",
+    "cli_usage_status": "pass",
+    "compatibility_changes": [
+      "Use LogNetlistReader plus PhysNetlistReader for paired .netlist/.phys input on the 2022.2 API",
+      "Use Node.getTile().getName() on the 2022.2 API",
+      "Add read-only inspect command for auditable DCP smoke tests"
+    ]
+  },
+  "vivado_smoke_design": {
+    "part": "xcu280-fsvh2892-2L-e",
+    "rtl_sha256": "c2aa10ec765156cc21053e5c8d0e4bd8fa7e5497e97d7cf1baa1ff7e8ef697d6",
+    "tcl_sha256": "efccbe92e58b107ef36dd45f9006e5219d6c9e195d5b96c79c6a0fd5249c6631",
+    "synthesis_errors": 0,
+    "placement_errors": 0,
+    "placed_dcp": "experiments/rapidwright_2022_2/smoke_top_placed.dcp",
+    "placed_dcp_sha256": "fb554e9838f1ad0f4d28232195e0dadbad0e73ebf8b329a313d08d6fd43cc78d",
+    "clb_luts": 2,
+    "clb_registers": 4,
+    "log_sha256": "fb7c84476fca20c6801a4676f02984d51aed9aa9f556e3e83d2d12fe3485cedf",
+    "utilization_report_sha256": "8eb7c3ac06b166b6ef2ec18232321b0d5cc48345cbbad947cd23cb53320e3acb",
+    "timing_report_sha256": "9a703f7831d4eee658ce95918de31ced9b20354c7cc4ab23bccbfbb69938c356"
+  },
+  "rapidwright_inspect": {
+    "status": "pass",
+    "input_sha256": "fb554e9838f1ad0f4d28232195e0dadbad0e73ebf8b329a313d08d6fd43cc78d",
+    "device": "xcu280",
+    "nets": 31,
+    "cells": 33,
+    "site_instances": 20,
+    "wall_s": 31.83,
+    "max_rss_kib": 3205196,
+    "log_sha256": "102cbed8b534da522fa5e8880421a753e6c42dc3ea766fe5b3be4e86a74e16d3"
+  },
+  "rapidwright_roundtrip": {
+    "operation": "apply an empty route replacement set, then write DCP and FPGA Interchange physical netlist",
+    "status": "pass",
+    "modified_nets": 0,
+    "output_dcp_sha256": "c85c4a9ba61cea7e0abf3cec2061b4cbd92e47e5e7f3045762f406356fff0af8",
+    "output_phys_sha256": "8b456928678189cafc0057ce187a4a1515af0de741e5f04731fc8f294884362d",
+    "apply_log_sha256": "9616f7758c9ad7eea68c65dec47730dafc5165e98c3aeeab6a1fda37150120a5",
+    "reread_status": "pass",
+    "reread_device": "xcu280",
+    "reread_nets": 31,
+    "reread_cells": 33,
+    "reread_site_instances": 20,
+    "reread_log_sha256": "66ba5bf1fed71ec717345dba2b5cb417f02991c630241aeb4f75267c19296d02"
+  },
+  "conclusion": {
+    "rapidwright_environment_passed": true,
+    "bridge_compilation_passed": true,
+    "real_vivado_placed_dcp_read_passed": true,
+    "dcp_and_phys_write_roundtrip_passed": true,
+    "claim_limit": "This validates the bridge environment and non-destructive DCP/physical-netlist round trip. FPGA24 graph export, non-empty PIP replacement, connectivity validation, Vivado legality/QoR and RWRoute/CUFR baselines remain pending."
+  }
+}

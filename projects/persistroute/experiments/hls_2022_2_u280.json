@@ -1,0 +1,78 @@
+{
+  "run_date": "2026-08-17",
+  "tool": "Vitis HLS 2022.2 build 3670227",
+  "rtl_simulator": "Vivado XSIM 2022.2 build 3671981",
+  "part": "xcu280-fsvh2892-2L-e",
+  "target_clock_ns": 4.0,
+  "flow": "Vivado IP",
+  "kernels": [
+    {
+      "top": "search_kernel",
+      "role": "legacy regression",
+      "csim": "pass",
+      "cosim": "pass",
+      "cosim_latency_cycles": 981,
+      "estimated_clock_ns": 2.920,
+      "bram_18k": 51,
+      "dsp": 12,
+      "ff": 23248,
+      "lut": 41615,
+      "xo_sha256": "56912b29b2178268c0e04e68131b3ac52cd84de3e327e30cdcec19dd67a30a25"
+    },
+    {
+      "top": "search_hbm_kernel",
+      "role": "production",
+      "csim": "pass",
+      "cosim": "pass",
+      "cosim_latency_cycles": 1664,
+      "estimated_clock_ns": 2.920,
+      "bram_18k": 0,
+      "dsp": 12,
+      "ff": 34371,
+      "lut": 64808,
+      "xo_sha256": "e39836392241770a7290b8f31f25a3859e41c1f73f6fbdd0257ab1afdf55e391"
+    },
+    {
+      "top": "multi_pe_schedule",
+      "role": "scheduler",
+      "csim": "pass",
+      "cosim": "pass",
+      "cosim_latency_cycles": 1204,
+      "estimated_clock_ns": 2.920,
+      "bram_18k": 0,
+      "dsp": 0,
+      "ff": 20382,
+      "lut": 33197,
+      "xo_sha256": "192ffbb54a2aa5c3a151532518930c83e5ce38b650550d47a750a1b3d33d47de"
+    },
+    {
+      "top": "commit_kernel",
+      "role": "legacy regression",
+      "csim": "pass",
+      "cosim": "pass",
+      "cosim_latency_cycles": 522,
+      "estimated_clock_ns": 9.577,
+      "bram_18k": 0,
+      "dsp": 0,
+      "ff": 18599,
+      "lut": 36638,
+      "xo_sha256": "6d68f2ce09c73bcf66c8d8021a3a1656e77298832e72c1dd9f860373469c11bc"
+    },
+    {
+      "top": "commit_hbm_kernel",
+      "role": "production",
+      "csim": "pass",
+      "cosim": "pass",
+      "cosim_transactions": 2,
+      "cosim_latency_cycles": {"min": 559, "average": 624, "max": 689},
+      "estimated_clock_ns": 9.309,
+      "bram_18k": 0,
+      "dsp": 0,
+      "ff": 19480,
+      "lut": 39028,
+      "xo_sha256": "96886fa0f14d8048265a8867e64302d6f88d2184a8ea4f0610b2de9b478d6fec"
+    }
+  ],
+  "scope_note": "This file records HLS synthesis, Verilog co-simulation, Vivado IP packaging and XO export only. Platform/environment and full-system implementation evidence are recorded separately; no physical-board run is claimed.",
+  "next_blocker": "The U280 platform and XRT are installed and verified; physical-board execution remains unavailable because this VMware guest has no U280 PCIe passthrough."
+}

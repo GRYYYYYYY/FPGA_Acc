@@ -1,0 +1,53 @@
+# Codex/local workspace state
+/.codex/
+/.Xil/
+
+# Local paper copies and externally downloaded datasets/repositories
+/论文库/
+/projects/persistroute/third_party/
+
+# Xilinx/Vitis/Vivado generated state
+**/.Xil/
+**/.ipcache/
+**/_x/
+**/.run/
+*.jou
+*.log
+*.str
+*.wdb
+*.wcfg
+*.xclbin
+*.xo
+*.dcp
+*.bit
+*.ltx
+*.xsa
+*.zip
+*.tar
+*.tar.gz
+
+# Build products and local executables
+**/build/
+**/cmake-build-*/
+*.o
+*.obj
+*.exe
+/projects/persistroute/host/persistroute_*
+
+# Python/tool caches
+**/__pycache__/
+**/.pytest_cache/
+**/.mypy_cache/
+**/.gradle/
+*.py[cod]
+
+# Large generated experiment workspaces. Keep the compact audit manifests.
+/projects/persistroute/experiments/*
+!/projects/persistroute/experiments/*.json
+
+# Editor/OS state
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~

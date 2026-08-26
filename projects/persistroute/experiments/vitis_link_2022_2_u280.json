@@ -1,0 +1,68 @@
+{
+  "run_date": "2026-08-18",
+  "tool": "Vitis v++ 2022.2 build 3671529 / Vivado 2022.2 build 3671981",
+  "target": "hw",
+  "platform": "xilinx_u280_gen3x16_xdma_1_202211_1",
+  "part": "xcu280-fsvh2892-2L-e",
+  "topology": {
+    "search_compute_units": 4,
+    "commit_compute_units": 1,
+    "kernel_hmss_master_ports": 32,
+    "hbm_pseudo_channels": 32
+  },
+  "status": "implementation_complete_timing_closed",
+  "stages": {
+    "system_link": "pass",
+    "connectivity_generation": "pass",
+    "block_design_generation": "pass",
+    "block_level_synthesis": "pass",
+    "top_level_synthesis": "pass",
+    "logic_optimization": "pass",
+    "placement": "pass",
+    "routing": "pass",
+    "bitstream_generation": "pass",
+    "xclbin_packaging": "pass"
+  },
+  "post_synthesis_dynamic_region_resources": {
+    "lut": 186821,
+    "register": 276771,
+    "bram": 108,
+    "dsp": 52,
+    "available_lut": 1133280,
+    "available_register": 2266560,
+    "available_bram": 1776,
+    "available_dsp": 8304
+  },
+  "host_memory": {
+    "physical_gib": 15,
+    "configured_swap_gib": 2,
+    "search_kernel_synthesis_peak_pss_mib": 5748.307,
+    "implementation_peak_vivado_mib": 12678.926,
+    "minimum_logged_free_physical_mib": 570,
+    "first_attempt_failure_evidence": "/tools/Xilinx/Vivado/2022.2/bin/rdiArgs.sh: line 312: Killed",
+    "resolution": "Enabled the 16 GiB temporary swap and used serial synthesis/implementation."
+  },
+  "clocking": {
+    "requested_kernel_frequency_mhz": 180,
+    "selected_data_clock_mhz": 180,
+    "selected_kernel_clock_mhz": 500,
+    "selected_hbm_clock_mhz": 450
+  },
+  "routed_timing": {
+    "wns_ns": 0.016,
+    "tns_ns": 0.0,
+    "setup_failing_endpoints": 0,
+    "whs_ns": 0.006,
+    "ths_ns": 0.0,
+    "hold_failing_endpoints": 0,
+    "report": "_x/reports/link/imp/impl_1_hw_bb_locked_timing_summary_routed.rpt"
+  },
+  "artifact": {
+    "xclbin": "build/xclbin/hw/persistroute.xclbin",
+    "bytes": 55215208,
+    "sha256": "1b4de2cb40096770b6f19aca0658781fe48e7074cf5e597bba80d848a521d791"
+  },
+  "conclusion": "The complete U280 hardware flow passes system integration, synthesis, placement, routing, bitstream generation, and xclbin packaging. With the DATA clock constrained to 180 MHz, all user timing constraints are met (WNS +0.016 ns, TNS 0, WHS +0.006 ns, THS 0).",
+  "next_action": "Use the routed timing, utilization, system estimate, and HLS C simulation/cosimulation reports as paper evidence. Hardware emulation and board execution remain optional future work.",
+  "board_execution": "not_available_in_vmware_guest_without_u280_pcie_passthrough"
+}

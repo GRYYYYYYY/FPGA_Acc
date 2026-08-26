@@ -1,0 +1,73 @@
+{
+  "schema": "PERSISTROUTE_RWROUTE_FPGA24_BASELINE_V1",
+  "date": "2026-08-24",
+  "benchmark": "logicnets_jscl",
+  "device": "xcvu3p-ffvc1517-2-e",
+  "source": {
+    "repository": "https://github.com/Xilinx/fpga24_routing_contest",
+    "repository_commit": "f86cb48769466601b9f8d70ae000fa7bae39b3d8",
+    "rapidwright_commit": "fc0f5991ddcc85d9af3dd6ed4d5c0eff9bfef683"
+  },
+  "input": {
+    "release": "FPGA24 v1.8",
+    "logical_netlist_sha256": "bf9f7a4afa61722d8123ad490451b595da33019b7c9ad2dee62d9d49f9aeef6e",
+    "unrouted_phys_sha256": "66b349eab569953b9ab7e42a2ffa903e7a4faa88f23d8cdfd57b405e92dde9fc"
+  },
+  "build": {
+    "java": "OpenJDK 11.0.11+9",
+    "gradle": "8.14",
+    "wall_seconds": 48.26,
+    "max_rss_kb": 799056,
+    "runtime_classpath_sha256": "2fad21a179b083418c749f59ad1f3eae5871408370f81533eef8fb2c6cd370ef",
+    "xcvu3p_db_sha256": "2b2ed1f184ecd1f66a418a21ee36554494495b0cdd4dcd16b6a3a252bf81a3c8",
+    "xcvu3p_db_cache_sha256": "5da0f095bdf38a2c65a9e8881e7245aa06594ff190c4ee16ba76b0d3cf3149f3",
+    "exit_status": 0
+  },
+  "machine": {
+    "cpu": "13th Gen Intel(R) Core(TM) i5-13490F",
+    "visible_processors": 8,
+    "ram_bytes": 16728829952,
+    "swap_bytes": 2147479552
+  },
+  "route": {
+    "jvm": "-XX:ActiveProcessorCount=8 -Xms1g -Xmx12g",
+    "heap_note": "The official documentation recommends at least 14 GB heap for all five initial benchmarks. This smaller logicnets_jscl case completed at a controlled 12 GB maximum heap on this VM.",
+    "nets_to_route": 27960,
+    "connections_to_route": 180326,
+    "iterations": 11,
+    "first_iteration_overlapping_nodes": 53784,
+    "final_overlapping_nodes": 0,
+    "connections_routed_across_iterations": 589926,
+    "direct_connections": 0,
+    "pip_overlaps": 0,
+    "route_design_seconds": 28.50,
+    "routing_seconds": 27.63,
+    "wall_seconds": 35.59,
+    "max_rss_kb": 4355344,
+    "output_bytes": 10877326,
+    "output_sha256": "6c5fb5695efe9771707e73790042602f663d991336356c27c619adfa7b36a7dd",
+    "log_sha256": "eb82aef696395432eb140e6c322fa7150cdc709763cb56fd514aa6458e0ad275",
+    "exit_status": 0
+  },
+  "official_check": {
+    "design_differences": 0,
+    "logical_nets": 37081,
+    "routable_nets": 27961,
+    "fully_routed_nets": 27961,
+    "routing_error_nets": 0,
+    "wall_seconds": 31.33,
+    "max_rss_kb": 2644052,
+    "dcp_bytes": 11704952,
+    "dcp_sha256": "3f13ee7b949bbe884e29f511826a06b5497c58642c02ff4edcfbb4161b9bed6c",
+    "log_sha256": "cadfcdda4b9e810a5c253d8fca28709a885a3dc3badf09ccfd18cc005f7fc2aa",
+    "exit_status": 0
+  },
+  "contest_qor": {
+    "critical_path_wirelength": 217,
+    "wirelength_wall_seconds": 12.04,
+    "wirelength_max_rss_kb": 621428,
+    "score": 53.731,
+    "wirelength_log_sha256": "0341fda8ee40b0ef933ce51c1528d00da2e0ecf44bbba6a3e41d59c20841417f"
+  },
+  "known_warning": "Vivado reports the usual RapidWright-written DCP archive integrity warning; the official CheckPhysNetlist comparison and full route-status check both pass with exit status 0."
+}

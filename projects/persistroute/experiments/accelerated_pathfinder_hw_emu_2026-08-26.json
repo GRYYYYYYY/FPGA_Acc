@@ -1,0 +1,179 @@
+{
+  "schema": "PERSISTROUTE_ACCELERATED_PATHFINDER_HW_EMU_V1",
+  "verified_at": "2026-08-26T00:31:31+08:00",
+  "environment": {
+    "os": "Ubuntu 22.04.5 LTS",
+    "kernel": "5.15.0-190-generic",
+    "vitis_vpp": "2022.2 build 3671529",
+    "vivado_xsim": "2022.2",
+    "xrt": "2.14.354",
+    "platform": "xilinx_u280_gen3x16_xdma_1_202211_1",
+    "platform_file": "/opt/xilinx/platforms/xilinx_u280_gen3x16_xdma_1_202211_1/xilinx_u280_gen3x16_xdma_1_202211_1.xpfm",
+    "physical_u280_devices": 0,
+    "execution_mode": "XCL_EMULATION_MODE=hw_emu"
+  },
+  "design": {
+    "compute_units": {
+      "search_hbm_kernel": 4,
+      "commit_hbm_kernel": 1
+    },
+    "xclbin": {
+      "path": "build/xclbin/hw_emu/persistroute.xclbin",
+      "bytes": 95802493,
+      "sha256": "73ff9d105a486c2f8cfa73e002756343947aa6d29d9b1fdd4e3523521f75cc33"
+    },
+    "host": {
+      "path": "host/persistroute_accelerated_xrt",
+      "sha256": "b4efb9bf984b8bfb2e9e3df4259d16e0ca01d831bdc4c31265842d707b25d6d7"
+    },
+    "emconfig_sha256": "7a896fd919c9baa7fc2aa1079eb1a78b7ca08ce3414f600a1499ee5a97ad99d5"
+  },
+  "real_vpr_graph": {
+    "case": "VTR 9.0.0 diffeq seed 1",
+    "nodes": 32920,
+    "edges": 344820,
+    "resources": 32920,
+    "shared_input_hashes": {
+      "nodes": "c92dfc833fda89866d41309c5ea8246bc7f8cbc9594929848b15f2cc13ced360",
+      "edges": "5da12b987fd890abbb22f09f1eac33d9c9b335254bd1c9132d4829706c86314f",
+      "resources": "aaf4bb84073a37356e8f46b6c7233b75d8284c7ac66fb1edca8c5d2eae6362c0"
+    }
+  },
+  "tests": [
+    {
+      "name": "parallel4_one_wave",
+      "purpose": "Exercise all four search CUs concurrently on four real VPR connections and commit a legal one-round result.",
+      "task_ids": [0, 7, 11, 13],
+      "task_sha256": "53f70426ad5de6728995e508821fbf99a68e840fb8db01ae7a27e0eec8e02674",
+      "cmodel": {
+        "legal": true,
+        "tasks": 4,
+        "iterations": 1,
+        "searches": 4,
+        "expanded": 2903,
+        "edge_visits": 12959,
+        "overused_resources": 0,
+        "result_json_sha256": "e59dc60ebaa42ba273230019c1ab3b45b4329cfc0a3b998672cdd979783ed166"
+      },
+      "hw_emu": {
+        "exit_status": 0,
+        "simulator_exit": "All the simulator processes exited successfully",
+        "legal": true,
+        "golden_match": true,
+        "tasks": 4,
+        "iterations": 1,
+        "searches": 4,
+        "overused_resources": 0,
+        "route_ms": 2313560,
+        "wall_s": 2324.44,
+        "max_rss_kib": 648692,
+        "swaps": 0,
+        "xsim_error_or_fatal_count": 0
+      },
+      "rounds": [
+        {
+          "iteration": 0,
+          "waves": 1,
+          "launched": 4,
+          "committed": 4,
+          "failed": 0,
+          "overused_resources": 0,
+          "resource_hash": "f2b638d9442601b2",
+          "route_hash": "ef84921f7a4a883b"
+        }
+      ],
+      "output_sha256": {
+        "paths.csv": "5612827332c54abeaf58231f7d97a6fccbdcb3c4878b5dab79231967ac8e0c33",
+        "route_trees.csv": "9f0c0d791fb35e3cb777afc575cf1aeaf5f99ac802aae02c0901ea70d11d9259",
+        "iterations.csv": "7c0bca2363291c53908f31c05f94b4ea115a902b03cc261f725e7bcb92fb3419",
+        "accelerated_iterations.csv": "e07cb203325e75666ef1162ed52b4f071eeaaf6834222b14026dd759474c0eaf",
+        "resources": "6058cd2820bdb239e93ba65d84cfafd9866b5ceb13212c0ce046fb4d0a536998"
+      },
+      "all_outputs_byte_identical_to_cmodel": true,
+      "evidence": {
+        "output_directory": "experiments/accelerated_pathfinder_2026-08-25/vpr_subset/hw_emu_final_parallel4",
+        "stdout_sha256": "a081bedfc67957d30c3c25839b6482e8f0da1de3f56b76a382e7242762727ee2",
+        "stderr_sha256": "168b86ac18dce5ff390e8f0313838ec5d1dd37f94c39cfea9ab7a2e9e2c25000",
+        "xsim_log": "host/.run/275747/hw_em/device0/binary_0/behav_waveform/xsim/simulate.log",
+        "xsim_log_sha256": "fa8b606446f162e536feeb86d24cd75b1d822ee401aacb199ce0db9808637a3a"
+      }
+    },
+    {
+      "name": "negotiated_congestion_two_rounds",
+      "purpose": "Exercise negotiated overuse, deterministic commit, rip-up and reroute until the real VPR subset becomes legal.",
+      "task_ids": [1901, 1903],
+      "task_sha256": "d34028247b750e11c1168d1e4e50360c4ee4cb4662c004cb3f55d905e3240f45",
+      "cmodel": {
+        "legal": true,
+        "tasks": 2,
+        "iterations": 2,
+        "searches": 4,
+        "expanded": 1830,
+        "edge_visits": 10576,
+        "overused_resources": 0,
+        "result_json_sha256": "2d058df2a1d91eb480b5f5fab9966e8b139dd331bf2c4089290fc721e6246a5c"
+      },
+      "hw_emu": {
+        "exit_status": 0,
+        "simulator_exit": "All the simulator processes exited successfully",
+        "legal": true,
+        "golden_match": true,
+        "tasks": 2,
+        "iterations": 2,
+        "searches": 4,
+        "overused_resources": 0,
+        "route_ms": 3534530,
+        "wall_s": 3543.91,
+        "max_rss_kib": 647504,
+        "swaps": 0,
+        "xsim_error_or_fatal_count": 0
+      },
+      "rounds": [
+        {
+          "iteration": 0,
+          "waves": 1,
+          "launched": 2,
+          "committed": 2,
+          "failed": 0,
+          "overused_resources": 1,
+          "resource_hash": "b4dbe3b4c1bc8fb4",
+          "route_hash": "7925798801d3abe8"
+        },
+        {
+          "iteration": 1,
+          "waves": 1,
+          "launched": 2,
+          "committed": 2,
+          "failed": 0,
+          "overused_resources": 0,
+          "resource_hash": "ba8d3f75966d2f0d",
+          "route_hash": "d7489e301472e111"
+        }
+      ],
+      "output_sha256": {
+        "paths.csv": "e8a4c8de0b0849dcb6e800abd59fc9d05b1ff5750f1b12803c726096239efcdf",
+        "route_trees.csv": "4224486f6a13498ad680c3dd3b9379dcac6a38bf4c1fd4d2ee8b404889e655c9",
+        "iterations.csv": "27babc3c9e77b785afbc5c2db797a1ffebc71c53bc223aabd7e47e74f8f4163c",
+        "accelerated_iterations.csv": "a994b924f01879b1843ab6ea9af88fb6a4e9f476a33139e2361ee5d1e81ed110",
+        "resources": "05e1431e839ec9c0dc3260c8c9fb9aa1d59a72cda1c6cde28c91ef5ed0fa4c76"
+      },
+      "all_outputs_byte_identical_to_cmodel": true,
+      "evidence": {
+        "output_directory": "experiments/accelerated_pathfinder_2026-08-25/vpr_subset/hw_emu_final_conflict2",
+        "stdout_sha256": "610606d73433c05362bafd95a2001cbc0915eeff46cc3a7ad5a4fb1274ef01ea",
+        "stderr_sha256": "57368d520137850b67d4f22ca0e2fc5eb64f36434f9bce07356270d325919f5f",
+        "xsim_log": "host/.run/284123/hw_em/device0/binary_0/behav_waveform/xsim/simulate.log",
+        "xsim_log_sha256": "ef80cca1ea7726ba66a8fc57ac1913acd2dc52fa71d07dd012746c94a32001ec"
+      }
+    }
+  ],
+  "conclusion": {
+    "accelerated_pathfinder_hw_emu_passed": true,
+    "four_search_cu_parallel_path_passed": true,
+    "negotiated_congestion_reroute_passed": true,
+    "commit_kernel_path_passed": true,
+    "all_outputs_match_hbm_cmodel": true,
+    "first_incomplete_project_item_completed": true,
+    "claim_limit": "The result validates real-VPR-subset functionality and the U280/XRT/RTL integration in hardware emulation. Hardware-emulation timing is approximate and is not physical-board performance. No U280 card is passed through to this VM, and the paper does not require a board run."
+  }
+}

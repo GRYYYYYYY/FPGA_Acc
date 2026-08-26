@@ -1,0 +1,1 @@
+{"paper":"DieRoute","kernel":"dieroute_kernel","datasets":["VTR multi-die","UltraScale+ SLR public designs"],"sweeps":{"dies":[2,3,4,8],"hbm_channels":[1,2,4,8],"sll_capacity":["low","medium","high"],"shadow_interval":[1,2,4,8]},"metrics":["legal","wall_ms","sll_used","cross_die_cpd_ns","wirelength","shadow_bytes","migrations","remote_accesses","board_j"]}

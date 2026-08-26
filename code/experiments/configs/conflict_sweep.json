@@ -1,0 +1,16 @@
+{
+  "name": "persist_route_conflict_sweep",
+  "repetitions": 5,
+  "designs": [
+    {"name": "random_32", "width": 32, "height": 32, "connections": 64, "capacity": 4, "pattern": "random", "seed": 101},
+    {"name": "cross_32", "width": 32, "height": 32, "connections": 48, "capacity": 4, "pattern": "cross", "seed": 103},
+    {"name": "hotspot_32", "width": 32, "height": 32, "connections": 48, "capacity": 8, "pattern": "hotspot", "seed": 107}
+  ],
+  "variants": [
+    {"name": "serial", "mode": "serial", "batch": 1, "threads": 1},
+    {"name": "spec_b2_t2", "mode": "speculative", "batch": 2, "threads": 2},
+    {"name": "spec_b4_t4", "mode": "speculative", "batch": 4, "threads": 4},
+    {"name": "spec_b8_t8", "mode": "speculative", "batch": 8, "threads": 8}
+  ],
+  "router": {"iterations": 60, "bbox_margin": 10}
+}

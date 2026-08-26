@@ -1,0 +1,14 @@
+{
+  "name": "persist_route_smoke",
+  "repetitions": 3,
+  "designs": [
+    {"name": "random_small", "width": 16, "height": 16, "connections": 12, "capacity": 3, "pattern": "random", "seed": 7},
+    {"name": "cross_small", "width": 16, "height": 16, "connections": 12, "capacity": 3, "pattern": "cross", "seed": 11},
+    {"name": "hotspot_small", "width": 20, "height": 20, "connections": 16, "capacity": 4, "pattern": "hotspot", "seed": 13}
+  ],
+  "variants": [
+    {"name": "serial", "mode": "serial", "batch": 1, "threads": 1},
+    {"name": "spec_b4_t4", "mode": "speculative", "batch": 4, "threads": 4}
+  ],
+  "router": {"iterations": 30, "bbox_margin": 5}
+}

@@ -1,0 +1,21 @@
+{
+  "schema": "FPGA_ACC_BASELINES_V1",
+  "baselines": {
+    "vpr_serial": {"evidence": "B0", "problem": "academic_fpga", "runner": "vpr", "workers": 1},
+    "vpr_parallel": {"evidence": "B0", "problem": "academic_fpga", "runner": "vpr", "workers": 16},
+    "rwroute": {"evidence": "B0", "problem": "ultrascale_plus", "runner": "rapidwright", "application": "RWRoute"},
+    "cufr": {"evidence": "B1", "problem": "ultrascale_plus", "runner": "rapidwright", "application": "CUFR"},
+    "vivado_route": {"evidence": "B0", "problem": "commercial_fpga", "runner": "vivado"},
+    "potter": {"evidence": "B2", "problem": "commercial_fpga", "runner": "literature_only"},
+    "dreamplacefpga": {"evidence": "B1", "problem": "heterogeneous_fpga_placement", "runner": "literature_only", "promotion_rule": "freeze an obtainable repository commit and audited CLI before enabling execution"},
+    "amf_placer": {"evidence": "B1", "problem": "heterogeneous_fpga_placement", "runner": "literature_only", "promotion_rule": "freeze an obtainable repository commit and audited CLI before enabling execution"},
+    "ripplefpga": {"evidence": "B1", "problem": "routability_driven_fpga_placement", "runner": "literature_only", "promotion_rule": "freeze an obtainable repository commit and audited CLI before enabling execution"},
+    "openparf": {"evidence": "B1", "problem": "heterogeneous_fpga_placement", "runner": "literature_only", "promotion_rule": "freeze an obtainable repository commit and audited CLI before enabling execution"},
+    "rapidpnr": {"evidence": "B1", "problem": "fpga_place_and_route", "runner": "literature_only", "promotion_rule": "freeze an obtainable repository commit and audited CLI before enabling execution"}
+  },
+  "evidence_levels": {
+    "B0": "command and locally produced logs/QoR reports",
+    "B1": "command is registered but must pass local version/CLI audit",
+    "B2": "literature result only; never used as a direct reproduced baseline"
+  }
+}

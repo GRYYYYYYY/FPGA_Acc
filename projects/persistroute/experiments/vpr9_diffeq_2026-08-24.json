@@ -1,0 +1,86 @@
+{
+  "schema": "PERSISTROUTE_VPR9_REAL_CASE_V1",
+  "verified_at": "2026-08-24T19:06:00+08:00",
+  "host": {
+    "os": "Ubuntu 22.04.5 LTS",
+    "kernel": "6.8.0-138-generic",
+    "kernel_matches_xrt_dkms": false,
+    "xrt_dkms_kernel": "5.15.0-190-generic",
+    "note": "The VPR and CPU PathFinder results do not use XRT. Do not use this boot for XRT device execution; reboot into the supported 5.15 kernel first."
+  },
+  "vtr": {
+    "release": "9.0.0",
+    "reported_version": "9.0.0-dev+v8.0.0-11943-g8cb20aa52",
+    "source_archive": "/home/gry/.local/opt/vtr-verilog-to-routing-9.0.0.tar.gz",
+    "source_archive_sha256": "bebbfac162630a2bea7403f2b2102200c31709dfea26bac85626ee7327a2881c",
+    "vpr_binary": "/home/gry/.local/opt/vtr-9.0.0-src/build_vpr/vpr/vpr",
+    "vpr_binary_sha256": "a5383476f324c6c13f1a009324d2055a21c228ee9e615f492bded542a3e9b8ba",
+    "build": "release IPO, GNU 11.4.0, serial execution",
+    "disabled_optional_features": ["GUI", "TBB parallel execution", "Eigen analytic placement"]
+  },
+  "case": {
+    "id": "diffeq_seed1_cw200",
+    "architecture": "k6_frac_N10_mem32K_40nm.xml",
+    "architecture_sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179",
+    "circuit": "diffeq.blif",
+    "circuit_sha256": "507978af7a0c09efa0baada34e55a7d3e635619b6dd9a18a7fa47aed7903ecf7",
+    "seed": 1,
+    "route_chan_width": 200,
+    "blocks": 1974,
+    "nets": 1935
+  },
+  "vpr_result": {
+    "success": true,
+    "routing_iterations": 13,
+    "wirelength": 9103,
+    "cpd_ns": 6.59759,
+    "fmax_mhz": 151.571,
+    "wall_s": 1.91,
+    "max_rss_kib": 68408,
+    "route_sha256": "f91ff4bf9aa2203edc616462c81fc85971d3e9d312a3847f8214bd43887dd761",
+    "repeat_route_sha256": "f91ff4bf9aa2203edc616462c81fc85971d3e9d312a3847f8214bd43887dd761",
+    "deterministic_repeat": true
+  },
+  "conversion": {
+    "connections": 1973,
+    "rr_nodes": 32920,
+    "rr_edges": 344820,
+    "connections_sha256": "b76e6662254294c117871117aeb75f27852dea687f1aac93f1496622c3b27e0d",
+    "rr_graph_sha256": "62d7b83281be59af216d789f9ec592c315af23519bd97260da4f131401306b96",
+    "tasks_sha256": "a69b4bd35c1145bd966c60da2f07617e5280a2a457648f08d913f7b52c994842",
+    "nodes_sha256": "c92dfc833fda89866d41309c5ea8246bc7f8cbc9594929848b15f2cc13ced360",
+    "edges_sha256": "5da12b987fd890abbb22f09f1eac33d9c9b335254bd1c9132d4829706c86314f",
+    "resources_sha256": "aaf4bb84073a37356e8f46b6c7233b75d8284c7ac66fb1edca8c5d2eae6362c0"
+  },
+  "cpu_pathfinder_result": {
+    "legal": true,
+    "route_success": true,
+    "tasks": 1973,
+    "routed_tasks": 1973,
+    "iterations": 3,
+    "searches": 2787,
+    "expanded": 7366072,
+    "edge_visits": 45095935,
+    "ripups": 71,
+    "overused_resources": 0,
+    "route_ms": 2064.615786,
+    "wall_ms": 2067.537151,
+    "max_rss_kib": 13080,
+    "paths_sha256": "fa8d2a813089ca68c66aafd56c15c5f9e001e36c8d605e064079fd14455e5d68",
+    "route_trees_sha256": "3725af4c9922ed6673710c7faab3e40ac8cf16ec51c5616d018f115bfda9d69e",
+    "iterations_sha256": "9188104d7697d1deca524cb4ca2f77e0e36eb5c8e22d3d270c118ad78806cd83"
+  },
+  "baseline": {
+    "name": "vpr_serial",
+    "evidence": "B0",
+    "status": "pass",
+    "wall_s": 1.8335673569999926,
+    "run_record": "vpr9/baseline_runs/vpr_serial/diffeq_seed1_cw200/run.json",
+    "metrics": "vpr9/baseline_runs/vpr_serial/diffeq_seed1_cw200/metrics.json"
+  },
+  "scope": {
+    "physical_u280_used": false,
+    "xrt_used": false,
+    "claim": "Real VTR data conversion and CPU correctness/control closure; not FPGA hardware acceleration evidence."
+  }
+}

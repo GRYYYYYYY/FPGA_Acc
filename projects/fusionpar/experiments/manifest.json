@@ -1,0 +1,1 @@
+{"paper":"FusionPAR","kernel":"fusionpar_kernel","datasets":["Titan23","Koios","FPGAIF public designs"],"sweeps":{"sketch_threshold":[64,128,256,512],"repair_budget":[0,1,2,4],"interleave_interval":[1,2,4,8]},"metrics":["legal","wall_ms","wirelength","cpd_ns","move_commits","move_aborts","repair_tasks","state_bytes_reused","initialization_ms_saved","board_j"]}

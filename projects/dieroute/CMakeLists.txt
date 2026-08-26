@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.16)
+project(dieroute LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+add_executable(dieroute_tb src/dieroute.cpp tb/dieroute_tb.cpp)
+target_include_directories(dieroute_tb PRIVATE include)
+enable_testing()
+add_test(NAME dieroute_tb COMMAND dieroute_tb)

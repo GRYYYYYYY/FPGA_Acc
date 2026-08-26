@@ -1,0 +1,114 @@
+{
+  "schema": "PERSISTROUTE_HW_EMU_2022_2_U280_V1",
+  "verified_at": "2026-08-24T20:20:12+08:00",
+  "environment": {
+    "os": "Ubuntu 22.04.5 LTS",
+    "kernel": "5.15.0-190-generic",
+    "vitis": "2022.2 build 3671529",
+    "vivado_xsim": "2022.2",
+    "xrt": "2.14.354",
+    "platform": "xilinx_u280_gen3x16_xdma_1_202211_1",
+    "platform_file": "/opt/xilinx/platforms/xilinx_u280_gen3x16_xdma_1_202211_1/xilinx_u280_gen3x16_xdma_1_202211_1.xpfm",
+    "physical_u280_devices": 0,
+    "execution_mode": "XCL_EMULATION_MODE=hw_emu"
+  },
+  "link": {
+    "command": "PERSISTROUTE_SKIP_HLS=1 ./build_xclbin.sh /opt/xilinx/platforms/xilinx_u280_gen3x16_xdma_1_202211_1/xilinx_u280_gen3x16_xdma_1_202211_1.xpfm hw_emu",
+    "working_directory": "/home/gry/workspace/FPGA_Acc/projects/persistroute",
+    "exit_status": 0,
+    "wall_s": 556,
+    "system_link": "success",
+    "vpl_hw_emu_compile_elaborate": "success",
+    "post_vpl_errors": 0,
+    "xclbinutil": "success",
+    "target_clock_mhz": 180,
+    "compute_units": {
+      "search_hbm_kernel": 4,
+      "commit_hbm_kernel": 1
+    },
+    "inputs": {
+      "search_xo_sha256": "e39836392241770a7290b8f31f25a3859e41c1f73f6fbdd0257ab1afdf55e391",
+      "commit_xo_sha256": "96886fa0f14d8048265a8867e64302d6f88d2184a8ea4f0610b2de9b478d6fec",
+      "connectivity_sha256": "9920b23096a45b11820bc49118ab2a3b0b818e4430caaa9ce3f9f9e3ad1e0092"
+    },
+    "xclbin": {
+      "path": "build/xclbin/hw_emu/persistroute.xclbin",
+      "bytes": 95422451,
+      "sha256": "02bd961651d244fbb8b73b4175c823766e8acc987407cfd3323b7d6be05fdc9a"
+    },
+    "evidence": {
+      "link_log": "build/xclbin/hw_emu/logs/link/link.steps.log",
+      "link_log_sha256": "4f5164973e5ea3d686a92578db3ea7bff1a0eb6adfa48509d7f3100d10b11d48",
+      "system_estimate": "build/xclbin/hw_emu/reports/link/system_estimate_persistroute.xtxt",
+      "system_estimate_sha256": "2fe9b05d712156773324331fcee5548ce6facc5baa3c340733a60628d74c440a"
+    }
+  },
+  "test_case": {
+    "name": "fixed tiny production-ABI graph",
+    "nodes": 3,
+    "edges": 2,
+    "tasks": 1,
+    "input_prefix": "experiments/hw_emu_2026-08-24/input/tiny",
+    "input_hashes": {
+      "nodes": "e9afa7ad0c457f2279981a1549da90b631e528b4399e2ed598f216a0e0307e24",
+      "edges": "f0e7e77384f5aec4f360d48ccd13342dc45f68693279b08f04f643f22afdd908",
+      "resources": "dd6cc463b5f1b2277b7854ec974c4a248c8c95078004813792d594ad33f1025f",
+      "tasks": "161a2d9a9e5b4d53da629fc7cf57a742f869211a28ef02f6bed28f36861318fc"
+    },
+    "emconfig_sha256": "7a896fd919c9baa7fc2aa1079eb1a78b7ca08ce3414f600a1499ee5a97ad99d5",
+    "host_binary_sha256": "7d18098831761d2a60d9cc31691b5006bcd09d7a4bf6e5127398c58a9149b7a1",
+    "settings": {
+      "pe_count": 1,
+      "max_replay": 2,
+      "queue_depth": 256,
+      "transaction_capacity": 4096
+    }
+  },
+  "configured_host_run": {
+    "exit_status": 0,
+    "simulator_exit": "All the simulator processes exited successfully",
+    "emconfig_warning": false,
+    "host_wall_s": 32.95,
+    "max_rss_kib": 644584,
+    "swaps": 0,
+    "host_metrics": {
+      "wall_ms": 26818.7,
+      "input_ms": 0.051665,
+      "setup_ms": 23362.0,
+      "route_replay_ms": 3435.99,
+      "output_ms": 20.6113,
+      "pes": 1,
+      "tasks": 1,
+      "committed": 1,
+      "remaining": 0,
+      "conflicts": 0,
+      "failed": 0
+    },
+    "results": {
+      "path": [1, 2],
+      "paths_sha256": "0db00974d0364a0fe66b5115f9c7a5ed70d9f6be00649c0be5e2c94837604aba",
+      "resources_sha256": "a9404921c3e5bcd8d1c2722bc2d4450faf90d0e6798a5319c922b8c64f95e9be",
+      "cpu_paths_sha256": "0db00974d0364a0fe66b5115f9c7a5ed70d9f6be00649c0be5e2c94837604aba",
+      "cpu_resources_sha256": "a9404921c3e5bcd8d1c2722bc2d4450faf90d0e6798a5319c922b8c64f95e9be",
+      "paths_byte_identical_to_cpu": true,
+      "resources_byte_identical_to_cpu": true
+    },
+    "logs": {
+      "stdout": "experiments/hw_emu_2026-08-24/hw_emu_with_config/host.stdout.log",
+      "stdout_sha256": "97e0041b0ab1fc6cba19493f14565fc285b527d7cc1300411964e8099a83f57a",
+      "stderr": "experiments/hw_emu_2026-08-24/hw_emu_with_config/host.stderr.log",
+      "stderr_sha256": "4fab3742698c8adb60c74c01c46c15b3bf3ca9fbd39c22807dc0215565c2a1f4",
+      "xsim": "experiments/hw_emu_2026-08-24/.run/57503/hw_em/device0/binary_0/behav_waveform/xsim/simulate.log",
+      "xsim_sha256": "3245e1e1b87f90db858010b6fe6f7d67c7bb6bc7eddbdf35e884220eed0406ce",
+      "xsim_error_or_fatal_count": 0,
+      "warning_scope": "XTLM deprecation and waveform/protocol-instance diagnostics only"
+    }
+  },
+  "conclusion": {
+    "hw_emu_integration_passed": true,
+    "native_xrt_host_passed": true,
+    "search_and_commit_kernel_path_passed": true,
+    "cpu_golden_match": true,
+    "claim_limit": "Hardware emulation validates the U280/XRT/RTL integration and functional result. Its modeled timing is approximate and is not a physical-board performance measurement."
+  }
+}

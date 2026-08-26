@@ -1,0 +1,1 @@
+{"paper":"TilePlace","kernel":"tileplace_kernel","datasets":["Titan23","Koios","VTR9 heterogeneous"],"sweeps":{"instances":[1024,4096,16384],"pages":[16,32,64],"criticality":["off","on"],"resource_mix":["CLB","CLB_BRAM","CLB_BRAM_DSP"]},"metrics":["legal","wall_ms","routed_wirelength","cpd_ns","wns_ns","placed_per_s","board_j"]}

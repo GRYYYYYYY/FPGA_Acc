@@ -1,0 +1,12 @@
+Placement_File: tiny.place Placement_ID: SHA256:test
+Array size: 2 x 2 logic blocks.
+
+Routing:
+
+Net 0 (data)
+
+Node: 0 SOURCE (0,0) Class: 0 Switch: 0
+Node: 1 CHANX (0,0) Track: 0 Switch: 0
+Node: 2 SINK (1,0) Class: 0 Switch: -1
+Node: 1 CHANX (0,0) Track: 0 Switch: 0
+Node: 3 SINK (1,1) Class: 0 Switch: -1

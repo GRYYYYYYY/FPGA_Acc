@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.16)
+project(routecast LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+add_executable(routecast_tb src/routecast.cpp tb/routecast_tb.cpp)
+target_include_directories(routecast_tb PRIVATE include)
+enable_testing()
+add_test(NAME routecast_tb COMMAND routecast_tb)

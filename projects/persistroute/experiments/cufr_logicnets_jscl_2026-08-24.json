@@ -1,0 +1,76 @@
+{
+  "schema": "PERSISTROUTE_CUFR_FPGA24_BASELINE_V1",
+  "date": "2026-08-24",
+  "benchmark": "logicnets_jscl",
+  "device": "xcvu3p-ffvc1517-2-e",
+  "source": {
+    "repository": "https://github.com/xszang/parallel-routing",
+    "commit": "ea4b031cb352c404c09fc02e1c644d52f6d41c3e",
+    "rapidwright_version": "2023.2.1-beta",
+    "paper_repository_reference_wall_seconds": 35.26,
+    "paper_repository_reference_wirelength": 234,
+    "paper_repository_reference_score": 55.13,
+    "reference_machine": "2.90 GHz CPU and 768 GB memory; runtime is not directly comparable to this VM."
+  },
+  "input": {
+    "release": "FPGA24 v1.8",
+    "logical_netlist_sha256": "bf9f7a4afa61722d8123ad490451b595da33019b7c9ad2dee62d9d49f9aeef6e",
+    "unrouted_phys_sha256": "66b349eab569953b9ab7e42a2ffa903e7a4faa88f23d8cdfd57b405e92dde9fc"
+  },
+  "build": {
+    "java": "OpenJDK 11.0.11+9",
+    "gradle": "7.4.2",
+    "wall_seconds": 196.33,
+    "max_rss_kb": 110808,
+    "main_jar_sha256": "6073a28ed22bb53d7f018b7c71047e357174d2987858b629a6c0382f82bb43dc",
+    "xcvu3p_db_sha256": "6c0e4fd4c0cf091113462d07cda08d6bf01084633bbda167dc949591b7e7924a",
+    "xcvu3p_db_cache_sha256": "5da0f095bdf38a2c65a9e8881e7245aa06594ff190c4ee16ba76b0d3cf3149f3",
+    "exit_status": 0
+  },
+  "machine": {
+    "cpu": "13th Gen Intel(R) Core(TM) i5-13490F",
+    "visible_processors": 8,
+    "ram_bytes": 16728829952,
+    "swap_bytes": 2147479552
+  },
+  "route": {
+    "threads": 8,
+    "jvm": "-XX:ActiveProcessorCount=8 -Xms1g -Xmx12g -Xss1g",
+    "iterations": 11,
+    "first_iteration_overlapping_nodes": 53832,
+    "final_overlapping_nodes": 0,
+    "direct_connections": 0,
+    "pip_overlaps": 0,
+    "phys_read_seconds": 1.672,
+    "phys_write_seconds": 3.898,
+    "wall_seconds": 26.33,
+    "user_cpu_seconds": 68.25,
+    "max_rss_kb": 4514272,
+    "output_bytes": 10901261,
+    "output_sha256": "2add4366f39722353f4dc450af8c072fde6635ee6211cdd71d10defdc3977ff0",
+    "log_sha256": "9b1b4845fa06d47d7b1a99ece18bb9042285148617f6cf0120ec65a3caf3be69",
+    "exit_status": 0
+  },
+  "official_check": {
+    "design_differences": 0,
+    "logical_nets": 37081,
+    "routable_nets": 27961,
+    "fully_routed_nets": 27961,
+    "routing_error_nets": 0,
+    "wall_seconds": 30.73,
+    "max_rss_kb": 2644568,
+    "dcp_bytes": 11155151,
+    "dcp_sha256": "bf22720e9894779a05b387e30c6aece1166b933e1300f38a0c5b4e712ca45594",
+    "log_sha256": "2b10c9b68f2cb3452d2e0f387b03f54bdd06358053aa524993a034be180500c8",
+    "exit_status": 0
+  },
+  "contest_qor": {
+    "critical_path_wirelength": 234,
+    "wirelength_wall_seconds": 12.68,
+    "wirelength_max_rss_kb": 622156,
+    "score": 47.097,
+    "wirelength_log_sha256": "1d0630b55e7300338c3ca21ea3025eeb45bb659f46a2e6b60909e83bceb1b73c"
+  },
+  "known_warning": "Vivado reports the usual RapidWright-written DCP archive integrity warning; the official CheckPhysNetlist comparison and full route-status check both pass with exit status 0.",
+  "claim_limit": "The CUFR QoR matches the published repository reference wirelength. Runtime is reported only for this 8-vCPU VM and is not compared as a speedup against the authors' 768-GB server."
+}

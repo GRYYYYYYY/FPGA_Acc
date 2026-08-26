@@ -1,0 +1,133 @@
+{
+  "schema": "PERSISTROUTE_VPR9_TITAN23_KOIOS_V1",
+  "verified_at": "2026-08-24T20:05:32+08:00",
+  "environment": {
+    "os": "Ubuntu 22.04.5 LTS",
+    "kernel": "5.15.0-190-generic",
+    "logical_cpus": 8,
+    "physical_u280_devices": 0,
+    "scope": "CPU VTR baseline; no XRT device is required"
+  },
+  "toolchain": {
+    "vtr_release": "9.0.0",
+    "vpr_reported_version": "9.0.0-dev+v8.0.0-11943-g8cb20aa52",
+    "vpr_binary": "/home/gry/.local/opt/vtr-9.0.0-src/build_vpr_tbb/vpr/vpr",
+    "vpr_sha256": "34c3ba7a17641f68fce813f8b97ea63ece9f0940f608131c9582ed0376e96dc7",
+    "parallel_runtime": "Ubuntu 22.04 libtbb 2021.5.0 / libtbb.so.12",
+    "yosys_sha256": "c1deee0e38ce7fcc624a00f73c533dea3c95c1584fc12e3948b4804cffddc9a4",
+    "parmys_plugin_sha256": "d1ef0e04634ad0fd4b7e53b1dce6719cb8ae9b054e468a4cad6d7616a7f4e200",
+    "abc_sha256": "51f1fbda925c07dc3f5ebad43e55ebc285b0f494cca8fcf348c7197fd8890a3d",
+    "worker_protocol": {
+      "serial": 1,
+      "parallel_requested": 16,
+      "parallel_host_limit": 8,
+      "note": "Both sides use the same TBB-enabled VPR executable; only --num_workers differs."
+    }
+  },
+  "titan23": {
+    "provenance": {
+      "archive": "/home/gry/.local/opt/vtr-9.0.0-src/titan_release_2.0.0_blif.tar.gz",
+      "archive_sha256": "fcaef6462961bf752999d59e3a5d826c55ec55fc9f2eaf44bc7ae4aebdd0e432",
+      "architecture_sha256": "0d3a4f0459af9a883329b934dea81f6a025c18a0ad10c63cbed3d2f8cac4c12b",
+      "circuit_sha256": "19f5ca22ae8ddb7e2aa70936217b044dd634c944cd4dda8f465bd49759dbc086",
+      "sdc_sha256": "c52c05ecf1ad6bbb26a33eb0078464788f8299000361b23af8f217ae2367d8ef"
+    },
+    "case": "neuron / Stratix IV timing architecture",
+    "parameters": {
+      "seed": 3,
+      "route_chan_width": 300,
+      "max_router_iterations": 400,
+      "router_lookahead": "map",
+      "initial_pres_fac": 1.0,
+      "router_profiler_astar_fac": 1.5
+    },
+    "problem": {
+      "blocks": 86875,
+      "nets": 119888,
+      "routing_iterations": 15
+    },
+    "serial": {
+      "wall_s": 203.85453234099987,
+      "vpr_total_s": 203.71,
+      "pack_s": 64.35,
+      "place_s": 57.71,
+      "route_s": 18.04,
+      "max_rss_mib": 2880.5
+    },
+    "parallel": {
+      "wall_s": 187.09587878000002,
+      "vpr_total_s": 186.96,
+      "pack_s": 65.12,
+      "place_s": 45.12,
+      "route_s": 13.95,
+      "max_rss_mib": 2884.2
+    },
+    "comparison": {
+      "whole_flow_speedup": 1.089573,
+      "route_stage_speedup": 1.29319,
+      "wirelength": 766630,
+      "cpd_ns": 7.60292,
+      "route_sha256": "7a054ac551f9621bffe8b114d7273f2668fff8d4c8f56a756e3880016a25f215",
+      "identical_qor_and_route": true
+    }
+  },
+  "koios": {
+    "provenance": {
+      "suite": "Koios 2.0 included with VTR 9.0.0",
+      "rtl_sha256": "cf4993a063440f824a5ed789050c45448a38709e191d47c8209592d7e100aaa1",
+      "hard_block_include_sha256": "0e33c4729ebdea49d2e0c54b3e8ec732ff9419eb978ab92d33ab45b000597f3e",
+      "architecture_sha256": "9738371dbd8b3ca5c138150e6f78ed6186e315882edb38b5d302547de4f36c2c",
+      "parmys_log_sha256": "176fdbec7ac130ce2384ca624417a7cdf73783ca38c6f02d09bfb0ccdbb9a868",
+      "frozen_pre_vpr_blif_sha256": "d3a8b391971e9d95281747f4785c5c24e980e672c2c1428276997fbbde06aab1"
+    },
+    "frontend_validation": {
+      "smoke_case": "test.v",
+      "smoke_full_flow_passed": true,
+      "case": "conv_layer.v with hard_block_include.v",
+      "pipeline": "Parmys -> ABC -> VPR",
+      "full_flow_passed": true,
+      "wall_s": 72.69,
+      "max_rss_mib": 572.83
+    },
+    "parameters": {
+      "seed": 1,
+      "route_chan_width": 300,
+      "max_router_iterations": 100
+    },
+    "problem": {
+      "blocks": 28067,
+      "nets": 33180,
+      "routing_iterations": 14
+    },
+    "serial": {
+      "wall_s": 31.81942517000016,
+      "vpr_total_s": 31.79,
+      "pack_s": 7.29,
+      "place_s": 7.38,
+      "route_s": 2.47,
+      "max_rss_mib": 570.7
+    },
+    "parallel": {
+      "wall_s": 29.215085833000103,
+      "vpr_total_s": 29.18,
+      "pack_s": 7.35,
+      "place_s": 5.59,
+      "route_s": 1.74,
+      "max_rss_mib": 574.7
+    },
+    "comparison": {
+      "whole_flow_speedup": 1.089144,
+      "route_stage_speedup": 1.41954,
+      "wirelength": 232357,
+      "cpd_ns": 5.12784,
+      "route_sha256": "4650984c31b6e4e050a766da829da92cfdf310e8d408f7f007bbece537ed5c77",
+      "identical_qor_and_route": true
+    }
+  },
+  "conclusion": {
+    "all_runs_passed": true,
+    "all_paired_routes_identical": true,
+    "representative_whole_flow_speedup": "about 1.09x on both Titan23 and Koios",
+    "claim_limit": "These are auditable CPU parallel VPR baselines, not FPGA acceleration measurements. Additional circuits are still required for statistical claims."
+  }
+}

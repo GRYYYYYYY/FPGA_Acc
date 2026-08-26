@@ -1,0 +1,118 @@
+{
+  "schema": "PERSISTROUTE_VPR9_BASELINE_SUITE_V1",
+  "verified_at": "2026-08-24T19:28:00+08:00",
+  "environment": {
+    "os": "Ubuntu 22.04.5 LTS",
+    "kernel": "5.15.0-190-generic",
+    "xrt": "2.14.354",
+    "xrt_dkms_kernel": "5.15.0-190-generic",
+    "vitis": "2022.2",
+    "vivado": "2022.2",
+    "u280_xpfm_present": true,
+    "physical_u280_devices": 0,
+    "swap_gib": 2
+  },
+  "vpr_builds": {
+    "serial": {
+      "path": "/home/gry/.local/opt/vtr-9.0.0-src/build_vpr/vpr/vpr",
+      "sha256": "a5383476f324c6c13f1a009324d2055a21c228ee9e615f492bded542a3e9b8ba",
+      "workers": 1
+    },
+    "parallel": {
+      "path": "/home/gry/.local/opt/vtr-9.0.0-src/build_vpr_tbb/vpr/vpr",
+      "sha256": "34c3ba7a17641f68fce813f8b97ea63ece9f0940f608131c9582ed0376e96dc7",
+      "workers": 16,
+      "tbb": "Ubuntu 22.04 libtbb 2021.5.0",
+      "elf_needed": "libtbb.so.12"
+    }
+  },
+  "fixed_parameters": {
+    "architecture": "k6_frac_N10_mem32K_40nm.xml",
+    "architecture_sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179",
+    "seed": 1,
+    "route_chan_width": 200
+  },
+  "cases": [
+    {
+      "id": "diffeq",
+      "blocks": 1974,
+      "nets": 1935,
+      "routing_iterations": 13,
+      "wirelength": 9103,
+      "cpd_ns": 6.59759,
+      "serial_wall_s": 1.8335673569999926,
+      "parallel_wall_s": 1.7895363449999877,
+      "speedup": 1.024605,
+      "route_sha256": "f91ff4bf9aa2203edc616462c81fc85971d3e9d312a3847f8214bd43887dd761"
+    },
+    {
+      "id": "frisc",
+      "blocks": 4561,
+      "nets": 4445,
+      "routing_iterations": 12,
+      "wirelength": 33182,
+      "cpd_ns": 13.5879,
+      "serial_wall_s": 5.611144788000047,
+      "parallel_wall_s": 5.492289347999986,
+      "speedup": 1.021640,
+      "route_sha256": "3c7800550d5407325a93d43f593364213780805ea2d97755f5a8bfc1763fbf25"
+    },
+    {
+      "id": "elliptic",
+      "blocks": 4969,
+      "nets": 4855,
+      "routing_iterations": 12,
+      "wirelength": 27329,
+      "cpd_ns": 8.79211,
+      "serial_wall_s": 5.080716884000026,
+      "parallel_wall_s": 4.900005221000015,
+      "speedup": 1.036880,
+      "route_sha256": "3828a75226fd605f043c4ef8a97ba12c94655a8c8cd9b48cec9b79d7e44139ac"
+    },
+    {
+      "id": "clma",
+      "blocks": 8542,
+      "nets": 8460,
+      "routing_iterations": 15,
+      "wirelength": 79857,
+      "cpd_ns": 11.6084,
+      "serial_wall_s": 12.031879295999943,
+      "parallel_wall_s": 11.403896765000013,
+      "speedup": 1.055067,
+      "route_sha256": "985825cd29091e8ec10e3ed186d1478366403cd75fb0622a022665e6a0f275bb"
+    }
+  ],
+  "summary": {
+    "all_runs_passed": true,
+    "all_serial_parallel_route_hashes_match": true,
+    "geomean_speedup": 1.0344649093870477,
+    "aggregate_speedup": 1.0411935836461417,
+    "interpretation": "The TBB build is correct and deterministic, but these four cases show only modest whole-flow speedup."
+  },
+  "clma_persistroute_closure": {
+    "rr_nodes": 155280,
+    "rr_edges": 1803328,
+    "connection_tasks": 13458,
+    "rr_graph_sha256": "9a5b08b40eed9f5edb25529cb53dfe1dede68bd33ae3cffee24ce9450b797fb1",
+    "connections_sha256": "bbca6740588cc6d9e43181a50fca7657cf2aac75b68592ad00af50bb8f702058",
+    "tasks_sha256": "206e0e7a1e2b5189ea59ff9f0620a276875d443b4f907b6203c26403e619af0a",
+    "legal": true,
+    "routed_tasks": 13458,
+    "iterations": 3,
+    "searches": 23060,
+    "expanded": 224356989,
+    "edge_visits": 1478736580,
+    "ripups": 589,
+    "overused_resources": 0,
+    "route_ms": 103049.491045,
+    "wall_ms": 103081.656829,
+    "max_rss_kib": 55676,
+    "paths_sha256": "8b5bc04d623aa39c085eb13e3c98f8f7dd665965d0f87da0b1041b7009e0ed5c",
+    "route_trees_sha256": "6c91685024853485d546051a0d27dac0e60fe21ebd121d66dd0e68dc583491e9"
+  },
+  "scope": {
+    "physical_u280_used": false,
+    "xrt_execution_used": false,
+    "claim": "Paired VPR CPU baselines and production-ABI CPU correctness closure; not FPGA acceleration evidence."
+  }
+}

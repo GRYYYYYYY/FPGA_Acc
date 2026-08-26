@@ -1,0 +1,4 @@
+#include "persistroute.hpp"
+#include <iostream>
+using namespace persistroute;
+int main(){static Node n[MAX_RESOURCES]{};static Edge e[MAX_EDGES]{};static Resource s[MAX_RESOURCES]{};static Task t[MAX_TASKS]{};static std::uint32_t p[MAX_TX_ENTRIES]{};static ReadEntry rd[MAX_TX_ENTRIES]{};static PathResult r[MAX_TASKS]{};for(int i=0;i<4;++i)s[i]={0,2,256,0,0,0xffffffffU};n[0]={0,2,0};n[1]={2,1,0};n[2]={3,1,0};e[0]={1,256,10};e[1]={2,1024,10};e[2]={3,256,10};e[3]={3,256,10};t[0]={0,10,0,3,32768,8,0,0,0};t[1]={1,11,0,3,32768,8,1,0,0};Metrics a{},b{};search_kernel(n,e,s,t,p,rd,r,4,4,2,&a);if(r[0].length!=2||p[r[0].offset]!=1||p[r[0].offset+1]!=3)return 3;commit_kernel(s,t,p,rd,r,4,2,&b);if(b.commits!=1||b.conflicts!=1||r[0].status!=4||r[1].status!=2)return 1;std::cout<<"persistroute_tb: PASS\n";return 0;}

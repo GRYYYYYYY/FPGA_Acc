@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.16)
+project(fusionpar LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+add_executable(fusionpar_tb src/fusionpar.cpp tb/fusionpar_tb.cpp)
+target_include_directories(fusionpar_tb PRIVATE include)
+enable_testing()
+add_test(NAME fusionpar_tb COMMAND fusionpar_tb)
