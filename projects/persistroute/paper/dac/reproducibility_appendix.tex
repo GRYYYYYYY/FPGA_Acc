@@ -1,0 +1,61 @@
+\documentclass[sigconf,anonymous]{acmart}
+\setcopyright{none}
+\settopmatter{printfolios=true}
+\renewcommand\footnotetextcopyrightpermission[1]{}
+\pagestyle{plain}
+\setlength{\emergencystretch}{2em}
+\begin{document}
+\title{PersistRoute Reproducibility Appendix (Separate Supplement)}
+\author{Anonymous Author(s)}
+\affiliation{\institution{Anonymous Institution}}
+\maketitle
+
+\section{Artifact and Environment}
+
+The frozen artifact targets Ubuntu 22.04, Linux 5.15.0-190, VTR 9.0.0,
+Vitis/Vivado/Vitis HLS 2022.2, XRT 2.14.354, and the U280 2022.2 development
+platform. No physical U280
+is attached to the evaluation VM. The machine-readable paper manifest is
+\texttt{paper/generated/}\allowbreak\texttt{paper\_results.json};
+\texttt{SHA256SUMS} authenticates
+the derived CSV, JSON, LaTeX, and SVG files. The generator fails if a CPU pair
+does not pass or differs in route hash, wirelength, CPD, or routing iterations.
+
+\section{Frozen Inputs and Commands}
+
+The matrix contains VTR \texttt{diffeq}, \texttt{frisc}, \texttt{elliptic}, and
+\texttt{clma}; Titan23 \texttt{neuron} and \texttt{stereo\_vision}; and Koios
+2.0 \texttt{conv\_layer}, \texttt{attention\_layer}, \texttt{spmv}, and
+\texttt{softmax}. VTR cases use seed 1/channel width 200. Titan23 uses seed
+3/channel width 300. Koios uses seed 1/channel width 300 and the official
+hard-memory include. Each serial/parallel pair uses the same TBB VPR binary and
+changes only \texttt{--num\_workers} from 1 to 16.
+
+\begin{quote}\ttfamily\small
+python3 tools/prepare\_paper\_artifacts.py\par
+(cd paper/generated \&\&\par
+\quad sha256sum -c SHA256SUMS)\par
+ctest --test-dir BUILD --output-on-failure\par
+python3 tools/test\_converters.py\par
+python3 ../experiments/strong\_baselines/\par
+\quad test\_runner.py
+\end{quote}
+
+The Xilinx flow must source the Vitis 2022.2 and XRT setup scripts. Long
+synthesis/implementation jobs are serialized on the 16-GiB host. The complete
+hardware XCLBIN uses four \texttt{search\_hbm\_kernel} CUs, one
+\texttt{commit\_hbm\_kernel} CU, and 32 HBM pseudo-channels at a requested
+180\,MHz data clock.
+
+\section{Validation and Claim Boundary}
+
+Seven CTest targets, converter tests, HLS C simulation, XSIM co-simulation,
+full U280 implementation, two real-VPR-subset hardware-emulation tests, and 15
+VPR/Tatum timing-oracle iterations pass. The commercial bridge is checked by
+FPGA Interchange round-trip, the official FPGA24 checker, and Vivado routing
+legality/DRC. Hardware-emulation time is excluded from performance claims.
+Submission-quality speedup and energy require a physical U280, at least five
+post-warm-up repetitions, end-to-end phase timing, power integration, and the
+ablations listed in the artifact's \texttt{EXPERIMENT\_PLAN.md}.
+
+\end{document}

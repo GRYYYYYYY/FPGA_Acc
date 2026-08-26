@@ -30,3 +30,22 @@ Contents:
 The CPU speedup plot characterizes the strong VPR baseline. It is not a
 PersistRoute accelerator speedup plot. Physical U280 execution is unavailable
 in this VMware guest, so board runtime and energy remain deliberately absent.
+
+## DAC manuscript
+
+`dac/main.tex` is the anonymous ACM `acmart`/`sigconf` manuscript. It is laid
+out as six pages of body text followed by one references-only page, matching
+the DAC research-manuscript limit. DAC does not permit appendix material on
+that seventh page, so `dac/reproducibility_appendix.tex` builds a separate
+one-page artifact appendix and must not be merged into the submission PDF.
+
+Build and enforce both page boundaries with:
+
+```bash
+cd dac
+PATH=/home/gry/.local/bin:$PATH make check
+```
+
+The local build uses Tectonic 0.16.9. The manuscript intentionally retains a
+visible `BOARD RESULT REQUIRED` marker: end-to-end board speedup, energy, and
+ablation claims remain blocked until physical U280 measurements exist.

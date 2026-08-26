@@ -1,0 +1,666 @@
+\documentclass[sigconf,anonymous,review]{acmart}
+
+\setcopyright{none}
+\settopmatter{printfolios=true}
+\renewcommand\footnotetextcopyrightpermission[1]{}
+\pagestyle{plain}
+\acmConference[DAC '26]{63rd ACM/IEEE Design Automation Conference}{July 26--29, 2026}{Long Beach, CA, USA}
+\acmYear{2026}
+\copyrightyear{2026}
+\acmISBN{}
+\acmDOI{}
+
+\newcommand{\system}{\textsc{PersistRoute}}
+\newcommand{\rrr}{rip-up-and-reroute}
+\newcommand{\todoresult}[1]{\textbf{[BOARD RESULT REQUIRED: #1]}}
+\setlength{\emergencystretch}{1.5em}
+
+\begin{document}
+
+\title{PersistRoute: Transactional Persistent-State FPGA Routing}
+
+\author{Anonymous Author(s)}
+\affiliation{\institution{Anonymous Institution}}
+
+\begin{abstract}
+Negotiated-congestion FPGA routing repeatedly traverses a large routing-resource
+(RR) graph while updating occupancy, history cost, route trees, and timing
+criticality. Accelerating isolated searches leaves state movement and global
+synchronization on the critical path. \system{} instead keeps production
+routing state resident in HBM across complete rip-up-and-reroute iterations.
+Four Search compute units speculatively generate versioned candidate paths with
+banked MultiQueues; one deterministic Commit unit validates and applies those
+transactions in a fixed order. A host control layer preserves PathFinder
+semantics and invokes VPR/Tatum after each iteration to refresh per-connection
+setup criticality. The complete 32-HBM-port design routes and closes timing on
+an AMD Alveo U280 at 180\,MHz, using 16.48\% of LUTs. Hardware emulation on a
+real VPR RR-graph subset is byte-identical to the HBM C-model for concurrent
+search and two-iteration negotiated congestion. Ten paired VTR, Titan23, and
+Koios cases further establish a deterministic multicore baseline with
+1.356$\times$ geometric-mean routing-stage scaling. These results validate the
+architecture and its routing semantics; physical-board end-to-end performance
+and energy remain required for an acceleration claim.
+\end{abstract}
+
+\begin{CCSXML}
+<ccs2012>
+ <concept>
+  <concept_id>10010520.10010575.10010755</concept_id>
+  <concept_desc>Computer systems organization~Reconfigurable computing</concept_desc>
+  <concept_significance>500</concept_significance>
+ </concept>
+ <concept>
+  <concept_id>10002950.10003624.10003633</concept_id>
+  <concept_desc>Mathematics of computing~Graph algorithms</concept_desc>
+  <concept_significance>300</concept_significance>
+ </concept>
+</ccs2012>
+\end{CCSXML}
+\ccsdesc[500]{Computer systems organization~Reconfigurable computing}
+\ccsdesc[300]{Mathematics of computing~Graph algorithms}
+\keywords{FPGA routing, PathFinder, HBM, speculative execution, deterministic commit}
+
+\maketitle
+
+\section{Introduction}
+
+Routing dominates difficult FPGA compilations because each signal connection
+performs an irregular shortest-path search over a large RR graph and because
+negotiated congestion revisits the same state for many iterations. PathFinder
+turns illegal sharing into progressively higher present and historical costs
+\cite{mcmurchie1995pathfinder}; modern VPR adds connection-level routing,
+lookahead, route trees, and timing-driven criticalities \cite{vtr8}. These
+features improve quality of results (QoR), but they also expose an unfavorable
+machine behavior: latency-sensitive priority queues generate random accesses,
+connections overlap in space, and every iteration synchronizes on shared
+occupancy and timing state.
+
+Prior work attacks complementary pieces of this problem. Deterministic and
+partitioned CPU routers exploit inter-net or inter-connection parallelism
+\cite{moctar2018galois,zhou2020connection}; MultiQueue routing relaxes strict
+priority ordering inside one search \cite{singer2024multiqueue}; and recent
+commercial routers allow or manage overlap among concurrently routed nets
+\cite{zang2024cufr,zang2024potter}. These advances do not by themselves define
+how a hardware accelerator should retain the authoritative RR state across
+iterations, how speculative paths should become deterministic updates, or how
+real timing analysis should feed the next hardware round.
+
+\system{} addresses that systems gap. It keeps the graph, resource state,
+queues, work arrays, paths, and transaction logs in U280 HBM. Four Search
+compute units (CUs) read versioned resource snapshots and emit candidate paths
+without mutating authoritative state. A single Commit CU checks the recorded
+versions and applies valid transactions in a fixed order; rejected work enters
+a replay queue. This separation admits overlapping connection searches without
+races while preserving a reproducible state transition. The same 32-byte task
+ABI drives a C++ reference, an HBM C-model, and an XRT backend.
+
+This paper makes four contributions:
+\begin{itemize}
+ \item a cross-iteration HBM state organization for production-scale RR graphs,
+ including occupancy, congestion cost, route trees, queues, and version state;
+ \item a two-level execution scheme combining concurrent connection searches
+ with banked MultiQueues inside each search;
+ \item a deterministic transaction protocol that separates speculative search
+ from fixed-order version-checked commit and replay; and
+ \item an auditable VPR/FPGAIF-to-XRT flow with per-iteration VPR/Tatum timing
+ feedback and layered C-model, RTL-emulation, implementation, and legality
+ validation.
+\end{itemize}
+
+We deliberately separate validated facts from unavailable measurements. The
+full U280 design is implemented and timing-closed, and RTL emulation matches the
+software model, but this VMware environment has no physical U280. Consequently,
+we do not report emulation wall time as speedup or claim energy improvement.
+
+\section{Background and Motivation}
+
+\subsection{Negotiated-congestion routing}
+
+Let $G=(V,E)$ be the directed RR graph. A connection task $k$ has source
+$s_k$, sink $t_k$, timing criticality $\alpha_k$, and a bounding box. Search
+minimizes a timing/congestion objective of the form
+\begin{equation}
+ f_k(v)=g_k(v)+(1-\alpha_k)h_{\mathrm{cong}}(v)+
+             \alpha_k h_{\mathrm{delay}}(v),
+\end{equation}
+where $g_k$ is accumulated path cost and the two lookahead components estimate
+congestion and delay. A resource $v$ with occupancy $o_v$ and capacity $c_v$
+is overused when $o_v>c_v$. After an iteration, PathFinder increases present
+cost for current overuse and historical cost for persistent overuse. Nets
+touching illegal resources are ripped up and searched again. A correct
+accelerator must therefore support more than independent point-to-point maze
+queries: it must preserve route trees, update shared negotiated costs, and
+repeat until all connections are routed with zero overuse.
+
+Timing-driven routing introduces a second feedback loop. Connection delay
+changes after each route. Static timing analysis (STA) then updates slack and
+criticality, changing priorities and edge costs in the next round. Holding
+criticality fixed is convenient for a kernel demonstration but does not match
+a production timing-driven router.
+
+\subsection{Why conventional offload is insufficient}
+
+Three observations motivate persistent transactional execution.
+\textit{First}, RR graphs are much larger than the set of paths changed in one
+iteration. Re-transferring graph and occupancy state for every batch can erase
+search acceleration. \textit{Second}, spatial partitioning alone loses
+parallelism on high-fanout or long connections whose bounding boxes overlap.
+Allowing overlap shifts the problem from scheduling to conflict resolution.
+\textit{Third}, mutating occupancy as each CU finishes makes output dependent on
+memory arbitration and completion time. Reproducibility is important both for
+CAD debugging and for paired QoR evaluation.
+
+\system{} therefore treats Search as speculative and Commit as authoritative.
+The hardware retains state across all rounds; only a compact timing snapshot
+crosses the host boundary when real STA is requested. This structure targets
+the random-access and synchronization bottlenecks without replacing the FPGA
+routing problem by an ASIC grid-routing abstraction.
+
+\section{PersistRoute Architecture}
+
+\begin{figure*}[t]
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{c@{\,$\rightarrow$\,}c@{\,$\rightarrow$\,}c@{\,$\rightarrow$\,}c@{\,$\rightarrow$\,}c}
+\fbox{\shortstack{VPR / FPGAIF\\converter}} &
+\fbox{\shortstack{Host controller\\epochs, timing, replay}} &
+\fbox{\shortstack{4$\times$ Search CU\\8-bank MultiQueue}} &
+\fbox{\shortstack{Transaction HBM\\paths + read versions}} &
+\fbox{\shortstack{1$\times$ Commit CU\\fixed-order validation}}
+\\[5pt]
+\multicolumn{5}{c}{\fbox{\shortstack{32 HBM pseudo-channels: RR nodes/edges, resources, work arrays, queues, route trees, and logs}}}
+\end{tabular}
+\caption{\system{} separates speculative path discovery from authoritative,
+deterministic state mutation while retaining routing state across complete RRR
+iterations.}
+\Description{A left-to-right architecture diagram connects the VPR or FPGA
+Interchange converter, host epoch controller, four parallel Search compute
+units, transaction storage, and one deterministic Commit compute unit above
+32 HBM pseudo-channels.}
+\label{fig:architecture}
+\end{figure*}
+
+\subsection{Production data representation}
+
+The front end converts VPR RR-graph XML or FPGA Interchange device resources
+into structure-of-arrays binaries. Node and edge indices are 32 bits, avoiding
+the small fixed graph limits common in on-chip demonstrations. A task is a
+fixed 32-byte record containing connection identity, source, sink, net,
+criticality, bounding box, and control flags. Keeping this ABI unchanged across
+the CPU reference, HBM model, and XRT backend makes binary inputs and outputs
+directly comparable.
+
+The graph is immutable during routing. Mutable resource records hold capacity,
+occupancy, present/history cost, owner fast-path state, and a monotonically
+increasing version. Work arrays and queues live in HBM rather than BRAM, so
+their size follows graph scale. The U280 platform exposes 32 HBM
+pseudo-channels; the linked design connects four Search CUs and one Commit CU
+through 32 kernel master ports. Read-mostly graph banks are separated from
+write-heavy transaction and resource banks to reduce interference.
+
+\subsection{Banked MultiQueue Search}
+
+Each Search CU runs an A*-style connection search. A strict global heap
+serializes push/pop operations and creates a hard random-access dependence.
+Instead, an eight-bank MultiQueue hashes candidates into independent binary
+heaps. A pop samples bank heads and removes a low-cost candidate; relaxed
+ordering increases available memory-level and pipeline parallelism while the
+best-known cost array suppresses dominated expansions. Deterministic bank
+selection and task-local tie breaking make repeated C-model executions
+reproducible even though the ordering is relaxed.
+
+Search reads resource occupancy, costs, and versions but does not claim
+resources. Its output is a candidate node path plus a compact read/write set.
+For each touched resource, the transaction records the observed version. Failed
+searches also produce explicit status, preventing missing paths from being
+mistaken for empty legal routes. Because candidates are isolated, four CUs can
+search overlapping regions in the same wave.
+
+\subsection{Versioned deterministic commit}
+
+The host orders completed candidates by $(\text{priority},\text{task-id})$ and
+streams them to one Commit CU. For transaction $T_k$ with read set $R_k$, commit
+succeeds iff
+\begin{equation}
+ \forall v\in R_k:\quad \mathrm{version}_{\mathrm{now}}(v)
+                  =\mathrm{version}_{T_k}(v).
+\end{equation}
+On success, Commit applies route-tree and occupancy changes, updates ownership,
+and increments the affected versions. A mismatch rejects the whole transaction
+without a partial update; the task is replayed against the new state. Fixed
+ordering converts nondeterministic Search completion into a deterministic
+sequence of authoritative mutations.
+
+At the end of an iteration, the controller identifies overused resources,
+rips up affected connections, updates negotiated costs, and forms the next
+epoch. Termination requires every connection to have a path and every resource
+to satisfy capacity. The architecture thus accelerates the repeated control
+loop, not only a one-shot path-search kernel.
+
+\subsection{Protocol invariants and failure handling}
+
+The transaction split is useful only if it preserves serial state semantics.
+We enforce four invariants. (I1) Search never writes authoritative occupancy,
+owner, congestion, or route-tree state. (I2) Every resource read by a candidate
+is paired with the version observed by Search. (I3) Commit either applies all
+of a transaction's resource and route-tree updates or applies none. (I4)
+Successful transactions are linearized in the published priority/task order.
+I1 removes write races among Search CUs. I2 and I3 detect interference and
+prevent partially installed paths. I4 defines one reproducible serial history
+for an epoch, independent of CU latency.
+
+\begin{figure}[t]
+\small
+\begin{tabular}{@{}rl@{}}
+1: & order tasks by priority and connection ID \\
+2: & while an ordered wave remains: \\
+3: & \quad launch up to four isolated searches \\
+4: & \quad collect candidate paths and read versions \\
+5: & \quad for each candidate in fixed order: \\
+6: & \qquad if every version matches, commit atomically \\
+7: & \qquad otherwise enqueue the task for replay \\
+8: & update overuse and negotiated congestion costs \\
+9: & rip up illegal connections; begin the next epoch \\
+10: & stop when all tasks route and overuse is zero
+\end{tabular}
+\caption{Deterministic speculative routing control. ``Atomically'' denotes one
+logical transaction; Commit may stream its validated writes.}
+\Description{Ten-line pseudocode orders connections, launches up to four
+isolated searches, validates candidates in a fixed order, replays conflicts,
+updates congestion costs, and stops at a legal zero-overuse routing.}
+\label{fig:protocol}
+\end{figure}
+
+Resource-version overflow is made explicit by a sufficiently wide monotonic
+counter in the production record; a run must fail rather than silently wrap.
+Malformed paths, out-of-range node IDs, missing task results, queue exhaustion,
+and path-length overflow produce errors at the ABI boundary. A search that
+cannot reach its sink produces a failed transaction and remains eligible for a
+later epoch after congestion costs change. The CPU and accelerated validators
+independently recheck edge adjacency, path endpoints, occupancy, route-tree
+membership, and zero final overuse.
+
+Determinism does not imply that relaxed MultiQueue expansion visits exactly the
+same nodes as a strict heap. It means that identical inputs and configuration
+produce identical \system{} outputs, and speculative completion order cannot
+select a different authoritative state. QoR equivalence to VPR is a separate
+empirical requirement, measured by legality, wirelength, CPD, and iteration
+count rather than inferred from the protocol.
+
+\section{Timing and Flow Integration}
+
+\subsection{Per-iteration real timing feedback}
+
+After every complete iteration, the host reconstructs each connection's RR
+node path and sums quantized edge delays. Edge delay uses VPR's buffered local
+$T_{\mathrm{linear}}$ RC expression; pass switches use a documented local RC
+approximation. The host writes one delay record per connection and invokes a
+patched VPR analysis run. The patch maps $(\text{net},s,t)$ back to the packed
+netlist, overwrites the corresponding entries of VPR's \texttt{net\_delay}
+matrix, and runs the normal \texttt{AnalysisDelayCalculator} and Tatum setup
+analysis. Returned slack, setup criticality, and critical-path delay are
+validated one-to-one against task IDs and quantized into the next iteration's
+unchanged 32-byte task record.
+
+Fail-closed validation rejects missing, duplicated, malformed, or ambiguous
+connections. Unrouted connections retain the delay of VPR's legal reference
+route so a failed intermediate search does not permanently eliminate a task.
+The current oracle supports clustered routing and intentionally rejects flat
+routing. Although host STA is not persistent hardware state, its periodic,
+audited interface preserves a real timing graph rather than substituting a
+synthetic criticality schedule.
+
+\subsection{Scheduling and memory traffic}
+
+The host groups ready tasks into four-CU waves while preserving a global commit
+order. Search load imbalance is expected: path length and explored volume vary
+by orders of magnitude even among connections of the same net. Static spatial
+partitioning would leave CUs idle behind a long connection. Wave scheduling
+instead assigns the next ready task to the next free Search CU; determinism is
+recovered at Commit rather than by synchronizing expansion. The accelerated
+iteration log records launched, committed, failed, and replayed task counts,
+overuse, and state hashes, permitting post-run utilization and conflict
+analysis.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lll}
+\toprule
+State & Access pattern & Lifetime \\
+\midrule
+RR nodes/edges & read-mostly & all iterations \\
+Resources & Search read, Commit write & all iterations \\
+Best-cost/parent & Search read/write & one task \\
+Queue banks & Search read/write & one task \\
+Candidate path & Search write, Commit read & one attempt \\
+Route tree & Commit/rip-up read & all iterations \\
+Timing snapshot & host/VPR exchange & one iteration \\
+\bottomrule
+\end{tabular}
+\caption{State access and lifetime. Persistent entries avoid graph-scale
+reinitialization between RRR iterations.}
+\label{tab:lifetime}
+\end{table}
+
+Table~\ref{tab:lifetime} separates persistent and task-local traffic. If the RR
+graph contains $N$ nodes and $M$ edges but an iteration touches $L$ path nodes,
+a full-state offload moves $\Theta(N+M)$ immutable data per batch. \system{}
+transfers that graph once and thereafter communicates task descriptors,
+transaction/path records proportional to explored work, and periodic timing
+records proportional to the connection count. This does not eliminate HBM
+random access; it changes repeated host/device movement into on-device bank
+traffic. A physical-board ablation must quantify whether that reduction
+dominates PCIe setup and host STA.
+
+\subsection{End-to-end and commercial interfaces}
+
+The academic path accepts VPR architecture, netlist, placement, route, and RR
+graph artifacts. The commercial path uses RapidWright/FPGA Interchange to
+extract and replay routed programmable interconnect points. The same converter
+tests enforce node/edge/task record sizes and hashes. On the FPGA24
+\texttt{logicnets\_jscl} design, the bridge performs a non-empty six-PIP
+round-trip and Vivado routes all 27,961 routable nets with zero routing errors
+and zero DRC violations. Because that public input contains no user timing
+constraints, this result establishes legality, not timing closure. RWRoute
+\cite{zhou2021rwroute}, CUFR \cite{zang2024cufr}, and Vivado provide
+same-input commercial references.
+
+\section{Evaluation}
+
+\subsection{Methodology}
+
+We use VTR 9, Titan 2.0/Titan23 \cite{murray2013titan,talaei2023titan2}, and
+Koios 2.0 \cite{arora2021koios}. Each paired CPU baseline invokes the same
+TBB-enabled VPR executable; only \texttt{--num\_workers} changes from 1 to 16
+(on an eight-logical-CPU VM). Architecture, synthesized netlist, SDC when
+available, seed, channel width, and router options are identical. A pair is
+accepted only if both runs pass and route SHA-256, wirelength, critical-path
+delay (CPD), and iteration count match. We report both full VPR wall time and
+routing-stage time to expose Amdahl's-law limits.
+
+Hardware synthesis, co-simulation, link, placement, and routing use Vitis,
+Vitis HLS, and Vivado 2022.2 for an AMD XCU280 device. The linked
+system has four Search and one Commit CU. Hardware-emulation outputs are
+compared byte-for-byte with the HBM C-model. Since no U280 is passed through to
+the VM, emulation time is excluded from speedup and energy results.
+
+\begin{table*}[t]
+\centering
+\small
+\input{../generated/cpu_baseline_table.tex}
+\caption{Deterministic paired VPR CPU baseline. ``Flow'' includes packing and
+placement; ``Route'' isolates routing. Every pair has identical route hash,
+wirelength, CPD, and routing-iteration count.}
+\label{tab:cpu}
+\end{table*}
+
+\subsection{CPU baseline characterization}
+
+Table~\ref{tab:cpu} covers four VTR circuits, both Titan23 designs available in
+the local Titan release, and four structurally different Koios workloads. The
+ten pairs are bitwise route-identical. Routing-stage geometric-mean scaling is
+1.356$\times$, whereas whole-flow scaling is only 1.046$\times$ because packing,
+placement, and serial analysis dominate. The largest route-stage gain is
+1.421$\times$; \texttt{spmv} slightly slows down end-to-end (0.996$\times$)
+despite a 1.297$\times$ routing-stage gain. This negative case is retained.
+The result establishes a reproducible strong CPU reference and shows why an
+accelerator paper must report total time rather than a selected kernel alone.
+
+\subsection{Implementation results}
+
+\begin{table}[t]
+\centering
+\small
+\input{../generated/u280_resource_table.tex}
+\caption{Post-synthesis dynamic-region resources for the complete four-Search,
+one-Commit U280 system.}
+\label{tab:resources}
+\end{table}
+
+The complete hardware flow passes system link, block design generation,
+synthesis, optimization, placement, routing, bitstream generation, and XCLBIN
+packaging. At the requested 180\,MHz data clock, routed setup WNS is
++0.016\,ns with TNS 0; hold WHS is +0.006\,ns with THS 0. There are no setup or
+hold failing endpoints. Table~\ref{tab:resources} shows 16.48\% LUT and 12.21\%
+register use, leaving capacity for additional Search CUs or larger local
+caches, subject to HBM-port and timing constraints. Search is the larger
+kernel; the final system timing result, rather than an older out-of-context
+estimate, is the implementation claim.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{p{0.30\columnwidth}p{0.61\columnwidth}}
+\toprule
+Test & Observed result \\
+\midrule
+HLS C/RTL & Five tops pass C simulation and XSIM co-simulation. \\
+Four-CU wave & Four real-VPR connections launch together; legal in one round;
+all five output classes match the C-model. \\
+Conflict/replay & Two connections create one overused resource in round 1 and
+reach zero overuse in round 2; outputs match byte-for-byte. \\
+Timing loop & Full \texttt{diffeq}: 3 CPU and 12 four-PE C-model STA updates;
+both legal with zero final overuse. \\
+Commercial check & 27,961/27,961 routable nets; zero routing errors and DRC
+violations after Vivado route. \\
+\bottomrule
+\end{tabular}
+\caption{Layered functional and flow validation.}
+\label{tab:validation}
+\end{table}
+
+\subsection{Functional closure and timing feedback}
+
+In the four-task RTL case, all four Search CUs launch in one wave and Commit
+produces a legal one-round result. Paths, route trees, ordinary iteration logs,
+accelerated iteration logs, and final resource bytes match the HBM C-model.
+The conflict case starts with one overused resource after the first commit,
+then exercises host rip-up, reroute, and replay; the second iteration reaches
+zero overuse and again matches all output classes. Simulator processes exit
+normally with no XSIM error or fatal messages.
+
+The full \texttt{diffeq} timing experiment has 32,920 RR nodes, 344,820 edges,
+and 1,973 connections. CPU routing legally converges in three iterations; the
+four-PE HBM C-model converges in twelve. VPR/Tatum successfully analyzes every
+round, returning final CPDs of 7.164 and 7.274\,ns, respectively. This proves
+that changing connection paths affect the real timing graph and the next
+round's priorities. It is not yet a ten-design QoR comparison.
+
+\subsection{Scale coverage and stress behavior}
+
+The converted real graphs exercise 32-bit production indices rather than only
+legacy on-chip limits. \texttt{diffeq} produces 32,920 nodes, 344,820 edges,
+and 1,973 connection tasks. The larger \texttt{clma} conversion contains
+155,280 nodes, 1,803,328 edges, and 13,458 tasks. On the CPU golden model,
+\texttt{clma} routes every connection and closes legally in three iterations,
+performing 23,060 searches, 224.36 million expansions, and 1.479 billion edge
+visits. These counts illustrate both the opportunity for parallel expansion
+and the external-memory pressure hidden by tiny kernel tests.
+
+The academic matrix spans 1,974--94,090 blocks and 1,935--127,090 nets.
+Titan23 is largest by netlist size, while Koios exercises heterogeneous
+hard-memory/DSP architecture models and markedly different front-end costs.
+The 3.0-GiB peak RSS of \texttt{attention\_layer} and its small whole-flow
+scaling show that routing acceleration must coexist with large serial
+packing/placement components. We therefore treat CPU stage scaling as workload
+characterization, not as a proxy for hardware speedup.
+
+\subsection{Pre-registered board and ablation protocol}
+
+To avoid selecting a favorable measurement after implementation, the final
+board experiment is fixed as follows. Each case receives one warm-up and at
+least five measured runs. CPU and U280 executions use identical packed netlist,
+placement, RR graph, initial route, seed, channel width, timing constraints,
+and termination limits. We report medians and dispersion for graph loading,
+task preparation, Search, Commit, replay, VPR/Tatum update, export, and complete
+wall time. Device power is integrated over the same interval; idle-subtracted
+energy is reported per connection and per completed design.
+
+The ablation matrix changes one mechanism at a time: (A0) full \system{}; (A1)
+retransfer or reinitialize mutable state per iteration instead of persistence;
+(A2) 1, 2, and 4 Search CUs; (A3) 1, 2, 4, and 8 queue banks; (A4) serialize
+Search and Commit to remove speculation; (A5) remove replay by scheduling only
+non-overlapping tasks; and (A6) timing updates every 1, 2, 4, or all iterations.
+Every point must remain legal and report replay rate, wirelength, and CPD. The
+acceptance target is at least 3$\times$ end-to-end speedup over the multicore
+reference, no more than 2\% mean wirelength or CPD degradation, and
+bitwise-repeatable \system{} output. Missing these gates narrows the result to
+an architecture study rather than the stated acceleration claim.
+
+\subsection{Evidence boundary}
+
+Table~\ref{tab:validation} establishes representation, control, RTL equivalence,
+implementation, and legality. It does not establish the central quantitative
+speedup target. A submission-ready accelerator evaluation must execute the
+same full cases on a physical U280, including graph transfer, per-iteration
+Search/Commit/replay, timing snapshots, and route export; repeat runs; record
+energy; and ablate persistent state, CU count, MultiQueue banks, version checks,
+and timing-update period. Those measurements are represented in the source as
+an explicit unresolved requirement rather than estimated from hardware
+emulation: \todoresult{end-to-end speedup, energy, and ablations}.
+
+\subsection{Threats to validity}
+
+The edge delay stored in the ABI is a local RC approximation and does not
+exactly reproduce full route-tree Elmore coupling. VPR/Tatum still supplies the
+real timing graph and constraints, but differences from VPR's native route-tree
+delay may affect criticality. Only clustered routing is supported by the
+current oracle. The commercial FPGA24 case checks UltraScale+ legality, yet its
+missing user timing constraints prevent a commercial timing claim. Finally,
+the ten CPU pairs establish determinism for fixed seeds, not sensitivity across
+seeds or physical-board run-to-run variance. The prescribed experiments
+separate these questions.
+
+\begin{table*}[t]
+\centering
+\small
+\begin{tabular}{lccccc}
+\toprule
+System & Intra-search & Overlap & Deterministic & Cross-RRR state & Real STA \\
+\midrule
+Galois \cite{moctar2018galois} & yes & limited & yes & no & no \\
+Connection-aware \cite{zhou2020connection} & no & partitioned & not central & no & yes \\
+MultiQueue \cite{singer2024multiqueue} & yes & n/a & implementation-dependent & no & yes \\
+CUFR \cite{zang2024cufr} & no & minimized & yes & CPU resident & weak \\
+Potter \cite{zang2024potter} & no & yes & not central & CPU resident & yes \\
+\system{} & yes & yes & fixed commit & HBM resident & VPR/Tatum \\
+\bottomrule
+\end{tabular}
+\caption{Mechanism-level positioning. Persistent state here specifically means
+accelerator state retained across complete RRR iterations.}
+\label{tab:related}
+\end{table*}
+
+\section{Correctness and Performance Accounting}
+
+\subsection{Serial equivalence of an epoch}
+
+The transaction protocol provides a simple refinement argument. Let $S_i$ be
+the authoritative resource and route-tree state before candidate $i$ in the
+fixed Commit order. Search records the version of every mutable resource it
+reads and proposes a path but does not change $S_i$. If all recorded versions
+still match, Commit applies the candidate as one logical state transition,
+yielding $S_{i+1}$. Otherwise, it leaves $S_i$ unchanged and places the task in
+the replay set. Consequently, every accepted candidate observes the same
+versions that a serial execution at its commit point would observe. Rejected
+candidates have no visible partial update. Induction over the fixed order gives
+one reproducible serial history for the accepted candidates in an epoch.
+
+This property does not assert that speculative execution reproduces VPR's
+exact path choices. The banked MultiQueue deliberately changes tie breaking,
+and replay changes when a connection is searched. The required invariant is
+instead semantic: each committed path is connected and in range, occupancy is
+the sum of committed uses, each connection has one authoritative route-tree
+representation, and termination requires zero overuse. The independent output
+validator checks these invariants after every test. Deterministic ordering then
+makes failures replayable and permits byte-level comparison between the
+C-model and RTL.
+
+Versions protect all resource fields whose changes can invalidate a candidate,
+including occupancy-dependent cost and ownership. Immutable topology and delay
+records require no versions. Rip-up and history-cost updates occur at epoch
+boundaries, after Commit drains, so Search never observes a partially updated
+negotiated-congestion round. Timing feedback follows the same boundary: route
+changes are exported, VPR/Tatum analyzes the complete snapshot, and the next
+epoch receives all connection criticalities together. Thus transactional
+isolation covers the accelerator phase while an explicit barrier covers global
+PathFinder and STA updates.
+
+\subsection{What end-to-end speedup must include}
+
+A kernel-only ratio would hide the costs that persistence is intended to
+remove. For board run $r$, we therefore define accelerator time as
+\begin{equation}
+ T_{\mathrm{acc}}^{(r)}=T_{\mathrm{load}}+\sum_j
+ (T_{\mathrm{search},j}+T_{\mathrm{commit},j}+T_{\mathrm{replay},j}
+ +T_{\mathrm{STA},j})+T_{\mathrm{export}},
+\end{equation}
+where $j$ ranges over complete RRR iterations. Setup, buffer migration,
+synchronization, and route validation remain in their corresponding terms.
+The primary result will compare the median complete $T_{\mathrm{acc}}$ against
+the median complete multicore VPR route phase; a second ratio will include
+packing and placement. Search-kernel throughput is diagnostic only.
+
+The CPU data in Table~\ref{tab:cpu} already show why both ratios are
+needed. Sixteen workers improve the routing stage by 1.356$\times$ in geometric
+mean, yet the whole flow improves by only 1.046$\times$. Persisting the RR graph
+can remove repeated graph migration, but host STA and serial front-end work
+remain. We will therefore report the fraction of time in each term above, PCIe
+bytes per iteration, accepted candidates per Search wave, version-conflict
+rate, mean replay count, and achieved HBM bandwidth. These counters distinguish
+compute saturation from Commit serialization, poor locality, conflict-heavy
+speculation, and host-side limits.
+
+Energy uses the same boundary. Board power is sampled from before the initial
+load through final export, synchronized with host timestamps. Idle power over
+an equal interval is subtracted and both raw and corrected joules are retained.
+Reporting joules per legal routed connection alongside total joules prevents a
+faster but incomplete run from appearing efficient. Runs that time out, violate
+QoR gates, fail validation, or omit a timing update are failures rather than
+samples removed from the distribution.
+
+\section{Related Work}
+
+PathFinder \cite{mcmurchie1995pathfinder} and VPR
+\cite{betz1997vpr,vtr8} define the negotiated-congestion academic baseline.
+Deterministic Galois execution studies both inter-net and intra-search CPU
+parallelism \cite{moctar2018galois}; connection-aware partitioning increases
+granularity and improves Titan23 QoR/runtime \cite{zhou2020connection}. These
+works prevent us from claiming determinism or connection-level parallelism
+alone as novel.
+
+MultiQueue routing demonstrates relaxed A* priority ordering for parallel
+wave expansion \cite{singer2024multiqueue}. \system{} uses a hardware banked
+MultiQueue but contributes the surrounding persistent state and transaction
+protocol. For commercial devices, RWRoute provides an open timing-driven
+UltraScale+ baseline \cite{zhou2021rwroute}. CUFR partitions nets with a
+recursive ternary tree \cite{zang2024cufr}; Potter tolerates overlapping
+partitions \cite{zang2024potter}; and AceRoute adaptively enables
+intra-connection exploration \cite{wei2024aceroute}. Thus overlap tolerance
+and two-level parallelism are also prior art. \system{}'s claim is their
+hardware realization as versioned deterministic transactions over state that
+persists across complete RRR and real-timing iterations.
+
+Earlier FPGA-assisted routing work demonstrates that path search can benefit
+from spatial pipelines or CPU--FPGA cooperation \cite{korolija2019fpga}. Such
+kernel acceleration is complementary to our focus on state lifetime,
+authoritative commit, and complete control-loop validation.
+
+\section{Conclusion}
+
+\system{} reorganizes timing-driven FPGA routing around persistent HBM state,
+speculative Search CUs, and deterministic version-checked Commit. The
+production ABI, real VPR/Tatum timing feedback, full U280 implementation, and
+byte-identical multi-round RTL validation establish a coherent routing system
+rather than an isolated maze kernel. Ten deterministic VPR pairs characterize
+the multicore reference and expose the whole-flow bottleneck. The remaining
+step is decisive: physical-board end-to-end time, energy, full-matrix QoR, and
+ablations must confirm that the architectural mechanisms deliver useful
+acceleration without exceeding the 2\% QoR target.
+
+\clearpage
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+
+\end{document}
