@@ -34,7 +34,7 @@
 
 1. PersistRoute 的物理 U280 端到端性能、能耗、重复试验和消融仍需有卡环境完成；当前 VM 不能形成这些 claim；
 2. 论文材料入口为 `projects/persistroute/paper/README.md`，十案例冻结结果为 `paper/generated/paper_results.json`；
-3. `frisc` timing-priority HBM C-model 已进入 2% CPD 门槛；若继续 PersistRoute，下一项是 VPR route 写回/验证和其余八案例 QoR；否则可进入第二个工程 TilePlace 的真实 VPR/FPGAIF 前端。
+3. `frisc` 与 `elliptic` timing-priority HBM C-model 已用统一策略进入 2% CPD 门槛；若继续 PersistRoute，下一项是 VPR route 写回/验证和其余七案例 QoR；否则可进入第二个工程 TilePlace 的真实 VPR/FPGAIF 前端。
 
 不要把 `hw_emu` 墙钟时间当作上板性能，也不要宣称当前 VM 已实际上板。
 
@@ -73,7 +73,7 @@ projects/persistroute/host/.run/284123
 - `accelerated_pathfinder.cpp` 是复用控制层；HBM C-model 与 XRT backend 使用相同控制语义。
 - 完整真实 `diffeq` HBM C-model 已完成 1973/1973 tasks，23 iterations 后 0 overuse，重复运行输出一致。
 - host-side VPR 9/Tatum timing oracle 已接入 CPU、HBM C-model 和 XRT 控制层：每轮按当前 RR path delay 运行真实 timing graph STA，并反馈逐 connection setup criticality。采用本轮 RC delay 模型后，完整 `diffeq` CPU 为 3 轮/CPD 7.164 ns，4-PE HBM C-model 为 12 轮/CPD 7.274 ns，均 0 overuse、`legal=true`；证据见 `projects/persistroute/experiments/timing_criticality_2026-08-26.json`。
-- timing oracle 现可强制最少 reroute 轮数，并在 STA 后按 criticality 降序确定性重排。`frisc` 4-PE HBM C-model 在 base cost 64、最少 4 轮 timing reroute 下最终 CPD 13.700 ns，相对 VPR +0.825%，0 overuse；两次运行六类核心输出逐字节一致，证据见 `projects/persistroute/experiments/timing_priority_frisc_2026-08-27.json`。
+- timing oracle 现可强制最少 reroute 轮数，并在 STA 后按 criticality 降序确定性重排。统一 base cost 64、最少 3 轮策略下，`frisc` 与 `elliptic` 4-PE HBM C-model 相对 VPR CPD 分别为 +0.803%/+0.499%，均 0 overuse；两案例各自两次运行六类核心输出逐字节一致，证据见 `projects/persistroute/experiments/timing_priority_{frisc,elliptic}_2026-08-27.json`。
 - Search 和 Commit HLS csim/csynth/Verilog cosim 均通过。
 - 4 Search CU + 1 Commit CU 的 U280 `hw` 完整实现已完成；180 MHz routed timing 为 WNS `+0.016 ns`、TNS `0`、WHS `+0.006 ns`、THS `0`。
 - 当前 `hw_emu` xclbin SHA-256：`73ff9d105a486c2f8cfa73e002756343947aa6d29d9b1fdd4e3523521f75cc33`。

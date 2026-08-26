@@ -18,7 +18,7 @@
   "implementation": {
     "task_abi_bytes": 32,
     "timing_order": "descending setup criticality, then original priority and task ID",
-    "timing_reroute": "four complete route/STA rounds before zero-overuse termination is allowed",
+    "timing_reroute": "three complete route/STA rounds before zero-overuse termination is allowed",
     "base_cost_q": 64,
     "edge_delay_model": "VPR buffered local T_linear in ps; pass-switch local RC approximation",
     "vpr_binary_sha256": "41d21e0e3ad1bf9d914b282fd9340024121db5b550747a231ceb0ec0736bf44f",
@@ -30,19 +30,19 @@
     "exit_status": 0,
     "legal": true,
     "routed_connections": 5767,
-    "iterations": 15,
-    "searches": 23536,
-    "expanded": 112655779,
-    "edge_visits": 674154773,
+    "iterations": 14,
+    "searches": 17651,
+    "expanded": 90626107,
+    "edge_visits": 521989947,
     "overused_resources": 0,
-    "final_cpd_ns": 13.700,
-    "cpd_delta_vs_vpr_percent": 0.824999,
-    "paths_sha256": "a6b7abd8a583fbf6402eb2b7ebc6f7d140f9ff80302740056349a109d69cd5d0",
-    "route_trees_sha256": "c3250453e40f58f888f285c6661a6d49d137ddeb3e80bba02cb0e5451b1abed3",
-    "resources_sha256": "d651fcbfbd20b0946538bd064e026bd9df6035456720d37a5dd5a64d918714c3",
-    "iterations_sha256": "84ad4382bebd1eeab82790e5546cdbddc9dd4272822b655df068c0d0c325e6be",
-    "accelerated_iterations_sha256": "a3e6a64928033f3839f5df568b9d04a282fb1e1cdf1ccc5504a2fbb1930f06a3",
-    "timing_iterations_sha256": "56188fe46c9aa7ad853000f19754361bbdd5fe48037d2991ca98449ec8eb01a5"
+    "final_cpd_ns": 13.697,
+    "cpd_delta_vs_vpr_percent": 0.802920,
+    "paths_sha256": "dc7f10c0f6d27753fc9e4d2b391ada63cfde6fac351a278aa142a90462f69487",
+    "route_trees_sha256": "2ac8f29d020775a9416c46f93e8d4dff3507b136386e7c3897890a52728c2a17",
+    "resources_sha256": "547d841b051f6cb8dd2d68b597feaac19103ae27645b13c309578d6b25753ec5",
+    "iterations_sha256": "8c07e3ed0cf28e84dab39aa429011419852d54f7b27dc5c6715a559b86352732",
+    "accelerated_iterations_sha256": "a0dc6db31ab64ae9da7e342fc4dc49444d92883f7de08e4f755af1ef82f84862",
+    "timing_iterations_sha256": "68baf4a252c85aa40274207a926e137c2211bd0dc87feeac539ac7e6558fa62a"
   },
   "determinism": {
     "runs": 2,
@@ -54,8 +54,8 @@
       "accelerated_iterations.csv",
       "timing_iterations.csv"
     ],
-    "run_1_wall_ms": 73917.0,
-    "run_2_wall_ms": 73349.2,
+    "run_1_wall_ms": 62018.1,
+    "run_2_wall_ms": 61717.5,
     "performance_interpretation": "software-model audit only; not U280 performance"
   },
   "ablations": {

@@ -31,11 +31,12 @@
 
 ## Current local progress
 
-- Full per-round VPR/Tatum closure is complete for `diffeq` and `frisc`.
-- The `frisc` four-PE HBM C-model uses base cost 64, four timing-aware reroute
-  rounds, and deterministic criticality-first ordering. It closes at 13.700 ns
-  versus VPR's 13.588 ns (+0.825%) with zero overuse; two runs are byte-identical.
-- Eight academic cases remain. A VPR route-file writer/validator is still needed
+- Full per-round VPR/Tatum closure is complete for `diffeq`, `frisc`, and `elliptic`.
+- One frozen four-PE HBM C-model policy uses base cost 64, three timing-aware
+  reroute rounds, and deterministic criticality-first ordering. `frisc` closes
+  at +0.803% CPD and `elliptic` at +0.499% versus VPR; both have zero overuse
+  and byte-identical paired runs.
+- Seven academic cases remain. A VPR route-file writer/validator is still needed
   before PersistRoute wirelength can be compared in VPR-native units.
 
 ## Rejection checks

@@ -470,11 +470,12 @@ round's priorities.
 
 On the 74,928-node, 5,767-connection \texttt{frisc} graph, a fixed task order
 with base cost 256 finishes 5.73\% above VPR's 13.588-ns CPD. Normalizing the
-base cost to 64 reduces the gap to 3.45\%. Requiring four timing-aware reroute
-rounds and deterministically reordering nets by updated criticality closes
-legally at 13.700\,ns, only 0.825\% above VPR. Two runs have byte-identical
-paths, trees, resources, congestion logs, and timing logs. This is a
-single-design timing-policy ablation, not yet a ten-design QoR result.
+base cost to 64 reduces the gap to 3.45\%. One frozen policy---base cost 64,
+three timing-aware reroute rounds, and deterministic criticality ordering---
+closes \texttt{frisc} at 13.697\,ns (+0.803\%) and \texttt{elliptic} at
+8.836\,ns (+0.499\%) relative to VPR. Both are legal, zero-overuse, and
+byte-identical across two runs. This is a two-design timing-policy result, not
+yet a ten-design QoR result.
 
 \subsection{Scale coverage and stress behavior}
 

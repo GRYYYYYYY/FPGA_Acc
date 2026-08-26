@@ -1,0 +1,68 @@
+{
+  "schema": "PERSISTROUTE_TIMING_PRIORITY_V1",
+  "date": "2026-08-27",
+  "case": {
+    "name": "elliptic_seed1_cw200",
+    "rr_nodes": 74928,
+    "rr_edges": 834175,
+    "connections": 5242,
+    "channel_width": 200,
+    "baseline_vpr_cpd_ns": 8.79211,
+    "baseline_vpr_wirelength": 27329,
+    "net_sha256": "7c6c18d9aa24edec1b6fd2ce682fe962a3078c7bc6b7b8088ada1fedc8b023ed",
+    "place_sha256": "73dbe85481fdf89ae689de5031f418bbf9c21d0fbc8fd2ac91fe3eaa6dc63193",
+    "route_sha256": "3828a75226fd605f043c4ef8a97ba12c94655a8c8cd9b48cec9b79d7e44139ac",
+    "rr_graph_sha256": "a2598c26e321af3b16e881fb3952719cb92610a2e655ec91897488ffa590c1ca",
+    "tasks_sha256": "254374175f88c8bc830defb13cd373d45c5320b69192f35c7e0c83e15a9787a8"
+  },
+  "implementation": {
+    "task_abi_bytes": 32,
+    "timing_order": "descending setup criticality, then original priority and task ID",
+    "timing_reroute": "three complete route/STA rounds before zero-overuse termination is allowed",
+    "base_cost_q": 64,
+    "edge_delay_model": "VPR buffered local T_linear in ps; pass-switch local RC approximation",
+    "vpr_binary_sha256": "41d21e0e3ad1bf9d914b282fd9340024121db5b550747a231ceb0ec0736bf44f",
+    "pathfinder_source_sha256": "57a47e31f2c174f7b14efa33d0e39ac6392d60923b3b92e3c09b6da255f83789",
+    "accelerated_pathfinder_source_sha256": "aabd9c7e5bd0c5be20899f031f0a4feb0d27cccd3a54cf282d32614af1e5c4d1",
+    "timing_analyzer_sha256": "0c697f15c1142833a86fa9b8855bd34aefc0376b73cf10f3812bfa2e3018e3e8"
+  },
+  "hbm_cmodel": {
+    "exit_status": 0,
+    "legal": true,
+    "routed_connections": 5242,
+    "iterations": 9,
+    "searches": 15986,
+    "expanded": 63684566,
+    "edge_visits": 378912155,
+    "overused_resources": 0,
+    "final_cpd_ns": 8.836,
+    "cpd_delta_vs_vpr_percent": 0.499198,
+    "paths_sha256": "c2eeb9b598a267d2abcd0292d313162efba349c48845a39bda4d861cd2e37235",
+    "route_trees_sha256": "79a058d48c062a8fc7fe6813d518785d019227846e38e86a2c7ab41e0ba5d10f",
+    "resources_sha256": "2a7507e020c0f03504cb61d25fef2309c1662b6f609c8bc43595341d725fce37",
+    "iterations_sha256": "86cebdb6fa11ef7764c4f3fd88dcdd49f0ce80eeca43250847bf49466b2cf2ad",
+    "accelerated_iterations_sha256": "af959c73f9f5104893e3d53311cd4edf88166ba5c019f296166defd1a6eab51b",
+    "timing_iterations_sha256": "1703a2cb4b0957c4eb7d475549b9c4f44becc52ed3045d5df8ef7e1f1e0fe1c3"
+  },
+  "determinism": {
+    "runs": 2,
+    "byte_identical": [
+      "paths.csv",
+      "route_trees.csv",
+      "resources",
+      "iterations.csv",
+      "accelerated_iterations.csv",
+      "timing_iterations.csv"
+    ],
+    "run_1_wall_ms": 47479.0,
+    "run_2_wall_ms": 46794.5,
+    "performance_interpretation": "software-model audit only; not U280 performance"
+  },
+  "artifact_directory": "projects/persistroute/experiments/full_matrix_cmodel_2026-08-27/elliptic_seed1_cw200",
+  "limitations": [
+    "This is one additional academic design, not the complete ten-case PersistRoute QoR matrix.",
+    "VPR wirelength cannot yet be computed from PersistRoute output because a complete VPR route-file writer/validator is still required.",
+    "The HBM C-model wall time is not physical U280 performance and is excluded from speedup claims.",
+    "No new hardware emulation or Vivado implementation was run."
+  ]
+}

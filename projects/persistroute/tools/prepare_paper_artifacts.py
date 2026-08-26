@@ -128,6 +128,7 @@ def evidence_sources() -> dict[str, str]:
         "hw_emu_2022_2_u280.json",
         "rwroute_logicnets_jscl_2026-08-24.json",
         "timing_criticality_2026-08-26.json",
+        "timing_priority_elliptic_2026-08-27.json",
         "timing_priority_frisc_2026-08-27.json",
         "vitis_link_2022_2_u280.json",
         "vpr9_baseline_suite_2026-08-24.json",

@@ -27,7 +27,7 @@
 - 新增直接消费 production ABI 的确定性 PathFinder 控制层与 CLI：完成多轮 present/history 更新、按 net rip-up、未受影响树跨轮持久化和多 sink trunk 共享，并输出逐轮审计记录。
 - 将上述控制层接入四个 `search_hbm_kernel` CU 与一个 `commit_hbm_kernel` CU 的 XRT host；支持同轮并发搜索、允许协商式暂时超用、确定性提交、按过用 net rip-up 和跨轮重路由。
 - 将 VPR 9 `AnalysisDelayCalculator`/Tatum STA 作为 host timing oracle 接入 CPU、HBM C-model 与 XRT 控制层；每轮以当前 connection RR path delay 覆盖 `net_delay`，反馈 setup criticality/slack，保持 32-byte Task ABI 不变。完整真实 `diffeq` CPU 与 4-PE HBM C-model 均已闭环合法收敛。
-- 增加 timing-aware 最少 reroute 轮次和 `(criticality desc, priority, task_id)` 确定性调度。真实 `frisc` 4-PE HBM C-model 最终 CPD 13.700 ns，对 VPR 13.5879 ns 为 +0.825%，0 overuse；两次运行六类核心输出逐字节一致。
+- 增加 timing-aware 最少 reroute 轮次和 `(criticality desc, priority, task_id)` 确定性调度。统一 base cost 64/最少 3 轮策略下，真实 `frisc` 与 `elliptic` 4-PE HBM C-model 的 CPD 相对 VPR 分别为 +0.803%/+0.499%，均 0 overuse；两案例各自两次运行六类核心输出逐字节一致。
 - 在本机 Vitis/Vivado 2022.2 上完成五个 top 的独立 HLS 工程：全部通过 C 仿真和 Verilog/XSIM RTL 协同仿真，并导出五个 `.xo`；修正 HLS 动态指针协仿深度、外存数组读改写和 MultiQueue 分银行退化问题。
 - 对两个 production top 的 HLS RTL 完成 Vivado 2022.2 OOC 综合、优化、DRC、时序/资源报告和 DCP 导出；4 ns 约束下 search WNS 为 +0.427 ns，commit WNS 为 -0.694 ns，后者明确保留为待优化问题。
 
@@ -52,7 +52,7 @@
 ## 当前下一步
 
 1. PersistRoute 已冻结 4 个 VTR、2 个 Titan23 和 4 个 Koios 案例的 1-worker/16-worker CPU 基线；全部配对 route/QoR 一致，whole-flow/route-stage 几何平均加速为 `1.046x/1.356x`。论文草稿、claim matrix、实验计划、CSV、LaTeX 和 SVG 位于 `projects/persistroute/paper/`。
-2. PersistRoute 仍缺物理 U280 的端到端 runtime、能耗、重复试验，以及其余八个学术案例的完整 QoR；当前 VM 无卡，不能用 `hw_emu` 替代。下一本机工程项是 VPR route 写回/验证与继续扩展 timing-priority 矩阵。
+2. PersistRoute 仍缺物理 U280 的端到端 runtime、能耗、重复试验，以及其余七个学术案例的完整 QoR；当前 VM 无卡，不能用 `hw_emu` 替代。下一本机工程项是 VPR route 写回/验证与继续扩展 timing-priority 矩阵。
 3. 若不等待外部硬件，开始 TilePlace 的真实 VPR/FPGAIF 前后端。高容量资源多 owner、图模板压缩和高于 180 MHz 的优化保留为 PersistRoute 后续增强。
 4. 如论文验证矩阵确实需要，可新增 timing-mode RTL 小子集终验；不要重跑既有最终 hw_emu。
 

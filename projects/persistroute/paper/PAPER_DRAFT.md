@@ -88,12 +88,13 @@ zero overuse; final critical-path delays are 7.164 ns and 7.274 ns,
 respectively. This establishes periodic real-timing feedback functionality,
 not broad QoR equivalence across the full benchmark matrix.
 
-On `frisc`, the initial fixed-order HBM C-model is 5.73% above VPR CPD.
-Base-cost normalization alone reduces the gap to 3.45%. Four timing-aware
-reroute rounds with deterministic criticality-first net ordering close legally
-at 13.700 ns versus VPR's 13.588 ns (+0.825%). Two runs produce byte-identical
-paths, route trees, resources, congestion logs and timing logs. This is a
-single-design timing-policy ablation, not a full-matrix QoR claim.
+On `frisc`, the initial fixed-order HBM C-model is 5.73% above VPR CPD and
+base-cost normalization alone reduces the gap to 3.45%. One frozen policy with
+base cost 64, three timing-aware reroute rounds, and criticality-first net
+ordering closes `frisc` at +0.803% and `elliptic` at +0.499% CPD versus VPR.
+Both are legal with zero overuse, and paired runs produce byte-identical paths,
+route trees, resources, congestion logs, and timing logs. This is a two-design
+timing-policy result, not a full-matrix QoR claim.
 
 ## Limitations and threats to validity
 
