@@ -58,6 +58,6 @@
 ## Windows → Ubuntu VM 续接
 
 - 移动或共享 `FPGA_Acc` 工程目录只会转移代码、报告和本文件，不会自动转移 Codex 原生会话历史。
-- 在 Ubuntu Codex 中打开 Linux 可见的工程路径后，先要求其完整阅读 `CODEX_CONTEXT.md`、`projects/实现状态.md` 和 `projects/真实数据与论文基线运行指南.md`，即可从当前技术状态继续新任务。
+- 在 Ubuntu Codex 中打开 Linux 可见的工程路径后，先要求其完整阅读 `AGENTS.md`、`SESSION_HANDOFF.md`、`CODEX_CONTEXT.md`、`projects/实现状态.md` 和 `projects/真实数据与论文基线运行指南.md`，即可从当前技术状态继续新任务。
 - 不建议直接复制整个 Windows `C:\Users\20641\.codex` 到 Linux `~/.codex`：其中可能包含认证、全局配置、数据库和 Windows 绝对路径；官方可支持的跨系统本地 session 导入方式尚未确认。
 - VMware 共享目录适合作为传输目录。Vitis/Vivado/XRT 的正式构建建议把工程复制到虚拟机原生 ext4 目录，避免共享文件系统的权限、符号链接、大小写和 I/O 性能问题。

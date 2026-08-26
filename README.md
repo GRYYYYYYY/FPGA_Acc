@@ -6,6 +6,7 @@
 
 主要入口：
 
+- [`SESSION_HANDOFF.md`](SESSION_HANDOFF.md)：新 Codex 会话的完整交接存档与快速恢复清单；
 - [`CODEX_CONTEXT.md`](CODEX_CONTEXT.md)：工作区总体状态和后续任务；
 - [`projects/实现状态.md`](projects/实现状态.md)：已验证能力与研究边界；
 - [`projects/真实数据与论文基线运行指南.md`](projects/真实数据与论文基线运行指南.md)：环境、真实数据和实验复现流程；
