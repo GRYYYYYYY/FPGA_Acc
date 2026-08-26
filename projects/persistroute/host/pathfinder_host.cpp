@@ -1,4 +1,4 @@
-#include "pathfinder.hpp"
+#include "external_timing.hpp"
 
 #include <algorithm>
 #include <chrono>
@@ -63,7 +63,9 @@ int main(int argc,char** argv) {
   config.present_start_q=env_u16("PERSISTROUTE_PRESENT_START_Q",config.present_start_q);
   config.present_multiplier_q=env_u16("PERSISTROUTE_PRESENT_MULTIPLIER_Q",config.present_multiplier_q);
   config.history_increment_q=env_u16("PERSISTROUTE_HISTORY_INCREMENT_Q",config.history_increment_q);
-  const PathfinderResult result=route_pathfinder(nodes,edges,resources,tasks,config);
+  TimingAnalyzer timing_analyzer;const char* timing_command=std::getenv("PERSISTROUTE_TIMING_COMMAND");
+  if(timing_command&&*timing_command)timing_analyzer=make_external_timing_analyzer(timing_command,output);
+  const PathfinderResult result=route_pathfinder(nodes,edges,resources,tasks,config,timing_analyzer);
   const auto routed=std::chrono::steady_clock::now();
 
   std::ofstream paths(output+".paths.csv");
@@ -84,9 +86,14 @@ int main(int argc,char** argv) {
   for(const auto& item:result.iteration_log)
    iterations<<item.iteration<<','<<item.routed_nets<<','<<item.failed_connections<<','
              <<item.overused_resources<<','<<item.present_factor_q<<'\n';
+  std::ofstream timing(output+".timing_iterations.csv");
+  if(!timing)throw std::runtime_error("cannot create "+output+".timing_iterations.csv");
+  timing<<"iteration,updated_connections,min_criticality_q,max_criticality_q,critical_path_delay_ps\n";
+  for(const auto& item:result.timing_log)timing<<item.iteration<<','<<item.updated_connections<<','
+   <<item.min_criticality_q<<','<<item.max_criticality_q<<','<<item.critical_path_delay_ps<<'\n';
   write_array(output+".resources",result.resources);
-  paths.close();trees.close();iterations.close();
-  if(!paths||!trees||!iterations)throw std::runtime_error("failed while writing route outputs");
+  paths.close();trees.close();iterations.close();timing.close();
+  if(!paths||!trees||!iterations||!timing)throw std::runtime_error("failed while writing route outputs");
 
   const auto end=std::chrono::steady_clock::now();
   const auto millis=[](auto first,auto last){return std::chrono::duration<double,std::milli>(last-first).count();};

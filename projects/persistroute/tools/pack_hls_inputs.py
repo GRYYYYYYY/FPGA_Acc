@@ -43,14 +43,22 @@ def _write_array(path: Path, rows: list[tuple], record: struct.Struct) -> dict:
 
 def pack(rr_graph: Path, connections: Path, prefix: Path, base_cost_q: int) -> dict:
     root = ET.parse(rr_graph).getroot()
-    switch_delay = {}
+    switch_timing: dict[int, tuple[float, float, bool]] = {}
     for switch in root.findall("./switches/switch"):
-        switch_delay[_integer(switch, "id")] = _floating(switch.find("timing"), "Tdel")
+        timing = switch.find("timing")
+        buffered = switch.attrib.get("type", "mux") not in {"pass_gate", "short"}
+        switch_timing[_integer(switch, "id")] = (
+            _floating(timing, "Tdel"), _floating(timing, "R"), buffered)
 
     xml_nodes = sorted(root.findall("./rr_nodes/node"), key=lambda n: _integer(n, "id"))
     for expected, node in enumerate(xml_nodes):
         if _integer(node, "id") != expected:
             raise ValueError("PersistRoute requires dense zero-based rr node IDs")
+
+    node_timing = []
+    for node in xml_nodes:
+        timing = node.find("timing")
+        node_timing.append((_floating(timing, "R"), _floating(timing, "C")))
 
     grouped: list[list[tuple[int, int, int]]] = [[] for _ in xml_nodes]
     for edge in root.findall("./rr_edges/edge"):
@@ -59,7 +67,13 @@ def pack(rr_graph: Path, connections: Path, prefix: Path, base_cost_q: int) -> d
         switch = _integer(edge, "switch_id")
         if src >= len(grouped) or dst >= len(grouped):
             raise ValueError(f"edge outside node range: {src}->{dst}")
-        delay_q = max(0, min(65535, round(switch_delay.get(switch, 0.0) * 1e12)))
+        tdel, switch_r, buffered = switch_timing.get(switch, (0.0, 0.0, True))
+        node_r, node_c = node_timing[dst]
+        if buffered:
+            local_delay = tdel + switch_r * node_c + 0.5 * node_r * node_c
+        else:
+            local_delay = tdel + 0.5 * switch_r * node_c
+        delay_q = max(0, min(65535, round(local_delay * 1e12)))
         grouped[src].append((dst, base_cost_q, delay_q))
 
     nodes: list[tuple[int, int, int]] = []
@@ -107,6 +121,7 @@ def pack(rr_graph: Path, connections: Path, prefix: Path, base_cost_q: int) -> d
         "connections": str(connections.resolve()),
         "connections_sha256": hashlib.sha256(connections.read_bytes()).hexdigest(),
         "base_cost_q": base_cost_q,
+        "edge_delay_model": "VPR buffered local T_linear (ps), pass switch local RC approximation",
         "files": files,
         "kernel": "search_hbm_kernel",
         "production_limits": {"node_id": "uint32", "edge_index": "uint32", "task_count": "uint32", "path_length": "uint16"},

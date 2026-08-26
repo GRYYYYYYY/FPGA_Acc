@@ -55,7 +55,8 @@ AcceleratedPathfinderResult route_accelerated_pathfinder(
  const std::vector<Task>& tasks,
  const KernelBatchExecutor& executor,
  const PathfinderConfig& config = {},
- std::uint32_t issue_width = 4);
+ std::uint32_t issue_width = 4,
+ const TimingAnalyzer& timing_analyzer = {});
 
 KernelBatchResult execute_hbm_cmodel_batch(
  const std::vector<Node>& nodes,

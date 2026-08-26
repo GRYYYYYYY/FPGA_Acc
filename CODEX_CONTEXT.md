@@ -26,6 +26,7 @@
 - 新增真实运行指南、论文基线覆盖矩阵、工具探测和实现状态文档。
 - 新增直接消费 production ABI 的确定性 PathFinder 控制层与 CLI：完成多轮 present/history 更新、按 net rip-up、未受影响树跨轮持久化和多 sink trunk 共享，并输出逐轮审计记录。
 - 将上述控制层接入四个 `search_hbm_kernel` CU 与一个 `commit_hbm_kernel` CU 的 XRT host；支持同轮并发搜索、允许协商式暂时超用、确定性提交、按过用 net rip-up 和跨轮重路由。
+- 将 VPR 9 `AnalysisDelayCalculator`/Tatum STA 作为 host timing oracle 接入 CPU、HBM C-model 与 XRT 控制层；每轮以当前 connection RR path delay 覆盖 `net_delay`，反馈 setup criticality/slack，保持 32-byte Task ABI 不变。完整真实 `diffeq` CPU 与 4-PE HBM C-model 均已闭环合法收敛。
 - 在本机 Vitis/Vivado 2022.2 上完成五个 top 的独立 HLS 工程：全部通过 C 仿真和 Verilog/XSIM RTL 协同仿真，并导出五个 `.xo`；修正 HLS 动态指针协仿深度、外存数组读改写和 MultiQueue 分银行退化问题。
 - 对两个 production top 的 HLS RTL 完成 Vivado 2022.2 OOC 综合、优化、DRC、时序/资源报告和 DCP 导出；4 ns 约束下 search WNS 为 +0.427 ns，commit WNS 为 -0.694 ns，后者明确保留为待优化问题。
 
@@ -49,8 +50,8 @@
 
 ## 仍需完成
 
-1. 接入真实 timing analysis 的逐 connection criticality 周期更新。
-2. 扩展 Titan23/Koios 多案例批量统计，并冻结论文图表输入。
+1. 扩展 Titan23/Koios 多案例批量统计，并冻结论文图表输入。
+2. 如论文验证矩阵确实需要，再新增 timing-mode RTL 小子集终验；不要重跑既有最终 hw_emu。
 3. 若目标高于当前已收敛的 180 MHz，继续优化 commit kernel 的 AXI 接口关键路径；旧版 OOC 4 ns 结果不能替代当前完整系统结果。
 4. 对高容量资源实现多 owner 状态，完成大图模板压缩和按需解压。
 5. 接入 TilePlace、RouteCast、DieRoute 和 FusionPAR 的真实 VPR/FPGAIF 前后端。

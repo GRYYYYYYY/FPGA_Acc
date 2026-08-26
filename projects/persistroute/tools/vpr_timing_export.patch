@@ -1,0 +1,109 @@
+--- a/vpr/src/base/vpr_api.cpp
++++ b/vpr/src/base/vpr_api.cpp
+@@ -14,6 +14,10 @@
+ #include <cstdio>
+ #include <cstring>
+ #include <cmath>
++#include <cstdlib>
++#include <fstream>
++#include <limits>
++#include <sstream>
+ 
+ #include "cluster_util.h"
+ #include "verify_placement.h"
+@@ -79,6 +83,7 @@
+ 
+ #include "timing_graph_builder.h"
+ #include "timing_reports.h"
++#include "timing_util.h"
+ #include "tatum/echo_writer.hpp"
+ 
+ #include "read_route.h"
+@@ -1546,11 +1551,87 @@
+         NetPinsMatrix<float> net_delay = make_net_pins_matrix<float>(net_list);
+         load_net_delay_from_routing(net_list, net_delay);
+ 
++        struct PersistRouteTimingConnection {
++            std::uint32_t task_id;
++            ParentNetId net_id;
++            std::size_t pin_index;
++            std::uint64_t delay_ps;
++        };
++        std::vector<PersistRouteTimingConnection> persistroute_connections;
++        const char* persistroute_delay_csv = std::getenv("PERSISTROUTE_VPR_TIMING_INPUT");
++        if (persistroute_delay_csv != nullptr && *persistroute_delay_csv != '\0') {
++            std::ifstream input(persistroute_delay_csv);
++            std::string line;
++            if (!input || !std::getline(input, line)) {
++                VPR_FATAL_ERROR(VPR_ERROR_ANALYSIS, "Unable to read PersistRoute timing input %s", persistroute_delay_csv);
++            }
++            while (std::getline(input, line)) {
++                if (line.empty()) continue;
++                std::replace(line.begin(), line.end(), ',', ' ');
++                std::istringstream row(line);
++                std::uint32_t iteration, task_id, net_value, source_rr, sink_rr, routed, criticality_q;
++                std::uint64_t delay_ps;
++                if (!(row >> iteration >> task_id >> net_value >> source_rr >> sink_rr >> routed >> delay_ps >> criticality_q) || routed > 1) {
++                    VPR_FATAL_ERROR(VPR_ERROR_ANALYSIS, "Malformed PersistRoute timing row: %s", line.c_str());
++                }
++                ParentNetId net_id(net_value);
++                if (!net_id || std::size_t(net_id) >= net_delay.size()) {
++                    VPR_FATAL_ERROR(VPR_ERROR_ANALYSIS, "PersistRoute net ID %u is outside the VPR netlist", net_value);
++                }
++                if (std::size_t(route_ctx.net_rr_terminals[net_id][0]) != source_rr) {
++                    VPR_FATAL_ERROR(VPR_ERROR_ANALYSIS, "PersistRoute source RR node %u is not the driver terminal of net %u", source_rr, net_value);
++                }
++                std::size_t pin_index = 0;
++                for (std::size_t ipin = 1; ipin < route_ctx.net_rr_terminals[net_id].size(); ++ipin) {
++                    if (std::size_t(route_ctx.net_rr_terminals[net_id][ipin]) == sink_rr) {
++                        if (pin_index != 0) VPR_FATAL_ERROR(VPR_ERROR_ANALYSIS, "Ambiguous PersistRoute sink RR node %u", sink_rr);
++                        pin_index = ipin;
++                    }
++                }
++                if (pin_index == 0) VPR_FATAL_ERROR(VPR_ERROR_ANALYSIS, "PersistRoute sink RR node %u is not a terminal of net %u", sink_rr, net_value);
++                if (routed != 0) {
++                    net_delay[net_id][pin_index] = static_cast<float>(delay_ps) * 1e-12f;
++                } else {
++                    delay_ps = static_cast<std::uint64_t>(std::llround(net_delay[net_id][pin_index] * 1e12));
++                }
++                persistroute_connections.push_back({task_id, net_id, pin_index, delay_ps});
++            }
++        }
++
+         //Do final timing analysis
+         auto analysis_delay_calc = std::make_shared<AnalysisDelayCalculator>(atom_ctx.nlist, atom_ctx.lookup, net_delay, vpr_setup.RouterOpts.flat_routing);
+         auto timing_info = make_setup_hold_timing_info(analysis_delay_calc, vpr_setup.AnalysisOpts.timing_update_type);
+         timing_info->update();
+ 
++        const char* persistroute_criticality_csv = std::getenv("PERSISTROUTE_VPR_TIMING_OUTPUT");
++        if (persistroute_criticality_csv != nullptr && *persistroute_criticality_csv != '\0') {
++            if (persistroute_connections.empty()) {
++                VPR_FATAL_ERROR(VPR_ERROR_ANALYSIS, "PersistRoute timing output requested without timing input");
++            }
++            if (is_flat) VPR_FATAL_ERROR(VPR_ERROR_ANALYSIS, "PersistRoute timing export currently requires clustered routing");
++            const auto cpd_ps = static_cast<std::uint64_t>(std::llround(timing_info->least_slack_critical_path().delay() * 1e12));
++            std::ofstream output(persistroute_criticality_csv);
++            if (!output) VPR_FATAL_ERROR(VPR_ERROR_ANALYSIS, "Unable to create PersistRoute timing output %s", persistroute_criticality_csv);
++            output << "task_id,criticality_q,delay_ps,slack_ps,critical_path_delay_ps\n";
++            for (const auto& connection : persistroute_connections) {
++                const ParentPinId pin = net_list.net_pin(connection.net_id, connection.pin_index);
++                const ClusterBlockId sink_block = convert_to_cluster_block_id(net_list.pin_block(pin));
++                const AtomNetId atom_net = atom_ctx.lookup.atom_net(convert_to_cluster_net_id(connection.net_id));
++                float criticality = 0.f;
++                float slack = std::numeric_limits<float>::infinity();
++                for (const AtomPinId atom_pin : atom_ctx.nlist.net_sinks(atom_net)) {
++                    if (atom_ctx.lookup.atom_clb(atom_ctx.nlist.pin_block(atom_pin)) != sink_block) continue;
++                    criticality = std::max(criticality, timing_info->setup_pin_criticality(atom_pin));
++                    slack = std::min(slack, timing_info->setup_pin_slack(atom_pin));
++                }
++                if (!std::isfinite(slack)) VPR_FATAL_ERROR(VPR_ERROR_ANALYSIS, "Unable to map PersistRoute net %zu pin %zu to an atom timing pin", std::size_t(connection.net_id), connection.pin_index);
++                const auto criticality_q = static_cast<std::uint16_t>(std::llround(std::max(0.f, std::min(1.f, criticality)) * 65535.f));
++                const auto slack_ps = std::isfinite(slack) ? static_cast<std::int64_t>(std::llround(slack * 1e12)) : 0;
++                output << connection.task_id << ',' << criticality_q << ',' << connection.delay_ps << ',' << slack_ps << ',' << cpd_ps << '\n';
++            }
++            if (!output) VPR_FATAL_ERROR(VPR_ERROR_ANALYSIS, "Failed while writing PersistRoute timing output %s", persistroute_criticality_csv);
++        }
++
+         if (isEchoFileEnabled(E_ECHO_ANALYSIS_TIMING_GRAPH)) {
+             auto& timing_ctx = g_vpr_ctx.timing();
+             tatum::write_echo(getEchoFileName(E_ECHO_ANALYSIS_TIMING_GRAPH),

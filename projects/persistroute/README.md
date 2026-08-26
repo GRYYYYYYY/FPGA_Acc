@@ -35,6 +35,29 @@ make -C host persistroute_pathfinder
 `PERSISTROUTE_MAX_ITERATIONS`、`PERSISTROUTE_PRESENT_START_Q`、
 `PERSISTROUTE_PRESENT_MULTIPLIER_Q` 和 `PERSISTROUTE_HISTORY_INCREMENT_Q` 控制 PathFinder 轮次与 Q8 代价更新。
 
+真实逐 connection timing 更新通过 host callback 接入，production `Task` ABI 仍保持 32 bytes。每轮 Search/Commit 后，host 将当前路径的 RR delay 写成
+`<output>.timing_iteration_N.input.csv`，外部 analyzer 必须返回每个 task 的 setup criticality、slack 和全设计 CPD；校验通过的 `criticality_q` 会用于下一轮 CPU 或 HBM/XRT Search。逐轮摘要写入 `<output>.timing_iterations.csv`。不设置 `PERSISTROUTE_TIMING_COMMAND` 时维持原有固定 criticality 行为。
+
+VPR 9/Tatum analyzer 的可复现接入方式：
+
+```bash
+cd /path/to/vtr-9.0.0-src
+patch -p1 < /home/gry/workspace/FPGA_Acc/projects/persistroute/tools/vpr_timing_export.patch
+cmake --build build_vpr --target vpr -j2
+
+export PERSISTROUTE_TIMING_COMMAND="python3 /home/gry/workspace/FPGA_Acc/projects/persistroute/tools/vpr_timing_analyzer.py"
+export PERSISTROUTE_VPR_BIN=/path/to/vtr-9.0.0-src/build_vpr/vpr/vpr
+export PERSISTROUTE_VPR_ARCH=/path/to/architecture.xml
+export PERSISTROUTE_VPR_CIRCUIT=/path/to/design.blif
+export PERSISTROUTE_VPR_NET=/path/to/design.net
+export PERSISTROUTE_VPR_PLACE=/path/to/design.place
+export PERSISTROUTE_VPR_ROUTE=/path/to/original-legal-design.route
+export PERSISTROUTE_VPR_CHAN_WIDTH=200
+./host/persistroute_accelerated_cmodel work/vpr_input work/timing_routed
+```
+
+补丁只在 VPR analysis 的 `net_delay` 矩阵上覆盖本轮 PersistRoute connection delays，再由真实 packed netlist、atom timing graph 和约束运行 Tatum STA；原始 `.route` 只用于初始化和合法的 net/pin 映射。当前 oracle 支持 clustered routing，不支持 `--flat_routing`。`pack_hls_inputs.py` 的 edge delay 使用 VPR buffered local `T_linear` RC 模型并量化为 ps；pass switch 使用局部 RC 近似。
+
 Vitis 2022.2/U280 构建：
 
 ```bash

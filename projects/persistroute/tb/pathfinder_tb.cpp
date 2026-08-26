@@ -96,11 +96,33 @@ void test_impossible_case_remains_illegal() {
  assert(result.metrics.overused_resources==1&&result.resources[1].history_cost_q>0);
 }
 
+void test_periodic_timing_updates() {
+ std::vector<Node> nodes;std::vector<Edge> edges;
+ make_graph(5,{{0,1,1,10},{1,2,1,20},{3,1,1,10},{1,4,1,20}},nodes,edges);
+ const std::vector<Task> tasks{{1,1,0,2,0,8,0,0,0},{2,2,3,4,0,8,1,0,0}};
+ PathfinderConfig config;config.max_iterations=3;
+ std::vector<std::vector<std::uint16_t>> observed;
+ TimingAnalyzer analyzer=[&](std::uint32_t iteration,const auto&,const auto&,const auto& routed){
+  observed.push_back({routed[0].task.criticality_q,routed[1].task.criticality_q});
+  TimingAnalysisResult out;out.critical_path_delay_ps=1000+iteration;
+  out.connections={{1,static_cast<std::uint16_t>(10000+iteration),30,-100},
+                   {2,static_cast<std::uint16_t>(50000+iteration),30,-200}};
+  return out;
+ };
+ const auto result=route_pathfinder(nodes,edges,resources(5),tasks,config,analyzer);
+ assert(!result.legal&&result.timing_log.size()==3&&observed.size()==3);
+ assert((observed[0]==std::vector<std::uint16_t>{0,0}));
+ assert((observed[1]==std::vector<std::uint16_t>{10000,50000}));
+ assert(result.tasks[0].task.criticality_q==10002&&result.tasks[1].task.criticality_q==50002);
+ assert(result.timing_log[0].updated_connections==2&&result.timing_log[2].critical_path_delay_ps==1002);
+}
+
 } // namespace
 
 int main() {
  test_route_tree_trunk_sharing();
  test_negotiated_congestion_and_determinism();
  test_impossible_case_remains_illegal();
+ test_periodic_timing_updates();
  std::cout<<"pathfinder_tb: PASS\n";
 }

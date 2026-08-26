@@ -26,7 +26,7 @@ if($LASTEXITCODE-ne 0){throw "pathfinder build failed"}
 $accelerated=@((Join-Path $persist "src/accelerated_pathfinder.cpp"),(Join-Path $persist "src/hbm_cmodel_backend.cpp"),(Join-Path $persist "src/search_hbm.cpp"),(Join-Path $persist "src/commit_hbm.cpp"),(Join-Path $persist "src/multiqueue.cpp"),(Join-Path $persist "src/pathfinder.cpp"))
 & $compiler -std=c++17 -O2 -Wall -Wextra -Wpedantic -I (Join-Path $persist "include") $accelerated (Join-Path $persist "tb/accelerated_pathfinder_tb.cpp") -o (Join-Path $persistOut "accelerated_pathfinder_tb.exe")
 if($LASTEXITCODE-ne 0){throw "accelerated pathfinder build failed"}
-& $compiler -std=c++17 -O2 -Wall -Wextra -Wpedantic -I (Join-Path $persist "include") (Join-Path $persist "src/pathfinder.cpp") (Join-Path $persist "host/pathfinder_host.cpp") -o (Join-Path $persistOut "persistroute_pathfinder.exe")
+& $compiler -std=c++17 -O2 -Wall -Wextra -Wpedantic -I (Join-Path $persist "include") (Join-Path $persist "src/pathfinder.cpp") (Join-Path $persist "src/external_timing.cpp") (Join-Path $persist "host/pathfinder_host.cpp") -o (Join-Path $persistOut "persistroute_pathfinder.exe")
 if($LASTEXITCODE-ne 0){throw "pathfinder host build failed"}
-& $compiler -std=c++17 -O2 -Wall -Wextra -Wpedantic -I (Join-Path $persist "include") $accelerated (Join-Path $persist "host/accelerated_pathfinder_host.cpp") -o (Join-Path $persistOut "persistroute_accelerated_cmodel.exe")
+& $compiler -std=c++17 -O2 -Wall -Wextra -Wpedantic -I (Join-Path $persist "include") $accelerated (Join-Path $persist "src/external_timing.cpp") (Join-Path $persist "host/accelerated_pathfinder_host.cpp") -o (Join-Path $persistOut "persistroute_accelerated_cmodel.exe")
 if($LASTEXITCODE-ne 0){throw "accelerated pathfinder host build failed"}

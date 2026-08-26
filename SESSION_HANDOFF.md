@@ -20,7 +20,7 @@
 
 推荐的新对话开场指令：
 
-> 请先完整阅读 AGENTS.md、SESSION_HANDOFF.md、CODEX_CONTEXT.md、projects/实现状态.md 和 projects/真实数据与论文基线运行指南.md，验证 Git/环境状态，然后从当前下一项“真实 timing analysis 的逐 connection criticality 周期更新”继续。长时间 Vitis/Vivado 作业按 AGENTS.md 交给 vivado_monitor，不要重跑已经完成的最终 hw_emu。
+> 请先完整阅读 AGENTS.md、SESSION_HANDOFF.md、CODEX_CONTEXT.md、projects/实现状态.md 和 projects/真实数据与论文基线运行指南.md，验证 Git/环境状态，然后从当前下一项“扩展 Titan23/Koios 多案例统计并冻结论文图表输入”继续。长时间 Vitis/Vivado 作业按 AGENTS.md 交给 vivado_monitor，不要重跑已经完成的最终 hw_emu。
 
 ## 2. 当前总体位置
 
@@ -32,8 +32,8 @@
 
 当前下一项是：
 
-1. 接入真实 timing analysis 的逐 connection criticality 周期更新；
-2. 之后扩展 Titan23/Koios 多案例统计并冻结论文图表输入；
+1. 扩展 Titan23/Koios 多案例统计并冻结论文图表输入；
+2. 真实 timing analysis 的逐 connection criticality 周期更新已完成 CPU 与 HBM C-model 真实 `diffeq` 闭环，后续只在确有必要时增加新的 RTL timing-mode 终验，不要重跑既有最终 `hw_emu`；
 3. 再考虑高容量资源多 owner、图模板压缩，以及其余四个论文工程。
 
 不要把 `hw_emu` 墙钟时间当作上板性能，也不要宣称当前 VM 已实际上板。
@@ -72,6 +72,7 @@ projects/persistroute/host/.run/284123
 - `commit_hbm_kernel` 支持确定性提交和 negotiated-congestion 的暂时超用。
 - `accelerated_pathfinder.cpp` 是复用控制层；HBM C-model 与 XRT backend 使用相同控制语义。
 - 完整真实 `diffeq` HBM C-model 已完成 1973/1973 tasks，23 iterations 后 0 overuse，重复运行输出一致。
+- host-side VPR 9/Tatum timing oracle 已接入 CPU、HBM C-model 和 XRT 控制层：每轮按当前 RR path delay 运行真实 timing graph STA，并反馈逐 connection setup criticality。采用本轮 RC delay 模型后，完整 `diffeq` CPU 为 3 轮/CPD 7.164 ns，4-PE HBM C-model 为 12 轮/CPD 7.274 ns，均 0 overuse、`legal=true`；证据见 `projects/persistroute/experiments/timing_criticality_2026-08-26.json`。
 - Search 和 Commit HLS csim/csynth/Verilog cosim 均通过。
 - 4 Search CU + 1 Commit CU 的 U280 `hw` 完整实现已完成；180 MHz routed timing 为 WNS `+0.016 ns`、TNS `0`、WHS `+0.006 ns`、THS `0`。
 - 当前 `hw_emu` xclbin SHA-256：`73ff9d105a486c2f8cfa73e002756343947aa6d29d9b1fdd4e3523521f75cc33`。
@@ -181,4 +182,4 @@ python3 projects/persistroute/tools/static_interface_audit.py
 
 ## 9. 当前没有运行中的长作业
 
-最终两个 `hw_emu` 已自然退出并归档，当前无需恢复、attach 或等待任何 host/XSim/Vivado 进程。新会话可以直接从 timing criticality 设计与实现开始。
+最终两个 `hw_emu` 已自然退出并归档，当前无需恢复、attach 或等待任何 host/XSim/Vivado 进程。新会话可以直接从 Titan23/Koios 多案例统计与论文图表输入冻结开始。

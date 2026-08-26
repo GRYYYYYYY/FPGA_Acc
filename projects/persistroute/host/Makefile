@@ -4,13 +4,13 @@ LDFLAGS += -L$(XILINX_XRT)/lib -lxrt_coreutil -pthread
 
 all: persistroute_pathfinder persistroute_accelerated_cmodel persistroute_accelerated_xrt persistroute_xrt persistroute_multi_xrt
 
-persistroute_pathfinder: pathfinder_host.cpp ../src/pathfinder.cpp
+persistroute_pathfinder: pathfinder_host.cpp ../src/pathfinder.cpp ../src/external_timing.cpp
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
-persistroute_accelerated_cmodel: accelerated_pathfinder_host.cpp ../src/accelerated_pathfinder.cpp ../src/hbm_cmodel_backend.cpp ../src/search_hbm.cpp ../src/commit_hbm.cpp ../src/multiqueue.cpp ../src/pathfinder.cpp
+persistroute_accelerated_cmodel: accelerated_pathfinder_host.cpp ../src/accelerated_pathfinder.cpp ../src/hbm_cmodel_backend.cpp ../src/search_hbm.cpp ../src/commit_hbm.cpp ../src/multiqueue.cpp ../src/pathfinder.cpp ../src/external_timing.cpp
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
-persistroute_accelerated_xrt: accelerated_xrt_host.cpp ../src/accelerated_pathfinder.cpp ../src/pathfinder.cpp
+persistroute_accelerated_xrt: accelerated_xrt_host.cpp ../src/accelerated_pathfinder.cpp ../src/pathfinder.cpp ../src/external_timing.cpp
 	$(CXX) $(CXXFLAGS) $^ -o $@ $(LDFLAGS)
 
 persistroute_xrt: xrt_host.cpp

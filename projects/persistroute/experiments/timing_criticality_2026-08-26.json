@@ -1,0 +1,62 @@
+{
+  "schema": "PERSISTROUTE_VPR_TIMING_CRITICALITY_V1",
+  "date": "2026-08-26",
+  "case": {
+    "name": "diffeq",
+    "rr_nodes": 32920,
+    "rr_edges": 344820,
+    "connections": 1973,
+    "channel_width": 200,
+    "constraints": "VPR-generated default single-clock constraints because diffeq.sdc is absent"
+  },
+  "implementation": {
+    "task_abi_bytes": 32,
+    "update_point": "after every complete PathFinder routing iteration and before the next iteration",
+    "edge_delay_model": "VPR buffered local T_linear in ps; pass-switch local RC approximation",
+    "sta": "VPR 9 AnalysisDelayCalculator plus Tatum setup/hold timing update",
+    "run_vpr_patch_sha256": "c8807e392b1fbf44a4b73af3b4ecefcd98410698dd36c3374521a56839f51b79",
+    "reproducible_vpr_patch_sha256": "1d5c20074611fce9d0a0d89977bc5b97678e35a6c9bf096d01ebb19e864d836a",
+    "run_vpr_analyzer_sha256": "0abaa52d94225f83ed39d777ccb60c9ab809f3a1102bf023f668e3cb3cde5b08",
+    "reproducible_vpr_analyzer_sha256": "ae729caeeacd20fc9160824b02ca550bb610714a54d921040a5411e0dfb069ae",
+    "run_vpr_binary_sha256": "ec8061478b56710d77648583ec624b84e83363d953f0f4c48a3a37ee43fa5d98",
+    "reproducible_patched_vpr_binary_sha256": "41d21e0e3ad1bf9d914b282fd9340024121db5b550747a231ceb0ec0736bf44f",
+    "reproduction_validation": "current patch rebuilt successfully; iteration-0 oracle CSV is byte-identical to the archived run; unrouted fallback also passed",
+    "input_manifest_sha256": "ae6a3e50b5d1f88e32d7cf57226c613c2bfcb8bec0918f6fdd7f2ff7a2193640"
+  },
+  "cpu_pathfinder": {
+    "exit_status": 0,
+    "legal": true,
+    "iterations": 3,
+    "searches": 2759,
+    "overused_resources": 0,
+    "oracle_runs": 3,
+    "oracle_successes": 3,
+    "iteration_0": {"updated_connections": 1973, "critical_path_delay_ps": 6761},
+    "final": {"updated_connections": 8, "min_criticality_q": 4038, "max_criticality_q": 65535, "critical_path_delay_ps": 7164},
+    "timing_log_sha256": "30d6380c2232ac1025de0853c1287c044ff975f3023e595b902b20b604918f00",
+    "paths_sha256": "007ce9618b60c75c33bbedc0d7a7b57d399189265e8ec0099abe4766f1a52b56",
+    "resources_sha256": "3f6837d917f3c23b3fe3c4bd27aa01a0e8eb17f6bbd577bd6c79f34c1956df15"
+  },
+  "hbm_cmodel": {
+    "exit_status": 0,
+    "legal": true,
+    "pe_count": 4,
+    "iterations": 12,
+    "searches": 3707,
+    "overused_resources": 0,
+    "oracle_runs": 12,
+    "oracle_successes": 12,
+    "iteration_0": {"updated_connections": 1973, "critical_path_delay_ps": 7001},
+    "final": {"updated_connections": 6, "min_criticality_q": 3977, "max_criticality_q": 65535, "critical_path_delay_ps": 7274},
+    "timing_log_sha256": "0ca3a027a7d25c7866ab03de81cd3fb95804e65a42eddf89ae4046c40c0e1035",
+    "paths_sha256": "80aeceb0ce28bc596f4a1ea0a56a235a64a72a05cd7586d95d126d550967597f",
+    "resources_sha256": "846d50391bdace8acf011c8f4bc03500d606b25c5c1dda38b7e6b01d0e96212d"
+  },
+  "artifact_directory": "projects/persistroute/experiments/timing_criticality_2026-08-26",
+  "limitations": [
+    "The timing oracle uses current PersistRoute connection delays but the original legal VPR route only for net/pin initialization.",
+    "The 16-bit hardware edge delay is a local RC approximation and does not reproduce VPR route-tree Elmore coupling exactly.",
+    "No new hw_emu was run; the previously completed final hw_emu evidence remains unchanged.",
+    "VMware has no physical U280 device, so this is not board execution evidence."
+  ]
+}

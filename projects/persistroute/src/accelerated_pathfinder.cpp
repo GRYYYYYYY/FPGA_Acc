@@ -145,12 +145,27 @@ void ripup(TreeState& tree,Owners& owners,std::vector<RoutedTask>& tasks,Pathfin
  for(const auto index:tree.tasks){if(tasks[index].routed)++metrics.ripped_connections;tasks[index].routed=false;tasks[index].path.clear();}
 }
 
+void update_timing(std::uint32_t iteration,const std::vector<Node>& nodes,
+ const std::vector<Edge>& edges,std::vector<RoutedTask>& tasks,
+ const TimingAnalyzer& analyzer,std::vector<PathfinderTimingIteration>& log) {
+ if(!analyzer)return;
+ const auto analysis=analyzer(iteration,nodes,edges,tasks);
+ if(analysis.connections.size()!=tasks.size())throw std::runtime_error("timing analyzer must return exactly one update per connection");
+ std::map<std::uint32_t,TimingConnectionUpdate> updates;
+ for(const auto& update:analysis.connections)if(!updates.emplace(update.task_id,update).second)throw std::runtime_error("timing analyzer returned a duplicate task ID");
+ PathfinderTimingIteration item{};item.iteration=iteration;item.min_criticality_q=65535U;item.critical_path_delay_ps=analysis.critical_path_delay_ps;
+ for(auto& routed:tasks){const auto found=updates.find(routed.task.id);if(found==updates.end())throw std::runtime_error("timing analyzer omitted a task ID");if(routed.task.criticality_q!=found->second.criticality_q)++item.updated_connections;routed.task.criticality_q=found->second.criticality_q;item.min_criticality_q=std::min(item.min_criticality_q,routed.task.criticality_q);item.max_criticality_q=std::max(item.max_criticality_q,routed.task.criticality_q);}
+ if(tasks.empty())item.min_criticality_q=0;
+ log.push_back(item);
+}
+
 } // namespace
 
 AcceleratedPathfinderResult route_accelerated_pathfinder(
  const std::vector<Node>& nodes,const std::vector<Edge>& edges,
  const std::vector<Resource>& initial_resources,const std::vector<Task>& input_tasks,
- const KernelBatchExecutor& executor,const PathfinderConfig& config,std::uint32_t issue_width) {
+ const KernelBatchExecutor& executor,const PathfinderConfig& config,std::uint32_t issue_width,
+ const TimingAnalyzer& timing_analyzer) {
  validate_inputs(nodes,edges,initial_resources,input_tasks,config);
  if(!executor||issue_width==0)throw std::invalid_argument("accelerated PathFinder executor/issue width is invalid");
  AcceleratedPathfinderResult out;auto& result=out.routing;result.resources=initial_resources;
@@ -193,6 +208,7 @@ AcceleratedPathfinderResult route_accelerated_pathfinder(
   const std::uint32_t over=static_cast<std::uint32_t>(std::count_if(result.resources.begin(),result.resources.end(),[](const auto& r){return r.occupancy>r.capacity;}));
   log.overused_resources=over;audit.overused_resources=over;audit.resource_hash=hash_resources(result.resources);audit.route_hash=hash_routes(result.tasks);
   result.metrics.overused_resources=over;result.iteration_log.push_back(log);out.audit.push_back(audit);
+  update_timing(iteration,nodes,edges,result.tasks,timing_analyzer,result.timing_log);
   const bool all=std::all_of(result.tasks.begin(),result.tasks.end(),[](const auto& task){return task.routed;});
   if(all&&over==0){result.route_success=true;break;}if(iteration+1==config.max_iterations)break;
   const std::uint64_t grown=(static_cast<std::uint64_t>(present)*config.present_multiplier_q+128U)/256U;

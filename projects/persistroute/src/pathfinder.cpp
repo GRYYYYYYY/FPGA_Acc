@@ -297,6 +297,38 @@ bool has_edge(
  return false;
 }
 
+void update_timing_criticalities(
+ std::uint32_t iteration,
+ const std::vector<Node>& nodes,
+ const std::vector<Edge>& edges,
+ std::vector<RoutedTask>& tasks,
+ const TimingAnalyzer& analyzer,
+ std::vector<PathfinderTimingIteration>& log) {
+ if (!analyzer) return;
+ const TimingAnalysisResult analysis = analyzer(iteration, nodes, edges, tasks);
+ if (analysis.connections.size() != tasks.size())
+  throw std::runtime_error("timing analyzer must return exactly one update per connection");
+ std::map<std::uint32_t, TimingConnectionUpdate> updates;
+ for (const auto& update : analysis.connections)
+  if (!updates.emplace(update.task_id, update).second)
+   throw std::runtime_error("timing analyzer returned a duplicate task ID");
+ PathfinderTimingIteration item{};
+ item.iteration = iteration;
+ item.min_criticality_q = 65535U;
+ item.critical_path_delay_ps = analysis.critical_path_delay_ps;
+ for (auto& routed : tasks) {
+  const auto found = updates.find(routed.task.id);
+  if (found == updates.end())
+   throw std::runtime_error("timing analyzer omitted a task ID");
+  if (routed.task.criticality_q != found->second.criticality_q) ++item.updated_connections;
+  routed.task.criticality_q = found->second.criticality_q;
+  item.min_criticality_q = std::min(item.min_criticality_q, routed.task.criticality_q);
+  item.max_criticality_q = std::max(item.max_criticality_q, routed.task.criticality_q);
+ }
+ if (tasks.empty()) item.min_criticality_q = 0;
+ log.push_back(item);
+}
+
 } // namespace
 
 PathfinderResult route_pathfinder(
@@ -304,7 +336,8 @@ PathfinderResult route_pathfinder(
  const std::vector<Edge>& edges,
  const std::vector<Resource>& initial_resources,
  const std::vector<Task>& input_tasks,
- const PathfinderConfig& config) {
+ const PathfinderConfig& config,
+ const TimingAnalyzer& timing_analyzer) {
  validate_inputs(nodes, edges, initial_resources, input_tasks, config);
  PathfinderResult result;
  result.resources = initial_resources;
@@ -377,6 +410,8 @@ PathfinderResult route_pathfinder(
   result.metrics.overused_resources = overused;
   log.overused_resources = overused;
   result.iteration_log.push_back(log);
+  update_timing_criticalities(iteration, nodes, edges, result.tasks,
+                              timing_analyzer, result.timing_log);
   const bool all_routed = std::all_of(result.tasks.begin(), result.tasks.end(),
       [](const RoutedTask& task) { return task.routed; });
   if (all_routed && overused == 0) {
