@@ -1,0 +1,66 @@
+{
+  "cases": [
+    {
+      "id": "titan23_neuron_seed3_cw300",
+      "suite": "Titan23",
+      "architecture": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/titan/stratixiv_arch.timing.xml",
+      "circuit": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/benchmarks/titan_blif/titan23/stratixiv/neuron_stratixiv_arch_timing.blif",
+      "sdc": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/benchmarks/titan_blif/titan23/stratixiv/neuron_stratixiv_arch_timing.sdc",
+      "route_chan_width": 300,
+      "seed": 3,
+      "max_router_iterations": 400,
+      "router_lookahead": "map",
+      "initial_pres_fac": 1.0,
+      "router_profiler_astar_fac": 1.5
+    },
+    {
+      "id": "titan23_stereo_vision_seed3_cw300",
+      "suite": "Titan23",
+      "architecture": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/titan/stratixiv_arch.timing.xml",
+      "circuit": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/benchmarks/titan_blif/titan23/stratixiv/stereo_vision_stratixiv_arch_timing.blif",
+      "sdc": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/benchmarks/titan_blif/titan23/stratixiv/stereo_vision_stratixiv_arch_timing.sdc",
+      "route_chan_width": 300,
+      "seed": 3,
+      "max_router_iterations": 400,
+      "router_lookahead": "map",
+      "initial_pres_fac": 1.0,
+      "router_profiler_astar_fac": 1.5
+    },
+    {
+      "id": "koios_conv_layer_seed1_cw300",
+      "suite": "Koios 2.0",
+      "architecture": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
+      "circuit": "koios_conv_layer_frontend/conv_layer.pre-vpr.blif",
+      "route_chan_width": 300,
+      "seed": 1,
+      "max_router_iterations": 100
+    },
+    {
+      "id": "koios_attention_layer_seed1_cw300",
+      "suite": "Koios 2.0",
+      "architecture": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
+      "circuit": "koios_attention_layer_frontend/attention_layer.pre-vpr.blif",
+      "route_chan_width": 300,
+      "seed": 1,
+      "max_router_iterations": 100
+    },
+    {
+      "id": "koios_spmv_seed1_cw300",
+      "suite": "Koios 2.0",
+      "architecture": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
+      "circuit": "koios_spmv_frontend/spmv.pre-vpr.blif",
+      "route_chan_width": 300,
+      "seed": 1,
+      "max_router_iterations": 100
+    },
+    {
+      "id": "koios_softmax_seed1_cw300",
+      "suite": "Koios 2.0",
+      "architecture": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
+      "circuit": "koios_softmax_frontend/softmax.pre-vpr.blif",
+      "route_chan_width": 300,
+      "seed": 1,
+      "max_router_iterations": 100
+    }
+  ]
+}

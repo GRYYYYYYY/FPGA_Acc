@@ -20,21 +20,21 @@
 
 推荐的新对话开场指令：
 
-> 请先完整阅读 AGENTS.md、SESSION_HANDOFF.md、CODEX_CONTEXT.md、projects/实现状态.md 和 projects/真实数据与论文基线运行指南.md，验证 Git/环境状态，然后从当前下一项“扩展 Titan23/Koios 多案例统计并冻结论文图表输入”继续。长时间 Vitis/Vivado 作业按 AGENTS.md 交给 vivado_monitor，不要重跑已经完成的最终 hw_emu。
+> 请先完整阅读 AGENTS.md、SESSION_HANDOFF.md、CODEX_CONTEXT.md、projects/实现状态.md 和 projects/真实数据与论文基线运行指南.md，验证 Git/环境状态，然后从 PersistRoute 论文包复核与下一工程 TilePlace 的真实前端接入继续。长时间 Vitis/Vivado 作业按 AGENTS.md 交给 vivado_monitor，不要重跑已经完成的最终 hw_emu。
 
 ## 2. 当前总体位置
 
 总目标是依次完成五个独立论文工程：PersistRoute → TilePlace → RouteCast → DieRoute → FusionPAR。
 
-当前仍在第一个工程 PersistRoute，但其基础功能闭环已经完成：真实 VPR/FPGAIF 前端、production ABI、PathFinder 控制、MultiQueue、HBM Search/Commit、多 CU XRT、HLS/RTL 验证、U280 完整实现和真实 VPR 子集多轮 `hw_emu` 均已通过。
+第一个工程 PersistRoute 的代码、实现、功能验证和论文材料包已收尾：真实 VPR/FPGAIF 前端、production ABI、PathFinder 控制、MultiQueue、HBM Search/Commit、多 CU XRT、真实 timing feedback、HLS/RTL 验证、U280 完整实现、真实 VPR 子集多轮 `hw_emu`、十案例 CPU 基线和论文图表均已具备。
 
 原先第一项未完成任务“将 PathFinder 控制层接入四 Search CU + Commit CU，并与真实 VPR RR graph 做逐轮 golden 对照”已于 2026-08-26 完成。
 
-当前下一项是：
+当前边界与下一项是：
 
-1. 扩展 Titan23/Koios 多案例统计并冻结论文图表输入；
-2. 真实 timing analysis 的逐 connection criticality 周期更新已完成 CPU 与 HBM C-model 真实 `diffeq` 闭环，后续只在确有必要时增加新的 RTL timing-mode 终验，不要重跑既有最终 `hw_emu`；
-3. 再考虑高容量资源多 owner、图模板压缩，以及其余四个论文工程。
+1. PersistRoute 的物理 U280 端到端性能、能耗、重复试验和消融仍需有卡环境完成；当前 VM 不能形成这些 claim；
+2. 论文材料入口为 `projects/persistroute/paper/README.md`，十案例冻结结果为 `paper/generated/paper_results.json`；
+3. 若不等待外部 U280，整体路线可进入第二个工程 TilePlace 的真实 VPR/FPGAIF 前端；高容量资源多 owner 和图模板压缩作为 PersistRoute 后续优化，不阻塞当前代码归档。
 
 不要把 `hw_emu` 墙钟时间当作上板性能，也不要宣称当前 VM 已实际上板。
 
@@ -182,4 +182,4 @@ python3 projects/persistroute/tools/static_interface_audit.py
 
 ## 9. 当前没有运行中的长作业
 
-最终两个 `hw_emu` 已自然退出并归档，当前无需恢复、attach 或等待任何 host/XSim/Vivado 进程。新会话可以直接从 Titan23/Koios 多案例统计与论文图表输入冻结开始。
+最终两个 `hw_emu` 已自然退出并归档，当前无需恢复、attach 或等待任何 host/XSim/Vivado 进程。十案例 CPU 基线与论文图表也已冻结；新会话可以从论文包复核或 TilePlace 开始。

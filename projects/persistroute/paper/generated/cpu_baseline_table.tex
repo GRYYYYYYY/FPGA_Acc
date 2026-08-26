@@ -1,0 +1,18 @@
+\begin{tabular}{llrrrrrr}
+\toprule
+Suite & Circuit & Blocks & Nets & Route iters. & CPD (ns) & Flow speedup & Route speedup \\
+\midrule
+VTR & diffeq & 1974 & 1935 & 13 & 6.598 & 1.025$\times$ & 1.333$\times$ \\
+VTR & frisc & 4561 & 4445 & 12 & 13.588 & 1.022$\times$ & 1.318$\times$ \\
+VTR & elliptic & 4969 & 4855 & 12 & 8.792 & 1.037$\times$ & 1.421$\times$ \\
+VTR & clma & 8542 & 8460 & 15 & 11.608 & 1.055$\times$ & 1.421$\times$ \\
+Titan23 & neuron & 86875 & 119888 & 15 & 7.603 & 1.090$\times$ & 1.293$\times$ \\
+Titan23 & stereo vision & 94090 & 127090 & 15 & 7.517 & 1.088$\times$ & 1.417$\times$ \\
+Koios 2.0 & conv layer & 28067 & 33180 & 14 & 5.128 & 1.089$\times$ & 1.420$\times$ \\
+Koios 2.0 & attention layer & 36457 & 45949 & 15 & 8.823 & 1.017$\times$ & 1.262$\times$ \\
+Koios 2.0 & SpMV & 14407 & 16311 & 13 & 6.153 & 0.996$\times$ & 1.297$\times$ \\
+Koios 2.0 & softmax & 11781 & 12958 & 18 & 9.190 & 1.049$\times$ & 1.392$\times$ \\
+\midrule
+\multicolumn{6}{r}{Geometric mean} & 1.046$\times$ & 1.356$\times$ \\
+\bottomrule
+\end{tabular}

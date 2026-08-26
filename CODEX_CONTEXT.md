@@ -48,13 +48,12 @@
 - `projects/真实数据与论文基线运行指南.md`：安装软件后的完整流程。
 - `projects/实现状态.md`：已验证、待工具验证和后续研究实现边界。
 
-## 仍需完成
+## 当前下一步
 
-1. 扩展 Titan23/Koios 多案例批量统计，并冻结论文图表输入。
-2. 如论文验证矩阵确实需要，再新增 timing-mode RTL 小子集终验；不要重跑既有最终 hw_emu。
-3. 若目标高于当前已收敛的 180 MHz，继续优化 commit kernel 的 AXI 接口关键路径；旧版 OOC 4 ns 结果不能替代当前完整系统结果。
-4. 对高容量资源实现多 owner 状态，完成大图模板压缩和按需解压。
-5. 接入 TilePlace、RouteCast、DieRoute 和 FusionPAR 的真实 VPR/FPGAIF 前后端。
+1. PersistRoute 已冻结 4 个 VTR、2 个 Titan23 和 4 个 Koios 案例的 1-worker/16-worker CPU 基线；全部配对 route/QoR 一致，whole-flow/route-stage 几何平均加速为 `1.046x/1.356x`。论文草稿、claim matrix、实验计划、CSV、LaTeX 和 SVG 位于 `projects/persistroute/paper/`。
+2. PersistRoute 仍缺物理 U280 的端到端 runtime、能耗、重复试验、全矩阵 QoR 与消融；当前 VM 无卡，不能用 `hw_emu` 替代。若取得有卡环境，按 `paper/EXPERIMENT_PLAN.md` 补齐。
+3. 若不等待外部硬件，开始 TilePlace 的真实 VPR/FPGAIF 前后端。高容量资源多 owner、图模板压缩和高于 180 MHz 的优化保留为 PersistRoute 后续增强。
+4. 如论文验证矩阵确实需要，可新增 timing-mode RTL 小子集终验；不要重跑既有最终 hw_emu。
 
 ## Windows → Ubuntu VM 续接
 

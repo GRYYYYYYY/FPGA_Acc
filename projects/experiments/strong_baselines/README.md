@@ -1,12 +1,14 @@
 # Paper-level strong baselines
 
 The runner records hashes, exact commands, host information, tool-version logs,
-stdout/stderr, exit status and full wall time. `B0` means a locally auditable
+stdout/stderr, exit status, full wall time and (when GNU time is available) peak
+RSS. `B0` means a locally auditable
 run; `B1` requires a local CLI/version audit; `B2` is literature-only and is
 intentionally not executable.
 
 ```powershell
 python run_strong_baselines.py --baseline vpr_parallel --cases cases.json --output runs
+python run_strong_baselines.py --baseline vpr_parallel --cases cases.json --case case_id --output runs
 python run_strong_baselines.py --baseline rwroute --cases cases.json --output runs
 python run_strong_baselines.py --baseline vivado_route --cases cases.json --output runs
 python parse_qor.py runs\...\stdout.log runs\...\timing_summary.rpt --output metrics.json

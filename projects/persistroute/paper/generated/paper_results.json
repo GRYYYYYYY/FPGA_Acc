@@ -1,0 +1,433 @@
+{
+  "all_paired_routes_and_qor_identical": true,
+  "all_runs_passed": true,
+  "case_count": 10,
+  "cases": [
+    {
+      "blocks": 1974,
+      "case_id": "diffeq_seed1_cw200",
+      "circuit": "diffeq",
+      "cpd_ns": 6.59759,
+      "input_sha256": [
+        {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+          "sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179"
+        },
+        {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/benchmarks/blif/diffeq.blif",
+          "sha256": "507978af7a0c09efa0baada34e55a7d3e635619b6dd9a18a7fa47aed7903ecf7"
+        }
+      ],
+      "nets": 1935,
+      "parallel_max_rss_mib": 67.5,
+      "parallel_route_s": 0.06,
+      "parallel_run_sha256": "95c14ce7644cee21339b980befa1eb8fcc1f9e45d4e6e8e4bcee197a0c324b8f",
+      "parallel_wall_s": 1.7895363449999877,
+      "route_sha256": "f91ff4bf9aa2203edc616462c81fc85971d3e9d312a3847f8214bd43887dd761",
+      "route_stage_speedup": 1.3333333333333335,
+      "routing_iterations": 13,
+      "serial_max_rss_mib": 67.2,
+      "serial_route_s": 0.08,
+      "serial_run_sha256": "e216f45b17982fdbb5dfe66694b7ba723bbb8fc84b6006f487bf4448da748c08",
+      "serial_wall_s": 1.8335673569999926,
+      "suite": "VTR",
+      "whole_flow_speedup": 1.0246047039631403,
+      "wirelength": 9103
+    },
+    {
+      "blocks": 4561,
+      "case_id": "frisc_seed1_cw200",
+      "circuit": "frisc",
+      "cpd_ns": 13.5879,
+      "input_sha256": [
+        {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+          "sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179"
+        },
+        {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/benchmarks/blif/frisc.blif",
+          "sha256": "0bccb5b0c7377a93d8daf64c3fb37ff0a4bccd6027ab199f214abe63c5aec01f"
+        }
+      ],
+      "nets": 4445,
+      "parallel_max_rss_mib": 86.8,
+      "parallel_route_s": 0.22,
+      "parallel_run_sha256": "16b3219c9f825f10b7b77bc362a20813ad64d05948b0118f339f312048b5d2ea",
+      "parallel_wall_s": 5.492289347999986,
+      "route_sha256": "3c7800550d5407325a93d43f593364213780805ea2d97755f5a8bfc1763fbf25",
+      "route_stage_speedup": 1.3181818181818181,
+      "routing_iterations": 12,
+      "serial_max_rss_mib": 85.9,
+      "serial_route_s": 0.29,
+      "serial_run_sha256": "157e5be256660cd227c633650409d8ca31e1a877e7b3d983b99c01189d6e3098",
+      "serial_wall_s": 5.611144788000047,
+      "suite": "VTR",
+      "whole_flow_speedup": 1.0216404184974963,
+      "wirelength": 33182
+    },
+    {
+      "blocks": 4969,
+      "case_id": "elliptic_seed1_cw200",
+      "circuit": "elliptic",
+      "cpd_ns": 8.79211,
+      "input_sha256": [
+        {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+          "sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179"
+        },
+        {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/benchmarks/blif/elliptic.blif",
+          "sha256": "5cc3a708720002c0e114c36312721ac7dd3b85ae2fd05f311d780fc11212b175"
+        }
+      ],
+      "nets": 4855,
+      "parallel_max_rss_mib": 87.1,
+      "parallel_route_s": 0.19,
+      "parallel_run_sha256": "44e68088e31173ea5c388dae5ddff04e9d9cf8031b83ce916d17f29aeeba8541",
+      "parallel_wall_s": 4.900005221000015,
+      "route_sha256": "3828a75226fd605f043c4ef8a97ba12c94655a8c8cd9b48cec9b79d7e44139ac",
+      "route_stage_speedup": 1.4210526315789473,
+      "routing_iterations": 12,
+      "serial_max_rss_mib": 85.9,
+      "serial_route_s": 0.27,
+      "serial_run_sha256": "b97d1c53985923fc24470b090464805f797b9f944edf56f14d3f42c574a05a19",
+      "serial_wall_s": 5.080716884000026,
+      "suite": "VTR",
+      "whole_flow_speedup": 1.0368798919285906,
+      "wirelength": 27329
+    },
+    {
+      "blocks": 8542,
+      "case_id": "clma_seed1_cw200",
+      "circuit": "clma",
+      "cpd_ns": 11.6084,
+      "input_sha256": [
+        {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+          "sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179"
+        },
+        {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/benchmarks/blif/clma.blif",
+          "sha256": "3151ef9596486448557a91f2b892d207dcd3a13d508ce72ba1d9946ce18d096e"
+        }
+      ],
+      "nets": 8460,
+      "parallel_max_rss_mib": 144.2,
+      "parallel_route_s": 0.57,
+      "parallel_run_sha256": "d942d164d7881525bc7b7696f709636e9bc87cbb4e8963ee5e2a8061ae279a46",
+      "parallel_wall_s": 11.403896765000013,
+      "route_sha256": "985825cd29091e8ec10e3ed186d1478366403cd75fb0622a022665e6a0f275bb",
+      "route_stage_speedup": 1.4210526315789476,
+      "routing_iterations": 15,
+      "serial_max_rss_mib": 142.8,
+      "serial_route_s": 0.81,
+      "serial_run_sha256": "8328b0c521e29f81265e679dd36385c026bc9274d105dc21783ce51dce006591",
+      "serial_wall_s": 12.031879295999943,
+      "suite": "VTR",
+      "whole_flow_speedup": 1.0550673637214332,
+      "wirelength": 79857
+    },
+    {
+      "blocks": 86875,
+      "case_id": "titan23_neuron_seed3_cw300",
+      "circuit": "neuron",
+      "cpd_ns": 7.60292,
+      "input_sha256": [
+        {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/titan/stratixiv_arch.timing.xml",
+          "sha256": "0d3a4f0459af9a883329b934dea81f6a025c18a0ad10c63cbed3d2f8cac4c12b"
+        },
+        {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/benchmarks/titan_blif/titan23/stratixiv/neuron_stratixiv_arch_timing.blif",
+          "sha256": "19f5ca22ae8ddb7e2aa70936217b044dd634c944cd4dda8f465bd49759dbc086"
+        },
+        {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/benchmarks/titan_blif/titan23/stratixiv/neuron_stratixiv_arch_timing.sdc",
+          "sha256": "c52c05ecf1ad6bbb26a33eb0078464788f8299000361b23af8f217ae2367d8ef"
+        }
+      ],
+      "nets": 119888,
+      "parallel_max_rss_mib": 2884.2,
+      "parallel_route_s": 13.95,
+      "parallel_run_sha256": "be210b153d11022698d3cff1b74dadb26b8eaec5206910923a5d78a54a22e405",
+      "parallel_wall_s": 187.09587878000002,
+      "route_sha256": "7a054ac551f9621bffe8b114d7273f2668fff8d4c8f56a756e3880016a25f215",
+      "route_stage_speedup": 1.293189964157706,
+      "routing_iterations": 15,
+      "serial_max_rss_mib": 2880.5,
+      "serial_route_s": 18.04,
+      "serial_run_sha256": "e5cfff3314beff23585cea41fee53f978721412d2dc7b367c95508cf6709a076",
+      "serial_wall_s": 203.85453234099987,
+      "suite": "Titan23",
+      "whole_flow_speedup": 1.0895725425395704,
+      "wirelength": 766630
+    },
+    {
+      "blocks": 94090,
+      "case_id": "titan23_stereo_vision_seed3_cw300",
+      "circuit": "stereo vision",
+      "cpd_ns": 7.51746,
+      "input_sha256": [
+        {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/titan/stratixiv_arch.timing.xml",
+          "sha256": "0d3a4f0459af9a883329b934dea81f6a025c18a0ad10c63cbed3d2f8cac4c12b"
+        },
+        {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/benchmarks/titan_blif/titan23/stratixiv/stereo_vision_stratixiv_arch_timing.blif",
+          "sha256": "515426efda12b7c0f9c2414871cdd6cb2d1c21619de151934201a26e1b815762"
+        },
+        {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/benchmarks/titan_blif/titan23/stratixiv/stereo_vision_stratixiv_arch_timing.sdc",
+          "sha256": "392cbdc288bbabd7cbfa4edf638f6c644997ec5ca5cd06a451873b6b22c43e4c"
+        }
+      ],
+      "nets": 127090,
+      "parallel_max_rss_mib": 2838.77734375,
+      "parallel_route_s": 8.63,
+      "parallel_run_sha256": "07e995eba883df5b636977a9dc446310906c43ff29a535e4e4e3265b67496f0f",
+      "parallel_wall_s": 183.5949529520003,
+      "route_sha256": "72f222c6c57a2eae9fe4ffae38e317e35f5449e2232eef2d301fdea25197460f",
+      "route_stage_speedup": 1.4171494785631518,
+      "routing_iterations": 15,
+      "serial_max_rss_mib": 2836.02734375,
+      "serial_route_s": 12.23,
+      "serial_run_sha256": "bf842c73b60afb021e368c77bef94bd241e89bf96abc70319ec9e8e489923a8c",
+      "serial_wall_s": 199.7416765280068,
+      "suite": "Titan23",
+      "whole_flow_speedup": 1.08794753513855,
+      "wirelength": 592827
+    },
+    {
+      "blocks": 28067,
+      "case_id": "koios_conv_layer_seed1_cw300",
+      "circuit": "conv layer",
+      "cpd_ns": 5.12784,
+      "input_sha256": [
+        {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
+          "sha256": "9738371dbd8b3ca5c138150e6f78ed6186e315882edb38b5d302547de4f36c2c"
+        },
+        {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/koios_conv_layer_frontend/conv_layer.pre-vpr.blif",
+          "sha256": "d3a8b391971e9d95281747f4785c5c24e980e672c2c1428276997fbbde06aab1"
+        }
+      ],
+      "nets": 33180,
+      "parallel_max_rss_mib": 574.7,
+      "parallel_route_s": 1.74,
+      "parallel_run_sha256": "aaf0aef840ed32475be81c93eb88ebd3d937591a8e9f3e2b4e6280ad2694a727",
+      "parallel_wall_s": 29.215085833000103,
+      "route_sha256": "4650984c31b6e4e050a766da829da92cfdf310e8d408f7f007bbece537ed5c77",
+      "route_stage_speedup": 1.4195402298850577,
+      "routing_iterations": 14,
+      "serial_max_rss_mib": 570.7,
+      "serial_route_s": 2.47,
+      "serial_run_sha256": "2399288a9f097f2577ccad9d5fca7e68188bbee22a18fecad52a4d11a897635c",
+      "serial_wall_s": 31.81942517000016,
+      "suite": "Koios 2.0",
+      "whole_flow_speedup": 1.0891436483153614,
+      "wirelength": 232357
+    },
+    {
+      "blocks": 36457,
+      "case_id": "koios_attention_layer_seed1_cw300",
+      "circuit": "attention layer",
+      "cpd_ns": 8.82262,
+      "input_sha256": [
+        {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
+          "sha256": "9738371dbd8b3ca5c138150e6f78ed6186e315882edb38b5d302547de4f36c2c"
+        },
+        {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/koios_attention_layer_frontend/attention_layer.pre-vpr.blif",
+          "sha256": "f76c03b9451399f55efa83ea3b5512b25dfa748370a2b99c702add13233a4fc4"
+        }
+      ],
+      "nets": 45949,
+      "parallel_max_rss_mib": 3043.10546875,
+      "parallel_route_s": 4.43,
+      "parallel_run_sha256": "9fcdd57949a3ef91c24ace1b960c4f5e77d5dcabf8de53aa812b4ad28025f96d",
+      "parallel_wall_s": 494.38917482900433,
+      "route_sha256": "2b1b4ff2959895339ca039fcb0a5621b1e536d765429a4f12ee887ad97ad21ed",
+      "route_stage_speedup": 1.2618510158013545,
+      "routing_iterations": 15,
+      "serial_max_rss_mib": 3045.94921875,
+      "serial_route_s": 5.59,
+      "serial_run_sha256": "f3c87c9ccf1369572d1a139e0abc6f552907f9a544705626ea5679e7bb6be4a6",
+      "serial_wall_s": 502.7413504399883,
+      "suite": "Koios 2.0",
+      "whole_flow_speedup": 1.0168939289859507,
+      "wirelength": 544069
+    },
+    {
+      "blocks": 14407,
+      "case_id": "koios_spmv_seed1_cw300",
+      "circuit": "SpMV",
+      "cpd_ns": 6.15322,
+      "input_sha256": [
+        {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
+          "sha256": "9738371dbd8b3ca5c138150e6f78ed6186e315882edb38b5d302547de4f36c2c"
+        },
+        {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/koios_spmv_frontend/spmv.pre-vpr.blif",
+          "sha256": "31cf5808fce5dbf75545bebee0b9eb332002e85b6b15aea2c1d718291ec967b1"
+        }
+      ],
+      "nets": 16311,
+      "parallel_max_rss_mib": 1017.65234375,
+      "parallel_route_s": 1.38,
+      "parallel_run_sha256": "00a4202a0cb3d657dcf9601f8e5315b863190d95fa62b619ce50e7dd242bcbf4",
+      "parallel_wall_s": 48.86819576099515,
+      "route_sha256": "97b6aeaff79a24e5efa5e535c8921c5f7f1f4632e9e9eff750aa9142f2c0219b",
+      "route_stage_speedup": 1.2971014492753625,
+      "routing_iterations": 13,
+      "serial_max_rss_mib": 1017.2890625,
+      "serial_route_s": 1.79,
+      "serial_run_sha256": "4b50a490778a388be3a560333d71146adf9e79b78aff3a200458da63f8ce931d",
+      "serial_wall_s": 48.660112324985676,
+      "suite": "Koios 2.0",
+      "whole_flow_speedup": 0.9957419455994003,
+      "wirelength": 221106
+    },
+    {
+      "blocks": 11781,
+      "case_id": "koios_softmax_seed1_cw300",
+      "circuit": "softmax",
+      "cpd_ns": 9.19045,
+      "input_sha256": [
+        {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
+          "sha256": "9738371dbd8b3ca5c138150e6f78ed6186e315882edb38b5d302547de4f36c2c"
+        },
+        {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/koios_softmax_frontend/softmax.pre-vpr.blif",
+          "sha256": "8d81c7fd97287f2cf5e3aa00072f4dd2e2222020b99f72a461ff834376130e80"
+        }
+      ],
+      "nets": 12958,
+      "parallel_max_rss_mib": 469.38671875,
+      "parallel_route_s": 1.3,
+      "parallel_run_sha256": "0783a0c3ba73c2d3a7f48b573ff7882d82dc6cce6b16da470daf9412fe5642aa",
+      "parallel_wall_s": 27.173310964019038,
+      "route_sha256": "b16f6601bc06bb08b4b629debfa2b1ab447967ef6396fa04e7620847a3e2f975",
+      "route_stage_speedup": 1.3923076923076922,
+      "routing_iterations": 18,
+      "serial_max_rss_mib": 469.2734375,
+      "serial_route_s": 1.81,
+      "serial_run_sha256": "22bbaa40307c35506dc6573108aa9e975c086517918c35aa9ea08b3cc2c22389",
+      "serial_wall_s": 28.49708728698897,
+      "suite": "Koios 2.0",
+      "whole_flow_speedup": 1.0487160480635864,
+      "wirelength": 127260
+    }
+  ],
+  "claim_boundary": "CPU VPR worker scaling is a baseline characterization, not measured U280 acceleration. Hardware-emulation wall time is excluded from performance claims; no physical U280 is available.",
+  "evidence_sources": {
+    "accelerated_pathfinder_hw_emu_2026-08-26.json": "af1ee19504b598c79b0f8657a3806dd471795b343a89a6c96c46aca77ee39ede",
+    "cufr_logicnets_jscl_2026-08-24.json": "9643a3815555a4ce336b58271f2436128d10e227a715fd24628db2515a76fd34",
+    "fpga24_logicnets_jscl_2026-08-24.json": "6f661d4aa14dfaa8336936320ceeb140df90686fd19abd382db97dd76eb2d3ca",
+    "hls_2022_2_u280.json": "babc3a888f4e42d6e471d84d91bdfea095d54052fd5c3d9a1d788b288b261330",
+    "hw_emu_2022_2_u280.json": "9c173f711d1769a864b050ad3043e2e0659fa9446540a12865e24ffd940e72c6",
+    "rwroute_logicnets_jscl_2026-08-24.json": "4a5ecea20771b2640a59ff2cbe1c9e38dc77cab1aa395de785dffa88f4133f2f",
+    "timing_criticality_2026-08-26.json": "1a1eec0e2a0b36f15cd8ecf014f388cd92a38bc1b4db34e66eb80c8ff82dabc7",
+    "vitis_link_2022_2_u280.json": "be7b6fd428744c5a2ebf27e7a89bca0fceb10f0664f5b69eccd4f5601835d846",
+    "vpr9_baseline_suite_2026-08-24.json": "fd603d8e6ff530e53b1a5521bd50929fa36bb57be531b1179b3f6933d64e6f55",
+    "vpr9_titan23_koios_2026-08-24.json": "b70186d8a454b8613a8078dfd2ced846aba3e1ac113425933cebad8cf4b8b939"
+  },
+  "hardware_implementation": {
+    "commit_compute_units": 1,
+    "hbm_pseudo_channels": 32,
+    "requested_kernel_frequency_mhz": 180,
+    "resources": [
+      {
+        "available": 1133280,
+        "name": "LUT",
+        "percent": 16.484981646195116,
+        "used": 186821
+      },
+      {
+        "available": 2266560,
+        "name": "Register",
+        "percent": 12.211059932232105,
+        "used": 276771
+      },
+      {
+        "available": 1776,
+        "name": "BRAM",
+        "percent": 6.081081081081081,
+        "used": 108
+      },
+      {
+        "available": 8304,
+        "name": "DSP",
+        "percent": 0.626204238921002,
+        "used": 52
+      }
+    ],
+    "search_compute_units": 4,
+    "source_sha256": "be7b6fd428744c5a2ebf27e7a89bca0fceb10f0664f5b69eccd4f5601835d846",
+    "target": "xcu280-fsvh2892-2L-e",
+    "ths_ns": 0.0,
+    "tns_ns": 0.0,
+    "whs_ns": 0.006,
+    "wns_ns": 0.016
+  },
+  "koios_frontends": [
+    {
+      "case": "conv_layer",
+      "driver_log_sha256": "967a04926cd6034df26fd6767d0b21c4fad3e2e315bc9962d54ebfbaa0b81bc7",
+      "flow": "Parmys -> ABC -> VPR",
+      "hard_block_include_sha256": "0e33c4729ebdea49d2e0c54b3e8ec732ff9419eb978ab92d33ab45b000597f3e",
+      "max_rss_mib": 572.83,
+      "pre_vpr_blif_sha256": "d3a8b391971e9d95281747f4785c5c24e980e672c2c1428276997fbbde06aab1",
+      "rtl_sha256": "cf4993a063440f824a5ed789050c45448a38709e191d47c8209592d7e100aaa1",
+      "status": "pass",
+      "wall_s": 72.69
+    },
+    {
+      "case": "attention_layer",
+      "driver_log_sha256": "ff305e1c685147131be359e69e55136b687d9e25271d6fee0ed2dcd288cc8042",
+      "flow": "Parmys -> ABC -> VPR",
+      "hard_block_include_sha256": "0e33c4729ebdea49d2e0c54b3e8ec732ff9419eb978ab92d33ab45b000597f3e",
+      "max_rss_mib": 3041.28,
+      "pre_vpr_blif_sha256": "f76c03b9451399f55efa83ea3b5512b25dfa748370a2b99c702add13233a4fc4",
+      "rtl_sha256": "02e5fec3ea0197486fc2dd8f28f9603d46624df631a959855b908bf97760192b",
+      "status": "pass",
+      "wall_s": 518.91
+    },
+    {
+      "case": "spmv",
+      "driver_log_sha256": "f1e7c46291a438f8be72f67735d0b13cfc39f90e84e34d0855d1aaa8c5bd898c",
+      "flow": "Parmys -> ABC -> VPR",
+      "hard_block_include_sha256": "0e33c4729ebdea49d2e0c54b3e8ec732ff9419eb978ab92d33ab45b000597f3e",
+      "max_rss_mib": 1017.86,
+      "pre_vpr_blif_sha256": "31cf5808fce5dbf75545bebee0b9eb332002e85b6b15aea2c1d718291ec967b1",
+      "rtl_sha256": "7722a76092c52c0deee09dde5ce451d45af56c19dbf38571709afe2a53aa6a31",
+      "status": "pass",
+      "wall_s": 61.51
+    },
+    {
+      "case": "softmax",
+      "driver_log_sha256": "4b391c6820b12351259fc516fa98ffd01e9b14002746ab7c82ef8b9daad49d36",
+      "flow": "Parmys -> ABC -> VPR",
+      "hard_block_include_sha256": "0e33c4729ebdea49d2e0c54b3e8ec732ff9419eb978ab92d33ab45b000597f3e",
+      "max_rss_mib": 469.79,
+      "pre_vpr_blif_sha256": "8d81c7fd97287f2cf5e3aa00072f4dd2e2222020b99f72a461ff834376130e80",
+      "rtl_sha256": "734a2c19c29b400b6c9c074fa89313069bbf6926c7ec904731d84369b2ea9dc8",
+      "status": "pass",
+      "wall_s": 40.32
+    }
+  ],
+  "route_stage_aggregate_speedup": 1.3360024638127506,
+  "route_stage_geomean_speedup": 1.356150011805325,
+  "schema": "PERSISTROUTE_PAPER_ARTIFACTS_V1",
+  "suite_case_counts": {
+    "Koios 2.0": 4,
+    "Titan23": 2,
+    "VTR": 4
+  },
+  "verified_date": "2026-08-26",
+  "whole_flow_aggregate_speedup": 1.0462301372844485,
+  "whole_flow_geomean_speedup": 1.046138701606101
+}

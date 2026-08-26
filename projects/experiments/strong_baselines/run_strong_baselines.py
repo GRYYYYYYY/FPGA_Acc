@@ -51,12 +51,22 @@ def version_command(profile,exe):
     if profile["runner"]=="rapidwright": return [exe,"--help"]
     return []
 
+def parse_gnu_time(path):
+    text=path.read_text(encoding="utf-8",errors="replace")
+    match=re.search(r"Maximum resident set size \(kbytes\):\s*([0-9]+)",text)
+    return None if match is None else int(match.group(1))
+
 def main():
-    p=argparse.ArgumentParser();p.add_argument("--baseline",required=True);p.add_argument("--cases",type=Path,required=True);p.add_argument("--output",type=Path,required=True);p.add_argument("--dry-run",action="store_true");p.add_argument("--timeout",type=int,default=86400);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument("--baseline",required=True);p.add_argument("--cases",type=Path,required=True);p.add_argument("--output",type=Path,required=True);p.add_argument("--case",action="append",dest="selected_cases");p.add_argument("--dry-run",action="store_true");p.add_argument("--timeout",type=int,default=86400);a=p.parse_args()
     registry=json.loads((ROOT/"baseline_registry.json").read_text(encoding="utf-8"));profile=registry["baselines"].get(a.baseline)
     if not profile: raise SystemExit(f"unknown baseline {a.baseline}")
     case_doc=json.loads(a.cases.read_text(encoding="utf-8"));base=a.cases.resolve().parent;results=[]
-    for case_raw in case_doc["cases"]:
+    cases=case_doc["cases"]
+    if a.selected_cases:
+        selected=set(a.selected_cases);available={case["id"] for case in cases};missing=selected-available
+        if missing: raise SystemExit("unknown case(s): "+", ".join(sorted(missing)))
+        cases=[case for case in cases if case["id"] in selected]
+    for case_raw in cases:
         case=dict(case_raw);case["_base"]=base;out=(a.output/a.baseline/case["id"]).resolve();out.mkdir(parents=True,exist_ok=True)
         try: cmd,inputs=command_for(profile,case,out)
         except RuntimeError as error:
@@ -67,9 +77,12 @@ def main():
         if a.dry_run: results.append(record);continue
         version=subprocess.run(version_command(profile,cmd[0]),text=True,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,timeout=120)
         (out/"version.log").write_text(version.stdout,encoding="utf-8",errors="replace")
-        begin=time.perf_counter();run=subprocess.run(cmd,cwd=out,text=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=a.timeout);wall=time.perf_counter()-begin
+        resource_log=out/"resource_usage.log";gnu_time=Path("/usr/bin/time")
+        measured_cmd=[str(gnu_time),"-v","-o",str(resource_log),*cmd] if gnu_time.exists() else cmd
+        begin=time.perf_counter();run=subprocess.run(measured_cmd,cwd=out,text=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=a.timeout);wall=time.perf_counter()-begin
         (out/"stdout.log").write_text(run.stdout,encoding="utf-8",errors="replace");(out/"stderr.log").write_text(run.stderr,encoding="utf-8",errors="replace")
         record.update({"status":"pass" if run.returncode==0 else "fail","returncode":run.returncode,"wall_s":wall,"tool_version_sha256":digest(out/"version.log")})
+        if resource_log.exists(): record["max_rss_kib"]=parse_gnu_time(resource_log)
         (out/"run.json").write_text(json.dumps(record,indent=2,sort_keys=True),encoding="utf-8");results.append(record)
     print(json.dumps(results,indent=2));return 0 if all(x["status"] in ("pass","dry_run") for x in results) else 3
 if __name__=="__main__":raise SystemExit(main())
