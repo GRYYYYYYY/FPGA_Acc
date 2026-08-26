@@ -265,7 +265,8 @@ void validate_inputs(
  const PathfinderConfig& config) {
  if (nodes.empty() || nodes.size() != resources.size())
   throw std::invalid_argument("node/resource arrays must be non-empty and equally sized");
- if (config.max_iterations == 0 || config.present_multiplier_q == 0)
+ if (config.max_iterations == 0 || config.min_timing_iterations == 0 ||
+     config.min_timing_iterations > config.max_iterations || config.present_multiplier_q == 0)
   throw std::invalid_argument("PathFinder iteration and multiplier values must be positive");
  for (std::size_t i = 0; i < nodes.size(); ++i) {
   if (resources[i].capacity == 0) throw std::invalid_argument("resource capacity must be positive");
@@ -412,9 +413,28 @@ PathfinderResult route_pathfinder(
   result.iteration_log.push_back(log);
   update_timing_criticalities(iteration, nodes, edges, result.tasks,
                               timing_analyzer, result.timing_log);
+  if (timing_analyzer) {
+   for (auto& item : trees) {
+    auto& indices = item.second.task_indices;
+    std::sort(indices.begin(), indices.end(), [&](std::size_t lhs, std::size_t rhs) {
+     const Task& a = result.tasks[lhs].task;
+     const Task& b = result.tasks[rhs].task;
+     return std::make_tuple(65535U - a.criticality_q, a.priority, a.id) <
+            std::make_tuple(65535U - b.criticality_q, b.priority, b.id);
+    });
+   }
+   std::sort(net_order.begin(), net_order.end(), [&](std::uint32_t lhs, std::uint32_t rhs) {
+    const Task& a = result.tasks[trees.at(lhs).task_indices.front()].task;
+    const Task& b = result.tasks[trees.at(rhs).task_indices.front()].task;
+    return std::make_tuple(65535U - a.criticality_q, a.priority, a.id, lhs) <
+           std::make_tuple(65535U - b.criticality_q, b.priority, b.id, rhs);
+   });
+  }
   const bool all_routed = std::all_of(result.tasks.begin(), result.tasks.end(),
       [](const RoutedTask& task) { return task.routed; });
-  if (all_routed && overused == 0) {
+  const bool force_timing_reroute = timing_analyzer &&
+      iteration + 1 < config.min_timing_iterations;
+  if (all_routed && overused == 0 && !force_timing_reroute) {
    result.route_success = true;
    break;
   }
@@ -425,6 +445,8 @@ PathfinderResult route_pathfinder(
   present_factor = std::max<std::uint16_t>(1, saturate_u16(grown));
   update_costs(result.resources, present_factor, config.history_increment_q);
   std::set<std::uint32_t> next_pending;
+  if (force_timing_reroute)
+   next_pending.insert(net_order.begin(), net_order.end());
   for (const auto& routed : result.tasks)
    if (!routed.routed) next_pending.insert(routed.task.net_id);
   for (std::uint32_t resource = 0; resource < result.resources.size(); ++resource) {

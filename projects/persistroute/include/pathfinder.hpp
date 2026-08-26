@@ -12,6 +12,7 @@ constexpr std::uint32_t INVALID_RESOURCE = 0xffffffffU;
 
 struct PathfinderConfig {
  std::uint32_t max_iterations = 30;
+ std::uint32_t min_timing_iterations = 1;
  std::uint16_t present_start_q = 256;
  std::uint16_t present_multiplier_q = 512; // Q8: 512 == 2.0
  std::uint16_t history_increment_q = 256;

@@ -60,6 +60,7 @@ int main(int argc,char** argv) {
   const auto resources=read_array<Resource>(input+".resources");const auto tasks=read_array<Task>(input+".tasks");
   PathfinderConfig config;
   config.max_iterations=env_u32("PERSISTROUTE_MAX_ITERATIONS",config.max_iterations);
+  config.min_timing_iterations=env_u32("PERSISTROUTE_MIN_TIMING_ITERATIONS",config.min_timing_iterations);
   config.present_start_q=env_u16("PERSISTROUTE_PRESENT_START_Q",config.present_start_q);
   config.present_multiplier_q=env_u16("PERSISTROUTE_PRESENT_MULTIPLIER_Q",config.present_multiplier_q);
   config.history_increment_q=env_u16("PERSISTROUTE_HISTORY_INCREMENT_Q",config.history_increment_q);

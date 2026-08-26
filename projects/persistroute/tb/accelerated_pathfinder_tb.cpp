@@ -32,5 +32,12 @@ int main(){
  std::vector<Node> timing_nodes;std::vector<Edge> timing_edges;graph(8,{{0,1,1},{0,2,1000},{1,3,1},{1,5,1},{2,3,1000},{2,5,300},{4,1,1},{4,2,300},{6,7,1}},timing_nodes,timing_edges);std::vector<Task> timing_tasks{{10,10,0,3,0,8,0,0,0},{20,20,4,5,0,8,1,0,0},{30,30,6,7,0,8,2,0,0}};PathfinderConfig timing_config;timing_config.max_iterations=5;const auto timed=route_accelerated_pathfinder(timing_nodes,timing_edges,state(8),timing_tasks,executor,timing_config,4,timing);
  assert(timed.routing.legal&&calls==timed.routing.metrics.iterations&&timed.routing.timing_log.size()==calls);
  assert(timed.routing.tasks[0].task.criticality_q==30010+timed.routing.metrics.iterations-1&&timed.routing.timing_log[0].updated_connections==3);
+ std::vector<Node> reroute_nodes;std::vector<Edge> reroute_edges;graph(3,{{0,1,1},{0,2,10},{2,1,10}},reroute_nodes,reroute_edges);
+ reroute_edges[0].delay_q=100;reroute_edges[1].delay_q=1;reroute_edges[2].delay_q=1;
+ PathfinderConfig reroute_config;reroute_config.max_iterations=4;reroute_config.min_timing_iterations=3;
+ std::uint32_t reroute_calls=0;TimingAnalyzer reroute_timing=[&](std::uint32_t,const auto&,const auto&,const auto& routed){++reroute_calls;TimingAnalysisResult out;out.connections={{routed[0].task.id,65535,0,0}};return out;};
+ const auto rerouted=route_accelerated_pathfinder(reroute_nodes,reroute_edges,state(3),{{1,1,0,1,0,8,0,0,0}},executor,reroute_config,4,reroute_timing);
+ assert(rerouted.routing.legal&&rerouted.routing.metrics.iterations==3&&reroute_calls==3);
+ assert((rerouted.routing.tasks[0].path==std::vector<std::uint32_t>{2,1}));
  std::cout<<"accelerated_pathfinder_tb: PASS\n";
 }

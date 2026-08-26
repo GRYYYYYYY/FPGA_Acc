@@ -218,7 +218,8 @@ search overlapping regions in the same wave.
 
 \subsection{Versioned deterministic commit}
 
-The host orders completed candidates by $(\text{priority},\text{task-id})$ and
+The host orders completed candidates by descending timing criticality, then
+$(\text{priority},\text{task-id})$, and
 streams them to one Commit CU. For transaction $T_k$ with read set $R_k$, commit
 succeeds iff
 \begin{equation}
@@ -244,7 +245,7 @@ We enforce four invariants. (I1) Search never writes authoritative occupancy,
 owner, congestion, or route-tree state. (I2) Every resource read by a candidate
 is paired with the version observed by Search. (I3) Commit either applies all
 of a transaction's resource and route-tree updates or applies none. (I4)
-Successful transactions are linearized in the published priority/task order.
+Successful transactions are linearized in the published deterministic order.
 I1 removes write races among Search CUs. I2 and I3 detect interference and
 prevent partially installed paths. I4 defines one reproducible serial history
 for an epoch, independent of CU latency.
@@ -252,7 +253,7 @@ for an epoch, independent of CU latency.
 \begin{figure}[t]
 \small
 \begin{tabular}{@{}rl@{}}
-1: & order tasks by priority and connection ID \\
+1: & order by criticality, priority, and connection ID \\
 2: & while an ordered wave remains: \\
 3: & \quad launch up to four isolated searches \\
 4: & \quad collect candidate paths and read versions \\
@@ -440,8 +441,8 @@ Four-CU wave & Four real-VPR connections launch together; legal in one round;
 all five output classes match the C-model. \\
 Conflict/replay & Two connections create one overused resource in round 1 and
 reach zero overuse in round 2; outputs match byte-for-byte. \\
-Timing loop & Full \texttt{diffeq}: 3 CPU and 12 four-PE C-model STA updates;
-both legal with zero final overuse. \\
+Timing loop & Full \texttt{diffeq} and \texttt{frisc} C-model routes use
+per-round VPR/Tatum STA; both close legally. \\
 Commercial check & 27,961/27,961 routable nets; zero routing errors and DRC
 violations after Vivado route. \\
 \bottomrule
@@ -465,7 +466,15 @@ and 1,973 connections. CPU routing legally converges in three iterations; the
 four-PE HBM C-model converges in twelve. VPR/Tatum successfully analyzes every
 round, returning final CPDs of 7.164 and 7.274\,ns, respectively. This proves
 that changing connection paths affect the real timing graph and the next
-round's priorities. It is not yet a ten-design QoR comparison.
+round's priorities.
+
+On the 74,928-node, 5,767-connection \texttt{frisc} graph, a fixed task order
+with base cost 256 finishes 5.73\% above VPR's 13.588-ns CPD. Normalizing the
+base cost to 64 reduces the gap to 3.45\%. Requiring four timing-aware reroute
+rounds and deterministically reordering nets by updated criticality closes
+legally at 13.700\,ns, only 0.825\% above VPR. Two runs have byte-identical
+paths, trees, resources, congestion logs, and timing logs. This is a
+single-design timing-policy ablation, not yet a ten-design QoR result.
 
 \subsection{Scale coverage and stress behavior}
 

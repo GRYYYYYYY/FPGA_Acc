@@ -80,6 +80,7 @@ void validate_inputs(const std::vector<Node>& nodes,const std::vector<Edge>& edg
  const std::vector<Resource>& resources,const std::vector<Task>& tasks,
  const PathfinderConfig& config) {
  if(nodes.empty()||nodes.size()!=resources.size()||config.max_iterations==0||
+    config.min_timing_iterations==0||config.min_timing_iterations>config.max_iterations||
     config.present_multiplier_q==0)throw std::invalid_argument("invalid accelerated PathFinder sizes/config");
  for(std::size_t node=0;node<nodes.size();++node){
   if(resources[node].capacity==0||static_cast<std::uint64_t>(nodes[node].edge_begin)+nodes[node].edge_count>edges.size())
@@ -209,11 +210,16 @@ AcceleratedPathfinderResult route_accelerated_pathfinder(
   log.overused_resources=over;audit.overused_resources=over;audit.resource_hash=hash_resources(result.resources);audit.route_hash=hash_routes(result.tasks);
   result.metrics.overused_resources=over;result.iteration_log.push_back(log);out.audit.push_back(audit);
   update_timing(iteration,nodes,edges,result.tasks,timing_analyzer,result.timing_log);
+  if(timing_analyzer){
+   for(auto& item:trees)std::sort(item.second.tasks.begin(),item.second.tasks.end(),[&](auto lhs,auto rhs){const Task& a=result.tasks[lhs].task;const Task& b=result.tasks[rhs].task;return std::make_tuple(65535U-a.criticality_q,a.priority,a.id)<std::make_tuple(65535U-b.criticality_q,b.priority,b.id);});
+   std::sort(net_order.begin(),net_order.end(),[&](auto lhs,auto rhs){const Task& a=result.tasks[trees[lhs].tasks.front()].task;const Task& b=result.tasks[trees[rhs].tasks.front()].task;return std::make_tuple(65535U-a.criticality_q,a.priority,a.id,lhs)<std::make_tuple(65535U-b.criticality_q,b.priority,b.id,rhs);});
+  }
   const bool all=std::all_of(result.tasks.begin(),result.tasks.end(),[](const auto& task){return task.routed;});
-  if(all&&over==0){result.route_success=true;break;}if(iteration+1==config.max_iterations)break;
+  const bool force_timing_reroute=timing_analyzer&&iteration+1<config.min_timing_iterations;
+  if(all&&over==0&&!force_timing_reroute){result.route_success=true;break;}if(iteration+1==config.max_iterations)break;
   const std::uint64_t grown=(static_cast<std::uint64_t>(present)*config.present_multiplier_q+128U)/256U;
   present=std::max<std::uint16_t>(1,sat16(grown));update_costs(result.resources,present,config.history_increment_q);
-  std::set<std::uint32_t> next;for(const auto& task:result.tasks)if(!task.routed)next.insert(task.task.net_id);
+  std::set<std::uint32_t> next;if(force_timing_reroute)next.insert(net_order.begin(),net_order.end());for(const auto& task:result.tasks)if(!task.routed)next.insert(task.task.net_id);
   for(std::size_t node=0;node<result.resources.size();++node)if(result.resources[node].occupancy>result.resources[node].capacity)for(const auto net:owners.at(node))next.insert(net);
   pending.swap(next);
  }

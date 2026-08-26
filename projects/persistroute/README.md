@@ -34,6 +34,8 @@ make -C host persistroute_pathfinder
 `routed.resources` 和 `routed.pathfinder.json`。路径 CSV 与 RapidWright PIP 反解工具使用相同格式。
 `PERSISTROUTE_MAX_ITERATIONS`、`PERSISTROUTE_PRESENT_START_Q`、
 `PERSISTROUTE_PRESENT_MULTIPLIER_Q` 和 `PERSISTROUTE_HISTORY_INCREMENT_Q` 控制 PathFinder 轮次与 Q8 代价更新。
+启用 timing analyzer 时，`PERSISTROUTE_MIN_TIMING_ITERATIONS`（默认 1）规定在允许零超用终止前至少执行多少个完整路由/STA 轮次；大于 1 时，每次 STA 更新后全网进入下一轮 reroute，使新 criticality 实际影响路径选择。
+每次 STA 更新还会按 `(criticality desc, priority, task_id)` 重新确定 connection 和 net 的下一轮顺序；固定 tie-break 保持重复运行确定性。
 
 真实逐 connection timing 更新通过 host callback 接入，production `Task` ABI 仍保持 32 bytes。每轮 Search/Commit 后，host 将当前路径的 RR delay 写成
 `<output>.timing_iteration_N.input.csv`，外部 analyzer 必须返回每个 task 的 setup criticality、slack 和全设计 CPD；校验通过的 `criticality_q` 会用于下一轮 CPU 或 HBM/XRT Search。逐轮摘要写入 `<output>.timing_iterations.csv`。不设置 `PERSISTROUTE_TIMING_COMMAND` 时维持原有固定 criticality 行为。

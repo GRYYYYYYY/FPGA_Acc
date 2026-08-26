@@ -9,6 +9,7 @@ criticality and slack for every connection.
 from __future__ import annotations
 
 import os
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -57,7 +58,10 @@ def main() -> int:
         for source, target in ((paths["PERSISTROUTE_VPR_NET"], net),
                                (paths["PERSISTROUTE_VPR_PLACE"], place),
                                (paths["PERSISTROUTE_VPR_ROUTE"], route)):
-            target.symlink_to(source)
+            # VPR may normalize or rewrite named artifacts in some modes.
+            # Private copies keep the frozen baseline inputs immutable even if
+            # a tool version decides to update one in place.
+            shutil.copy2(source, target)
         log = Path(str(timing_output) + ".vpr.log")
         env = os.environ.copy()
         env["PERSISTROUTE_VPR_TIMING_INPUT"] = str(timing_input)
@@ -79,7 +83,7 @@ def main() -> int:
             if not sdc_source.is_file():
                 raise SystemExit(f"PERSISTROUTE_VPR_SDC does not exist: {sdc_source}")
             sdc = work / sdc_source.name
-            sdc.symlink_to(sdc_source)
+            shutil.copy2(sdc_source, sdc)
             command.extend(("--sdc_file", sdc.name))
         with log.open("w", encoding="utf-8") as stream:
             completed = subprocess.run(command, cwd=work, env=env, stdout=stream,

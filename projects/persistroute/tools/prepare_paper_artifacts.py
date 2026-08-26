@@ -56,7 +56,7 @@ def extract(text: str) -> dict[str, int | float]:
     return result
 
 
-def load_run(baseline: str, case_id: str) -> tuple[dict, dict, Path]:
+def load_run(baseline: str, case_id: str) -> tuple[dict, dict, Path, Path]:
     directory = RUNS / baseline / case_id
     record = json.loads((directory / "run.json").read_text(encoding="utf-8"))
     if record.get("status") != "pass" or record.get("returncode") != 0:
@@ -72,7 +72,16 @@ def load_run(baseline: str, case_id: str) -> tuple[dict, dict, Path]:
     route = directory / "design.route"
     if not route.exists():
         raise RuntimeError(f"missing route file for {baseline}/{case_id}")
-    return record, metrics, route
+    header = route.open(encoding="utf-8", errors="replace").readline()
+    placement = re.fullmatch(
+        r"Placement_File:\s+(\S+)\s+Placement_ID:\s+SHA256:([0-9a-f]{64})\s*\n?", header
+    )
+    if placement is None:
+        raise RuntimeError(f"invalid placement identity in {baseline}/{case_id}/design.route")
+    place = directory / placement.group(1)
+    if not place.is_file() or sha256(place) != placement.group(2):
+        raise RuntimeError(f"route/placement identity mismatch for {baseline}/{case_id}")
+    return record, metrics, route, place
 
 
 def geometric_mean(values: list[float]) -> float:
@@ -119,6 +128,7 @@ def evidence_sources() -> dict[str, str]:
         "hw_emu_2022_2_u280.json",
         "rwroute_logicnets_jscl_2026-08-24.json",
         "timing_criticality_2026-08-26.json",
+        "timing_priority_frisc_2026-08-27.json",
         "vitis_link_2022_2_u280.json",
         "vpr9_baseline_suite_2026-08-24.json",
         "vpr9_titan23_koios_2026-08-24.json",
@@ -221,11 +231,14 @@ def main() -> None:
     OUTPUT.mkdir(parents=True, exist_ok=True)
     rows = []
     for suite, case_id, circuit in CASES:
-        serial_record, serial, serial_route = load_run("vpr_serial", case_id)
-        parallel_record, parallel, parallel_route = load_run("vpr_parallel", case_id)
+        serial_record, serial, serial_route, serial_place = load_run("vpr_serial", case_id)
+        parallel_record, parallel, parallel_route, parallel_place = load_run("vpr_parallel", case_id)
         route_hash = sha256(serial_route)
         if route_hash != sha256(parallel_route):
             raise RuntimeError(f"serial/parallel route mismatch for {case_id}")
+        place_hash = sha256(serial_place)
+        if place_hash != sha256(parallel_place):
+            raise RuntimeError(f"serial/parallel placement mismatch for {case_id}")
         for key in ("blocks", "nets", "routing_iterations", "wirelength", "cpd_ns"):
             if serial[key] != parallel[key]:
                 raise RuntimeError(f"serial/parallel {key} mismatch for {case_id}")
@@ -247,6 +260,7 @@ def main() -> None:
             "serial_max_rss_mib": serial["max_rss_mib"],
             "parallel_max_rss_mib": parallel["max_rss_mib"],
             "route_sha256": route_hash,
+            "place_sha256": place_hash,
             "serial_run_sha256": sha256(RUNS / "vpr_serial" / case_id / "run.json"),
             "parallel_run_sha256": sha256(RUNS / "vpr_parallel" / case_id / "run.json"),
             "input_sha256": serial_record["inputs"],
@@ -260,11 +274,12 @@ def main() -> None:
 
     summary = {
         "schema": "PERSISTROUTE_PAPER_ARTIFACTS_V1",
-        "verified_date": "2026-08-26",
+        "verified_date": "2026-08-27",
         "case_count": len(rows),
         "suite_case_counts": {suite: sum(row["suite"] == suite for row in rows) for suite in sorted({row["suite"] for row in rows})},
         "all_runs_passed": True,
         "all_paired_routes_and_qor_identical": True,
+        "all_route_placement_identities_valid": True,
         "whole_flow_geomean_speedup": geometric_mean([row["whole_flow_speedup"] for row in rows]),
         "route_stage_geomean_speedup": geometric_mean([row["route_stage_speedup"] for row in rows]),
         "whole_flow_aggregate_speedup": sum(row["serial_wall_s"] for row in rows) / sum(row["parallel_wall_s"] for row in rows),

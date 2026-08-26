@@ -38,12 +38,13 @@ claim.
 
 ## Method summary
 
-At the beginning of an epoch, the scheduler orders connections by timing and
-congestion priority. Search CUs read the shared RR graph and a versioned state
+At the beginning of an epoch, the scheduler orders connections by descending
+timing criticality, then frozen priority and connection ID. Search CUs read the
+shared RR graph and a versioned state
 snapshot but write only private paths and transaction logs. Each log contains
 the resources read, the expected versions and the proposed occupancy/route-tree
-updates. The Commit CU consumes completed transactions in deterministic
-`(priority, connection_id)` order. A transaction commits only if its observed
+updates. The Commit CU consumes completed transactions in that deterministic
+order. A transaction commits only if its observed
 versions still match; otherwise the connection is placed on the replay queue.
 After a full routing iteration, overused resources update negotiated congestion
 costs. The optional timing oracle overwrites VPR connection delays from current
@@ -86,6 +87,13 @@ route and twelve for the four-PE HBM C-model route. Both converge legally with
 zero overuse; final critical-path delays are 7.164 ns and 7.274 ns,
 respectively. This establishes periodic real-timing feedback functionality,
 not broad QoR equivalence across the full benchmark matrix.
+
+On `frisc`, the initial fixed-order HBM C-model is 5.73% above VPR CPD.
+Base-cost normalization alone reduces the gap to 3.45%. Four timing-aware
+reroute rounds with deterministic criticality-first net ordering close legally
+at 13.700 ns versus VPR's 13.588 ns (+0.825%). Two runs produce byte-identical
+paths, route trees, resources, congestion logs and timing logs. This is a
+single-design timing-policy ablation, not a full-matrix QoR claim.
 
 ## Limitations and threats to validity
 

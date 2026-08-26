@@ -117,6 +117,36 @@ void test_periodic_timing_updates() {
  assert(result.timing_log[0].updated_connections==2&&result.timing_log[2].critical_path_delay_ps==1002);
 }
 
+void test_timing_feedback_forces_reroute() {
+ std::vector<Node> nodes;std::vector<Edge> edges;
+ make_graph(3,{{0,1,1,100},{0,2,10,1},{2,1,10,1}},nodes,edges);
+ const std::vector<Task> tasks{{1,1,0,1,0,8,0,0,0}};
+ PathfinderConfig config;config.max_iterations=4;config.min_timing_iterations=3;
+ std::uint32_t calls=0;
+ TimingAnalyzer analyzer=[&](std::uint32_t iteration,const auto&,const auto&,const auto&){
+  ++calls;TimingAnalysisResult out;out.critical_path_delay_ps=100-iteration;
+  out.connections={{1,65535,0,0}};return out;
+ };
+ const auto result=route_pathfinder(nodes,edges,resources(3),tasks,config,analyzer);
+ assert(result.legal&&result.metrics.iterations==3&&calls==3&&result.metrics.ripups==2);
+ assert((result.tasks[0].path==std::vector<std::uint32_t>{2,1}));
+}
+
+void test_timing_feedback_reorders_nets() {
+ std::vector<Node> nodes;std::vector<Edge> edges;
+ make_graph(6,{{0,1,1,1},{0,2,10,100},{1,3,1,1},{2,3,10,100},
+               {4,1,1,1},{4,2,10,100},{1,5,1,1},{2,5,10,100}},nodes,edges);
+ const std::vector<Task> tasks{{1,1,4,5,0,8,0,0,0},{2,2,0,3,0,8,1,0,0}};
+ PathfinderConfig config;config.max_iterations=3;config.min_timing_iterations=2;
+ TimingAnalyzer analyzer=[](std::uint32_t,const auto&,const auto&,const auto&){
+  TimingAnalysisResult out;out.connections={{1,0,0,0},{2,65535,0,0}};return out;
+ };
+ const auto result=route_pathfinder(nodes,edges,resources(6),tasks,config,analyzer);
+ assert(result.legal&&result.metrics.iterations==2);
+ assert((result.tasks[0].path==std::vector<std::uint32_t>{2,5}));
+ assert((result.tasks[1].path==std::vector<std::uint32_t>{1,3}));
+}
+
 } // namespace
 
 int main() {
@@ -124,5 +154,7 @@ int main() {
  test_negotiated_congestion_and_determinism();
  test_impossible_case_remains_illegal();
  test_periodic_timing_updates();
+ test_timing_feedback_forces_reroute();
+ test_timing_feedback_reorders_nets();
  std::cout<<"pathfinder_tb: PASS\n";
 }
