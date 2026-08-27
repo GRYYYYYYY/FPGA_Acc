@@ -34,7 +34,7 @@
 
 1. PersistRoute 的物理 U280 端到端性能、能耗、重复试验和消融仍需有卡环境完成；当前 VM 不能形成这些 claim；
 2. 论文材料入口为 `projects/persistroute/paper/README.md`，十案例冻结结果为 `paper/generated/paper_results.json`；
-3. `frisc` 与 `elliptic` timing-priority HBM C-model 已用统一策略进入 2% CPD 门槛，且完整 VPR route 写回/原生验证已通过；原生 wirelength 增量 +3.656%/+3.864% 尚未达到 2% 门槛。两点静态 channel-length edge-cost 消融均使 wirelength 恶化，不能冻结。若继续 PersistRoute，下一项是共享 route-tree/合法后 cleanup 策略并扩展其余七案例 QoR；否则可进入第二个工程 TilePlace 的真实 VPR/FPGAIF 前端。
+3. `frisc` 与 `elliptic` timing-priority HBM C-model 已用统一策略进入 2% CPD 门槛，且完整 VPR route 写回/原生验证已通过；原生 wirelength 增量 +3.656%/+3.864% 尚未达到 2% 门槛。两点静态 channel-length edge-cost 与一次全网 cleanup 均使 wirelength 恶化，不能冻结。若继续 PersistRoute，下一项是保留合法全局解的选择性 net/branch replacement 并扩展其余七案例 QoR；否则可进入第二个工程 TilePlace 的真实 VPR/FPGAIF 前端。
 
 不要把 `hw_emu` 墙钟时间当作上板性能，也不要宣称当前 VM 已实际上板。
 

@@ -40,13 +40,29 @@
     "route_sha256": "9f3244f75f6e60997eba759d121b1881ac2ed69b5336601ef56976ad05563d9b",
     "validation_report_sha256": "8f6461cc959124309fae3ec56b22599c392f55ae519cc4b3fa925ed3a7050454"
   },
+  "uniform_base64_full_reroute_to_iteration15": {
+    "legal": true,
+    "minimum_timing_iterations": 15,
+    "iterations_to_relegalize": 22,
+    "searches": 86880,
+    "timing_oracle_cpd_ns": 13.837,
+    "total_wirelength": 34556,
+    "wirelength_delta_percent": 4.140799,
+    "critical_path_delay_ns": 13.8479,
+    "cpd_delta_percent": 1.913467,
+    "route_trees_sha256": "243f4384ea1c9cf175b0136a0ba8b51731c8a3bbcb92be0955221b6a9877eba8",
+    "route_sha256": "8de857a47a772a84606ed5c7b21ecdfd87fcf25c297c5a4692aec231b8df2d8c",
+    "iterations_sha256": "d51620217b54a65a175dd6cc90b4febfe964fa585e543830e5e8a0ca63d3b0fd",
+    "timing_iterations_sha256": "6a7a0dab62e164627eaff4206e5f65111ca4f1571a3587708a0d36d5011d1c13",
+    "validation_report_sha256": "914e29a91021f55bedc6204259656e98b7e4edd866e70722e8c7ade7414d34b5"
+  },
   "implementation": {
     "packer_sha256": "f13098585712f2612b5ac8a5392d7a8b183079710aa0606f7e54581659a6afbc",
     "cost_model": "base_cost_q + channel_length_cost_q * (destination RR channel length - 1)",
     "abi_change": false,
     "xclbin_rebuild_required": false
   },
-  "conclusion": "Direct per-edge channel-length weighting is rejected as the frozen policy: both tested weights increased VPR-native wirelength. The next optimization must address shared-tree selection and the late negotiated-congestion cleanup state instead of only static edge cost.",
+  "conclusion": "Direct per-edge channel-length weighting and one extra full-network reroute are rejected as the frozen policy: all three probes increased VPR-native wirelength. The next optimization should selectively replace expensive net/tree branches while retaining a known legal global solution.",
   "limitations": [
     "This is a two-point mechanism ablation on frisc, not a parameter sweep or matrix result.",
     "C-model wall time is not physical U280 performance.",

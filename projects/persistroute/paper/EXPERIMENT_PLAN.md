@@ -44,6 +44,10 @@
   and `(16,16)` on `frisc`; native wirelength worsened to +4.225% and +4.632%.
   Do not tune this scalar further before testing shared-tree selection and a
   legal-route cleanup phase that preserves negotiated-congestion feasibility.
+- Forcing one post-legal full-network reroute (`min_timing_iterations=15`)
+  requires 22 total rounds to re-legalize and yields +4.141% wirelength and
+  +1.913% CPD. Reject full-network cleanup; evaluate selective branch/net
+  replacement against a retained legal solution.
 
 ## Rejection checks
 
