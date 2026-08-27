@@ -72,6 +72,7 @@ python3 tools/validate_vpr_route.py --vpr /path/to/vpr --arch arch.xml \
 ```
 
 验证器先要求 route header 的 Placement ID 等于 `.place` 文件 SHA-256，再在私有工作目录运行 VPR `--analysis`；只有 route load、routing consistency、feasibility、wirelength、CPD 和 VPR 退出状态全部成功才报告 `legal=true`。
+`pack_hls_inputs.py --channel-length-cost-q N` 可在不改变 ABI 的前提下给进入 CHAN RR node 的 edge 增加 `N * (length - 1)` 静态代价；默认值为 0，保持旧输入逐字节语义。该选项是消融旋钮，不是推荐策略：`frisc` 的 16/64 两个试点都使 VPR-native wirelength 恶化。
 
 Vitis 2022.2/U280 构建：
 

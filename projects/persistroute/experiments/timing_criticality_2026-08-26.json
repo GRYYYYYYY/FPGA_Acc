@@ -52,6 +52,20 @@
     "paths_sha256": "80aeceb0ce28bc596f4a1ea0a56a235a64a72a05cd7586d95d126d550967597f",
     "resources_sha256": "846d50391bdace8acf011c8f4bc03500d606b25c5c1dda38b7e6b01d0e96212d"
   },
+  "vpr_native_validation": {
+    "legal": true,
+    "routing_consistency": true,
+    "channel_width": 200,
+    "baseline_wirelength": 9103,
+    "total_wirelength": 9291,
+    "wirelength_delta_percent": 2.065253,
+    "baseline_cpd_ns": 6.59759,
+    "critical_path_delay_ns": 7.27998,
+    "cpd_delta_percent": 10.343019,
+    "route_sha256": "22451a9a7f2fc038a5fc0d9f403cf600571a2c9a109369db5d5ff6b8f9909580",
+    "validation_report_sha256": "8a3224c72a194ed1bf9cbe9f08d539e0da63ca86fc96acc4bc862b6d89d3cb5c",
+    "interpretation": "Native legality is established, but this pre-timing-priority route is functional timing-feedback evidence rather than QoR evidence."
+  },
   "artifact_directory": "projects/persistroute/experiments/timing_criticality_2026-08-26",
   "limitations": [
     "The timing oracle uses current PersistRoute connection delays but the original legal VPR route only for net/pin initialization.",

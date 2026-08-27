@@ -40,6 +40,10 @@
   and native analysis accepts `frisc` and `elliptic`. Their CPD deltas are
   +0.884%/+0.549%, while wirelength deltas are +3.656%/+3.864%; therefore the
   pre-registered 2% wirelength gate currently fails. Seven academic cases remain.
+- A direct RR channel-length edge penalty was tested at `(base,length)=(64,64)`
+  and `(16,16)` on `frisc`; native wirelength worsened to +4.225% and +4.632%.
+  Do not tune this scalar further before testing shared-tree selection and a
+  legal-route cleanup phase that preserves negotiated-congestion feasibility.
 
 ## Rejection checks
 

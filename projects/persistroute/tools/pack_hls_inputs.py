@@ -41,7 +41,8 @@ def _write_array(path: Path, rows: list[tuple], record: struct.Struct) -> dict:
             "bytes": len(rows) * record.size, "sha256": digest.hexdigest()}
 
 
-def pack(rr_graph: Path, connections: Path, prefix: Path, base_cost_q: int) -> dict:
+def pack(rr_graph: Path, connections: Path, prefix: Path, base_cost_q: int,
+         channel_length_cost_q: int = 0) -> dict:
     root = ET.parse(rr_graph).getroot()
     switch_timing: dict[int, tuple[float, float, bool]] = {}
     for switch in root.findall("./switches/switch"):
@@ -56,9 +57,17 @@ def pack(rr_graph: Path, connections: Path, prefix: Path, base_cost_q: int) -> d
             raise ValueError("PersistRoute requires dense zero-based rr node IDs")
 
     node_timing = []
+    node_wirelength = []
     for node in xml_nodes:
         timing = node.find("timing")
         node_timing.append((_floating(timing, "R"), _floating(timing, "C")))
+        loc = node.find("loc")
+        if node.attrib.get("type") in {"CHANX", "CHANY"} and loc is not None:
+            length = max(_integer(loc, "xhigh") - _integer(loc, "xlow"),
+                         _integer(loc, "yhigh") - _integer(loc, "ylow")) + 1
+        else:
+            length = 1
+        node_wirelength.append(length)
 
     grouped: list[list[tuple[int, int, int]]] = [[] for _ in xml_nodes]
     for edge in root.findall("./rr_edges/edge"):
@@ -74,7 +83,10 @@ def pack(rr_graph: Path, connections: Path, prefix: Path, base_cost_q: int) -> d
         else:
             local_delay = tdel + 0.5 * switch_r * node_c
         delay_q = max(0, min(65535, round(local_delay * 1e12)))
-        grouped[src].append((dst, base_cost_q, delay_q))
+        edge_base_cost = base_cost_q + channel_length_cost_q * (node_wirelength[dst] - 1)
+        if edge_base_cost > 65535:
+            raise ValueError(f"edge base cost exceeds uint16 for {src}->{dst}")
+        grouped[src].append((dst, edge_base_cost, delay_q))
 
     nodes: list[tuple[int, int, int]] = []
     edges: list[tuple[int, int, int]] = []
@@ -121,6 +133,8 @@ def pack(rr_graph: Path, connections: Path, prefix: Path, base_cost_q: int) -> d
         "connections": str(connections.resolve()),
         "connections_sha256": hashlib.sha256(connections.read_bytes()).hexdigest(),
         "base_cost_q": base_cost_q,
+        "channel_length_cost_q": channel_length_cost_q,
+        "wirelength_cost_model": "base_cost_q + channel_length_cost_q * (destination RR channel length - 1)",
         "edge_delay_model": "VPR buffered local T_linear (ps), pass switch local RC approximation",
         "files": files,
         "kernel": "search_hbm_kernel",
@@ -138,9 +152,12 @@ def main() -> None:
     parser.add_argument("connections", type=Path)
     parser.add_argument("output_prefix", type=Path)
     parser.add_argument("--base-cost-q", type=int, default=256)
+    parser.add_argument("--channel-length-cost-q", type=int, default=0)
     args = parser.parse_args()
+    if not 0 <= args.base_cost_q <= 65535 or not 0 <= args.channel_length_cost_q <= 65535:
+        parser.error("edge cost fields must fit uint16")
     print(json.dumps(pack(args.rr_graph, args.connections, args.output_prefix,
-                          args.base_cost_q), indent=2, sort_keys=True))
+                          args.base_cost_q, args.channel_length_cost_q), indent=2, sort_keys=True))
 
 
 if __name__ == "__main__":

@@ -36,7 +36,7 @@ if not all(markers.values()) or wirelength!=123 or cpd!=5.25:
     raise SystemExit("VPR native validation parser failed")
 prefix=temp/"xrt_input"
 subprocess.run([sys.executable,str(root/"pack_hls_inputs.py"),str(root/"fixtures/tiny_rr_graph.xml"),
-                str(root/"fixtures/tiny_connections.csv"),str(prefix)],check=True)
+                str(root/"fixtures/tiny_connections.csv"),str(prefix),"--channel-length-cost-q","16"],check=True)
 manifest=json.loads(Path(str(prefix)+".manifest.json").read_text(encoding="utf-8"))
 expected={"nodes":(4,8),"edges":(3,8),"resources":(4,16),"tasks":(1,32)}
 for name,(count,size) in expected.items():
@@ -45,6 +45,8 @@ for name,(count,size) in expected.items():
         raise SystemExit(f"bad packed {name} metadata")
 task=struct.Struct("<IIIIHHIII").unpack(prefix.with_suffix(".tasks").read_bytes())
 if task!=(7,12,0,2,32768,16,10,0,0): raise SystemExit("task ABI packing failed")
+edge_rows=list(struct.iter_unpack("<IHH",prefix.with_suffix(".edges").read_bytes()))
+if edge_rows[0][1]!=272: raise SystemExit("channel-length edge cost packing failed")
 rw_prefix=temp/"rw_input"
 subprocess.run([sys.executable,str(root/"rapidwright_csv_to_hls.py"),str(root/"fixtures/rw_export"),str(rw_prefix)],check=True)
 rw_manifest=json.loads(Path(str(rw_prefix)+".manifest.json").read_text(encoding="utf-8"))

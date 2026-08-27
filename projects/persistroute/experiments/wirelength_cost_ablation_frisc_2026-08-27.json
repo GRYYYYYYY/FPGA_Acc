@@ -1,0 +1,55 @@
+{
+  "schema": "PERSISTROUTE_WIRELENGTH_COST_ABLATION_V1",
+  "date": "2026-08-27",
+  "case": "frisc_seed1_cw200",
+  "baseline_vpr": {
+    "wirelength": 33182,
+    "critical_path_delay_ns": 13.5879
+  },
+  "control_base64_uniform": {
+    "legal": true,
+    "iterations": 14,
+    "total_wirelength": 34395,
+    "wirelength_delta_percent": 3.655596,
+    "critical_path_delay_ns": 13.708,
+    "cpd_delta_percent": 0.883875
+  },
+  "base64_length64": {
+    "legal": true,
+    "iterations": 21,
+    "timing_oracle_cpd_ns": 14.115,
+    "total_wirelength": 34584,
+    "wirelength_delta_percent": 4.225182,
+    "critical_path_delay_ns": 14.1258,
+    "cpd_delta_percent": 3.958669,
+    "input_manifest_sha256": "48468bea85078fc03cd82dee8ccb87f9e8a33eb8e1707ba601f565d14528d474",
+    "route_trees_sha256": "a9a5266c4095c9dec20d3825d9a910b53b2a59d9c29c141064bd9dc59adceef3",
+    "route_sha256": "50d3f8a9a6b609d8e1533e0419005efb0ff40d1759e1e09490cef7e5cda8d724",
+    "validation_report_sha256": "e1dfcdb5076309aa936145beb8b8b1f0f7b39fafda3aeccd679f0c0274c80234"
+  },
+  "base16_length16": {
+    "legal": true,
+    "iterations": 9,
+    "timing_oracle_cpd_ns": 13.557,
+    "total_wirelength": 34719,
+    "wirelength_delta_percent": 4.632029,
+    "critical_path_delay_ns": 13.568,
+    "cpd_delta_percent": -0.146454,
+    "input_manifest_sha256": "3f985a0e4f5421ab10d325cbefa38b71752c212e032153ebc7b45132721c8580",
+    "route_trees_sha256": "075fcc298f47a90d8fe56dac9b955a01af2c6c18a3af321dd93f4acf446e68a9",
+    "route_sha256": "9f3244f75f6e60997eba759d121b1881ac2ed69b5336601ef56976ad05563d9b",
+    "validation_report_sha256": "8f6461cc959124309fae3ec56b22599c392f55ae519cc4b3fa925ed3a7050454"
+  },
+  "implementation": {
+    "packer_sha256": "f13098585712f2612b5ac8a5392d7a8b183079710aa0606f7e54581659a6afbc",
+    "cost_model": "base_cost_q + channel_length_cost_q * (destination RR channel length - 1)",
+    "abi_change": false,
+    "xclbin_rebuild_required": false
+  },
+  "conclusion": "Direct per-edge channel-length weighting is rejected as the frozen policy: both tested weights increased VPR-native wirelength. The next optimization must address shared-tree selection and the late negotiated-congestion cleanup state instead of only static edge cost.",
+  "limitations": [
+    "This is a two-point mechanism ablation on frisc, not a parameter sweep or matrix result.",
+    "C-model wall time is not physical U280 performance.",
+    "No hardware emulation or Vivado job was run."
+  ]
+}

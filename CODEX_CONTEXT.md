@@ -52,7 +52,7 @@
 ## 当前下一步
 
 1. PersistRoute 已冻结 4 个 VTR、2 个 Titan23 和 4 个 Koios 案例的 1-worker/16-worker CPU 基线；全部配对 route/QoR 一致，whole-flow/route-stage 几何平均加速为 `1.046x/1.356x`。论文草稿、claim matrix、实验计划、CSV、LaTeX 和 SVG 位于 `projects/persistroute/paper/`。
-2. PersistRoute 仍缺物理 U280 的端到端 runtime、能耗、重复试验，以及其余七个学术案例的完整 QoR；当前 VM 无卡，不能用 `hw_emu` 替代。VPR route 写回/原生验证已完成，`frisc`/`elliptic` CPD 增量为 +0.884%/+0.549%，但 wirelength 增量 +3.656%/+3.864% 未达到 2% 门槛。下一本机工程项是优化 wirelength 策略并扩展 timing-priority 矩阵。
+2. PersistRoute 仍缺物理 U280 的端到端 runtime、能耗、重复试验，以及其余七个学术案例的完整 QoR；当前 VM 无卡，不能用 `hw_emu` 替代。VPR route 写回/原生验证已完成，`frisc`/`elliptic` CPD 增量为 +0.884%/+0.549%，但 wirelength 增量 +3.656%/+3.864% 未达到 2% 门槛。两点静态 channel-length edge-cost 消融均恶化 wirelength，已排除。下一本机工程项是共享 route-tree/合法后 cleanup 策略，而后扩展 timing-priority 矩阵。
 3. 若不等待外部硬件，开始 TilePlace 的真实 VPR/FPGAIF 前后端。高容量资源多 owner、图模板压缩和高于 180 MHz 的优化保留为 PersistRoute 后续增强。
 4. 如论文验证矩阵确实需要，可新增 timing-mode RTL 小子集终验；不要重跑既有最终 hw_emu。
 
