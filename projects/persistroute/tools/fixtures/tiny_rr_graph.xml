@@ -6,6 +6,7 @@
     <node id="0" type="SOURCE" direction="NONE" capacity="1"><loc xlow="0" ylow="0" xhigh="0" yhigh="0" ptc="0"/><timing R="0" C="0"/></node>
     <node id="1" type="CHANX" direction="INC_DIR" capacity="1"><loc xlow="0" ylow="0" xhigh="1" yhigh="0" ptc="0"/><timing R="1" C="1e-12"/><segment segment_id="0"/></node>
     <node id="2" type="SINK" direction="NONE" capacity="1"><loc xlow="1" ylow="0" xhigh="1" yhigh="0" ptc="0"/><timing R="0" C="0"/></node>
+    <node id="3" type="SINK" direction="NONE" capacity="1"><loc xlow="1" ylow="1" xhigh="1" yhigh="1" ptc="0"/><timing R="0" C="0"/></node>
   </rr_nodes>
-  <rr_edges><edge src_node="0" sink_node="1" switch_id="0"/><edge src_node="1" sink_node="2" switch_id="0"/></rr_edges>
+  <rr_edges><edge src_node="0" sink_node="1" switch_id="0"/><edge src_node="1" sink_node="2" switch_id="0"/><edge src_node="1" sink_node="3" switch_id="0"/></rr_edges>
 </rr_graph>

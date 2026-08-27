@@ -91,10 +91,12 @@ not broad QoR equivalence across the full benchmark matrix.
 On `frisc`, the initial fixed-order HBM C-model is 5.73% above VPR CPD and
 base-cost normalization alone reduces the gap to 3.45%. One frozen policy with
 base cost 64, three timing-aware reroute rounds, and criticality-first net
-ordering closes `frisc` at +0.803% and `elliptic` at +0.499% CPD versus VPR.
-Both are legal with zero overuse, and paired runs produce byte-identical paths,
-route trees, resources, congestion logs, and timing logs. This is a two-design
-timing-policy result, not a full-matrix QoR claim.
+ordering yields feedback-oracle CPDs of +0.803% and +0.499%. Deterministic
+`.route` export and VPR-native checking accept both routes; authoritative CPD
+deltas are +0.884% and +0.549%, while wirelength deltas are +3.656% and
++3.864%. Both are legal with zero overuse, and paired runs produce
+byte-identical paths, route trees, resources, congestion logs, and timing logs.
+This is a two-design result, and it does not yet meet the 2% wirelength gate.
 
 ## Limitations and threats to validity
 

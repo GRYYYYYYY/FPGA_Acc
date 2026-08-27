@@ -36,8 +36,10 @@
   reroute rounds, and deterministic criticality-first ordering. `frisc` closes
   at +0.803% CPD and `elliptic` at +0.499% versus VPR; both have zero overuse
   and byte-identical paired runs.
-- Seven academic cases remain. A VPR route-file writer/validator is still needed
-  before PersistRoute wirelength can be compared in VPR-native units.
+- The deterministic route writer now round-trips PersistRoute trees into VPR,
+  and native analysis accepts `frisc` and `elliptic`. Their CPD deltas are
+  +0.884%/+0.549%, while wirelength deltas are +3.656%/+3.864%; therefore the
+  pre-registered 2% wirelength gate currently fails. Seven academic cases remain.
 
 ## Rejection checks
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from pathlib import Path
-import csv, json, shutil, struct, subprocess, sys
+import csv, importlib.util, json, shutil, struct, subprocess, sys
 
 root=Path(__file__).resolve().parent
 temp=root/".test_output"
@@ -15,11 +15,30 @@ connections=temp/"connections.csv"
 subprocess.run([sys.executable,str(root/"vpr_route_connections.py"),str(root/"fixtures/tiny.route"),str(connections)],check=True)
 with connections.open(encoding="utf-8") as stream: connection_rows=list(csv.DictReader(stream))
 if len(connection_rows)!=2 or connection_rows[1]["source"]!="0" or connection_rows[1]["sink"]!="3": raise SystemExit("VPR route connection extraction failed")
+trees=temp/"route_trees.csv"
+trees.write_text("net_id,source,parent,child\n0,0,0,1\n0,0,1,2\n0,0,1,3\n",encoding="utf-8")
+roundtrip=temp/"roundtrip.route"
+subprocess.run([sys.executable,str(root/"write_vpr_route.py"),str(root/"fixtures/tiny.route"),
+                str(root/"fixtures/tiny_rr_graph.xml"),str(connections),str(trees),str(roundtrip)],check=True)
+if roundtrip.read_text(encoding="utf-8")!=Path(root/"fixtures/tiny.route").read_text(encoding="utf-8"):
+    raise SystemExit("VPR route writer deterministic roundtrip failed")
+spec=importlib.util.spec_from_file_location("validate_vpr_route",root/"validate_vpr_route.py")
+validator=importlib.util.module_from_spec(spec);spec.loader.exec_module(validator)
+sample="""Finished loading route file
+Completed routing consistency check successfully.
+Circuit successfully routed with a channel width factor of 200.
+Total wirelength: 123, average net length: 4
+Final critical path delay (least slack): 5.25 ns, Fmax: 190 MHz
+VPR succeeded
+"""
+markers,wirelength,cpd=validator.parse_vpr_output(sample)
+if not all(markers.values()) or wirelength!=123 or cpd!=5.25:
+    raise SystemExit("VPR native validation parser failed")
 prefix=temp/"xrt_input"
 subprocess.run([sys.executable,str(root/"pack_hls_inputs.py"),str(root/"fixtures/tiny_rr_graph.xml"),
                 str(root/"fixtures/tiny_connections.csv"),str(prefix)],check=True)
 manifest=json.loads(Path(str(prefix)+".manifest.json").read_text(encoding="utf-8"))
-expected={"nodes":(3,8),"edges":(2,8),"resources":(3,16),"tasks":(1,32)}
+expected={"nodes":(4,8),"edges":(3,8),"resources":(4,16),"tasks":(1,32)}
 for name,(count,size) in expected.items():
     item=manifest["files"][name]
     if item["count"]!=count or item["record_bytes"]!=size or item["bytes"]!=count*size:

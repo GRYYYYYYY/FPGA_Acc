@@ -37,6 +37,8 @@ python3 tools/prepare\_paper\_artifacts.py\par
 \quad sha256sum -c SHA256SUMS)\par
 ctest --test-dir BUILD --output-on-failure\par
 python3 tools/test\_converters.py\par
+python3 tools/write\_vpr\_route.py \ldots\par
+python3 tools/validate\_vpr\_route.py \ldots\par
 python3 ../experiments/strong\_baselines/\par
 \quad test\_runner.py
 \end{quote}
@@ -53,7 +55,10 @@ Seven CTest targets, converter tests, HLS C simulation, XSIM co-simulation,
 full U280 implementation, two real-VPR-subset hardware-emulation tests, and 15
 VPR/Tatum timing-oracle iterations pass. The commercial bridge is checked by
 FPGA Interchange round-trip, the official FPGA24 checker, and Vivado routing
-legality/DRC. Hardware-emulation time is excluded from performance claims.
+legality/DRC. Exported \texttt{frisc} and \texttt{elliptic} routes also pass
+VPR-native routing consistency and feasibility checks; their CPD deltas are
++0.884\%/+0.549\%, while wirelength deltas are +3.656\%/+3.864\%.
+Hardware-emulation time is excluded from performance claims.
 Submission-quality speedup and energy require a physical U280, at least five
 post-warm-up repetitions, end-to-end phase timing, power integration, and the
 ablations listed in the artifact's \texttt{EXPERIMENT\_PLAN.md}.

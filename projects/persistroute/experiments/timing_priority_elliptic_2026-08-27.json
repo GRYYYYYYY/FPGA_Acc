@@ -44,6 +44,21 @@
     "accelerated_iterations_sha256": "af959c73f9f5104893e3d53311cd4edf88166ba5c019f296166defd1a6eab51b",
     "timing_iterations_sha256": "1703a2cb4b0957c4eb7d475549b9c4f44becc52ed3045d5df8ef7e1f1e0fe1c3"
   },
+  "vpr_native_validation": {
+    "legal": true,
+    "routing_consistency": true,
+    "channel_width": 200,
+    "total_wirelength": 28385,
+    "wirelength_delta_vs_vpr_percent": 3.864027,
+    "critical_path_delay_ns": 8.84034,
+    "cpd_delta_vs_vpr_percent": 0.548560,
+    "route_sha256": "1ee788fd88beca9547f2bcc73bccc10caea37e1b19c5a6e54e24581bb9979bc6",
+    "route_trees_edges": 19853,
+    "ambiguous_used_rr_edges": 0,
+    "route_writer_sha256": "db0f263a73064c79259454df4a935332693d66f52f0334014c373bbbe0fa8548",
+    "validator_sha256": "8a84c8cd1a9c8585c57f6596a60bcc4e5ca54488dfce58c5ea1047bea5a3ef94",
+    "validation_report_sha256": "e836b5dbd2c9b712631bc67190994fe23416c5dd89b6fc74045b88c9b3a987c5"
+  },
   "determinism": {
     "runs": 2,
     "byte_identical": [
@@ -61,7 +76,7 @@
   "artifact_directory": "projects/persistroute/experiments/full_matrix_cmodel_2026-08-27/elliptic_seed1_cw200",
   "limitations": [
     "This is one additional academic design, not the complete ten-case PersistRoute QoR matrix.",
-    "VPR wirelength cannot yet be computed from PersistRoute output because a complete VPR route-file writer/validator is still required.",
+    "VPR-native wirelength is available for this route, but the +3.864% delta does not meet the pre-registered 2% target.",
     "The HBM C-model wall time is not physical U280 performance and is excluded from speedup claims.",
     "No new hardware emulation or Vivado implementation was run."
   ]

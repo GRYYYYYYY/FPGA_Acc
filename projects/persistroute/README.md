@@ -60,6 +60,19 @@ export PERSISTROUTE_VPR_CHAN_WIDTH=200
 
 补丁只在 VPR analysis 的 `net_delay` 矩阵上覆盖本轮 PersistRoute connection delays，再由真实 packed netlist、atom timing graph 和约束运行 Tatum STA；原始 `.route` 只用于初始化和合法的 net/pin 映射。当前 oracle 支持 clustered routing，不支持 `--flat_routing`。`pack_hls_inputs.py` 的 edge delay 使用 VPR buffered local `T_linear` RC 模型并量化为 ps；pass switch 使用局部 RC 近似。
 
+最终 route tree 可写回并交 VPR 原生检查。回写器从原始 `.route` 保留 placement ID、net/pin 描述和 sink pin index，从 RR graph 恢复每条树边的 switch，并验证树的唯一父节点、连通性、terminal sinks 和 edge adjacency：
+
+```bash
+python3 tools/write_vpr_route.py original.route rr_graph.xml connections.csv \
+  routed.route_trees.csv routed.route
+python3 tools/validate_vpr_route.py --vpr /path/to/vpr --arch arch.xml \
+  --circuit design.blif --net design.net --place design.place \
+  --route routed.route --rr-graph rr_graph.xml --channel-width 200 \
+  --work-dir work/vpr_native_validation
+```
+
+验证器先要求 route header 的 Placement ID 等于 `.place` 文件 SHA-256，再在私有工作目录运行 VPR `--analysis`；只有 route load、routing consistency、feasibility、wirelength、CPD 和 VPR 退出状态全部成功才报告 `legal=true`。
+
 Vitis 2022.2/U280 构建：
 
 ```bash

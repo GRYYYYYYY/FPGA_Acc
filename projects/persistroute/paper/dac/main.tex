@@ -443,6 +443,8 @@ Conflict/replay & Two connections create one overused resource in round 1 and
 reach zero overuse in round 2; outputs match byte-for-byte. \\
 Timing loop & Full \texttt{diffeq} and \texttt{frisc} C-model routes use
 per-round VPR/Tatum STA; both close legally. \\
+VPR route check & Exported \texttt{frisc}/\texttt{elliptic} routes pass native
+routing consistency and feasibility checks. \\
 Commercial check & 27,961/27,961 routable nets; zero routing errors and DRC
 violations after Vivado route. \\
 \bottomrule
@@ -472,10 +474,13 @@ On the 74,928-node, 5,767-connection \texttt{frisc} graph, a fixed task order
 with base cost 256 finishes 5.73\% above VPR's 13.588-ns CPD. Normalizing the
 base cost to 64 reduces the gap to 3.45\%. One frozen policy---base cost 64,
 three timing-aware reroute rounds, and deterministic criticality ordering---
-closes \texttt{frisc} at 13.697\,ns (+0.803\%) and \texttt{elliptic} at
-8.836\,ns (+0.499\%) relative to VPR. Both are legal, zero-overuse, and
-byte-identical across two runs. This is a two-design timing-policy result, not
-yet a ten-design QoR result.
+yields feedback-oracle CPDs of 13.697\,ns (+0.803\%) for \texttt{frisc} and
+8.836\,ns (+0.499\%) for \texttt{elliptic}. Deterministic route export then
+passes VPR's native consistency and feasibility checks. Native CPDs are
+13.708\,ns (+0.884\%) and 8.840\,ns (+0.549\%); wirelengths are 34,395
+(+3.656\%) and 28,385 (+3.864\%). Both paired C-model runs are zero-overuse
+and byte-identical. Thus two designs meet the CPD gate but not the
+pre-registered 2\% wirelength gate; this is not a ten-design QoR result.
 
 \subsection{Scale coverage and stress behavior}
 
@@ -534,8 +539,9 @@ emulation: \todoresult{end-to-end speedup, energy, and ablations}.
 
 The edge delay stored in the ABI is a local RC approximation and does not
 exactly reproduce full route-tree Elmore coupling. VPR/Tatum still supplies the
-real timing graph and constraints, but differences from VPR's native route-tree
-delay may affect criticality. Only clustered routing is supported by the
+real timing graph and constraints; native route re-analysis differs from the
+feedback oracle by 0.011\,ns on \texttt{frisc} and 0.00434\,ns on
+\texttt{elliptic}. Only clustered routing is supported by the
 current oracle. The commercial FPGA24 case checks UltraScale+ legality, yet its
 missing user timing constraints prevent a commercial timing claim. Finally,
 the ten CPU pairs establish determinism for fixed seeds, not sensitivity across
