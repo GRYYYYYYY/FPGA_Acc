@@ -139,6 +139,21 @@ std::vector<SearchSeed> tree_seeds(const TreeState& tree) {
  std::vector<SearchSeed> seeds;for(const auto& item:depths)seeds.push_back({item.first,item.second});return seeds;
 }
 
+std::uint64_t tree_wirelength(const TreeState& tree,const std::vector<Node>& nodes) {
+ std::uint64_t total=0;for(const auto& item:tree.parent)total+=nodes[item.first].delay_class;return total;
+}
+
+std::uint64_t routed_delay(const RoutedTask& routed,const std::vector<Node>& nodes,
+ const std::vector<Edge>& edges) {
+ std::uint64_t total=0;std::uint32_t src=routed.task.source;
+ for(const auto dst:routed.path){const Node node=nodes[src];bool found=false;
+  for(std::uint32_t j=0;j<node.edge_count;++j){const Edge& edge=edges[node.edge_begin+j];if(edge.dst==dst){total+=edge.delay_q;found=true;break;}}
+  if(!found)throw std::logic_error("routed cleanup path is not present in the RR graph");
+  src=dst;
+ }
+ return total;
+}
+
 void ripup(TreeState& tree,Owners& owners,std::vector<RoutedTask>& tasks,PathfinderMetrics& metrics) {
  if(tree.parent.size()>1)++metrics.ripups;
  for(const auto& item:tree.parent)if(item.first!=tree.source)owners.remove(item.first,tree.net_id);
@@ -166,7 +181,7 @@ AcceleratedPathfinderResult route_accelerated_pathfinder(
  const std::vector<Node>& nodes,const std::vector<Edge>& edges,
  const std::vector<Resource>& initial_resources,const std::vector<Task>& input_tasks,
  const KernelBatchExecutor& executor,const PathfinderConfig& config,std::uint32_t issue_width,
- const TimingAnalyzer& timing_analyzer) {
+ const TimingAnalyzer& timing_analyzer,const SelectiveCleanupConfig& cleanup) {
  validate_inputs(nodes,edges,initial_resources,input_tasks,config);
  if(!executor||issue_width==0)throw std::invalid_argument("accelerated PathFinder executor/issue width is invalid");
  AcceleratedPathfinderResult out;auto& result=out.routing;result.resources=initial_resources;
@@ -222,6 +237,42 @@ AcceleratedPathfinderResult route_accelerated_pathfinder(
   std::set<std::uint32_t> next;if(force_timing_reroute)next.insert(net_order.begin(),net_order.end());for(const auto& task:result.tasks)if(!task.routed)next.insert(task.task.net_id);
   for(std::size_t node=0;node<result.resources.size();++node)if(result.resources[node].occupancy>result.resources[node].capacity)for(const auto net:owners.at(node))next.insert(net);
   pending.swap(next);
+ }
+ if(result.route_success&&cleanup.passes&&cleanup.channel_length_cost_q){
+  std::vector<Edge> cleanup_edges=edges;
+  for(auto& edge:cleanup_edges){const std::uint32_t length=nodes[edge.dst].delay_class;
+   const std::uint64_t extra=length>0?static_cast<std::uint64_t>(cleanup.channel_length_cost_q)*(length-1U):0U;
+   edge.base_cost_q=sat16(static_cast<std::uint64_t>(edge.base_cost_q)+extra);
+  }
+  auto total_wire=[&](){std::uint64_t total=0;for(const auto& item:trees)total+=tree_wirelength(item.second,nodes);return total;};
+  out.cleanup_wirelength_before=total_wire();
+  for(std::uint32_t pass=0;pass<cleanup.passes;++pass){
+   std::vector<std::uint32_t> order=net_order;
+   std::sort(order.begin(),order.end(),[&](auto lhs,auto rhs){const auto a=tree_wirelength(trees[lhs],nodes),b=tree_wirelength(trees[rhs],nodes);return std::make_tuple(std::numeric_limits<std::uint64_t>::max()-a,lhs)<std::make_tuple(std::numeric_limits<std::uint64_t>::max()-b,rhs);});
+   std::uint32_t accepted_this_pass=0;
+   for(const auto net:order){++out.cleanup_attempted_nets;TreeState& tree=trees[net];
+    const std::uint64_t old_wire=tree_wirelength(tree,nodes);if(old_wire==0)continue;
+    std::vector<std::uint64_t> old_delays;old_delays.reserve(tree.tasks.size());for(const auto index:tree.tasks)old_delays.push_back(routed_delay(result.tasks[index],nodes,edges));
+    const TreeState old_tree=tree;std::vector<RoutedTask> old_tasks;old_tasks.reserve(tree.tasks.size());for(const auto index:tree.tasks)old_tasks.push_back(result.tasks[index]);
+    const std::vector<Resource> old_resources=result.resources;
+    ripup(tree,owners,result.tasks,result.metrics);owners.refresh_all();bool complete=true;
+    for(const auto index:tree.tasks){RoutedTask& routed=result.tasks[index];Task task=routed.task;task.epoch=result.metrics.iterations+pass+1;
+     const std::vector<Task> one_task{task};const std::vector<std::vector<SearchSeed>> one_seed{tree_seeds(tree)};
+     KernelBatchResult batch=executor(nodes,cleanup_edges,result.resources,one_task,one_seed,false);++result.metrics.searches;
+     result.metrics.expanded+=batch.search_metrics.expanded;result.metrics.edge_visits+=batch.search_metrics.edge_visits;
+     if(batch.candidates.size()!=1||batch.candidates[0].search_status!=1||batch.candidates[0].commit_status!=4){complete=false;break;}
+     const auto& candidate=batch.candidates[0];accept_path(tree,owners,routed,candidate.attachment,candidate.path);owners.refresh_all();
+    }
+    bool delay_ok=complete;if(complete&&cleanup.per_connection_delay_guard)for(std::size_t i=0;i<tree.tasks.size();++i){const std::uint64_t old_delay=old_delays[i];const std::uint64_t tolerance=old_delay*cleanup.delay_tolerance_ppm/1000000ULL;if(routed_delay(result.tasks[tree.tasks[i]],nodes,edges)>old_delay+tolerance){delay_ok=false;break;}}
+    if(complete&&!cleanup.per_connection_delay_guard){const std::uint64_t old_delay=*std::max_element(old_delays.begin(),old_delays.end());std::uint64_t new_delay=0;for(const auto index:tree.tasks)new_delay=std::max(new_delay,routed_delay(result.tasks[index],nodes,edges));const std::uint64_t tolerance=old_delay*cleanup.delay_tolerance_ppm/1000000ULL;delay_ok=new_delay<=old_delay+tolerance;}
+    const bool feasible=complete&&std::none_of(result.resources.begin(),result.resources.end(),[](const auto& state){return state.occupancy>state.capacity;});
+    const bool improve=feasible&&delay_ok&&tree_wirelength(tree,nodes)<old_wire;
+    if(improve){++out.cleanup_accepted_nets;++accepted_this_pass;}
+    else {ripup(tree,owners,result.tasks,result.metrics);tree=old_tree;for(const auto& item:tree.parent)if(item.first!=tree.source)owners.add(item.first,tree.net_id);for(std::size_t i=0;i<tree.tasks.size();++i)result.tasks[tree.tasks[i]]=old_tasks[i];owners.refresh_all();result.resources=old_resources;}
+   }
+   if(accepted_this_pass==0)break;
+  }
+  out.cleanup_wirelength_after=total_wire();result.metrics.overused_resources=0;
  }
  for(const auto& item:trees){const auto& tree=item.second;NetRouteTree snapshot{tree.net_id,tree.source,{},{}};for(const auto& edge:tree.parent){snapshot.nodes.push_back(edge.first);if(edge.second!=INVALID_RESOURCE)snapshot.edges.push_back({edge.second,edge.first});}std::sort(snapshot.edges.begin(),snapshot.edges.end(),[](const auto& a,const auto& b){return std::tie(a.parent,a.child)<std::tie(b.parent,b.child);});result.route_trees.push_back(std::move(snapshot));}
  result.legal=result.route_success&&validate_pathfinder_result(nodes,edges,initial_resources,result);

@@ -47,6 +47,8 @@ task=struct.Struct("<IIIIHHIII").unpack(prefix.with_suffix(".tasks").read_bytes(
 if task!=(7,12,0,2,32768,16,10,0,0): raise SystemExit("task ABI packing failed")
 edge_rows=list(struct.iter_unpack("<IHH",prefix.with_suffix(".edges").read_bytes()))
 if edge_rows[0][1]!=272: raise SystemExit("channel-length edge cost packing failed")
+node_rows=list(struct.iter_unpack("<IHH",prefix.with_suffix(".nodes").read_bytes()))
+if node_rows[1][2]!=2 or node_rows[0][2]!=0: raise SystemExit("RR channel wirelength metadata packing failed")
 rw_prefix=temp/"rw_input"
 subprocess.run([sys.executable,str(root/"rapidwright_csv_to_hls.py"),str(root/"fixtures/rw_export"),str(rw_prefix)],check=True)
 rw_manifest=json.loads(Path(str(rw_prefix)+".manifest.json").read_text(encoding="utf-8"))

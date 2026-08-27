@@ -98,6 +98,13 @@ deltas are +0.884% and +0.549%, while wirelength deltas are +3.656% and
 byte-identical paths, route trees, resources, congestion logs, and timing logs.
 This is a two-design result, and it does not yet meet the 2% wirelength gate.
 
+A post-legal selective cleanup snapshots one net at a time, reroutes it with
+physical channel-length cost, and commits only legal wirelength reductions;
+all rejected candidates restore tree, tasks, resources, and versions. Two
+passes reduce native wirelength/CPD deltas to +3.134%/+0.876% on `frisc` and
++2.646%/+0.084% on `elliptic`. The two-design geometric-mean wirelength delta
+improves from +3.760% to +2.890%, which remains above the 2% gate.
+
 ## Limitations and threats to validity
 
 The VMware guest has no physical U280 PCIe device. Consequently, the current

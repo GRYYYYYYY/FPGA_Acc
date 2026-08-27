@@ -74,6 +74,18 @@ python3 tools/validate_vpr_route.py --vpr /path/to/vpr --arch arch.xml \
 验证器先要求 route header 的 Placement ID 等于 `.place` 文件 SHA-256，再在私有工作目录运行 VPR `--analysis`；只有 route load、routing consistency、feasibility、wirelength、CPD 和 VPR 退出状态全部成功才报告 `legal=true`。
 `pack_hls_inputs.py --channel-length-cost-q N` 可在不改变 ABI 的前提下给进入 CHAN RR node 的 edge 增加 `N * (length - 1)` 静态代价；默认值为 0，保持旧输入逐字节语义。该选项是消融旋钮，不是推荐策略：`frisc` 的 16/64 两个试点都使 VPR-native wirelength 恶化。
 
+HBM C-model 还支持在首次合法收敛后进行可回滚的选择性 net cleanup：
+
+```bash
+export PERSISTROUTE_SELECTIVE_CLEANUP_PASSES=2
+export PERSISTROUTE_CLEANUP_LENGTH_COST_Q=64
+export PERSISTROUTE_CLEANUP_DELAY_TOLERANCE_PPM=0
+# 1（默认）：每条 connection delay 不增；0：net 最大 delay 不增，必须再做 VPR-native STA
+export PERSISTROUTE_CLEANUP_PER_CONNECTION_DELAY_GUARD=1
+```
+
+每个 net 在尝试前保存 route tree、tasks、resources 和 version；只有全部 connections 成功、全局容量合法且唯一 CHAN wirelength 严格下降时才提交，否则逐字节语义回滚。当前动态 cleanup edge-cost 仅接入 HBM C-model host；XRT backend 的 graph BO 在启动时固定，因此没有重跑或宣称硬件 cleanup 结果。
+
 Vitis 2022.2/U280 构建：
 
 ```bash

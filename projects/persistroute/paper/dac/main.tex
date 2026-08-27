@@ -483,6 +483,12 @@ and byte-identical. Thus two designs meet the CPD gate but not the
 pre-registered 2\% wirelength gate; this is not a ten-design QoR result.
 A preliminary static RR channel-length penalty worsens \texttt{frisc}
 wirelength, so we reject scalar edge reweighting as the cleanup mechanism.
+Instead, a post-legal cleanup snapshots and reroutes one net at a time,
+committing only legal tree-wirelength reductions and rolling back all other
+candidates. Two passes yield native wirelength/CPD deltas of
++3.134\%/+0.876\% on \texttt{frisc} and +2.646\%/+0.084\% on
+\texttt{elliptic}. Geometric-mean wirelength degradation falls from 3.760\%
+to 2.890\%, an improvement that still misses the 2\% gate.
 
 \subsection{Scale coverage and stress behavior}
 

@@ -58,6 +58,9 @@ FPGA Interchange round-trip, the official FPGA24 checker, and Vivado routing
 legality/DRC. Exported \texttt{frisc} and \texttt{elliptic} routes also pass
 VPR-native routing consistency and feasibility checks; their CPD deltas are
 +0.884\%/+0.549\%, while wirelength deltas are +3.656\%/+3.864\%.
+Two-pass selective cleanup reduces the native pairs to
++0.876\%/+3.134\% and +0.084\%/+2.646\%, respectively; the wirelength gate
+therefore remains open.
 Hardware-emulation time is excluded from performance claims.
 Submission-quality speedup and energy require a physical U280, at least five
 post-warm-up repetitions, end-to-end phase timing, power integration, and the

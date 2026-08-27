@@ -96,7 +96,8 @@ def pack(rr_graph: Path, connections: Path, prefix: Path, base_cost_q: int,
         outgoing = sorted(grouped[node_id], key=lambda item: (item[0], item[2], item[1]))
         if len(outgoing) > 65535:
             raise ValueError(f"node {node_id} fanout exceeds uint16")
-        nodes.append((cursor, len(outgoing), 0))
+        wirelength = node_wirelength[node_id] if xml_node.attrib.get("type") in {"CHANX", "CHANY"} else 0
+        nodes.append((cursor, len(outgoing), wirelength))
         edges.extend(outgoing)
         cursor += len(outgoing)
         capacity = max(1, min(65535, _integer(xml_node, "capacity", 1)))
@@ -135,6 +136,7 @@ def pack(rr_graph: Path, connections: Path, prefix: Path, base_cost_q: int,
         "base_cost_q": base_cost_q,
         "channel_length_cost_q": channel_length_cost_q,
         "wirelength_cost_model": "base_cost_q + channel_length_cost_q * (destination RR channel length - 1)",
+        "node_delay_class_semantics": "VPR RR channel wirelength; zero for non-channel nodes",
         "edge_delay_model": "VPR buffered local T_linear (ps), pass switch local RC approximation",
         "files": files,
         "kernel": "search_hbm_kernel",

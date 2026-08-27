@@ -48,6 +48,11 @@
   requires 22 total rounds to re-legalize and yields +4.141% wirelength and
   +1.913% CPD. Reject full-network cleanup; evaluate selective branch/net
   replacement against a retained legal solution.
+- Selective per-net snapshot/reroute/rollback is now implemented. With two
+  net-max-guarded passes and mandatory final VPR checking, `frisc` reaches
+  +3.134% wirelength/+0.876% CPD and `elliptic` +2.646%/+0.084%. The
+  two-design geomean wirelength delta is +2.890%, so branch-level replacement
+  or a stronger global timing guard is still needed before matrix expansion.
 
 ## Rejection checks
 

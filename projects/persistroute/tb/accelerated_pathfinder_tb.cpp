@@ -39,5 +39,11 @@ int main(){
  const auto rerouted=route_accelerated_pathfinder(reroute_nodes,reroute_edges,state(3),{{1,1,0,1,0,8,0,0,0}},executor,reroute_config,4,reroute_timing);
  assert(rerouted.routing.legal&&rerouted.routing.metrics.iterations==3&&reroute_calls==3);
  assert((rerouted.routing.tasks[0].path==std::vector<std::uint32_t>{2,1}));
+ std::vector<Node> cleanup_nodes;std::vector<Edge> cleanup_edges;graph(4,{{0,1,1},{0,2,10},{1,3,1},{2,3,10}},cleanup_nodes,cleanup_edges);
+ cleanup_nodes[1].delay_class=5;cleanup_nodes[2].delay_class=1;SelectiveCleanupConfig cleanup_config;cleanup_config.passes=1;cleanup_config.channel_length_cost_q=10;
+ const auto cleaned=route_accelerated_pathfinder(cleanup_nodes,cleanup_edges,state(4),{{1,1,0,3,0,8,0,0,0}},executor,{},4,{},cleanup_config);
+ assert(cleaned.routing.legal&&cleaned.cleanup_attempted_nets==1&&cleaned.cleanup_accepted_nets==1);
+ assert(cleaned.cleanup_wirelength_before==5&&cleaned.cleanup_wirelength_after==1);
+ assert((cleaned.routing.tasks[0].path==std::vector<std::uint32_t>{2,3}));
  std::cout<<"accelerated_pathfinder_tb: PASS\n";
 }

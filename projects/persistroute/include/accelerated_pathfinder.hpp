@@ -46,6 +46,17 @@ struct AcceleratedIteration {
 struct AcceleratedPathfinderResult {
  PathfinderResult routing;
  std::vector<AcceleratedIteration> audit;
+ std::uint32_t cleanup_attempted_nets = 0;
+ std::uint32_t cleanup_accepted_nets = 0;
+ std::uint64_t cleanup_wirelength_before = 0;
+ std::uint64_t cleanup_wirelength_after = 0;
+};
+
+struct SelectiveCleanupConfig {
+ std::uint32_t passes = 0;
+ std::uint16_t channel_length_cost_q = 0;
+ std::uint32_t delay_tolerance_ppm = 0;
+ bool per_connection_delay_guard = true;
 };
 
 AcceleratedPathfinderResult route_accelerated_pathfinder(
@@ -56,7 +67,8 @@ AcceleratedPathfinderResult route_accelerated_pathfinder(
  const KernelBatchExecutor& executor,
  const PathfinderConfig& config = {},
  std::uint32_t issue_width = 4,
- const TimingAnalyzer& timing_analyzer = {});
+ const TimingAnalyzer& timing_analyzer = {},
+ const SelectiveCleanupConfig& cleanup = {});
 
 KernelBatchResult execute_hbm_cmodel_batch(
  const std::vector<Node>& nodes,

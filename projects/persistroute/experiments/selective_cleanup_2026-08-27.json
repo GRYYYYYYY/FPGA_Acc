@@ -1,0 +1,104 @@
+{
+  "schema": "PERSISTROUTE_SELECTIVE_CLEANUP_V1",
+  "date": "2026-08-27",
+  "algorithm": {
+    "scope": "post-legal per-net route-tree replacement",
+    "ordering": "descending current net wirelength, then net ID",
+    "transaction": "snapshot tree, routed tasks, resources and versions; rip up one net; reroute its connections; accept or restore exactly",
+    "hard_acceptance": [
+      "all connections rerouted",
+      "no resource exceeds capacity",
+      "unique VPR CHAN wirelength strictly decreases"
+    ],
+    "delay_guards": {
+      "default": "every connection local delay must remain within tolerance",
+      "research": "net maximum local delay must remain within tolerance; final VPR-native STA is mandatory"
+    },
+    "abi_change": false,
+    "xclbin_rebuild_required": false,
+    "xrt_execution_status": "not rerun; cleanup experiment is HBM C-model plus VPR-native validation"
+  },
+  "frozen_research_policy": {
+    "base_cost_q": 64,
+    "minimum_timing_iterations": 3,
+    "cleanup_passes": 2,
+    "cleanup_channel_length_cost_q": 64,
+    "cleanup_delay_tolerance_ppm": 0,
+    "per_connection_delay_guard": false,
+    "required_final_gate": "VPR route load, routing consistency, feasibility, wirelength and native STA"
+  },
+  "frisc": {
+    "baseline_vpr_wirelength": 33182,
+    "baseline_vpr_cpd_ns": 13.5879,
+    "cleanup_attempted_nets": 3734,
+    "cleanup_accepted_nets": 70,
+    "wirelength_before_cleanup": 34556,
+    "wirelength_after_cleanup": 34222,
+    "vpr_native_wirelength_delta_percent": 3.134229,
+    "vpr_native_cpd_ns": 13.7069,
+    "vpr_native_cpd_delta_percent": 0.875779,
+    "legal": true,
+    "input_manifest_sha256": "84c145d0e5d3a229d7bf26c5996a827f35267016cf5e1048f92ae824caed48ab",
+    "paths_sha256": "5d8b45bce9249555bddc8530f97cfe3d95c86db6a44960fe2ca52acc2d2e545c",
+    "route_trees_sha256": "07467a0f5c591e95fe105b7488fcaf2413af15a124b63ac97345b8b24e66d9eb",
+    "resources_sha256": "cd01ea02d70985f08e54517825d113c2dfc405f259333a0a655c881d7308e005",
+    "route_sha256": "f286d49d34f17e539504a1c80f540d1e2c9b05338e9954a4fc7ef9d473f27a56",
+    "validation_report_sha256": "62523d11628961cdf86b88ade18d730a465e8da008af3b5d8f998fc2a63c952f"
+  },
+  "elliptic": {
+    "baseline_vpr_wirelength": 27329,
+    "baseline_vpr_cpd_ns": 8.79211,
+    "cleanup_attempted_nets": 3756,
+    "cleanup_accepted_nets": 54,
+    "wirelength_before_cleanup": 28385,
+    "wirelength_after_cleanup": 28052,
+    "vpr_native_wirelength_delta_percent": 2.645541,
+    "vpr_native_cpd_ns": 8.7995,
+    "vpr_native_cpd_delta_percent": 0.084053,
+    "legal": true,
+    "input_manifest_sha256": "fe63e9b5b6f850dea0d97f756ed44a59f7848d8ca7b8cdf6cd0828d9e4eaf29c",
+    "paths_sha256": "e46db167f881972c86b95c0636390f952067388fa771f45e6defe480f79e9a9c",
+    "route_trees_sha256": "a8cecceaef52ac5ac60afb7c25cc1f2f47d5f9f7548d3f733dd44fbd84e5f2a9",
+    "resources_sha256": "efb47ceed33348976631af4b2b95ce22eb7dafba4c6e0c904d8a912b1b458a80",
+    "route_sha256": "7916262c5e9d84c0733952b2ca119bd1184e9e8f09e9d288cac35dc4b100ec2c",
+    "validation_report_sha256": "8cb8554b06980a0c23ca43997a996a68a6a33f19651ae784a72d3dc3c56c69a4",
+    "repeat_runs": 2,
+    "repeat_byte_identical": [
+      "paths.csv",
+      "route_trees.csv",
+      "resources",
+      "iterations.csv",
+      "accelerated_iterations.csv",
+      "timing_iterations.csv"
+    ]
+  },
+  "two_design_geomean": {
+    "wirelength_delta_before_cleanup_percent": 3.759759,
+    "wirelength_delta_after_cleanup_percent": 2.889595,
+    "cpd_delta_before_cleanup_percent": 0.716078,
+    "cpd_delta_after_cleanup_percent": 0.479136
+  },
+  "conservative_guard_ablation": {
+    "frisc": {"accepted_nets": 12, "wirelength_delta_percent": 4.008197, "cpd_delta_percent": 0.875779},
+    "elliptic": {"accepted_nets": 11, "wirelength_delta_percent": 3.714003, "cpd_delta_percent": 0.548560}
+  },
+  "rejected_extension": {
+    "elliptic_five_net_max_passes": {
+      "wirelength_delta_percent": 2.543086,
+      "cpd_delta_percent": 2.632701,
+      "reason": "fails the pre-registered 2% CPD gate; not used"
+    }
+  },
+  "implementation_hashes": {
+    "accelerated_pathfinder_cpp_sha256": "608c0965a70e6ceb3c9143154784e6dd5a7a4bc4b10cc9ecdadd4687e615a8a0",
+    "accelerated_pathfinder_hpp_sha256": "59fd64b068b9b3041f986c946d8599b100197776a625145650a8e5e9596f68cf",
+    "accelerated_cmodel_host_sha256": "026f2d7a9ff5e99dee05ba772bf0b5fff1ba41959acdf42925ef2381b6ebef02",
+    "packer_sha256": "0b2846ba535986327c9918aa62e91afff6609b675b2d7f8010e649a728236397"
+  },
+  "limitations": [
+    "The two-design geomean wirelength delta improves from +3.760% to +2.890% but still misses the 2% target.",
+    "Net-max delay guarding is accepted only with final VPR-native STA; five passes demonstrate that local delay guards alone are insufficient.",
+    "No physical U280 is attached, so C-model time is not accelerator performance.",
+    "No existing final hardware-emulation result was rerun."
+  ]
+}
