@@ -190,7 +190,10 @@ AcceleratedPathfinderResult route_accelerated_pathfinder(
  const KernelBatchExecutor& executor,const PathfinderConfig& config,std::uint32_t issue_width,
  const TimingAnalyzer& timing_analyzer,const SelectiveCleanupConfig& cleanup) {
  validate_inputs(nodes,edges,initial_resources,input_tasks,config);
- if(!executor||issue_width==0)throw std::invalid_argument("accelerated PathFinder executor/issue width is invalid");
+ const bool adaptive=(config.adaptive_issue_width_min!=0||config.adaptive_issue_stagnation_iterations!=0);
+ if(!executor||issue_width==0||(adaptive&&(config.adaptive_issue_width_min==0||
+    config.adaptive_issue_stagnation_iterations==0||config.adaptive_issue_width_min>issue_width)))
+  throw std::invalid_argument("accelerated PathFinder executor/issue width is invalid");
  AcceleratedPathfinderResult out;auto& result=out.routing;result.resources=initial_resources;
  for(const auto& task:input_tasks)result.tasks.push_back({task,{},false});
  Owners owners(initial_resources,result.resources);std::map<std::uint32_t,TreeState> trees;
@@ -200,10 +203,12 @@ AcceleratedPathfinderResult route_accelerated_pathfinder(
  std::sort(net_order.begin(),net_order.end(),[&](auto a,auto b){const Task& x=result.tasks[trees[a].tasks.front()].task;const Task& y=result.tasks[trees[b].tasks.front()].task;return std::tie(x.priority,x.id,a)<std::tie(y.priority,y.id,b);});
  std::set<std::uint32_t> pending;for(const auto net:net_order)pending.insert(net);
  std::uint16_t present=config.present_start_q;update_costs(result.resources,present,0);
+ std::uint32_t current_issue_width=issue_width;
+ std::uint32_t best_overuse=std::numeric_limits<std::uint32_t>::max(),stagnant_iterations=0;
 
  for(std::uint32_t iteration=0;iteration<config.max_iterations;++iteration){
   result.metrics.iterations=iteration+1;PathfinderIteration log{iteration,static_cast<std::uint32_t>(pending.size()),0,0,present};
-  AcceleratedIteration audit{};audit.iteration=iteration;
+  AcceleratedIteration audit{};audit.iteration=iteration;audit.issue_width=current_issue_width;
   if(iteration){for(const auto net:net_order)if(pending.count(net))ripup(trees[net],owners,result.tasks,result.metrics);owners.refresh_all();}
   std::map<std::uint32_t,std::size_t> cursors;for(const auto net:pending)cursors[net]=0;
   while(true){
@@ -211,8 +216,8 @@ AcceleratedPathfinderResult route_accelerated_pathfinder(
    for(const auto net:net_order){if(!pending.count(net))continue;auto& tree=trees[net];auto& cursor=cursors[net];if(cursor<tree.tasks.size()){Task task=result.tasks[tree.tasks[cursor++]].task;task.epoch=iteration;wave.push_back(task);seeds.push_back(tree_seeds(tree));}}
    if(wave.empty())break;
    ++audit.waves;audit.launched+=wave.size();result.metrics.searches+=wave.size();
-   for(std::size_t begin=0;begin<wave.size();begin+=issue_width){
-    const std::size_t end=std::min<std::size_t>(wave.size(),begin+issue_width);
+   for(std::size_t begin=0;begin<wave.size();begin+=current_issue_width){
+    const std::size_t end=std::min<std::size_t>(wave.size(),begin+current_issue_width);
     std::vector<Task> batch_tasks(wave.begin()+begin,wave.begin()+end);
     std::vector<std::vector<SearchSeed>> batch_seeds(seeds.begin()+begin,seeds.begin()+end);
     KernelBatchResult batch=executor(nodes,edges,result.resources,batch_tasks,batch_seeds,true);
@@ -241,6 +246,12 @@ AcceleratedPathfinderResult route_accelerated_pathfinder(
   const bool all=std::all_of(result.tasks.begin(),result.tasks.end(),[](const auto& task){return task.routed;});
   const bool force_timing_reroute=timing_analyzer&&iteration+1<config.min_timing_iterations;
   if(all&&over==0&&!force_timing_reroute){if(timing_analyzer&&!timing_updated){const auto timing_begin=std::chrono::steady_clock::now();update_timing(iteration,nodes,edges,result.tasks,timing_analyzer,result.timing_log);out.timing_ns+=std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now()-timing_begin).count();}result.route_success=true;break;}if(iteration+1==config.max_iterations)break;
+  if(over<best_overuse){best_overuse=over;stagnant_iterations=0;}else ++stagnant_iterations;
+  if(adaptive&&stagnant_iterations>=config.adaptive_issue_stagnation_iterations&&
+     current_issue_width>config.adaptive_issue_width_min){
+   current_issue_width=std::max(config.adaptive_issue_width_min,(current_issue_width+1U)/2U);
+   stagnant_iterations=0;best_overuse=over;
+  }
   const std::uint64_t grown=(static_cast<std::uint64_t>(present)*config.present_multiplier_q+128U)/256U;
   present=std::max<std::uint16_t>(1,sat16(grown));update_costs(result.resources,present,config.history_increment_q);
   std::set<std::uint32_t> next;if(force_timing_reroute)next.insert(net_order.begin(),net_order.end());for(const auto& task:result.tasks)if(!task.routed)next.insert(task.task.net_id);

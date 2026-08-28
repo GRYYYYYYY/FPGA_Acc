@@ -100,6 +100,12 @@ def main() -> int:
             "--route_chan_width", str(channel_width),
             "--timing_report_npaths", "1",
         ]
+        rr_graph_text = os.environ.get("PERSISTROUTE_VPR_RR_GRAPH")
+        if rr_graph_text:
+            rr_graph = Path(rr_graph_text).resolve()
+            if not rr_graph.is_file():
+                raise SystemExit(f"PERSISTROUTE_VPR_RR_GRAPH does not exist: {rr_graph}")
+            command.extend(("--read_rr_graph", str(rr_graph)))
         sdc_text = os.environ.get("PERSISTROUTE_VPR_SDC")
         if sdc_text:
             sdc_source = Path(sdc_text).resolve()

@@ -33,18 +33,21 @@ in this VMware guest, so board runtime and energy remain deliberately absent.
 
 ## DAC manuscript
 
-`dac/main.tex` is the anonymous ACM `acmart`/`sigconf` manuscript. It is laid
-out as six pages of body text followed by one references-only page, matching
-the DAC research-manuscript limit. DAC does not permit appendix material on
-that seventh page, so `dac/reproducibility_appendix.tex` builds a separate
-one-page artifact appendix and must not be merged into the submission PDF.
+`dac/main.tex` is the anonymous ACM `acmart`/`sigconf` manuscript. During the
+experimental and writing phase it may exceed the final DAC page budget so that
+results, ablations, and limitations can be written before editorial trimming.
+`dac/reproducibility_appendix.tex` remains a separate artifact appendix and
+must not be merged into the submission PDF.
 
-Build and enforce both page boundaries with:
+Build and check LaTeX integrity while reporting (but not limiting) page counts:
 
 ```bash
 cd dac
 PATH=/home/gry/.local/bin:$PATH make check
 ```
+
+When preparing the final DAC submission, restore the six-body-page plus
+references-only-page boundary with `make check-submission`.
 
 The local build uses Tectonic 0.16.9. The manuscript intentionally retains a
 visible `BOARD RESULT REQUIRED` marker: end-to-end board speedup, energy, and

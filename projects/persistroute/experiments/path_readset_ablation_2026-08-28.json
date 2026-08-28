@@ -1,0 +1,50 @@
+{
+  "schema": "PERSISTROUTE_PATH_READSET_ABLATION_V1",
+  "case_id": "clma_seed1_cw200",
+  "configuration": {
+    "pe_count": 4,
+    "issue_width": 8,
+    "adaptive_issue_width_min": 1,
+    "adaptive_issue_stagnation_iterations": 3,
+    "max_iterations": 30,
+    "min_timing_iterations": 3,
+    "timing_update_period": 1,
+    "base_cost_q": 64
+  },
+  "input_hashes": {
+    "rr_graph_sha256": "9a5b08b40eed9f5edb25529cb53dfe1dede68bd33ae3cffee24ce9450b797fb1",
+    "connections_sha256": "bbca6740588cc6d9e43181a50fca7657cf2aac75b68592ad00af50bb8f702058",
+    "packed_tasks_sha256": "206e0e7a1e2b5189ea59ff9f0620a276875d443b4f907b6203c26403e619af0a"
+  },
+  "explored_resource_read_set": {
+    "legal": false,
+    "iterations": 30,
+    "tasks": 13458,
+    "routed_tasks": 12493,
+    "overused_resources": 0,
+    "searches": 194299,
+    "expanded": 1542247998,
+    "edge_visits": 10022120244,
+    "search_ms": 521405.0,
+    "timing_ms": 59949.0,
+    "route_ms": 1099540.0
+  },
+  "path_resource_read_set": {
+    "legal": true,
+    "iterations": 8,
+    "tasks": 13458,
+    "routed_tasks": 13458,
+    "overused_resources": 0,
+    "searches": 41467,
+    "expanded": 282768504,
+    "edge_visits": 1674957110,
+    "search_ms": 81415.5,
+    "timing_ms": 16017.1,
+    "route_ms": 154662.0,
+    "route_time_ratio_vs_explored_read_set": 7.1093,
+    "native_vpr_legal": true,
+    "native_wirelength_delta_percent": 3.2157481498177987,
+    "native_cpd_delta_percent": 0.6624513283484346
+  },
+  "claim_boundary": "Same-input HBM C-model algorithmic ablation with real per-round VPR/Tatum timing; not a physical-U280 speedup claim."
+}

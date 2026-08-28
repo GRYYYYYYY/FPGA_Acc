@@ -54,6 +54,10 @@ def validate(args):
         "--route_file", local_route.name, "--route_chan_width", str(args.channel_width),
         "--read_rr_graph", str(args.rr_graph.resolve()),
     ]
+    if args.sdc:
+        local_sdc = args.work_dir / args.sdc.name
+        shutil.copy2(args.sdc, local_sdc)
+        command.extend(("--sdc_file", local_sdc.name))
     completed = subprocess.run(command, cwd=args.work_dir, text=True, capture_output=True)
     stdout_path = args.work_dir / "vpr_analysis.stdout"
     stderr_path = args.work_dir / "vpr_analysis.stderr"
@@ -84,6 +88,7 @@ def validate(args):
             "circuit_sha256": sha256(args.circuit), "net_sha256": sha256(args.net),
             "place_sha256": place_sha, "route_sha256": sha256(args.route),
             "rr_graph_sha256": sha256(args.rr_graph),
+            "sdc_sha256": sha256(args.sdc) if args.sdc else None,
         },
         "stdout_sha256": sha256(stdout_path),
         "stderr_sha256": sha256(stderr_path),
@@ -101,6 +106,7 @@ def main():
     parser.add_argument("--vpr", required=True, type=Path)
     parser.add_argument("--arch", required=True, type=Path)
     parser.add_argument("--circuit", required=True, type=Path)
+    parser.add_argument("--sdc", type=Path)
     parser.add_argument("--net", required=True, type=Path)
     parser.add_argument("--place", required=True, type=Path)
     parser.add_argument("--route", required=True, type=Path)

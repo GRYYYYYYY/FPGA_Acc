@@ -24,6 +24,7 @@ AcceleratedPathfinderResult run(){
 int main(){
  const auto first=run(),second=run();
  assert(first.routing.legal&&first.routing.metrics.iterations>1);assert(first.audit.front().overused_resources==1&&first.audit.back().overused_resources==0);assert(first.audit.size()==second.audit.size());
+ assert(std::all_of(first.audit.begin(),first.audit.end(),[](const auto& item){return item.issue_width==4;}));
  for(std::size_t i=0;i<first.audit.size();++i)assert(first.audit[i].resource_hash==second.audit[i].resource_hash&&first.audit[i].route_hash==second.audit[i].route_hash);
  std::vector<Node> nodes;std::vector<Edge> edges;graph(4,{{0,1,1},{1,2,1},{1,3,1}},nodes,edges);std::vector<Task> tasks{{1,7,0,2,0,8,0,0,0},{2,7,0,3,0,8,1,0,0}};
  KernelBatchExecutor executor=[](const auto& n,const auto& e,auto& r,const auto& t,const auto& s,bool over){return execute_hbm_cmodel_batch(n,e,r,t,s,over,4);};const auto shared=route_accelerated_pathfinder(nodes,edges,state(4),tasks,executor);

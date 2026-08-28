@@ -55,9 +55,11 @@ Seven CTest targets, converter tests, HLS C simulation, XSIM co-simulation,
 full U280 implementation, two real-VPR-subset hardware-emulation tests, and 15
 VPR/Tatum timing-oracle iterations pass. The commercial bridge is checked by
 FPGA Interchange round-trip, the official FPGA24 checker, and Vivado routing
-legality/DRC. Exported \texttt{frisc} and \texttt{elliptic} routes also pass
-VPR-native routing consistency and feasibility checks; their CPD deltas are
-+0.884\%/+0.549\%, while wirelength deltas are +3.656\%/+3.864\%.
+legality/DRC. The path-read-set issue-eight matrix exports four VTR routes that
+pass VPR-native routing consistency and feasibility checks. For
+\texttt{diffeq}, \texttt{frisc}, \texttt{elliptic}, and \texttt{clma},
+respectively, CPD deltas are +0.579\%, +0.876\%, +3.857\%, and +0.662\%;
+wirelength deltas are +4.427\%, +4.659\%, +3.934\%, and +3.216\%.
 Two-pass selective cleanup reduces the native pairs to
 +0.876\%/+3.134\% and +0.084\%/+2.646\%, respectively; the wirelength gate
 therefore remains open.

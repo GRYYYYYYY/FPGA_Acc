@@ -211,7 +211,11 @@ reproducible even though the ordering is relaxed.
 
 Search reads resource occupancy, costs, and versions but does not claim
 resources. Its output is a candidate node path plus a compact read/write set.
-For each touched resource, the transaction records the observed version. Failed
+For each resource on the candidate path, the transaction records the observed
+version. Logging the entire explored region is unnecessary for commit
+feasibility and, on large graphs, can exceed the 16-bit per-transaction count;
+changes off the chosen path may affect optimality but cannot invalidate that
+path's capacity check. Failed
 searches also produce explicit status, preventing missing paths from being
 mistaken for empty legal routes. Because candidates are isolated, four CUs can
 search overlapping regions in the same wave.
@@ -509,6 +513,37 @@ scaling show that routing acceleration must coexist with large serial
 packing/placement components. We therefore treat CPU stage scaling as workload
 characterization, not as a proxy for hardware speedup.
 
+Path-only conflict validation removes a previously hidden scale limit. The
+explored-resource read set caused 1,206 of 13,458 \texttt{clma} connections to
+overflow in the first round and still left 965 unrouted after 30 rounds.
+Recording only candidate-path versions routes all 13,458 in round one and
+reaches a legal solution in eight rounds. Host C-model routing time falls from
+1,099.5\,s for the nonconvergent run to 154.7\,s for the legal run (7.11$\times$);
+this is an algorithmic C-model comparison, not a U280 speedup claim.
+
+Table~\ref{tab:pathreads-qor} reports the first four-case native-VPR matrix for
+issue eight, every-round STA, and deterministic tail serialization after three
+stagnant rounds. Every exported route passes VPR consistency and feasibility.
+The geometric-mean wirelength and CPD deltas are +4.06\% and +1.48\%.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Circuit & Rounds & WL $\Delta$ & CPD $\Delta$ & Strict? \\
+\midrule
+\texttt{diffeq}  & 22 & +4.43\% & +0.58\% & yes \\
+\texttt{frisc}   & 18 & +4.66\% & +0.88\% & yes \\
+\texttt{elliptic}& 20 & +3.93\% & +3.86\% & no \\
+\texttt{clma}    &  8 & +3.22\% & +0.66\% & yes \\
+\bottomrule
+\end{tabular}
+\caption{Native VPR validation of the path-read-set policy. Strict denotes
+WL$\leq$5\% and CPD$\leq$3\%; all four pass a relaxed 5\%/5\% throughput tier.}
+\label{tab:pathreads-qor}
+\end{table}
+
 \subsection{Pre-registered board and ablation protocol}
 
 To avoid selecting a favorable measurement after implementation, the final
@@ -625,10 +660,11 @@ synchronization, and route validation remain in their corresponding terms.
 The primary result will compare the median complete $T_{\mathrm{acc}}$ against
 the median complete multicore VPR route phase; a second ratio will include
 packing and placement. Search-kernel throughput is diagnostic only.
-Balanced (3\% CPD/5\% wirelength) and legal-only Throughput points form
-separate Pareto tiers. Issue-eight/every-round-STA screens as a two-design
-Balanced candidate (+4.296\% wirelength/+2.355\% CPD); C-model time is not
-performance evidence, and neither tier replaces the 2\% Strict gate.
+Balanced (3\% CPD/5\% wirelength) and relaxed Throughput (5\%/5\%) points form
+separate Pareto tiers. Issue-eight/every-round-STA with path-only conflict
+validation passes Balanced on three of four VTR cases and the relaxed tier on
+all four; C-model time is not board-performance evidence, and neither tier
+replaces the aspirational 2\% gate.
 
 The CPU data in Table~\ref{tab:cpu} already show why both ratios are
 needed. Sixteen workers improve the routing stage by 1.356$\times$ in geometric
@@ -682,10 +718,10 @@ speculative Search CUs, and deterministic version-checked Commit. The
 production ABI, real VPR/Tatum timing feedback, full U280 implementation, and
 byte-identical multi-round RTL validation establish a coherent routing system
 rather than an isolated maze kernel. Ten deterministic VPR pairs characterize
-the multicore reference and expose the whole-flow bottleneck. The remaining
-step is decisive: physical-board end-to-end time, energy, full-matrix QoR, and
-ablations must confirm that the architectural mechanisms deliver useful
-acceleration without exceeding the 2\% QoR target.
+the multicore reference and expose the whole-flow bottleneck. Native VPR now
+validates four path-read-set cases, including a 7.11$\times$ C-model scalability
+recovery on \texttt{clma}. The remaining steps are physical-board end-to-end
+time and energy, the six non-VTR QoR cases, and the registered ablations.
 
 \clearpage
 \bibliographystyle{ACM-Reference-Format}

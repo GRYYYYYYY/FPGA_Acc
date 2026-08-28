@@ -61,7 +61,6 @@ extern "C" void search_hbm_kernel(const Node* nodes,const Edge* edges,const Reso
 #pragma HLS PIPELINE II=1
 #endif
     const std::uint32_t ei=node.edge_begin+j;if(ei>=edge_count){overflow=true;break;}const Edge edge=edges[ei];if(edge.dst>=node_count||closed_epoch[edge.dst]==epoch)continue;++out.edge_visits;const Resource state=resources[edge.dst];
-    if(read_epoch[edge.dst]!=epoch){if(read_cursor>=transaction_capacity||result.read_count==65535U){overflow=true;break;}read_epoch[edge.dst]=epoch;read_pool[read_cursor++]={edge.dst,state.version};++result.read_count;}
     const bool other_net=state.owner!=t.net_id;
     const std::uint32_t projected=static_cast<std::uint32_t>(state.occupancy)+(other_net?1U:0U);
     const std::uint32_t overuse=projected>state.capacity?projected-state.capacity:0U;
@@ -79,8 +78,10 @@ extern "C" void search_hbm_kernel(const Node* nodes,const Edge* edges,const Reso
     }
    }
   }
-  if(found&&!overflow){std::uint32_t cursor=t.sink;while(predecessor[cursor]!=0xffffffffU){if(cursor>=node_count||path_cursor>=transaction_capacity||path_entries>=65535U){overflow=true;break;}path_pool[path_cursor++]=cursor;++path_entries;cursor=predecessor[cursor];}
-   if(!overflow&&t.epoch!=0){if(path_cursor>=transaction_capacity||path_entries>=65535U)overflow=true;else{path_pool[path_cursor++]=cursor;++path_entries;}}
+  // Only committed path resources can invalidate feasibility. Logging every explored
+  // node needlessly caps large searches at the 16-bit transaction count.
+  if(found&&!overflow){std::uint32_t cursor=t.sink;while(predecessor[cursor]!=0xffffffffU){if(cursor>=node_count||path_cursor>=transaction_capacity||read_cursor>=transaction_capacity||path_entries>=65535U){overflow=true;break;}path_pool[path_cursor++]=cursor;read_pool[read_cursor++]={cursor,resources[cursor].version};++path_entries;++result.read_count;cursor=predecessor[cursor];}
+   if(!overflow&&t.epoch!=0){if(path_cursor>=transaction_capacity||read_cursor>=transaction_capacity||path_entries>=65535U)overflow=true;else{path_pool[path_cursor++]=cursor;read_pool[read_cursor++]={cursor,resources[cursor].version};++path_entries;++result.read_count;}}
    if(!overflow){for(std::uint32_t left=0;left<path_entries/2;++left){const std::uint32_t li=path_cursor-path_entries+left,ri=path_cursor-1-left;const std::uint32_t tmp=path_pool[li];path_pool[li]=path_pool[ri];path_pool[ri]=tmp;}result.length=static_cast<std::uint16_t>(path_entries);result.status=1;}}
   if(!found||overflow){path_cursor-=path_entries;read_cursor-=result.read_count;result.length=0;result.read_count=0;result.status=3;++out.failed;}
   result.offset=path_cursor-result.length;result.read_offset=read_cursor-result.read_count;results[ti]=result;

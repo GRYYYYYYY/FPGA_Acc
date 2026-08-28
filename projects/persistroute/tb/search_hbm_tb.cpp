@@ -27,6 +27,8 @@ int main(){
   }
   std::cerr<<'\n';return 1;
  }
+ assert(results[0].read_count==results[0].length);
+ assert(reads[0].resource_id==3&&reads[1].resource_id==2);
  tasks[0].epoch=2;tasks[0].reserved=64;queue[64]={0,0xffffffffU,0,0};queue[65]={2,0xffffffffU,0,1};
  results[0]={};metrics={};
  search_hbm_kernel(nodes.data(),edges.data(),resources.data(),tasks.data(),paths.data(),reads.data(),results.data(),dist.data(),pred.data(),hops.data(),seen.data(),closed.data(),read_epoch.data(),queue.data(),sizes.data(),4,4,1,8,32,&metrics);

@@ -44,6 +44,7 @@ using KernelBatchExecutor = std::function<KernelBatchResult(
 
 struct AcceleratedIteration {
  std::uint32_t iteration = 0;
+ std::uint32_t issue_width = 0;
  std::uint32_t waves = 0;
  std::uint32_t launched = 0;
  std::uint32_t committed = 0;

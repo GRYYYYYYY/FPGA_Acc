@@ -1,0 +1,102 @@
+{
+  "schema": "PERSISTROUTE_BALANCED_MATRIX_CASES_V1",
+  "configuration": {
+    "pe_count": 4,
+    "issue_width": 8,
+    "max_iterations": 30,
+    "min_timing_iterations": 3,
+    "timing_update_period": 1,
+    "base_cost_q": 64,
+    "cleanup_passes": 0,
+    "balanced_wirelength_delta_percent_max": 5.0,
+    "balanced_cpd_delta_percent_max": 3.0
+  },
+  "cases": [
+    {
+      "id": "diffeq_seed1_cw200", "name": "diffeq", "suite": "VTR",
+      "architecture": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+      "circuit": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/benchmarks/blif/diffeq.blif",
+      "baseline_dir": "experiments/vpr9/baseline_runs/vpr_serial/diffeq_seed1_cw200",
+      "net": "diffeq.net", "place": "diffeq.place", "route": "design.route",
+      "rr_graph": "experiments/vpr9/diffeq_seed1/rr_graph.xml",
+      "channel_width": 200, "baseline_wirelength": 9103, "baseline_cpd_ns": 6.59759
+    },
+    {
+      "id": "frisc_seed1_cw200", "name": "frisc", "suite": "VTR",
+      "architecture": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+      "circuit": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/benchmarks/blif/frisc.blif",
+      "baseline_dir": "experiments/vpr9/baseline_runs/vpr_serial/frisc_seed1_cw200",
+      "net": "frisc.net", "place": "frisc.place", "route": "design.route",
+      "rr_graph": "experiments/full_matrix_cmodel_2026-08-27/frisc_seed1_cw200/input/rr_graph.xml",
+      "channel_width": 200, "baseline_wirelength": 33182, "baseline_cpd_ns": 13.5879
+    },
+    {
+      "id": "elliptic_seed1_cw200", "name": "elliptic", "suite": "VTR",
+      "architecture": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+      "circuit": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/benchmarks/blif/elliptic.blif",
+      "baseline_dir": "experiments/vpr9/baseline_runs/vpr_serial/elliptic_seed1_cw200",
+      "net": "elliptic.net", "place": "elliptic.place", "route": "design.route",
+      "rr_graph": "experiments/full_matrix_cmodel_2026-08-27/elliptic_seed1_cw200/input/rr_graph.xml",
+      "channel_width": 200, "baseline_wirelength": 27329, "baseline_cpd_ns": 8.79211
+    },
+    {
+      "id": "clma_seed1_cw200", "name": "clma", "suite": "VTR",
+      "architecture": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+      "circuit": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/benchmarks/blif/clma.blif",
+      "baseline_dir": "experiments/vpr9/baseline_runs/vpr_serial/clma_seed1_cw200",
+      "net": "clma.net", "place": "clma.place", "route": "design.route",
+      "rr_graph": "experiments/vpr9/clma_seed1/rr_graph.xml",
+      "channel_width": 200, "baseline_wirelength": 79857, "baseline_cpd_ns": 11.6084
+    },
+    {
+      "id": "titan23_neuron_seed3_cw300", "name": "neuron_stratixiv_arch_timing", "suite": "Titan23",
+      "architecture": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/titan/stratixiv_arch.timing.xml",
+      "circuit": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/benchmarks/titan_blif/titan23/stratixiv/neuron_stratixiv_arch_timing.blif",
+      "sdc": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/benchmarks/titan_blif/titan23/stratixiv/neuron_stratixiv_arch_timing.sdc",
+      "baseline_dir": "experiments/vpr9/baseline_runs/vpr_serial/titan23_neuron_seed3_cw300",
+      "net": "neuron_stratixiv_arch_timing.net", "place": "neuron_stratixiv_arch_timing.place", "route": "design.route",
+      "channel_width": 300, "baseline_wirelength": 766630, "baseline_cpd_ns": 7.60292
+    },
+    {
+      "id": "titan23_stereo_vision_seed3_cw300", "name": "stereo_vision_stratixiv_arch_timing", "suite": "Titan23",
+      "architecture": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/titan/stratixiv_arch.timing.xml",
+      "circuit": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/benchmarks/titan_blif/titan23/stratixiv/stereo_vision_stratixiv_arch_timing.blif",
+      "sdc": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/benchmarks/titan_blif/titan23/stratixiv/stereo_vision_stratixiv_arch_timing.sdc",
+      "baseline_dir": "experiments/vpr9/baseline_runs/vpr_serial/titan23_stereo_vision_seed3_cw300",
+      "net": "stereo_vision_stratixiv_arch_timing.net", "place": "stereo_vision_stratixiv_arch_timing.place", "route": "design.route",
+      "channel_width": 300, "baseline_wirelength": 592827, "baseline_cpd_ns": 7.51746
+    },
+    {
+      "id": "koios_conv_layer_seed1_cw300", "name": "conv_layer", "suite": "Koios 2.0",
+      "architecture": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
+      "circuit": "experiments/vpr9/koios_conv_layer_frontend/conv_layer.pre-vpr.blif",
+      "baseline_dir": "experiments/vpr9/baseline_runs/vpr_serial/koios_conv_layer_seed1_cw300",
+      "net": "conv_layer.pre-vpr.net", "place": "conv_layer.pre-vpr.place", "route": "design.route",
+      "channel_width": 300, "baseline_wirelength": 232357, "baseline_cpd_ns": 5.12784
+    },
+    {
+      "id": "koios_attention_layer_seed1_cw300", "name": "attention_layer", "suite": "Koios 2.0",
+      "architecture": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
+      "circuit": "experiments/vpr9/koios_attention_layer_frontend/attention_layer.pre-vpr.blif",
+      "baseline_dir": "experiments/vpr9/baseline_runs/vpr_serial/koios_attention_layer_seed1_cw300",
+      "net": "attention_layer.pre-vpr.net", "place": "attention_layer.pre-vpr.place", "route": "design.route",
+      "channel_width": 300, "baseline_wirelength": 544069, "baseline_cpd_ns": 8.82262
+    },
+    {
+      "id": "koios_spmv_seed1_cw300", "name": "spmv", "suite": "Koios 2.0",
+      "architecture": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
+      "circuit": "experiments/vpr9/koios_spmv_frontend/spmv.pre-vpr.blif",
+      "baseline_dir": "experiments/vpr9/baseline_runs/vpr_serial/koios_spmv_seed1_cw300",
+      "net": "spmv.pre-vpr.net", "place": "spmv.pre-vpr.place", "route": "design.route",
+      "channel_width": 300, "baseline_wirelength": 221106, "baseline_cpd_ns": 6.15322
+    },
+    {
+      "id": "koios_softmax_seed1_cw300", "name": "softmax", "suite": "Koios 2.0",
+      "architecture": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
+      "circuit": "experiments/vpr9/koios_softmax_frontend/softmax.pre-vpr.blif",
+      "baseline_dir": "experiments/vpr9/baseline_runs/vpr_serial/koios_softmax_seed1_cw300",
+      "net": "softmax.pre-vpr.net", "place": "softmax.pre-vpr.place", "route": "design.route",
+      "channel_width": 300, "baseline_wirelength": 127260, "baseline_cpd_ns": 9.19045
+    }
+  ]
+}
