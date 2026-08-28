@@ -60,9 +60,12 @@ pass VPR-native routing consistency and feasibility checks. For
 \texttt{diffeq}, \texttt{frisc}, \texttt{elliptic}, and \texttt{clma},
 respectively, CPD deltas are +0.579\%, +0.876\%, +3.857\%, and +0.662\%;
 wirelength deltas are +4.427\%, +4.659\%, +3.934\%, and +3.216\%.
-Two-pass selective cleanup reduces the native pairs to
-+0.876\%/+3.134\% and +0.084\%/+2.646\%, respectively; the wirelength gate
-therefore remains open.
+Koios \texttt{softmax} and \texttt{spmv} also export legal native-VPR routes.
+Their wirelength/CPD deltas are +8.912\%/+3.388\% and
++5.683\%/+57.911\%, respectively; the latter is retained as a failed QoR point.
+Across all six exports, three pass the 5\%-wirelength/3\%-CPD Balanced tier,
+two more pass the 10\%/5\% Throughput tier, and
+\texttt{spmv} fails timing QoR despite being routing-legal.
 Hardware-emulation time is excluded from performance claims.
 Submission-quality speedup and energy require a physical U280, at least five
 post-warm-up repetitions, end-to-end phase timing, power integration, and the

@@ -216,8 +216,11 @@ AcceleratedPathfinderResult route_accelerated_pathfinder(
    for(const auto net:net_order){if(!pending.count(net))continue;auto& tree=trees[net];auto& cursor=cursors[net];if(cursor<tree.tasks.size()){Task task=result.tasks[tree.tasks[cursor++]].task;task.epoch=iteration;wave.push_back(task);seeds.push_back(tree_seeds(tree));}}
    if(wave.empty())break;
    ++audit.waves;audit.launched+=wave.size();result.metrics.searches+=wave.size();
-   for(std::size_t begin=0;begin<wave.size();begin+=current_issue_width){
-    const std::size_t end=std::min<std::size_t>(wave.size(),begin+current_issue_width);
+   const std::uint32_t wave_issue_width=adaptive&&config.adaptive_issue_tail_tasks&&
+    wave.size()<=config.adaptive_issue_tail_tasks?config.adaptive_issue_width_min:current_issue_width;
+   audit.issue_width=std::min(audit.issue_width,wave_issue_width);
+   for(std::size_t begin=0;begin<wave.size();begin+=wave_issue_width){
+    const std::size_t end=std::min<std::size_t>(wave.size(),begin+wave_issue_width);
     std::vector<Task> batch_tasks(wave.begin()+begin,wave.begin()+end);
     std::vector<std::vector<SearchSeed>> batch_seeds(seeds.begin()+begin,seeds.begin()+end);
     KernelBatchResult batch=executor(nodes,edges,result.resources,batch_tasks,batch_seeds,true);

@@ -8,10 +8,12 @@ directory; the aggregate JSON is the compact evidence intended for Git.
 from __future__ import annotations
 
 import argparse
+import csv
 import hashlib
 import json
 import math
 import os
+import shutil
 import subprocess
 import sys
 import time
@@ -90,16 +92,27 @@ def run_case(case: dict, config: dict, output: Path, vpr: Path, host: Path) -> d
     status_path = case_dir / "case_result.json"
 
     baseline_dir = resolve(case["baseline_dir"])
-    inputs = {
+    source_inputs = {
         "architecture": resolve(case["architecture"]),
         "circuit": resolve(case["circuit"]),
-        "net": baseline_dir / case["net"],
-        "place": baseline_dir / case["place"],
-        "route": baseline_dir / case["route"],
+        "net": resolve(case["net_path"]) if case.get("net_path") else baseline_dir / case["net"],
+        "place": resolve(case["place_path"]) if case.get("place_path") else baseline_dir / case["place"],
+        "route": resolve(case["route_path"]) if case.get("route_path") else baseline_dir / case["route"],
     }
     if case.get("sdc"):
-        inputs["sdc"] = resolve(case["sdc"])
-    require_files(list(inputs.values()) + [vpr, host])
+        source_inputs["sdc"] = resolve(case["sdc"])
+    require_files(list(source_inputs.values()) + [vpr, host])
+    inputs = {name: source_inputs[name] for name in ("architecture", "circuit")}
+    reference_dir = input_dir / "reference"
+    reference_dir.mkdir(parents=True, exist_ok=True)
+    for name in ("net", "place", "route", "sdc"):
+        if name not in source_inputs:
+            continue
+        source = source_inputs[name]
+        target = reference_dir / source.name
+        if not target.is_file() or sha256(target) != sha256(source):
+            shutil.copy2(source, target)
+        inputs[name] = target
 
     record = {
         "schema": "PERSISTROUTE_BALANCED_MATRIX_CASE_V1",
@@ -107,6 +120,8 @@ def run_case(case: dict, config: dict, output: Path, vpr: Path, host: Path) -> d
         "status": "running", "configuration": config,
         "baseline": {"wirelength": case["baseline_wirelength"], "cpd_ns": case["baseline_cpd_ns"]},
         "inputs": {name: {"path": str(path), "sha256": sha256(path)} for name, path in inputs.items()},
+        "source_inputs": {name: {"path": str(path), "sha256": sha256(path)}
+                          for name, path in source_inputs.items()},
         "stages": {},
     }
     write_json(status_path, record)
@@ -137,12 +152,69 @@ def run_case(case: dict, config: dict, output: Path, vpr: Path, host: Path) -> d
     else:
         record["stages"]["connections"] = {"status": "resumed"}
 
+    timing_env = os.environ.copy()
+    timing_env.update({
+        "PERSISTROUTE_VPR_BIN": str(vpr),
+        "PERSISTROUTE_VPR_ARCH": str(inputs["architecture"]),
+        "PERSISTROUTE_VPR_CIRCUIT": str(inputs["circuit"]),
+        "PERSISTROUTE_VPR_NET": str(inputs["net"]),
+        "PERSISTROUTE_VPR_PLACE": str(inputs["place"]),
+        "PERSISTROUTE_VPR_ROUTE": str(inputs["route"]),
+        "PERSISTROUTE_VPR_RR_GRAPH": str(rr_graph),
+        "PERSISTROUTE_VPR_CHAN_WIDTH": str(case["channel_width"]),
+    })
+    if inputs.get("sdc"):
+        timing_env["PERSISTROUTE_VPR_SDC"] = str(inputs["sdc"])
+
+    if config.get("initial_reference_timing"):
+        reference_input = input_dir / "reference_timing.input.csv"
+        reference_output = input_dir / "reference_timing.output.csv"
+        with connections.open(encoding="utf-8-sig", newline="") as source, \
+                reference_input.open("w", encoding="utf-8", newline="") as target:
+            rows = csv.DictReader(source)
+            writer = csv.writer(target)
+            writer.writerow(("iteration", "task_id", "net_id", "source", "sink",
+                             "routed", "delay_ps", "criticality_q"))
+            for row in rows:
+                writer.writerow((0xffffffff, row["id"], row["net_id"], row["source"],
+                                 row["sink"], 0, 0, row["criticality_q"]))
+        command = [sys.executable, str(ROOT / "tools/vpr_timing_analyzer.py"),
+                   str(0xffffffff), str(reference_input), str(reference_output)]
+        code, wall = run(command, input_dir, input_dir / "reference_timing.stdout",
+                         input_dir / "reference_timing.stderr", timing_env)
+        if code:
+            raise RuntimeError(f"reference timing initialization failed with exit {code}")
+        criticalities = {}
+        with reference_output.open(encoding="utf-8", newline="") as stream:
+            for row in csv.DictReader(stream):
+                criticalities[row["task_id"]] = row["criticality_q"]
+        timed_connections = input_dir / "timed_connections.csv"
+        temporary = timed_connections.with_suffix(".csv.tmp")
+        with connections.open(encoding="utf-8-sig", newline="") as source, \
+                temporary.open("w", encoding="utf-8", newline="") as target:
+            rows = csv.DictReader(source)
+            writer = csv.DictWriter(target, fieldnames=rows.fieldnames)
+            writer.writeheader()
+            for row in rows:
+                if row["id"] not in criticalities:
+                    raise RuntimeError(f"reference timing omitted task {row['id']}")
+                row["criticality_q"] = criticalities[row["id"]]
+                writer.writerow(row)
+        temporary.replace(timed_connections)
+        connections = timed_connections
+        record["stages"]["reference_timing"] = {
+            "status": "pass", "command": command, "wall_s": wall,
+            "connections": len(criticalities), "output_sha256": sha256(reference_output),
+        }
+
     prefix = input_dir / "vpr_input"
     manifest = input_dir / "vpr_input.manifest.json"
     packed = [prefix.with_suffix(suffix) for suffix in (".nodes", ".edges", ".resources", ".tasks")]
     packed_current = False
     if manifest.is_file() and all(path.is_file() for path in packed):
-        packed_current = json.loads(manifest.read_text(encoding="utf-8")).get("base_cost_q") == config["base_cost_q"]
+        prior_manifest = json.loads(manifest.read_text(encoding="utf-8"))
+        packed_current = (prior_manifest.get("base_cost_q") == config["base_cost_q"]
+                          and prior_manifest.get("connections_sha256") == sha256(connections))
     if not packed_current:
         command = [sys.executable, str(ROOT / "tools/pack_hls_inputs.py"), str(rr_graph),
                    str(connections), str(prefix), "--base-cost-q", str(config["base_cost_q"])]
@@ -160,36 +232,34 @@ def run_case(case: dict, config: dict, output: Path, vpr: Path, host: Path) -> d
     host_stdout, host_stderr = run_dir / "host.stdout", run_dir / "host.stderr"
     route_trees = routed_prefix.with_suffix(".route_trees.csv")
     host_result_path = run_dir / "host_result.json"
-    run_identity = {"configuration": config, "host_sha256": sha256(host)}
+    def execution_config(value: dict) -> dict:
+        return {key: item for key, item in value.items()
+                if not key.startswith(("balanced_", "relaxed_"))
+                and not (key == "initial_reference_timing" and not item)}
+    run_identity = {"configuration": execution_config(config), "host_sha256": sha256(host)}
     reusable_host_result = False
     if host_result_path.is_file() and route_trees.is_file():
-        reusable_host_result = json.loads(host_result_path.read_text(encoding="utf-8")).get(
-            "run_identity") == run_identity
+        prior_identity = json.loads(host_result_path.read_text(encoding="utf-8")).get("run_identity", {})
+        reusable_host_result = (
+            prior_identity.get("host_sha256") == run_identity["host_sha256"]
+            and execution_config(prior_identity.get("configuration", {})) == run_identity["configuration"])
     host_ran = not reusable_host_result
     if host_ran:
-        env = os.environ.copy()
+        env = timing_env.copy()
         env.update({
             "PERSISTROUTE_PE_COUNT": str(config["pe_count"]),
             "PERSISTROUTE_ISSUE_WIDTH": str(config["issue_width"]),
             "PERSISTROUTE_ADAPTIVE_ISSUE_MIN": str(config.get("adaptive_issue_width_min", 0)),
             "PERSISTROUTE_ADAPTIVE_ISSUE_STAGNATION": str(
                 config.get("adaptive_issue_stagnation_iterations", 0)),
+            "PERSISTROUTE_ADAPTIVE_ISSUE_TAIL_TASKS": str(
+                config.get("adaptive_issue_tail_tasks", 0)),
             "PERSISTROUTE_MAX_ITERATIONS": str(config["max_iterations"]),
             "PERSISTROUTE_MIN_TIMING_ITERATIONS": str(config["min_timing_iterations"]),
             "PERSISTROUTE_TIMING_UPDATE_PERIOD": str(config["timing_update_period"]),
             "PERSISTROUTE_SELECTIVE_CLEANUP_PASSES": str(config["cleanup_passes"]),
             "PERSISTROUTE_TIMING_COMMAND": f"{sys.executable} {ROOT / 'tools/vpr_timing_analyzer.py'}",
-            "PERSISTROUTE_VPR_BIN": str(vpr),
-            "PERSISTROUTE_VPR_ARCH": str(inputs["architecture"]),
-            "PERSISTROUTE_VPR_CIRCUIT": str(inputs["circuit"]),
-            "PERSISTROUTE_VPR_NET": str(inputs["net"]),
-            "PERSISTROUTE_VPR_PLACE": str(inputs["place"]),
-            "PERSISTROUTE_VPR_ROUTE": str(inputs["route"]),
-            "PERSISTROUTE_VPR_RR_GRAPH": str(rr_graph),
-            "PERSISTROUTE_VPR_CHAN_WIDTH": str(case["channel_width"]),
         })
-        if inputs.get("sdc"):
-            env["PERSISTROUTE_VPR_SDC"] = str(inputs["sdc"])
         command = [str(host), str(prefix), str(routed_prefix)]
         code, wall = run(command, run_dir, host_stdout, host_stderr, env)
         host_result = last_json_line(host_stdout)
@@ -289,9 +359,14 @@ def main() -> int:
     parser.add_argument("--vpr", type=Path, default=DEFAULT_VPR)
     parser.add_argument("--host", type=Path, default=ROOT / "host/persistroute_accelerated_cmodel")
     parser.add_argument("--case", action="append", dest="selected")
+    parser.add_argument("--include-existing", action="store_true",
+                        help="aggregate completed case_result.json files already in --output")
     parser.add_argument("--issue-width", type=int)
     parser.add_argument("--adaptive-issue-min", type=int)
     parser.add_argument("--adaptive-stagnation", type=int)
+    parser.add_argument("--adaptive-tail-tasks", type=int)
+    parser.add_argument("--initial-reference-timing", action=argparse.BooleanOptionalAction,
+                        default=None)
     parser.add_argument("--max-iterations", type=int)
     args = parser.parse_args()
     document = json.loads(args.config.read_text(encoding="utf-8"))
@@ -302,11 +377,14 @@ def main() -> int:
         "issue_width": args.issue_width,
         "adaptive_issue_width_min": args.adaptive_issue_min,
         "adaptive_issue_stagnation_iterations": args.adaptive_stagnation,
+        "adaptive_issue_tail_tasks": args.adaptive_tail_tasks,
         "max_iterations": args.max_iterations,
+        "initial_reference_timing": args.initial_reference_timing,
     }
     document["configuration"].update(
         {key: value for key, value in overrides.items() if value is not None})
-    cases = document["cases"]
+    all_cases = document["cases"]
+    cases = all_cases
     if args.selected:
         selected = set(args.selected)
         unknown = selected - {case["id"] for case in cases}
@@ -327,6 +405,15 @@ def main() -> int:
             results.append(failure)
             print(f"[balanced-matrix] ERROR {case['id']}: {error}", file=sys.stderr, flush=True)
         write_json(args.summary.resolve(), aggregate(document["configuration"], results))
+    if args.include_existing:
+        existing = []
+        for case in all_cases:
+            result_path = args.output.resolve() / case["id"] / "case_result.json"
+            if result_path.is_file():
+                item = json.loads(result_path.read_text(encoding="utf-8"))
+                if item.get("status") not in ("running", "error"):
+                    existing.append(item)
+        write_json(args.summary.resolve(), aggregate(document["configuration"], existing))
     return 0 if results and all(item.get("status") == "pass" for item in results) else 3
 
 

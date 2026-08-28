@@ -1,0 +1,31 @@
+{
+  "schema": "PERSISTROUTE_TIMING_INITIALIZATION_ABLATION_V1",
+  "date": "2026-08-29",
+  "default_decision": "unseeded",
+  "cases": [
+    {
+      "name": "diffeq",
+      "unseeded": {
+        "routing_iterations": 22,
+        "wirelength_delta_percent": 4.427111941118311,
+        "cpd_delta_percent": 0.5794540127531445
+      },
+      "reference_timing_seeded": {
+        "routing_iterations": 11,
+        "wirelength_delta_percent": 4.372184993958039,
+        "cpd_delta_percent": 2.1883748459664787,
+        "source_summary": "reference_seed_validation_2026-08-29.json"
+      },
+      "conclusion": "The seed reduces iteration count but worsens final timing QoR."
+    },
+    {
+      "name": "spmv",
+      "unseeded_first_round_cpd_ns": 8.190,
+      "reference_timing_seeded_first_round_cpd_ns": 9.436,
+      "seeded_run_completed": false,
+      "stop_reason": "The first-round timing result was already worse, so the long negative branch was stopped before completing the matrix.",
+      "conclusion": "Reference-route criticalities are not a robust initialization for the present local-delay search cost."
+    }
+  ],
+  "claim_boundary": "The incomplete spmv branch is reported only as a first-round negative diagnostic, not as a final-route comparison."
+}

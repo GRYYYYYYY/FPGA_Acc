@@ -34,6 +34,7 @@ class Node:
     yhigh: int
     layer: int
     ptc: int
+    logical_pin: str | None = None
 
 
 def sha256(path: Path) -> str:
@@ -75,7 +76,7 @@ def parse_original(path: Path):
                     value = pin_match.group(3)
                     old = pin_templates.setdefault(key, value)
                     if old != value:
-                        raise ValueError(f"ambiguous logical pin description for {key}: {old} versus {value}")
+                        pin_templates[key] = None
             routed[net_id] = {"name": name, "nodes": nodes, "section": section}
         sections.append((start, end, match, section))
     size_match = ARRAY_SIZE.match(lines[1])
@@ -122,16 +123,32 @@ def load_rr_graph(path: Path, used_nodes: set[int], used_edges: set[tuple[int, i
     nodes = {}
     edge_switch = {}
     ambiguous = {}
+    block_pins = {}
+    grid = {}
     for _, elem in ET.iterparse(path, events=("end",)):
         tag = elem.tag.rsplit("}", 1)[-1]
-        if tag == "node":
+        if tag == "block_type":
+            block_pins[int(elem.attrib["id"])] = {
+                int(pin.attrib["ptc"]): (pin.text or "")
+                for pin in elem.iter() if pin.tag.rsplit("}", 1)[-1] == "pin"
+            }
+            elem.clear()
+        elif tag == "grid_loc":
+            a = elem.attrib
+            grid[(int(a["x"]), int(a["y"]), int(a.get("layer", 0)))] = int(a["block_type_id"])
+            elem.clear()
+        elif tag == "node":
             node_id = int(elem.attrib["id"])
             if node_id in used_nodes:
                 loc = next(child for child in elem if child.tag.rsplit("}", 1)[-1] == "loc")
                 a = loc.attrib
+                coordinate = (int(a["xlow"]), int(a["ylow"]), int(a.get("layer", 0)))
+                ptc = int(a["ptc"])
+                block_type = grid.get(coordinate)
                 nodes[node_id] = Node(
                     elem.attrib["type"], int(a["xlow"]), int(a["ylow"]),
-                    int(a["xhigh"]), int(a["yhigh"]), int(a.get("layer", 0)), int(a["ptc"])
+                    int(a["xhigh"]), int(a["yhigh"]), int(a.get("layer", 0)), ptc,
+                    block_pins.get(block_type, {}).get(ptc),
                 )
             elem.clear()
         elif tag == "edge":
@@ -205,9 +222,12 @@ def node_prefix(node_id: int, node: Node, templates, pin_templates, dimensions) 
     width, height = dimensions
     marker = "Pad" if node.xlow in (0, width - 1) or node.ylow in (0, height - 1) else "Pin"
     key = (node.kind, marker, node.ptc)
-    if key not in pin_templates:
+    if node.logical_pin is not None:
+        logical = node.logical_pin
+    elif key not in pin_templates or pin_templates[key] is None:
         raise ValueError(f"new {node.kind} node {node_id} has no learned logical pin description for {key}")
-    logical = pin_templates[key]
+    else:
+        logical = pin_templates[key]
     logical_text = f" {logical}" if logical else ""
     return text + f"{marker}: {node.ptc}{logical_text} Switch:"
 

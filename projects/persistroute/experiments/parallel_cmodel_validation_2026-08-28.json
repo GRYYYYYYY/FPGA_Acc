@@ -1,0 +1,294 @@
+{
+  "all_cases_legal": true,
+  "all_cases_pass_balanced_gate": true,
+  "all_cases_pass_relaxed_gate": true,
+  "balanced_case_count": 1,
+  "case_count": 1,
+  "cases": [
+    {
+      "balanced_case_pass": true,
+      "baseline": {
+        "cpd_ns": 6.59759,
+        "wirelength": 9103
+      },
+      "case_id": "diffeq_seed1_cw200",
+      "configuration": {
+        "adaptive_issue_stagnation_iterations": 3,
+        "adaptive_issue_width_min": 1,
+        "balanced_cpd_delta_percent_max": 3.0,
+        "balanced_wirelength_delta_percent_max": 5.0,
+        "base_cost_q": 64,
+        "cleanup_passes": 0,
+        "conflict_validation_read_set": "path_resources",
+        "issue_width": 8,
+        "max_iterations": 30,
+        "min_timing_iterations": 3,
+        "pe_count": 4,
+        "relaxed_cpd_delta_percent_max": 5,
+        "relaxed_wirelength_delta_percent_max": 5,
+        "timing_update_period": 1
+      },
+      "inputs": {
+        "architecture": {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+          "sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179"
+        },
+        "circuit": {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/benchmarks/blif/diffeq.blif",
+          "sha256": "507978af7a0c09efa0baada34e55a7d3e635619b6dd9a18a7fa47aed7903ecf7"
+        },
+        "net": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/diffeq_seed1_cw200/diffeq.net",
+          "sha256": "1ceb244ed8861bbeaecdcc961ca48c131ce5182dfc279a074854ab5fcbaab043"
+        },
+        "place": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/diffeq_seed1_cw200/diffeq.place",
+          "sha256": "e784bc6695bdcc5fdba27400de277395ff7406f06680ab6624562596a623120c"
+        },
+        "route": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/diffeq_seed1_cw200/design.route",
+          "sha256": "f91ff4bf9aa2203edc616462c81fc85971d3e9d312a3847f8214bd43887dd761"
+        }
+      },
+      "name": "diffeq",
+      "native_validation": {
+        "baseline_cpd_ns": 6.59759,
+        "baseline_wirelength": 9103,
+        "channel_width": 200,
+        "command": [
+          "/home/gry/.local/opt/vtr-9.0.0-src/build_vpr/vpr/vpr",
+          "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+          "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/benchmarks/blif/diffeq.blif",
+          "--analysis",
+          "--net_file",
+          "diffeq.net",
+          "--place_file",
+          "diffeq.place",
+          "--route_file",
+          "diffeq.persist.route",
+          "--route_chan_width",
+          "200",
+          "--read_rr_graph",
+          "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/diffeq_seed1/rr_graph.xml"
+        ],
+        "cpd_delta_percent": 0.5794540127531445,
+        "critical_path_delay_ns": 6.63582,
+        "inputs": {
+          "arch_sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179",
+          "circuit_sha256": "507978af7a0c09efa0baada34e55a7d3e635619b6dd9a18a7fa47aed7903ecf7",
+          "net_sha256": "1ceb244ed8861bbeaecdcc961ca48c131ce5182dfc279a074854ab5fcbaab043",
+          "place_sha256": "e784bc6695bdcc5fdba27400de277395ff7406f06680ab6624562596a623120c",
+          "route_sha256": "7d1ac484cc044f018612ef4e34a4913451a3589560188fb41a6b753af424a5e2",
+          "rr_graph_sha256": "62d7b83281be59af216d789f9ec592c315af23519bd97260da4f131401306b96",
+          "sdc_sha256": null,
+          "vpr_sha256": "41d21e0e3ad1bf9d914b282fd9340024121db5b550747a231ceb0ec0736bf44f"
+        },
+        "legal": true,
+        "route_loaded": true,
+        "routing_consistency": true,
+        "schema": "PERSISTROUTE_VPR_NATIVE_VALIDATION_V1",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "0acfda2546b9c829933b4765550f3b39e47c15ef1a038a0f4970690b2241ff74",
+        "successfully_routed": true,
+        "total_wirelength": 9506,
+        "vpr_exit_status": 0,
+        "vpr_succeeded": true,
+        "wirelength_delta_percent": 4.427111941118311
+      },
+      "output_hashes": {
+        "diffeq.paths.csv": "21c7cb41bf9f5a1481443c9ddb64caa6b1b1a6fd51996b10f472d8f3c7fc5196",
+        "diffeq.persist.route": "7d1ac484cc044f018612ef4e34a4913451a3589560188fb41a6b753af424a5e2",
+        "diffeq.resources": "8ff4fca130125cb9847ad7961db2d567c8eebfd651194189ad33c9eb32150919",
+        "diffeq.route_trees.csv": "4a2bbbfe4b42316e3e8218f22dfc55d86471e7282d685fd79b4c4b64400c3f17",
+        "validation.json": "aa0e80c680892e27f541bcde5daa0c322d810fdd60b105d235d441df1ca43556"
+      },
+      "packed_input": {
+        "edges": {
+          "bytes": 2758560,
+          "count": 344820,
+          "path": "vpr_input.edges",
+          "record_bytes": 8,
+          "sha256": "6fec396362a5995b247eb5cdedf9dc72a6552a1cfa25d179988ea18486a55c4a"
+        },
+        "manifest_sha256": "0764c1953a2c7ee4d6af78b90999e882100c02b82fa7ad8ebb47d5333628c2cb",
+        "nodes": {
+          "bytes": 263360,
+          "count": 32920,
+          "path": "vpr_input.nodes",
+          "record_bytes": 8,
+          "sha256": "4957ec0a0ac3be18d9708d26e83c93f8a0f9469048b5c4031c3c4fe99d9284c4"
+        },
+        "resources": {
+          "bytes": 526720,
+          "count": 32920,
+          "path": "vpr_input.resources",
+          "record_bytes": 16,
+          "sha256": "aaf4bb84073a37356e8f46b6c7233b75d8284c7ac66fb1edca8c5d2eae6362c0"
+        },
+        "tasks": {
+          "bytes": 63136,
+          "count": 1973,
+          "path": "vpr_input.tasks",
+          "record_bytes": 32,
+          "sha256": "a69b4bd35c1145bd966c60da2f07617e5280a2a457648f08d913f7b52c994842"
+        }
+      },
+      "relaxed_case_pass": true,
+      "schema": "PERSISTROUTE_BALANCED_MATRIX_CASE_V1",
+      "stages": {
+        "connections": {
+          "command": [
+            "/usr/bin/python3",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/tools/vpr_route_connections.py",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/diffeq_seed1_cw200/design.route",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/parallel_cmodel_validation_2026-08-28/diffeq_seed1_cw200/input/connections.csv"
+          ],
+          "status": "pass",
+          "wall_s": 0.03820717400230933
+        },
+        "hbm_cmodel": {
+          "backend": "hbm_cmodel",
+          "cleanup_accepted_branches": 0,
+          "cleanup_accepted_nets": 0,
+          "cleanup_attempted_branches": 0,
+          "cleanup_attempted_nets": 0,
+          "cleanup_ms": 0,
+          "cleanup_wirelength_after": 0,
+          "cleanup_wirelength_before": 0,
+          "command": [
+            "/tmp/persistroute-cmake-build/persistroute_accelerated_cmodel",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/parallel_cmodel_validation_2026-08-28/diffeq_seed1_cw200/input/vpr_input",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/parallel_cmodel_validation_2026-08-28/diffeq_seed1_cw200/run/diffeq"
+          ],
+          "commit_launches": 1050,
+          "commit_ms": 0.776722,
+          "d2h_bytes": 0,
+          "edge_visits": 66907339,
+          "exit_status": 0,
+          "expanded": 11432596,
+          "h2d_bytes": 0,
+          "iterations": 22,
+          "legal": true,
+          "overused_resources": 0,
+          "route_ms": 13145.7,
+          "routed_tasks": 1973,
+          "run_identity": {
+            "configuration": {
+              "adaptive_issue_stagnation_iterations": 3,
+              "adaptive_issue_width_min": 1,
+              "balanced_cpd_delta_percent_max": 3.0,
+              "balanced_wirelength_delta_percent_max": 5.0,
+              "base_cost_q": 64,
+              "cleanup_passes": 0,
+              "conflict_validation_read_set": "path_resources",
+              "issue_width": 8,
+              "max_iterations": 30,
+              "min_timing_iterations": 3,
+              "pe_count": 4,
+              "relaxed_cpd_delta_percent_max": 5,
+              "relaxed_wirelength_delta_percent_max": 5,
+              "timing_update_period": 1
+            },
+            "host_sha256": "e02f3aa97f52746395a50f33e8aefca6bf5d82e9001692829ecddf5556604cfa"
+          },
+          "search_launches": 3596,
+          "search_ms": 1253.17,
+          "searches": 6525,
+          "status": "pass",
+          "tasks": 1973,
+          "timing_ms": 10692.2,
+          "wall_ms": 13148.5,
+          "wall_s_measured": 13.152640096996038
+        },
+        "native_validation": {
+          "command": [
+            "/usr/bin/python3",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/tools/validate_vpr_route.py",
+            "--vpr",
+            "/home/gry/.local/opt/vtr-9.0.0-src/build_vpr/vpr/vpr",
+            "--arch",
+            "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+            "--circuit",
+            "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/benchmarks/blif/diffeq.blif",
+            "--net",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/diffeq_seed1_cw200/diffeq.net",
+            "--place",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/diffeq_seed1_cw200/diffeq.place",
+            "--route",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/parallel_cmodel_validation_2026-08-28/diffeq_seed1_cw200/run/diffeq.persist.route",
+            "--rr-graph",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/diffeq_seed1/rr_graph.xml",
+            "--channel-width",
+            "200",
+            "--work-dir",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/parallel_cmodel_validation_2026-08-28/diffeq_seed1_cw200/native_validation",
+            "--report",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/parallel_cmodel_validation_2026-08-28/diffeq_seed1_cw200/native_validation/validation.json",
+            "--baseline-wirelength",
+            "9103",
+            "--baseline-cpd-ns",
+            "6.59759"
+          ],
+          "status": "pass",
+          "wall_s": 0.5255011440021917
+        },
+        "packing": {
+          "command": [
+            "/usr/bin/python3",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/tools/pack_hls_inputs.py",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/diffeq_seed1/rr_graph.xml",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/parallel_cmodel_validation_2026-08-28/diffeq_seed1_cw200/input/connections.csv",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/parallel_cmodel_validation_2026-08-28/diffeq_seed1_cw200/input/vpr_input",
+            "--base-cost-q",
+            "64"
+          ],
+          "status": "pass",
+          "wall_s": 1.2534721069969237
+        },
+        "route_writeback": {
+          "command": [
+            "/usr/bin/python3",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/tools/write_vpr_route.py",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/diffeq_seed1_cw200/design.route",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/diffeq_seed1/rr_graph.xml",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/parallel_cmodel_validation_2026-08-28/diffeq_seed1_cw200/input/connections.csv",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/parallel_cmodel_validation_2026-08-28/diffeq_seed1_cw200/run/diffeq.route_trees.csv",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/parallel_cmodel_validation_2026-08-28/diffeq_seed1_cw200/run/diffeq.persist.route"
+          ],
+          "status": "pass",
+          "wall_s": 0.7746033959992928
+        },
+        "rr_graph": {
+          "bytes": 27406582,
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/diffeq_seed1/rr_graph.xml",
+          "sha256": "62d7b83281be59af216d789f9ec592c315af23519bd97260da4f131401306b96",
+          "status": "reused"
+        }
+      },
+      "status": "pass",
+      "suite": "VTR"
+    }
+  ],
+  "claim_boundary": "HBM C-model screening and native VPR QoR only; no physical-U280 speed or energy claim.",
+  "configuration": {
+    "adaptive_issue_stagnation_iterations": 3,
+    "adaptive_issue_width_min": 1,
+    "balanced_cpd_delta_percent_max": 3.0,
+    "balanced_wirelength_delta_percent_max": 5.0,
+    "base_cost_q": 64,
+    "cleanup_passes": 0,
+    "conflict_validation_read_set": "path_resources",
+    "issue_width": 8,
+    "max_iterations": 30,
+    "min_timing_iterations": 3,
+    "pe_count": 4,
+    "relaxed_cpd_delta_percent_max": 5,
+    "relaxed_wirelength_delta_percent_max": 5,
+    "timing_update_period": 1
+  },
+  "geomean_cpd_delta_percent": 0.5794540127531445,
+  "geomean_wirelength_delta_percent": 4.427111941118311,
+  "legal_case_count": 1,
+  "relaxed_case_count": 1,
+  "schema": "PERSISTROUTE_BALANCED_MATRIX_V1"
+}

@@ -1,0 +1,34 @@
+{
+  "schema": "PERSISTROUTE_STREAMING_PACKER_VALIDATION_V1",
+  "date": "2026-08-29",
+  "workload": "Koios spmv RR graph XML",
+  "input_xml_size_gib": 2.2,
+  "legacy_dom_packer": {
+    "elapsed_minutes_approx": 8.5,
+    "vm_peak_gib_approx": 25.0,
+    "rss_peak_gib_approx": 14.8,
+    "swap_observed": true
+  },
+  "two_pass_streaming_packer": {
+    "elapsed_minutes_approx": 2.0,
+    "rss_peak_mib_approx": 81,
+    "swap_observed": false
+  },
+  "equivalence_checks": [
+    {
+      "case": "tiny synthetic graph",
+      "node_binary_sha256_equal": true,
+      "edge_binary_sha256_equal": true,
+      "resource_binary_sha256_equal": true,
+      "task_binary_sha256_equal": true
+    },
+    {
+      "case": "VTR diffeq",
+      "node_binary_sha256_equal": true,
+      "edge_binary_sha256_equal": true,
+      "resource_binary_sha256_equal": true,
+      "task_binary_sha256_equal": true
+    }
+  ],
+  "claim_boundary": "Memory and elapsed values are single observed engineering measurements and are not used as FPGA speedup results."
+}

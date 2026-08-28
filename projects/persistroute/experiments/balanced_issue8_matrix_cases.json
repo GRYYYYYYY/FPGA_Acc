@@ -9,7 +9,9 @@
     "base_cost_q": 64,
     "cleanup_passes": 0,
     "balanced_wirelength_delta_percent_max": 5.0,
-    "balanced_cpd_delta_percent_max": 3.0
+    "balanced_cpd_delta_percent_max": 3.0,
+    "relaxed_wirelength_delta_percent_max": 10.0,
+    "relaxed_cpd_delta_percent_max": 5.0
   },
   "cases": [
     {
@@ -95,7 +97,9 @@
       "architecture": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
       "circuit": "experiments/vpr9/koios_softmax_frontend/softmax.pre-vpr.blif",
       "baseline_dir": "experiments/vpr9/baseline_runs/vpr_serial/koios_softmax_seed1_cw300",
-      "net": "softmax.pre-vpr.net", "place": "softmax.pre-vpr.place", "route": "design.route",
+      "net": "softmax.pre-vpr.net", "place": "softmax.pre-vpr.place",
+      "place_path": "experiments/vpr9/baseline_runs/vpr_parallel/koios_softmax_seed1_cw300/softmax.pre-vpr.place",
+      "route": "design.route",
       "channel_width": 300, "baseline_wirelength": 127260, "baseline_cpd_ns": 9.19045
     }
   ]

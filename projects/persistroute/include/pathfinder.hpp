@@ -16,6 +16,7 @@ struct PathfinderConfig {
  std::uint32_t timing_update_period = 1;
  std::uint32_t adaptive_issue_width_min = 0;
  std::uint32_t adaptive_issue_stagnation_iterations = 0;
+ std::uint32_t adaptive_issue_tail_tasks = 0;
  std::uint16_t present_start_q = 256;
  std::uint16_t present_multiplier_q = 512; // Q8: 512 == 2.0
  std::uint16_t history_increment_q = 256;

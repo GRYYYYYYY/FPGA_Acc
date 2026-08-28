@@ -1,0 +1,1255 @@
+{
+  "all_cases_legal": true,
+  "all_cases_pass_balanced_gate": false,
+  "all_cases_pass_relaxed_gate": false,
+  "balanced_case_count": 3,
+  "case_count": 6,
+  "cases": [
+    {
+      "balanced_case_pass": true,
+      "baseline": {
+        "cpd_ns": 6.59759,
+        "wirelength": 9103
+      },
+      "case_id": "diffeq_seed1_cw200",
+      "configuration": {
+        "adaptive_issue_stagnation_iterations": 3,
+        "adaptive_issue_width_min": 1,
+        "balanced_cpd_delta_percent_max": 3.0,
+        "balanced_wirelength_delta_percent_max": 5.0,
+        "base_cost_q": 64,
+        "cleanup_passes": 0,
+        "conflict_validation_read_set": "path_resources",
+        "issue_width": 8,
+        "max_iterations": 30,
+        "min_timing_iterations": 3,
+        "pe_count": 4,
+        "relaxed_cpd_delta_percent_max": 5,
+        "relaxed_wirelength_delta_percent_max": 5,
+        "timing_update_period": 1
+      },
+      "inputs": {
+        "architecture": {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+          "sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179"
+        },
+        "circuit": {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/benchmarks/blif/diffeq.blif",
+          "sha256": "507978af7a0c09efa0baada34e55a7d3e635619b6dd9a18a7fa47aed7903ecf7"
+        },
+        "net": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/diffeq_seed1_cw200/diffeq.net",
+          "sha256": "1ceb244ed8861bbeaecdcc961ca48c131ce5182dfc279a074854ab5fcbaab043"
+        },
+        "place": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/diffeq_seed1_cw200/diffeq.place",
+          "sha256": "e784bc6695bdcc5fdba27400de277395ff7406f06680ab6624562596a623120c"
+        },
+        "route": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/diffeq_seed1_cw200/design.route",
+          "sha256": "f91ff4bf9aa2203edc616462c81fc85971d3e9d312a3847f8214bd43887dd761"
+        }
+      },
+      "name": "diffeq",
+      "native_validation": {
+        "baseline_cpd_ns": 6.59759,
+        "baseline_wirelength": 9103,
+        "channel_width": 200,
+        "command": [
+          "/home/gry/.local/opt/vtr-9.0.0-src/build_vpr/vpr/vpr",
+          "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+          "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/benchmarks/blif/diffeq.blif",
+          "--analysis",
+          "--net_file",
+          "diffeq.net",
+          "--place_file",
+          "diffeq.place",
+          "--route_file",
+          "diffeq.persist.route",
+          "--route_chan_width",
+          "200",
+          "--read_rr_graph",
+          "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/diffeq_seed1/rr_graph.xml"
+        ],
+        "cpd_delta_percent": 0.5794540127531445,
+        "critical_path_delay_ns": 6.63582,
+        "inputs": {
+          "arch_sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179",
+          "circuit_sha256": "507978af7a0c09efa0baada34e55a7d3e635619b6dd9a18a7fa47aed7903ecf7",
+          "net_sha256": "1ceb244ed8861bbeaecdcc961ca48c131ce5182dfc279a074854ab5fcbaab043",
+          "place_sha256": "e784bc6695bdcc5fdba27400de277395ff7406f06680ab6624562596a623120c",
+          "route_sha256": "7d1ac484cc044f018612ef4e34a4913451a3589560188fb41a6b753af424a5e2",
+          "rr_graph_sha256": "62d7b83281be59af216d789f9ec592c315af23519bd97260da4f131401306b96",
+          "sdc_sha256": null,
+          "vpr_sha256": "41d21e0e3ad1bf9d914b282fd9340024121db5b550747a231ceb0ec0736bf44f"
+        },
+        "legal": true,
+        "route_loaded": true,
+        "routing_consistency": true,
+        "schema": "PERSISTROUTE_VPR_NATIVE_VALIDATION_V1",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "2633e85d18aea8589c2f3b1868e42e26ae70b1e9ee58a9f003998040e570389f",
+        "successfully_routed": true,
+        "total_wirelength": 9506,
+        "vpr_exit_status": 0,
+        "vpr_succeeded": true,
+        "wirelength_delta_percent": 4.427111941118311
+      },
+      "output_hashes": {
+        "diffeq.paths.csv": "21c7cb41bf9f5a1481443c9ddb64caa6b1b1a6fd51996b10f472d8f3c7fc5196",
+        "diffeq.persist.route": "7d1ac484cc044f018612ef4e34a4913451a3589560188fb41a6b753af424a5e2",
+        "diffeq.resources": "8ff4fca130125cb9847ad7961db2d567c8eebfd651194189ad33c9eb32150919",
+        "diffeq.route_trees.csv": "4a2bbbfe4b42316e3e8218f22dfc55d86471e7282d685fd79b4c4b64400c3f17",
+        "validation.json": "89430ab14531e16aad564317ebfd51986c0273aed767a48bb2c3ca8f44a45b61"
+      },
+      "packed_input": {
+        "edges": {
+          "bytes": 2758560,
+          "count": 344820,
+          "path": "vpr_input.edges",
+          "record_bytes": 8,
+          "sha256": "6fec396362a5995b247eb5cdedf9dc72a6552a1cfa25d179988ea18486a55c4a"
+        },
+        "manifest_sha256": "40203fd5db1a1238314071a7706f2361f3bd4b5e5390c8ae78579e636787b54f",
+        "nodes": {
+          "bytes": 263360,
+          "count": 32920,
+          "path": "vpr_input.nodes",
+          "record_bytes": 8,
+          "sha256": "4957ec0a0ac3be18d9708d26e83c93f8a0f9469048b5c4031c3c4fe99d9284c4"
+        },
+        "resources": {
+          "bytes": 526720,
+          "count": 32920,
+          "path": "vpr_input.resources",
+          "record_bytes": 16,
+          "sha256": "aaf4bb84073a37356e8f46b6c7233b75d8284c7ac66fb1edca8c5d2eae6362c0"
+        },
+        "tasks": {
+          "bytes": 63136,
+          "count": 1973,
+          "path": "vpr_input.tasks",
+          "record_bytes": 32,
+          "sha256": "a69b4bd35c1145bd966c60da2f07617e5280a2a457648f08d913f7b52c994842"
+        }
+      },
+      "relaxed_case_pass": true,
+      "schema": "PERSISTROUTE_BALANCED_MATRIX_CASE_V1",
+      "stages": {
+        "connections": {
+          "status": "resumed"
+        },
+        "hbm_cmodel": {
+          "backend": "hbm_cmodel",
+          "cleanup_accepted_branches": 0,
+          "cleanup_accepted_nets": 0,
+          "cleanup_attempted_branches": 0,
+          "cleanup_attempted_nets": 0,
+          "cleanup_ms": 0,
+          "cleanup_wirelength_after": 0,
+          "cleanup_wirelength_before": 0,
+          "command": [
+            "/tmp/persistroute-cmake-build/persistroute_accelerated_cmodel",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/diffeq_seed1_cw200/input/vpr_input",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/diffeq_seed1_cw200/run/diffeq"
+          ],
+          "commit_launches": 1050,
+          "commit_ms": 0.444816,
+          "d2h_bytes": 0,
+          "edge_visits": 66907339,
+          "exit_status": 0,
+          "expanded": 11432596,
+          "h2d_bytes": 0,
+          "iterations": 22,
+          "legal": true,
+          "overused_resources": 0,
+          "route_ms": 13571.2,
+          "routed_tasks": 1973,
+          "search_launches": 3596,
+          "search_ms": 2315.84,
+          "searches": 6525,
+          "status": "pass",
+          "tasks": 1973,
+          "timing_ms": 9760.34,
+          "wall_ms": 13574,
+          "wall_s_measured": 13.576828044999274
+        },
+        "native_validation": {
+          "status": "resumed"
+        },
+        "packing": {
+          "status": "resumed"
+        },
+        "route_writeback": {
+          "status": "resumed"
+        },
+        "rr_graph": {
+          "bytes": 27406582,
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/diffeq_seed1/rr_graph.xml",
+          "sha256": "62d7b83281be59af216d789f9ec592c315af23519bd97260da4f131401306b96",
+          "status": "reused"
+        }
+      },
+      "status": "pass",
+      "suite": "VTR"
+    },
+    {
+      "balanced_case_pass": true,
+      "baseline": {
+        "cpd_ns": 13.5879,
+        "wirelength": 33182
+      },
+      "case_id": "frisc_seed1_cw200",
+      "configuration": {
+        "adaptive_issue_stagnation_iterations": 3,
+        "adaptive_issue_width_min": 1,
+        "balanced_cpd_delta_percent_max": 3.0,
+        "balanced_wirelength_delta_percent_max": 5.0,
+        "base_cost_q": 64,
+        "cleanup_passes": 0,
+        "conflict_validation_read_set": "path_resources",
+        "issue_width": 8,
+        "max_iterations": 30,
+        "min_timing_iterations": 3,
+        "pe_count": 4,
+        "relaxed_cpd_delta_percent_max": 5,
+        "relaxed_wirelength_delta_percent_max": 5,
+        "timing_update_period": 1
+      },
+      "inputs": {
+        "architecture": {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+          "sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179"
+        },
+        "circuit": {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/benchmarks/blif/frisc.blif",
+          "sha256": "0bccb5b0c7377a93d8daf64c3fb37ff0a4bccd6027ab199f214abe63c5aec01f"
+        },
+        "net": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/frisc_seed1_cw200/frisc.net",
+          "sha256": "f6e2659582a94630fce6a7c7ad64e1e21bd330ebdb2f00149cba469568155f8f"
+        },
+        "place": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/frisc_seed1_cw200/frisc.place",
+          "sha256": "f49ddcf4220e4f4c56e29806ce13edaa1020d9c0d43899ab2f375c693c5ce3e3"
+        },
+        "route": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/frisc_seed1_cw200/design.route",
+          "sha256": "3c7800550d5407325a93d43f593364213780805ea2d97755f5a8bfc1763fbf25"
+        }
+      },
+      "name": "frisc",
+      "native_validation": {
+        "baseline_cpd_ns": 13.5879,
+        "baseline_wirelength": 33182,
+        "channel_width": 200,
+        "command": [
+          "/home/gry/.local/opt/vtr-9.0.0-src/build_vpr/vpr/vpr",
+          "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+          "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/benchmarks/blif/frisc.blif",
+          "--analysis",
+          "--net_file",
+          "frisc.net",
+          "--place_file",
+          "frisc.place",
+          "--route_file",
+          "frisc.persist.route",
+          "--route_chan_width",
+          "200",
+          "--read_rr_graph",
+          "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/full_matrix_cmodel_2026-08-27/frisc_seed1_cw200/input/rr_graph.xml"
+        ],
+        "cpd_delta_percent": 0.8757791858933217,
+        "critical_path_delay_ns": 13.7069,
+        "inputs": {
+          "arch_sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179",
+          "circuit_sha256": "0bccb5b0c7377a93d8daf64c3fb37ff0a4bccd6027ab199f214abe63c5aec01f",
+          "net_sha256": "f6e2659582a94630fce6a7c7ad64e1e21bd330ebdb2f00149cba469568155f8f",
+          "place_sha256": "f49ddcf4220e4f4c56e29806ce13edaa1020d9c0d43899ab2f375c693c5ce3e3",
+          "route_sha256": "6528593b6427407ef44f95a8232362f9f851a0fcbdc09980667ddfca8fda5493",
+          "rr_graph_sha256": "a2598c26e321af3b16e881fb3952719cb92610a2e655ec91897488ffa590c1ca",
+          "sdc_sha256": null,
+          "vpr_sha256": "41d21e0e3ad1bf9d914b282fd9340024121db5b550747a231ceb0ec0736bf44f"
+        },
+        "legal": true,
+        "route_loaded": true,
+        "routing_consistency": true,
+        "schema": "PERSISTROUTE_VPR_NATIVE_VALIDATION_V1",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "c0df1802f1529e08600732906897c285ec72ffe725fcb9ba8b707f461f50b8ae",
+        "successfully_routed": true,
+        "total_wirelength": 34728,
+        "vpr_exit_status": 0,
+        "vpr_succeeded": true,
+        "wirelength_delta_percent": 4.659152552588752
+      },
+      "output_hashes": {
+        "frisc.paths.csv": "8e4ec8fcd73a98ce31b19eb96f5ea06fe0c0818866290f06fdd57d4143afc2d7",
+        "frisc.persist.route": "6528593b6427407ef44f95a8232362f9f851a0fcbdc09980667ddfca8fda5493",
+        "frisc.resources": "64c7b250d249997b1ac78afc494101eaaf16c75315911289af7f9eee490fba72",
+        "frisc.route_trees.csv": "a4f2d9df412e49fc45c75229ce9eb5d7ea77867ac18b30eabbf9fac5d19838df",
+        "validation.json": "49e9e2015de5a0dc4c071f43e56cf71a253ed0a0acaba8a048d336e70fe09b3b"
+      },
+      "packed_input": {
+        "edges": {
+          "bytes": 6673400,
+          "count": 834175,
+          "path": "vpr_input.edges",
+          "record_bytes": 8,
+          "sha256": "9ee4740688aa5de7a36f01919a7d74e460be647947952a6d52bd11da22bf1af3"
+        },
+        "manifest_sha256": "4c681c71c3bc2f6983611e99350a19f47cbb548baa5775545299eb7ee081b614",
+        "nodes": {
+          "bytes": 599424,
+          "count": 74928,
+          "path": "vpr_input.nodes",
+          "record_bytes": 8,
+          "sha256": "e77927b0d513ec00cc8a41f100f13aa79bcefe81f30593dfee03c302ae189e3d"
+        },
+        "resources": {
+          "bytes": 1198848,
+          "count": 74928,
+          "path": "vpr_input.resources",
+          "record_bytes": 16,
+          "sha256": "d259b5e6313e76f412e9754a541a42a353bf9b884c0eca8296c823212c84249c"
+        },
+        "tasks": {
+          "bytes": 184544,
+          "count": 5767,
+          "path": "vpr_input.tasks",
+          "record_bytes": 32,
+          "sha256": "e2b7ac0fc5a87334b037551837552d15309e7f3d76028542b9b6f6fefb752339"
+        }
+      },
+      "relaxed_case_pass": true,
+      "schema": "PERSISTROUTE_BALANCED_MATRIX_CASE_V1",
+      "stages": {
+        "connections": {
+          "status": "resumed"
+        },
+        "hbm_cmodel": {
+          "backend": "hbm_cmodel",
+          "cleanup_accepted_branches": 0,
+          "cleanup_accepted_nets": 0,
+          "cleanup_attempted_branches": 0,
+          "cleanup_attempted_nets": 0,
+          "cleanup_ms": 0,
+          "cleanup_wirelength_after": 0,
+          "cleanup_wirelength_before": 0,
+          "command": [
+            "/tmp/persistroute-cmake-build/persistroute_accelerated_cmodel",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/frisc_seed1_cw200/input/vpr_input",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/frisc_seed1_cw200/run/frisc"
+          ],
+          "commit_launches": 2784,
+          "commit_ms": 1.74235,
+          "d2h_bytes": 0,
+          "edge_visits": 516010723,
+          "exit_status": 0,
+          "expanded": 86939166,
+          "h2d_bytes": 0,
+          "iterations": 18,
+          "legal": true,
+          "overused_resources": 0,
+          "route_ms": 48874.1,
+          "routed_tasks": 5767,
+          "search_launches": 10224,
+          "search_ms": 21071,
+          "searches": 18547,
+          "status": "pass",
+          "tasks": 5767,
+          "timing_ms": 16785,
+          "wall_ms": 48881.8,
+          "wall_s_measured": 48.88517654900352
+        },
+        "native_validation": {
+          "status": "resumed"
+        },
+        "packing": {
+          "status": "resumed"
+        },
+        "route_writeback": {
+          "status": "resumed"
+        },
+        "rr_graph": {
+          "bytes": 65777936,
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/full_matrix_cmodel_2026-08-27/frisc_seed1_cw200/input/rr_graph.xml",
+          "sha256": "a2598c26e321af3b16e881fb3952719cb92610a2e655ec91897488ffa590c1ca",
+          "status": "reused"
+        }
+      },
+      "status": "pass",
+      "suite": "VTR"
+    },
+    {
+      "balanced_case_pass": false,
+      "baseline": {
+        "cpd_ns": 8.79211,
+        "wirelength": 27329
+      },
+      "case_id": "elliptic_seed1_cw200",
+      "configuration": {
+        "adaptive_issue_stagnation_iterations": 3,
+        "adaptive_issue_width_min": 1,
+        "balanced_cpd_delta_percent_max": 3.0,
+        "balanced_wirelength_delta_percent_max": 5.0,
+        "base_cost_q": 64,
+        "cleanup_passes": 0,
+        "conflict_validation_read_set": "path_resources",
+        "issue_width": 8,
+        "max_iterations": 30,
+        "min_timing_iterations": 3,
+        "pe_count": 4,
+        "relaxed_cpd_delta_percent_max": 5,
+        "relaxed_wirelength_delta_percent_max": 5,
+        "timing_update_period": 1
+      },
+      "inputs": {
+        "architecture": {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+          "sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179"
+        },
+        "circuit": {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/benchmarks/blif/elliptic.blif",
+          "sha256": "5cc3a708720002c0e114c36312721ac7dd3b85ae2fd05f311d780fc11212b175"
+        },
+        "net": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/elliptic_seed1_cw200/elliptic.net",
+          "sha256": "7c6c18d9aa24edec1b6fd2ce682fe962a3078c7bc6b7b8088ada1fedc8b023ed"
+        },
+        "place": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/elliptic_seed1_cw200/elliptic.place",
+          "sha256": "73dbe85481fdf89ae689de5031f418bbf9c21d0fbc8fd2ac91fe3eaa6dc63193"
+        },
+        "route": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/elliptic_seed1_cw200/design.route",
+          "sha256": "3828a75226fd605f043c4ef8a97ba12c94655a8c8cd9b48cec9b79d7e44139ac"
+        }
+      },
+      "name": "elliptic",
+      "native_validation": {
+        "baseline_cpd_ns": 8.79211,
+        "baseline_wirelength": 27329,
+        "channel_width": 200,
+        "command": [
+          "/home/gry/.local/opt/vtr-9.0.0-src/build_vpr/vpr/vpr",
+          "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+          "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/benchmarks/blif/elliptic.blif",
+          "--analysis",
+          "--net_file",
+          "elliptic.net",
+          "--place_file",
+          "elliptic.place",
+          "--route_file",
+          "elliptic.persist.route",
+          "--route_chan_width",
+          "200",
+          "--read_rr_graph",
+          "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/full_matrix_cmodel_2026-08-27/elliptic_seed1_cw200/input/rr_graph.xml"
+        ],
+        "cpd_delta_percent": 3.8565259078878755,
+        "critical_path_delay_ns": 9.13118,
+        "inputs": {
+          "arch_sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179",
+          "circuit_sha256": "5cc3a708720002c0e114c36312721ac7dd3b85ae2fd05f311d780fc11212b175",
+          "net_sha256": "7c6c18d9aa24edec1b6fd2ce682fe962a3078c7bc6b7b8088ada1fedc8b023ed",
+          "place_sha256": "73dbe85481fdf89ae689de5031f418bbf9c21d0fbc8fd2ac91fe3eaa6dc63193",
+          "route_sha256": "e1c122334d4bf9f3562d9c6a5c3070824ca436bc2078cc0fd1b00ad1f2121e0f",
+          "rr_graph_sha256": "a2598c26e321af3b16e881fb3952719cb92610a2e655ec91897488ffa590c1ca",
+          "sdc_sha256": null,
+          "vpr_sha256": "41d21e0e3ad1bf9d914b282fd9340024121db5b550747a231ceb0ec0736bf44f"
+        },
+        "legal": true,
+        "route_loaded": true,
+        "routing_consistency": true,
+        "schema": "PERSISTROUTE_VPR_NATIVE_VALIDATION_V1",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "73f1c970f2e47ccb4ceb15b91fd6c0aced7cf503d27fd20c30139cb9047c3645",
+        "successfully_routed": true,
+        "total_wirelength": 28404,
+        "vpr_exit_status": 0,
+        "vpr_succeeded": true,
+        "wirelength_delta_percent": 3.933550440923561
+      },
+      "output_hashes": {
+        "elliptic.paths.csv": "392a6871424c6b5dc389492d23b71fd397df69f9b00b0ff16e2346d582b121b9",
+        "elliptic.persist.route": "e1c122334d4bf9f3562d9c6a5c3070824ca436bc2078cc0fd1b00ad1f2121e0f",
+        "elliptic.resources": "79e166ce97f2b76f23fbb00f4874580773ffded771b2ba721f047e6412e0a5c5",
+        "elliptic.route_trees.csv": "1c976dda4672e5b84cd89a594d4aad6fb9fad7afe3af2282be189a84889cfd28",
+        "validation.json": "31f2822dc4960dca3c7c5d5f0f91424e3bf76091a31425d8a4156b6ce85f2ec1"
+      },
+      "packed_input": {
+        "edges": {
+          "bytes": 6673400,
+          "count": 834175,
+          "path": "vpr_input.edges",
+          "record_bytes": 8,
+          "sha256": "9ee4740688aa5de7a36f01919a7d74e460be647947952a6d52bd11da22bf1af3"
+        },
+        "manifest_sha256": "48651657a03a4cdc42e13dad1e578ed6c049eddccf88f436d90bc7d7e2fec089",
+        "nodes": {
+          "bytes": 599424,
+          "count": 74928,
+          "path": "vpr_input.nodes",
+          "record_bytes": 8,
+          "sha256": "e77927b0d513ec00cc8a41f100f13aa79bcefe81f30593dfee03c302ae189e3d"
+        },
+        "resources": {
+          "bytes": 1198848,
+          "count": 74928,
+          "path": "vpr_input.resources",
+          "record_bytes": 16,
+          "sha256": "d259b5e6313e76f412e9754a541a42a353bf9b884c0eca8296c823212c84249c"
+        },
+        "tasks": {
+          "bytes": 167744,
+          "count": 5242,
+          "path": "vpr_input.tasks",
+          "record_bytes": 32,
+          "sha256": "254374175f88c8bc830defb13cd373d45c5320b69192f35c7e0c83e15a9787a8"
+        }
+      },
+      "relaxed_case_pass": true,
+      "schema": "PERSISTROUTE_BALANCED_MATRIX_CASE_V1",
+      "stages": {
+        "connections": {
+          "status": "resumed"
+        },
+        "hbm_cmodel": {
+          "backend": "hbm_cmodel",
+          "cleanup_accepted_branches": 0,
+          "cleanup_accepted_nets": 0,
+          "cleanup_attempted_branches": 0,
+          "cleanup_attempted_nets": 0,
+          "cleanup_ms": 0,
+          "cleanup_wirelength_after": 0,
+          "cleanup_wirelength_before": 0,
+          "command": [
+            "/tmp/persistroute-cmake-build/persistroute_accelerated_cmodel",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/elliptic_seed1_cw200/input/vpr_input",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/elliptic_seed1_cw200/run/elliptic"
+          ],
+          "commit_launches": 2679,
+          "commit_ms": 1.61521,
+          "d2h_bytes": 0,
+          "edge_visits": 395303786,
+          "exit_status": 0,
+          "expanded": 66022583,
+          "h2d_bytes": 0,
+          "iterations": 20,
+          "legal": true,
+          "overused_resources": 0,
+          "route_ms": 44746.3,
+          "routed_tasks": 5242,
+          "search_launches": 9059,
+          "search_ms": 16211.8,
+          "searches": 16750,
+          "status": "pass",
+          "tasks": 5242,
+          "timing_ms": 18724.8,
+          "wall_ms": 44753.2,
+          "wall_s_measured": 44.75666453399754
+        },
+        "native_validation": {
+          "status": "resumed"
+        },
+        "packing": {
+          "status": "resumed"
+        },
+        "route_writeback": {
+          "status": "resumed"
+        },
+        "rr_graph": {
+          "bytes": 65777936,
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/full_matrix_cmodel_2026-08-27/elliptic_seed1_cw200/input/rr_graph.xml",
+          "sha256": "a2598c26e321af3b16e881fb3952719cb92610a2e655ec91897488ffa590c1ca",
+          "status": "reused"
+        }
+      },
+      "status": "qor_gate_fail",
+      "suite": "VTR"
+    },
+    {
+      "balanced_case_pass": true,
+      "baseline": {
+        "cpd_ns": 11.6084,
+        "wirelength": 79857
+      },
+      "case_id": "clma_seed1_cw200",
+      "configuration": {
+        "adaptive_issue_stagnation_iterations": 3,
+        "adaptive_issue_width_min": 1,
+        "balanced_cpd_delta_percent_max": 3.0,
+        "balanced_wirelength_delta_percent_max": 5.0,
+        "base_cost_q": 64,
+        "cleanup_passes": 0,
+        "conflict_validation_read_set": "path_resources",
+        "issue_width": 8,
+        "max_iterations": 30,
+        "min_timing_iterations": 3,
+        "pe_count": 4,
+        "relaxed_cpd_delta_percent_max": 5,
+        "relaxed_wirelength_delta_percent_max": 5,
+        "timing_update_period": 1
+      },
+      "inputs": {
+        "architecture": {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+          "sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179"
+        },
+        "circuit": {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/benchmarks/blif/clma.blif",
+          "sha256": "3151ef9596486448557a91f2b892d207dcd3a13d508ce72ba1d9946ce18d096e"
+        },
+        "net": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/clma_seed1_cw200/clma.net",
+          "sha256": "6095191f2407b45f0d23bc5bfd75380d9a0ce5b4b325f9ec5901fca26a9fce9c"
+        },
+        "place": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/clma_seed1_cw200/clma.place",
+          "sha256": "35f2d02d8381684e58c0c51fcf21bab5dbe60c2fc6be6ced990aad57cca1bf07"
+        },
+        "route": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/clma_seed1_cw200/design.route",
+          "sha256": "985825cd29091e8ec10e3ed186d1478366403cd75fb0622a022665e6a0f275bb"
+        }
+      },
+      "name": "clma",
+      "native_validation": {
+        "baseline_cpd_ns": 11.6084,
+        "baseline_wirelength": 79857,
+        "channel_width": 200,
+        "command": [
+          "/home/gry/.local/opt/vtr-9.0.0-src/build_vpr/vpr/vpr",
+          "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+          "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/benchmarks/blif/clma.blif",
+          "--analysis",
+          "--net_file",
+          "clma.net",
+          "--place_file",
+          "clma.place",
+          "--route_file",
+          "clma.persist.route",
+          "--route_chan_width",
+          "200",
+          "--read_rr_graph",
+          "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/clma_seed1/rr_graph.xml"
+        ],
+        "cpd_delta_percent": 0.6624513283484346,
+        "critical_path_delay_ns": 11.6853,
+        "inputs": {
+          "arch_sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179",
+          "circuit_sha256": "3151ef9596486448557a91f2b892d207dcd3a13d508ce72ba1d9946ce18d096e",
+          "net_sha256": "6095191f2407b45f0d23bc5bfd75380d9a0ce5b4b325f9ec5901fca26a9fce9c",
+          "place_sha256": "35f2d02d8381684e58c0c51fcf21bab5dbe60c2fc6be6ced990aad57cca1bf07",
+          "route_sha256": "3ec50e1a8f8856a7c827dd593edd6da8bd7044294a73b0cfe9ac09d16b3f10c6",
+          "rr_graph_sha256": "9a5b08b40eed9f5edb25529cb53dfe1dede68bd33ae3cffee24ce9450b797fb1",
+          "sdc_sha256": null,
+          "vpr_sha256": "41d21e0e3ad1bf9d914b282fd9340024121db5b550747a231ceb0ec0736bf44f"
+        },
+        "legal": true,
+        "route_loaded": true,
+        "routing_consistency": true,
+        "schema": "PERSISTROUTE_VPR_NATIVE_VALIDATION_V1",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "92c37e29671b88cd12e30c4748892c0ff3fc1ea97f924337ee6d5508a8bc75ff",
+        "successfully_routed": true,
+        "total_wirelength": 82425,
+        "vpr_exit_status": 0,
+        "vpr_succeeded": true,
+        "wirelength_delta_percent": 3.2157481498177987
+      },
+      "output_hashes": {
+        "clma.paths.csv": "902c4126bed2d6bcfaf1cf7aa90418bf931a27af11be5859b30aa855c0e3619f",
+        "clma.persist.route": "3ec50e1a8f8856a7c827dd593edd6da8bd7044294a73b0cfe9ac09d16b3f10c6",
+        "clma.resources": "71038283c6e09d7963b142d9b6aadc556f914aef31ab54ada3f779dd2a201e5b",
+        "clma.route_trees.csv": "cbaa56cb7117ec535d5df6756833ae17dd472a53a4e29c4c214a0d0b71d1453b",
+        "validation.json": "249c52783c9a41f8b9bc697dc754cf4fad4e7c886a606d0226ddfc40f770ba4f"
+      },
+      "packed_input": {
+        "edges": {
+          "bytes": 14426624,
+          "count": 1803328,
+          "path": "vpr_input.edges",
+          "record_bytes": 8,
+          "sha256": "ebd906513105a54ff1cbe6eaa8acf42f19b165cf3c665e18fd257b27e2bb6611"
+        },
+        "manifest_sha256": "f16c4c7b58d5157d956532fcf2cd844d6f8fcaa1c86bd032af7c7a5633e9ef31",
+        "nodes": {
+          "bytes": 1242240,
+          "count": 155280,
+          "path": "vpr_input.nodes",
+          "record_bytes": 8,
+          "sha256": "dc11f3ac72f624d50b99ca41c2642c758ec0de209e3a31f818f841a22ba2f58c"
+        },
+        "resources": {
+          "bytes": 2484480,
+          "count": 155280,
+          "path": "vpr_input.resources",
+          "record_bytes": 16,
+          "sha256": "8b64acbfb2d6a4c8ca17dd8cab1e430bf6b16f5ac6acb207c6e33335cc1b32ff"
+        },
+        "tasks": {
+          "bytes": 430656,
+          "count": 13458,
+          "path": "vpr_input.tasks",
+          "record_bytes": 32,
+          "sha256": "206e0e7a1e2b5189ea59ff9f0620a276875d443b4f907b6203c26403e619af0a"
+        }
+      },
+      "relaxed_case_pass": true,
+      "schema": "PERSISTROUTE_BALANCED_MATRIX_CASE_V1",
+      "stages": {
+        "connections": {
+          "status": "resumed"
+        },
+        "hbm_cmodel": {
+          "backend": "hbm_cmodel",
+          "cleanup_accepted_branches": 0,
+          "cleanup_accepted_nets": 0,
+          "cleanup_attempted_branches": 0,
+          "cleanup_attempted_nets": 0,
+          "cleanup_ms": 0,
+          "cleanup_wirelength_after": 0,
+          "cleanup_wirelength_before": 0,
+          "command": [
+            "/tmp/persistroute-cmake-build/persistroute_accelerated_cmodel",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/clma_seed1_cw200/input/vpr_input",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/clma_seed1_cw200/run/clma"
+          ],
+          "commit_launches": 5916,
+          "commit_ms": 4.60969,
+          "d2h_bytes": 0,
+          "edge_visits": 1674957110,
+          "exit_status": 0,
+          "expanded": 282768504,
+          "h2d_bytes": 0,
+          "iterations": 8,
+          "legal": true,
+          "overused_resources": 0,
+          "route_ms": 154662,
+          "routed_tasks": 13458,
+          "search_launches": 22000,
+          "search_ms": 81415.5,
+          "searches": 41467,
+          "status": "pass",
+          "tasks": 13458,
+          "timing_ms": 16017.1,
+          "wall_ms": 154684,
+          "wall_s_measured": 154.6889530490007
+        },
+        "native_validation": {
+          "status": "resumed"
+        },
+        "packing": {
+          "status": "resumed"
+        },
+        "route_writeback": {
+          "status": "resumed"
+        },
+        "rr_graph": {
+          "bytes": 142737815,
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/clma_seed1/rr_graph.xml",
+          "sha256": "9a5b08b40eed9f5edb25529cb53dfe1dede68bd33ae3cffee24ce9450b797fb1",
+          "status": "reused"
+        }
+      },
+      "status": "pass",
+      "suite": "VTR"
+    },
+    {
+      "balanced_case_pass": false,
+      "baseline": {
+        "cpd_ns": 6.15322,
+        "wirelength": 221106
+      },
+      "case_id": "koios_spmv_seed1_cw300",
+      "configuration": {
+        "adaptive_issue_stagnation_iterations": 3,
+        "adaptive_issue_tail_tasks": 8,
+        "adaptive_issue_width_min": 1,
+        "balanced_cpd_delta_percent_max": 3.0,
+        "balanced_wirelength_delta_percent_max": 5.0,
+        "base_cost_q": 64,
+        "cleanup_passes": 0,
+        "conflict_validation_read_set": "path_resources",
+        "initial_reference_timing": false,
+        "issue_width": 8,
+        "max_iterations": 30,
+        "min_timing_iterations": 3,
+        "pe_count": 4,
+        "relaxed_cpd_delta_percent_max": 5.0,
+        "relaxed_wirelength_delta_percent_max": 10.0,
+        "timing_update_period": 1
+      },
+      "inputs": {
+        "architecture": {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
+          "sha256": "9738371dbd8b3ca5c138150e6f78ed6186e315882edb38b5d302547de4f36c2c"
+        },
+        "circuit": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/koios_spmv_frontend/spmv.pre-vpr.blif",
+          "sha256": "31cf5808fce5dbf75545bebee0b9eb332002e85b6b15aea2c1d718291ec967b1"
+        },
+        "net": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/input/reference/spmv.pre-vpr.net",
+          "sha256": "741ca8d98d56b209b171c050b8bf407c6e30ff21f224bf36b01e28ecece64a1e"
+        },
+        "place": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/input/reference/spmv.pre-vpr.place",
+          "sha256": "50e47c7e2486fdcb54856df741a3143d04d7c783e7fcca6649cf48a51b12a262"
+        },
+        "route": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/input/reference/design.route",
+          "sha256": "97b6aeaff79a24e5efa5e535c8921c5f7f1f4632e9e9eff750aa9142f2c0219b"
+        }
+      },
+      "name": "spmv",
+      "native_validation": {
+        "baseline_cpd_ns": 6.15322,
+        "baseline_wirelength": 221106,
+        "channel_width": 300,
+        "command": [
+          "/home/gry/.local/opt/vtr-9.0.0-src/build_vpr/vpr/vpr",
+          "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
+          "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/koios_spmv_frontend/spmv.pre-vpr.blif",
+          "--analysis",
+          "--net_file",
+          "spmv.pre-vpr.net",
+          "--place_file",
+          "spmv.pre-vpr.place",
+          "--route_file",
+          "spmv.persist.route",
+          "--route_chan_width",
+          "300",
+          "--read_rr_graph",
+          "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/input/rr_graph.xml"
+        ],
+        "cpd_delta_percent": 57.911467491817284,
+        "critical_path_delay_ns": 9.71664,
+        "inputs": {
+          "arch_sha256": "9738371dbd8b3ca5c138150e6f78ed6186e315882edb38b5d302547de4f36c2c",
+          "circuit_sha256": "31cf5808fce5dbf75545bebee0b9eb332002e85b6b15aea2c1d718291ec967b1",
+          "net_sha256": "741ca8d98d56b209b171c050b8bf407c6e30ff21f224bf36b01e28ecece64a1e",
+          "place_sha256": "50e47c7e2486fdcb54856df741a3143d04d7c783e7fcca6649cf48a51b12a262",
+          "route_sha256": "d79c8e0ed1583ae7a5ad31380ae5fe469e1d19ea7826bf4380ffb675664985a3",
+          "rr_graph_sha256": "3d529f3f10387770f976075717f72577a67d1c92659b3a68bced7b3893f4abcc",
+          "sdc_sha256": null,
+          "vpr_sha256": "41d21e0e3ad1bf9d914b282fd9340024121db5b550747a231ceb0ec0736bf44f"
+        },
+        "legal": true,
+        "route_loaded": true,
+        "routing_consistency": true,
+        "schema": "PERSISTROUTE_VPR_NATIVE_VALIDATION_V1",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "3781135a0fbcdaf35d46b8dfe567e31953812990279980df5390ea3428ba977e",
+        "successfully_routed": true,
+        "total_wirelength": 233672,
+        "vpr_exit_status": 0,
+        "vpr_succeeded": true,
+        "wirelength_delta_percent": 5.683246949426968
+      },
+      "output_hashes": {
+        "spmv.paths.csv": "b6e07941757dbb2ab45e04dce7f861ac6325f3e5552c89a4737567b209c7c16a",
+        "spmv.persist.route": "d79c8e0ed1583ae7a5ad31380ae5fe469e1d19ea7826bf4380ffb675664985a3",
+        "spmv.resources": "24e720cfdd7be5446581d78134ebf5d3d60064c31ba8785ca6136302e2fd123e",
+        "spmv.route_trees.csv": "73aacac54537d95e624d8ff4d1f2211aaaf491cacec83fabf0476d511c861f79",
+        "validation.json": "6534e4e05cfba87d26392887bd604cd182a91ee38e0ccea477affbe7a2b8ff1a"
+      },
+      "packed_input": {
+        "edges": {
+          "bytes": 234364056,
+          "count": 29295507,
+          "path": "vpr_input.edges",
+          "record_bytes": 8,
+          "sha256": "8fa25b6b82f0ef6c47cef61db4ddbce335f54f69b6979162d33df5b86f3693ff"
+        },
+        "manifest_sha256": "96c1d2f0579573f6b40deebfe63ecee36189dd756ab36100354e28dcca9c6dd9",
+        "nodes": {
+          "bytes": 15814496,
+          "count": 1976812,
+          "path": "vpr_input.nodes",
+          "record_bytes": 8,
+          "sha256": "41a36491c62df046d92f2ba7c71c7dfa0b3864f017aa47a0ed9afd7835d6cf8d"
+        },
+        "resources": {
+          "bytes": 31628992,
+          "count": 1976812,
+          "path": "vpr_input.resources",
+          "record_bytes": 16,
+          "sha256": "3e607ac862c8ba4f297b8408f220c8dae4e8149873e6a96b129ed5738a63e016"
+        },
+        "tasks": {
+          "bytes": 484416,
+          "count": 15138,
+          "path": "vpr_input.tasks",
+          "record_bytes": 32,
+          "sha256": "318b763eea45e53c9f788281dc2ae07342032d4c02b4d3dea816811b6fbc3dfd"
+        }
+      },
+      "relaxed_case_pass": false,
+      "schema": "PERSISTROUTE_BALANCED_MATRIX_CASE_V1",
+      "source_inputs": {
+        "architecture": {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
+          "sha256": "9738371dbd8b3ca5c138150e6f78ed6186e315882edb38b5d302547de4f36c2c"
+        },
+        "circuit": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/koios_spmv_frontend/spmv.pre-vpr.blif",
+          "sha256": "31cf5808fce5dbf75545bebee0b9eb332002e85b6b15aea2c1d718291ec967b1"
+        },
+        "net": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/koios_spmv_seed1_cw300/spmv.pre-vpr.net",
+          "sha256": "741ca8d98d56b209b171c050b8bf407c6e30ff21f224bf36b01e28ecece64a1e"
+        },
+        "place": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/koios_spmv_seed1_cw300/spmv.pre-vpr.place",
+          "sha256": "50e47c7e2486fdcb54856df741a3143d04d7c783e7fcca6649cf48a51b12a262"
+        },
+        "route": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/koios_spmv_seed1_cw300/design.route",
+          "sha256": "97b6aeaff79a24e5efa5e535c8921c5f7f1f4632e9e9eff750aa9142f2c0219b"
+        }
+      },
+      "stages": {
+        "connections": {
+          "status": "resumed"
+        },
+        "hbm_cmodel": {
+          "backend": "hbm_cmodel",
+          "cleanup_accepted_branches": 0,
+          "cleanup_accepted_nets": 0,
+          "cleanup_attempted_branches": 0,
+          "cleanup_attempted_nets": 0,
+          "cleanup_ms": 0,
+          "cleanup_wirelength_after": 0,
+          "cleanup_wirelength_before": 0,
+          "command": [
+            "/tmp/persistroute-cmake-build/persistroute_accelerated_cmodel",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/input/vpr_input",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/run/spmv"
+          ],
+          "commit_launches": 9167,
+          "commit_ms": 21.2446,
+          "d2h_bytes": 0,
+          "edge_visits": 29970912877,
+          "exit_status": 0,
+          "expanded": 5380904504,
+          "h2d_bytes": 0,
+          "iterations": 16,
+          "legal": true,
+          "overused_resources": 0,
+          "route_ms": 2475620.0,
+          "routed_tasks": 15138,
+          "run_identity": {
+            "configuration": {
+              "adaptive_issue_stagnation_iterations": 3,
+              "adaptive_issue_tail_tasks": 8,
+              "adaptive_issue_width_min": 1,
+              "base_cost_q": 64,
+              "cleanup_passes": 0,
+              "conflict_validation_read_set": "path_resources",
+              "issue_width": 8,
+              "max_iterations": 30,
+              "min_timing_iterations": 3,
+              "pe_count": 4,
+              "timing_update_period": 1
+            },
+            "host_sha256": "883d2e3976b941e45cd3ab246a517503a02ed79a8cd5d58e1d64f0d033ac10c5"
+          },
+          "search_launches": 25743,
+          "search_ms": 992252,
+          "searches": 47544,
+          "status": "pass",
+          "tasks": 15138,
+          "timing_ms": 202696,
+          "wall_ms": 2475670.0,
+          "wall_s_measured": 2475.7128607710038
+        },
+        "native_validation": {
+          "status": "resumed"
+        },
+        "packing": {
+          "command": [
+            "/usr/bin/python3",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/tools/pack_hls_inputs.py",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/input/rr_graph.xml",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/input/connections.csv",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/input/vpr_input",
+            "--base-cost-q",
+            "64"
+          ],
+          "status": "pass",
+          "wall_s": 100.58826098999998
+        },
+        "route_writeback": {
+          "status": "resumed"
+        },
+        "rr_graph": {
+          "bytes": 2271868622,
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/input/rr_graph.xml",
+          "sha256": "3d529f3f10387770f976075717f72577a67d1c92659b3a68bced7b3893f4abcc",
+          "status": "resumed"
+        }
+      },
+      "status": "qor_gate_fail",
+      "suite": "Koios 2.0"
+    },
+    {
+      "balanced_case_pass": false,
+      "baseline": {
+        "cpd_ns": 9.19045,
+        "wirelength": 127260
+      },
+      "case_id": "koios_softmax_seed1_cw300",
+      "configuration": {
+        "adaptive_issue_stagnation_iterations": 3,
+        "adaptive_issue_tail_tasks": 8,
+        "adaptive_issue_width_min": 1,
+        "balanced_cpd_delta_percent_max": 3.0,
+        "balanced_wirelength_delta_percent_max": 5.0,
+        "base_cost_q": 64,
+        "cleanup_passes": 0,
+        "conflict_validation_read_set": "path_resources",
+        "initial_reference_timing": false,
+        "issue_width": 8,
+        "max_iterations": 30,
+        "min_timing_iterations": 3,
+        "pe_count": 4,
+        "relaxed_cpd_delta_percent_max": 5.0,
+        "relaxed_wirelength_delta_percent_max": 10.0,
+        "timing_update_period": 1
+      },
+      "inputs": {
+        "architecture": {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
+          "sha256": "9738371dbd8b3ca5c138150e6f78ed6186e315882edb38b5d302547de4f36c2c"
+        },
+        "circuit": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/koios_softmax_frontend/softmax.pre-vpr.blif",
+          "sha256": "8d81c7fd97287f2cf5e3aa00072f4dd2e2222020b99f72a461ff834376130e80"
+        },
+        "net": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_softmax_seed1_cw300/input/reference/softmax.pre-vpr.net",
+          "sha256": "482f58815ba9a9584743a8ea793551af14bd4dbb618532a14a509d1810b0ec09"
+        },
+        "place": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_softmax_seed1_cw300/input/reference/softmax.pre-vpr.place",
+          "sha256": "3cefffbc265e3e3a965c63df4c1fc69b7887c95514bb5edced42e5ca5f08eddd"
+        },
+        "route": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_softmax_seed1_cw300/input/reference/design.route",
+          "sha256": "b16f6601bc06bb08b4b629debfa2b1ab447967ef6396fa04e7620847a3e2f975"
+        }
+      },
+      "name": "softmax",
+      "native_validation": {
+        "baseline_cpd_ns": 9.19045,
+        "baseline_wirelength": 127260,
+        "channel_width": 300,
+        "command": [
+          "/home/gry/.local/opt/vtr-9.0.0-src/build_vpr/vpr/vpr",
+          "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
+          "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/koios_softmax_frontend/softmax.pre-vpr.blif",
+          "--analysis",
+          "--net_file",
+          "softmax.pre-vpr.net",
+          "--place_file",
+          "softmax.pre-vpr.place",
+          "--route_file",
+          "softmax.persist.route",
+          "--route_chan_width",
+          "300",
+          "--read_rr_graph",
+          "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_softmax_seed1_cw300/input/rr_graph.xml"
+        ],
+        "cpd_delta_percent": 3.3878645768161464,
+        "critical_path_delay_ns": 9.50181,
+        "inputs": {
+          "arch_sha256": "9738371dbd8b3ca5c138150e6f78ed6186e315882edb38b5d302547de4f36c2c",
+          "circuit_sha256": "8d81c7fd97287f2cf5e3aa00072f4dd2e2222020b99f72a461ff834376130e80",
+          "net_sha256": "482f58815ba9a9584743a8ea793551af14bd4dbb618532a14a509d1810b0ec09",
+          "place_sha256": "3cefffbc265e3e3a965c63df4c1fc69b7887c95514bb5edced42e5ca5f08eddd",
+          "route_sha256": "36618221814082266237abf539edd502d82bb1bbc64fadfd87432e9ef99496d4",
+          "rr_graph_sha256": "6c45d2f594ccff21c5daa036492a58b0e7f9fe31a8b43684e03ec8f4d7dc92c4",
+          "sdc_sha256": null,
+          "vpr_sha256": "41d21e0e3ad1bf9d914b282fd9340024121db5b550747a231ceb0ec0736bf44f"
+        },
+        "legal": true,
+        "route_loaded": true,
+        "routing_consistency": true,
+        "schema": "PERSISTROUTE_VPR_NATIVE_VALIDATION_V1",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "a532ea58bb432c03c175f5c653e87d4a95a251aeea6346e2c664dfd926dc1784",
+        "successfully_routed": true,
+        "total_wirelength": 138601,
+        "vpr_exit_status": 0,
+        "vpr_succeeded": true,
+        "wirelength_delta_percent": 8.911676881973918
+      },
+      "output_hashes": {
+        "softmax.paths.csv": "4a8e975b41869cbc06df8a975103334bf7eae2e42f0cdcd8ef8c0d9b5e3f6b88",
+        "softmax.persist.route": "36618221814082266237abf539edd502d82bb1bbc64fadfd87432e9ef99496d4",
+        "softmax.resources": "7d09405c842c02b3dee699247b4cc0db3f743306eb6d0cfc2090f2975c423ffa",
+        "softmax.route_trees.csv": "40f2e9c53d44060732c5b3d9dc7558e6c40ca0dc0bb9c48ee219b808daca2602",
+        "validation.json": "0efa3e26dd0104b8e97152c2110f9492ce3f8a93c7c702a8039cdaa0f92e07c8"
+      },
+      "packed_input": {
+        "edges": {
+          "bytes": 95507912,
+          "count": 11938489,
+          "path": "vpr_input.edges",
+          "record_bytes": 8,
+          "sha256": "b94075e007329be43d11ba6ef2f18ae62a987ce7e9a034d01c77a5d29332190d"
+        },
+        "manifest_sha256": "db40641a467c18db35656eeada1086d9e494f3ed6de0cfc028fbe58ebcef6f1a",
+        "nodes": {
+          "bytes": 6477312,
+          "count": 809664,
+          "path": "vpr_input.nodes",
+          "record_bytes": 8,
+          "sha256": "70a72b403bedd9d6c6bdf94a7735e2ed3dbfd24d3a8b9379647ed5ce9e5fc6b1"
+        },
+        "resources": {
+          "bytes": 12954624,
+          "count": 809664,
+          "path": "vpr_input.resources",
+          "record_bytes": 16,
+          "sha256": "57eef49ef3312b4587529a5c0d86ef921a0a0c41aca4bb8fb1b8f999b3311645"
+        },
+        "tasks": {
+          "bytes": 538144,
+          "count": 16817,
+          "path": "vpr_input.tasks",
+          "record_bytes": 32,
+          "sha256": "d0808c14666f0e4c08daf38fa2523c22757c86218dd5986d1b09cf614c5570cc"
+        }
+      },
+      "relaxed_case_pass": true,
+      "schema": "PERSISTROUTE_BALANCED_MATRIX_CASE_V1",
+      "source_inputs": {
+        "architecture": {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
+          "sha256": "9738371dbd8b3ca5c138150e6f78ed6186e315882edb38b5d302547de4f36c2c"
+        },
+        "circuit": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/koios_softmax_frontend/softmax.pre-vpr.blif",
+          "sha256": "8d81c7fd97287f2cf5e3aa00072f4dd2e2222020b99f72a461ff834376130e80"
+        },
+        "net": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/koios_softmax_seed1_cw300/softmax.pre-vpr.net",
+          "sha256": "482f58815ba9a9584743a8ea793551af14bd4dbb618532a14a509d1810b0ec09"
+        },
+        "place": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_parallel/koios_softmax_seed1_cw300/softmax.pre-vpr.place",
+          "sha256": "3cefffbc265e3e3a965c63df4c1fc69b7887c95514bb5edced42e5ca5f08eddd"
+        },
+        "route": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/koios_softmax_seed1_cw300/design.route",
+          "sha256": "b16f6601bc06bb08b4b629debfa2b1ab447967ef6396fa04e7620847a3e2f975"
+        }
+      },
+      "stages": {
+        "connections": {
+          "status": "resumed"
+        },
+        "hbm_cmodel": {
+          "backend": "hbm_cmodel",
+          "cleanup_accepted_branches": 0,
+          "cleanup_accepted_nets": 0,
+          "cleanup_attempted_branches": 0,
+          "cleanup_attempted_nets": 0,
+          "cleanup_ms": 0,
+          "cleanup_wirelength_after": 0,
+          "cleanup_wirelength_before": 0,
+          "command": [
+            "/tmp/persistroute-cmake-build/persistroute_accelerated_cmodel",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_softmax_seed1_cw300/input/vpr_input",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_softmax_seed1_cw300/run/softmax"
+          ],
+          "commit_launches": 8965,
+          "commit_ms": 16.8594,
+          "d2h_bytes": 0,
+          "edge_visits": 11096362192,
+          "exit_status": 0,
+          "expanded": 1743360585,
+          "h2d_bytes": 0,
+          "iterations": 23,
+          "legal": true,
+          "overused_resources": 0,
+          "route_ms": 994649,
+          "routed_tasks": 16817,
+          "run_identity": {
+            "configuration": {
+              "adaptive_issue_stagnation_iterations": 3,
+              "adaptive_issue_tail_tasks": 8,
+              "adaptive_issue_width_min": 1,
+              "balanced_cpd_delta_percent_max": 3.0,
+              "balanced_wirelength_delta_percent_max": 5.0,
+              "base_cost_q": 64,
+              "cleanup_passes": 0,
+              "conflict_validation_read_set": "path_resources",
+              "issue_width": 8,
+              "max_iterations": 30,
+              "min_timing_iterations": 3,
+              "pe_count": 4,
+              "relaxed_cpd_delta_percent_max": 5,
+              "relaxed_wirelength_delta_percent_max": 5,
+              "timing_update_period": 1
+            },
+            "host_sha256": "883d2e3976b941e45cd3ab246a517503a02ed79a8cd5d58e1d64f0d033ac10c5"
+          },
+          "search_launches": 28067,
+          "search_ms": 304756,
+          "searches": 53259,
+          "status": "pass",
+          "tasks": 16817,
+          "timing_ms": 150458,
+          "wall_ms": 994789,
+          "wall_s_measured": 994.8075613250039
+        },
+        "native_validation": {
+          "status": "resumed"
+        },
+        "packing": {
+          "status": "resumed"
+        },
+        "route_writeback": {
+          "status": "resumed"
+        },
+        "rr_graph": {
+          "bytes": 909848259,
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_softmax_seed1_cw300/input/rr_graph.xml",
+          "sha256": "6c45d2f594ccff21c5daa036492a58b0e7f9fe31a8b43684e03ec8f4d7dc92c4",
+          "status": "resumed"
+        }
+      },
+      "status": "qor_gate_fail",
+      "suite": "Koios 2.0"
+    }
+  ],
+  "claim_boundary": "HBM C-model screening and native VPR QoR only; no physical-U280 speed or energy claim.",
+  "configuration": {
+    "adaptive_issue_stagnation_iterations": 3,
+    "adaptive_issue_tail_tasks": 8,
+    "adaptive_issue_width_min": 1,
+    "balanced_cpd_delta_percent_max": 3.0,
+    "balanced_wirelength_delta_percent_max": 5.0,
+    "base_cost_q": 64,
+    "cleanup_passes": 0,
+    "conflict_validation_read_set": "path_resources",
+    "initial_reference_timing": false,
+    "issue_width": 8,
+    "max_iterations": 30,
+    "min_timing_iterations": 3,
+    "pe_count": 4,
+    "relaxed_cpd_delta_percent_max": 5.0,
+    "relaxed_wirelength_delta_percent_max": 10.0,
+    "timing_update_period": 1
+  },
+  "geomean_cpd_delta_percent": 9.58390793345021,
+  "geomean_wirelength_delta_percent": 5.122448284500369,
+  "legal_case_count": 6,
+  "relaxed_case_count": 5,
+  "schema": "PERSISTROUTE_BALANCED_MATRIX_V1"
+}

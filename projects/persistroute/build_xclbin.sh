@@ -14,6 +14,7 @@ impl_jobs="${PERSISTROUTE_IMPL_JOBS:-1}"
 # Keep a conservative, reproducible default for the 16 GiB reference host;
 # callers can explicitly request a higher clock after timing closure.
 kernel_freq_mhz="${PERSISTROUTE_KERNEL_FREQ_MHZ:-180}"
+output_name="${PERSISTROUTE_OUTPUT_NAME:-$target}"
 
 if [[ -z "$platform" ]]; then
   echo "usage: $0 /path/to/xilinx_u280_*.xpfm [hw|hw_emu]" >&2
@@ -26,6 +27,10 @@ if [[ ! -f "$platform" ]]; then
 fi
 if [[ "$target" != "hw" && "$target" != "hw_emu" ]]; then
   echo "target must be hw or hw_emu" >&2
+  exit 2
+fi
+if [[ ! "$output_name" =~ ^[A-Za-z0-9][A-Za-z0-9._-]*$ ]]; then
+  echo "PERSISTROUTE_OUTPUT_NAME must contain only letters, digits, '.', '_', or '-'" >&2
   exit 2
 fi
 if [[ ! -f "$vitis_root/settings64.sh" ]]; then
@@ -52,7 +57,7 @@ if [[ "${PERSISTROUTE_SKIP_HLS:-0}" != "1" ]]; then
   ./run_hls.sh
 fi
 
-out_dir="$script_dir/build/xclbin/$target"
+out_dir="$script_dir/build/xclbin/$output_name"
 temp_dir="$out_dir/_x"
 log_dir="$out_dir/logs"
 report_dir="$out_dir/reports"

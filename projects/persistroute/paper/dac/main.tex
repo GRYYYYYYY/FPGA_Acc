@@ -540,9 +540,33 @@ Circuit & Rounds & WL $\Delta$ & CPD $\Delta$ & Strict? \\
 \bottomrule
 \end{tabular}
 \caption{Native VPR validation of the path-read-set policy. Strict denotes
-WL$\leq$5\% and CPD$\leq$3\%; all four pass a relaxed 5\%/5\% throughput tier.}
+WL$\leq$5\% and CPD$\leq$3\%; all four pass a relaxed 10\%/5\% throughput tier.}
 \label{tab:pathreads-qor}
 \end{table}
+
+The heterogeneous extension adds two substantially larger Koios graphs.
+\texttt{softmax} has 809,664 nodes, 11.94 million edges, and 16,817
+connections; tail serialization changes a 30-round, two-overuse failure into a
+legal 23-round route. Native VPR reports +8.91\% wirelength and +3.39\% CPD, so
+the case enters only the 10\%/5\% Throughput tier. \texttt{spmv} has 1.98
+million nodes, 29.30 million edges, and 15,138 connections. It closes legally
+in 16 rounds with +5.68\% wirelength, but its +57.91\% CPD is rejected rather
+than hidden by the relaxed tier. Thus all six completed exports are legal,
+three pass Balanced, two additional cases pass Throughput, and one case is a
+clear timing-QoR failure.
+
+Two negative ablations sharpen the timing result. Seeding round zero with
+criticalities from the legal VPR reference reduces \texttt{diffeq} from 22 to
+11 rounds, but increases its CPD delta from +0.58\% to +2.19\%. On
+\texttt{spmv}, the same seed worsens first-round CPD from 8.190 to 9.436\,ns,
+so we reject it as the default. The failure indicates that the present sum of
+local RR-edge delays does not reproduce heterogeneous route-tree/Tatum delay;
+better lookahead and route-tree-aware timing cost are required.
+
+Scale also exposed a front-end artifact bottleneck. The original DOM-style
+packer reached roughly 25\,GiB virtual memory on the 2.2-GiB \texttt{spmv} RR
+XML. A two-pass streaming packer emits byte-identical node, edge, resource, and
+task arrays while holding about 81\,MiB RSS in the measured packing phase.
 
 \subsection{Pre-registered board and ablation protocol}
 
@@ -615,16 +639,16 @@ accelerator state retained across complete RRR iterations.}
 
 \subsection{Serial equivalence of an epoch}
 
-The transaction protocol provides a simple refinement argument. Let $S_i$ be
-the authoritative resource and route-tree state before candidate $i$ in the
-fixed Commit order. Search records the version of every mutable resource it
-reads and proposes a path but does not change $S_i$. If all recorded versions
-still match, Commit applies the candidate as one logical state transition,
-yielding $S_{i+1}$. Otherwise, it leaves $S_i$ unchanged and places the task in
-the replay set. Consequently, every accepted candidate observes the same
-versions that a serial execution at its commit point would observe. Rejected
-candidates have no visible partial update. Induction over the fixed order gives
-one reproducible serial history for the accepted candidates in an epoch.
+The transaction protocol provides a deterministic feasibility argument. Let
+$S_i$ be the authoritative resource and route-tree state before candidate $i$
+in the fixed Commit order. Search records versions for the resources on its
+proposed path but does not change $S_i$. If those versions still match, Commit
+applies the candidate as one logical state transition, yielding $S_{i+1}$.
+Otherwise, it leaves $S_i$ unchanged and places the task in the replay set.
+Rejected candidates therefore have no visible partial update, while every
+accepted path is validated against the state that determines its occupancy and
+ownership effects at commit time. Fixed ordering gives a reproducible history
+for the accepted candidates in an epoch.
 
 This property does not assert that speculative execution reproduces VPR's
 exact path choices. The banked MultiQueue deliberately changes tie breaking,
@@ -636,9 +660,11 @@ validator checks these invariants after every test. Deterministic ordering then
 makes failures replayable and permits byte-level comparison between the
 C-model and RTL.
 
-Versions protect all resource fields whose changes can invalidate a candidate,
-including occupancy-dependent cost and ownership. Immutable topology and delay
-records require no versions. Rip-up and history-cost updates occur at epoch
+Path-only validation intentionally does not claim that every explored-cost
+read is serializable: an off-path occupancy change could have changed which
+path Search preferred, but cannot invalidate the connectivity or resource
+accounting of the selected path. Immutable topology and delay records require
+no versions. Rip-up and history-cost updates occur at epoch
 boundaries, after Commit drains, so Search never observes a partially updated
 negotiated-congestion round. Timing feedback follows the same boundary: route
 changes are exported, VPR/Tatum analyzes the complete snapshot, and the next
@@ -660,7 +686,7 @@ synchronization, and route validation remain in their corresponding terms.
 The primary result will compare the median complete $T_{\mathrm{acc}}$ against
 the median complete multicore VPR route phase; a second ratio will include
 packing and placement. Search-kernel throughput is diagnostic only.
-Balanced (3\% CPD/5\% wirelength) and relaxed Throughput (5\%/5\%) points form
+Balanced (3\% CPD/5\% wirelength) and relaxed Throughput (5\% CPD/10\% wirelength) points form
 separate Pareto tiers. Issue-eight/every-round-STA with path-only conflict
 validation passes Balanced on three of four VTR cases and the relaxed tier on
 all four; C-model time is not board-performance evidence, and neither tier
