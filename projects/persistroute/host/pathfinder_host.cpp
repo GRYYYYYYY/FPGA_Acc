@@ -61,6 +61,7 @@ int main(int argc,char** argv) {
   PathfinderConfig config;
   config.max_iterations=env_u32("PERSISTROUTE_MAX_ITERATIONS",config.max_iterations);
   config.min_timing_iterations=env_u32("PERSISTROUTE_MIN_TIMING_ITERATIONS",config.min_timing_iterations);
+  config.timing_update_period=env_u32("PERSISTROUTE_TIMING_UPDATE_PERIOD",config.timing_update_period);
   config.present_start_q=env_u16("PERSISTROUTE_PRESENT_START_Q",config.present_start_q);
   config.present_multiplier_q=env_u16("PERSISTROUTE_PRESENT_MULTIPLIER_Q",config.present_multiplier_q);
   config.history_increment_q=env_u16("PERSISTROUTE_HISTORY_INCREMENT_Q",config.history_increment_q);

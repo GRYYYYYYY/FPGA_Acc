@@ -1,0 +1,100 @@
+{
+  "schema": "PERSISTROUTE_VITIS_LINK_EVIDENCE_V2",
+  "date": "2026-08-28",
+  "target": "hw",
+  "platform": "/opt/xilinx/platforms/xilinx_u280_gen3x16_xdma_1_202211_1/xilinx_u280_gen3x16_xdma_1_202211_1.xpfm",
+  "environment": {
+    "os": "Ubuntu 22.04.5 LTS",
+    "kernel": "5.15.0-190-generic",
+    "vitis_vivado": "2022.2",
+    "xrt": "2.14.354",
+    "physical_u280_available": false,
+    "xbutil_expected_devices": 0
+  },
+  "design": {
+    "data_clock_mhz": 180,
+    "search_cus": 4,
+    "commit_cus": 1,
+    "hmss_kernel_master_ports": 32,
+    "resource_replicas": 4,
+    "resource_hbm_groups": ["HBM[4:5]", "HBM[12:13]", "HBM[20:21]", "HBM[28:29]"],
+    "commit_resource_bundles": {
+      "resources0": "STATE0",
+      "resources1": "STATE1",
+      "resources2": "STATE2",
+      "resources3": "STATE2"
+    },
+    "host_dataflow": "batched tasks per Search CU; Commit updates all four persistent Resource replicas; no full Resource download per wave"
+  },
+  "hls": {
+    "search_csynth": "pass",
+    "search_cosim": "pass",
+    "search_cosim_cycles": 3337,
+    "commit_csynth": "pass",
+    "commit_cosim": "pass",
+    "commit_cosim_cycles": 2585,
+    "search_xo_sha256": "11a19bc3a65f01583ea155445c99f1fce4b4b3bf65681e9efe9b27a0e9db00ba",
+    "commit_xo_sha256": "6423c5ab350400b62883887aa26978d1613fcf8af17b01b39482c1bc183a19b1"
+  },
+  "implementation": {
+    "system_link": "pass",
+    "vpl_create_bd": "pass",
+    "synthesis": "pass",
+    "opt_design": "pass",
+    "place_design": "pass",
+    "route_design": "pass",
+    "write_bitstream": "pass",
+    "drc_errors": 0,
+    "critical_warnings": 3,
+    "peak_memory_mb": 18867.633,
+    "timing": {
+      "wns_ns": 0.016,
+      "tns_ns": 0.0,
+      "setup_failing_endpoints": 0,
+      "whs_ns": 0.006,
+      "ths_ns": 0.0,
+      "hold_failing_endpoints": 0,
+      "all_user_constraints_met": true
+    },
+    "kernel_resources_routed": {
+      "lut": 123263,
+      "lut_as_memory": 4823,
+      "register": 156449,
+      "bram": 107,
+      "uram": 0,
+      "dsp": 112,
+      "commit": {"lut": 13848, "lut_as_memory": 927, "register": 19477, "bram": 27, "uram": 0, "dsp": 0},
+      "four_search_total": {"lut": 109415, "lut_as_memory": 3896, "register": 136972, "bram": 80, "uram": 0, "dsp": 112}
+    },
+    "routed_dcp_sha256": "8a1638cc183eab4050630e3cc070e621c6223b536dcd0b400cc08ed1c9ea2a61",
+    "partial_bitstream_sha256": "f751dd358e3f4f610e5469914fd408dbeb8c9c0895d6cd1a4dda6cccfd206919",
+    "timing_report_sha256": "f80dad5d5f2f400f8c35d9f053591e12e6d34280c746da33b1230634b8169b2c",
+    "kernel_utilization_report_sha256": "ec2f1900e18c4b83a22b391dcab998d9a8030811ec7d1835efd07304202e1a91"
+  },
+  "packaging": {
+    "status": "pass",
+    "method": "cf2sw plus xclbinutil using the current system-link runtime metadata and the successfully routed partial bitstream; used because v++ recovery markers attempted to reset vpl.impl",
+    "xclbin_bytes": 53867399,
+    "xclbin_sha256": "e3ca2e6030aa5b65d07390492e8d7070fcf74cd29064318cc7139c3e3ea69743",
+    "xclbin_info_checks": [
+      "target hw",
+      "DATA clock 180 MHz",
+      "four search_hbm_kernel instances",
+      "one commit_hbm_kernel instance",
+      "commit signature contains resources0 through resources3",
+      "four Resource replicas map to the intended HBM groups"
+    ]
+  },
+  "recovery_notes": [
+    "A 33-master topology was rejected by the U280 HMSS; resources2 and resources3 were therefore placed on one STATE2 AXI bundle while retaining distinct HBM arguments.",
+    "Implementation was killed by memory pressure with only the existing 2 GiB swap. A dedicated non-persistent 16 GiB temporary swap file was enabled, then the saved implementation run completed with MALLOC_ARENA_MAX=2 and one implementation thread.",
+    "The v++ --from_step rtdgen retry was stopped immediately when Vitis ignored the marker and tried to reset vpl.impl. Packaging was completed directly from the current cf2sw metadata and routed bitstream without rerunning implementation."
+  ],
+  "source_hashes": {
+    "abi_sha256": "7d56cca124ef08139b8e6899a9d43eb164cb3035b34df6d5e02cb097ba9dea10",
+    "commit_hbm_sha256": "e2990cbfd1854bc7ff1d4c514a24977672445ea150e645e4e3c53049a22c85c4",
+    "xrt_host_sha256": "e9d88c649c50765d3e61ad9c98ddb8aecbf13648cf88dfde0a52d64214367756",
+    "connectivity_sha256": "ea648b6beff3ec8018305dbbf017a44fb6cf2cd46b69d58ff893978294e26727"
+  },
+  "claim_boundary": "This proves compile, HLS RTL equivalence, U280 integration, routed timing closure and xclbin packaging for the batched ABI. It is not physical-board execution, performance or energy evidence. The previously completed final hw_emu was not rerun."
+}

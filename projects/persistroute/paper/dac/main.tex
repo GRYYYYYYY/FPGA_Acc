@@ -419,9 +419,9 @@ one-Commit U280 system.}
 \label{tab:resources}
 \end{table}
 
-The complete hardware flow passes system link, block design generation,
-synthesis, optimization, placement, routing, bitstream generation, and XCLBIN
-packaging. At the requested 180\,MHz data clock, routed setup WNS is
+The complete batched, four-replica hardware flow passes system link, block
+design generation, synthesis, optimization, placement, routing, bitstream
+generation, and XCLBIN packaging. At the requested 180\,MHz data clock, routed setup WNS is
 +0.016\,ns with TNS 0; hold WHS is +0.006\,ns with THS 0. There are no setup or
 hold failing endpoints. Table~\ref{tab:resources} shows 16.48\% LUT and 12.21\%
 register use, leaving capacity for additional Search CUs or larger local
@@ -526,7 +526,7 @@ retransfer or reinitialize mutable state per iteration instead of persistence;
 Search and Commit to remove speculation; (A5) remove replay by scheduling only
 non-overlapping tasks; and (A6) timing updates every 1, 2, 4, or all iterations.
 Every point must remain legal and report replay rate, wirelength, and CPD. The
-acceptance target is at least 3$\times$ end-to-end speedup over the multicore
+primary acceptance target is at least 3$\times$ complete-routing-phase speedup over the multicore
 reference, no more than 2\% mean wirelength or CPD degradation, and
 bitwise-repeatable \system{} output. Missing these gates narrows the result to
 an architecture study rather than the stated acceleration claim.
@@ -625,6 +625,10 @@ synchronization, and route validation remain in their corresponding terms.
 The primary result will compare the median complete $T_{\mathrm{acc}}$ against
 the median complete multicore VPR route phase; a second ratio will include
 packing and placement. Search-kernel throughput is diagnostic only.
+Balanced (3\% CPD/5\% wirelength) and legal-only Throughput points form
+separate Pareto tiers. Issue-eight/every-round-STA screens as a two-design
+Balanced candidate (+4.296\% wirelength/+2.355\% CPD); C-model time is not
+performance evidence, and neither tier replaces the 2\% Strict gate.
 
 The CPU data in Table~\ref{tab:cpu} already show why both ratios are
 needed. Sixteen workers improve the routing stage by 1.356$\times$ in geometric

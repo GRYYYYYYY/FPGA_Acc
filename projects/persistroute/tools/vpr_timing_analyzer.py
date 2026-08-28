@@ -8,7 +8,9 @@ criticality and slack for every connection.
 """
 from __future__ import annotations
 
+import hashlib
 import os
+import re
 import shutil
 import subprocess
 import sys
@@ -25,6 +27,25 @@ REQUIRED = (
     "PERSISTROUTE_VPR_ROUTE",
     "PERSISTROUTE_VPR_CHAN_WIDTH",
 )
+
+
+def _sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for chunk in iter(lambda: stream.read(1 << 20), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def _validate_placement_identity(route: Path, place: Path) -> None:
+    header = "\n".join(route.read_text(encoding="utf-8", errors="replace").splitlines()[:8])
+    match = re.search(r"Placement_ID:\s*SHA256:([0-9a-fA-F]{64})", header)
+    if not match:
+        raise SystemExit(f"route has no SHA-256 Placement_ID: {route}")
+    place_sha = _sha256(place)
+    if match.group(1).lower() != place_sha:
+        raise SystemExit(
+            f"route Placement_ID {match.group(1).lower()} differs from place SHA256 {place_sha}")
 
 
 def main() -> int:
@@ -44,6 +65,8 @@ def main() -> int:
     for name, path in paths.items():
         if not path.is_file():
             raise SystemExit(f"{name} does not exist: {path}")
+    _validate_placement_identity(paths["PERSISTROUTE_VPR_ROUTE"],
+                                 paths["PERSISTROUTE_VPR_PLACE"])
     channel_width = int(os.environ["PERSISTROUTE_VPR_CHAN_WIDTH"], 10)
     if channel_width <= 0:
         raise SystemExit("PERSISTROUTE_VPR_CHAN_WIDTH must be positive")

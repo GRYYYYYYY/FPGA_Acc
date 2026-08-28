@@ -1,6 +1,7 @@
 #include "accelerated_pathfinder.hpp"
 
 #include <algorithm>
+#include <chrono>
 #include <limits>
 #include <stdexcept>
 
@@ -25,8 +26,9 @@ KernelBatchResult execute_hbm_cmodel_batch(
   std::size_t seed_count=0;for(const auto& item:part_seeds)seed_count+=item.size();const std::size_t active_queue=static_cast<std::size_t>(MQ_QUEUES)*queue_depth;
   std::vector<MQEntry> queue(active_queue+seed_count);std::size_t seed_cursor=active_queue;
   for(std::size_t i=0;i<part.size();++i){if(part_seeds[i].empty()||part_seeds[i].size()>0xffffffffULL)throw std::runtime_error("invalid search seed list");part[i].reserved=seed_cursor;part[i].epoch=part_seeds[i].size();for(const auto& seed:part_seeds[i])queue[seed_cursor++]={seed.node,INVALID_RESOURCE,0,seed.hops};}
-  Metrics metrics{};
+  Metrics metrics{};const auto search_begin=std::chrono::steady_clock::now();
   search_hbm_kernel(nodes.data(),edges.data(),resources.data(),part.data(),paths.data(),reads.data(),results.data(),distance.data(),predecessor.data(),hops.data(),seen.data(),closed.data(),read_epoch.data(),queue.data(),sizes.data(),nodes.size(),edges.size(),part.size(),queue_depth,capacity,&metrics);
+  output.telemetry.search_ns+=std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now()-search_begin).count();++output.telemetry.search_launches;
   output.search_metrics.expanded+=metrics.expanded;output.search_metrics.edge_visits+=metrics.edge_visits;output.search_metrics.failed+=metrics.failed;
   for(std::size_t i=0;i<part.size();++i){KernelCandidate candidate{};candidate.task=tasks[0];candidate.task=part[i];candidate.task.epoch=0;candidate.task.reserved=0;candidate.search_status=results[i].status;candidate.commit_status=results[i].status;
    if(results[i].status==1){const auto& r=results[i];candidate.path.assign(paths.begin()+r.offset,paths.begin()+r.offset+r.length);if(candidate.path.empty())throw std::runtime_error("multi-source kernel omitted attachment");candidate.attachment=candidate.path.front();candidate.path.erase(candidate.path.begin());candidate.reads.assign(reads.begin()+r.read_offset,reads.begin()+r.read_offset+r.read_count);}output.candidates.push_back(std::move(candidate));}
@@ -35,7 +37,8 @@ KernelBatchResult execute_hbm_cmodel_batch(
  std::vector<Task> commit_tasks;std::vector<std::uint32_t> paths;std::vector<ReadEntry> reads;std::vector<PathResult> results;
  for(const auto& c:output.candidates){PathResult r{};r.offset=paths.size();r.read_offset=reads.size();r.length=c.path.size();r.read_count=c.reads.size();r.status=c.search_status;if(r.length!=c.path.size()||r.read_count!=c.reads.size())throw std::runtime_error("kernel transaction exceeds 16-bit record");commit_tasks.push_back(c.task);paths.insert(paths.end(),c.path.begin(),c.path.end());reads.insert(reads.end(),c.reads.begin(),c.reads.end());results.push_back(r);}
  const std::size_t capacity=std::max<std::size_t>({paths.size(),reads.size(),1});paths.resize(capacity);reads.resize(capacity);Metrics metrics{};
- commit_hbm_kernel(resources.data(),commit_tasks.data(),paths.data(),reads.data(),results.data(),resources.size(),commit_tasks.size(),capacity,allow_overuse?1U:0U,&metrics);
+ const auto commit_begin=std::chrono::steady_clock::now();commit_hbm_kernel(resources.data(),resources.data(),resources.data(),resources.data(),commit_tasks.data(),paths.data(),reads.data(),results.data(),resources.size(),commit_tasks.size(),capacity,allow_overuse?1U:0U,&metrics);
+ output.telemetry.commit_ns=std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now()-commit_begin).count();output.telemetry.commit_launches=1;
  output.commit_metrics=metrics;for(std::size_t i=0;i<output.candidates.size();++i)output.candidates[i].commit_status=results[i].status;
  return output;
 }

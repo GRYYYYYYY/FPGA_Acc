@@ -34,10 +34,11 @@ int main(){
  assert(timed.routing.tasks[0].task.criticality_q==30010+timed.routing.metrics.iterations-1&&timed.routing.timing_log[0].updated_connections==3);
  std::vector<Node> reroute_nodes;std::vector<Edge> reroute_edges;graph(3,{{0,1,1},{0,2,10},{2,1,10}},reroute_nodes,reroute_edges);
  reroute_edges[0].delay_q=100;reroute_edges[1].delay_q=1;reroute_edges[2].delay_q=1;
- PathfinderConfig reroute_config;reroute_config.max_iterations=4;reroute_config.min_timing_iterations=3;
+ PathfinderConfig reroute_config;reroute_config.max_iterations=4;reroute_config.min_timing_iterations=3;reroute_config.timing_update_period=2;
  std::uint32_t reroute_calls=0;TimingAnalyzer reroute_timing=[&](std::uint32_t,const auto&,const auto&,const auto& routed){++reroute_calls;TimingAnalysisResult out;out.connections={{routed[0].task.id,65535,0,0}};return out;};
  const auto rerouted=route_accelerated_pathfinder(reroute_nodes,reroute_edges,state(3),{{1,1,0,1,0,8,0,0,0}},executor,reroute_config,4,reroute_timing);
- assert(rerouted.routing.legal&&rerouted.routing.metrics.iterations==3&&reroute_calls==3);
+ assert(rerouted.routing.legal&&rerouted.routing.metrics.iterations==3&&reroute_calls==2);
+ assert(rerouted.routing.timing_log.size()==2&&rerouted.routing.timing_log[0].iteration==0&&rerouted.routing.timing_log[1].iteration==2);
  assert((rerouted.routing.tasks[0].path==std::vector<std::uint32_t>{2,1}));
  std::vector<Node> cleanup_nodes;std::vector<Edge> cleanup_edges;graph(4,{{0,1,1},{0,2,10},{1,3,1},{2,3,10}},cleanup_nodes,cleanup_edges);
  cleanup_nodes[1].delay_class=5;cleanup_nodes[2].delay_class=1;SelectiveCleanupConfig cleanup_config;cleanup_config.passes=1;cleanup_config.channel_length_cost_q=10;
@@ -45,5 +46,13 @@ int main(){
  assert(cleaned.routing.legal&&cleaned.cleanup_attempted_nets==1&&cleaned.cleanup_accepted_nets==1);
  assert(cleaned.cleanup_wirelength_before==5&&cleaned.cleanup_wirelength_after==1);
  assert((cleaned.routing.tasks[0].path==std::vector<std::uint32_t>{2,3}));
+ std::vector<Node> branch_nodes;std::vector<Edge> branch_edges;graph(6,{{0,1,1},{1,2,1},{2,3,1},{1,4,10},{4,3,10},{1,5,1}},branch_nodes,branch_edges);
+ branch_nodes[1].delay_class=1;branch_nodes[2].delay_class=5;branch_nodes[4].delay_class=1;branch_nodes[5].delay_class=1;
+ SelectiveCleanupConfig branch_config;branch_config.passes=1;branch_config.channel_length_cost_q=10;branch_config.max_branches=2;
+ const auto branch_cleaned=route_accelerated_pathfinder(branch_nodes,branch_edges,state(6),{{1,1,0,3,0,8,0,0,0},{2,1,0,5,0,8,1,0,0}},executor,{},4,{},branch_config);
+ assert(branch_cleaned.routing.legal&&branch_cleaned.cleanup_attempted_branches==2&&branch_cleaned.cleanup_accepted_branches==1);
+ assert(branch_cleaned.cleanup_wirelength_before==7&&branch_cleaned.cleanup_wirelength_after==3);
+ assert((branch_cleaned.routing.tasks[0].path==std::vector<std::uint32_t>{1,4,3}));
+ assert((branch_cleaned.routing.tasks[1].path==std::vector<std::uint32_t>{1,5}));
  std::cout<<"accelerated_pathfinder_tb: PASS\n";
 }

@@ -18,10 +18,20 @@ struct KernelCandidate {
 
 struct SearchSeed {std::uint32_t node = 0;std::uint32_t hops = 0;};
 
+struct KernelBatchTelemetry {
+ std::uint64_t h2d_bytes = 0;
+ std::uint64_t d2h_bytes = 0;
+ std::uint64_t search_ns = 0;
+ std::uint64_t commit_ns = 0;
+ std::uint32_t search_launches = 0;
+ std::uint32_t commit_launches = 0;
+};
+
 struct KernelBatchResult {
  std::vector<KernelCandidate> candidates;
  Metrics search_metrics{};
  Metrics commit_metrics{};
+ KernelBatchTelemetry telemetry{};
 };
 
 using KernelBatchExecutor = std::function<KernelBatchResult(
@@ -39,6 +49,7 @@ struct AcceleratedIteration {
  std::uint32_t committed = 0;
  std::uint32_t failed = 0;
  std::uint32_t overused_resources = 0;
+ KernelBatchTelemetry telemetry{};
  std::uint64_t resource_hash = 0;
  std::uint64_t route_hash = 0;
 };
@@ -48,14 +59,22 @@ struct AcceleratedPathfinderResult {
  std::vector<AcceleratedIteration> audit;
  std::uint32_t cleanup_attempted_nets = 0;
  std::uint32_t cleanup_accepted_nets = 0;
+ std::uint32_t cleanup_attempted_branches = 0;
+ std::uint32_t cleanup_accepted_branches = 0;
  std::uint64_t cleanup_wirelength_before = 0;
  std::uint64_t cleanup_wirelength_after = 0;
+ std::uint64_t timing_ns = 0;
+ std::uint64_t cleanup_ns = 0;
+ KernelBatchTelemetry telemetry{};
 };
 
 struct SelectiveCleanupConfig {
  std::uint32_t passes = 0;
  std::uint16_t channel_length_cost_q = 0;
  std::uint32_t delay_tolerance_ppm = 0;
+ std::uint32_t branch_budget_ppm = 0;
+ std::uint32_t max_branches = 0;
+ std::uint32_t time_budget_ms = 0;
  bool per_connection_delay_guard = true;
 };
 

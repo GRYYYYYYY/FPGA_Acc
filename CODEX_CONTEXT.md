@@ -37,6 +37,8 @@
 
 当前机器已确认 Vitis HLS/v++ 2022.2、Vivado/XSIM 2022.2、XRT 2.14.354 与 `xilinx_u280_gen3x16_xdma_1_202211_1` 平台可用；XPFM、hw XSA、平台版本、DKMS 和软件包哈希记录在 `projects/persistroute/experiments/environment_2022_2_u280.json`。该机器是未透传 U280 PCIe 的 VMware 虚拟机，因此 `xbutil examine` 正常返回 0 块设备，不能在本机宣称上板通过。四 search CU + 一 commit CU 的 U280 `hw` 已完成 system link、32 端口 HBM block design、综合、placement、routing、bitstream 与 xclbin 打包；180 MHz 下最终 WNS `+0.016 ns`、TNS `0`、WHS `+0.006 ns`、THS `0`，证据见 `projects/persistroute/experiments/vitis_link_2022_2_u280.json`。同一多 CU 系统的 `hw_emu` xclbin、XSim 与 XRT native host 已通过，tiny production-ABI 输出与 C++ golden 逐字节一致，证据见 `projects/persistroute/experiments/hw_emu_2022_2_u280.json`。加速 PathFinder 又在真实 `diffeq` RR graph 子集上完成两项 RTL 终验：4 个 Search CU 同 wave 的 4-task 用例一轮合法结束；2-task 冲突用例从首轮 1 个超用资源经 rip-up/re-route 在第二轮降为 0。两项均退出码 0、`legal=true`、`golden_match=true`，五类输出与 HBM C-model 逐字节一致，XSim 无 ERROR/FATAL，证据见 `projects/persistroute/experiments/accelerated_pathfinder_hw_emu_2026-08-26.json`。VPR 9 已完成四个标准案例及 Titan23/Koios 代表案例的 serial/parallel B0 配对。RapidWright 2022.2.0-beta/JDK 11 已安装；FPGA24 v1.8 `logicnets_jscl` 的官方 DeviceResources/NXRoute 已真实运行，bridge 完成 6-PIP 非空回写与逐字节重提取；Vivado 2022.2 又完成 27961/27961 个 routable nets 的全设计布线，0 routing errors、0 DRC violations。CUFR `ea4b031...` 和官方 RWRoute `f86cb487...` 均在同一 VM/输入上合法收敛且通过官方 checker；CUFR/RWRoute 分别为 26.33/35.59 s、critical-path wirelength 234/217、score 47.097/53.731。官方输入无用户时序约束，因此 Vivado 结果只证明布线合法，不证明时序收敛。证据见 `projects/persistroute/experiments/fpga24_logicnets_jscl_2026-08-24.json`、`projects/persistroute/experiments/cufr_logicnets_jscl_2026-08-24.json` 与 `projects/persistroute/experiments/rwroute_logicnets_jscl_2026-08-24.json`。
 
+本轮进一步完成了包含多任务 batch、四份 HBM Resource replica 与 Commit 广播更新的新 ABI 硬件终验：U280 routed implementation 在 180 MHz 下 WNS `+0.016 ns`、TNS `0`、WHS `+0.006 ns`、THS `0`，新 xclbin SHA-256 为 `e3ca2e6030aa5b65d07390492e8d7070fcf74cd29064318cc7139c3e3ea69743`。证据见 `projects/persistroute/experiments/vitis_link_batched_2026-08-28_u280.json`；这不代表物理上板性能。
+
 ## 关键文件
 
 - `projects/persistroute/README.md`：PersistRoute 生产/回归架构和命令。
@@ -52,7 +54,7 @@
 ## 当前下一步
 
 1. PersistRoute 已冻结 4 个 VTR、2 个 Titan23 和 4 个 Koios 案例的 1-worker/16-worker CPU 基线；全部配对 route/QoR 一致，whole-flow/route-stage 几何平均加速为 `1.046x/1.356x`。论文草稿、claim matrix、实验计划、CSV、LaTeX 和 SVG 位于 `projects/persistroute/paper/`。
-2. PersistRoute 的选择性 net cleanup 已完成：两遍后 `frisc`/`elliptic` 原生 wirelength 增量降到 +3.134%/+2.646%，CPD +0.876%/+0.084%，双设计几何平均 wirelength 增量 +2.890%，仍未达到 2%。下一本机算法项是 branch-level replacement 或更强的全局 timing guard；之后扩展其余七案例。物理 U280 runtime/能耗仍因无卡阻塞，不能用 `hw_emu` 替代。
+2. PersistRoute 已完成性能路径重构与新 ABI 的 180 MHz U280 实现终验：XRT 多任务 batch、四份 HBM Resource replica、Commit 同步更新、Host 差分同步、timing cadence 和分阶段计量均已实现并完成 xclbin 打包。1% branch replacement 受支配，issue64/timing-period8 在 `elliptic` 不合法，均保留为负消融。issue8/every-round STA 已在 `frisc`/`elliptic` 原生 VPR 检查后以 +4.296% wirelength/+2.355% CPD 几何平均增量冻结为双案例 Balanced 候选，issue16 因 CPD +3.075% 淘汰。下一步扩展 issue8 完整矩阵；物理 U280 runtime/能耗仍因无卡阻塞。
 3. 若不等待外部硬件，开始 TilePlace 的真实 VPR/FPGAIF 前后端。高容量资源多 owner、图模板压缩和高于 180 MHz 的优化保留为 PersistRoute 后续增强。
 4. 如论文验证矩阵确实需要，可新增 timing-mode RTL 小子集终验；不要重跑既有最终 hw_emu。
 

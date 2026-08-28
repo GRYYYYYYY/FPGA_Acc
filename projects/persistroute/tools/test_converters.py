@@ -34,6 +34,16 @@ VPR succeeded
 markers,wirelength,cpd=validator.parse_vpr_output(sample)
 if not all(markers.values()) or wirelength!=123 or cpd!=5.25:
     raise SystemExit("VPR native validation parser failed")
+timing_spec=importlib.util.spec_from_file_location("vpr_timing_analyzer",root/"vpr_timing_analyzer.py")
+timing_module=importlib.util.module_from_spec(timing_spec);timing_spec.loader.exec_module(timing_module)
+identity_route=temp/"identity.route"
+identity_route.write_text((root/"fixtures/tiny.route").read_text(encoding="utf-8").replace(
+    "SHA256:test","SHA256:"+timing_module._sha256(root/"fixtures/tiny.place")),encoding="utf-8")
+timing_module._validate_placement_identity(identity_route,root/"fixtures/tiny.place")
+bad_place=temp/"bad.place";bad_place.write_text("corrupted placement\n",encoding="utf-8")
+try: timing_module._validate_placement_identity(identity_route,bad_place)
+except SystemExit: pass
+else: raise SystemExit("timing analyzer accepted a mismatched Placement_ID")
 prefix=temp/"xrt_input"
 subprocess.run([sys.executable,str(root/"pack_hls_inputs.py"),str(root/"fixtures/tiny_rr_graph.xml"),
                 str(root/"fixtures/tiny_connections.csv"),str(prefix),"--channel-length-cost-q","16"],check=True)

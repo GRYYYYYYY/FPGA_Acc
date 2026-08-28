@@ -35,6 +35,7 @@ make -C host persistroute_pathfinder
 `PERSISTROUTE_MAX_ITERATIONS`、`PERSISTROUTE_PRESENT_START_Q`、
 `PERSISTROUTE_PRESENT_MULTIPLIER_Q` 和 `PERSISTROUTE_HISTORY_INCREMENT_Q` 控制 PathFinder 轮次与 Q8 代价更新。
 启用 timing analyzer 时，`PERSISTROUTE_MIN_TIMING_ITERATIONS`（默认 1）规定在允许零超用终止前至少执行多少个完整路由/STA 轮次；大于 1 时，每次 STA 更新后全网进入下一轮 reroute，使新 criticality 实际影响路径选择。
+`PERSISTROUTE_TIMING_UPDATE_PERIOD=N` 可将更新降为每 N 轮一次；第 0 轮和最终合法解始终分析，默认 `N=1`。
 每次 STA 更新还会按 `(criticality desc, priority, task_id)` 重新确定 connection 和 net 的下一轮顺序；固定 tie-break 保持重复运行确定性。
 
 真实逐 connection timing 更新通过 host callback 接入，production `Task` ABI 仍保持 32 bytes。每轮 Search/Commit 后，host 将当前路径的 RR delay 写成
@@ -86,6 +87,10 @@ export PERSISTROUTE_CLEANUP_PER_CONNECTION_DELAY_GUARD=1
 
 每个 net 在尝试前保存 route tree、tasks、resources 和 version；只有全部 connections 成功、全局容量合法且唯一 CHAN wirelength 严格下降时才提交，否则逐字节语义回滚。当前动态 cleanup edge-cost 仅接入 HBM C-model host；XRT backend 的 graph BO 在启动时固定，因此没有重跑或宣称硬件 cleanup 结果。
 
+Branch-level 消融可用 `PERSISTROUTE_CLEANUP_BRANCH_BUDGET_PPM`、`PERSISTROUTE_CLEANUP_MAX_BRANCHES` 和 `PERSISTROUTE_CLEANUP_TIME_BUDGET_MS` 限制。它只拆除未被同 net 其他 sinks 使用的末端分支；真实两案例 1% budget 合法但只接受 2/58 和 1/53 个候选，QoR 劣于 net cleanup，因此不是冻结默认值。
+
+新 XRT host 使用 `PERSISTROUTE_TASKS_PER_CU` 控制每 CU 单次任务数。四份 Resource replica 常驻各 Search CU 的 HBM bank，Commit 同步更新所有 replica，Host 侧变化只同步连续差分区间。性能计量写入 `.performance_iterations.csv`；确定性哈希仍独立保留在 `.accelerated_iterations.csv`。
+
 Vitis 2022.2/U280 构建：
 
 ```bash
@@ -101,7 +106,7 @@ Vitis 2022.2/U280 构建：
 .\build_xclbin.ps1 -Platform D:\xilinx\platforms\xilinx_u280_gen3x16_xdma_1_202211_1.xpfm
 ```
 
-`run_hls.sh` 可接受 `search_legacy`、`search_hbm`、`scheduler`、`commit_legacy`、`commit_hbm` 之一以单独回归。`run_vivado_ooc.sh` 对两个 production top 的 HLS RTL 做 Vivado out-of-context 综合并保存 DCP、时序、利用率和 DRC 报告。Vitis HLS/XSIM 实测结果与 XO 哈希保存在 `experiments/hls_2022_2_u280.json`；旧版 Vivado OOC 结果与 DCP 哈希保存在 `experiments/vivado_ooc_2022_2_u280.json`，它早于本轮 AXI bundle 合并。Vitis/XRT/U280 平台的精确版本、路径和哈希见 `experiments/environment_2022_2_u280.json`。本机无 U280 PCIe 透传，因此不包含上板结果。
+`run_hls.sh` 可接受 `search_legacy`、`search_hbm`、`scheduler`、`commit_legacy`、`commit_hbm` 之一以单独回归。`run_vivado_ooc.sh` 对两个 production top 的 HLS RTL 做 Vivado out-of-context 综合并保存 DCP、时序、利用率和 DRC 报告。Vitis HLS/XSIM 实测结果与 XO 哈希保存在 `experiments/hls_2022_2_u280.json`；旧版 Vivado OOC 结果与 DCP 哈希保存在 `experiments/vivado_ooc_2022_2_u280.json`，它早于本轮 AXI bundle 合并。batched/four-replica 新 ABI 的完整 U280 实现在 180 MHz 下以 WNS +0.016 ns、TNS 0 收敛并完成 xclbin 打包，证据见 `experiments/vitis_link_batched_2026-08-28_u280.json`。Vitis/XRT/U280 平台的精确版本、路径和哈希见 `experiments/environment_2022_2_u280.json`。本机无 U280 PCIe 透传，因此不包含上板结果。
 
 XRT host 建议在安装了 XRT 与板卡驱动的 Linux 主机编译：
 

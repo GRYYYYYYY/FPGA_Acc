@@ -34,7 +34,7 @@
 
 1. PersistRoute 的物理 U280 端到端性能、能耗、重复试验和消融仍需有卡环境完成；当前 VM 不能形成这些 claim；
 2. 论文材料入口为 `projects/persistroute/paper/README.md`，十案例冻结结果为 `paper/generated/paper_results.json`；
-3. `frisc` 与 `elliptic` 的选择性 net cleanup 已完成并通过 VPR-native 检查：wirelength 增量 +3.134%/+2.646%，CPD +0.876%/+0.084%，双设计几何平均 wirelength +2.890%，仍未达到 2%。若继续 PersistRoute，下一项是 branch-level replacement/全局 timing guard 后扩展其余七案例；否则可进入 TilePlace 的真实 VPR/FPGAIF 前端。
+3. 新性能路径已实现多任务/CU batch、四份HBM Resource replica、Commit同步、Host差分同步、timing cadence和独立性能计量，并已完成新 ABI 的 U280 180 MHz routed implementation 与 xclbin 打包。1% branch replacement合法但QoR受支配；issue64/timing-period8在`elliptic`不合法。issue8/every-round STA 已在 `frisc`/`elliptic` 原生 VPR 检查后以 wirelength/CPD 几何平均 +4.296%/+2.355% 冻结为双案例 Balanced 候选；issue16 因 CPD +3.075% 淘汰。下一步扩展 issue8 十案例；无物理U280时不得形成加速/能耗claim。
 
 不要把 `hw_emu` 墙钟时间当作上板性能，也不要宣称当前 VM 已实际上板。
 
@@ -75,7 +75,7 @@ projects/persistroute/host/.run/284123
 - host-side VPR 9/Tatum timing oracle 已接入 CPU、HBM C-model 和 XRT 控制层：每轮按当前 RR path delay 运行真实 timing graph STA，并反馈逐 connection setup criticality。采用本轮 RC delay 模型后，完整 `diffeq` CPU 为 3 轮/CPD 7.164 ns，4-PE HBM C-model 为 12 轮/CPD 7.274 ns，均 0 overuse、`legal=true`；证据见 `projects/persistroute/experiments/timing_criticality_2026-08-26.json`。
 - timing oracle 现可强制最少 reroute 轮数，并在 STA 后按 criticality 降序确定性重排。统一 base cost 64、最少 3 轮策略下，`frisc` 与 `elliptic` 4-PE HBM C-model 相对 VPR CPD 分别为 +0.803%/+0.499%，均 0 overuse；两案例各自两次运行六类核心输出逐字节一致，证据见 `projects/persistroute/experiments/timing_priority_{frisc,elliptic}_2026-08-27.json`。
 - Search 和 Commit HLS csim/csynth/Verilog cosim 均通过。
-- 4 Search CU + 1 Commit CU 的 U280 `hw` 完整实现已完成；180 MHz routed timing 为 WNS `+0.016 ns`、TNS `0`、WHS `+0.006 ns`、THS `0`。
+- 4 Search CU + 1 Commit CU 的 batched/four-replica U280 `hw` 完整实现已完成；180 MHz routed timing 为 WNS `+0.016 ns`、TNS `0`、WHS `+0.006 ns`、THS `0`，新 xclbin SHA-256 为 `e3ca2e6030aa5b65d07390492e8d7070fcf74cd29064318cc7139c3e3ea69743`。
 - 当前 `hw_emu` xclbin SHA-256：`73ff9d105a486c2f8cfa73e002756343947aa6d29d9b1fdd4e3523521f75cc33`。
 - FPGA24 `logicnets_jscl`、Vivado 全设计合法布线、CUFR 和 RWRoute 强基线已有真实证据，详见各 experiment JSON。
 
@@ -183,4 +183,4 @@ python3 projects/persistroute/tools/static_interface_audit.py
 
 ## 9. 当前没有运行中的长作业
 
-最终两个 `hw_emu` 已自然退出并归档，当前无需恢复、attach 或等待任何 host/XSim/Vivado 进程。十案例 CPU 基线与论文图表也已冻结；新会话可以从论文包复核或 TilePlace 开始。
+最终两个 `hw_emu` 已自然退出并归档且本轮未重跑。新 ABI 的 Vivado 实现与 xclbin 打包也已完成，当前没有 host/XSim/Vivado/Vitis 长作业。十案例 CPU 基线与论文图表已冻结；下一项是扩展 issue8 Balanced 完整矩阵，或在有物理 U280 时完成 runtime/能耗测量。

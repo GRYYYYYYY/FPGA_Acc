@@ -29,6 +29,13 @@
 7. Validate each final academic route with VPR and each commercial route with
    the official FPGA24 checker plus Vivado `report_route_status`/DRC.
 
+## Frozen reporting tiers
+
+- Strict: legal, with geometric-mean CPD and wirelength deltas each at most 2%.
+- Balanced: legal, CPD at most 3% and wirelength at most 5%; speedup must carry this qualifier.
+- Throughput: legality only with all QoR disclosed; it is not a matched-QoR result.
+- Primary speedup is complete routing phase versus VPR 16-worker, including load, transfer, Search, Commit, replay, STA and export. Whole VPR flow is secondary and has no 3x target.
+
 ## Current local progress
 
 - Full per-round VPR/Tatum closure is complete for `diffeq`, `frisc`, and `elliptic`.
@@ -53,6 +60,9 @@
   +3.134% wirelength/+0.876% CPD and `elliptic` +2.646%/+0.084%. The
   two-design geomean wirelength delta is +2.890%, so branch-level replacement
   or a stronger global timing guard is still needed before matrix expansion.
+- The performance path now batches tasks per Search CU, keeps four Resource replicas in HBM, synchronizes them in Commit, transfers only compact Host-side changes, and emits separate transfer/launch/Search/Commit/STA telemetry. The fresh U280 build for this ABI closes routed timing at 180 MHz (WNS +0.016 ns, TNS 0) and packages successfully; physical-board runtime remains outstanding.
+- A 1% unique-branch screen is legal but dominated: `frisc` accepts 2/58 candidates and remains +4.126% wirelength; `elliptic` accepts 1/53 and remains +3.849%. A 64-connection/every-8-round STA point leaves one overused resource on `elliptic` after 30 rounds and is rejected. Evidence is `performance_qor_exploration_2026-08-27.json`.
+- The conservative issue-width screen freezes issue 8 with every-round STA as the current two-design Balanced candidate: both routes pass native VPR, with geometric-mean wirelength/CPD deltas of +4.296%/+2.355%. Issue 16 is rejected because its CPD geomean is +3.075%. These are C-model QoR screens, not board speed measurements; extend issue 8 to the full matrix before reporting it as a result.
 
 ## Rejection checks
 

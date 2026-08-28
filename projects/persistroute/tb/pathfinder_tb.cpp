@@ -121,14 +121,15 @@ void test_timing_feedback_forces_reroute() {
  std::vector<Node> nodes;std::vector<Edge> edges;
  make_graph(3,{{0,1,1,100},{0,2,10,1},{2,1,10,1}},nodes,edges);
  const std::vector<Task> tasks{{1,1,0,1,0,8,0,0,0}};
- PathfinderConfig config;config.max_iterations=4;config.min_timing_iterations=3;
+ PathfinderConfig config;config.max_iterations=4;config.min_timing_iterations=3;config.timing_update_period=2;
  std::uint32_t calls=0;
  TimingAnalyzer analyzer=[&](std::uint32_t iteration,const auto&,const auto&,const auto&){
   ++calls;TimingAnalysisResult out;out.critical_path_delay_ps=100-iteration;
   out.connections={{1,65535,0,0}};return out;
  };
  const auto result=route_pathfinder(nodes,edges,resources(3),tasks,config,analyzer);
- assert(result.legal&&result.metrics.iterations==3&&calls==3&&result.metrics.ripups==2);
+ assert(result.legal&&result.metrics.iterations==3&&calls==2&&result.metrics.ripups==2);
+ assert(result.timing_log.size()==2&&result.timing_log[0].iteration==0&&result.timing_log[1].iteration==2);
  assert((result.tasks[0].path==std::vector<std::uint32_t>{2,1}));
 }
 

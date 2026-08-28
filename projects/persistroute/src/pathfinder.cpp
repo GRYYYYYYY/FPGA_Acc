@@ -268,6 +268,8 @@ void validate_inputs(
  if (config.max_iterations == 0 || config.min_timing_iterations == 0 ||
      config.min_timing_iterations > config.max_iterations || config.present_multiplier_q == 0)
   throw std::invalid_argument("PathFinder iteration and multiplier values must be positive");
+ if (config.timing_update_period == 0)
+  throw std::invalid_argument("timing update period must be positive");
  for (std::size_t i = 0; i < nodes.size(); ++i) {
   if (resources[i].capacity == 0) throw std::invalid_argument("resource capacity must be positive");
   if (static_cast<std::uint64_t>(nodes[i].edge_begin) + nodes[i].edge_count > edges.size())
@@ -411,9 +413,11 @@ PathfinderResult route_pathfinder(
   result.metrics.overused_resources = overused;
   log.overused_resources = overused;
   result.iteration_log.push_back(log);
-  update_timing_criticalities(iteration, nodes, edges, result.tasks,
-                              timing_analyzer, result.timing_log);
-  if (timing_analyzer) {
+  bool timing_updated = timing_analyzer && iteration % config.timing_update_period == 0;
+  if (timing_updated)
+   update_timing_criticalities(iteration, nodes, edges, result.tasks,
+                               timing_analyzer, result.timing_log);
+  if (timing_updated) {
    for (auto& item : trees) {
     auto& indices = item.second.task_indices;
     std::sort(indices.begin(), indices.end(), [&](std::size_t lhs, std::size_t rhs) {
@@ -435,6 +439,9 @@ PathfinderResult route_pathfinder(
   const bool force_timing_reroute = timing_analyzer &&
       iteration + 1 < config.min_timing_iterations;
   if (all_routed && overused == 0 && !force_timing_reroute) {
+   if (timing_analyzer && !timing_updated)
+    update_timing_criticalities(iteration, nodes, edges, result.tasks,
+                                timing_analyzer, result.timing_log);
    result.route_success = true;
    break;
   }

@@ -1,0 +1,93 @@
+{
+  "schema": "PERSISTROUTE_PERFORMANCE_QOR_EXPLORATION_V1",
+  "date": "2026-08-27",
+  "qor_tiers": {
+    "strict": {"cpd_geomean_delta_percent_max": 2, "wirelength_geomean_delta_percent_max": 2},
+    "balanced": {"cpd_geomean_delta_percent_max": 3, "wirelength_geomean_delta_percent_max": 5},
+    "throughput": {"hard_requirement": "legal; report all QoR without a hidden limit"}
+  },
+  "implementation": {
+    "timing_update_period": "configurable; iteration zero and the final legal solution are always analyzed",
+    "xrt_batching": "configurable tasks per CU; tasks and multi-source seeds are partitioned across 1-4 active Search CUs",
+    "persistent_resources": "four HBM Resource replicas; Commit writes every accepted state to all replicas; host-originated changes use compact contiguous range synchronization",
+    "resource_transfer_invariant": "no full Resource download per Search/Commit wave",
+    "telemetry": ["H2D bytes", "D2H bytes", "Search/Commit nanoseconds", "Search/Commit launches", "STA nanoseconds", "cleanup nanoseconds"],
+    "branch_cleanup": "time/count-bounded unique-sink-branch replacement with exact rollback",
+    "placement_identity": "timing analyzer now rejects a route/place SHA-256 mismatch before invoking VPR"
+  },
+  "screening": {
+    "throughput_issue64_timing_period8": {
+      "status": "rejected",
+      "frisc": {"status": "invalidated because the selected place artifact did not match route Placement_ID"},
+      "elliptic": {"legal": false, "iterations": 30, "remaining_overused_resources": 1, "wall_ms": 32467.4, "timing_ms": 4850.8},
+      "reason": "fails the legality gate; do not freeze this batch/cadence pair"
+    },
+    "balanced_issue8_timing_period1": {
+      "status": "frozen_two_case_candidate",
+      "configuration": {"issue_width": 8, "timing_update_period": 1, "cleanup_passes": 0},
+      "frisc": {
+        "legal": true, "iterations": 18, "search_launches": 10224, "commit_launches": 2784,
+        "search_ms": 25823.5, "commit_ms": 145.474, "timing_ms": 22117.2, "wall_ms": 62234.7,
+        "vpr_native_wirelength": 34728, "vpr_native_wirelength_delta_percent": 4.659153,
+        "vpr_native_cpd_ns": 13.7069, "vpr_native_cpd_delta_percent": 0.875779,
+        "route_tree_sha256": "a4f2d9df412e49fc45c75229ce9eb5d7ea77867ac18b30eabbf9fac5d19838df",
+        "route_sha256": "6528593b6427407ef44f95a8232362f9f851a0fcbdc09980667ddfca8fda5493",
+        "validation_sha256": "a0282f3e0bb02fd63c89cefce0ed78ed791af433407d537114b734559d05cdf9"
+      },
+      "elliptic": {
+        "legal": true, "iterations": 20, "search_launches": 9059, "commit_launches": 2679,
+        "search_ms": 19793.3, "commit_ms": 121.551, "timing_ms": 24763.3, "wall_ms": 57689.9,
+        "vpr_native_wirelength": 28404, "vpr_native_wirelength_delta_percent": 3.933550,
+        "vpr_native_cpd_ns": 9.13118, "vpr_native_cpd_delta_percent": 3.856526,
+        "route_tree_sha256": "1c976dda4672e5b84cd89a594d4aad6fb9fad7afe3af2282be189a84889cfd28",
+        "route_sha256": "e1c122334d4bf9f3562d9c6a5c3070824ca436bc2078cc0fd1b00ad1f2121e0f",
+        "validation_sha256": "17349575f6a1ec6a1b9d030f609a82d40f5c03364a87c373ebe5ff09f262c3c7"
+      },
+      "geomean_wirelength_delta_percent": 4.295720,
+      "geomean_cpd_delta_percent": 2.355303,
+      "interpretation": "passes the frozen two-design Balanced gates; C-model time is not a board-speed result and matrix expansion remains required"
+    },
+    "balanced_issue16_timing_period1": {
+      "status": "rejected",
+      "configuration": {"issue_width": 16, "timing_update_period": 1, "cleanup_passes": 0},
+      "frisc": {"legal": true, "iterations": 10, "wall_ms": 50648.0, "vpr_native_wirelength_delta_percent": 4.849015, "vpr_native_cpd_delta_percent": 0.859588},
+      "elliptic": {"legal": true, "iterations": 12, "wall_ms": 49558.0, "vpr_native_wirelength_delta_percent": 3.637162, "vpr_native_cpd_delta_percent": 5.338423},
+      "geomean_wirelength_delta_percent": 4.241327,
+      "geomean_cpd_delta_percent": 3.074681,
+      "reason": "misses the 3% Balanced CPD gate"
+    },
+    "strict_branch_budget_1_percent": {
+      "status": "rejected_as_dominated_but_retained_as_ablation",
+      "configuration": {"issue_width": 4, "timing_update_period": 1, "cleanup_passes": 1, "length_cost_q": 64, "delay_tolerance_ppm": 0, "per_connection_delay_guard": true},
+      "frisc": {
+        "attempted_branches": 58, "accepted_branches": 2,
+        "wirelength_before": 34556, "wirelength_after": 34551,
+        "vpr_native_wirelength_delta_percent": 4.125731,
+        "vpr_native_cpd_delta_percent": 0.875779,
+        "legal": true, "cleanup_ms": 648.151,
+        "route_tree_sha256": "abeea0447b5f420c2ba26fc32a3c2def4a97bbaf850c5e7901d4110fc5016892",
+        "route_sha256": "6436fd0bf68d9116dd857e8f3624a5fece959c2e13b5bd9a6ca5904d995f2364",
+        "validation_sha256": "c776269cec873340e8cf4b62dd6f979ebd388404e7b57b691f1134ccce847db4"
+      },
+      "elliptic": {
+        "attempted_branches": 53, "accepted_branches": 1,
+        "wirelength_before": 28385, "wirelength_after": 28381,
+        "vpr_native_wirelength_delta_percent": 3.849391,
+        "vpr_native_cpd_delta_percent": 0.548560,
+        "legal": true, "cleanup_ms": 558.465,
+        "route_tree_sha256": "b2350d130f3fb908b92dcb099668429369bdf11368efeb83d1661b9c8c741548",
+        "route_sha256": "0c73e67256253035ff1a21e600702d470de0d71ddf9e0bc1c171a24a38731c8b",
+        "validation_sha256": "745acad5531cb978300fff326e0926133aa4eef928195e06681eedd22c92050d"
+      },
+      "reason": "legal but accepts too few branches and is worse than the frozen selective net cleanup on both designs"
+    }
+  },
+  "implementation_hashes": {
+    "abi_sha256": "7d56cca124ef08139b8e6899a9d43eb164cb3035b34df6d5e02cb097ba9dea10",
+    "commit_hbm_sha256": "e2990cbfd1854bc7ff1d4c514a24977672445ea150e645e4e3c53049a22c85c4",
+    "xrt_host_sha256": "e9d88c649c50765d3e61ad9c98ddb8aecbf13648cf88dfde0a52d64214367756",
+    "accelerated_pathfinder_sha256": "9e1e721a27d7b9d0dddb17f06ea8fd3413739da9bcafbf39a2598f3bfc9cc5f0",
+    "timing_analyzer_sha256": "c20f349c6227b8fdef6bfc0d993e5674c11a9085fa41cc731688380fe8c3896b"
+  },
+  "claim_boundary": "C-model time is screening evidence only. The new XRT dataflow requires a new xclbin and physical-board execution before any acceleration claim."
+}
