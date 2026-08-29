@@ -427,7 +427,10 @@ The complete batched, four-replica hardware flow passes system link, block
 design generation, synthesis, optimization, placement, routing, bitstream
 generation, and XCLBIN packaging. At the requested 180\,MHz data clock, routed setup WNS is
 +0.016\,ns with TNS 0; hold WHS is +0.006\,ns with THS 0. There are no setup or
-hold failing endpoints. Table~\ref{tab:resources} shows 16.48\% LUT and 12.21\%
+hold failing endpoints. A post-path-read-set rebuild independently reproduces
+this closure and emits XCLBIN SHA-256 \texttt{da64d4b4\ldots}; the prior
+hardware artifact remains preserved under a separate hash.
+Table~\ref{tab:resources} shows 16.48\% LUT and 12.21\%
 register use, leaving capacity for additional Search CUs or larger local
 caches, subject to HBM-port and timing constraints. Search is the larger
 kernel; the final system timing result, rather than an older out-of-context
@@ -562,6 +565,25 @@ criticalities from the legal VPR reference reduces \texttt{diffeq} from 22 to
 so we reject it as the default. The failure indicates that the present sum of
 local RR-edge delays does not reproduce heterogeneous route-tree/Tatum delay;
 better lookahead and route-tree-aware timing cost are required.
+
+A per-connection postmortem localizes that requirement. The worst
+\texttt{spmv} connection belongs to a 32-sink net and grows from 1.380 to
+9.609\,ns; all six connections above criticality 60,000 are on 32-sink nets.
+The multi-source search had initialized every existing tree node at zero cost,
+so criticality charged the new branch but not source-to-attachment delay. An
+optional correction seeds each tree node with its accumulated upstream local
+RR delay times connection criticality. On \texttt{diffeq}, this changes
++0.58\% CPD in 22 rounds to $-$0.03\% in nine rounds, while increasing
+wirelength from +4.43\% to +6.77\%. The point is therefore a promising timing
+mechanism but only a Throughput-tier result at full weight. A Q8 weight sweep
+finds that half weight retains $-$0.03\% CPD with +4.97\% wirelength, restoring
+the Balanced tier on this screening case. A deliberately truncated
+\texttt{spmv} full-weight screen is more diagnostic:
+after identical 8.190-ns round-zero CPD, the corrected second round falls to
+6.155\,ns instead of the old 8.997\,ns, within 0.03\% of the 6.153-ns VPR
+reference. Its maximum connection delay falls from the old final 9.609\,ns to
+3.779\,ns. We stop before a third expensive round and make no legality or final
+QoR claim for this screen; it selects the next algorithm direction.
 
 Scale also exposed a front-end artifact bottleneck. The original DOM-style
 packer reached roughly 25\,GiB virtual memory on the 2.2-GiB \texttt{spmv} RR
@@ -745,9 +767,11 @@ production ABI, real VPR/Tatum timing feedback, full U280 implementation, and
 byte-identical multi-round RTL validation establish a coherent routing system
 rather than an isolated maze kernel. Ten deterministic VPR pairs characterize
 the multicore reference and expose the whole-flow bottleneck. Native VPR now
-validates four path-read-set cases, including a 7.11$\times$ C-model scalability
-recovery on \texttt{clma}. The remaining steps are physical-board end-to-end
-time and energy, the six non-VTR QoR cases, and the registered ablations.
+validates six path-read-set cases, including a 7.11$\times$ C-model scalability
+recovery on \texttt{clma}; five meet the declared Balanced or Throughput tier,
+while the legal \texttt{spmv} route exposes a timing-QoR failure instead of
+being discarded. The remaining steps are physical-board end-to-end time and
+energy, broader non-VTR QoR coverage, and the registered ablations.
 
 \clearpage
 \bibliographystyle{ACM-Reference-Format}

@@ -1,0 +1,51 @@
+{
+  "schema": "PERSISTROUTE_TREE_TIMING_WEIGHT_SWEEP_V1",
+  "date": "2026-08-29",
+  "case": "diffeq_seed1_cw200",
+  "q_format": "Q8",
+  "points": [
+    {
+      "weight_q": 0,
+      "routing_iterations": 22,
+      "wirelength_delta_percent": 4.427111941118311,
+      "cpd_delta_percent": 0.5794540127531445,
+      "legal": true,
+      "balanced": true
+    },
+    {
+      "weight_q": 64,
+      "routing_iterations": 11,
+      "wirelength_delta_percent": 4.5479512248709275,
+      "cpd_delta_percent": 0.5794540127531445,
+      "legal": true,
+      "balanced": true
+    },
+    {
+      "weight_q": 128,
+      "routing_iterations": 14,
+      "wirelength_delta_percent": 4.965396023289026,
+      "cpd_delta_percent": -0.028040542076734898,
+      "legal": true,
+      "balanced": true
+    },
+    {
+      "weight_q": 192,
+      "routing_iterations": 11,
+      "wirelength_delta_percent": 5.229045369658358,
+      "cpd_delta_percent": -0.028040542076734898,
+      "legal": true,
+      "balanced": false
+    },
+    {
+      "weight_q": 256,
+      "routing_iterations": 9,
+      "wirelength_delta_percent": 6.766999890146108,
+      "cpd_delta_percent": -0.028040542076734898,
+      "legal": true,
+      "balanced": false
+    }
+  ],
+  "selected_weight_q": 128,
+  "selection_reason": "Highest screened timing weight that improves CPD while remaining within the 5% wirelength Balanced gate.",
+  "claim_boundary": "Single-case deterministic C-model screening with native VPR final-route validation; broader matrix validation remains required."
+}

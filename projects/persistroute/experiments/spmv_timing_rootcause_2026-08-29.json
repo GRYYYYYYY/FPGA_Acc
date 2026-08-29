@@ -1,0 +1,31 @@
+{
+  "schema": "PERSISTROUTE_SPMV_TIMING_ROOTCAUSE_V1",
+  "date": "2026-08-29",
+  "baseline_reference_cpd_ps": 6153,
+  "path_readset_final_cpd_ps": 9720,
+  "connection_delay_comparison": {
+    "connections": 15138,
+    "worsened": 3713,
+    "improved": 3238,
+    "unchanged": 8187,
+    "mean_delta_ps": 61.64268727705113,
+    "maximum_delta_ps": 8229
+  },
+  "worst_connection": {
+    "task_id": 8334,
+    "net_id": 4040,
+    "net_fanout": 32,
+    "criticality_q": 65535,
+    "reference_delay_ps": 1380,
+    "path_readset_delay_ps": 9609,
+    "delta_ps": 8229
+  },
+  "high_criticality_cluster": {
+    "criticality_q_greater_than_60000_count": 6,
+    "median_net_fanout": 32,
+    "maximum_net_fanout": 32
+  },
+  "root_cause": "Every existing route-tree node was inserted as a zero-cost multi-source seed. Search criticality therefore charged only the new branch and ignored source-to-attachment upstream tree delay, strongly favoring deep attachment on high-fanout nets.",
+  "implemented_screen": "Optional route-tree timing seeds initialize each attachment with its source-to-node accumulated local RR delay weighted by the connection criticality.",
+  "claim_boundary": "The diagnosis uses the existing final per-connection VPR/Tatum export. The replacement policy requires separate legality and native-QoR validation."
+}

@@ -3,6 +3,9 @@
   "configuration": {
     "pe_count": 4,
     "issue_width": 8,
+    "adaptive_issue_width_min": 1,
+    "adaptive_issue_stagnation_iterations": 3,
+    "adaptive_issue_tail_tasks": 8,
     "max_iterations": 30,
     "min_timing_iterations": 3,
     "timing_update_period": 1,

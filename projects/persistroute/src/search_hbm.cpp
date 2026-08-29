@@ -47,8 +47,10 @@ extern "C" void search_hbm_kernel(const Node* nodes,const Edge* edges,const Reso
    overflow=!hbm_mq_push(queue_data,queue_sizes,queue_depth,{t.source,0xffffffffU,0,t.source});}
   else for(std::uint32_t seed_index=0;seed_index<t.epoch&&!overflow;++seed_index){
    const MQEntry seed=queue_data[t.reserved+seed_index];if(seed.node>=node_count||seed.tie>t.max_hops){overflow=true;break;}
-   if(seen_epoch[seed.node]!=epoch||seed.tie<hop_count[seed.node]){seen_epoch[seed.node]=epoch;distance[seed.node]=0;predecessor[seed.node]=0xffffffffU;hop_count[seed.node]=seed.tie;
-    overflow=!hbm_mq_push(queue_data,queue_sizes,queue_depth,{seed.node,0xffffffffU,0,seed.node});}
+   if(seen_epoch[seed.node]!=epoch||seed.cost_q<distance[seed.node]||
+      (seed.cost_q==distance[seed.node]&&seed.tie<hop_count[seed.node])){
+    seen_epoch[seed.node]=epoch;distance[seed.node]=seed.cost_q;predecessor[seed.node]=0xffffffffU;hop_count[seed.node]=seed.tie;
+    overflow=!hbm_mq_push(queue_data,queue_sizes,queue_depth,{seed.node,0xffffffffU,seed.cost_q,seed.node});}
   }
   MQEntry current{};
   while(!overflow&&hbm_mq_pop(queue_data,queue_sizes,queue_depth,current)){
@@ -60,7 +62,13 @@ extern "C" void search_hbm_kernel(const Node* nodes,const Edge* edges,const Reso
 #ifdef __SYNTHESIS__
 #pragma HLS PIPELINE II=1
 #endif
-    const std::uint32_t ei=node.edge_begin+j;if(ei>=edge_count){overflow=true;break;}const Edge edge=edges[ei];if(edge.dst>=node_count||closed_epoch[edge.dst]==epoch)continue;++out.edge_visits;const Resource state=resources[edge.dst];
+    const std::uint32_t ei=node.edge_begin+j;if(ei>=edge_count){overflow=true;break;}const Edge edge=edges[ei];
+    // Multi-source tree nodes are immutable attachment candidates.  With nonzero
+    // upstream seed costs, allowing relaxation back into another seed can return
+    // a branch that re-enters the authoritative tree.
+    const bool existing_seed=edge.dst<node_count&&seen_epoch[edge.dst]==epoch&&predecessor[edge.dst]==0xffffffffU;
+    if(edge.dst>=node_count||closed_epoch[edge.dst]==epoch||existing_seed)continue;
+    ++out.edge_visits;const Resource state=resources[edge.dst];
     const bool other_net=state.owner!=t.net_id;
     const std::uint32_t projected=static_cast<std::uint32_t>(state.occupancy)+(other_net?1U:0U);
     const std::uint32_t overuse=projected>state.capacity?projected-state.capacity:0U;

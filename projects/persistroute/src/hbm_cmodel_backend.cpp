@@ -26,7 +26,7 @@ KernelBatchResult execute_hbm_cmodel_batch(
   std::vector<ReadEntry> reads(capacity);std::vector<PathResult> results(part.size());
   std::size_t seed_count=0;for(const auto& item:part_seeds)seed_count+=item.size();const std::size_t active_queue=static_cast<std::size_t>(MQ_QUEUES)*queue_depth;
   std::vector<MQEntry> queue(active_queue+seed_count);std::size_t seed_cursor=active_queue;
-  for(std::size_t i=0;i<part.size();++i){if(part_seeds[i].empty()||part_seeds[i].size()>0xffffffffULL)throw std::runtime_error("invalid search seed list");part[i].reserved=seed_cursor;part[i].epoch=part_seeds[i].size();for(const auto& seed:part_seeds[i])queue[seed_cursor++]={seed.node,INVALID_RESOURCE,0,seed.hops};}
+  for(std::size_t i=0;i<part.size();++i){if(part_seeds[i].empty()||part_seeds[i].size()>0xffffffffULL)throw std::runtime_error("invalid search seed list");part[i].reserved=seed_cursor;part[i].epoch=part_seeds[i].size();for(const auto& seed:part_seeds[i])queue[seed_cursor++]={seed.node,INVALID_RESOURCE,seed.cost_q,seed.hops};}
   Metrics metrics{};const auto search_begin=std::chrono::steady_clock::now();
   search_hbm_kernel(nodes.data(),edges.data(),resources.data(),part.data(),paths.data(),reads.data(),results.data(),distance.data(),predecessor.data(),hops.data(),seen.data(),closed.data(),read_epoch.data(),queue.data(),sizes.data(),nodes.size(),edges.size(),part.size(),queue_depth,capacity,&metrics);
   partial.telemetry.search_ns=std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now()-search_begin).count();++partial.telemetry.search_launches;

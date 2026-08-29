@@ -1,0 +1,52 @@
+{
+  "schema": "PERSISTROUTE_U280_HW_IMPLEMENTATION_V1",
+  "date": "2026-08-29",
+  "source_commit": "8832cc0",
+  "target": "hw",
+  "platform": "/opt/xilinx/platforms/xilinx_u280_gen3x16_xdma_1_202211_1/xilinx_u280_gen3x16_xdma_1_202211_1.xpfm",
+  "output_directory": "build/xclbin/hw_pathreads_2026-08-29",
+  "hw_emu_rerun": false,
+  "search_hls": {
+    "xo_sha256": "c27c47bfd5918670a0a983c6bc289f79b9ff199eeff5660f78c205d90a18c5f0",
+    "xo_bytes": 1089691,
+    "target_clock_ns": 4.0,
+    "estimated_clock_ns": 2.92,
+    "bram_18k": 0,
+    "dsp": 27,
+    "ff": 39912,
+    "lut": 76847,
+    "uram": 0,
+    "latency_bound": "data-dependent"
+  },
+  "implementation": {
+    "vpp_exit_status": 0,
+    "vpp_elapsed": "1h59m29s",
+    "data_clock_mhz": 180,
+    "routing_done": true,
+    "all_user_timing_constraints_met": true,
+    "wns_ns": 0.016,
+    "tns_ns": 0.0,
+    "whs_ns": 0.006,
+    "ths_ns": 0.0,
+    "user_kernel_resources": {
+      "lut": 132305,
+      "registers": 161920,
+      "bram": 107,
+      "uram": 0,
+      "dsp": 112
+    },
+    "search_cu_count": 4,
+    "commit_cu_count": 1,
+    "hbm_pseudo_channels_used": 32
+  },
+  "xclbin": {
+    "path": "build/xclbin/hw_pathreads_2026-08-29/persistroute.xclbin",
+    "bytes": 54285200,
+    "sha256": "da64d4b413a1438d27714d5d0b1c0d7e607ca47365849b654873aa5db424447f"
+  },
+  "previous_hw_preserved": {
+    "path": "build/xclbin/hw/persistroute.xclbin",
+    "sha256": "e3ca2e6030aa5b65d07390492e8d7070fcf74cd29064318cc7139c3e3ea69743"
+  },
+  "claim_boundary": "This proves synthesis, placement, routing, and timing closure for the path-read-set kernel. No physical U280 is attached, so it is not board-runtime or speedup evidence."
+}

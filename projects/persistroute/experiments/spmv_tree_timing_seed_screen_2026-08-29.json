@@ -1,0 +1,28 @@
+{
+  "schema": "PERSISTROUTE_SPMV_TREE_TIMING_SEED_SCREEN_V1",
+  "date": "2026-08-29",
+  "configuration": {
+    "route_tree_timing_seed": true,
+    "issue_width": 8,
+    "adaptive_issue_width_min": 1,
+    "adaptive_issue_stagnation_iterations": 3,
+    "adaptive_issue_tail_tasks": 8,
+    "timing_update_period": 1
+  },
+  "reference_vpr_cpd_ps": 6153,
+  "old_path_readset_trajectory_ps": [8190, 8997, 9720],
+  "tree_timing_seed_trajectory_ps": [8190, 6155],
+  "second_round_cpd_delta_vs_reference_percent": 0.032504469364537625,
+  "maximum_connection_delay_ps": {
+    "round_0": 6283,
+    "round_1": 3779,
+    "old_final": 9609
+  },
+  "connections_analyzed_per_round": 15138,
+  "run_completed": false,
+  "stop_reason": "The run was intentionally interrupted after round-1 VPR/Tatum output proved the timing hypothesis; a third expensive screening round was unnecessary.",
+  "legality_claim": false,
+  "final_qor_claim": false,
+  "conclusion": "Charging source-to-attachment route-tree delay prevents the heterogeneous high-fanout CPD blow-up and is the selected next algorithm direction.",
+  "claim_boundary": "This is a two-round diagnostic, not a converged route, native final-route validation, board runtime, or speedup result."
+}

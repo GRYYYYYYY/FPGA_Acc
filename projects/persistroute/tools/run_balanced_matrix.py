@@ -245,6 +245,11 @@ def run_case(case: dict, config: dict, output: Path, vpr: Path, host: Path) -> d
             and execution_config(prior_identity.get("configuration", {})) == run_identity["configuration"])
     host_ran = not reusable_host_result
     if host_ran:
+        # A fail-closed host can exit before rewriting its final outputs.  Remove
+        # every prior file with this routed prefix so a resumed diagnostic cannot
+        # mistake stale timing snapshots for progress from the new run.
+        for stale in run_dir.glob(f"{routed_prefix.name}.*"):
+            stale.unlink()
         env = timing_env.copy()
         env.update({
             "PERSISTROUTE_PE_COUNT": str(config["pe_count"]),
@@ -254,6 +259,8 @@ def run_case(case: dict, config: dict, output: Path, vpr: Path, host: Path) -> d
                 config.get("adaptive_issue_stagnation_iterations", 0)),
             "PERSISTROUTE_ADAPTIVE_ISSUE_TAIL_TASKS": str(
                 config.get("adaptive_issue_tail_tasks", 0)),
+            "PERSISTROUTE_ROUTE_TREE_TIMING_WEIGHT_Q": str(config.get(
+                "route_tree_timing_weight_q", 256 if config.get("route_tree_timing_seed") else 0)),
             "PERSISTROUTE_MAX_ITERATIONS": str(config["max_iterations"]),
             "PERSISTROUTE_MIN_TIMING_ITERATIONS": str(config["min_timing_iterations"]),
             "PERSISTROUTE_TIMING_UPDATE_PERIOD": str(config["timing_update_period"]),
@@ -367,6 +374,9 @@ def main() -> int:
     parser.add_argument("--adaptive-tail-tasks", type=int)
     parser.add_argument("--initial-reference-timing", action=argparse.BooleanOptionalAction,
                         default=None)
+    parser.add_argument("--route-tree-timing-seed", action=argparse.BooleanOptionalAction,
+                        default=None)
+    parser.add_argument("--route-tree-timing-weight-q", type=int)
     parser.add_argument("--max-iterations", type=int)
     args = parser.parse_args()
     document = json.loads(args.config.read_text(encoding="utf-8"))
@@ -380,6 +390,8 @@ def main() -> int:
         "adaptive_issue_tail_tasks": args.adaptive_tail_tasks,
         "max_iterations": args.max_iterations,
         "initial_reference_timing": args.initial_reference_timing,
+        "route_tree_timing_seed": args.route_tree_timing_seed,
+        "route_tree_timing_weight_q": args.route_tree_timing_weight_q,
     }
     document["configuration"].update(
         {key: value for key, value in overrides.items() if value is not None})

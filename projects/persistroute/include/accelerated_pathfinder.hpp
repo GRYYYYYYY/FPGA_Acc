@@ -16,7 +16,11 @@ struct KernelCandidate {
  std::uint16_t commit_status = 0;
 };
 
-struct SearchSeed {std::uint32_t node = 0;std::uint32_t hops = 0;};
+struct SearchSeed {
+ std::uint32_t node = 0;
+ std::uint32_t hops = 0;
+ std::uint32_t cost_q = 0;
+};
 
 struct KernelBatchTelemetry {
  std::uint64_t h2d_bytes = 0;
