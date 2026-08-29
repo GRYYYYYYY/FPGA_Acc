@@ -1,0 +1,23 @@
+{
+  "schema": "PERSISTROUTE_CORRECTED_QOR_MATRIX_V1",
+  "date": "2026-08-29",
+  "case_count": 6,
+  "legal_case_count": 6,
+  "balanced_case_count": 3,
+  "throughput_case_count": 6,
+  "geomean_wirelength_delta_percent": 5.465513558773427,
+  "geomean_cpd_delta_percent": 1.5495116139423892,
+  "cases": [
+    {"name": "diffeq", "iterations": 22, "wirelength_delta_percent": 4.427111941118311, "cpd_delta_percent": 0.5794540127531445, "legal": true, "balanced": true, "throughput": true, "route_tree_timing_weight_q": 0},
+    {"name": "frisc", "iterations": 18, "wirelength_delta_percent": 4.659152552588752, "cpd_delta_percent": 0.8757791858933217, "legal": true, "balanced": true, "throughput": true, "route_tree_timing_weight_q": 0},
+    {"name": "elliptic", "iterations": 20, "wirelength_delta_percent": 3.933550440923561, "cpd_delta_percent": 3.8565259078878755, "legal": true, "balanced": false, "throughput": true, "route_tree_timing_weight_q": 0},
+    {"name": "clma", "iterations": 8, "wirelength_delta_percent": 3.2157481498177987, "cpd_delta_percent": 0.6624513283484346, "legal": true, "balanced": true, "throughput": true, "route_tree_timing_weight_q": 0},
+    {"name": "spmv", "iterations": 21, "wirelength_delta_percent": 7.769576583177296, "cpd_delta_percent": 0.0, "legal": true, "balanced": false, "throughput": true, "route_tree_timing_weight_q": 128},
+    {"name": "softmax", "iterations": 23, "wirelength_delta_percent": 8.911676881973918, "cpd_delta_percent": 3.3878645768161464, "legal": true, "balanced": false, "throughput": true, "route_tree_timing_weight_q": 0}
+  ],
+  "source_summaries": [
+    "balanced_pathreads_extended_matrix_2026-08-29.json",
+    "tree_timing_weight128_spmv_full_2026-08-29.json"
+  ],
+  "claim_boundary": "All six final routes pass native VPR legality and consistency. C-model time is not physical-U280 speed evidence."
+}

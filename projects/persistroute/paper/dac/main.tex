@@ -554,9 +554,12 @@ legal 23-round route. Native VPR reports +8.91\% wirelength and +3.39\% CPD, so
 the case enters only the 10\%/5\% Throughput tier. \texttt{spmv} has 1.98
 million nodes, 29.30 million edges, and 15,138 connections. It closes legally
 in 16 rounds with +5.68\% wirelength, but its +57.91\% CPD is rejected rather
-than hidden by the relaxed tier. Thus all six completed exports are legal,
-three pass Balanced, two additional cases pass Throughput, and one case is a
-clear timing-QoR failure.
+than hidden by the relaxed tier. The route-tree timing correction developed
+below instead closes in 21 rounds with +7.77\% wirelength and exactly the
+6.15322-ns reference CPD. Thus all six completed exports are legal and pass at
+least the Throughput tier: three pass Balanced and three additional cases pass
+Throughput. Across the corrected six-case matrix, geometric-mean wirelength
+and CPD deltas are +5.47\% and +1.55\%.
 
 Two negative ablations sharpen the timing result. Seeding round zero with
 criticalities from the legal VPR reference reduces \texttt{diffeq} from 22 to
@@ -582,8 +585,10 @@ the Balanced tier on this screening case. A deliberately truncated
 after identical 8.190-ns round-zero CPD, the corrected second round falls to
 6.155\,ns instead of the old 8.997\,ns, within 0.03\% of the 6.153-ns VPR
 reference. Its maximum connection delay falls from the old final 9.609\,ns to
-3.779\,ns. We stop before a third expensive round and make no legality or final
-QoR claim for this screen; it selects the next algorithm direction.
+3.779\,ns. A full half-weight run subsequently converges with zero overuse in
+21 rounds; native VPR reports +7.77\% wirelength and 0.00\% CPD delta. This
+moves \texttt{spmv} from rejected timing QoR into the Throughput tier while
+preserving the diagnostic screen's claim boundary.
 
 Scale also exposed a front-end artifact bottleneck. The original DOM-style
 packer reached roughly 25\,GiB virtual memory on the 2.2-GiB \texttt{spmv} RR
@@ -768,9 +773,9 @@ byte-identical multi-round RTL validation establish a coherent routing system
 rather than an isolated maze kernel. Ten deterministic VPR pairs characterize
 the multicore reference and expose the whole-flow bottleneck. Native VPR now
 validates six path-read-set cases, including a 7.11$\times$ C-model scalability
-recovery on \texttt{clma}; five meet the declared Balanced or Throughput tier,
-while the legal \texttt{spmv} route exposes a timing-QoR failure instead of
-being discarded. The remaining steps are physical-board end-to-end time and
+recovery on \texttt{clma}; all six meet the declared Balanced or Throughput
+tier after route-tree-aware timing removes \texttt{spmv}'s CPD failure. The
+remaining steps are physical-board end-to-end time and
 energy, broader non-VTR QoR coverage, and the registered ablations.
 
 \clearpage
