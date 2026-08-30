@@ -8,7 +8,11 @@
 | `dieroute` | DieRoute | `dieroute_kernel` | SLL预留、shadow版本和die队列映射 |
 | `fusionpar` | FusionPAR | `fusionpar_kernel` | 原子move-route-repair共享状态协议 |
 
-五个目录不引用彼此头文件或源码，每个都能独立复制、构建和归档。当前 HLS code/testbench/Tcl 已写好，但真实论文实验仍需接 VPR/FPGAIF/RapidWright 数据、强软件 baseline 和板卡运行；不能把当前小型 testbench 数字作为投稿结果。
+五个目录不引用彼此头文件或源码，每个都能独立复制、构建和归档。PersistRoute
+已完成真实 VPR/FPGAIF、强软件 baseline、HLS/RTL、U280 routed implementation 和
+论文材料闭环，但仍缺物理板 runtime/能耗。其余四个工程仍处于 HLS 骨架阶段；
+下一项 TilePlace 必须先完成真实 VPR placement 前端、CPU golden 和写回合法性，
+不能把当前小型 testbench 数字作为投稿结果。
 
 ## 无 Vitis 时的功能验证
 
@@ -35,12 +39,13 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\run_vivado_post_synth.
 
 该入口生成 post-synthesis DCP、utilization 和 timing summary；安装 Vivado 前不会产生虚构报告。
 
-## 尚未伪装成“完成”的部分
+## 后四个工程尚未完成的部分
 
-- 真实 VPR 9 RR graph、Titan23/Koios；
+- TilePlace/RouteCast/DieRoute/FusionPAR 的真实 VPR 9、Titan23/Koios 前后端；
 - FPGAIF/RapidWright UltraScale+ PIP、route tree和timing导入；
-- 完整 bucket/MultiQueue、multi-PE、HBM/XRT host；
+- 各自论文机制所需的完整 queue/multi-PE/HBM/XRT host；
 - Vivado合法性、时序、post-route面积/Fmax/功率；
 - 与 VPR/RWRoute/CUFR/Potter/DiffRouter 等强baseline的论文实验。
 
-这些内容依赖数据转换、工具安装和板卡，后续应逐工程继续实现和验证，不能仅凭当前 HLS 骨架宣称五篇论文的全部系统已经完成。
+这些内容依赖数据转换、工具和板卡，后续应从 TilePlace 开始逐工程实现和验证，
+不能把 PersistRoute 的完成状态外推到后四篇。

@@ -1,0 +1,41 @@
+{
+  "all_cases_legal": false,
+  "all_cases_pass_balanced_gate": false,
+  "all_cases_pass_relaxed_gate": false,
+  "balanced_case_count": 0,
+  "case_count": 1,
+  "cases": [
+    {
+      "case_id": "koios_spmv_seed1_cw300",
+      "error": "no JSON result in /home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/tree_timing_seed_spmv_screen_2026-08-29/koios_spmv_seed1_cw300/run/host.stdout",
+      "name": "spmv",
+      "schema": "PERSISTROUTE_BALANCED_MATRIX_CASE_V1",
+      "status": "error",
+      "suite": "Koios 2.0"
+    }
+  ],
+  "claim_boundary": "HBM C-model screening and native VPR QoR only; no physical-U280 speed or energy claim.",
+  "configuration": {
+    "adaptive_issue_stagnation_iterations": 3,
+    "adaptive_issue_tail_tasks": 8,
+    "adaptive_issue_width_min": 1,
+    "balanced_cpd_delta_percent_max": 3.0,
+    "balanced_wirelength_delta_percent_max": 5.0,
+    "base_cost_q": 64,
+    "cleanup_passes": 0,
+    "conflict_validation_read_set": "path_resources",
+    "issue_width": 8,
+    "max_iterations": 3,
+    "min_timing_iterations": 3,
+    "pe_count": 4,
+    "relaxed_cpd_delta_percent_max": 5.0,
+    "relaxed_wirelength_delta_percent_max": 10.0,
+    "route_tree_timing_seed": true,
+    "timing_update_period": 1
+  },
+  "geomean_cpd_delta_percent": null,
+  "geomean_wirelength_delta_percent": null,
+  "legal_case_count": 0,
+  "relaxed_case_count": 0,
+  "schema": "PERSISTROUTE_BALANCED_MATRIX_V1"
+}

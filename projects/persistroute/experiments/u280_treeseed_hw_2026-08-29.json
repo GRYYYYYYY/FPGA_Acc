@@ -1,0 +1,73 @@
+{
+  "schema": "PERSISTROUTE_U280_HW_IMPLEMENTATION_V1",
+  "date": "2026-08-29",
+  "source_commit": "10856a2",
+  "algorithm_variant": "route-tree upstream timing seed with configurable Q8 weight",
+  "target": "hw",
+  "platform": "/opt/xilinx/platforms/xilinx_u280_gen3x16_xdma_1_202211_1/xilinx_u280_gen3x16_xdma_1_202211_1.xpfm",
+  "output_directory": "build/xclbin/hw_treeseed_2026-08-29",
+  "hw_emu_rerun": false,
+  "search_hls": {
+    "xo_sha256": "ce5e7ca9260cfe916643af9d3522bd79ac1caa52eef59c9c5ffb3ebc249b2889",
+    "xo_bytes": 1105685
+  },
+  "commit_hls": {
+    "xo_sha256": "6423c5ab350400b62883887aa26978d1613fcf8af17b01b39482c1bc183a19b1",
+    "xo_bytes": 501143
+  },
+  "implementation": {
+    "vpp_exit_status": 0,
+    "vpp_elapsed": "2h13m19s",
+    "system_link": "pass",
+    "synthesis": "pass",
+    "placement": "pass",
+    "routing": "pass",
+    "bitstream": "pass",
+    "packaging": "pass",
+    "data_clock_mhz": 180,
+    "all_user_timing_constraints_met": true,
+    "wns_ns": 0.016,
+    "tns_ns": 0,
+    "setup_failing_endpoints": 0,
+    "whs_ns": 0.005,
+    "ths_ns": 0,
+    "hold_failing_endpoints": 0,
+    "user_kernel_resources": {
+      "lut": 133016,
+      "lut_as_memory": 4823,
+      "registers": 163112,
+      "bram": 107,
+      "uram": 0,
+      "dsp": 112
+    },
+    "search_cu_count": 4,
+    "commit_cu_count": 1,
+    "hbm_pseudo_channels_used": 32,
+    "timing_report_sha256": "de56493341348b38af3b54c8bc5b53a84c3c9047f7ac3a1d2cb5e7441a42cc4e",
+    "kernel_utilization_report_sha256": "b708f7e67cfa62aafd2203a195da92898f55486eb16b4d9be8f01e1088de5155"
+  },
+  "xclbin": {
+    "path": "build/xclbin/hw_treeseed_2026-08-29/persistroute.xclbin",
+    "bytes": 54573844,
+    "sha256": "323ddd9f3170b8dccc2e76b63661971671da691390ff70984b62ba338cf18c57"
+  },
+  "previous_hw_preserved": [
+    {
+      "variant": "batched ABI before path-read-set optimization",
+      "path": "build/xclbin/hw/persistroute.xclbin",
+      "sha256": "e3ca2e6030aa5b65d07390492e8d7070fcf74cd29064318cc7139c3e3ea69743"
+    },
+    {
+      "variant": "candidate-path read-set optimization",
+      "path": "build/xclbin/hw_pathreads_2026-08-29/persistroute.xclbin",
+      "sha256": "da64d4b413a1438d27714d5d0b1c0d7e607ca47365849b654873aa5db424447f"
+    }
+  ],
+  "source_hashes": {
+    "search_hbm_cpp_sha256": "bd5a1dd33c9ac1482dc48675fc8de7b6106881e1bf598afdf074a57a69838810",
+    "accelerated_pathfinder_cpp_sha256": "bc02685f60db5ee761454a086bd80074d0d55cfed1acc451dd642352b71c80e7",
+    "xrt_host_cpp_sha256": "2adaadec85d979b72b2c2b229913619e91813357ea06fc9aca404c3c15c3de94",
+    "connectivity_cfg_sha256": "ea648b6beff3ec8018305dbbf017a44fb6cf2cd46b69d58ff893978294e26727"
+  },
+  "claim_boundary": "This proves HLS compilation, U280 integration, placement, routing, timing closure and xclbin packaging for the final route-tree timing-seed source. The already completed final hw_emu was not rerun. With no physical U280 attached, this is not board-runtime, speedup, power or energy evidence."
+}

@@ -1,0 +1,271 @@
+{
+  "all_cases_legal": true,
+  "all_cases_pass_balanced_gate": false,
+  "all_cases_pass_relaxed_gate": false,
+  "balanced_case_count": 0,
+  "case_count": 1,
+  "cases": [
+    {
+      "balanced_case_pass": false,
+      "baseline": {
+        "cpd_ns": 6.15322,
+        "wirelength": 221106
+      },
+      "case_id": "koios_spmv_seed1_cw300",
+      "configuration": {
+        "adaptive_issue_stagnation_iterations": 3,
+        "adaptive_issue_tail_tasks": 8,
+        "adaptive_issue_width_min": 1,
+        "balanced_cpd_delta_percent_max": 3.0,
+        "balanced_wirelength_delta_percent_max": 5.0,
+        "base_cost_q": 64,
+        "cleanup_passes": 0,
+        "conflict_validation_read_set": "path_resources",
+        "initial_reference_timing": false,
+        "issue_width": 8,
+        "max_iterations": 30,
+        "min_timing_iterations": 3,
+        "pe_count": 4,
+        "relaxed_cpd_delta_percent_max": 5.0,
+        "relaxed_wirelength_delta_percent_max": 10.0,
+        "timing_update_period": 1
+      },
+      "inputs": {
+        "architecture": {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
+          "sha256": "9738371dbd8b3ca5c138150e6f78ed6186e315882edb38b5d302547de4f36c2c"
+        },
+        "circuit": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/koios_spmv_frontend/spmv.pre-vpr.blif",
+          "sha256": "31cf5808fce5dbf75545bebee0b9eb332002e85b6b15aea2c1d718291ec967b1"
+        },
+        "net": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/input/reference/spmv.pre-vpr.net",
+          "sha256": "741ca8d98d56b209b171c050b8bf407c6e30ff21f224bf36b01e28ecece64a1e"
+        },
+        "place": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/input/reference/spmv.pre-vpr.place",
+          "sha256": "50e47c7e2486fdcb54856df741a3143d04d7c783e7fcca6649cf48a51b12a262"
+        },
+        "route": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/input/reference/design.route",
+          "sha256": "97b6aeaff79a24e5efa5e535c8921c5f7f1f4632e9e9eff750aa9142f2c0219b"
+        }
+      },
+      "name": "spmv",
+      "native_validation": {
+        "baseline_cpd_ns": 6.15322,
+        "baseline_wirelength": 221106,
+        "channel_width": 300,
+        "command": [
+          "/home/gry/.local/opt/vtr-9.0.0-src/build_vpr/vpr/vpr",
+          "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
+          "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/koios_spmv_frontend/spmv.pre-vpr.blif",
+          "--analysis",
+          "--net_file",
+          "spmv.pre-vpr.net",
+          "--place_file",
+          "spmv.pre-vpr.place",
+          "--route_file",
+          "spmv.persist.route",
+          "--route_chan_width",
+          "300",
+          "--read_rr_graph",
+          "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/input/rr_graph.xml"
+        ],
+        "cpd_delta_percent": 57.911467491817284,
+        "critical_path_delay_ns": 9.71664,
+        "inputs": {
+          "arch_sha256": "9738371dbd8b3ca5c138150e6f78ed6186e315882edb38b5d302547de4f36c2c",
+          "circuit_sha256": "31cf5808fce5dbf75545bebee0b9eb332002e85b6b15aea2c1d718291ec967b1",
+          "net_sha256": "741ca8d98d56b209b171c050b8bf407c6e30ff21f224bf36b01e28ecece64a1e",
+          "place_sha256": "50e47c7e2486fdcb54856df741a3143d04d7c783e7fcca6649cf48a51b12a262",
+          "route_sha256": "d79c8e0ed1583ae7a5ad31380ae5fe469e1d19ea7826bf4380ffb675664985a3",
+          "rr_graph_sha256": "3d529f3f10387770f976075717f72577a67d1c92659b3a68bced7b3893f4abcc",
+          "sdc_sha256": null,
+          "vpr_sha256": "41d21e0e3ad1bf9d914b282fd9340024121db5b550747a231ceb0ec0736bf44f"
+        },
+        "legal": true,
+        "route_loaded": true,
+        "routing_consistency": true,
+        "schema": "PERSISTROUTE_VPR_NATIVE_VALIDATION_V1",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_sha256": "3781135a0fbcdaf35d46b8dfe567e31953812990279980df5390ea3428ba977e",
+        "successfully_routed": true,
+        "total_wirelength": 233672,
+        "vpr_exit_status": 0,
+        "vpr_succeeded": true,
+        "wirelength_delta_percent": 5.683246949426968
+      },
+      "output_hashes": {
+        "spmv.paths.csv": "b6e07941757dbb2ab45e04dce7f861ac6325f3e5552c89a4737567b209c7c16a",
+        "spmv.persist.route": "d79c8e0ed1583ae7a5ad31380ae5fe469e1d19ea7826bf4380ffb675664985a3",
+        "spmv.resources": "24e720cfdd7be5446581d78134ebf5d3d60064c31ba8785ca6136302e2fd123e",
+        "spmv.route_trees.csv": "73aacac54537d95e624d8ff4d1f2211aaaf491cacec83fabf0476d511c861f79",
+        "validation.json": "6534e4e05cfba87d26392887bd604cd182a91ee38e0ccea477affbe7a2b8ff1a"
+      },
+      "packed_input": {
+        "edges": {
+          "bytes": 234364056,
+          "count": 29295507,
+          "path": "vpr_input.edges",
+          "record_bytes": 8,
+          "sha256": "8fa25b6b82f0ef6c47cef61db4ddbce335f54f69b6979162d33df5b86f3693ff"
+        },
+        "manifest_sha256": "96c1d2f0579573f6b40deebfe63ecee36189dd756ab36100354e28dcca9c6dd9",
+        "nodes": {
+          "bytes": 15814496,
+          "count": 1976812,
+          "path": "vpr_input.nodes",
+          "record_bytes": 8,
+          "sha256": "41a36491c62df046d92f2ba7c71c7dfa0b3864f017aa47a0ed9afd7835d6cf8d"
+        },
+        "resources": {
+          "bytes": 31628992,
+          "count": 1976812,
+          "path": "vpr_input.resources",
+          "record_bytes": 16,
+          "sha256": "3e607ac862c8ba4f297b8408f220c8dae4e8149873e6a96b129ed5738a63e016"
+        },
+        "tasks": {
+          "bytes": 484416,
+          "count": 15138,
+          "path": "vpr_input.tasks",
+          "record_bytes": 32,
+          "sha256": "318b763eea45e53c9f788281dc2ae07342032d4c02b4d3dea816811b6fbc3dfd"
+        }
+      },
+      "relaxed_case_pass": false,
+      "schema": "PERSISTROUTE_BALANCED_MATRIX_CASE_V1",
+      "source_inputs": {
+        "architecture": {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
+          "sha256": "9738371dbd8b3ca5c138150e6f78ed6186e315882edb38b5d302547de4f36c2c"
+        },
+        "circuit": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/koios_spmv_frontend/spmv.pre-vpr.blif",
+          "sha256": "31cf5808fce5dbf75545bebee0b9eb332002e85b6b15aea2c1d718291ec967b1"
+        },
+        "net": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/koios_spmv_seed1_cw300/spmv.pre-vpr.net",
+          "sha256": "741ca8d98d56b209b171c050b8bf407c6e30ff21f224bf36b01e28ecece64a1e"
+        },
+        "place": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/koios_spmv_seed1_cw300/spmv.pre-vpr.place",
+          "sha256": "50e47c7e2486fdcb54856df741a3143d04d7c783e7fcca6649cf48a51b12a262"
+        },
+        "route": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/koios_spmv_seed1_cw300/design.route",
+          "sha256": "97b6aeaff79a24e5efa5e535c8921c5f7f1f4632e9e9eff750aa9142f2c0219b"
+        }
+      },
+      "stages": {
+        "connections": {
+          "status": "resumed"
+        },
+        "hbm_cmodel": {
+          "backend": "hbm_cmodel",
+          "cleanup_accepted_branches": 0,
+          "cleanup_accepted_nets": 0,
+          "cleanup_attempted_branches": 0,
+          "cleanup_attempted_nets": 0,
+          "cleanup_ms": 0,
+          "cleanup_wirelength_after": 0,
+          "cleanup_wirelength_before": 0,
+          "command": [
+            "/tmp/persistroute-cmake-build/persistroute_accelerated_cmodel",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/input/vpr_input",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/run/spmv"
+          ],
+          "commit_launches": 9167,
+          "commit_ms": 21.2446,
+          "d2h_bytes": 0,
+          "edge_visits": 29970912877,
+          "exit_status": 0,
+          "expanded": 5380904504,
+          "h2d_bytes": 0,
+          "iterations": 16,
+          "legal": true,
+          "overused_resources": 0,
+          "route_ms": 2475620.0,
+          "routed_tasks": 15138,
+          "run_identity": {
+            "configuration": {
+              "adaptive_issue_stagnation_iterations": 3,
+              "adaptive_issue_tail_tasks": 8,
+              "adaptive_issue_width_min": 1,
+              "base_cost_q": 64,
+              "cleanup_passes": 0,
+              "conflict_validation_read_set": "path_resources",
+              "issue_width": 8,
+              "max_iterations": 30,
+              "min_timing_iterations": 3,
+              "pe_count": 4,
+              "timing_update_period": 1
+            },
+            "host_sha256": "883d2e3976b941e45cd3ab246a517503a02ed79a8cd5d58e1d64f0d033ac10c5"
+          },
+          "search_launches": 25743,
+          "search_ms": 992252,
+          "searches": 47544,
+          "status": "pass",
+          "tasks": 15138,
+          "timing_ms": 202696,
+          "wall_ms": 2475670.0,
+          "wall_s_measured": 2475.7128607710038
+        },
+        "native_validation": {
+          "status": "resumed"
+        },
+        "packing": {
+          "command": [
+            "/usr/bin/python3",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/tools/pack_hls_inputs.py",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/input/rr_graph.xml",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/input/connections.csv",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/input/vpr_input",
+            "--base-cost-q",
+            "64"
+          ],
+          "status": "pass",
+          "wall_s": 100.58826098999998
+        },
+        "route_writeback": {
+          "status": "resumed"
+        },
+        "rr_graph": {
+          "bytes": 2271868622,
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/input/rr_graph.xml",
+          "sha256": "3d529f3f10387770f976075717f72577a67d1c92659b3a68bced7b3893f4abcc",
+          "status": "resumed"
+        }
+      },
+      "status": "qor_gate_fail",
+      "suite": "Koios 2.0"
+    }
+  ],
+  "claim_boundary": "HBM C-model screening and native VPR QoR only; no physical-U280 speed or energy claim.",
+  "configuration": {
+    "adaptive_issue_stagnation_iterations": 3,
+    "adaptive_issue_tail_tasks": 8,
+    "adaptive_issue_width_min": 1,
+    "balanced_cpd_delta_percent_max": 3.0,
+    "balanced_wirelength_delta_percent_max": 5.0,
+    "base_cost_q": 64,
+    "cleanup_passes": 0,
+    "conflict_validation_read_set": "path_resources",
+    "initial_reference_timing": false,
+    "issue_width": 8,
+    "max_iterations": 30,
+    "min_timing_iterations": 3,
+    "pe_count": 4,
+    "relaxed_cpd_delta_percent_max": 5.0,
+    "relaxed_wirelength_delta_percent_max": 10.0,
+    "timing_update_period": 1
+  },
+  "geomean_cpd_delta_percent": 57.911467491817284,
+  "geomean_wirelength_delta_percent": 5.683246949426968,
+  "legal_case_count": 1,
+  "relaxed_case_count": 0,
+  "schema": "PERSISTROUTE_BALANCED_MATRIX_V1"
+}

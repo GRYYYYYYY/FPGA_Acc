@@ -1,0 +1,196 @@
+{
+  "all_cases_legal": false,
+  "all_cases_pass_balanced_gate": false,
+  "all_cases_pass_relaxed_gate": false,
+  "balanced_case_count": 0,
+  "case_count": 1,
+  "cases": [
+    {
+      "baseline": {
+        "cpd_ns": 9.19045,
+        "wirelength": 127260
+      },
+      "case_id": "koios_softmax_seed1_cw300",
+      "configuration": {
+        "adaptive_issue_stagnation_iterations": 3,
+        "adaptive_issue_width_min": 1,
+        "balanced_cpd_delta_percent_max": 3.0,
+        "balanced_wirelength_delta_percent_max": 5.0,
+        "base_cost_q": 64,
+        "cleanup_passes": 0,
+        "conflict_validation_read_set": "path_resources",
+        "issue_width": 8,
+        "max_iterations": 30,
+        "min_timing_iterations": 3,
+        "pe_count": 4,
+        "relaxed_cpd_delta_percent_max": 5,
+        "relaxed_wirelength_delta_percent_max": 5,
+        "timing_update_period": 1
+      },
+      "inputs": {
+        "architecture": {
+          "path": "/home/gry/.local/opt/vtr-9.0.0-src/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
+          "sha256": "9738371dbd8b3ca5c138150e6f78ed6186e315882edb38b5d302547de4f36c2c"
+        },
+        "circuit": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/koios_softmax_frontend/softmax.pre-vpr.blif",
+          "sha256": "8d81c7fd97287f2cf5e3aa00072f4dd2e2222020b99f72a461ff834376130e80"
+        },
+        "net": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/koios_softmax_seed1_cw300/softmax.pre-vpr.net",
+          "sha256": "482f58815ba9a9584743a8ea793551af14bd4dbb618532a14a509d1810b0ec09"
+        },
+        "place": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_parallel/koios_softmax_seed1_cw300/softmax.pre-vpr.place",
+          "sha256": "3cefffbc265e3e3a965c63df4c1fc69b7887c95514bb5edced42e5ca5f08eddd"
+        },
+        "route": {
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/koios_softmax_seed1_cw300/design.route",
+          "sha256": "b16f6601bc06bb08b4b629debfa2b1ab447967ef6396fa04e7620847a3e2f975"
+        }
+      },
+      "name": "softmax",
+      "packed_input": {
+        "edges": {
+          "bytes": 95507912,
+          "count": 11938489,
+          "path": "vpr_input.edges",
+          "record_bytes": 8,
+          "sha256": "b94075e007329be43d11ba6ef2f18ae62a987ce7e9a034d01c77a5d29332190d"
+        },
+        "manifest_sha256": "db40641a467c18db35656eeada1086d9e494f3ed6de0cfc028fbe58ebcef6f1a",
+        "nodes": {
+          "bytes": 6477312,
+          "count": 809664,
+          "path": "vpr_input.nodes",
+          "record_bytes": 8,
+          "sha256": "70a72b403bedd9d6c6bdf94a7735e2ed3dbfd24d3a8b9379647ed5ce9e5fc6b1"
+        },
+        "resources": {
+          "bytes": 12954624,
+          "count": 809664,
+          "path": "vpr_input.resources",
+          "record_bytes": 16,
+          "sha256": "57eef49ef3312b4587529a5c0d86ef921a0a0c41aca4bb8fb1b8f999b3311645"
+        },
+        "tasks": {
+          "bytes": 538144,
+          "count": 16817,
+          "path": "vpr_input.tasks",
+          "record_bytes": 32,
+          "sha256": "d0808c14666f0e4c08daf38fa2523c22757c86218dd5986d1b09cf614c5570cc"
+        }
+      },
+      "schema": "PERSISTROUTE_BALANCED_MATRIX_CASE_V1",
+      "stages": {
+        "connections": {
+          "command": [
+            "/usr/bin/python3",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/tools/vpr_route_connections.py",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/koios_softmax_seed1_cw300/design.route",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_softmax_seed1_cw300/input/connections.csv"
+          ],
+          "status": "pass",
+          "wall_s": 0.11169840799993835
+        },
+        "hbm_cmodel": {
+          "backend": "hbm_cmodel",
+          "cleanup_accepted_branches": 0,
+          "cleanup_accepted_nets": 0,
+          "cleanup_attempted_branches": 0,
+          "cleanup_attempted_nets": 0,
+          "cleanup_ms": 0,
+          "cleanup_wirelength_after": 0,
+          "cleanup_wirelength_before": 0,
+          "command": [
+            "/tmp/persistroute-cmake-build/persistroute_accelerated_cmodel",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_softmax_seed1_cw300/input/vpr_input",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_softmax_seed1_cw300/run/softmax"
+          ],
+          "commit_launches": 7864,
+          "commit_ms": 14.79,
+          "d2h_bytes": 0,
+          "edge_visits": 11212827905,
+          "exit_status": 3,
+          "expanded": 1763481942,
+          "h2d_bytes": 0,
+          "iterations": 30,
+          "legal": false,
+          "overused_resources": 2,
+          "route_ms": 2143470.0,
+          "routed_tasks": 16817,
+          "run_identity": {
+            "configuration": {
+              "adaptive_issue_stagnation_iterations": 3,
+              "adaptive_issue_width_min": 1,
+              "balanced_cpd_delta_percent_max": 3.0,
+              "balanced_wirelength_delta_percent_max": 5.0,
+              "base_cost_q": 64,
+              "cleanup_passes": 0,
+              "conflict_validation_read_set": "path_resources",
+              "issue_width": 8,
+              "max_iterations": 30,
+              "min_timing_iterations": 3,
+              "pe_count": 4,
+              "relaxed_cpd_delta_percent_max": 5,
+              "relaxed_wirelength_delta_percent_max": 5,
+              "timing_update_period": 1
+            },
+            "host_sha256": "788b99e1c0162dc627b6fd0af968783548651e1d64e40a296d4e519a0f17a07c"
+          },
+          "search_launches": 27989,
+          "search_ms": 621344,
+          "searches": 53321,
+          "status": "illegal",
+          "tasks": 16817,
+          "timing_ms": 177467,
+          "wall_ms": 2143490.0,
+          "wall_s_measured": 2143.507562731007
+        },
+        "packing": {
+          "command": [
+            "/usr/bin/python3",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/tools/pack_hls_inputs.py",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_softmax_seed1_cw300/input/rr_graph.xml",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_softmax_seed1_cw300/input/connections.csv",
+            "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_softmax_seed1_cw300/input/vpr_input",
+            "--base-cost-q",
+            "64"
+          ],
+          "status": "pass",
+          "wall_s": 38.005008016996726
+        },
+        "rr_graph": {
+          "bytes": 909848259,
+          "path": "/home/gry/workspace/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_softmax_seed1_cw300/input/rr_graph.xml",
+          "sha256": "6c45d2f594ccff21c5daa036492a58b0e7f9fe31a8b43684e03ec8f4d7dc92c4",
+          "status": "resumed"
+        }
+      },
+      "status": "rejected_illegal",
+      "suite": "Koios 2.0"
+    }
+  ],
+  "claim_boundary": "HBM C-model screening and native VPR QoR only; no physical-U280 speed or energy claim.",
+  "configuration": {
+    "adaptive_issue_stagnation_iterations": 3,
+    "adaptive_issue_width_min": 1,
+    "balanced_cpd_delta_percent_max": 3.0,
+    "balanced_wirelength_delta_percent_max": 5.0,
+    "base_cost_q": 64,
+    "cleanup_passes": 0,
+    "conflict_validation_read_set": "path_resources",
+    "issue_width": 8,
+    "max_iterations": 30,
+    "min_timing_iterations": 3,
+    "pe_count": 4,
+    "relaxed_cpd_delta_percent_max": 5,
+    "relaxed_wirelength_delta_percent_max": 5,
+    "timing_update_period": 1
+  },
+  "geomean_cpd_delta_percent": null,
+  "geomean_wirelength_delta_percent": null,
+  "legal_case_count": 0,
+  "relaxed_case_count": 0,
+  "schema": "PERSISTROUTE_BALANCED_MATRIX_V1"
+}

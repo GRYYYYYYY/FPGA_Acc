@@ -1,16 +1,13 @@
-# Codex 新会话交接存档
+# Codex 项目交接存档
 
-更新日期：2026-08-27（Asia/Shanghai）。
+更新日期：2026-08-31（Asia/Shanghai）。
 
-## 1. 新会话首先执行
+## 1. 新设备/新会话首先执行
 
-工作目录固定为：
+将仓库克隆到新设备的 Linux 原生文件系统，不要假定原机器的
+`/home/gry/workspace/FPGA_Acc`、Xilinx 安装路径、内核、swap 或板卡状态仍然成立。
 
-```text
-/home/gry/workspace/FPGA_Acc
-```
-
-新会话应先完整阅读以下文件，再继续任何实现或实验：
+新会话必须先完整阅读：
 
 1. `AGENTS.md`
 2. `SESSION_HANDOFF.md`（本文件）
@@ -18,169 +15,193 @@
 4. `projects/实现状态.md`
 5. `projects/真实数据与论文基线运行指南.md`
 
-推荐的新对话开场指令：
+推荐开场指令：
 
-> 请先完整阅读 AGENTS.md、SESSION_HANDOFF.md、CODEX_CONTEXT.md、projects/实现状态.md 和 projects/真实数据与论文基线运行指南.md，验证 Git/环境状态，然后从 PersistRoute 论文包复核与下一工程 TilePlace 的真实前端接入继续。长时间 Vitis/Vivado 作业按 AGENTS.md 交给 vivado_monitor，不要重跑已经完成的最终 hw_emu。
+> 请完整阅读 AGENTS.md、SESSION_HANDOFF.md、CODEX_CONTEXT.md、projects/实现状态.md 和 projects/真实数据与论文基线运行指南.md；验证 Git、OS/内核、Vitis/Vivado/Vitis HLS、XRT、目标 XPFM、磁盘、内存/swap 与物理板状态。PersistRoute 不重跑已完成的最终 hw_emu；从 TilePlace 的真实 VPR 前端、CPU golden 和 placement 合法性闭环开始。长时间 Vitis/Vivado 作业按 AGENTS.md 交给 vivado_monitor。
 
-## 2. 当前总体位置
+首次检查：
 
-总目标是依次完成五个独立论文工程：PersistRoute → TilePlace → RouteCast → DieRoute → FusionPAR。
+```bash
+git status --short --branch
+git log -3 --oneline --decorate
+uname -a
+free -h
+swapon --show
+df -h .
+source <Vitis安装目录>/settings64.sh
+source <XRT安装目录>/setup.sh
+v++ --version
+vivado -version | head
+vitis_hls -version | head
+xbutil --version
+xbutil examine
+find /opt/xilinx/platforms -name '*.xpfm' -print
+```
 
-第一个工程 PersistRoute 的代码、实现、功能验证和论文材料包已收尾：真实 VPR/FPGAIF 前端、production ABI、PathFinder 控制、MultiQueue、HBM Search/Commit、多 CU XRT、真实 timing feedback、HLS/RTL 验证、U280 完整实现、真实 VPR 子集多轮 `hw_emu`、十案例 CPU 基线和论文图表均已具备。
+如果新设备的版本或平台路径不同，先更新该设备工作区中的 `AGENTS.md`，再运行
+任何 Xilinx 作业。只有 `xbutil examine` 真实发现目标卡后，才进入上板实验。
 
-原先第一项未完成任务“将 PathFinder 控制层接入四 Search CU + Commit CU，并与真实 VPR RR graph 做逐轮 golden 对照”已于 2026-08-26 完成。
+## 2. 总体位置
 
-当前边界与下一项是：
+总目标是依次完成五个独立论文工程：
 
-1. PersistRoute 的物理 U280 端到端性能、能耗、重复试验和消融仍需有卡环境完成；当前 VM 不能形成这些 claim；
-2. 论文材料入口为 `projects/persistroute/paper/README.md`，十案例冻结结果为 `paper/generated/paper_results.json`；
-3. 新性能路径已实现多任务/CU batch、四份HBM Resource replica、Commit同步、Host差分同步、timing cadence和独立性能计量，并已完成新 ABI 的 U280 180 MHz routed implementation 与 xclbin 打包。1% branch replacement合法但QoR受支配；issue64/timing-period8在`elliptic`不合法。issue8/every-round STA 已在 `frisc`/`elliptic` 原生 VPR 检查后以 wirelength/CPD 几何平均 +4.296%/+2.355% 冻结为双案例 Balanced 候选；issue16 因 CPD +3.075% 淘汰。下一步扩展 issue8 十案例；无物理U280时不得形成加速/能耗claim。
+```text
+PersistRoute → TilePlace → RouteCast → DieRoute → FusionPAR
+```
 
-不要把 `hw_emu` 墙钟时间当作上板性能，也不要宣称当前 VM 已实际上板。
+PersistRoute 是第一篇工程，当前已经完成本机可完成的工程闭环与论文草稿：真实
+VPR/FPGAIF 数据转换、production ABI、PathFinder/MultiQueue、HBM Search/Commit、
+4 Search CU + 1 Commit CU、XRT host、逐 connection timing feedback、原生 VPR
+回写检查、HLS/RTL 验证、U280 routed implementation、真实 RR graph 子集多轮
+`hw_emu`、CPU 强基线、QoR/消融材料和 ACM/DAC LaTeX 草稿。
 
-## 3. 最新功能终验结果
+PersistRoute 仍缺物理 U280 的端到端 runtime、功耗/能耗和重复试验。这些是外部
+硬件待补项，不应阻塞第二篇 TilePlace。不得把 C-model 或 `hw_emu` 墙钟时间写成
+真卡加速比。
 
-最终证据：
+下一工程明确为 `projects/tileplace`。现有 TilePlace 只是最多 512 instances、64
+pages 的确定性 HLS 骨架，只有 toy testbench；尚无真实 VPR 数据、CPU golden、
+合法化、强基线、XRT host 或论文结果。
+
+## 3. PersistRoute 最终冻结状态
+
+源码与论文冻结提交链：
+
+```text
+8832cc0  Extend PersistRoute to heterogeneous timing cases
+a11d429  Add route-tree-aware timing seeds
+10856a2  Close spmv timing QoR with route-tree costs
+```
+
+最新正确性/QoR机制：
+
+- timing oracle 使用 VPR 9 `AnalysisDelayCalculator`/Tatum，每轮反馈逐 connection
+  setup criticality/slack，production `Task` ABI 保持 32 bytes；
+- candidate-path read set 取代 explored-resource read set，避免大图出现大量伪冲突；
+- tail serialization 在停滞后收窄 issue width，修复 `softmax` 的尾部合法化；
+- route-tree upstream timing seed 对共享树节点加入 source-to-attachment 延迟代价，
+  修复高 fanout `spmv` 的 CPD 失真；
+- `spmv` 最终使用 Q8 weight 128，其余冻结案例使用 weight 0。
+
+修正后的六案例原生 VPR 矩阵：
+
+| Case | Rounds | WL delta | CPD delta | Tier |
+|---|---:|---:|---:|---|
+| diffeq | 22 | +4.427% | +0.579% | Balanced |
+| frisc | 18 | +4.659% | +0.876% | Balanced |
+| elliptic | 20 | +3.934% | +3.857% | Throughput |
+| clma | 8 | +3.216% | +0.662% | Balanced |
+| spmv | 21 | +7.770% | 0.000% | Throughput |
+| softmax | 23 | +8.912% | +3.388% | Throughput |
+
+六例全部 legal，3 例达到 Balanced（WL ≤ 5%、CPD ≤ 3%），全部 6 例达到
+Throughput（WL ≤ 10%、CPD ≤ 5%）。几何平均 WL/CPD 增量为
+`+5.466%/+1.550%`。核心证据：
+
+```text
+projects/persistroute/experiments/balanced_pathreads_corrected_matrix_2026-08-29.json
+projects/persistroute/experiments/tree_timing_weight128_spmv_full_2026-08-29.json
+projects/persistroute/experiments/tree_timing_weight_sweep_diffeq_2026-08-29.json
+projects/persistroute/experiments/spmv_timing_rootcause_2026-08-29.json
+```
+
+CPU 强基线另有 4 VTR + 2 Titan23 + 4 Koios 共十案例；serial/16-worker 配对的
+route/QoR 完全一致，whole-flow/route-stage 几何平均为 `1.046x/1.356x`。这只是
+CPU baseline，不是 PersistRoute 硬件加速比。
+
+## 4. PersistRoute 硬件证据
+
+最终 tree-seed 源码在 U280 平台完成完整 `v++ hw`：
+
+```text
+source commit: 10856a2
+target clock: 180 MHz
+WNS/TNS: +0.016 ns / 0
+WHS/THS: +0.005 ns / 0
+setup/hold failing endpoints: 0 / 0
+xclbin SHA-256: 323ddd9f3170b8dccc2e76b63661971671da691390ff70984b62ba338cf18c57
+```
+
+可提交证据：
+
+```text
+projects/persistroute/experiments/u280_treeseed_hw_2026-08-29.json
+```
+
+大型 xclbin/报告目录被 `.gitignore` 排除，不会随 GitHub 自动迁移。原机器保留：
+
+```text
+build/xclbin/hw/persistroute.xclbin
+  e3ca2e6030aa5b65d07390492e8d7070fcf74cd29064318cc7139c3e3ea69743
+build/xclbin/hw_pathreads_2026-08-29/persistroute.xclbin
+  da64d4b413a1438d27714d5d0b1c0d7e607ca47365849b654873aa5db424447f
+build/xclbin/hw_treeseed_2026-08-29/persistroute.xclbin
+  323ddd9f3170b8dccc2e76b63661971671da691390ff70984b62ba338cf18c57
+```
+
+已完成的最终 `hw_emu` 不要重跑。真实 `diffeq` RR graph 子集已经覆盖四 Search
+CU 同 wave 和两轮冲突消解，并与 HBM C-model 五类输出逐字节一致：
 
 ```text
 projects/persistroute/experiments/accelerated_pathfinder_hw_emu_2026-08-26.json
 ```
 
-使用完整真实 VTR 9 `diffeq` RR graph（32920 nodes、344820 edges），以固定 task ID 选择代表 connection 子集控制 XSim 时间：
+## 5. TilePlace 的第一阶段任务
 
-- 4-CU 并发用例：task IDs `0, 7, 11, 13`；单 wave 发射 4 个 Search，1 iteration、4 searches、0 overuse；host exit 0，`legal=true`、`golden_match=true`；墙钟 38:44.44，峰值 RSS 648692 KiB。
-- 两轮冲突用例：task IDs `1901, 1903`；第一轮 1 个 overused resource，Commit 后 rip-up/re-route，第二轮降为 0；2 iterations、4 searches；host exit 0，`legal=true`、`golden_match=true`；墙钟 59:03.91，峰值 RSS 647504 KiB。
-- 两组的 `.paths.csv`、`.route_trees.csv`、`.iterations.csv`、`.accelerated_iterations.csv` 和 `.resources` 均与 HBM C-model 逐字节一致。
-- 两次 XRT 均报告 `All the simulator processes exited successfully`，XSim 的实际 `ERROR/FATAL` 计数均为 0。
-- 静态接口审计通过。
+先完成真实前端与 CPU correctness，不要一开始就跑 HLS/Vivado：
 
-本地结果目录（被 Git 忽略，但仍保留在磁盘）：
+1. 编译并运行当前 toy testbench，记录当前接口和确定性行为；
+2. 从冻结的 VTR 9 placement 流中定义真实数据契约：block type、初始/参考坐标、
+   fixed/region constraint、CLB/BRAM/DSP site、net/pin、timing criticality；
+3. 实现流式/低内存 packer 和 manifest，保留原始输入 SHA-256、VPR commit、seed、
+   channel width 与命令；
+4. 实现不限 512-instance 的 CPU golden，包含异构 site 合法性、唯一占用、区域约束、
+   macro/cascade 连续形状与确定性 tie-break；
+5. 将输出写回 VPR placement，并以 VPR placement/route/analysis 做 fail-closed 检查；
+6. 先用 `diffeq` 做首个真实闭环，再扩展 `frisc/elliptic/clma` 和 Koios/Titan23；
+7. correctness 冻结后再设计 page decomposition、增量 net/timing cost、HBM layout、
+   多 CU/XRT 和 U280 构建。
 
-```text
-projects/persistroute/experiments/accelerated_pathfinder_2026-08-25/vpr_subset/hw_emu_final_parallel4
-projects/persistroute/experiments/accelerated_pathfinder_2026-08-25/vpr_subset/hw_emu_final_conflict2
-projects/persistroute/host/.run/275747
-projects/persistroute/host/.run/284123
-```
+TilePlace 的强基线至少包括 VPR 9 placement；DREAMPlaceFPGA、AMF-Placer 在确切
+commit、依赖、命令和相同后端 router 未冻结前只能标为 B1/B2。比较必须使用同一
+输入/约束并经同一 router 报告 routed wirelength、CPD、合法性和端到端时间。
 
-先前运行约 4 小时的 `diffeq_issue4_round2` 并非算法报错，而是交互执行会话中断；它没有最终 JSON。不要把它写成失败的 RTL 结果，也无需重跑。最终两个可控用例已覆盖 4-CU 同 wave 和多轮协商式冲突消解。
+## 6. Git 与本地数据边界
 
-## 4. 已完成的关键技术状态
-
-- production `Task` ABI 为 32 bytes，保留稳定 `net_id`；相同 net 支持多 sink route-tree trunk 共享。
-- `search_hbm_kernel` 使用 HBM 工作数组和完整 8-bank MultiQueue。
-- `commit_hbm_kernel` 支持确定性提交和 negotiated-congestion 的暂时超用。
-- `accelerated_pathfinder.cpp` 是复用控制层；HBM C-model 与 XRT backend 使用相同控制语义。
-- 完整真实 `diffeq` HBM C-model 已完成 1973/1973 tasks，23 iterations 后 0 overuse，重复运行输出一致。
-- host-side VPR 9/Tatum timing oracle 已接入 CPU、HBM C-model 和 XRT 控制层：每轮按当前 RR path delay 运行真实 timing graph STA，并反馈逐 connection setup criticality。采用本轮 RC delay 模型后，完整 `diffeq` CPU 为 3 轮/CPD 7.164 ns，4-PE HBM C-model 为 12 轮/CPD 7.274 ns，均 0 overuse、`legal=true`；证据见 `projects/persistroute/experiments/timing_criticality_2026-08-26.json`。
-- timing oracle 现可强制最少 reroute 轮数，并在 STA 后按 criticality 降序确定性重排。统一 base cost 64、最少 3 轮策略下，`frisc` 与 `elliptic` 4-PE HBM C-model 相对 VPR CPD 分别为 +0.803%/+0.499%，均 0 overuse；两案例各自两次运行六类核心输出逐字节一致，证据见 `projects/persistroute/experiments/timing_priority_{frisc,elliptic}_2026-08-27.json`。
-- Search 和 Commit HLS csim/csynth/Verilog cosim 均通过。
-- 4 Search CU + 1 Commit CU 的 batched/four-replica U280 `hw` 完整实现已完成；180 MHz routed timing 为 WNS `+0.016 ns`、TNS `0`、WHS `+0.006 ns`、THS `0`，新 xclbin SHA-256 为 `e3ca2e6030aa5b65d07390492e8d7070fcf74cd29064318cc7139c3e3ea69743`。
-- 当前 `hw_emu` xclbin SHA-256：`73ff9d105a486c2f8cfa73e002756343947aa6d29d9b1fdd4e3523521f75cc33`。
-- FPGA24 `logicnets_jscl`、Vivado 全设计合法布线、CUFR 和 RWRoute 强基线已有真实证据，详见各 experiment JSON。
-
-关键源码：
+远端仓库：
 
 ```text
-projects/persistroute/src/accelerated_pathfinder.cpp
-projects/persistroute/src/hbm_cmodel_backend.cpp
-projects/persistroute/src/search_hbm.cpp
-projects/persistroute/src/commit_hbm.cpp
-projects/persistroute/host/accelerated_xrt_host.cpp
-projects/persistroute/include/accelerated_pathfinder.hpp
-```
-
-## 5. Xilinx 环境与硬件边界
-
-当前已核实：
-
-```text
-OS: Ubuntu 22.04.5 LTS
-Kernel: 5.15.0-190-generic
-Vitis/Vivado/Vitis HLS: 2022.2
-XRT: 2.14.354
-U280 platform: /opt/xilinx/platforms/xilinx_u280_gen3x16_xdma_1_202211_1/xilinx_u280_gen3x16_xdma_1_202211_1.xpfm
-```
-
-运行 Xilinx 命令前必须执行：
-
-```bash
-source /tools/Xilinx/Vitis/2022.2/settings64.sh
-source /opt/xilinx/xrt/setup.sh
-```
-
-VMware 未透传物理 U280，`xbutil examine` 返回 0 devices 是预期结果。论文当前不要求实际上板；HLS/RTL 仿真、`hw_emu` 和实现报告是当前完成门槛。
-
-当前 swap 状态只有 `/swapfile` 2 GiB（约 0.8 GiB 已用）。此前 16 GiB `/tmp/persistroute_vivado.swap` 是临时文件，重启后未启用。若未来重新运行内存密集的 `v++ hw`/Vivado 实现，必须先复核 `free -h` 与 `swapon --show`，不要假定额外 swap 存在。
-
-## 6. 长作业代理配置
-
-按 `AGENTS.md`：
-
-- 主代理用于架构、算法、诊断、代码修改和报告解释；目标配置为 `gpt-5.6-sol` high。
-- Vitis HLS、Vivado 综合/实现、`v++` link、routing、bitstream 等长作业交给项目自定义代理 `vivado_monitor`。
-- `vivado_monitor` 使用 `gpt-5.6-terra` medium；必须给出精确命令、工作目录、预期输出和完成标准，并要求等待真实退出状态。
-- 快速环境检查、短报告读取不需要监控代理。
-
-## 7. GitHub 与本地 Git 状态
-
-私有仓库：
-
-```text
-https://github.com/GRYYYYYYY/FPGA_Acc
-```
-
-当前配置：
-
-```text
+https://github.com/GRYYYYYYY/FPGA_Acc.git
 branch: main
-remote: origin -> https://github.com/GRYYYYYYY/FPGA_Acc.git
-GitHub CLI account: GRYYYYYYY
 ```
 
-建立交接文档前的基础提交为 `38b9afd`。本文件提交后应以最新 `git log -1` 为准。
+新设备应以 `git log -1` 显示的最新 handoff 提交为准。不要使用
+`git clean -fdx`/`git clean -Xfd`：它们会删除被忽略的 Vitis/Vivado、XSim、数据集
+和本地实验存档。
 
-根级 `.gitignore` 排除了 Vitis/Vivado 生成物、XSim `.run`、第三方下载仓库、论文 PDF、真实数据工作目录和二进制产物。`.gitignore` 不会删除文件，但这些文件也没有 GitHub 备份。
+GitHub 只包含源码、脚本、论文源文件和紧凑 JSON 证据，不包含：
 
-当前本地被忽略的大目录约为：
+- `projects/persistroute/build/` 下的 `.xo`、xclbin、Vivado 工程和报告；
+- `projects/persistroute/host/.run/` 的 XRT/XSim 现场；
+- `projects/persistroute/third_party/` 的 VTR/FPGA24/RapidWright 等下载内容；
+- 大型 rr graph、网表、placement/route 工作目录；
+- 生成的论文 PDF。
 
-```text
-projects/persistroute/build       611 MiB
-projects/persistroute/host/.run   3.1 GiB
-projects/persistroute/third_party 962 MiB
-projects/persistroute/experiments 2.8 GiB
-论文库                            26 MiB
-```
+如需在新设备复现 PersistRoute，按 JSON 中的来源、版本和 SHA-256 重新下载/构建，
+不要假定缺少被忽略目录表示实验从未完成。
 
-禁止使用 `git clean -fdx` 或 `git clean -Xfd`，它们会删除被忽略的本地实验存档。新会话不要因为目录被 `.gitignore` 排除而清理或重建它们。
+## 7. 原机器状态与清理提醒
 
-常规提交：
+交接时原机器为 Ubuntu 22.04.5、kernel `5.15.0-190-generic`、Vitis/Vivado
+2022.2、XRT 2.14.354，VMware 未透传 U280；当前没有 Vitis/Vivado/XSim 长作业。
+
+专用 `/var/tmp/persistroute-vivado-16g.swap` 在最新构建后仍处于启用状态。Codex
+尝试关闭时因 `sudo` 需要交互密码而未改变系统状态。原机器所有者应在终端执行：
 
 ```bash
-git status
-git add <明确文件>
-git commit -m "说明"
-git push
-```
-
-## 8. 新会话快速验证清单
-
-```bash
-cd /home/gry/workspace/FPGA_Acc
-git status --short --branch
-git log -1 --oneline --decorate
-uname -r
+sudo swapoff /var/tmp/persistroute-vivado-16g.swap
+sudo rm /var/tmp/persistroute-vivado-16g.swap
 swapon --show
-source /tools/Xilinx/Vitis/2022.2/settings64.sh
-source /opt/xilinx/xrt/setup.sh
-v++ --version
-xbutil --version
-python3 -m json.tool projects/persistroute/experiments/accelerated_pathfinder_hw_emu_2026-08-26.json >/dev/null
-python3 projects/persistroute/tools/static_interface_audit.py
 ```
 
-正常预期：Git 工作树干净、内核为 `5.15.0-190-generic`、Vitis 2022.2、XRT 2.14.354、实验 JSON 语法通过、静态接口审计 PASS。
-
-## 9. 当前没有运行中的长作业
-
-最终两个 `hw_emu` 已自然退出并归档且本轮未重跑。新 ABI 的 Vivado 实现与 xclbin 打包也已完成，当前没有 host/XSim/Vivado/Vitis 长作业。十案例 CPU 基线与论文图表已冻结；下一项是扩展 issue8 Balanced 完整矩阵，或在有物理 U280 时完成 runtime/能耗测量。
+执行前再次确认没有 Vivado/Vitis 长作业且 `free -h` 有足够 available memory。

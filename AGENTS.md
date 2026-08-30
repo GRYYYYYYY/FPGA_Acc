@@ -1,5 +1,15 @@
 # FPGA_Acc Environment
 
+## Scope and Portability
+
+The concrete paths and hardware status below describe the original verified
+Ubuntu VMware environment as of 2026-08-31. On a different machine, verify the
+OS/kernel, Vitis/Vivado/Vitis HLS, XRT, XPFM path, memory/swap, disk space, and
+`xbutil examine` output before running experiments. Update this file with that
+machine's facts instead of assuming `/tools`, `/opt/xilinx`, kernel 5.15, or the
+absence of a physical U280. Do not make board-performance claims unless the
+target card is actually enumerated and the run logs are archived.
+
 ## Xilinx Toolchain
 
 - OS: Ubuntu 22.04.5 LTS
