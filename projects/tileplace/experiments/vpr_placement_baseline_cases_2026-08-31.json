@@ -1,0 +1,68 @@
+{
+  "cases": [
+    {
+      "architecture": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+      "case": "diffeq",
+      "channel_width": 200,
+      "circuit": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/diffeq.blif",
+      "contract": "projects/tileplace/experiments/diffeq_seed1_cw200_endpoints",
+      "netlist": "projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/diffeq_seed1_cw200/diffeq.net",
+      "reference_place": "projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/diffeq_seed1_cw200/diffeq.place",
+      "seed": 1
+    },
+    {
+      "architecture": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+      "case": "frisc",
+      "channel_width": 200,
+      "circuit": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/frisc.blif",
+      "contract": "projects/tileplace/experiments/frisc_seed1_cw200_endpoints",
+      "netlist": "projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/frisc_seed1_cw200/frisc.net",
+      "reference_place": "projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/frisc_seed1_cw200/frisc.place",
+      "seed": 1
+    },
+    {
+      "architecture": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+      "case": "elliptic",
+      "channel_width": 200,
+      "circuit": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/elliptic.blif",
+      "contract": "projects/tileplace/experiments/elliptic_seed1_cw200_endpoints",
+      "netlist": "projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/elliptic_seed1_cw200/elliptic.net",
+      "reference_place": "projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/elliptic_seed1_cw200/elliptic.place",
+      "seed": 1
+    },
+    {
+      "architecture": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+      "case": "clma",
+      "channel_width": 200,
+      "circuit": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+      "contract": "projects/tileplace/experiments/clma_seed1_cw200_endpoints",
+      "netlist": "projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/clma_seed1_cw200/clma.net",
+      "reference_place": "projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/clma_seed1_cw200/clma.place",
+      "seed": 1
+    },
+    {
+      "architecture": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
+      "case": "spmv",
+      "channel_width": 300,
+      "circuit": "projects/persistroute/experiments/vpr9/koios_spmv_frontend/spmv.pre-vpr.blif",
+      "contract": "projects/tileplace/experiments/spmv_seed1_cw300_endpoints",
+      "netlist": "projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/input/reference/spmv.pre-vpr.net",
+      "reference_place": "projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/input/reference/spmv.pre-vpr.place",
+      "seed": 1
+    },
+    {
+      "architecture": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
+      "case": "softmax",
+      "channel_width": 300,
+      "circuit": "projects/persistroute/experiments/vpr9/koios_softmax_frontend/softmax.pre-vpr.blif",
+      "contract": "projects/tileplace/experiments/softmax_seed1_cw300_endpoints",
+      "netlist": "projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_softmax_seed1_cw300/input/reference/softmax.pre-vpr.net",
+      "reference_place": "projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_softmax_seed1_cw300/input/reference/softmax.pre-vpr.place",
+      "seed": 1
+    }
+  ],
+  "schema": "TILEPLACE_VPR_PLACEMENT_BASELINE_CASES_V1",
+  "vpr": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr_eigen/vpr/vpr",
+  "vpr_revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+  "vpr_sha256": "dd7d30f7faf133fa2ee2196a0b307aa2784e60398a7356d209364a39a16b6508"
+}

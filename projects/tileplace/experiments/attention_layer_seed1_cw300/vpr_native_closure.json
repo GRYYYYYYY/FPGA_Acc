@@ -1,0 +1,101 @@
+{
+  "channel_width": 300,
+  "command": [
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/koios_attention_layer_frontend/attention_layer.pre-vpr.blif",
+    "--net_file",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/attention_layer_seed1_cw300_native_closure/vpr_input.net",
+    "--place_file",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/attention_layer_seed1_cw300_native_closure/vpr_input.place",
+    "--route_file",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/attention_layer_seed1_cw300_native_closure/vpr_output.route",
+    "--seed",
+    "1",
+    "--num_workers",
+    "1",
+    "--route_chan_width",
+    "300",
+    "--echo_file",
+    "on",
+    "--max_router_iterations",
+    "100",
+    "--read_rr_graph",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/attention_layer_input_capture/rr_graph.xml",
+    "--route",
+    "--analysis"
+  ],
+  "cpd_ns": 8.82262,
+  "inputs": {
+    "architecture": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
+      "sha256": "9738371dbd8b3ca5c138150e6f78ed6186e315882edb38b5d302547de4f36c2c"
+    },
+    "circuit": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/koios_attention_layer_frontend/attention_layer.pre-vpr.blif",
+      "sha256": "f76c03b9451399f55efa83ea3b5512b25dfa748370a2b99c702add13233a4fc4"
+    },
+    "golden_place": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/koios_attention_layer_seed1_cw300/attention_layer.pre-vpr.place",
+      "sha256": "382bb5ba07cfa50fae6257dcfa5fb924750c29c4aed4da4c6f071160fecf7a39"
+    },
+    "netlist": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/koios_attention_layer_seed1_cw300/attention_layer.pre-vpr.net",
+      "sha256": "79201bfd4d36a73a59eb93556ffd90a6af66d6625454e1fbc4a7273bd3ffa8e7"
+    },
+    "vpr": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+      "sha256": "a90dc1b3380ebda705e85f176db0cc3d6be1b71ab9ee887db819febc8b62bafc"
+    }
+  },
+  "legal": true,
+  "max_router_iterations": 100,
+  "max_rss_mib": 13186.8,
+  "outputs": {
+    "native_macros": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/attention_layer_seed1_cw300_native_closure/place_macros.echo",
+      "sha256": "2cff94c56fab0a539f40610a33ea57954d912521f03706c234dc536afd8e26b8"
+    },
+    "post_routing_netlist": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/attention_layer_seed1_cw300_native_closure/vpr_input.net.post_routing",
+      "sha256": "c30c02bf1309f14bafb13983658f458d0e91ecc8381f1b314bb1ca6a8dc69272"
+    },
+    "route": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/attention_layer_seed1_cw300_native_closure/vpr_output.route",
+      "sha256": "c662632fdc129f14df4c96c2885c96c10ca6ea4dcaa651815b66a20cba468768"
+    },
+    "stderr": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/attention_layer_seed1_cw300_native_closure/vpr.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/attention_layer_seed1_cw300_native_closure/vpr.stdout.log",
+      "sha256": "7068cfa60d88dc11b6193eaeb919d8e8e6f9173d8e237bfc6a468c63231a25af"
+    },
+    "vpr_netlist_copy": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/attention_layer_seed1_cw300_native_closure/vpr_input.net",
+      "sha256": "79201bfd4d36a73a59eb93556ffd90a6af66d6625454e1fbc4a7273bd3ffa8e7"
+    },
+    "vpr_place_copy": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/attention_layer_seed1_cw300_native_closure/vpr_input.place",
+      "sha256": "b1ccc012f12ab27c90d2e6751d739e052ca8cf22e6a1715e1360031aa29a357e"
+    }
+  },
+  "placement_validation": {
+    "blocks": 2885,
+    "legal": true,
+    "macros": 4,
+    "occupied_sites": 2885,
+    "placement_sha256": "b1ccc012f12ab27c90d2e6751d739e052ca8cf22e6a1715e1360031aa29a357e",
+    "schema": "TILEPLACE_CPU_GOLDEN_V1"
+  },
+  "returncode": 0,
+  "routing_iterations": 15,
+  "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+  "seed": 1,
+  "status": "pass",
+  "vpr_revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+  "vpr_version": "9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+  "wall_s": 154.744933180511,
+  "wirelength": 544069
+}

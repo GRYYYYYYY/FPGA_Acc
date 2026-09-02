@@ -56,10 +56,16 @@ export PERSISTROUTE_VPR_NET=/path/to/design.net
 export PERSISTROUTE_VPR_PLACE=/path/to/design.place
 export PERSISTROUTE_VPR_ROUTE=/path/to/original-legal-design.route
 export PERSISTROUTE_VPR_CHAN_WIDTH=200
+# 非自动尺寸器件或原生 placement constraints 按需设置：
+export PERSISTROUTE_VPR_DEVICE=mcnc_medium
+export PERSISTROUTE_VPR_CONSTRAINTS=/path/to/vpr_constraints.xml
 ./host/persistroute_accelerated_cmodel work/vpr_input work/timing_routed
 ```
 
 补丁只在 VPR analysis 的 `net_delay` 矩阵上覆盖本轮 PersistRoute connection delays，再由真实 packed netlist、atom timing graph 和约束运行 Tatum STA；原始 `.route` 只用于初始化和合法的 net/pin 映射。当前 oracle 支持 clustered routing，不支持 `--flat_routing`。`pack_hls_inputs.py` 的 edge delay 使用 VPR buffered local `T_linear` RC 模型并量化为 ps；pass switch 使用局部 RC 近似。
+analyzer 会先核对源 `.route` 的 Placement_ID，再仅在私有临时副本中按传给 VPR 的
+net/place basename 重写 identity header；这允许归档 header 含绝对路径的合法输入通过
+analysis，同时不修改源 `.net/.place/.route`。
 
 最终 route tree 可写回并交 VPR 原生检查。回写器从原始 `.route` 保留 placement ID、net/pin 描述和 sink pin index，从 RR graph 恢复每条树边的 switch，并验证树的唯一父节点、连通性、terminal sinks 和 edge adjacency：
 

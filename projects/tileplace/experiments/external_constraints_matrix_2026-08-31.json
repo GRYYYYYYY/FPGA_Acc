@@ -1,0 +1,124 @@
+{
+  "analytical_place_attempt": {
+    "error": "QP Hybrid Solver requires the Eigen library",
+    "interpretation": "The official AP mode recognized the fixed constraints but this VPR build lacks Eigen; the passing fixed-I/O case therefore uses conventional VPR placement with the same XML.",
+    "log_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/apex4_fixed_io_seed1_cw78/baseline.stdout.log",
+    "log_sha256": "29114e3ae5789b38c1904cfda8b7dabefc70bf59c7cfd0f7775a8c5e10b5b81a",
+    "recognized_fixed_blocks": 28,
+    "status": "environment_dependency_missing",
+    "stderr_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/apex4_fixed_io_seed1_cw78/baseline.stderr.log",
+    "stderr_sha256": "c325ebdfdfec3844515de7b1638139a35cc73e06f4ce93e59f79e840ad737ba2"
+  },
+  "cases": [
+    {
+      "blocks": 576,
+      "case": "bigkey_tight_seed3_cw300",
+      "channel_width": 300,
+      "constraints": {
+        "atom_patterns": 224,
+        "constrained_clusters": 148,
+        "coordinate_fixed_clusters": 0,
+        "matched_atoms": 224,
+        "partitions": 3,
+        "source": "vpr_constraints_xml"
+      },
+      "directory": "bigkey_tight_seed3_cw300_v2",
+      "nets": 2152,
+      "reference": {
+        "deterministic": true,
+        "moved_blocks": 0,
+        "native_cpd_ns": 3.02421,
+        "native_routing_iterations": 11,
+        "native_wirelength": 11415
+      },
+      "seed": 3,
+      "sites": 644,
+      "source": {
+        "archived_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/bigkey_tight_seed3_cw300_v2/source.vpr_constraints.xml",
+        "kind": "VTR regression placement constraint",
+        "original_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/tasks/regression_tests/vtr_reg_strong/strong_tight_floorplan/bigkey_tight.xml",
+        "revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "sha256": "af0e0bba72fca77ec0320ae4265a325c8906f193a2c4653d6eacedee956875e7"
+      },
+      "violation_probe": {
+        "deterministic_recovery_sha256": "ef6f22386cf371a86bff8d28ebdbdc69077286e6e0b9a46408cafc3135156143",
+        "injection": {
+          "blocks": [
+            "n_n2854",
+            "n_n2966"
+          ],
+          "first_constraint_violation": true,
+          "kind": "same_type_location_swap",
+          "logical_type": "clb",
+          "second_constraint_violation": true
+        },
+        "moved_from_input": 9,
+        "native_cpd_ns": 3.27572,
+        "native_routing_iterations": 9,
+        "native_wirelength": 11670,
+        "validator_rejection": "n_n2854: location (1, 6, 0, 0) violates region [{'layer_high': 0, 'layer_low': 0, 'subtile': -1, 'xmax': 11, 'xmin': 1, 'ymax': 4, 'ymin': 1}]; n_n2966: location (10, 1, 0, 0) violates region [{'layer_high': 0, 'layer_low': 0, 'subtile': -1, 'xmax': 11, 'xmin': 1, 'ymax': 9, 'ymin': 5}]"
+      }
+    },
+    {
+      "blocks": 110,
+      "case": "apex4_fixed_io_seed1_cw78",
+      "channel_width": 78,
+      "constraints": {
+        "atom_patterns": 28,
+        "constrained_clusters": 28,
+        "coordinate_fixed_clusters": 28,
+        "matched_atoms": 28,
+        "partitions": 28,
+        "source": "vpr_constraints_xml"
+      },
+      "directory": "apex4_fixed_io_seed1_cw78_v2",
+      "nets": 897,
+      "reference": {
+        "deterministic": true,
+        "moved_blocks": 0,
+        "native_cpd_ns": 5.20192,
+        "native_routing_iterations": 19,
+        "native_wirelength": 10023
+      },
+      "seed": 1,
+      "sites": 644,
+      "source": {
+        "archived_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/apex4_fixed_io_seed1_cw78_v2/source.vpr_constraints.xml",
+        "kind": "VTR regression placement constraint",
+        "original_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/tasks/regression_tests/vtr_reg_strong/strong_ap/mcnc/constraints/apex4_io_constraint.xml",
+        "revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "sha256": "70d7be2896a393678fc507ee5ef1c1a38a8c7ffcfb63ab4ccba8c3d66eb59c61"
+      },
+      "violation_probe": {
+        "deterministic_recovery_sha256": "e22907cba63b51189839d1aac0f96fa380d4b0e522bb3441759803d56c56a887",
+        "injection": {
+          "blocks": [
+            "out:o_10_",
+            "out:o_14_"
+          ],
+          "first_constraint_violation": true,
+          "kind": "same_type_location_swap",
+          "logical_type": "io",
+          "second_constraint_violation": true
+        },
+        "moved_from_input": 3,
+        "native_cpd_ns": 5.19528,
+        "native_routing_iterations": 20,
+        "native_wirelength": 10049,
+        "validator_rejection": "out:o_10_: location (5, 0, 0, 0) violates region [{'layer_high': 0, 'layer_low': 0, 'subtile': -1, 'xmax': 9, 'xmin': 9, 'ymax': 0, 'ymin': 0}]; out:o_10_: location (5, 0, 0, 0) violates fixed dimensions {'layer': 0, 'subtile': None, 'x': 9, 'y': 0}; out:o_14_: location (9, 0, 1, 0) violates region [{'layer_high': 0, 'layer_low': 0, 'subtile': -1, 'xmax': 5, 'xmin': 5, 'ymax': 0, 'ymin': 0}]; out:o_14_: location (9, 0, 1, 0) violates fixed dimensions {'layer': 0, 'subtile': None, 'x': 5, 'y': 0}"
+      }
+    }
+  ],
+  "claim_boundary": "These cases prove external VPR constraint import, deterministic CPU legality recovery, and VPR-native route/analysis closure. Reference and recovery QoR values are not TilePlace placement improvements or hardware performance results.",
+  "date": "2026-08-31",
+  "schema": "TILEPLACE_EXTERNAL_CONSTRAINT_MATRIX_V1",
+  "status": "pass",
+  "totals": {
+    "blocks": 686,
+    "cases": 2,
+    "constrained_clusters": 176,
+    "coordinate_fixed_clusters": 28,
+    "matched_atoms": 252
+  },
+  "vtr_revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07"
+}

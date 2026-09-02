@@ -1,0 +1,107 @@
+{
+  "channel_width": 300,
+  "command": [
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/titan/stratixiv_arch.timing.xml",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/titan_blif/titan23/stratixiv/neuron_stratixiv_arch_timing.blif",
+    "--net_file",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/titan23_neuron_page2_connection_star_guard_q60000_w1_native/vpr_input.net",
+    "--place_file",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/titan23_neuron_page2_connection_star_guard_q60000_w1_native/vpr_input.place",
+    "--route_file",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/titan23_neuron_page2_connection_star_guard_q60000_w1_native/vpr_output.route",
+    "--seed",
+    "3",
+    "--num_workers",
+    "1",
+    "--route_chan_width",
+    "300",
+    "--echo_file",
+    "on",
+    "--max_router_iterations",
+    "400",
+    "--sdc_file",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/titan_blif/titan23/stratixiv/neuron_stratixiv_arch_timing.sdc",
+    "--router_lookahead",
+    "map",
+    "--initial_pres_fac",
+    "1.0",
+    "--router_profiler_astar_fac",
+    "1.5",
+    "--route",
+    "--analysis"
+  ],
+  "cpd_ns": 7.60292,
+  "inputs": {
+    "architecture": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/titan/stratixiv_arch.timing.xml",
+      "sha256": "0d3a4f0459af9a883329b934dea81f6a025c18a0ad10c63cbed3d2f8cac4c12b"
+    },
+    "circuit": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/titan_blif/titan23/stratixiv/neuron_stratixiv_arch_timing.blif",
+      "sha256": "19f5ca22ae8ddb7e2aa70936217b044dd634c944cd4dda8f465bd49759dbc086"
+    },
+    "golden_place": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/titan23_neuron_seed3_cw300_endpoints/page2_connection_star_guard_q60000_w1.place",
+      "sha256": "5ef9e7d8f3051df085f1c8e308425db67a9ac933293d8c842cd66b45858ab83b"
+    },
+    "netlist": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/titan23_neuron_seed3_cw300/neuron_stratixiv_arch_timing.net",
+      "sha256": "325c6fd1d2d8a2dbcaa8d3caf4f8426507516e48ee39de24228ccc8f68142908"
+    },
+    "vpr": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+      "sha256": "a90dc1b3380ebda705e85f176db0cc3d6be1b71ab9ee887db819febc8b62bafc"
+    }
+  },
+  "legal": true,
+  "max_router_iterations": 400,
+  "max_rss_mib": 2874.3,
+  "outputs": {
+    "native_macros": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/titan23_neuron_page2_connection_star_guard_q60000_w1_native/place_macros.echo",
+      "sha256": "fd9f3510113877166989d79dd6c6f577c7b6cba1039fe8e7c5e9ae72d49355b7"
+    },
+    "post_routing_netlist": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/titan23_neuron_page2_connection_star_guard_q60000_w1_native/vpr_input.net.post_routing",
+      "sha256": "adc06888a57692826eec73f948a52454004452bfe201bca314dc57edca1835a3"
+    },
+    "route": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/titan23_neuron_page2_connection_star_guard_q60000_w1_native/vpr_output.route",
+      "sha256": "691d0bcb1b429ce9991c044445389dfdfa6a75e59be89476b5d8594e68856f46"
+    },
+    "stderr": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/titan23_neuron_page2_connection_star_guard_q60000_w1_native/vpr.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/titan23_neuron_page2_connection_star_guard_q60000_w1_native/vpr.stdout.log",
+      "sha256": "d774e984abf35b48c1ac531fcb9fa8d3b5e33f6270ea499b7d4eb8d96eab3d63"
+    },
+    "vpr_netlist_copy": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/titan23_neuron_page2_connection_star_guard_q60000_w1_native/vpr_input.net",
+      "sha256": "325c6fd1d2d8a2dbcaa8d3caf4f8426507516e48ee39de24228ccc8f68142908"
+    },
+    "vpr_place_copy": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/titan23_neuron_page2_connection_star_guard_q60000_w1_native/vpr_input.place",
+      "sha256": "82ec597de79a6d972d0d87e195fbbecf3a553f3aa9a2e9c1e16a7e656f7f3d30"
+    }
+  },
+  "placement_validation": {
+    "blocks": 3438,
+    "legal": true,
+    "macros": 101,
+    "occupied_sites": 3438,
+    "placement_sha256": "82ec597de79a6d972d0d87e195fbbecf3a553f3aa9a2e9c1e16a7e656f7f3d30",
+    "schema": "TILEPLACE_CPU_GOLDEN_V1"
+  },
+  "returncode": 0,
+  "routing_iterations": 16,
+  "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+  "seed": 3,
+  "status": "pass",
+  "vpr_revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+  "vpr_version": "9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+  "wall_s": 204.70861587673426,
+  "wirelength": 767301
+}

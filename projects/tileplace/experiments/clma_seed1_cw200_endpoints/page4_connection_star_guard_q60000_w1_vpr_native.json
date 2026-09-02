@@ -1,0 +1,97 @@
+{
+  "channel_width": 200,
+  "command": [
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+    "--net_file",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/clma_page4_connection_star_guard_q60000_w1_native/vpr_input.net",
+    "--place_file",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/clma_page4_connection_star_guard_q60000_w1_native/vpr_input.place",
+    "--route_file",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/clma_page4_connection_star_guard_q60000_w1_native/vpr_output.route",
+    "--seed",
+    "1",
+    "--num_workers",
+    "1",
+    "--route_chan_width",
+    "200",
+    "--echo_file",
+    "on",
+    "--route",
+    "--analysis"
+  ],
+  "cpd_ns": 11.5962,
+  "inputs": {
+    "architecture": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+      "sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179"
+    },
+    "circuit": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+      "sha256": "3151ef9596486448557a91f2b892d207dcd3a13d508ce72ba1d9946ce18d096e"
+    },
+    "golden_place": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/clma_seed1_cw200_endpoints/page4_connection_star_guard_q60000_w1.place",
+      "sha256": "b24dbcc2b829ae802026242775ae201dd083511c919c5b77883390a8e5b498d5"
+    },
+    "netlist": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/clma_seed1_cw200/clma.net",
+      "sha256": "6095191f2407b45f0d23bc5bfd75380d9a0ce5b4b325f9ec5901fca26a9fce9c"
+    },
+    "vpr": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+      "sha256": "a90dc1b3380ebda705e85f176db0cc3d6be1b71ab9ee887db819febc8b62bafc"
+    }
+  },
+  "legal": true,
+  "max_router_iterations": null,
+  "max_rss_mib": 134.7,
+  "outputs": {
+    "native_macros": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/clma_page4_connection_star_guard_q60000_w1_native/place_macros.echo",
+      "sha256": "0efcfecb18fd7b26f5fff38f8e7afb45d3da42b7febc428ec4b045c63b7c93ee"
+    },
+    "post_routing_netlist": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/clma_page4_connection_star_guard_q60000_w1_native/vpr_input.net.post_routing",
+      "sha256": "57f059633560e9a2ef64bb836992f6c42b915bfaf73469a633c66c1360744fe2"
+    },
+    "route": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/clma_page4_connection_star_guard_q60000_w1_native/vpr_output.route",
+      "sha256": "c636837a836b4506306a03ed41e5ba2d10b4705cbb06d08b7c86da73ca0c4b54"
+    },
+    "stderr": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/clma_page4_connection_star_guard_q60000_w1_native/vpr.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/clma_page4_connection_star_guard_q60000_w1_native/vpr.stdout.log",
+      "sha256": "e3b9f8739ae13476ed235e64fc0497986ecc12db5ca714a63ee2541e78f3fbe5"
+    },
+    "vpr_netlist_copy": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/clma_page4_connection_star_guard_q60000_w1_native/vpr_input.net",
+      "sha256": "6095191f2407b45f0d23bc5bfd75380d9a0ce5b4b325f9ec5901fca26a9fce9c"
+    },
+    "vpr_place_copy": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/clma_page4_connection_star_guard_q60000_w1_native/vpr_input.place",
+      "sha256": "c4c22c3ab1e03c2d3531d230d7408995e3f011fea80ebf64bbbb283ea8330405"
+    }
+  },
+  "placement_validation": {
+    "blocks": 719,
+    "legal": true,
+    "macros": 0,
+    "occupied_sites": 719,
+    "placement_sha256": "c4c22c3ab1e03c2d3531d230d7408995e3f011fea80ebf64bbbb283ea8330405",
+    "schema": "TILEPLACE_CPU_GOLDEN_V1"
+  },
+  "returncode": 0,
+  "routing_iterations": 15,
+  "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+  "seed": 1,
+  "status": "pass",
+  "vpr_revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+  "vpr_version": "9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+  "wall_s": 9.93491943180561,
+  "wirelength": 79786
+}

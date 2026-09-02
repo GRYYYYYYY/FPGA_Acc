@@ -1,0 +1,103 @@
+{
+  "compatibility": "logical_type must equal physical_type",
+  "inputs": {
+    "architecture": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+      "sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179"
+    },
+    "connections": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/frisc_seed1_cw200/input/connections.csv",
+      "sha256": "8264de8e8876dcc58517316f8231b9ef556df7f7d8178a92bc67ea9f056ec7ef"
+    },
+    "native_macros": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/frisc_seed1_cw200/vpr_place_macros.echo",
+      "sha256": "0efcfecb18fd7b26f5fff38f8e7afb45d3da42b7febc428ec4b045c63b7c93ee"
+    },
+    "packed_netlist": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/frisc_seed1_cw200/frisc.net",
+      "sha256": "f6e2659582a94630fce6a7c7ad64e1e21bd330ebdb2f00149cba469568155f8f"
+    },
+    "reference_place": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/frisc_seed1_cw200/frisc.place",
+      "sha256": "f49ddcf4220e4f4c56e29806ce13edaa1020d9c0d43899ab2f375c693c5ce3e3"
+    },
+    "rr_graph": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/full_matrix_cmodel_2026-08-27/frisc_seed1_cw200/input/rr_graph.xml",
+      "sha256": "a2598c26e321af3b16e881fb3952719cb92610a2e655ec91897488ffa590c1ca"
+    },
+    "timing": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/frisc_seed1_cw200/run/frisc.timing_iteration_0.output.csv",
+      "sha256": "c9b7b3d48ab178794615d8f1dbab118fe2b29529a4283c188850df41fbcf90bd"
+    }
+  },
+  "outputs": {
+    "blocks.jsonl": {
+      "count": 385,
+      "sha256": "e0141ed3e88f36e740efd3e7d146f861c307a066699ca7ac96c6afee4623b8da"
+    },
+    "nets.jsonl": {
+      "count": 4445,
+      "sha256": "ccaa8717a3c84758cd03410286f30a722bf3d7c85a7db3c5d8af981bb12f40e5"
+    },
+    "sites.jsonl": {
+      "count": 891,
+      "sha256": "dd1b7804a9be762c8ad273da57ac81607e8d43600c63e33f53eec2000bc7261a"
+    }
+  },
+  "packed_netlist": {
+    "architecture_id": "SHA256:01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179",
+    "atom_netlist_id": "SHA256:0bccb5b0c7377a93d8daf64c3fb37ff0a4bccd6027ab199f214abe63c5aec01f",
+    "instance": "FPGA_packed_netlist[0]",
+    "name": "frisc.net"
+  },
+  "placement_header": {
+    "array_size": "Array size: 21 x 21 logic blocks",
+    "netlist": "Netlist_File: frisc.net Netlist_ID: SHA256:f6e2659582a94630fce6a7c7ad64e1e21bd330ebdb2f00149cba469568155f8f"
+  },
+  "placement_macros": {
+    "macro_count": 0,
+    "member_count": 0,
+    "source": "vpr_place_macros_echo"
+  },
+  "rr_block_types": {
+    "0": {
+      "capacity": 1,
+      "height": 1,
+      "name": "EMPTY",
+      "width": 1
+    },
+    "1": {
+      "capacity": 8,
+      "height": 1,
+      "name": "io",
+      "width": 1
+    },
+    "2": {
+      "capacity": 1,
+      "height": 1,
+      "name": "clb",
+      "width": 1
+    },
+    "3": {
+      "capacity": 1,
+      "height": 4,
+      "name": "mult_36",
+      "width": 1
+    },
+    "4": {
+      "capacity": 1,
+      "height": 6,
+      "name": "memory",
+      "width": 1
+    }
+  },
+  "schema": "TILEPLACE_VPR_CONTRACT_V1",
+  "vpr": {
+    "channel_width": 200,
+    "command": [
+      "vpr k6_frac_N10_mem32K_40nm.xml frisc.blif --seed 1 --num_workers 1 --route_chan_width 200"
+    ],
+    "revision": "v8.0.0-11943-g8cb20aa52",
+    "seed": 1
+  }
+}

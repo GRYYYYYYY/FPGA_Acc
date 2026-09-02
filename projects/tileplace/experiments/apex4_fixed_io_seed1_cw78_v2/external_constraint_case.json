@@ -1,0 +1,86 @@
+{
+  "baseline": {
+    "command": [
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_40nm.xml",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/wiremap6/apex4.pre-vpr.blif",
+      "--net_file",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/apex4_fixed_io_seed1_cw78_v2/baseline.net",
+      "--place_file",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/apex4_fixed_io_seed1_cw78_v2/baseline.place",
+      "--route_file",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/apex4_fixed_io_seed1_cw78_v2/baseline.route",
+      "--seed",
+      "1",
+      "--num_workers",
+      "1",
+      "--route_chan_width",
+      "78",
+      "--read_vpr_constraints",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/apex4_fixed_io_seed1_cw78_v2/source.vpr_constraints.xml",
+      "--write_rr_graph",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/apex4_fixed_io_seed1_cw78_v2/rr_graph.xml",
+      "--echo_file",
+      "on",
+      "--device",
+      "mcnc_medium"
+    ],
+    "cpd_ns": 5.20192,
+    "routing_iterations": 19,
+    "vpr_revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+    "wall_s": 7.306485997512937,
+    "wirelength": 10023
+  },
+  "case": "apex4_fixed_io_seed1_cw78",
+  "claim_boundary": "This case validates external VPR region/fixed-constraint import and native legality; it is not a TilePlace QoR or hardware-speedup result.",
+  "constraints": {
+    "atom_patterns": 28,
+    "constrained_clusters": 28,
+    "coordinate_fixed_clusters": 28,
+    "matched_atoms": 28,
+    "partitions": 28,
+    "source": "vpr_constraints_xml"
+  },
+  "contract": {
+    "blocks": 110,
+    "macros": {
+      "macro_count": 0,
+      "member_count": 0,
+      "source": "vpr_place_macros_echo"
+    },
+    "nets": 897,
+    "sites": 644
+  },
+  "cpu_golden": {
+    "blocks": 110,
+    "deterministic_repeat": true,
+    "deterministic_tie_break": "displacement,net_cost,layer,y,x,subtile",
+    "input_place_sha256": null,
+    "legal": true,
+    "macros": 0,
+    "moved_blocks": 0,
+    "moved_from_input": 0,
+    "moved_from_reference": 0,
+    "occupied_sites": 110,
+    "placement_sha256": "d8a8623261db7401e3aeacf5070dfb024180627bc2c3949eb5820f1bbadea731",
+    "repeat_sha256": "d8a8623261db7401e3aeacf5070dfb024180627bc2c3949eb5820f1bbadea731",
+    "schema": "TILEPLACE_CPU_GOLDEN_V1"
+  },
+  "native_closure": {
+    "cpd_ns": 5.20192,
+    "legal": true,
+    "report": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/apex4_fixed_io_seed1_cw78_v2/vpr_native_closure.json",
+    "report_sha256": "fc83c863cfb5fcf7d26e6db900edddec4202eba9d969a67b6c5786c4b7a516a4",
+    "routing_iterations": 19,
+    "wirelength": 10023
+  },
+  "schema": "TILEPLACE_EXTERNAL_CONSTRAINT_CASE_V1",
+  "source": {
+    "archived_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/apex4_fixed_io_seed1_cw78_v2/source.vpr_constraints.xml",
+    "kind": "VTR regression placement constraint",
+    "original_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/tasks/regression_tests/vtr_reg_strong/strong_ap/mcnc/constraints/apex4_io_constraint.xml",
+    "revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+    "sha256": "70d7be2896a393678fc507ee5ef1c1a38a8c7ffcfb63ab4ccba8c3d66eb59c61"
+  },
+  "status": "pass"
+}

@@ -1,0 +1,77 @@
+{
+  "accepted_moves": 8,
+  "blocks": 202,
+  "candidate_limit": 64,
+  "claim_boundary": "Internal HPWL is a research objective; VPR-native routed WL/CPD is required for QoR claims.",
+  "conflict_protocol": "snapshot proposals; disjoint old/new site write-set and touched-net set; deterministic delta/color/unit commit",
+  "critical_distance_guard_q": 55000,
+  "critical_distance_slack": 0,
+  "final_objective": 283928239,
+  "final_timing_hpwl_q": 282821551,
+  "final_wire_hpwl": 4323,
+  "guarded_connections": 223,
+  "guarded_connections_increased": 0,
+  "initial_objective": 287088975,
+  "initial_timing_hpwl_q": 285981775,
+  "initial_wire_hpwl": 4325,
+  "input_place_sha256": "e784bc6695bdcc5fdba27400de277395ff7406f06680ab6624562596a623120c",
+  "legal": true,
+  "macro_units": 0,
+  "mapped_timed_connections": 1973,
+  "max_guarded_connection_delta": 0,
+  "max_rejected_guard_overrun": 9,
+  "nets_with_multiple_blocks": 892,
+  "output_place_sha256": "df32a2ebd034aaa6d00ca8d4bd4e8983a734e6d91a56a07036606ad11053449b",
+  "page_colors": 4,
+  "page_height": 4,
+  "page_width": 4,
+  "pages": 16,
+  "passes": [
+    {
+      "accepted": 4,
+      "objective": 285483284,
+      "pass": 0,
+      "proposals": 6
+    },
+    {
+      "accepted": 1,
+      "objective": 283953156,
+      "pass": 1,
+      "proposals": 3
+    },
+    {
+      "accepted": 1,
+      "objective": 283943849,
+      "pass": 2,
+      "proposals": 3
+    },
+    {
+      "accepted": 1,
+      "objective": 283934806,
+      "pass": 3,
+      "proposals": 2
+    },
+    {
+      "accepted": 1,
+      "objective": 283928239,
+      "pass": 4,
+      "proposals": 1
+    },
+    {
+      "accepted": 0,
+      "objective": 283928239,
+      "pass": 5,
+      "proposals": 0
+    }
+  ],
+  "rejected_conflicts": 7,
+  "rejected_guard_candidates": 849,
+  "schema": "TILEPLACE_PAGE_INCREMENTAL_CPU_V1",
+  "status": "pass",
+  "timed_connections": 1973,
+  "timing_mapping_coverage": 1.0,
+  "timing_model": "connection_star",
+  "timing_weight": 1,
+  "units": 202,
+  "wire_weight": 256
+}

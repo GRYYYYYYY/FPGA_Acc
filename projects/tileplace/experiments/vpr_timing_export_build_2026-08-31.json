@@ -1,0 +1,49 @@
+{
+  "binary": {
+    "build_info": "Release VTR_ASSERT_LEVEL=2",
+    "compiled_utc": "2026-08-31T22:45:33",
+    "compiler": "GNU 11.4.0 on Linux-5.15.0-119-generic x86_64",
+    "path": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr_timing/vpr/vpr",
+    "sha256": "9c535e22f4d85b86ba371bb05d4fc634b3cf422ef3ef934c284be3570c31d10b",
+    "size_bytes": 8062040,
+    "version": "9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07"
+  },
+  "build_configuration": {
+    "bison": "3.8.2",
+    "cmake": "3.30.5",
+    "cmake_build_type": "Release",
+    "flex": "2.6.4",
+    "vpr_use_ezgl": false,
+    "vpr_use_server": false,
+    "vtr_assert_level": 2,
+    "vtr_enable_capnproto": false,
+    "vtr_ipo_build": "off",
+    "with_abc": false,
+    "with_odin": false,
+    "with_parmys": false,
+    "zlib_root": "projects/tileplace/third_party/local_tools/usr"
+  },
+  "build_environment": {
+    "BISON_PKGDATADIR": "projects/tileplace/third_party/local_tools/usr/share/bison",
+    "LD_LIBRARY_PATH": "projects/tileplace/third_party/local_tools/usr/lib/x86_64-linux-gnu",
+    "M4": "projects/tileplace/third_party/local_tools/usr/bin/m4",
+    "VTR_ARCHIVE_REVISION": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07"
+  },
+  "frozen_correctness_binary": {
+    "preserved": true,
+    "sha256_after_build": "a90dc1b3380ebda705e85f176db0cc3d6be1b71ab9ee887db819febc8b62bafc"
+  },
+  "patch": {
+    "path": "projects/persistroute/tools/vpr_timing_export.patch",
+    "purpose": "export baseline routed delay, setup criticality, slack, and CPD for every VPR connection",
+    "sha256": "1d5c20074611fce9d0a0d89977bc5b97678e35a6c9bf096d01ebb19e864d836a"
+  },
+  "revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+  "schema": "TILEPLACE_VPR_TIMING_EXPORT_BUILD_V1",
+  "source_restoration": {
+    "restored_after_build": true,
+    "vpr_api_cpp_sha256": "81011d26cd80ada2ce8e580f1f07a828d23fc80e1d7e0d3e49b978f43a6c1dcb"
+  },
+  "status": "pass",
+  "timestamp_utc": "2026-08-31T22:48:08+00:00"
+}

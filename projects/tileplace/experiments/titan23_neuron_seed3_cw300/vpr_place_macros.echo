@@ -1,0 +1,515 @@
+#Identified Placement macros
+Num_Macros: 101
+Macro_Id: 0, Num_Blocks: 4
+------------------------------------------------------
+Block_Id: 86 (hh_core:hh_core_0|Add0~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 87 (hh_core:hh_core_0|Add0~82), x_offset: 0, y_offset: -1, z_offset: 0
+Block_Id: 88 (hh_core:hh_core_0|Add0~162), x_offset: 0, y_offset: -2, z_offset: 0
+Block_Id: 677 (hh_system_rsp_xbar_mux:rsp_xbar_mux|src_payload~8), x_offset: 0, y_offset: -3, z_offset: 0
+
+Macro_Id: 1, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 89 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_8|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:one_minus_xf|add_sub_prh:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 490 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_8|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_mux:table_one|mux_frc:auto_generated|l5_w21_n0_mux_dataout~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 2, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 90 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_6|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:one_minus_xf|add_sub_prh:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 491 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_6|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_mux:table_one|mux_frc:auto_generated|l5_w22_n0_mux_dataout~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 3, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 91 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_7|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:one_minus_xf|add_sub_prh:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 492 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_7|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_mux:table_one|mux_frc:auto_generated|l5_w21_n0_mux_dataout~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 4, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 92 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_2|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:one_minus_xf|add_sub_prh:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 493 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_2|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_mux:table_one|mux_frc:auto_generated|l5_w22_n0_mux_dataout~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 5, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 93 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_0|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:one_minus_xf|add_sub_prh:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 494 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_0|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_mux:table_one|mux_frc:auto_generated|l5_w21_n0_mux_dataout~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 6, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 94 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_1|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:one_minus_xf|add_sub_prh:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 495 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_1|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_mux:table_one|mux_frc:auto_generated|l5_w22_n0_mux_dataout~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 7, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 95 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_4|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:one_minus_xf|add_sub_prh:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 496 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_4|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_mux:table_one|mux_frc:auto_generated|l5_w21_n0_mux_dataout~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 8, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 96 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_5|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:one_minus_xf|add_sub_prh:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 497 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_5|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_mux:table_one|mux_frc:auto_generated|l5_w21_n0_mux_dataout~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 9, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 97 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_3|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:one_minus_xf|add_sub_prh:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 498 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_3|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_mux:table_one|mux_frc:auto_generated|l5_w22_n0_mux_dataout~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 10, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 98 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_8|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:x_fixed_minus_xiln2|add_sub_0sh:auto_generated|result_int[0]~3), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 189 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_8|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:xf_minus_ln2|add_sub_prh:auto_generated|pipeline_dffe[1]~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 11, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 99 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_6|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:x_fixed_minus_xiln2|add_sub_0sh:auto_generated|result_int[0]~3), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 190 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_6|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:xf_minus_ln2|add_sub_prh:auto_generated|pipeline_dffe[1]~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 12, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 100 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_7|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:x_fixed_minus_xiln2|add_sub_0sh:auto_generated|result_int[0]~3), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 191 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_7|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:xf_minus_ln2|add_sub_prh:auto_generated|pipeline_dffe[1]~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 13, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 101 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_2|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:x_fixed_minus_xiln2|add_sub_0sh:auto_generated|result_int[0]~3), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 192 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_3|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|extra_ln2), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 14, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 102 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_0|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:x_fixed_minus_xiln2|add_sub_0sh:auto_generated|result_int[0]~3), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 193 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_0|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:xf_minus_ln2|add_sub_prh:auto_generated|pipeline_dffe[1]~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 15, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 103 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_1|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:x_fixed_minus_xiln2|add_sub_0sh:auto_generated|result_int[0]~3), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 194 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_1|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:xf_minus_ln2|add_sub_prh:auto_generated|pipeline_dffe[1]~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 16, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 104 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_4|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:x_fixed_minus_xiln2|add_sub_0sh:auto_generated|result_int[0]~3), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 195 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_4|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:xf_minus_ln2|add_sub_prh:auto_generated|pipeline_dffe[1]~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 17, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 105 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_5|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:x_fixed_minus_xiln2|add_sub_0sh:auto_generated|result_int[0]~3), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 196 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_5|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:xf_minus_ln2|add_sub_prh:auto_generated|pipeline_dffe[1]~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 18, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 106 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_3|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:x_fixed_minus_xiln2|add_sub_0sh:auto_generated|result_int[0]~3), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 197 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|y_reg~42), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 19, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 107 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_13|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:remainder_sub_0|add_sub_t2i:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 244 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_15|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|e1_dffe_0[7]~7), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 20, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 108 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_14|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:remainder_sub_0|add_sub_t2i:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 245 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_4|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|datab_man_not_zero[22]~3), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 21, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 109 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_15|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:remainder_sub_0|add_sub_t2i:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 246 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|y_reg~49), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 22, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 110 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_17|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:remainder_sub_0|add_sub_t2i:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 247 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_2|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|dataa_man_not_zero[22]~3), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 23, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 111 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_16|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:remainder_sub_0|add_sub_t2i:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 248 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_6|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_mux:table_one|mux_frc:auto_generated|l5_w10_n0_mux_dataout~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 24, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 112 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_18|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:remainder_sub_0|add_sub_t2i:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 249 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_add_sub_mf:gen_single_fp.u_altfp_sub_1|altfp_add_sub_mf_altfp_add_sub_k4o:altfp_add_sub_mf_altfp_add_sub_k4o_component|aligned_datab_man_w[18]), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 25, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 113 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_2|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:remainder_sub_0|add_sub_t2i:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 250 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_0|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|e1_dffe_0[7]~7), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 26, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 114 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_0|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:remainder_sub_0|add_sub_t2i:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 251 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|y_reg~54), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 27, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 115 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_1|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:remainder_sub_0|add_sub_t2i:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 252 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_3|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|wire_exp_value_to_ln2a_dataout[4]~4), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 28, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 116 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_3|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:remainder_sub_0|add_sub_t2i:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 253 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_2|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_mux:table_one|mux_frc:auto_generated|l5_w10_n0_mux_dataout~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 29, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 117 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_4|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:remainder_sub_0|add_sub_t2i:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 254 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_2|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|xf[7]~24), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 30, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 118 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_5|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:remainder_sub_0|add_sub_t2i:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 255 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_22|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|dataa_man_not_zero[22]~3), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 31, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 119 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_7|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:remainder_sub_0|add_sub_t2i:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 256 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_8|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|datab_man_not_zero[22]~3), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 32, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 120 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_6|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:remainder_sub_0|add_sub_t2i:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 257 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_3|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_mux:table_one|mux_frc:auto_generated|l5_w10_n0_mux_dataout~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 33, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 121 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_8|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:remainder_sub_0|add_sub_t2i:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 258 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_1|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_mux:table_one|mux_frc:auto_generated|l5_w10_n0_mux_dataout~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 34, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 122 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_9|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:remainder_sub_0|add_sub_t2i:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 259 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|y_reg~20), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 35, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 123 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_10|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:remainder_sub_0|add_sub_t2i:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 260 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|y_reg~19), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 36, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 124 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_11|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:remainder_sub_0|add_sub_t2i:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 261 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|y_reg~12), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 37, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 125 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_12|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:remainder_sub_0|add_sub_t2i:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 262 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|y_reg~16), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 38, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 126 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_19|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:remainder_sub_0|add_sub_t2i:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 263 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_4|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|wire_exp_value_to_ln2a_dataout[3]~3), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 39, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 127 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_8|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:xf_minus_ln2|add_sub_prh:auto_generated|op_1~3), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 448 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_8|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_mux:table_one|mux_frc:auto_generated|l5_w11_n0_mux_dataout~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 40, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 128 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_6|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:xf_minus_ln2|add_sub_prh:auto_generated|op_1~3), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 449 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_6|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_mux:table_one|mux_frc:auto_generated|l5_w29_n0_mux_dataout~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 41, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 129 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_7|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:xf_minus_ln2|add_sub_prh:auto_generated|op_1~3), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 450 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_7|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_mux:table_one|mux_frc:auto_generated|l5_w11_n0_mux_dataout~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 42, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 130 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_2|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:xf_minus_ln2|add_sub_prh:auto_generated|op_1~3), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 451 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_2|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_mux:table_one|mux_frc:auto_generated|l5_w29_n0_mux_dataout~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 43, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 131 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_0|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:xf_minus_ln2|add_sub_prh:auto_generated|op_1~3), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 452 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_0|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_mux:table_one|mux_frc:auto_generated|l5_w11_n0_mux_dataout~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 44, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 132 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_1|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:xf_minus_ln2|add_sub_prh:auto_generated|op_1~3), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 453 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_1|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_mux:table_one|mux_frc:auto_generated|l5_w29_n0_mux_dataout~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 45, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 133 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_4|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:xf_minus_ln2|add_sub_prh:auto_generated|op_1~3), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 454 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_4|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_mux:table_one|mux_frc:auto_generated|l5_w11_n0_mux_dataout~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 46, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 134 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_5|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:xf_minus_ln2|add_sub_prh:auto_generated|op_1~3), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 455 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_5|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_mux:table_one|mux_frc:auto_generated|l5_w11_n0_mux_dataout~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 47, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 135 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_3|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:xf_minus_ln2|add_sub_prh:auto_generated|op_1~3), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 456 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_3|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_mux:table_one|mux_frc:auto_generated|l5_w29_n0_mux_dataout~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 48, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 136 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_19|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:quotient_process|add_sub_lci:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 867 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_19|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|quotient_process_cin_w~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 49, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 137 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_13|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:quotient_process|add_sub_lci:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 840 (hh_system_rsp_xbar_mux:rsp_xbar_mux|src_data[10]~6), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 50, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 138 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_14|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:quotient_process|add_sub_lci:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 843 (ports2avalon_0_usb_readdata[26]), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 51, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 139 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_15|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:quotient_process|add_sub_lci:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 844 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|y_reg[2][27]~1), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 52, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 140 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_17|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:quotient_process|add_sub_lci:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 845 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_17|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|quotient_process_cin_w~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 53, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 141 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_16|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:quotient_process|add_sub_lci:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 846 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_6|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_mux:table_two|mux_irc:auto_generated|l5_w17_n0_mux_dataout~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 54, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 142 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_18|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:quotient_process|add_sub_lci:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 847 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_18|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|quotient_process_cin_w~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 55, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 143 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_2|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:quotient_process|add_sub_lci:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 848 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_2|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|quotient_process_cin_w~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 56, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 144 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_0|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:quotient_process|add_sub_lci:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 852 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_0|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|quotient_process_cin_w~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 57, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 145 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_1|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:quotient_process|add_sub_lci:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 853 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_1|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|e1_dffe_0[12]~12), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 58, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 146 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_3|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:quotient_process|add_sub_lci:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 854 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_2|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:xf_minus_ln2|add_sub_prh:auto_generated|pipeline_dffe[1]~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 59, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 147 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_4|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:quotient_process|add_sub_lci:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 855 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_2|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_mux:table_three|mux_drc:auto_generated|l5_w4_n0_mux_dataout~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 60, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 148 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_5|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:quotient_process|add_sub_lci:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 856 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_5|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|quotient_process_cin_w~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 61, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 149 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_7|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:quotient_process|add_sub_lci:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 857 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_7|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|quotient_process_cin_w~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 62, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 150 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_6|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:quotient_process|add_sub_lci:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 860 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_6|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|quotient_process_cin_w~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 63, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 151 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_8|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:quotient_process|add_sub_lci:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 862 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_1|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_mux:table_two|mux_irc:auto_generated|l5_w0_n0_mux_dataout~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 64, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 152 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_9|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:quotient_process|add_sub_lci:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 863 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_9|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|quotient_process_cin_w~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 65, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 153 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_10|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:quotient_process|add_sub_lci:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 864 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_10|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|quotient_process_cin_w~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 66, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 154 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_11|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:quotient_process|add_sub_lci:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 865 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_11|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|quotient_process_cin_w~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 67, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 155 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_12|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|lpm_add_sub:quotient_process|add_sub_lci:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 866 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_12|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|quotient_process_cin_w~0), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 68, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 156 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_12|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|lpm_add_sub:man_round_adder|add_sub_mqb:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 723 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_20|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|dataa_man_not_zero[22]~2), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 69, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 157 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_9|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|lpm_add_sub:man_round_adder|add_sub_mqb:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 724 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_9|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|dataa_man_not_zero[22]~2), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 70, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 158 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_10|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|lpm_add_sub:man_round_adder|add_sub_mqb:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 725 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_10|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|exp_result_ff~4), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 71, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 159 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_11|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|lpm_add_sub:man_round_adder|add_sub_mqb:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 726 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_11|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|dataa_man_not_zero[22]~2), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 72, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 160 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_13|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|lpm_add_sub:man_round_adder|add_sub_mqb:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 727 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|y_reg~25), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 73, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 161 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_23|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|lpm_add_sub:man_round_adder|add_sub_mqb:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 728 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|y_reg~29), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 74, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 162 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_14|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|lpm_add_sub:man_round_adder|add_sub_mqb:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 729 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|y_reg~26), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 75, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 163 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_15|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|lpm_add_sub:man_round_adder|add_sub_mqb:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 730 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_15|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|datab_man_not_zero[22]~2), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 76, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 164 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_16|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|lpm_add_sub:man_round_adder|add_sub_mqb:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 731 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_16|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|dataa_man_not_zero[22]~2), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 77, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 165 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_17|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|lpm_add_sub:man_round_adder|add_sub_mqb:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 732 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_17|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|dataa_man_not_zero[22]~2), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 78, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 166 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_18|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|lpm_add_sub:man_round_adder|add_sub_mqb:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 733 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|y_reg~11), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 79, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 167 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_4|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|lpm_add_sub:man_round_adder|add_sub_mqb:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 734 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_4|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|datab_man_not_zero[10]~1), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 80, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 168 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_2|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|lpm_add_sub:man_round_adder|add_sub_mqb:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 735 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|y_reg~28), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 81, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 169 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_0|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|lpm_add_sub:man_round_adder|add_sub_mqb:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 736 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_0|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|exp_result_ff~3), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 82, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 170 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_1|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|lpm_add_sub:man_round_adder|add_sub_mqb:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 737 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_1|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|datab_man_not_zero[10]~4), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 83, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 171 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_21|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|lpm_add_sub:man_round_adder|add_sub_mqb:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 738 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|y_reg~30), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 84, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 172 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_5|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|lpm_add_sub:man_round_adder|add_sub_mqb:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 739 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_5|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|datab_man_not_zero[10]~1), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 85, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 173 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_6|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|lpm_add_sub:man_round_adder|add_sub_mqb:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 740 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_6|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|dataa_man_not_zero[22]~2), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 86, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 174 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_7|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|lpm_add_sub:man_round_adder|add_sub_mqb:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 741 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_7|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|dataa_man_not_zero[22]~2), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 87, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 175 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_3|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|lpm_add_sub:man_round_adder|add_sub_mqb:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 742 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|y_reg~27), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 88, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 176 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_22|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|lpm_add_sub:man_round_adder|add_sub_mqb:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 743 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_22|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|dataa_man_not_zero[10]~1), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 89, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 177 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_8|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|lpm_add_sub:man_round_adder|add_sub_mqb:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 744 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|y_reg~15), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 90, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 178 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_19|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|lpm_add_sub:man_round_adder|add_sub_mqb:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 745 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|y_reg~43), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 91, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 179 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_mult_mf:gen_single_fp.u_altfp_mult_20|altfp_mult_mf_altfp_mult_sir:altfp_mult_mf_altfp_mult_sir_component|lpm_add_sub:man_round_adder|add_sub_mqb:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 746 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|y_reg~41), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 92, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 180 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_8|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:man_round|add_sub_ite:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 839 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_8|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|man_prod_result[37]~4), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 93, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 181 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_6|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:man_round|add_sub_ite:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 841 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_6|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|man_prod_result[45]~20), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 94, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 182 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_7|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:man_round|add_sub_ite:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 842 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_7|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|man_prod_result[47]~10), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 95, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 183 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_2|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:man_round|add_sub_ite:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 849 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_div_mf:gen_single_fp.u_altfp_div_5|altfp_div_mf_altfp_div_9qm:altfp_div_mf_altfp_div_9qm_component|altfp_div_mf_altfp_div_pst_plj:altfp_div_pst1|e1_dffe_0[14]~14), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 96, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 184 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_0|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:man_round|add_sub_ite:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 850 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_0|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|man_prod_result[45]~10), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 97, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 185 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_1|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:man_round|add_sub_ite:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 851 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_add_sub_mf:gen_single_fp.u_altfp_sub_1|altfp_add_sub_mf_altfp_add_sub_k4o:altfp_add_sub_mf_altfp_add_sub_k4o_component|man_smaller_w~4), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 98, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 186 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_4|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:man_round|add_sub_ite:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 858 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_4|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|man_prod_result[53]~12), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 99, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 187 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_5|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:man_round|add_sub_ite:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 859 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_5|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|man_prod_result[49]~5), x_offset: 0, y_offset: -1, z_offset: 0
+
+Macro_Id: 100, Num_Blocks: 2
+------------------------------------------------------
+Block_Id: 188 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_3|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|lpm_add_sub:man_round|add_sub_ite:auto_generated|op_1~2), x_offset: 0, y_offset: 0, z_offset: 0
+Block_Id: 861 (hh_core:hh_core_0|hodgkin_huxley:hh_inst|altfp_exp_mf:gen_single_fp.u_altfp_exp_3|altfp_exp_mf_altfp_exp_5cg:altfp_exp_mf_altfp_exp_5cg_component|man_prod_result[48]~11), x_offset: 0, y_offset: -1, z_offset: 0
+
+
+#Macro-related direct connections
+type      type_pin  is_direct direct_type
+------------------------------------------
+LAB       87        true      SINK      
+LAB       129       true      SOURCE    

@@ -1,0 +1,55 @@
+{
+  "schema": "TILEPLACE_POST_FREEZE_PREREGISTRATION_V1",
+  "date": "2026-09-01",
+  "status": "preregistered_before_input_capture_or_tileplace_run",
+  "case": "titan23_stereo_vision",
+  "cohort": "post_freeze_validation",
+  "rationale": "Use the second locally archived Titan23 serial baseline to expand the second architecture family without selecting on TilePlace outcome.",
+  "source_inputs": {
+    "architecture_sha256": "0d3a4f0459af9a883329b934dea81f6a025c18a0ad10c63cbed3d2f8cac4c12b",
+    "circuit_sha256_expected_from_frozen_baseline_run": "515426efda12b7c0f9c2414871cdd6cb2d1c21619de151934201a26e1b815762",
+    "sdc_sha256_expected_from_frozen_baseline_run": "392cbdc288bbabd7cbfa4edf638f6c644997ec5ca5cd06a451873b6b22c43e4c",
+    "packed_netlist_sha256": "aa5fac2699614a382ba5f10855957f5b0ecae95aa615c74614d2085ed51dd605",
+    "placement_sha256": "90d3067328296636b67e5ffebd6baf1edd2cc7acdf827e9ce055260c93a30c7f",
+    "route_sha256": "72f222c6c57a2eae9fe4ffae38e317e35f5449e2232eef2d301fdea25197460f"
+  },
+  "source_baseline": {
+    "vpr_revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+    "seed": 3,
+    "channel_width": 300,
+    "wirelength": 592827,
+    "cpd_ns": 7.51746,
+    "routing_iterations": 15,
+    "num_workers": 1,
+    "max_router_iterations": 400,
+    "router_lookahead": "map",
+    "initial_pres_fac": 1.0,
+    "router_profiler_astar_fac": 1.5
+  },
+  "frozen_tileplace_strategy": {
+    "page_size": [2, 2],
+    "passes": 8,
+    "candidate_limit": 64,
+    "wire_weight": 256,
+    "timing_weight": 1,
+    "timing_model": "connection_star",
+    "critical_distance_guard_q": 60000,
+    "critical_distance_slack": 0,
+    "proposal_workers": 1
+  },
+  "frozen_binaries": {
+    "correctness_vpr_sha256": "a90dc1b3380ebda705e85f176db0cc3d6be1b71ab9ee887db819febc8b62bafc",
+    "timing_export_vpr_sha256": "58c84e686fb622bd732b8f6c07d506c5efae318fe1adf57180dd4df89c0cb6b2"
+  },
+  "required_evidence": [
+    "input hashes and official Titan 2.0.0 acquisition provenance",
+    "complete routed-connection and atom timing-pin mapping accounting",
+    "native VPR macro capture",
+    "legal reference contract",
+    "two byte-identical complete CPU runs",
+    "baseline and candidate native VPR route plus analysis with identical frozen parameters",
+    "aggregate matrix regenerated with the result retained"
+  ],
+  "retention_rule": "Retain the case whenever input capture, legality, determinism, and both native closures pass, regardless of wirelength or CPD direction.",
+  "failure_rule": "Do not substitute a different benchmark revision, SDC, seed, channel width, router option, strategy parameter, or VPR binary after observing an outcome. Record infrastructure or mapping failure separately instead of reporting QoR."
+}

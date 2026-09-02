@@ -1,0 +1,112 @@
+{
+  "schema": "TILEPLACE_TITAN23_NEURON_INPUT_CAPTURE_V1",
+  "status": "pass",
+  "date": "2026-09-01",
+  "case": "titan23_neuron",
+  "source_run": {
+    "cohort": "PersistRoute frozen serial baseline",
+    "seed": 3,
+    "channel_width": 300,
+    "vpr_revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+    "wirelength": 766630,
+    "cpd_ns": 7.60292,
+    "routing_iterations": 15,
+    "max_router_iterations": 400,
+    "router_lookahead": "map",
+    "initial_pres_fac": 1.0,
+    "router_profiler_astar_fac": 1.5
+  },
+  "source_inputs": {
+    "architecture": {
+      "path": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/titan/stratixiv_arch.timing.xml",
+      "sha256": "0d3a4f0459af9a883329b934dea81f6a025c18a0ad10c63cbed3d2f8cac4c12b"
+    },
+    "circuit": {
+      "path": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/titan_blif/titan23/stratixiv/neuron_stratixiv_arch_timing.blif",
+      "sha256": "19f5ca22ae8ddb7e2aa70936217b044dd634c944cd4dda8f465bd49759dbc086"
+    },
+    "sdc": {
+      "path": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/titan_blif/titan23/stratixiv/neuron_stratixiv_arch_timing.sdc",
+      "sha256": "c52c05ecf1ad6bbb26a33eb0078464788f8299000361b23af8f217ae2367d8ef"
+    },
+    "packed_netlist": {
+      "path": "projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/titan23_neuron_seed3_cw300/neuron_stratixiv_arch_timing.net",
+      "sha256": "325c6fd1d2d8a2dbcaa8d3caf4f8426507516e48ee39de24228ccc8f68142908"
+    },
+    "placement": {
+      "path": "projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/titan23_neuron_seed3_cw300/neuron_stratixiv_arch_timing.place",
+      "sha256": "c0cdbe69aca0a25f1bffbdcfd6141b4244fa8a4b41ee9edebd1e4131d5a3a698"
+    },
+    "route": {
+      "path": "projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/titan23_neuron_seed3_cw300/design.route",
+      "sha256": "7a054ac551f9621bffe8b114d7273f2668fff8d4c8f56a756e3880016a25f215",
+      "size_bytes": 44309557
+    }
+  },
+  "rr_graph": {
+    "path": "projects/tileplace/work/titan23_neuron_input_capture/rr_graph.xml",
+    "sha256": "75df19f715d1662d421823b797ad6030f9fd7d324c98c7301632eebdf4edbac8",
+    "size_bytes": 3261812612,
+    "nodes": 3593250,
+    "edges": 39165143,
+    "generation": {
+      "status": "graph_written_before_expected_route_identity_failure",
+      "explanation": "VPR completed device/RR-graph creation and wrote a closed XML document before rejecting the copied route because VPR had normalized the copied placement header. The archived source placement was never modified; later timing and QoR runs use private copies with preserved source identity.",
+      "stdout_sha256": "8cd95c6c1703bed0bfac17c0c737b385ebc242f8f3bec7d716a99076073f5e34",
+      "stderr_sha256": "b6c985b42eeb7dacb4491479ef274f35a7c954c375fe7a6651301a5efc60f034"
+    }
+  },
+  "connections": {
+    "path": "projects/tileplace/work/titan23_neuron_input_capture/connections.csv",
+    "sha256": "ae1cd9a82b7a82d412c21baac4087c02858c6753d57c118c18bdc4d13bb66bce",
+    "size_bytes": 17809212,
+    "rows": 77106,
+    "report_sha256": "920adf7fce687271432abfe97a65da13c88bc8b5ca262ed25e6eebc98af45838"
+  },
+  "timing_export": {
+    "input": {
+      "path": "projects/tileplace/work/titan23_neuron_input_capture/reference_timing.input.csv",
+      "sha256": "93bf0ee7c13d73168682d46d50d871cbbe8d30f0ad6cc8dee28ec51fed9a96c4",
+      "generator": "projects/tileplace/tools/prepare_reference_timing_input.py"
+    },
+    "output": {
+      "path": "projects/tileplace/work/titan23_neuron_input_capture/reference_timing.output.csv",
+      "sha256": "042ed8dd1941599a77fd09de3374780b27a5b7c8f891c15e1c7f276e02406ded",
+      "size_bytes": 2144736,
+      "rows": 77106
+    },
+    "log_sha256": "fdf82fdd81143d8e6fd139edcd54af59cf936226a5a707a037f4b4972ee98390",
+    "critical_path_delay_ps": 7603,
+    "criticality_q_threshold": 60000,
+    "connections_at_or_above_threshold": 201,
+    "atom_timing_pin_mapped": 77106,
+    "atom_timing_pin_unmapped": 0,
+    "fully_exported": true
+  },
+  "timing_export_binary": {
+    "path": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr_timing_optional/vpr/vpr",
+    "sha256": "58c84e686fb622bd732b8f6c07d506c5efae318fe1adf57180dd4df89c0cb6b2",
+    "build_provenance": "projects/tileplace/experiments/vpr_timing_export_optional_build_2026-08-31.json"
+  },
+  "frozen_correctness_binary": {
+    "path": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+    "sha256": "a90dc1b3380ebda705e85f176db0cc3d6be1b71ab9ee887db819febc8b62bafc",
+    "preserved": true
+  },
+  "native_macros": {
+    "path": "projects/tileplace/experiments/titan23_neuron_seed3_cw300/vpr_place_macros.echo",
+    "sha256": "fd9f3510113877166989d79dd6c6f577c7b6cba1039fe8e7c5e9ae72d49355b7",
+    "capture_report_sha256": "24907b6731dce2a48c36465bf4226fd056e61b204e51e0c3cf6819d285ab70b4",
+    "macro_count": 101,
+    "member_count": 204
+  },
+  "contract": {
+    "path": "projects/tileplace/experiments/titan23_neuron_seed3_cw300_endpoints/manifest.json",
+    "sha256": "9af025de15f9ca26a48c698b196de996a71f9b8fed0724593214957feb00e04c",
+    "clustered_blocks": 3438,
+    "routed_connections": 77106,
+    "cluster_endpoints_fully_mapped": 77106,
+    "atom_timing_pins_mapped": 77106
+  },
+  "claim_boundary": "This is a post-freeze Titan23/Stratix-IV validation case using the unchanged TilePlace strategy. Timing capture uses the independent optional-mapping binary, but every connection maps to an atom timing pin. Baseline and candidate QoR closure use only the frozen correctness VPR binary and the same SDC/router parameters."
+}

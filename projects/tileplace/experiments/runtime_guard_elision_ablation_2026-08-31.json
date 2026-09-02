@@ -1,0 +1,90 @@
+{
+  "aggregate": {
+    "geomean_speedup": 1.4385276287691193,
+    "max_after_wall_cv": 0.1501117188631469,
+    "max_speedup": 1.6493780692809141,
+    "min_speedup": 1.3376220289827983
+  },
+  "cases": [
+    {
+      "after_median_wall_s": 4.052248221,
+      "after_wall_cv": 0.02615354187455283,
+      "before_median_wall_s": 6.683689347,
+      "before_wall_cv": 0.030547317213811282,
+      "blocks": 719,
+      "case": "clma",
+      "output_place_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+      "speedup": 1.6493780692809141,
+      "timed_connections": 13458
+    },
+    {
+      "after_median_wall_s": 0.54505791,
+      "after_wall_cv": 0.04585925037348663,
+      "before_median_wall_s": 0.757049227,
+      "before_wall_cv": 0.227396325694601,
+      "blocks": 202,
+      "case": "diffeq",
+      "output_place_sha256": "65c65279d64c55234103977d25bd99cd583b716142377478179d5a23c774174d",
+      "speedup": 1.3889335667103702,
+      "timed_connections": 1973
+    },
+    {
+      "after_median_wall_s": 1.581499805,
+      "after_wall_cv": 0.1501117188631469,
+      "before_median_wall_s": 2.115448978,
+      "before_wall_cv": 0.014720379647064448,
+      "blocks": 484,
+      "case": "elliptic",
+      "output_place_sha256": "d50c38d2a200a8e901e58a1305c4a69d573e812708e5089a78156a5a4c2341b9",
+      "speedup": 1.3376220289827983,
+      "timed_connections": 5242
+    },
+    {
+      "after_median_wall_s": 1.513493044,
+      "after_wall_cv": 0.021046291817483985,
+      "before_median_wall_s": 2.115037916,
+      "before_wall_cv": 0.01910516600528701,
+      "blocks": 385,
+      "case": "frisc",
+      "output_place_sha256": "7b18f16c638ee81e82869fe335193d1e794e145d320c2fca1821040d242f4e31",
+      "speedup": 1.397454665804199,
+      "timed_connections": 5767
+    }
+  ],
+  "change": "skip touched-net HPWL and unweighted connection-wire before-costs when their candidate guards are disabled",
+  "claim_boundary": "This is a same-process single-core Python implementation ablation with warm caches. It is not thread scaling, end-to-end VPR speedup, or FPGA performance.",
+  "environment": {
+    "affinity": [
+      31
+    ],
+    "cpu_model": "INTEL(R) XEON(R) GOLD 6530",
+    "loadavg_after": [
+      85.84228515625,
+      85.0107421875,
+      84.4599609375
+    ],
+    "logical_cpus": 128,
+    "pinned_cpu": 31,
+    "pinned_cpus": [
+      31
+    ],
+    "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0]"
+  },
+  "protocol": {
+    "cache_state": "one warmup per case; measured runs are warm-cache",
+    "critical_distance_guard_q": 60000,
+    "eager_disabled_guard_costs": false,
+    "included": "contract load, optimization, placement write, legality validation, and JSON report write",
+    "measured_repetitions": 7,
+    "page_size": [
+      2,
+      2
+    ],
+    "proposal_workers": 1,
+    "timing_model": "connection_star",
+    "warmups": 3
+  },
+  "schema": "TILEPLACE_RUNTIME_GUARD_ELISION_ABLATION_V1",
+  "status": "pass"
+}

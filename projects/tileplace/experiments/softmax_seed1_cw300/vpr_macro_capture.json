@@ -1,0 +1,74 @@
+{
+  "channel_width": 300,
+  "command": [
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/koios_softmax_frontend/softmax.pre-vpr.blif",
+    "--net_file",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/softmax_macro_capture/vpr_input.net",
+    "--place_file",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/softmax_macro_capture/vpr_input.place",
+    "--route_file",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/softmax_macro_capture/vpr_output.route",
+    "--seed",
+    "1",
+    "--num_workers",
+    "1",
+    "--route_chan_width",
+    "300",
+    "--max_router_iterations",
+    "1",
+    "--echo_file",
+    "on",
+    "--route"
+  ],
+  "inputs": {
+    "architecture": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
+      "sha256": "9738371dbd8b3ca5c138150e6f78ed6186e315882edb38b5d302547de4f36c2c"
+    },
+    "circuit": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/koios_softmax_frontend/softmax.pre-vpr.blif",
+      "sha256": "8d81c7fd97287f2cf5e3aa00072f4dd2e2222020b99f72a461ff834376130e80"
+    },
+    "netlist": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_softmax_seed1_cw300/input/reference/softmax.pre-vpr.net",
+      "sha256": "482f58815ba9a9584743a8ea793551af14bd4dbb618532a14a509d1810b0ec09"
+    },
+    "place": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_softmax_seed1_cw300/input/reference/softmax.pre-vpr.place",
+      "sha256": "3cefffbc265e3e3a965c63df4c1fc69b7887c95514bb5edced42e5ca5f08eddd"
+    },
+    "vpr": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+      "sha256": "a90dc1b3380ebda705e85f176db0cc3d6be1b71ab9ee887db819febc8b62bafc"
+    }
+  },
+  "logs": {
+    "stderr": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/softmax_macro_capture/vpr.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/softmax_macro_capture/vpr.stdout.log",
+      "sha256": "684230d391f30508c796a3dfb71dcf9f7f88434ab075ab96e4490c8bc215119f"
+    }
+  },
+  "macros": {
+    "macro_count": 0,
+    "member_count": 0,
+    "source": "vpr_place_macros_echo"
+  },
+  "output": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/softmax_seed1_cw300/vpr_place_macros.echo",
+    "sha256": "71ce3605e8fea8b03f795401033407ae995903312f8de051b7c5011586762432"
+  },
+  "placement_consistency": "pass",
+  "routing_iteration_limit": 1,
+  "schema": "TILEPLACE_VPR_MACRO_CAPTURE_V1",
+  "seed": 1,
+  "status": "pass",
+  "vpr_returncode": 2,
+  "vpr_revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+  "wall_s": 28.15875332057476
+}

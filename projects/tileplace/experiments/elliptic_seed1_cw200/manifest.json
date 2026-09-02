@@ -1,0 +1,103 @@
+{
+  "compatibility": "logical_type must equal physical_type",
+  "inputs": {
+    "architecture": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+      "sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179"
+    },
+    "connections": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/elliptic_seed1_cw200/input/connections.csv",
+      "sha256": "abb42219b1131336f1e67c83f7e8cd548ebc7604f28c9153b1b667815ae6c2de"
+    },
+    "native_macros": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/elliptic_seed1_cw200/vpr_place_macros.echo",
+      "sha256": "0efcfecb18fd7b26f5fff38f8e7afb45d3da42b7febc428ec4b045c63b7c93ee"
+    },
+    "packed_netlist": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/elliptic_seed1_cw200/elliptic.net",
+      "sha256": "7c6c18d9aa24edec1b6fd2ce682fe962a3078c7bc6b7b8088ada1fedc8b023ed"
+    },
+    "reference_place": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/elliptic_seed1_cw200/elliptic.place",
+      "sha256": "73dbe85481fdf89ae689de5031f418bbf9c21d0fbc8fd2ac91fe3eaa6dc63193"
+    },
+    "rr_graph": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/full_matrix_cmodel_2026-08-27/elliptic_seed1_cw200/input/rr_graph.xml",
+      "sha256": "a2598c26e321af3b16e881fb3952719cb92610a2e655ec91897488ffa590c1ca"
+    },
+    "timing": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/elliptic_seed1_cw200/run/elliptic.timing_iteration_0.output.csv",
+      "sha256": "eaab86710a829e516ac0fd6b1c1b0a3f7261d01ea7b8929596559e4de8bafc6a"
+    }
+  },
+  "outputs": {
+    "blocks.jsonl": {
+      "count": 484,
+      "sha256": "1a2286b19a0362ac1ffd21d119eeb5c19cdd53c06e4a10d8b3ca844ea64aecba"
+    },
+    "nets.jsonl": {
+      "count": 4855,
+      "sha256": "0216b95b351df6cb0754d02804e480243b7f66a4e745dddf26991368372f5da1"
+    },
+    "sites.jsonl": {
+      "count": 891,
+      "sha256": "dd1b7804a9be762c8ad273da57ac81607e8d43600c63e33f53eec2000bc7261a"
+    }
+  },
+  "packed_netlist": {
+    "architecture_id": "SHA256:01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179",
+    "atom_netlist_id": "SHA256:5cc3a708720002c0e114c36312721ac7dd3b85ae2fd05f311d780fc11212b175",
+    "instance": "FPGA_packed_netlist[0]",
+    "name": "elliptic.net"
+  },
+  "placement_header": {
+    "array_size": "Array size: 21 x 21 logic blocks",
+    "netlist": "Netlist_File: elliptic.net Netlist_ID: SHA256:7c6c18d9aa24edec1b6fd2ce682fe962a3078c7bc6b7b8088ada1fedc8b023ed"
+  },
+  "placement_macros": {
+    "macro_count": 0,
+    "member_count": 0,
+    "source": "vpr_place_macros_echo"
+  },
+  "rr_block_types": {
+    "0": {
+      "capacity": 1,
+      "height": 1,
+      "name": "EMPTY",
+      "width": 1
+    },
+    "1": {
+      "capacity": 8,
+      "height": 1,
+      "name": "io",
+      "width": 1
+    },
+    "2": {
+      "capacity": 1,
+      "height": 1,
+      "name": "clb",
+      "width": 1
+    },
+    "3": {
+      "capacity": 1,
+      "height": 4,
+      "name": "mult_36",
+      "width": 1
+    },
+    "4": {
+      "capacity": 1,
+      "height": 6,
+      "name": "memory",
+      "width": 1
+    }
+  },
+  "schema": "TILEPLACE_VPR_CONTRACT_V1",
+  "vpr": {
+    "channel_width": 200,
+    "command": [
+      "vpr k6_frac_N10_mem32K_40nm.xml elliptic.blif --seed 1 --num_workers 1 --route_chan_width 200"
+    ],
+    "revision": "v8.0.0-11943-g8cb20aa52",
+    "seed": 1
+  }
+}

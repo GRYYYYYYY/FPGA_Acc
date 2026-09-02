@@ -1,0 +1,42 @@
+{
+  "accepted_moves": 1,
+  "blocks": 576,
+  "candidate_limit": 64,
+  "claim_boundary": "Internal HPWL is a research objective; VPR-native routed WL/CPD is required for QoR claims.",
+  "conflict_protocol": "snapshot proposals; disjoint old/new site write-set and touched-net set; deterministic delta/color/unit commit",
+  "final_objective": 1604096,
+  "final_timing_hpwl_q": 0,
+  "final_wire_hpwl": 6266,
+  "initial_objective": 1604608,
+  "initial_timing_hpwl_q": 0,
+  "initial_wire_hpwl": 6268,
+  "input_place_sha256": "30ca1d8d7218c881d9b2b52e4368d3e2feae25cbb4865b178e7ede29b64af1fb",
+  "legal": true,
+  "macro_units": 0,
+  "nets_with_multiple_blocks": 1013,
+  "output_place_sha256": "53e352ebcc1a21a105c89964531118fbd5cb2d065eb0082c227daa1e1f6eae6a",
+  "page_colors": 4,
+  "page_height": 4,
+  "page_width": 4,
+  "pages": 16,
+  "passes": [
+    {
+      "accepted": 1,
+      "objective": 1604096,
+      "pass": 0,
+      "proposals": 1
+    },
+    {
+      "accepted": 0,
+      "objective": 1604096,
+      "pass": 1,
+      "proposals": 0
+    }
+  ],
+  "rejected_conflicts": 0,
+  "schema": "TILEPLACE_PAGE_INCREMENTAL_CPU_V1",
+  "status": "pass",
+  "timing_weight": 1,
+  "units": 576,
+  "wire_weight": 256
+}

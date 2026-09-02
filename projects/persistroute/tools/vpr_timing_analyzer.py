@@ -48,6 +48,24 @@ def _validate_placement_identity(route: Path, place: Path) -> None:
             f"route Placement_ID {match.group(1).lower()} differs from place SHA256 {place_sha}")
 
 
+def _normalize_private_identity_headers(net: Path, place: Path, route: Path) -> None:
+    """Bind private copies to the basenames passed to VPR without touching sources."""
+    place_lines = place.read_text(encoding="utf-8").splitlines()
+    if not place_lines:
+        raise SystemExit(f"empty placement file: {place}")
+    net_id = re.search(r"Netlist_ID:\s*SHA256:([0-9a-fA-F]{64})", place_lines[0])
+    if not net_id:
+        raise SystemExit(f"placement has no SHA-256 Netlist_ID: {place}")
+    place_lines[0] = f"Netlist_File: {net.name} Netlist_ID: SHA256:{net_id.group(1).lower()}"
+    place.write_text("\n".join(place_lines) + "\n", encoding="utf-8")
+
+    route_lines = route.read_text(encoding="utf-8").splitlines()
+    if not route_lines:
+        raise SystemExit(f"empty route file: {route}")
+    route_lines[0] = f"Placement_File: {place.name} Placement_ID: SHA256:{_sha256(place)}"
+    route.write_text("\n".join(route_lines) + "\n", encoding="utf-8")
+
+
 def main() -> int:
     if len(sys.argv) != 4:
         print("usage: vpr_timing_analyzer.py <iteration> <input.csv> <output.csv>", file=sys.stderr)
@@ -85,6 +103,7 @@ def main() -> int:
             # Private copies keep the frozen baseline inputs immutable even if
             # a tool version decides to update one in place.
             shutil.copy2(source, target)
+        _normalize_private_identity_headers(net, place, route)
         log = Path(str(timing_output) + ".vpr.log")
         env = os.environ.copy()
         env["PERSISTROUTE_VPR_TIMING_INPUT"] = str(timing_input)
@@ -100,6 +119,15 @@ def main() -> int:
             "--route_chan_width", str(channel_width),
             "--timing_report_npaths", "1",
         ]
+        device = os.environ.get("PERSISTROUTE_VPR_DEVICE")
+        if device:
+            command.extend(("--device", device))
+        constraints_text = os.environ.get("PERSISTROUTE_VPR_CONSTRAINTS")
+        if constraints_text:
+            constraints = Path(constraints_text).resolve()
+            if not constraints.is_file():
+                raise SystemExit(f"PERSISTROUTE_VPR_CONSTRAINTS does not exist: {constraints}")
+            command.extend(("--read_vpr_constraints", str(constraints)))
         rr_graph_text = os.environ.get("PERSISTROUTE_VPR_RR_GRAPH")
         if rr_graph_text:
             rr_graph = Path(rr_graph_text).resolve()

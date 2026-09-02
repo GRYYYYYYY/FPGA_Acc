@@ -48,24 +48,83 @@ PersistRoute 未完成且只能在有卡设备补齐：物理 U280 端到端 run
 
 ## TilePlace 当前状态
 
-`projects/tileplace` 目前只有独立 HLS 原型：CLB/BRAM/DSP page capacity、region、
-criticality、cascade 字段、确定性 page/site assignment 和 toy testbench。固定上限为
-512 instances/64 pages；没有真实 VPR 前端、完整网表代价、macro/cascade 合法化、
-CPU大规模golden、VPR写回、XRT、多CU或论文结果。
+`projects/tileplace` 的 HLS kernel 仍是固定 512 instances/64 pages 的 toy 原型；但
+独立 correctness 路径已新增真实 VPR JSONL contract、输入/输出 SHA-256 manifest、
+不限规模 CPU golden、异构/subtile 唯一占用、region/fixed/macro/cascade validator
+和 VPR `.place` 写回。五案例矩阵共 2866 clustered blocks/47580 connections，全部
+CPU golden 与 VPR 原生 route+analysis 合法，iterations/WL/CPD 与冻结 baseline 一致。
+Koios `conv_layer` 覆盖 42 DSP、56 memory、156 IO；同一精确 VTR commit
+`8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07` 从 architecture direct/packed netlist 导出
+43 个 carry macro/86 members，capture/contract/closure 哈希一致。非法异构 placement
+经 CPU 确定性恢复后也通过 VPR 原生 consistency 与布通。VTR 官方 `bigkey_tight`
+region 与 `apex4` fixed-I/O 两例又覆盖 686 blocks、176 constrained clusters/28
+coordinate-fixed clusters；违规注入恢复均通过 VPR 原生重读 XML 后的 route+analysis，
+证据为 `tileplace/experiments/external_constraints_matrix_2026-08-31.json`。这份约束矩阵
+仍使用原 non-Eigen VPR binary，不能改写成 AP 约束结果。
+另在结果产生前预注册 apex4 fixed-I/O constrained QoR 点，并以冻结 2×2/q60000 策略运行：
+2263/2263 条 connection 完整映射、28 个 coordinate-fixed I/O 保持、两遍 CPU 逐字节一致；
+原生 WL/CPD 为 +0.210%/+0.463%，19→21 iterations。该负结果单列于
+`tileplace/experiments/constrained_qor_matrix_2026-09-01.json`，不进入九例主 aggregate，
+也不是 Eigen AP 结果。
+
+CPU 研究原型已加入 page/四着色、精确 touched-net 增量 cost、逐 connection
+endpoint timing、q60000 critical-distance guard 和 macro-aware site/net 冲突事务。
+九个 QoR contract 共 198595 条 routed connections 全映射 clustered endpoints；同 tile
+多 IO sink 由 RR class stride 唯一映射 subtile，多高度 DSP/memory endpoint 按物理 tile
+footprint 映射 placement root。2×2/4×4/8×8 消融在四例开发集上选择 2×2；冻结后依次加入
+spmv/softmax/attention_layer 的七案例串行 VPR 矩阵 routed WL/CPD 几何平均为
+-0.108%/-1.296%，最坏单例 +0.439%/+0.017%。冻结后三例自身为 -0.049%/-2.970%；
+attention_layer 为 -0.331%/-7.069%，routing iterations 保持 15。证据为
+`tileplace/experiments/timing_extended_matrix_2026-08-31.json`，其输入捕获审计为
+`attention_layer_input_capture_2026-08-31.json`。另以最终 2×2/q60000 策略复验此前参与
+4×4 probe 的 conv_layer：43 macros/86 members 保持，WL/CPD -0.124%/0.000%，14→15
+routing iterations；它单列为 previously-probed macro-stress，不冒充 post-freeze。随后以同一
+2×2/q60000 策略加入第二架构族 Titan23 neuron：101 macros/204 members 保持，WL/CPD
++0.088%/0.000%，15→16 routing iterations。九例 WL/CPD geomean 为 -0.088%/-1.010%，
+最坏仍为 +0.439%/+0.017%；四个 post-freeze cases 为 -0.015%/-2.236%。证据为
+`timing_titan_extended_matrix_2026-09-01.json`。198595 条 connection 中 194155 条映射
+atom timing pin；conv_layer 其余 4440 条显式 zero-criticality/unmapped、仍保留在线长目标。
+另以 Eigen 3.4.0 构建精确 revision 的独立 VPR binary
+（SHA-256 `dd7d30f...`），在同 packed netlist/router 下配对 conventional SA 与官方
+cluster-level AP + quench。六个 conventional 点精确复现冻结 baseline；AP 六例全合法，
+但 WL/CPD geomean 为 +3.711%/+16.103%，0/6 WL 改善且 0/6 CPD 不回归。证据为
+`tileplace/experiments/vpr_placement_baseline_matrix_2026-08-31.json`。这是实验性
+wirelength-oriented 官方路径的可执行负结果，不代表外部 timing-driven placer。
+DREAMPlaceFPGA `004494318...` 与 AMF-Placer `70d982881...` 已完成 license、源码、CLI、依赖和
+格式的 B1 审计，证据为
+`tileplace/experiments/external_placer_feasibility_2026-08-31.json`。前者改变 packing/netlist，
+后者使用 Vivado primitive/Tcl backend，均不能直接加入九例 TilePlace QoR 矩阵；
+当前仍无独立外部 placer B0 QoR、XRT/多 CU 或物理 U280 性能结果。
+
+单核 Python runtime 已固定 CPU 31、3 warm-ups/7 measured runs：六案例中位数
+0.545/1.513/1.581/4.052/59.672/21.798 s；新增 spmv/softmax CV 为 2.8%/2.2%。四例开发集
+禁用 guard cost 的惰性跳过取得 1.439× geomean speedup，
+全部 placement 哈希不变。fork-process proposal evaluation 在四案例 1/2/4/8 workers
+下精确等价，但 clma 无受控 speedup，因此只证明并行语义，不能作为性能 claim。证据为
+`tileplace/experiments/{cpu_runtime_matrix,runtime_guard_elision_ablation,parallel_proposal_matrix}_2026-08-31.json`。
 
 ## 当前下一步
 
-1. 在新设备复核环境并运行 TilePlace toy testbench，不先启动长 HLS/Vivado 作业。
-2. 定义 VTR 9 placement 数据契约，复用 PersistRoute 冻结案例的架构、网表、seed、
-   placement 和 timing 资产，但不要耦合两个工程的源码。
-3. 实现真实 placement packer/manifest 与不限 512-instance 的 CPU golden，覆盖异构
-   site、唯一占用、region、fixed block、macro/cascade 和确定性。
-4. 写回 VPR placement，以同一 VPR router 做 legality、routed WL、CPD 和可布通性
-   fail-closed 验证；先闭环 `diffeq`。
-5. correctness 冻结后，再进行 page decomposition、增量 net/timing cost、HBM layout、
+1. [完成] 增加可审计的真实外部 fixed/region 约束案例。
+2. [完成] page decomposition/page-size 消融、增量 net/per-connection timing cost、
+   critical-distance guard 与 macro-aware 并行冲突已有九案例、两个架构族矩阵。
+3. [完成] VPR conventional full placement 与 cluster-level AP 已用同 packed netlist/router
+   形成六例矩阵；DREAMPlaceFPGA/AMF-Placer 已审计为不适合直接并表的 B1 candidates。
+   优先扩展 post-freeze VPR/Koios 案例；外部 placer 若继续，应另建预注册的
+   Bookshelf/FPGAIF/Vivado cohort。Python process scaling 已证明受支配，后续性能实现应转向
+   C++/持久共享快照或 HLS。
+   第二个 Titan23 `stereo_vision` 已 outcome-blind 预注册，但官方 1.06 GB Titan 输入镜像
+   实测吞吐过低；只在取得与冻结 baseline 哈希一致的 BLIF/SDC 后继续。
+4. 算法 correctness/QoR 冻结后，再进行 HBM layout、
    多 PE/XRT、HLS/RTL 和 U280 实现。
-6. 强基线从 VPR 9 placement 开始；DREAMPlaceFPGA/AMF-Placer 只有在 commit、依赖、
-   命令与统一后端 router 固定后才能升级为可执行论文基线。
+5. DREAMPlaceFPGA/AMF-Placer 只有在独立 cohort 内冻结输入、转换、packing、依赖、命令与
+   统一后端，并归档本机 QoR 后才能从 B1 升为 B0。
+
+新线程应直接采用 `SESSION_HANDOFF.md` 的“1.1 当前线程最终检查点”。不要重新实现
+或重复运行已经冻结的五案例/macro/recovery closure，除非相关输入或代码发生变化；
+外部约束、九案例 TilePlace timing 与六案例 VPR conventional/AP 矩阵现已冻结，下一步
+优先整理论文叙事并只在预注册后扩展新案例；
+不得为了补 baseline 强行构建已证明方法学不相容的外部 placer。
 
 ## 关键入口
 

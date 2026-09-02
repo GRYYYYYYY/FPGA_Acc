@@ -1,0 +1,676 @@
+{
+  "algorithm": "read-only snapshot proposal evaluation in Linux fork processes; deterministic delta/color/unit commit remains in the parent process",
+  "claim_boundary": "The 1/2/4/8-worker paths are result-equivalent on four cases. The largest-case speedup is reported as a prototype result and does not support a scalable CPU or FPGA acceleration claim.",
+  "clma_scaling": {
+    "best_speedup": 1.0,
+    "best_workers": 1,
+    "decision": "correct_parallel_semantics_but_no_controlled_process_scaling_speedup",
+    "environment": {
+      "affinity": [
+        0
+      ],
+      "cpu_model": "INTEL(R) XEON(R) GOLD 6530",
+      "loadavg_after": [
+        81.248046875,
+        82.2021484375,
+        83.91455078125
+      ],
+      "logical_cpus": 128,
+      "pinned_cpus": [
+        0
+      ],
+      "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.35",
+      "python": "3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0]"
+    },
+    "points": [
+      {
+        "parallel_efficiency": 1.0,
+        "pinned_cpus": [
+          0
+        ],
+        "proposal_workers": 1,
+        "samples": [
+          {
+            "accepted_moves": 24,
+            "output_place_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+            "process_s": 3.908125941,
+            "usage": {
+              "input_blocks": 0,
+              "involuntary_context_switches": 21,
+              "major_faults": 0,
+              "minor_faults": 22162,
+              "output_blocks": 0,
+              "system_s": 0.088003,
+              "user_s": 3.820131,
+              "voluntary_context_switches": 6
+            },
+            "wall_s": 3.912777827
+          },
+          {
+            "accepted_moves": 24,
+            "output_place_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+            "process_s": 3.955842577,
+            "usage": {
+              "input_blocks": 0,
+              "involuntary_context_switches": 28,
+              "major_faults": 0,
+              "minor_faults": 21158,
+              "output_blocks": 0,
+              "system_s": 0.03603899999999999,
+              "user_s": 3.9198140000000006,
+              "voluntary_context_switches": 6
+            },
+            "wall_s": 3.996084571
+          },
+          {
+            "accepted_moves": 24,
+            "output_place_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+            "process_s": 4.079410869,
+            "usage": {
+              "input_blocks": 0,
+              "involuntary_context_switches": 30,
+              "major_faults": 0,
+              "minor_faults": 19892,
+              "output_blocks": 0,
+              "system_s": 0.06012600000000001,
+              "user_s": 4.019297999999999,
+              "voluntary_context_switches": 7
+            },
+            "wall_s": 4.086396058
+          },
+          {
+            "accepted_moves": 24,
+            "output_place_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+            "process_s": 3.967226602,
+            "usage": {
+              "input_blocks": 0,
+              "involuntary_context_switches": 22,
+              "major_faults": 0,
+              "minor_faults": 18884,
+              "output_blocks": 0,
+              "system_s": 0.05597800000000003,
+              "user_s": 3.911256,
+              "voluntary_context_switches": 6
+            },
+            "wall_s": 3.972448285
+          },
+          {
+            "accepted_moves": 24,
+            "output_place_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+            "process_s": 4.041607966,
+            "usage": {
+              "input_blocks": 0,
+              "involuntary_context_switches": 22,
+              "major_faults": 0,
+              "minor_faults": 17877,
+              "output_blocks": 0,
+              "system_s": 0.044074,
+              "user_s": 3.997544999999999,
+              "voluntary_context_switches": 6
+            },
+            "wall_s": 4.046250584
+          },
+          {
+            "accepted_moves": 24,
+            "output_place_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+            "process_s": 4.154265525,
+            "usage": {
+              "input_blocks": 0,
+              "involuntary_context_switches": 25,
+              "major_faults": 0,
+              "minor_faults": 16868,
+              "output_blocks": 0,
+              "system_s": 0.035891000000000006,
+              "user_s": 4.118382,
+              "voluntary_context_switches": 6
+            },
+            "wall_s": 4.162345894
+          },
+          {
+            "accepted_moves": 24,
+            "output_place_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+            "process_s": 4.137536342,
+            "usage": {
+              "input_blocks": 0,
+              "involuntary_context_switches": 28,
+              "major_faults": 0,
+              "minor_faults": 16114,
+              "output_blocks": 0,
+              "system_s": 0.05990400000000001,
+              "user_s": 4.077641,
+              "voluntary_context_switches": 6
+            },
+            "wall_s": 4.142508544
+          }
+        ],
+        "speedup": 1.0,
+        "wall_s": {
+          "cv": 0.020918185854355707,
+          "max": 4.162345894,
+          "mean": 4.045544537571429,
+          "median": 4.046250584,
+          "median_absolute_deviation": 0.07380229900000002,
+          "min": 3.912777827,
+          "pstdev": 0.08462545251899266
+        }
+      },
+      {
+        "parallel_efficiency": 0.4920379428126034,
+        "pinned_cpus": [
+          0,
+          1
+        ],
+        "proposal_workers": 2,
+        "samples": [
+          {
+            "accepted_moves": 24,
+            "output_place_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+            "process_s": 4.081628496,
+            "usage": {
+              "input_blocks": 0,
+              "involuntary_context_switches": 20,
+              "major_faults": 0,
+              "minor_faults": 22162,
+              "output_blocks": 0,
+              "system_s": 0.06395999999999999,
+              "user_s": 4.017676000000001,
+              "voluntary_context_switches": 6
+            },
+            "wall_s": 4.086185075
+          },
+          {
+            "accepted_moves": 24,
+            "output_place_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+            "process_s": 4.138896571,
+            "usage": {
+              "input_blocks": 0,
+              "involuntary_context_switches": 22,
+              "major_faults": 0,
+              "minor_faults": 21410,
+              "output_blocks": 0,
+              "system_s": 0.05598399999999998,
+              "user_s": 4.082925999999999,
+              "voluntary_context_switches": 7
+            },
+            "wall_s": 4.143663649
+          },
+          {
+            "accepted_moves": 24,
+            "output_place_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+            "process_s": 4.109079172,
+            "usage": {
+              "input_blocks": 0,
+              "involuntary_context_switches": 14,
+              "major_faults": 0,
+              "minor_faults": 20144,
+              "output_blocks": 0,
+              "system_s": 0.05591500000000002,
+              "user_s": 4.053179000000002,
+              "voluntary_context_switches": 6
+            },
+            "wall_s": 4.111726182
+          },
+          {
+            "accepted_moves": 24,
+            "output_place_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+            "process_s": 4.06194196,
+            "usage": {
+              "input_blocks": 0,
+              "involuntary_context_switches": 14,
+              "major_faults": 0,
+              "minor_faults": 19388,
+              "output_blocks": 0,
+              "system_s": 0.039975999999999956,
+              "user_s": 4.021977,
+              "voluntary_context_switches": 6
+            },
+            "wall_s": 4.110449517
+          },
+          {
+            "accepted_moves": 24,
+            "output_place_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+            "process_s": 4.130585277,
+            "usage": {
+              "input_blocks": 0,
+              "involuntary_context_switches": 15,
+              "major_faults": 0,
+              "minor_faults": 18381,
+              "output_blocks": 0,
+              "system_s": 0.06391800000000003,
+              "user_s": 4.066679999999998,
+              "voluntary_context_switches": 6
+            },
+            "wall_s": 4.132944886
+          },
+          {
+            "accepted_moves": 24,
+            "output_place_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+            "process_s": 3.95174334,
+            "usage": {
+              "input_blocks": 0,
+              "involuntary_context_switches": 18,
+              "major_faults": 0,
+              "minor_faults": 17372,
+              "output_blocks": 0,
+              "system_s": 0.036004000000000036,
+              "user_s": 3.9157480000000007,
+              "voluntary_context_switches": 6
+            },
+            "wall_s": 3.953521148
+          },
+          {
+            "accepted_moves": 24,
+            "output_place_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+            "process_s": 4.139020479,
+            "usage": {
+              "input_blocks": 0,
+              "involuntary_context_switches": 13,
+              "major_faults": 0,
+              "minor_faults": 16366,
+              "output_blocks": 0,
+              "system_s": 0.06796599999999997,
+              "user_s": 4.071064,
+              "voluntary_context_switches": 6
+            },
+            "wall_s": 4.140636212
+          }
+        ],
+        "speedup": 0.9840758856252068,
+        "wall_s": {
+          "cv": 0.015010574664296094,
+          "max": 4.143663649,
+          "mean": 4.097018095571428,
+          "median": 4.111726182,
+          "median_absolute_deviation": 0.025541106999999563,
+          "min": 3.953521148,
+          "pstdev": 0.06149859602454712
+        }
+      },
+      {
+        "parallel_efficiency": 0.24140708806356523,
+        "pinned_cpus": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "proposal_workers": 4,
+        "samples": [
+          {
+            "accepted_moves": 24,
+            "output_place_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+            "process_s": 4.004902062,
+            "usage": {
+              "input_blocks": 0,
+              "involuntary_context_switches": 21,
+              "major_faults": 0,
+              "minor_faults": 22412,
+              "output_blocks": 0,
+              "system_s": 0.044055,
+              "user_s": 3.9608550000000005,
+              "voluntary_context_switches": 6
+            },
+            "wall_s": 4.010967674
+          },
+          {
+            "accepted_moves": 24,
+            "output_place_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+            "process_s": 4.17646136,
+            "usage": {
+              "input_blocks": 0,
+              "involuntary_context_switches": 23,
+              "major_faults": 0,
+              "minor_faults": 21663,
+              "output_blocks": 0,
+              "system_s": 0.07594399999999998,
+              "user_s": 4.100525000000001,
+              "voluntary_context_switches": 6
+            },
+            "wall_s": 4.19027732
+          },
+          {
+            "accepted_moves": 24,
+            "output_place_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+            "process_s": 4.206514206,
+            "usage": {
+              "input_blocks": 0,
+              "involuntary_context_switches": 22,
+              "major_faults": 0,
+              "minor_faults": 20900,
+              "output_blocks": 0,
+              "system_s": 0.05984500000000001,
+              "user_s": 4.146678000000001,
+              "voluntary_context_switches": 6
+            },
+            "wall_s": 4.212759439
+          },
+          {
+            "accepted_moves": 24,
+            "output_place_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+            "process_s": 4.100580264,
+            "usage": {
+              "input_blocks": 0,
+              "involuntary_context_switches": 23,
+              "major_faults": 0,
+              "minor_faults": 20396,
+              "output_blocks": 0,
+              "system_s": 0.03995399999999999,
+              "user_s": 4.060635999999999,
+              "voluntary_context_switches": 6
+            },
+            "wall_s": 4.105690167
+          },
+          {
+            "accepted_moves": 24,
+            "output_place_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+            "process_s": 3.94239658,
+            "usage": {
+              "input_blocks": 0,
+              "involuntary_context_switches": 21,
+              "major_faults": 0,
+              "minor_faults": 19892,
+              "output_blocks": 0,
+              "system_s": 0.05991599999999997,
+              "user_s": 3.8824889999999996,
+              "voluntary_context_switches": 6
+            },
+            "wall_s": 3.948093808
+          },
+          {
+            "accepted_moves": 24,
+            "output_place_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+            "process_s": 4.346796024,
+            "usage": {
+              "input_blocks": 0,
+              "involuntary_context_switches": 20,
+              "major_faults": 0,
+              "minor_faults": 19388,
+              "output_blocks": 0,
+              "system_s": 0.06389800000000001,
+              "user_s": 4.282907000000002,
+              "voluntary_context_switches": 6
+            },
+            "wall_s": 4.352179144
+          },
+          {
+            "accepted_moves": 24,
+            "output_place_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+            "process_s": 4.455162369,
+            "usage": {
+              "input_blocks": 0,
+              "involuntary_context_switches": 25,
+              "major_faults": 0,
+              "minor_faults": 18886,
+              "output_blocks": 0,
+              "system_s": 0.10388900000000001,
+              "user_s": 4.351285000000001,
+              "voluntary_context_switches": 6
+            },
+            "wall_s": 4.460603549
+          }
+        ],
+        "speedup": 0.9656283522542609,
+        "wall_s": {
+          "cv": 0.04014370400661391,
+          "max": 4.460603549,
+          "mean": 4.182938728714285,
+          "median": 4.19027732,
+          "median_absolute_deviation": 0.16190182400000008,
+          "min": 3.948093808,
+          "pstdev": 0.16791865420330818
+        }
+      },
+      {
+        "parallel_efficiency": 0.12324489517253738,
+        "pinned_cpus": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "proposal_workers": 8,
+        "samples": [
+          {
+            "accepted_moves": 24,
+            "output_place_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+            "process_s": 4.08666026,
+            "usage": {
+              "input_blocks": 0,
+              "involuntary_context_switches": 21,
+              "major_faults": 0,
+              "minor_faults": 21913,
+              "output_blocks": 0,
+              "system_s": 0.063957,
+              "user_s": 4.022718,
+              "voluntary_context_switches": 16
+            },
+            "wall_s": 4.098571117
+          },
+          {
+            "accepted_moves": 24,
+            "output_place_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+            "process_s": 4.125462747,
+            "usage": {
+              "input_blocks": 0,
+              "involuntary_context_switches": 29,
+              "major_faults": 0,
+              "minor_faults": 20655,
+              "output_blocks": 0,
+              "system_s": 0.07195600000000002,
+              "user_s": 4.053519999999999,
+              "voluntary_context_switches": 6
+            },
+            "wall_s": 4.12720281
+          },
+          {
+            "accepted_moves": 24,
+            "output_place_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+            "process_s": 4.206763287,
+            "usage": {
+              "input_blocks": 0,
+              "involuntary_context_switches": 27,
+              "major_faults": 0,
+              "minor_faults": 19136,
+              "output_blocks": 0,
+              "system_s": 0.04792400000000002,
+              "user_s": 4.1588470000000015,
+              "voluntary_context_switches": 6
+            },
+            "wall_s": 4.350468502
+          },
+          {
+            "accepted_moves": 24,
+            "output_place_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+            "process_s": 4.097975672,
+            "usage": {
+              "input_blocks": 0,
+              "involuntary_context_switches": 19,
+              "major_faults": 0,
+              "minor_faults": 17876,
+              "output_blocks": 0,
+              "system_s": 0.06394699999999998,
+              "user_s": 4.034037999999999,
+              "voluntary_context_switches": 6
+            },
+            "wall_s": 4.103872394
+          },
+          {
+            "accepted_moves": 24,
+            "output_place_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+            "process_s": 4.054588594,
+            "usage": {
+              "input_blocks": 0,
+              "involuntary_context_switches": 28,
+              "major_faults": 0,
+              "minor_faults": 16869,
+              "output_blocks": 0,
+              "system_s": 0.020000000000000018,
+              "user_s": 4.034596999999998,
+              "voluntary_context_switches": 6
+            },
+            "wall_s": 4.056539732
+          },
+          {
+            "accepted_moves": 24,
+            "output_place_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+            "process_s": 5.841806746,
+            "usage": {
+              "input_blocks": 0,
+              "involuntary_context_switches": 28,
+              "major_faults": 0,
+              "minor_faults": 15860,
+              "output_blocks": 0,
+              "system_s": 0.047968999999999984,
+              "user_s": 5.793849999999999,
+              "voluntary_context_switches": 6
+            },
+            "wall_s": 5.85063053
+          },
+          {
+            "accepted_moves": 24,
+            "output_place_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+            "process_s": 4.03454956,
+            "usage": {
+              "input_blocks": 0,
+              "involuntary_context_switches": 24,
+              "major_faults": 0,
+              "minor_faults": 14098,
+              "output_blocks": 0,
+              "system_s": 0.02399499999999999,
+              "user_s": 4.010569999999998,
+              "voluntary_context_switches": 6
+            },
+            "wall_s": 4.036260347
+          }
+        ],
+        "speedup": 0.985959161380299,
+        "wall_s": {
+          "cv": 0.13945861244543215,
+          "max": 5.85063053,
+          "mean": 4.3747922045714285,
+          "median": 4.103872394,
+          "median_absolute_deviation": 0.04733266199999964,
+          "min": 4.036260347,
+          "pstdev": 0.6101024505866245
+        }
+      }
+    ],
+    "protocol": {
+      "cache_state": "one warmup per case; measured runs are warm-cache",
+      "critical_distance_guard_q": 60000,
+      "included": "contract load, optimization, placement write, legality validation, and JSON report write",
+      "measured_repetitions": 7,
+      "page_size": [
+        2,
+        2
+      ],
+      "proposal_workers": 1,
+      "timing_model": "connection_star",
+      "warmups": 1
+    },
+    "root_cause": "persistent workers avoid per-pass fork, but Python snapshot serialization, process IPC, and memory traffic dominate these problem sizes"
+  },
+  "date": "2026-08-31",
+  "determinism": {
+    "all_exact": true,
+    "case_count": 4,
+    "cases": [
+      {
+        "case": "diffeq",
+        "serial_output_place_sha256": "65c65279d64c55234103977d25bd99cd583b716142377478179d5a23c774174d",
+        "workers": [
+          {
+            "backend": "linux_fork_process_pool",
+            "exact_match": true,
+            "proposal_workers": 2
+          },
+          {
+            "backend": "linux_fork_process_pool",
+            "exact_match": true,
+            "proposal_workers": 4
+          },
+          {
+            "backend": "linux_fork_process_pool",
+            "exact_match": true,
+            "proposal_workers": 8
+          }
+        ]
+      },
+      {
+        "case": "frisc",
+        "serial_output_place_sha256": "7b18f16c638ee81e82869fe335193d1e794e145d320c2fca1821040d242f4e31",
+        "workers": [
+          {
+            "backend": "linux_fork_process_pool",
+            "exact_match": true,
+            "proposal_workers": 2
+          },
+          {
+            "backend": "linux_fork_process_pool",
+            "exact_match": true,
+            "proposal_workers": 4
+          },
+          {
+            "backend": "linux_fork_process_pool",
+            "exact_match": true,
+            "proposal_workers": 8
+          }
+        ]
+      },
+      {
+        "case": "elliptic",
+        "serial_output_place_sha256": "d50c38d2a200a8e901e58a1305c4a69d573e812708e5089a78156a5a4c2341b9",
+        "workers": [
+          {
+            "backend": "linux_fork_process_pool",
+            "exact_match": true,
+            "proposal_workers": 2
+          },
+          {
+            "backend": "linux_fork_process_pool",
+            "exact_match": true,
+            "proposal_workers": 4
+          },
+          {
+            "backend": "linux_fork_process_pool",
+            "exact_match": true,
+            "proposal_workers": 8
+          }
+        ]
+      },
+      {
+        "case": "clma",
+        "serial_output_place_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+        "workers": [
+          {
+            "backend": "linux_fork_process_pool",
+            "exact_match": true,
+            "proposal_workers": 2
+          },
+          {
+            "backend": "linux_fork_process_pool",
+            "exact_match": true,
+            "proposal_workers": 4
+          },
+          {
+            "backend": "linux_fork_process_pool",
+            "exact_match": true,
+            "proposal_workers": 8
+          }
+        ]
+      }
+    ],
+    "worker_counts": [
+      1,
+      2,
+      4,
+      8
+    ]
+  },
+  "schema": "TILEPLACE_PARALLEL_PROPOSAL_MATRIX_V1",
+  "status": "pass"
+}

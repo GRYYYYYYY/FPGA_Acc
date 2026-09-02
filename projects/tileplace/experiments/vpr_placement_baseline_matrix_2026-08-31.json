@@ -1,0 +1,333 @@
+{
+  "aggregate": {
+    "analytic_vs_conventional": {
+      "cases": 6,
+      "cpd_geomean_delta_pct": 16.10297737090032,
+      "cpd_nonregressing_cases": 0,
+      "cpd_worst_delta_pct": 57.473647943678266,
+      "wirelength_geomean_delta_pct": 3.7106235427921908,
+      "wirelength_improved_cases": 0,
+      "wirelength_worst_delta_pct": 11.727859035937517
+    },
+    "tileplace_vs_conventional": {
+      "cases": 6,
+      "cpd_geomean_delta_pct": -0.2996039941130846,
+      "cpd_nonregressing_cases": 5,
+      "cpd_worst_delta_pct": 0.016926824601304347,
+      "wirelength_geomean_delta_pct": -0.07096344952239875,
+      "wirelength_improved_cases": 3,
+      "wirelength_worst_delta_pct": 0.43909400270774057
+    }
+  },
+  "cases": [
+    {
+      "analytic": {
+        "cpd_delta_pct": 9.334620672093896,
+        "cpd_ns": 7.21345,
+        "moved_from_reference": 201,
+        "place_sha256": "c08348e6fcd3f919213c34e406141bce05dd99bca6a8a78196786dc8f80742a7",
+        "placement_stage_s": 0.67,
+        "route_sha256": "7648b566a979facf02647ed501f5d6ed2e60e162e61cc620771e18984a72d4ee",
+        "routing_iterations": 13,
+        "vpr_entire_flow_s": 2.11,
+        "wall_s": 2.124932885169983,
+        "wirelength": 9185,
+        "wirelength_delta_pct": 0.9008019334285411
+      },
+      "case": "diffeq",
+      "cohort": "development",
+      "conventional": {
+        "cpd_ns": 6.59759,
+        "moved_from_reference": 0,
+        "place_sha256": "eaa4d4d32c9afaeb95520e1179303d707109d3a2d16471249ecc83a3df1f156b",
+        "placement_stage_s": 3.43,
+        "route_sha256": "8a7f461e6d4af7a26ff539472573d363bc8beb74bf8f967cd273e56755523bc0",
+        "routing_iterations": 13,
+        "vpr_entire_flow_s": 5.26,
+        "wall_s": 5.276981744915247,
+        "wirelength": 9103
+      },
+      "same_packed_netlist": true,
+      "same_router": true,
+      "tileplace": {
+        "cpd_delta_pct": 0.0,
+        "cpd_ns": 6.59759,
+        "moved_from_reference": 12,
+        "place_sha256": "65c65279d64c55234103977d25bd99cd583b716142377478179d5a23c774174d",
+        "routing_iterations": 13,
+        "wirelength": 9031,
+        "wirelength_delta_pct": -0.790948039107986
+      }
+    },
+    {
+      "analytic": {
+        "cpd_delta_pct": 5.933955946099112,
+        "cpd_ns": 14.3942,
+        "moved_from_reference": 383,
+        "place_sha256": "b5afbfaa538ec6828c6893642155c67f80efbb6b7e8b2c3471e8f6cc95f9b793",
+        "placement_stage_s": 4.87,
+        "route_sha256": "638fabd8eb404383fa8e039188193349022d90bd26435f08f80210753d79ee9b",
+        "routing_iterations": 13,
+        "vpr_entire_flow_s": 7.84,
+        "wall_s": 7.850710136815906,
+        "wirelength": 33763,
+        "wirelength_delta_pct": 1.7509493098667894
+      },
+      "case": "frisc",
+      "cohort": "development",
+      "conventional": {
+        "cpd_ns": 13.5879,
+        "moved_from_reference": 0,
+        "place_sha256": "405e9a613c0014d0ecc0209ffe3d81a8ab715b7be0b6405056537f5a4154dd4b",
+        "placement_stage_s": 2.21,
+        "route_sha256": "7685f3692b89cb51646dd18d0b2a7c3d925294a3a91c67d90e89ebf69f9cdd63",
+        "routing_iterations": 12,
+        "vpr_entire_flow_s": 5.29,
+        "wall_s": 5.309459691867232,
+        "wirelength": 33182
+      },
+      "same_packed_netlist": true,
+      "same_router": true,
+      "tileplace": {
+        "cpd_delta_pct": 0.016926824601304347,
+        "cpd_ns": 13.5902,
+        "moved_from_reference": 74,
+        "place_sha256": "7b18f16c638ee81e82869fe335193d1e794e145d320c2fca1821040d242f4e31",
+        "routing_iterations": 13,
+        "wirelength": 33173,
+        "wirelength_delta_pct": -0.02712313905128827
+      }
+    },
+    {
+      "analytic": {
+        "cpd_delta_pct": 11.277270188839793,
+        "cpd_ns": 9.78362,
+        "moved_from_reference": 482,
+        "place_sha256": "6ea170501512222a0ced5b971ef37cc054f86a6b90a423afa32b7edbca13e3d7",
+        "placement_stage_s": 2.28,
+        "route_sha256": "5f602652ef69f519de814451d423ea177ba563d2d2d83a1c282ad9e12f275e6b",
+        "routing_iterations": 14,
+        "vpr_entire_flow_s": 5.35,
+        "wall_s": 5.361360762268305,
+        "wirelength": 27795,
+        "wirelength_delta_pct": 1.7051483771817422
+      },
+      "case": "elliptic",
+      "cohort": "development",
+      "conventional": {
+        "cpd_ns": 8.79211,
+        "moved_from_reference": 0,
+        "place_sha256": "baa98e23a636f332aa2f7ee2cc4fc59c5ca714499ae90b17ed8a2f8c43948334",
+        "placement_stage_s": 2.08,
+        "route_sha256": "c98388bab9a3ed1b7eb7dd60ab9769760ee7b9f2d4401ed059a9b4673e72bffd",
+        "routing_iterations": 12,
+        "vpr_entire_flow_s": 5.58,
+        "wall_s": 5.596107663586736,
+        "wirelength": 27329
+      },
+      "same_packed_netlist": true,
+      "same_router": true,
+      "tileplace": {
+        "cpd_delta_pct": 0.0,
+        "cpd_ns": 8.79211,
+        "moved_from_reference": 27,
+        "place_sha256": "d50c38d2a200a8e901e58a1305c4a69d573e812708e5089a78156a5a4c2341b9",
+        "routing_iterations": 13,
+        "wirelength": 27449,
+        "wirelength_delta_pct": 0.43909400270774057
+      }
+    },
+    {
+      "analytic": {
+        "cpd_delta_pct": 15.008097584507784,
+        "cpd_ns": 13.3506,
+        "moved_from_reference": 719,
+        "place_sha256": "81d680f692d188cc02855b43d3499682729328f8231a1e1e829cd6cb2c6c33fd",
+        "placement_stage_s": 13.15,
+        "route_sha256": "7802ecd5daf9884afe64dfaf4cbac6fd4485c0341a85eda26b9d348edec7b133",
+        "routing_iterations": 14,
+        "vpr_entire_flow_s": 22.03,
+        "wall_s": 22.06030254624784,
+        "wirelength": 80772,
+        "wirelength_delta_pct": 1.1457981141290041
+      },
+      "case": "clma",
+      "cohort": "development",
+      "conventional": {
+        "cpd_ns": 11.6084,
+        "moved_from_reference": 0,
+        "place_sha256": "19450c8e7bdd365ac903da1541d114eaf9c968c3e67f57b7d63af0d0f5e30c91",
+        "placement_stage_s": 9.11,
+        "route_sha256": "57a7c3d6416b8a0d84c27abe4aff13491350066e29a9569fec4daaf30ace2fa8",
+        "routing_iterations": 15,
+        "vpr_entire_flow_s": 19.61,
+        "wall_s": 19.634077731519938,
+        "wirelength": 79857
+      },
+      "same_packed_netlist": true,
+      "same_router": true,
+      "tileplace": {
+        "cpd_delta_pct": -0.10509630956893057,
+        "cpd_ns": 11.5962,
+        "moved_from_reference": 24,
+        "place_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+        "routing_iterations": 15,
+        "wirelength": 79676,
+        "wirelength_delta_pct": -0.2266551460736066
+      }
+    },
+    {
+      "analytic": {
+        "cpd_delta_pct": 57.473647943678266,
+        "cpd_ns": 9.6897,
+        "moved_from_reference": 1000,
+        "place_sha256": "a2058b42d77502025530023ebdcadd55782611ceca67a05b3abb97b1d53aa7cc",
+        "placement_stage_s": 17.05,
+        "route_sha256": "15f4d5055b2308036722ddb254379a901aca914b6ca91e2eb91eed760d890fb3",
+        "routing_iterations": 13,
+        "vpr_entire_flow_s": 72.08,
+        "wall_s": 72.18993400223553,
+        "wirelength": 247037,
+        "wirelength_delta_pct": 11.727859035937517
+      },
+      "case": "spmv",
+      "cohort": "post_freeze_validation",
+      "conventional": {
+        "cpd_ns": 6.15322,
+        "moved_from_reference": 0,
+        "place_sha256": "b0fc413e474f233e1a530c02fe7010e14bf74ef12464811cd1e5397dd1cbcc09",
+        "placement_stage_s": 13.96,
+        "route_sha256": "ba4cb02c1e562e82eba592622867654417271263c1141b4a6165a8db4ddee979",
+        "routing_iterations": 13,
+        "vpr_entire_flow_s": 76.68,
+        "wall_s": 76.74962101131678,
+        "wirelength": 221106
+      },
+      "same_packed_netlist": true,
+      "same_router": true,
+      "tileplace": {
+        "cpd_delta_pct": 0.0,
+        "cpd_ns": 6.15322,
+        "moved_from_reference": 76,
+        "place_sha256": "8e97f13bf5e6bafe8ee4f432cc85a5b4a497e571b411f92780a5ec3d89907932",
+        "routing_iterations": 13,
+        "wirelength": 221112,
+        "wirelength_delta_pct": 0.0027136305663422178
+      }
+    },
+    {
+      "analytic": {
+        "cpd_delta_pct": 4.935993340913658,
+        "cpd_ns": 9.64409,
+        "moved_from_reference": 1091,
+        "place_sha256": "655dbff62d9d0d75e909228fa0c7f277b50361bc00441ffd9dc9e18dd983bad3",
+        "placement_stage_s": 11.41,
+        "route_sha256": "1b1468aaa457a4af560f970cbe8e069c0267af9d5e05498c4962d93a3f7332c9",
+        "routing_iterations": 17,
+        "vpr_entire_flow_s": 46.84,
+        "wall_s": 46.896328357979655,
+        "wirelength": 134198,
+        "wirelength_delta_pct": 5.451830897375443
+      },
+      "case": "softmax",
+      "cohort": "post_freeze_validation",
+      "conventional": {
+        "cpd_ns": 9.19045,
+        "moved_from_reference": 0,
+        "place_sha256": "16d4bcd9ec31dd774cabed9607e9e7d7460c8cd4f038d288d2feb1cffc892a7d",
+        "placement_stage_s": 17.06,
+        "route_sha256": "1e8a4372b758e0c0318c0845748f028bcb7234657989afb4debed216d393a183",
+        "routing_iterations": 18,
+        "vpr_entire_flow_s": 41.46,
+        "wall_s": 41.51687427610159,
+        "wirelength": 127260
+      },
+      "same_packed_netlist": true,
+      "same_router": true,
+      "tileplace": {
+        "cpd_delta_pct": -1.697522972215726,
+        "cpd_ns": 9.03444,
+        "moved_from_reference": 25,
+        "place_sha256": "0907b1bd6be272ba147b23312e5a96ca8a0dc4837e66173813daf6a0dfe53a66",
+        "routing_iterations": 17,
+        "wirelength": 127491,
+        "wirelength_delta_pct": 0.18151815181517428
+      }
+    }
+  ],
+  "claim_boundary": "All values are CPU VPR placement/route/analysis or deterministic CPU TilePlace refinement results, not FPGA hardware performance. Placement and entire-flow times are single-run audit metadata, not a runtime benchmark. VPR cluster-level AP is an official experimental wirelength-oriented path and is reported even where routed QoR regresses.",
+  "inputs": {
+    "build_provenance": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/vpr_eigen_build_2026-08-31.json",
+      "sha256": "054251757b758cf3be0be24d639c8de3ff4cc578e7bd4ad7c493b359edc1d179"
+    },
+    "case_config": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/vpr_placement_baseline_cases_2026-08-31.json",
+      "sha256": "548f5fb36296f66b3e9bc0cd23a5ec95d3874df1b264b7f2bd43cde073c60802"
+    },
+    "reports": {
+      "clma_analytic": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/vpr_placement_baselines_2026-08-31/clma_analytic.json",
+        "sha256": "bb2fc23621e9cff28c247bd14e45f98e4fe5740c8e78b417bc34442d3c024261"
+      },
+      "clma_conventional": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/vpr_placement_baselines_2026-08-31/clma_conventional.json",
+        "sha256": "f720bd197e9258e2898c81e69c16dfa0d48368f327ac44d918491625202c0623"
+      },
+      "diffeq_analytic": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/vpr_placement_baselines_2026-08-31/diffeq_analytic.json",
+        "sha256": "f6ebf698dce813e61b3941d64d988786e2e624e84a06e1caf32c6daa54a77f20"
+      },
+      "diffeq_conventional": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/vpr_placement_baselines_2026-08-31/diffeq_conventional.json",
+        "sha256": "b3538e955b5cd6583b5d9d613a3269366b863fd39c174455ff1692709bba354b"
+      },
+      "elliptic_analytic": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/vpr_placement_baselines_2026-08-31/elliptic_analytic.json",
+        "sha256": "2e20a420c8bc4afab7d662f435901cfe43a1902f74c434bbefedd7c2c9afceff"
+      },
+      "elliptic_conventional": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/vpr_placement_baselines_2026-08-31/elliptic_conventional.json",
+        "sha256": "3cee142233c35091cae094cc0db37fe24ebd883b639e54e6614c979d024f2e80"
+      },
+      "frisc_analytic": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/vpr_placement_baselines_2026-08-31/frisc_analytic.json",
+        "sha256": "2718ca3a283f97b8047a15c6d68a18ce9e14aa2462fbea5b510a3202ffdff259"
+      },
+      "frisc_conventional": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/vpr_placement_baselines_2026-08-31/frisc_conventional.json",
+        "sha256": "b549274cea7dab53deabb01ac53265b2634844d6864d5c815c8b0e66b29e8892"
+      },
+      "softmax_analytic": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/vpr_placement_baselines_2026-08-31/softmax_analytic.json",
+        "sha256": "a65e4d152937e287d980fcacc3a1ee3341225843a45d1f6318107ef9ff75d575"
+      },
+      "softmax_conventional": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/vpr_placement_baselines_2026-08-31/softmax_conventional.json",
+        "sha256": "9ea2fd9acd535aba60e00dbed2469e74a796a99b88d628788d588b97dacf974c"
+      },
+      "spmv_analytic": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/vpr_placement_baselines_2026-08-31/spmv_analytic.json",
+        "sha256": "c9fa30623abb934d7c62c158a785df26efbc13600ebacb5f5f82623afdaa3ed7"
+      },
+      "spmv_conventional": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/vpr_placement_baselines_2026-08-31/spmv_conventional.json",
+        "sha256": "377542da3319210a4ca37669be1fea87900458a9dd34bdcef0ef3acc7225073d"
+      }
+    },
+    "tileplace_matrix": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/timing_multicase_matrix_2026-08-31.json",
+      "sha256": "9f767bc458856c5ffaea5aeae91b5b3970672ba27e0204393ab77e004fa5b33a"
+    },
+    "vpr_revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+    "vpr_sha256": "dd7d30f7faf133fa2ee2196a0b307aa2784e60398a7356d209364a39a16b6508"
+  },
+  "methodology": {
+    "analytic": "VPR cluster-level --enable_analytic_placer true plus quench; not integrated --analytical_place",
+    "comparison": "same packed netlist, architecture, atom netlist, seed, channel width, VPR revision/binary, single-worker router and analysis",
+    "conventional": "VPR timing-driven simulated annealing plus quench",
+    "tileplace": "frozen deterministic post-placement 2x2-page refinement of the conventional placement"
+  },
+  "schema": "TILEPLACE_VPR_PLACEMENT_BASELINE_MATRIX_V1",
+  "status": "pass"
+}

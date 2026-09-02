@@ -1,0 +1,78 @@
+{
+  "accepted_moves": 17,
+  "blocks": 1076,
+  "candidate_limit": 64,
+  "claim_boundary": "Internal HPWL is a research objective; VPR-native routed WL/CPD is required for QoR claims.",
+  "conflict_protocol": "snapshot proposals; disjoint old/new site write-set and touched-net set; deterministic delta/color/unit commit",
+  "final_objective": 32362240,
+  "final_timing_hpwl_q": 0,
+  "final_wire_hpwl": 126415,
+  "initial_objective": 32478464,
+  "initial_timing_hpwl_q": 0,
+  "initial_wire_hpwl": 126869,
+  "input_place_sha256": "0836288b21a838aa8bdb35bee602138122a33144799245cf98d0ece8b4f7e951",
+  "legal": true,
+  "macro_units": 43,
+  "nets_with_multiple_blocks": 12736,
+  "output_place_sha256": "8443d388395cf07a5ab96925abb9cb76a834a9283e4fad248794b219b20e0e96",
+  "page_colors": 4,
+  "page_height": 4,
+  "page_width": 4,
+  "pages": 196,
+  "passes": [
+    {
+      "accepted": 7,
+      "objective": 32459776,
+      "pass": 0,
+      "proposals": 241
+    },
+    {
+      "accepted": 3,
+      "objective": 32443904,
+      "pass": 1,
+      "proposals": 232
+    },
+    {
+      "accepted": 2,
+      "objective": 32428288,
+      "pass": 2,
+      "proposals": 232
+    },
+    {
+      "accepted": 1,
+      "objective": 32414208,
+      "pass": 3,
+      "proposals": 232
+    },
+    {
+      "accepted": 1,
+      "objective": 32400384,
+      "pass": 4,
+      "proposals": 234
+    },
+    {
+      "accepted": 1,
+      "objective": 32387328,
+      "pass": 5,
+      "proposals": 237
+    },
+    {
+      "accepted": 1,
+      "objective": 32374528,
+      "pass": 6,
+      "proposals": 236
+    },
+    {
+      "accepted": 1,
+      "objective": 32362240,
+      "pass": 7,
+      "proposals": 235
+    }
+  ],
+  "rejected_conflicts": 1862,
+  "schema": "TILEPLACE_PAGE_INCREMENTAL_CPU_V1",
+  "status": "pass",
+  "timing_weight": 1,
+  "units": 1033,
+  "wire_weight": 256
+}

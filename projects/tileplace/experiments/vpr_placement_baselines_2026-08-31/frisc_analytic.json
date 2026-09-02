@@ -1,0 +1,140 @@
+{
+  "case": "frisc",
+  "channel_width": 200,
+  "command": [
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr_eigen/vpr/vpr",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/frisc.blif",
+    "--net_file",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/vpr_placement_baseline_frisc_analytic_2026-08-31/vpr_input.net",
+    "--place_file",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/vpr_placement_baseline_frisc_analytic_2026-08-31/vpr_output.place",
+    "--route_file",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/vpr_placement_baseline_frisc_analytic_2026-08-31/vpr_output.route",
+    "--seed",
+    "1",
+    "--num_workers",
+    "1",
+    "--route_chan_width",
+    "200",
+    "--echo_file",
+    "on",
+    "--enable_analytic_placer",
+    "true",
+    "--place",
+    "--route",
+    "--analysis"
+  ],
+  "cpd_ns": 14.3942,
+  "inputs": {
+    "architecture": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+      "sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179"
+    },
+    "circuit": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/frisc.blif",
+      "sha256": "0bccb5b0c7377a93d8daf64c3fb37ff0a4bccd6027ab199f214abe63c5aec01f"
+    },
+    "contract": {
+      "manifest_sha256": "22d025b2b265aa465d05496abc9c623c6b1401216ed09181555f37674ec8a6b4",
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/frisc_seed1_cw200_endpoints"
+    },
+    "packed_netlist": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/frisc_seed1_cw200/frisc.net",
+      "sha256": "f6e2659582a94630fce6a7c7ad64e1e21bd330ebdb2f00149cba469568155f8f"
+    },
+    "reference_place": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/frisc_seed1_cw200/frisc.place",
+      "sha256": "f49ddcf4220e4f4c56e29806ce13edaa1020d9c0d43899ab2f375c693c5ce3e3"
+    },
+    "vpr": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr_eigen/vpr/vpr",
+      "sha256": "dd7d30f7faf133fa2ee2196a0b307aa2784e60398a7356d209364a39a16b6508"
+    }
+  },
+  "integrated_analytical_place": false,
+  "legal": true,
+  "max_rss_mib": 82.9,
+  "method": "vpr_cluster_level_analytic_plus_quench",
+  "mode": "analytic",
+  "num_workers": 1,
+  "outputs": {
+    "native_macros": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/vpr_placement_baseline_frisc_analytic_2026-08-31/place_macros.echo",
+      "sha256": "0efcfecb18fd7b26f5fff38f8e7afb45d3da42b7febc428ec4b045c63b7c93ee"
+    },
+    "packed_netlist_copy": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/vpr_placement_baseline_frisc_analytic_2026-08-31/vpr_input.net",
+      "sha256": "f6e2659582a94630fce6a7c7ad64e1e21bd330ebdb2f00149cba469568155f8f"
+    },
+    "place": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/vpr_placement_baseline_frisc_analytic_2026-08-31/vpr_output.place",
+      "sha256": "b5afbfaa538ec6828c6893642155c67f80efbb6b7e8b2c3471e8f6cc95f9b793"
+    },
+    "post_routing_netlist": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/vpr_placement_baseline_frisc_analytic_2026-08-31/vpr_input.net.post_routing",
+      "sha256": "6921b4e0a912511a10d60915e19cb830118d75fba90e1ca357e26f7deb88197f"
+    },
+    "route": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/vpr_placement_baseline_frisc_analytic_2026-08-31/vpr_output.route",
+      "sha256": "638fabd8eb404383fa8e039188193349022d90bd26435f08f80210753d79ee9b"
+    },
+    "stderr": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/vpr_placement_baseline_frisc_analytic_2026-08-31/vpr.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/vpr_placement_baseline_frisc_analytic_2026-08-31/vpr.stdout.log",
+      "sha256": "b115851846a6fef3b3529cb4f1d61c8bf4a9b29af6a8f1276bbefea2f59d34ad"
+    }
+  },
+  "placement": {
+    "blocks": 385,
+    "moved_from_reference": 383
+  },
+  "placement_validation": {
+    "blocks": 385,
+    "legal": true,
+    "macros": 0,
+    "occupied_sites": 385,
+    "placement_sha256": "b5afbfaa538ec6828c6893642155c67f80efbb6b7e8b2c3471e8f6cc95f9b793",
+    "schema": "TILEPLACE_CPU_GOLDEN_V1"
+  },
+  "reference_validation": {
+    "blocks": 385,
+    "legal": true,
+    "macros": 0,
+    "occupied_sites": 385,
+    "placement_sha256": "f49ddcf4220e4f4c56e29806ce13edaa1020d9c0d43899ab2f375c693c5ce3e3",
+    "schema": "TILEPLACE_CPU_GOLDEN_V1"
+  },
+  "returncode": 0,
+  "routing_iterations": 13,
+  "same_packed_netlist": true,
+  "schema": "TILEPLACE_VPR_PLACEMENT_BASELINE_V1",
+  "seed": 1,
+  "stage_times_s": {
+    "analytic_placement": 3.71,
+    "initial_placement": 0.0,
+    "placement": 4.87,
+    "placement_quench": 0.02,
+    "routing": 0.45,
+    "timing_analysis": 0.365755,
+    "vpr_entire_flow": 7.84
+  },
+  "status": "pass",
+  "tool_validation": {
+    "analytic_enabled": true,
+    "analytic_execution_markers": {
+      "start": true,
+      "timer": true
+    },
+    "analytic_option_available": true,
+    "expected_vpr_revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+    "expected_vpr_sha256": "dd7d30f7faf133fa2ee2196a0b307aa2784e60398a7356d209364a39a16b6508",
+    "vpr_revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+    "vpr_version": "9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07"
+  },
+  "wall_s": 7.850710136815906,
+  "wirelength": 33763
+}

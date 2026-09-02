@@ -1,0 +1,140 @@
+{
+  "case": "elliptic",
+  "channel_width": 200,
+  "command": [
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr_eigen/vpr/vpr",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/elliptic.blif",
+    "--net_file",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/vpr_placement_baseline_elliptic_conventional_2026-08-31/vpr_input.net",
+    "--place_file",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/vpr_placement_baseline_elliptic_conventional_2026-08-31/vpr_output.place",
+    "--route_file",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/vpr_placement_baseline_elliptic_conventional_2026-08-31/vpr_output.route",
+    "--seed",
+    "1",
+    "--num_workers",
+    "1",
+    "--route_chan_width",
+    "200",
+    "--echo_file",
+    "on",
+    "--enable_analytic_placer",
+    "false",
+    "--place",
+    "--route",
+    "--analysis"
+  ],
+  "cpd_ns": 8.79211,
+  "inputs": {
+    "architecture": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+      "sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179"
+    },
+    "circuit": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/elliptic.blif",
+      "sha256": "5cc3a708720002c0e114c36312721ac7dd3b85ae2fd05f311d780fc11212b175"
+    },
+    "contract": {
+      "manifest_sha256": "dd99617cc770df9bcfc7fb4015f3bbf43373531934e1f69f78ecda6610399372",
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/elliptic_seed1_cw200_endpoints"
+    },
+    "packed_netlist": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/elliptic_seed1_cw200/elliptic.net",
+      "sha256": "7c6c18d9aa24edec1b6fd2ce682fe962a3078c7bc6b7b8088ada1fedc8b023ed"
+    },
+    "reference_place": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/elliptic_seed1_cw200/elliptic.place",
+      "sha256": "73dbe85481fdf89ae689de5031f418bbf9c21d0fbc8fd2ac91fe3eaa6dc63193"
+    },
+    "vpr": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr_eigen/vpr/vpr",
+      "sha256": "dd7d30f7faf133fa2ee2196a0b307aa2784e60398a7356d209364a39a16b6508"
+    }
+  },
+  "integrated_analytical_place": false,
+  "legal": true,
+  "max_rss_mib": 83.4,
+  "method": "vpr_simulated_annealing",
+  "mode": "conventional",
+  "num_workers": 1,
+  "outputs": {
+    "native_macros": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/vpr_placement_baseline_elliptic_conventional_2026-08-31/place_macros.echo",
+      "sha256": "0efcfecb18fd7b26f5fff38f8e7afb45d3da42b7febc428ec4b045c63b7c93ee"
+    },
+    "packed_netlist_copy": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/vpr_placement_baseline_elliptic_conventional_2026-08-31/vpr_input.net",
+      "sha256": "7c6c18d9aa24edec1b6fd2ce682fe962a3078c7bc6b7b8088ada1fedc8b023ed"
+    },
+    "place": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/vpr_placement_baseline_elliptic_conventional_2026-08-31/vpr_output.place",
+      "sha256": "baa98e23a636f332aa2f7ee2cc4fc59c5ca714499ae90b17ed8a2f8c43948334"
+    },
+    "post_routing_netlist": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/vpr_placement_baseline_elliptic_conventional_2026-08-31/vpr_input.net.post_routing",
+      "sha256": "9a494df5f8edc312b75c55b9f6feb4383a727f319f292181e821a7a6fed45417"
+    },
+    "route": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/vpr_placement_baseline_elliptic_conventional_2026-08-31/vpr_output.route",
+      "sha256": "c98388bab9a3ed1b7eb7dd60ab9769760ee7b9f2d4401ed059a9b4673e72bffd"
+    },
+    "stderr": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/vpr_placement_baseline_elliptic_conventional_2026-08-31/vpr.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/vpr_placement_baseline_elliptic_conventional_2026-08-31/vpr.stdout.log",
+      "sha256": "76def5f32c3e4e7989b86fc4604bcd2492dd411f01cc8d1d151391f6e23c7e7d"
+    }
+  },
+  "placement": {
+    "blocks": 484,
+    "moved_from_reference": 0
+  },
+  "placement_validation": {
+    "blocks": 484,
+    "legal": true,
+    "macros": 0,
+    "occupied_sites": 484,
+    "placement_sha256": "baa98e23a636f332aa2f7ee2cc4fc59c5ca714499ae90b17ed8a2f8c43948334",
+    "schema": "TILEPLACE_CPU_GOLDEN_V1"
+  },
+  "reference_validation": {
+    "blocks": 484,
+    "legal": true,
+    "macros": 0,
+    "occupied_sites": 484,
+    "placement_sha256": "73dbe85481fdf89ae689de5031f418bbf9c21d0fbc8fd2ac91fe3eaa6dc63193",
+    "schema": "TILEPLACE_CPU_GOLDEN_V1"
+  },
+  "returncode": 0,
+  "routing_iterations": 12,
+  "same_packed_netlist": true,
+  "schema": "TILEPLACE_VPR_PLACEMENT_BASELINE_V1",
+  "seed": 1,
+  "stage_times_s": {
+    "analytic_placement": null,
+    "initial_placement": 0.0,
+    "placement": 2.08,
+    "placement_quench": 0.02,
+    "routing": 0.36,
+    "timing_analysis": 0.568578,
+    "vpr_entire_flow": 5.58
+  },
+  "status": "pass",
+  "tool_validation": {
+    "analytic_enabled": false,
+    "analytic_execution_markers": {
+      "start": false,
+      "timer": false
+    },
+    "analytic_option_available": true,
+    "expected_vpr_revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+    "expected_vpr_sha256": "dd7d30f7faf133fa2ee2196a0b307aa2784e60398a7356d209364a39a16b6508",
+    "vpr_revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+    "vpr_version": "9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07"
+  },
+  "wall_s": 5.596107663586736,
+  "wirelength": 27329
+}

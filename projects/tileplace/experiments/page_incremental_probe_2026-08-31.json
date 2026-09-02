@@ -1,0 +1,120 @@
+{
+  "algorithm": {
+    "candidate_scope": "source page plus eight neighboring pages",
+    "conflict_protocol": "snapshot proposals; disjoint old/new site write-set and touched-net set; deterministic delta/color/unit commit",
+    "incremental_cost": "exact HPWL recomputation for touched nets",
+    "macro_protocol": "all macro members move as one proposal and one site/net transaction",
+    "page_colors": 4,
+    "page_size": [
+      4,
+      4
+    ],
+    "timing_cost": "per-connection criticality-weighted source/sink Manhattan distance",
+    "timing_guard": "input-relative distance cap for connections with criticality_q >= 60000"
+  },
+  "cases": [
+    {
+      "accepted_moves": 1,
+      "baseline": {
+        "cpd_ns": 3.02421,
+        "wirelength": 11415
+      },
+      "candidate": {
+        "cpd_delta_pct": 0.0,
+        "cpd_ns": 3.02421,
+        "wirelength": 11416,
+        "wirelength_delta_pct": 0.008760402978547077
+      },
+      "case": "bigkey_tight_seed3_cw300",
+      "decision": "reject_routed_wirelength_regression",
+      "external_constraints": true,
+      "internal_hpwl": [
+        6268,
+        6266
+      ],
+      "macro_units": 0,
+      "pages": 16,
+      "rejected_conflicts": 0
+    },
+    {
+      "accepted_moves": 13,
+      "baseline": {
+        "cpd_ns": 6.59759,
+        "routing_iterations": 13,
+        "wirelength": 9103
+      },
+      "candidate": {
+        "cpd_delta_pct": 0.0,
+        "cpd_ns": 6.59759,
+        "routing_iterations": 13,
+        "wirelength": 9031,
+        "wirelength_delta_pct": -0.790948039107986
+      },
+      "case": "diffeq_seed1_cw200",
+      "decision": "retain_timing_guard_candidate",
+      "external_constraints": false,
+      "internal_hpwl": [
+        4325,
+        4323
+      ],
+      "internal_timing_hpwl_q": [
+        285981775,
+        282711594
+      ],
+      "macro_units": 0,
+      "pages": 16,
+      "rejected_conflicts": 11,
+      "timing_refinement": {
+        "endpoint_mapping": {
+          "connections": 1973,
+          "mapped_sinks": 1973,
+          "mapped_sources": 1973,
+          "timed_connections": 1973,
+          "timed_fully_mapped": 1973
+        },
+        "guard": {
+          "critical_distance_slack": 0,
+          "criticality_q": 60000,
+          "guarded_connections": 90,
+          "guarded_connections_increased": 0
+        },
+        "model": "criticality-weighted source/sink Manhattan distance",
+        "native_ablation": {
+          "connection_star_guard_cpd_ns": 6.59759,
+          "connection_star_no_guard_cpd_ns": 6.65337,
+          "net_hpwl_cpd_ns": 6.65669
+        }
+      }
+    },
+    {
+      "accepted_moves": 17,
+      "baseline": {
+        "cpd_ns": 5.12784,
+        "routing_iterations": 14,
+        "wirelength": 232357
+      },
+      "candidate": {
+        "cpd_delta_pct": 0.0,
+        "cpd_ns": 5.12784,
+        "routing_iterations": 13,
+        "wirelength": 231991,
+        "wirelength_delta_pct": -0.1575162357923321
+      },
+      "case": "koios_conv_layer_seed1_cw300",
+      "decision": "retain_preliminary_candidate",
+      "deterministic_output_sha256": "8443d388395cf07a5ab96925abb9cb76a834a9283e4fad248794b219b20e0e96",
+      "external_constraints": false,
+      "internal_hpwl": [
+        126869,
+        126415
+      ],
+      "macro_units": 43,
+      "pages": 196,
+      "rejected_conflicts": 1862
+    }
+  ],
+  "claim_boundary": "This is a three-case algorithm probe, not a paper QoR matrix. On diffeq, the unguarded net-level and per-connection timing proxies both regressed native CPD; the calibrated critical-distance guard preserved baseline CPD while improving routed wirelength. Koios has no timing CSV in its current contract, and multi-case guard evidence is still required.",
+  "date": "2026-08-31",
+  "schema": "TILEPLACE_PAGE_INCREMENTAL_PROBE_V1",
+  "status": "pass"
+}

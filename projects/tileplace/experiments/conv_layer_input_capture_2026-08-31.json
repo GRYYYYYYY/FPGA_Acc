@@ -1,0 +1,94 @@
+{
+  "schema": "TILEPLACE_CONV_LAYER_INPUT_CAPTURE_V1",
+  "status": "pass",
+  "date": "2026-08-31",
+  "case": "conv_layer",
+  "source_run": {
+    "cohort": "PersistRoute frozen serial baseline",
+    "seed": 1,
+    "channel_width": 300,
+    "vpr_revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+    "wirelength": 232357,
+    "cpd_ns": 5.12784,
+    "routing_iterations": 14
+  },
+  "source_inputs": {
+    "architecture": {
+      "path": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
+      "sha256": "9738371dbd8b3ca5c138150e6f78ed6186e315882edb38b5d302547de4f36c2c"
+    },
+    "circuit": {
+      "path": "projects/persistroute/experiments/vpr9/koios_conv_layer_frontend/conv_layer.pre-vpr.blif",
+      "sha256": "d3a8b391971e9d95281747f4785c5c24e980e672c2c1428276997fbbde06aab1"
+    },
+    "packed_netlist": {
+      "path": "projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/koios_conv_layer_seed1_cw300/conv_layer.pre-vpr.net",
+      "sha256": "892547c8222871a827f3b5339f92dd1bfff082164745a388298bf8aec0906b22"
+    },
+    "placement": {
+      "path": "projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/koios_conv_layer_seed1_cw300/conv_layer.pre-vpr.place",
+      "sha256": "1640a4b0afb6ed1960b33c8e499cd9ad71da7f62201e7fbb44c7f8fd9c24ab35"
+    },
+    "route": {
+      "path": "projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/koios_conv_layer_seed1_cw300/design.route",
+      "sha256": "4650984c31b6e4e050a766da829da92cfdf310e8d408f7f007bbece537ed5c77",
+      "size_bytes": 8881837
+    }
+  },
+  "rr_graph": {
+    "path": "projects/tileplace/work/koios_conv_layer_capture/rr_graph.xml",
+    "sha256": "f805df1d285515e2ceef0c752d2490dfb863ba3b9de3a3a6ad6680ba4f568505",
+    "size_bytes": 976984751,
+    "nodes": 873536,
+    "edges": 12806542
+  },
+  "connections": {
+    "path": "projects/tileplace/work/koios_conv_layer_capture/connections.csv",
+    "sha256": "74b8fa881511693c93c030696431a88f7033cc42fad5ae0ad73b2e79849ae4e6",
+    "size_bytes": 1186232,
+    "rows": 21140
+  },
+  "timing_export": {
+    "input": {
+      "path": "projects/tileplace/work/koios_conv_layer_capture/reference_timing.input.csv",
+      "sha256": "8b9e703fb56f0559c4de2f60d01f883caab65a7a09a01a80bfc68ee618d572e0",
+      "generator": "projects/tileplace/tools/prepare_reference_timing_input.py"
+    },
+    "output": {
+      "path": "projects/tileplace/work/koios_conv_layer_capture/reference_timing.output.csv",
+      "sha256": "e2b43a4f09b562e508f49f0c7bde4b0ae7223dae25b89b821013beabc9a8cd2f",
+      "size_bytes": 568822,
+      "rows": 21140
+    },
+    "log": {
+      "path": "projects/tileplace/work/koios_conv_layer_capture/reference_timing.output.csv.vpr.log",
+      "sha256": "b853e5b553b762d1bc6458b12eb6e99b569b60cdd705f6635d42dc696b0ea08e"
+    },
+    "critical_path_delay_ps": 5128,
+    "criticality_q_threshold": 60000,
+    "connections_at_or_above_threshold": 83,
+    "atom_timing_pin_mapped": 16700,
+    "atom_timing_pin_unmapped": 4440,
+    "unconstrained_timing_endpoints_reported_by_vpr": 20608,
+    "fully_exported": true
+  },
+  "timing_export_binary": {
+    "path": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr_timing_optional/vpr/vpr",
+    "sha256": "58c84e686fb622bd732b8f6c07d506c5efae318fe1adf57180dd4df89c0cb6b2",
+    "build_provenance": "projects/tileplace/experiments/vpr_timing_export_optional_build_2026-08-31.json"
+  },
+  "frozen_correctness_binary": {
+    "path": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+    "sha256": "a90dc1b3380ebda705e85f176db0cc3d6be1b71ab9ee887db819febc8b62bafc",
+    "preserved": true
+  },
+  "contract": {
+    "path": "projects/tileplace/experiments/koios_conv_layer_seed1_cw300_endpoints/manifest.json",
+    "sha256": "965795e1a1329a839d44dd9d44eb7a866f843e80a29c35d6c358f476d581ed5d",
+    "routed_connections": 21140,
+    "cluster_endpoints_fully_mapped": 21140,
+    "native_macros": 43,
+    "macro_members": 86
+  },
+  "claim_boundary": "conv_layer was used in an earlier 4x4 macro-aware algorithm probe, so its final 2x2/q60000 result is a previously-probed macro-stress point, not an independent post-freeze validation case. Connections without an atom timing-pin match remain in wire cost and are explicitly labeled with zero timing criticality; they are not counted as timing-pin mapped."
+}

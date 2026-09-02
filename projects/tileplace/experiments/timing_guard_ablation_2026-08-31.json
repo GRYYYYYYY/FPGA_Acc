@@ -1,0 +1,155 @@
+{
+  "baseline": {
+    "cpd_ns": 6.59759,
+    "routing_iterations": 13,
+    "wirelength": 9103
+  },
+  "case": "diffeq_seed1_cw200",
+  "claim_boundary": "This single-case ablation shows that the per-connection model alone did not protect CPD, while an input-relative Manhattan-distance guard on the highest-criticality connections preserved diffeq CPD and improved routed wirelength. Multi-case evidence is still required.",
+  "date": "2026-08-31",
+  "endpoint_mapping": {
+    "connections": 1973,
+    "mapped_sinks": 1973,
+    "mapped_sources": 1973,
+    "timed_connections": 1973,
+    "timed_fully_mapped": 1973
+  },
+  "schema": "TILEPLACE_TIMING_GUARD_ABLATION_V1",
+  "selected": {
+    "criticality_fraction": 0.9155413138017853,
+    "deterministic_output_sha256": "65c65279d64c55234103977d25bd99cd583b716142377478179d5a23c774174d",
+    "native": {
+      "cpd_delta_pct": 0.0,
+      "cpd_ns": 6.59759,
+      "routing_iterations": 13,
+      "wirelength": 9031,
+      "wirelength_delta_pct": -0.790948039107986
+    },
+    "repeat_match": true,
+    "timing_weights_with_identical_placement": [
+      1,
+      2,
+      4
+    ],
+    "variant": "connection_star_guard_q60000"
+  },
+  "status": "pass",
+  "variants": [
+    {
+      "cpu": {
+        "accepted_moves": 3,
+        "critical_distance_guard_q": 0,
+        "critical_distance_slack": 0,
+        "guarded_connections": 0,
+        "guarded_connections_increased": null,
+        "placement_sha256": "58fc5b20d062ab511b72d9829955170b89d5f472364e1fcb0296bfa20fab8dd8",
+        "timing_cost_q": [
+          150381288,
+          149627501
+        ],
+        "timing_model": "net_hpwl",
+        "timing_weight": 1,
+        "wire_hpwl": [
+          4325,
+          4310
+        ]
+      },
+      "decision": "reject_cpd_regression",
+      "native": {
+        "cpd_delta_pct": 0.8957816414781661,
+        "cpd_ns": 6.65669,
+        "routing_iterations": 12,
+        "wirelength": 9064,
+        "wirelength_delta_pct": -0.4284301878501595
+      },
+      "variant": "net_max_criticality_times_hpwl"
+    },
+    {
+      "cpu": {
+        "accepted_moves": 9,
+        "critical_distance_guard_q": 0,
+        "critical_distance_slack": 0,
+        "guarded_connections": 0,
+        "guarded_connections_increased": null,
+        "placement_sha256": "27fd1f4746e0beb676e217cfd76e39ebda595da32bf9ed0533be2961237daf18",
+        "timing_cost_q": [
+          285981775,
+          282240682
+        ],
+        "timing_model": "connection_star",
+        "timing_weight": 1,
+        "wire_hpwl": [
+          4325,
+          4313
+        ]
+      },
+      "decision": "reject_cpd_regression",
+      "native": {
+        "cpd_delta_pct": 0.8454602362377717,
+        "cpd_ns": 6.65337,
+        "routing_iterations": 13,
+        "wirelength": 9090,
+        "wirelength_delta_pct": -0.14281006261671614
+      },
+      "variant": "connection_star_no_guard"
+    },
+    {
+      "cpu": {
+        "accepted_moves": 8,
+        "critical_distance_guard_q": 55000,
+        "critical_distance_slack": 0,
+        "guarded_connections": 223,
+        "guarded_connections_increased": 0,
+        "placement_sha256": "df32a2ebd034aaa6d00ca8d4bd4e8983a734e6d91a56a07036606ad11053449b",
+        "timing_cost_q": [
+          285981775,
+          282821551
+        ],
+        "timing_model": "connection_star",
+        "timing_weight": 1,
+        "wire_hpwl": [
+          4325,
+          4323
+        ]
+      },
+      "decision": "feasible_but_weaker_wirelength",
+      "native": {
+        "cpd_delta_pct": 0.0,
+        "cpd_ns": 6.59759,
+        "routing_iterations": 13,
+        "wirelength": 9097,
+        "wirelength_delta_pct": -0.06591233659233309
+      },
+      "variant": "connection_star_guard_q55000"
+    },
+    {
+      "cpu": {
+        "accepted_moves": 13,
+        "critical_distance_guard_q": 60000,
+        "critical_distance_slack": 0,
+        "guarded_connections": 90,
+        "guarded_connections_increased": 0,
+        "placement_sha256": "65c65279d64c55234103977d25bd99cd583b716142377478179d5a23c774174d",
+        "timing_cost_q": [
+          285981775,
+          282711594
+        ],
+        "timing_model": "connection_star",
+        "timing_weight": 1,
+        "wire_hpwl": [
+          4325,
+          4323
+        ]
+      },
+      "decision": "select",
+      "native": {
+        "cpd_delta_pct": 0.0,
+        "cpd_ns": 6.59759,
+        "routing_iterations": 13,
+        "wirelength": 9031,
+        "wirelength_delta_pct": -0.790948039107986
+      },
+      "variant": "connection_star_guard_q60000"
+    }
+  ]
+}

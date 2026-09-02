@@ -1,0 +1,56 @@
+{
+  "analytic_placer_evidence": {
+    "compile_definitions": [
+      "EIGEN_INSTALLED",
+      "ENABLE_ANALYTIC_PLACE"
+    ],
+    "help_option": "--enable_analytic_placer {true, false}",
+    "status": "enabled"
+  },
+  "binary": {
+    "build_info": "Release IPO VTR_ASSERT_LEVEL=2",
+    "compiled_utc": "2026-08-31T21:50:32",
+    "compiler": "GNU 11.4.0 on Linux-5.15.0-119-generic x86_64",
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr_eigen/vpr/vpr",
+    "sha256": "dd7d30f7faf133fa2ee2196a0b307aa2784e60398a7356d209364a39a16b6508",
+    "size_bytes": 6579024,
+    "version": "9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07"
+  },
+  "build_configuration": {
+    "bison": "3.8.2",
+    "cmake": "3.30.5",
+    "cmake_build_type": "Release",
+    "cmake_prefix_path": "projects/tileplace/third_party/eigen-3.4.0-install",
+    "flex": "2.6.4",
+    "vtr_assert_level": 2,
+    "vtr_enable_capnproto": false,
+    "vtr_ipo_build": "auto",
+    "with_odin": false,
+    "zlib_root": "projects/tileplace/third_party/local_tools/usr"
+  },
+  "build_environment": {
+    "BISON_PKGDATADIR": "projects/tileplace/third_party/local_tools/usr/share/bison",
+    "LD_LIBRARY_PATH": "projects/tileplace/third_party/local_tools/usr/lib/x86_64-linux-gnu",
+    "M4": "projects/tileplace/third_party/local_tools/usr/bin/m4",
+    "VTR_ARCHIVE_REVISION": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07"
+  },
+  "dependencies": {
+    "eigen": {
+      "commit": "3147391d946bb4b6c68edd901f2add6ac1f31f8c",
+      "repository": "https://gitlab.com/libeigen/eigen.git",
+      "tag": "3.4.0",
+      "working_tree_clean": true
+    },
+    "vtr_source_archive": {
+      "revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+      "sha256": "b606c9014099b091e1857ad546f5ac3b06d39c3a59bb5088e3edde3390edc886",
+      "url": "https://github.com/verilog-to-routing/vtr-verilog-to-routing/archive/8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07.tar.gz"
+    }
+  },
+  "revision_validation": {
+    "expected": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+    "vpr_reported": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07"
+  },
+  "schema": "TILEPLACE_VPR_EIGEN_BUILD_V1",
+  "status": "pass"
+}

@@ -1,0 +1,92 @@
+{
+  "baseline": {
+    "command": [
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_40nm.xml",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/bigkey.blif",
+      "--net_file",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/bigkey_tight_seed3_cw300_v2/baseline.net",
+      "--place_file",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/bigkey_tight_seed3_cw300_v2/baseline.place",
+      "--route_file",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/bigkey_tight_seed3_cw300_v2/baseline.route",
+      "--seed",
+      "3",
+      "--num_workers",
+      "1",
+      "--route_chan_width",
+      "300",
+      "--read_vpr_constraints",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/bigkey_tight_seed3_cw300_v2/source.vpr_constraints.xml",
+      "--write_rr_graph",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/bigkey_tight_seed3_cw300_v2/rr_graph.xml",
+      "--echo_file",
+      "on",
+      "--max_router_iterations",
+      "400",
+      "--router_lookahead",
+      "map",
+      "--initial_pres_fac",
+      "1.0",
+      "--router_profiler_astar_fac",
+      "1.5"
+    ],
+    "cpd_ns": 3.02421,
+    "routing_iterations": 11,
+    "vpr_revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+    "wall_s": 10.055598629638553,
+    "wirelength": 11415
+  },
+  "case": "bigkey_tight_seed3_cw300",
+  "claim_boundary": "This case validates external VPR region/fixed-constraint import and native legality; it is not a TilePlace QoR or hardware-speedup result.",
+  "constraints": {
+    "atom_patterns": 224,
+    "constrained_clusters": 148,
+    "coordinate_fixed_clusters": 0,
+    "matched_atoms": 224,
+    "partitions": 3,
+    "source": "vpr_constraints_xml"
+  },
+  "contract": {
+    "blocks": 576,
+    "macros": {
+      "macro_count": 0,
+      "member_count": 0,
+      "source": "vpr_place_macros_echo"
+    },
+    "nets": 2152,
+    "sites": 644
+  },
+  "cpu_golden": {
+    "blocks": 576,
+    "deterministic_repeat": true,
+    "deterministic_tie_break": "displacement,net_cost,layer,y,x,subtile",
+    "input_place_sha256": null,
+    "legal": true,
+    "macros": 0,
+    "moved_blocks": 0,
+    "moved_from_input": 0,
+    "moved_from_reference": 0,
+    "occupied_sites": 576,
+    "placement_sha256": "30ca1d8d7218c881d9b2b52e4368d3e2feae25cbb4865b178e7ede29b64af1fb",
+    "repeat_sha256": "30ca1d8d7218c881d9b2b52e4368d3e2feae25cbb4865b178e7ede29b64af1fb",
+    "schema": "TILEPLACE_CPU_GOLDEN_V1"
+  },
+  "native_closure": {
+    "cpd_ns": 3.02421,
+    "legal": true,
+    "report": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/bigkey_tight_seed3_cw300_v2/vpr_native_closure.json",
+    "report_sha256": "fc08580ea1630f340d2c41a93b5dacb75c0c0a6c9be8bbdab607b11112043a89",
+    "routing_iterations": 11,
+    "wirelength": 11415
+  },
+  "schema": "TILEPLACE_EXTERNAL_CONSTRAINT_CASE_V1",
+  "source": {
+    "archived_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/bigkey_tight_seed3_cw300_v2/source.vpr_constraints.xml",
+    "kind": "VTR regression placement constraint",
+    "original_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/tasks/regression_tests/vtr_reg_strong/strong_tight_floorplan/bigkey_tight.xml",
+    "revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+    "sha256": "af0e0bba72fca77ec0320ae4265a325c8906f193a2c4653d6eacedee956875e7"
+  },
+  "status": "pass"
+}

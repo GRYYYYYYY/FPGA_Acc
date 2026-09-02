@@ -1,0 +1,51 @@
+{
+  "contract": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/koios_conv_layer_seed1_cw300",
+  "corrupted_place": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/koios_conv_layer_legalization_probe/corrupted.place",
+    "sha256": "72605aa1f2a3f00d353830bf75bdd041b8e341ddb51dd48b0eb4362aecca3977"
+  },
+  "golden_place_sha256": "0836288b21a838aa8bdb35bee602138122a33144799245cf98d0ece8b4f7e951",
+  "injections": [
+    {
+      "blocks": [
+        "$add~1153^ADD~156-0~dummy_output~0~1",
+        "$add~1188^ADD~144-0~dummy_output~0~1"
+      ],
+      "kind": "duplicate_occupancy"
+    },
+    {
+      "blocks": [
+        "$add~1177^ADD~145-0~dummy_output~0~1",
+        "mac_int_18x19~2165^out~0"
+      ],
+      "kind": "clb_dsp_type_swap"
+    },
+    {
+      "blocks": [
+        "dual_port_ram^MEM~4-15^out2~1"
+      ],
+      "kind": "memory_non_root_offset"
+    }
+  ],
+  "recovered_place": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/koios_conv_layer_legalization_probe/recovered_a.place",
+    "sha256": "33d616a901075eb0e56b25e6568f43a71d6d3772257dcf5d8d49edfa7dfefd9c"
+  },
+  "recovery": {
+    "blocks": 1076,
+    "deterministic_tie_break": "displacement,net_cost,layer,y,x,subtile",
+    "input_place_sha256": "72605aa1f2a3f00d353830bf75bdd041b8e341ddb51dd48b0eb4362aecca3977",
+    "legal": true,
+    "macros": 43,
+    "moved_blocks": 14,
+    "moved_from_input": 15,
+    "moved_from_reference": 14,
+    "occupied_sites": 1076,
+    "placement_sha256": "33d616a901075eb0e56b25e6568f43a71d6d3772257dcf5d8d49edfa7dfefd9c",
+    "schema": "TILEPLACE_CPU_GOLDEN_V1"
+  },
+  "repeat_sha256": "33d616a901075eb0e56b25e6568f43a71d6d3772257dcf5d8d49edfa7dfefd9c",
+  "schema": "TILEPLACE_REAL_LEGALIZATION_PROBE_V1",
+  "status": "pass",
+  "validator_rejection": "$add~1177^ADD~145-0~dummy_output~0~1: logical type clb is incompatible with dsp_top at (38, 21, 0, 0); $add~1188^ADD~144-0~dummy_output~0~1: site (40, 21, 0, 0) is already occupied by $add~1153^ADD~156-0~dummy_output~0~1; dual_port_ram^MEM~4-15^out2~1: location (18, 38, 0, 0) is not a root site/subtile; mac_int_18x19~2165^out~0: logical type dsp_top is incompatible with clb at (37, 12, 0, 0); macro vpr_direct:1: members do not preserve their declared relative shape; macro vpr_direct:2: members do not preserve their declared relative shape"
+}

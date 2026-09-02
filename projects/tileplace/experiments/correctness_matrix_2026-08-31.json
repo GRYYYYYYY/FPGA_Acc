@@ -1,0 +1,202 @@
+{
+  "cases": [
+    {
+      "block_types": {
+        "clb": 99,
+        "io": 103
+      },
+      "blocks": 202,
+      "case": "diffeq",
+      "connections": 1973,
+      "contract": "diffeq_seed1_cw200",
+      "cpd_ns": 6.59759,
+      "cpu_golden_legal": true,
+      "cpu_golden_moved_blocks": 0,
+      "heterogeneous_blocks": 0,
+      "native_macro_count": 0,
+      "native_macro_hash_verified": true,
+      "native_macro_members": 0,
+      "native_matches_baseline": true,
+      "native_vpr_legal": true,
+      "nets": 1935,
+      "pins": 4004,
+      "route_sha256": "23a31a26cb089a197b549eb1382578f32b5fbcf61eadc4f08a533c53d9e46890",
+      "routing_iterations": 13,
+      "site_types": {
+        "clb": 108,
+        "io": 384,
+        "memory": 4,
+        "mult_36": 3
+      },
+      "sites": 499,
+      "timed_connections": 1973,
+      "vpr_revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+      "wirelength": 9103
+    },
+    {
+      "block_types": {
+        "clb": 249,
+        "io": 136
+      },
+      "blocks": 385,
+      "case": "frisc",
+      "connections": 5767,
+      "contract": "frisc_seed1_cw200",
+      "cpd_ns": 13.5879,
+      "cpu_golden_legal": true,
+      "cpu_golden_moved_blocks": 0,
+      "heterogeneous_blocks": 0,
+      "native_macro_count": 0,
+      "native_macro_hash_verified": true,
+      "native_macro_members": 0,
+      "native_matches_baseline": true,
+      "native_vpr_legal": true,
+      "nets": 4445,
+      "pins": 10434,
+      "route_sha256": "c61f9ee7e3233ecda92ef79059cfb92ef8ef2641c6eae2228ee946818d5f0135",
+      "routing_iterations": 12,
+      "site_types": {
+        "clb": 266,
+        "io": 608,
+        "memory": 9,
+        "mult_36": 8
+      },
+      "sites": 891,
+      "timed_connections": 5767,
+      "vpr_revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+      "wirelength": 33182
+    },
+    {
+      "block_types": {
+        "clb": 239,
+        "io": 245
+      },
+      "blocks": 484,
+      "case": "elliptic",
+      "connections": 5242,
+      "contract": "elliptic_seed1_cw200",
+      "cpd_ns": 8.79211,
+      "cpu_golden_legal": true,
+      "cpu_golden_moved_blocks": 0,
+      "heterogeneous_blocks": 0,
+      "native_macro_count": 0,
+      "native_macro_hash_verified": true,
+      "native_macro_members": 0,
+      "native_matches_baseline": true,
+      "native_vpr_legal": true,
+      "nets": 4855,
+      "pins": 10324,
+      "route_sha256": "1af51c647a53ac57eb45b18c7e4795285562ad36010cda960c58810412729ef7",
+      "routing_iterations": 12,
+      "site_types": {
+        "clb": 266,
+        "io": 608,
+        "memory": 9,
+        "mult_36": 8
+      },
+      "sites": 891,
+      "timed_connections": 5242,
+      "vpr_revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+      "wirelength": 27329
+    },
+    {
+      "block_types": {
+        "clb": 575,
+        "io": 144
+      },
+      "blocks": 719,
+      "case": "clma",
+      "connections": 13458,
+      "contract": "clma_seed1_cw200",
+      "cpd_ns": 11.6084,
+      "cpu_golden_legal": true,
+      "cpu_golden_moved_blocks": 0,
+      "heterogeneous_blocks": 0,
+      "native_macro_count": 0,
+      "native_macro_hash_verified": true,
+      "native_macro_members": 0,
+      "native_matches_baseline": true,
+      "native_vpr_legal": true,
+      "nets": 8460,
+      "pins": 21960,
+      "route_sha256": "462601bfa7cca643df97fff37779c4ba653d9ec7ec614b000649670c7258598b",
+      "routing_iterations": 15,
+      "site_types": {
+        "clb": 588,
+        "io": 896,
+        "memory": 16,
+        "mult_36": 21
+      },
+      "sites": 1521,
+      "timed_connections": 13458,
+      "vpr_revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+      "wirelength": 79857
+    },
+    {
+      "block_types": {
+        "clb": 822,
+        "dsp_top": 42,
+        "io": 156,
+        "memory": 56
+      },
+      "blocks": 1076,
+      "case": "koios_conv_layer",
+      "connections": 21140,
+      "contract": "koios_conv_layer_seed1_cw300",
+      "cpd_ns": 5.12784,
+      "cpu_golden_legal": true,
+      "cpu_golden_moved_blocks": 0,
+      "heterogeneous_blocks": 98,
+      "native_macro_count": 43,
+      "native_macro_hash_verified": true,
+      "native_macro_members": 86,
+      "native_matches_baseline": true,
+      "native_vpr_legal": true,
+      "nets": 33180,
+      "pins": 56781,
+      "recovery": {
+        "cpd_ns": 5.12784,
+        "cpu_legal": true,
+        "deterministic": true,
+        "moved_from_input": 15,
+        "moved_from_reference": 14,
+        "native_vpr_legal": true,
+        "routing_iterations": 14,
+        "wirelength": 233550
+      },
+      "route_sha256": "f82ede622a0e25a56d114cf72df11c91442f1c173d4d5f524cbeb4d765948da6",
+      "routing_iterations": 14,
+      "site_types": {
+        "clb": 2492,
+        "dsp_top": 52,
+        "io": 1728,
+        "memory": 108
+      },
+      "sites": 4380,
+      "timed_connections": 0,
+      "vpr_revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+      "wirelength": 232357
+    }
+  ],
+  "limitations": [
+    "CPU golden is a zero-displacement correctness reference, not a placement QoR improvement.",
+    "The Koios case has routed connections but no imported per-connection timing criticality CSV yet.",
+    "The five real cases contain no external region/fixed/macro constraint file; Koios contains VPR-native direct-chain macros."
+  ],
+  "schema": "TILEPLACE_CORRECTNESS_MATRIX_V2",
+  "status": "pass",
+  "summary": {
+    "all_cpu_golden_legal": true,
+    "all_native_macro_hashes_verified": true,
+    "all_native_match_baseline": true,
+    "all_native_vpr_legal": true,
+    "case_count": 5,
+    "heterogeneous_blocks": 98,
+    "heterogeneous_case_count": 1,
+    "koios_recovery_native_vpr_legal": true,
+    "native_macro_count": 43,
+    "native_macro_members": 86,
+    "total_blocks": 2866,
+    "total_connections": 47580
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "schema": "TILEPLACE_CONSTRAINED_QOR_PREREGISTRATION_V1",
+  "date": "2026-09-01",
+  "status": "preregistered_before_timing_capture_or_tileplace_qor_run",
+  "case": "apex4_fixed_io_seed1_cw78",
+  "cohort": "constrained_post_freeze_validation",
+  "separation_rule": "Report this native fixed-I/O point separately from the nine-case unconstrained QoR matrix and from the six-case Eigen conventional/AP matrix.",
+  "source_inputs": {
+    "architecture_sha256": "a51389137cc75da5abc832dc4b6366631a21125b8875ee01ad01a15e67448667",
+    "circuit_sha256": "e53c480ec7a77524474252ab4669ca0a33a977be623020a51a0b7160998af18f",
+    "packed_netlist_sha256": "7fc8815c3a075a1acc314fc4e2fc25e5806307cf3807a70ec45565123f901625",
+    "placement_sha256": "e02814c485447b4086baa08af765ae4ab3c94a126600ff8bcaef2ab0dd3ef3f3",
+    "route_sha256": "437b13b51fbf29984a4b5956445140e58c82d9ae1461cd331f447aabe550cd17",
+    "rr_graph_sha256": "8976e09ec0078a962bd6a482efef3a374f98b634cfa562a20e95d646872679c6",
+    "vpr_constraints_sha256": "70d7be2896a393678fc507ee5ef1c1a38a8c7ffcfb63ab4ccba8c3d66eb59c61"
+  },
+  "source_baseline": {
+    "vpr_revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+    "vpr_build": "non-Eigen frozen correctness binary",
+    "seed": 1,
+    "channel_width": 78,
+    "device": "mcnc_medium",
+    "wirelength": 10023,
+    "cpd_ns": 5.20192,
+    "routing_iterations": 19,
+    "num_workers": 1,
+    "coordinate_fixed_clusters": 28
+  },
+  "frozen_tileplace_strategy": {
+    "page_size": [2, 2],
+    "passes": 8,
+    "candidate_limit": 64,
+    "wire_weight": 256,
+    "timing_weight": 1,
+    "timing_model": "connection_star",
+    "critical_distance_guard_q": 60000,
+    "critical_distance_slack": 0,
+    "proposal_workers": 1
+  },
+  "frozen_binaries": {
+    "correctness_vpr_sha256": "a90dc1b3380ebda705e85f176db0cc3d6be1b71ab9ee887db819febc8b62bafc",
+    "timing_export_vpr_sha256": "58c84e686fb622bd732b8f6c07d506c5efae318fe1adf57180dd4df89c0cb6b2"
+  },
+  "timing_capture_normalization": {
+    "reason": "The archived source placement header contains an absolute netlist path that VPR normalizes in a private analysis copy before reading the archived route, invalidating the old Placement_ID.",
+    "normalized_pair_source": "existing passing baseline native-closure evidence generated before this preregistration",
+    "coordinate_identity": "all 110 block names and x/y/subtile/layer coordinates exactly match the archived source placement",
+    "normalized_place_sha256": "2fd0d34fcd382daa3ee394b993d4d07b510ba2a1a56cb23a172ba335bc0cd742",
+    "normalized_route_sha256": "ec49040bfd4378a281625efe1958a5b41cae0a5560b701768721d08ce452c9e5",
+    "normalized_route_placement_id": "2fd0d34fcd382daa3ee394b993d4d07b510ba2a1a56cb23a172ba335bc0cd742",
+    "native_qor_identity": "wirelength 10023, CPD 5.20192 ns, routing iterations 19",
+    "scope": "Use this normalized pair only for routed-connection and timing-oracle capture; baseline and candidate QoR remain separate native route-plus-analysis closures."
+  },
+  "required_evidence": [
+    "all routed connections accounted for at clustered and atom timing-pin levels",
+    "reference contract imports the original VPR constraints XML",
+    "all 28 coordinate-fixed clusters remain fixed",
+    "two byte-identical complete CPU runs",
+    "baseline and candidate native VPR route plus analysis using the same constraints and device",
+    "result retained regardless of QoR direction"
+  ],
+  "retention_rule": "Retain and report the point separately whenever timing accounting, constraint legality, determinism, and both native closures pass, regardless of wirelength or CPD direction.",
+  "failure_rule": "Do not switch to the Eigen VPR binary, alter the XML/device/channel width, tune TilePlace parameters, or merge this result into the unconstrained or AP aggregates after observing the outcome."
+}

@@ -1,0 +1,124 @@
+{
+  "compatibility": "logical_type must equal physical_type",
+  "connection_endpoint_mapping": {
+    "atom_timing_pin_labeled": 21140,
+    "atom_timing_pin_mapped": 16700,
+    "atom_timing_pin_unmapped": 4440,
+    "connections": 21140,
+    "mapped_sinks": 21140,
+    "mapped_sources": 21140,
+    "timed_connections": 21140,
+    "timed_fully_mapped": 21140
+  },
+  "inputs": {
+    "architecture": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
+      "sha256": "9738371dbd8b3ca5c138150e6f78ed6186e315882edb38b5d302547de4f36c2c"
+    },
+    "connections": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/koios_conv_layer_capture/connections.csv",
+      "sha256": "74b8fa881511693c93c030696431a88f7033cc42fad5ae0ad73b2e79849ae4e6"
+    },
+    "native_macros": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/koios_conv_layer_seed1_cw300/vpr_place_macros.echo",
+      "sha256": "a044afae212c0a12b622b63f9760623e0bcb7318949746514286193a8b74c902"
+    },
+    "packed_netlist": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/koios_conv_layer_seed1_cw300/conv_layer.pre-vpr.net",
+      "sha256": "892547c8222871a827f3b5339f92dd1bfff082164745a388298bf8aec0906b22"
+    },
+    "reference_place": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/koios_conv_layer_seed1_cw300/conv_layer.pre-vpr.place",
+      "sha256": "1640a4b0afb6ed1960b33c8e499cd9ad71da7f62201e7fbb44c7f8fd9c24ab35"
+    },
+    "rr_graph": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/koios_conv_layer_capture/rr_graph.xml",
+      "sha256": "f805df1d285515e2ceef0c752d2490dfb863ba3b9de3a3a6ad6680ba4f568505"
+    },
+    "timing": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/koios_conv_layer_capture/reference_timing.output.csv",
+      "sha256": "e2b43a4f09b562e508f49f0c7bde4b0ae7223dae25b89b821013beabc9a8cd2f"
+    }
+  },
+  "outputs": {
+    "blocks.jsonl": {
+      "count": 1076,
+      "sha256": "27daae1c94450ee70915ff628d2852d66d4609adda1ee2334e9963ead50d9c85"
+    },
+    "nets.jsonl": {
+      "count": 33180,
+      "sha256": "64de53bffd8da2b1512365e478281f90c70495b5b8908ccb241ee9dc6a341c8b"
+    },
+    "sites.jsonl": {
+      "count": 4380,
+      "sha256": "3248ebd1f83bcf9d66c56a89fd04a3b74dd068a72d146dc4b8e9de47665f33be"
+    }
+  },
+  "packed_netlist": {
+    "architecture_id": "SHA256:9738371dbd8b3ca5c138150e6f78ed6186e315882edb38b5d302547de4f36c2c",
+    "atom_netlist_id": "SHA256:d3a8b391971e9d95281747f4785c5c24e980e672c2c1428276997fbbde06aab1",
+    "instance": "FPGA_packed_netlist[0]",
+    "name": "conv_layer.pre-vpr.net"
+  },
+  "placement_constraints": {
+    "constrained_clusters": 0,
+    "coordinate_fixed_clusters": 0,
+    "fully_fixed_clusters": 0,
+    "source": "none"
+  },
+  "placement_header": {
+    "array_size": "Array size: 56 x 56 logic blocks",
+    "netlist": "Netlist_File: conv_layer.pre-vpr.net Netlist_ID: SHA256:892547c8222871a827f3b5339f92dd1bfff082164745a388298bf8aec0906b22"
+  },
+  "placement_macros": {
+    "macro_count": 43,
+    "member_count": 86,
+    "source": "vpr_place_macros_echo"
+  },
+  "rr_block_types": {
+    "0": {
+      "capacity": 1,
+      "class_count": 0,
+      "height": 1,
+      "name": "EMPTY",
+      "width": 1
+    },
+    "1": {
+      "capacity": 8,
+      "class_count": 24,
+      "height": 1,
+      "name": "io",
+      "width": 1
+    },
+    "2": {
+      "capacity": 1,
+      "class_count": 47,
+      "height": 1,
+      "name": "clb",
+      "width": 1
+    },
+    "3": {
+      "capacity": 1,
+      "class_count": 386,
+      "height": 4,
+      "name": "dsp_top",
+      "width": 1
+    },
+    "4": {
+      "capacity": 1,
+      "class_count": 105,
+      "height": 2,
+      "name": "memory",
+      "width": 1
+    }
+  },
+  "schema": "TILEPLACE_VPR_CONTRACT_V1",
+  "vpr": {
+    "channel_width": 300,
+    "command": [
+      "vpr k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml conv_layer.pre-vpr.blif --seed 1 --num_workers 1 --route_chan_width 300 --max_router_iterations 100"
+    ],
+    "revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+    "seed": 1
+  }
+}

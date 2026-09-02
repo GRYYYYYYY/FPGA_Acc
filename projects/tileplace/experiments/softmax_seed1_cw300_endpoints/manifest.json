@@ -1,0 +1,121 @@
+{
+  "compatibility": "logical_type must equal physical_type",
+  "connection_endpoint_mapping": {
+    "connections": 16817,
+    "mapped_sinks": 16817,
+    "mapped_sources": 16817,
+    "timed_connections": 16817,
+    "timed_fully_mapped": 16817
+  },
+  "inputs": {
+    "architecture": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
+      "sha256": "9738371dbd8b3ca5c138150e6f78ed6186e315882edb38b5d302547de4f36c2c"
+    },
+    "connections": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_softmax_seed1_cw300/input/connections.csv",
+      "sha256": "2df6a9e2458b1ed71a8bc020b200ba7e28bdfc33cab7bacc505a51a0c39bc2a8"
+    },
+    "native_macros": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/softmax_seed1_cw300/vpr_place_macros.echo",
+      "sha256": "71ce3605e8fea8b03f795401033407ae995903312f8de051b7c5011586762432"
+    },
+    "packed_netlist": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_softmax_seed1_cw300/input/reference/softmax.pre-vpr.net",
+      "sha256": "482f58815ba9a9584743a8ea793551af14bd4dbb618532a14a509d1810b0ec09"
+    },
+    "reference_place": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_softmax_seed1_cw300/input/reference/softmax.pre-vpr.place",
+      "sha256": "3cefffbc265e3e3a965c63df4c1fc69b7887c95514bb5edced42e5ca5f08eddd"
+    },
+    "rr_graph": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_softmax_seed1_cw300/input/rr_graph.xml",
+      "sha256": "6c45d2f594ccff21c5daa036492a58b0e7f9fe31a8b43684e03ec8f4d7dc92c4"
+    },
+    "timing": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_softmax_seed1_cw300/run/softmax.timing_iteration_0.output.csv",
+      "sha256": "78531f88b5668ab46acfb94a8b0e6a1936e60720ba620ec8a77494455b92849a"
+    }
+  },
+  "outputs": {
+    "blocks.jsonl": {
+      "count": 1098,
+      "sha256": "a71b55bc0b0c3f61be78b2c64515366f8c4e560e7f96b952491357b505d2f8e4"
+    },
+    "nets.jsonl": {
+      "count": 12958,
+      "sha256": "991ef7d807db867034744714c7e2a07e4e65420f310001d0ff128728b876015e"
+    },
+    "sites.jsonl": {
+      "count": 4147,
+      "sha256": "5a6a3c2e95a3a8ed2ecb7d93bd4d30067fc0b40b5a574bf4f647c547a082dc3f"
+    }
+  },
+  "packed_netlist": {
+    "architecture_id": "SHA256:9738371dbd8b3ca5c138150e6f78ed6186e315882edb38b5d302547de4f36c2c",
+    "atom_netlist_id": "SHA256:8d81c7fd97287f2cf5e3aa00072f4dd2e2222020b99f72a461ff834376130e80",
+    "instance": "FPGA_packed_netlist[0]",
+    "name": "softmax.pre-vpr.net"
+  },
+  "placement_constraints": {
+    "constrained_clusters": 0,
+    "coordinate_fixed_clusters": 0,
+    "fully_fixed_clusters": 0,
+    "source": "none"
+  },
+  "placement_header": {
+    "array_size": "Array size: 54 x 54 logic blocks",
+    "netlist": "Netlist_File: softmax.pre-vpr.net Netlist_ID: SHA256:482f58815ba9a9584743a8ea793551af14bd4dbb618532a14a509d1810b0ec09"
+  },
+  "placement_macros": {
+    "macro_count": 0,
+    "member_count": 0,
+    "source": "vpr_place_macros_echo"
+  },
+  "rr_block_types": {
+    "0": {
+      "capacity": 1,
+      "class_count": 0,
+      "height": 1,
+      "name": "EMPTY",
+      "width": 1
+    },
+    "1": {
+      "capacity": 8,
+      "class_count": 24,
+      "height": 1,
+      "name": "io",
+      "width": 1
+    },
+    "2": {
+      "capacity": 1,
+      "class_count": 47,
+      "height": 1,
+      "name": "clb",
+      "width": 1
+    },
+    "3": {
+      "capacity": 1,
+      "class_count": 386,
+      "height": 4,
+      "name": "dsp_top",
+      "width": 1
+    },
+    "4": {
+      "capacity": 1,
+      "class_count": 105,
+      "height": 2,
+      "name": "memory",
+      "width": 1
+    }
+  },
+  "schema": "TILEPLACE_VPR_CONTRACT_V1",
+  "vpr": {
+    "channel_width": 300,
+    "command": [
+      "vpr k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml softmax.pre-vpr.blif --seed 1 --num_workers 1 --route_chan_width 300 --max_router_iterations 100"
+    ],
+    "revision": "v8.0.0-11943-g8cb20aa52",
+    "seed": 1
+  }
+}

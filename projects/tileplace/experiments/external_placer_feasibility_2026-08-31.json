@@ -1,0 +1,158 @@
+{
+  "candidates": [
+    {
+      "build_audit": {
+        "build_attempted": false,
+        "documented_cpu_mode": true,
+        "documented_dependencies": {
+          "cmake_minimum": "3.8.2",
+          "cuda": "optional; 9.1 through 11.x documented, 12.0 or newer incompatible",
+          "python": "2.7 or 3.5/3.6/3.7",
+          "pytorch": "1.6/1.7/1.8; 2.0 or newer incompatible"
+        },
+        "local_blockers": [
+          "The host Python is 3.10.12 and PyTorch is not installed.",
+          "The documented Python/PyTorch compatibility window does not match the host environment.",
+          "No NVIDIA driver utility, CUDA compiler, or Docker executable is available; CPU mode remains possible in principle.",
+          "Boost headers, flex, and bison are not installed system-wide.",
+          "The pinned clone has four declared but uninitialized submodules: cub, fpga-interchange-schema, munkres-cpp, and pybind11."
+        ],
+        "reason_not_attempted": "A dependency reconstruction would not resolve the netlist, architecture, packing, and backend mismatch with the frozen VPR comparison."
+      },
+      "cli_audit": {
+        "cpu_selection": "set gpu to 0 in the JSON configuration",
+        "entrypoint": "python dreamplacefpga/Placer.py <benchmark>.json",
+        "status": "documented_cli_identified"
+      },
+      "comparison_audit": {
+        "apples_to_apples_with_current_six_case_vpr_matrix": false,
+        "backend": "DREAMPlaceFPGA can emit Bookshelf placement and, for its limited Ultrascale+ flow, FPGA Interchange physical output/DCP conversion; it does not emit the clustered VPR .place contract used by the frozen matrix.",
+        "blockers": [
+          "The current TilePlace matrix starts from already packed VPR clustered netlists, whereas DREAMPlaceFPGA starts from flat Bookshelf or FPGA Interchange logical netlists.",
+          "DREAMPlaceFPGA performs its own LUT/FF packing and legalization, so cluster identity and the packed netlist change.",
+          "Its supplied architectures target simplified Xilinx Ultrascale or a limited Ultrascale+ FPGA Interchange flow, not the VTR architectures used by the six frozen cases.",
+          "Using its native output would also change the final routing/backend methodology."
+        ],
+        "current_matrix_decision": "exclude",
+        "defensible_future_use": "Create a separately labeled Bookshelf or FPGA Interchange/Vivado cohort with frozen conversion, packing, and common-backend rules; do not merge it into the current six-case VPR table.",
+        "input_formats": [
+          "Bookshelf .aux/.nodes/.nets/.scl/.pl",
+          "FPGA Interchange .netlist and .device converted to Bookshelf"
+        ],
+        "placement_scope": "flat global placement plus packing/legalization and optional detailed placement",
+        "same_packed_netlist": false,
+        "same_router": false
+      },
+      "evidence": {
+        "license_sha256": "e6853fd070ef25844f6062a3944fe49eec7a28852fb6fe53558f51de20f435db",
+        "readme_sha256": "aa68a4600b8aa33d370f252e935d461a3a65f608b8c9a3b7bd4c5035736715a2",
+        "requirements_sha256": "8b1b5b875b0da84014d3c323a1f2bfdcfd5c63644674ebb54adf8bb8fd79fe89",
+        "interchange_readme_sha256": "ddd82f965f90489d65785f8bc4cd9d8272a582f8fa2ab63e3efbd727852e51be"
+      },
+      "license": "BSD-3-Clause",
+      "name": "DREAMPlaceFPGA",
+      "repository": "https://github.com/rachelselinar/DREAMPlaceFPGA.git",
+      "revision": "004494318453ba4ad7053b12d0c924a2a2a34356",
+      "revision_date": "2025-04-30T12:13:58-06:00",
+      "source_tree_clean": true,
+      "status": {
+        "classification": "B1_executable_source_candidate",
+        "local_qor_run": false,
+        "promotion_to_B0": "blocked until a methodologically defensible separate cohort is specified and a complete local run archives commands, logs, outputs, legality, QoR, and backend evidence",
+        "source_and_cli_audited": true
+      }
+    },
+    {
+      "build_audit": {
+        "build_attempted": false,
+        "documented_dependencies": {
+          "boost": "1.65.1 or newer",
+          "eigen": "3.3.9 fetched by CMake",
+          "openmp": "compiler support",
+          "patoh": "prebuilt academic-use library downloaded by CMake",
+          "qt": "Qt5 Widgets is required"
+        },
+        "local_blockers": [
+          "Qt5 development metadata, Boost headers, system Eigen, and PaToH are absent.",
+          "There is no system CMake executable, although a local CMake 3.30.5 payload is available.",
+          "The build fetches Boost, Eigen, and the academic-use PaToH binary from the network and therefore requires a separately audited dependency/license archive."
+        ],
+        "reason_not_attempted": "Building the sample VCU108 flow would create a separate Vivado primitive/device experiment and would not produce a comparable row in the frozen VPR matrix."
+      },
+      "cli_audit": {
+        "build_entrypoint": "./build.sh",
+        "run_entrypoint": "./AMFPlacer <configuration.json>",
+        "sample": "./AMFPlacer ../benchmarks/testConfig/OpenPiton.json",
+        "status": "documented_cli_identified"
+      },
+      "comparison_audit": {
+        "apples_to_apples_with_current_six_case_vpr_matrix": false,
+        "backend": "Generated placement Tcl is loaded into an implemented Vivado design; the script clears/replaces placement, invokes Vivado placement handling for remaining primitives, and routes with Vivado.",
+        "blockers": [
+          "AMF-Placer consumes Xilinx primitive, device, macro, fixed-unit, clock, and timing data extracted from an already implemented Vivado design, not a VPR packed netlist.",
+          "The bundled device and benchmark flow targets VCU108/Ultrascale and uses Vivado site/BEL semantics rather than the current VTR architecture grid.",
+          "Its output is a Vivado placement Tcl/checkpoint flow and cannot be passed unchanged to the frozen VPR router.",
+          "The public repository is the basic implementation, documented as about 5% below the separately distributed advanced version."
+        ],
+        "current_matrix_decision": "exclude",
+        "defensible_future_use": "Run a separately labeled commercial-device/Vivado experiment with fixed design checkpoints, extraction hashes, Tcl replay, and the same Vivado routing methodology for every placer.",
+        "input_formats": [
+          "Vivado-extracted zipped primitive netlist and cluster data",
+          "Vivado-extracted device/site/BEL data",
+          "fixed-unit, macro, clock, and timing files referenced by JSON"
+        ],
+        "placement_scope": "mixed-size primitive-level analytical placement, legalization, packing, and timing refinement",
+        "same_packed_netlist": false,
+        "same_router": false
+      },
+      "evidence": {
+        "build_cmake_sha256": "fdb6e864d64b2a635263fe3696398ad3c0ff540088fcaf8101b201a6ce8a69c9",
+        "design_extraction_doc_sha256": "c9a8f21faf42d4a72af2a8894bea2565494ff54fc1d259a482aaf0900b52352d",
+        "license_sha256": "810ef82a6f1874c8997036f2fe854b3b2a4f963f0d9ca0800ed8e9d5bbdf319e",
+        "output_replay_doc_sha256": "c032cc8cf84dca1d40404467683e3a285d6a27847207e733ae90901418d90711",
+        "readme_sha256": "5863f0864a179a9900264c735aa4e215de8db10fe16fa127d0a2b01b9ae6debc"
+      },
+      "license": "Apache-2.0",
+      "name": "AMF-Placer 2.0 basic implementation",
+      "repository": "https://github.com/zslwyuan/AMF-Placer.git",
+      "revision": "70d98288153046ea4fd07190e748b6530e3042f5",
+      "revision_date": "2024-03-09T17:53:20+08:00",
+      "source_tree_clean": true,
+      "status": {
+        "classification": "B1_executable_source_candidate",
+        "local_qor_run": false,
+        "promotion_to_B0": "blocked until a separate Vivado cohort is specified and a complete local run archives dependency licenses, extraction inputs, commands, logs, Tcl output, routed legality, QoR, and backend evidence",
+        "source_and_cli_audited": true
+      }
+    }
+  ],
+  "host_audit": {
+    "cmake": {
+      "local_payload": "projects/tileplace/third_party/cmake-3.30.5-linux-x86_64/bin/cmake",
+      "system_executable": false
+    },
+    "compiler": {
+      "gcc": "/usr/bin/gcc",
+      "gxx": "/usr/bin/g++"
+    },
+    "container_runtime_available": false,
+    "cuda_compiler_available": false,
+    "nvidia_smi_available": false,
+    "python": "3.10.12",
+    "pytorch_installed": false,
+    "system_dependencies": {
+      "boost_headers": false,
+      "eigen_headers": false,
+      "qt5_core_pkg_config": false
+    }
+  },
+  "methodology_decision": {
+    "current_six_case_matrix": "Keep conventional VPR, VPR cluster-level AP, and TilePlace as the only same-packed-netlist/same-router rows.",
+    "external_placer_claim": "No independent external placer QoR result has been reproduced; neither candidate supports a direct superiority claim.",
+    "next_preferred_direction": "Expand the post-freeze VPR/Koios cohort under the existing frozen strategy before investing in a separate external-format flow.",
+    "separate_experiment_option": "A future FPGA Interchange/Vivado study must be pre-registered as a distinct cohort with its own netlist, architecture, packing, conversion, and backend controls."
+  },
+  "schema": "TILEPLACE_EXTERNAL_PLACER_FEASIBILITY_V1",
+  "status": "pass",
+  "timestamp_utc": "2026-08-31T22:24:42+00:00"
+}

@@ -1,0 +1,94 @@
+{
+  "schema": "TILEPLACE_ATTENTION_INPUT_CAPTURE_V1",
+  "status": "pass",
+  "date": "2026-08-31",
+  "case": "attention_layer",
+  "source_run": {
+    "cohort": "PersistRoute frozen serial baseline",
+    "seed": 1,
+    "channel_width": 300,
+    "vpr_revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+    "wirelength": 544069,
+    "cpd_ns": 8.82262,
+    "routing_iterations": 15
+  },
+  "source_inputs": {
+    "architecture": {
+      "path": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml",
+      "sha256": "9738371dbd8b3ca5c138150e6f78ed6186e315882edb38b5d302547de4f36c2c"
+    },
+    "circuit": {
+      "path": "projects/persistroute/experiments/vpr9/koios_attention_layer_frontend/attention_layer.pre-vpr.blif",
+      "sha256": "f76c03b9451399f55efa83ea3b5512b25dfa748370a2b99c702add13233a4fc4"
+    },
+    "packed_netlist": {
+      "path": "projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/koios_attention_layer_seed1_cw300/attention_layer.pre-vpr.net",
+      "sha256": "79201bfd4d36a73a59eb93556ffd90a6af66d6625454e1fbc4a7273bd3ffa8e7"
+    },
+    "placement": {
+      "path": "projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/koios_attention_layer_seed1_cw300/attention_layer.pre-vpr.place",
+      "sha256": "382bb5ba07cfa50fae6257dcfa5fb924750c29c4aed4da4c6f071160fecf7a39"
+    },
+    "route": {
+      "path": "projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/koios_attention_layer_seed1_cw300/design.route",
+      "sha256": "2b1b4ff2959895339ca039fcb0a5621b1e536d765429a4f12ee887ad97ad21ed",
+      "size_bytes": 18215225
+    }
+  },
+  "rr_graph": {
+    "path": "projects/tileplace/work/attention_layer_input_capture/rr_graph.xml",
+    "sha256": "7d0ad336e3f93f7a3d01fbfa1047593cb05afb697ff245da67dac98d75a87b7b",
+    "size_bytes": 7192371593,
+    "nodes": 6181188,
+    "edges": 91982111
+  },
+  "connections": {
+    "path": "projects/tileplace/work/attention_layer_input_capture/connections.csv",
+    "sha256": "5434b24d8a2e448c43b726ad5c1c6252dd3923f8258a7a5f4c0391883c510d85",
+    "size_bytes": 2582812,
+    "rows": 41954,
+    "report": {
+      "path": "projects/tileplace/work/attention_layer_input_capture/connections.report.json",
+      "sha256": "f5f24ccafc9cc3a553066987a4fa55a83afcf4afd75d5aa234ff2d8cf4c7a473"
+    }
+  },
+  "timing_export": {
+    "input": {
+      "path": "projects/tileplace/work/attention_layer_input_capture/reference_timing.input.csv",
+      "sha256": "265d7f1ebc9a42777cdfb4ffa1298492cb10bf90b5c0b2be02af0adf7f5d69c7"
+    },
+    "output": {
+      "path": "projects/tileplace/work/attention_layer_input_capture/reference_timing.output.csv",
+      "sha256": "220d521b37f657f53192fd1ed2a5b631d65694cbcce3f2f836144af20f7fc16b",
+      "size_bytes": 1132810,
+      "rows": 41954
+    },
+    "log": {
+      "path": "projects/tileplace/work/attention_layer_input_capture/reference_timing.output.csv.vpr.log",
+      "sha256": "a764168e920aff1749d6544fdb93ce37893cc926a52f50e7a92618963e31ab47"
+    },
+    "critical_path_delay_ps": 8823,
+    "criticality_q_threshold": 60000,
+    "connections_at_or_above_threshold": 26,
+    "fully_exported": true
+  },
+  "binaries": {
+    "timing_export": {
+      "path": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr_timing/vpr/vpr",
+      "sha256": "9c535e22f4d85b86ba371bb05d4fc634b3cf422ef3ef934c284be3570c31d10b",
+      "build_provenance": "projects/tileplace/experiments/vpr_timing_export_build_2026-08-31.json"
+    },
+    "frozen_correctness": {
+      "path": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+      "sha256": "a90dc1b3380ebda705e85f176db0cc3d6be1b71ab9ee887db819febc8b62bafc",
+      "preserved": true
+    }
+  },
+  "contract": {
+    "path": "projects/tileplace/experiments/attention_layer_seed1_cw300_endpoints/manifest.json",
+    "sha256": "22f1b6c1f9285edac36bdece4a6dd2f8133b372231ec8192359f8ceb0b23b9cc",
+    "timed_connections": 41954,
+    "timed_fully_mapped": 41954
+  },
+  "claim_boundary": "This archive records the frozen serial VPR inputs, RR graph, routed connections, and per-connection timing used to construct the attention_layer TilePlace contract. The timing-export binary is independent of the preserved correctness binary; all QoR closure uses the latter. CPD export is integer picoseconds and therefore records 8823 ps while the source VPR log reports 8.82262 ns."
+}

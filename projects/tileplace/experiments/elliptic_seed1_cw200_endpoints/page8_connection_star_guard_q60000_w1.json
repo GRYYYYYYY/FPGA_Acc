@@ -1,0 +1,95 @@
+{
+  "accepted_moves": 28,
+  "blocks": 484,
+  "candidate_limit": 64,
+  "claim_boundary": "Internal HPWL is a research objective; VPR-native routed WL/CPD is required for QoR claims.",
+  "conflict_protocol": "snapshot proposals; disjoint old/new site write-set and touched-net set; deterministic delta/color/unit commit",
+  "critical_distance_guard_q": 60000,
+  "critical_distance_slack": 0,
+  "final_connection_wire": 39532,
+  "final_objective": 1113626369,
+  "final_timing_hpwl_q": 1110354945,
+  "final_wire_hpwl": 12779,
+  "guarded_connections": 151,
+  "guarded_connections_increased": 0,
+  "initial_connection_wire": 39571,
+  "initial_objective": 1114394316,
+  "initial_timing_hpwl_q": 1111120332,
+  "initial_wire_hpwl": 12789,
+  "input_place_sha256": "73dbe85481fdf89ae689de5031f418bbf9c21d0fbc8fd2ac91fe3eaa6dc63193",
+  "legal": true,
+  "macro_units": 0,
+  "mapped_timed_connections": 5242,
+  "max_connection_wire_delta": null,
+  "max_guarded_connection_delta": 0,
+  "max_rejected_guard_overrun": 9,
+  "max_wire_delta": null,
+  "nets_with_multiple_blocks": 1879,
+  "output_place_sha256": "70ff02c4c21c128bb719d5bf8509aa3285f6e6f0e1ec6c12a8b37606005b9483",
+  "page_colors": 4,
+  "page_height": 8,
+  "page_width": 8,
+  "pages": 9,
+  "passes": [
+    {
+      "accepted": 10,
+      "objective": 1114156470,
+      "pass": 0,
+      "proposals": 15
+    },
+    {
+      "accepted": 6,
+      "objective": 1114083308,
+      "pass": 1,
+      "proposals": 11
+    },
+    {
+      "accepted": 3,
+      "objective": 1113817837,
+      "pass": 2,
+      "proposals": 6
+    },
+    {
+      "accepted": 3,
+      "objective": 1113752686,
+      "pass": 3,
+      "proposals": 5
+    },
+    {
+      "accepted": 3,
+      "objective": 1113699883,
+      "pass": 4,
+      "proposals": 3
+    },
+    {
+      "accepted": 2,
+      "objective": 1113652202,
+      "pass": 5,
+      "proposals": 2
+    },
+    {
+      "accepted": 1,
+      "objective": 1113626369,
+      "pass": 6,
+      "proposals": 1
+    },
+    {
+      "accepted": 0,
+      "objective": 1113626369,
+      "pass": 7,
+      "proposals": 0
+    }
+  ],
+  "rejected_conflicts": 15,
+  "rejected_connection_wire_candidates": 0,
+  "rejected_guard_candidates": 1124,
+  "rejected_wire_candidates": 0,
+  "schema": "TILEPLACE_PAGE_INCREMENTAL_CPU_V1",
+  "status": "pass",
+  "timed_connections": 5242,
+  "timing_mapping_coverage": 1.0,
+  "timing_model": "connection_star",
+  "timing_weight": 1,
+  "units": 484,
+  "wire_weight": 256
+}

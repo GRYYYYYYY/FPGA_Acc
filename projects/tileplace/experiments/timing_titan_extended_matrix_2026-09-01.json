@@ -1,0 +1,467 @@
+{
+  "aggregate": {
+    "cases": 9,
+    "cpd_geomean_delta_pct": -1.009532574668004,
+    "cpd_nonregressing_cases": 8,
+    "cpd_worst_delta_pct": 0.016926824601304347,
+    "wirelength_geomean_delta_pct": -0.0882288763690009,
+    "wirelength_improved_cases": 5,
+    "wirelength_worst_delta_pct": 0.43909400270774057
+  },
+  "architecture_aggregates": {
+    "COFFE_22nm": {
+      "cases": 8,
+      "cpd_geomean_delta_pct": -1.1350054323924552,
+      "cpd_nonregressing_cases": 7,
+      "cpd_worst_delta_pct": 0.016926824601304347,
+      "wirelength_geomean_delta_pct": -0.11017651507360116,
+      "wirelength_improved_cases": 5,
+      "wirelength_worst_delta_pct": 0.43909400270774057
+    },
+    "Titan23_Stratix_IV": {
+      "cases": 1,
+      "cpd_geomean_delta_pct": 0.0,
+      "cpd_nonregressing_cases": 1,
+      "cpd_worst_delta_pct": 0.0,
+      "wirelength_geomean_delta_pct": 0.08752592515293145,
+      "wirelength_improved_cases": 0,
+      "wirelength_worst_delta_pct": 0.08752592515293145
+    }
+  },
+  "atom_timing_pin_mapping": {
+    "connections": 198595,
+    "mapped": 194155,
+    "optional_export_cases": 2,
+    "strict_export_cases": 7,
+    "unmapped": 4440
+  },
+  "cases": [
+    {
+      "accepted_moves": 12,
+      "baseline": {
+        "cpd_ns": 6.59759,
+        "routing_iterations": 13,
+        "wirelength": 9103
+      },
+      "candidate": {
+        "cpd_delta_pct": 0.0,
+        "cpd_ns": 6.59759,
+        "routing_iterations": 13,
+        "wirelength": 9031,
+        "wirelength_delta_pct": -0.790948039107986
+      },
+      "case": "diffeq",
+      "cohort": "development",
+      "deterministic_output_sha256": "65c65279d64c55234103977d25bd99cd583b716142377478179d5a23c774174d",
+      "endpoint_mapping": {
+        "connections": 1973,
+        "mapped_sinks": 1973,
+        "mapped_sources": 1973,
+        "timed_connections": 1973,
+        "timed_fully_mapped": 1973
+      },
+      "guarded_connections": 90,
+      "internal_hpwl": [
+        4325,
+        4323
+      ],
+      "internal_timing_cost_q": [
+        285981775,
+        282711594
+      ],
+      "native_evidence_reused_from_page4_by_hash": true
+    },
+    {
+      "accepted_moves": 74,
+      "baseline": {
+        "cpd_ns": 13.5879,
+        "routing_iterations": 12,
+        "wirelength": 33182
+      },
+      "candidate": {
+        "cpd_delta_pct": 0.016926824601304347,
+        "cpd_ns": 13.5902,
+        "routing_iterations": 13,
+        "wirelength": 33173,
+        "wirelength_delta_pct": -0.02712313905128827
+      },
+      "case": "frisc",
+      "cohort": "development",
+      "deterministic_output_sha256": "7b18f16c638ee81e82869fe335193d1e794e145d320c2fca1821040d242f4e31",
+      "endpoint_mapping": {
+        "connections": 5767,
+        "mapped_sinks": 5767,
+        "mapped_sources": 5767,
+        "timed_connections": 5767,
+        "timed_fully_mapped": 5767
+      },
+      "guarded_connections": 139,
+      "internal_hpwl": [
+        17408,
+        17410
+      ],
+      "internal_timing_cost_q": [
+        1076870233,
+        1071715147
+      ],
+      "native_evidence_reused_from_page4_by_hash": false
+    },
+    {
+      "accepted_moves": 27,
+      "baseline": {
+        "cpd_ns": 8.79211,
+        "routing_iterations": 12,
+        "wirelength": 27329
+      },
+      "candidate": {
+        "cpd_delta_pct": 0.0,
+        "cpd_ns": 8.79211,
+        "routing_iterations": 13,
+        "wirelength": 27449,
+        "wirelength_delta_pct": 0.43909400270774057
+      },
+      "case": "elliptic",
+      "cohort": "development",
+      "deterministic_output_sha256": "d50c38d2a200a8e901e58a1305c4a69d573e812708e5089a78156a5a4c2341b9",
+      "endpoint_mapping": {
+        "connections": 5242,
+        "mapped_sinks": 5242,
+        "mapped_sources": 5242,
+        "timed_connections": 5242,
+        "timed_fully_mapped": 5242
+      },
+      "guarded_connections": 151,
+      "internal_hpwl": [
+        12789,
+        12769
+      ],
+      "internal_timing_cost_q": [
+        1111120332,
+        1110694390
+      ],
+      "native_evidence_reused_from_page4_by_hash": false
+    },
+    {
+      "accepted_moves": 24,
+      "baseline": {
+        "cpd_ns": 11.6084,
+        "routing_iterations": 15,
+        "wirelength": 79857
+      },
+      "candidate": {
+        "cpd_delta_pct": -0.10509630956893057,
+        "cpd_ns": 11.5962,
+        "routing_iterations": 15,
+        "wirelength": 79676,
+        "wirelength_delta_pct": -0.2266551460736066
+      },
+      "case": "clma",
+      "cohort": "development",
+      "deterministic_output_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+      "endpoint_mapping": {
+        "connections": 13458,
+        "mapped_sinks": 13458,
+        "mapped_sources": 13458,
+        "timed_connections": 13458,
+        "timed_fully_mapped": 13458
+      },
+      "guarded_connections": 316,
+      "internal_hpwl": [
+        40813,
+        40800
+      ],
+      "internal_timing_cost_q": [
+        5956023404,
+        5945785038
+      ],
+      "native_evidence_reused_from_page4_by_hash": false
+    },
+    {
+      "accepted_moves": 76,
+      "baseline": {
+        "cpd_ns": 6.15322,
+        "routing_iterations": 13,
+        "wirelength": 221106
+      },
+      "candidate": {
+        "cpd_delta_pct": 0.0,
+        "cpd_ns": 6.15322,
+        "routing_iterations": 13,
+        "wirelength": 221112,
+        "wirelength_delta_pct": 0.0027136305663422178
+      },
+      "case": "spmv",
+      "cohort": "post_freeze_validation",
+      "deterministic_output_sha256": "8e97f13bf5e6bafe8ee4f432cc85a5b4a497e571b411f92780a5ec3d89907932",
+      "endpoint_mapping": {
+        "connections": 15138,
+        "mapped_sinks": 15138,
+        "mapped_sources": 15138,
+        "timed_connections": 15138,
+        "timed_fully_mapped": 15138
+      },
+      "guarded_connections": 12,
+      "internal_hpwl": [
+        132053,
+        131974
+      ],
+      "internal_timing_cost_q": [
+        5345953498,
+        5277472616
+      ],
+      "native_evidence_reused_from_page4_by_hash": false
+    },
+    {
+      "accepted_moves": 25,
+      "baseline": {
+        "cpd_ns": 9.19045,
+        "routing_iterations": 18,
+        "wirelength": 127260
+      },
+      "candidate": {
+        "cpd_delta_pct": -1.697522972215726,
+        "cpd_ns": 9.03444,
+        "routing_iterations": 17,
+        "wirelength": 127491,
+        "wirelength_delta_pct": 0.18151815181517428
+      },
+      "case": "softmax",
+      "cohort": "post_freeze_validation",
+      "deterministic_output_sha256": "0907b1bd6be272ba147b23312e5a96ca8a0dc4837e66173813daf6a0dfe53a66",
+      "endpoint_mapping": {
+        "connections": 16817,
+        "mapped_sinks": 16817,
+        "mapped_sources": 16817,
+        "timed_connections": 16817,
+        "timed_fully_mapped": 16817
+      },
+      "guarded_connections": 175,
+      "internal_hpwl": [
+        55899,
+        56241
+      ],
+      "internal_timing_cost_q": [
+        2317651862,
+        2295513727
+      ],
+      "native_evidence_reused_from_page4_by_hash": false
+    },
+    {
+      "accepted_moves": 372,
+      "baseline": {
+        "cpd_ns": 8.82262,
+        "routing_iterations": 15,
+        "wirelength": 544069
+      },
+      "candidate": {
+        "cpd_delta_pct": -7.069328612135639,
+        "cpd_ns": 8.19892,
+        "routing_iterations": 15,
+        "wirelength": 542266,
+        "wirelength_delta_pct": -0.3313917903795316
+      },
+      "case": "attention_layer",
+      "cohort": "post_freeze_validation",
+      "deterministic_output_sha256": "4ed7f23e9db7ae0bfaf6124a7542c3bd46c01d3a5c029dc3971d5984f1119477",
+      "endpoint_mapping": {
+        "connections": 41954,
+        "mapped_sinks": 41954,
+        "mapped_sources": 41954,
+        "timed_connections": 41954,
+        "timed_fully_mapped": 41954
+      },
+      "guarded_connections": 26,
+      "internal_hpwl": [
+        261854,
+        261510
+      ],
+      "internal_timing_cost_q": [
+        35580790577,
+        35537667574
+      ],
+      "macros": {
+        "macro_count": 4,
+        "member_count": 8,
+        "source": "vpr_place_macros_echo"
+      },
+      "same_router_baseline_reproduced": true
+    },
+    {
+      "accepted_moves": 21,
+      "baseline": {
+        "cpd_ns": 5.12784,
+        "routing_iterations": 14,
+        "wirelength": 232357
+      },
+      "candidate": {
+        "cpd_delta_pct": 0.0,
+        "cpd_ns": 5.12784,
+        "routing_iterations": 15,
+        "wirelength": 232069,
+        "wirelength_delta_pct": -0.12394720193494857
+      },
+      "case": "conv_layer",
+      "cohort": "macro_stress_previously_probed",
+      "deterministic_output_sha256": "d5dda130098e6d76b8f7bfa6f37a3bdc620ec26b6fe9e066418f034a35a07cc9",
+      "endpoint_mapping": {
+        "atom_timing_pin_labeled": 21140,
+        "atom_timing_pin_mapped": 16700,
+        "atom_timing_pin_unmapped": 4440,
+        "connections": 21140,
+        "mapped_sinks": 21140,
+        "mapped_sources": 21140,
+        "timed_connections": 21140,
+        "timed_fully_mapped": 21140
+      },
+      "guarded_connections": 83,
+      "internal_hpwl": [
+        126869,
+        126951
+      ],
+      "internal_timing_cost_q": [
+        3902505025,
+        3854893859
+      ],
+      "macros": {
+        "macro_count": 43,
+        "member_count": 86,
+        "source": "vpr_place_macros_echo"
+      },
+      "same_router_baseline_reproduced": true
+    },
+    {
+      "accepted_moves": 13,
+      "architecture_family": "Titan23 Stratix IV",
+      "baseline": {
+        "cpd_ns": 7.60292,
+        "routing_iterations": 15,
+        "wirelength": 766630
+      },
+      "candidate": {
+        "cpd_delta_pct": 0.0,
+        "cpd_ns": 7.60292,
+        "routing_iterations": 16,
+        "wirelength": 767301,
+        "wirelength_delta_pct": 0.08752592515293145
+      },
+      "case": "titan23_neuron",
+      "cohort": "post_freeze_validation",
+      "deterministic_output_sha256": "5ef9e7d8f3051df085f1c8e308425db67a9ac933293d8c842cd66b45858ab83b",
+      "endpoint_mapping": {
+        "atom_timing_pin_labeled": 77106,
+        "atom_timing_pin_mapped": 77106,
+        "atom_timing_pin_unmapped": 0,
+        "connections": 77106,
+        "mapped_sinks": 77106,
+        "mapped_sources": 77106,
+        "timed_connections": 77106,
+        "timed_fully_mapped": 77106
+      },
+      "guarded_connections": 196,
+      "internal_hpwl": [
+        452937,
+        453081
+      ],
+      "internal_timing_cost_q": [
+        23600080023,
+        23529899820
+      ],
+      "macros": {
+        "macro_count": 101,
+        "member_count": 204,
+        "source": "vpr_place_macros_echo"
+      },
+      "same_router_baseline_reproduced": true
+    }
+  ],
+  "claim_boundary": "Titan23 neuron is a post-freeze second-architecture-family validation point. It uses the unchanged 2x2/q60000 strategy and identical frozen VPR/SDC/router parameters for baseline and candidate. Its small routed-wirelength regression is retained. This remains CPU/VPR QoR evidence, not FPGA acceleration or hardware performance.",
+  "cohort_aggregates": {
+    "development": {
+      "cases": 4,
+      "cpd_geomean_delta_pct": -0.022054113294978084,
+      "cpd_nonregressing_cases": 3,
+      "cpd_worst_delta_pct": 0.016926824601304347,
+      "wirelength_geomean_delta_pct": -0.15238353906017466,
+      "wirelength_improved_cases": 3,
+      "wirelength_worst_delta_pct": 0.43909400270774057
+    },
+    "macro_stress_previously_probed": {
+      "cases": 1,
+      "cpd_geomean_delta_pct": 0.0,
+      "cpd_nonregressing_cases": 1,
+      "cpd_worst_delta_pct": 0.0,
+      "wirelength_geomean_delta_pct": -0.12394720193494857,
+      "wirelength_improved_cases": 1,
+      "wirelength_worst_delta_pct": -0.12394720193494857
+    },
+    "post_freeze_validation": {
+      "cases": 4,
+      "cpd_geomean_delta_pct": -2.2355674127443104,
+      "cpd_nonregressing_cases": 4,
+      "cpd_worst_delta_pct": 0.0,
+      "wirelength_geomean_delta_pct": -0.015095676765664034,
+      "wirelength_improved_cases": 1,
+      "wirelength_worst_delta_pct": 0.18151815181517428
+    }
+  },
+  "date": "2026-09-01",
+  "endpoint_mapping": {
+    "connections": 198595,
+    "mapped_sinks": 198595,
+    "mapped_sources": 198595,
+    "timed_connections": 198595,
+    "timed_fully_mapped": 198595
+  },
+  "frozen_strategy": {
+    "critical_distance_guard_q": 60000,
+    "critical_distance_slack": 0,
+    "page_size": [
+      2,
+      2
+    ],
+    "per_transaction_hpwl_cap": null,
+    "timing_model": "connection_star",
+    "timing_weight": 1,
+    "wire_weight": 256
+  },
+  "new_case_evidence": {
+    "base_matrix": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/timing_macro_extended_matrix_2026-08-31.json",
+      "sha256": "e2f2dd9a8d96524868d363c1d885d0afbfe7e5692030d637c106b39b99f95274"
+    },
+    "baseline_closure": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/titan23_neuron_seed3_cw300/vpr_native_closure.json",
+      "sha256": "2ad5e9086d2f8ed13b9a255deb13c9c3424a0a0c9a8621636090cf4df082d179"
+    },
+    "candidate_closure": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/titan23_neuron_seed3_cw300_endpoints/page2_connection_star_guard_q60000_w1_vpr_native.json",
+      "sha256": "286e54e47dd0f57dbb5b653c3e73abf6ff0942f7806769caf8f4b3b27e49601b"
+    },
+    "candidate_place": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/titan23_neuron_seed3_cw300_endpoints/page2_connection_star_guard_q60000_w1.place",
+      "sha256": "5ef9e7d8f3051df085f1c8e308425db67a9ac933293d8c842cd66b45858ab83b"
+    },
+    "cpu": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/titan23_neuron_seed3_cw300_endpoints/page2_connection_star_guard_q60000_w1.json",
+      "sha256": "37e99791ff6f1d9b928af996d1cc6d8e2568053e12c1060c2a53755a920d863b"
+    },
+    "input_capture": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/titan23_neuron_input_capture_2026-09-01.json",
+      "sha256": "5b6153a64937a96b2ef1d95bb73f12b185413d25025f5498d905bd3ee1c5bbb5"
+    },
+    "macro_capture": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/titan23_neuron_seed3_cw300/vpr_macro_capture.json",
+      "sha256": "24907b6731dce2a48c36465bf4226fd056e61b204e51e0c3cf6819d285ab70b4"
+    },
+    "manifest": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/titan23_neuron_seed3_cw300_endpoints/manifest.json",
+      "sha256": "9af025de15f9ca26a48c698b196de996a71f9b8fed0724593214957feb00e04c"
+    },
+    "timing_export_build": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/vpr_timing_export_optional_build_2026-08-31.json",
+      "sha256": "8a44f1d2cd424ce41f999d6fca0968ad1f21d8edef0fce98d286d40e762832a5"
+    }
+  },
+  "schema": "TILEPLACE_TIMING_TITAN_EXTENDED_MATRIX_V1",
+  "status": "pass"
+}

@@ -1,0 +1,63 @@
+{
+  "constraint_sources": {
+    "n_n2854": [
+      {
+        "layer_high": 0,
+        "layer_low": 0,
+        "subtile": -1,
+        "xmax": 11,
+        "xmin": 1,
+        "ymax": 4,
+        "ymin": 1
+      }
+    ],
+    "n_n2966": [
+      {
+        "layer_high": 0,
+        "layer_low": 0,
+        "subtile": -1,
+        "xmax": 11,
+        "xmin": 1,
+        "ymax": 9,
+        "ymin": 5
+      }
+    ]
+  },
+  "contract": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/bigkey_tight_seed3_cw300_v2",
+  "corrupted_place": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/bigkey_tight_seed3_cw300_v2/constraint_probe/constraint_corrupted.place",
+    "sha256": "ace8f0a4f4f5b4753f492d955b26167a22e69b76a9a1b18e54b312e1166d5400"
+  },
+  "golden_place_sha256": "30ca1d8d7218c881d9b2b52e4368d3e2feae25cbb4865b178e7ede29b64af1fb",
+  "injection": {
+    "blocks": [
+      "n_n2854",
+      "n_n2966"
+    ],
+    "first_constraint_violation": true,
+    "kind": "same_type_location_swap",
+    "logical_type": "clb",
+    "second_constraint_violation": true
+  },
+  "recovered_place": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/bigkey_tight_seed3_cw300_v2/constraint_probe/constraint_recovered_a.place",
+    "sha256": "ef6f22386cf371a86bff8d28ebdbdc69077286e6e0b9a46408cafc3135156143"
+  },
+  "recovery": {
+    "blocks": 576,
+    "deterministic_tie_break": "displacement,net_cost,layer,y,x,subtile",
+    "input_place_sha256": "ace8f0a4f4f5b4753f492d955b26167a22e69b76a9a1b18e54b312e1166d5400",
+    "legal": true,
+    "macros": 0,
+    "moved_blocks": 9,
+    "moved_from_input": 9,
+    "moved_from_reference": 9,
+    "occupied_sites": 576,
+    "placement_sha256": "ef6f22386cf371a86bff8d28ebdbdc69077286e6e0b9a46408cafc3135156143",
+    "schema": "TILEPLACE_CPU_GOLDEN_V1"
+  },
+  "repeat_sha256": "ef6f22386cf371a86bff8d28ebdbdc69077286e6e0b9a46408cafc3135156143",
+  "schema": "TILEPLACE_EXTERNAL_CONSTRAINT_PROBE_V1",
+  "status": "pass",
+  "validator_rejection": "n_n2854: location (1, 6, 0, 0) violates region [{'layer_high': 0, 'layer_low': 0, 'subtile': -1, 'xmax': 11, 'xmin': 1, 'ymax': 4, 'ymin': 1}]; n_n2966: location (10, 1, 0, 0) violates region [{'layer_high': 0, 'layer_low': 0, 'subtile': -1, 'xmax': 11, 'xmin': 1, 'ymax': 9, 'ymin': 5}]"
+}

@@ -1,0 +1,105 @@
+{
+  "baseline": {
+    "cpd_ns": 5.20192,
+    "routing_iterations": 19,
+    "wirelength": 10023
+  },
+  "candidate": {
+    "cpd_delta_pct": 0.46290600393699144,
+    "cpd_ns": 5.226,
+    "routing_iterations": 21,
+    "wirelength": 10044,
+    "wirelength_delta_pct": 0.20951810835079243
+  },
+  "case": "apex4_fixed_io_seed1_cw78",
+  "claim_boundary": "This point proves that the frozen TilePlace flow preserves native coordinate-fixed I/O through deterministic CPU refinement and VPR route/analysis. Its small routed-WL and CPD regressions are retained. It is not part of the unconstrained QoR or Eigen AP aggregates.",
+  "cohort": "constrained_post_freeze_validation",
+  "constraints": {
+    "coordinate_fixed_clusters": 28,
+    "fixed_clusters_preserved": 28,
+    "source": "native VPR XML"
+  },
+  "cpu": {
+    "accepted_moves": 10,
+    "complete_repeat_byte_identical": true,
+    "deterministic_output_sha256": "e6e8fd85474429a622e50682507f4bd6f48fd9a249e64bb4339d3023cae3784a",
+    "guarded_connections": 278,
+    "guarded_connections_increased": 0,
+    "internal_hpwl": [
+      3958,
+      3944
+    ],
+    "internal_timing_cost_q": [
+      673651993,
+      670962113
+    ]
+  },
+  "date": "2026-09-01",
+  "decision": "retain_separate_constrained_negative_qor_point",
+  "endpoint_mapping": {
+    "atom_timing_pin_labeled": 2263,
+    "atom_timing_pin_mapped": 2263,
+    "atom_timing_pin_unmapped": 0,
+    "connections": 2263,
+    "mapped_sinks": 2263,
+    "mapped_sources": 2263,
+    "timed_connections": 2263,
+    "timed_fully_mapped": 2263
+  },
+  "evidence": {
+    "baseline_closure": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/apex4_fixed_io_seed1_cw78_v2/vpr_native_closure.json",
+      "sha256": "fc83c863cfb5fcf7d26e6db900edddec4202eba9d969a67b6c5786c4b7a516a4"
+    },
+    "candidate_closure": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/apex4_fixed_io_seed1_cw78_endpoints/page2_connection_star_guard_q60000_w1_vpr_native.json",
+      "sha256": "df1ebffe7cdfdd6ffcadcbd7f132568424d005923e7a937e7a436cbf2effbe27"
+    },
+    "connections": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/apex4_fixed_io_constrained_qor_2026-09-01/connections.csv",
+      "sha256": "fb25bbc396ec903bbe46a9440540e7f25d0bd28948346f8c7597fd5cc79b427a"
+    },
+    "cpu": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/apex4_fixed_io_seed1_cw78_endpoints/page2_connection_star_guard_q60000_w1.json",
+      "sha256": "6e2f48c31dbf895cc716f703432858184e3c0d5e0275ea7f23273687c9137345"
+    },
+    "manifest": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/apex4_fixed_io_seed1_cw78_endpoints/manifest.json",
+      "sha256": "bb9dceb9eb3e47ba80eeed01638ff85e4f19fa5d4e745240bedb4f1087b43edc"
+    },
+    "preregistration": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/apex4_fixed_io_constrained_qor_preregistration_2026-09-01.json",
+      "sha256": "ea6f880ff877bce94bfc64cab55942006568db67aff21fc9ba4394ca03c6eebe"
+    },
+    "timing": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/apex4_fixed_io_constrained_qor_2026-09-01/reference_timing.output.csv",
+      "sha256": "7bac5d98fb765a4283fa42fd3904e7f13c63a569a04fd436857d6a4ada74d363"
+    }
+  },
+  "frozen_strategy": {
+    "candidate_limit": 64,
+    "critical_distance_guard_q": 60000,
+    "critical_distance_slack": 0,
+    "page_size": [
+      2,
+      2
+    ],
+    "passes": 8,
+    "proposal_workers": 1,
+    "timing_model": "connection_star",
+    "timing_weight": 1,
+    "wire_weight": 256
+  },
+  "schema": "TILEPLACE_CONSTRAINED_QOR_MATRIX_V1",
+  "separate_from": [
+    "nine-case unconstrained TilePlace QoR aggregate",
+    "six-case Eigen conventional/AP aggregate"
+  ],
+  "status": "pass",
+  "timing_export": {
+    "atom_timing_pin_mapped": 2263,
+    "connections": 2263,
+    "critical_path_delay_ps": 5202,
+    "criticality_q_at_least_60000": 278
+  }
+}

@@ -1,0 +1,31 @@
+--- a/vpr/src/base/vpr_api.cpp
++++ b/vpr/src/base/vpr_api.cpp
+@@ -1620,7 +1620,8 @@
+             const auto cpd_ps = static_cast<std::uint64_t>(std::llround(timing_info->least_slack_critical_path().delay() * 1e12));
+             std::ofstream output(persistroute_criticality_csv);
+             if (!output) VPR_FATAL_ERROR(VPR_ERROR_ANALYSIS, "Unable to create PersistRoute timing output %s", persistroute_criticality_csv);
+-            output << "task_id,criticality_q,delay_ps,slack_ps,critical_path_delay_ps\n";
++            output << "task_id,criticality_q,delay_ps,slack_ps,critical_path_delay_ps,timing_pin_mapped\n";
++            std::size_t unmapped_timing_pins = 0;
+             for (const auto& connection : persistroute_connections) {
+                 const ParentPinId pin = net_list.net_pin(connection.net_id, connection.pin_index);
+                 const ClusterBlockId sink_block = convert_to_cluster_block_id(net_list.pin_block(pin));
+@@ -1633,10 +1634,15 @@
+                     criticality = std::max(criticality, timing_info->setup_pin_criticality(atom_pin));
+                     slack = std::min(slack, timing_info->setup_pin_slack(atom_pin));
+                 }
+-                if (!std::isfinite(slack)) VPR_FATAL_ERROR(VPR_ERROR_ANALYSIS, "Unable to map PersistRoute net %zu pin %zu to an atom timing pin", std::size_t(connection.net_id), connection.pin_index);
++                const bool timing_pin_mapped = std::isfinite(slack);
++                if (!timing_pin_mapped) ++unmapped_timing_pins;
+                 const auto criticality_q = static_cast<std::uint16_t>(std::llround(std::max(0.f, std::min(1.f, criticality)) * 65535.f));
+-                const auto slack_ps = std::isfinite(slack) ? static_cast<std::int64_t>(std::llround(slack * 1e12)) : 0;
+-                output << connection.task_id << ',' << criticality_q << ',' << connection.delay_ps << ',' << slack_ps << ',' << cpd_ps << '\n';
++                const auto slack_ps = timing_pin_mapped ? static_cast<std::int64_t>(std::llround(slack * 1e12)) : 0;
++                output << connection.task_id << ',' << criticality_q << ',' << connection.delay_ps << ',' << slack_ps << ',' << cpd_ps << ',' << timing_pin_mapped << '\n';
++            }
++            if (unmapped_timing_pins != 0) {
++                VTR_LOG_WARN("%zu PersistRoute connections have no atom timing pin; exported with timing_pin_mapped=0, criticality=0, and slack=0\n",
++                             unmapped_timing_pins);
+             }
+             if (!output) VPR_FATAL_ERROR(VPR_ERROR_ANALYSIS, "Failed while writing PersistRoute timing output %s", persistroute_criticality_csv);
+         }

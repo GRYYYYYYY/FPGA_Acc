@@ -1,0 +1,331 @@
+{
+  "case_scaling": {
+    "case_count": 2,
+    "interpretation": "descriptive single-worker case scaling, not a complexity proof",
+    "log_log_slope_median_wall_vs_timed_connections": -9.568246465872402
+  },
+  "cases": [
+    {
+      "accepted_moves": 76,
+      "blocks": 1003,
+      "case": "spmv",
+      "input_place_sha256": "50e47c7e2486fdcb54856df741a3143d04d7c783e7fcca6649cf48a51b12a262",
+      "median_blocks_per_s": 16.808444477534888,
+      "median_timed_connections_per_s": 252.76347762179333,
+      "nets_with_multiple_blocks": 8946,
+      "output_place_sha256": "8e97f13bf5e6bafe8ee4f432cc85a5b4a497e571b411f92780a5ec3d89907932",
+      "process_s": {
+        "cv": 0.023985874102250702,
+        "max": 62.797775387,
+        "mean": 59.98932289385714,
+        "median": 59.644050415,
+        "median_absolute_deviation": 0.8081858219999987,
+        "min": 58.213646592,
+        "pstdev": 1.4388963464113231
+      },
+      "samples": [
+        {
+          "accepted_moves": 76,
+          "output_place_sha256": "8e97f13bf5e6bafe8ee4f432cc85a5b4a497e571b411f92780a5ec3d89907932",
+          "process_s": 58.213646592,
+          "usage": {
+            "input_blocks": 0,
+            "involuntary_context_switches": 81,
+            "major_faults": 0,
+            "minor_faults": 39776,
+            "output_blocks": 0,
+            "system_s": 0.14799099999999998,
+            "user_s": 58.065664,
+            "voluntary_context_switches": 7
+          },
+          "wall_s": 58.228295559
+        },
+        {
+          "accepted_moves": 76,
+          "output_place_sha256": "8e97f13bf5e6bafe8ee4f432cc85a5b4a497e571b411f92780a5ec3d89907932",
+          "process_s": 62.797775387,
+          "usage": {
+            "input_blocks": 0,
+            "involuntary_context_switches": 78,
+            "major_faults": 0,
+            "minor_faults": 38017,
+            "output_blocks": 0,
+            "system_s": 0.10800599999999994,
+            "user_s": 62.68977799999996,
+            "voluntary_context_switches": 8
+          },
+          "wall_s": 63.60002419
+        },
+        {
+          "accepted_moves": 76,
+          "output_place_sha256": "8e97f13bf5e6bafe8ee4f432cc85a5b4a497e571b411f92780a5ec3d89907932",
+          "process_s": 60.939881029,
+          "usage": {
+            "input_blocks": 0,
+            "involuntary_context_switches": 73,
+            "major_faults": 0,
+            "minor_faults": 37765,
+            "output_blocks": 0,
+            "system_s": 0.10798799999999997,
+            "user_s": 60.831901000000016,
+            "voluntary_context_switches": 6
+          },
+          "wall_s": 60.94375932
+        },
+        {
+          "accepted_moves": 76,
+          "output_place_sha256": "8e97f13bf5e6bafe8ee4f432cc85a5b4a497e571b411f92780a5ec3d89907932",
+          "process_s": 59.644050415,
+          "usage": {
+            "input_blocks": 0,
+            "involuntary_context_switches": 118,
+            "major_faults": 0,
+            "minor_faults": 37261,
+            "output_blocks": 0,
+            "system_s": 0.15999800000000008,
+            "user_s": 59.48406299999999,
+            "voluntary_context_switches": 11
+          },
+          "wall_s": 59.672386778
+        },
+        {
+          "accepted_moves": 76,
+          "output_place_sha256": "8e97f13bf5e6bafe8ee4f432cc85a5b4a497e571b411f92780a5ec3d89907932",
+          "process_s": 58.87396565,
+          "usage": {
+            "input_blocks": 0,
+            "involuntary_context_switches": 197,
+            "major_faults": 0,
+            "minor_faults": 36759,
+            "output_blocks": 0,
+            "system_s": 0.17598200000000008,
+            "user_s": 58.697993999999994,
+            "voluntary_context_switches": 11
+          },
+          "wall_s": 58.897723442
+        },
+        {
+          "accepted_moves": 76,
+          "output_place_sha256": "8e97f13bf5e6bafe8ee4f432cc85a5b4a497e571b411f92780a5ec3d89907932",
+          "process_s": 59.003704947,
+          "usage": {
+            "input_blocks": 0,
+            "involuntary_context_switches": 100,
+            "major_faults": 0,
+            "minor_faults": 36257,
+            "output_blocks": 0,
+            "system_s": 0.13598,
+            "user_s": 58.86773599999998,
+            "voluntary_context_switches": 7
+          },
+          "wall_s": 59.008266144
+        },
+        {
+          "accepted_moves": 76,
+          "output_place_sha256": "8e97f13bf5e6bafe8ee4f432cc85a5b4a497e571b411f92780a5ec3d89907932",
+          "process_s": 60.452236237,
+          "usage": {
+            "input_blocks": 0,
+            "involuntary_context_switches": 123,
+            "major_faults": 0,
+            "minor_faults": 35753,
+            "output_blocks": 0,
+            "system_s": 0.11600200000000016,
+            "user_s": 60.33624300000008,
+            "voluntary_context_switches": 6
+          },
+          "wall_s": 60.459648087
+        }
+      ],
+      "timed_connections": 15083,
+      "wall_s": {
+        "cv": 0.0277020165952009,
+        "max": 63.60002419,
+        "mean": 60.11572907428572,
+        "median": 59.672386778,
+        "median_absolute_deviation": 0.7872613089999945,
+        "min": 58.228295559,
+        "pstdev": 1.665326924448464
+      }
+    },
+    {
+      "accepted_moves": 25,
+      "blocks": 1098,
+      "case": "softmax",
+      "input_place_sha256": "3cefffbc265e3e3a965c63df4c1fc69b7887c95514bb5edced42e5ca5f08eddd",
+      "median_blocks_per_s": 50.37087487510331,
+      "median_timed_connections_per_s": 768.7292807669455,
+      "nets_with_multiple_blocks": 7737,
+      "output_place_sha256": "0907b1bd6be272ba147b23312e5a96ca8a0dc4837e66173813daf6a0dfe53a66",
+      "process_s": {
+        "cv": 0.02235912606254116,
+        "max": 22.752002142,
+        "mean": 21.856672226714284,
+        "median": 21.795877797,
+        "median_absolute_deviation": 0.4321225429999984,
+        "min": 21.347111095,
+        "pstdev": 0.48869608962474687
+      },
+      "samples": [
+        {
+          "accepted_moves": 25,
+          "output_place_sha256": "0907b1bd6be272ba147b23312e5a96ca8a0dc4837e66173813daf6a0dfe53a66",
+          "process_s": 21.363755254,
+          "usage": {
+            "input_blocks": 0,
+            "involuntary_context_switches": 39,
+            "major_faults": 0,
+            "minor_faults": 27672,
+            "output_blocks": 0,
+            "system_s": 0.09998599999999991,
+            "user_s": 21.263779,
+            "voluntary_context_switches": 8
+          },
+          "wall_s": 21.368610773
+        },
+        {
+          "accepted_moves": 25,
+          "output_place_sha256": "0907b1bd6be272ba147b23312e5a96ca8a0dc4837e66173813daf6a0dfe53a66",
+          "process_s": 21.53169344,
+          "usage": {
+            "input_blocks": 0,
+            "involuntary_context_switches": 57,
+            "major_faults": 0,
+            "minor_faults": 26419,
+            "output_blocks": 0,
+            "system_s": 0.107993,
+            "user_s": 21.42370900000003,
+            "voluntary_context_switches": 12
+          },
+          "wall_s": 21.535685774
+        },
+        {
+          "accepted_moves": 25,
+          "output_place_sha256": "0907b1bd6be272ba147b23312e5a96ca8a0dc4837e66173813daf6a0dfe53a66",
+          "process_s": 21.347111095,
+          "usage": {
+            "input_blocks": 0,
+            "involuntary_context_switches": 35,
+            "major_faults": 0,
+            "minor_faults": 25410,
+            "output_blocks": 0,
+            "system_s": 0.08398600000000012,
+            "user_s": 21.263135000000034,
+            "voluntary_context_switches": 17
+          },
+          "wall_s": 21.350176006
+        },
+        {
+          "accepted_moves": 25,
+          "output_place_sha256": "0907b1bd6be272ba147b23312e5a96ca8a0dc4837e66173813daf6a0dfe53a66",
+          "process_s": 22.752002142,
+          "usage": {
+            "input_blocks": 0,
+            "involuntary_context_switches": 25,
+            "major_faults": 0,
+            "minor_faults": 25158,
+            "output_blocks": 0,
+            "system_s": 0.09999499999999983,
+            "user_s": 22.652016000000003,
+            "voluntary_context_switches": 6
+          },
+          "wall_s": 22.755610121
+        },
+        {
+          "accepted_moves": 25,
+          "output_place_sha256": "0907b1bd6be272ba147b23312e5a96ca8a0dc4837e66173813daf6a0dfe53a66",
+          "process_s": 22.364608358,
+          "usage": {
+            "input_blocks": 0,
+            "involuntary_context_switches": 29,
+            "major_faults": 0,
+            "minor_faults": 24654,
+            "output_blocks": 0,
+            "system_s": 0.10441300000000009,
+            "user_s": 22.26020500000004,
+            "voluntary_context_switches": 8
+          },
+          "wall_s": 22.368997762
+        },
+        {
+          "accepted_moves": 25,
+          "output_place_sha256": "0907b1bd6be272ba147b23312e5a96ca8a0dc4837e66173813daf6a0dfe53a66",
+          "process_s": 21.841657501,
+          "usage": {
+            "input_blocks": 0,
+            "involuntary_context_switches": 35,
+            "major_faults": 0,
+            "minor_faults": 24402,
+            "output_blocks": 0,
+            "system_s": 0.07309400000000021,
+            "user_s": 21.768572999999947,
+            "voluntary_context_switches": 7
+          },
+          "wall_s": 21.844603736
+        },
+        {
+          "accepted_moves": 25,
+          "output_place_sha256": "0907b1bd6be272ba147b23312e5a96ca8a0dc4837e66173813daf6a0dfe53a66",
+          "process_s": 21.795877797,
+          "usage": {
+            "input_blocks": 0,
+            "involuntary_context_switches": 27,
+            "major_faults": 0,
+            "minor_faults": 23652,
+            "output_blocks": 0,
+            "system_s": 0.06398899999999985,
+            "user_s": 21.731899,
+            "voluntary_context_switches": 6
+          },
+          "wall_s": 21.798311082
+        }
+      ],
+      "timed_connections": 16757,
+      "wall_s": {
+        "cv": 0.022355663004729895,
+        "max": 22.755610121,
+        "mean": 21.860285036285713,
+        "median": 21.798311082,
+        "median_absolute_deviation": 0.4297003090000011,
+        "min": 21.350176006,
+        "pstdev": 0.48870116545854303
+      }
+    }
+  ],
+  "claim_boundary": "Python CPU reference with deterministic fork-process proposal evaluation on the recorded pinned logical CPUs. This is not VPR end-to-end or FPGA performance evidence.",
+  "environment": {
+    "affinity": [
+      31
+    ],
+    "cpu_model": "INTEL(R) XEON(R) GOLD 6530",
+    "loadavg_after": [
+      91.58740234375,
+      87.83935546875,
+      87.0810546875
+    ],
+    "logical_cpus": 128,
+    "pinned_cpu": 31,
+    "pinned_cpus": [
+      31
+    ],
+    "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12 (main, Jul 29 2024, 16:56:48) [GCC 11.4.0]"
+  },
+  "protocol": {
+    "cache_state": "one warmup per case; measured runs are warm-cache",
+    "critical_distance_guard_q": 60000,
+    "eager_disabled_guard_costs": false,
+    "included": "contract load, optimization, placement write, legality validation, and JSON report write",
+    "measured_repetitions": 7,
+    "page_size": [
+      2,
+      2
+    ],
+    "proposal_workers": 1,
+    "timing_model": "connection_star",
+    "warmups": 3
+  },
+  "schema": "TILEPLACE_CPU_RUNTIME_MATRIX_V1",
+  "started_at_utc": "2026-08-31T21:37:03.689796+00:00",
+  "status": "pass"
+}

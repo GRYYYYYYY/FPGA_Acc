@@ -1,0 +1,342 @@
+{
+  "aggregate": {
+    "cases": 6,
+    "cpd_geomean_delta_pct": -0.2996039941130846,
+    "cpd_nonregressing_cases": 5,
+    "cpd_worst_delta_pct": 0.016926824601304347,
+    "wirelength_geomean_delta_pct": -0.07096344952239875,
+    "wirelength_improved_cases": 3,
+    "wirelength_worst_delta_pct": 0.43909400270774057
+  },
+  "cases": [
+    {
+      "accepted_moves": 12,
+      "baseline": {
+        "cpd_ns": 6.59759,
+        "routing_iterations": 13,
+        "wirelength": 9103
+      },
+      "candidate": {
+        "cpd_delta_pct": 0.0,
+        "cpd_ns": 6.59759,
+        "routing_iterations": 13,
+        "wirelength": 9031,
+        "wirelength_delta_pct": -0.790948039107986
+      },
+      "case": "diffeq",
+      "cohort": "development",
+      "deterministic_output_sha256": "65c65279d64c55234103977d25bd99cd583b716142377478179d5a23c774174d",
+      "endpoint_mapping": {
+        "connections": 1973,
+        "mapped_sinks": 1973,
+        "mapped_sources": 1973,
+        "timed_connections": 1973,
+        "timed_fully_mapped": 1973
+      },
+      "guarded_connections": 90,
+      "internal_hpwl": [
+        4325,
+        4323
+      ],
+      "internal_timing_cost_q": [
+        285981775,
+        282711594
+      ],
+      "native_evidence_reused_from_page4_by_hash": true
+    },
+    {
+      "accepted_moves": 74,
+      "baseline": {
+        "cpd_ns": 13.5879,
+        "routing_iterations": 12,
+        "wirelength": 33182
+      },
+      "candidate": {
+        "cpd_delta_pct": 0.016926824601304347,
+        "cpd_ns": 13.5902,
+        "routing_iterations": 13,
+        "wirelength": 33173,
+        "wirelength_delta_pct": -0.02712313905128827
+      },
+      "case": "frisc",
+      "cohort": "development",
+      "deterministic_output_sha256": "7b18f16c638ee81e82869fe335193d1e794e145d320c2fca1821040d242f4e31",
+      "endpoint_mapping": {
+        "connections": 5767,
+        "mapped_sinks": 5767,
+        "mapped_sources": 5767,
+        "timed_connections": 5767,
+        "timed_fully_mapped": 5767
+      },
+      "guarded_connections": 139,
+      "internal_hpwl": [
+        17408,
+        17410
+      ],
+      "internal_timing_cost_q": [
+        1076870233,
+        1071715147
+      ],
+      "native_evidence_reused_from_page4_by_hash": false
+    },
+    {
+      "accepted_moves": 27,
+      "baseline": {
+        "cpd_ns": 8.79211,
+        "routing_iterations": 12,
+        "wirelength": 27329
+      },
+      "candidate": {
+        "cpd_delta_pct": 0.0,
+        "cpd_ns": 8.79211,
+        "routing_iterations": 13,
+        "wirelength": 27449,
+        "wirelength_delta_pct": 0.43909400270774057
+      },
+      "case": "elliptic",
+      "cohort": "development",
+      "deterministic_output_sha256": "d50c38d2a200a8e901e58a1305c4a69d573e812708e5089a78156a5a4c2341b9",
+      "endpoint_mapping": {
+        "connections": 5242,
+        "mapped_sinks": 5242,
+        "mapped_sources": 5242,
+        "timed_connections": 5242,
+        "timed_fully_mapped": 5242
+      },
+      "guarded_connections": 151,
+      "internal_hpwl": [
+        12789,
+        12769
+      ],
+      "internal_timing_cost_q": [
+        1111120332,
+        1110694390
+      ],
+      "native_evidence_reused_from_page4_by_hash": false
+    },
+    {
+      "accepted_moves": 24,
+      "baseline": {
+        "cpd_ns": 11.6084,
+        "routing_iterations": 15,
+        "wirelength": 79857
+      },
+      "candidate": {
+        "cpd_delta_pct": -0.10509630956893057,
+        "cpd_ns": 11.5962,
+        "routing_iterations": 15,
+        "wirelength": 79676,
+        "wirelength_delta_pct": -0.2266551460736066
+      },
+      "case": "clma",
+      "cohort": "development",
+      "deterministic_output_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+      "endpoint_mapping": {
+        "connections": 13458,
+        "mapped_sinks": 13458,
+        "mapped_sources": 13458,
+        "timed_connections": 13458,
+        "timed_fully_mapped": 13458
+      },
+      "guarded_connections": 316,
+      "internal_hpwl": [
+        40813,
+        40800
+      ],
+      "internal_timing_cost_q": [
+        5956023404,
+        5945785038
+      ],
+      "native_evidence_reused_from_page4_by_hash": false
+    },
+    {
+      "accepted_moves": 76,
+      "baseline": {
+        "cpd_ns": 6.15322,
+        "routing_iterations": 13,
+        "wirelength": 221106
+      },
+      "candidate": {
+        "cpd_delta_pct": 0.0,
+        "cpd_ns": 6.15322,
+        "routing_iterations": 13,
+        "wirelength": 221112,
+        "wirelength_delta_pct": 0.0027136305663422178
+      },
+      "case": "spmv",
+      "cohort": "post_freeze_validation",
+      "deterministic_output_sha256": "8e97f13bf5e6bafe8ee4f432cc85a5b4a497e571b411f92780a5ec3d89907932",
+      "endpoint_mapping": {
+        "connections": 15138,
+        "mapped_sinks": 15138,
+        "mapped_sources": 15138,
+        "timed_connections": 15138,
+        "timed_fully_mapped": 15138
+      },
+      "guarded_connections": 12,
+      "internal_hpwl": [
+        132053,
+        131974
+      ],
+      "internal_timing_cost_q": [
+        5345953498,
+        5277472616
+      ],
+      "native_evidence_reused_from_page4_by_hash": false
+    },
+    {
+      "accepted_moves": 25,
+      "baseline": {
+        "cpd_ns": 9.19045,
+        "routing_iterations": 18,
+        "wirelength": 127260
+      },
+      "candidate": {
+        "cpd_delta_pct": -1.697522972215726,
+        "cpd_ns": 9.03444,
+        "routing_iterations": 17,
+        "wirelength": 127491,
+        "wirelength_delta_pct": 0.18151815181517428
+      },
+      "case": "softmax",
+      "cohort": "post_freeze_validation",
+      "deterministic_output_sha256": "0907b1bd6be272ba147b23312e5a96ca8a0dc4837e66173813daf6a0dfe53a66",
+      "endpoint_mapping": {
+        "connections": 16817,
+        "mapped_sinks": 16817,
+        "mapped_sources": 16817,
+        "timed_connections": 16817,
+        "timed_fully_mapped": 16817
+      },
+      "guarded_connections": 175,
+      "internal_hpwl": [
+        55899,
+        56241
+      ],
+      "internal_timing_cost_q": [
+        2317651862,
+        2295513727
+      ],
+      "native_evidence_reused_from_page4_by_hash": false
+    }
+  ],
+  "claim_boundary": "This matrix is deterministic CPU placement plus serial VPR route/analysis on six academic cases, including two cases first evaluated after the strategy was frozen. It is not hardware performance evidence. The frozen strategy improves geometric-mean wirelength and CPD, but per-case routed wirelength is not monotonic and the worst case is reported explicitly.",
+  "cohort_aggregates": {
+    "development": {
+      "cases": 4,
+      "cpd_geomean_delta_pct": -0.022054113294978084,
+      "cpd_nonregressing_cases": 3,
+      "cpd_worst_delta_pct": 0.016926824601304347,
+      "wirelength_geomean_delta_pct": -0.15238353906017466,
+      "wirelength_improved_cases": 3,
+      "wirelength_worst_delta_pct": 0.43909400270774057
+    },
+    "post_freeze_validation": {
+      "cases": 2,
+      "cpd_geomean_delta_pct": -0.8523943668914069,
+      "cpd_nonregressing_cases": 2,
+      "cpd_worst_delta_pct": 0.0,
+      "wirelength_geomean_delta_pct": 0.09207596414091412,
+      "wirelength_improved_cases": 0,
+      "wirelength_worst_delta_pct": 0.18151815181517428
+    }
+  },
+  "date": "2026-08-31",
+  "frozen_strategy": {
+    "critical_distance_guard_q": 60000,
+    "critical_distance_slack": 0,
+    "page_size": [
+      2,
+      2
+    ],
+    "per_transaction_hpwl_cap": null,
+    "timing_model": "connection_star",
+    "timing_weight": 1,
+    "wire_weight": 256
+  },
+  "schema": "TILEPLACE_TIMING_MULTICASE_MATRIX_V2",
+  "status": "pass",
+  "wire0_ablation": {
+    "aggregate": {
+      "cases": 4,
+      "cpd_geomean_delta_pct": -0.022054113294978084,
+      "cpd_nonregressing_cases": 3,
+      "cpd_worst_delta_pct": 0.016926824601304347,
+      "wirelength_geomean_delta_pct": 0.006379914993348557,
+      "wirelength_improved_cases": 2,
+      "wirelength_worst_delta_pct": 0.12440996743385835
+    },
+    "cases": [
+      {
+        "baseline": {
+          "cpd_ns": 6.59759,
+          "routing_iterations": 13,
+          "wirelength": 9103
+        },
+        "candidate": {
+          "cpd_delta_pct": 0.0,
+          "cpd_ns": 6.59759,
+          "routing_iterations": 13,
+          "wirelength": 9096,
+          "wirelength_delta_pct": -0.07689772602438305
+        },
+        "case": "diffeq",
+        "placement_sha256": "fba36292f110b6c21539c1f79ca35dc25731689ee3489e20dc2d9bb9fc454698"
+      },
+      {
+        "baseline": {
+          "cpd_ns": 13.5879,
+          "routing_iterations": 12,
+          "wirelength": 33182
+        },
+        "candidate": {
+          "cpd_delta_pct": 0.016926824601304347,
+          "cpd_ns": 13.5902,
+          "routing_iterations": 11,
+          "wirelength": 33171,
+          "wirelength_delta_pct": -0.033150503284917754
+        },
+        "case": "frisc",
+        "placement_sha256": "cdd5825f106f4a8edf60f7c506dae3f778df9a57c93bd0746d2fe1286986c582"
+      },
+      {
+        "baseline": {
+          "cpd_ns": 8.79211,
+          "routing_iterations": 12,
+          "wirelength": 27329
+        },
+        "candidate": {
+          "cpd_delta_pct": 0.0,
+          "cpd_ns": 8.79211,
+          "routing_iterations": 13,
+          "wirelength": 27363,
+          "wirelength_delta_pct": 0.12440996743385835
+        },
+        "case": "elliptic",
+        "placement_sha256": "e06b63140c6fefcaddc7451417684b5814d9eab365b2a073144b5e3bd9bc03d9"
+      },
+      {
+        "baseline": {
+          "cpd_ns": 11.6084,
+          "routing_iterations": 15,
+          "wirelength": 79857
+        },
+        "candidate": {
+          "cpd_delta_pct": -0.10509630956893057,
+          "cpd_ns": 11.5962,
+          "routing_iterations": 14,
+          "wirelength": 79866,
+          "wirelength_delta_pct": 0.01127014538486737
+        },
+        "case": "clma",
+        "placement_sha256": "53b1526474aeb5400d674f054c63e06f2554a50ae6171e5cd24d8edf248ddeb2"
+      }
+    ],
+    "decision": "reject_as_default",
+    "description": "four-case development ablation: prior 4x4 strategy plus a non-increasing touched-net HPWL transaction cap",
+    "page_size": [
+      4,
+      4
+    ]
+  }
+}

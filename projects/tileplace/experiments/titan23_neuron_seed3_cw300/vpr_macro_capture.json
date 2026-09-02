@@ -1,0 +1,88 @@
+{
+  "channel_width": 300,
+  "command": [
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/titan/stratixiv_arch.timing.xml",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/titan_blif/titan23/stratixiv/neuron_stratixiv_arch_timing.blif",
+    "--net_file",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/titan23_neuron_macro_capture/vpr_input.net",
+    "--place_file",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/titan23_neuron_macro_capture/vpr_input.place",
+    "--route_file",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/titan23_neuron_macro_capture/vpr_output.route",
+    "--seed",
+    "3",
+    "--num_workers",
+    "1",
+    "--route_chan_width",
+    "300",
+    "--max_router_iterations",
+    "1",
+    "--echo_file",
+    "on",
+    "--read_rr_graph",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/titan23_neuron_input_capture/rr_graph.xml",
+    "--sdc_file",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/titan_blif/titan23/stratixiv/neuron_stratixiv_arch_timing.sdc",
+    "--router_lookahead",
+    "map",
+    "--initial_pres_fac",
+    "1.0",
+    "--router_profiler_astar_fac",
+    "1.5",
+    "--route"
+  ],
+  "inputs": {
+    "architecture": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/titan/stratixiv_arch.timing.xml",
+      "sha256": "0d3a4f0459af9a883329b934dea81f6a025c18a0ad10c63cbed3d2f8cac4c12b"
+    },
+    "circuit": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/titan_blif/titan23/stratixiv/neuron_stratixiv_arch_timing.blif",
+      "sha256": "19f5ca22ae8ddb7e2aa70936217b044dd634c944cd4dda8f465bd49759dbc086"
+    },
+    "netlist": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/titan23_neuron_seed3_cw300/neuron_stratixiv_arch_timing.net",
+      "sha256": "325c6fd1d2d8a2dbcaa8d3caf4f8426507516e48ee39de24228ccc8f68142908"
+    },
+    "place": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/titan23_neuron_seed3_cw300/neuron_stratixiv_arch_timing.place",
+      "sha256": "c0cdbe69aca0a25f1bffbdcfd6141b4244fa8a4b41ee9edebd1e4131d5a3a698"
+    },
+    "rr_graph": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/titan23_neuron_input_capture/rr_graph.xml",
+      "sha256": "75df19f715d1662d421823b797ad6030f9fd7d324c98c7301632eebdf4edbac8"
+    },
+    "vpr": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+      "sha256": "a90dc1b3380ebda705e85f176db0cc3d6be1b71ab9ee887db819febc8b62bafc"
+    }
+  },
+  "logs": {
+    "stderr": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/titan23_neuron_macro_capture/vpr.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/titan23_neuron_macro_capture/vpr.stdout.log",
+      "sha256": "1e86ea5975e274ee28fbbe5b48d41a53839d6c4f92726009b04299ba50d3ae50"
+    }
+  },
+  "macros": {
+    "macro_count": 101,
+    "member_count": 204,
+    "source": "vpr_place_macros_echo"
+  },
+  "output": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/titan23_neuron_seed3_cw300/vpr_place_macros.echo",
+    "sha256": "fd9f3510113877166989d79dd6c6f577c7b6cba1039fe8e7c5e9ae72d49355b7"
+  },
+  "placement_consistency": "pass",
+  "routing_iteration_limit": 1,
+  "schema": "TILEPLACE_VPR_MACRO_CAPTURE_V1",
+  "seed": 3,
+  "status": "pass",
+  "vpr_returncode": 2,
+  "vpr_revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+  "wall_s": 113.05242381989956
+}

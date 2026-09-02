@@ -1,0 +1,66 @@
+{
+  "schema": "TILEPLACE_VPR_TIMING_EXPORT_OPTIONAL_BUILD_V1",
+  "status": "pass",
+  "timestamp_utc": "2026-08-31T23:32:57+00:00",
+  "revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+  "binary": {
+    "path": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr_timing_optional/vpr/vpr",
+    "sha256": "58c84e686fb622bd732b8f6c07d506c5efae318fe1adf57180dd4df89c0cb6b2",
+    "size_bytes": 8062104,
+    "version": "9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+    "compiled_utc": "2026-08-31T23:32:57",
+    "compiler": "GNU 11.4.0 on Linux-5.15.0-119-generic x86_64",
+    "build_info": "Release VTR_ASSERT_LEVEL=2"
+  },
+  "patches": [
+    {
+      "path": "projects/persistroute/tools/vpr_timing_export.patch",
+      "sha256": "1d5c20074611fce9d0a0d89977bc5b97678e35a6c9bf096d01ebb19e864d836a",
+      "purpose": "export routed delay, setup criticality, slack, and CPD for each VPR connection"
+    },
+    {
+      "path": "projects/persistroute/tools/vpr_timing_export_optional_unmapped.patch",
+      "sha256": "9f3bdcab1560bf8f66932435ce48342ccd8bb4f178e8c902a5dd511cf58ecc8f",
+      "purpose": "label connections without an atom timing-pin match and export them with zero criticality/slack instead of omitting rows or aborting"
+    }
+  ],
+  "unmapped_policy": {
+    "output_column": "timing_pin_mapped",
+    "mapped_value": 1,
+    "unmapped_value": 0,
+    "unmapped_criticality_q": 0,
+    "unmapped_slack_ps": 0,
+    "route_and_terminal_validation": "unchanged and fail-closed",
+    "rationale": "A routed clustered-net connection can be absent from the post-sweep atom timing graph or unconstrained. Such a connection has no defensible setup criticality, but remains part of placement wire cost and must not be silently dropped."
+  },
+  "build_configuration": {
+    "cmake": "3.30.5",
+    "cmake_build_type": "Release",
+    "vtr_assert_level": 2,
+    "vtr_ipo_build": "off",
+    "vpr_use_ezgl": false,
+    "vpr_use_server": false,
+    "vtr_enable_capnproto": false,
+    "with_abc": false,
+    "with_odin": false,
+    "with_parmys": false,
+    "bison": "3.8.2",
+    "flex": "2.6.4",
+    "zlib_root": "projects/tileplace/third_party/local_tools/usr"
+  },
+  "source_restoration": {
+    "restored_after_build": true,
+    "vpr_api_cpp_sha256": "81011d26cd80ada2ce8e580f1f07a828d23fc80e1d7e0d3e49b978f43a6c1dcb"
+  },
+  "preserved_binaries": {
+    "frozen_correctness": {
+      "sha256_after_build": "a90dc1b3380ebda705e85f176db0cc3d6be1b71ab9ee887db819febc8b62bafc",
+      "preserved": true
+    },
+    "strict_timing_export_v1": {
+      "sha256_after_build": "9c535e22f4d85b86ba371bb05d4fc634b3cf422ef3ef934c284be3570c31d10b",
+      "preserved": true
+    }
+  },
+  "claim_boundary": "This binary is only a timing-input capture oracle. TilePlace legality and baseline/candidate QoR closure continue to use the frozen correctness VPR binary."
+}

@@ -1,0 +1,138 @@
+{
+  "compatibility": "logical_type must equal physical_type",
+  "connection_endpoint_mapping": {
+    "atom_timing_pin_labeled": 77106,
+    "atom_timing_pin_mapped": 77106,
+    "atom_timing_pin_unmapped": 0,
+    "connections": 77106,
+    "mapped_sinks": 77106,
+    "mapped_sources": 77106,
+    "timed_connections": 77106,
+    "timed_fully_mapped": 77106
+  },
+  "inputs": {
+    "architecture": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/titan/stratixiv_arch.timing.xml",
+      "sha256": "0d3a4f0459af9a883329b934dea81f6a025c18a0ad10c63cbed3d2f8cac4c12b"
+    },
+    "connections": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/titan23_neuron_input_capture/connections.csv",
+      "sha256": "ae1cd9a82b7a82d412c21baac4087c02858c6753d57c118c18bdc4d13bb66bce"
+    },
+    "native_macros": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/titan23_neuron_seed3_cw300/vpr_place_macros.echo",
+      "sha256": "fd9f3510113877166989d79dd6c6f577c7b6cba1039fe8e7c5e9ae72d49355b7"
+    },
+    "packed_netlist": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/titan23_neuron_seed3_cw300/neuron_stratixiv_arch_timing.net",
+      "sha256": "325c6fd1d2d8a2dbcaa8d3caf4f8426507516e48ee39de24228ccc8f68142908"
+    },
+    "reference_place": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/titan23_neuron_seed3_cw300/neuron_stratixiv_arch_timing.place",
+      "sha256": "c0cdbe69aca0a25f1bffbdcfd6141b4244fa8a4b41ee9edebd1e4131d5a3a698"
+    },
+    "rr_graph": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/titan23_neuron_input_capture/rr_graph.xml",
+      "sha256": "75df19f715d1662d421823b797ad6030f9fd7d324c98c7301632eebdf4edbac8"
+    },
+    "timing": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/titan23_neuron_input_capture/reference_timing.output.csv",
+      "sha256": "042ed8dd1941599a77fd09de3374780b27a5b7c8f891c15e1c7f276e02406ded"
+    }
+  },
+  "outputs": {
+    "blocks.jsonl": {
+      "count": 3438,
+      "sha256": "614eacbabb1579947c8bfc0fdc69d9a9fd7d34a025338a3d0f02d46599a3c377"
+    },
+    "nets.jsonl": {
+      "count": 119888,
+      "sha256": "c3786373e1c976758b3425ad3d5c00bdf86c26b17cdb06f2f78c99716fa9b48d"
+    },
+    "sites.jsonl": {
+      "count": 11841,
+      "sha256": "2677536278cb60eb18fc3e598391afd2e8b097fcc0be39c997660ef1d4cb2153"
+    }
+  },
+  "packed_netlist": {
+    "architecture_id": "SHA256:0d3a4f0459af9a883329b934dea81f6a025c18a0ad10c63cbed3d2f8cac4c12b",
+    "atom_netlist_id": "SHA256:19f5ca22ae8ddb7e2aa70936217b044dd634c944cd4dda8f465bd49759dbc086",
+    "instance": "FPGA_packed_netlist[0]",
+    "name": "neuron_stratixiv_arch_timing.net"
+  },
+  "placement_constraints": {
+    "constrained_clusters": 0,
+    "coordinate_fixed_clusters": 0,
+    "fully_fixed_clusters": 0,
+    "source": "none"
+  },
+  "placement_header": {
+    "array_size": "Array size: 129 x 96 logic blocks",
+    "netlist": "Netlist_File: neuron_stratixiv_arch_timing.net Netlist_ID: SHA256:325c6fd1d2d8a2dbcaa8d3caf4f8426507516e48ee39de24228ccc8f68142908"
+  },
+  "placement_macros": {
+    "macro_count": 101,
+    "member_count": 204,
+    "source": "vpr_place_macros_echo"
+  },
+  "rr_block_types": {
+    "0": {
+      "capacity": 1,
+      "class_count": 0,
+      "height": 1,
+      "name": "EMPTY",
+      "width": 1
+    },
+    "1": {
+      "capacity": 2,
+      "class_count": 190,
+      "height": 1,
+      "name": "io",
+      "width": 1
+    },
+    "2": {
+      "capacity": 1,
+      "class_count": 36,
+      "height": 1,
+      "name": "PLL",
+      "width": 1
+    },
+    "3": {
+      "capacity": 1,
+      "class_count": 9,
+      "height": 1,
+      "name": "LAB",
+      "width": 1
+    },
+    "4": {
+      "capacity": 1,
+      "class_count": 587,
+      "height": 4,
+      "name": "DSP",
+      "width": 1
+    },
+    "5": {
+      "capacity": 1,
+      "class_count": 145,
+      "height": 1,
+      "name": "M9K",
+      "width": 1
+    },
+    "6": {
+      "capacity": 1,
+      "class_count": 541,
+      "height": 8,
+      "name": "M144K",
+      "width": 1
+    }
+  },
+  "schema": "TILEPLACE_VPR_CONTRACT_V1",
+  "vpr": {
+    "channel_width": 300,
+    "command": [
+      "vpr stratixiv_arch.timing.xml neuron_stratixiv_arch_timing.blif --seed 3 --num_workers 1 --route_chan_width 300 --sdc_file neuron_stratixiv_arch_timing.sdc --max_router_iterations 400 --router_lookahead map --initial_pres_fac 1.0 --router_profiler_astar_fac 1.5"
+    ],
+    "revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+    "seed": 3
+  }
+}

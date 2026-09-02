@@ -1,0 +1,184 @@
+{
+  "claim_boundary": "Page size was selected on this four-case matrix and requires validation on additional cases.",
+  "date": "2026-08-31",
+  "fixed_parameters": {
+    "critical_distance_guard_q": 60000,
+    "timing_model": "connection_star",
+    "timing_weight": 1,
+    "wire_weight": 256
+  },
+  "schema": "TILEPLACE_PAGE_SIZE_ABLATION_V1",
+  "selected_page_size": [
+    2,
+    2
+  ],
+  "selection_rule": "minimum four-case routed-wirelength geomean delta; report CPD and worst case",
+  "sizes": [
+    {
+      "aggregate": {
+        "cpd_geomean_delta_pct": -0.022054113294989186,
+        "cpd_worst_delta_pct": 0.016926824601304347,
+        "wirelength_geomean_delta_pct": -0.15238353906017466,
+        "wirelength_improved_cases": 3,
+        "wirelength_worst_delta_pct": 0.43909400270774057
+      },
+      "cases": [
+        {
+          "accepted_moves": 12,
+          "case": "diffeq",
+          "cpd_delta_pct": 0.0,
+          "cpd_ns": 6.59759,
+          "native_evidence_reused_from_page4_by_hash": true,
+          "placement_sha256": "65c65279d64c55234103977d25bd99cd583b716142377478179d5a23c774174d",
+          "wirelength": 9031,
+          "wirelength_delta_pct": -0.790948039107986
+        },
+        {
+          "accepted_moves": 74,
+          "case": "frisc",
+          "cpd_delta_pct": 0.016926824601304347,
+          "cpd_ns": 13.5902,
+          "native_evidence_reused_from_page4_by_hash": false,
+          "placement_sha256": "7b18f16c638ee81e82869fe335193d1e794e145d320c2fca1821040d242f4e31",
+          "wirelength": 33173,
+          "wirelength_delta_pct": -0.02712313905128827
+        },
+        {
+          "accepted_moves": 27,
+          "case": "elliptic",
+          "cpd_delta_pct": 0.0,
+          "cpd_ns": 8.79211,
+          "native_evidence_reused_from_page4_by_hash": false,
+          "placement_sha256": "d50c38d2a200a8e901e58a1305c4a69d573e812708e5089a78156a5a4c2341b9",
+          "wirelength": 27449,
+          "wirelength_delta_pct": 0.43909400270774057
+        },
+        {
+          "accepted_moves": 24,
+          "case": "clma",
+          "cpd_delta_pct": -0.10509630956893057,
+          "cpd_ns": 11.5962,
+          "native_evidence_reused_from_page4_by_hash": false,
+          "placement_sha256": "b27ecbe7eb436f6af00030afde426202a9c817c1630f2104bdcde040d63479d3",
+          "wirelength": 79676,
+          "wirelength_delta_pct": -0.2266551460736066
+        }
+      ],
+      "page_size": [
+        2,
+        2
+      ]
+    },
+    {
+      "aggregate": {
+        "cpd_geomean_delta_pct": -0.022054113294989186,
+        "cpd_worst_delta_pct": 0.016926824601304347,
+        "wirelength_geomean_delta_pct": -0.10376352995077331,
+        "wirelength_improved_cases": 2,
+        "wirelength_worst_delta_pct": 0.4537304694646638
+      },
+      "cases": [
+        {
+          "accepted_moves": 13,
+          "case": "diffeq",
+          "cpd_delta_pct": 0.0,
+          "cpd_ns": 6.59759,
+          "native_evidence_reused_from_page4_by_hash": false,
+          "placement_sha256": "65c65279d64c55234103977d25bd99cd583b716142377478179d5a23c774174d",
+          "wirelength": 9031,
+          "wirelength_delta_pct": -0.790948039107986
+        },
+        {
+          "accepted_moves": 71,
+          "case": "frisc",
+          "cpd_delta_pct": 0.016926824601304347,
+          "cpd_ns": 13.5902,
+          "native_evidence_reused_from_page4_by_hash": false,
+          "placement_sha256": "c9f12fc6e02cf913ce27e3a8e8dfc3c938c3b5b372f922f4b3a673ca20b92330",
+          "wirelength": 33187,
+          "wirelength_delta_pct": 0.015068410584051506
+        },
+        {
+          "accepted_moves": 28,
+          "case": "elliptic",
+          "cpd_delta_pct": 0.0,
+          "cpd_ns": 8.79211,
+          "native_evidence_reused_from_page4_by_hash": false,
+          "placement_sha256": "70ff02c4c21c128bb719d5bf8509aa3285f6e6f0e1ec6c12a8b37606005b9483",
+          "wirelength": 27453,
+          "wirelength_delta_pct": 0.4537304694646638
+        },
+        {
+          "accepted_moves": 26,
+          "case": "clma",
+          "cpd_delta_pct": -0.10509630956893057,
+          "cpd_ns": 11.5962,
+          "native_evidence_reused_from_page4_by_hash": false,
+          "placement_sha256": "b24dbcc2b829ae802026242775ae201dd083511c919c5b77883390a8e5b498d5",
+          "wirelength": 79786,
+          "wirelength_delta_pct": -0.08890892470290179
+        }
+      ],
+      "page_size": [
+        4,
+        4
+      ]
+    },
+    {
+      "aggregate": {
+        "cpd_geomean_delta_pct": -0.022054113294989186,
+        "cpd_worst_delta_pct": 0.016926824601304347,
+        "wirelength_geomean_delta_pct": -0.04528146542389644,
+        "wirelength_improved_cases": 1,
+        "wirelength_worst_delta_pct": 0.4537304694646638
+      },
+      "cases": [
+        {
+          "accepted_moves": 13,
+          "case": "diffeq",
+          "cpd_delta_pct": 0.0,
+          "cpd_ns": 6.59759,
+          "native_evidence_reused_from_page4_by_hash": true,
+          "placement_sha256": "65c65279d64c55234103977d25bd99cd583b716142377478179d5a23c774174d",
+          "wirelength": 9031,
+          "wirelength_delta_pct": -0.790948039107986
+        },
+        {
+          "accepted_moves": 71,
+          "case": "frisc",
+          "cpd_delta_pct": 0.016926824601304347,
+          "cpd_ns": 13.5902,
+          "native_evidence_reused_from_page4_by_hash": true,
+          "placement_sha256": "c9f12fc6e02cf913ce27e3a8e8dfc3c938c3b5b372f922f4b3a673ca20b92330",
+          "wirelength": 33187,
+          "wirelength_delta_pct": 0.015068410584051506
+        },
+        {
+          "accepted_moves": 28,
+          "case": "elliptic",
+          "cpd_delta_pct": 0.0,
+          "cpd_ns": 8.79211,
+          "native_evidence_reused_from_page4_by_hash": true,
+          "placement_sha256": "70ff02c4c21c128bb719d5bf8509aa3285f6e6f0e1ec6c12a8b37606005b9483",
+          "wirelength": 27453,
+          "wirelength_delta_pct": 0.4537304694646638
+        },
+        {
+          "accepted_moves": 25,
+          "case": "clma",
+          "cpd_delta_pct": -0.10509630956893057,
+          "cpd_ns": 11.5962,
+          "native_evidence_reused_from_page4_by_hash": false,
+          "placement_sha256": "7670c469ff2372992de899975bd3aa8cdac69a0cd1b5d235e2d7ade112d98d15",
+          "wirelength": 79973,
+          "wirelength_delta_pct": 0.14525965162728305
+        }
+      ],
+      "page_size": [
+        8,
+        8
+      ]
+    }
+  ],
+  "status": "pass"
+}
