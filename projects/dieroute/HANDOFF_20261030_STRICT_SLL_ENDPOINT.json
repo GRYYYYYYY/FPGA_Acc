@@ -1,0 +1,24 @@
+{
+  "observed_ns": 1793399612353805075,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261030_CANDIDATE_CAPACITIES.json",
+    "sha256": "c540c59d91e8c7a9df713bb0dfabb6c35e7c845d504313bd0b419eec95f1186b"
+  },
+  "candidate": {
+    "review": "work/strict_SLL_commit_candidate_20261030/host_review.json",
+    "review_sha256": "501652675c9b764a3af5b33a452992ca2a6a5266642ec76cc300fadfbff66473",
+    "derivation": "work/strict_SLL_commit_candidate_20261030/derivation.json",
+    "derivation_sha256": "2d3952a1cf34c4af7ed12cb20643e81bd2239c403da878eaa6dffbf5633e579a",
+    "scope": "Private serial HBM endpoint source candidate with strict SLL capacity guard; directed CPU/sanitizer and legacy state-byte comparison only. Full native cohort, HLS/RTL and hardware serialization remain unverified.",
+    "adopted": false,
+    "research_complete": false
+  },
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "all_eight_gates_open": true
+  },
+  "next_action": "First verify original full28878/native/metadata positives and their existing terminal watchers. Independently continue this candidate with original full native graph/cohort policy and capacity bindings, then full native functional validation before synthesis/RTL. Do not treat directed CPU tests as full native, concurrent grants, candidate adoption or full positive acceptance. Preserve all original guard/watchdog owners and failures.",
+  "research_complete": false
+}

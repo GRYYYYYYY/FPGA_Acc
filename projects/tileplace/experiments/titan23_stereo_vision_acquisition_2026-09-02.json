@@ -1,0 +1,68 @@
+{
+  "schema": "TILEPLACE_EXTERNAL_INPUT_ACQUISITION_V1",
+  "date": "2026-09-02",
+  "case": "titan23_stereo_vision",
+  "status": "resolved_exact_input_acquired",
+  "preregistration": "titan23_stereo_vision_preregistration_2026-09-01.json",
+  "required_inputs": {
+    "blif": {
+      "name": "stereo_vision_stratixiv_arch_timing.blif",
+      "sha256": "515426efda12b7c0f9c2414871cdd6cb2d1c21619de151934201a26e1b815762"
+    },
+    "sdc": {
+      "name": "stereo_vision_stratixiv_arch_timing.sdc",
+      "sha256": "392cbdc288bbabd7cbfa4edf638f6c644997ec5ca5cd06a451873b6b22c43e4c"
+    }
+  },
+  "official_archive": {
+    "url": "https://www.eecg.utoronto.ca/~vaughn/titan/titan_release_2.0.0_blif.tar.gz",
+    "content_length_bytes": 1059033941,
+    "accept_ranges": true,
+    "partial_cache": "projects/tileplace/work/titan_download_2026-09-01/titan_release_2.0.0_blif.tar.gz",
+    "partial_cache_bytes_before_resolution": 4268032,
+    "completed_archive_bytes": 1059033941,
+    "completed_archive_sha256": "fcaef6462961bf752999d59e3a5d826c55ec55fc9f2eaf44bc7ae4aebdd0e432",
+    "gzip_and_tar_integrity": "pass"
+  },
+  "local_search": {
+    "scope": "/inspire/hdd/global_user/guoruiyuan-253208540291",
+    "matching_blif_found": false,
+    "matching_sdc_found": false,
+    "archived_baseline_assets_found": [
+      "packed_netlist",
+      "placement",
+      "route",
+      "vpr_logs"
+    ],
+    "archived_baseline_assets_sufficient_for_preregistered_run": false,
+    "reason": "The packed netlist records the expected atom-netlist hash but cannot replace the original hash-matched BLIF and SDC required by the preregistration."
+  },
+  "network_attempts": [
+    {
+      "client": "curl",
+      "operation": "one-MiB byte-range probe beginning at the partial-cache boundary",
+      "result": "TLS unexpected EOF",
+      "bytes_received": 0
+    },
+    {
+      "client": "wget",
+      "operation": "one-MiB Range request beginning at the partial-cache boundary",
+      "result": "TLS unexpected EOF",
+      "bytes_received": 0
+    }
+  ],
+  "public_mirror_search": {
+    "github_repository_search_matches": 0,
+    "github_anonymous_code_search": "requires login and yielded no auditable file result",
+    "sourcegraph_result": "Only VTR configuration, documentation, and golden-result references were indexed; no BLIF or SDC file body was found."
+  },
+  "resolution": {
+    "method": "verified HTTP 206 byte-range download in 127 independently checked chunks",
+    "blif_sha256_match": true,
+    "sdc_sha256_match": true,
+    "input_capture": "titan23_stereo_vision_input_capture_2026-09-02.json",
+    "qor_matrix": "timing_titan_stereo_extended_matrix_2026-09-02.json"
+  },
+  "decision": "The unblock condition was satisfied before input capture or TilePlace execution; no reconstructed or substituted input was used.",
+  "unblock_condition": "Obtain the two exact files from the original machine, a trusted transfer, or a completed official Titan 2.0.0 archive and verify both SHA-256 values before any input capture or QoR run."
+}

@@ -1,0 +1,28 @@
+{
+  "observed_ns": 1793401534150284470,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261030_ORIGINAL_XRT_BACKENDS.json",
+    "sha256": "fae17d4753e2711b61b98a97833ba748ecdbf90550e1a735263d2f96bc030eef"
+  },
+  "progress": {
+    "report": "work/research_artifact_dependency_inventory_20261030/large_scoped_alias_resolution.json",
+    "report_sha256": "b3eae1ed91a914cf8c3a38da5abe4032a14ff81df9a1833c1df8d4395fad79f7",
+    "independent_review": "work/research_artifact_dependency_inventory_20261030/large_scoped_alias_resolution_review.json",
+    "independent_review_sha256": "3ba75c104eb3b7ded0652fba8f5e1271fd544ad7784ee438cf5629e21816217a",
+    "ledger": "work/research_artifact_dependency_inventory_20261030/original_hash_field_content_ledger_v9_20261030.json",
+    "ledger_sha256": "944fc03405b7b135c362413df50f3683529ddb950cc27fb8472d7bd14845176c",
+    "cumulative_original_fields_bound": 9656,
+    "original_fields_not_bound": 312,
+    "root_paths_without_compatible_binding": 466,
+    "scope": "Existing-byte associations only, using precisely the prior same-document path-keyed or literal sibling aliases. Prior bounded read proofs are reused only when inode/size/mtime still match, explicitly not a fresh hash. Newly read graph/state blobs use bounded O_DIRECT. Files outside the closed filename/size/dense scope\u2014including all multi-GB full traces and sparse TV\u2014remain deferred. No unique-origin, historical launch-chain, scientific acceptance or full artifact closure claim. Original9968 fields remain the denominator; separate820 transitive fields and466 unbound root paths remain separate.",
+    "research_complete": false
+  },
+  "next_action": "Use v9 remaining312 original fields;21 nonoverlapping phases cover9656/9968. Separate820transitive fields and466root-path gaps remain. Preserve22 monitored process identities, full positive RTL requirements and existing watchdogs; strict full-native mapped-capacity v2 waits for unchanged20GiB headroom. Do not reread multi-GB traces or sparse TV to force closure. No new scientific acceptance.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

@@ -1,0 +1,18 @@
+{
+  "schema": "FUSIONPAR_INDEPENDENT_PUBLICATION_AUDIT_V1",
+  "pass": true,
+  "suite": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/alu4_sequential_retained_v1",
+  "suite_audit_sha256": "a4990588c5749dd2728a1f9fe9c276efdc92b2a8fbdc2d850251bef74a231809",
+  "auditor_sha256": "b6d1bbdaefd4c6c98a714da1fb49ec39b3c601512fa37bb7f2ebc086d3974c02",
+  "counts": {
+    "runs": 15,
+    "qor_commits": 10,
+    "protocol_commits": 0,
+    "aborts": 15,
+    "timing_barriers": 25,
+    "placement_repairs": 0,
+    "native_feedback_checks": 0,
+    "baseline_route_commits": 0
+  },
+  "scope": "full serialized state/version/timing reconstruction and archived native bindings; not independent P&R performance replication"
+}

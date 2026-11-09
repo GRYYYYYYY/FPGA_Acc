@@ -1,0 +1,45 @@
+{
+  "observed_ns": 1793428619816129979,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_LAYOUT_INITIALIZATION.json",
+    "sha256": "c9dc825810080d6862a9a94a8b62ddc274379d08466bc0380466b31dd950f74a"
+  },
+  "progress": {
+    "report": "work/resident_layout_coupled_startup_20261031/review.json",
+    "report_sha256": "556f655ea41eeea06cff8e33e77bbb213a3a292d3b06e2acbfd451ff7c299a24",
+    "independent_review": "work/resident_layout_coupled_startup_20261031/independent_review.json",
+    "independent_review_sha256": "6aca44fc954d332bfe72c4ba2ea1dd0c3926a965fcc92d8c19fe09d66091fa55",
+    "initial_exit_histories": 64,
+    "source_parent_states": 326,
+    "source_graph_minimum_first_layout_start_edges": 10,
+    "required_idle_prefix_edges": 8,
+    "reachable_states": 1001,
+    "unique_edges": 1703,
+    "standalone_idle_control_precondition_discharged_in_projection": true,
+    "live_dimension_or_base_stability_proved": false,
+    "actual_ROM_load_observed": false,
+    "HDL_simulation_executed": false,
+    "full_sequential_HDL_equivalence_proved": false,
+    "scope": "Reset-started finite binary coupled source-control projection covers execute326state FSM,two registered helper starts,zero-loop count/flowinit/cache,and layout-loop count/flowinit/cache,seven qualified iteration tags and six unreset exit-history bits. All64binary exit histories are initial;other uninitialized counters/tags are abstracted as irrelevant until source loopinit overwrites them. Critical launch/wait/ready/done transitions and helper equations are source checked;other parent cases may take any syntactic source target,so unrelated child delays/data predicates are conservative. Qualified tags align with source7stage k/enables and previously audited memory/multiplier pipeline;this model itself has no payloads/ROMdata. Closed reachable graph across repeated calls proves no zero/layout writes escape parent14/19,respectively;starts and active tokens remain correctly owned. Every zero completion follows exactly9ordered writes0..8,and every layout completion samples ordered write8on the same edge after writes1..7,with no extra/missing writes. Source graph shortest reset-to-layout start is10edges even ignoring child latency,and coupled saturating idle counter proves every actual layout first start has at least8preceding start-low edges and zero exit history. Old done cache is masked by asserted start at a new launch. This discharges the previous standalone8idleedge control startup precondition and parent routing/terminal sampling obligation in this source projection. It does not prove fullRTL/4state/reset-abort behavior,ROMloading/currentfileintegrity,stable live dimensions/base,physical memoryvalues/responseidentity,execute loop-index bounds,native success,watchdog/timing/board results. No original process/input/cache/guard/budget changes or HDL/HLS/native flow.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v248_20261031/matrix.json",
+    "sha256": "a656708d7101d549774b9acd6cdc61550c08b9abaacc84cd9c0c88626a81c6aa"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v248.json",
+    "sha256": "16790e861c1e1e23a27f38fd8eb2bfde86e844a389d18598a91dd0e2684cf89c"
+  },
+  "next_action": "Trace live execute dimension/base inputs through actual top registers and AXI-Lite/software ownership to identify or discharge stable-input contracts;then prove execute loop-index initialization/update/bounds correspondence. Parent/zero/layout coupled binary control now supplies the standalone8idleedge startup and terminal same-edge write routing preconditions. Actual ROMreadmemh/currentfileintegrity,fullRTL/native success remain unverified. Poll original handles first and preserve guards/budgets/inputs/caches/retained failures.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

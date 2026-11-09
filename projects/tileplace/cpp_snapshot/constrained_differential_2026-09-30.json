@@ -1,0 +1,65 @@
+{
+  "status": "pass",
+  "scope": "synthetic constrained contract candidate/selection differential; not native board or benchmark QoR evidence",
+  "fixtures": 12,
+  "unit_candidate_comparisons": 60,
+  "color_forbidden_comparisons": 48,
+  "coverage": [
+    "macro_swap observed",
+    "cross-layer and subtile macro offsets",
+    "region bounding box with optional layer",
+    "region union with wildcard and fixed subtile",
+    "partial fixed location",
+    "initial-location fixed block",
+    "negative page coordinates",
+    "sparse net IDs",
+    "pressure and routed timing weights"
+  ],
+  "verification": "ctest --test-dir /tmp/tileplace-snapshot-build --output-on-failure: 6/6 pass",
+  "files": [
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/cpp_snapshot/test_constrained_proposals.py",
+      "sha256": "b60cad780f35eae3a3aa9165625892ce7b41bb7d58a856d0ab49766579af88d2"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/cpp_snapshot/proposal_query.cpp",
+      "sha256": "691e72ce177c95055adde39d6f70786af00c03e5aba1bf8ed8b37485ee03e051"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/cpp_snapshot/compare_proposals.py",
+      "sha256": "e24e2f4b4ed627b52f5857e5409884791d2ea50525caea8cc71e9f1e43142527"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/cpp_snapshot/native_adapter.py",
+      "sha256": "4c89239fabf46a36865fd75854bc254c8b816afeaac733833c688e12d200d6ec"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/cpp_snapshot/net_cost.hpp",
+      "sha256": "7b7e46b367838fa35bbbf18a35ad76ed2c1f13dfc722a63ba849e5d7de32b79c"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/cpp_snapshot/placement.hpp",
+      "sha256": "ee20e173304a43f55d19e1413f68327fae751a02b7bf54a54e98b7af7dd8fb6d"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/cpp_snapshot/pressure_snapshot.hpp",
+      "sha256": "3ee055e9bd1eb9990e8185c32e4a084005caa809267ccfa9b176d8b97639263d"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/cpp_snapshot/proposals.hpp",
+      "sha256": "6974babece9681027f2652a2fcad495e99e196b06cbf63bfa3dd03b8f9376b8e"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/cpp_snapshot/score.hpp",
+      "sha256": "9aa2c1bb641972ea004d2fc85b216a6c1140f9069f7c037e7bbd3e9495dbfc91"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/cpp_snapshot/search_state.hpp",
+      "sha256": "010e2b2c488a3d733c3b186d0b0b4022b4f8801d314e36b5684cdf542e34fd6b"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/cpp_snapshot/transactions.hpp",
+      "sha256": "08236ebcf821b64914fbc65ce47c2595c36bded187ce600a8087b13680437208"
+    }
+  ]
+}

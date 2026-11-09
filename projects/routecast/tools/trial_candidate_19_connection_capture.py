@@ -1,0 +1,13 @@
+import json,os,re,shutil,subprocess
+from pathlib import Path
+from pre_route_endpoints import sha
+from stream_native_route_audit import audit
+root=Path(__file__).resolve().parents[1];out=root/'experiments/candidate_19_connection_capture_2026-10-06';out.mkdir();work=root/'work/candidate_19_connection_capture_2026-10-06';work.mkdir();parent=root/'experiments/candidate_19_coordinated_repair_2026-10-06';r=json.loads((parent/'receipt.json').read_text());v=json.loads((parent/'verification.json').read_text());assert sha(parent/'receipt.json')==v['receipt_sha256'];build=root/'build/capacity_connection_capture_2026-10-06';br=json.loads((build/'receipt.json').read_text());results=[];env={k:v for k,v in os.environ.items() if not k.startswith('ROUTECAST_')}
+for variant,arm in [('sequential','expanded_sequential'),('prerelease','expanded_prerelease')]:
+ row=next(x for x in r['results'] if x['arm']==arm);assert all(sha(p)==h for p,h in row['files_sha256'].items());source=Path(row['cwd']);cwd=work/variant;cwd.mkdir()
+ for n in ('design.net','design.place','design.blif','seed.route','repair_names.txt'):shutil.copyfile(source/n,cwd/n)
+ binary=build/(variant+'_vpr');assert sha(binary)==br['variants'][variant]['binary_sha256'];cmd=row['command'].copy();cmd[0]=str(binary);runenv={**env,'ROUTECAST_NATIVE_SEED':str(cwd/'seed.route'),'ROUTECAST_REPAIR_NET_NAMES':str(cwd/'repair_names.txt'),'ROUTECAST_ENTRY_CAPTURE_DIR':str(cwd),'ROUTECAST_CONNECTION_CAPTURE_DIR':str(cwd)}
+ if variant=='prerelease':runenv['ROUTECAST_PRERELEASE_NET_NAMES']=str(cwd/'repair_names.txt')
+ with (cwd/'run.log').open('w') as f:code=subprocess.run(cmd,cwd=cwd,env=runenv,stdout=f,stderr=subprocess.STDOUT,timeout=60).returncode
+ log=(cwd/'run.log').read_text();assert code==0 and 'VPR succeeded' in log and 'Completed routing consistency check successfully.' in log;cpd=float(re.search(r'Final critical path delay \(least slack\):\s*([0-9.]+)',log)[1]);assert cpd==row['cpd_ns'];graph=cmd[cmd.index('--read_rr_graph')+1];physical=audit(graph,cwd/'output.route');assert len(physical['connections'])==516 and not physical['overflow_units'];assert (cwd/'iter_1_after_setup.nodes.tsv').exists();results.append({'variant':variant,'cpd_ns':cpd,'cwd':str(cwd),'command':cmd,'files_sha256':{str(p):sha(p) for p in cwd.iterdir() if p.is_file()}});print(variant,cpd,flush=True)
+(out/'receipt.json').write_text(json.dumps({'results':results,'build_receipt_sha256':sha(build/'receipt.json'),'source_sha256':sha(Path(__file__)),'scope':'Diagnostic capture before/after target connections, including live costs and tree prefixes. Output FULL/physical audit and CPD reproduce uninstrumented controls; no performance measurements.'},indent=2)+'\n')

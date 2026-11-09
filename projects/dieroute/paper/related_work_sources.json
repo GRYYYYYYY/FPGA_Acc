@@ -1,0 +1,168 @@
+{
+  "status": "nine_primary_sources_with_bounded_documentation_and_source_review",
+  "checked_utc": "2026-10-18",
+  "sources": [
+    {
+      "citation": "multidie",
+      "primary_url": "https://arxiv.org/abs/2606.06421v3",
+      "version": "v3,2026-06-30",
+      "scope": "Selected full-text sections IV-A and IV-B; not exhaustive evaluation review",
+      "full_text_url": "https://arxiv.org/html/2606.06421v3",
+      "sections": [
+        "IV-A",
+        "IV-B1",
+        "IV-B2",
+        "IV-B3"
+      ],
+      "mechanisms": [
+        "Scatter-gather routing architecture and explicit CHANZ modeling",
+        "Separates intra-die heuristic from per-cut minimum crossing delay",
+        "Targets boundary congestion in placement"
+      ],
+      "implication": "Die-aware lookahead and boundary congestion awareness are prior work. Compare ownership/publication semantics and mapped hardware separately; novelty remains unverified.",
+      "bounded_current_source_comparison": "work/multidie_lookahead_method_comparison_20261016/comparison.json",
+      "comparison_scope": "IV-B2/IV-B3 rechecked2026-10-16; static architecture heuristic versus snapshot-specific current-source suffix search, not independent algorithm reproduction or novelty proof."
+    },
+    {
+      "citation": "rwroute",
+      "primary_url": "https://biblio.ugent.be/publication/8728159",
+      "doi": "10.1145/3491236",
+      "scope": "Author university publication record and abstract; legacy official PDF URLs returned404"
+    },
+    {
+      "citation": "parallel",
+      "primary_url": "https://www.jstage.jst.go.jp/article/elex/8/24/8_24_2061/_article/-char/en",
+      "doi": "10.1587/elex.8.2061",
+      "scope": "Selected full-text sections3 and4, pages2063-2066",
+      "full_text_url": "https://www.jstage.jst.go.jp/article/elex/8/24/8_24_2061/_pdf",
+      "sections": [
+        "3",
+        "4"
+      ],
+      "mechanisms": [
+        "Per-net mesh copies with global congestion updates",
+        "Iteration barriers and sequential main-thread updates",
+        "Load balancing by terminal counts"
+      ],
+      "implication": "Snapshot-like copies, iteration synchronization and workload distribution are prior comparison axes. The text does not establish the transaction/version protocol required by DieRoute; absence is not a novelty proof."
+    },
+    {
+      "citation": "spatial",
+      "primary_url": "https://ic.ese.upenn.edu/pdf/fastroute_fpga2003.pdf",
+      "title": "Stochastic, Spatial Routing for Hypergraphs, Trees, and Meshes",
+      "authors": [
+        "Randy Huang",
+        "John Wawrzynek",
+        "Andre DeHon"
+      ],
+      "year": 2003,
+      "scope": "Selected primary full-text sections3 and4.1-4.2; not a complete evaluation review",
+      "mechanisms": [
+        "Routing search and network state mapped spatially into hardware",
+        "Randomized congestion/victim selection and hardware-local costs"
+      ],
+      "implication": "Hardware-assisted routing and congestion-aware spatial search require explicit prior comparison; no novelty claim established."
+    },
+    {
+      "citation": "gpu",
+      "primary_url": "https://ceca.pku.edu.cn/docs/20190518095826853152.pdf",
+      "title": "Exploring GPU-Accelerated Routing for FPGAs",
+      "authors": [
+        "Minghua Shen",
+        "Guojie Luo",
+        "Nong Xiao"
+      ],
+      "year": 2019,
+      "doi": "10.1109/TPDS.2018.2885745",
+      "scope": "Selected primary body sections3.3,4.1-4.3,printedpages1336-1340 reviewed2026-10-16;not exhaustive evaluation.",
+      "mechanisms": [
+        "Boundary contact triggers subgraph growth in a later routing iteration.",
+        "Single-net GPU execution combines static nodes, active-node worklists and edge parallelism.",
+        "Multi-net grouping uses disjoint subgraph boxes and preserves serial net order.",
+        "Independent nets are grouped into a pseudo-net with a virtual source."
+      ],
+      "implication": "Subgraph restriction and accelerator parallelism are required comparison axes. No reproduction or directly comparable speedup claim.",
+      "sections": [
+        "3.3",
+        "4.1",
+        "4.2",
+        "4.3"
+      ],
+      "body_review": "work/gpu_primary_fulltext_retry_20261016/review.json",
+      "primary_pdf_sha256": "05441d7c39500b6a3f7c1c6f6daac0f6cc440623f5f042a410c2224083228c6a"
+    },
+    {
+      "citation": "commercialparallel",
+      "primary_url": "https://arxiv.org/html/2407.00009",
+      "title": "An Open-Source Fast Parallel Routing Approach for Commercial FPGAs",
+      "authors": [
+        "Xinshi Zang",
+        "Wenhao Lin",
+        "Shiju Lin",
+        "Jinwei Liu",
+        "Evangeline F. Y. Young"
+      ],
+      "year": 2024,
+      "doi": "10.1145/3649476.3658714",
+      "scope": "Selected primary full-text methodology sections3.1 and3.2; no benchmark data used for DieRoute tuning",
+      "mechanisms": [
+        "Recursive ternary partitioning processes crossing connections before independent side regions",
+        "Hybrid congestion-coefficient updates for commercial-device routing"
+      ],
+      "implication": "Recursive partitioning, scheduling and cost-update changes need explicit comparison; benchmark metric names cannot be equated with native CPD or total geometric wirelength."
+    },
+    {
+      "citation": "rwrelease",
+      "primary_url": "https://github.com/Xilinx/RapidWright/releases",
+      "checked_utc": "2026-10-16",
+      "scope": "Official release-note entries only; implementation and benchmark behavior not reviewed.",
+      "versions": [
+        "2025.1.1-beta",
+        "2025.2.0-beta"
+      ],
+      "mechanisms": [
+        "Release notes list SLL-tile support and SLR-crossing optimizations.",
+        "Later release lists initial Versal SLR-crossing support."
+      ],
+      "implication": "Cross-SLR awareness alone cannot distinguish DieRoute; ownership, reservation and mapped hardware require explicit comparison. This inference is not a novelty proof.",
+      "retrieval_record": "work/related_work_release_review_20261016/retrieval.json"
+    },
+    {
+      "citation": "rwdocs",
+      "primary_url": "https://www.rapidwright.io/docs/Implementation_Basics.html",
+      "checked_utc": "2026-10-18",
+      "scope": "Current official Implementation Basics RWRoute documentation section only; separate from2022paper.",
+      "mechanisms": [
+        "Documents full-design timing-driven and wirelength-driven modes plus partial routing.",
+        "Documents timing/length weighting and criticality-aware sharing as configurable tradeoffs.",
+        "Lists lack of hold-time estimation in the described timing model and additional clock/hard-block analysis inputs."
+      ],
+      "implication": "Routing timing models,resource sharing and partial routing need explicit comparison; no novelty proof.",
+      "body_review": "work/rwroute_official_documentation_review_20261018/review.json"
+    },
+    {
+      "citation": "potterrepo",
+      "primary_url": "https://github.com/diriLin/Potter/tree/19b898ab77c13fc88646992e789aa2211626a123",
+      "checked_utc": "2026-10-18",
+      "scope": "README and selected routing/synchronization source at pinned author-repository commit; no paper-body or experimental reproduction.",
+      "body_review": "work/potter_primary_source_review_20261018/review.json",
+      "mechanisms": [
+        "Stable mode joins routing, deferred net updates and congestion-cost refresh as separate phases.",
+        "Per-net pending usage changes accompany batch stamps.",
+        "Node occupancy uses atomics.",
+        "Runtime mode routes thread groups before joining."
+      ],
+      "implication": "Overlap-tolerant routing and deferred synchronization are prior comparison axes. DieRoute must substantiate its own ownership and hardware claims separately."
+    }
+  ],
+  "limitations": [
+    "Not an exhaustive literature review",
+    "No absence-of-prior-art claim",
+    "RWRoute reviewed at university metadata/abstract level only; listed full text is UGent-restricted",
+    "Broader accelerator literature and prior cited multi-die CAD work still require primary-source review",
+    "Hardware/GPU/commercial-parallel review is bounded to the sections specified per source; no exhaustive novelty or cross-paper performance equivalence claim",
+    "RWRoute release metadata adds contemporary SLR/SLL context only; it does not extend the 2022 paper beyond metadata/abstract review. GPU direct retrieval later succeeded; old RWRoute PDF URL returned404 on2026-10-16.",
+    "Potter inspection is selected pinned source only; no independent race analysis, full paper review or benchmark comparison."
+  ],
+  "research_complete": false
+}

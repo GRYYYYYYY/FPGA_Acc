@@ -1,0 +1,99 @@
+{
+  "schema": "dieroute.native_membership_progress.v1",
+  "captured_utc": "2026-10-13T06:52:08.232020+00:00",
+  "research_status": "active_incomplete",
+  "board_result": false,
+  "implemented": {
+    "identity": "canonical native electrical node remains one RR ID and one capacity/version/cost state across every SLR membership",
+    "local_search": "native PIP SLR must belong to both endpoint nodes; local search follows that SLR",
+    "portal": "implicit intra-node SLR transition adds no RR path entry, hop, resource charge or fabricated delay",
+    "compatibility": "absent native sidecars preserves single-layer VPR topology",
+    "unsupported_fail_closed": [
+      "multi-SLR task terminals without explicit pin access",
+      "parallel native PIPs without edge identity in path outputs",
+      "inconsistent or missing membership/PIP sidecars"
+    ]
+  },
+  "validation": {
+    "ctest": "8/8 pass",
+    "sanitizers": "RR backend and wide controller ASan/UBSan pass",
+    "random_native_graphs": 1000,
+    "native_functional_runs": 60,
+    "native_repeats_per_case_mode": 5,
+    "native_cases": [
+      "same-net shared cross/local sinks",
+      "reverse SLR traversal",
+      "two-net capacity competition (expected illegal)"
+    ],
+    "native_roundtrip": "3 paths / 6 PIPs resolved again in device DB; corrupted endpoint rejected",
+    "legacy_replays": "3 fixed-criticality development cases; all 7 semantic artifacts and prior non-wall counters equal frozen v1"
+  },
+  "native_scope": {
+    "device": "xcu280",
+    "centre": "LAG_LAG_X4Y539/UBUMP0",
+    "nodes": 7,
+    "pips": 6,
+    "cost_model": "unit base / zero delay; functional only",
+    "occupancy": "exclusive graph-root sources implicit; child RR nodes charged once per net",
+    "limitations": [
+      "partial PIP neighbourhood, not full commercial design",
+      "no DCP round trip or design-level legality",
+      "no native commercial timing or QoR",
+      "serial C++ only; no concurrent shadow/HBM implementation",
+      "no board performance evidence"
+    ]
+  },
+  "verification_directory": "work/native_membership_verification_20261013",
+  "source_snapshot": "work/native_membership_verification_20261013/source",
+  "evidence": {
+    "work/native_membership_verification_20261013/native_reject_corrupt.json": "93ecdd3e5ab932e2abff7a7fd937dd05fa9a5095edc08610822735192e7d3fe8",
+    "work/native_membership_verification_20261013/legacy_comparison.json": "db9c49c6f53f10d2ed0e23fac1a490c841ac09d5c0fc0ba7048eb77371dd7476",
+    "work/native_membership_verification_20261013/current_diffeq.json": "8def00644e179b6b153f6c49eccef731b484c9788be5db418a935d8bd66708ff",
+    "work/native_membership_verification_20261013/final_artifact_audit.json": "c7d0329e9da7bdf46d59f62ef91fdbec8ffd2d217063d3500d457502ed00a831",
+    "work/native_membership_verification_20261013/ctest_final.log": "96bd47ba58806eba57dd6412e3bb3480a31b42a9cd25b5c9faf2e5cc985cf8ae",
+    "work/native_membership_verification_20261013/upstream_source_sha256.json": "01d232c2fa6e83ef76d61ab03ea41dc8edcadfee2f30279a4011e326d6480f32",
+    "work/native_membership_verification_20261013/native_verify_compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/native_membership_verification_20261013/build_final.log": "d58cdadb91ea247456803249fa2b4b13cd034338c18555c454e42f64df0ccbea",
+    "work/native_membership_verification_20261013/corrupt_paths.tsv": "1edda77ad85e7a2c589c0fcc5bfecc6dc5005cd876cd49c82290bef7d0c46cf9",
+    "work/native_membership_verification_20261013/asan_final.log": "720ad004a7f9cff15271dee21795f1b2e8fedd034fe6529392147065d9c709ba",
+    "work/native_membership_verification_20261013/current_alu4.json": "099aa5864f3ad52b6f2b0d66835b2c221fe86786b91f9cd694e2838968ab9a82",
+    "work/native_membership_verification_20261013/native_verify.log": "b64bf45fd30ebb6447ca45127f2bedaf2d951a66cbdd32e3ce533a292dde89ea",
+    "work/native_membership_verification_20261013/native_verify.json": "92e1f1362eee32dbe879a2e3bfb08b5c29b42c418132aebc5a906c998140a9f6",
+    "work/native_membership_verification_20261013/native_reject_corrupt.log": "3bb2ee22aee4fe9a2441bb2e4f2e0c6da80dfc53b304099f09e8314bf9e1bcad",
+    "work/native_membership_verification_20261013/current_ex5p.json": "10871ae3113558f2ffbcfd73b0df86a5c3a6a8e378f490bcbccc55510e4f79f7",
+    "work/native_membership_verification_20261013/asan_final_build.log": "f58f77d75389755acef151e0086850c5a5b341ba17d8c7060e5633754dc959c9",
+    "work/native_membership_verification_20261013/paths.tsv": "a65f15096cc92e3fbec130ebd5803b8e3c4030563d161914724d4e04fa6a04d8",
+    "work/native_membership_verification_20261013/current_diffeq.log": "446f895ee70af40c190625a55bc58e62db0f741feab123cbcb0e140937c77b3c",
+    "work/native_membership_verification_20261013/current_alu4.log": "446f895ee70af40c190625a55bc58e62db0f741feab123cbcb0e140937c77b3c",
+    "work/native_membership_verification_20261013/build.log": "d41b7bd6cf9d302ff32c67ac502bf502f0fe7270d0c7bbe14e450176c47d1575",
+    "work/native_membership_verification_20261013/current_ex5p.log": "09eb23211ccfb553258866e6d1502ac88c9210a17b5b71c147cdeda3461f08ea",
+    "work/native_membership_verification_20261013/source_sha256.json": "f9681c783ffce646ed854d12f6770d0fb0707b41190c33f8fdb1e123e460beba",
+    "work/native_membership_verification_20261013/ctest.log": "0c2411c3d6598bc960758c389d7e069e8d10ee8ab6d66230cefa107c30f36b04",
+    "work/native_membership_verification_20261013/asan.log": "31b4d327e7741cdbfffe55586b457b31ee47aecf6eac87d7471e0402c7f6b076",
+    "work/native_membership_verification_20261013/asan_build.log": "e1dfb8d52a675b2ce14186c04c92017e59eb8290bd92d3861ba6f452b786bdfd",
+    "work/native_membership_verification_20261013/native_runtime_sha256.json": "25778c37e9b7dfe0856613914aae38f2735bd6b6aad9d0f675a8c9c10971fc44"
+  },
+  "native_export_manifest": {
+    "path": "work/native_slr_graph_20261013/manifest.json",
+    "sha256": "62b11fff06c7f93a5019c049acd4495fefd503ac359bfd8410991c1d154864bd"
+  },
+  "native_routing_manifest": {
+    "path": "work/native_slr_routing_v3_20261013/verification.json",
+    "sha256": "8183fbc9bd3070a0e219b105b6ba18d5e3bd49a24d62aa7c62ec236cd560cb14"
+  },
+  "wide_timing_cohort_audit": {
+    "path": "experiments/wide_timing_cohort_audit_20261013.json",
+    "sha256": "41f486d41a35b10fc1e1bf6f5fe130b8938ea3b4322d28fe3f6d3fc61cc9dac5"
+  },
+  "prior_failed_check_retained": "work/native_slr_routing_20261013/initial_audit_failure.json",
+  "active_processes": [],
+  "remaining": [
+    "joint native WL/CPD gate",
+    "full commercial design/pin-access/delay export and DCP validation",
+    "concurrent reservations and boundary shadow",
+    "larger held-out cohort and all five ablations",
+    "HLS/HBM implementation",
+    "physical board speedup and energy",
+    "paper and complete reproducible artifact"
+  ]
+}

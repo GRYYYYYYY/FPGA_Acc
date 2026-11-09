@@ -1,0 +1,43 @@
+{
+  "observed_ns": 1793411365729170463,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_SELECTOR_SUCCESS_PATH.json",
+    "sha256": "fecdaff129ac75783c8aea45efb2e45df2918d720e3499d75a8f4996cb0d9248"
+  },
+  "progress": {
+    "report": "work/resident_selector_ready_interval_20261031/review.json",
+    "report_sha256": "aea35da4ed45b79eb87ee3f77e8ccc1711c963733e9aece3660769e9aa157a95",
+    "independent_review": "work/resident_selector_ready_interval_20261031/independent_review.json",
+    "independent_review_sha256": "d71226dd65a690de8959abaf9936e4f1e21a1cd3ab71bf60716b55ec6328980c",
+    "nested_interval_ready_stability_established": true,
+    "inner_waits": 10,
+    "outer_waits": 20,
+    "ready_registers_with_sole_writer_at_state25": 3,
+    "global_reset_to_state_reachability_proved": false,
+    "all_projected_runtime_calls_successful_proved": false,
+    "whole_program_lower_bound_certified": false,
+    "watchdog_failure_verdict": null,
+    "scope": "Read-only binary, legal-one-hot, shared-clock, no-mid-call-reset nested-call interval invariant over three SHA-bound existing2022.2 RTL modules. At the10enumerated selector wait states, fixed mux/direct bindings select one ready register and caller done is0. While selector done is0 the caller holds that state; all20enumerated enclosing execute waits hold when caller done is0 (state242requires the previously checked admitted-call predicate). All three ready registers have exactly one clocked update site, execute state25, disjoint from these waits. Therefore in these properly nested admitted intervals ready remains stable through selector state10 completion sampling. No global reset-to-state reachability, arbitrary malformed hierarchy/control, X/Z behavior, all-start scheduling, runtime call counts, successful return of every projected call, helper cycle correspondence, serial cycle sum, certified program lower bound or actual watchdog verdict is established. The previous unstable-ready abstract witness is excluded within these stated nested intervals, not globally disproved or diagnosed as a reachable DUT bug. No new HLS/simulation, DUT edit, program/trace/TV read, job control, budget/guard change or adoption.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v199_20261031/matrix.json",
+    "sha256": "06f2e1a4a4064de15eb0a70434707470eb3da581334183793a1fbdc5ec6cb7ab"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v199.json",
+    "sha256": "c7f121920953b133598d08f482a28bfffd1fe8216d29891babf0c34b0579961e"
+  },
+  "next_action": "Ready instability is excluded for the enumerated properly nested admitted intervals. Next examine source/build invariants and RTL return/count correspondence for projected successful installs, plus helper-loop/timing and serial composition. Actual full terminal remains required; no timeout verdict or job changes.",
+  "runtime": "30exact handles freshly confirmed live; terminal watchers empty; global63.374GiB, strict original20GiB headroom unmet. No job/guard/watchdog/candidate adoption change.",
+  "artifact_ledger_unchanged": "v24:9878/9968associated,90pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

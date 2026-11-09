@@ -1,0 +1,25 @@
+{
+  "observed_ns": 1793402046916475914,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261030_LOCAL_EXCHANGE_ROLES.json",
+    "sha256": "1dbce5eec9279f4787d193982be52b574c3613b29a4321496df4ddf6fb0d67ab"
+  },
+  "progress": {
+    "review": "work/strict_SLL_commit_candidate_20261030/native_fullgraph_mapped_capacity_v2/adapter_integration_checks/integration_role_review.json",
+    "review_sha256": "eed7820a094dbdd779fbc2d5ec29bc0e938d5c8d4cc053a8238c2f84b6a86adb",
+    "execution_review": "work/strict_SLL_commit_candidate_20261030/native_fullgraph_mapped_capacity_v2/adapter_integration_checks/attempt_v2/review.json",
+    "execution_review_sha256": "d5f4eb2a1ea866971ac7778733b691b6f5fe81fce346af04dc0731e84132af7b",
+    "calls_per_variant": 19,
+    "authority_completion_delta_bytes_identical": 187264,
+    "scope": "Directed component integration of exact queued full-native mapped adapter and unchanged strict DUT; state-byte equality to prior vector adapter, including ASAN/UBSAN and both readonly residency boundaries. Not full native graph/cohort, RTL, concurrency, performance or board proof.",
+    "research_complete": false
+  },
+  "next_action": "Preserve all22 monitored identities and full positive RTL/watchdog/resource conditions. The mapped strict-native v2 owner still waits for unchanged20GiB headroom; do not launch a competing run or relax guards. These19call component tests verify the host memory interface, not the queued91,975,782node/341net/729connection five-repeat experiment. Retain v1 full-native RSS failure and testbench missing-header compile failure. Latest artifact ledger remains v10:9681/9968 content-associated,287remaining, separate820transitive fields/466root gaps.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "scope": "array root, legality and macro translation integrated in CPU candidate generation; host buffers and transaction control remain STL; native validation pending",
+  "fixtures": 12,
+  "unit_candidate_sets": 60,
+  "forbidden_color_sets": 48,
+  "resident_adapter_calls": 144,
+  "files": {
+    "array_macro_proposals.hpp": "cb507c3c734a2a9b068ebf42981f88f54fe3e1a787f60eff958133c12318aea9",
+    "array_macro_search.hpp": "141befbbc88d0ba627cf4b3ee37ae3db2ccee6d13035c35a9219c0da68b3c13f",
+    "array_macro_feedback_search.hpp": "4bc1e063e50d1c471115fba0233c4e39b690b9a5271c0cc5a352d9d254a89490",
+    "array_macro_native_server.cpp": "ed1f6f9756a5da2aebc6c95b45c95b486ccf219ed5558d16d6ff652c76832dfb",
+    "test_array_macro_search.py": "a88b475445c1d5c2b1bb9e17617cc3442af0b9a8bfce407d2bf944046aab6491",
+    "test_array_macro_adapter.py": "d748762c3a39272f5a7f9db4f01652fbde7f4bccda8f6fbca25e62cebda20025"
+  }
+}

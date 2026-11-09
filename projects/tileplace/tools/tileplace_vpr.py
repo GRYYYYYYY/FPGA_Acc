@@ -546,7 +546,15 @@ def parse_rr_sites(
     root_tiles: list[dict[str, int]] = []
     wanted = endpoint_node_ids or set()
     endpoint_locations: dict[int, dict[str, int]] = {}
-    for _event, element in ET.iterparse(path, events=("end",)):
+    stack: list[ET.Element] = []
+    record_containers = {
+        "block_types", "grid", "rr_nodes", "rr_edges", "switches", "segments", "channels"
+    }
+    for event, element in ET.iterparse(path, events=("start", "end")):
+        if event == "start":
+            stack.append(element)
+            continue
+        parent = stack[-2] if len(stack) >= 2 else None
         if element.tag == "block_type":
             block_id = int(element.attrib["id"])
             name = element.attrib["name"]
@@ -562,24 +570,29 @@ def parse_rr_sites(
                 "capacity": capacity,
                 "class_count": sum(1 for _pin_class in element.iter("pin_class")),
             }
-            element.clear()
         elif element.tag == "grid_loc":
             attrs = {key: int(value) for key, value in element.attrib.items()}
             if attrs.get("width_offset", 0) == 0 and attrs.get("height_offset", 0) == 0:
                 root_tiles.append(attrs)
-            element.clear()
-        elif element.tag == "node" and int(element.attrib["id"]) in wanted:
+        elif element.tag == "node":
             node_id = int(element.attrib["id"])
-            loc = element.find("loc")
-            if loc is None:
-                raise ContractError(f"RR node {node_id} has no loc")
-            endpoint_locations[node_id] = {
-                "x": int(loc.attrib["xlow"]),
-                "y": int(loc.attrib["ylow"]),
-                "layer": int(loc.attrib.get("layer", 0)),
-                "ptc": int(loc.attrib["ptc"]),
-            }
+            if node_id in wanted:
+                loc = element.find("loc")
+                if loc is None:
+                    raise ContractError(f"RR node {node_id} has no loc")
+                endpoint_locations[node_id] = {
+                    "x": int(loc.attrib["xlow"]),
+                    "y": int(loc.attrib["ylow"]),
+                    "layer": int(loc.attrib.get("layer", 0)),
+                    "ptc": int(loc.attrib["ptc"]),
+                }
+        endpoints_complete = bool(wanted) and len(endpoint_locations) == len(wanted)
+        if parent is not None and parent.tag in record_containers:
+            parent.remove(element)
             element.clear()
+        stack.pop()
+        if endpoints_complete and block_types and root_tiles:
+            break
 
     sites: list[dict[str, Any]] = []
     for tile in sorted(root_tiles, key=lambda row: (row.get("layer", 0), row["y"], row["x"])):

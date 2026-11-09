@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "cases": 1000,
+  "scope": "owned full identity map reference; duplicate lowest score/stable tie, identity output order; atomic capacity and malformed identity. No HLS/native integration yet",
+  "sha256": {
+    "test_dedup_words.cpp": "4830e57576c5ac15b3326bf659739f96f8acb74a0a4797e9204f6f017f506a67",
+    "dedup_words.hpp": "b2502574aaa785c5817db4ca25163d6b81a3e3cdc92375098c1411fd223ecfd7",
+    "host_dedup.hpp": "3c94929c02524b2e0b67dee13a4a9d256be245666b95f9ffd4303ecc919935bc"
+  },
+  "note": "Core only formatting braces changed for warning-clean host integration; CTest validates full integration"
+}

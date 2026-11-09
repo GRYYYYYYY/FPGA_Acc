@@ -1,0 +1,25 @@
+{
+  "status": "pass",
+  "scope": "array full-identity score ordering and CSR conflict selection, with all range/capacity checks before writes; no host rank required; not connected to live search or HLS synthesized",
+  "transaction_sets": 1000,
+  "set_sizes": "0 through 64",
+  "atomic_fault_cases": 6,
+  "faults": [
+    "site range",
+    "scratch capacity",
+    "kind range",
+    "unit table range",
+    "trial range",
+    "nested member range"
+  ],
+  "preconditions": [
+    "canonical nested unit and trial ordering supplied by encoder",
+    "canonical unit conflict IDs",
+    "distinct buffers"
+  ],
+  "files": {
+    "identity_selection.hpp": "682059b220bd225dd0be275c1224d8f0d885b0be40f5beafd1d6654f3d71d5db",
+    "identity_selection_test.cpp": "a5a09133ff1413ea5b08c32631d2af5219eeec796e3697f825bf957718075371",
+    "identity.hpp": "ed2ab9fa81f06aaed5888306a0e9d31bfb95f3655c9518b7e461b6c1a444e0f8"
+  }
+}

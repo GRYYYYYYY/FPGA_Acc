@@ -1,0 +1,25 @@
+{
+  "schema": "dieroute.native_label_transport_plan.v1",
+  "scope": "Fixed 64-byte cross-worker label request/response and controller traceback, serial C++ model",
+  "configurations": [
+    "control",
+    "local",
+    "reentry"
+  ],
+  "repeats": 5,
+  "cohort": "Same frozen 70-net/298-connection U280 development cohort",
+  "baseline_pattern": "work/u280_native_worker_{case}_v1_20261013",
+  "criteria": [
+    "All prior CSV journals unchanged for corresponding configuration",
+    "Final routes/authority equal frozen flat proposal",
+    "Independent CRC, endpoint, version, budget, boundary label history and physical traceback audit",
+    "Five repeats have identical packets after epoch-origin normalization",
+    "Counter-derived bytes equal actual 64-byte packet count"
+  ],
+  "not_established": [
+    "Concurrent worker execution or delayed transport",
+    "Complete accelerator traffic: seed/arbitration/authority channels excluded",
+    "HBM placement, migration, board performance or energy",
+    "New native STA/DRC, full-design routing, representative held-out QoR"
+  ]
+}

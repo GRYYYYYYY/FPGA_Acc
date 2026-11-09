@@ -1,0 +1,58 @@
+{
+  "schema": "dieroute.native_corridor_protocol.v1",
+  "scope": "Serial CPU reference on the complete native electrical graph; candidate-local optimistic reservations, no distributed grants or hardware implementation.",
+  "topology": {
+    "resource": "canonical electrical node",
+    "boundary": "complete native membership mask has two or more bits",
+    "portal": "zero-hop transition inside one boundary electrical node; no extra PIP, occupancy or delay",
+    "local_edge": "both endpoint memberships contain selected die AND raw physical PIP belongs to that die",
+    "eligibility": "same qualified CSR, frozen outside footprints, node protection and exclusive net policy as direct cohort"
+  },
+  "planning": {
+    "die_path": "deterministic multi-source shortest simple die path from existing tree memberships",
+    "ranking": "minimum tile-box gap from tree seeds plus gap to sink plus current negotiated node cost; a proposal score, not timing or an admissible path bound",
+    "repair": "ban failed portal and retry within explicit attempt limit",
+    "fallback": "unchanged full-graph guided sparse search, including routes requiring die reentry"
+  },
+  "reservation": {
+    "identity": "union of selected electrical portal IDs and any new multi-SLR sink",
+    "shared_tree": "existing tree nodes are multi-source seeds; existing shared SLL is counted once per net",
+    "authority_mutation": "none during any candidate search; accepted complete branch is published through NativeRouteState.accept",
+    "release": "discard entire candidate union on failure, budget/overflow, losing comparison or outer stale replay",
+    "capacity": "distinct-net occupancy may be overused during negotiated routing; final convergence requires zero overused nodes. These are not strict concurrent capacity grants."
+  },
+  "reentry": {
+    "optional": true,
+    "trigger": "tree already reaches sink die and another die",
+    "comparison": "compare complete incremental branch cost, then full depth, attachment, lexicographic path and PIPs",
+    "saved_candidate": "no authoritative writes; release saved reservation even if later candidate throws",
+    "scope": "bounded deterministic proposals, not a globally optimal hierarchical solver"
+  },
+  "cost_bound": {
+    "optional": true,
+    "upper_bound": "already found complete candidate cost minus accumulated prefix cost",
+    "lower_bound": "existing consistent quotient potential to the current segment goal",
+    "prune": "g+h strictly greater than upper bound; equal-cost alternatives remain eligible",
+    "failed_status": "cost_limited is distinct from exhausted and resource budget exhausted",
+    "repair_effect": "a cost-pruned portal may allow another repair attempt; therefore complete run equivalence to the unbounded proposal schedule is not assumed",
+    "quotient_work_bound": "Reverse quotient BFS stops at min(source distance, C+1); all undiscovered eligible groups are clamped to that distance, including disconnected groups. This keeps labels with g+h <= C identical and also bounds heuristic preparation work."
+  },
+  "shadow_integration": "same immutable remote boundary overlay and complete decision-read validation; stale plans/paths are discarded and all corridor work reruns against current serial authority",
+  "evidence": "all completed candidates include directed PIP paths and complete costs; verifier reconstructs accepted trees, occupancy, history, versions, publication snapshots and final drain across epochs",
+  "limitations": [
+    "No physical timing or wirelength model in proposal ranking; PIP count is not physical wirelength.",
+    "CPU source-observer boundary overlay still reads centralized local/nonboundary authority.",
+    "No die-local concurrent workers, hardware/HBM traffic or board results.",
+    "New candidate trees need native DCP connectivity, route/DRC, timing, bus-skew and bitstream checks before signoff claims."
+  ],
+  "portal_comparison": {
+    "optional": true,
+    "default_complete_candidates": 1,
+    "limits": "Both completed nonlocal candidate limit and global attempt limit apply; failed/pruned proposals consume attempts.",
+    "enumeration": "Ban the final portal of each completed nonlocal proposal, then replan with the existing ranking. No exhaustive enumeration of upstream portals or die sequences.",
+    "selection": "Same complete incremental cost and deterministic tie tuple as reentry comparison; no authority mutation until final selection.",
+    "reentry_composition": "If enabled, the zero-transition local extension is evaluated first and does not consume the nonlocal completed-candidate limit.",
+    "bound": "Existing incumbent prefix-subtracted cost bound applies to alternative portals; equal cost remains eligible.",
+    "default_compatibility": "A limit of one preserves prior first-feasible behavior, including reentry behavior when enabled."
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "schema": "dieroute.native_whole_net_profile.v1",
+  "scope": "First repeat of three freshly executed fixed-development-cohort native runs; counts are source-bound profiling, not full-design hardware capacity or cycle evidence",
+  "cases": {
+    "sync1": {
+      "transactions": 97,
+      "accepted_transactions": 74,
+      "read_entries": 20857691,
+      "maximum_read_entries_per_proposal": 2823767,
+      "maximum_read_wire_bytes": 45180272,
+      "maximum_candidate_path_entries_per_proposal": 670,
+      "maximum_final_tree_nodes": 671,
+      "final_authoritative_records_by_owner": {
+        "0": 983,
+        "1": 1062,
+        "2": 564
+      },
+      "final_occupied_nodes": 2598,
+      "final_memberships": 2598,
+      "maximum_final_membership_count": 1
+    },
+    "sync3": {
+      "transactions": 99,
+      "accepted_transactions": 74,
+      "read_entries": 24220029,
+      "maximum_read_entries_per_proposal": 2823767,
+      "maximum_read_wire_bytes": 45180272,
+      "maximum_candidate_path_entries_per_proposal": 670,
+      "maximum_final_tree_nodes": 671,
+      "final_authoritative_records_by_owner": {
+        "0": 983,
+        "1": 1062,
+        "2": 564
+      },
+      "final_occupied_nodes": 2598,
+      "final_memberships": 2598,
+      "maximum_final_membership_count": 1
+    },
+    "serial3": {
+      "transactions": 78,
+      "accepted_transactions": 74,
+      "read_entries": 18902734,
+      "maximum_read_entries_per_proposal": 2823767,
+      "maximum_read_wire_bytes": 45180272,
+      "maximum_candidate_path_entries_per_proposal": 670,
+      "maximum_final_tree_nodes": 671,
+      "final_authoritative_records_by_owner": {
+        "0": 983,
+        "1": 1062,
+        "2": 564
+      },
+      "final_occupied_nodes": 2598,
+      "final_memberships": 2598,
+      "maximum_final_membership_count": 1
+    }
+  },
+  "input_sha256": {
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_owner_push_sync1_v1_20261014/route/transactions.csv": "539e76827b2dfb104cd5d5534ec83365ddd52b737cef5553c491b687f3390e5b",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_owner_push_sync1_v1_20261014/route/proposals.csv": "2203cc1d753de4bff8fc727125f346a0961bf2fadbdaa751708f80770d3f8abd",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_owner_push_sync1_v1_20261014/route/proposal_paths.csv": "e09edd67ceae4b91f8135deee18aae5286fc2ad01ed004d839a3eb4246292081",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_owner_push_sync1_v1_20261014/route/trees.csv": "1cc40db746b080dddce4abf0942d090b4e2086da723687bc5a597882c131bb65",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_owner_push_sync1_v1_20261014/route/owner_usage.csv": "2f59ccbfaf07766a25ddadcfc99c8c70c1c63a85539806f9417e26ae87ba22aa",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_owner_push_sync3_v1_20261014/route/transactions.csv": "be07b69b039e0bd4f89742721c968410674dc89e7eccf48b602526ac4de7607a",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_owner_push_sync3_v1_20261014/route/proposals.csv": "1b03457e399e02ec5ef1f60558131e6b961154ddd579033fd980d704e86de4c4",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_owner_push_sync3_v1_20261014/route/proposal_paths.csv": "adc1ba0521b2c82561c9e205a04ca945299383fa709ba55ef97ea9ed17d1be27",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_owner_push_sync3_v1_20261014/route/trees.csv": "1cc40db746b080dddce4abf0942d090b4e2086da723687bc5a597882c131bb65",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_owner_push_sync3_v1_20261014/route/owner_usage.csv": "2f59ccbfaf07766a25ddadcfc99c8c70c1c63a85539806f9417e26ae87ba22aa",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_owner_push_serial3_v1_20261014/route/transactions.csv": "e14450c6a756abd4ad7cd31c31bb4098d8a675636c3a26f530c681ea28ba29d4",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_owner_push_serial3_v1_20261014/route/proposals.csv": "2b3c32a4a630687395d58eb5eb38e222ac7c487f5c542026ceabafcc935c2d2d",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_owner_push_serial3_v1_20261014/route/proposal_paths.csv": "c22a91d6dbcd3929f2a115207974980e675569c175ecfbecd6c508c3e0f8c14b",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_owner_push_serial3_v1_20261014/route/trees.csv": "1cc40db746b080dddce4abf0942d090b4e2086da723687bc5a597882c131bb65",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_owner_push_serial3_v1_20261014/route/owner_usage.csv": "2f59ccbfaf07766a25ddadcfc99c8c70c1c63a85539806f9417e26ae87ba22aa"
+  },
+  "prohibited_inferences": [
+    "Final state size is not peak transient state or staging capacity",
+    "70-net cohort does not bound representative full-design resource needs",
+    "A read entry may refer to an absent interior resource; never drop it merely because it has no allocated authority record"
+  ],
+  "required_consequence": "Hardware preflight must stream arbitrarily long bounded read footprints against all-node authority lookup, with explicit overflow/backpressure rather than silently restricting validation to changed or boundary nodes."
+}

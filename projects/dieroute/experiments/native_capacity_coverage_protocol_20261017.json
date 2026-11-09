@@ -1,0 +1,27 @@
+{
+  "schema": "dieroute.capacity_coverage.v1",
+  "geometries": [
+    [
+      20,
+      16
+    ],
+    [
+      28,
+      22
+    ]
+  ],
+  "cases": [
+    "apex2",
+    "frisc",
+    "elliptic"
+  ],
+  "seeds": [
+    1
+  ],
+  "channel_width": 80,
+  "workers": 1,
+  "execution_protocol": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_capacity_coverage_20261017/protocol.json",
+  "protocol_sha256": "6c747d0725c3e8cfc237ae4b38411b345862fa1f6af87338f1c6d5ea702710e2",
+  "scope": "Separate capacity/topology scaling characterization, after original reserved cohort terminal. Two predeclared geometries20x16/28x22,3cases,seed1,cw80,workers1; change only named layout dimensions, keep three-layer architecture rules. Preserve all six attempts and original15baseline failures. Native baselines only, not independent holdout, candidate quality, acceleration or completion. No geometry escalation or outcome-based selection within this study.",
+  "research_complete": false
+}

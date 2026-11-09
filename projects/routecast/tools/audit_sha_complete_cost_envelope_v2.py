@@ -1,0 +1,14 @@
+"""Complete measured stage accounting and conditional break-even envelope, no skipped audits."""
+import json
+from pathlib import Path
+from decimal import Decimal
+from pre_route_endpoints import sha
+R=Path(__file__).resolve().parents[1];S=R/'experiments/sha1_actual_old_linear_expat_workflow_v1_2026-10-10';rp=S/'receipt.json';r=json.loads(rp.read_text());assert all(sha(k)==h for k,h in r['files'].items());sp=S/'stages.json';stages=json.loads(sp.read_text());assert len(stages)==18 and [x['arm'] for x in r['rows']]==['cold','seed'] and all(x['status']=='COMPLETE_VERIFIED' for x in r['rows']);arms={'cold':[],'seed':[]}
+for row in stages:
+ assert row['seconds']>=0
+ if 'log' in row:
+  assert row['exit_code']==0;path=Path(row['log']);assert path.is_file();relative=path.relative_to(S);arm=relative.parts[0];name='/'.join(relative.parts[1:])
+ else:arm=row['arm'];name=row['stage']
+ assert arm in arms;arms[arm].append(dict(stage=name,seconds=str(row['seconds'])))
+assert len(arms['cold'])==8 and len(arms['seed'])==10;totals={x['arm']:Decimal(str(x['continuous_arm_seconds'])) for x in r['rows']};sums={a:sum((Decimal(x['seconds']) for x in rows),Decimal(0)) for a,rows in arms.items()};overheads={a:totals[a]-sums[a] for a in arms};assert all(x>=0 for x in overheads.values());model=next(Decimal(x['seconds']) for x in arms['seed'] if x['stage']=='sha1_model_native_seed.log');audit=next(Decimal(x['seconds']) for x in arms['seed'] if x['stage']=='sha1_shared_audits.log');rest=totals['seed']-model-audit;bounds=dict(cold=totals['cold'],seed=totals['seed'],model_handoff=model,full_model_audit=audit,remaining_seed_cost=rest,seed_if_only_model_handoff_zero=totals['seed']-model,seed_if_only_model_audit_zero=totals['seed']-audit,seed_if_model_handoff_and_audit_zero=rest,max_model_plus_audit_to_match_cold=totals['cold']-rest)
+D=R/'experiments/sha_complete_cost_envelope_v2_2026-10-10';assert not D.exists();D.mkdir();bindings={str(x):sha(x) for x in [Path(__file__).resolve(),rp,sp]};bindings.update({x['log']:sha(x['log']) for x in stages if 'log' in x});assert all(sha(k)==h for k,h in bindings.items());(D/'verification.json').write_text(json.dumps(dict(bindings=bindings,all18_stages=arms,stage_sum_seconds={a:str(x) for a,x in sums.items()},unlisted_continuous_overhead_seconds={a:str(x) for a,x in overheads.items()},conditional_envelope={k:str(v) for k,v in bounds.items()},scope='Single archived complete audited SHA trial, exact Decimal accounting of all18 stages and remaining measured overhead. Hypothetical zero-cost bounds hold only with all other measured costs fixed; no audit omitted in executed experiment, no future or hardware speed claim. Entire model+handoff free alone still exceeds cold. No model/round choice tuned here.'),indent=2)+'\n');print({k:str(v) for k,v in bounds.items()})

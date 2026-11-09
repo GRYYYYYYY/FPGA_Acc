@@ -1,0 +1,176 @@
+      DieRoute: Multi-Die Routing with Partitioned Authority
+                                    Evidence and Research Draft
+
+                         Research draft; authorship and venue pending
+                                            14 October 2026
+
+                                                  Abstract
+         DieRoute studies cross-die routing using SLL reservation, die-local resource authority, versioned
+     boundary summaries, and HBM placement. The prototype reuses PersistRoute search and transac-
+     tional commit infrastructure. We report verified component behavior, native-graph snapshot searches,
+     and actual compute unit execution in hardware emulation. Separate resource buffers map three owner
+     shards to HBM groups 13, 14, and 15. These results establish bounded functional properties of a
+     serialized prototype. They do not establish an asynchronous multi-owner architecture or board per-
+     formance. Development workloads remain above the frozen native wirelength baseline. This draft
+     therefore records unresolved research gates rather than a completed accelerator evaluation.
+
+
+1    Problem and scope
+Cross-die connections couple local resource occupancy to scarce boundary resources. The research objec-
+tive is to route complete designs while preserving native legality, timing and wirelength, and to obtain
+an independently measured end-to-end accelerator benefit. PersistRoute provides the reused search, ver-
+sioned validation and commit substrate; reuse is not claimed as DieRoute novelty. The proposed research
+contributions are SLL reservation and corridor repair, single-owner resource state with boundary sum-
+maries, HBM/die mapping, and criticality/congestion-aware migration. The latter contributions require
+additional integration and ablation evidence.
+
+
+2    Authority and search protocol
+For an electrical routing resource r, exactly one logical owner stores its authoritative occupancy, history,
+version and membership. A boundary summary is read-only information derived from that authority;
+it must not become a second independent writer. Physical die membership and authority ownership
+are separate concepts, particularly for resources spanning multiple dies. The prototype uses a canonical
+owner within the membership set.
+    A proposal records each consumed resource observation and its version. Publication requires com-
+patible session/epoch identity, valid graph edges and immutable admission policy, and current consumed
+versions. A failed proposal must preserve all authority bytes. Multi-sink branches attach to the existing
+net tree, and shared resources count once per net. These requirements apply also to rejected search,
+malformed paths and late commit overflow.
+    The present banked implementation has three separate resource AXI interfaces and shared tree, net
+and control state. Searches consume immutable authority snapshots; commit follows under exclusive
+serialized handoff. The search and commit compute units share the same device buffers. This implemen-
+tation is a functional step toward the architecture: independent buffers do not prove concurrent writers,
+distributed ordering or asynchronous shadow coherence.
+
+
+3    Corridor selection and development variants
+The routing reference ranks candidate portals using a timing-weighted tree seed cost, a source-side ge-
+ometric estimate, transition cost and destination lookahead. Detailed searches subsequently realize the
+corridor and stage the complete branch before publication. Failed reservations are released before re-
+pair or fallback. Reservation does not by itself demonstrate fewer global SLL crossings or a hardware
+performance benefit.
+
+
+                                                      1
+                             Host: snapshot import and serialized CU launches
+
+
+
+
+                    Seed worker CU           Whole search CU         Commit/query CU
+
+
+                                                        read       publish/query
+
+
+
+                 Immutable graph          Owner resource shards          Tree/net/control
+                   HBM 16:31               HBM 13 / 14 / 15                  HBM 12
+
+
+
+
+                                          Labels, queue, journal
+                                               HBM 0:11
+
+
+Figure 1: Verified buffer roles of the three-CU banked prototype. Lines show logical accesses, not simul-
+taneous traffic or independent authority writers. Host launch ordering provides exclusive search/commit
+handoff.
+
+   The development entry-cost variant replaces the source geometric estimate with a local multi-source
+search on the same resource snapshot. It uses the reference single-label cost/hop ordering; it is not a
+Pareto solver for hop-constrained paths. Both upstream and downstream work are included in total
+expansions and edge visits. A second variant stops upstream traversal once all eligible portal sources
+have finalized labels. Nonnegative edge costs justify retaining these distances under the same single-label
+ordering. Component tests compare selected paths and complete authority with full traversal; native
+repeated evaluation of this stopping rule remains in progress.
+
+
+4    Evidence levels and methodology
+We distinguish CPU reference execution, synthesizable top C-model execution, RTL cosimulation, XRT
+compute unit execution in hardware emulation, routed implementation and physical board measurement.
+Evidence at one level is not substituted for another. Hardware emulation wall time is not a board speed
+or energy metric. Initial native authority imports are reported explicitly.
+    The VTR architecture-model development cases are diffeq, alu4 and ex5p. Algorithm choices may use
+these cases. Reserved validation cases remain unopened until an algorithm/configuration freeze. Current
+commercial evidence uses native U280 topology and selected rerouting cohorts; it does not constitute a
+representative held-out full-design cohort. Repeated runs check deterministic artifacts and counters in
+addition to native validation.
+
+
+5    Verified functional results
+A banked top C-model search on a native cross-die snapshot expands 229746 nodes and consumes 862428
+observations, with path cost 42. Exported search artifacts match the independently audited flat reference.
+This case has no occupied observations and does not prove live contention or asynchronous routing.
+    A serialized small hardware-emulation fixture launches 16 actual compute unit calls. Runtime owner
+groups are 13, 14 and 15. Stale validation is rejected, a valid path is published, and authority is not
+reuploaded. A separate native smoke case uploads and verifies 3746844664 bytes of graph/authority data,
+performs seed/search/commit/query calls and independently checks all 341 net trees after publication.
+It expands only 2 nodes; large input capacity and a short search must not be conflated with a substantial
+native routing execution.
+
+
+
+
+                                                    2
+6    Development QoR and negative results
+Table 1 reports downstream routing against the frozen native baseline. All three cases have positive
+wirelength deltas; ex5p also has a positive critical-path-delay delta. The joint acceptance gate therefore
+fails. The flat timing-updated ex5p reference additionally fails to converge at the declared iteration
+budget. That failure is retained rather than treated as a valid quality baseline.
+
+                    Case      Baseline WL    Candidate WL         WL delta   CPD delta
+                    diffeq            8639                 8996      4.13%         -0.03%
+                    alu4              7733                 8353      8.02%         -0.67%
+                    ex5p              9664                10762     11.36%          2.28%
+
+Table 1: Native validation of five-repeat development experiments. Geometric channel spans are wire-
+length units; percentages are relative to the frozen native baseline. These are not physical U280 accelerator
+measurements.
+
+    The geometry-weight ablation compares weights 0 and 64 on ex5p. Five audited repeats give byte-
+identical results for the seven common canonical artifacts. Native wirelength and CPD are unchanged.
+This result does not support adopting a different geometry weight for this development case.
+    Fresh native delay extraction covers 5980 final connections across the three cases. Local-RC path
+sums differ from full routed-tree delay by at most 1–2 ps. These observations concern final paths, not all
+intermediate iterations or arbitrary architectures, and are not a causal explanation of QoR.
+    The entry-cost variant passes five independently audited deterministic repeats. All routes are native-
+legal; wirelength is 10749 and CPD is 9.67608 ns. It reduces convergence from 22 to 13 iterations but
+expands 96811142 nodes, about 2.85 times the original downstream work. Wirelength remains about
+11.23% above baseline and CPD about 0.79% above baseline. These repeated results neither close the
+QoR gate nor support a speedup claim.
+
+
+7    Open requirements and artifact status
+                             Gate   Recorded status                 Completion
+                             G1     in progress                     Not complete
+                             G2     in progress                     Not complete
+                             G3     in progress                     Not complete
+                             G4     in progress gate failed         Not complete
+                             G5     in progress                     Not complete
+                             G6     in progress                     Not complete
+                             G7     pending external hardware       Not complete
+                             G8     in progress                     Not complete
+
+G1–G3 cover frozen inputs, complete routing and representative workload coverage. G4 requires joint
+native legality, SLL, timing and wirelength acceptance. G5 requires reservation, mapping, shadow, mi-
+gration and topology ablations. G6 requires the integrated hardware validation and routed timing and
+resource evidence. G7 requires physical board end-to-end performance, energy and repeated measure-
+ments. G8 requires the paper, full claim matrix, reproducible artifact bundle and requirement-wide final
+audit. This draft and the direct evidence inventory are partial G8 artifacts.
+    Physical U280 execution is unavailable in the current environment. Routed implementation, large
+native hardware-emulation searches and repeated development variants are still being evaluated. A
+complete literature review, novelty positioning, final architectural figures, held-out results, full artifact
+packaging and final claim review are required before submission.
+
+Reproducibility. Draft numbers are generated by tools/export research draft evidence.py from
+named JSON evidence. paper/evidence manifest.json records their SHA-256 hashes. The research
+plan and per-experiment manifests specify remaining scope, source hashes and commands. The generated
+number manifest is a provenance aid and does not certify research completion.
+
+
+
+
+                                                      3
+

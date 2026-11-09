@@ -1,0 +1,19 @@
+"""Recover evidence-path packaging only, no application/model rerun."""
+import json,hashlib,sys,subprocess
+from pathlib import Path
+from evaluate_external_forecast_case_v1 import evaluate
+from external_forecast_metrics_v1 import gate,metrics,vectors
+from verify_wbuart_primary_metrics_v1 import scores,rho
+R=Path(__file__).resolve().parents[1];E=R/'experiments';D=E/'wbuart_pair_application_trial_v1_2026-10-20'
+def read(p):return json.loads(Path(p).read_text())
+def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def main():
+ assert read(D/'terminal.json')['all_pass'];m=read(D/'manifest.json');assert all(sha(p)==h for p,h in m['bindings'].items());comparisons=[];extras=[]
+ for c in m['cases']:
+  out=Path(c['model_output']).resolve();vp=out/'verification.json';proof=read(vp);assert proof['status']=='COMPLETE_PAIR_APPLICATION_XML_FRACTION_AND_ATOMIC_REPLAY_PASS';assert all(sha(p)==h for p,h in proof['bindings'].items());bindings={str(Path(p).resolve()):h for p,h in proof['bindings'].items()};assert all(sha(p)==h for p,h in bindings.items());bindings[str(vp)]=sha(vp);adapted=dict(proof,bindings=bindings,evidence_packaging_scope='Absolute path aliases only; original verification hash bound, no model/state/physical predicate changed.');ap=out/'absolute_path_binding_verification_v1.json';assert not ap.exists();ap.write_text(json.dumps(adapted,indent=2)+'\n');s=read(c['old_specification']);s['predictions']['native_retained_on']={'frame':str(out/'sketch.json'),'proof':str(ap)};folder=D/c['case'];sp=folder/'specification_v2.json';assert not sp.exists();sp.write_text(json.dumps(s,indent=2)+'\n');cp=folder/'comparison_v2.json';evaluate(sp,cp);v=read(cp);previous=read(c['old_comparison']);additional=gate(v['metrics']['native_retained_on'],previous['metrics']['native_retained_on']);domain=read(s['domain_proof']);resources=[json.loads(x) for x in (Path(s['domain_proof']).parent/'resources.jsonl').read_text().splitlines()];bins=read(Path(s['domain_proof']).parent/'spatial_bins.json');truth={int(n):x for n,x in read(s['label_physical_audit'])['node_occupancy'].items()};warmledger={int(n):x for n,x in read(out/'initial.json')['ledger'].items()};wm=metrics(vectors(resources,bins,warmledger,domain['graph_nodes']),vectors(resources,bins,truth,domain['graph_nodes'],truth=True),domain['resource_k'],domain['spatial_k']);warmvec=scores(resources,bins,warmledger);tv=scores(resources,bins,truth)
+  for scope,k in [('resource',domain['resource_k']),('spatial',domain['spatial_k'])]:
+   a,b=warmvec[scope],tv[scope];value=rho(a,b);hits=len(set(sorted(a,key=lambda n:(-a[n],n))[:k])&set(sorted(b,key=lambda n:(-b[n],n))[:k]));assert abs(value-wm[scope]['spearman'])<1e-12 and hits==wm[scope]['top_k_hits']
+  extras.append({'case':c['case'],'committed_groups':proof['committed_groups'],'candidate_vs_original_model':additional,'pair_off_warm_metrics':{scope:{k:x for k,x in d.items() if k in ['spearman','top_k_hits','k','universe_size']} for scope,d in wm.items()},'candidate_vs_pair_off_warm':gate(v['metrics']['native_retained_on'],wm),'pair_off_warm_metrics_independent_fraction_ranks_checked':True,'original_gate_pass':v['pass_case_gate']});comparisons.append({'case':c['case'],'specification':str(sp),'comparison':str(cp)})
+ (D/'workflow.json').write_text(json.dumps({'comparisons':comparisons,'recovery':'All9 application/audits already terminal0; first proof-relative-path alias packaging repaired without rerun.','manifest':str(D/'manifest.json')},indent=2)+'\n');subprocess.run([sys.executable,str(R/'tools/verify_wbuart_pair_application_metrics_v1.py')],check=True)
+ (D/'additional_controls_v1.json').write_text(json.dumps({'rows':extras,'scope':'Original2round model and no-pair warm controls reported separately; warm metrics independently recomputed. All gate semantics unchanged, no candidate promotion.'},indent=2)+'\n');print('PAIR_APPLICATION_EVALUATION_RECOVERED')
+if __name__=='__main__':main()

@@ -1,0 +1,43 @@
+{
+  "observed_ns": 1793416412520205814,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_PREFIX_WRITE_CONTROL.json",
+    "sha256": "f487c4fce035724624e9930c51472af54d9dab4923c783da0ea0f08b794a049f"
+  },
+  "progress": {
+    "report": "work/resident_prefix_accumulator_projection_20261031/review.json",
+    "report_sha256": "3141cb6a4d42e4a368f2ff6085d649f155c870ea86a591664eea8b74de761ac5",
+    "independent_review": "work/resident_prefix_accumulator_projection_20261031/independent_review.json",
+    "independent_review_sha256": "6160d950413716fffc2b0be14c8829b34fc23c27185542395f8e4affdf9180ef",
+    "local_accumulator_modules": 3,
+    "local_queries_unsat": 6,
+    "forward_reverse_structural_prefix_bound": 3466592,
+    "portal_structural_prefix_bound": 1873504,
+    "actual_word_population_and_guard_correspondence_proved": false,
+    "actual_prefix_memory_contents_validated": false,
+    "global_sequential_RTL_equivalence_proved": false,
+    "whole_program_lower_bound_certified": false,
+    "watchdog_failure_verdict": null,
+    "scope": "Source-bound admitted prefix-block accumulation projection over three existing2022.2 loop modules. The eight actual64bit add/mux shapes take zero-extended7bit count fields; partial sums capture at phases6/7/0/1/2/3/4and final feedback/data at5. For an admitted block with stated phase/control enables, no mid-block accumulator reinitialization and incoming total held until final feedback, symbolic composition eliminates seven arbitrary old partial sums and equals eight ordered guarded arrivals. Arrival count/guard values are opaque binary values at their sampling phases, not asserted to be correct word populations/validity tests. Their7bit bound alone gives0..1016per block. With total initialized0and correct admitted block-feedback sequencing, integer induction bounds all prefix sums by blocks*1016(3466592for forward/reverse,1873504for portal),so32bit write truncation is lossless and cumulative sums cannot decrease in this projection. The local source/model proofs do not establish complete extracted Verilog equivalence, actual count-word/guard correspondence, real memory data and upper-level write delivery, full global sequencing or actual prefix contents, all runtime counts/timing/watchdog. No original program/trace/TV/.dat input, HLS/simulator/native execution, DUT edit, process control, guard/watchdog change or adoption.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v211_20261031/matrix.json",
+    "sha256": "934ec07be7feb8acc2214db65eba3b9607bb9fec40758fff8caee31c3a1aec03"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v211.json",
+    "sha256": "ceabd3ef54b79aab7a650c319c0c817142615ec269c81cfecc89e880462ec54c"
+  },
+  "next_action": "Conditional accumulation coherence/range and32bit exactness established for opaque7bit arrivals. Next verify actual eight word/count/validity arrivals and top-level memory delivery,plus accepted-build total/sentinel check,before claiming real prefix correctness or global runtime/timing. Preserve full original jobs/guards/budgets and actual terminal prerequisite.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

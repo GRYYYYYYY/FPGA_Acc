@@ -1,0 +1,77 @@
+{
+  "status": "planned_not_implemented",
+  "created_utc": "2026-10-18T07:37:00.593658+00:00",
+  "bindings": {
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/build/native_partial_net_firstpass_v1_2026-10-18/source/route.cpp": "6722255b2a7c237da45953fb904bb5082f55c3735c9db77675ae2e7379d547e0",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/build/native_partial_net_firstpass_v1_2026-10-18/source/route_net.cpp": "7b65550327a7334af0036b39c7461fc17f51f2a92fb05b1176295edc7ed1e35a",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/build/native_partial_net_firstpass_v1_2026-10-18/receipt.json": "c89fc9910c021b07b77b4453c2a2839e061b907a19ca8934d320ab394526c8c5",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/experiments/mmc_partial_firstpass_recovery_v3_2026-10-18/independent_wire_work_comparison_v1.json": "004bb4c3ae7faed3307ffd2a39d65052dd962043d000c94f092d9c9fa5e670ea",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/experiments/mmc_old_owner_pressure_quality_v1_2026-10-18/research_decision_v1.json": "1320c766ba4755293cfbe3a5af34bb1121e27ab9525110b62847e172db6251ef",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/experiments/mmc_old_owner_pressure_context_v1_2026-10-18/exposed_coverage_all3policies_v1.json": "a573ca01fba0cf3903a6116642f8063b3cc51e7d1b8bba68593afbcda6e67a51",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/experiments/mmc_partial_firstpass_recovery_v2_2026-10-18/case_01/verification.json": "e88ade13b362bb7fd9cd5506494269b277089aa1bbbb5c915d50adcf5416dcdd",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/experiments/mmc_partial_firstpass_recovery_v3_2026-10-18/case_02/verification.json": "9f88fc6f70b13c477689b17e8b95dd2e256d291c27b817b26f0be556b8e1f00b",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/experiments/mmc_partial_firstpass_recovery_v2_2026-10-18/case_03/verification.json": "74ab57ac1a03813ddccf8be328bffb74b5a605cd556f26aebc434ea2d5f2c3b0"
+  },
+  "jobs": [
+    {
+      "case": "case_01",
+      "policy": "default",
+      "preserve_partial_first_iteration": false,
+      "baseline_route": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/experiments/mmc_partial_firstpass_native_v1_2026-10-18/case_01/off/output.route",
+      "seed": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/experiments/mmc_old_branch_prune_seeds_v1_2026-10-18/case_01/seed.route"
+    },
+    {
+      "case": "case_01",
+      "policy": "firstpass_preserve",
+      "preserve_partial_first_iteration": true,
+      "baseline_route": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/experiments/mmc_partial_firstpass_native_v1_2026-10-18/case_01/on/output.route",
+      "seed": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/experiments/mmc_old_branch_prune_seeds_v1_2026-10-18/case_01/seed.route"
+    },
+    {
+      "case": "case_02",
+      "policy": "default",
+      "preserve_partial_first_iteration": false,
+      "baseline_route": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/experiments/mmc_partial_firstpass_native_v1_2026-10-18/case_02/off/output.route",
+      "seed": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/experiments/mmc_old_branch_prune_seeds_v1_2026-10-18/case_02/seed.route"
+    },
+    {
+      "case": "case_02",
+      "policy": "firstpass_preserve",
+      "preserve_partial_first_iteration": true,
+      "baseline_route": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/experiments/mmc_partial_firstpass_native_v1_2026-10-18/case_02/on/output.route",
+      "seed": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/experiments/mmc_old_branch_prune_seeds_v1_2026-10-18/case_02/seed.route"
+    },
+    {
+      "case": "case_03",
+      "policy": "default",
+      "preserve_partial_first_iteration": false,
+      "baseline_route": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/experiments/mmc_partial_firstpass_native_v1_2026-10-18/case_03/off/output.route",
+      "seed": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/experiments/mmc_old_branch_prune_seeds_v1_2026-10-18/case_03/seed.route"
+    },
+    {
+      "case": "case_03",
+      "policy": "firstpass_preserve",
+      "preserve_partial_first_iteration": true,
+      "baseline_route": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/experiments/mmc_partial_firstpass_native_v1_2026-10-18/case_03/on/output.route",
+      "seed": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/experiments/mmc_old_branch_prune_seeds_v1_2026-10-18/case_03/seed.route"
+    }
+  ],
+  "purpose": "Distinguish congestion ownership propagation, native force/timing decisions, initializer resets and other state transitions behind global NET-union drift; do not assume congestion is the sole cause.",
+  "implementation_scope": "New isolated read-only observer build; original/vendor sources and all archived outputs immutable. Explicit trace switch, single-worker file-seed LOOKAHEAD only; no routing decisions, prices, costs, budgets, trees, timing values, RNG or iteration counts changed.",
+  "required_observations": [
+    "Initial, per-iteration and final complete NET ownership checkpoints with RR multiplicities, sufficient to detect changes outside perNET hooks.",
+    "Native true routing-decision guard and actual event order; distinguish absent tree, pending sink, overuse, hold/forced decision and unclassified cases without inferring exclusive causality.",
+    "Each routed NET pre/post ownership; occupied overused RR node IDs with actual native occ/cap; explicitly account for local OPIN reservation or non-NET occupancy instead of fabricating NET owners.",
+    "Exact unrounded per-iteration RouterStats and final native totals, independently checked against existing exact-total work reconstruction."
+  ],
+  "admission": [
+    "Authenticate all6seed/input/graph/settings bindings before runs; new observations, not restarts of completed native experiments.",
+    "Matched archived output.route and packed post-routing netlist bytes, wire/diagnostic CPD and every integer work counter for all6jobs; retain current policies and original failed metric gates.",
+    "Transfer or freshly verify full115572query physical/canonical admission only through explicit exact-byte and input-binding equivalence.",
+    "Independent trace replay must match every pre/post/checkpoint, actual owner multiplicities and counter boundary; reject missing or ambiguous events before any propagation claim.",
+    "State explicitly that first-true guard is execution evidence, not sole counterfactual cause; trace clocks cannot prove end-to-end gain."
+  ],
+  "child_address_space_limit_bytes": 34359738368,
+  "elapsed_timeout_seconds": null,
+  "scope": "All3exposed placements and both fixed partial-seed policies, no favorable-label selection, current graph/seed1/width128/1worker unchanged. No route-policy promotion, parameter tuning, heldout or hardware claim."
+}

@@ -1,0 +1,17 @@
+{
+  "status": "pass",
+  "scope": "full-identity array transaction selector integrated into CPU candidate generation and resident feedback state; host encoding/control still use STL; native pilot running",
+  "fixtures": 12,
+  "guarded_unit_sets": 60,
+  "guarded_color_sets": 48,
+  "resident_adapter_calls": 144,
+  "ctest": "5/5 pass",
+  "files": {
+    "transaction_proposals.hpp": "e35d56989399ccb195096c646a42006d88d6a3d1e786f05aaf408b184d23e676",
+    "transaction_search.hpp": "f3d4f8fbb0dd7a8fea164ee60c7695e6ffbd77f6b5b4a1f6861f456cfd467c6a",
+    "transaction_feedback_search.hpp": "f918311472242e2b920acec7ff81bcf2122a39379963f6189dc6493156b226e8",
+    "transaction_native_server.cpp": "81b04b08c76a4fcdfe8b63feb0a9cabdfb5ca0941f0c4729bf1588556a66e17b",
+    "test_transaction_search.py": "a97ed67d613fa2ede98890a8a6beee488a47155ab5f2b1bc14f173673b477872",
+    "test_transaction_adapter.py": "c71cc26267ad6284e9617168d3cd4fcba94173147ccb005fb2932943300f2dad"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "dieroute.native_owner_push_schema.v1",
+  "backend_mode": 2,
+  "cli": "--summary-push; requires --worker-shadow-sync > 0 and native parallel routing",
+  "transport": "Existing native frame container type 0x44520024, 384 bytes per record; mode is frozen in the run command",
+  "metadata": ["repeat", "iteration", "wave", "actor", "attempt", "reason", "sequence", "die"],
+  "reasons": {
+    "0": "Live search: subscribe/fetch op6, receiver delivery op3, receiver lookup op4",
+    "1": "CPU coordinator owner-summary install op1, bound to exact native commit boundary",
+    "2": "Refresh receiver delivery op3, bound to raw publisher output and logical summary packet",
+    "3": "Consumed-value validation op5 against current owner summary",
+    "4": "Publisher pump: config, control_before, control_after, completion, zero",
+    "5": "Raw publisher output: packet, metadata, zero, zero, zero; immediately follows its pump"
+  },
+  "pump_config": ["worker mask for actor lane", "update budget 8", "visit budget dirty_capacity*65", "update_read", "update_write", "actor/die command ticket", 0, 0],
+  "completion": "Ops1/5/6 retain raw owner-publisher completion ABI; ops3/4 retain original receiver completion ABI",
+  "queue": "Per-die power-of-two dirty capacity >= boundary slots; 8-entry output ring; global per-owner update cursor; per-actor/per-die explicit command cursor",
+  "delivery": "Drain output credits, sort by worker/node, rewrite only lane-local transport serial, deliver via unchanged receiver kernel",
+  "termination": "A pump producing fewer than eight updates has exhausted the filtered pass under the checked visit budget; a full batch is followed by another pump",
+  "concurrency": "Per-die mutex serializes CUs. Queries on immutable joined-phase snapshots OR disjoint lane subscription bits; canonical actor-order capture is a valid linearization",
+  "inventory": "summary_hbm_subscriptions.csv: repeat,owner,node,subscribers,pending,queued; final pending/queued must be zero and subscriber bits must match actual caches",
+  "metrics": "Refresh publication_scans is zero; all empty pump calls, visits, output records, cold queries, rejected validations and replay work remain counted",
+  "limitations": ["CPU still computes searches, owns net sets and commits atomically", "CPU publishes committed owner tuples and dispatches updates", "No autonomous asynchronous DMA/network, routed timing, hardware throughput or energy claim"]
+}

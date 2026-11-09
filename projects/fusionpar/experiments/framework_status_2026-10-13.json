@@ -1,0 +1,110 @@
+{
+  "schema": "FUSIONPAR_FRAMEWORK_STATUS_V1",
+  "date": "2026-10-13",
+  "framework": "implemented_and_native_protocol_verified",
+  "research_benefit": "not_demonstrated",
+  "unit_checks": 67,
+  "native_runs": 25,
+  "deterministic_five_repeats": true,
+  "cold_shared_semantics_equal": true,
+  "modes": {
+    "interleaved": {
+      "runs": 5,
+      "commits": 0,
+      "aborts": 15,
+      "median_process_wall_ns": 15531728964,
+      "median_charged_wall_ns": 17710265159,
+      "final_wirelength": 9857,
+      "final_cpd_ns": 5.8858,
+      "protocol_only": false
+    },
+    "interleaved_repair": {
+      "runs": 5,
+      "commits": 0,
+      "aborts": 15,
+      "median_process_wall_ns": 15844780802,
+      "median_charged_wall_ns": 18023316997,
+      "final_wirelength": 9857,
+      "final_cpd_ns": 5.8858,
+      "protocol_only": false
+    },
+    "protocol_probe": {
+      "runs": 5,
+      "commits": 15,
+      "aborts": 0,
+      "median_process_wall_ns": 14813414227,
+      "median_charged_wall_ns": 16991950422,
+      "final_wirelength": 9844,
+      "final_cpd_ns": 6.52996,
+      "protocol_only": true
+    },
+    "sequential": {
+      "runs": 5,
+      "commits": 0,
+      "aborts": 5,
+      "median_process_wall_ns": 8764220370,
+      "median_charged_wall_ns": 10942756565,
+      "final_wirelength": 9857,
+      "final_cpd_ns": 5.8858,
+      "protocol_only": false
+    },
+    "sequential_shared": {
+      "runs": 5,
+      "commits": 0,
+      "aborts": 5,
+      "median_process_wall_ns": 8705394427,
+      "median_charged_wall_ns": 10883930622,
+      "final_wirelength": 9857,
+      "final_cpd_ns": 5.8858,
+      "protocol_only": false
+    }
+  },
+  "evidence": [
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/ex5p_framework_validation_v1/audit.json",
+      "sha256": "2ec324f3e1a3c7fa903fb59d2dd2f81e71a7f9b278a9042da91f99302a281bd8"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/ex5p_publication_audit_2026-10-13.json",
+      "sha256": "896ce7316a4546eb3d9b873c7ff01c4c419959fa86e2e8df80ec1da64d098b53"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/sanitize_tests_final.log",
+      "sha256": "b178da21ffe3fb4148ac0560372ec92faafd473e569f9b9cd1c0cb3f99b68c96"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/sanitize_host_final.log",
+      "sha256": "9b6d6bc9a578f7a21d038152cc67611ce992f1916d2b9ad47de488d574e74578"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/sanitize_build_final.log",
+      "sha256": "f7bad37682903fdfcab5fdf2e84921565afd5b8fc33b9bfe92c18eabcacf2752"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/sanitize_configure.log",
+      "sha256": "639243d9b88a7f14defbecd747c5ef5436902459349b73991b4448e2cb308c7e"
+    }
+  ],
+  "current_sources": {
+    "include/fusionpar.hpp": "c3afeb74eff585b315de27d597cfbc6eb3d4a650b64a71968bf9aa8267de3312",
+    "include/joint_io.hpp": "c00361537061b7f97a3c09c6247370972b7ef5ea5032ef544be92cd7e6aad63c",
+    "include/joint_state.hpp": "d3c32f5459d8cbd4b635146d93c5213ef637f51306dac37777b131e58d09032d",
+    "src/fusionpar.cpp": "643c0afbc66428a1d081e5771c95828a70532197b728adbd59e54ffd47dbb62f",
+    "src/joint_io.cpp": "849e57ec78856b5e7cc4f53948db3e0d1ff4b546e62acb35f3fe54c94ced44c9",
+    "src/joint_state.cpp": "79d1f7fb49514aa001bf6eb61748e710ea84126b4908b33cb0336ae0fb530dcd",
+    "host/joint_host.cpp": "d93b552c27703ee51ac0e551c31e0fa0a1841725a9d74b40be8f88f257e1f0d9",
+    "tb/fusionpar_tb.cpp": "b6f1e7b9cdfe7db226779eee7f3d328b7b783ec862528660816b234d1cee502c",
+    "tb/joint_state_tb.cpp": "81893074f2ef85e3e48c152c5df3b359746ae99ba0643683642797eb7d3b8395",
+    "tools/audit_development.py": "a1c1185eb76cdb0669b83166224ce68f7ca4626b493e5d0e52fd68a5654f8c7b",
+    "tools/prepare_vpr_bundle.py": "2b7466e3bf8dea64784ba02aa445b02ce884a9999e847d4d3db73df6864a8747",
+    "tools/run_development.py": "71a1b22f4d343a753135c2cae9085f93a787735614f2c43cfc713fd21d8aa0e8",
+    "tools/validate_candidate.py": "74f84e30817913f6b0ab324a91cbddd5380bcbe209890664227b49a0eab82831"
+  },
+  "remaining": [
+    "QoR-protected accepted move/controller benefit",
+    "failure-driven placement repair beyond callback/global reroute",
+    "more development designs then independent validation",
+    "best placer + PR strong baseline"
+  ],
+  "hardware_execution": false
+}

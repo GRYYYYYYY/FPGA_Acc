@@ -1,0 +1,22 @@
+{
+  "objective": "Complete DieRoute research under the existing five-paper protocol",
+  "previous_recovery": {
+    "path": "HANDOFF_20261030_FORMAL45_PAPER.json",
+    "sha256": "0205e68f07d79bd3dcc204d29bf5657d9ad1cb42298cfd03acea95dc5669bad8"
+  },
+  "progress": {
+    "review": "work/rwroute_author_manuscript_review_20261030/timing_evaluation_review.json",
+    "review_sha256": "30fea49ecfa1a7f44bdc68fd3a37600131ecd909bcf87a0fd37ed6d2f45eb833",
+    "catalogue": "work/rwroute_author_manuscript_review_20261030/catalogue_snapshot.json",
+    "catalogue_sha256": "27dfa5878aa861d6e4c10581be759eb7d22a212692eadcb76c86ab93fb827a00",
+    "scope": "Selected author-thesis3.6.1-3.6.3; distinct external STA, runtime boundaries, joint QoR and scaling methodology. Journal body remains unreviewed; no benchmark tuning or gate completion.",
+    "research_complete": false
+  },
+  "next_actions": [
+    "Continue exact existing RTL process monitoring and original terminal acceptance checks.",
+    "Keep native CPD/estimated-clock/physical STA claims separate; no author calibration constants transferred.",
+    "Commercial matched-route QoR and full runtime remain open under original gate requirements.",
+    "Preserve original11 workloads/311096 searches,45slots,37passes/8failures,watchdogs and guards."
+  ],
+  "research_complete": false
+}

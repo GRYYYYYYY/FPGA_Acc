@@ -1,0 +1,42 @@
+{
+  "observed_ns": 1793421333856217196,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_INSTALL_CREDIT_RETIREMENT.json",
+    "sha256": "6273afa6280a5b7edbbbe11aab3e37ad7ce348e1f5773728d3f824ac504f3ace"
+  },
+  "progress": {
+    "report": "work/resident_install_caller_ownership_20261031/review_v2.json",
+    "report_sha256": "fa91c62774b04e122428ca144773dc9cd008dbfd1f466b381eaa0d1e696f3d25",
+    "independent_review": "work/resident_install_caller_ownership_20261031/independent_review.json",
+    "independent_review_sha256": "704b2844645fdf0f04434da0f8f75e7bc2dc331a4f378bf52ac67728b8d9b01f",
+    "nested_routes": 12,
+    "mux_and_leaf_queries_unsat": 47,
+    "wait_hold_queries_unsat": 12,
+    "mux_truth_table_cases": 12460,
+    "leaf_truth_table_cases": 48,
+    "global_caller_ownership_proved": false,
+    "all_install_traffic_no_empty_read_proved": false,
+    "HDL_simulation_executed": false,
+    "scope": "SHA-bound combinational ownership proof for three delimiter leaves, conditional on simultaneously nested caller waits: top75,execute25,prepare8/10/12,builder5. Portal prepare12 additionally requires predicate_op177=1, whose source definition is tmp_15_reg_1501 AND tmp_reg_1492; state11 is only a one-cycle launch transition, not its wait state. If the predicate is0, prepare12 ARVALID and RREADY are0. Each of four levels per family forwards the same child ARADDR,ARLEN,ARVALID,RREADY for arbitrary other binary predicate flags; top adapter address/length connect directly to execute output. ARREADY,RVALID,RDATA are direct broadcasts. Each caller holds its examined state while its corresponding child done is zero; completion-edge signals use the pre-edge state. Leaf ready implies its broadcast RVALID even with other binary conditions unconstrained. Therefore at these nested states adapter internal RREADY implies internal RVALID; no other child drives the selected mux value. This does not establish that these nested states are globally reachable or maintained for every request, no reset/misnesting, outstanding-response ownership across state changes, other consumers, pointer identity, or external response correctness. It does not discharge the credit model premise over all installation traffic and is not HDL simulation/full equivalence, native acceptance, watchdog/timing/board evidence. No DUT/native job/guard/budget/cache/input changes.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v229_20261031/matrix.json",
+    "sha256": "1013612b58d87fca04aa1fc2eacfbdc6591715f39a9d6b5e8cea1cbc73b72f20"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v229.json",
+    "sha256": "f2ee478ae830c7ae51628795d6bdf71457bebbbfeabf29e87d8a4a1530297716"
+  },
+  "next_action": "Verify temporal nesting/portal predicate lifetime and outstanding-response ownership at state transitions;extend no-empty-read beyond delimiter consumers. Preserve ordered-correct-external-return premise;continue original terminal monitoring without new execution owners,guard/budget/input/cache changes.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

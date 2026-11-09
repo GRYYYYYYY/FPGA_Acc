@@ -1,0 +1,28 @@
+{
+  "schema": "FUSIONPAR_TP_CHECKPOINT_NEGATIVE_CONTROLS_V1",
+  "pass": true,
+  "reference": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/tp_checkpoint_reference_status_2026-10-13.json",
+    "sha256": "6dd840b4123e1b85a6d9e4baf3b9d8b388e667b436ec7cb373cd158f41515f00"
+  },
+  "checker": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/check_tp_checkpoint_audit.py",
+    "sha256": "d06d8ed039826b07e429d1cf376176a89e08051e8d22fea48730e19440a2805d"
+  },
+  "auditor": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/audit_tp_checkpoint_reference.py",
+    "sha256": "f99bef187c6bcc84ac972006f8d65d7ba377e57f58800c49e69cc51983e6521c"
+  },
+  "cases": [
+    {
+      "case": "wrong_certificate",
+      "rejected": true,
+      "reason": "native placement certificate is bound to another canonical output"
+    },
+    {
+      "case": "changed_block_identity",
+      "rejected": true,
+      "reason": "native routing changed proposed placement coordinates/identity"
+    }
+  ]
+}

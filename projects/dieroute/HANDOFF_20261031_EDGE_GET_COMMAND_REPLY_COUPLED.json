@@ -1,0 +1,55 @@
+{
+  "observed_ns": 1793449690914782820,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_REVERSE_GET_COMMAND_REPLY_COUPLED.json",
+    "sha256": "1226d68adf10e8f49a5e56db9411eced0a34c62d98e23085d9edb62daba66b67"
+  },
+  "progress": {
+    "report": "work/resident_edge_get_reply_coupled_20261031/review.json",
+    "report_sha256": "240557517584606080cefc2114cf0929294f811d073d1c8561f4ce57cc61521f",
+    "consistency_review": "work/resident_edge_get_reply_coupled_20261031/consistency_review.json",
+    "consistency_review_sha256": "3f7f8ee978af6576200ba80e42dcc55be793b2ce15aa5690065fb597275af39a",
+    "final_review": "work/resident_edge_get_reply_coupled_20261031/final_review.json",
+    "final_review_sha256": "07b2c916a797b573da7a28cc0ace1aa9f2db356759c1133471e4c35e22cdde62",
+    "calls": 192,
+    "source_event_edges": 52022,
+    "actual_source_get_calls": 60,
+    "actual_edge_get_calls": 12,
+    "actual_reverse_get_calls": 48,
+    "actual_reverse_valid_calls": 24,
+    "actual_reverse_invalid_calls": 24,
+    "remaining_get_contract_calls": 12,
+    "new_SMT_queries": 0,
+    "new_native_accepted_cases": 0,
+    "scope": "Onecommonreset192retained-state commandreply source-event calls;48actualkind3reverse and12actualkind1edge reads through generatedget/root/select3helpers/viewgetter/fieldgetter plus generatedmux and4stageDSPprimitiveprojection. Synthetic admitted fullN773272/E973552reverse image and1179648wordpool;20bittarget/32bitcost/17bitauxfields withdictionaryfalse;12kind7contractsremain. PoolandviewsRAMbinaryreadlatencies, arbitraryinvalidaddresses andstablepublishedmetadata admitted. No sourceinstallation, originalgraph,AXILitebus,4state,wholeRTL,native,board or performanceclaim. Sourceprimitivepipeline regs andallRAMstages enter idle memo signature; compileraggregateoriginal11models only. Full192cases/CPU90/AS1GiBunchanged; researchincomplete. Provenance/fixture consistency review independently reconstructs192command hashes,180reply hashes and full1179648word syntheticpool SHA in memory. Remaining12kind7 replies checked by producer oracle. Original11model compiler counters15620/12658380 exclude added7hierarchy models. Actual producer exit0 observed. Initial primitive-parameter parser failure preserved; only corrected checker rerun, no native flow rerun. No new SMT/native/workload/gate acceptance.",
+    "research_complete": false,
+    "full_public_host_roundtrip_proved": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v286_20261031/matrix.json",
+    "sha256": "88d14cdda5a05a9ff86ed0780c2d03ce9cdfa4f7a1dbdcff2fa3c5f5dd49fa57"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v286.json",
+    "sha256": "ae81586fbfcecf6fa51fe2bb6e1a6579ac5837189d2ca84bca5646114b96bbc4"
+  },
+  "current_runtime_observation": {
+    "path": "work/resident_edge_get_reply_coupled_20261031/runtime_observation.json",
+    "sha256": "da072d4d42450884a11dfc197b8f5b3132bbfba2d71d175c66679fbb84245a85",
+    "scope": "Fresh30actual identities; no new native acceptance; Owner supervisor failure retained."
+  },
+  "previous_goal_turn_classification": "progress_and_verified_wait_v285",
+  "current_goal_turn_classification": "progress_and_verified_wait",
+  "next_action": "Prioritize actual native terminal review. Remove remaining12kind7portal query contracts by actual generated view/field/get/selector hierarchy and forward image, preserving original192cases, limits and errorpaths. Extend dictionary mode and original sourceinstallation/publication before fullhost claim. RawAXILite configuration/start/continue still admitted; retain Owner missing supervisor/auditor quota failure and absentcompletion, no restart/adoption. All8gates, strictcapacity/async/mapping/migration/QoR/ablations/300MHz/board/artifacts/paper remain open.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "owner_supervisor_failure_retained": true,
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending;820separate transitive/466root gaps;paper unchanged.",
+  "research_complete": false
+}

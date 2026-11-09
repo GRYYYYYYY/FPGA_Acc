@@ -1,0 +1,9 @@
+{
+  "status": "pass",
+  "validation": "strict Werror query build; 12 Python packed snapshots passed canonical validation and section-count comparison",
+  "scope": "strict snapshot -> owned complete word input arrays, including connections/prefix/routed/focus. Only section counts checked here, not full proposals or native integration.",
+  "sources": {
+    "host_snapshot_words.hpp": "62805260a0868e26e1fc054d494daba9e8d16906cb2d3a736c9987e6a73779ed",
+    "test_host_snapshot_query.cpp": "cf0dd8f6e5174579639acfe95b0f9d0d54fb2f879e60cc6cd2bf0a76910b7cfd"
+  }
+}

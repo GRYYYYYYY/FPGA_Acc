@@ -1,1 +1,70 @@
-{"paper":"FusionPAR","kernel":"fusionpar_kernel","datasets":["Titan23","Koios","FPGAIF public designs"],"sweeps":{"sketch_threshold":[64,128,256,512],"repair_budget":[0,1,2,4],"interleave_interval":[1,2,4,8]},"metrics":["legal","wall_ms","wirelength","cpd_ns","move_commits","move_aborts","repair_tasks","state_bytes_reused","initialization_ms_saved","board_j"]}
+{
+  "paper": "FusionPAR",
+  "status": "cpu_framework_independent_validation_completed_with_coverage_failures_hardware_not_run",
+  "framework_status": "framework_acceptance_2026-10-13.json",
+  "kernel": "fusionpar_kernel",
+  "datasets": [
+    "Titan23",
+    "Koios",
+    "FPGAIF public designs"
+  ],
+  "sweeps": {
+    "sketch_threshold": [
+      64,
+      128,
+      256,
+      512
+    ],
+    "repair_budget": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "interleave_interval": [
+      1,
+      2,
+      4,
+      8
+    ]
+  },
+  "metrics": [
+    "legal",
+    "wall_ms",
+    "wirelength",
+    "cpd_ns",
+    "move_commits",
+    "move_aborts",
+    "repair_tasks",
+    "state_bytes_reused",
+    "initialization_ms_saved",
+    "board_j"
+  ],
+  "placement_repair_status": "placement_repair_status_2026-10-13.json",
+  "tree_reuse_status": "tree_reuse_status_2026-10-13.json",
+  "controller_baselines_status": "controller_baselines_status_2026-10-13.json",
+  "hardware_sweep_status": "planned_not_run",
+  "feedback_budget_status": "feedback_budget_status_2026-10-13.json",
+  "tp_pr_timing_diagnosis": "tp_pr_timing_diagnosis_2026-10-13.json",
+  "tree_timing_cost_status": "tree_timing_cost_status_2026-10-13.json",
+  "rr_export_cache_status": "rr_export_cache_status_2026-10-13.json",
+  "tp_checkpoint_reference": "tp_checkpoint_reference_status_2026-10-13.json",
+  "tp_checkpoint_contract_audit": "tp_checkpoint_contract_audit_2026-10-13.json",
+  "tp_checkpoint_reference_notes": "TP_CHECKPOINT_REFERENCE.md",
+  "tp_budget_reference_protocol": "tp_budget_reference_protocol_2026-10-13.json",
+  "independent_validation_protocol": "independent_validation_protocol_2026-10-13.json",
+  "tp_budget_reference_status": "tp_budget_reference_status_2026-10-13.json",
+  "tp_budget_artifact_recheck": "tp_budget_artifact_recheck_2026-10-13.json",
+  "independent_validation_progress": "independent_validation_progress_2026-10-13.json",
+  "framework_contract": "FRAMEWORK_CONTRACT.md",
+  "independent_validation_clock_failure": "independent_validation_s38584_clock_failure_2026-10-13.json",
+  "global_net_support_notes": "GLOBAL_NET_SUPPORT_NOTES.md",
+  "framework_status_scope": "Current early-framework acceptance; full P&R, advanced upstream policies, root-clock extension and hardware remain unimplemented",
+  "framework_plan": "framework_plan.json",
+  "independent_validation_status": "independent_validation_status_2026-10-13.json",
+  "independent_validation_results": "INDEPENDENT_VALIDATION_RESULTS.md",
+  "independent_validation_tseng_clock_failure": "independent_validation_tseng_clock_failure_2026-10-13.json",
+  "historical_framework_status": "framework_status_2026-10-13.json",
+  "framework_acceptance_report": "FRAMEWORK_ACCEPTANCE.md",
+  "framework_evidence_recheck": "framework_evidence_recheck_2026-10-13.json"
+}

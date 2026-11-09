@@ -1,0 +1,18 @@
+"""All actual callback identity/lifetime/thread rejections and NET mapping joins."""
+import json
+from pathlib import Path
+from pre_route_endpoints import sha
+R=Path(__file__).resolve().parents[1];E=R/'experiments';D=E/'prince_guarded_consumer_trial_v1_2026-10-20'
+def main():
+ vp=D/'verification.json';v=json.loads(vp.read_text());parity=D/'consumer_verification_v1.json';p=json.loads(parity.read_text());assert p['boundaries']==227 and p['raw_capture_payloads_equal']==454;bindings={str(f):sha(f) for f in [vp,parity,Path(__file__),R/'tools/prince_live_view_v1.h',R/'tools/prince_guarded_status_consumer_v1.cpp']};counts=dict(callbacks=0,wrong_identity_rejections=0,expired_view_rejections=0,foreign_thread_rejections=0,live_NET_endpoint_box_joins=0);rows=[];binary=R/'build/prince_guarded_status_consumer_v1_2026-10-20/vpr'
+ for r in v['rows']:
+  d=D/r['case'];case=r['case'].rsplit('/',1)[0];meta=d/'callback.tsv.view.tsv';view=[list(map(int,line.split())) for line in meta.read_text().splitlines()];raw=[list(map(int,line.split())) for line in (d/'callback.tsv').read_text().splitlines()];assert len(view)==len(raw)==r['iterations'];old=E/'prince_status_consumer_trial_v1_2026-10-20'/r['case']/'callback.tsv';reference=[list(map(int,line.split())) for line in old.read_text().splitlines()];assert [x[:11] for x in raw]==[x[:11] for x in reference]
+  for i,(a,b) in enumerate(zip(view,raw),1):
+   assert len(a)==7 and a[:3]==[i,1792,7] and a[3]==(4 if i==1 else 5) and a[4]==1 and a[5:]==b[7:9];counts['callbacks']+=1;counts['wrong_identity_rejections']+=a[2];counts['expired_view_rejections']+=a[3];counts['foreign_thread_rejections']+=a[4];counts['live_NET_endpoint_box_joins']+=a[1]
+  mapping=d/'NET_mapping.tsv';proof=E/'prince_resident_consumer_v1_2026-10-20'/case/'NET_mapping.json';expected={x['native_NET_id']:x for x in json.loads(proof.read_text())};observed={}
+  for line in mapping.read_text().splitlines():
+   n,e,g,name=line.split('\t');n,e,g=int(n),int(e),int(g);assert n not in observed;observed[n]=dict(native_NET_id=n,endpoint_NET_id=e,name=name,ignored_global=bool(g));assert g in [0,1]
+  assert observed==expected;identity=d/'identity.txt';lines=identity.read_text().splitlines();ep=E/'prince_native_cohort_v1_2026-10-20'/case/'pre_route_endpoints.json';endpoint=json.loads(ep.read_text());assert lines==[endpoint['graph_sha256'],endpoint['inputs']['net']['sha256'],endpoint['inputs']['place']['sha256'],sha(binary),'post_route_accumulated_cost_and_timing_update__pre_dynamic_BB_update_and_pres_advance',case];rows.append(dict(case=r['case'],callbacks=len(view),live_mapping_checked_native_NETs=len(observed)))
+  for f in [meta,d/'callback.tsv',old,mapping,proof,identity,ep,d/'receipt.json']:bindings[str(f)]=sha(f)
+ assert counts==dict(callbacks=454,wrong_identity_rejections=3178,expired_view_rejections=2252,foreign_thread_rejections=454,live_NET_endpoint_box_joins=813568);assert all(sha(f)==h for f,h in bindings.items());(D/'live_view_verification_v1.json').write_text(json.dumps(dict(status='ALL_GUARDED_LIVE_CALLBACK_IDENTITY_MAPPING_AND_LIFETIME_TESTS_PASS',counts=counts,rows=rows,bindings=bindings,scope='Same-process native clustered NET names/global flags checked against explicit endpoint mapping on every process startup; current views join boxes via endpoint ID. Cooperative C++ interface returns copied records and guards callback lifetime/owner thread; no malicious-plugin memory isolation or generic parallel native access proof. Validation includes duplicate scans, intentional exceptions and a test thread per callback, fully paid. No stop/restore, forecast quality or matched fullpaid speedup.'),indent=2)+'\n');print('GUARDED_LIVE_VIEW_PASS',counts)
+if __name__=='__main__':main()

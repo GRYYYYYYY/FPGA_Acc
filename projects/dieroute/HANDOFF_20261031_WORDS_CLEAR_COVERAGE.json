@@ -1,0 +1,41 @@
+{
+  "observed_ns": 1793418627446103230,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_BUILDER_LENGTH_OPERANDS.json",
+    "sha256": "d9a2224dc4d6601e46ad6a31d6804adbea7b37fc17d4d009dce236ee0a5dcfaa"
+  },
+  "progress": {
+    "report": "work/resident_words_clear_coverage_20261031/review.json",
+    "report_sha256": "c1270f081f230141443108d4db0ac1547c141e03da7b49f53d639dadf0aae1da",
+    "independent_review": "work/resident_words_clear_coverage_20261031/independent_review.json",
+    "independent_review_sha256": "28d5641229b810593e2707ca24fc3da78c109a8444c6d6a70f108cee4a3fdbbd",
+    "local_clear_loops": 3,
+    "abstract_clear_cases": 81,
+    "address_step_queries_unsat": 3,
+    "conditional_clear_word_coverage_and_ordering_checked": true,
+    "actual_complete_delimiter_contents_proved": false,
+    "HDL_simulation_executed": false,
+    "watchdog_failure_verdict": null,
+    "scope": "SHA-bound source-fragment abstract control/tag and nested RAM-route audit for three2022.2 word-clear loops. Assume reset/idle loop controls init1/iter1zero,arbitrary initial data counter/tag,held start through first done then dropped,stable admitted wordcount1..native maximum,binary shared-clock/no-reset/no-stall operation. Stage0uses initmux0,incrementing counter and one delayed address tag. Iter1suppresses initial write and clears on exit. Abstract samples span nine wordcounts and three old-data seeds per family;integer step bounds cover admitted address arithmetic. Model writes64bit zero at addresses0..words-1exactly once;last write coincides with first done,followed by four no-write continuation clocks. All four write pins route through parent state3,prepare and execute state25to actual RAM,whose write samples old parent state before nonblocking transition3to4. Delimiter child launches subsequently from4. This is local source/model evidence,not complete HDL equivalence or an actual native execution. It does not prove upstream header/offset values,delimiter read-modify-write correctness,all global control/reachability,actual complete initialized words/prefix contents,runtime/timing/watchdog or gate closure. No .dat/trace/TV reads,native/HLS execution,DUT edits,original process control,guard/budget changes or adoption.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v219_20261031/matrix.json",
+    "sha256": "f7e88f5793ad8c1d04e52ff4b3c46a14ff2551622ccdda87da6d0b1179f3300e"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v219.json",
+    "sha256": "666254c98a4647fb52b601b4acc98c430e3ed29e4ab53b0b2dade58a95da9741"
+  },
+  "next_action": "Verify delimiter offset-loop validation,position arithmetic and actual read-modify-write memory timing after clear. Establish distinct delimiter bits,totaln+1,and compatible startup/all-block feedback/global operands before actual prefix-content claims. Preserve original full jobs,guards,budgets and eight gates.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

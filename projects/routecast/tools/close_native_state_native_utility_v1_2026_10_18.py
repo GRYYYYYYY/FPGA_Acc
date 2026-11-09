@@ -1,0 +1,17 @@
+"""Close every frozen native arm and disclose complete cost/QoR limits."""
+import json,hashlib
+from pathlib import Path
+R=Path(__file__).resolve().parents[1];D=R/'experiments/xtea_native_state_native_utility_v1_2026-10-18'
+def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+p=D/'verification.json';v=json.loads(p.read_text());assert v['all_four_native_physical_and_canonical_pass'] and all(sha(p)==h for p,h in v['bindings'].items());pp=R/'experiments/xtea_native_state_native_utility_protocol_v1_2026-10-18/protocol.json';protocol=json.loads(pp.read_text());assert all(sha(p)==h for p,h in protocol['bindings'].items());assert [r['arm'] for r in v['rows']]==protocol['order'];summary={};bindings={str(p):sha(p),str(pp):sha(pp),str(Path(__file__)):sha(__file__)}
+for r in v['rows']:
+ assert r['exit_status']==0 and not r['native_timeout'] and r['status']=='FULL_PHYSICAL_AND_CANONICAL_PASS';c=r['canonical'];assert c['semantic_consistency_gate_pass'] and c['all_NET_physical_node_type_switch_sequences_identical'] and c['packed_netlist_byte_identical'];assert not c['original_zero_counter_gate_pass'];assert c['native_ignored_only_mismatch_pins']==c['mismatches']==c['fixups']==26
+ summary[r['arm']]={k:r[k] for k in ['iterations','wirelength','diagnostic_cpd_ns','native_process_seconds','canonical_audit_seconds']};summary[r['arm']].update({k:x for k,x in r['native_work'].items() if k not in ['rows','iterations']})
+comparisons={}
+for arm in ['all','local']:
+ for baseline in ['none','cold']:
+  a=summary[arm];b=summary[baseline];comparisons[arm+'_minus_'+baseline]={k:dict(delta=a[k]-b[k],fractional_change=(a[k]-b[k])/b[k] if b[k] else None) for k in ['iterations','wirelength','total_heap_pushes','total_rerouted_NET_operations','total_rerouted_connection_operations','native_process_seconds']}
+model=R/'experiments/xtea_native_state_feedback_comparison_v3_2026-10-18/receipt.json';m=json.loads(model.read_text());bindings[str(model)]=sha(model);cost={r['arm']:r.get('model_seconds',0) for r in m['rows']};quality={arm:summary[arm]['wirelength']<=summary['none']['wirelength'] and summary[arm]['diagnostic_cpd_ns']<=summary['none']['diagnostic_cpd_ns'] and (summary[arm]['wirelength']<summary['none']['wirelength'] or summary[arm]['diagnostic_cpd_ns']<summary['none']['diagnostic_cpd_ns']) for arm in ['all','local']}
+out=dict(bindings=bindings,arms=summary,comparisons=comparisons,registered_diagnostic_quality_criterion=quality,feedback_component_seconds=cost,all_four_native_physical_canonical_semantic_pass=True,all_four_original_zero_counter_gate_pass=False,ignored_pin_fixups_each=26,decision='Both feedback arms meet frozen diagnostic wire/CPD criterion vs same-prior-state none. All feedback reduces work/line length but increases iteration count; local wire remains worse than cold. No default promotion: extra feedback component cost greatly exceeds observed native time differences.',cost_limit='Model observations31.16s/all and6.02s/local versus none native1.54s, excluding additional audits. Disconnected clocks and fixed order do not prove continuous workflow runtime; no stable native timing or netgain claim.',scope='One exposed XTEA move/seed1; CPD diagnostic asynchronous architecture, no original HDL timing guarantee, unseen family or hardware proof.')
+with (D/'research_decision_v1.json').open('x') as f:json.dump(out,f,indent=2);f.write('\n')
+print('CLOSED',quality,flush=True)

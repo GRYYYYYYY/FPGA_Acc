@@ -1,0 +1,30 @@
+{
+  "weights": [
+    {
+      "weight_ns": "1/20",
+      "producer": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/trial_owner_wire_50ps_development.py",
+      "producer_sha256": "dfbaff374fac64af5bd994a88d987cb8ad67bed622ffb6c753a1e48497587085",
+      "output": "mux_owner_wire_50ps_development_2026-10-07",
+      "auditors": [
+        "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/50ps_verify_mux_owner_union_wire_costs.py",
+        "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/50ps_verify_mux_owner_union_wire_fixed_cap_cohort_online_case.py",
+        "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/50ps_audit_mux_owner_union_wire_fixed_cap_cohort_online_paths.py",
+        "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/50ps_diagnose_mux_owner_union_wire_objective.py"
+      ]
+    },
+    {
+      "weight_ns": "1/10",
+      "producer": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/trial_owner_wire_100ps_development.py",
+      "producer_sha256": "74ea242bd055370cee8b23275143c3f9edcabcc3dd62684030d8bb28265ed1a4",
+      "output": "mux_owner_wire_100ps_development_2026-10-07",
+      "auditors": [
+        "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/100ps_verify_mux_owner_union_wire_costs.py",
+        "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/100ps_verify_mux_owner_union_wire_fixed_cap_cohort_online_case.py",
+        "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/100ps_audit_mux_owner_union_wire_fixed_cap_cohort_online_paths.py",
+        "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/100ps_diagnose_mux_owner_union_wire_objective.py"
+      ]
+    }
+  ],
+  "frozen_before_execution": true,
+  "scope": "Two prespecified development weights 50ps and100ps, same frozen12 mux cases, unchanged exact delay caps/history/search limits. Report all cases, including failures. Independent query cost/timing/physical/union geometry audits before native gate. Strict joint CPD/wire vs matched cold remains retrospective diagnostic until explicit new admission contract. No heldout, full lifecycle or hardware benefit claim. Original10ps evidence unchanged."
+}

@@ -1,0 +1,42 @@
+{
+  "observed_ns": 1793418158977437034,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_PREFIX_TAIL_MASKING.json",
+    "sha256": "73ae6b6bbc57612b250dc7671ec9ab3d7104ec2039cca95a6f2cfa53b316e1b4"
+  },
+  "progress": {
+    "report": "work/resident_prefix_timed_count_arithmetic_20261031/review.json",
+    "report_sha256": "03fdf25adce0c886784356893f7bee7290d4bc858330f25b9563526d7d0df06b",
+    "independent_review": "work/resident_prefix_timed_count_arithmetic_20261031/independent_review.json",
+    "independent_review_sha256": "4a758460b09f7762cee2b754ee0378f053da57316139cce6f79aee0797bc595f",
+    "local_builder_modules": 3,
+    "valid_timed_count_samples": 108,
+    "structurally_distinct_arithmetic_shapes": 2,
+    "arithmetic_queries_unsat": 2,
+    "conditional_count_population_correspondence": true,
+    "HDL_simulation_executed": false,
+    "full_RTL_equivalence_proved": false,
+    "watchdog_failure_verdict": null,
+    "scope": "Source-derived finite symbolic arithmetic unroll for three SHA-bound2022.2 prefix-build count cones,679arbitrary initial registers each,including60partial-register write events. Each of eight tail lengths is preceded by two full actual rounds;final actual round starts at16,dummy exit round at24. Use the source-bound validity capture schedule and registered exit transition from the local tail-mask audit. Assume legal binary one-hot/no-stall/no-reset phases,iter0anditer1enabled through all30modeled clocks,and count guards supplied by that stated schedule;actual global control reachability is not proved. Every nonblocking RHS uses preedge data;disjoint full/partial bit writes are merged and overlapping active writes reject. Read-return words at each cycle are independent arbitrary64bit variables. For each valid slot,sample at22+slotmust contain only return-word18+slotand no old state. Normalize only that word variable;structurally identical expressions share one arithmetic query against exact frozen C SWAR. UNSAT applies only to this supported-expression/model translation and its stated premises. The previous C SWAR compositional theorem separately proves C population arithmetic. Does not establish complete Verilog/netlist equivalence,actual installation data or global operands/control,startup/all-call sequencing,initialized complete prefix contents,full runtime/timing/watchdog or gate closure. Original three monolithic UNKNOWN/timeout queries remain unchanged and are not rerun. No .dat/trace/TV reads,native/HLS flow,DUT edits,process controls,guard/budget changes or adoption. Independent guard truth enumeration also checks that the actual possible phase7iter1=0does not change count-register activation relative to the model assumption1. Global control and installation premises remain unproved.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v216_20261031/matrix.json",
+    "sha256": "854d48ddffaeeab617c594e37793d21a04549fe6118c7f50bf739f1a446b1566"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v216.json",
+    "sha256": "3f9f637983e61bf58b32170655f0f6d19074f956edd94b877230c56476851efa"
+  },
+  "next_action": "Compose local numeric valid counts,tail masks,accumulator/address/write timing under explicit compatible premises. Verify initialized bit words/parent operands/startup and actual upper prefix write delivery before asserting numerical prefix contents or global counts. Continue original full-job terminal monitoring without retries or guard/budget changes.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

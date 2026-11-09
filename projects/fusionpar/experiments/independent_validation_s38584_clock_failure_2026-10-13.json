@@ -1,0 +1,53 @@
+{
+  "schema": "FUSIONPAR_VALIDATION_INPUT_COVERAGE_FAILURE_V1",
+  "observed_utc": "2026-10-13T12:13:50.869698+00:00",
+  "design": "s38584.1",
+  "root_clock_nets": [
+    "pclk"
+  ],
+  "net": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/s38584.1/baseline/s38584.1.net",
+    "sha256": "ebc6e8e80cd55ab6da6e8a032e7458e881659f3f4ee6b0d2ebbd48bb1584b4cf"
+  },
+  "converter": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/prepare_vpr_bundle.py",
+    "sha256": "789c497087d62cd8a7a0dbeb08f871f535107454d6e92ab9042e7c2f2e7c7ab0"
+  },
+  "failures": [
+    {
+      "track": "shared_staged_vs_interleaved",
+      "phase": "conversion",
+      "exit_status": 1,
+      "prepare_seconds": 6.249190062,
+      "host_calls": 0,
+      "receipt": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/s38584.1/shared_staged_vs_interleaved/prepare.process.json",
+        "sha256": "cecaea05915a663449ddcc0ef949fef0d7e798b172820324f9ed5afbffbe7dac"
+      },
+      "stderr": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/s38584.1/shared_staged_vs_interleaved/prepare.stderr.log",
+        "sha256": "32417a892d29aaf729c0d70a1f4358c5dfe84200184a7f7bbbe3b72a0f86f4cf"
+      }
+    },
+    {
+      "track": "equal_evaluation_feedback",
+      "phase": "conversion",
+      "exit_status": 1,
+      "prepare_seconds": 5.990801096,
+      "host_calls": 0,
+      "receipt": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/s38584.1/equal_evaluation_feedback/prepare.process.json",
+        "sha256": "6b68a2d8a379924b1da3f20f7dddf2ad3dd7bfe9749eb2aec3ecb253c620fdc8"
+      },
+      "stderr": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/s38584.1/equal_evaluation_feedback/prepare.stderr.log",
+        "sha256": "32417a892d29aaf729c0d70a1f4358c5dfe84200184a7f7bbbe3b72a0f86f4cf"
+      }
+    }
+  ],
+  "classification": "Explicit unsupported root-clock input boundary; no host candidate evaluation; retained in selected-six denominator",
+  "limits": [
+    "Cohort remains running; this records one input failure, not final coverage or QoR results",
+    "No source or policy change and no replacement design"
+  ]
+}

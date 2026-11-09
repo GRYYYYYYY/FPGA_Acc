@@ -1,0 +1,56 @@
+{
+  "observed_ns": 1793451247237273305,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_PORTAL_GET_SOURCE_DIAGNOSTIC.json",
+    "sha256": "be1b43f97ef08933bbfdb5ded21c29eb9acc7309713b634b376a120a4702f2ce"
+  },
+  "progress": {
+    "report": "work/resident_all_get_reply_coupled_20261031/review.json",
+    "report_sha256": "b482f99ae6cea99a01258c767b5a1c1d98e07968251ddbe47c1020d580599720",
+    "consistency_review": "work/resident_all_get_reply_coupled_20261031/consistency_review.json",
+    "consistency_review_sha256": "2c9bca45fdbea3106b900d638e11e609b56028bb32c94d51f81c0381c43c448a",
+    "final_review": "work/resident_all_get_reply_coupled_20261031/final_review.json",
+    "final_review_sha256": "16cd0dcc9815ac53e02cd9d728d6ed9a3411db8ee8b250a303aa39591f98e9df",
+    "calls": 192,
+    "source_event_edges": 81756,
+    "actual_source_get_calls": 72,
+    "actual_reverse_get_calls": 48,
+    "actual_reverse_valid_calls": 24,
+    "actual_reverse_invalid_calls": 24,
+    "actual_edge_get_calls": 12,
+    "actual_portal_get_calls": 12,
+    "remaining_get_contract_calls": 0,
+    "new_SMT_queries": 0,
+    "new_native_accepted_cases": 0,
+    "scope": "Onecommonreset192retainedstate sourcecommand/execute/get(kind1/3/7)/reply composition using synthetic admitted fullN773272/E973552forward/reverse encodedimage and1179648wordpool.72actualgetcalls:48reverse24valid24invalid,12edge and12portal;no getreturncontracts used. Field1dictionarypath andfield2/3rawpaths,sourceview/fieldhelpers,mux/DSPpipelineprojections,1CEviews/2CE4bankpool/forwardreverseRAM. Source shape/publication/install/AXILiteacceptedrawinputs,successfulorderedexternalresponses,binaryreset/noabort/componentrefinement remainpremises. Not originalgraph/fullRTL/X/native/board/performance claim. Original192cases/CPU90/AS1GiB/nativeguards retained; localobservation1200nonportal/3688portal includes previousactual2488sourcecycles, not performanceacceptance;prior1200failure retained; dependency-checked sourcehelper idle selftransitionmemo includes allsource registers/flow/readvalues and anyjunk read; firstwitness plus997hit rechecks;RAM/DSPtickseveryedge;sourcezero/reservedhelperidle selftransitions reuse complete helper/flowreg+16command-keyed witnesses and997hit rechecks;allparsedclockblocksconcatenatedinoriginalorder beforeoriginalnonblockingcommit;firstprojectedtick unchangedthenidenticalregselectionsbatched;parsedclockarithmetic inlinedwithoutperexpressioncallbacks and first/997programoutputchecks;precomputedstate-bit maps compare originalstate method atfirstuse/997calls;pure1bitAND/ORconditions compiled with commutative shortcircuit ordering, differential originalvaluechecks retained;original11modelcompileraggregate excludes7gethierarchymodels. All192command/reply128byte hashes reconstructed independently from mathematical fixtures. No getreturncontract launches for exercised kinds1/3/7, not a claim for unexercised kinds. Compiler/parser-AST inlining, original-evaluator first/periodic997comparisons, state-map comparisons and dependency-checked idle selftransitions are finite observed checks, not universal compiler/RTL equivalence. CPU90/AS1GiB/native guards retained; source-inclusive localframe cap changes only portal1200->3688 with original1200truncation and failed checker attempts archived. Fixture layout is admitted and does not establish that actual Store.prepare/allocator/Field.build would produce it.86.52seconds describes checkerCPU, not hardwareperformance. Synthetic images remain admitted snapshots; original install/publication/AXILite/fullRTL/X/native/300MHz/board/performance obligations remain open.",
+    "research_complete": false,
+    "full_public_host_roundtrip_proved": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v288_20261031/matrix.json",
+    "sha256": "5c9fda853f072118be8912eb9b22f3e9ec6566f8486b2a08b9acc02007dc3c52"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v288.json",
+    "sha256": "87c0534ece38fc784cb95129190bb096eff38f90dd11f6467dcc02bdf1c3eaa4"
+  },
+  "current_runtime_observation": {
+    "path": "work/resident_all_get_reply_coupled_20261031/runtime_observation.json",
+    "sha256": "d8f4ef13295d5d3f931fc18369c759abf72b050b3ad659e0298ede0c25862a1d",
+    "scope": "Fresh30actual identities; no new native acceptance; Owner supervisor failure retained."
+  },
+  "previous_goal_turn_classification": "progress_and_verified_wait_v287",
+  "current_goal_turn_classification": "progress_and_verified_wait",
+  "next_action": "Prioritize any actual native terminal review. Replace admitted synthetic pool/forwardreverse snapshots and published graph/session/shape/ready values with actual source prepare/install/publication composition on original graph evidence; retain fullcapacity and all failure paths, not inherit standalone query proofs as installation. Accepted rawAXILite pointer/start/continue values still need actual bus frontend composition for fullhost claim. Universal/4state/fullRTL/native and G1-G8 async/migration/mapping/QoR/ablations/300MHz/board/artifact/paper requirements remain open. Retain Owner quota failure/missing guard/auditor/absentcompletion and all failed checker versions; no restart/adoption.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "owner_supervisor_failure_retained": true,
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending;820separate transitive/466root gaps;paper unchanged.",
+  "research_complete": false
+}

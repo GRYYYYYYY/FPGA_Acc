@@ -1,0 +1,148 @@
+{
+  "schema": "dieroute.native_boundary_shadow_progress.v1",
+  "finished_ns": 1791916096449641393,
+  "research_complete": false,
+  "board_result": false,
+  "active_owned_experiment_processes": [],
+  "protocol": "experiments/native_boundary_shadow_schema_v1.json",
+  "evidence": [
+    {
+      "path": "work/u280_native_boundary_sync0_v1_20261013/manifest.json",
+      "sha256": "9449a516bc7bcf139643b89fa9c0864c19f19360bb66890483d910245e5aeb96"
+    },
+    {
+      "path": "work/u280_native_boundary_sync1_v1_20261013/manifest.json",
+      "sha256": "f0a12f96e183237266185bb61c08b0bdc20a17e678d9c460bfe6f62b9d3eaa0f"
+    },
+    {
+      "path": "work/u280_native_boundary_sync3_v1_20261013/manifest.json",
+      "sha256": "fb76c892817f433b5e56defb48a8b8f7c001afb25318541be07926b793563bf7"
+    },
+    {
+      "path": "work/u280_native_boundary_sync0_v2_20261013/manifest.json",
+      "sha256": "dd59e0b9451e7e0cffa70c6ca464f6f54028cce73ebdfba5ff65cbb71e0d674f"
+    },
+    {
+      "path": "work/u280_native_boundary_sync1_v2_20261013/manifest.json",
+      "sha256": "166ae8901c9398342dca312980f09be16090900cbc3c0594ea90aa765a23a2d2"
+    },
+    {
+      "path": "work/u280_native_boundary_sync3_v2_20261013/manifest.json",
+      "sha256": "04f578de74121fb921f3c40a551c5cdb885ebf725ac1db42521d92d088c298f0"
+    },
+    {
+      "path": "work/u280_native_boundary_sync1_audit_v2_20261013/audit.json",
+      "sha256": "b9e1825125cf7a918f6430ed3cc916928891a524fbd46fd4c0b70232d522ae48"
+    },
+    {
+      "path": "work/u280_native_boundary_sync3_audit_v2_20261013/audit.json",
+      "sha256": "ef617d7d334ac1381b90b0889462a5b7c255624957d51df69568cce87fcf285f"
+    },
+    {
+      "path": "work/u280_native_boundary_cohort_audit_v2_20261013/audit.json",
+      "sha256": "689eeaa3ed6e25424e391be50b3486df5fbf320adc0b849b16fee2ce6e415429"
+    },
+    {
+      "path": "work/native_boundary_baseline_regression_20261013/audit.json",
+      "sha256": "cb7082538696ae0ea2c9cdbe745117b81df2af46ed62997ecdbb660a358c0cf4"
+    },
+    {
+      "path": "work/native_boundary_build_20261013/ctest_final.log",
+      "sha256": "4af171e4d3cfe0e5fd7ead29223df8064afd6c6cc266e6d95d4446d2eb29ced7"
+    },
+    {
+      "path": "work/native_boundary_sanitize_20261013/ctest_final.log",
+      "sha256": "9de7fd8944e2410502f061d8c96ac9929172be046eecbf10048b80756a8f3681"
+    }
+  ],
+  "cohort": {
+    "selected_nets": 70,
+    "connections": 298,
+    "repeats_per_mode": 5,
+    "modes": [
+      0,
+      1,
+      3
+    ],
+    "whole_net_closure": true,
+    "frozen_unselected_nodes": 12198732,
+    "directed_tree_pips_per_repeat": 2528,
+    "all_modes_converged": true,
+    "overuse_by_epoch": [
+      2,
+      1,
+      0
+    ]
+  },
+  "exact_serial_equivalence": {
+    "final_files": [
+      "selection.csv",
+      "trees.csv",
+      "usage.csv",
+      "paths.csv",
+      "connections.csv"
+    ],
+    "same_history_and_versions": true,
+    "five_repeats_equal": true,
+    "prior_serial_cohort_outputs_equal": true,
+    "prior_serial_route": "work/u280_native_cohort_repeat_v1_20261013",
+    "scope": "Prior C++ cohort candidate, not the later five-net hold-repaired checkpoint; no new native STA or DCP signoff run."
+  },
+  "per_repeat": {
+    "sync1": {
+      "repeat": 0,
+      "sync_searches": 1,
+      "searches": 308,
+      "replays": 0,
+      "remote_reads": 38499,
+      "publications": 309,
+      "changed_summaries": 44,
+      "logical_deliveries": 88,
+      "retained_summaries": 36
+    },
+    "sync3": {
+      "repeat": 0,
+      "sync_searches": 3,
+      "searches": 308,
+      "replays": 4,
+      "remote_reads": 38499,
+      "publications": 104,
+      "changed_summaries": 43,
+      "logical_deliveries": 86,
+      "retained_summaries": 36
+    }
+  },
+  "work": {
+    "direct_expanded_per_repeat": 7841282,
+    "delayed_expanded_per_repeat": 9069496,
+    "expanded_increase_percent": 15.663433606902544,
+    "direct_edge_visits_per_repeat": 32270334,
+    "delayed_edge_visits_per_repeat": 37465899,
+    "edge_visits_increase_percent": 16.10012775200902,
+    "logical_deliveries_reduction_percent": 2.2727272727272707,
+    "final_pending_updates_drained": true,
+    "physical_traffic_measured": false
+  },
+  "journal": {
+    "remote_reads_per_repeat": 38499,
+    "stale_searches_per_repeat": 4,
+    "changed_read_observations_per_repeat": 5,
+    "changed_reads_currently_unoccupied_per_repeat": 2,
+    "final_boundary_summaries": 36,
+    "independent_off_path_adversarial_test": true
+  },
+  "checks": {
+    "ctest_passed": 30,
+    "ctest_total": 30,
+    "asan_ubsan_passed": 3,
+    "asan_ubsan_total": 3,
+    "corrupt_journal_hash_stale_flag_and_missing_final_update_rejected": true
+  },
+  "exploratory_v1": "Retained successful routing runs; communication counters lacked final drain and must not support final savings claims. V2 adds graph-wide broadcast domain and final summary drain/export.",
+  "interpretation": "Native serial boundary overlays preserve the direct routing result. Period 3 yields only 2.27% fewer modeled deliveries with 15.66% more expanded nodes; this does not establish useful acceleration or bandwidth savings.",
+  "remaining": [
+    "Native corridor reservation and die-local partitioned authority/concurrent workers; boundary overlay still reads centralized nonboundary authority.",
+    "Timing/length costs, joint QoR and representative full-design workloads.",
+    "Full ablations, actual HLS/RTL/HBM data plane, board performance/energy, paper and research completion audit."
+  ]
+}

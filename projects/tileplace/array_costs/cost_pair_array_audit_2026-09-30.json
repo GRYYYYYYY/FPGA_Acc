@@ -1,0 +1,13 @@
+{
+  "status": "pass",
+  "random_reference_cost_pairs": 2000,
+  "atomic_errors": [
+    "unknown touched net",
+    "routed multiplication overflow"
+  ],
+  "scope": "CPU canonical-array cost pairs: HPWL, criticality, routed timing, congestion; no complete search integration or HLS claim",
+  "sources": {
+    "cost_pair_array.hpp": "880d4fd2ff2f6d5d2bad486a52191208ea00a87f7a7fe405eb61a1a935fa5050",
+    "cost_pair_array_test.cpp": "283472961e53126a634a34329d0ac6ca1e4681f5e0f511021dfe4916e1e4c986"
+  }
+}

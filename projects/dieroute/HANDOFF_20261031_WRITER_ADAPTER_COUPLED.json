@@ -1,0 +1,53 @@
+{
+  "observed_ns": 1793446519807141716,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_REPLY_WRITE_ADAPTER.json",
+    "sha256": "810c545340ad6c41cebc1cc5f5093701062d9cf538bdf16307a689d66919059a"
+  },
+  "progress": {
+    "report": "work/resident_reply_writer_adapter_coupled_20261031/review.json",
+    "report_sha256": "8af1e78a452363911760653da5fef5fe408f9fc8e741e165feea080be1088f18",
+    "consistency_review": "work/resident_reply_writer_adapter_coupled_20261031/consistency_review.json",
+    "consistency_review_sha256": "1de5d258a124ac382554d0acf2af0118bf21120c8fc70ef5f4d4295f62e23648",
+    "final_review": "work/resident_reply_writer_adapter_coupled_20261031/final_review.json",
+    "final_review_sha256": "f0ab34d38ca594703180cd3895b357365dc49ddcb44b8ce5f85a1a13a29b598a",
+    "source_event_calls": 192,
+    "source_event_edges": 28535,
+    "physical_AW": 195,
+    "physical_W": 384,
+    "physical_B": 195,
+    "logical_frames": 192,
+    "new_SMT_queries": 0,
+    "new_native_accepted_cases": 0,
+    "full_public_host_roundtrip_proved": false,
+    "scope": "Onecommonreset followed192calls with retained generated source writer registers, actual flow loopinit/cache clocks, selected top74/75/76/77..144/1source control/capture/start/done registers and full prior write-adapter source-event projection. Internal WDATA/WSTRB/VALID come from source writer through top WVALIDmux and direct sourceWDATA/WSTRB wiring; no injected expected packets. Independent external AW/W/B rendezvous/byte oracle covers all64page slots at3addressranges/schedules and delayed execute completion. Drainedwriter/flow entry and topdone0 are checked each call after actual previous frame and modeled software continue ack, rather than reseeded. Pointer acquisition states2..73 and execute computation/terminal9outputs remain admitted, as do accepted software ack, valid aligned stable128byte object, proper common reset/noabort/binary clocks and successful ordered external responses. No full AXI-Lite host/read/install/get-to-reply loop, universal whole-source/RTL/X/liveness/native/300MHz/board proof. Serial parent2packet requests fit actual16entryfrontWbuffer, so external stalls need not cause internal writer WREADY stalls; no capacity reduction or invented pressure. Initial nonexistent top reply_words_WDATA name error retained; corrected checker follows actual direct I_WDATA/I_WSTRB wires and WVALIDmux. Source response done latch/continue acknowledgements are clocked, not forcibly reseeded between calls. This finite composed reply-side audit adds no native calls, workloads or solver queries.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v282_20261031/matrix.json",
+    "sha256": "65c0b45e67aaee90f668f246f5a0a692eeede4ff046848e9a5c20239f2963c37"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v282.json",
+    "sha256": "c6257352117632bf049dc0b3549510ec587c61adc80a980e532ff59250c29874"
+  },
+  "current_runtime_observation": {
+    "path": "work/resident_reply_writer_adapter_coupled_20261031/runtime_observation.json",
+    "sha256": "69521fd221a285d4eb46f1aa754806298cadffc96fc6bb1646e67414dbb5a31a",
+    "scope": "Fresh actual process identities; no native acceptance; Owner supervisor failure retained."
+  },
+  "previous_goal_turn_classification": "progress_and_verified_wait_v281",
+  "current_goal_turn_classification": "progress_and_verified_wait",
+  "next_action": "Integrate actual public-read execute/finish source with coupled top/writer/adapter instead of injected terminal9outputs; connect command acquisition/control adapter when feasible and expose all remaining get/encodedmemory/install/currentmetadata premises. Preserve proper AXILite start/continue semantics: parentdone remains latched until accepted continue, source writer cachedone may remain1 while idle. The finite192reply-side run is not wholehost or native acceptance. Prioritize any actual native terminal, preserve Owner supervisor quota failure and missing guard/negative evidence, no restart/adoption. Retain allG1-G8 objectives, full install/strict capacity/async/mapping/migration, representative QoR/ablations,300MHz/board/artifact/paper requirements.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "owner_supervisor_failure_retained": true,
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending;820separate transitive/466root gaps;paper unchanged.",
+  "research_complete": false
+}

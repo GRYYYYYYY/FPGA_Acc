@@ -1,0 +1,33 @@
+{
+  "status": "online_equivalence_passed_full_cohort_running",
+  "updated_ns": 1791973800744136587,
+  "adapter": "host/owner_publish_native_sparse_xrt.cpp",
+  "adapter_sha256": "d3035e61cfb6c117f91159a64244614a27a0c93cb4cb0ddac55fa76264c978d9",
+  "guard": "work/native_sparse_endpoint_guard_v1_20261014/manifest.json",
+  "actual_guard_calls": 8,
+  "rejected_CPU_state_overwrites": 5,
+  "state_uploads": 0,
+  "online_regressions": "work/native_sparse_endpoint_regressions_v1_20261014/manifest.json",
+  "scope": "Device row readbacks for command-only owner calls and receiver operations; full readback retained for publisher pump/error cases. Requires full output equality and dispatch binding before full-cohort use. No performance or hardware-search claim.",
+  "full_native_run_verified": false,
+  "board_result": false,
+  "full_slot_test": "work/native_sparse_endpoint_large_v1_20261014/manifest.json",
+  "full_native_queue": "work/native_sparse_full_queue_v1_20261014/manifest.json",
+  "full_native_audit_queue": "work/native_joint_authority_scripts_20261014/full_native_sparse_audit_queue.json",
+  "full_native_queue_status": "running_full_cohort",
+  "full_slot_test_status": "passed",
+  "full_slot_test_actual_calls": 8,
+  "full_slot_test_directory_slots": 46848,
+  "full_slot_test_scope": "Real native topology directory and full-sized arrays; synthetic summary values, lane-major high-row updates/query and CPU overwrite rejection; not full routing",
+  "online_case_status": {
+    "interior_3": "passed",
+    "cross_3": "passed"
+  },
+  "online_verification": "work/native_sparse_endpoint_verification_v1_20261014/verification.json",
+  "online_verification_sha256": "3331c481328251dc8b085929fb241bf428b773c2dca27000a44f54ec65518479",
+  "online_actual_calls": {
+    "net_kernel_calls": 90,
+    "publisher_kernel_calls": 222,
+    "receiver_kernel_calls": 75
+  }
+}

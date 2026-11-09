@@ -1,0 +1,160 @@
+{
+  "schema": "FUSIONPAR_TP_NINE_CLOSURE_REFERENCE_RESULTS_V1",
+  "study": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/tp_nine_closure_reference_v1/study.json",
+    "sha256": "0253b754f9b1717305109533508fc4972e0a310c2ef1759ed99406005050af72"
+  },
+  "FP_reference": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/feedback_budget_status_2026-10-13.json",
+    "sha256": "869955f7d273f5819138b829b9f32421462b3f0b72b496e4abfad070bec34213"
+  },
+  "summarizer": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/summarize_tp_budget_reference.py",
+    "sha256": "7424ab33b6598e3c512bdfa11cbc7de7bd041343de3b3e3ae164e0d02a5cbd28"
+  },
+  "counts": {
+    "TP_runs": 15,
+    "TP_candidate_evaluations": 135,
+    "FP_reference_runs": 30,
+    "FP_reference_candidate_evaluations": 270
+  },
+  "designs": {
+    "ex5p": {
+      "TP_selected_trial": 5,
+      "TP_selected_quality": {
+        "wirelength": 9752,
+        "cpd_ns": 5.88248
+      },
+      "TP_selected_accepted_online": false,
+      "TP_eligible_trials": 9,
+      "TP_legal_trials": 9,
+      "TP_reported_final_quality": {
+        "wirelength": 9826,
+        "cpd_ns": 5.62862
+      },
+      "TP_wall_samples_seconds": [
+        24.138673342,
+        24.181916522,
+        24.502823258,
+        23.876524926,
+        23.805420019
+      ],
+      "TP_median_wall_seconds": 24.138673342,
+      "TP_trajectory_semantics_sha256": "af5f25e80aee699a7c309839327a69c00b2ae665b3747b47e3e0aa6599ce49c9",
+      "FP_modes": {
+        "interleaved_tree_reuse": {
+          "quality": {
+            "wirelength": 9844,
+            "cpd_ns": 5.83751
+          },
+          "median_host_seconds": 31.535968885,
+          "median_charged_seconds": 33.74901571,
+          "FP_better_final_lexicographic": false
+        },
+        "interleaved_tree_feedback": {
+          "quality": {
+            "wirelength": 9844,
+            "cpd_ns": 5.83751
+          },
+          "median_host_seconds": 31.307638797,
+          "median_charged_seconds": 33.520685622,
+          "FP_better_final_lexicographic": false
+        }
+      }
+    },
+    "alu4": {
+      "TP_selected_trial": 8,
+      "TP_selected_quality": {
+        "wirelength": 9535,
+        "cpd_ns": 5.97476
+      },
+      "TP_selected_accepted_online": false,
+      "TP_eligible_trials": 9,
+      "TP_legal_trials": 9,
+      "TP_reported_final_quality": {
+        "wirelength": 9577,
+        "cpd_ns": 5.96812
+      },
+      "TP_wall_samples_seconds": [
+        22.611824246,
+        22.688764344,
+        21.901868976,
+        22.248621115,
+        21.771335667
+      ],
+      "TP_median_wall_seconds": 22.248621115,
+      "TP_trajectory_semantics_sha256": "6f673fa2b62a8faf91850049c80e1379dd7ecb377abba4895465317851d0af1b",
+      "FP_modes": {
+        "interleaved_tree_reuse": {
+          "quality": {
+            "wirelength": 9510,
+            "cpd_ns": 5.93739
+          },
+          "median_host_seconds": 38.206901616,
+          "median_charged_seconds": 41.380168626,
+          "FP_better_final_lexicographic": true
+        },
+        "interleaved_tree_feedback": {
+          "quality": {
+            "wirelength": 9485,
+            "cpd_ns": 5.96812
+          },
+          "median_host_seconds": 37.458065239,
+          "median_charged_seconds": 40.631332249,
+          "FP_better_final_lexicographic": true
+        }
+      }
+    },
+    "misex3": {
+      "TP_selected_trial": 6,
+      "TP_selected_quality": {
+        "wirelength": 10262,
+        "cpd_ns": 5.14741
+      },
+      "TP_selected_accepted_online": false,
+      "TP_eligible_trials": 7,
+      "TP_legal_trials": 9,
+      "TP_reported_final_quality": {
+        "wirelength": 10269,
+        "cpd_ns": 5.038
+      },
+      "TP_wall_samples_seconds": [
+        40.241445529,
+        39.713184264,
+        42.821023412,
+        39.063757796,
+        39.767738893
+      ],
+      "TP_median_wall_seconds": 39.767738893,
+      "TP_trajectory_semantics_sha256": "2651a37533296887a3f5a4cb30434243d71c334b1e6714c533e39a11ca8164a4",
+      "FP_modes": {
+        "interleaved_tree_reuse": {
+          "quality": {
+            "wirelength": 10319,
+            "cpd_ns": 5.08031
+          },
+          "median_host_seconds": 34.517047842,
+          "median_charged_seconds": 37.299474334,
+          "FP_better_final_lexicographic": false
+        },
+        "interleaved_tree_feedback": {
+          "quality": {
+            "wirelength": 10319,
+            "cpd_ns": 5.08031
+          },
+          "median_host_seconds": 34.658614717,
+          "median_charged_seconds": 37.441041209,
+          "FP_better_final_lexicographic": false
+        }
+      }
+    }
+  },
+  "limits": [
+    "Development cohort already inspected; not held-out validation",
+    "Common final objective and nine candidate-evaluation budget, not identical online acceptance, proposals, moved-block count, routed work or runtime budget",
+    "TP evaluates move batches with native VPR; FP evaluates local moves with PR C-model plus validation",
+    "Historical FP nine-evaluation runs are separate measurements with different CPU affinity; no paired timing or speedup claim",
+    "Baseline P&R, graph/contract creation and build costs are not remeasured",
+    "No new FPGA execution or performance claim"
+  ]
+}

@@ -1,0 +1,29 @@
+"""Bound native state contract and derived CHANNEL history from every audited prefix."""
+import json,xml.etree.ElementTree as ET,re
+from pathlib import Path
+from collections import Counter
+from pre_route_endpoints import sha
+R=Path(__file__).resolve().parents[1];E=R/'experiments';D=E/'prince_checkpoint_state_audit_v1_2026-10-20'
+def main():
+ D.mkdir(exist_ok=False);root=E/'prince_native_trajectory_v1_2026-10-20';vp=root/'trajectory_audit_verification_v1.json';v=json.loads(vp.read_text());vendor=R.parent/'tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vpr/src';sources=[vendor/'route/route.cpp',vendor/'route/route_common.cpp',vendor/'base/read_route.cpp'];texts={p.name:p.read_text() for p in sources};assert 'node_inf.acc_cost = 1.0;' in texts['route_common.cpp'];assert 'for (itry = 1;' in texts['route.cpp'];assert 'alloc_and_load_rr_node_route_structs();' in texts['read_route.cpp'];assert 'route_ctx.rr_node_route_inf[rr_id].acc_cost += overuse * acc_fac;' in texts['route_common.cpp'];bindings={str(p):sha(p) for p in [vp,Path(__file__),*sources]};rows=[];caps_cache={}
+ for item in v['rows']:
+  case=item['case'];width=case.split('/')[0];ap=Path(item['proof']);assert sha(ap)==item['sha256'];a=json.loads(ap.read_text());graph=E/'prince_native_cohort_v1_2026-10-20'/width/'source/rr_graph.xml';log=root/case/'native.log';text=log.read_text();assert 'RouterOpts.acc_fac: 1.000000' in text and 'RouterOpts.routing_budgets_algorithm = DISABLE' in text and 'RouterOpts.route_bb_update: DYNAMIC' in text
+  if width not in caps_cache:
+   caps={}
+   for ev,x in ET.iterparse(graph):
+    if x.tag=='node' and x.get('type') in ['CHANX','CHANY']:caps[int(x.get('id'))]=int(x.get('capacity'))
+    x.clear()
+   caps_cache[width]=caps
+  caps=caps_cache[width];history=Counter();rounds=[];pernode={};prior_paths=[]
+  for snapshot in a['rows']:
+   p=Path(snapshot['occupancy']);assert sha(p)==snapshot['occupancy_sha256'];d=json.loads(p.read_text());occ={int(n):count for n,count in d['node_occupancy'].items()};iteration=snapshot['iteration'];over={n:occ.get(n,0)-cap for n,cap in caps.items() if occ.get(n,0)>cap}
+   if iteration>1:
+    history.update(over)
+    for n,value in over.items():pernode.setdefault(n,[]).append(value)
+   # Independent per-node list reduction verifies each cumulative sum, not native runtime bits.
+   assert dict(history)=={n:sum(values) for n,values in pernode.items()};assert all(0<1+value<2**24 for value in history.values());forgotten={n:1+value for n,value in history.items() if occ.get(n,0)<=caps[n]};costs={str(n):1+value for n,value in history.items()};out=D/case;out.mkdir(parents=True,exist_ok=True);payload=out/f'iteration_{iteration:03d}_derived_CHANNEL_acc_cost.json';payload.write_text(json.dumps(dict(default_cost=1,derived_costs=costs,not_native_captured=True))+'\n');rounds.append(dict(iteration=iteration,currently_overused_CHANNEL_nodes=len(over),history_elevated_CHANNEL_nodes=len(history),history_elevated_but_currently_not_overused_CHANNEL_nodes=len(forgotten),max_derived_acc_cost=max(costs.values(),default=1),derived_costs=str(payload),sha256=sha(payload)));bindings[str(p)]=sha(p)
+  target=D/case/'derived_history_verification.json';target.write_text(json.dumps(dict(case=case,rows=rounds,scope='Derived CHANNEL global accumulated-cost recurrence from all prefix occupancy snapshots, initial1, acc_fac1, first iteration global increment0. Does not capture native runtime bits, OPIN reservation increments, timing, bounding boxes or full continuation state.'),indent=2)+'\n');rows.append(dict(case=case,iterations=len(rounds),terminal_history_elevated_CHANNEL_nodes=rounds[-1]['history_elevated_CHANNEL_nodes'],terminal_history_elevated_but_not_currently_overused=rounds[-1]['history_elevated_but_currently_not_overused_CHANNEL_nodes'],proof=str(target),sha256=sha(target)))
+  for p in [ap,graph,log]:bindings[str(p)]=sha(p)
+ contract={'route_file_contains':'Physical NET/node/type/switch trace and pin/placement metadata; sufficient for audited union occupancy and route reload, not full native search continuation.','missing_or_reset':[{'state':'RR accumulated congestion costs','evidence':'read_route allocates routing structures; reset_rr_node_route_structs sets acc_cost1; writer prints trace, no accumulated-cost payload. CHANNEL prefix replay derived separately, not native-captured.'},{'state':'Iteration index, current pres_fac, convergence counters, failure predictor observations and high-effort phase','evidence':'route.cpp function-local values initialize anew and for-loop begins at1.'},{'state':'Dynamic route bounding boxes and netlist router update state','evidence':'DYNAMIC logged for all9, route.cpp updates boxes and notifies netlist_router after each iteration.'},{'state':'Timing/criticality context and connection reroute state','evidence':'route.cpp creates CBRR/netlist router and performs timing updates; trace writer is not a serializer for these objects.'}], 'disabled_here':'routing_budgets_algorithm DISABLE for all9; active budget state is not claimed as missing active state in this cohort.','handoff_requirement':'Same-process resident boundary retaining objects is a candidate design, not implemented or validated. Disk restore requires explicit state capture plus parity tests. Reload success alone is insufficient.'}
+ assert all(sha(p)==h for p,h in bindings.items());(D/'verification.json').write_text(json.dumps(dict(rows=rows,contract=contract,bindings=bindings,scope='Source-bound checkpoint sufficiency audit and derived CHANNEL history, not native full-state capture or continuation proof. All prior quality/unseen/fullpaid obligations remain open.'),indent=2)+'\n');print('CHECKPOINT_STATE_AUDIT',[(r['case'],r['terminal_history_elevated_but_not_currently_overused']) for r in rows])
+if __name__=='__main__':main()

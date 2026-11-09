@@ -1,0 +1,23 @@
+# DieRoute 恢复入口：一元rank成员检查候选实际完整RTL运行 — 2026-10-30
+
+原目标未完成；矩阵仍v169/314条，关键路径 experiments/critical_path_20261030_v169.md，八门槛均开放。11语料/311096搜索、45正式槽及原预算保持，正式终态37通过/8存储失败不替换。原目标见 HANDOFF_20261021.md；此前RTL背景见 HANDOFF_20261030_PORTAL_EDGE_RTL.md；最新制品依赖审计范围见 HANDOFF_20261030_CROSSCASE_HASH_AUDIT.md；论文/文献背景见 HANDOFF_20261030_PAPER.md。
+
+本轮回到完整图安装关键路径。新增work/resident_rank_membership_candidate_20261030，从portal-install-edge五源派生，只在rows.hpp添加contains，并把Store.belongs的两次select/row区间查询替换为forward.contains；逆变换逐字恢复父五源。数据成员/数组/存储绑定、build、offset/row及公开get后缀、外部ABI与容量不变。
+
+等价关系：delimiter d_i=i+offset(i)。edge属于node当且仅当position=node+edge+1是两个相邻delimiter之间的零位，且此前delimiter数为node+1。prefix[block]提供512位块前计数，再遍历该块中至多8个字和目标位之前的mask。ready/node/edge边界在算position或访问内存前检查；未构建/失败build与原select同样拒绝。完整推导及两处差异见derivation.json。此机制复用原words/prefix，不增加元数据存储。
+
+ASAN/UBSAN原始28878全部预期回复通过，与父候选stdout逐字相同；256有效图/3072输入变异，共56085父子回复差分通过。独立成员oracle穷尽5004个不同小图，另324个边界布局（含空行、64位字/512位块边界、长行/空块、UINT64_MAX和失败build），58779行检查、14440580成员判断、58779失败build检查均通过。有限测试支持数学推导，不替代完整RTL证明。见host_correctness_review.json。
+
+相同计数器插入后逆变换恢复父子源码，分别重放原程序及全部预期回复。两次成功安装call1/session1与28875/session3：select_calls6927996→4639636（减少2288360，约33.0%），prefix_steps80345551→53339420，select_word_visits31162137→20869110；新增rank_calls1144180、rank_word_visits5148219。两个失败安装仍0相应调用。这里是主机源操作，不能当RTL周期/物理读次数或加速比。
+
+原生2022.2 csynth真正exit0/117.335秒，峰值1838936064bytes，无12GiB自身/72GiB全局守卫触发，20GiB启动条件保持。独立报告/源/主机绑定复核：LUT119914→118133（-1781），FF72391→70628（-1763），BRAM18K86/URAM42/DSP87不变，估计时钟2.563ns不变，总延迟仍undef。belongs调度从两次selector调用（4个启动/完成phase）变为0次；局部worst estimate75cycles，内部字循环trip1..8/latency8..67。该75只是局部HLS估计，绝不是完整程序十亿周期验收。见independent_HLS_comparison_20261030.json及membership_schedule_review_20261030.json；无routed fit或实卡频率证明。
+
+已推进到真实完整原始28878 RTL。原生cosim -setup只用312byte配置bootstrap，exit0/27.086秒/峰值962228224bytes，无守卫触发；克隆1620文件/214247332bytes的本候选HLS工程。96DUT与新综合输出逐字相同、155端口匹配，13监控本次重新生成，Cpost两处源码差异及私有路径重定位逆变换核对后实际重编译exit0。最终preparation源库存逐项匹配。未复制/哈希巨大稀疏TV，原完整cache仅symlink，8个inode/size/mtime身份不变。
+
+实际正向协议绑定255文件，原图N773272/E973552/P170628、5752357安装words、原28878调用、十亿累计周期、xelab -O0/-mt off和资源守卫不变；启动前21.337GiB余量。XSim日志3个time0零初始化、3个known-write绑定、原1/28878进度；这个1只表示安装前unavailable读取完成，完整图安装及全部正向未证明，accepted仍0。见actual_RTL_runtime_receipt_20261030.json及actual_RTL_launch_binding_review_20261030.json。
+
+新实际句柄：supervisor238148/start1764512281；pipeline238292/start1764512293；xsim271473/start1764516067。终态监控327873/start1764522948只拥有本候选，绑定同字节v2审计器SHA4e37f23e8f3683bedcd6651189eb3a2d7545df06bb5db15e138e5056635ffea0；等三句柄真正退出后，成功终态才复核全部28878回复/Cpost/性能行/observers，失败/守卫终态保留，不重试/采用。负向fixture只改reply观察器数据和banner，可逆回正向；缺完整正向证明的只读gate检查返回75，未创建负向执行目录。之后仍须正向v2通过、三句柄消失、资源核验，再显式 --run，不继承父证明。
+
+现10仿真、5终态监控和2后续队列；共享可变记录仍CSR目录latest_all_jobs_verified_wait.json，已加入新内核和监控。最新poll：python3 -B work/resident_rank_membership_candidate_20261030/poll_existing_jobs.py；17核心身份及六候选另外12个supervisor/pipeline均核验live，CPU增加，资源心跳正常，内存约59.288GiB/80GiB是观察值。禁止因静默/观察超时重启/停止，原预算和所有失败保留。
+
+下一步等待实际终态并独立复核，同时继续原完整依赖闭包、QoR及全部研究门槛；不把主机33%调用减少或75cycle模块估计当实际RTL加速。原401路径引用批次已核对，原9968未关联hash形值累计3202已处理/6766未处理，另820新传递字段单列；468研究根路径来源仍未重新分类。新候选材料不继承旧1753库存覆盖。U280无实卡，无板上速度/能耗、平台fit或300MHz达标结论。文献稿仍独立32页文献更新/22October评测快照，不是最终全实验稿。无commit/push。

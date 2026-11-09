@@ -1,0 +1,40 @@
+{
+  "status": "audited_v2_and_refreshed_quality_figure_rendered",
+  "cases": [
+    {
+      "case": "ex5p",
+      "WL_v2": "-1.644425312096427034007748600",
+      "WL_refresh": "-1.876883340507963839862247090",
+      "CPD_v2": "0.739493547368723153896930100",
+      "CPD_refresh": "-0.0047832700347265404521146800"
+    },
+    {
+      "case": "diffeq",
+      "WL_v2": "-13.82651491848661950169178714",
+      "WL_refresh": "-13.82651491848661950169178714",
+      "CPD_v2": "-0.3447880737831028094176841000",
+      "CPD_refresh": "-0.3447880737831028094176841000"
+    },
+    {
+      "case": "alu4",
+      "WL_v2": "-11.26177024482109227871939736",
+      "WL_refresh": "-11.26177024482109227871939736",
+      "CPD_v2": "-0.0192361331525136816997047300",
+      "CPD_refresh": "-0.0192361331525136816997047300"
+    }
+  ],
+  "source_sha256": {
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_joint_budget_net_repair_v2_20261016/independent_audit.json": "cc69f96794978ff9a79e4db5dd3d33adfcabfdc339e37973a12d24e537d158dd",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_refreshed_critical_policy_v1_20261016/independent_audit.json": "a6506e345867f7420123df0e09d0b4c351ce7e64fd370a043ed11f73b3da267d",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_refreshed_critical_policy_v1_20261016/protocol.json": "d89ec57ae661d3f46bfef0458e99aeb75ce55a6a8d0509427aa9c9d6d996e526",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/tools/plot_refreshed_native_quality.py": "e08fe43370199ec2e758535fcb28551b5980e334253d6fa21758ee2e94ca9fa9"
+  },
+  "artifacts_sha256": {
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/paper/figures/refreshed_native_quality.tex": "92951b10be76a7f5a3dd04281c004008cccbb3820d67865f19af097e0ff5cc3c",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/paper/figures/refreshed_native_quality.tsv": "1bd08fdda742c5d73df429eb1499a68a34278e5b44fd3c3fa946836221228af1",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/paper/figures/refreshed_native_quality.pdf": "ff52fb20bd3347009e4522441f11313b03501d70a0e177a84d353cd88fe940b4",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/paper/figures/refreshed_native_quality.png": "2e89f1c6960d1e799916f30c430fd56df0883f5594f8f67c3c0972ffabf7ed94"
+  },
+  "research_complete": false,
+  "scope": "Percent change versus each design baseline; one CPU incremental development run. No repeated-seed, heldout or FPGA result."
+}

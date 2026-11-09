@@ -1,4 +1,22 @@
-# TilePlace: deterministic page-decomposed incremental FPGA placement
+# TilePlace: deterministic routed-oracle transactional FPGA placement refinement
+
+> **2026-09-29 provenance audit:** A full diffeq timing replay does not reproduce
+> the archived V4 trajectory. With the same hashed timing report, the current
+> port parser yields 52 initial edges instead of 37. Four development summaries
+> plus pdc/dsip disagree with the current parser and match a diagnostic
+> restricted-port variant. Archived QoR values remain intact, but the
+> single-frozen-implementation / outcome-blind held-out claim is **not verified**.
+> Numerical gate checks alone do not close this gap. See
+> `../experiments/tileplace_v4_timing_parser_audit_2026-09-29.json`.
+
+
+> `dac/main.tex` is the manuscript source of truth. This supporting draft still
+> preserves the frozen ten-case V1 evidence below; V4 adds atomic swaps/chains,
+> routed top-path and congestion feedback, native acceptance, exact rollback,
+> stable bisection, and an incumbent-specific no-good frontier. The V4 held-out
+> aggregate must not be merged with the older ten-case matrix. The frozen V4
+> six-case result passes all five preregistered gates: CPD/WL geomeans are
+> -5.049%/-0.507%, 3/6 cases strictly improve CPD, and worst WL is +0.270%.
 
 ## Abstract draft
 
@@ -7,9 +25,9 @@ decomposes the device into colored pages, evaluates local moves using exact touc
 commits proposals only when their site and net write sets are disjoint. Placement macros move as atomic
 transactions, while native fixed and regional constraints are preserved. A connection-specific timing
 model maps routed timing endpoints back to clustered blocks and protects the highest-criticality
-connections with an input-relative distance guard. Across nine academic VPR designs spanning the COFFE
+connections with an input-relative distance guard. Across ten academic VPR designs spanning the COFFE
 22 nm and Titan23 Stratix IV architecture families, refinement changes routed wirelength and critical-path
-delay by -0.088% and -1.010% in geometric mean, with worst-case
+delay by -0.066% and -0.911% in geometric mean, with worst-case
 changes of +0.439% and +0.017%, respectively. A macro-heavy Koios case preserves all 43
 placement macros while reducing routed wirelength by 0.124% at unchanged delay. A separately reported
 fixed-I/O point preserves all 28 coordinate-fixed clusters but changes WL/CPD by +0.210%/+0.463%.
@@ -38,14 +56,14 @@ criticality at least 60000 may not become longer than in the input placement.
 
 All QoR comparisons start from frozen VPR 9 placements and use the same VTR revision, architecture,
 packed netlist, seed, channel width, single-worker router, and analysis flow within each paired comparison.
-The nine timing cases contain 198595 connections fully mapped to clustered source/sink endpoints. Of these,
-194155 also map to atom
-timing pins; 4440 connections in conv_layer are explicitly labeled as lacking such a mapping, assigned zero
+The ten timing cases contain 280205 connections fully mapped to clustered source/sink endpoints. Of these,
+275654 also map to atom
+timing pins; 4551 connections (4440 in conv_layer and 111 in Titan23 stereo_vision) are explicitly labeled as lacking such a mapping, assigned zero
 timing criticality, and retained in the wire objective. The strategy and parameters were frozen on four designs before spmv,
-softmax, attention_layer, and Titan23 neuron were evaluated. CPU repeats are byte-identical and every candidate passes the
-contract validator and VPR placement/routing consistency checks. Across all nine cases, the final strategy
-improves geometric-mean routed wirelength by 0.088% and CPD by 1.010%. The post-freeze quartet changes these
-metrics by -0.015% and -2.236%, respectively; attention_layer alone changes WL/CPD by
+softmax, attention_layer, Titan23 neuron, and Titan23 stereo_vision were evaluated. CPU repeats are byte-identical and every candidate passes the
+contract validator and VPR placement/routing consistency checks. Across all ten cases, the final strategy
+improves geometric-mean routed wirelength by 0.066% and CPD by 0.911%. The post-freeze quintet changes these
+metrics by +0.015% and -1.797%, respectively; attention_layer alone changes WL/CPD by
 -0.331%/-7.069% without increasing its 15 routing iterations. Improvements are not monotonic per design:
 the worst routed
 wirelength change is +0.439%, which motivates a future congestion-aware objective. A strict per-transaction
@@ -57,6 +75,13 @@ Titan23 neuron is the first post-freeze point from a second architecture family.
 77106 routed connections to both clustered endpoints and atom timing pins. Its routed WL changes from
 766630 to 767301 (+0.088%), CPD remains 7.60292 ns, and routing iterations change from 15 to 16; this
 non-improving WL result is retained rather than tuned away.
+
+Titan23 stereo_vision is the second post-freeze point from that architecture family and was preregistered
+before its exact Titan 2.0 inputs were acquired. The unchanged policy preserves 150 native macros (300
+members). All 81610 routed connections map to clustered endpoints; 81499 map to atom timing pins and the
+remaining 111 are explicitly retained with zero timing criticality. Routed WL changes from 592827 to
+593627 (+0.135%), CPD changes from 7.51746 to 7.51592 ns (-0.020%), and routing iterations decrease from
+15 to 14.
 
 The macro-heavy conv_layer design appeared in an earlier 4×4 algorithm probe, so we do not label it as
 independent post-freeze validation. We rerun it with the final 2×2/q60000 configuration as a distinct
@@ -85,11 +110,11 @@ We also pinned and audited the executable sources and command-line flows of DREA
 AMF-Placer. DREAMPlaceFPGA begins from a flat Bookshelf or FPGA Interchange netlist and performs its own
 packing and legalization. AMF-Placer consumes primitive, device, and timing data extracted from an
 implemented Vivado design and returns placement Tcl to a Vivado backend. Neither flow preserves the
-packed netlist, architecture, or router of our nine-case VPR QoR experiment. We therefore classify them as
+packed netlist, architecture, or router of our ten-case VPR QoR experiment. We therefore classify them as
 B1 executable-source candidates rather than reporting an invalid direct comparison. A future external
 placer study requires a separately pre-registered Bookshelf/FPGA Interchange/Vivado cohort.
 
-On one pinned Xeon Gold 6530 logical CPU, the complete Python refinement flow takes 0.545--59.672 s
+On one pinned Xeon Gold 6530 logical CPU, the earlier guarded Python reference refinement takes 0.545--59.672 s
 in median across the six timing cases after three warm-ups and seven measured repetitions. The two
 post-freeze cases spmv and softmax take 59.672 s and 21.798 s, with wall-time CVs of 2.8% and 2.2%.
 On the four development cases, eliminating cost computations for disabled candidate guards improves
@@ -99,10 +124,14 @@ is exactly result-equivalent to serial execution for
 speedup because Python snapshot serialization and IPC dominate; we therefore claim deterministic parallel
 semantics, not scalable CPU performance.
 
+These timings exclude the V4 routed-oracle search. V4 pays for accepted and rejected native
+route/analysis calls and feedback refresh; a closure-count cap is not a wall-time bound.
+Controlled repeated V4 end-to-end timings and an equal-time comparison remain unmeasured.
+
 ## Limitations draft
 
 The current implementation is a CPU research prototype and the existing HLS kernel does not implement
-the full algorithm. The nine-case benchmark count remains small, quality gains are modest, and there is no physical U280
+the full algorithm. The ten-case benchmark count remains small, quality gains are modest, and there is no physical U280
 runtime or energy measurement. The current claim is therefore limited to deterministic VPR post-placement
 refinement with native legality, same-router QoR evidence, an executable conventional/AP VPR comparison,
 and bounded single-core reference runtime. Independent placer sources have been audited but not reproduced

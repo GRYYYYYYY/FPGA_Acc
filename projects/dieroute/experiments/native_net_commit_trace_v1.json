@@ -1,0 +1,81 @@
+{
+  "schema": "dieroute.native_net_commit_trace.v1",
+  "byte_order": "little endian",
+  "container": "64-byte FPGAACCP v0.1 header, architecture fingerprint and CRC64-ECMA of payload",
+  "policy": {
+    "filename": "net_commit_policy.bin",
+    "kind": "0x44520026",
+    "width_bytes": 8,
+    "fields": "low32 exclusive net ID or UINT32_MAX; bits32..39 full die mask; bit40 forbidden by protection or frozen unselected ownership"
+  },
+  "frames": {
+    "filename": "net_commit_frames.bin",
+    "kind": "0x44520025",
+    "element_width_bytes": 8,
+    "header_words": [
+      "sequence",
+      "repeat",
+      "epoch",
+      "wave",
+      "actor",
+      "attempt",
+      "opcode",
+      "frame_words",
+      "read_count",
+      "shadow_count",
+      "branch_count",
+      "path_count",
+      "delta_count",
+      "resource_count",
+      "tree_highwater",
+      "net_count"
+    ],
+    "config_words": [
+      "node_count",
+      "arc_count",
+      "dies",
+      "shard_capacity",
+      "net_capacity",
+      "tree_capacity",
+      "scratch_capacity",
+      "delta_capacity"
+    ],
+    "fixed_records": [
+      "command16Q",
+      "completion8Q",
+      "control8Q"
+    ],
+    "payload": [
+      "reads:2Q per record",
+      "consumed shadows:8Q",
+      "successful branches:8Q",
+      "paths:2Q",
+      "produced deltas:8Q",
+      "current-session resources:index+8Q",
+      "all tree rows below highwater:index+8Q, including free rows",
+      "current-session nets:index+8Q"
+    ],
+    "kernel_abi": "experiments/net_commit_schema_v1.json"
+  },
+  "publications": {
+    "filename": "net_commit_publications.bin",
+    "kind": "0x44520027",
+    "width_bytes": 128,
+    "prefix_words": [
+      "repeat",
+      "epoch",
+      "wave",
+      "controller",
+      "attempt",
+      "initial_projection",
+      "completed_kernel_call_count",
+      "reserved_zero"
+    ],
+    "value": "unchanged 8Q kernel delta; first publication instead projects current kernel authority, including implicit zero resources, onto the immutable boundary directory",
+    "coalescing": "latest produced delta per boundary node, sorted by node",
+    "boundary_binding": "wave start precedes first proposal; validation precedes matching slot/attempt; final drain precedes next session or EOF"
+  },
+  "substrate": "Determined separately from linked executable and build provenance; trace alone does not prove RTL or physical execution",
+  "scope": "Fresh native coordinator integration; CPU search snapshots decoded from kernel authority; independent CPU oracle does not suppress kernel proposals; capacity overflow fails closed; no concurrent DMA or crash atomicity",
+  "research_complete": false
+}

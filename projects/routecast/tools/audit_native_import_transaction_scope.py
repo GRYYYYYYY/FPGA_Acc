@@ -1,0 +1,9 @@
+"""Source-grounded mutation inventory for read_route rollback implementation."""
+import json,hashlib
+from pathlib import Path
+root=Path(__file__).resolve().parents[1];vtr=root.parent/'tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07';out=root/'experiments/native_import_transaction_scope_2026-10-06';out.mkdir()
+files=['vpr/src/base/vpr_context.h','vpr/src/base/read_route.cpp','vpr/src/route/route_common.cpp'];data={f:(vtr/f).read_bytes() for f in files}
+fields=['route_trees','trace_nodes','net_rr_terminals','is_clock_net','rr_blk_source','rr_node_route_inf','net_terminal_groups','net_terminal_group_num','non_configurable_bitset','net_status','route_bb','clb_opins_used_locally','routing_id','is_flat']
+for field in fields:assert field in data[files[0]].decode()
+result={'source_sha256':{str(vtr/f):hashlib.sha256(b).hexdigest() for f,b in data.items()},'routing_context_snapshot_fields':fields,'additional_mutable_import_state':['thread_local routecast_import_net','traceback/node allocations and cleanup'], 'scope_boundary':'read_route import under fixed graph/netlist/placement; no packing synchronization, placement move, net_delay matrix or timing update inside this boundary','outside_boundary_required_for_full_move':['placement registry and physical pin maps','cluster/pb/atom synchronization state','net_delay matrix','timing invalidation/cache state','connection reroute metadata','ownership/cache namespaces'],'next_runtime_gate':'In same process, load valid seed, attempt bad pin after initialized context, catch native VprError, verify saved routing fields restored, then load/search valid seed. Snapshot field list is conservative source inventory, not tested rollback.'}
+(out/'scope.json').write_text(json.dumps(result,indent=2)+'\n');print('Archived conservative import snapshot scope (14 fields)')

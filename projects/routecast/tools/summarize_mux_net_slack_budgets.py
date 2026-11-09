@@ -1,0 +1,9 @@
+"""Bind all12 independently verified initial-only budget outcomes."""
+import json
+from pathlib import Path
+from collections import Counter
+from pre_route_endpoints import sha
+ROOT=Path(__file__).resolve().parents[1];out=ROOT/'experiments/mux_net_slack_budgets_2026-10-06';p=json.loads((out/'protocol.json').read_text());r=json.loads((out/'receipt.json').read_text());assert len(r['rows'])==len(p['cases'])==12 and r['protocol_sha256']==sha(out/'protocol.json');assert p['source_sha256']==sha(ROOT/'tools/prepare_mux_net_slack_budgets.py');base=ROOT/'experiments/mux_critical_release_budgets_2026-10-06';br=json.loads((base/'receipt.json').read_text());assert p['base_receipt_sha256']==sha(base/'receipt.json') and p['base_verification_sha256']==sha(base/'verification.json');rows=[]
+for case,row,old in zip(p['cases'],r['rows'],br['rows']):
+ w,i=case['width'],case['index'];assert (w,i)==(row['width'],row['index'])==(old['width'],old['index']);file=out/f'w{w}_m{i}.json';vf=out/f'w{w}_m{i}_verification.json';v=json.loads(vf.read_text());d=json.loads(file.read_text());assert row['sha256']==sha(file)==v['result_sha256'];seed=base/f'w{w}_m{i}.json';assert d['base_sha256']==sha(seed)==old['sha256'];assert d['status']==row['status'];assert (d['status']=='PRIOR_ALLOCATION_SKIP')==(old['status']!='CRITICAL_RELEASE_VECTOR_CONSTRUCTED');assert all(sha(f)==h for f,h in case['inputs'].items());rows.append(dict(**row,verification_sha256=sha(vf)))
+(out/'verification.json').write_text(json.dumps(dict(receipt_sha256=sha(out/'receipt.json'),source_sha256=sha(Path(__file__)),rows=rows,statuses=dict(Counter(row['status'] for row in rows)),scope='All12 initial-only budget outcomes/source/seed/input/independent maximal-grid/CPD proofs bound. Preparation costs outside later routing and must be accounted. No actualroute/fullcohortnative acceptance proof.'),indent=2)+'\n');print(Counter(row['status'] for row in rows))

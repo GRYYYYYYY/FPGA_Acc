@@ -1,0 +1,46 @@
+{
+  "observed_ns": 1793440513730925625,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_MARKER_ROW_LIFETIME.json",
+    "sha256": "d999345c684b211990cac2b849520219754685b5b533437c59d6b1d42bbacb49"
+  },
+  "progress": {
+    "report": "work/resident_marker_read32_transport_20261031/review.json",
+    "report_sha256": "e5d103cddd14bab5305a468bf1efc74d4f7b4223b4f862bba7afa70de2db7786",
+    "independent_review": "work/resident_marker_read32_transport_20261031/independent_review.json",
+    "independent_review_sha256": "7bb42b11a670c1d27d95ef90569faac04addc584cee0c5724fa3cbfaaee6bb20",
+    "final_review": "work/resident_marker_read32_transport_20261031/final_review.json",
+    "final_review_sha256": "580566331bf1561405620d27b69d74e37fd0f5c7661905989fdf175e28ee3792",
+    "new_feasible_UNSAT_queries": 6,
+    "continuous_integer_calls": 9,
+    "source_edges": 17074,
+    "AR_R_stalls": 139,
+    "conditional_read32_address_capture_decode_checked": true,
+    "decoded_row_output_injected": false,
+    "adapter_queue_ordering_proved": false,
+    "actual_encoded_memory_contract_proved": false,
+    "scope": "Source markerread32 request/capture/decode underorderedinternalHLSresponsecontract:6feasibleBVqueries prove38bitO+4i,bytealignment,actualsigned61-to64wordaddress/adaptershift3,lane0/4capture71and32bitextraction72. O37four-aligned/B64eight-aligned/validi<=n premises;v268suppliesheldrow. AR1/R71blockedcycles stutter4sole-writer transportregisters.9continuousseparateinteger-sourcecalls useactualrequests tolookup independentbyteimage;no decodedrowoutputinjection,randomAR/Rstalls/livejunk/highbases,success/failures/long127then1. ActualadapterFIFO/outerreadqueue/orderandexternalmemorycontentsremainpremises;notwholeencodedimage/full4stateHDL/native/physical/boardproof. Source topdefaultnativeinstallbus64,notgeneric512claim.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v269_20261031/matrix.json",
+    "sha256": "676e2e424ae20e9cc4e9ae2948a3ec7aece13293662823d98b7cc72d21c38748"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v269.json",
+    "sha256": "04cdc37227183cba92abb1f498b91a7015512aece9be84f770b33a2c12fd7e52"
+  },
+  "next_action": "VerifyactualadapterrequestFIFO/registerslice/readburst/readresponseFIFOorderedidentity,notjustaddressunitconversion:source nativeinstallUSER_DW64/defaultbus64 takes equal-widthbranch. Bindactualparent5/execute25/topactivebusmuxandstablebase/Oalignment;thencomposewordclear,markerread32/row/validation/RMW/callcontrol,prefixrecurrence/readytotaln+1andunaryselect-getintoactualencodedimage. Preserveoriginaljobs/guards/budgets/inputs/caches/failures/UNKNOWNs/native/full4state/timing/boardgaps.",
+  "previous_goal_turn_classification": "progress_and_verified_wait_v268",
+  "current_goal_turn_classification": "progress_and_verified_wait",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

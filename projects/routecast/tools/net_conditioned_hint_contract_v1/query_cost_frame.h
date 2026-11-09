@@ -1,0 +1,113 @@
+#pragma once
+#include <atomic>
+#include <cmath>
+#include <cstdint>
+#include <cstring>
+#include <exception>
+#include <limits>
+#include <mutex>
+#include <set>
+#include <stdexcept>
+#include <utility>
+#include <vector>
+
+namespace routecast {
+struct FrameError : std::runtime_error { using std::runtime_error::runtime_error; };
+inline uint32_t cost_bits(float value) { uint32_t b; std::memcpy(&b,&value,4); return b; }
+inline void set_cost_bits(float& value,uint32_t b) { std::memcpy(&value,&b,4); }
+
+// Cost-array prototype only. Native geometry, NET names and graph identity are caller contracts.
+// Exactly one manager borrows a cost store. Queries themselves must be serial.
+class QueryCostFrame {
+public:
+    struct Claim { uint32_t node,net,hint_bits; };
+    struct Token { uint64_t owner,generation,epoch; uint32_t net; };
+    class Scope;
+    QueryCostFrame(std::vector<float>& costs,uint32_t net_count,uint64_t epoch,
+                   const std::vector<Claim>& claims,bool cold=true,uint32_t workers=1)
+        :costs_(costs),size_(costs.size()),epoch_(epoch),cold_(cold),workers_(workers),owned_(net_count) {
+        if(!net_count || !epoch || size_>std::numeric_limits<uint32_t>::max())throw FrameError("context domain");
+        uint32_t previous=0;bool first=true;
+        for(const auto& c:claims) {
+            float value;std::memcpy(&value,&c.hint_bits,4);
+            if(c.node>=size_ || c.net>=net_count || (!first && c.node<=previous) || !std::isfinite(value) || value<1.f)
+                throw FrameError("claim domain/order/value");
+            first=false;previous=c.node;owned_[c.net].push_back(c);has_claims_=true;
+        }
+        owner_=next_owner();
+        std::lock_guard<std::mutex> lock(registry_mutex());
+        if(!registry().insert(&costs_).second)throw FrameError("cost store already borrowed");
+    }
+    QueryCostFrame(const QueryCostFrame&)=delete;
+    QueryCostFrame& operator=(const QueryCostFrame&)=delete;
+    QueryCostFrame(QueryCostFrame&&)=delete;
+    QueryCostFrame& operator=(QueryCostFrame&&)=delete;
+    ~QueryCostFrame() noexcept {
+        if(active_)std::terminate(); // Never silently leak a cost exemption into subsequent queries.
+        std::lock_guard<std::mutex> lock(registry_mutex());
+        if(registry().erase(&costs_)!=1)std::terminate();
+    }
+    Token begin(uint64_t epoch,uint32_t net,uint32_t iteration,bool enabled=true) {
+        if(active_)throw FrameError("nested query frame");
+        if(epoch!=epoch_ || net>=owned_.size() || !iteration || costs_.size()!=size_)throw FrameError("stale/invalid query context");
+        const bool apply=enabled && iteration==1;
+        if(apply && has_claims_ && (!cold_ || workers_!=1))throw FrameError("hint requires cold serial routing");
+        if(generation_==std::numeric_limits<uint64_t>::max())throw FrameError("generation exhausted");
+        std::vector<std::pair<uint32_t,uint32_t>> backup;
+        if(apply) {
+            backup.reserve(owned_[net].size());
+            for(const auto& c:owned_[net]) {
+                const auto bits=cost_bits(costs_[c.node]);
+                if(bits!=c.hint_bits)throw FrameError("unexpected history before exemption");
+                backup.emplace_back(c.node,bits);
+            }
+        }
+        // All validation/allocation completes before any external cost word changes.
+        backup_=std::move(backup);token_={owner_,++generation_,epoch_,net};active_=true;
+        for(const auto& entry:backup_)set_cost_bits(costs_[entry.first],one_bits);
+        return token_;
+    }
+    void finish(Token token) {
+        if(!active_ || token.owner!=token_.owner || token.generation!=token_.generation ||
+           token.epoch!=token_.epoch || token.net!=token_.net || costs_.size()!=size_)
+            throw FrameError("foreign/stale query token or cost domain");
+        // Validate the entire write set before restoring anything. Preserve unexpected history.
+        for(const auto& entry:backup_)
+            if(cost_bits(costs_[entry.first])!=one_bits)throw FrameError("unexpected history during exemption");
+        for(const auto& entry:backup_)set_cost_bits(costs_[entry.first],entry.second);
+        backup_.clear();active_=false;
+    }
+    bool active() const noexcept { return active_; }
+    const std::vector<Claim>& claims_for(uint32_t net) const { return owned_.at(net); }
+    Scope scoped(uint64_t epoch,uint32_t net,uint32_t iteration,bool enabled=true);
+    static constexpr uint32_t one_bits=0x3f800000;
+private:
+    static uint64_t next_owner() {
+        static std::atomic<uint64_t> next{1};auto value=next.load();
+        do { if(value==std::numeric_limits<uint64_t>::max())throw FrameError("owner identity exhausted"); }
+        while(!next.compare_exchange_weak(value,value+1));
+        return value;
+    }
+    static std::set<const void*>& registry() { static std::set<const void*> value;return value; }
+    static std::mutex& registry_mutex() { static std::mutex value;return value; }
+    std::vector<float>& costs_;size_t size_;uint64_t epoch_,owner_=0,generation_=0;
+    bool cold_,has_claims_=false,active_=false;uint32_t workers_;Token token_{};
+    std::vector<std::vector<Claim>> owned_;
+    std::vector<std::pair<uint32_t,uint32_t>> backup_;
+};
+class QueryCostFrame::Scope {
+public:
+    Scope(const Scope&)=delete;Scope& operator=(const Scope&)=delete;
+    Scope(Scope&&)=delete;Scope& operator=(Scope&&)=delete;
+    ~Scope() noexcept { if(open_) { try { frame_.finish(token_); } catch(...) { std::terminate(); } } }
+    void close() { frame_.finish(token_);open_=false; }
+private:
+    friend class QueryCostFrame;
+    Scope(QueryCostFrame& frame,uint64_t epoch,uint32_t net,uint32_t iteration,bool enabled)
+        :frame_(frame),token_(frame.begin(epoch,net,iteration,enabled)) {}
+    QueryCostFrame& frame_;Token token_;bool open_=true;
+};
+inline QueryCostFrame::Scope QueryCostFrame::scoped(uint64_t epoch,uint32_t net,uint32_t iteration,bool enabled) {
+    return Scope(*this,epoch,net,iteration,enabled);
+}
+} // namespace routecast

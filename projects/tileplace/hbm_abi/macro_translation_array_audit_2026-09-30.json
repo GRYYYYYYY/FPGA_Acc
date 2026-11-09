@@ -1,0 +1,45 @@
+{
+  "status": "pass",
+  "scope": "array-only macro translation CPU differential and atomic error handling; not integrated or HLS synthesized",
+  "queries": 2000,
+  "unit_sizes": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "random_seed": 33,
+  "atomic_fault_cases": 11,
+  "faults": [
+    "empty unit",
+    "insufficient capacity",
+    "unknown member",
+    "x/y/subtile/layer INT32 overflow and underflow"
+  ],
+  "preconditions": [
+    "canonical sorted block IDs",
+    "unique unit members",
+    "output does not alias input"
+  ],
+  "verification": "CMake macro_translation_array_test build and targeted CTest macro_translation_array_atomic 1/1 pass",
+  "files": {
+    "macro_translation_array.hpp": "53dc5d5d628f566d14a1c042e59402499827ce5e7f6d3350bcaa707fd7e9e7ff",
+    "macro_translation_array_test.cpp": "d64969d4baa6d60a608ea729ea9af33422dfed30be2b4702fd2d140ed0f1a9ed"
+  }
+}

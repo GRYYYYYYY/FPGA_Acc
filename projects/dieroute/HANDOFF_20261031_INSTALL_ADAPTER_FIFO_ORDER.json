@@ -1,0 +1,42 @@
+{
+  "observed_ns": 1793419894603486793,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_DELIMITER_INACTIVE_CAPTURE_ISOLATION.json",
+    "sha256": "d7302f499011f726e0135cc0536f100ec8fa29beaf7abc3fab522d5ab3d70781"
+  },
+  "progress": {
+    "report": "work/resident_install_adapter_FIFO_order_20261031/review.json",
+    "report_sha256": "fc927424b426ce9b72782c425b06baa1ce6f641c1a8f864b12a34df2b95a4fe1",
+    "independent_review": "work/resident_install_adapter_FIFO_order_20261031/independent_review.json",
+    "independent_review_sha256": "11e4bd207ab63be7a3d2b15d8aa62c2880f40ce0b49019b34def7c8db2470a0e",
+    "default_user_bus_bits": 64,
+    "local_FIFO_paths": 2,
+    "induction_queries_unsat": 4,
+    "token_projection_cycles": 21974,
+    "accepted_consumed_tokens": 11300,
+    "intended_request_response_identity_proved": false,
+    "HDL_simulation_executed": false,
+    "watchdog_failure_verdict": null,
+    "scope": "SHA-bound local source/queue-model audit of the actual install-read adapter default64bit user/bus equal-width configuration. Request FIFO depth69uses default shift-register storage;response FIFO depth256uses block storage and output-head register. Source push/pop/full/empty/head rules and physical storage fragments are bound. Four feasible integer induction queries establish internal count/head conservation,capacity/flag invariants,and source storage index preservation for remaining and appended queue tokens under full/empty guards. The order argument uses the invariant that inner cells encode the unconsumed inner token sequence;SRL shifting and ring index lemmas preserve it,while output prefetch moves only the inner head. The block read-address register follows rnext;initial reset/idle precedes accepted traffic. Deterministic fill/drain/simultaneous/random token projections at actual depths cross-check registered flags,head refill,wrap and ordered external dequeue against an independent queue. They are not RTL simulations. Assume known binary reset/clock controls,top ACLK_EN1and correct source/model correspondence. Equal-width response branch connects beat_data to internal data and beat_valid to internal valid. This establishes only local accepted-stream preservation in the stated abstraction,not that incoming returned beats correspond to intended requests. External bus-read conversion/throttle/ordering,response IDs or errors,parent ownership,full HDL equivalence,actual delimiter/prefix contents,timing/watchdog and gates remain open. No .dat/trace/TV reads,native/HLS execution,DUT edits,process controls,guards/budgets changed or adoption.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v224_20261031/matrix.json",
+    "sha256": "02b761f63575fe2ecfd0cec1a0461016598ac9197381790e40fdc344d1dff6eb"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v224.json",
+    "sha256": "9f5998a14dab2402dc906e0747c808ce236232c619bcb5758e6d87ba25b32923"
+  },
+  "next_action": "Trace bus-read address conversion,burst splitting/throttling and response descriptor/ownership association before claiming intended internal return identity. FIFO ordering alone does not connect request to response. Continue previous-offset/cache/global delimiter requirements and original terminal monitoring without changes to jobs/guards/budgets.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

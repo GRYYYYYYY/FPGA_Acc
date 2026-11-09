@@ -1,0 +1,42 @@
+{
+  "observed_ns": 1793417655076223263,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_PREFIX_WORDS_READPATH.json",
+    "sha256": "6014132e85e83493865c971bd6547bd4de0ce023308704c98c73c854fadf688e"
+  },
+  "progress": {
+    "report": "work/resident_prefix_tail_masking_20261031/review.json",
+    "report_sha256": "c99dab1ab1f670aca58aa7e849ab42d90de77282b8faf604baac75d8b6869e81",
+    "independent_review": "work/resident_prefix_tail_masking_20261031/independent_review.json",
+    "independent_review_sha256": "9226c02a457b21def3e5b695a3b7a9198b404c946e9f5d931dee68b9b4a4bb25",
+    "local_builder_modules": 3,
+    "final_block_and_exit_round_abstract_cases": 138688,
+    "affine_predicate_queries_unsat": 3,
+    "local_opaque_invalid_count_contribution_excluded": true,
+    "numeric_count_correctness_proved": false,
+    "full_RTL_tail_correctness_proved": false,
+    "HDL_simulation_executed": false,
+    "watchdog_failure_verdict": null,
+    "scope": "SHA-bound source-fragment abstract projection of address-validity flag captures and guarded prefix accumulation for three2022.2 builders. Assume final actual blockb withB=b+1,known stable wordlimit8*b+t(t1..8),admitted binary/no-stall phase0..7then dummy exit round,settled low address constants,and actual partial capture phases6..13. Phase0exit comparison disables saving a new base in dummy round; latched exit1 suppresses replacement of seven per-slot validity flags during drain. Enumerate all frozen-range block indices,all eight tail lengths and both uniform initial flag seeds. At each slot accumulation,the selected guard equals address<wordlimit. Final expression is incoming_total plus only valid opaque count symbols; invalid count values may be arbitrary/unknown and are not selected in this model. This is local abstract source analysis,not HDL simulation/full Verilog equivalence or a proof that count datapaths compute correct populations. Actual operand delivery,control reachability/startup,valid-word arithmetic,full-prefix contents,all-call/global timing/watchdog and hardware remain open. No .dat/trace/TV reads,native/HLS flow,DUT edits,process control,guards/budgets changed or candidate adoption. Composition retains the earlier accumulator premises: no mid-block accumulator reinitialization,ap_loop_init0 during dummy exit round,and incoming total stable from slot0capture atcycle6until final feedback atcycle13. This audit does not establish those premises for every actual call.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v215_20261031/matrix.json",
+    "sha256": "12527984389d719462153daa8066bb2962bc845ab3c85872792c1a6b78d2cceb"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v215.json",
+    "sha256": "542d4e509ffba27e8a3d0ecbb1c51bbcc10eed1865bc1edec93a3e17547ccccc"
+  },
+  "next_action": "Verify each valid timed prefix count output equals the correct word population,including partial-register writes and actual validity gating;then compose initialized numerical prefix contents and actual full-job terminal audits. Local tail invalid-count exclusion is conditional on admitted phase/control/operand premises. Preserve original full jobs,guards,budgets and eight gates.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

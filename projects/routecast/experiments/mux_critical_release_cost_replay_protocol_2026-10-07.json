@@ -1,0 +1,7 @@
+{
+  "sources": {
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/prepare_mux_critical_release_cost_replay.py": "ff2e266b965556965871583552dcceba6aaacbe17ae84f1127b67746fc0ebbed",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/verify_mux_critical_release_cost_replay.py": "1aa836cbed43b810ad1db28d25d5bf718822d89823094a1c69438bcc21b77e65"
+  },
+  "policy": "Fresh all12 critical-release preparation with unchanged algorithm, including existing24step interpolation. Wall clock includes process startup/import/setup/allcases/output. Compare every output byte to archived audited preparation, then independent fullDAG/shortestcertificate verification. Upstream allfanin floors, old STA reports and RR/endpoint conversion remain prepared inputs and additional costs; not complete end-to-end measurement. Legacy interpolation currently unused by fixed-cap predictor; report it explicitly rather than declaring preparation optimal."
+}

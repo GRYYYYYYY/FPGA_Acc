@@ -1,0 +1,44 @@
+{
+  "observed_ns": 1793431161438954319,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_WORDSCAN_CALL_COMPOSITION.json",
+    "sha256": "b0ba5b15ad618737b0dd5703160b4d07060851904817388b086a53c141d06a92"
+  },
+  "progress": {
+    "report": "work/resident_bitselect_step_refinement_20261031/review.json",
+    "report_sha256": "cf521a01f313e53b560ec96ea3639e34923cc23a225e515b4fedb99cb5b8d004",
+    "independent_review": "work/resident_bitselect_step_refinement_20261031/independent_review.json",
+    "independent_review_sha256": "fcba8976587282bf627548baa7ab9933f5dbb15d7bf13aed0af345649d5f1980",
+    "feasible_UNSAT_queries": 24,
+    "admitted_steps": 6,
+    "independent_integer_source_cases": 2016,
+    "shared_syntax_parsers_only": true,
+    "full_six_step_call_control_proved": false,
+    "bit_parent_helper_lifetime_proved": false,
+    "actual_encoded_memory_contract_proved": false,
+    "actual_whole_select_semantics_proved": false,
+    "HDL_simulation_executed": false,
+    "full_sequential_HDL_equivalence_proved": false,
+    "scope": "Source-interpreted nonblocking local iteration refinement for generated selectbit helper5phase pipeline. For each actual half32/16/8/4/2/1,begin at admitted nonterminal phase3with arbitrary64bitcurrentword/rank,32bitbitbase,all other data registers arbitrary,and coherent step/half/mask/control registers. Source clockblocks and supported width-correct expressions are evaluated through3->4->0;actual belowdepends on the captured current low-half word and equals frozen Cpopulation by6feasible BVqueries,with arbitrary initial pipeline data eliminated. Cut the now-completed7bitbelowwire to an arbitrary symbol under this local semantic equality,then source phase1compare/bitupdate and phase2value/rankcommit yield18feasible BVqueries matching reference half selection. Delayed half/preserved maskedword/saved oldvalue align correctly despite overlap with next iteration preparation. These24queries prove six admitted step-local refinements,not that startup/loopcontrol actually reaches exactly these coherent preconditions or that six such steps compose across real calls. Source phase graph/blockzero checks do not replace a coupled call/control proof. Frozen population cardinality semantics is reused from staged reference proofs. Actual parent argument/outputcapture lifetime,valid initial rank<wordpopulation,full six-step termination/finalbit,parent result reconstruction,encodedmemoryidentity,outerget/execute/fullRTL/4state/native/timing/board behavior remain open. No old timeoutquery reruns,DUT/process/input/cache/guard/budget changes or HDL/HLS/native flow.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v256_20261031/matrix.json",
+    "sha256": "6501292ae017e07b5c2c62fe28dc2cba95da65aaa646bfee8d5a803ccb82d2bd"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v256.json",
+    "sha256": "34d2155bb56fff32e3e8b20368b9601cd209eafbb8fdf9bfb90bad45f918539f"
+  },
+  "next_action": "Couple bithelper startup/step counter/drain and select_rparent lifetime/output captures to establish exactly six coherent local refinements and correct final bit/value/rank. Admitted sixhalf local count/data updates now checked24UNSATplus2016independent integer-source cases. Valid initial rank<wordpopulation and actualencodedmemory/outergetcontracts remain open. Poll original handles first;retain guards/budgets/inputs/caches/failed evidence and old populationUNKNOWNs.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

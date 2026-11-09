@@ -1,0 +1,111 @@
+{
+  "schema": "FUSIONPAR_WORK_PLAN_V1",
+  "scope": "C++ joint transaction framework, real VPR closure, paired sequential/interleaved development evaluation",
+  "gates": [
+    {
+      "id": "G1",
+      "requirement": "Atomic placement/site/route/resource state, endpoint remapping, timing barrier, version conflicts, bounded repair, deterministic replay",
+      "status": "verified",
+      "evidence": "113 C++ checks including weight-dependent tree attachment, PR/empty-tree equivalence and retained branch invariance; full native publication audits"
+    },
+    {
+      "id": "G2",
+      "requirement": "Real VPR case with moved placement, PR C-model candidate routing, native placement/routing validation and repeated semantic outputs",
+      "status": "protected_QoR_development_and_supported_independent_inputs_verified",
+      "evidence": "Three-design nine-evaluation feedback study: 30 runs, 85 QoR commits, 185 aborts, 115 timing barriers; five-repeat full-state/event/timing determinism; independent state and budget audits; frozen independent cohort: four supported designs, 80 host runs, eight publication audits, 35 QoR commits; two additional designs fail root-clock conversion and remain coverage failures"
+    },
+    {
+      "id": "G3",
+      "requirement": "Same-component sequential/shared/interleaved/repair comparison including all initialization, copying, validation and fallback costs",
+      "status": "same_component_and_evaluation_budget_controls_verified_general_fusion_benefit_unproven",
+      "evidence": "Same retained-router staged controls completed; matched nine-evaluation feedback changes alu4 WL/CPD tradeoff but does not improve ex5p/misex3 final QoR; PR full reroute remains outside common CPD gate; 54 timing-weight runs preserve all old weight-zero semantics; weighted full rerouting improves CPD but misses WL gate; 132 non-overlapping validation cost ledgers audited; cache changes preserve 630 native-file comparisons; TP best-visited strong reference adds 75 canonical placement checks but has a 24-closure budget; fresh 15-run TP nine-closure reference passes 135 native closure audits and repeated full-trajectory comparison; common final objective favors TP on ex5p/misex3 and FP on alu4; no paired timing claim; independent cohort: all four shared staged/interleaved pairs unchanged in quality; nine-evaluation feedback worse on three designs and equal on one, with no universal gain"
+    }
+  ],
+  "deferred_components": [
+    "advanced TP proposal policy",
+    "RC predictor (bypass first)",
+    "DR multi-die extension",
+    "hardware optimization after profiling"
+  ],
+  "claim_limits": [
+    "Local refinement starts from a legal routed design and does not establish full P&R from packed input",
+    "No physical U280 performance claim",
+    "No speedup claim from synthetic tests or stage-only timing",
+    "Existing TP move/rollback machinery is prior component work",
+    "Protocol-only commits are excluded from QoR/performance evidence"
+  ],
+  "next_work": [],
+  "evidence_index": "framework_evidence_recheck_2026-10-13.json",
+  "independent_publication_audit": "ex5p_publication_audit_2026-10-13.json",
+  "completed_increments": [
+    {
+      "feature": "rejected-candidate native delay/WL attribution",
+      "evidence": "ex5p_rejection_attribution_2026-10-13.json"
+    },
+    {
+      "feature": "bounded failure-to-placement repair, immutable snapshots, feedback provenance and native delay bridge",
+      "evidence": "placement_repair_status_2026-10-13.json",
+      "result": "79 unit checks and three-design native development audits pass; zero QoR-accepted commit"
+    },
+    {
+      "feature": "Explicit retained-tree FP controller using unchanged PR search/commit kernels, exact per-net ownership, paired empty-tree control and native IO serialization repair",
+      "evidence": "tree_reuse_status_2026-10-13.json",
+      "result": "Local development QoR improvements reproduced; no independent fusion/speedup claim"
+    },
+    {
+      "feature": "Same retained-router staged controls and reproduced frozen TP followed by priority-aligned fixed-placement PR",
+      "evidence": "controller_baselines_status_2026-10-13.json",
+      "result": "45 protected controller runs and 15 legality-only PR runs re-audited; no universal interleaving benefit; all full-reroute PR outputs exceed common CPD gate"
+    },
+    {
+      "feature": "Retained-router feedback repair consumes the same total evaluation budget as blind HPWL candidate selection",
+      "evidence": "feedback_budget_status_2026-10-13.json",
+      "result": "30 nine-evaluation runs, five repeats per mode/design; 85 QoR commits and 60 repair attempts; native/state/budget audits and two negative auditor controls pass; only alu4 has lower final WL with feedback, at higher CPD than blind control"
+    },
+    {
+      "feature": "Explicit common upstream tree-timing weight and non-overlapping native validation cost ledger",
+      "evidence": "tree_timing_cost_status_2026-10-13.json",
+      "result": "113 checks and 54 runs audited; all weight-zero state/event/timing outputs reproduce archives; full weight improves PR CPD but violates common WL gate in all three cases; controller effects mixed; default unchanged; RR XML decode accounts for 35.04% of 132 profiled validation bodies"
+    },
+    {
+      "feature": "Immutable complete-CSR RR export metadata with native byte equality and full preparation charging",
+      "evidence": "rr_export_cache_status_2026-10-13.json",
+      "result": "60 runs, 90 paired native validations and 630 byte comparisons pass; 40 QoR commits, 80 aborts, 100 timing barriers; host faster but charged short-batch totals worse; default XML retained"
+    },
+    {
+      "feature": "Common-final-objective selection over all 24 native TP trials per design, including TP rejections",
+      "evidence": "tp_checkpoint_reference_status_2026-10-13.json",
+      "result": "All 75 original/visited layouts independently checked against common contract; 72 proposal/canonical coordinate comparisons; selected trials 5/20/20 all rejected by TP online policy; full 24-closure cost retained; no equal-budget claim",
+      "contract_audit": "tp_checkpoint_contract_audit_2026-10-13.json",
+      "negative_controls": "tp_checkpoint_auditor_regression_2026-10-13.json"
+    },
+    {
+      "feature": "Fresh frozen TP nine-closure reference with common final quality selector and five complete invocations per design",
+      "evidence": "tp_budget_reference_status_2026-10-13.json",
+      "result": "15 new invocations, 135 legal native candidate closures and five-repeat full trajectory determinism; same initial net/place/route as FP; TP wins final WL on ex5p/misex3, FP wins on alu4; internal objectives/work units differ and timings are not paired"
+    },
+    {
+      "feature": "Frozen six-input validation with preserved input failures and complete final analysis",
+      "evidence": "independent_validation_status_2026-10-13.json",
+      "report": "INDEPENDENT_VALIDATION_RESULTS.md",
+      "result": "All 12 suites attempted; eight audited, four root-clock conversion failures, support 4/6; 80 host runs, 35 QoR commits, 405 aborts, 115 timing barriers, 105 repairs; no general fusion benefit"
+    }
+  ],
+  "incremental_evidence_index": "independent_validation_status_2026-10-13.json",
+  "active_validation": {
+    "status": "terminal_with_input_coverage_failures",
+    "output": "work/independent_validation_v1",
+    "progress": "independent_validation_progress_2026-10-13.json",
+    "all_suites_passed": false,
+    "source_edits_forbidden_until_terminal": false
+  },
+  "status": "initial_framework_accepted_with_declared_input_boundary",
+  "acceptance_report": "FRAMEWORK_ACCEPTANCE.md",
+  "acceptance": "framework_acceptance_2026-10-13.json",
+  "historical_first_checkpoint": "framework_status_2026-10-13.json",
+  "follow_up_research": [
+    "Implement explicit ignored-net membership and serialization before expanding root-clock support; preserve the archived coverage failures",
+    "Profile candidate enumeration separately, then evaluate improved TP/RC policies under newly frozen protocols and validation inputs",
+    "Decide hardware partition, transaction pool and binary/HBM ABI from measured footprints only after algorithm and cost evidence justify it"
+  ]
+}

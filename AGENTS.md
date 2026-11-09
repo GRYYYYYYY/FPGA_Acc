@@ -109,6 +109,20 @@ Vivado recognizes the following XCU280 parts:
     xcu280-fsvh2892-2L-e
     xcu280-fsvh2892-2LV-e
 
+## Paper Toolchain
+
+TeX Live 2026 is installed persistently at:
+
+    /inspire/hdd/global_user/guoruiyuan-253208540291/texlive/2026
+
+Load `pdflatex`, `xelatex`, `lualatex`, `bibtex`, `latexmk`, and `tlmgr` with:
+
+    source /inspire/hdd/global_user/guoruiyuan-253208540291/texlive/setup.sh
+
+The local installation uses the Tsinghua CTAN mirror and includes the ACM
+`acmart` class plus the packages needed by the TilePlace paper. It is independent
+of the container overlay and occupies approximately 1.5 GiB on persistent GPFS.
+
 ## Model and Long-Running Job Delegation
 
 - Keep the primary agent on `gpt-5.6-sol` with `high` reasoning for architecture,
@@ -123,3 +137,34 @@ Vivado recognizes the following XCU280 parts:
   optimization choices, interpretation of results, and user-facing conclusions.
 - Do not spawn the monitoring agent for quick environment checks, short report
   reads, or commands expected to finish within a few minutes.
+
+
+## Migrated Container Verification — 2026-11-06
+
+This dated observation supersedes the earlier host-specific capacity/path facts
+for the current container; previous experiment logs and provenance remain historical.
+
+- Project root: `/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute`.
+- Host: `fpgaacc-1--5e8de292dbd1-gxc4guphhd`; Ubuntu 22.04.4, kernel 5.15.0-119-generic.
+- Host exposes 128 logical CPUs and approximately 1.5 TiB RAM, no swap.
+  Container limits are **300 GiB memory** and **54 CPU equivalents** (cpu.max
+  5400000/100000). Original experiment-specific stricter guards still apply.
+- New workspace filesystem reports 32 TiB total and approximately 26 TiB free
+  at observation. This is shared filesystem capacity, not a per-job allocation.
+- Vivado, Vitis v++, and Vitis HLS version commands each confirmed 2022.2.
+  Existing tools/platform/XRT remain accessible under the original
+  `/inspire/hdd/global_user/guoruiyuan-253208540291` prefix. Use their setup paths
+  documented above; do not assume they were copied into the new project prefix.
+- `platforminfo -p` successfully parsed the existing U280 XPFM and hardware / hardware-emulation XSA paths.
+- XRT examine confirmed 2.14.354, **0 devices found**, unknown kernel drivers;
+  PCI sysfs also lists no Xilinx 0x10ee device. Physical board remains unavailable.
+- System Python has no pip or globally importable z3. The migrated project has
+  Z3 4.13.0 under `work/resident_wordscan_bitvector_audit_20261031/python_deps`;
+  source proof tools use this explicit local dependency.
+- Original 148 paused experiment/monitor processes were explicitly terminated
+  in the old container for migration; see `MIGRATION_PROCESS_RELEASE_20261106.json`.
+  No native experiment jobs or Vivado MCP sessions were active at recovery.
+  Old manifests are historical and cannot establish liveness or authorize PID reuse.
+- Evidence: `projects/dieroute/work/migration_recovery_20261106/`, with version,
+  XRT, platform and immutable source-binding observations. Research authority is
+  selected through `projects/dieroute/experiments/research_plan.json` current pointers.

@@ -1,0 +1,10 @@
+{
+  "status": "partial",
+  "validation": "native compile and smoke test exit0; 8 trials cover move/swap/chain2/chain3",
+  "scope": "Five-kind integer control loop implemented with caller scratch/Emit; macro_swap branch present but not tested, full reference comparison/HLS/native integration pending. Emit side effects require batch discard on later error. Host canonical validation required.",
+  "sha256": {
+    "enumerate_words.hpp": "4ff9d9bfb9c6378e4140eea3d0d47ab9e2e1fa6ccbfc1473ba8b2cb5e30f261b",
+    "test_enumerate_smoke.cpp": "258958881f937e5e2e0bf074bea23eb26fa475be9c308acd01665a7c42f003fc",
+    "merge_core.hpp": "5fd7168f07908308aed96f740d5cad93a8b547c9ff3021a435e3423401b7a45a"
+  }
+}

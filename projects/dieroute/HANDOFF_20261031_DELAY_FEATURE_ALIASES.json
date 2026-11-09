@@ -1,0 +1,37 @@
+{
+  "recorded_ns": 1793405857667745142,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_FROZEN_DELAY_RANKING.json",
+    "sha256": "634c041b6353ddd083018e37f139f7ee723f2e0cb74925994b09c51da4a97046"
+  },
+  "progress": {
+    "review": "work/native_delay_feature_alias_audit_20261031/review.json",
+    "review_sha256": "77a15b99095897851b8427de53f5c3df1a47ce807efe85904e4e92a7764d3307",
+    "independent_review": "work/native_delay_feature_alias_audit_20261031/independent_review.json",
+    "independent_review_sha256": "13e82bd7b12fee7134d20c316e2b6eaa514c21d3f2604cff8ac8778e39493f30",
+    "tree190_disagreement_groups": 4,
+    "tree190_empirical_minimax_bound_ps": "6",
+    "sdk_sum_slr_empirical_minimax_bound_ps": "14.5",
+    "scope": "Posterior exact-input identifiability audit of the already frozen native interconnect-delay development datasets. Group only the same net/task/pin/fold with distinct complete-tree identities and identical model input vectors. No cross-fold or cross-endpoint function assumption. Any lower bound is empirical for these recorded integer-ps targets and these unchanged representations, not a certified physical error bound, new-design generalization or route acceptance rule. No refit, coefficient/feature selection, native query/routing/RTL execution, acceptance tolerance change or hardware adoption.",
+    "routing_cost_ready": false,
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v178_20261031/matrix.json",
+    "sha256": "618b898912511334717e2e5c97378949071eaa18927540d00ba03b5c440429d8"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v178.json",
+    "sha256": "e7158bf79445ed50c3ad5f6f01fd20f323da4c17c9e5517e9b3b60f91694ae14"
+  },
+  "next_action": "Preserve native timing acceptance; coefficient-only changes cannot give exact predictions for the same-input aliases in the unchanged frozen representations. These are posterior interconnect recorded-target limits, not unseen physical-error guarantees or changed tolerances. No fit, feature tuning, native rerun, route or hardware adoption performed. Current matrix334claims preserves333prior claims. Preserve30watched identities and full-positive/canary/resource guards. Ledger remainsv15:9757/9968associated,211pending;820separate transitive/466root gaps. All8gates open.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

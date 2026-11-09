@@ -1,0 +1,38 @@
+{
+  "observed_ns": 1793404469654181220,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261030_APEX2_STAGE9_COUNTEREXAMPLE.json",
+    "sha256": "d13fc4bbc17573b18bd60314c7099244ac4f8db015e5539b29af675bb78629fb"
+  },
+  "progress": {
+    "report": "work/research_artifact_dependency_inventory_20261030/terminal_stdout_role_resolution.json",
+    "report_sha256": "09c258ac08471ba1fff2f7344f8fd75bc28b9471d2e90909d4090985fd938d3d",
+    "independent_review": "work/research_artifact_dependency_inventory_20261030/terminal_stdout_role_resolution_review.json",
+    "independent_review_sha256": "7bb1f1ed4ed11def001af478877b768d5a67763d18f9846e282af273612b5d41",
+    "ledger": "work/research_artifact_dependency_inventory_20261030/original_hash_field_content_ledger_v12_20261030.json",
+    "ledger_sha256": "3b886ccd52fb3cb48b5ecbbd62345cf74c828e9b6c76ca9428a8210defb4af57",
+    "cumulative_original_fields_bound": 9716,
+    "original_fields_not_bound": 252,
+    "root_paths_without_compatible_binding": 466,
+    "scope": "Content association through declared repeat/dispatch/case roles and retained generator semantics, not digest-only workspace search. Current generator bytes are pinned by this report; original production-time generator identity and unique origin are not reconstructed where absent. Five original provenance-guard failures remain failures; three complete C replay outputs and eleven graph-storage outputs remain their original scopes, including one explicit reused maximum sanitizer result. No graph/trace/TV reads, reruns, new experiment/RTL acceptance, runtime speedup or full artifact closure.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v172_20261030/matrix.json",
+    "sha256": "c255ae8c490b9ba845a9aafcb69e045c52be97a9c328e99fb2cd90a862db4d54"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261030_v172.json",
+    "sha256": "813d5ba6c453364b267e0ee2c4c0ba01fe7210425b1031226647bd0f480c26ac"
+  },
+  "next_action": "Use ledger v12:9716/9968 content-associated fields,252remaining over24phases. Separate820transitive/466root gaps unchanged. Five old guard failures remain failures; original C replay/storage outputs are not new RTL or fullsearch acceptance. Current matrix328claims,327old claims preserved. Preserve30monitored identities and original full-positive/canary/20GiB/12GiB/global72 guards; no quiet-job restart or huge trace/TV reads. Stage9apex2 posterior jointWL/CPD failure remains not adopted.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

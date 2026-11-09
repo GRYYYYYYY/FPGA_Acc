@@ -1,0 +1,25 @@
+{
+  "observed_ns": 1793399102047208350,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261030_CANDIDATE_PATH_BUDGETS.json",
+    "sha256": "8ebb13d0a7936f6e958791b42670919038087ce2e29cb8962943211f7e4dc2e6"
+  },
+  "review": {
+    "review": "work/native_candidate_capacity_replay_20261030/review.json",
+    "review_sha256": "6535babc1bee28a54299e9d9a3fe5cf9839bee65969cee3400aa9c8e15f5616d",
+    "preflight": "work/native_candidate_capacity_replay_20261030/registration_preflight.json",
+    "preflight_sha256": "25911b6f8abfa60b34e60a790a5489002edb50ecf528ac5e369f04ccfa21f65a",
+    "candidate_trees": 778,
+    "whole_candidate_memberships_checked": 7581620,
+    "scope": "Serial CPU admission replay of all retained trial candidates from the three original development sweeps. Not unsaved candidate certification, concurrent grants, hardware authority, new QoR pass or final acceptance.",
+    "research_complete": false
+  },
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "all_eight_gates_open": true
+  },
+  "next_action": "Preserve the live full28878 RTL runs and their original watchdog/guard owners; audit real terminal transitions before canaries. Continue original full-design/QoR/concurrency/hardware and artifact requirements; the serial candidate checks do not satisfy those gates.",
+  "research_complete": false
+}

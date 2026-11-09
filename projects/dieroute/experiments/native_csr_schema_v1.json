@@ -1,0 +1,36 @@
+{
+  "schema": "dieroute.native_csr.v1",
+  "scope": "raw directed topology with explicit PIP identity; not yet a design-qualified router or existing HLS kernel ABI",
+  "header": {
+    "bytes": 64,
+    "magic_ascii": "FPGAACCP",
+    "fields": ["magic:u64@0", "schema_major:u16@8=0", "schema_minor:u16@10=1", "object_type:u32@12", "element_count:u64@16", "payload_bytes:u64@24", "architecture_hash:128bits@32", "crc64:u64@48", "flags:u64@56=1"],
+    "endianness": "little-endian",
+    "crc": "CRC-64/ECMA-182, polynomial 0x42f0e1eba9ea3693, initial 0, non-reflected, xorout 0; payload only",
+    "architecture_hash": "first 16 bytes of SHA-256 of canonical sorted compact JSON {schema,nodes_sha256,pips_sha256}; complete hash and descriptor in manifest"
+  },
+  "objects": {
+    "offsets.bin": {"type": "0x44520001", "record_bytes": 8, "count": "node_count+1", "record": "u64 arc offset; first=0, monotonic, last=arc_count"},
+    "arcs.bin": {"type": "0x44520002", "record_bytes": 8, "record": ["destination_node:u32", "edge_key:u32"], "ordering": "each source slice sorted by destination then edge_key; parallel PIPs retained"},
+    "protection.bin": {"type": "0x44520003", "record_bytes": 1, "count": "node_count", "record": "immutable-resource metadata bit mask"}
+  },
+  "edge_key": {
+    "encoding": "(native_PIP_catalog_ID << 1) | direction",
+    "direction_0": "raw PIP start node -> raw end node",
+    "direction_1": "raw PIP end node -> raw start node",
+    "limit": "PIP count <= 2^31; reject larger catalogs before packing",
+    "coverage": "one declared direction for unidirectional PIPs, both directions for bidirectional PIPs; retain route-throughs; omit and enumerate missing-endpoint PIPs"
+  },
+  "protection_bits": {
+    "1": "at least one excluded/background net owner",
+    "2": "partition pin",
+    "4": "native node tied to GND or VCC",
+    "8": "native member getter empty; exhaustive membership retained separately"
+  },
+  "limitations": [
+    "Protection is metadata until enforced by the routing controller",
+    "Core routing tile, clock, site-pin access and route-through admissibility are not established by CSR membership",
+    "No capacity, base cost or delay is fabricated",
+    "CSR storage excludes raw native lookup catalogs, geometry, mutable state, route trees, tasks and hardware queues; storage size alone is not HBM feasibility or performance evidence"
+  ]
+}

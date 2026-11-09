@@ -1,0 +1,15 @@
+{
+  "schema": "FUSIONPAR_INDEPENDENT_PUBLICATION_AUDIT_V1",
+  "pass": true,
+  "suite": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/ex5p_framework_validation_v1",
+  "suite_audit_sha256": "2ec324f3e1a3c7fa903fb59d2dd2f81e71a7f9b278a9042da91f99302a281bd8",
+  "auditor_sha256": "a1c1185eb76cdb0669b83166224ce68f7ca4626b493e5d0e52fd68a5654f8c7b",
+  "counts": {
+    "runs": 25,
+    "qor_commits": 0,
+    "protocol_commits": 15,
+    "aborts": 40,
+    "timing_barriers": 40
+  },
+  "scope": "full serialized state/version/timing reconstruction and archived native bindings; not independent P&R performance replication"
+}

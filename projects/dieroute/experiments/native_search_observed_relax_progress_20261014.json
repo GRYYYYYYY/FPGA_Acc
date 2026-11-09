@@ -1,0 +1,85 @@
+{
+  "status": "directed_rtl_and_randomized_cpu_component_passed",
+  "verified_ns": 1791983643038382796,
+  "inputs": {
+    "include/native_search_hbm_relax_observed.hpp": "05d5bd449b9b62c597db4d958c03defdeb1e809f7d67576bbdea7c8781366647",
+    "tb/native_search_hbm_relax_observed_tb.cpp": "3554513028ff975e114954c073a02cbc79dace8e4960e5639e0437e26d773c75"
+  },
+  "cases": 8,
+  "behavior": "Protected labels avoid observations; dominated, unreachable, cost-limited and overflow attempts retain actual observations; admission occurs after finite-cost checks",
+  "remaining": [
+    "Native physical graph integration and full search RTL differential validation",
+    "Real owner transport source binding",
+    "Complete graph search and reconstruction",
+    "Full-capacity combined RTL and platform integration"
+  ],
+  "board_result": false,
+  "research_complete": false,
+  "differential": {
+    "status": "passed",
+    "cases": 10000,
+    "seed": 431927,
+    "reference": "Existing SparseLabelWorker receiver and tuple queue; independent scalar arc cost/filter logic",
+    "checked": [
+      "status",
+      "observation count and consumed fields",
+      "label cost/hops/parent/edge/version",
+      "queue entry"
+    ],
+    "inputs": {
+      "tb/native_search_hbm_relax_observed_differential_tb.cpp": "38eadb71014f9104a8d3b8cb30ca4843e1aa23eb893a2d207b8be2f21b26bc04",
+      "include/sparse_label_worker.hpp": "49b583ce14a93f3e70dea9233ced91111517b74cb7421e65dfadf7c5b1c986e4",
+      "include/native_search_hbm_relax_observed.hpp": "05d5bd449b9b62c597db4d958c03defdeb1e809f7d67576bbdea7c8781366647"
+    },
+    "verified_ns": 1791983717560267944,
+    "scope": "Serialized single-arc finite random inputs; not full graph routing, owner transport or RTL proof"
+  },
+  "combined_hls": {
+    "status": "passed",
+    "manifest": "work/native_search_relax_observed_hls_v2_20261014/manifest.json",
+    "directed_top_calls": 8,
+    "maximum_storage_capacity": 1024,
+    "test_active_capacity": 8,
+    "cpu_top_test": "passed",
+    "axi_master_bundles": 2,
+    "platform_integration": "Numerically fits two remaining master slots for a single CU; actual link and bank allocation not verified",
+    "audit": "work/native_search_relax_observed_hls_v2_20261014/audit.json",
+    "data_width_bits": 512
+  },
+  "prior_four_master_hls": {
+    "status": "passed",
+    "manifest": "work/native_search_relax_observed_hls_v1_20261014/manifest.json",
+    "directed_top_calls": 8,
+    "maximum_storage_capacity": 1024,
+    "test_active_capacity": 8,
+    "cpu_top_test": "passed",
+    "axi_master_bundles": 4,
+    "platform_integration": "Requires shared/reduced master budget; existing seven-CU image already uses 30 masters",
+    "audit": "work/native_search_relax_observed_hls_v1_20261014/audit.json"
+  },
+  "composed_search_differential": "experiments/native_search_hbm_search_differential_20261014.json",
+  "native_csr_probe": "work/native_hbm_search_probe_v1_20261014/manifest.json",
+  "native_cross_slr_probe": "work/native_hbm_cross_slr_probe_v1_20261014/audit.json",
+  "native_guided_probe": "work/native_hbm_guided_probe_v1_20261014/manifest.json",
+  "native_capacity_scaling": [
+    "work/native_hbm_large_probe_v1_20261014/manifest.json",
+    "work/native_hbm_2m_probe_v1_20261014/manifest.json"
+  ],
+  "expanded_capacity_top": {
+    "hls_rtl": "work/native_search_relax_observed_hls_scale_v1_20261014/audit.json",
+    "actual_top_native_cmodel": "work/native_hbm_top_2m_probe_v1_20261014/manifest.json",
+    "full_capacity_rtl_verified": false
+  },
+  "combined_worker": {
+    "hls_rtl": "work/native_search_worker_hls_v1_20261014/audit.json",
+    "native_top_cmodel": "work/native_worker_2m_probe_v1_20261014/manifest.json",
+    "axi_masters": 2,
+    "autonomous_search": false
+  },
+  "four_operation_worker": {
+    "hls_rtl": "work/native_search_worker_hls_v2_20261014/audit.json",
+    "native_top_cmodel": "work/native_worker_allops_2m_probe_v1_20261014/manifest.json",
+    "axi_masters": 2,
+    "autonomous_search": false
+  }
+}

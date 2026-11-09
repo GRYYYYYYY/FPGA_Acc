@@ -1,0 +1,38 @@
+{
+  "observed_ns": 1793407896937702399,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_LITERATURE_DOCUMENT_ROLES.json",
+    "sha256": "cebde107c064f69ce7af65bb92e4f4f8ad4e7070a6aba1667520d14d14782a17"
+  },
+  "progress": {
+    "report": "work/fullgraph_terminal_auditor_readiness_20261031/review_completed_executable_bindings.json",
+    "report_sha256": "1e8276f3c0a25a5f682a06add828ef286a228fc491cfeddb6784d5d59e3598ff",
+    "review": "work/fullgraph_terminal_auditor_readiness_20261031/dependency_review.json",
+    "review_sha256": "35d07217f31e32c19e424f8f2f2e2497267c61b8d850c4f9580aefa9012b03ca",
+    "candidate_runs": 6,
+    "checked_binding_references": 1470,
+    "deferred_shared_report_references": 12,
+    "unique_files_content_hashed": 1460,
+    "terminal_audits_executed": 0,
+    "scope": "Current immutable dependency/readiness check only. Auditors parsed as source, not imported/executed; nine static guard strings are evidence of required code checks, not proof of all auditor behavior. Six original supervisor/pipeline/xsim identity triples are live. Declared small input bindings are compared to retained protocol hashes; no shared TV/cache metadata, trace or original dense program access. No RTL correctness or completed-call evidence, negative canary execution, candidate adoption, restart, limit change or new owner. Original full28878/watchdog/resource requirements remain. Supplemental exact six Cpost executable bindings directly hashed under16MiB/file and80MiB total; binaries never executed. Shared-cache report/log references remain explicitly deferred. This is partial readiness, not full terminal acceptance.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v187_20261031/matrix.json",
+    "sha256": "7704b62eecb843c3dc95e666b671eec17e4a78cb0f88c47071c892fe75132859"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v187.json",
+    "sha256": "593542f5385044e149b1024d58843bc799c96a0e07e37109fcfb2a5a0ef7f910"
+  },
+  "next_action": "Existing fullgraph terminal auditor dependencies partially rechecked:1470matching bindings,12deferred shared-cache report references. Six live runs remain unaccepted; no terminal auditor executed. Original full28878,watchdog1e9,guards and negative-canary prerequisites unchanged. Preserve30watched identities and sole strict-native queue owner. Ledger v20 remains9829/9968associated,139pending plus820separate transitive/466root gaps. Integrated34page draft unchanged. Handle actual terminal before more static work; do not restart quiet jobs or access huge trace/sparseTV.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

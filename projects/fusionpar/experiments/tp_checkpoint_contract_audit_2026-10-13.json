@@ -1,0 +1,1074 @@
+{
+  "schema": "FUSIONPAR_TP_CHECKPOINT_CONTRACT_AUDIT_V1",
+  "pass": true,
+  "reference": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/tp_checkpoint_reference_status_2026-10-13.json",
+    "sha256": "6dd840b4123e1b85a6d9e4baf3b9d8b388e667b436ec7cb373cd158f41515f00"
+  },
+  "auditor_sha256": "f99bef187c6bcc84ac972006f8d65d7ba377e57f58800c49e69cc51983e6521c",
+  "helper_sources": [
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/tileplace_vpr.py",
+      "sha256": "355535e49a0ec47b485e8c374e34fa35ee323fbf406b731b920ca40ab582d364"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/pre_route_endpoints.py",
+      "sha256": "40ad4611760c4b1be22b75decef2b3330f6c923e5cf249e1ab2726fa0346ea74"
+    }
+  ],
+  "rows": [
+    {
+      "design": "ex5p",
+      "trial": 0,
+      "selected": false,
+      "placement_sha256": "26d529055cf05083c1dfeb247847989ce159f906eee563383d8abf9cd23a862c",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 150,
+        "occupied_sites": 150,
+        "macros": 0,
+        "placement_sha256": "26d529055cf05083c1dfeb247847989ce159f906eee563383d8abf9cd23a862c"
+      }
+    },
+    {
+      "design": "ex5p",
+      "trial": 1,
+      "selected": false,
+      "placement_sha256": "9b9df3f7210bd007763ce017d63b3325febecf15e831b6013a70d233c857ab5d",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 150,
+        "occupied_sites": 150,
+        "macros": 0,
+        "placement_sha256": "9b9df3f7210bd007763ce017d63b3325febecf15e831b6013a70d233c857ab5d"
+      }
+    },
+    {
+      "design": "ex5p",
+      "trial": 2,
+      "selected": false,
+      "placement_sha256": "ec0cd761a0acea93e6c810e16daba767a9453767864e764eda8f7e036ca4b7d5",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 150,
+        "occupied_sites": 150,
+        "macros": 0,
+        "placement_sha256": "ec0cd761a0acea93e6c810e16daba767a9453767864e764eda8f7e036ca4b7d5"
+      }
+    },
+    {
+      "design": "ex5p",
+      "trial": 3,
+      "selected": false,
+      "placement_sha256": "1f8e43a6508d4611ec8f26cd784bf595e754b9131745dbe02d70f7c040dd1cdd",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 150,
+        "occupied_sites": 150,
+        "macros": 0,
+        "placement_sha256": "1f8e43a6508d4611ec8f26cd784bf595e754b9131745dbe02d70f7c040dd1cdd"
+      }
+    },
+    {
+      "design": "ex5p",
+      "trial": 4,
+      "selected": false,
+      "placement_sha256": "8537c7e0bf59acf030c37d7dd678d86397eca829782561398c04fdd0d5d30498",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 150,
+        "occupied_sites": 150,
+        "macros": 0,
+        "placement_sha256": "8537c7e0bf59acf030c37d7dd678d86397eca829782561398c04fdd0d5d30498"
+      }
+    },
+    {
+      "design": "ex5p",
+      "trial": 5,
+      "selected": true,
+      "placement_sha256": "8c09830b405b6811f04f4068af4b07a1bd7b90162f46b578ef482bf131593ccc",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 150,
+        "occupied_sites": 150,
+        "macros": 0,
+        "placement_sha256": "8c09830b405b6811f04f4068af4b07a1bd7b90162f46b578ef482bf131593ccc"
+      }
+    },
+    {
+      "design": "ex5p",
+      "trial": 6,
+      "selected": false,
+      "placement_sha256": "483ffb047b40b1243a5c071621baca0410d6e5e3011f10ed494e4e88c962aef5",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 150,
+        "occupied_sites": 150,
+        "macros": 0,
+        "placement_sha256": "483ffb047b40b1243a5c071621baca0410d6e5e3011f10ed494e4e88c962aef5"
+      }
+    },
+    {
+      "design": "ex5p",
+      "trial": 7,
+      "selected": false,
+      "placement_sha256": "3cd2875980b548076017bc6f361358284d50ff70499e1dfad83edc4702c62ac7",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 150,
+        "occupied_sites": 150,
+        "macros": 0,
+        "placement_sha256": "3cd2875980b548076017bc6f361358284d50ff70499e1dfad83edc4702c62ac7"
+      }
+    },
+    {
+      "design": "ex5p",
+      "trial": 8,
+      "selected": false,
+      "placement_sha256": "785d5a77dd50d113a28f45c6fb3acd68af220a377d867623994515e61ba5bec0",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 150,
+        "occupied_sites": 150,
+        "macros": 0,
+        "placement_sha256": "785d5a77dd50d113a28f45c6fb3acd68af220a377d867623994515e61ba5bec0"
+      }
+    },
+    {
+      "design": "ex5p",
+      "trial": 9,
+      "selected": false,
+      "placement_sha256": "7439cfa5a30d1b7ef8e04ac17cb4b61f072c21beee03d41dedf1cf5775c2a314",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 150,
+        "occupied_sites": 150,
+        "macros": 0,
+        "placement_sha256": "7439cfa5a30d1b7ef8e04ac17cb4b61f072c21beee03d41dedf1cf5775c2a314"
+      }
+    },
+    {
+      "design": "ex5p",
+      "trial": 10,
+      "selected": false,
+      "placement_sha256": "12b951491804a5e016ea933324a91991f70e4ed34299d254d5e037e5342f6c17",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 150,
+        "occupied_sites": 150,
+        "macros": 0,
+        "placement_sha256": "12b951491804a5e016ea933324a91991f70e4ed34299d254d5e037e5342f6c17"
+      }
+    },
+    {
+      "design": "ex5p",
+      "trial": 11,
+      "selected": false,
+      "placement_sha256": "f185af0a099dc776b2eddba4e439f3568e517902cfd9b36e4cfdd741b17357f5",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 150,
+        "occupied_sites": 150,
+        "macros": 0,
+        "placement_sha256": "f185af0a099dc776b2eddba4e439f3568e517902cfd9b36e4cfdd741b17357f5"
+      }
+    },
+    {
+      "design": "ex5p",
+      "trial": 12,
+      "selected": false,
+      "placement_sha256": "37469b03b8f9b16368446b43ff56a38385b249ca48f0a80b96016e083bd5205f",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 150,
+        "occupied_sites": 150,
+        "macros": 0,
+        "placement_sha256": "37469b03b8f9b16368446b43ff56a38385b249ca48f0a80b96016e083bd5205f"
+      }
+    },
+    {
+      "design": "ex5p",
+      "trial": 13,
+      "selected": false,
+      "placement_sha256": "33b45a95e6b747b00aad6a5a5ac4f9df2ba59a150bee0b37e9b2a0cb0d77ebb6",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 150,
+        "occupied_sites": 150,
+        "macros": 0,
+        "placement_sha256": "33b45a95e6b747b00aad6a5a5ac4f9df2ba59a150bee0b37e9b2a0cb0d77ebb6"
+      }
+    },
+    {
+      "design": "ex5p",
+      "trial": 14,
+      "selected": false,
+      "placement_sha256": "288ee2c1196d9d07b79679b65ccb53ef18ef1126b02da23ef11172400e2e743d",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 150,
+        "occupied_sites": 150,
+        "macros": 0,
+        "placement_sha256": "288ee2c1196d9d07b79679b65ccb53ef18ef1126b02da23ef11172400e2e743d"
+      }
+    },
+    {
+      "design": "ex5p",
+      "trial": 15,
+      "selected": false,
+      "placement_sha256": "6b20bd4441efe44d234a209063b610f02f308d92829d2c7fb85f7013b16599b5",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 150,
+        "occupied_sites": 150,
+        "macros": 0,
+        "placement_sha256": "6b20bd4441efe44d234a209063b610f02f308d92829d2c7fb85f7013b16599b5"
+      }
+    },
+    {
+      "design": "ex5p",
+      "trial": 16,
+      "selected": false,
+      "placement_sha256": "7937f65785a9a2be408ad66483d1c8922761e13f4c5bbf55dab259309d9eacb6",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 150,
+        "occupied_sites": 150,
+        "macros": 0,
+        "placement_sha256": "7937f65785a9a2be408ad66483d1c8922761e13f4c5bbf55dab259309d9eacb6"
+      }
+    },
+    {
+      "design": "ex5p",
+      "trial": 17,
+      "selected": false,
+      "placement_sha256": "2e81f39bb2552aebab1d2c13a91c5fae1f2a903f6f1d6bf5d83c4f7a5514d4ab",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 150,
+        "occupied_sites": 150,
+        "macros": 0,
+        "placement_sha256": "2e81f39bb2552aebab1d2c13a91c5fae1f2a903f6f1d6bf5d83c4f7a5514d4ab"
+      }
+    },
+    {
+      "design": "ex5p",
+      "trial": 18,
+      "selected": false,
+      "placement_sha256": "3c47bc5fae46930927e2b6cf2053abe1f018040a7c9d074444cfdd161e460861",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 150,
+        "occupied_sites": 150,
+        "macros": 0,
+        "placement_sha256": "3c47bc5fae46930927e2b6cf2053abe1f018040a7c9d074444cfdd161e460861"
+      }
+    },
+    {
+      "design": "ex5p",
+      "trial": 19,
+      "selected": false,
+      "placement_sha256": "c3f2c11fb201c614dfb4972bdd7e6b7b08564a05761cac2ad787dfcc10cce77c",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 150,
+        "occupied_sites": 150,
+        "macros": 0,
+        "placement_sha256": "c3f2c11fb201c614dfb4972bdd7e6b7b08564a05761cac2ad787dfcc10cce77c"
+      }
+    },
+    {
+      "design": "ex5p",
+      "trial": 20,
+      "selected": false,
+      "placement_sha256": "dedb4723ebbf2109a748a09e48acf536e77d8fae76198719ecb2da51c59278aa",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 150,
+        "occupied_sites": 150,
+        "macros": 0,
+        "placement_sha256": "dedb4723ebbf2109a748a09e48acf536e77d8fae76198719ecb2da51c59278aa"
+      }
+    },
+    {
+      "design": "ex5p",
+      "trial": 21,
+      "selected": false,
+      "placement_sha256": "1f9228aed8972858d6776c913cb981bfb46acecc81fe5d28d14afc7d6501c813",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 150,
+        "occupied_sites": 150,
+        "macros": 0,
+        "placement_sha256": "1f9228aed8972858d6776c913cb981bfb46acecc81fe5d28d14afc7d6501c813"
+      }
+    },
+    {
+      "design": "ex5p",
+      "trial": 22,
+      "selected": false,
+      "placement_sha256": "453d852428df2d74cdf30cb661d05369e0338b6aff111d6467830902a86ebd95",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 150,
+        "occupied_sites": 150,
+        "macros": 0,
+        "placement_sha256": "453d852428df2d74cdf30cb661d05369e0338b6aff111d6467830902a86ebd95"
+      }
+    },
+    {
+      "design": "ex5p",
+      "trial": 23,
+      "selected": false,
+      "placement_sha256": "1fb603df42763514cdcbad87128b293f03d533f504c6654bed3f082b3d9d0ebd",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 150,
+        "occupied_sites": 150,
+        "macros": 0,
+        "placement_sha256": "1fb603df42763514cdcbad87128b293f03d533f504c6654bed3f082b3d9d0ebd"
+      }
+    },
+    {
+      "design": "ex5p",
+      "trial": 24,
+      "selected": false,
+      "placement_sha256": "99294f5bbd487da0e64a1e3d040fee9535bcc83d7d9c420f5428a6ca7d47604a",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 150,
+        "occupied_sites": 150,
+        "macros": 0,
+        "placement_sha256": "99294f5bbd487da0e64a1e3d040fee9535bcc83d7d9c420f5428a6ca7d47604a"
+      }
+    },
+    {
+      "design": "alu4",
+      "trial": 0,
+      "selected": false,
+      "placement_sha256": "9b918561626c51c1e42e87fda1f7350e835ca9f41e60a864cec63b1dd52b0cb1",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 131,
+        "occupied_sites": 131,
+        "macros": 0,
+        "placement_sha256": "9b918561626c51c1e42e87fda1f7350e835ca9f41e60a864cec63b1dd52b0cb1"
+      }
+    },
+    {
+      "design": "alu4",
+      "trial": 1,
+      "selected": false,
+      "placement_sha256": "20770c114a581acc8104d62ace714c0e3bb312397681244d62b3eb848a080b4f",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 131,
+        "occupied_sites": 131,
+        "macros": 0,
+        "placement_sha256": "20770c114a581acc8104d62ace714c0e3bb312397681244d62b3eb848a080b4f"
+      }
+    },
+    {
+      "design": "alu4",
+      "trial": 2,
+      "selected": false,
+      "placement_sha256": "f337e0a7e341c608d25baae9590db12e4bddeab4527e6b261dcda38b2cde2ddf",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 131,
+        "occupied_sites": 131,
+        "macros": 0,
+        "placement_sha256": "f337e0a7e341c608d25baae9590db12e4bddeab4527e6b261dcda38b2cde2ddf"
+      }
+    },
+    {
+      "design": "alu4",
+      "trial": 3,
+      "selected": false,
+      "placement_sha256": "869d02e1749a962e6c6dfcbc3f0182fbf422611954e4a0efc17d163cd2f9cbad",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 131,
+        "occupied_sites": 131,
+        "macros": 0,
+        "placement_sha256": "869d02e1749a962e6c6dfcbc3f0182fbf422611954e4a0efc17d163cd2f9cbad"
+      }
+    },
+    {
+      "design": "alu4",
+      "trial": 4,
+      "selected": false,
+      "placement_sha256": "f8b0db503efae8fab999f064abad05b29381d5c95bc7bad00775f9f1604287ac",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 131,
+        "occupied_sites": 131,
+        "macros": 0,
+        "placement_sha256": "f8b0db503efae8fab999f064abad05b29381d5c95bc7bad00775f9f1604287ac"
+      }
+    },
+    {
+      "design": "alu4",
+      "trial": 5,
+      "selected": false,
+      "placement_sha256": "15b9c1275e851ad4463793a646f0332eb03f2f58552013d2a249949273345ebf",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 131,
+        "occupied_sites": 131,
+        "macros": 0,
+        "placement_sha256": "15b9c1275e851ad4463793a646f0332eb03f2f58552013d2a249949273345ebf"
+      }
+    },
+    {
+      "design": "alu4",
+      "trial": 6,
+      "selected": false,
+      "placement_sha256": "7421a7532e4c43384b9aad332cfcabb9a6fdfc4b9386e9c053881ff820679784",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 131,
+        "occupied_sites": 131,
+        "macros": 0,
+        "placement_sha256": "7421a7532e4c43384b9aad332cfcabb9a6fdfc4b9386e9c053881ff820679784"
+      }
+    },
+    {
+      "design": "alu4",
+      "trial": 7,
+      "selected": false,
+      "placement_sha256": "202c260e466da362fa74d5e7e56f825eaddbf59802a60d28dc5121bf9be120ab",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 131,
+        "occupied_sites": 131,
+        "macros": 0,
+        "placement_sha256": "202c260e466da362fa74d5e7e56f825eaddbf59802a60d28dc5121bf9be120ab"
+      }
+    },
+    {
+      "design": "alu4",
+      "trial": 8,
+      "selected": false,
+      "placement_sha256": "d22f2b1ac902a574dedf6f2e9180daddb9b115b22cb73eb83a32bb548c3a8d68",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 131,
+        "occupied_sites": 131,
+        "macros": 0,
+        "placement_sha256": "d22f2b1ac902a574dedf6f2e9180daddb9b115b22cb73eb83a32bb548c3a8d68"
+      }
+    },
+    {
+      "design": "alu4",
+      "trial": 9,
+      "selected": false,
+      "placement_sha256": "641097f5eddc62c41179ee376db5584fce0843f076b77072f6934fdbde7b9416",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 131,
+        "occupied_sites": 131,
+        "macros": 0,
+        "placement_sha256": "641097f5eddc62c41179ee376db5584fce0843f076b77072f6934fdbde7b9416"
+      }
+    },
+    {
+      "design": "alu4",
+      "trial": 10,
+      "selected": false,
+      "placement_sha256": "77120595b975a6410e856021450ef28c35613b2458b64e1fe59cc3b82d05acf8",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 131,
+        "occupied_sites": 131,
+        "macros": 0,
+        "placement_sha256": "77120595b975a6410e856021450ef28c35613b2458b64e1fe59cc3b82d05acf8"
+      }
+    },
+    {
+      "design": "alu4",
+      "trial": 11,
+      "selected": false,
+      "placement_sha256": "a902182ff8400ce50ddc005895980049488f4305065f7584e147efd39ca9a403",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 131,
+        "occupied_sites": 131,
+        "macros": 0,
+        "placement_sha256": "a902182ff8400ce50ddc005895980049488f4305065f7584e147efd39ca9a403"
+      }
+    },
+    {
+      "design": "alu4",
+      "trial": 12,
+      "selected": false,
+      "placement_sha256": "2337cc22bc2fb833e1f6d71155a08a07754e6a77cc05b6f1d5dc0a42006a7e42",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 131,
+        "occupied_sites": 131,
+        "macros": 0,
+        "placement_sha256": "2337cc22bc2fb833e1f6d71155a08a07754e6a77cc05b6f1d5dc0a42006a7e42"
+      }
+    },
+    {
+      "design": "alu4",
+      "trial": 13,
+      "selected": false,
+      "placement_sha256": "8fb1005fd55a9bb997591daa6809e046c788b67bda9d280e1a7f16e59e4cc1b0",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 131,
+        "occupied_sites": 131,
+        "macros": 0,
+        "placement_sha256": "8fb1005fd55a9bb997591daa6809e046c788b67bda9d280e1a7f16e59e4cc1b0"
+      }
+    },
+    {
+      "design": "alu4",
+      "trial": 14,
+      "selected": false,
+      "placement_sha256": "896f31e476beb9aab40559f4aceb97ce73d1438c86d8e334428fbaf0b60d326a",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 131,
+        "occupied_sites": 131,
+        "macros": 0,
+        "placement_sha256": "896f31e476beb9aab40559f4aceb97ce73d1438c86d8e334428fbaf0b60d326a"
+      }
+    },
+    {
+      "design": "alu4",
+      "trial": 15,
+      "selected": false,
+      "placement_sha256": "5edb886d8c68c3a866162786d63602d0397712053ac10f3daf9a949e6b31c325",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 131,
+        "occupied_sites": 131,
+        "macros": 0,
+        "placement_sha256": "5edb886d8c68c3a866162786d63602d0397712053ac10f3daf9a949e6b31c325"
+      }
+    },
+    {
+      "design": "alu4",
+      "trial": 16,
+      "selected": false,
+      "placement_sha256": "bd2acebda30e467fafb48cf55b08c642a4362542e1771ea70b02c5f5c91c9bd0",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 131,
+        "occupied_sites": 131,
+        "macros": 0,
+        "placement_sha256": "bd2acebda30e467fafb48cf55b08c642a4362542e1771ea70b02c5f5c91c9bd0"
+      }
+    },
+    {
+      "design": "alu4",
+      "trial": 17,
+      "selected": false,
+      "placement_sha256": "a1ce003cf4f9b30e563cf7ad9138c868b040f44487dc09e526ca2951ad0b5dd5",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 131,
+        "occupied_sites": 131,
+        "macros": 0,
+        "placement_sha256": "a1ce003cf4f9b30e563cf7ad9138c868b040f44487dc09e526ca2951ad0b5dd5"
+      }
+    },
+    {
+      "design": "alu4",
+      "trial": 18,
+      "selected": false,
+      "placement_sha256": "b7f42911eb6b98ecd169cd60ffc1ea702a9cce6f5c47fe6f4f6b07141372b025",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 131,
+        "occupied_sites": 131,
+        "macros": 0,
+        "placement_sha256": "b7f42911eb6b98ecd169cd60ffc1ea702a9cce6f5c47fe6f4f6b07141372b025"
+      }
+    },
+    {
+      "design": "alu4",
+      "trial": 19,
+      "selected": false,
+      "placement_sha256": "b49564ad2315568151d7f4ac239f2eabed9555d974cb720862fe95a8409b05c3",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 131,
+        "occupied_sites": 131,
+        "macros": 0,
+        "placement_sha256": "b49564ad2315568151d7f4ac239f2eabed9555d974cb720862fe95a8409b05c3"
+      }
+    },
+    {
+      "design": "alu4",
+      "trial": 20,
+      "selected": true,
+      "placement_sha256": "020dc8db16301236a1eb7e8ae2ce5b98580d235798ff2849f7b7fec335b82bd2",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 131,
+        "occupied_sites": 131,
+        "macros": 0,
+        "placement_sha256": "020dc8db16301236a1eb7e8ae2ce5b98580d235798ff2849f7b7fec335b82bd2"
+      }
+    },
+    {
+      "design": "alu4",
+      "trial": 21,
+      "selected": false,
+      "placement_sha256": "0872023baa56cecfec5a870cfaa753411781bef2685a185e9ecdd91d0c060944",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 131,
+        "occupied_sites": 131,
+        "macros": 0,
+        "placement_sha256": "0872023baa56cecfec5a870cfaa753411781bef2685a185e9ecdd91d0c060944"
+      }
+    },
+    {
+      "design": "alu4",
+      "trial": 22,
+      "selected": false,
+      "placement_sha256": "ca69fef6131dec2ed6823d6872dd631fa61d518c1328f10c70f5c851e77cadbd",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 131,
+        "occupied_sites": 131,
+        "macros": 0,
+        "placement_sha256": "ca69fef6131dec2ed6823d6872dd631fa61d518c1328f10c70f5c851e77cadbd"
+      }
+    },
+    {
+      "design": "alu4",
+      "trial": 23,
+      "selected": false,
+      "placement_sha256": "eb16697a52e9cce846792073e10b4730202c392ad82897dc695d6640157fa029",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 131,
+        "occupied_sites": 131,
+        "macros": 0,
+        "placement_sha256": "eb16697a52e9cce846792073e10b4730202c392ad82897dc695d6640157fa029"
+      }
+    },
+    {
+      "design": "alu4",
+      "trial": 24,
+      "selected": false,
+      "placement_sha256": "d9309f825b017477f02ab61ff573c1814f9bddc39ee4bf919a4458ecb8cf3b52",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 131,
+        "occupied_sites": 131,
+        "macros": 0,
+        "placement_sha256": "d9309f825b017477f02ab61ff573c1814f9bddc39ee4bf919a4458ecb8cf3b52"
+      }
+    },
+    {
+      "design": "misex3",
+      "trial": 0,
+      "selected": false,
+      "placement_sha256": "df7032e78278724efbc15419a4df52d3470bf1d5dc98b0187fd1d4eee2b82d75",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 126,
+        "occupied_sites": 126,
+        "macros": 0,
+        "placement_sha256": "df7032e78278724efbc15419a4df52d3470bf1d5dc98b0187fd1d4eee2b82d75"
+      }
+    },
+    {
+      "design": "misex3",
+      "trial": 1,
+      "selected": false,
+      "placement_sha256": "b05e95a1f4f7d15f7753fa95050bcc26b1162e943471f5ee7dfcb2990e7dbf3b",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 126,
+        "occupied_sites": 126,
+        "macros": 0,
+        "placement_sha256": "b05e95a1f4f7d15f7753fa95050bcc26b1162e943471f5ee7dfcb2990e7dbf3b"
+      }
+    },
+    {
+      "design": "misex3",
+      "trial": 2,
+      "selected": false,
+      "placement_sha256": "8cc486ccd8db6e81b14c6e3118d93853c2a59a53b7050f14d7fac88e63cc8c7f",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 126,
+        "occupied_sites": 126,
+        "macros": 0,
+        "placement_sha256": "8cc486ccd8db6e81b14c6e3118d93853c2a59a53b7050f14d7fac88e63cc8c7f"
+      }
+    },
+    {
+      "design": "misex3",
+      "trial": 3,
+      "selected": false,
+      "placement_sha256": "647df7a5d38ffd6a674bd568e9eaae6755600fefe54f89503cfc299db7ccd500",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 126,
+        "occupied_sites": 126,
+        "macros": 0,
+        "placement_sha256": "647df7a5d38ffd6a674bd568e9eaae6755600fefe54f89503cfc299db7ccd500"
+      }
+    },
+    {
+      "design": "misex3",
+      "trial": 4,
+      "selected": false,
+      "placement_sha256": "608a7d947cb7c76770abfc0d747367060775b4c61ef33a511b213ce6c57c8c22",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 126,
+        "occupied_sites": 126,
+        "macros": 0,
+        "placement_sha256": "608a7d947cb7c76770abfc0d747367060775b4c61ef33a511b213ce6c57c8c22"
+      }
+    },
+    {
+      "design": "misex3",
+      "trial": 5,
+      "selected": false,
+      "placement_sha256": "133efef3889c21232c4a83bcdc426322ec4309280555b9004021b9b617a3d8f3",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 126,
+        "occupied_sites": 126,
+        "macros": 0,
+        "placement_sha256": "133efef3889c21232c4a83bcdc426322ec4309280555b9004021b9b617a3d8f3"
+      }
+    },
+    {
+      "design": "misex3",
+      "trial": 6,
+      "selected": false,
+      "placement_sha256": "86609954c7f7f685576336a3bb32590cbf63b49fe09d492b212d5142fc7080dc",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 126,
+        "occupied_sites": 126,
+        "macros": 0,
+        "placement_sha256": "86609954c7f7f685576336a3bb32590cbf63b49fe09d492b212d5142fc7080dc"
+      }
+    },
+    {
+      "design": "misex3",
+      "trial": 7,
+      "selected": false,
+      "placement_sha256": "81a0e4bb738b4eb3b915c71c4e22a62fea055a0322db2e0cd096f9d5d7e365d7",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 126,
+        "occupied_sites": 126,
+        "macros": 0,
+        "placement_sha256": "81a0e4bb738b4eb3b915c71c4e22a62fea055a0322db2e0cd096f9d5d7e365d7"
+      }
+    },
+    {
+      "design": "misex3",
+      "trial": 8,
+      "selected": false,
+      "placement_sha256": "d789388df80f6447e535183f82c2ca002fe771405c3ce04786ebc78b0879f9fe",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 126,
+        "occupied_sites": 126,
+        "macros": 0,
+        "placement_sha256": "d789388df80f6447e535183f82c2ca002fe771405c3ce04786ebc78b0879f9fe"
+      }
+    },
+    {
+      "design": "misex3",
+      "trial": 9,
+      "selected": false,
+      "placement_sha256": "14f5f7945679536f9e8c645034b7d2950089421d1a613af81aa26bd136bf4a25",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 126,
+        "occupied_sites": 126,
+        "macros": 0,
+        "placement_sha256": "14f5f7945679536f9e8c645034b7d2950089421d1a613af81aa26bd136bf4a25"
+      }
+    },
+    {
+      "design": "misex3",
+      "trial": 10,
+      "selected": false,
+      "placement_sha256": "fa67ad8b66bf506dc9c92495ec71874ff0133e9810de04917e26cedfbc5ba19c",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 126,
+        "occupied_sites": 126,
+        "macros": 0,
+        "placement_sha256": "fa67ad8b66bf506dc9c92495ec71874ff0133e9810de04917e26cedfbc5ba19c"
+      }
+    },
+    {
+      "design": "misex3",
+      "trial": 11,
+      "selected": false,
+      "placement_sha256": "52b7f9a737e6466161890b77e8f9b23a422ab9892f480c74a85d2bae93631a46",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 126,
+        "occupied_sites": 126,
+        "macros": 0,
+        "placement_sha256": "52b7f9a737e6466161890b77e8f9b23a422ab9892f480c74a85d2bae93631a46"
+      }
+    },
+    {
+      "design": "misex3",
+      "trial": 12,
+      "selected": false,
+      "placement_sha256": "7f89ed5ac60911328f91ebb6b4d7611f20e04e34657ac4d96d6761b802e3b112",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 126,
+        "occupied_sites": 126,
+        "macros": 0,
+        "placement_sha256": "7f89ed5ac60911328f91ebb6b4d7611f20e04e34657ac4d96d6761b802e3b112"
+      }
+    },
+    {
+      "design": "misex3",
+      "trial": 13,
+      "selected": false,
+      "placement_sha256": "67f1eca59625f7bfa6416126f9c813b5d63c675973818f2e91189514ae18ae33",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 126,
+        "occupied_sites": 126,
+        "macros": 0,
+        "placement_sha256": "67f1eca59625f7bfa6416126f9c813b5d63c675973818f2e91189514ae18ae33"
+      }
+    },
+    {
+      "design": "misex3",
+      "trial": 14,
+      "selected": false,
+      "placement_sha256": "22f56533145a18d45d72d1c1f32d6061f5b89f1b5cd5ff96d002cab45151bbaa",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 126,
+        "occupied_sites": 126,
+        "macros": 0,
+        "placement_sha256": "22f56533145a18d45d72d1c1f32d6061f5b89f1b5cd5ff96d002cab45151bbaa"
+      }
+    },
+    {
+      "design": "misex3",
+      "trial": 15,
+      "selected": false,
+      "placement_sha256": "f5105a2394a3830266c93cc85066ed1cb21676638df56520d188ad56c7b6044d",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 126,
+        "occupied_sites": 126,
+        "macros": 0,
+        "placement_sha256": "f5105a2394a3830266c93cc85066ed1cb21676638df56520d188ad56c7b6044d"
+      }
+    },
+    {
+      "design": "misex3",
+      "trial": 16,
+      "selected": false,
+      "placement_sha256": "2305e16b7691cd695b5be5f649b1c64606640dcf5aa689bdb3ea6ffcbc8999f3",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 126,
+        "occupied_sites": 126,
+        "macros": 0,
+        "placement_sha256": "2305e16b7691cd695b5be5f649b1c64606640dcf5aa689bdb3ea6ffcbc8999f3"
+      }
+    },
+    {
+      "design": "misex3",
+      "trial": 17,
+      "selected": false,
+      "placement_sha256": "02fc948369621eea3dcb11ec233538fcb7ab412ef58e81896553766faf4dcab7",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 126,
+        "occupied_sites": 126,
+        "macros": 0,
+        "placement_sha256": "02fc948369621eea3dcb11ec233538fcb7ab412ef58e81896553766faf4dcab7"
+      }
+    },
+    {
+      "design": "misex3",
+      "trial": 18,
+      "selected": false,
+      "placement_sha256": "5492f121ae973765ff584e2b22cd6b8374687c5b6ffcb3d4027b8cbd8c0219a7",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 126,
+        "occupied_sites": 126,
+        "macros": 0,
+        "placement_sha256": "5492f121ae973765ff584e2b22cd6b8374687c5b6ffcb3d4027b8cbd8c0219a7"
+      }
+    },
+    {
+      "design": "misex3",
+      "trial": 19,
+      "selected": false,
+      "placement_sha256": "109a34c2f110660d66aa2e717b29c37ad392456cc98cbe1d2bc81bc61d6adcdf",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 126,
+        "occupied_sites": 126,
+        "macros": 0,
+        "placement_sha256": "109a34c2f110660d66aa2e717b29c37ad392456cc98cbe1d2bc81bc61d6adcdf"
+      }
+    },
+    {
+      "design": "misex3",
+      "trial": 20,
+      "selected": true,
+      "placement_sha256": "32563ffa49e0429de4b185ef6bff3b7e775d9ae9fd316922ab76986bc37d8d91",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 126,
+        "occupied_sites": 126,
+        "macros": 0,
+        "placement_sha256": "32563ffa49e0429de4b185ef6bff3b7e775d9ae9fd316922ab76986bc37d8d91"
+      }
+    },
+    {
+      "design": "misex3",
+      "trial": 21,
+      "selected": false,
+      "placement_sha256": "f9ecb89184ed39abdb995559f39acd63226d2d4e5a6a799908457d0f0d28e841",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 126,
+        "occupied_sites": 126,
+        "macros": 0,
+        "placement_sha256": "f9ecb89184ed39abdb995559f39acd63226d2d4e5a6a799908457d0f0d28e841"
+      }
+    },
+    {
+      "design": "misex3",
+      "trial": 22,
+      "selected": false,
+      "placement_sha256": "aa7a644183e6b91e0097a66ccfdb6f655801d2f942d4f8f00dd2b83cb7a4912d",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 126,
+        "occupied_sites": 126,
+        "macros": 0,
+        "placement_sha256": "aa7a644183e6b91e0097a66ccfdb6f655801d2f942d4f8f00dd2b83cb7a4912d"
+      }
+    },
+    {
+      "design": "misex3",
+      "trial": 23,
+      "selected": false,
+      "placement_sha256": "074c3a5359b59ed3ed732ba07db049173b95ebc946417bdb445217292e9ffdeb",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 126,
+        "occupied_sites": 126,
+        "macros": 0,
+        "placement_sha256": "074c3a5359b59ed3ed732ba07db049173b95ebc946417bdb445217292e9ffdeb"
+      }
+    },
+    {
+      "design": "misex3",
+      "trial": 24,
+      "selected": false,
+      "placement_sha256": "c9ed8cc952f31852247fd27f4bbed7cb72be8ef44ab76b81f9d015e58019862e",
+      "contract_check": {
+        "schema": "TILEPLACE_CPU_GOLDEN_V1",
+        "legal": true,
+        "blocks": 126,
+        "occupied_sites": 126,
+        "macros": 0,
+        "placement_sha256": "c9ed8cc952f31852247fd27f4bbed7cb72be8ef44ab76b81f9d015e58019862e"
+      }
+    }
+  ],
+  "limits": [
+    "Additional placement/identity audit; no new TP search or runtime benchmark"
+  ]
+}

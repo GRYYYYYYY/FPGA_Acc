@@ -1,0 +1,38 @@
+{
+  "schema": "dieroute.native_quotient_contract.v1",
+  "scope": "Exact quotient of the frozen qualified CSR for a consistent hop-count lower bound; not a replacement routing graph or a physical delay model",
+  "binding": "Run manifests hash the qualified search CSR and masks, complete native node metadata, architecture fingerprint, sources and executables. Successful independent full node/arc verification is required before the probe runner accepts the quotient.",
+  "container": "Shared FPGAACCP 64-byte little-endian header, schema 0.1, architecture fingerprint and payload CRC64/ECMA-182",
+  "objects": {
+    "node_groups.bin": {"type": "0x4452000d", "width_bytes": 4, "count": "native_node_count", "record": "u32 group ID; 0xffffffff for statically protected nodes"},
+    "reverse_offsets.bin": {"type": "0x4452000e", "width_bytes": 8, "count": "group_count+1", "record": "u64 index into reverse_sources; monotonic, starts at zero, ends at quotient_arc_count"},
+    "reverse_sources.bin": {"type": "0x4452000f", "width_bytes": 4, "record": "u32 predecessor group; strictly increasing within each destination row, no self loops"},
+    "groups.bin": {"type": "0x44520010", "width_bytes": 8, "record": ["native SDK representative tile address:u32", "native intent dictionary ID:u32"]}
+  },
+  "construction": {
+    "group_key": "(native nodes.bin column 3, native nodes.bin column 7); every unprotected node gets exactly one group",
+    "group_order": "First occurrence in native node order; all equal keys share one group",
+    "arcs": "For every qualified native arc u->v with different group IDs, emit group(u)->group(v), deduplicate, and store its reverse index",
+    "relaxations": "Net-exclusive ownership and connectivity within a group are ignored only while computing the potential. Full search retains exact PIP identity and per-net permissions."
+  },
+  "proof": {
+    "full": "For every native arc u->v, group(u) equals group(v) or the corresponding directed quotient edge exists. Reverse shortest-hop distance H therefore satisfies H(u)<=1+H(v), H(sink)=0, and cannot exceed a concrete path's hop count. No quotient path implies no concrete path, while a quotient path alone does not establish concrete reachability.",
+    "source_radius": "Stop reverse FIFO BFS when the source group is dequeued at distance D. All groups at distance <D are complete. Return min(H,D), using D for undiscovered groups. This clamping preserves consistency and zero at the sink. If the source group is unreachable, BFS exhausts and uses full distances. If source and sink share a group, D=0 yields zero guidance.",
+    "search": "SparseSearch::run_guided orders by (g+h,g,hops,node,parent). Potential must be fixed during a query, nonnegative, consistent, and zero at the sink. Finite priority overflow rejects; UINT64_MAX is reserved for proven unreachable states.",
+    "weighted_cost_warning": "A hop lower bound must not be reused unscaled for arbitrary physical/congestion costs, especially zero-cost edges. Such use requires separately proven compatible edge lower bounds."
+  },
+  "verification": [
+    "Independent verifier checks all native node group descriptors and every native arc; every quotient arc must have a native witness",
+    "Byte-oracle fixtures reject missing/invented edges, wrong or protected groups and duplicate descriptors after checksums are repaired",
+    "Potential fixture compares every source/sink pair with clamped full distances and checks every quotient edge for consistency, including unreachable and same-group cases",
+    "Guided search compared with Bellman-Ford optimum on 1500 random weighted graphs; zero guidance retains 3000 dense-oracle comparisons and legacy routing results",
+    "Emitted native paths independently resolve against original PIP records, qualified CSR and net permissions"
+  ],
+  "measurement": {
+    "detailed_search": "Expanded native labels, offered native arcs and retained label/hash/queue bytes",
+    "preprocessing": "Expanded quotient groups, visited quotient edges, retained distance/FIFO bytes; each prepare also initializes group_count distance slots, including source-radius mode",
+    "not_in_counters": "Index construction/verification, hashing/loading, static index storage, distance initialization instructions, total process RSS, mutable routing state or hardware execution",
+    "comparison_limit": "Full and bounded preprocessing must be counted separately; differing completion counts under a search cap do not establish equal-work speedup"
+  },
+  "remaining": ["Native calibrated capacities/delays and edge-aware timing", "Whole-design net sharing and occupancy negotiation", "Worker snapshot scaling and distributed synchronization", "DCP writeback and native legality/QoR", "HBM/HLS implementation and physical board evidence"]
+}

@@ -1,0 +1,16 @@
+\begin{tabular}{llrr}
+\toprule
+Case & Cohort & Connections & Macros/members \\
+\midrule
+diffeq & Development & 1973 & -- \\
+frisc & Development & 5767 & -- \\
+elliptic & Development & 5242 & -- \\
+clma & Development & 13458 & -- \\
+spmv & Post-freeze & 15138 & -- \\
+softmax & Post-freeze & 16817 & -- \\
+attention\_layer & Post-freeze & 41954 & 4/8 \\
+conv\_layer$^{\dagger}$ & Macro stress & 21140 & 43/86 \\
+Titan23 neuron & Post-freeze & 77106 & 101/204 \\
+Titan23 stereo & Post-freeze & 81610 & 150/300 \\
+\bottomrule
+\end{tabular}

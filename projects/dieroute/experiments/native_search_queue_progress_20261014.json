@@ -1,0 +1,32 @@
+{
+  "status": "bounded_component_full_capacity_rtl_passed",
+  "updated_ns": 1791981527390258161,
+  "evidence": "work/native_search_queue_hls_v5_20261014/audit.json",
+  "evidence_sha256": "b5811f4064af595d8b8f4c9a20ac59c1843689686b630bdf3fa17b823723a960",
+  "axi_master_read_widths": {
+    "queue_memory": 512,
+    "commands": 512,
+    "metadata": 32
+  },
+  "bounded_kernel_capacity": 1024,
+  "full_capacity_rtl": "work/native_search_queue_hls_large_v1_20261014/manifest.json",
+  "failed_experiments_retained": [
+    "work/native_search_queue_hls_v1_20261014/manifest.json",
+    "work/native_search_queue_hls_v2_20261014/manifest.json",
+    "work/native_search_queue_hls_v3_20261014/manifest.json",
+    "work/native_search_queue_hls_v4_20261014/manifest.json"
+  ],
+  "remaining": [
+    "Audit 2309-operation RTL experiment",
+    "Sparse label table and epoch/credit admission",
+    "Graph expansion and exact cost/read journals",
+    "Hardware traceback and complete-net integration",
+    "Capacity scaling to full native search limits",
+    "U280 master budget and physical implementation"
+  ],
+  "scope": "External bounded search queue only; not complete search",
+  "board_result": false,
+  "research_complete": false,
+  "full_capacity_rtl_audit": "work/native_search_queue_hls_large_v1_20261014/audit.json",
+  "full_capacity_rtl_calls": 2309
+}

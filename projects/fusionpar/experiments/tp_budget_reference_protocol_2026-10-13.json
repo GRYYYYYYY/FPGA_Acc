@@ -1,0 +1,25 @@
+{
+  "schema": "FUSIONPAR_TP_NINE_CLOSURE_REFERENCE_PROTOCOL_V1",
+  "designs": ["ex5p", "alu4", "misex3"],
+  "repeats": 5,
+  "closure_budget": 9,
+  "implementation": "2fa6e2324a971d8489bba12d49115f91d0a56874c0ee5200224d72e4f8a9f689",
+  "search": "Unmodified frozen TP with original timing-first online acceptance; only max-closures changes from 24 to 9",
+  "selection": "Initial original legal route plus all actually executed trials, including TP rejections; native legal and WL/CPD <=102% original; minimum (WL, CPD, trial)",
+  "execution": "Fresh full TP invocation for every repeat; rotate design order between repeats; archive commands, stdout, stderr, source and input identities; analyze only after all measured processes finish",
+  "cost_boundary": "Measure complete TP subprocess including initial route/timing feedback construction, proposal generation, all native closures, acceptance, refresh and serialization. Reuse archived original baseline, contract and RR XML as inputs; their original preparation cost is outside this refinement boundary. Selection/audit cost reported separately.",
+  "verification": [
+    "Require all nine trial slots actually consumed before labeling comparison equal evaluation budget",
+    "Verify every report and input/output SHA, native logs, net/place/route identity and common placement contract",
+    "Compare repeat semantics including all proposed coordinates, route body, acceptance decisions and selected state",
+    "Retain all failures and slower samples; do not select a favorable repeat or truncate measured 24-trial cost"
+  ],
+  "limits": [
+    "Development cohort already inspected; not held-out validation",
+    "Common final objective and nine candidate-evaluation budget, not identical online acceptance, proposals, moved-block count, routed work or runtime budget",
+    "TP evaluates move batches with native VPR; FP evaluates local moves with PR C-model plus validation",
+    "Historical FP nine-evaluation runs are separate measurements with different CPU affinity; no paired timing or speedup claim",
+    "Baseline P&R, graph/contract creation and build costs are not remeasured",
+    "No new FPGA execution or performance claim"
+  ]
+}

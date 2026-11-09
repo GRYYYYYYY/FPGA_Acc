@@ -1,0 +1,407 @@
+{
+  "schema": "TILEPLACE_CANDIDATE_EXPOSURE_REVIEW_V1",
+  "status": "local_review_only",
+  "roots": [
+    "projects/fusionpar/experiments",
+    "projects/routecast/experiments",
+    "projects/persistroute/experiments",
+    "projects/persistroute/host/.run",
+    "projects/dieroute/experiments",
+    "projects/tileplace/experiments",
+    "projects/tileplace/work"
+  ],
+  "scanned_text_files": 15954,
+  "oversize_text_files_not_read": 1186,
+  "designs": [
+    {
+      "design": "adder",
+      "match_count": 325,
+      "matches": [
+        {
+          "path": "projects/persistroute/experiments/tree_timing_seed_spmv_screen_2026-08-29/koios_spmv_seed1_cw300/run/spmv.timing_iteration_5.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/tree_timing_seed_spmv_screen_2026-08-29/koios_spmv_seed1_cw300/run/spmv.timing_iteration_3.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/tree_timing_seed_spmv_screen_2026-08-29/koios_spmv_seed1_cw300/run/spmv.timing_iteration_15.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/tree_timing_seed_spmv_screen_2026-08-29/koios_spmv_seed1_cw300/run/spmv.timing_iteration_19.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/tree_timing_seed_spmv_screen_2026-08-29/koios_spmv_seed1_cw300/run/spmv.timing_iteration_11.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/tree_timing_seed_spmv_screen_2026-08-29/koios_spmv_seed1_cw300/run/spmv.timing_iteration_1.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/tree_timing_seed_spmv_screen_2026-08-29/koios_spmv_seed1_cw300/run/spmv.timing_iteration_9.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/tree_timing_seed_spmv_screen_2026-08-29/koios_spmv_seed1_cw300/run/spmv.timing_iteration_6.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/tree_timing_seed_spmv_screen_2026-08-29/koios_spmv_seed1_cw300/run/spmv.timing_iteration_7.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/tree_timing_seed_spmv_screen_2026-08-29/koios_spmv_seed1_cw300/run/spmv.timing_iteration_16.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/tree_timing_seed_spmv_screen_2026-08-29/koios_spmv_seed1_cw300/run/spmv.timing_iteration_20.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/tree_timing_seed_spmv_screen_2026-08-29/koios_spmv_seed1_cw300/run/spmv.timing_iteration_4.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/tree_timing_seed_spmv_screen_2026-08-29/koios_spmv_seed1_cw300/run/spmv.timing_iteration_2.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/tree_timing_seed_spmv_screen_2026-08-29/koios_spmv_seed1_cw300/run/spmv.timing_iteration_12.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/tree_timing_seed_spmv_screen_2026-08-29/koios_spmv_seed1_cw300/run/spmv.timing_iteration_0.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/tree_timing_seed_spmv_screen_2026-08-29/koios_spmv_seed1_cw300/run/spmv.timing_iteration_13.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/tree_timing_seed_spmv_screen_2026-08-29/koios_spmv_seed1_cw300/run/spmv.timing_iteration_17.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/tree_timing_seed_spmv_screen_2026-08-29/koios_spmv_seed1_cw300/run/spmv.timing_iteration_8.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/tree_timing_seed_spmv_screen_2026-08-29/koios_spmv_seed1_cw300/run/spmv.timing_iteration_14.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/tree_timing_seed_spmv_screen_2026-08-29/koios_spmv_seed1_cw300/run/spmv.timing_iteration_18.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/tree_timing_seed_spmv_screen_2026-08-29/koios_spmv_seed1_cw300/run/spmv.timing_iteration_10.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/tree_timing_seed_spmv_screen_2026-08-29/koios_spmv_seed1_cw300/native_validation/vpr_stdout.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/tree_timing_seed_spmv_screen_2026-08-29/koios_spmv_seed1_cw300/input/reference_timing.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/run/spmv.timing_iteration_5.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/run/spmv.timing_iteration_3.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/run/spmv.timing_iteration_15.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/run/spmv.timing_iteration_11.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/run/spmv.timing_iteration_1.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/run/spmv.timing_iteration_9.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/run/spmv.timing_iteration_6.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/run/spmv.timing_iteration_7.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/run/spmv.timing_iteration_4.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/run/spmv.timing_iteration_2.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/run/spmv.timing_iteration_12.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/run/spmv.timing_iteration_0.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/run/spmv.timing_iteration_13.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/run/spmv.timing_iteration_8.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/run/spmv.timing_iteration_14.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/run/spmv.timing_iteration_10.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/rr_graph_generation/vpr_stdout.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/native_validation/vpr_stdout.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_spmv_seed1_cw300/input/reference_timing.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_softmax_seed1_cw300/run/softmax.timing_iteration_18.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_softmax_seed1_cw300/run/softmax.timing_iteration_7.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_softmax_seed1_cw300/run/softmax.timing_iteration_17.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_softmax_seed1_cw300/run/softmax.timing_iteration_29.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_softmax_seed1_cw300/run/softmax.timing_iteration_6.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_softmax_seed1_cw300/run/softmax.timing_iteration_8.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_softmax_seed1_cw300/run/softmax.timing_iteration_2.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/koios_softmax_seed1_cw300/run/softmax.timing_iteration_25.output.csv.vpr.log",
+          "path_match": false,
+          "content_match": true
+        }
+      ]
+    },
+    {
+      "design": "alu4",
+      "match_count": 0,
+      "matches": []
+    },
+    {
+      "design": "apex2",
+      "match_count": 0,
+      "matches": []
+    },
+    {
+      "design": "des",
+      "match_count": 0,
+      "matches": []
+    },
+    {
+      "design": "ex1010",
+      "match_count": 0,
+      "matches": []
+    },
+    {
+      "design": "ex5p",
+      "match_count": 0,
+      "matches": []
+    },
+    {
+      "design": "misex3",
+      "match_count": 0,
+      "matches": []
+    },
+    {
+      "design": "s298",
+      "match_count": 0,
+      "matches": []
+    },
+    {
+      "design": "s38417",
+      "match_count": 0,
+      "matches": []
+    },
+    {
+      "design": "s38584.1",
+      "match_count": 0,
+      "matches": []
+    },
+    {
+      "design": "seq",
+      "match_count": 9,
+      "matches": [
+        {
+          "path": "projects/persistroute/experiments/vpr9/baseline_runs/vpr_parallel/titan23_stereo_vision_seed3_cw300/stereo_vision_stratixiv_arch_timing.place",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/titan23_stereo_vision_seed3_cw300/stereo_vision_stratixiv_arch_timing.place",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/tileplace/experiments/titan23_stereo_vision_seed3_cw300_endpoints/page2_connection_star_guard_q60000_w1.place",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/tileplace/work/titan23_stereo_vision_input_capture/stereo_vision_stratixiv_arch_timing.place",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/tileplace/work/titan23_stereo_vision_input_capture/vpr_input.place",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/tileplace/work/titan23_stereo_vision_page2_repeat/page2_connection_star_guard_q60000_w1.place",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/tileplace/work/titan23_stereo_vision_macro_capture/vpr_input.place",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/tileplace/work/titan23_stereo_vision_page2_connection_star_guard_q60000_w1_native/vpr_input.place",
+          "path_match": false,
+          "content_match": true
+        },
+        {
+          "path": "projects/tileplace/work/titan23_stereo_vision_seed3_cw300_native_closure/vpr_input.place",
+          "path_match": false,
+          "content_match": true
+        }
+      ]
+    },
+    {
+      "design": "spla",
+      "match_count": 0,
+      "matches": []
+    },
+    {
+      "design": "tseng",
+      "match_count": 0,
+      "matches": []
+    }
+  ],
+  "limitations": [
+    "Textual matches can be unrelated signals or names; require inspection",
+    "Excluded vendor/third-party trees and source archives",
+    "Large files checked by path only; absence of matches does not prove historical non-exposure",
+    "This review does not inspect prior conversation or external-machine artifacts"
+  ],
+  "assessment": {
+    "status": "local_review_complete_with_coverage_limits",
+    "no_text_matches": [
+      "alu4",
+      "apex2",
+      "des",
+      "ex1010",
+      "ex5p",
+      "misex3",
+      "s298",
+      "s38417",
+      "s38584.1",
+      "spla",
+      "tseng"
+    ],
+    "sample_match_interpretation": {
+      "adder": "Sample hits are VPR architecture resource counts in spmv logs",
+      "seq": "Sample hits are hierarchy tokens in stereo_vision packed block names"
+    },
+    "blindness_claim": "Not established; oversized text and external history remain unreviewed",
+    "selection": "Retain all 13 candidates; no outcome-based pruning"
+  }
+}

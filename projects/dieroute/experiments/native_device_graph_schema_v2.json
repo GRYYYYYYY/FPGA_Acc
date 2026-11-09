@@ -1,0 +1,28 @@
+{
+  "schema": "dieroute.native_device_graph.v2",
+  "scope": "diagnostic raw topology, not production ABI or design-eligible routing graph",
+  "encoding": "little-endian u32 records without header; manifest fixes schema and SHA-256",
+  "absent_id": 4294967295,
+  "node_identity": "all tile wires grouped by native Node.getNode base identity; minimum tile-address/wire-index member is canonical",
+  "tables": {
+    "nodes.bin": ["id", "canonical_tile", "canonical_wire", "native_tile", "native_wire", "membership_mask", "member_count", "intent_id", "flags", "xlow", "ylow", "xhigh", "yhigh", "reserved_zero", "reserved_zero", "reserved_zero"],
+    "wires.bin": ["node_id", "tile_address", "wire_index"],
+    "null_wires.bin": ["tile_address", "wire_index"],
+    "pips.bin": ["id", "raw_start_node", "raw_end_node", "tile_address", "start_wire_index", "end_wire_index", "slr", "flags"]
+  },
+  "ordering": {
+    "nodes.bin": "ID assigned at first encountered member in sorted tile/wire enumeration",
+    "wires.bin": "tile_address, wire_index; NOT grouped by node ID",
+    "null_wires.bin": "tile_address, wire_index",
+    "pips.bin": "tile_address, start_wire_index, end_wire_index, flags"
+  },
+  "node_flags": {"1": "tied to GND", "2": "tied to VCC", "4": "native instance member getter empty; members reconstructed by exhaustive wire-to-node enumeration"},
+  "pip_flags": {"1": "reversed", "2": "bidirectional", "4": "fixed", "8": "route-through", "16": "stub", "32": "start stub", "64": "logical driver", "128": "end wire null"},
+  "dictionaries": {"intents.csv": "explicit native intent ordinal to name", "tiles.csv": "address, name, type, slr, column, row, wire_count, pip_begin, pip_count"},
+  "verifier_outputs": {
+    "footprint_node_map.bin": "one u32 device-graph node ID per original footprint node ID",
+    "footprint_pip_map.bin": "one u32 native catalog PIP ID per original footprint PIP ID; DCP reversal remains in original footprint flags",
+    "occupied_nodes.bin": ["device_node_id", "footprint_node_id", "first_net_id", "owners", "background_owners", "candidate_owners", "footprint_node_flags", "reserved_zero"]
+  },
+  "qualification": "Missing endpoints, clock and route-through restrictions, capacities, delays, directed CSR and physical PIP identity in route outputs require separate qualification before routing. Never treat a raw catalog edge as implicitly legal or zero-delay."
+}

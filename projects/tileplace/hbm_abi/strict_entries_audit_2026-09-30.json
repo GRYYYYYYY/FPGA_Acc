@@ -1,0 +1,33 @@
+{
+  "status": "pass",
+  "valid_fixtures": 12,
+  "malformed_fixtures_rejected_by_both": 8,
+  "scope": "strict Python codecs and C++ state construction; no flat search/HLS equivalence claim",
+  "real_binary_unchanged": true,
+  "files": [
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/hbm_abi/strict_snapshot_codec.py",
+      "sha256": "57e8ab206ca9987473f8551c554073303e58432557a899638c79b595ca48b906"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/hbm_abi/strict_flat_state.hpp",
+      "sha256": "c5ee341be73cd467a108813f659e557771a3d44e67b5b100cdfdfeedbbb906a3"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/hbm_abi/strict_flat_state_query.cpp",
+      "sha256": "e2f2888cd9007f64131c190f3779dd5512b04261636c9fe13e895d7ae53ce8d6"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/hbm_abi/pack_strict_snapshot.py",
+      "sha256": "e78da062185e44406b255598e1b1ec9a59bdc3cdacab2f69b917a6032a948605"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/hbm_abi/test_strict_entries.py",
+      "sha256": "fee0b73945c5b64305051d07d20923ff884da0209126b982e923959081202598"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/hbm_abi/canonical_snapshot.hpp",
+      "sha256": "9e27b57be5af8a55371d4e0153ef3c22270c063f6343c2adecdcab56624343b3"
+    }
+  ]
+}

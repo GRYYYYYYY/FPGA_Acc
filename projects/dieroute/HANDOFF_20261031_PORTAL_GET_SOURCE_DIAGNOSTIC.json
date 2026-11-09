@@ -1,0 +1,53 @@
+{
+  "observed_ns": 1793450073462399794,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_EDGE_GET_COMMAND_REPLY_COUPLED.json",
+    "sha256": "f00182b661679425a282f17fa8b12d1bfba0145c5f6e699bf78887286641ceff"
+  },
+  "progress": {
+    "report": "work/resident_portal_get_reply_coupled_20261031/probe_review.json",
+    "report_sha256": "ee4554916938201e26ca0c6d010e40cc7cc8c7e7470d813e76bf6aa56d05e8be",
+    "independent_review": "work/resident_portal_get_reply_coupled_20261031/independent_review.json",
+    "independent_review_sha256": "9bf225704db0f4e1f2a5b2160780fe85d11b96cebdf38749b1830182f94e744b",
+    "final_review": "work/resident_portal_get_reply_coupled_20261031/final_review.json",
+    "final_review_sha256": "1fe06a3d9427493c8683095ca840a4acccc6863658d8c9982ba37cfc66706438",
+    "source_query_count": 24,
+    "portal_queries": 12,
+    "dictionary_edge_queries": 12,
+    "portal_source_cycles": 2488,
+    "new192host_batches_accepted": 0,
+    "host_observation_limit_retained": 1200,
+    "new_SMT_queries": 0,
+    "new_native_accepted_cases": 0,
+    "scope": "Standalone24retained-state sourceget diagnostic on fullN/E/pool admitted snapshots, not192hostframe acceptance. Successful exact source results and actual sourcebinarysearch intervals checked against mathematicaloracle. Original1200frame observationfailure retained. Diagnostic10000source-step cap only;originalCPU90/AS1GiB/native budgets unchanged. No native/fullRTL/X/originalinstall/board acceptance. Separate review reconstructs complete synthetic pool and checks24returnedvalues,228actualselectorcalls and all12binarysearchintervaltraces.12portalqueries each2488sourcecycles;12dictionaryedgequeries each67cycles.192host attempt stopped at1200cycle observation cap on firstportal(call7),exit1;no new192hostbatch accepted. Diagnostic10000source-step cap is separate, not a nativebudget change or192host acceptance. Both checkers retainCPU90/AS1GiB. Actual exit0 for diagnostic. Previousv286192batch remains conditional with12portalcontracts; it is not upgraded by this standalone result.",
+    "research_complete": false,
+    "full_public_host_roundtrip_proved": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v287_20261031/matrix.json",
+    "sha256": "bacf7f75bc9fc7a7c5c3cb1a4f19c48dfe78c981b91309b64af56dfeb5ff5948"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v287.json",
+    "sha256": "9429173378b411cd9669023975555485b9a6e1ac52948a356d1494e590e103c7"
+  },
+  "current_runtime_observation": {
+    "path": "work/resident_portal_get_reply_coupled_20261031/runtime_observation.json",
+    "sha256": "0c926cc5a70de2acdfdf4086d8aa9c5795d40a711ce5d602da66692b4b87e678",
+    "scope": "Fresh30actual identities; no new native acceptance; Owner supervisor failure retained."
+  },
+  "previous_goal_turn_classification": "progress_and_verified_wait_v286",
+  "current_goal_turn_classification": "progress_and_verified_wait",
+  "next_action": "Integrate all72actualget calls into original192commandreply cohort, accounting explicitly for actualportal2488sourcecycles versus retained1200observationcap; do not raise native simulation/CPU90/AS1GiB guards or shrinkcases. Use source-driven bounded observation and exact evaluator stutter memo if needed, preserving failedattempt. Standalone query success does not replace fullchain evidence. Original sourceinstallation/publication/AXILite/X/fullRTL/QoR/300MHz/board/artifact/paper remain open. Prioritize actual native terminal review; retain Owner quota failure/missing supervisor/auditor/absentcompletion, no restart/adoption.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "owner_supervisor_failure_retained": true,
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending;820separate transitive/466root gaps;paper unchanged.",
+  "research_complete": false
+}

@@ -1,0 +1,142 @@
+{
+  "schema": "FUSIONPAR_STRONG_BASELINE_INPUT_INVENTORY_V1",
+  "protocol": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_protocol_2026-09-29.json",
+    "sha256": "0ebf81ed105c8f6057e12a6a3ee63075e5d5fd4be39c333cf72edfd010c2b3c2"
+  },
+  "tileplace_frozen_implementation": "2fa6e2324a971d8489bba12d49115f91d0a56874c0ee5200224d72e4f8a9f689",
+  "designs": {
+    "ex5p": {
+      "final": {
+        "wirelength": 9868,
+        "cpd_ns": 5.61423,
+        "legal": true
+      },
+      "accepted_transactions": 13,
+      "closure_calls": 24,
+      "historical_elapsed_s": 78.43551354855299,
+      "config": {
+        "candidate_limit": 64,
+        "chain_candidate_limit": 16,
+        "congestion_weight": 1,
+        "critical_distance_guard_q": 0,
+        "critical_distance_slack": 0,
+        "page_height": 2,
+        "page_width": 2,
+        "routed_timing_weight": 2,
+        "timing_weight": 2
+      },
+      "evidence": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_00/report.json",
+          "sha256": "3aae022cfc05104d03c8d61be517d836ce77f79d19fad543f1bda26623f1d1bb"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_00/final.place",
+          "sha256": "b30bc9c47b239310b1bd2648c4a10df325ac9ffec24e80f5442f2decb4a64b73"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_00/refinement_00.process.json",
+          "sha256": "66f14b9f98c4eda93b44a2c5877c60dcb99d59ea82f6c97540fc5a265816f498"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_00/work/trial_21/vpr_native_closure.json",
+          "sha256": "4ddda28870ff05ec1a624a9bd46cc2182157df29d474e0872beb456ff3cb1c59"
+        }
+      ]
+    },
+    "alu4": {
+      "final": {
+        "wirelength": 9561,
+        "cpd_ns": 5.96812,
+        "legal": true
+      },
+      "accepted_transactions": 3,
+      "closure_calls": 24,
+      "historical_elapsed_s": 82.87020622752607,
+      "config": {
+        "candidate_limit": 64,
+        "chain_candidate_limit": 16,
+        "congestion_weight": 1,
+        "critical_distance_guard_q": 0,
+        "critical_distance_slack": 0,
+        "page_height": 2,
+        "page_width": 2,
+        "routed_timing_weight": 2,
+        "timing_weight": 2
+      },
+      "evidence": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/alu4/run_00/report.json",
+          "sha256": "ae52fc034b1976ce14b3784f9e171d5043df2d7dbeba520c2c194e09b041a364"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/alu4/run_00/final.place",
+          "sha256": "238aaa40a4ecd518b5e93c023b315fa726c6d12a343530bff4f6dae0b7fff25a"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/alu4/run_00/refinement_00.process.json",
+          "sha256": "7fac99becb0bc3f7f210d93b4defa0eefafb6ba781bf0acee6a654375a7504c1"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/alu4/run_00/work/trial_13/vpr_native_closure.json",
+          "sha256": "595badec460b4d8e4f61446030fd0fe9e26139e84a0c62de5200655647d6e900"
+        }
+      ]
+    },
+    "misex3": {
+      "final": {
+        "wirelength": 10269,
+        "cpd_ns": 5.038,
+        "legal": true
+      },
+      "accepted_transactions": 4,
+      "closure_calls": 24,
+      "historical_elapsed_s": 127.20584614574909,
+      "config": {
+        "candidate_limit": 64,
+        "chain_candidate_limit": 16,
+        "congestion_weight": 1,
+        "critical_distance_guard_q": 0,
+        "critical_distance_slack": 0,
+        "page_height": 2,
+        "page_width": 2,
+        "routed_timing_weight": 2,
+        "timing_weight": 2
+      },
+      "evidence": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/misex3/run_00/report.json",
+          "sha256": "e0d05d699c1feb54909ee089a78b3555c542e1401a82bc638859eb6168132a0d"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/misex3/run_00/final.place",
+          "sha256": "a115e30775d002a214a30ee8a3f76183a87fc9e78146ab787d2afc38e408e550"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/misex3/run_00/refinement_00.process.json",
+          "sha256": "48a8f397bf1a9e35c2c5b1ec7163e581524556007fd15cc5a9093324f8ba99d1"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/misex3/run_00/work/trial_07/vpr_native_closure.json",
+          "sha256": "e5e2687294eac9d09fadd03975eef2b7efce2aae6886ac788295b6cc08767f19"
+        }
+      ]
+    }
+  },
+  "status": "inputs_located_not_a_completed_strong_baseline",
+  "limitations": [
+    "These archived results use TilePlace feedback/rollback with native VPR closure, not a newly executed TilePlace + PR final route",
+    "24 native closure calls versus FP three primary attempts; not effort matched",
+    "TilePlace timing/whole-quality objective differs from FP strict WL-first acceptance",
+    "Historical host wall times are not paired current measurements",
+    "All three designs are development cases"
+  ],
+  "required_next_steps": [
+    "Verify frozen implementation archive and reproduce or separately charge placer work",
+    "Build endpoint-remapped bundle from selected legal placer output under the same graph, pins and constraints",
+    "Run PR from empty routing reservations with the same criticality and numerical guard configuration",
+    "Archive native legality and STA, failures and full stage costs",
+    "Report QoR/time tradeoffs and budget limits instead of treating unequal objectives as a direct speedup"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "schema": "dieroute.owner_publish_live_integration_design.v1",
+  "status": "implemented_and_verified",
+  "activation": "Keep argv[23] and extend backend mode 0/1 to 2. Add --summary-push to runner; require positive worker-shadow-sync. Modes 0/1 remain unchanged.",
+  "fabric": [
+    "NativeSummaryHbm gains optional owner-publisher state per die: registry, dirty ring, queue control, update ring/cursors. Reuse existing owner arrays and per-die mutex.",
+    "Route owner_install and owner_validate through new owner CU. Cold owner_fetch becomes owner_subscribe with actual actor lane in descriptor; retain actual raw new completion in command capture.",
+    "Keep original endpoint for shadow_receive and shadow_inspect. Shared actor/die command tickets may span both kernels because the handoff ABI explicitly supplies cursors.",
+    "Drain publisher separately for each requested lane across all owner CUs at the same periodic/forced/final refresh boundaries. Serialize per CU; output credits are drained before relaunch. Detect ticket exhaustion/nonprogress explicitly.",
+    "Sort published records by worker/node, rewrite only transport serial using the existing lane sender counter, then feed the unchanged receiver. Do not read a CPU value cache or scan all subscriptions for refresh.",
+    "Subscription OR writes from distinct lanes commute on a frozen owner snapshot. Canonical lane-order logs remain a valid linearization; actual interleaving is not claimed."
+  ],
+  "metrics": [
+    "Persistent refresh scans=0 for push mode; retain all existing query/hit/fetch/update counters. Do not fake old subscription scan work to preserve byte equality.",
+    "Capture raw publisher outputs and actual receiver envelopes so re-sequencing is explicitly auditable. Export final registry/pending inventory."
+  ],
+  "capture": [
+    "Retain 384B native summary frames. Use reasons 4/5 for publisher pump/update events with a per-frame reason override; ordinary receiver refresh commands remain reason 2.",
+    "Pump payload follows standalone replay: config,control_before,control_after,completion,zero. Update payload: packet,metadata,zero,zero,zero. Record raw owner completion ABI for owner commands in backend mode 2.",
+    "Extend SummaryEndpointAudit with subscription/dirty-queue state and raw-output-to-receiver binding, adapting the independently tested standalone publisher model. Owner install values must still bind to reconstructed coordinator state at exact boundaries.",
+    "Extend PersistentShadowAudit to expect zero refresh scans in mode 2 while independently computing the same changed-only logical deliveries. Keep normal stale/forced replay/final drain checks."
+  ],
+  "required_validation": [
+    "Run existing component stale-cost/atomic rejection/replay fixture in both endpoint modes, including two concurrent lanes; ASan/UBSan and TSan.",
+    "Native host fixture differential plus valid-CRC corrupted pump/output/control records.",
+    "Fresh real routing: 4-worker periods1/3 and 1-worker period3, five repeats each. All canonical outputs, read sets, transactions and 64B logical summary packets equal matching scan-endpoint baseline; only scan accounting and new hardware logs differ.",
+    "Independent full native transaction and publisher replay; final owner/cache/registry match authority.",
+    "Add native mode to build_owner_publish_xrt.sh and run actual small native routing with six-CU xclbin, without CPU kernels linked."
+  ],
+  "remaining_full_goal": "Full-net hardware authority/commit, autonomous inter-CU transport, representative datasets, mapping/migration/topology ablations, physical QoR, routed platform timing and board evaluation remain open.",
+  "implementation_review": {
+    "reviewed_ns": 1791938073828263984,
+    "concurrent_linearization": "During overlapping queries owner tuples and dirty queues are frozen. Different actor lanes update disjoint subscriber bits under the existing per-die mutex; canonical actor-order frames are a valid linearization. Pumps and installations remain outside joined query phases.",
+    "pump_termination": "Drain every produced update before relaunch. Stop when an exhaustive bounded pass returns fewer than the output budget, including the no-eligible-subscriber case with other lanes still pending. An exactly full batch requires another call to prove the filtered tail empty. Check dirty-capacity growth and max-visits multiplication before narrowing to uint32.",
+    "frame_normalization": "Pump frames use controller session in control_before/control_after and publisher completion word7; a previous-session control_before normalizes separately from current-session records. Ordinary new-owner completions use word7, whereas original receiver completions use word6. Raw update serial stays owner-global; logical delivery serial stays lane-local.",
+    "publication_binding": "For each refresh key, require a one-to-one match of sorted raw hardware updates to the actual logical summary messages and receiver commands, allowing only the documented lane transport serial rewrite. Compare final registry bits with actual receiver-cache keys and require zero pending bits and empty dirty queues after final drain.",
+    "baseline_compatibility": "Do not rewrite historical mode1 source manifests or claim push-mode byte equality for publication scan counters. New mode2 logs intentionally report zero host polling scans; all canonical route and consumed-value evidence still must match."
+  },
+  "evidence": "experiments/native_owner_push_progress_20261014.json"
+}

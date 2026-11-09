@@ -1,0 +1,27 @@
+{
+  "observed_ns": 1793398568767184429,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261030_SCOPED_CONTENT_ALIASES.json",
+    "sha256": "a532345c1bdc4094ee47ee645eceb74d43fc6201a0dfd4d795aa77720cce801e"
+  },
+  "original_handoff": {
+    "path": "HANDOFF_20261021.md",
+    "sha256": "f6d1f7c2dc0f39665ebb4d8b15b6d61593e43f374d4cbdbb3341982c336b1114"
+  },
+  "review": {
+    "review": "work/fullgraph_RTL_progress_semantics_20261030/review.json",
+    "review_sha256": "4de7da0c507b1aacc58ed1614d85d7fb50883449c4e39620ae5097a3cb9abf8f",
+    "preflight": "work/fullgraph_RTL_progress_semantics_20261030/registration_preflight.json",
+    "preflight_sha256": "a387b229a2d0b07b3a4be13a0595b3e497e648be317ad0868d3a2bb9aed81aae",
+    "scope": "Six live full28878 simulators; bounded monitor/source review. No completion, inner-stage progress percentage, wall-clock ETA or hardware performance proof.",
+    "research_complete": false
+  },
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "all_eight_gates_open": true
+  },
+  "next_action": "Preserve existing live simulations and guard owners. On a genuine terminal transition run the existing full positive reviewer; negative canary remains gated. Continue original G1-G8 research with frozen budgets and retained failures.",
+  "research_complete": false
+}

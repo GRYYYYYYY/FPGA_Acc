@@ -1,0 +1,43 @@
+{
+  "observed_ns": 1793942461220509778,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_PUBLICATION_CLOCK_CONSUMER.json",
+    "sha256": "c4b13ec815c8d8b5cddb3abf40c8ba52957b2c9edfd85ef554d84721ac10b38c"
+  },
+  "migration_recovery": {
+    "path": "work/migration_recovery_20261106/review_frozen.json",
+    "sha256": "bcb6e06d29d762ec2bd1fe1e1a23711e584e2b94268fd56cc23029ad65040da0",
+    "scope": "Migration release receipt records original148 terminated; all old handles absent in newnamespace; current local native jobs0/MCPsessions0. No restart or native acceptance. Historical running observations superseded."
+  },
+  "progress": {
+    "report": "work/resident_prepare_metadata_coverage_20261106/field_review.json",
+    "independent_review": "work/resident_prepare_metadata_coverage_20261106/independent_field_review.json",
+    "final_review": "work/resident_prepare_metadata_coverage_20261106/final_review.json",
+    "final_review_sha256": "fca75f67beba41509784ce9661cf885bcfad54235efe15d553e8ead7fc702dd9",
+    "local_feasible_UNSAT_queries": 63,
+    "metadata_valid_ports": 28,
+    "scope": "All onehot21state local bitvector source formulas plus exhaustive finite field-loop reachability from admitted state3->4 and all64 stale successor/index/equality values. Successful reach of prepare7 entails four distinct done6 events in index order0..3 and all28 field metadata valid pulses exactly once. Completion and success are arbitrary binary child inputs; infinite wait selfloops retained, no child termination or producer-value correctness assumed proved. Failure at any field may publish its seven outputs before prepare13; failed metadata preservation is not asserted. The 12 row scalar valid strobes, full successful prepare/install, AXI transport, 4-state/native/board/performance remain open. Existing v252 ownership and v290 exact consumer connections are separate premises for composition; no native acceptance or gate closure. Independent ordinary-integer interpreter exactly reproduces all81states/84edges with304input evaluations. The primary wait_self_loops=8 counts two success-input choices for each of four waits; there are four unique self-loop edges, not eight distinct states. Migrated root is resolved only for locating original protocol keys; original source/protocol bytes and hashes remain unchanged.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v291_20261106/matrix.json",
+    "sha256": "e6c00391e89a621c19741175f7fdea4634ddeeefcd877abc587e0770a9a46716"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261106_v291.json",
+    "sha256": "119209d658d21004107bb1322bb19ada121db832138e87de13601198a0dfed90"
+  },
+  "previous_goal_turn_classification": "progress_migration_pause_and_archive",
+  "current_goal_turn_classification": "progress_migration_recovery_and_new_source_proof",
+  "next_action": "Prove all12forward/reverse/portal scalar valid strobes on successful row-builder completion and compose them with the28field coverage. Then establish actual producerdata, RAMwrites and complete validation/publication vs original installed snapshot. For future native runs, use separately recorded migrated attempts with original fullcases/capacities/guards; original148processes have explicitly ended, no PID continuation or old raw-progress acceptance. All G1-G8, originalQoR/ablations/300MHz/board/paper/artifact requirements remain open.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "owner_supervisor_failure_retained": true,
+  "research_complete": false
+}

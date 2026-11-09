@@ -1,0 +1,68 @@
+{
+  "schema": "dieroute.native_joint_comparison_plan.v1",
+  "created_ns": 1791921221771725645,
+  "baseline": "flat_v4",
+  "cases": {
+    "flat_v4": {
+      "run": "work/u280_native_corridor_flat_v4_20261013",
+      "cohort_audit": "work/u280_native_corridor_flat_cohort_audit_v4_20261013"
+    },
+    "greedy": {
+      "run": "work/u280_native_portal_greedy_v1_20261013",
+      "cohort_audit": "work/u280_native_portal_greedy_cohort_audit_v1_20261013",
+      "protocol_audit": "work/u280_native_portal_greedy_protocol_audit_v1_20261013"
+    },
+    "eight": {
+      "run": "work/u280_native_portal_eight_v1_20261013",
+      "cohort_audit": "work/u280_native_portal_eight_cohort_audit_v1_20261013",
+      "protocol_audit": "work/u280_native_portal_eight_protocol_audit_v1_20261013"
+    },
+    "flat": {
+      "run": "work/u280_native_joint_flat_v1_20261013",
+      "cohort_audit": "work/u280_native_joint_flat_cohort_audit_v1_20261013"
+    },
+    "joint": {
+      "run": "work/u280_native_joint_joint_v1_20261013",
+      "cohort_audit": "work/u280_native_joint_joint_cohort_audit_v1_20261013",
+      "protocol_audit": "work/u280_native_joint_joint_protocol_audit_v1_20261013"
+    },
+    "reentry": {
+      "run": "work/u280_native_joint_reentry_v1_20261013",
+      "cohort_audit": "work/u280_native_joint_reentry_cohort_audit_v1_20261013",
+      "protocol_audit": "work/u280_native_joint_reentry_protocol_audit_v1_20261013"
+    },
+    "reentry_shadow3": {
+      "run": "work/u280_native_joint_reentry_shadow3_v1_20261013",
+      "cohort_audit": "work/u280_native_joint_reentry_shadow3_cohort_audit_v1_20261013",
+      "protocol_audit": "work/u280_native_joint_reentry_shadow3_protocol_audit_v1_20261013"
+    }
+  },
+  "required_equal_routes": [
+    [
+      "flat_v4",
+      "flat"
+    ],
+    [
+      "reentry",
+      "reentry_shadow3"
+    ]
+  ],
+  "quotient_radius_pairs": [],
+  "protocol": "experiments/native_joint_schema_v1.json",
+  "controls": {
+    "cohort": "Same 70 whole selected nets, 298 connections, frozen unselected footprint, unchanged qualified CSR/quotient/costs/task ordering",
+    "repeats": 5,
+    "joint_attempt_limit": 8,
+    "joint_ranked_candidates": false,
+    "optional_reentry_bound": true,
+    "shadow_sync_searches": [
+      0,
+      3
+    ]
+  },
+  "acceptance": {
+    "integrity": "All complete deterministic runs; independent final PIP and full authority reconstruction; source/input/artifact hashes. Default flat output equals frozen baseline.",
+    "quality": "Report selected SLL and tree PIPs separately. PIP count is not physical wirelength; no native signoff inferred.",
+    "work": "Report detailed, quotient, joint and fallback work; concurrent runs do not establish CPU or hardware latency speedups."
+  }
+}

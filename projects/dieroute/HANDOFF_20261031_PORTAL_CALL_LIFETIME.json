@@ -1,0 +1,40 @@
+{
+  "observed_ns": 1793421602638624901,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_INSTALL_CALLER_OWNERSHIP.json",
+    "sha256": "577143e34b8caed715656bdf6f6fb7522098bdf8f9a832f2b48eb419fff03f74"
+  },
+  "progress": {
+    "report": "work/resident_portal_call_lifetime_20261031/review.json",
+    "report_sha256": "42a31665ab8204cc7fa872911e96fe72dfecfbe6617850bbb06d9d3f6c6e2afd",
+    "independent_review": "work/resident_portal_call_lifetime_20261031/independent_review.json",
+    "independent_review_sha256": "0679a8a1595341d63026a91095d78d19665dca79eb2aed2b6b799cdb4ae411dd",
+    "reachable_states": 65,
+    "input_labelled_transitions": 284,
+    "initial_saved_return_seeds": 4,
+    "global_full_HDL_ownership_proved": false,
+    "cross_call_response_identity_proved": false,
+    "HDL_simulation_executed": false,
+    "scope": "Finite binary-control overapproximation from reset of SHA-bound prepare21-state FSM,portal-builder8-state FSM,two1bit saved returns and the registered portal start. Uninitialized saved returns cover all four binary seeds. All other declared1bit controls,child done/return and error predicates vary independently each edge;no payloads or memory are modeled. Source exact guards,shared reset/clock wiring,capture enables,nonblocking updates,portal done/ready and call predicate/block aliases are evaluated. Reachable abstraction proves prepare10 implies first saved success;launch11 has both successes and an idle builder with start0,then sets start1 and enters12. Active prepare12 keeps both saved successes unchanged;every non-idle portal-builder state has prepare12,predicate1,start1. A launched builder in idle has start1,so idle done cannot falsely terminate that launch. Prepare12 cannot leave until actual builder done. These properties hold across any finite binary control schedule without midcall reset. This is not complete RTL simulation/equivalence: datapath/control-atom relationships are overapproximated,childloop handshakes are nondeterministic,invalid/X states excluded,reset abort semantics not modeled. It does not prove execute/top initiation and ownership,leaf outstanding return retirement before done,cross-call response identity,other consumers,installation data correctness,native runtime/watchdog/timing or board results. Original guards,jobs,inputs,caches and budgets unchanged.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v230_20261031/matrix.json",
+    "sha256": "f7a9c0ef16f784323b049134db1774953f80ea3d6d4e698de53ec32d7647e8e6"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v230.json",
+    "sha256": "969f0389e3694ab3f6d373d8cddd2f0a6a4b3accc2bf66528c6a820232686c7f"
+  },
+  "next_action": "Verify execute/top start/wait lifetime and delimiter request/return retirement before child done. Portal prepare/builder predicate lifetime is now checked in a reset-started binary-control overapproximation;other consumers,cross-call response identity and full HDL/native acceptance remain. Continue original jobs without guard/budget/input/cache changes.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

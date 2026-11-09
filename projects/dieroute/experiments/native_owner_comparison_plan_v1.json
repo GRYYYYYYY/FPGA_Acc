@@ -1,0 +1,35 @@
+{
+  "schema": "dieroute.native_owner_comparison_plan.v1",
+  "scope": "Fixed 70-net development cohort; real owner shards in the serial C++ model",
+  "repeats": 5,
+  "cases": {
+    "control": {
+      "run": "work/u280_native_owner_control_v1_20261013",
+      "cohort_audit": "work/u280_native_owner_control_cohort_audit_v1_20261013",
+      "protocol_audit": "work/u280_native_owner_control_protocol_audit_v1_20261013",
+      "prior_reference": "work/u280_native_defer_defer_v1_20261013"
+    },
+    "partition": {
+      "run": "work/u280_native_owner_partition_v1_20261013",
+      "cohort_audit": "work/u280_native_owner_partition_cohort_audit_v1_20261013",
+      "protocol_audit": "work/u280_native_owner_partition_protocol_audit_v1_20261013",
+      "prior_reference": "work/u280_native_defer_defer_v1_20261013"
+    },
+    "shadow3": {
+      "run": "work/u280_native_owner_shadow3_v1_20261013",
+      "cohort_audit": "work/u280_native_owner_shadow3_cohort_audit_v1_20261013",
+      "protocol_audit": "work/u280_native_owner_shadow3_protocol_audit_v1_20261013",
+      "prior_reference": "work/u280_native_defer_shadow3_v1_20261013"
+    }
+  },
+  "required_equalities": "All prior CSV journals byte-identical to the corresponding reference. New control/partition CSV journals byte-identical except owner_usage.csv. Every owner inventory independently checked against full native membership and canonical authority.",
+  "not_established": [
+    "stage-local worker data plane",
+    "concurrent distributed commit",
+    "HBM placement",
+    "new native signoff",
+    "board latency or energy",
+    "representative held-out cohort",
+    "research completion"
+  ]
+}

@@ -1,0 +1,13 @@
+"""Frozen MMC local correctness pilot; cached floors, explicit timing limits."""
+import json,subprocess,sys,time
+from pathlib import Path
+R=Path(__file__).resolve().parents[1];sys.path.insert(0,str(R/'tools'));from pre_route_endpoints import sha
+D=R/'experiments/mmc_native_cached_feedback_pilot_v1_2026-10-18';D.mkdir(exist_ok=False);I=R/'experiments/mmc_native_feedback_inputs_v1_2026-10-18';ip=I/'verification.json';v=json.loads(ip.read_text());assert v['all115572_frozen_criticalities_remapped'] and all(sha(p)==h for p,h in v['bindings'].items());sc=R/'experiments/mmc_native_feedback_source_contract_v1_2026-10-18/verification.json';sv=json.loads(sc.read_text());assert all(sha(p)==h for p,h in sv['bindings'].items());ep=R/'experiments/mmc_native_state_swap_inputs_v1_2026-10-18/demand/endpoints.json';script=R/'tools/run_mmc_native_cached_feedback_v1_2026_10_18.py';bindings={str(p):sha(p) for p in [Path(__file__),ip,sc,ep,script,R/'experiments/mmc_native_state_geometry_v1_2026-10-18/continuous_cost_contract_v1.json']};cmd=[sys.executable,str(script),str(ep),str(D/'model'),str(I/'base/verification.json'),str(I/'timing'),str(I/'warm'),'local']
+with (D/'protocol.json').open('x') as f:json.dump(dict(bindings=bindings,command=cmd,rounds=2,scheduled_wholeNETs=54,initial_predicted_overflow=525,budget_policy='NATIVE_ANCHORED_PROXY_V1',scope='Cached old-floor local correctness pilot on frozen exposed MMC swap. Whole model parse/import/feedback/output charged inside model component, but old global floor production, new frontend/input preparation, audits/native/canonical excluded. Not continuous full workflow or gain; all-old-independent minimum dual certificate absent and explicit.'),f,indent=2);f.write('\n')
+start=time.perf_counter()
+with (D/'model.log').open('x') as f:code=subprocess.call(cmd,cwd=R,stdout=f,stderr=subprocess.STDOUT)
+with (D/'model_terminal.json').open('x') as f:json.dump(dict(exit_code=code,process_seconds=time.perf_counter()-start),f);f.write('\n')
+if code:raise SystemExit(code)
+r=json.loads((D/'model/receipt.json').read_text());rows=[dict(round=x['round_index'],NETs=len(x['events']),commits=sum(e['status']=='COMMITTED' for e in x['events']),overflow_before=x['overflow_before'],overflow_after=x['overflow_after']) for x in r['rounds']];assert all(x['NETs']==54 for x in rows)
+with (D/'receipt.json').open('x') as f:json.dump(dict(bindings=bindings,rounds=rows,model_component_seconds=r['total_paid_resident_seconds'],independent_audits_pending=True,new_target_native_not_run=True,scope='Execution only; full frame/event auditing required, no native QoR or gain.'),f,indent=2);f.write('\n')
+print('MMC LOCAL MODEL COMPLETE',rows,flush=True)

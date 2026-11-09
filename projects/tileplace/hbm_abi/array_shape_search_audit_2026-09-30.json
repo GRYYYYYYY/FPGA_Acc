@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "scope": "array macro-shape equality integrated into CPU candidate generation; host buffers and transaction selection still STL; full nine-case native coverage running",
+  "fixtures": 12,
+  "guarded_unit_sets": 60,
+  "guarded_color_sets": 48,
+  "resident_adapter_calls": 144,
+  "files": {
+    "array_shape_proposals.hpp": "11339c203cdfbf77fc1896bd1b4fa9628c1e2fdb7645ac490f67f178f65bf700",
+    "array_shape_search.hpp": "bdcd6ba8686920b1d814a213a154e291f1575527c2ea5d138764e6d40c2695d1",
+    "array_shape_feedback_search.hpp": "196ade2efb27b1fc4928da9035fc93b327b5eec060cef4209884907165d05fd6",
+    "array_shape_native_server.cpp": "fbc08f0c7744666236a3144a07198bdeee617a135817c9220ca55e15a53d342c",
+    "test_array_shape_search.py": "0f788e3165fa2a7881b6a2331c0debd98e13e2ace07b65c5b1e80577be999910",
+    "test_array_shape_adapter.py": "26a8782dc25188e2cb60bc2b43f7d0a9a369962fcdcb8a9bf7a633ffc2586c40"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "observed_ns": 1793438608346409609,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_REVERSE_WORD_CLEAR.json",
+    "sha256": "870a50b21bf43d20dbfac5d2b28dc75a87c70dc0942e76a3a2bf4fa8d19d1ccd"
+  },
+  "progress": {
+    "report": "work/resident_reverse_marker_RMW_20261031/review.json",
+    "report_sha256": "c2cb51d780239a50057972e420843ecd0472e45425f4010ac22d6710cc99ce6e",
+    "independent_review": "work/resident_reverse_marker_RMW_20261031/independent_review.json",
+    "independent_review_sha256": "45168e97d4900c1337444991e81044ea4216cf86c6ed31fc0d7a3f38c1af95e3",
+    "validation_snapshot_review": "work/resident_reverse_marker_RMW_20261031/validation_snapshot_review.json",
+    "validation_snapshot_review_sha256": "57138233d3d84067efbb06ec05230a15697a6ef606e3584f4b337046f8eb02ca",
+    "snapshot_integer_review": "work/resident_reverse_marker_RMW_20261031/snapshot_integer_review.json",
+    "snapshot_integer_review_sha256": "07c58d45bfaf0312d6e38340ad5b0a5b1db48742fad8f5257719bd482679eff9",
+    "binding_and_cache_witness": "work/resident_reverse_marker_RMW_20261031/binding_and_cache_witness.json",
+    "binding_and_cache_witness_sha256": "351845df1e15ef00ade6ab3e5370b47f94239a4126370037e4e7d420f10aff28",
+    "final_review": "work/resident_reverse_marker_RMW_20261031/final_review.json",
+    "final_review_sha256": "a545196dc0819cfed93536ecd8ea5684081f0a93dc80b05932628bf2315054ac",
+    "new_feasible_UNSAT_queries": 13,
+    "source_RMW_transactions": 203,
+    "cache_hits": 193,
+    "cache_misses": 10,
+    "IO_stall_edges": 1572,
+    "validation_integer_cases": 3248,
+    "write_gate_cases": 320,
+    "conditional_RMW_fresh_read_and_cache_commit_checked": true,
+    "phase72_snapshot_current_row_checked": true,
+    "entry_cache_coherence_required": true,
+    "whole_marker_call_proved": false,
+    "actual_encoded_memory_contract_proved": false,
+    "HDL_simulation_executed": false,
+    "full_sequential_HDL_equivalence_proved": false,
+    "scope": "Conditional source marker-word read/modify/write contract:13feasibleBVqueries cover referencevalidation,21bitposition/15bitword/6bitmask correctness,fresh2CEreadwithpoisonedqandundefinedintermediateaddresses,ORpreservationandcachecommitunderentrycachecoherence. Sourcephase1blockedstate stutters relevantregisters/RAM;unblockedadvancementguaranteessecondreadbeforecapture2. Capturedcachecompare0usesoldcacheaddress;addressupdates0,data/ORupdates3,write4restoreboundarycoherence. Phase72nestedvalidation snapshots startarbitrary:accepted iffcurrent decoded rowvalid,andjointword/maskfieldsfresh;failedflagsdisablewrite4.203integer sourcewindows(193hits/10misses,1572stall edges),3248snapshot casesandcomplete320casewritegate table agree;actualRAM request/returnhierarchychecked. Requiresdecoded rawoffset/i/n/e/previous snapshots,activeparent5held,propercallcacheinitialization/coherententryandstablememory. FullAXIread32transport,rowcounter/previousvaluefulllifetimes,wholemarkerstartup/completion,actualencodedimage/global4stateRTL/native/timing/board remainopen. DeliberatelyincoherentcacheSAT/concretewitnessisassumptionnecessity,notobservedDUTbug. No original flow/DUT/process/input/cache/guard/budgetchange,newnativeexecutionoradoption.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v266_20261031/matrix.json",
+    "sha256": "bbf1b6b584b1c3caa31d39b3b2d500ce0b593a35401e303b81893e719443bc08"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v266.json",
+    "sha256": "579e90d051e9f58af394198ace89aa269b4ba9e92263f950f37fb4fb876788db"
+  },
+  "next_action": "Close whole73phase marker call control:loopinit invalidates cachebeforefirstactiveRMW,allvaliddecoded rowsiteratei0..n,previousoffsettracksacceptedrow,andparent5completioncannotprecedefinalwrite4. ProveactualAXIread32request/response/capture transports the intended reverse slot despiteAR/Rstalls andoldbusvalues;thenconnect72snapshotandRMWcontracts tocomplete initializedmarkerimage. Composewithwordclear/stablememoryprefixrecurrence/readytotaln+1/unaryselect-getdelimiter contracts. LocalcachecoherenceisrequiredatRMWboundaries,andundefinedextraRAMreadaddressesmustnotbeassumedvalid/stable. Preserve alloriginalhandles/guards/budgets/inputs/caches/failures/UNKNOWNs andnative/4state/boardgaps.",
+  "previous_goal_turn_classification": "progress_and_verified_wait_v265_registered",
+  "current_goal_turn_classification": "progress_and_verified_wait",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

@@ -1,0 +1,26 @@
+{
+  "observed_ns": 1793401033500285158,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261030_STRICT_NATIVE_MAPPED_CAPACITY.json",
+    "sha256": "6e92195a32ad67afe36f46c43acb7e23e8d83c414d95d9db63f02976ae9c961a"
+  },
+  "review": {
+    "review": "work/original_joint_XRT_completion_frontier_20261030/review.json",
+    "review_sha256": "5be575b3410dd6cf4359ffc6e03a46326e5dc8ec625162491d0a40f644b4d786",
+    "monitor_extension": "work/original_joint_XRT_completion_frontier_20261030/monitor_extension_review.json",
+    "monitor_extension_sha256": "54463b5e4232da3783de5eb810ded957550851a4e4ad05a714af3a7dfd86178a",
+    "reported_net_calls_each": 96,
+    "reported_proposal_calls_each": 25,
+    "full_route_terminal": false,
+    "scope": "Two original live XRT chains, bounded post-wait receipt/source review. Partial reported call completion only; no full native route, device-state independent review, hardware grant, physical performance or board acceptance.",
+    "research_complete": false
+  },
+  "next_action": "Use the existing bounded poller, now also watching the two source-bound original XRT host PIDs and v2 waiting supervisor. Preserve all original chains and their graph mappings; do not stop/restart or evict cache based on quiet logs. Distinguish CPU liveness, reported post-wait completion and actual full terminal acceptance. The new full341net/5repeat strict endpoint chain remains gated on unchanged20GiB headroom. Further API diagnosis needs stronger read-only evidence because no begin receipt exists in the old logs.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

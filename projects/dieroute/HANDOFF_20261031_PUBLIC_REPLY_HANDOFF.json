@@ -1,0 +1,49 @@
+{
+  "observed_ns": 1793445659069257683,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_PUBLIC_READ_RESULT.json",
+    "sha256": "c1c53ed1d2c32ae8b8485d37ca9db571826ce0f1e33adf8ac3d46b9ef47bc76d"
+  },
+  "progress": {
+    "report": "work/resident_public_reply_handoff_20261031/review.json",
+    "report_sha256": "5636eebc6d66adefbe4f1437020d12442175717978c0b5b5b0b2f15855081c0a",
+    "independent_review": "work/resident_public_reply_handoff_20261031/independent_review.json",
+    "independent_review_sha256": "a59db10678c01931b9b77b22bdcec2258592c017a4795552d018e349cab29576",
+    "final_review": "work/resident_public_reply_handoff_20261031/final_review.json",
+    "final_review_sha256": "e60e60502d5f3b677bf71a071366ec6423579e2fafd48ed9cf0db41f7778fd57",
+    "new_feasible_UNSAT_queries": 23,
+    "integer_admitted_cases": 64,
+    "fixed_post_writer_edges": 4288,
+    "logical_B_wait_edges": 224,
+    "public_host_roundtrip_proved": false,
+    "scope": "Source projections connect public field/get registered launch/ready/wait boundaries, accepted get3firststate not idle-done, get35secondvalue0/terminal15/currentpreg, top75final9capture+writerstart/top76holding/freshwriter-no-cacheddone, fixed77..143chain and144logicalB-gatedcompletion. Arbitrary old selected data and kind7flags/cachedone admitted. Requires stable binary command/current successful get contract, proper common reset/noabort, drained writer entry with enable1=0/done_reg0/loop_init1, and active top done_reg0. These entry conditions are explicit composition premises, not a new universal full-parent reachability proof. Fresh source context at each selected boundary is admitted; full multi-call control closure and external reply adapter physicalB/error/order remain open. LogicalB is the HLS internal adapter completion, not necessarily a single external B. No new HDL/native/physical/board result. Separate integer64admitted boundary cases preserve selected get/top registers and cover4288fixed postwriter edges/224logicalBwaitedges. Initial lexer limitation and mistaken internal BREADY1-without-BVALID assumption retained as checker errors, not DUTbugs. Source core BID/BRESP inputs are unused beyond declarations; successful ordered physical write responses remain an explicit external premise.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v280_20261031/matrix.json",
+    "sha256": "ccf69281c8421203eea4bad3c5388016705cf7f2b318c12809588277e72568bf"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v280.json",
+    "sha256": "cdaf2ddf5b6c6533eaba038a6866ee3d64063d0bd20922222db0565056df806c"
+  },
+  "current_runtime_observation": {
+    "path": "work/resident_public_reply_handoff_20261031/runtime_observation.json",
+    "sha256": "e33c4a90949ec778cccb7abf36a5b1e488d58cce91dfc3bd1dcbae61e5f35583",
+    "scope": "Fresh actual process identities; no native acceptance; Owner supervisor loss retained."
+  },
+  "previous_goal_turn_classification": "progress_and_verified_wait_v279",
+  "current_goal_turn_classification": "progress_and_verified_wait",
+  "next_action": "Verify actual reply write adapter USER_DW512/BUS512/MAX16/69requests/16outstanding: 128byte request geometry and4KiB splits, all FIFO/buffer/throttle WDATA/WSTRB/WLAST order, core last_resp and front wrsp/user_resp physicalB->one logicalB. Keep correct ordered successful external responses explicit because writecore does not inspect BID/BRESP. Discharge admitted drainedwriter and active-topdone0 entry reachability across full calls before claiming public host roundtrip. Continue original native handles and preserve Owner supervisor quota failure/missing negative+guard terminal; no restart/adoption. Full install/prepare, strict capacity/async, representative QoR/ablations,300MHz/board/artifact/paper goals remain open.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "owner_supervisor_failure_retained": true,
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending;820separate transitive/466root gaps;paper unchanged.",
+  "research_complete": false
+}

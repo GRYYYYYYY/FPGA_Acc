@@ -1,0 +1,67 @@
+{
+  "plans": [
+    {
+      "arm": 0,
+      "mode": "online",
+      "commands": [
+        "tools/trial_paired_checked_v1_arm0_v6.py",
+        "tools/verify_paired_checked_v1_arm0_v6.py",
+        "tools/run_paired_checked_v1_arm0_serialize_v6.py",
+        "tools/run_paired_checked_v1_arm0_native_v6.py",
+        "tools/run_paired_checked_v1_arm0_canonical_v6.py",
+        "tools/run_paired_checked_v1_arm0_quality_v6.py",
+        "tools/trial_paired_checked_v1_arm0_wire_selection_v6.py",
+        "tools/verify_paired_checked_v1_arm0_wire_paths_v6.py",
+        "tools/run_paired_checked_v1_arm0_wire_serialize_v6.py",
+        "tools/run_paired_checked_v1_arm0_wire_native_v6.py",
+        "tools/run_paired_checked_v1_arm0_wire_canonical_v6.py",
+        "tools/run_paired_checked_v1_arm0_wire_quality_v6.py"
+      ],
+      "report": "paired_checked_v1_arm0_wire_native_quality_v6_2026-10-09/verification.json",
+      "native": "paired_checked_v1_arm0_wire_native_v6_2026-10-09"
+    },
+    {
+      "arm": 1,
+      "mode": "cold",
+      "commands": [
+        "tools/run_paired_checked_v1_arm1_native.py",
+        "tools/run_paired_checked_v1_arm1_canonical.py",
+        "tools/run_paired_checked_v1_arm1_quality.py"
+      ],
+      "report": "paired_checked_v1_arm1_quality_2026-10-09/verification.json",
+      "native": "paired_checked_v1_arm1_native_2026-10-09"
+    },
+    {
+      "arm": 2,
+      "mode": "cold",
+      "commands": [
+        "tools/run_paired_checked_v1_arm2_native.py",
+        "tools/run_paired_checked_v1_arm2_canonical.py",
+        "tools/run_paired_checked_v1_arm2_quality.py"
+      ],
+      "report": "paired_checked_v1_arm2_quality_2026-10-09/verification.json",
+      "native": "paired_checked_v1_arm2_native_2026-10-09"
+    },
+    {
+      "arm": 3,
+      "mode": "online",
+      "commands": [
+        "tools/trial_paired_checked_v1_arm3_v6.py",
+        "tools/verify_paired_checked_v1_arm3_v6.py",
+        "tools/run_paired_checked_v1_arm3_serialize_v6.py",
+        "tools/run_paired_checked_v1_arm3_native_v6.py",
+        "tools/run_paired_checked_v1_arm3_canonical_v6.py",
+        "tools/run_paired_checked_v1_arm3_quality_v6.py",
+        "tools/trial_paired_checked_v1_arm3_wire_selection_v6.py",
+        "tools/verify_paired_checked_v1_arm3_wire_paths_v6.py",
+        "tools/run_paired_checked_v1_arm3_wire_serialize_v6.py",
+        "tools/run_paired_checked_v1_arm3_wire_native_v6.py",
+        "tools/run_paired_checked_v1_arm3_wire_canonical_v6.py",
+        "tools/run_paired_checked_v1_arm3_wire_quality_v6.py"
+      ],
+      "report": "paired_checked_v1_arm3_wire_native_quality_v6_2026-10-09/verification.json",
+      "native": "paired_checked_v1_arm3_wire_native_v6_2026-10-09"
+    }
+  ],
+  "scope": "FixedABBA single step3, two online/two cold. Unified outer wallclock from first subprocess start through required independent quality terminal includes fresh oldstate candidate generation, CNF/core/RUP/query production, candidate audits, optimization, two online native/canonical quality stages and all subprocess/files. Input oldstate/budget/identitytrace/build production excluded and supplied; no independent timing specification, HDL, hardware or broad randomized gain claim. Cached-occurrence solver and indexed proof support version; fresh namespaces for every arm; no concurrent RouteCast diagnostic jobs during timing. Production indexed independent RUP checker; final cross-check uses original naive replay and its full cost remains included."
+}

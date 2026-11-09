@@ -1,0 +1,84 @@
+{
+  "schema": "dieroute.edge_identity_progress.v1",
+  "captured_utc": "2026-10-13T10:50:34.842176+00:00",
+  "research_status": "active_incomplete",
+  "board_result": false,
+  "implemented": [
+    "selected CSR edge IDs in local/flat/corridor search and speculative replay",
+    "explicit edge-aware batch/controller/timing APIs; legacy APIs fail closed",
+    "shared-tree parent edge and selected-edge upstream delay; rip-up clears both node and edge paths",
+    "edge-sensitive route/transaction hashes with unchanged legacy formats",
+    "host outputs physical PIP ID/direction sidecar mapping; independent native DB re-resolution"
+  ],
+  "validation": {
+    "ctest": "12/12 pass; later reverse-PIP host extension also passes",
+    "asan_ubsan": "4/4 core tests pass",
+    "tsan": "2/2 concurrency tests pass",
+    "legacy_development_replays": {
+      "cases": [
+        "diffeq",
+        "alu4",
+        "ex5p"
+      ],
+      "runs_per_case": 1,
+      "semantic_artifacts_per_case": 7,
+      "all_hashes_and_prior_non_wall_counters_identical": true
+    },
+    "host_fixture": "16 mode/worker configurations, 2 reverse-PIP executions, 7 fail-closed configurations",
+    "native_runs": 400,
+    "repeats_per_case_mode_workers": 5,
+    "native_cases": [
+      "parallel PIP choice 0",
+      "parallel PIP choice 1",
+      "shared SLR tree",
+      "reverse SLR traversal",
+      "capacity competition (expected illegal)"
+    ],
+    "native_workers": [
+      0,
+      1,
+      2,
+      4
+    ],
+    "native_paths_resolved": 560,
+    "native_pip_occurrences_resolved": 960,
+    "native_pip_access_slr_transitions": 320,
+    "damaged_native_pip_rejected": true,
+    "same_node_paths_distinct_selected_pips_change_hash": true
+  },
+  "evidence": {
+    "work/edge_identity_verification_20261013/artifact_manifest.json": "3e4e4ce4b21a824ccbf3fc93f33230b03af10dd814e4ca2b5d778e3f24346682",
+    "work/edge_identity_verification_20261013/source_sha256.json": "76f49be34a91f56d6953d29e032404c6c6f21240b7e8ad43484cda0ee42f238d",
+    "work/edge_identity_verification_20261013/upstream_sha256.json": "d5ad1cdd598e35824d3ce91895c2f8f5a036239fc780bfa9cad15da4b90191c5",
+    "work/edge_identity_legacy_20261013/audit.json": "e22163327c8cb38fa1ca2d37697460205e3ebc9bfc4184ca3b630b5f67a35354",
+    "work/edge_identity_native_20261013/routing_audit.json": "fa9422e013e4160f86d467ab7d37eea27b44008cfe9f81abaee57a1ba2e06cbc",
+    "work/edge_identity_native_20261013/native_verify.json": "f7a3b581393b0292d0c59e62eb055dcdcdbb288d652163ef1ec674854882a253",
+    "work/edge_identity_native_20261013/selected_verify.log": "3cdfc61041d9cf7e3c0189be5f6285295a8cc411ca05fb6f0e64557140703da9",
+    "work/edge_identity_native_20261013/corrupt_verify.log": "9f96d36a60433e4238e7ea536f4226215d7031d39043f41c8489c7b7b71f3342"
+  },
+  "verification_directory": "work/edge_identity_verification_20261013",
+  "source_snapshot": "work/edge_identity_verification_20261013/source",
+  "initial_failed_test": {
+    "log": "work/edge_identity_build_20261013/ctest_edges.log",
+    "cause": "test incorrectly expected a stale conflict with one worker; one-task windows serialize authority and correctly produce zero conflicts",
+    "resolution": "assert zero replay for one worker and one replay for overlapping 2/4-worker windows; final edge paths and hashes agree across all"
+  },
+  "scope_limits": [
+    "native 2-node parallel-PIP and 7-node SLR subgraphs only",
+    "native costs/capacities are artificial functional fixtures, not commercial calibration",
+    "full native CSR not yet integrated as a protected/admissible full-design routing workload",
+    "native key namespace is local to each frozen catalog",
+    "edge-aware external commercial timing adapter and actual DieRoute DCP writeback remain open",
+    "no new HLS/HBM or physical board result"
+  ],
+  "remaining": [
+    "joint native WL/CPD gate",
+    "complete commercial routing graph restrictions, pin access, protection enforcement, capacity and delay calibration",
+    "complete design DCP rerouting/writeback and native legality/QoR",
+    "held-out workloads, topology scaling and all ablations",
+    "HLS/HBM engine implementation and validation",
+    "physical board performance/energy",
+    "paper and complete artifact"
+  ],
+  "active_processes": []
+}

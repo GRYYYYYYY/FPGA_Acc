@@ -1,0 +1,108 @@
+{
+  "schema": "dieroute.dcp_frontend_progress.v1",
+  "captured_utc": "2026-10-13T08:34:53.029871+00:00",
+  "research_status": "active_incomplete",
+  "board_result": false,
+  "routes_recomputed": false,
+  "input": {
+    "original_checkpoint": "../persistroute/build/xclbin/hw/_x/link/vivado/vpl/prj/prj.runs/impl_1/level0_wrapper_routed.dcp",
+    "sha256": "8a1638cc183eab4050630e3cc070e621c6223b536dcd0b400cc08ed1c9ea2a61",
+    "scope": "complete preexisting PersistRoute implementation plus U280 platform shell; frontend development case, not held-out DieRoute routing benchmark"
+  },
+  "physical_inventory": {
+    "nets": 963825,
+    "pins": 2928754,
+    "pips": 11500192,
+    "signal_nets": 963772,
+    "cross_slr_signal_nets": 15252,
+    "cross_slr_pin_patterns": {
+      "0;1": 9497,
+      "0;1;2": 20,
+      "0;2": 230,
+      "1;2": 5505
+    },
+    "missing_pin_locations": 0,
+    "pins_on_multi_slr_nodes": 0,
+    "nets_without_source": 323030,
+    "cross_slr_signals_without_source": 0
+  },
+  "placement_inventory": {
+    "cell_occurrences": 857493,
+    "placed_occurrences": 857164,
+    "locked_occurrences": 32617,
+    "locked_named_occurrences": 32616,
+    "routethru_occurrences": 22860
+  },
+  "physical_roundtrip": {
+    "all_five_csv_files_byte_equal": true,
+    "native_route_errors": 0,
+    "native_fully_routed_nets": 640797,
+    "native_slls_used": 15502,
+    "native_wns_ns": 0.016,
+    "native_tns_ns": 0.0,
+    "native_timing_all_compared_fields_equal": true,
+    "native_primitive_counts_equal": true,
+    "native_drc_rules_counts_equal": true,
+    "native_drc_warnings": 438,
+    "native_drc_advisories": 5,
+    "complete_native_field_equivalence": false
+  },
+  "logical_diagnosis": {
+    "original_readable_vs_rw_embedded_hierarchy_equal": true,
+    "native_reelaboration_removed_instances": 7,
+    "removed_instance_types": [
+      "VCC"
+    ],
+    "native_reelaboration_changed_rows": 533,
+    "changed_fields": {
+      "ports": 524,
+      "nets": 9,
+      "children": 7
+    },
+    "scope": "hierarchy and instance properties only; no encrypted cell elaboration or full leaf-pin connectivity equivalence proof"
+  },
+  "fixes": [
+    "Use explicit Vivado readable EDIF; retain encrypted EDN dependencies and generated checkpoint loader.",
+    "Enumerate per-site physical BEL occurrences instead of a global <LOCKED> representative; include unused/unplaced records explicitly.",
+    "Archive reports, input/runtime/source hashes, complete physical inventories and command exit statuses."
+  ],
+  "failures_retained": [
+    "Initial native read failed because embedded EDIF was unreadable and auto-generation had no Vivado PATH.",
+    "Initial cell inventory differed at one global <LOCKED> representative; full site/BEL enumeration resolves this false comparison.",
+    "A concurrently written auditor console was captured empty by the v2 producer manifest; provenance_note records the single changed observer log, with all native producer artifacts unchanged. Final v3 inventory manifests are independently verified.",
+    "First ad-hoc hierarchy comparison failed from Counter.update(dict-of-list); fixed audit completed in a new directory.",
+    "Strict native report equality remains failed due to native logical/hierarchy counts; not masked or weakened."
+  ],
+  "verification_directory": "work/dcp_frontend_verification_20261013",
+  "evidence": {
+    "work/u280_dcp_probe_20261013/manifest.json": "8ec9da19cfced946c10eba251fad1829189f970443ddf2e0dc9e8607b268e92a",
+    "work/u280_dcp_probe_20261013/probe.log": "2e479018050e5c946ca8af217b121717fc8575acb2ccd4a3aa765102583fed0e",
+    "work/u280_dcp_baseline_v1_20261013/manifest.json": "40a342b4aeb65539028389f794b54edfd2caa42e416154946d228d568f9d7b96",
+    "work/u280_dcp_baseline_v1_20261013/environment.log": "89ab84ba3f437f21e638f1924c0b3e537ae34914ac6f5fb9978c04e849ee3ca4",
+    "work/u280_dcp_baseline_v1_20261013/pci_xilinx.json": "bfc081e3957682942a8ddc17c092a6eebe9b0ac181f25b90c4d43ab9f459110b",
+    "work/u280_dcp_inventory_v2_20261013/manifest.json": "05228dd58993a7c4af92ab673d5079138ad50c1000fa57b6ee142f7f8f30f6b7",
+    "work/u280_dcp_inventory_audit_v2_20261013/provenance_note.json": "e88e17cadd859406614af88d64c5eeb047276ddc6b3a24b29c078590cb8a22a9",
+    "work/u280_dcp_roundtrip_comparison_v1_20261013/audit.json": "6a3130e2a720a21ca1e2146da40e0b796a2a67158473e855d72ae72a1fa9c143",
+    "work/u280_dcp_roundtrip_comparison_v1_20261013/cell_differences.json": "54287ae9338fd88cb6aeebada98ca3e88067c81ddccf6c7fd66e0e776e3eb445",
+    "work/u280_dcp_inventory_v3_20261013/manifest.json": "ace545a711bd4bcb586eb7f0c9238bb58ef3e8e86d87b7645ded69e486b9dfae",
+    "work/u280_dcp_roundtrip_inventory_v2_20261013/manifest.json": "77b5e2a4c71c92ba166c70b8e29830aae8f23352921734c751312d09200a706b",
+    "work/u280_dcp_roundtrip_native_v1_20261013/manifest.json": "77224dd3403a292998ed6b6901e0df82cfbe2002891063ccf83b14e3e1904ace",
+    "work/u280_dcp_native_comparison_20261013.json": "9ffbbc343be075865f22a72897a945c0fda44288b47a8518680814d83a0dc4c6",
+    "work/u280_dcp_roundtrip_comparison_v2_20261013/audit.json": "9d482fe821122f287e829351a157fa246217c38200989b69c5639dbf8021a33d",
+    "work/u280_edif_hierarchy_20261013/manifest.json": "ee2da524efa9325480bfd7bb4de746c0daa7b96c00258023595c7b2235653ec0",
+    "work/u280_edif_hierarchy_audit_v2_20261013/audit.json": "45012d9da3cf4726f646370d29e35b2891de77966cfff7d8030adbf668734eb8",
+    "work/u280_edif_hierarchy_audit_v2_20261013/changed_rows.jsonl": "221f4f20cf01d6855ce84c9d9f48971b8641342d7aa26688fc33112b5c856335",
+    "work/u280_edif_hierarchy_audit_20261013/failure.json": "b7c0b706626abb2f0645b673beaa9fcce84842df8f633afee609fdceff864b01",
+    "work/dcp_frontend_verification_20261013/placement_counts.json": "17e435daad0b2f349620701a6ffa8b4e4f86941779257b62097f91234bad64a7",
+    "work/dcp_frontend_verification_20261013/source_sha256.json": "3d1b97f6bdc3993c5aa6e0fb7ff503e0040294b986d55a346d84190272656de6"
+  },
+  "active_processes": [],
+  "remaining": [
+    "Prove logical connectivity preservation across native EDIF re-elaboration or use a native route-only checkpoint update path.",
+    "Export and route a complete commercial RR workload with actual pin access, delay model and preserved background resource ownership.",
+    "Joint native WL/CPD gate and broader held-out/scaling cohort.",
+    "Full reservation/HBM/shadow/migration/topology ablations.",
+    "New HLS/HBM implementation and physical board speed/energy.",
+    "Paper and complete reproducible artifact."
+  ]
+}

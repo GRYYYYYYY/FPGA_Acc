@@ -1,0 +1,10 @@
+import json,sys,subprocess,time,os
+from pathlib import Path
+R=Path(__file__).resolve().parents[1];sys.path[:0]=[str(R/'tools'),str(R/'tools/native_resume_prototype')]
+from pre_route_endpoints import sha
+from source_binding_v2 import closure
+src=R/'experiments/ethernet_native_demand_v1_2026-10-08';proof=src/'verification.json';v=json.loads(proof.read_text());assert v['exhaustive_disjoint_partition_exact_original_queries_and_whole_NET_scope_pass'] and all(sha(k)==v for k,v in v['bindings'].items());ep=src/'endpoints.json';runner=R/'tools/run_resident_soft_demand_affected_cache_v1.py';out=R/'experiments/ethernet_resident_v1_2026-10-08';out.mkdir();bindings={**closure([Path(__file__),runner]),str(proof):sha(proof),str(ep):sha(ep)};bindings.update({v['path']:v['sha256'] for v in json.loads(ep.read_text())['inputs'].values()});cmd=[sys.executable,str(runner),str(ep),str(out/'resident')];(out/'protocol.json').write_text(json.dumps(dict(bindings=bindings,command=cmd,timeout_seconds=1200,scope='Complete Ethernet physical demand on experimental async architecture. Frozen original exact RC floors/max1ns-or-ceil1.5floor budgets, span50ps plus dynamic50ps prices, two rounds, wholeNET replacement/failure retention. No native labels available or used, all outcomes retained. Original HDL/timing/generalization/netgain gates unproven.'),indent=2)+'\n');tick=time.perf_counter()
+with (out/'resident.log').open('w') as log:
+ try:code=subprocess.run(cmd,cwd=R,env={k:v for k,v in os.environ.items() if not k.startswith('ROUTECAST_')},stdout=log,stderr=subprocess.STDOUT,timeout=1200).returncode
+ except subprocess.TimeoutExpired:code='TIMEOUT'
+assert all(sha(k)==v for k,v in bindings.items());(out/'receipt.json').write_text(json.dumps(dict(bindings=bindings,exit_code=code,estimator_process_wall_seconds=time.perf_counter()-tick,files={str(p):sha(p) for p in out.rglob('*') if p.is_file()},scope='Estimate process outcome only, requires independent full path/RC/budget/event audits, native labels and generalization validation.'),indent=2)+'\n');print('ESTIMATE',code,flush=True)

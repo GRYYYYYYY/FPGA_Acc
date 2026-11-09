@@ -1,0 +1,22 @@
+{
+  "schema": "FUSIONPAR_TREE_REUSE_DEVELOPMENT_V1",
+  "designs": ["ex5p", "alu4", "misex3"],
+  "scope": "development, not held-out validation",
+  "primary_attempts": 3,
+  "policy": {
+    "retention": "Within every affected net, retain complete old branches exactly when both RR source and sink endpoints are unchanged",
+    "source_move": "Remapped source invalidates all of that net's old branches",
+    "resource_accounting": "Unaffected base reservations plus explicit per-net dynamic owner sets, counted once per net; support capacity > 1",
+    "versions": "Retained route versions stay unchanged; resources conservatively version the full affected-net union",
+    "congestion": "Retained trees remain fixed across bounded negotiation; no implicit full-tree fallback",
+    "ordering": "Same task priority/id and net wave ordering for empty-tree and retained-tree controls",
+    "kernel": "Existing PR HBM C-model search/commit kernels with shared numeric guard",
+    "max_iterations": 30,
+    "issue_width": 1,
+    "acceptance": "Strict native (wirelength, CPD) lexicographic improvement; both at most 102% of initial legal baseline"
+  },
+  "modes_added": ["interleaved_tree_control", "interleaved_tree_reuse"],
+  "required_checks": ["Empty-tree control reproduces PR event semantics and search counts", "Retained connection IDs exactly match unchanged endpoints", "Every retained path and route version remain unchanged", "Native legality and STA for every routed candidate", "All rejected work and validation costs included"],
+  "repeats": "ex5p pilot: 1; fixed-policy development validation: 2 per design",
+  "limits": ["Do not infer native delay preservation from path preservation because RC branch loads can change", "Do not compare later diverged candidate placements as matched per-candidate work", "No physical FPGA measurements", "Best placer + PR baseline remains outstanding"]
+}

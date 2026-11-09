@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "CTest": "wire_legal_search_integration",
+  "guarded_units": 60,
+  "guarded_colors": 48,
+  "resident_calls": 144,
+  "scope": "CPU external-word cost and legality, host enumeration still containers; native closure pending",
+  "sources": {
+    "legal_search.hpp": "6577595d05c12a4c6877cae1bcb8b36213767dac8a25d4e0262f2381a4face36",
+    "legal_feedback_search.hpp": "b0d2c0a38168933d213f5a829374800823ebc2f0f7f9ad47ecc06d84e5fcea7d",
+    "test_legal_adapter.py": "76eb5df88f7047d74302b8c33c0eae25ea85f1faf06030d6745c43e6e4f285f4",
+    "test_legal_search.py": "1903f14205ad279690e83a42d91d08c3078e8a036b8b819e024de8fe226972f0",
+    "legal_search_query.cpp": "5bce329c19b51b581c19cca4866a3053dad259ea2087cd2fd1db13dde1f7d3fa",
+    "legal_native_server.cpp": "814450867c537acb266edce4258c47620cf2bcd2ffd7004f91cf0bf938c7fedf"
+  }
+}

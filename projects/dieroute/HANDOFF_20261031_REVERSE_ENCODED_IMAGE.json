@@ -1,0 +1,51 @@
+{
+  "observed_ns": 1793441275102369919,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_INSTALL_STREAM_IDENTITY.json",
+    "sha256": "468ecfa8627755932642acbcf9684497ecfc8b3a3ac2128fe036232bcdc0e7ea"
+  },
+  "progress": {
+    "report": "work/resident_reverse_encoded_image_20261031/review.json",
+    "report_sha256": "a9ce5bac7b777242b245da6735c1e9d6b4d946a9f42cc844a2ce5495dfb81eda",
+    "independent_review": "work/resident_reverse_encoded_image_20261031/independent_review.json",
+    "independent_review_sha256": "800871c2abbef98c9b4fdca940855b759b7e523991610db5152aafc4a124502d",
+    "final_review": "work/resident_reverse_encoded_image_20261031/final_review.json",
+    "final_review_sha256": "72bcc5e81f69f1f5a58781b2fa06f5b90374c76f415c593c39305c495aaa8a3f",
+    "new_feasible_UNSAT_queries": 7,
+    "continuous_clear_marker_prefix_calls": 8,
+    "source_edges": {
+      "clear": 119,
+      "marker": 26420,
+      "prefix": 192
+    },
+    "cache_hits": 322,
+    "cache_misses": 20,
+    "AR_R_stalls": 222,
+    "conditional_reverse_word_image_and_total_contract_checked": true,
+    "actual_encoded_memory_contract_proved": false,
+    "full_RTL_refinement_proved": false,
+    "scope": "Conditionalcomplete reverseunarywordimage/prefixtotal source-modelcomposition.7feasibleBV/array/LIAlemmas plusnineexistingcomponentcontracts establish exactsetofn+1markers i+a_i,zero padding/outsideframe,strictdistinctness/cardinality,and stableprefixP[B]=n+1 forvalidmonotoneoffsettablea0=0/an=e. Eightcontinuousclear/marker/prefixsource-helpercalls share27295wordRAMandbothURAMqstageswithoutreset;actualread32requestresponse/RMW/cachecommitfeedsstableprefix directly,witholdcounters/cache/readstagesandlong128then1. No decodedroworwordimageinjection. Parentprefix0write/helpersequencingapplyprevioussourcecontracts. Requiresactualhosttable/layout/alignmentidentity,correctexternalorderedstablememoryprotocol,andcomponentbinarysource-modelrefinement. Notfull4stateRTL/native/boardorunconditionalactualencodedmemoryproof.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v271_20261031/matrix.json",
+    "sha256": "2a292229f13e5c7d3be6c9551f4cdd36c868f863ae5989c29840961db8a00483"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v271.json",
+    "sha256": "641dcdbde1928b54ccb0d14d04c971b2a52df2f52cb5d958f05a8b1077ea4984"
+  },
+  "next_action": "Composeconditionalcompletewordimage/prefixcontractwithsourceprefixsearch/wordscan/six-stepbitselect/return/getbridge toverify reverseget(i)=offset_i whenready. Auditactualhostpackedtable/layoutslot/alignment/commandvalueidentityandmemoryimmutabilitypremises;preservefullRTL/native/externalprotocol/physicalboardgaps. Keeporiginalhandles/guards/budgets/inputs/caches/failures/UNKNOWNs andawaitnativecompletionwithoutrestart.",
+  "previous_goal_turn_classification": "progress_and_verified_wait_v270",
+  "current_goal_turn_classification": "progress_and_verified_wait",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

@@ -1,0 +1,66 @@
+{
+  "schema": "dieroute.reserved_validation.v1",
+  "status": "preregistered_not_executed_reserved_inputs_unopened",
+  "reserved_cases": [
+    "apex2",
+    "frisc",
+    "elliptic"
+  ],
+  "development_cases": [
+    "ex5p",
+    "diffeq",
+    "alu4"
+  ],
+  "algorithm": "Frozen feedback-off native parent plus joint budget net sweep plus refreshed critical policy",
+  "implementation_selection": "Implicit implementation only if all three development full-run trees, quality and complete recorded decision traces equal reference; otherwise retain reference and archive mismatch. No selection based on reserved outcomes.",
+  "architecture": "Same controlled three-layer SB3/cw80 development architecture generation, no commercial SLR equivalence claim.",
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "workers": 1,
+  "channel_width": 80,
+  "maximum_labels": 2097152,
+  "maximum_expansions": 2097152,
+  "parent_configuration_recipe": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/sb3_fixed_feedback_pair_20261015/recipes/ex5p/feedback_off/pair.json",
+  "parent_configuration_rule": "Copy frozen scalar configuration verbatim; only circuit/input identity, explicitly paired seed and output paths may differ. Archive effective command and environment.",
+  "baseline_policy": "Fresh native VPR baseline for each circuit/seed under identical architecture,width,packing and placement inputs. Bind source/binary/commands/input graph and route hashes before candidate evaluation; include baseline failures.",
+  "quality_gate": {
+    "native_legal": true,
+    "failures_nonincrease": true,
+    "wirelength_nonincrease": true,
+    "critical_path_delay_nonincrease": true,
+    "unique_crossing_edges_nonincrease": true
+  },
+  "failure_policy": "Archive all attempts. Missing endpoint binding, exhausted labels, route/STA failure and native baseline failure are explicit outcomes. No omitted failures, case-specific caps, width changes, net IDs or post-result tuning.",
+  "timing_policy": "Charge parent routing, graph loading, initial STA, every search, writeback, native validation, observations, binder and verification. Report explicit verification separately; hash preflight exclusion stated. Preserve per-stage and total wall time; no physical speedup from CPU timing.",
+  "launch_prerequisites": [
+    "Full development implicit comparison independently reviewed or reference retained per predefined rule",
+    "Freeze generated architecture, native tools and effective per-seed baseline commands before candidate outcomes",
+    "Dedicated reserved run directories with immutable source and input manifests"
+  ],
+  "claim_limits": [
+    "Architecture-model validation only",
+    "No physical-board performance or energy inferred",
+    "Five seeds are distinct from identical-configuration repeats",
+    "No gate closes solely because this protocol exists"
+  ],
+  "source_sha256": {
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/experiments/cohort_protocol_v1.json": "77c9ad51e0504180bfcaa8fee3119510eeebdfd7f0341115a6020515a447c350",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/tools/run_native_joint_budget_repeat_stage.py": "b2e18274a694a2856d5da3819567d4399a41c6b1eafcaa3cb0e64ea265c97bb8",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/tools/run_native_refreshed_critical_policy_v1.py": "b28de40d8adf290efe39661cca20adc999d70102b6733d39f530867b875187c0",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/tools/shared_tree_budget_repair.py": "1e55cf5b1f479138ea547feaaba8862eae269afab0be39b67fbb536b949abe24",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/tools/delay_crossing_bounded_wire_search.py": "e1fb0808500977dd4f54a953cc712fd884045d1e3828d69c1cb652ac0f717c89",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/tools/shared_tree_budget_repair_implicit.py": "eb4c808a2b1b4bd4fa5c5ae6f9fb14b73c6a6a7f21a138af6a70db273682d641",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/tools/implicit_tree_budget_search.py": "4200a4efeeb97b57eef7a5cdeefacbbc97c6a1ea86daf03fc460db81289e7ed6",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/tools/native_STA_task_binding_v2.py": "03f61fd6b0bf83b365a2b3386930fc6908925e930dc4e6000d01d28adade439b",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/tools/native_setup_path_parser.py": "026b84fe88da010274d6a9108a946d3ccfdea3c4b8cd0ce1f304692d75d7d455",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_instrumented_compound_repeat_20261016/protocol.json": "e279b5020e4879af5dd9452b499b522de83dd11b98697744a5eb744f40114c91",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/sb3_fixed_feedback_pair_20261015/recipes/ex5p/feedback_off/pair.json": "926a7724a5d058a324f458026475d6ae5ba9d37916127818d685fd1528361010"
+  },
+  "research_complete": false,
+  "board_result": false
+}

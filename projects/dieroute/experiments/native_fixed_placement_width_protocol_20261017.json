@@ -1,0 +1,28 @@
+{
+  "schema": "dieroute.fixed_placement_width.v1",
+  "cases": [
+    "apex2",
+    "frisc",
+    "elliptic"
+  ],
+  "geometries": [
+    [
+      20,
+      16
+    ],
+    [
+      28,
+      22
+    ]
+  ],
+  "channel_widths": [
+    160,
+    320
+  ],
+  "seed": 1,
+  "workers": 1,
+  "execution_protocol": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_fixed_placement_width_coverage_20261017/protocol.json",
+  "protocol_sha256": "5285df451c46ce8e16a65381e8c58fa1333525410663b8b29395fbbdcbcda834",
+  "scope": "Posterior fixed-placement channel-width characterization. Twelve predeclared attempts:3cases x2geometries x widths160/320,seed1,workers1. Reuse exact packed net/place from terminal cw80 capacity study; no repacking/replacement/adaptive escalation/early stop. Keep all prior failures and all12outcomes. Native model diagnostics only; not independent holdout or candidate algorithm benefit.",
+  "research_complete": false
+}

@@ -1,0 +1,15 @@
+# DieRoute 恢复入口：diffeq/alu4产物哈希角色核对 — 2026-10-30
+
+原目标未完成；矩阵仍v169/314条、关键路径 experiments/critical_path_20261030_v169.md，八门槛均开放。11语料/311096搜索、45正式槽及预算保持，正式45终态37通过/8存储失败不替换。原要求见 HANDOFF_20261021.md；9实际仿真和终态监控见 HANDOFF_20261030_PORTAL_EDGE_RTL.md；原401路径批次及完整来源范围见 HANDOFF_20261030_PATH_COHORT_AUDIT.md；先前哈希角色阶段见 HANDOFF_20261030_HASH_ROLE_AUDIT.md；论文/文献背景见 HANDOFF_20261030_PAPER.md。
+
+本轮在work/research_artifact_dependency_inventory_20261030继续原9968个未关联hash形值。固定处理原已验证根中的upstream_hash_crosscase_pairs/independent_pair_audit.json、independent_case_audit_diffeq.json和independent_case_audit_alu4.json。三个声明文档重新匹配原冻结SHA；原generator/source_sha绑定、绝对run manifest路径及hash均核验。各case reference始终是该case的pair0_parent，candidate按run label定位；不是任意同名文件或同编号parent。
+
+新增resolve_crosscase_hash_roles.py核验3120个reference/candidate hash字段，与原unassociated census按source/pointer/hash逐条匹配；三报告包括同一批diffeq/alu4各10次既有运行的总报告与两个case报告，重复字段不合并为新实验。每run完整route.*集合仍为39文件，含原8input/8output epochs。新鲜核验780个不同路由文件，共270656940bytes；每文件<=8MiB，总读取<=512MiB。1560比较行保留原byte_equal及route.json除wall_ms外全字段相等条件。未回放运行、重跑VPR/native legality或产生新时间样本；原cost_scale256、planned20与case-only范围保留。
+
+输出crosscase_hash_role_resolution.json，独立crosscase_hash_role_resolution_review.json重新核对全部3120指针/期望值/来源SHA。原9968值累计已处理82+3120=3202，尚有6766未处理；上一轮新展开传递JSON的820字段属于另一集合，继续单列，不从原9968直接扣除。3120是字段次数、780是物理路由文件，三报告仍只代表20次旧运行。
+
+先前468个未找到显式绑定的研究根路径未重新分类；原401路径批次完成也不代表递归来源图完成。新报告/候选不继承旧1753路径库存覆盖。后续需继续未处理schema/传递来源，同时优先关注实际RTL终态和既定十亿周期预算的瓶颈证据，不重复已通过的完整字段检查来替代实验进展。
+
+9仿真、4终态监控和2后续队列按实际PID/startticks核验继续运行，五候选资源心跳正常，暂无新增完整RTL accepted。最新poll：python3 -B work/resident_portal_install_edge_candidate_20261030/poll_existing_jobs.py；共享可更新记录仍CSR目录latest_all_jobs_verified_wait.json。禁止因静默/观察超时重启/停止，完整原图、28878、十亿周期、正向后负向和资源守卫保持。物理/平台队列仍需原前置证明及内存余量，不能因哈希核对通过绕过。
+
+原全部研究门槛仍需完成。U280无实卡，无板上速度/能耗、平台fit或300MHz达标结论。文献稿仍32页独立文献更新/22October评测快照，不是最终全实验稿。所有失败/分母保留，无commit/push。

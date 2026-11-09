@@ -86,6 +86,7 @@ def main() -> int:
         native_macros = work / "place_macros.echo"
         stdout_path = work / "vpr.stdout.log"
         stderr_path = work / "vpr.stderr.log"
+        timing_setup_report = work / "report_timing.setup.rpt"
         shutil.copyfile(netlist, vpr_netlist)
         shutil.copyfile(golden_place, vpr_place)
         command = [
@@ -140,6 +141,8 @@ def main() -> int:
             raise ContractError("VPR did not create the post-routing packed netlist")
         if not native_macros.is_file():
             raise ContractError("VPR did not create place_macros.echo")
+        if not timing_setup_report.is_file():
+            raise ContractError("VPR did not create report_timing.setup.rpt")
         if sha256(native_macros) != manifest["inputs"]["native_macros"]["sha256"]:
             raise ContractError("VPR regenerated placement macros differ from the contract input")
         native_validation = validate_contract(contract, vpr_place)
@@ -188,6 +191,10 @@ def main() -> int:
                 "native_macros": {"path": str(native_macros), "sha256": sha256(native_macros)},
                 "stdout": {"path": str(stdout_path), "sha256": sha256(stdout_path)},
                 "stderr": {"path": str(stderr_path), "sha256": sha256(stderr_path)},
+                "timing_setup_report": {
+                    "path": str(timing_setup_report),
+                    "sha256": sha256(timing_setup_report),
+                },
             },
             "placement_validation": native_validation,
         }

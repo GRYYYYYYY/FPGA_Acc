@@ -1,0 +1,47 @@
+{
+  "observed_ns": 1793432141378914373,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_BITSELECT_CALL_COMPOSITION.json",
+    "sha256": "4fe9ffc0bac815e110d9d595bb6c292cf4f1a12bf59f95c73c0786eb9ea84677"
+  },
+  "progress": {
+    "report": "work/resident_selector_return_refinement_20261031/review.json",
+    "report_sha256": "2b9a897d1cd8d8810efb881a8fa6b42bbafb13d86fe74bc4bac21c1bae4eab13",
+    "independent_review": "work/resident_selector_return_refinement_20261031/independent_review.json",
+    "independent_review_sha256": "10340d2e0e5d4aa32e6cb4c6ca49a4e3c361de8f45e54afcde0cae0b33418f8b",
+    "checker_and_scope_clarification": "work/resident_selector_return_refinement_20261031/checker_and_scope_clarification.json",
+    "checker_and_scope_clarification_sha256": "bcfd47b442e28bb34046c0891cc05b3583763aa67ca13d9c7d53b6b0fb489aeb",
+    "feasible_UNSAT_queries": 21,
+    "terminal_arithmetic_cases": 1088,
+    "post_terminal_hold_cases": 4352,
+    "early_failure_cases": 320,
+    "position_width": 34,
+    "live_ready_stability_assumed": true,
+    "outer_get_ownership_proved": false,
+    "actual_encoded_memory_contract_proved": false,
+    "actual_whole_select_semantics_proved": false,
+    "HDL_simulation_executed": false,
+    "full_sequential_HDL_equivalence_proved": false,
+    "scope": "Source-bound select_rterminal comb/clock-priority and finite-width audit. Under admitted captured block<=3411,word<=7,bit<=63and valid saved search/scanflags with stable live ready1,actual34bit reconstruction equals64*(8block+word)+bitand fits design span. Terminal outputs bypass old phi/preg and return success exactly when current finalvaluebit1and current childrank0,otherwisezero/failure. Five earlyfailure classes\u2014invalidordinal,unready,zero searchlo,invalidblock,and scan-notfound\u2014clear old phi/retval in their source states and subsequently return zero/failure under their retained errorflag/stable-readypremise. Source low34outputcapture and unconditional high30zero plus scalarpregcapture preserve the current terminal result outside state10. All21feasible BVqueries use arbitrary old results/controlpayloads where not explicitly constrained. Capture inventory links block6,word/scanflag7,finalvalue9and direct childbit/rankhold from prior contracts to terminal10;all terminalpredecessors classified1/3/5/8/9. This supports local parent position/return composition under earlier admitted childcontracts,butdoes NOT discharge actual outerget/executeownership or live ready stability. If readychanges,retained fallbackbehavior is not covered. Correct encoded marker/prefix/wordcontents and actual successfulselector/getdelimiterprovenance remain open,as do fullRTL/4state/resetabort/native/ROMload/timing/board acceptance. No DUT/process/input/cache/guard/budget changes or new HDL/HLS/native flow.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v258_20261031/matrix.json",
+    "sha256": "78b2b0860455909e49ce9ba496873302eb5c40a0cb99087c3cb57230e053d1ad"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v258.json",
+    "sha256": "ec8924ce2afc8db7ab034f463ee1090c49312f775ea31a62306e51298ce251d4"
+  },
+  "next_action": "Couple outerget/execute ready/shape/ordinal holding and selector ownership to discharge stable live readyand correct call/result association;then connect successful reverse build contents to exact marker/prefix/word contracts. Local selectorposition/terminaloutputsnowchecked,but actual complete select/getdelimiterprovenance stillopen. Poll originalhandles first;preserve guards/budgets/inputs/caches/retainedfailures/oldUNKNOWNs.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

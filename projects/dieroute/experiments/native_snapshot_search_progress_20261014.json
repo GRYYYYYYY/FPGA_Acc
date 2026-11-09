@@ -1,0 +1,554 @@
+{
+  "status": "directed_success_failure_rtl_and_randomized_top_cmodel_passed",
+  "verified_ns": 1791991390563224824,
+  "cases": 9,
+  "authority_snapshots": 2,
+  "case_types": {
+    "found": 4,
+    "budget": 3,
+    "hop_limited": 1,
+    "exhausted": 1
+  },
+  "inputs": {
+    "src/net_commit_hbm.cpp": "84d5550636cd7bfd12b34176294ca29bd57c0cc15e2a17e11a3c6de32252260c",
+    "include/net_commit_hbm.hpp": "4635df9f6002365cfcd70e5366f0debed57f5f97fdaae843f4e4277f5ef1d396",
+    "include/summary_hbm.hpp": "55177ca09b0b07e2e23b38d8430052b405ff9617b6049613663baf3eeb3e401c",
+    "tb/native_search_hbm_snapshot_search_tb.cpp": "fbe40d9f93bcae86b526f7907320a9ef62e1b442c9846725711e67b25c347a4f",
+    "include/sparse_search.hpp": "8fa6018007d2844cee1ce1038321a860831cdab92286c9a8a29a2446c9fa40be",
+    "include/sparse_label_worker.hpp": "49b583ce14a93f3e70dea9233ced91111517b74cb7421e65dfadf7c5b1c986e4",
+    "include/label_packet.hpp": "4b6ac60a56113bc599f4b51a1b9f065950f1b001eabfd63ff763a07dec30dd86",
+    "include/sparse_table.hpp": "dbcd6c9b9fe52911ff3cdd3f95260978f37dabce9c7f369d703ea66c834b1da6",
+    "include/native_search_hbm_seed.hpp": "e91c1a9fa999aa9f9219732c68e201f65abc1e91743db1dbc953dfe00a23d7ed",
+    "include/native_search_hbm_queue.hpp": "967863f42b6c6bb67921ac2e7a60e8c48b90ce3a4bd5d9ce58a2078e6e5ab1eb",
+    "include/native_search_hbm_labels.hpp": "858dd88d17bd902b6930eb7df7828abafb611d566bf379023f14ec8a58d2b29a",
+    "include/native_search_hbm_snapshot_search.hpp": "c63fe9d1d3554458a4ff96575ae7a554afff535f677e5b413ba91a455c1ff62d",
+    "include/native_search_hbm_relax_observed.hpp": "05d5bd449b9b62c597db4d958c03defdeb1e809f7d67576bbdea7c8781366647",
+    "include/native_search_hbm_observation.hpp": "37b4e2dcf02c69427f761501bceec5513ae38e2442156fcc1d584e50a3e464ce",
+    "include/native_search_hbm_cost.hpp": "5d3c0551058893c917163699c46a99dbb8d8752572c5be110348b0147155dd26",
+    "include/native_search_hbm_admission.hpp": "56e202616d54b49a32763af64285a30b40a77b9c31d3d6d1cecde2de5caa2981",
+    "include/native_search_hbm_frontier.hpp": "ac5cb229b91e3d19fd79a81c11236e40c3e54eb961211424c6e306fc4ded0021",
+    "include/native_search_hbm_label_ops.hpp": "4c652bae4d559bb75f431706e962147db3cb7a16e3c041d089a157ea4169dcc3",
+    "include/native_search_hbm_resource.hpp": "4cfa2b8f6e259a172132e0780a07b1544cc82f15c6f4dbbeb1c06e3986ef9e5e",
+    "include/native_search_hbm_csr.hpp": "e4ea122c435cfd6eac7afd0df5ef492b0426fd15c896c881d67d83801990ac0c",
+    "tb/net_commit_fixture.hpp": "9312545be2f939b5f32e0f5a03dfdca43b5e026c8103819bd31c937f30b2377b"
+  },
+  "checks": [
+    "Reference status and full path",
+    "Exact expansion/edge counters",
+    "Ordered consumed node/version/occupancy/history",
+    "Read-only authority state"
+  ],
+  "contract": [
+    "Single-worker, exclusive immutable authority handoff",
+    "Caller seeds all existing current-net tree nodes with exact depths",
+    "Consistent optional potential supplied by caller",
+    "Failure or budget requires fresh epoch, not resumable search"
+  ],
+  "remaining": [
+    "Native full graph differential using commit-produced authority and complete current-net tree seeds",
+    "Full capacity RTL and physical implementation",
+    "Autonomous asynchronous owner/coherence protocol"
+  ],
+  "scope": "Directed success and failure RTL, randomized top C-model differential, and serialized small-fixture joint XRT whole-search/commit verified; native full graph, concurrent protocol and board remain open",
+  "board_result": false,
+  "research_complete": false,
+  "hls_rtl_audit": "work/native_snapshot_search_hls_v1_20261014/audit.json",
+  "randomized_differential": "work/native_snapshot_search_random_top_v1_20261014/audit.json",
+  "failure_hls_rtl_audit": "work/native_snapshot_search_failure_hls_v1_20261014/audit.json",
+  "joint_image": {
+    "status": "linked_metadata_verified",
+    "compile_manifest": "work/native_snapshot_worker_hw_emu_link_v1_20261014/manifest.json",
+    "link_manifest": "work/native_snapshot_worker_hw_emu_link_v1_20261014/link_manifest.json",
+    "xo_abi_audit": "work/native_snapshot_worker_hw_emu_link_v1_20261014/xo_abi_audit.json",
+    "masters": 8,
+    "metadata_audit": "work/native_snapshot_worker_hw_emu_link_v1_20261014/metadata_audit.json"
+  },
+  "joint_execution": {
+    "status": "passed_independent_audit",
+    "manifest": "work/native_snapshot_joint_xrt_v2_20261014/manifest.json",
+    "planned_actual_calls": {
+      "commit": 12,
+      "seed_worker": 2,
+      "snapshot_search": 2
+    },
+    "host": "tb/native_snapshot_joint_xrt_tb.cpp",
+    "shared_metadata_semantics": "Seed worker word2=status; host then sets word2=touched=1 while retaining device queued/used counts",
+    "authority_byte_checks": [
+      "resources",
+      "trees",
+      "nets",
+      "control"
+    ],
+    "production_kernel_cpp_linked": false,
+    "prior_failure": "work/native_snapshot_joint_xrt_v1_20261014/manifest.json",
+    "fix_evidence": "work/native_snapshot_joint_xrt_v2_20261014/prior_failure.json",
+    "audit": "work/native_snapshot_joint_xrt_v2_20261014/independent_audit.json",
+    "actual_cu_calls": 16,
+    "complete_search_calls": 2
+  },
+  "updated_ns": 1792006935614568233,
+  "native_authority_snapshot": {
+    "status": "exported_and_independently_audited",
+    "manifest": "work/native_real_search_snapshot_v1_20261014/snapshot.json",
+    "audit": "work/native_real_search_snapshot_v1_20261014/independent_audit.json",
+    "source": "work/native_strict_sll_repeat_pair_v1_20261014/baseline/route/net_commit_frames.bin",
+    "selection": "First proposal and first branch, prior authority frame; no outcome selection",
+    "nodes": 91975782,
+    "arcs": 253648514,
+    "session": 1,
+    "revision": 341,
+    "seed_count": 1,
+    "remaining": "Run actual whole-search top C-model with these authority rows and independent SparseSearch reference; this export is not search evidence"
+  },
+  "native_full_graph_top_probe": {
+    "status": "small_first_proposal_execution_and_provenance_audited",
+    "manifest": "work/native_real_snapshot_search_v1_20261014/manifest.json",
+    "label_capacity": 2097152,
+    "expansion_limit": 2097152,
+    "reference_resource_access": "Independent node-keyed map from authority rows",
+    "top_resource_access": "Actual owner hash shards",
+    "comparisons": [
+      "status",
+      "expansion and edge counters",
+      "ordered resource observations",
+      "goal cost and hops",
+      "full path and PIPs"
+    ],
+    "scope": "C-model only; not full-design routing, RTL, concurrent authority or physical board",
+    "result": {
+      "status": "passed",
+      "search_status": 0,
+      "expanded": 2,
+      "observations": 1,
+      "occupied_observations": 0,
+      "cost": 1,
+      "scope": "Actual whole-search top C-model, real graph and commit-produced authority; no RTL or board claim"
+    },
+    "limitation": "Only 2 expanded nodes and zero occupied observations; not broad native workload evidence",
+    "next": "Deterministically select cross-die pre-proposal authority and repeat full-search top/reference differential",
+    "audit": "work/native_real_snapshot_search_v1_20261014/independent_audit.json"
+  },
+  "native_cross_die_top_probe": {
+    "status": "capacity_rejection_differential_and_provenance_audited",
+    "manifest": "work/native_cross_die_snapshot_search_v1_20261014/manifest.json",
+    "snapshot_audit": "work/native_cross_die_search_snapshot_v1_20261014/independent_audit.json",
+    "selection": "work/native_snapshot_export_tools_20261014/cross_die_selection.json",
+    "selection_tool": "tools/select_native_cross_die_snapshot.py",
+    "label_capacity": 2097152,
+    "expansion_limit": 2097152,
+    "scope": "Real graph, real pre-proposal authority, actual whole-search top C-model; still not RTL or full-design routing",
+    "completion_auditor": "tools/audit_native_snapshot_probe.py",
+    "result": {
+      "status": "passed",
+      "search_status": 2,
+      "expanded": 1405230,
+      "observations": 3652686,
+      "occupied_observations": 3,
+      "cost": 0,
+      "scope": "Actual whole-search top C-model, real graph and commit-produced authority; no RTL or board claim"
+    },
+    "audit": "work/native_cross_die_snapshot_search_v1_20261014/independent_audit.json",
+    "limitation": "Budget-limited: no path; three occupied observations; zero cost field is unwritten goal buffer"
+  },
+  "exported_path_evidence": {
+    "status": "small_fixture_passed",
+    "manifest": "work/native_snapshot_path_export_v1_20261014/manifest.json",
+    "audit": "work/native_snapshot_path_export_v1_20261014/path_audit.json",
+    "probe_source": "tools/probe_native_snapshot_search_artifacts.cpp",
+    "auditor": "tools/audit_native_snapshot_path.py",
+    "remaining": "Export and audit substantial cross-die path and observations"
+  },
+  "native_label_placement_profile": {
+    "manifest": "work/native_cross_die_label_profile_v2_20261014/manifest.json",
+    "result": {
+      "status": "profiled",
+      "unique_nodes": 2097152,
+      "observed_unique_nodes": 2097153,
+      "reference_status": 2,
+      "direct_insert_probes": 58236834809,
+      "direct_max_probe": 1986737,
+      "mixed_insert_probes": 1404969951,
+      "mixed_max_probe": 2084194,
+      "scope": "Exact insertion-only placement probes for first-observed unique nodes, not all runtime lookups or HBM timing"
+    },
+    "next": "Use independently verified consistent quotient potential to reduce touched labels, retain unguided run to validate exact capacity rejection; do not infer board speedup"
+  },
+  "native_cross_die_guided_probe": {
+    "status": "top_differential_provenance_and_exported_path_audits_passed",
+    "manifest": "work/native_cross_die_snapshot_guided_v1_20261014/manifest.json",
+    "snapshot_audit": "work/native_cross_die_search_snapshot_v1_20261014/independent_audit.json",
+    "consistency_check": "All allowed native CSR edges checked for h(u)<=1+h(v), sink zero",
+    "artifacts": "work/native_cross_die_snapshot_guided_v1_20261014/artifacts",
+    "scope": "Actual full-search top C-model and independent resource-cost reference; no hardware throughput claim",
+    "result": {
+      "status": "passed",
+      "search_status": 0,
+      "expanded": 229746,
+      "observations": 862428,
+      "occupied_observations": 0,
+      "cost": 42,
+      "scope": "Actual whole-search top C-model, real graph and commit-produced authority; no RTL or board claim"
+    },
+    "audit": "work/native_cross_die_snapshot_guided_v1_20261014/independent_audit.json",
+    "limitation": "No occupied resource observations; one current-net root seed",
+    "path_audit": "work/native_cross_die_snapshot_guided_v1_20261014/artifacts/path_audit.json",
+    "consistency_edges": 212892069
+  },
+  "native_post_multiseed_snapshot": {
+    "status": "exported_and_independently_audited",
+    "manifest": "work/native_post_multiseed_snapshot_v1_20261014/snapshot.json",
+    "seed_count": 521,
+    "scope": "Real committed authority, synthetic legal foreign-occupied next target; not recorded original next task",
+    "audit": "work/native_post_multiseed_snapshot_v1_20261014/independent_audit.json"
+  },
+  "native_post_multiseed_search": {
+    "status": "differential_and_exported_path_audits_passed",
+    "manifest": "work/native_post_multiseed_guided_v2_20261014/manifest.json",
+    "inputs": "work/native_post_multiseed_guided_v1_20261014/inputs.json",
+    "seed_count": 521,
+    "label_capacity": 65536,
+    "scope": "Synthetic foreign-occupied next target on actual committed tree; no original workload replay claim",
+    "failure": "seed rejected after reference completed 95 expansions and163 observations",
+    "next": "Diagnose seed return status and potential, preserve rejected run; do not claim multi-seed search pass",
+    "audit": "work/native_post_multiseed_guided_v2_20261014/independent_audit.json",
+    "path_audit": "work/native_post_multiseed_guided_v2_20261014/artifacts/path_audit.json",
+    "result": {
+      "status": "passed",
+      "search_status": 0,
+      "expanded": 95,
+      "observations": 141,
+      "occupied_observations": 2,
+      "cost": 2,
+      "scope": "Actual whole-search top C-model, real graph and commit-produced authority; no RTL or board claim"
+    },
+    "initial_failure": "work/native_post_multiseed_guided_v1_20261014/manifest.json",
+    "diagnostic": "work/native_post_multiseed_diagnostic_v1_20261014/run.log",
+    "fix": "Caller saturates all quotient potentials at node_count, rechecks all allowed arcs, then seeds complete current-net tree including otherwise unreachable nodes",
+    "consistency_edges": 212892489,
+    "limitation": "Synthetic one-edge target on real committed authority; not original next workload task or broad congestion/QoR proof"
+  },
+  "native_search_path_commit_closed_loop": {
+    "status": "two_cases_passed",
+    "cases": [
+      {
+        "case": "native_cross_die",
+        "manifest": "work/native_cross_die_path_commit_v1_20261014/manifest.json",
+        "result": {
+          "status": "passed",
+          "commit_calls": 1,
+          "query_calls": 42,
+          "canonical_reads": 587294,
+          "published_nodes": 42,
+          "revision": 344,
+          "scope": "Actual commit core C-model publication of actual search-top exported native path; no XRT or board claim"
+        }
+      },
+      {
+        "case": "post_multiseed_congestion",
+        "manifest": "work/native_post_multiseed_path_commit_v1_20261014/manifest.json",
+        "result": {
+          "status": "passed",
+          "commit_calls": 1,
+          "query_calls": 1,
+          "canonical_reads": 140,
+          "published_nodes": 1,
+          "revision": 508,
+          "scope": "Actual commit core C-model publication of actual search-top exported native path; no XRT or board claim"
+        }
+      }
+    ],
+    "scope": "Actual whole-search top to production commit core C-model; full consumed footprints, all-net trees and membership/resources replay; not actual XRT native search or async proof"
+  },
+  "native_path_commit_rejection": {
+    "status": "passed_independent_audit",
+    "manifest": "work/native_cross_die_rejection_v1_20261014/manifest.json",
+    "audit": "work/native_cross_die_rejection_v1_20261014/independent_audit.json",
+    "atomic_rejections": 2,
+    "scope": "Injected version mismatch and invalid PIP rejected with full authority byte assertions; corrected replay byte-equal to independently audited clean native commit",
+    "limitations": [
+      "Injected faults, not concurrent stale-state generation",
+      "C-model only; no DMA, RTL or board result"
+    ]
+  },
+  "full_graph_snapshot_image": {
+    "status": "linked_and_actual_group_audited",
+    "manifest": "work/native_snapshot_full_graph_link_v1_20261014/manifest.json",
+    "capacity": "work/native_snapshot_full_graph_link_v1_20261014/capacity.json",
+    "final_group_auditor": "tools/audit_native_snapshot_full_graph_platform.py",
+    "pointer_arguments": 35,
+    "graph_group": "HBM[16:31]",
+    "scratch_group": "HBM[0:11]",
+    "authority_group": "HBM[12]",
+    "remaining": [
+      "Final raw/group connectivity audit",
+      "Actual XRT BO allocation and shared group IDs",
+      "Full native graph upload/readback",
+      "Native search CU execution and path commitment"
+    ],
+    "scope": "Unmodified verified XOs, enlarged allocation groups; no final image or execution claim yet",
+    "allocation_probe": {
+      "status": "actual_xrt_allocation_and_markers_independently_audited",
+      "manifest": "work/native_snapshot_full_graph_allocation_v1_20261014/manifest.json",
+      "source": "tb/native_snapshot_xrt_allocation_tb.cpp",
+      "plan": "work/native_snapshot_full_graph_link_v1_20261014/allocation_plan.txt",
+      "buffers": 26,
+      "pointer_arguments": 35,
+      "native_graph_uploaded": false,
+      "kernel_launches": 0,
+      "audit": "work/native_snapshot_full_graph_allocation_v1_20261014/independent_audit.json",
+      "total_bytes": 7385634280,
+      "markers": 94
+    },
+    "group_audit": "work/native_snapshot_full_graph_link_v1_20261014/group_audit/audit.json",
+    "xclbin_sha256": "4144274daff3f9876116641a08f0907df6c2bf30d2145ae61843ba910bed371c"
+  },
+  "native_full_graph_search_xrt_host": {
+    "status": "native_smoke_audited_cross_die_running",
+    "source": "tb/native_snapshot_real_graph_xrt_tb.cpp",
+    "binary": "work/native_snapshot_full_graph_link_v1_20261014/native_search_probe",
+    "source_sha256": "2eba2421b54d5b0ac9faa35db03d1e5bd37918eb7a508130d0abeb7309fe829c",
+    "binary_sha256": "8e223ff10c63a983ae1b2e60c22c726e0cd872cef583db51bb4a772e8b649b2d",
+    "authority_initialization": "One imported audited snapshot; no authority re-upload after seed/search calls",
+    "checks": [
+      "Complete graph and optional potential upload/readback",
+      "All tree seeds initialized through actual worker CU",
+      "Actual whole-search CU completion",
+      "Device resources/trees/nets/control byte preservation",
+      "Exported path/PIP/observation artifacts"
+    ],
+    "scope": "Host prepared; no runtime result yet",
+    "remaining": [
+      "Complete native smoke CU execution and independent audit",
+      "Complete substantial cross-die CU execution and independent audit",
+      "Actual native search/commit CU closed loop",
+      "Asynchronous protocol, full cohort, physical implementation and board evidence"
+    ],
+    "pipeline_manifest": "work/native_snapshot_full_graph_xrt_pipeline_v2_20261014/manifest.json",
+    "prior_supervisor_failure": "work/native_snapshot_full_graph_xrt_pipeline_v1_20261014/manifest.json",
+    "cross_die_reference": "work/native_cross_die_clamped_reference_v1_20261014/independent_audit.json",
+    "smoke_audit": "work/native_snapshot_full_graph_xrt_pipeline_v2_20261014/native_smoke/independent_audit.json",
+    "smoke_path_audit": "work/native_snapshot_full_graph_xrt_pipeline_v2_20261014/native_smoke/artifacts/path_audit.json",
+    "smoke_result": {
+      "status": "executed",
+      "search_status": 0,
+      "seed_calls": 1,
+      "snapshot_calls": 1,
+      "expanded": 2,
+      "observations": 1,
+      "cost": 1,
+      "verified_upload_bytes": 3746844664,
+      "authority_imports": 1,
+      "authority_reuploads": 0,
+      "scope": "Actual native whole-search CU on imported immutable authority; no full routing, commit execution or board claim"
+    }
+  },
+  "native_search_commit_xrt_pipeline": {
+    "status": "compiled_queued_after_native_search_pipeline",
+    "manifest": "work/native_snapshot_search_commit_xrt_pipeline_v1_20261014/manifest.json",
+    "source": "tb/native_snapshot_real_graph_commit_xrt_tb.cpp",
+    "binary": "work/native_snapshot_full_graph_link_v1_20261014/native_search_commit_probe",
+    "source_sha256": "a62be2c3d8443524b66a7a55026b010e54d13148ecb4926e8dc69aa304a3366c",
+    "binary_sha256": "ed69cba33c568106c51317f02e2616d51790f730f4b4c4110f79d43b4dec8d5f",
+    "scope": "Same actual graph/resources/trees/nets/control BOs shared across search and commit CUs; CPU forms canonical reads and proposal; no authority re-upload",
+    "verification": [
+      "Search raw artifacts compared to C-model",
+      "One actual proposal plus membership query per published node",
+      "Independent complete net-tree/resource replay"
+    ],
+    "board_result": false
+  },
+  "hardware_implementation": {
+    "status": "synthesis_complete_implementation_running",
+    "manifest": "work/native_snapshot_full_graph_hw_v2_20261014/manifest.json",
+    "kernel_clock_mhz": 300,
+    "frozen_source_files": 49,
+    "scope": "Actual hw link completed synthesis and started implementation; routed timing/resource/bitstream and physical board result remain unproven",
+    "remaining": [
+      "Compile three hardware XOs",
+      "U280 synthesis/place/route/bitstream",
+      "Routed setup/hold and clock audit",
+      "Hierarchical LUT/FF/BRAM/URAM/DSP and SLR report audit",
+      "Board execution when hardware available"
+    ],
+    "board_result": false,
+    "compiled_xos": {
+      "commit": "fe4c9dee928061858c2b042d051f2d9260f08f1d52c99d8aec667288e4f16be7",
+      "worker": "f05378666c48d0430d9ec58bae8b49d56de96efa75c49ee96374f157ef5792f2",
+      "snapshot": "16b3dcf433a6ed874c9b90bbdd5db6902d9c220f2739a5fdbdf8e4b1640a6309"
+    },
+    "prior_failure": "work/native_snapshot_full_graph_hw_v1_20261014/manifest.json",
+    "failure_evidence": "work/native_snapshot_full_graph_hw_v2_20261014/prior_failure.json",
+    "routed_report_queue": "work/native_snapshot_hw_routed_reports_v2_20261014/manifest.json",
+    "stage_evidence": "work/native_snapshot_full_graph_hw_v2_20261014/link.log"
+  },
+  "claim_matrix": "experiments/native_snapshot_claim_matrix_20261014.json",
+  "claim_matrix_audit": "work/native_snapshot_claim_matrix_audit_20261014.json",
+  "owner_sharded_commit": {
+    "status": "75_top_rtl_calls_independently_audited",
+    "cmodel_audit": "work/net_commit_sharded_cmodel_v1_20261014/audit.json",
+    "hls_manifest": "work/net_commit_sharded_hls_v3_20261014/manifest.json",
+    "source": "src/net_commit_sharded_hbm.cpp",
+    "header": "include/net_commit_sharded_hbm.hpp",
+    "original_commit_sha256": "84d5550636cd7bfd12b34176294ca29bd57c0cc15e2a17e11a3c6de32252260c",
+    "owner_resource_ports": 3,
+    "maximum_dies": 3,
+    "remaining": [
+      "HLS/RTL and AXI master verification",
+      "Banked resource read and whole-search integration",
+      "Joint physical bank mapping and runtime ownership proof",
+      "Actual die-local concurrent owner coordination"
+    ],
+    "scope": "Distinct resource pointer interfaces only; no physical bank allocation or concurrent owner claim",
+    "retained_hls_failures": [
+      "work/net_commit_sharded_hls_v1_20261014/manifest.json",
+      "work/net_commit_sharded_hls_v2_20261014/manifest.json"
+    ],
+    "postcheck_diagnostic": "work/net_commit_sharded_postcheck_asan_v1_20261014/postcheck_asan.log",
+    "padded_test_audit": "work/net_commit_sharded_cmodel_v1_20261014/padded_and_resource_audit.json",
+    "hls_audit": "work/net_commit_sharded_hls_v3_20261014/audit.json",
+    "axi_masters": 6,
+    "owner_port_bits": 512
+  },
+  "owner_sharded_resource_read": {
+    "status": "52_top_rtl_calls_independently_audited",
+    "header": "include/native_search_hbm_resource_sharded.hpp",
+    "source": "src/native_search_resource_sharded_hbm.cpp",
+    "hls_manifest": "work/native_resource_sharded_hls_v1_20261014/manifest.json",
+    "producer_snapshots": 4,
+    "direct_header_comparisons": 60,
+    "top_fixture_calls": 52,
+    "scope": "Separate pointer banks and exact observation contract; no actual physical bank mapping or concurrent writer proof",
+    "audit": "work/native_resource_sharded_hls_v1_20261014/audit.json",
+    "axi_masters": 6,
+    "owner_port_bits": 512
+  },
+  "owner_sharded_whole_search": {
+    "status": "9_whole_search_rtl_calls_independently_audited",
+    "source": "src/native_snapshot_search_sharded_hbm.cpp",
+    "header": "include/native_search_hbm_snapshot_search_sharded.hpp",
+    "cmodel_audit": "work/native_snapshot_sharded_cmodel_v1_20261014/audit.json",
+    "hls_manifest": "work/native_snapshot_sharded_hls_v1_20261014/manifest.json",
+    "comparisons": [
+      "All1024 label/queue/journal entries byte-equal",
+      "Metadata/result/goal bytes equal",
+      "Independent SparseSearch status/path/consumed-read checks",
+      "All owner bank bytes and guards preserved"
+    ],
+    "remaining": [
+      "Whole-search RTL and interface audit",
+      "Joint banked search/commit XRT image",
+      "Actual bank13/14/15 ownership and shared BO proof",
+      "Native large graph differential and physical implementation"
+    ],
+    "scope": "Single worker, immutable authority handoff; not async multi-owner protocol",
+    "hls_audit": "work/native_snapshot_sharded_hls_v1_20261014/audit.json"
+  },
+  "owner_sharded_native_search": {
+    "status": "two_cases_differential_and_path_audits_passed",
+    "manifest": "work/native_snapshot_sharded_native_v1_20261014/manifest.json",
+    "cases": {
+      "cross_die": {
+        "status": "passed",
+        "search_status": 0,
+        "expanded": 229746,
+        "observations": 862428,
+        "occupied_observations": 0,
+        "cost": 42,
+        "scope": "Actual three-bank whole-search top C-model, real graph and commit-produced authority; no RTL or board claim"
+      },
+      "multiseed": {
+        "status": "passed",
+        "search_status": 0,
+        "expanded": 95,
+        "observations": 141,
+        "occupied_observations": 2,
+        "cost": 2,
+        "scope": "Actual three-bank whole-search top C-model, real graph and commit-produced authority; no RTL or board claim"
+      }
+    },
+    "scope": "Actual top C-model with independently allocated three owner arrays; exact audited flat artifact match, not real physical bank placement"
+  },
+  "owner_sharded_joint_image": {
+    "status": "linked_final_groups_and_joint_actual_cu_fixture_audited",
+    "manifest": "work/native_snapshot_sharded_hw_emu_link_v1_20261014/manifest.json",
+    "capacity": "work/native_snapshot_sharded_hw_emu_link_v1_20261014/capacity.json",
+    "owner_bank_candidates": [
+      "HBM[13]",
+      "HBM[14]",
+      "HBM[15]"
+    ],
+    "pointer_arguments": 39,
+    "axi_masters_expected": 14,
+    "remaining": [
+      "Compile/link",
+      "Final raw and allocation-group metadata audit",
+      "Actual per-owner shared BO allocation and traffic",
+      "Joined banked search and commit CU execution",
+      "Native graph and concurrent coherence integration"
+    ],
+    "scope": "Candidate separate physical owner banks; not runtime mapping evidence yet",
+    "final_group_auditor": "tools/audit_native_snapshot_sharded_platform.py",
+    "auditor_validation": "work/native_snapshot_sharded_platform_auditor_tests_20261014.json",
+    "audit_queue": "work/native_snapshot_sharded_hw_emu_link_v1_20261014/audit_queue/manifest.json",
+    "mutations_rejected": [
+      "Owner bank alias",
+      "Missing argument",
+      "Wrong bank base",
+      "Halved capacity",
+      "Missing allocation mapping"
+    ],
+    "group_audit": "work/native_snapshot_sharded_hw_emu_link_v1_20261014/group_audit/audit.json",
+    "image_sha256": "9651e98d5f74d5394b2fb09a12f2e7a5b69a407fb8b87b2693d216744f7cec77"
+  },
+  "owner_sharded_joint_execution": {
+    "status": "passed_independent_audit",
+    "manifest": "work/native_snapshot_sharded_joint_xrt_v3_20261014/manifest.json",
+    "audit": "work/native_snapshot_sharded_joint_xrt_v3_20261014/independent_audit.json",
+    "actual_cu_calls": 16,
+    "runtime_owner_groups": [
+      13,
+      14,
+      15
+    ],
+    "authority_reuploads": 0,
+    "source": "tb/native_snapshot_sharded_joint_xrt_tb.cpp",
+    "adapter": "host/native_resource_commit_sharded_xrt.cpp",
+    "scope": "Actual banked commit/seed/whole-search CUs, shared owner BOs, runtime group checks, full authority preservation assertions and stale-read rejection/path publication; serialized small fixture with negotiated overuse",
+    "remaining": [
+      "Full native graph banked XRT search and commit",
+      "Asynchronous owner/multi-worker protocol",
+      "Physical timing and mapping/migration/topology ablations"
+    ]
+  },
+  "owner_sharded_native_xrt": {
+    "status": "smoke_search_commit_query_audited_cross_die_running",
+    "manifest": "work/native_snapshot_sharded_native_xrt_v2_20261014/manifest.json",
+    "source": "tb/native_snapshot_sharded_real_graph_commit_xrt_tb.cpp",
+    "audit_tool": "tools/audit_native_snapshot_sharded_search_commit_xrt.py",
+    "scope": "Full native graph and initially imported audited authority; same three actual owner BOs across banked search and commit; no async or board result",
+    "planned_cases": [
+      "Small native smoke with actual commit/query",
+      "Substantial cross-die229746-expansion reference case with actual commit/query"
+    ],
+    "runtime_memory_guard": "Anonymous usage plus32GiB reserved under80GiB cgroup limit",
+    "retained_failure": "work/native_snapshot_sharded_native_xrt_v1_20261014/manifest.json",
+    "retained_source": "work/native_snapshot_sharded_native_xrt_v1_20261014/original_host_source.cpp",
+    "failure": "Host commit preparation used branch-buffer size for read upload and zero owner-placeholder size for path upload; corrected read/path lengths, no kernel change",
+    "smoke_evidence": {
+      "runtime_audit": "work/native_snapshot_sharded_native_xrt_v2_20261014/smoke/independent_audit.json",
+      "path_audit": "work/native_snapshot_sharded_native_xrt_v2_20261014/smoke/artifacts/path_audit.json",
+      "commit_audit": "work/native_snapshot_sharded_native_xrt_v2_20261014/smoke/artifacts/commit/independent_audit.json",
+      "expanded": 2,
+      "observations": 1,
+      "verified_upload_bytes": 3746844664,
+      "owner_groups": [
+        13,
+        14,
+        15
+      ],
+      "authority_reuploads": 0,
+      "all_net_trees_checked": 341,
+      "board_result": false
+    }
+  }
+}

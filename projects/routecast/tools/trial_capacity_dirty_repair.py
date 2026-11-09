@@ -1,0 +1,18 @@
+"""Matched cold/seed route-stage continuation for all twenty coherent candidate bundles."""
+import json,os,re,shutil,subprocess,time
+from pathlib import Path
+from pre_route_endpoints import sha
+root=Path(__file__).resolve().parents[1];parent=root/'experiments/capacity_synchronized_reload_2026-10-06';proof=json.loads((parent/'verification.json').read_text());prior=json.loads((parent/'receipt.json').read_text());assert sha(parent/'receipt.json')==proof['receipt_sha256'];build=root/'build/capacity_dirty_repair_2026-10-06';binary=build/'repair_vpr';br=json.loads((build/'receipt.json').read_text());assert sha(binary)==br['binary_sha256'];assert all(sha(p)==h for p,h in br['link_inputs_sha256'].items());out=root/'experiments/capacity_dirty_repair_trial_2026-10-06';out.mkdir();work=root/'work/capacity_dirty_repair_trial_2026-10-06';work.mkdir();env={k:v for k,v in os.environ.items() if not k.startswith('ROUTECAST_')};results=[]
+for row in prior['results']:
+ assert row['status']=='RELOADED' and all(sha(p)==h for p,h in row['sha256'].items());index=row['pair_index'];source=Path(row['cwd'])/'reload'
+ for mode in ('seed',):
+  cwd=work/f'{index}_{mode}';cwd.mkdir()
+  for name in ('design.net','design.blif','design.place'):shutil.copyfile(source/name,cwd/name)
+  shutil.copyfile(source/'design.route',cwd/'seed.route');inputs={str(p):sha(p) for p in cwd.iterdir()};cmd=row['reload_command'].copy();cmd[0]=str(binary);cmd[cmd.index('--analysis')]='--route';cmd[cmd.index('--route_file')+1]='output.route';runenv=dict(env)
+  if mode=='seed':
+   runenv['ROUTECAST_NATIVE_SEED']=str(cwd/'seed.route')
+   prediction=json.loads((root/f'experiments/native_complete_joint_capacity_rc_2026-10-06/pair_{index}.json').read_text());dirty={q['net_id'] for q in prediction['records']};reference=(root/'work/native_candidate_resource_frames_2026-10-06/adder/state_0.route').read_text();names={int(m[1]):m[2] for m in re.finditer(r'^Net\s+(\d+)\s+\((.*?)\)\s*$',reference,re.M)};repair=cwd/'repair_names.txt';repair.write_text('\n'.join(sorted(names[n] for n in dirty))+'\n');runenv['ROUTECAST_REPAIR_NET_NAMES']=str(repair)
+  start=time.perf_counter()
+  with (cwd/'run.log').open('w') as log:code=subprocess.run(cmd,cwd=cwd,env=runenv,stdout=log,stderr=subprocess.STDOUT,timeout=60).returncode
+  text=(cwd/'run.log').read_text();cpd=re.search(r'Final critical path delay \(least slack\):\s*([0-9.]+)',text);counts=re.findall(r'total_nets_routed:\s*(\d+)\s+total_connections_routed:\s*(\d+)\s+total_heap_pushes:\s*(\d+)\s+total_heap_pops:\s*(\d+)',text);result={'pair_index':index,'mode':mode,'exit_code':code,'native_success':code==0 and 'VPR succeeded' in text,'cpd_ns':float(cpd[1]) if cpd else None,'wall_s':time.perf_counter()-start,'search_counts':[list(map(int,c)) for c in counts],'repair_visits':len(re.findall(r'ROUTECAST_DIRTY_REPAIR net=',text)),'required_dirty_nets':len(dirty),'input_cpd_ns':row['cpd_ns'],'command':cmd,'cwd':str(cwd),'inputs_sha256':inputs,'artifacts_sha256':{str(p):sha(p) for p in cwd.iterdir() if p.is_file()}};assert all(sha(p)==h for p,h in inputs.items());results.append(result);print(index,mode,code,result['cpd_ns'],result['search_counts'],flush=True)
+(out/'receipt.json').write_text(json.dumps({'results':results,'binary_sha256':sha(binary),'build_receipt_sha256':sha(build/'receipt.json'),'parent_verification_sha256':sha(parent/'verification.json'),'source_sha256':sha(Path(__file__)),'scope':'One seeded dirty-NET repair process per frozen adder bundle; whole NETs selected once by moved-block connectivity, no CPD-label selection. Comparison control recorded separately. Excludes predictor and bundle preparation; no full-pipeline speed claim.'},indent=2)+'\n')

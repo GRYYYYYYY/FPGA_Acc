@@ -1,0 +1,98 @@
+{
+  "schema": "dieroute.routing_policy_progress.v1",
+  "captured_utc": "2026-10-13T11:13:20.400511+00:00",
+  "research_status": "active_incomplete",
+  "board_result": false,
+  "previous_turn_classification": "progress: selected PIP identity implementation and verified evidence",
+  "implemented": [
+    "immutable node/edge admission independent of negotiated overuse",
+    "net-exclusive candidate pin nodes retained across rip-up",
+    "policy enforcement in local/flat/downstream search, corridor planning, ordered commit and edge-aware controller",
+    "frozen protected occupancy/owner/capacity/version/logical costs including initial cost setup",
+    "host sidecar loading with exact coverage and API downgrade rejection",
+    "full native policy conversion bound to original DCP footprint and graph manifests"
+  ],
+  "native_full_graph": {
+    "schema": "dieroute.native_policy.v1",
+    "original_candidate_footprint_preserved": true,
+    "nodes": 91975782,
+    "pips": 427282568,
+    "raw_arcs": 427714823,
+    "policy_permitted_arcs_before_net_specific_checks": 352071611,
+    "protected_nodes": 5886862,
+    "clock_intent_nodes": 111672,
+    "restricted_native_pips": 15945441,
+    "missing_endpoint_pips": 321,
+    "different_terminal_owner_arcs": 0,
+    "exclusive_candidate_pin_nodes": 1612338,
+    "candidate_pins_checked": 1612338,
+    "candidate_pips_checked": 6479479,
+    "candidate_tasks_checked": 1194028,
+    "forbidden_candidate_pins": 0,
+    "forbidden_candidate_pips": 0,
+    "forbidden_candidate_tasks": 0,
+    "candidate_source_nodes_with_incoming_arcs": 117570,
+    "multi_slr_source_nodes": 0,
+    "multi_slr_sink_tasks": 0,
+    "cross_slr_tasks": 12720,
+    "scope": "immutable resource/clock/PIP/terminal constraints and original path preservation only; not full site/tile legality, capacity/delay calibration or new commercial routing"
+  },
+  "validation": {
+    "ctest": "15/15 pass",
+    "asan_ubsan": "6/6 core/conversion test targets pass",
+    "tsan": "3/3 concurrent core test targets pass",
+    "native_policy_fixtures": 9,
+    "host_policy_configurations": 48,
+    "controller_repeats_per_workers": 5,
+    "workers": [
+      1,
+      2,
+      4
+    ],
+    "independent_native_audit": "every node/PIP mask and terminal owner recomputed; counts agree",
+    "legacy_replays": {
+      "cases": [
+        "diffeq",
+        "alu4",
+        "ex5p"
+      ],
+      "runs_per_case": 1,
+      "semantic_artifacts_per_case": 7,
+      "all_previous_hashes_and_non_wall_counters_identical": true
+    }
+  },
+  "retained_failures": [
+    {
+      "path": "work/routing_policy_build_20261013/policy_test.log",
+      "cause": "negative fixture assumed every heuristic selected the same forbidden resource; changed to require any policy violation"
+    },
+    {
+      "path": "work/routing_policy_build_20261013/policy_test_v2.log",
+      "cause": "actual initial wide-cost update omitted policy; corrected initialization and retained saturated-version test"
+    },
+    {
+      "path": "work/native_policy_independent_20261013.log",
+      "cause": "system Python lacks NumPy; used task-local frozen official PyPI 1.26.4 wheel with SHA-256 verification; system installation unchanged"
+    }
+  ],
+  "verification_directory": "work/routing_policy_verification_20261013",
+  "source_snapshot": "work/routing_policy_verification_20261013/source",
+  "evidence": {
+    "work/routing_policy_verification_20261013/artifact_manifest.json": "ae1c683a4dac3417621dc56d1389ffb4ca92d7988d221e9bfdfcedbf508672f3",
+    "work/routing_policy_verification_20261013/source_sha256.json": "73d216ab9f32152d655c206a073ce25e327008861a9bd1530209d6e6214de89d",
+    "work/routing_policy_verification_20261013/upstream_sha256.json": "057f0d25fe6575b78839401660545985ceb89f71a75fa6efb1966bbce2e343f8",
+    "work/routing_policy_verification_20261013/independent_command.json": "e5818214a25aa622ade62aadb8c221029df1a3c5a633b51d1d2d1ee19f82c606",
+    "work/u280_native_policy_v1_20261013/manifest.json": "89a0a9f84ea867112ec2de320decee1cf400ffb0aacd68de2e2470e1d8679406",
+    "work/u280_native_policy_independent_v1_20261013/audit.json": "234fffcd005d1e38053b0456ec10b44d77afa701a9d25fefa64a3248829a9419",
+    "work/routing_policy_legacy_20261013/audit.json": "8e499fb5d6aa8f941e21f8339bf32c57872e116adbed0cf5c2ec735b759f80ec"
+  },
+  "limits": [
+    "complete policy census and original candidate preservation do not constitute full commercial graph rerouting",
+    "runtime hard admission proven on fixtures; full native masks not yet consumed by a complete commercial routing workload",
+    "remaining site/tile accessibility and pin projection restrictions are not modeled by masks",
+    "physical capacities/delays, DCP writeback, native design legality and QoR remain open",
+    "native PIP-indexed masks must be expanded into PR CSR-edge order during full input packing",
+    "no new hardware result"
+  ],
+  "active_processes": []
+}

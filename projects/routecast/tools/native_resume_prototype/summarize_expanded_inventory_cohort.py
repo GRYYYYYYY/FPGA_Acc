@@ -1,0 +1,14 @@
+"""Native reroute-work evidence and secondary historical control comparison."""
+import json,sys
+from pathlib import Path
+from fractions import Fraction as F
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+from pre_route_endpoints import sha
+from native_route_work_metrics import extract
+ROOT=Path(__file__).resolve().parents[2];out=ROOT/'experiments/native_resume_inventory_expanded_cohort_2026-10-07';vf=out/'verified/verification.json';v=json.loads(vf.read_text());assert all(sha(f)==h for f,h in v['bindings'].items());hp=ROOT/'experiments/native_resume_precritical_cohort_2026-10-07/verification.json';h=json.loads(hp.read_text());assert all(sha(f)==x for f,x in h['bindings'].items());bindings={str(p):sha(p) for p in (vf,hp,Path(__file__))};rows=[]
+for row in v['rows']:
+ w,i=row['width'],row['index'];work=[]
+ for mode in ('workflow','cold'):
+  base=ROOT/f'experiments/native_resume_inventory_pipeline_w{w}_m{i}_{mode}_2026-10-07';rp=base/'receipt.json';r=json.loads(rp.read_text());log=base/'first/run.log';metrics=extract(log.read_text());assert metrics['routing_success'] and metrics['native_vpr_succeeded'];bindings.update({str(f):sha(f) for f in (rp,log)});work.append(dict(mode=mode,route_failure=False,router_iterations=metrics['iterations'],rerouted_connection_attempts=metrics['rerouted_connection_attempts'],heap_pushes=metrics['heap_pushes']))
+ a=json.loads((ROOT/f'experiments/native_resume_inventory_pipeline_w{w}_m{i}_workflow_2026-10-07/receipt.json').read_text());stage=a['stages'][-1];historical=next(x for x in h['rows'] if x['width']==w and x['index']==i);rows.append(dict(width=w,index=i,initial_native_work=work,exchange_before_cpd=stage['before_cpd_ns'],exchange_after_cpd=stage['final_cpd_ns'],exchange_before_wire=stage['before_wirelength'],exchange_after_wire=stage['final_wirelength'],primary_fresh_quality_pass=row['joint_quality_pass'],secondary_historical_unfloored_cold_cpd=historical['cpd_pair'][1],secondary_historical_unfloored_cold_wire=historical['wire_pair'][1],secondary_historical_quality_pass=F(row['cpd_pair'][0])<=F(historical['cpd_pair'][1]) and row['wire_pair'][0]<=historical['wire_pair'][1]))
+assert all(sha(f)==h for f,h in bindings.items());(out/'routing_work_summary.json').write_text(json.dumps(dict(rows=rows,bindings=bindings,route_failures=0,total_native_attempts=8,primary_quality_passes=sum(row['joint_quality_pass'] for row in v['rows']),complete_gains=sum(row['outer_complete_gain_pass'] for row in v['rows']),scope='Router iterations include initial pass; connection attempts count native printed reroutes in the first routing stage only, not compiled branch exchanges or native analysis. Outer workflow time separately includes all costs. Historical cold has different policy and is secondary only, never replaces stricter fresh quality failures. Same family new states, not heldout family.'),indent=2)+'\n');print(rows)

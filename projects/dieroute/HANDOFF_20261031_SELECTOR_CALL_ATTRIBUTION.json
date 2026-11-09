@@ -1,0 +1,37 @@
+{
+  "observed_ns": 1793409672864794528,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_SELECTOR_CONDITIONAL_WAITS.json",
+    "sha256": "43161c871686735e6129722412dfd60631d1509122dcd0fdc8eaf362f35545a5"
+  },
+  "progress": {
+    "report": "work/resident_selector_call_attribution_20261031/review_v2.json",
+    "report_sha256": "b73d5f4bc33c517ee2a998d7ddd6effdb743ba162f4d038e2dfbca50e7d22e5a",
+    "independent_review": "work/resident_selector_call_attribution_20261031/independent_attribution_review.json",
+    "independent_review_sha256": "c930aef1af2da9f3402a9b774918d2a2b29cc996d8fa7074d2c6a75c380a775e",
+    "source_successful_install_select_calls": 4639636,
+    "instance_families": 4,
+    "dynamic_RTL_instance_counts_measured": false,
+    "whole_program_cycle_bound_proven": false,
+    "scope": "Source-level successful-install call attribution, reconciled against retained host counters and SHA-bound P6HLS input/caller modules. Formula6N+4 and four-instance-family projections explain hostQ/T/W; put3/get3 and put5/get5 have the same immutable offset input sequence0..N, allowing host loop-count attribution. These are not observed RTL accepted-start counts or a proven compiler scheduling/count correspondence. Instrumentation reverses exactly to P6source. P7/P8formulas4N+4/2N+2 are host-only; their hardware schedules remain unmeasured. No original program/trace/TV payload read, new execution, loop/drain timing bound, watchdog verdict, ETA or adoption.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v194_20261031/matrix.json",
+    "sha256": "b0f7f64e0cb0e36c489d90a5f1abb1add19454fdbb49bc080d46030bdabe60c3"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v194.json",
+    "sha256": "5893f526780cb45c468242b2c0037f172db25d98529e67ad1da86dca5360581f"
+  },
+  "next_action": "Successful-install Ccall formula6N+4 and hostQ/T/W now reconcile to four RTL instance-family projections; not observed accepted-start counts or proof of HLS dynamic cycle correspondence. P7/P8formulas remain host-only. Earlier local and two-state conditional control proofs retained; child loop/drain timing and complete netlist semantics still needed before watchdog bounds. Preserve30watched handles, original full workloads/watchdogs/guards/failures and sole strict-native queue owner. Actual full terminal before canaries/adoption. Ledger v23 remains9865/9968associated,103pending plus820separate transitive/466root gaps; integrated34page draft unchanged. No new tool flow or original program/trace/TV payload access. Board absent; optional board-host question pending.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

@@ -1,0 +1,12 @@
+{
+  "development_evidence_sha256": "e15e5b2373b23f7072dbc50bf41ba94aad4697fca00655b52e4483e41b9e5202",
+  "chosen_development_policy": "50ps owner-NET-union wire cost (chosen after development, not heldout)",
+  "cases_protocol_sha256": "d1af6b285d318d1d4da73fa2006a3a715add9520b12c69a6fd6b3c25f892c3f5",
+  "cold_sources": {
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/trial_mux_joint_qor_cost_cold_reference.py": "e8282bdba447ad54927c857cef1dabef0cbb39f9e12942fb46aac7b471fa5bdf",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/verify_mux_joint_qor_cost_cold_reference.py": "a369bef49180b6ffe55300548b1e1f8641025324d1afa5141354d962f8fc8d03"
+  },
+  "cold_output": "mux_joint_qor_cost_cold_reference_2026-10-07",
+  "measurement_scope": "Fresh full12 cold native route, canonical original FULLSTA, physical audit and accepted ledger import; frontend/original native route/RR conversion and old timing reports excluded reusable input. Case timers include context and initial ledger setup. Verification cost recorded separately. Serial single observations, no stable speedup inference.",
+  "next_candidate_scope": "Before candidate timing, freeze actual acceptance workflow: count full12 prediction including failures, model/timing and physical checks, native gate cold reference, canonical validation, ledger import, and native fallback. Strict joint candidate quality uses explicit authenticated cold comparison. Original critical-floor preparation must be timed or stated additional; cached ready floors cannot be presented as zero preparation. Retrospective development gains are not final admission protocol."
+}

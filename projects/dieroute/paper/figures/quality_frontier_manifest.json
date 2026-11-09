@@ -1,0 +1,1931 @@
+{
+  "status": "observed_completed_native_quality_frontier_exported",
+  "rows": [
+    {
+      "label": "Original downstream",
+      "wirelength": 10762,
+      "cpd_ns": 9.81893
+    },
+    {
+      "label": "Entry stop",
+      "wirelength": 10749,
+      "cpd_ns": 9.67608
+    },
+    {
+      "label": "Local first",
+      "wirelength": 10954,
+      "cpd_ns": 9.65946
+    },
+    {
+      "label": "Cleanup",
+      "wirelength": 10684,
+      "cpd_ns": 9.67608
+    },
+    {
+      "label": "Fine flat",
+      "wirelength": 10771,
+      "cpd_ns": 9.69287
+    },
+    {
+      "label": "Fine entry",
+      "wirelength": 10722,
+      "cpd_ns": 9.91429
+    },
+    {
+      "label": "Zero seed",
+      "wirelength": 9521,
+      "cpd_ns": 10.2293
+    },
+    {
+      "label": "Half seed",
+      "wirelength": 9929,
+      "cpd_ns": 9.63263
+    },
+    {
+      "label": "Span price",
+      "wirelength": 10529,
+      "cpd_ns": 9.81527
+    },
+    {
+      "label": "Feedback: control",
+      "wirelength": 9929,
+      "cpd_ns": 9.63263
+    },
+    {
+      "label": "Feedback: candidate",
+      "wirelength": 9809,
+      "cpd_ns": 9.78317
+    },
+    {
+      "label": "Local guard: disabled",
+      "wirelength": 9929,
+      "cpd_ns": 9.63263
+    },
+    {
+      "label": "Local guard: unguarded",
+      "wirelength": 9809,
+      "cpd_ns": 9.78317
+    },
+    {
+      "label": "Local guard: guarded",
+      "wirelength": 9762,
+      "cpd_ns": 10.06
+    },
+    {
+      "label": "Whole net: parent",
+      "wirelength": 9762,
+      "cpd_ns": 10.06
+    },
+    {
+      "label": "Whole net: staged",
+      "wirelength": 9902,
+      "cpd_ns": 9.6313
+    },
+    {
+      "label": "Whole net: guarded",
+      "wirelength": 9919,
+      "cpd_ns": 9.63263
+    },
+    {
+      "label": "Ordinary: bulk",
+      "wirelength": 9929,
+      "cpd_ns": 9.63263
+    },
+    {
+      "label": "Ordinary: dispatch",
+      "wirelength": 10026,
+      "cpd_ns": 10.0142
+    },
+    {
+      "label": "Ordinary: serial",
+      "wirelength": 9443,
+      "cpd_ns": 10.2508
+    },
+    {
+      "label": "Present: legacy",
+      "wirelength": 9929,
+      "cpd_ns": 9.63263
+    },
+    {
+      "label": "Present: slow_growth",
+      "wirelength": 9736,
+      "cpd_ns": 9.6716
+    },
+    {
+      "label": "Present: zero_first_warm_start",
+      "wirelength": 9512,
+      "cpd_ns": 9.54931
+    },
+    {
+      "label": "Retention: whole_reset",
+      "wirelength": 9929,
+      "cpd_ns": 9.63263
+    },
+    {
+      "label": "Retention: legal_retention",
+      "wirelength": 9973,
+      "cpd_ns": 9.91446
+    },
+    {
+      "label": "Criticality: clamp",
+      "wirelength": 9512,
+      "cpd_ns": 9.54931
+    },
+    {
+      "label": "Criticality: shift",
+      "wirelength": 9749,
+      "cpd_ns": 9.68003
+    },
+    {
+      "label": "Initial: uniform",
+      "wirelength": 9512,
+      "cpd_ns": 9.54931
+    },
+    {
+      "label": "Initial: native",
+      "wirelength": 9665,
+      "cpd_ns": 9.69023
+    },
+    {
+      "label": "Fanout factorial: legacy_bulk",
+      "wirelength": 9929,
+      "cpd_ns": 9.63263
+    },
+    {
+      "label": "Fanout factorial: fanout_bulk",
+      "wirelength": 9996,
+      "cpd_ns": 9.75744
+    },
+    {
+      "label": "Fanout factorial: legacy_serial",
+      "wirelength": 9443,
+      "cpd_ns": 10.2508
+    },
+    {
+      "label": "Fanout factorial: fanout_serial",
+      "wirelength": 9420,
+      "cpd_ns": 9.74681
+    },
+    {
+      "label": "Fanout serial seed: weight128",
+      "wirelength": 9420,
+      "cpd_ns": 9.74681
+    },
+    {
+      "label": "Fanout serial seed: weight256",
+      "wirelength": 10064,
+      "cpd_ns": 9.78266
+    },
+    {
+      "label": "Fanout-present: present0_fanout0",
+      "wirelength": 9929,
+      "cpd_ns": 9.63263
+    },
+    {
+      "label": "Fanout-present: present0_fanout1",
+      "wirelength": 9996,
+      "cpd_ns": 9.75744
+    },
+    {
+      "label": "Fanout-present: present2_fanout0",
+      "wirelength": 9512,
+      "cpd_ns": 9.54931
+    },
+    {
+      "label": "Fanout-present: present2_fanout1",
+      "wirelength": 9622,
+      "cpd_ns": 9.65646
+    }
+  ],
+  "unique_points": [
+    {
+      "wirelength": 9420,
+      "cpd_ns": 9.74681,
+      "labels": [
+        "Fanout factorial: fanout_serial",
+        "Fanout serial seed: weight128"
+      ],
+      "dominated_by": [],
+      "nondominated": true,
+      "baseline": false,
+      "wire_percent": -2.5248344370860876,
+      "cpd_percent": 1.5253578768318343
+    },
+    {
+      "wirelength": 9443,
+      "cpd_ns": 10.2508,
+      "labels": [
+        "Ordinary: serial",
+        "Fanout factorial: legacy_serial"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9420,
+          "cpd_ns": 9.74681,
+          "labels": [
+            "Fanout factorial: fanout_serial",
+            "Fanout serial seed: weight128"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": -2.2868377483443725,
+      "cpd_percent": 6.775051378228136
+    },
+    {
+      "wirelength": 9512,
+      "cpd_ns": 9.54931,
+      "labels": [
+        "Present: zero_first_warm_start",
+        "Criticality: clamp",
+        "Initial: uniform",
+        "Fanout-present: present2_fanout0"
+      ],
+      "dominated_by": [],
+      "nondominated": true,
+      "baseline": false,
+      "wire_percent": -1.572847682119205,
+      "cpd_percent": -0.5318545014410869
+    },
+    {
+      "wirelength": 9521,
+      "cpd_ns": 10.2293,
+      "labels": [
+        "Zero seed"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9512,
+          "cpd_ns": 9.54931,
+          "labels": [
+            "Present: zero_first_warm_start",
+            "Criticality: clamp",
+            "Initial: uniform",
+            "Fanout-present: present2_fanout0"
+          ]
+        },
+        {
+          "wirelength": 9420,
+          "cpd_ns": 9.74681,
+          "labels": [
+            "Fanout factorial: fanout_serial",
+            "Fanout serial seed: weight128"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": -1.47971854304636,
+      "cpd_percent": 6.551101676289561
+    },
+    {
+      "wirelength": 9622,
+      "cpd_ns": 9.65646,
+      "labels": [
+        "Fanout-present: present2_fanout1"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9512,
+          "cpd_ns": 9.54931,
+          "labels": [
+            "Present: zero_first_warm_start",
+            "Criticality: clamp",
+            "Initial: uniform",
+            "Fanout-present: present2_fanout0"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": -0.43460264900662127,
+      "cpd_percent": 0.584248315429492
+    },
+    {
+      "wirelength": 9664,
+      "cpd_ns": 9.60037,
+      "labels": [
+        "Frozen baseline"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9512,
+          "cpd_ns": 9.54931,
+          "labels": [
+            "Present: zero_first_warm_start",
+            "Criticality: clamp",
+            "Initial: uniform",
+            "Fanout-present: present2_fanout0"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": true,
+      "wire_percent": 0.0,
+      "cpd_percent": 0.0
+    },
+    {
+      "wirelength": 9665,
+      "cpd_ns": 9.69023,
+      "labels": [
+        "Initial: native"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9664,
+          "cpd_ns": 9.60037,
+          "labels": [
+            "Frozen baseline"
+          ]
+        },
+        {
+          "wirelength": 9512,
+          "cpd_ns": 9.54931,
+          "labels": [
+            "Present: zero_first_warm_start",
+            "Criticality: clamp",
+            "Initial: uniform",
+            "Fanout-present: present2_fanout0"
+          ]
+        },
+        {
+          "wirelength": 9622,
+          "cpd_ns": 9.65646,
+          "labels": [
+            "Fanout-present: present2_fanout1"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": 0.010347682119205004,
+      "cpd_percent": 0.93600559145115
+    },
+    {
+      "wirelength": 9736,
+      "cpd_ns": 9.6716,
+      "labels": [
+        "Present: slow_growth"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9664,
+          "cpd_ns": 9.60037,
+          "labels": [
+            "Frozen baseline"
+          ]
+        },
+        {
+          "wirelength": 9512,
+          "cpd_ns": 9.54931,
+          "labels": [
+            "Present: zero_first_warm_start",
+            "Criticality: clamp",
+            "Initial: uniform",
+            "Fanout-present: present2_fanout0"
+          ]
+        },
+        {
+          "wirelength": 9622,
+          "cpd_ns": 9.65646,
+          "labels": [
+            "Fanout-present: present2_fanout1"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": 0.7450331125827825,
+      "cpd_percent": 0.7419505706550922
+    },
+    {
+      "wirelength": 9749,
+      "cpd_ns": 9.68003,
+      "labels": [
+        "Criticality: shift"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9664,
+          "cpd_ns": 9.60037,
+          "labels": [
+            "Frozen baseline"
+          ]
+        },
+        {
+          "wirelength": 9736,
+          "cpd_ns": 9.6716,
+          "labels": [
+            "Present: slow_growth"
+          ]
+        },
+        {
+          "wirelength": 9512,
+          "cpd_ns": 9.54931,
+          "labels": [
+            "Present: zero_first_warm_start",
+            "Criticality: clamp",
+            "Initial: uniform",
+            "Fanout-present: present2_fanout0"
+          ]
+        },
+        {
+          "wirelength": 9622,
+          "cpd_ns": 9.65646,
+          "labels": [
+            "Fanout-present: present2_fanout1"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": 0.8795529801324475,
+      "cpd_percent": 0.8297596863454215
+    },
+    {
+      "wirelength": 9762,
+      "cpd_ns": 10.06,
+      "labels": [
+        "Local guard: guarded",
+        "Whole net: parent"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9664,
+          "cpd_ns": 9.60037,
+          "labels": [
+            "Frozen baseline"
+          ]
+        },
+        {
+          "wirelength": 9736,
+          "cpd_ns": 9.6716,
+          "labels": [
+            "Present: slow_growth"
+          ]
+        },
+        {
+          "wirelength": 9512,
+          "cpd_ns": 9.54931,
+          "labels": [
+            "Present: zero_first_warm_start",
+            "Criticality: clamp",
+            "Initial: uniform",
+            "Fanout-present: present2_fanout0"
+          ]
+        },
+        {
+          "wirelength": 9749,
+          "cpd_ns": 9.68003,
+          "labels": [
+            "Criticality: shift"
+          ]
+        },
+        {
+          "wirelength": 9665,
+          "cpd_ns": 9.69023,
+          "labels": [
+            "Initial: native"
+          ]
+        },
+        {
+          "wirelength": 9420,
+          "cpd_ns": 9.74681,
+          "labels": [
+            "Fanout factorial: fanout_serial",
+            "Fanout serial seed: weight128"
+          ]
+        },
+        {
+          "wirelength": 9622,
+          "cpd_ns": 9.65646,
+          "labels": [
+            "Fanout-present: present2_fanout1"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": 1.0140728476821126,
+      "cpd_percent": 4.7876279768384045
+    },
+    {
+      "wirelength": 9809,
+      "cpd_ns": 9.78317,
+      "labels": [
+        "Feedback: candidate",
+        "Local guard: unguarded"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9664,
+          "cpd_ns": 9.60037,
+          "labels": [
+            "Frozen baseline"
+          ]
+        },
+        {
+          "wirelength": 9736,
+          "cpd_ns": 9.6716,
+          "labels": [
+            "Present: slow_growth"
+          ]
+        },
+        {
+          "wirelength": 9512,
+          "cpd_ns": 9.54931,
+          "labels": [
+            "Present: zero_first_warm_start",
+            "Criticality: clamp",
+            "Initial: uniform",
+            "Fanout-present: present2_fanout0"
+          ]
+        },
+        {
+          "wirelength": 9749,
+          "cpd_ns": 9.68003,
+          "labels": [
+            "Criticality: shift"
+          ]
+        },
+        {
+          "wirelength": 9665,
+          "cpd_ns": 9.69023,
+          "labels": [
+            "Initial: native"
+          ]
+        },
+        {
+          "wirelength": 9420,
+          "cpd_ns": 9.74681,
+          "labels": [
+            "Fanout factorial: fanout_serial",
+            "Fanout serial seed: weight128"
+          ]
+        },
+        {
+          "wirelength": 9622,
+          "cpd_ns": 9.65646,
+          "labels": [
+            "Fanout-present: present2_fanout1"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": 1.50041390728477,
+      "cpd_percent": 1.9040932797381727
+    },
+    {
+      "wirelength": 9902,
+      "cpd_ns": 9.6313,
+      "labels": [
+        "Whole net: staged"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9664,
+          "cpd_ns": 9.60037,
+          "labels": [
+            "Frozen baseline"
+          ]
+        },
+        {
+          "wirelength": 9512,
+          "cpd_ns": 9.54931,
+          "labels": [
+            "Present: zero_first_warm_start",
+            "Criticality: clamp",
+            "Initial: uniform",
+            "Fanout-present: present2_fanout0"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": 2.4627483443708575,
+      "cpd_percent": 0.3221750828353409
+    },
+    {
+      "wirelength": 9919,
+      "cpd_ns": 9.63263,
+      "labels": [
+        "Whole net: guarded"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9664,
+          "cpd_ns": 9.60037,
+          "labels": [
+            "Frozen baseline"
+          ]
+        },
+        {
+          "wirelength": 9902,
+          "cpd_ns": 9.6313,
+          "labels": [
+            "Whole net: staged"
+          ]
+        },
+        {
+          "wirelength": 9512,
+          "cpd_ns": 9.54931,
+          "labels": [
+            "Present: zero_first_warm_start",
+            "Criticality: clamp",
+            "Initial: uniform",
+            "Fanout-present: present2_fanout0"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": 2.6386589403973426,
+      "cpd_percent": 0.33602871555993286
+    },
+    {
+      "wirelength": 9929,
+      "cpd_ns": 9.63263,
+      "labels": [
+        "Half seed",
+        "Feedback: control",
+        "Local guard: disabled",
+        "Ordinary: bulk",
+        "Present: legacy",
+        "Retention: whole_reset",
+        "Fanout factorial: legacy_bulk",
+        "Fanout-present: present0_fanout0"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9664,
+          "cpd_ns": 9.60037,
+          "labels": [
+            "Frozen baseline"
+          ]
+        },
+        {
+          "wirelength": 9902,
+          "cpd_ns": 9.6313,
+          "labels": [
+            "Whole net: staged"
+          ]
+        },
+        {
+          "wirelength": 9919,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Whole net: guarded"
+          ]
+        },
+        {
+          "wirelength": 9512,
+          "cpd_ns": 9.54931,
+          "labels": [
+            "Present: zero_first_warm_start",
+            "Criticality: clamp",
+            "Initial: uniform",
+            "Fanout-present: present2_fanout0"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": 2.742135761589415,
+      "cpd_percent": 0.33602871555993286
+    },
+    {
+      "wirelength": 9973,
+      "cpd_ns": 9.91446,
+      "labels": [
+        "Retention: legal_retention"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9664,
+          "cpd_ns": 9.60037,
+          "labels": [
+            "Frozen baseline"
+          ]
+        },
+        {
+          "wirelength": 9929,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Half seed",
+            "Feedback: control",
+            "Local guard: disabled",
+            "Ordinary: bulk",
+            "Present: legacy",
+            "Retention: whole_reset",
+            "Fanout factorial: legacy_bulk",
+            "Fanout-present: present0_fanout0"
+          ]
+        },
+        {
+          "wirelength": 9809,
+          "cpd_ns": 9.78317,
+          "labels": [
+            "Feedback: candidate",
+            "Local guard: unguarded"
+          ]
+        },
+        {
+          "wirelength": 9902,
+          "cpd_ns": 9.6313,
+          "labels": [
+            "Whole net: staged"
+          ]
+        },
+        {
+          "wirelength": 9919,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Whole net: guarded"
+          ]
+        },
+        {
+          "wirelength": 9736,
+          "cpd_ns": 9.6716,
+          "labels": [
+            "Present: slow_growth"
+          ]
+        },
+        {
+          "wirelength": 9512,
+          "cpd_ns": 9.54931,
+          "labels": [
+            "Present: zero_first_warm_start",
+            "Criticality: clamp",
+            "Initial: uniform",
+            "Fanout-present: present2_fanout0"
+          ]
+        },
+        {
+          "wirelength": 9749,
+          "cpd_ns": 9.68003,
+          "labels": [
+            "Criticality: shift"
+          ]
+        },
+        {
+          "wirelength": 9665,
+          "cpd_ns": 9.69023,
+          "labels": [
+            "Initial: native"
+          ]
+        },
+        {
+          "wirelength": 9420,
+          "cpd_ns": 9.74681,
+          "labels": [
+            "Fanout factorial: fanout_serial",
+            "Fanout serial seed: weight128"
+          ]
+        },
+        {
+          "wirelength": 9622,
+          "cpd_ns": 9.65646,
+          "labels": [
+            "Fanout-present: present2_fanout1"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": 3.197433774834435,
+      "cpd_percent": 3.2716447386923697
+    },
+    {
+      "wirelength": 9996,
+      "cpd_ns": 9.75744,
+      "labels": [
+        "Fanout factorial: fanout_bulk",
+        "Fanout-present: present0_fanout1"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9664,
+          "cpd_ns": 9.60037,
+          "labels": [
+            "Frozen baseline"
+          ]
+        },
+        {
+          "wirelength": 9929,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Half seed",
+            "Feedback: control",
+            "Local guard: disabled",
+            "Ordinary: bulk",
+            "Present: legacy",
+            "Retention: whole_reset",
+            "Fanout factorial: legacy_bulk",
+            "Fanout-present: present0_fanout0"
+          ]
+        },
+        {
+          "wirelength": 9902,
+          "cpd_ns": 9.6313,
+          "labels": [
+            "Whole net: staged"
+          ]
+        },
+        {
+          "wirelength": 9919,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Whole net: guarded"
+          ]
+        },
+        {
+          "wirelength": 9736,
+          "cpd_ns": 9.6716,
+          "labels": [
+            "Present: slow_growth"
+          ]
+        },
+        {
+          "wirelength": 9512,
+          "cpd_ns": 9.54931,
+          "labels": [
+            "Present: zero_first_warm_start",
+            "Criticality: clamp",
+            "Initial: uniform",
+            "Fanout-present: present2_fanout0"
+          ]
+        },
+        {
+          "wirelength": 9749,
+          "cpd_ns": 9.68003,
+          "labels": [
+            "Criticality: shift"
+          ]
+        },
+        {
+          "wirelength": 9665,
+          "cpd_ns": 9.69023,
+          "labels": [
+            "Initial: native"
+          ]
+        },
+        {
+          "wirelength": 9420,
+          "cpd_ns": 9.74681,
+          "labels": [
+            "Fanout factorial: fanout_serial",
+            "Fanout serial seed: weight128"
+          ]
+        },
+        {
+          "wirelength": 9622,
+          "cpd_ns": 9.65646,
+          "labels": [
+            "Fanout-present: present2_fanout1"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": 3.43543046357615,
+      "cpd_percent": 1.6360827759763552
+    },
+    {
+      "wirelength": 10026,
+      "cpd_ns": 10.0142,
+      "labels": [
+        "Ordinary: dispatch"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9664,
+          "cpd_ns": 9.60037,
+          "labels": [
+            "Frozen baseline"
+          ]
+        },
+        {
+          "wirelength": 9929,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Half seed",
+            "Feedback: control",
+            "Local guard: disabled",
+            "Ordinary: bulk",
+            "Present: legacy",
+            "Retention: whole_reset",
+            "Fanout factorial: legacy_bulk",
+            "Fanout-present: present0_fanout0"
+          ]
+        },
+        {
+          "wirelength": 9809,
+          "cpd_ns": 9.78317,
+          "labels": [
+            "Feedback: candidate",
+            "Local guard: unguarded"
+          ]
+        },
+        {
+          "wirelength": 9902,
+          "cpd_ns": 9.6313,
+          "labels": [
+            "Whole net: staged"
+          ]
+        },
+        {
+          "wirelength": 9919,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Whole net: guarded"
+          ]
+        },
+        {
+          "wirelength": 9736,
+          "cpd_ns": 9.6716,
+          "labels": [
+            "Present: slow_growth"
+          ]
+        },
+        {
+          "wirelength": 9512,
+          "cpd_ns": 9.54931,
+          "labels": [
+            "Present: zero_first_warm_start",
+            "Criticality: clamp",
+            "Initial: uniform",
+            "Fanout-present: present2_fanout0"
+          ]
+        },
+        {
+          "wirelength": 9973,
+          "cpd_ns": 9.91446,
+          "labels": [
+            "Retention: legal_retention"
+          ]
+        },
+        {
+          "wirelength": 9749,
+          "cpd_ns": 9.68003,
+          "labels": [
+            "Criticality: shift"
+          ]
+        },
+        {
+          "wirelength": 9665,
+          "cpd_ns": 9.69023,
+          "labels": [
+            "Initial: native"
+          ]
+        },
+        {
+          "wirelength": 9996,
+          "cpd_ns": 9.75744,
+          "labels": [
+            "Fanout factorial: fanout_bulk",
+            "Fanout-present: present0_fanout1"
+          ]
+        },
+        {
+          "wirelength": 9420,
+          "cpd_ns": 9.74681,
+          "labels": [
+            "Fanout factorial: fanout_serial",
+            "Fanout serial seed: weight128"
+          ]
+        },
+        {
+          "wirelength": 9622,
+          "cpd_ns": 9.65646,
+          "labels": [
+            "Fanout-present: present2_fanout1"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": 3.7458609271523224,
+      "cpd_percent": 4.310563030383219
+    },
+    {
+      "wirelength": 10064,
+      "cpd_ns": 9.78266,
+      "labels": [
+        "Fanout serial seed: weight256"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9664,
+          "cpd_ns": 9.60037,
+          "labels": [
+            "Frozen baseline"
+          ]
+        },
+        {
+          "wirelength": 9929,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Half seed",
+            "Feedback: control",
+            "Local guard: disabled",
+            "Ordinary: bulk",
+            "Present: legacy",
+            "Retention: whole_reset",
+            "Fanout factorial: legacy_bulk",
+            "Fanout-present: present0_fanout0"
+          ]
+        },
+        {
+          "wirelength": 9902,
+          "cpd_ns": 9.6313,
+          "labels": [
+            "Whole net: staged"
+          ]
+        },
+        {
+          "wirelength": 9919,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Whole net: guarded"
+          ]
+        },
+        {
+          "wirelength": 9736,
+          "cpd_ns": 9.6716,
+          "labels": [
+            "Present: slow_growth"
+          ]
+        },
+        {
+          "wirelength": 9512,
+          "cpd_ns": 9.54931,
+          "labels": [
+            "Present: zero_first_warm_start",
+            "Criticality: clamp",
+            "Initial: uniform",
+            "Fanout-present: present2_fanout0"
+          ]
+        },
+        {
+          "wirelength": 9749,
+          "cpd_ns": 9.68003,
+          "labels": [
+            "Criticality: shift"
+          ]
+        },
+        {
+          "wirelength": 9665,
+          "cpd_ns": 9.69023,
+          "labels": [
+            "Initial: native"
+          ]
+        },
+        {
+          "wirelength": 9996,
+          "cpd_ns": 9.75744,
+          "labels": [
+            "Fanout factorial: fanout_bulk",
+            "Fanout-present: present0_fanout1"
+          ]
+        },
+        {
+          "wirelength": 9420,
+          "cpd_ns": 9.74681,
+          "labels": [
+            "Fanout factorial: fanout_serial",
+            "Fanout serial seed: weight128"
+          ]
+        },
+        {
+          "wirelength": 9622,
+          "cpd_ns": 9.65646,
+          "labels": [
+            "Fanout-present: present2_fanout1"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": 4.139072847682113,
+      "cpd_percent": 1.898780984482884
+    },
+    {
+      "wirelength": 10529,
+      "cpd_ns": 9.81527,
+      "labels": [
+        "Span price"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9664,
+          "cpd_ns": 9.60037,
+          "labels": [
+            "Frozen baseline"
+          ]
+        },
+        {
+          "wirelength": 9929,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Half seed",
+            "Feedback: control",
+            "Local guard: disabled",
+            "Ordinary: bulk",
+            "Present: legacy",
+            "Retention: whole_reset",
+            "Fanout factorial: legacy_bulk",
+            "Fanout-present: present0_fanout0"
+          ]
+        },
+        {
+          "wirelength": 9809,
+          "cpd_ns": 9.78317,
+          "labels": [
+            "Feedback: candidate",
+            "Local guard: unguarded"
+          ]
+        },
+        {
+          "wirelength": 9902,
+          "cpd_ns": 9.6313,
+          "labels": [
+            "Whole net: staged"
+          ]
+        },
+        {
+          "wirelength": 9919,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Whole net: guarded"
+          ]
+        },
+        {
+          "wirelength": 9736,
+          "cpd_ns": 9.6716,
+          "labels": [
+            "Present: slow_growth"
+          ]
+        },
+        {
+          "wirelength": 9512,
+          "cpd_ns": 9.54931,
+          "labels": [
+            "Present: zero_first_warm_start",
+            "Criticality: clamp",
+            "Initial: uniform",
+            "Fanout-present: present2_fanout0"
+          ]
+        },
+        {
+          "wirelength": 9749,
+          "cpd_ns": 9.68003,
+          "labels": [
+            "Criticality: shift"
+          ]
+        },
+        {
+          "wirelength": 9665,
+          "cpd_ns": 9.69023,
+          "labels": [
+            "Initial: native"
+          ]
+        },
+        {
+          "wirelength": 9996,
+          "cpd_ns": 9.75744,
+          "labels": [
+            "Fanout factorial: fanout_bulk",
+            "Fanout-present: present0_fanout1"
+          ]
+        },
+        {
+          "wirelength": 9420,
+          "cpd_ns": 9.74681,
+          "labels": [
+            "Fanout factorial: fanout_serial",
+            "Fanout serial seed: weight128"
+          ]
+        },
+        {
+          "wirelength": 10064,
+          "cpd_ns": 9.78266,
+          "labels": [
+            "Fanout serial seed: weight256"
+          ]
+        },
+        {
+          "wirelength": 9622,
+          "cpd_ns": 9.65646,
+          "labels": [
+            "Fanout-present: present2_fanout1"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": 8.950745033112572,
+      "cpd_percent": 2.2384553928650686
+    },
+    {
+      "wirelength": 10684,
+      "cpd_ns": 9.67608,
+      "labels": [
+        "Cleanup"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9664,
+          "cpd_ns": 9.60037,
+          "labels": [
+            "Frozen baseline"
+          ]
+        },
+        {
+          "wirelength": 9929,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Half seed",
+            "Feedback: control",
+            "Local guard: disabled",
+            "Ordinary: bulk",
+            "Present: legacy",
+            "Retention: whole_reset",
+            "Fanout factorial: legacy_bulk",
+            "Fanout-present: present0_fanout0"
+          ]
+        },
+        {
+          "wirelength": 9902,
+          "cpd_ns": 9.6313,
+          "labels": [
+            "Whole net: staged"
+          ]
+        },
+        {
+          "wirelength": 9919,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Whole net: guarded"
+          ]
+        },
+        {
+          "wirelength": 9736,
+          "cpd_ns": 9.6716,
+          "labels": [
+            "Present: slow_growth"
+          ]
+        },
+        {
+          "wirelength": 9512,
+          "cpd_ns": 9.54931,
+          "labels": [
+            "Present: zero_first_warm_start",
+            "Criticality: clamp",
+            "Initial: uniform",
+            "Fanout-present: present2_fanout0"
+          ]
+        },
+        {
+          "wirelength": 9622,
+          "cpd_ns": 9.65646,
+          "labels": [
+            "Fanout-present: present2_fanout1"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": 10.554635761589415,
+      "cpd_percent": 0.7886154387799715
+    },
+    {
+      "wirelength": 10722,
+      "cpd_ns": 9.91429,
+      "labels": [
+        "Fine entry"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9664,
+          "cpd_ns": 9.60037,
+          "labels": [
+            "Frozen baseline"
+          ]
+        },
+        {
+          "wirelength": 10684,
+          "cpd_ns": 9.67608,
+          "labels": [
+            "Cleanup"
+          ]
+        },
+        {
+          "wirelength": 9929,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Half seed",
+            "Feedback: control",
+            "Local guard: disabled",
+            "Ordinary: bulk",
+            "Present: legacy",
+            "Retention: whole_reset",
+            "Fanout factorial: legacy_bulk",
+            "Fanout-present: present0_fanout0"
+          ]
+        },
+        {
+          "wirelength": 10529,
+          "cpd_ns": 9.81527,
+          "labels": [
+            "Span price"
+          ]
+        },
+        {
+          "wirelength": 9809,
+          "cpd_ns": 9.78317,
+          "labels": [
+            "Feedback: candidate",
+            "Local guard: unguarded"
+          ]
+        },
+        {
+          "wirelength": 9902,
+          "cpd_ns": 9.6313,
+          "labels": [
+            "Whole net: staged"
+          ]
+        },
+        {
+          "wirelength": 9919,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Whole net: guarded"
+          ]
+        },
+        {
+          "wirelength": 9736,
+          "cpd_ns": 9.6716,
+          "labels": [
+            "Present: slow_growth"
+          ]
+        },
+        {
+          "wirelength": 9512,
+          "cpd_ns": 9.54931,
+          "labels": [
+            "Present: zero_first_warm_start",
+            "Criticality: clamp",
+            "Initial: uniform",
+            "Fanout-present: present2_fanout0"
+          ]
+        },
+        {
+          "wirelength": 9749,
+          "cpd_ns": 9.68003,
+          "labels": [
+            "Criticality: shift"
+          ]
+        },
+        {
+          "wirelength": 9665,
+          "cpd_ns": 9.69023,
+          "labels": [
+            "Initial: native"
+          ]
+        },
+        {
+          "wirelength": 9996,
+          "cpd_ns": 9.75744,
+          "labels": [
+            "Fanout factorial: fanout_bulk",
+            "Fanout-present: present0_fanout1"
+          ]
+        },
+        {
+          "wirelength": 9420,
+          "cpd_ns": 9.74681,
+          "labels": [
+            "Fanout factorial: fanout_serial",
+            "Fanout serial seed: weight128"
+          ]
+        },
+        {
+          "wirelength": 10064,
+          "cpd_ns": 9.78266,
+          "labels": [
+            "Fanout serial seed: weight256"
+          ]
+        },
+        {
+          "wirelength": 9622,
+          "cpd_ns": 9.65646,
+          "labels": [
+            "Fanout-present: present2_fanout1"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": 10.947847682119205,
+      "cpd_percent": 3.2698739736072735
+    },
+    {
+      "wirelength": 10749,
+      "cpd_ns": 9.67608,
+      "labels": [
+        "Entry stop"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9664,
+          "cpd_ns": 9.60037,
+          "labels": [
+            "Frozen baseline"
+          ]
+        },
+        {
+          "wirelength": 10684,
+          "cpd_ns": 9.67608,
+          "labels": [
+            "Cleanup"
+          ]
+        },
+        {
+          "wirelength": 9929,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Half seed",
+            "Feedback: control",
+            "Local guard: disabled",
+            "Ordinary: bulk",
+            "Present: legacy",
+            "Retention: whole_reset",
+            "Fanout factorial: legacy_bulk",
+            "Fanout-present: present0_fanout0"
+          ]
+        },
+        {
+          "wirelength": 9902,
+          "cpd_ns": 9.6313,
+          "labels": [
+            "Whole net: staged"
+          ]
+        },
+        {
+          "wirelength": 9919,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Whole net: guarded"
+          ]
+        },
+        {
+          "wirelength": 9736,
+          "cpd_ns": 9.6716,
+          "labels": [
+            "Present: slow_growth"
+          ]
+        },
+        {
+          "wirelength": 9512,
+          "cpd_ns": 9.54931,
+          "labels": [
+            "Present: zero_first_warm_start",
+            "Criticality: clamp",
+            "Initial: uniform",
+            "Fanout-present: present2_fanout0"
+          ]
+        },
+        {
+          "wirelength": 9622,
+          "cpd_ns": 9.65646,
+          "labels": [
+            "Fanout-present: present2_fanout1"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": 11.22723509933774,
+      "cpd_percent": 0.7886154387799715
+    },
+    {
+      "wirelength": 10762,
+      "cpd_ns": 9.81893,
+      "labels": [
+        "Original downstream"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9664,
+          "cpd_ns": 9.60037,
+          "labels": [
+            "Frozen baseline"
+          ]
+        },
+        {
+          "wirelength": 10749,
+          "cpd_ns": 9.67608,
+          "labels": [
+            "Entry stop"
+          ]
+        },
+        {
+          "wirelength": 10684,
+          "cpd_ns": 9.67608,
+          "labels": [
+            "Cleanup"
+          ]
+        },
+        {
+          "wirelength": 9929,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Half seed",
+            "Feedback: control",
+            "Local guard: disabled",
+            "Ordinary: bulk",
+            "Present: legacy",
+            "Retention: whole_reset",
+            "Fanout factorial: legacy_bulk",
+            "Fanout-present: present0_fanout0"
+          ]
+        },
+        {
+          "wirelength": 10529,
+          "cpd_ns": 9.81527,
+          "labels": [
+            "Span price"
+          ]
+        },
+        {
+          "wirelength": 9809,
+          "cpd_ns": 9.78317,
+          "labels": [
+            "Feedback: candidate",
+            "Local guard: unguarded"
+          ]
+        },
+        {
+          "wirelength": 9902,
+          "cpd_ns": 9.6313,
+          "labels": [
+            "Whole net: staged"
+          ]
+        },
+        {
+          "wirelength": 9919,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Whole net: guarded"
+          ]
+        },
+        {
+          "wirelength": 9736,
+          "cpd_ns": 9.6716,
+          "labels": [
+            "Present: slow_growth"
+          ]
+        },
+        {
+          "wirelength": 9512,
+          "cpd_ns": 9.54931,
+          "labels": [
+            "Present: zero_first_warm_start",
+            "Criticality: clamp",
+            "Initial: uniform",
+            "Fanout-present: present2_fanout0"
+          ]
+        },
+        {
+          "wirelength": 9749,
+          "cpd_ns": 9.68003,
+          "labels": [
+            "Criticality: shift"
+          ]
+        },
+        {
+          "wirelength": 9665,
+          "cpd_ns": 9.69023,
+          "labels": [
+            "Initial: native"
+          ]
+        },
+        {
+          "wirelength": 9996,
+          "cpd_ns": 9.75744,
+          "labels": [
+            "Fanout factorial: fanout_bulk",
+            "Fanout-present: present0_fanout1"
+          ]
+        },
+        {
+          "wirelength": 9420,
+          "cpd_ns": 9.74681,
+          "labels": [
+            "Fanout factorial: fanout_serial",
+            "Fanout serial seed: weight128"
+          ]
+        },
+        {
+          "wirelength": 10064,
+          "cpd_ns": 9.78266,
+          "labels": [
+            "Fanout serial seed: weight256"
+          ]
+        },
+        {
+          "wirelength": 9622,
+          "cpd_ns": 9.65646,
+          "labels": [
+            "Fanout-present: present2_fanout1"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": 11.361754966887428,
+      "cpd_percent": 2.276578923520667
+    },
+    {
+      "wirelength": 10771,
+      "cpd_ns": 9.69287,
+      "labels": [
+        "Fine flat"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9664,
+          "cpd_ns": 9.60037,
+          "labels": [
+            "Frozen baseline"
+          ]
+        },
+        {
+          "wirelength": 10749,
+          "cpd_ns": 9.67608,
+          "labels": [
+            "Entry stop"
+          ]
+        },
+        {
+          "wirelength": 10684,
+          "cpd_ns": 9.67608,
+          "labels": [
+            "Cleanup"
+          ]
+        },
+        {
+          "wirelength": 9929,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Half seed",
+            "Feedback: control",
+            "Local guard: disabled",
+            "Ordinary: bulk",
+            "Present: legacy",
+            "Retention: whole_reset",
+            "Fanout factorial: legacy_bulk",
+            "Fanout-present: present0_fanout0"
+          ]
+        },
+        {
+          "wirelength": 9902,
+          "cpd_ns": 9.6313,
+          "labels": [
+            "Whole net: staged"
+          ]
+        },
+        {
+          "wirelength": 9919,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Whole net: guarded"
+          ]
+        },
+        {
+          "wirelength": 9736,
+          "cpd_ns": 9.6716,
+          "labels": [
+            "Present: slow_growth"
+          ]
+        },
+        {
+          "wirelength": 9512,
+          "cpd_ns": 9.54931,
+          "labels": [
+            "Present: zero_first_warm_start",
+            "Criticality: clamp",
+            "Initial: uniform",
+            "Fanout-present: present2_fanout0"
+          ]
+        },
+        {
+          "wirelength": 9749,
+          "cpd_ns": 9.68003,
+          "labels": [
+            "Criticality: shift"
+          ]
+        },
+        {
+          "wirelength": 9665,
+          "cpd_ns": 9.69023,
+          "labels": [
+            "Initial: native"
+          ]
+        },
+        {
+          "wirelength": 9622,
+          "cpd_ns": 9.65646,
+          "labels": [
+            "Fanout-present: present2_fanout1"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": 11.454884105960272,
+      "cpd_percent": 0.963504531596171
+    },
+    {
+      "wirelength": 10954,
+      "cpd_ns": 9.65946,
+      "labels": [
+        "Local first"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9664,
+          "cpd_ns": 9.60037,
+          "labels": [
+            "Frozen baseline"
+          ]
+        },
+        {
+          "wirelength": 9929,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Half seed",
+            "Feedback: control",
+            "Local guard: disabled",
+            "Ordinary: bulk",
+            "Present: legacy",
+            "Retention: whole_reset",
+            "Fanout factorial: legacy_bulk",
+            "Fanout-present: present0_fanout0"
+          ]
+        },
+        {
+          "wirelength": 9902,
+          "cpd_ns": 9.6313,
+          "labels": [
+            "Whole net: staged"
+          ]
+        },
+        {
+          "wirelength": 9919,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Whole net: guarded"
+          ]
+        },
+        {
+          "wirelength": 9512,
+          "cpd_ns": 9.54931,
+          "labels": [
+            "Present: zero_first_warm_start",
+            "Criticality: clamp",
+            "Initial: uniform",
+            "Fanout-present: present2_fanout0"
+          ]
+        },
+        {
+          "wirelength": 9622,
+          "cpd_ns": 9.65646,
+          "labels": [
+            "Fanout-present: present2_fanout1"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": 13.348509933774832,
+      "cpd_percent": 0.6154971110488461
+    }
+  ],
+  "frontier": [
+    {
+      "wirelength": 9420,
+      "cpd_ns": 9.74681,
+      "labels": [
+        "Fanout factorial: fanout_serial",
+        "Fanout serial seed: weight128"
+      ],
+      "dominated_by": [],
+      "nondominated": true,
+      "baseline": false,
+      "wire_percent": -2.5248344370860876,
+      "cpd_percent": 1.5253578768318343
+    },
+    {
+      "wirelength": 9512,
+      "cpd_ns": 9.54931,
+      "labels": [
+        "Present: zero_first_warm_start",
+        "Criticality: clamp",
+        "Initial: uniform",
+        "Fanout-present: present2_fanout0"
+      ],
+      "dominated_by": [],
+      "nondominated": true,
+      "baseline": false,
+      "wire_percent": -1.572847682119205,
+      "cpd_percent": -0.5318545014410869
+    }
+  ],
+  "two_metric_non_degrading_variants": [
+    {
+      "wirelength": 9512,
+      "cpd_ns": 9.54931,
+      "labels": [
+        "Present: zero_first_warm_start",
+        "Criticality: clamp",
+        "Initial: uniform",
+        "Fanout-present: present2_fanout0"
+      ],
+      "dominated_by": [],
+      "nondominated": true,
+      "baseline": false,
+      "wire_percent": -1.572847682119205,
+      "cpd_percent": -0.5318545014410869
+    }
+  ],
+  "source_sha256": {
+    "experiments/wide_timing_cohort_audit_20261013.json": "41f486d41a35b10fc1e1bf6f5fe130b8938ea3b4322d28fe3f6d3fc61cc9dac5",
+    "work/rr_upstream_target_stop_variant_20261014/independent_audit.json": "f1f9c18f62602799211034444f92ed29850451b232d1590fafeed207df6af618",
+    "work/rr_local_task_order_variant_20261014/independent_audit.json": "e9d629762c098adef9a5b2a0bc26805eec3325e00b53b917bd7c91b5ebfb9a6a",
+    "work/rr_wide_cleanup_variant_20261014/independent_audit.json": "4e8e88c2c9eacf307b31f7eb313e8735957f2f635029e9110d6fdd24432a9ee4",
+    "work/rr_cost_precision_variant_20261014/independent_audit.json": "9a7a2e1f998b9b6ff0350d0c6a1a3429cbe6e4d7a837585c46a5c3c0443beb7b",
+    "work/rr_tree_seed_zero_variant_20261014/tree_seed_comparison.json": "c6dbc3fbe7c89ab5e7e1f145c28057eba794594927d1fbc41095e4915e8e6275",
+    "work/rr_tree_seed_midpoint_variant_20261014/tree_seed_midpoint_comparison.json": "9db0a15729a6b51a08803007fea20c7da1e35b1fe027af0e6b77da996e526a30",
+    "work/rr_main_span_cost_variant_20261014/span_price_comparison.json": "21a0394d8232488ebc0b02bff7198842b4a767745eac898e85dd8a3c2d281421",
+    "work/rr_critical_feedback_variant_20261014/feedback_comparison.json": "83fef47133e0d6173e8477ab20f5f0285266ba7247ed0cd30c788c2e44bbe8cf",
+    "work/rr_local_delay_feedback_variant_20261014/three_arm_comparison.json": "32f7f9242ba5e4eeba44834b06c6686dc480925404f1bb9df2c065880459ccea",
+    "work/rr_supplemental_net_transaction_variant_20261015/three_arm_comparison.json": "678dd538facfe99bdc9df86548f702493af46fe2be5b9276eff7884003a0cd55",
+    "work/rr_ordinary_schedule_variant_20261015/three_arm_comparison.json": "cc7b2d11b53b27fcde74897a3fcc92a4b38aeed51e01b7a58e88e8413918ca0c",
+    "work/rr_present_schedule_variant_20261015/three_arm_comparison_v2.json": "ca3cfaefe9abc567e09032b308180793702fc1bb6d5e2f1d530cfa7209d66bdf",
+    "work/rr_legal_connection_retention_variant_20261015/paired_comparison.json": "945fad35d136ee835590284f63aa8bbd581fe7e8ebe5b21bd84436f30528da64",
+    "work/rr_criticality_shift_variant_20261015/result.json": "2ebfbc540dfb987aa304984f05ca184ff65acc7b66e85303e09a46684e6564ab",
+    "work/rr_criticality_shift_variant_20261015/native_runs_v2/mode0_0/transformed_resource_replay_audit.json": "7b9b24951a36381cfb6cebacf30bcb87e3b68645c176125ea1881d632a2566ce",
+    "work/rr_criticality_shift_variant_20261015/native_runs_v2/mode0_1/transformed_resource_replay_audit.json": "8bfd71fb415976355f5c130b9af1ae8cf2782b5fdea1d052856cc4c3d5ae6d26",
+    "work/rr_criticality_shift_variant_20261015/native_runs_v2/mode0_2/transformed_resource_replay_audit.json": "e5306dff988f32fdbd056385d6dd4692ec06a5cf378ab0b142f09aebf4e2b492",
+    "work/rr_criticality_shift_variant_20261015/native_runs_v2/mode0_3/transformed_resource_replay_audit.json": "bd53bbaef71fbf2368163abd13a11fea75eee7e92ad41a4cad6d9e3fbb0f84a1",
+    "work/rr_criticality_shift_variant_20261015/native_runs_v2/mode0_4/transformed_resource_replay_audit.json": "b2d994223d11a67e72888d7c57710ef5a75dc18732904547579013f4101f641e",
+    "work/rr_criticality_shift_variant_20261015/native_runs_v2/mode1_0/transformed_resource_replay_audit.json": "9f4796feeafab6a33fb68e160ffdd0bacd910d23aedf2089fe24669a0b2b52f6",
+    "work/rr_criticality_shift_variant_20261015/native_runs_v2/mode1_1/transformed_resource_replay_audit.json": "350917a5dab4aa91c471eb2d89b4bacc3126299b30dc627b62866e29b71f8945",
+    "work/rr_criticality_shift_variant_20261015/native_runs_v2/mode1_2/transformed_resource_replay_audit.json": "b6ac7f7785081bbe44cf7d51277d2c658ceff30bd64e92255ee6ea8c08b67b9e",
+    "work/rr_criticality_shift_variant_20261015/native_runs_v2/mode1_3/transformed_resource_replay_audit.json": "efca41a9c91d5d43748316e01808d4ca44c3bc1f1fbd8389e642c2fa3f9ac8bf",
+    "work/rr_criticality_shift_variant_20261015/native_runs_v2/mode1_4/transformed_resource_replay_audit.json": "a3983f7f369f3d45e40455575ed251ccfaff0caeaff5d278efff200a550212cf",
+    "work/rr_native_initial_criticality_study_20261015/result.json": "2738c6b4f0ec840df6ac0075a700cd79d33c9907818eba04749c6f3fd195fc01",
+    "work/rr_native_initial_criticality_study_20261015/runs/uniform_0/resource_replay_audit.json": "6da65f70013c37c0738b9ead9dffa949a524b0f96d08af1be03ecfdace28ee21",
+    "work/rr_native_initial_criticality_study_20261015/runs/uniform_1/resource_replay_audit.json": "02745eaf76b2f68aff8f7282b77dd3b21e5605499764d759b7a3e1dcd3d84b33",
+    "work/rr_native_initial_criticality_study_20261015/runs/uniform_2/resource_replay_audit.json": "cc76fbb8b2ef5f99c25450621f787f0e4d779d1755d6721ccce0ee4a0a59b146",
+    "work/rr_native_initial_criticality_study_20261015/runs/uniform_3/resource_replay_audit.json": "ec631e56a12c4a2e98947d0fce089ccee6028ccecc48e8bcdd5a16e0a24489ac",
+    "work/rr_native_initial_criticality_study_20261015/runs/uniform_4/resource_replay_audit.json": "7b62d4c06812620356ab698109e47db37cdd33b2abffb4133d3da7a012fd8e0e",
+    "work/rr_native_initial_criticality_study_20261015/runs/native_0/resource_replay_audit.json": "6cbd2d1e532c69e76785b3d6bf2cbef02c5fbaf00ad79f2a6c6345926c4fc09e",
+    "work/rr_native_initial_criticality_study_20261015/runs/native_1/resource_replay_audit.json": "e30747cadbd6fef5aaa18c929b32facfc076185cdb7ef10e3d1755cebbf0add1",
+    "work/rr_native_initial_criticality_study_20261015/runs/native_2/resource_replay_audit.json": "735a9285ae0d76e93875e02e0ae4ff5694e32fc8794ced0311ce1ca639d77c5e",
+    "work/rr_native_initial_criticality_study_20261015/runs/native_3/resource_replay_audit.json": "75e2704226d86ee8a88dd536a76facdb14b73665407817393a460889800d3fd0",
+    "work/rr_native_initial_criticality_study_20261015/runs/native_4/resource_replay_audit.json": "c1bec89e949599dea3505a9f33076d6fa6b6847ba7815ae8c1868fed44f9694d",
+    "work/rr_fanout_net_order_variant_20261015/native_result.json": "e49e04a65096663718f6c0fdf9e735e2b6a850fcd237cfc31b805fd0d87bfbcc",
+    "work/rr_fanout_net_order_variant_20261015/terminal_evidence_review.json": "4f4d4c7d65a8e825a765a57815314e66c075d59e7ed45165096b818398e9df6f",
+    "work/rr_fanout_net_order_variant_20261015/native_runs/legacy_bulk_0/dispatch_resource_replay_audit.json": "9e5f037deda779472eb24552ebb63a00518a10fbc2bb3b166a3fb2cc29ed62e4",
+    "work/rr_fanout_net_order_variant_20261015/native_runs/legacy_bulk_1/dispatch_resource_replay_audit.json": "993ce5bbe8623fde17f64c9f32d6f52ffe71a9092ce5634b86139e8ddae81741",
+    "work/rr_fanout_net_order_variant_20261015/native_runs/legacy_bulk_2/dispatch_resource_replay_audit.json": "88cef4e1d25bea99cd98f2eae46c88bf5165c13e4c1e86689d6612087e739c85",
+    "work/rr_fanout_net_order_variant_20261015/native_runs/legacy_bulk_3/dispatch_resource_replay_audit.json": "5abc4ba82db07fa1869a8edee5bc5756c4a5b45773df5d6350533624f4c3cb9b",
+    "work/rr_fanout_net_order_variant_20261015/native_runs/legacy_bulk_4/dispatch_resource_replay_audit.json": "38ad46df5b72bcef7c4dcc130914ecda7a1c1a318dd53d0f9fa857034d2c2694",
+    "work/rr_fanout_net_order_variant_20261015/native_runs/fanout_bulk_0/dispatch_resource_replay_audit.json": "f4a4510f8ba6ac23323c288a883134d80556c603ee06ff31b711e7d60949e9e5",
+    "work/rr_fanout_net_order_variant_20261015/native_runs/fanout_bulk_1/dispatch_resource_replay_audit.json": "2282688bd1852fa62af6636319d003cc73e25b9bdcfb0076ad72bb8038fd3606",
+    "work/rr_fanout_net_order_variant_20261015/native_runs/fanout_bulk_2/dispatch_resource_replay_audit.json": "2798ce772528874785609bc998d501ad61522209ecc19106559bd30cc67fe37a",
+    "work/rr_fanout_net_order_variant_20261015/native_runs/fanout_bulk_3/dispatch_resource_replay_audit.json": "f18fde197cb07cc1a4d49e87febd1d13defb0ef7b17f3efae869c59a27db1b86",
+    "work/rr_fanout_net_order_variant_20261015/native_runs/fanout_bulk_4/dispatch_resource_replay_audit.json": "7a7112112f82dedf0328fa3fa79e0f4e2e3a7e1909bbec0f00ced205c67332a4",
+    "work/rr_fanout_net_order_variant_20261015/native_runs/legacy_serial_0/dispatch_resource_replay_audit.json": "94b485416a697ced759cc0990880832ed54cbd290c44fdef4e036c420979bbe8",
+    "work/rr_fanout_net_order_variant_20261015/native_runs/legacy_serial_1/dispatch_resource_replay_audit.json": "f452504650c8de9dbde3b170136499823ee430b98ec4a5f421023bbaee37b1e6",
+    "work/rr_fanout_net_order_variant_20261015/native_runs/legacy_serial_2/dispatch_resource_replay_audit.json": "5cb46c8d0432bd3b8d914ed0f709b98d883ed2310bbfe2a4d7a59a71a3179581",
+    "work/rr_fanout_net_order_variant_20261015/native_runs/legacy_serial_3/dispatch_resource_replay_audit.json": "c60c7e2bcd14458a07bcf68e331f0d5c3fa4c682b72c43d674c0bccfc6d422c8",
+    "work/rr_fanout_net_order_variant_20261015/native_runs/legacy_serial_4/dispatch_resource_replay_audit.json": "d95f3150cedaf2d14d1aa2a3442464d3295879442f92e900bdd90fc493b217b8",
+    "work/rr_fanout_net_order_variant_20261015/native_runs/fanout_serial_0/dispatch_resource_replay_audit.json": "5e4835d82512296335eb79071229632561c05698bbabedac040e7ec5a0c91c53",
+    "work/rr_fanout_net_order_variant_20261015/native_runs/fanout_serial_1/dispatch_resource_replay_audit.json": "355db4558d983e545f630ebc835f5fb763a47641fb6ab7b0f0f261d738b45eae",
+    "work/rr_fanout_net_order_variant_20261015/native_runs/fanout_serial_2/dispatch_resource_replay_audit.json": "a694678b7c674c63211face46d4ffbac42c191ebf6eee604608a8600cfdef83f",
+    "work/rr_fanout_net_order_variant_20261015/native_runs/fanout_serial_3/dispatch_resource_replay_audit.json": "679f50c6e2dedbe8c3600ce9d9dee07bdb72bb17142cfd4b7fc59939458da691",
+    "work/rr_fanout_net_order_variant_20261015/native_runs/fanout_serial_4/dispatch_resource_replay_audit.json": "60c03426aac076f40f5f8ca3923501a05a409f4a815352d6e8b1b6b0d2c656c5",
+    "work/rr_fanout_seed_weight_variant_v3_20261015/independent_audit.json": "9ac3d5252afaae8dea9bab36222ee756965a138873132b61c4ad4bf8362e30f0",
+    "work/rr_fanout_present_interaction_variant_v2_20261015/independent_audit.json": "28136c19fb8f25bd01ff0aea20542e46db1c1450c51ba86059349e572b5690e2",
+    "work/native_ex5p_stratix2die_cw80_20261013/vpr.log": "332abcd445b4a59c8ce7236dde733c0b29f832bdf78097ec4915c58ba2b413d6",
+    "tools/export_rr_quality_frontier.py": "977305b5313f1b166ecd24c40ff81e3c4f353df8c9eebc0fbe6922d2b1e01b4e"
+  },
+  "scope": "Completed legal five-repeat ex5p variants only, duplicate coordinates grouped. Two-metric observed-set dominance, not a global optimum, policy causal comparison, SLL acceptance, heldout generalization, physical performance or research completion.",
+  "board_result": false,
+  "research_complete": false
+}

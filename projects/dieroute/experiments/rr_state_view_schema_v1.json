@@ -1,0 +1,20 @@
+{
+  "schema": "dieroute.rr_state_view.v1",
+  "status": "cpu_reference",
+  "authority": "One borrowed Resource array and optional WideCost array per read window; lifetime and immutability are caller requirements.",
+  "overlay": "Only remote boundary records are copied into a captured shared_ptr<const RRStateOverlay>; current authoritative net owner is retained.",
+  "synchronization": "Every worker future joins before the first authoritative commit or ordered replay. ResourceReader journals all observed versions, including cost reads and discarded candidates.",
+  "shadow_storage": "For N nodes, B boundary nodes and D dies: (D+1)*B BoundaryShadow records; O(N) owner/boundary metadata remains. Boundary ID-to-index lookup is separate.",
+  "invariants": [
+    "No new net owner can be fabricated by an overlay.",
+    "Boundary summaries reject same-version differing payloads and drop older versions.",
+    "Previously captured overlays remain unchanged after later summary publication.",
+    "Interior resource and cost access borrows authoritative array addresses."
+  ],
+  "excluded": [
+    "No distributed/hardware lifetime protocol.",
+    "No elimination of per-worker static RRBackend topology/incoming-index copies.",
+    "No native commercial cohort integration.",
+    "No hardware bandwidth, latency or board speedup claim."
+  ]
+}

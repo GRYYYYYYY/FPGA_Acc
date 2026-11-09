@@ -1,0 +1,216 @@
+{
+  "plans": [
+    {
+      "arm": 0,
+      "mode": "online",
+      "steps": [
+        {
+          "step": 1,
+          "commands": [
+            "tools/run_paired_optimized_chain_v1_arm0_step1_stage00.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step1_stage01.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step1_stage02.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step1_stage03.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step1_stage04.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step1_stage05.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step1_stage06.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step1_stage07.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step1_stage08.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step1_stage09.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step1_stage10.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step1_stage11.py"
+          ],
+          "report": "paired_optimized_chain_v1_arm0_step1_wire_native_quality_v1_2026-10-09/verification.json",
+          "native": "paired_optimized_chain_v1_arm0_step1_wire_native_v1_2026-10-09",
+          "selection": "paired_optimized_chain_v1_arm0_step1_wire_paths_verification_v1_2026-10-09/selection.json"
+        },
+        {
+          "step": 2,
+          "commands": [
+            "tools/run_paired_optimized_chain_v1_arm0_step2_stage00.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step2_stage01.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step2_stage02.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step2_stage03.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step2_stage04.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step2_stage05.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step2_stage06.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step2_stage07.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step2_stage08.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step2_stage09.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step2_stage10.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step2_stage11.py"
+          ],
+          "report": "paired_optimized_chain_v1_arm0_step2_wire_native_quality_v1_2026-10-09/verification.json",
+          "native": "paired_optimized_chain_v1_arm0_step2_wire_native_v1_2026-10-09",
+          "selection": "paired_optimized_chain_v1_arm0_step2_wire_paths_verification_v1_2026-10-09/selection.json"
+        },
+        {
+          "step": 3,
+          "commands": [
+            "tools/run_paired_optimized_chain_v1_arm0_step3_stage00.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step3_stage01.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step3_stage02.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step3_stage03.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step3_stage04.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step3_stage05.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step3_stage06.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step3_stage07.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step3_stage08.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step3_stage09.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step3_stage10.py",
+            "tools/run_paired_optimized_chain_v1_arm0_step3_stage11.py"
+          ],
+          "report": "paired_optimized_chain_v1_arm0_step3_wire_native_quality_v1_2026-10-09/verification.json",
+          "native": "paired_optimized_chain_v1_arm0_step3_wire_native_v1_2026-10-09",
+          "selection": "paired_optimized_chain_v1_arm0_step3_wire_paths_verification_v1_2026-10-09/selection.json"
+        }
+      ]
+    },
+    {
+      "arm": 1,
+      "mode": "cold",
+      "steps": [
+        {
+          "step": 1,
+          "commands": [
+            "tools/run_paired_optimized_chain_v1_arm1_step1_stage00.py",
+            "tools/run_paired_optimized_chain_v1_arm1_step1_stage01.py",
+            "tools/run_paired_optimized_chain_v1_arm1_step1_stage02.py"
+          ],
+          "report": "paired_optimized_chain_v1_arm1_step1_quality_v1_2026-10-09/verification.json",
+          "native": "paired_optimized_chain_v1_arm1_step1_native_v1_2026-10-09",
+          "selection": null
+        },
+        {
+          "step": 2,
+          "commands": [
+            "tools/run_paired_optimized_chain_v1_arm1_step2_stage00.py",
+            "tools/run_paired_optimized_chain_v1_arm1_step2_stage01.py",
+            "tools/run_paired_optimized_chain_v1_arm1_step2_stage02.py"
+          ],
+          "report": "paired_optimized_chain_v1_arm1_step2_quality_v1_2026-10-09/verification.json",
+          "native": "paired_optimized_chain_v1_arm1_step2_native_v1_2026-10-09",
+          "selection": null
+        },
+        {
+          "step": 3,
+          "commands": [
+            "tools/run_paired_optimized_chain_v1_arm1_step3_stage00.py",
+            "tools/run_paired_optimized_chain_v1_arm1_step3_stage01.py",
+            "tools/run_paired_optimized_chain_v1_arm1_step3_stage02.py"
+          ],
+          "report": "paired_optimized_chain_v1_arm1_step3_quality_v1_2026-10-09/verification.json",
+          "native": "paired_optimized_chain_v1_arm1_step3_native_v1_2026-10-09",
+          "selection": null
+        }
+      ]
+    },
+    {
+      "arm": 2,
+      "mode": "cold",
+      "steps": [
+        {
+          "step": 1,
+          "commands": [
+            "tools/run_paired_optimized_chain_v1_arm2_step1_stage00.py",
+            "tools/run_paired_optimized_chain_v1_arm2_step1_stage01.py",
+            "tools/run_paired_optimized_chain_v1_arm2_step1_stage02.py"
+          ],
+          "report": "paired_optimized_chain_v1_arm2_step1_quality_v1_2026-10-09/verification.json",
+          "native": "paired_optimized_chain_v1_arm2_step1_native_v1_2026-10-09",
+          "selection": null
+        },
+        {
+          "step": 2,
+          "commands": [
+            "tools/run_paired_optimized_chain_v1_arm2_step2_stage00.py",
+            "tools/run_paired_optimized_chain_v1_arm2_step2_stage01.py",
+            "tools/run_paired_optimized_chain_v1_arm2_step2_stage02.py"
+          ],
+          "report": "paired_optimized_chain_v1_arm2_step2_quality_v1_2026-10-09/verification.json",
+          "native": "paired_optimized_chain_v1_arm2_step2_native_v1_2026-10-09",
+          "selection": null
+        },
+        {
+          "step": 3,
+          "commands": [
+            "tools/run_paired_optimized_chain_v1_arm2_step3_stage00.py",
+            "tools/run_paired_optimized_chain_v1_arm2_step3_stage01.py",
+            "tools/run_paired_optimized_chain_v1_arm2_step3_stage02.py"
+          ],
+          "report": "paired_optimized_chain_v1_arm2_step3_quality_v1_2026-10-09/verification.json",
+          "native": "paired_optimized_chain_v1_arm2_step3_native_v1_2026-10-09",
+          "selection": null
+        }
+      ]
+    },
+    {
+      "arm": 3,
+      "mode": "online",
+      "steps": [
+        {
+          "step": 1,
+          "commands": [
+            "tools/run_paired_optimized_chain_v1_arm3_step1_stage00.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step1_stage01.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step1_stage02.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step1_stage03.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step1_stage04.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step1_stage05.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step1_stage06.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step1_stage07.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step1_stage08.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step1_stage09.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step1_stage10.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step1_stage11.py"
+          ],
+          "report": "paired_optimized_chain_v1_arm3_step1_wire_native_quality_v1_2026-10-09/verification.json",
+          "native": "paired_optimized_chain_v1_arm3_step1_wire_native_v1_2026-10-09",
+          "selection": "paired_optimized_chain_v1_arm3_step1_wire_paths_verification_v1_2026-10-09/selection.json"
+        },
+        {
+          "step": 2,
+          "commands": [
+            "tools/run_paired_optimized_chain_v1_arm3_step2_stage00.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step2_stage01.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step2_stage02.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step2_stage03.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step2_stage04.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step2_stage05.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step2_stage06.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step2_stage07.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step2_stage08.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step2_stage09.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step2_stage10.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step2_stage11.py"
+          ],
+          "report": "paired_optimized_chain_v1_arm3_step2_wire_native_quality_v1_2026-10-09/verification.json",
+          "native": "paired_optimized_chain_v1_arm3_step2_wire_native_v1_2026-10-09",
+          "selection": "paired_optimized_chain_v1_arm3_step2_wire_paths_verification_v1_2026-10-09/selection.json"
+        },
+        {
+          "step": 3,
+          "commands": [
+            "tools/run_paired_optimized_chain_v1_arm3_step3_stage00.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step3_stage01.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step3_stage02.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step3_stage03.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step3_stage04.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step3_stage05.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step3_stage06.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step3_stage07.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step3_stage08.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step3_stage09.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step3_stage10.py",
+            "tools/run_paired_optimized_chain_v1_arm3_step3_stage11.py"
+          ],
+          "report": "paired_optimized_chain_v1_arm3_step3_wire_native_quality_v1_2026-10-09/verification.json",
+          "native": "paired_optimized_chain_v1_arm3_step3_wire_native_v1_2026-10-09",
+          "selection": "paired_optimized_chain_v1_arm3_step3_wire_paths_verification_v1_2026-10-09/selection.json"
+        }
+      ]
+    }
+  ],
+  "spec": "tools/optimized_three_step_cost_spec_v1.json",
+  "status": "PREPARED_NOT_EXECUTED"
+}

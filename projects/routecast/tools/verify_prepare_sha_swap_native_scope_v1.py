@@ -1,0 +1,15 @@
+"""Complete independent endpoint/type/partition verification for actual legal swap."""
+import json,subprocess,sys
+from pathlib import Path
+from pre_route_endpoints import sha
+R=Path(__file__).resolve().parents[1];D=R/'experiments/sha_legal_swap_native_scope_v1_2026-10-10';assert not D.exists();D.mkdir();S=R/'experiments/sha_legal_swap_endpoints_v2_2026-10-10';W=S/'sha1';F=D/'demand';commands=[[sys.executable,str(R/'tools/verify_freecores_rr_endpoints_v1.py'),str(W),str(S/'receipt.json')],[sys.executable,str(R/'tools/prepare_freecores_native_demand_v1.py'),str(W),str(F)],[sys.executable,str(R/'tools/verify_freecores_native_demand_v1.py'),str(F),str(W/'endpoints.json')]];bindings={str(Path(__file__).resolve()):sha(Path(__file__)),str(S/'receipt.json'):sha(S/'receipt.json')};(D/'protocol.json').write_text(json.dumps(dict(bindings=bindings,commands=commands,scope='All6770remapped packed queries independently checked against original XML node type/class/capacity/bbox, actual native ignored flags/exhaustive6273+497partition. No sampled queries/no route labels. Legal sameCLBswap isolated from TilePlace.'),indent=2)+'\n');codes=[]
+for i,cmd in enumerate(commands):
+ with (D/f'stage{i}.log').open('w') as log:code=subprocess.run(cmd,cwd=R,stdout=log,stderr=subprocess.STDOUT).returncode
+ codes.append(code)
+ if code:break
+assert codes==[0,0,0]
+for p in [W/'verification.json',F/'receipt.json',F/'verification.json']:
+ v=json.loads(p.read_text())
+ for section in ['bindings','files']:assert all(sha(k)==h for k,h in v.get(section,{}).items())
+ bindings[str(p)]=sha(p)
+oldfile=R/'experiments/sha1_compact_json_complete_workflow_v1_2026-10-10/seed/demand/sha1/endpoints.json';newfile=F/'endpoints.json';a=json.loads(oldfile.read_text());b=json.loads(newfile.read_text());assert len(a['connections'])==len(b['connections'])==6273 and a['native_ignored_connection_count']==b['native_ignored_connection_count']==497 and a['graph_sha256']==b['graph_sha256'];assert a['net_names']==b['net_names'];old={q['connection_id']:q for q in a['connections']};new={q['connection_id']:q for q in b['connections']};assert old.keys()==new.keys() and all(old[c]['net_id']==new[c]['net_id'] for c in old);changed=[c for c in old if (old[c]['source'],old[c]['sink'])!=(new[c]['source'],new[c]['sink'])];assert changed;bindings.update({str(oldfile):sha(oldfile),str(newfile):sha(newfile)});assert all(sha(k)==h for k,h in bindings.items());(D/'verification.json').write_text(json.dumps(dict(bindings=bindings,exit_codes=codes,all6770_endpoint_types_classes_capacity_bbox_pass=True,all6273_physical_and497_ignored_partition_pass=True,physical_changed_connection_ids=changed,physical_changed_net_ids=sorted({old[c]['net_id'] for c in changed}),old_endpoints=str(oldfile),new_endpoints=str(newfile),scope='Actual native-placement-consistent CLBswap and complete source/query partition. No dynamic state updated yet, not incrementally reused paths/fullnative route/newfamily/HDL/hardware/timegain proof.'),indent=2)+'\n');print('COMPLETE LEGAL SWAP SCOPE',len(changed),'physical changed connections',len({old[c]['net_id'] for c in changed}),'NETs')

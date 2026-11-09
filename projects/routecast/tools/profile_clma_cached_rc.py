@@ -1,0 +1,13 @@
+"""Full graph cost parity and paired preparation observations, no label access."""
+import json,shutil,time
+from pathlib import Path
+from pre_route_endpoints import sha
+from rr_graph import read_rr_graph
+from bound_indexed_cost import BoundNormalizedRCBase
+from cached_bound_rc import CachedBoundRC
+out=Path('experiments/clma_cached_bound_rc_2026-10-04');parent=Path('experiments/clma_cost_binding_2026-10-04')
+if out.exists():raise ValueError('fresh output required')
+p=json.loads((parent/'protocol.json').read_text());r=json.loads((parent/'receipt.json').read_text());inputs={'graph':p['inputs']['graph'],'table':{'path':str((parent/'rr_indexed_data.echo').resolve()),'sha256':r['reports']['rr_indexed_data.echo']},'binding':{'path':str((parent/'routecast_node_cost_indices.csv').resolve()),'sha256':r['reports']['routecast_node_cost_indices.csv']}}
+assert all(sha(v['path'])==v['sha256'] for v in inputs.values());out.mkdir();(out/'source').mkdir()
+for f in Path(__file__).parent.glob('*.py'):shutil.copyfile(f,out/'source'/f.name)
+protocol={'inputs':inputs,'order':'reference then cached, one paired preparation observation on shared host','scope':'full graph exact edge cost/disabled-state parity; no route labels or accuracy measurement','source_sha256':{f.name:sha(f) for f in (out/'source').glob('*.py')}};(out/'protocol.json').write_text(json.dumps(protocol,indent=2)+'\n');start=time.monotonic();g=read_rr_graph(inputs['graph']['path']);load=time.monotonic()-start;text=Path(inputs['table']['path']).read_text();csv=Path(inputs['binding']['path']).read_text();identity={'graph_sha256':g.sha256,'table_sha256':inputs['table']['sha256'],'bindings_sha256':inputs['binding']['sha256']};start=time.monotonic();ref=BoundNormalizedRCBase(g,text,csv,identity);ref_s=time.monotonic()-start;print(json.dumps({'stage':'reference_ready','reference_s':ref_s}),flush=True);start=time.monotonic();cached=CachedBoundRC(g,text,csv,identity);cached_s=time.monotonic()-start;assert ref.outgoing==cached.outgoing;assert all(sha(v['path'])==v['sha256'] for v in inputs.values());report={'protocol_sha256':sha(out/'protocol.json'),'graph_load_s':load,'reference_preparation_s':ref_s,'cached_preparation_s':cached_s,'full_outgoing_exact':True,'edges':len(g.edges),'edge_cost_queries':cached.edge_cost_queries,'cache_entries':cached.cache_entries,'source_R_classes':cached.source_R_classes,'destination_RC_classes':cached.destination_RC_classes,'inputs_unchanged':True,'timing_scope':'one paired observation, reference then cached; no end-to-end benefit claim'};(out/'receipt.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report),flush=True)

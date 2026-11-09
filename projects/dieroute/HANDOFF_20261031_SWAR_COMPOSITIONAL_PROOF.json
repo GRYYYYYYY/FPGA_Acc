@@ -1,0 +1,40 @@
+{
+  "observed_ns": 1793415528281359748,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_PREFIX_K_BOUND_INDUCTION.json",
+    "sha256": "3da512ace1e6f75a9e6f85c4a7af799b2717a01478cdea966747cd2258cbbb70"
+  },
+  "progress": {
+    "report": "work/resident_SWAR_compositional_proof_20261031/review.json",
+    "report_sha256": "8a153dbf6f1e9bb8397065f1001be9ca0bffdcc37d59169e95e6581b5801b834",
+    "independent_review": "work/resident_SWAR_compositional_proof_20261031/independent_review.json",
+    "independent_review_sha256": "07d153f8d85e9ed2ad02c5ebd95dc5bc492cecfaf35ed12171eb713e96d6c7fc",
+    "compositional_stage_queries_unsat": 7,
+    "C_population_count_theorem_by_stage_composition": true,
+    "original_three_monolithic_query_results_unchanged": true,
+    "global_sequential_RTL_equivalence_proved": false,
+    "whole_program_lower_bound_certified": false,
+    "watchdog_failure_verdict": null,
+    "scope": "Compositional bit-vector arithmetic certificate for the exact frozen C uint64 SWAR population body. Seven distinct bounded queries prove2bit counts,4bit counts,byte counts,three byte folds and final extraction. Each stage proves its output equality and range from the previous stage range. Exact integer coefficient composition shows final low byte contains each of64original bits once; the final bound64fits the7bit mask. If all stage queries are UNSAT,this composition establishes the C arithmetic population-count theorem for every64bit word. The original three monolithic bit_sum queries are not rerun or reclassified; their recorded UNKNOWN/timeout results remain. This is a new compositional proof route with the same per-query10s/256MiB bounds. Does not establish actual RTL graph/build/prefix memory contents, caller operands or global sequential/runtime equivalence, call/loop counts, whole-program timing/watchdog or any research gate closure. No original program/trace/TV/.dat read, HLS/simulation/native flow, DUT edit, job control, guard/watchdog change or adoption.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v209_20261031/matrix.json",
+    "sha256": "38dbc3d78a7916d6e6162312b9c75dc06e5532eceaf1140949be7d92c2525fd3"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v209.json",
+    "sha256": "0941f334fd9b54cacfb4b34d0cbea5d3910b9e2242783eb31be54b7bc654553b"
+  },
+  "next_action": "C population arithmetic theorem established by stage composition; prior monolithic timeout records unchanged. Next link valid source/build delimiter and prefix invariants to actual RTL writes/data delivery before all-call count/timing claims. Preserve original full jobs/guards/budgets and actual full-terminal prerequisite.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

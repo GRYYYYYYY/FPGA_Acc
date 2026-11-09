@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "compile": "g++ -std=c++17 -O2 -Wall -Wextra -Werror test_enumerate_descriptors.cpp",
+  "binary": "/tmp/tileplace-enumerate-descriptors-test",
+  "coverage": "exact six-block macro swap and zero descriptor capacity rejection; five branch implementations retained from original but not all revalidated here",
+  "scope": "variable-length descriptor pools for evaluator; no full enumeration/evaluate/rank chain or RTL/native",
+  "sources": {
+    "test_enumerate_descriptors.cpp": "470ce724d1a184abc4e909e5b4bf88e6f019d33f855a63b3c76f26bd5cebc9c1",
+    "enumerate_descriptors.hpp": "cf21f5c0170e09dd0bd68939208e758009c51c901c15b14da0dd2653cc728da0"
+  }
+}

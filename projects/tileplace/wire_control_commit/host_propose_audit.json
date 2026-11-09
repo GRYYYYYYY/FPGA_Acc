@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "compile": "g++ -std=c++17 -O2 -Wall -Wextra -Werror test_host_propose.cpp",
+  "binary": "/tmp/tileplace-full-host-propose-test",
+  "cases": 4,
+  "scope": "complete integer full_color on private positions -> native Proposal decoding kind/unit/trial/score/write sites/touched nets and stats. Original positions unchanged, indexed-reference external forbidden fallback checked. Not actual native server or VPR integration.",
+  "sources": {
+    "host_propose.hpp": "bca9f2cbe8b09edfa16d297657d5a8cc7147fe7b65d727d28673406daa682401",
+    "test_host_propose.cpp": "1b57285b1ffed1d342e487d0265514447bc027d4dbcbad51460fb15daa2477e5"
+  }
+}

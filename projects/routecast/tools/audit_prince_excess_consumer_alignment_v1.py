@@ -1,0 +1,16 @@
+"""Actual codec images of projected/feasible-oracle counts, no native QoR claim."""
+import json
+from pathlib import Path
+from pre_route_endpoints import sha
+from export_external_excess_preload_v1 import encode
+R=Path(__file__).resolve().parents[1];E=R/'experiments';D=E/'prince_excess_consumer_alignment_v1_2026-10-20'
+def main():
+ D.mkdir(exist_ok=False);vp=E/'prince_capacity_projection_v1_2026-10-20/verification.json';v=json.loads(vp.read_text());exporter=R/'tools/export_external_excess_preload_v1.py';hook=R/'tools/native_search_seed/build_native_excess_preload_state_v2_2026_10_19.py';bindings={str(p):sha(p) for p in [vp,exporter,hook,Path(__file__)]};rows=[]
+ for item in v['rows']:
+  if item['status']!='SCORES_READY':continue
+  case=item['case'];proof=Path(item['verification']);p=json.loads(proof.read_text());scoresp=Path(p['score_file']);scores=list(map(json.loads,scoresp.open()));domain=E/'prince_quality_domains_v1_2026-10-20'/case.split('/')[0];dp=domain/'verification.json';d=json.loads(dp.read_text());rp=domain/'resources.jsonl';resources=list(map(json.loads,rp.open()));label=E/'prince_native_cohort_v1_2026-10-20'/case/'physical_audit.json';native=json.loads(label.read_text());assert native['overflow_units']==0;truth={int(n):count for n,count in native['node_occupancy'].items()};projected={x['id']:x['forecast_count'] for x in scores};raw={x['id']:x['native_count'] for x in scores};risk={name:encode(resources,ledger,d['graph_sha256'],d['graph_nodes']) for name,ledger in [('zero',{}),('projected',projected),('oracle_final_legal',truth),('raw_ready',raw)]};assert risk['zero']==risk['projected']==risk['oracle_final_legal'];assert all(truth.get(x['id'],0)<=x['capacity'] for x in resources);positive=sum(raw.get(x['id'],0)>x['capacity'] for x in resources);assert int(risk['raw_ready'].splitlines()[0].split()[-1])==positive==p['clipped_resources'];out=D/case;out.mkdir(parents=True)
+  for name,text in risk.items():(out/(name+'.risk')).write_text(text)
+  rows.append(dict(case=case,raw_ready_positive_excess_entries=positive,projected_positive_excess_entries=0,oracle_final_positive_excess_entries=0,projected_and_oracle_bytes_equal_zero=True));
+  for f in [proof,scoresp,dp,rp,label,*out.glob('*.risk')]:bindings[str(f)]=sha(f)
+ assert len(rows)==6 and all(sha(p)==h for p,h in bindings.items());(D/'verification.json').write_text(json.dumps(dict(rows=rows,bindings=bindings,structural_property='For every resource with 0<=forecast<=capacity, max(forecast-capacity,0)=0. Thus this codec maps every capacity-feasible occupancy forecast, including a perfect final legal occupancy oracle, to its zero-preload arm. Source hook updates acc_cost only for positive encoded entries.',scope='Exact existing encoder output bytes plus pinned consumer-hook source audit. No native run/import admission is claimed for projected score files or target-label oracle, and no QoR impossibility for other consumers is inferred. Original forecast metric gates remain unchanged. Final feasible occupancy quality and this particular excess-initialization utility cannot be treated as interchangeable evidence.'),indent=2)+'\n');print('EXCESS_CONSUMER_ALIGNMENT',len(rows),'projected/oracle == zero for all')
+if __name__=='__main__':main()

@@ -1,0 +1,40 @@
+{
+  "observed_ns": 1793407688963167370,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_NATIVE_DELAY_LIMITS_PAPER.json",
+    "sha256": "681c5c7c24ea2bb4333780d35156c22465943527a528b576c9adab67097d251d"
+  },
+  "progress": {
+    "report": "work/research_artifact_dependency_inventory_20261030/literature_document_role_resolution_20261031.json",
+    "report_sha256": "6384a3e3737ffbb79c33c47ed79f29d6eba73f95a9652a4edb30e28dbd9452cf",
+    "independent_review": "work/research_artifact_dependency_inventory_20261030/literature_document_role_resolution_review_20261031.json",
+    "independent_review_sha256": "b0112c5c010de7735f07b23a24b1ecc82ad4877a63f6fa140a15d159024b0d27",
+    "ledger": "work/research_artifact_dependency_inventory_20261030/original_hash_field_content_ledger_v20_20261031.json",
+    "ledger_sha256": "1b80c64bb9288c0d087431fe764bbd355266079ddb91db71a7ff1bdaa05b9796",
+    "cumulative_original_fields_bound": 9829,
+    "original_fields_not_bound": 139,
+    "root_paths_without_compatible_binding": 466,
+    "hardware_observation": "work/research_artifact_dependency_inventory_20261030/hardware_availability_recheck_20261031.json",
+    "hardware_observation_sha256": "39fe51932b87f6ddf4f928cb58fbab033e444c00c5bd100e45cd84466b8bc0dc",
+    "scope": "Six original digest fields identify two retained primary PDFs, one historical parent draft PDF and its build review. GPU PDF copied to persistent storage from the exact retained download path derived from its retrieval metadata, with original digest equality; no new literature fetch or body review. Historical fresh-download digest is not a current online validation. No full experiment or gate closure, large trace/sparseTV access or board acceptance.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v186_20261031/matrix.json",
+    "sha256": "d52f00e9a7b29cac166c9592b2fc81bed307240eadfdf6c7fae9c958ff58204c"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v186.json",
+    "sha256": "3118f4782dca71af34aecc891b8a07e4aeaa7c7a125bb6fc468d6770b78c5663"
+  },
+  "next_action": "Ledger v20:9829/9968 original fields associated,139pending over32phases, plus820separate transitive fields/466root gaps. Six literature/document fields bound; original GPU PDF preserved on persistent storage; no new literature body review. PCI/XRT both still show no board. Integrated34page manuscript and original formal45 remain unchanged. Preserve30watched identities, sole strict-native queue owner, all original guards/watchdogs/failures. Prioritize actual full terminal evidence, no quiet-job restart or huge trace/sparseTV reads.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

@@ -1,0 +1,42 @@
+{
+  "observed_ns": 1793419166180931679,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_DELIMITER_ADMITTED_RMW.json",
+    "sha256": "1ca108287701e1914daafa48f32a032a6a5c5832149d152b17f950e28eaecd1c"
+  },
+  "progress": {
+    "report": "work/resident_delimiter_validation_flags_20261031/review.json",
+    "report_sha256": "85abd155e1474c6af54867432c7735853c5de4342d8b53d699c865749430995d",
+    "independent_review": "work/resident_delimiter_validation_flags_20261031/independent_review.json",
+    "independent_review_sha256": "a3efeac0ad4ea9c42c77ef37c900584f55d48e00ba1b0d6ace633e482dd08573",
+    "local_validation_paths": 3,
+    "predicate_and_extraction_queries_unsat": 5,
+    "exit_guard_boolean_cases": 192,
+    "write_guard_boolean_cases": 128,
+    "short_circuit_capture_boolean_cases": 256,
+    "actual_AXI_request_return_association_or_global_control_proved": false,
+    "HDL_simulation_executed": false,
+    "watchdog_failure_verdict": null,
+    "scope": "SHA-bound local offset extraction/validation predicate and flag-capture audit for three2022.2 delimiter loops. Actual comparator trees match the frozen C invalid conditions:offset>entries,nonfirst decrease,nonzero first offset,and last offset!=entries. Assume i/n/offset/previous/entries snapshots correctly delivered for the same admitted iteration,binary no-reset/no-stall control and appropriate iteration enable. Forward phase72error/exit blocks forwarding into iter1. Reverse/portal phase72short-circuit captures gate each later flag on all earlier predicates being false;arbitrary old flags cannot make validation eligibility differ from the four-predicate check. Delayed exit snapshots at0are used in following write guards. Three feasible BV queries prove eligibility equations under this abstract alignment. For reverse/portal,the returned64bit word captured at71is shifted by((base_mod8+4*(i&1))mod8)*8. With explicit base4byte-alignment premise,two feasible BV queries prove correct low/high32bit selection. Forward extracts low32for nonterminal callback and usesentriesfor terminal offset. This does not establish AXI request/return association,response protocol/stalls,global operand/iteration alignment,actual original header/offset contents,cache invariant,complete delimiter coverage/totaln+1,prefix contents,complete HDL equivalence,timing/watchdog or gate closure. No .dat/trace/TV reads,native/HLS execution,DUT edits,process control,guards/budgets changed or adoption.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v221_20261031/matrix.json",
+    "sha256": "60f23c23088ee3f22e6c8bc817917ef40988f56f835528b4e8f23737d1a11a4a"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v221.json",
+    "sha256": "0a2bd894ab8aa007f7e1953ea07f3a649384ab01c1c801e311569acbe1bcbf12"
+  },
+  "next_action": "Verify actual AXI request/return and stall/iteration association,base-address operands and previous-offset state progression;then cache invariant and distinct delimiter coverage/totaln+1. Local captured validation predicates and packed field extraction are conditional. Preserve original full jobs,guards,budgets and eight gates.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

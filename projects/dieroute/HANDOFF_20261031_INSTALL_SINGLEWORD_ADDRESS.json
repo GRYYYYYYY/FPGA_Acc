@@ -1,0 +1,41 @@
+{
+  "observed_ns": 1793420130861527404,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_INSTALL_ADAPTER_FIFO_ORDER.json",
+    "sha256": "2402387c4dba483fce7db36be454c986c36cad6eb73fa41bdbdbb624177e2f04"
+  },
+  "progress": {
+    "report": "work/resident_install_singleword_address_20261031/review.json",
+    "report_sha256": "e1b5eff03384ca5ec005bc4047a33d881922377572c96f1aeb539613a3de3c14",
+    "independent_review": "work/resident_install_singleword_address_20261031/independent_review.json",
+    "independent_review_sha256": "03e86f4daf08fe5f5df1fa7aac8fc7af888c2f1f5e5b39488df1967c8f07d824",
+    "singleword_child_formats": 3,
+    "address_no_split_hold_queries_unsat": 3,
+    "isolated_request_samples": 72,
+    "independent_boundary_addresses": 2560,
+    "intended_request_response_identity_proved": false,
+    "HDL_simulation_executed": false,
+    "watchdog_failure_verdict": null,
+    "scope": "SHA-bound local address/length and isolated request-control projection for three delimiter reads through the install adapter default64bit user/bus,C_TARGET_ADDR0,burstlimit16configuration. Each child requests one64bit word;child stores byte-expression[63:3]and sign extends to64. Load conversion shifts left3modulo64,restoring aligned original byte expression even when its high bit is1. Three feasible BV queries prove this roundtrip,a one-word8byte aligned interval cannot wrap/cross4KiB and needs one beat,and outward AR payload/valid remain stable while blocked. The selected could-multi-bursts branch reduces this isolated request to one section/one loop with ARLEN0,ARSIZE3,ARID0.72reset-started isolated descriptor/availability samples check exactly one outward acceptance and no duplicate under delayed ARREADY/credit. This is a supported source/abstract control model,not full Verilog equivalence,RTL simulation or actual bus execution. Does not prove original pointer expressions/global caller ownership,back-to-back multi-request burst scheduling,external responses/ID/error handling,credit/descriptor return matching,intended offset data,actual delimiter/prefix contents,timing/watchdog or gate closure. No .dat/trace/TV reads,native/HLS flow,DUT edits,process controls,guard/budget changes or adoption.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v225_20261031/matrix.json",
+    "sha256": "84595c269a4348baa5424083074c29e4990db61ada42ff912fe1e0faff97f861"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v225.json",
+    "sha256": "6d4c28dcafd5224f07df3458ed2fa389c6df7b622b3e2c17fe549aad50b8bc65"
+  },
+  "next_action": "Verify continuous request scheduling and descriptor/credit response association,including bus-read data slice/IDs/errors and caller ownership. Isolated singleword address/no-split evidence does not prove actual intended returned offset identity. Preserve original full jobs,guards,budgets and all eight gates.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

@@ -1,0 +1,15 @@
+{
+  "status": "pass",
+  "net_reference_queries": 2000,
+  "pair_reference_queries": 2000,
+  "atomic_net_errors": 10,
+  "extreme_net_cases": 1,
+  "atomic_pair_errors": 2,
+  "RTL_evidence": "work/cost_pair_wire_product_hls_2026-09-30/rtl_audit.json seven transactions",
+  "sources": {
+    "test_net_words.cpp": "8095132bb222b5c355be0c7ed344d734bff5c0c4af3cab46b190b76b0b442f2a",
+    "net_cost_words.hpp": "9dcd06a03f4a02f0d1be4c957cdedb65b6e9bbe8b2dfec53c08b938ac6372ad8",
+    "test_cost_pair_words.cpp": "48f02e323cf0fd8fc2e9c06197a85b4031728509b503c5998d16466332a6f92f",
+    "cost_pair_words.hpp": "92ba25a672d52f1be3fe1069dfca7a428aba1582df69bde372d894194397ccce"
+  }
+}

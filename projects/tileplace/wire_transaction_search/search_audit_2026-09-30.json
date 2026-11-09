@@ -1,0 +1,17 @@
+{
+  "status": "pass",
+  "CTest": "wire_transaction_search_integration",
+  "guarded_unit_queries": 60,
+  "guarded_color_queries": 48,
+  "resident_calls": 144,
+  "scope": "CPU search with external words costs, legality and full-identity transaction selection; host enumeration/encoding retain containers; native/selectorRTL pending",
+  "sources": {
+    "transaction_native_server.cpp": "138a07204aa6ba760e19ee785b700db22beb47f390fcbe9708bbcc712d7d0e4a",
+    "transaction_search.hpp": "e0811f168846da980e0ab2399c13bc35567bbacf3d748d949c740f0e4098cb3b",
+    "test_wiretransaction_adapter.py": "7d0795d80f4d25c04915e71210849edf1c9dca97ead63fb7810dcdc04212e412",
+    "transaction_proposals.hpp": "dec61827f05226ae310ef05c0fe5b4ecbc9027ba4466f276964f2a5c514e9f09",
+    "transaction_feedback_search.hpp": "38d7d81942502d0f25e9524040b24124740aa42f6ae4f16afc921e4659d68a39",
+    "transaction_search_query.cpp": "a9b3506ae14c82076915a65fe49d3b11e294644c354eeda1234076164654de50",
+    "test_wiretransaction_search.py": "6028136ef221b865bfc226f8107eb6483cc8b479c3d264430fa368136292e631"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "observed_ns": 1793407986250249149,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_TERMINAL_AUDITOR_READINESS.json",
+    "sha256": "f9ba9e083d2912a3bb8ae1de977bb1c79283ed674406fe9b3858e2e0b1360fe6"
+  },
+  "progress": {
+    "report": "work/fullgraph_terminal_auditor_readiness_20261031/review_all_declared_dependencies.json",
+    "report_sha256": "76a32dacf90e9cde01b420006ec7047f5a1bc59e30951708e2894d4f84448160",
+    "review": "work/fullgraph_terminal_auditor_readiness_20261031/all_dependency_registration_preflight.json",
+    "review_sha256": "05d1d8cdf0d176a43b8b1f6d77c335b8b5e6a56fd22b78f0db0fecad2bb995dc",
+    "candidate_runs": 6,
+    "matching_declared_dependencies": 1482,
+    "deferred_dependencies": 0,
+    "unique_content_hashed_files": 1463,
+    "terminal_audits_executed": 0,
+    "scope": "Current dependency identity/readiness only: all1482declared references for six SHA-bound full28878v2auditors match1463unique retained files. Last12references were resolved from three explicitly named small historical reports/logs. Shared TV input metadata/content, large traces and dense programs were not accessed. All original execution triples remain live. Auditors were parsed but not imported/executed; static guard-string checks are not a proof of complete auditor behavior. No successful terminal, negative canary, RTL correctness, adoption, timing or performance result. Prior partial-phase records retained; original guards/watchdogs/queue ownership unchanged.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v188_20261031/matrix.json",
+    "sha256": "0ccf9e695b1f6dc0c8eb1927329a8a6e53b433ca88789dcf0438b882dd8cc176"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v188.json",
+    "sha256": "8abda4a325106c0f3ab849051d12d90ca30e6b18f953db5dd11c06af0294a6a1"
+  },
+  "next_action": "All1482declared dependencies of six live full28878auditors now match1463retained files. Last12small historical-report references resolved without TV input metadata/data. No auditor execution or new RTL acceptance. Preserve30watched handles, exact sole strict-native queue owner, guards/watchdogs and failures. Actual complete positive terminal takes priority before canaries/adoption. Ledger v20 remains9829/9968associated,139pending plus820separate transitive/466root gaps. Integrated34page draft unchanged; no board enumerated. No quiet-job restart or huge trace/sparseTV reads.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

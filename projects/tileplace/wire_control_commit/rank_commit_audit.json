@@ -1,0 +1,14 @@
+{
+  "status": "pass",
+  "compile": "g++ -std=c++17 -O2 -Wall -Wextra -Werror test_rank_commit.cpp",
+  "binary": "/tmp/tileplace-rank-commit-test",
+  "cases": 6,
+  "coverage": "per-group score best, forbidden removal, stable identity dedup with lowest score, shared net conflict, original selected indices, group/select/commit errors preserve positions",
+  "scope": "CPU ranked transaction13 composition only; enumeration/evaluation/identity construction not included in rank_commit. No RTL/native integration.",
+  "sha256": {
+    "test_control_commit.cpp": "b071e93818d78640201fd5e4cdb4a56d490a4e27c472229a20f32a02f4b64749",
+    "rank_commit_words.hpp": "c842bec811f91e2b5ead5205c58cd257f4a1af86180fd37246bf05d3487762d6",
+    "test_rank_commit.cpp": "b047aa45279548cad1e9d6b83e03dbf4665bcc4e014721cfa1c54382ae61cf96",
+    "control_commit_words.hpp": "d0fb7cebea0872fc6662e0adde0b5cbf1d216546de2d7cef13e78c6843160f2e"
+  }
+}

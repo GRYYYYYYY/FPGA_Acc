@@ -1,0 +1,27 @@
+{
+  "schema": "FUSIONPAR_TP_COMMON_OBJECTIVE_CHECKPOINT_REFERENCE_V1",
+  "scope": "Development-only extraction of strongest visited feasible TP snapshot; no new search or held-out claim",
+  "designs": [
+    "ex5p",
+    "alu4",
+    "misex3"
+  ],
+  "population": "Initial legal original routed baseline plus every one of the 24 closure evaluations from reproduced frozen TP, including TP-rejected trials",
+  "eligibility": "Native legal with WL and CPD each <=102% of original routed baseline",
+  "selection": "Minimize (native WL, native CPD), then trial number with initial baseline numbered zero; same FP final-quality ordering",
+  "required_evidence": [
+    "Verify reproduced TP implementation and all recorded closure identities",
+    "Exactly closure_calls trial reports, no omission of failed or rejected trials",
+    "Verify raw VPR log WL/CPD and routing-success/consistency markers against closure JSON for legal candidates",
+    "Verify canonical net/place/route hashes and route Placement_ID",
+    "Keep selected snapshot artifact bindings; do not overwrite TP final output or reroute it",
+    "Record full measured TP invocation cost and total oracle budget, even when selecting an early checkpoint"
+  ],
+  "limits": [
+    "Postprocessed frozen TP trajectory; not a rerun with FP acceptance guiding each TP step",
+    "TP budget 24 native closures differs from FP budgets; no equal-budget or speedup claim",
+    "The TP command uses prepared initial feedback; its construction cost was not remeasured",
+    "No per-design tuning; same final selection rule on every development design",
+    "No extra PR reroute cost charged to an already feasible native-routed reference"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "observed_ns": 1793418493964812846,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_PREFIX_RAM_WRITE_DELIVERY.json",
+    "sha256": "f1d897654f5debbcfc8e6b13cbcf2961aae47961ccb01fe61f2c2df6a07fb199"
+  },
+  "progress": {
+    "report": "work/resident_builder_length_operands_20261031/review.json",
+    "report_sha256": "382f9b1f7d2b8564b206ed87ea9ba09e72e0d3d5d9220b4381a69cca72c2fd37",
+    "independent_review": "work/resident_builder_length_operands_20261031/independent_review.json",
+    "independent_review_sha256": "4c42c6d10cf8f3a156da42c24d289ca2f40698b1218f29cdc63d0ce8abd4964d",
+    "local_builder_length_paths": 3,
+    "native_width_queries_unsat": 6,
+    "integer_boundary_cases": 108,
+    "local_length_rounding_capture_and_capacity_checked": true,
+    "actual_upstream_header_values_or_delimiter_contents_validated": false,
+    "HDL_simulation_executed": false,
+    "watchdog_failure_verdict": null,
+    "scope": "SHA-bound local source/finite-width audit of three2022.2 unary-row builder length operands and their direct prepare caller wires. Builder native input ports are n32bits,entries20/20/18bits;caller wire widths match with no extra port truncation. Six feasible bit-vector queries prove local n-1unsigned-wrap guard exactly accepts1<=n<=773272and bounded entries,and accepted33bit sum/word/block arithmetic equals frozen C uint64 length=n+entries+1rounding without overflow. Length captures at accepted state1;word/block bounds at state2. State2also raises the registered clear-child start,and next state3wait begins with bounds already captured. Clear and prefix children share the same27bit word-count register;prefix also receives the24bit block count. Bound registers have one writer confined to state1/2,so remain stable outside those states. Assumes admitted shared-clock/no-mid-call-reset parent transition and valid input values at capture. Not a proof of all global caller/header values,correct installed delimiter words/offsets,total n+1,complete initialization/child execution,prefix contents,HDL equivalence,global timing/watchdog or gate closure. No .dat/trace/TV input read,HLS/native execution,DUT edits,process controls,guard/budget changes or candidate adoption.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v218_20261031/matrix.json",
+    "sha256": "11a42f2982f58cf631a9dfba648cbe0813104401afba3f98694ee59642178ae9"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v218.json",
+    "sha256": "3dde3f26106d0bf1029af05727aca4b03822029d197e27a6ed715384e28b1d41"
+  },
+  "next_action": "Verify words clear-loop startup/write coverage and delimiter offset-loop construction,including source validation before bit positions and correct read-modify-write memory timing. Upstream original header validation and all-block feedback/global execution remain required before actual prefix-content claims. Preserve original full jobs,guards,budgets and eight gates.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

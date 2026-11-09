@@ -1,0 +1,38 @@
+{
+  "observed_ns": 1793406770245707683,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_SELECTOR_WATCHDOG_SCREEN.json",
+    "sha256": "85de65af4b7ef62d62935badfb6f17e5458c9b22cf39653eb3d44b4f0c22c219"
+  },
+  "progress": {
+    "report": "work/research_artifact_dependency_inventory_20261030/checkpoint_xo_role_resolution_20261031.json",
+    "report_sha256": "588d375aca8c5e694e5d2746677abac70816646ac9bf36478c9b0878068b4b21",
+    "independent_review": "work/research_artifact_dependency_inventory_20261030/checkpoint_xo_role_resolution_review_20261031.json",
+    "independent_review_sha256": "867e2d4167ea87bb49566a6d59eb2acee8aca392735934b310e9d320c029b50d",
+    "ledger": "work/research_artifact_dependency_inventory_20261030/original_hash_field_content_ledger_v16_20261031.json",
+    "ledger_sha256": "ec236a05cc92592d762b60e5b01738b3326200a58033f853de7806f270b3e711",
+    "cumulative_original_fields_bound": 9769,
+    "original_fields_not_bound": 199,
+    "root_paths_without_compatible_binding": 466,
+    "scope": "Content and retained-role associations only. Two declared compile-output XOs, mapping source DCP and four functional exports, and five snapshot references to one prepared postplace input DCP. Netlist headers identify funcsim exports; no new simulation, equivalence, source-to-export execution provenance, physical implementation, timing, clock, platform fit, throughput or board acceptance. Postplace preparation is not execution. No Vivado startup, active input modification, large trace or sparse TV access. Original scope, failures, watchdogs and all eight open gates retained.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v181_20261031/matrix.json",
+    "sha256": "94ec3f50859a60f66b7aa2ea1c79e2e266ac116631e8dc0cc82812a18ad35dbf"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v181.json",
+    "sha256": "9813d51c24d45564f2178fbe9954b442797d2feb75eb07984ebfc6f55df4ccf5"
+  },
+  "next_action": "Use ledger v16:9769/9968 original fields associated,199pending over28phases. Twelve XO/DCP/functional-export fields resolved without Vivado startup or new experiment. Five snapshot references identify one prepared input DCP, not five runs. All336previous claims preserved, not recertified. Preserve30watched identities, exact queue ownership, original guards/watchdogs/failures; handle actual terminal first. No huge trace or sparseTV access.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

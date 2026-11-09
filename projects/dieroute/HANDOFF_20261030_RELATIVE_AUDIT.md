@@ -1,0 +1,17 @@
+# DieRoute 恢复入口：旧CPU包相对引用审计 — 2026-10-30
+
+原目标未完成；矩阵仍v169/314条、关键路径 experiments/critical_path_20261030_v169.md，八门槛均开放。11语料/311096搜索、45正式槽和原预算保持；正式45终态37通过/8存储失败不替换。原要求见 HANDOFF_20261021.md；9条实际仿真及其终态监控/恢复见 HANDOFF_20261030_PORTAL_EDGE_RTL.md；论文/文献背景见 HANDOFF_20261030_PAPER.md。
+
+本轮继续 `work/research_artifact_dependency_inventory_20261030` 的传递来源审计，只读核验旧 `upstream_hash_portable_bundle_20261018`。先前root_embedded_binding_audit.json已验证的independent_audit.json中，50条 relocated_source_dependencies_sha256 使用parent/...、candidate/...相对名。基准由该冻结审计source_sha256的绝对 relocated/dieroute_hash_cpu/payload_manifest.json 路径确定，并由冻结archive顶层目录和同字节manifest交叉确认；没有按文件名搜索或凭当前工作目录猜测基准。
+
+冻结压缩包SHA、大小与原审计一致；全部844个regular archive member与冻结manifest及现存解包文件逐字SHA一致（843个payload entries+manifest自身，共5615431解压bytes）。每成员<=8MiB，总量<=64MiB，拒绝路径越界、重复/未列出member和解包路径中的symlink。未执行包内容、未解包/覆盖原文件、未重跑已有CPU构建测试。50条源码引用均与archive及现存解包文件、manifest、原声明哈希一致，JSON pointer正确转义并独立解析复核。见 portable_cpu_relative_binding_resolution.json 和 portable_cpu_resolution_review.json。
+
+新增 census_relative_bindings.py 用原识别语法对相同1181个JSON根进行有界读取/新鲜哈希复核，完整重现原401条相对/fragment声明，分为57组；记录 relative_declaration_census_v2.json。此前探索性relative_declaration_census.json保留，与v2逐条相同；v2补足可执行生成器、8MiB读取边界、声明源SHA和正确转义pointer。本轮50条是这401条的确切子集，尚有351条未处理。
+
+其余分组包括HLS/RTL basename清单、修复包相对文件、历史handoff/plan引用。后续必须逐schema确定显式基准和版本，不能拿任一同名/同哈希文件冒充原引用。尤其历史handoff可能对应冻结版本；P3preparation包含已解释的中间阶段hash，不可修改活动文件来迎合历史元数据。
+
+先前468个研究根路径未找到显式绑定的状态未重新分类；本轮50条是新增解析的传递边，不是让468减50。此前1753文件路径库存、1255直接哈希、29当前间接匹配和一个历史plan边归档解析仍按原范围保留。新的候选/登记文件不继承该库存覆盖。完整传递闭包及G8仍未完成；此项也不增加算法/QoR/CPU性能/FPGA验收。
+
+9仿真、4终态监控和2后续队列均按实际PID/startticks核验live，五候选资源心跳正常；无新的完整RTL独立accepted。最新poll命令为 python3 -B work/resident_portal_install_edge_candidate_20261030/poll_existing_jobs.py，共15核心身份及五候选另外10个supervisor/pipeline身份。不要因日志静默/观察超时重启或停止；固定原完整图/28878、十亿周期、资源守卫和正向后负向审计保持。
+
+后续继续实际终态复核、剩余351相对声明和468根路径来源/完整依赖闭包，以及原全部研究门槛。U280无实卡，无板上速度/能耗、平台fit或300MHz达标结论。文献稿仍32页独立文献更新/22October评测快照，不是最终全实验稿；所有失败/分母保留，无commit/push。

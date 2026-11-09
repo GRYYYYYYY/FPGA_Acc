@@ -1,0 +1,20 @@
+{
+  "schema": "FUSIONPAR_FROZEN_TP_PR_PROTOCOL_V1",
+  "designs": [
+    "ex5p",
+    "alu4",
+    "misex3"
+  ],
+  "frozen_placer": "2fa6e2324a971d8489bba12d49115f91d0a56874c0ee5200224d72e4f8a9f689",
+  "placer_runs_per_design": 1,
+  "PR_repeats_per_design": 5,
+  "TP_budget": "Original four-epoch/24-native-closure command and weights unchanged",
+  "PR_policy": "Full reroute from zero affected-net reservations, fixed TP output placement, native criticalities, 30 iteration bound, production PR width 1",
+  "publication": "Explicit routing_epoch; native legality only, counted separately from QoR-improving moves",
+  "cost": "Current reproduced placer wall time is charged to each PR repeat plus conversion and complete PR host wall time; not repeated end-to-end pipelines",
+  "limits": [
+    "Not equal-budget or equal-objective to three-move FP study",
+    "Evaluate common initial WL/CPD 2% guards separately",
+    "Do not declare globally best placer or standalone fusion gain"
+  ]
+}

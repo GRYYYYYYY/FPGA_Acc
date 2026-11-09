@@ -1,0 +1,44 @@
+{
+  "observed_ns": 1793429245360098487,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_EXECUTE_INPUT_STABILITY.json",
+    "sha256": "22f53b40639b1d0d4d95cad1f1d7d4fa03838d2f8f12cbc2a80649ec7ae342b1"
+  },
+  "progress": {
+    "report": "work/resident_execute_loop_indices_20261031/review.json",
+    "report_sha256": "8084b210d5ac69a7def76d90324114a117dd5fc6c69b2219e4c57b85ba9b58f7",
+    "independent_review": "work/resident_execute_loop_indices_20261031/independent_review.json",
+    "independent_review_sha256": "101b20ef1805cb23d60cafd496dee3de10b855c356e5bea7ff45180d8bfeae35",
+    "supplement": "work/resident_execute_loop_indices_20261031/row_next_refinement.json",
+    "supplement_sha256": "2b092448ebf612637913711bedbbfd793e78a7437d97d0b3b7610ea6e8d4c991",
+    "primary_feasible_UNSAT_queries": 49,
+    "supplementary_feasible_UNSAT_queries": 9,
+    "direct_loops": 4,
+    "Protocol_read64_slots_with_direct_loop_bounds": 7,
+    "row_next_state30_strengthened_guard_proved": true,
+    "reverse_get_delimiter_value_provenance_proved": false,
+    "HDL_simulation_executed": false,
+    "full_sequential_HDL_equivalence_proved": false,
+    "scope": "Source-width QFBV inductive loop invariants cover four actual execute loops:row64bit,edge20bit,metadata64bit andportal18bit. Source validation or_ln17_2==0implies1<=n<=773272,e<=973552,p<=170628;only state12can enter13and loop initialization entries dominate each loop. Parsed source clock blocks use simultaneous symbolic nonblocking updates;source FSM guards select transitions. Under stable dimensions and valid shape,each nonempty-loop entry establishes its invariant and every internal transition preserves it,without unrolling trip counts. Source saved-successor captures ensure no counter wrap and active index<limit;metadata uses source index!=nonly after its index<=ninduction,and addresses/storecalls use the saved old index while current advances. Zeroedge/portal branches skip their uninitialized counters. This supplies bounds for seven Protocol read64slots across rowpair/edgepair/meta/portalpair,complementing prior arithmetic/capture proofs. Reverse read bounds and increment are conditional on actual returned begin<=end<=eand begin<=at<end;this report does NOT connect get()returns to validated stored rowdelimiters or prove complete reverse-loop sequential refinement. Invariant proofs are restricted supported source expression/clock projections,not wholeRTL sequential/4state equivalence. They compose with prior source input-hold and caller-lifetime contracts,but do not prove command/ROMvalue identity,external data/object validity,native success,watchdog/timing/board behavior or that a completed native run exercised these properties. No original DUT/process/input/cache/guard/budget changes or new HDL/HLS/native flow. Independent supplementary source29/30invariant retains next<nfrom28branch and proves state30bound without an extra caller assumption;all58primary/supplementary queries feasible UNSAT.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v250_20261031/matrix.json",
+    "sha256": "e0f13b4d1b6c54b75018a47efe46850a8275fb1ace225b720993dbaa3fe6bba7"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v250.json",
+    "sha256": "409da2830029f222f1d6a4622e0637f15a6885bf422a88c32cd3e4479caf15af"
+  },
+  "next_action": "Trace reverse-row get()returned begin/end to the previously validated stored rowprefix values and bounds,then establish reverse inner/outer loop temporal invariants. Four direct-loop source inductions now bound seven read64slots;reverse currently conditional. Actual command/ROMvalue identity,external valid memoryobject/returned words and fullRTL/native acceptance remain open. Poll original handles first;preserve all guards/budgets/inputs/caches/retained failures.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

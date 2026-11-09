@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "differential_cases": 4000,
+  "legality_rejections": 2003,
+  "input_errors": 314,
+  "scaling_faults": 2,
+  "scope": "CPU direct external-word guard vs typed reference; no HLS or full search integration yet",
+  "sha256": {
+    "guard_words.hpp": "be8a1b96df0bdc9b927e042d1ee03bdc8c2dd066d688cf5f569c69d657a8d3ed",
+    "test_guard_words.cpp": "a29c83dd6ced41b778c8b58982a296324b73d053d66e0a8b23666e7e8eb1f359"
+  }
+}

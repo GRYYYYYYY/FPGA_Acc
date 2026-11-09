@@ -1,0 +1,95 @@
+{
+  "schema": "TILEPLACE_NEW_COHORT_DESIGN_V1",
+  "status": "draft_exposure_review_pending",
+  "inventory_sha256": "8b157c6cef4830ac681541147873bae0f24662d767f96de06d98228171b80908",
+  "selection_rule": "Include every non-clock-test VTR BLIF with no reference in scanned TilePlace evidence; alphabetical order; no outcome-based exclusions",
+  "cases": [
+    {
+      "design": "adder",
+      "blif": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/adder.blif",
+      "sha256": "bf1255fa6111af82a0d7d78b7bb2da0bc732bda28fe2c48880a0a777542d280d"
+    },
+    {
+      "design": "alu4",
+      "blif": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/alu4.blif",
+      "sha256": "2e83026772493ee6ed422873be2197a01a81be9296f72b9fe0ada7d268599b50"
+    },
+    {
+      "design": "apex2",
+      "blif": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/apex2.blif",
+      "sha256": "8567abd1524a5bd4962d766aa1f5a080bc61a013310fd2ccd259193666cfb3fc"
+    },
+    {
+      "design": "des",
+      "blif": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/des.blif",
+      "sha256": "b7f4517e93cdfe974918de8462e2ab0abcf794d5e62438a80ee5738442364d4f"
+    },
+    {
+      "design": "ex1010",
+      "blif": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/ex1010.blif",
+      "sha256": "48f45635e01a6ce3b513ca908e6ff10f601db0006b7f72c3d8b3bb3a6fd32430"
+    },
+    {
+      "design": "ex5p",
+      "blif": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/ex5p.blif",
+      "sha256": "4efbea0113705c5a9375c2e2664150521465f6647dd60023d53203311aa06a63"
+    },
+    {
+      "design": "misex3",
+      "blif": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/misex3.blif",
+      "sha256": "074f7fa8de19f6318644aaaf8db55bdbb0fc74a359018672eb95876c0dd9c6fe"
+    },
+    {
+      "design": "s298",
+      "blif": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/s298.blif",
+      "sha256": "77b408a1edf084795c452545f69b1ba6e1f017442e75a3e80fed69a604da4154"
+    },
+    {
+      "design": "s38417",
+      "blif": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/s38417.blif",
+      "sha256": "7fc95f17087ca083ee6bccb2a1500b240cb259239b7a3676143ed28ede183819"
+    },
+    {
+      "design": "s38584.1",
+      "blif": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/s38584.1.blif",
+      "sha256": "48fd0e76846c6ee39cef9a876bc3d8922c8d71a9a5594e00cecc6f9d1923968f"
+    },
+    {
+      "design": "seq",
+      "blif": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/seq.blif",
+      "sha256": "d3a76e9e83510aa0ecafc53eabcd63895ecd5410d8ab51da07b39eebb202ac99"
+    },
+    {
+      "design": "spla",
+      "blif": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/spla.blif",
+      "sha256": "f92d5b5cbd7c9daefefddbf6488ea97d5ce9c018d542f9c7c2c54bd2b478d9f1"
+    },
+    {
+      "design": "tseng",
+      "blif": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/tseng.blif",
+      "sha256": "1943b838df8ad3a1aa45fd0b201d0a21764870e57034c5c4f924f23a7c91523c"
+    }
+  ],
+  "implementation_sha256": "2fa6e2324a971d8489bba12d49115f91d0a56874c0ee5200224d72e4f8a9f689",
+  "fixed_parameters": {
+    "seed": 1,
+    "channel_width": 200,
+    "epochs": 4,
+    "max_closures": 24,
+    "timing_weight": 2,
+    "routed_timing_weight": 2,
+    "congestion_weight": 1,
+    "critical_distance_guard_q": 0,
+    "timing_feedback_paths": 20,
+    "use_no_goods": true
+  },
+  "requirements_before_launch": [
+    "Review other projects and historical work directories for candidate exposure; archive exact findings",
+    "Freeze architecture/VPR/source hashes, complete packing/placement/router commands and input export tooling before observing refinement outcomes",
+    "Register all failures and exclusions in advance; no width/seed/weight adaptation after results",
+    "Use native baseline and refined placement on the same packed netlist and router; archive both and every intermediate trial",
+    "Record two behavior repetitions per design, native legality, routed CPD/WL and end-to-end time",
+    "Keep primary paired comparison against incumbent baseline; do not pool with historical parser-mixed cohort"
+  ],
+  "scope": "Fresh source-sealed validation on local logic-oriented designs; architectural and heterogeneous generalization require a separate cohort"
+}

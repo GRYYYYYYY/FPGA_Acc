@@ -1,0 +1,6 @@
+"""Authenticate original width64 failure; never interpret router failure as UNSAT."""
+import json
+from pathlib import Path
+from pre_route_endpoints import sha
+root=Path(__file__).resolve().parents[1];out=root/'experiments/nonzero_rc_ex5p_reference_2026-10-06';r=json.loads((out/'receipt.json').read_text());p=json.loads((out/'protocol.json').read_text());assert r['protocol_sha256']==sha(out/'protocol.json') and r['source_sha256']==sha(root/'tools/trial_nonzero_rc_ex5p_reference.py') and all(sha(path)==h for path,h in r['files_sha256'].items());assert sha(p['command'][0])==p['binary_sha256'] and sha(p['command'][1])==p['architecture_sha256'];assert p['command'][p['command'].index('--route_chan_width')+1]=='64';log=(Path(p['cwd'])/'run.log').read_text();assert r['exit_code']==2 and not r['timed_out'] and not r['native_success'] and 'Circuit is unroutable with a channel width factor of 64.' in log and 'VPR failed to implement circuit' in log
+(out/'verification.json').write_text(json.dumps({'width':64,'native_router_failure_verified':True,'graph_unsat_claimed':False,'receipt_sha256':sha(out/'receipt.json'),'scope':'Frozen original width64 run/binary/arch/log/file hashes and terminal failure; heuristically bounded routing failure not graph/layout impossibility.'},indent=2)+'\n');print('verified width64 terminal failure, no UNSAT claim')

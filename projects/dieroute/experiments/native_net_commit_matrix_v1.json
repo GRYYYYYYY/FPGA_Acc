@@ -1,0 +1,42 @@
+{
+  "schema": "dieroute.native_net_commit_matrix.v1",
+  "substrate": "CPU C model linked to synthesizable kernels",
+  "repeats": 5,
+  "cases": {
+    "sync1": {
+      "workers": 4,
+      "period": 1,
+      "run": "work/u280_native_net_commit_sync1_v1_20261014",
+      "cohort_audit": "work/u280_native_net_commit_sync1_cohort_audit_v1_20261014",
+      "protocol_audit": "work/u280_native_net_commit_sync1_protocol_audit_v1_20261014",
+      "baseline": "work/u280_native_owner_push_sync1_v1_20261014"
+    },
+    "sync3": {
+      "workers": 4,
+      "period": 3,
+      "run": "work/u280_native_net_commit_sync3_v1_20261014",
+      "cohort_audit": "work/u280_native_net_commit_sync3_cohort_audit_v1_20261014",
+      "protocol_audit": "work/u280_native_net_commit_sync3_protocol_audit_v1_20261014",
+      "baseline": "work/u280_native_owner_push_sync3_v1_20261014"
+    },
+    "serial3": {
+      "workers": 1,
+      "period": 3,
+      "run": "work/u280_native_net_commit_serial3_v1_20261014",
+      "cohort_audit": "work/u280_native_net_commit_serial3_cohort_audit_v1_20261014",
+      "protocol_audit": "work/u280_native_net_commit_serial3_protocol_audit_v1_20261014",
+      "baseline": "work/u280_native_owner_push_serial3_v1_20261014"
+    }
+  },
+  "criteria": [
+    "Fresh 70-net runs through the complete-net kernel for all authority mutations",
+    "Canonical output parity with CPU authority, excluding elapsed execution time and mode report",
+    "Independent replay binds every kernel read, consumed shadow, path, state and publication to online proposals",
+    "Full input and source provenance; five deterministic repeats"
+  ],
+  "not_established": [
+    "Joint owner/receiver/net authority hardware emulation",
+    "Full graph HBM bank placement",
+    "Physical-card execution, performance, power or representative full-design QoR"
+  ]
+}

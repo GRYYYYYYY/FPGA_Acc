@@ -1,0 +1,22 @@
+{
+  "schema": "dieroute.native_joint_corridor_protocol.v1",
+  "scope": "Serial CPU diagnostic/algorithm reference; no distributed grants or hardware implementation.",
+  "domain": "Every available boundary electrical node has exactly two SLR memberships. Constructor rejects catalogs with more memberships. Canonical IDs and original directed PIPs are unchanged.",
+  "die_sequence": "Same deterministic multisource shortest simple die sequence used by the corridor planner. All existing tree seeds on its starting die are included. Optional reentry comparison separately searches a sequence starting outside the sink die.",
+  "edge_policy": {
+    "internal_single_slr": "Physical PIP must belong to the unique SLR of both electrical endpoints. That SLR must occur in the sequence.",
+    "internal_boundary": "Enter on the earlier adjacent die and leave on the next die; using a boundary as an incidental same-die wire is prohibited.",
+    "root": "Existing tree seeds may depart on the sequence starting die. Other existing tree nodes cannot be entered.",
+    "sink": "End on the designated sink die, or enter a multi-SLR sink from the preceding die and terminate after its zero-hop transition; no outgoing PIP on the last die is required.",
+    "transition": "Inside one electrical node, with no synthetic edge, cost, hop, or occupancy."
+  },
+  "search": "One existing guided sparse shortest-path search over all physical arcs admitted by the policy. Unchanged quotient potential remains a consistent relaxation; route cost is 1+history+present*other_net_count. Exact minimum cost/full-hop objective within this fixed-sequence family when search completes without resource cutoff. SparseSearch tie ordering is deterministic, not a claim of globally lexicographically minimal paths.",
+  "limitations": [
+    "Not an oracle over other die sequences, die reentry, or global eventual shared trees.",
+    "A failed constrained discovery uses the unchanged full-graph fallback, with counters; a budget cutoff is not proof of unreachability.",
+    "Full physical WL/CPD and fresh DCP/STA signoff remain required."
+  ],
+  "reservation": "Only after a complete discovered path, record the canonical union of selected portal IDs plus any new multi-SLR sink. Failure during discovery creates no reservation. Losing complete candidates and exceptions release their union. No strict capacity grant is implied.",
+  "journal": "joint_searches is separate from local_searches and flat_searches. Failed joint discovery has failed_stage=UINT32_MAX-1 and every portal field=UINT32_MAX (no chosen corridor). Successful paths reconstruct the actual die transitions. Independent verifier checks PIPs, costs, release counts, authority and shadow replay.",
+  "shadow": "Complete decision-read journal and stale serial replay are unchanged. Pure local/nonboundary costs still read centralized authority."
+}

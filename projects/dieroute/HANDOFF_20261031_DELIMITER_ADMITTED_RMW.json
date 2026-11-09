@@ -1,0 +1,41 @@
+{
+  "observed_ns": 1793418898049608032,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_WORDS_CLEAR_COVERAGE.json",
+    "sha256": "67400bf3a30b0618e18d2fe410fccc8abddc711ac2d1d4539e0d91538b78f6db"
+  },
+  "progress": {
+    "report": "work/resident_delimiter_admitted_RMW_20261031/review.json",
+    "report_sha256": "76708262ee425c84e51d1f2769503ffc30cce3985cc74b1246154a9f59543c96",
+    "independent_review": "work/resident_delimiter_admitted_RMW_20261031/independent_review.json",
+    "independent_review_sha256": "03cc96a8d87bae8d23e0b998fa6f30e9b2b05fb21a4b1b811286230dcbada78e",
+    "local_admitted_RMW_paths": 3,
+    "arithmetic_queries_unsat": 6,
+    "integer_one_bit_preservation_cases": 768,
+    "mask_and_address_operand_provenance_checked": true,
+    "actual_offset_values_or_global_delimiter_contents_proved": false,
+    "HDL_simulation_executed": false,
+    "watchdog_failure_verdict": null,
+    "scope": "SHA-bound local admitted delimiter read-modify-write source/word-token audit for three existing2022.2 builders. Assume accepted offset iteration0<=i<=n,0<=offset<=entries,known bounded lengths,legal binary/no-stall/no-reset control,iter1enabled,all iteration error/exit guards0and no interleaved writer. Position slicing21/21/20bits and low6bit sums preserve i+offset,word index and bit index under local bounds;three feasible BV queries check this. Actual CE stages0/1/2pluswrite deliver requested word beforephase2through two RAM read registers. Forward/reverse latch fallback at2,compute/capture at3andwrite4;portal computes/captures at2andwrites3. Later undefined-address reads remain opaque and are not sampled by this admitted update. Old cached-address equality latches at0;cached address initializes to64bit allones. Assuming hit implies cache equals current memory word,two-branch OR update equals setting the selected bit;three feasible BV queries check it. Cache-data update occurs at3. Local RAM pins forward through parent5/prepare/execute25. This is source-fragment/abstract model evidence,not complete HDL equivalence or actual native execution. Actual offset AXI delivery,validation flag alignment/cache invariant establishment,loop admission/order/drain,distinct delimiter coverage,totaln+1,complete initialized words/prefix contents,global timing/watchdog and gate closure remain open. No .dat/trace/TV reads,native/HLS flow,DUT edits,process control,guard/budget changes or adoption.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v220_20261031/matrix.json",
+    "sha256": "af2d707fb767a9ab3ef5304d2f2e42e2f9154fa41eeaf2bc9f11c3c2fd021198"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v220.json",
+    "sha256": "9e6942c137e8be68af88ae0250f91a90d1fe3689f803e35a0f9d2650d948986b"
+  },
+  "next_action": "Verify actual AXI offset extraction and validation/iteration flag alignment,then cache invariant preservation and full delimiter coverage/totaln+1before composing actual prefix contents. Existing admitted RMW contract assumes correct offsets/control/cache. Preserve original jobs,guards,budgets and all eight gates.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

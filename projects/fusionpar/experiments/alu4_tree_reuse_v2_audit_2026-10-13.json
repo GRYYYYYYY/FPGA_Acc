@@ -1,0 +1,17 @@
+{
+  "schema": "FUSIONPAR_INDEPENDENT_PUBLICATION_AUDIT_V1",
+  "pass": true,
+  "suite": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/alu4_tree_reuse_development_v2",
+  "suite_audit_sha256": "59fb98e2dd1c832d4d208081c995cd5ca5c4f551126be6a8ac9e01653e1aeae2",
+  "auditor_sha256": "907dd63202f8472f1d639f8aaa6e2369db1bd5f38684ed83a0376b3c583f043f",
+  "counts": {
+    "runs": 6,
+    "qor_commits": 4,
+    "protocol_commits": 0,
+    "aborts": 14,
+    "timing_barriers": 10,
+    "placement_repairs": 0,
+    "native_feedback_checks": 0
+  },
+  "scope": "full serialized state/version/timing reconstruction and archived native bindings; not independent P&R performance replication"
+}

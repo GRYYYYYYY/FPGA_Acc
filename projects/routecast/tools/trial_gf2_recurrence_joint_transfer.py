@@ -1,0 +1,15 @@
+"""Frozen whole-family joint predictor transfer; generator reads pre-route files only."""
+import json,time
+from pathlib import Path
+from pre_route_endpoints import sha,extract
+from persistent_rc_context import PersistentRCContext
+from joint_prediction_engine import predict_joint
+from route_ledger_state import RouteLedgerState
+root=Path(__file__).resolve().parents[1];freeze=root/'experiments/gf2_recurrence_family_freeze_2026-10-06';p=json.loads((freeze/'protocol.json').read_text());reference=root/'experiments/gf2_recurrence_native_reference_2026-10-06';r=json.loads((reference/'receipt.json').read_text());v=json.loads((reference/'verification.json').read_text());assert v['receipt_sha256']==sha(reference/'receipt.json');out=root/'experiments/gf2_recurrence_joint_transfer_2026-10-06';out.mkdir();sources={n:sha(root/'tools'/n) for n in ('persistent_rc_context.py','joint_prediction_engine.py','nonzero_rc_endpoint_context.py','native_capacity_rc_search.py','route_ledger_state.py','pre_route_endpoints.py')};assert all(sources[n]==p['sources_sha256'][n] for n in sources)
+protocol={'freeze_protocol_sha256':sha(freeze/'protocol.json'),'reference_receipt_sha256':sha(reference/'receipt.json'),'source_sha256':sha(Path(__file__)),'predictor_sources_sha256':sources,'policy':p['policy'],'scope':'All widths in one frozen generated family, primary policy unchanged; pre-route NET/place/RR endpoints only, native paths/delay labels never predictor inputs. Keep incomplete/failure outcomes without tuning.'};(out/'protocol.json').write_text(json.dumps(protocol,indent=2)+'\n');rows=[]
+for row in r['rows']:
+ width=row['width'];directory=out/f'gf2_d{width}';directory.mkdir()
+ if not row['native_success']:rows.append({'width':width,'native_failure_retained':True});continue
+ cwd=Path(row['cwd']);t=time.monotonic();ep,mapping=extract(cwd/'design.net',cwd/'design.place',cwd/'rr_graph.xml');epfile=directory/'endpoints.json';epfile.write_text(json.dumps(ep,indent=2)+'\n');(directory/'mapping.json').write_text(json.dumps(mapping,indent=2)+'\n');frontend_s=time.monotonic()-t;t=time.monotonic();ctx=PersistentRCContext(epfile);state=RouteLedgerState(ctx);setup_s=time.monotonic()-t;t=time.monotonic();candidate=predict_joint(ctx,max_labels=10000,fallback_limit=64,state=state);search_s=time.monotonic()-t
+ candidate['endpoint_sha256']=sha(epfile);(directory/'receipt.json').write_text(json.dumps(candidate,indent=2)+'\n');record={'width':width,'status':candidate['status'],'completed_connections':candidate['completed_connections'],'required_connections':candidate['required_connections'],'failure':candidate['failure'],'frontend_s':frontend_s,'context_setup_s':setup_s,'search_s':search_s,'candidate_sha256':sha(directory/'receipt.json'),'endpoint_sha256':sha(epfile)};rows.append(record);print(width,record['status'],record['completed_connections'],record['required_connections'],record['failure'],flush=True)
+assert all(sha(root/'tools'/n)==h for n,h in sources.items());(out/'receipt.json').write_text(json.dumps({'protocol_sha256':sha(out/'protocol.json'),'rows':rows,'all_three_cases_retained':True},indent=2)+'\n')

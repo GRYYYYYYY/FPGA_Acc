@@ -1,0 +1,23 @@
+{
+  "observed_ns": 1793398752396667327,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261030_RTL_PROGRESS_SEMANTICS.json",
+    "sha256": "d7f35085dc92240bc14415a36b078c0c59f2c5d9757dd603b18295f2cda6fe06"
+  },
+  "review": {
+    "review": "work/multidie_evaluation_primary_review_20261030/review.json",
+    "review_sha256": "fffc7bab709e561daf45a5927627f35ae434237585911457e699d595aa593e24",
+    "catalogue": "work/multidie_evaluation_primary_review_20261030/catalogue_snapshot.json",
+    "catalogue_sha256": "ac6dcb7e2cb7b639707d8d19159309f00f9c5db3d681a1f78e3ec78991c6f353",
+    "scope": "Selected V/VI evaluation methodology only; not experiment reproduction, comparable speedup, novelty or gate completion.",
+    "research_complete": false
+  },
+  "next_action": "Keep existing full28878 RTL positives and watchdogs running. Audit actual terminal transitions before any negative canary. Continue original matched full-workload/QoR/hardware requirements; this literature review does not replace them.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

@@ -1,0 +1,54 @@
+{
+  "schema": "dieroute.native_summary_hbm_schema.v1",
+  "activation": "Native parallel CLI argv[23]=1 or run_native_cohort.py --summary-hbm; requires worker-shadow-sync>0",
+  "kernel_abi": "experiments/summary_hbm_schema_v1.json",
+  "scope": "Same synthesizable endpoint called live by native search; CPU C-model on real graph and actual XRT CU on bounded fixture. CPU retains full net sets, search frontier and atomic net commit.",
+  "topology": "Every full-membership native boundary, including unused/inaccessible route nodes; immutable sorted unique node:u32|mask:u32 words. Owner is lowest membership bit.",
+  "execution": "A distinct ring per actor/CU and one mutex per CU. Owner installation happens before a search window and before each validation, after all proposals join. Searches only read owner arrays and modify their own per-lane receiver slots. Refresh scans subscribed keys on CPU, comparing endpoint fetch and inspect values. No host worker-value cache.",
+  "publication": "Upload all boundary slots on new session; then changed tuples only with expected previous version. Host publication bookkeeper never supplies a consumed search value. Complete final cache drain and owner/cache inventories required.",
+  "validation": "Every actual remote consumed tuple goes through owner_validate. Compare status-derived stale indices with CPU reference, abort on disagreement, replay stale proposal after forced refresh. Full net-set/footprint validation and atomic commit remain CPU.",
+  "queue": "Capacity 8, one request per invocation, monotonic per actor/die tickets, response completion before next call. Bounded synchronous orchestration; batching/async scheduling unimplemented.",
+  "artifacts": {
+    "summary_hbm_topology.bin": {
+      "object_type": "0x44520023",
+      "record_bytes": 8,
+      "payload": "u64 node | membership_mask<<32"
+    },
+    "summary_hbm_frames.bin": {
+      "object_type": "0x44520024",
+      "record_bytes": 384,
+      "metadata_u64": [
+        "repeat",
+        "iteration",
+        "wave",
+        "actor",
+        "attempt",
+        "reason",
+        "sequence",
+        "die"
+      ],
+      "payload": "Five 64-byte words: command packet, descriptor, response packet, receipt, completion",
+      "reason": {
+        "query": 0,
+        "owner_publication": 1,
+        "cache_refresh": 2,
+        "validation": 3
+      },
+      "actor": "0..net_workers-1 per lane; net_workers is publication controller",
+      "publication_attempt": "0 at window start/final; 2*(slot+1)+attempt before candidate validation",
+      "final": "iteration UINT32_MAX, wave global completed window count",
+      "normalization": "repeat=0 and command/response/completion session=1; all other words byte-identical across repeats"
+    },
+    "summary_hbm_owners.csv": "Actual output array/readback: repeat,owner,node,occupancy,history,version for every directory node",
+    "summary_hbm_caches.csv": "Actual output array/readback: repeat,lane,worker,node,occupancy,history,version for current-session initialized receiver records"
+  },
+  "trace_order": "Within immutable proposal phase, drain lane traces in ascending lane order before commit. This is a deterministic linearization of commuting lane operations, not physical interleaving or timing.",
+  "independent_audit": "Python replays all commands/receipts/completions, queue tickets, owner/receiver values, final tables, observed queries and validation outcomes. Installs are bound to separately reconstructed CPU authority at exact window/validation phase. Full native transaction audit separately replays footprint, conflict, branch cost and atomic commit.",
+  "limits": [
+    "No complete router or full-net hardware transaction",
+    "No asynchronous host-device memory coherence or autonomous inter-CU network",
+    "Small XRT adapter supports <=16 slots, <=4 lanes, <=3 CUs; real graph C-model only",
+    "No physical platform placement/timing, board throughput/energy or new QoR proof",
+    "Single-command launches and CPU scans are functional integration; no performance claim"
+  ]
+}

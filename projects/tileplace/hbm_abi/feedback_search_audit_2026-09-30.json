@@ -1,0 +1,25 @@
+{
+  "status": "pass",
+  "scope": "CPU full-snapshot feedback publication and rollback; no native VPR or HLS result",
+  "fixtures": 12,
+  "accepted_feedback_updates": 12,
+  "rejected_feedback_updates": 36,
+  "whole_version_restores": 12,
+  "color_comparisons": 288,
+  "updated_fields": [
+    "prefix_lines",
+    "prefix_entries",
+    "routed_edges",
+    "focus"
+  ],
+  "rejected_inputs": [
+    "truncated snapshot",
+    "connection topology/weight change",
+    "placement mismatch"
+  ],
+  "files": {
+    "feedback_search.hpp": "a94063e73b4a3e07842cd437ee969f9b697a1bf29b89ce15d542e7d449ac74e4",
+    "feedback_search_server.cpp": "c99d92b2eadbc636d1cacbca9d67774ba3d80500bb4f201e1fa11fd5388e1b7d",
+    "test_feedback_search.py": "781ad6a772604601053a322c55076a83cb9732fd87941b7bfc142cdecfd58cb4"
+  }
+}

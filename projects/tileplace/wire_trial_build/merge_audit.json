@@ -1,0 +1,9 @@
+{
+  "status": "pass",
+  "cases": 3000,
+  "scope": "independent map-insert reference; ID sorted merge, duplicate first-stream priority and atomic capacity/order faults. No RTL/search integration yet",
+  "sha256": {
+    "merge_words.hpp": "57dbef8375b882d16da32276062cb61df924455e499f8d972c94d3dd1db477d4",
+    "test_merge_words.cpp": "bfded2e863adee4c30f0df5242a0e834afafe9e6abf56aa51ef40916bcc087aa"
+  }
+}

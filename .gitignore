@@ -54,3 +54,38 @@ Thumbs.db
 *.swp
 *.swo
 *~
+
+# Local credentials and agent state (including nested independent workspaces)
+**/.aws/
+**/.codex/
+**/.agents/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Native build variants and downloaded tool environments
+**/build-*/
+**/build_*/
+**/.venv/
+**/venv/
+**/node_modules/
+
+# Raw experiment runs: retain top-level protocols/manifests and files already
+# tracked in Git. Nested runs contain hundreds of GiB of graphs and traces.
+/projects/routecast/experiments/*/
+/projects/tileplace/experiments/*/
+/projects/dieroute/migration_archive/
+
+# Generated paper outputs and host report scratch files
+*.aux
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.toc
+*.pdf
+/report_*.rpt
+/packing_pin_util.rpt
+**/abc.history

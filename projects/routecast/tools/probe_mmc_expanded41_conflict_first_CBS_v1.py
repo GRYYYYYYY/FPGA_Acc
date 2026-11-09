@@ -1,0 +1,91 @@
+"""Input-only bounded joint ownership branching, original complete-NET budgets."""
+import json,time,itertools,shutil
+from pathlib import Path
+from types import SimpleNamespace
+from collections import defaultdict,Counter
+from array import array
+from pre_route_endpoints import sha
+from masked_raw_forward_v1 import Search
+from MMC_zero_node_RC_shared_CSR_v1 import load
+from binary_owner_capacity_v1 import solve
+from bounded_resource_cbs_v1 import search as cbs
+R=Path(__file__).resolve().parents[1];D=R/'experiments/mmc_expanded41_conflict_first_CBS_v1_2026-10-21';D.mkdir(exist_ok=False);S=R/'experiments/mmc_cover_plus151_residual_v1_2026-10-21';P=S/'verification.json';v=json.loads(P.read_text());A=S/'independent_verification_v1.json';audit=json.loads(A.read_text());assert audit['all_within_budget']==453 and all(sha(p)==h for p,h in audit['bindings'].items());assert all(sha(p)==h for key in ['bindings','files'] for p,h in v[key].items());F=R/'experiments/mmc_coupled_chooser_cost_and_data_scope_v1_2026-10-19/input_only_choice_protocol_v1.json';frozen=json.loads(F.read_text());graph=next(Path(p) for p in v['bindings'] if p.endswith('.xml'));binary=R/'experiments/wide_cost_backend_build_v1_2026-10-13/search.so';bindings={str(p):sha(p) for p in [P,A,F,graph,binary,Path(__file__),R/'tools/bounded_resource_cbs_v1.py',R/'tools/masked_raw_forward_v1.py',R/'tools/wide_cost_search_bridge_v2.py',R/'tools/MMC_zero_node_RC_shared_CSR_v1.py',R/'tools/binary_owner_capacity_v1.py']};selection_path=R/'experiments/mmc_expanded40_joint_CBS_v1_2026-10-21/next41_protocol_v1.json';selection=json.loads(selection_path.read_text());bindings[str(selection_path)]=sha(selection_path);limits={'max_states':64,'max_queries':128,'max_seconds':60}
+(D/'protocol.json').write_text(json.dumps({'limits_per_case':limits,'cases':['case_01','case_02','case_03'],'policy':'All40 extended NETs reroutable on original RR; fixed old keeper and unextended mandatory masks. Branch on individual positive capacity1 CHANNEL conflicts. For unextended A/B UNSAT, branch on every extended owner/resource use in the contradictory implication core; remaining A/B choices exact2SAT. Complete unchanged-budget shortest trees only; no native labels.','scope':'Bounded exploration, limits are not UNSAT, fixed domain only. No prediction, STA/native legality or end-to-end gain claim.','bindings':bindings},indent=2)+'\n')
+cache_root=R/'experiments/mmc_expanded40_joint_CBS_v1_2026-10-21';cache_vpath=cache_root/'verification.json';cache_apath=cache_root/'independent_verification_v1.json';cache_v=json.loads(cache_vpath.read_text());cache_a=json.loads(cache_apath.read_text());assert all(sha(p)==h for p,h in cache_a['bindings'].items());assert all(sha(p)==h for k in ['bindings','files'] for p,h in cache_v[k].items());bindings[str(cache_vpath)]=sha(cache_vpath);bindings[str(cache_apath)]=sha(cache_apath);cached={}
+for cp in sorted(cache_root.glob('case_*/query_*/result.json')):
+ cr=json.loads(cp.read_text());cached[cr['case'],cr['net_id'],tuple(cr['extra_forbidden']),tuple(cr['blocked_nodes'])]=(cp,cr)
+start=time.perf_counter();row,dest,cost,caps,kinds,_=load(graph);channels={n for n,k in enumerate(kinds) if k in ['CHANX','CHANY'] and caps[n]>0};assert len(channels)==258720 and all(caps[n]==1 for n in channels);engine=Search({'row_offsets':row,'dest_ranks':dest,'capacities':caps},SimpleNamespace(increments=cost,initial=lambda n:0),binary);setup=time.perf_counter()-start;rows=[];files={};print('CBS SETUP',setup,flush=True)
+try:
+ for case in ['case_02','case_03']:
+  case_start=time.perf_counter();work=D/case;work.mkdir();old={i['net_id']:json.loads(Path(i['result']).read_text()) for i in v['rows'] if i['case']==case};initial={};base_masks={n:set(r['blocked_nodes']) for n,r in old.items()}
+  for net,r in old.items():
+   support={node for q in r['connections'] for node in [q['source'],*(dest[e] for e in q['physical_edge_ids'])]}&channels
+   initial[net]={'support':support,'cost':sum(q['minimum'] for q in r['connections']),'result':next(i['result'] for i in v['rows'] if i['case']==case and i['net_id']==net)}
+  bp=R/'experiments/mmc_candidate_ownership_implications_v1_2026-10-19'/case/'banks.jsonl';assert sha(bp)==frozen['bindings'][str(bp)];bindings[str(bp)]=sha(bp);banks={r['net_id']:(set(r['A'])&channels,set(r['B'])&channels) for r in map(json.loads,bp.open())};assert len(banks)==55300
+  original_plan_path=R/'experiments/mmc_bank_mandatory_capacity_v1_2026-10-21/verification.json';original_plan=json.loads(original_plan_path.read_text());bindings[str(original_plan_path)]=sha(original_plan_path);pr=next(r for r in original_plan['rows'] if r['case']==case);frame_path=Path(pr['frames']['A']);assert sha(frame_path)==original_plan['bindings'][str(frame_path)];bindings[str(frame_path)]=sha(frame_path);frame=json.loads(frame_path.read_text());newnets=selection['new_NETs'][case];old37=set(old)
+  for net in newnets:
+   qs=[dict(connection_id=q['connection_id'],source=q['source'],sink=q['sink'],budget=q['budget_integer']) for q in frame['records'] if q['net_id']==net];assert qs;old[net]={'case':case,'net_id':net,'source':qs[0]['source'],'connections':qs}
+  base_masks={n:set() for n in old}
+  for witness in pr['witnesses']:
+   outside=sorted(set(witness['NETs'])-old37);keeper=outside[0] if outside else min(witness['NETs'])
+   for net in set(witness['NETs'])&set(old):
+    if net!=keeper:base_masks[net].add(witness['node'])
+  mandatory=set().union(*(aa&bb for net,(aa,bb) in banks.items() if net not in old))
+  for net in old:base_masks[net].update(mandatory)
+  assert all(not t['support']&base_masks[net] for net,t in initial.items())
+  common=defaultdict(list);variable=defaultdict(list)
+  for net,(aa,bb) in banks.items():
+   if net in old:continue
+   for n in aa&bb:common[n].append(net)
+   for n in aa-bb:variable[n].append((net,False))
+   for n in bb-aa:variable[n].append((net,True))
+  assert all(len(ns)<=1 for ns in common.values());base_clauses=[];base_w=[]
+  for n,lits in sorted(variable.items()):
+   for clause in ([(lit,) for lit in lits] if common[n] else itertools.combinations(sorted(lits),2)):base_clauses.append(clause);base_w.append(n)
+  counters={'assessments':0,'queries':0};last={}
+  def assess(trees):
+   counters['assessments']+=1;owners=defaultdict(list)
+   for net,t in trees.items():
+    for n in t['support']:owners[n].append(net)
+   conflict=None;answer=None;clauses=list(base_clauses);witness=list(base_w)
+   for n,ns in sorted(owners.items()):
+    if len(ns)+len(common[n])>1:conflict=[(net,n) for net in sorted(ns)];break
+   if conflict is None:
+    for n in sorted(owners):
+     for lit in variable[n]:clauses.append((lit,));witness.append(n)
+    answer=solve(set(banks)-set(old),clauses)
+    if answer['satisfiable']:
+     picks=answer['assignment'];ledger=Counter(n for net,(aa,bb) in banks.items() for n in (trees[net]['support'] if net in old else bb if picks[net] else aa));assert all(x<=1 for x in ledger.values())
+    else:
+     core={step['clause'] for k in ['false_to_true','true_to_false'] for step in answer[k]};conflict=sorted({(net,witness[k]) for k in core for net in owners[witness[k]]})
+   state={'assessment':counters['assessments'],'trees':{n:t['result'] for n,t in trees.items()},'conflict':conflict,'result':answer,'forbidden':clauses if answer is not None else [],'clause_channels':witness if answer is not None else []};p=work/('assessment_%03d.json'%counters['assessments']);p.write_text(json.dumps(state,indent=2)+'\n');files[str(p)]=sha(p);last.clear();last.update(state);return conflict
+  def reroute(net,extra):
+   counters['queries']+=1;tick=time.perf_counter();r=old[net];blocked=base_masks[net]|set(extra);qs=r['connections'];cache_key=(case,net,tuple(sorted(extra)),tuple(sorted(blocked)))
+   if cache_key in cached:
+    cp,cr=cached[cache_key];out=work/('query_%03d_NET_%d'%(counters['queries'],net));out.mkdir();result=dict(cr)
+    for field,name in [('potential_file','potential.u64'),('reachable_file','reachable.u8')]:shutil.copy2(cr[field],out/name);result[field]=str(out/name)
+    result.update(reused_query=str(cp),reused_query_sha256=sha(cp),seconds=time.perf_counter()-tick);p=out/'result.json';p.write_text(json.dumps(result,indent=2)+'\n')
+    for f in out.iterdir():files[str(f)]=sha(f)
+    support={dest[e] for q in result['connections'] for e in q['physical_edge_ids']} & channels;good=result['all_connections_within_budget'];print('CBS REUSE',case,counters['queries'],net,'budget',good,flush=True)
+    return {'support':support,'cost':sum(q['minimum'] for q in result['connections']),'result':str(p)} if good else None
+   answer=engine.query(r['source'],{q['sink'] for q in qs},blocked);out=work/('query_%03d_NET_%d'%(counters['queries'],net));out.mkdir();raw=array('Q');raw.frombytes(answer['raw_u128_bytes']);assert all(raw[2*n+1]==0 for n in range(len(caps)) if answer['settled_bytes'][n]);potential=array('Q',(raw[2*n] if answer['settled_bytes'][n] else answer['cutoff'] for n in range(len(caps))));(out/'potential.u64').write_bytes(potential.tobytes());(out/'reachable.u8').write_bytes(answer['settled_bytes']);connections=[];support=set()
+   for q in qs:
+    a=answer['answers'][q['sink']];slots=a.get('slots',[]);passed=a['reachable'] and a['minimum']<=q['budget'];connections.append(dict(connection_id=q['connection_id'],source=q['source'],sink=q['sink'],budget=q['budget'],reachable=a['reachable'],minimum=a.get('minimum'),within_budget=passed,physical_edge_ids=slots));support.update(dest[e] for e in slots)
+   good=all(q['within_budget'] for q in connections);result=dict(case=case,net_id=net,source=r['source'],initial=answer['initial'],cutoff=answer['cutoff'],blocked_nodes=sorted(blocked),extra_forbidden=sorted(extra),connections=connections,all_connections_within_budget=good,potential_file=str(out/'potential.u64'),reachable_file=str(out/'reachable.u8'),seconds=time.perf_counter()-tick);p=out/'result.json';p.write_text(json.dumps(result,indent=2)+'\n')
+   for f in out.iterdir():files[str(f)]=sha(f)
+   print('CBS QUERY',case,counters['queries'],net,'budget',good,flush=True)
+   return {'support':support&channels,'cost':sum(q['minimum'] for q in connections),'result':str(p)} if good else None
+  def score_trees(trees):
+   ledger=Counter(n for t in trees.values() for n in t['support']);return (sum(max(0,c-1) for c in ledger.values()),sum(t['cost'] for t in trees.values()))
+  root_failed=[]
+  for net in newnets:
+   tree=reroute(net,frozenset())
+   if tree is None:root_failed.append(net)
+   else:initial[net]=tree
+  if root_failed:
+   answer=dict(status='INITIAL_NET_BUDGET_INFEASIBLE',expanded=0,queries=0,root_failed_NETs=root_failed,events=[],seconds=0);last['assessment']=0
+  else:answer=cbs(initial,assess,reroute,score_trees,**limits)
+  answer['initial_new_NET_queries']=len(newnets)
+  answer.pop('trees',None);answer['masks']={n:sorted(mask) for n,mask in answer.get('masks',{}).items()};answer.update(case=case,last_assessment=last['assessment'],case_total_seconds=time.perf_counter()-case_start);p=work/'result.json';p.write_text(json.dumps(answer,indent=2)+'\n');files[str(p)]=sha(p);rows.append(answer);print('CBS CASE',case,answer['status'],answer['expanded'],answer['queries'],flush=True)
+finally:engine.close()
+assert all(sha(p)==h for p,h in bindings.items());(D/'verification.json').write_text(json.dumps({'rows':rows,'setup_seconds':setup,'total_seconds':time.perf_counter()-start,'bindings':bindings,'files':files,'independent_verification_pending':True,'scope':'Only fixed keeper/cover with unextended frozen A/B library. Limit or exhaustion cannot be promoted to complete RR impossibility; all new lower-bound/primal proofs and terminal assignments require independent audit.'},indent=2)+'\n')

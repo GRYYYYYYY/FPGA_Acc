@@ -1,0 +1,41 @@
+{
+  "observed_ns": 1793417411084629332,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_PREFIX_REQUEST_ORDER.json",
+    "sha256": "cf43d8fc3498d4edda7fd8ac13d05d884f70941f89beb2bcbc0c6c47655d19dd"
+  },
+  "progress": {
+    "report": "work/resident_prefix_words_readpath_20261031/review.json",
+    "report_sha256": "6df7512d87b663e4cdcc923880242cd2e7e04cc85b6dce177edd42c49341df75",
+    "independent_review": "work/resident_prefix_words_readpath_20261031/independent_review.json",
+    "independent_review_sha256": "82ce7f3896cd3c6e540cb106939e1dbc5724ae21a13fcb6423d0366495fef0f6",
+    "local_RAM_routes": 3,
+    "steady_request_return_count_source_joins": 24,
+    "enabled_edge_RAM_read_registers": 2,
+    "explicit_RAM_bounds_check_or_zero_substitution": false,
+    "tail_masking_proved": false,
+    "HDL_simulation_executed": false,
+    "watchdog_failure_verdict": null,
+    "scope": "SHA-bound combinational request/return route audit for three prefix-build loops through their prepare wrappers and execute state25 to the actual words RAM instances. Assume legal binary one-hot/shared-clock/no-reset control,execute held at25,parent held at its enumerated loop wait,steady loop CE1 and initialized unchanged valid memory. WE is0 in these nested intervals. RAM models contain exactly two CE-gated read registers and an unchecked ram[address0] lookup,with no explicit bounds guard or zero substitution. A28clock abstract token model per family maps preedge return at cyclec to requestc-2. Joining earlier steady count provenance maps slots0..7to final-block request addresses. Logical tail returns are deliberately opaque invalid tokens,not zeros or accepted count values. This is source-fragment/token analysis,not HDL simulation,netlist equivalence,global reachability,tail masking,count arithmetic,prefix validity or whole-program timing/watchdog proof. No .dat/trace/TV input read,native/HLS flow,DUT edit,process control,guard changes or adoption.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v214_20261031/matrix.json",
+    "sha256": "3ace0ae0488fccbfcf9b3362343ae159f62b232a5f2649f6f06b65663d65b144"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v214.json",
+    "sha256": "211b225a9d41de7030baf8e2d5b585b0ee2fbe6aa71bbef7d789c1aff350af25"
+  },
+  "next_action": "Check per-slot address<word_limit flag capture and guarded accumulator masking across final-block/drain boundaries,including opaque invalid RAM returns. Then complete count arithmetic/prefix-content composition and actual full-job terminal audits. Keep original jobs,guards,budgets and all eight gates.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

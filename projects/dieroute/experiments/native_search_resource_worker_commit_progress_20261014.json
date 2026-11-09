@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "verified_ns": 1791988506677093013,
+  "inputs": {
+    "tb/native_search_resource_worker_commit_tb.cpp": "7a6b596790c2888cfd1c572e01d10482db99d11e9e7b12c6ba40832746b868a3",
+    "src/net_commit_hbm.cpp": "84d5550636cd7bfd12b34176294ca29bd57c0cc15e2a17e11a3c6de32252260c",
+    "src/native_search_resource_hbm.cpp": "9109b58c147d6a6fcd12a7d0eb173f7e150c218411a32e6d324d2b1f0e452286",
+    "src/native_search_worker_hbm.cpp": "5d2df8908297545e96e2768c25fca35fc479f15e34109a663269499619afcab5",
+    "include/native_search_hbm_resource.hpp": "4cfa2b8f6e259a172132e0780a07b1544cc82f15c6f4dbbeb1c06e3986ef9e5e"
+  },
+  "actual_cmodel_calls": {
+    "commit": 10,
+    "resource_reader": 4,
+    "worker": 12
+  },
+  "path_costs": [
+    4,
+    7
+  ],
+  "observations": 4,
+  "stale_validation": {
+    "resource_version_conflicts": 1,
+    "shadow_conflicts": 1
+  },
+  "fresh_validation_passed": true,
+  "scope": "Actual three kernel C-model pipeline using commit-produced resource state, worker search, consumed-read/shadow validation and explicit fresh epoch after negotiate; no RTL/XRT joint pipeline or concurrent handoff proof",
+  "board_result": false,
+  "research_complete": false
+}

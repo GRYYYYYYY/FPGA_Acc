@@ -1,0 +1,30 @@
+{
+  "observed_ns": 1793402811041316306,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261030_FORWARD_INSTALL_HOST.json",
+    "sha256": "6ecd84f3e3535605a078d9d18ddb8e90108bda79f1d1dedd45538a579a9786e7"
+  },
+  "progress": {
+    "report": "work/research_artifact_dependency_inventory_20261030/router_receipt_role_resolution.json",
+    "report_sha256": "c031aa974eea28a9a3861193852f38a99c9a1792612b3fad521dfca8aaa806ec",
+    "independent_review": "work/research_artifact_dependency_inventory_20261030/router_receipt_role_resolution_review.json",
+    "independent_review_sha256": "7403d25037c9822f7611f7ae2e2708ea0a37b76ab677eaf94c265381dcab0419",
+    "ledger": "work/research_artifact_dependency_inventory_20261030/original_hash_field_content_ledger_v11_20261030.json",
+    "ledger_sha256": "3eb4846add3abf1cfcbd9bb6e97d5863d0834b9ed005d987e3fd60f518454b7d",
+    "cumulative_original_fields_bound": 9697,
+    "original_fields_not_bound": 271,
+    "root_paths_without_compatible_binding": 466,
+    "scope": "Retained command[0] ELF and recipe pair JSON, checked against frozen generator semantics, actual source-bound parent manifests and embedded/standalone receipts. Existing exit3 remains exit3. File identity/content association does not establish full historical dependency closure, rebuild reproducibility, routing success, new formal repeat, RTL, timing, speedup or board execution.",
+    "research_complete": false
+  },
+  "next_action": "Latest original-content ledger v11 has9697/9968 associated fields,271 remaining;820 separate transitive fields and466 root gaps remain. Preserve all22 monitored identities and source/resource/watchdog conditions. Forward-install candidate has full28878 host proof but synthesis prepared only. Existing mapped strict-native v2 waits for original20GiB headroom; no competing launch or retries. Existing seq_seed2 parent exit3 remains a failure.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

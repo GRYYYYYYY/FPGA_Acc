@@ -1,0 +1,65 @@
+{
+  "schema": "dieroute.costaware_progress.v1",
+  "verified_utc": "2026-10-13T05:10:35.488123+00:00",
+  "research_complete": false,
+  "board_result": false,
+  "current_core_matches_frozen_bounded_experiment": true,
+  "core_sha256": {
+    "src/rr_backend.cpp": "119743a13e633e27025f57f6ec7a1e91d76bbc5192b183da60b10eb675ea0db4",
+    "include/rr_backend.hpp": "0bb5bfeabaf25d9df6b465db1878d2e90a66b43656dccecd06f82c8a307e7b9a",
+    "host/rr_host.cpp": "c4a52b845a8848b0232bea06b05077054d9fd8cd1cf8a28133e705e30811b3b8"
+  },
+  "checks": [
+    {
+      "command": [
+        "ctest",
+        "--test-dir",
+        "build",
+        "--output-on-failure"
+      ],
+      "exit_code": 0,
+      "log": "work/costaware_verification_20261013/ctest.log",
+      "sha256": "81baa5d497ff1b0e33120a1ec018fd7713a501b49b3993953c56de151a93dc9e"
+    },
+    {
+      "command": [
+        "./build-sanitized/rr_backend_tb"
+      ],
+      "exit_code": 0,
+      "log": "work/costaware_verification_20261013/asan_ubsan.log",
+      "sha256": "d2f3003cf8701351d688e3b1693854771669e2df8d78f9ad274e5ff53e027387"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check",
+        "--",
+        "."
+      ],
+      "exit_code": 0,
+      "log": "work/costaware_verification_20261013/diff_check.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "experiments/downstream_crossing_audit_20261013.json",
+      "sha256": "7ff14e137e9b5c4e2cf337c26c99783689f485a71df9a3877892da230d353557"
+    },
+    {
+      "path": "experiments/timing_feedback_audit_20261013.json",
+      "sha256": "61cdcbe09393f3103a1ef9aceca13b13efbfd2ff25a74815600648e3c6059229"
+    },
+    {
+      "path": "experiments/cohort_protocol_v1.json",
+      "sha256": "77c9ad51e0504180bfcaa8fee3119510eeebdfd7f0341115a6020515a447c350"
+    }
+  ],
+  "next_work": [
+    "Joint upstream route-tree timing and incremental path objective; route_tree_timing_weight_q currently defaults to 0",
+    "Expand timing feedback and bounded lookahead across the declared development cohort",
+    "Preserve native VPR no-degradation gate; do not select only a weaker matched baseline",
+    "Concurrent boundary shadow protocol, commercial SLR/SLL mapping, hardware dataflow, board evaluation and paper remain open"
+  ]
+}

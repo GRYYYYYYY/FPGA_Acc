@@ -1,0 +1,59 @@
+--- a/vpr/src/route/route.cpp
++++ b/vpr/src/route/route.cpp
+@@ -1,3 +1,9 @@
++#include <cstdlib>
++#include <fstream>
++#include <iomanip>
++#include <cmath>
++#include "route_net.h"
++#include "timing_util.h"
+ #include "concrete_timing_info.h"
+ #include "connection_based_routing.h"
+ #include "draw.h"
+@@ -193,6 +199,46 @@
+         timing_info->update();
+         VTR_LOG("Initial Net Connection Criticality Histogram:\n");
+         print_router_criticality_histogram(net_list, *timing_info, netlist_pin_lookup, is_flat);
++    }
++
++    // Observation only: export the native pre-routing lookahead/STA state.
++    if (const char* initial_csv = std::getenv("DIEROUTE_VPR_INITIAL_TIMING_CSV")) {
++        if (*initial_csv) {
++            if (is_flat || !router_opts.with_timing_analysis ||
++                router_opts.initial_timing != e_router_initial_timing::LOOKAHEAD) {
++                VPR_FATAL_ERROR(VPR_ERROR_ROUTE, "Initial timing export requires clustered LOOKAHEAD timing mode\n");
++            }
++            if (std::ifstream(initial_csv).good()) {
++                VPR_FATAL_ERROR(VPR_ERROR_ROUTE, "Refusing to overwrite initial timing CSV\n");
++            }
++            std::ofstream initial_stream(initial_csv);
++            if (!initial_stream) VPR_FATAL_ERROR(VPR_ERROR_ROUTE, "Cannot create initial timing CSV\n");
++            initial_stream << std::setprecision(17);
++            initial_stream << "net_id,net_pin_index,source_rr,sink_rr,is_clock,lookahead_delay_s,policy_input_criticality,route_criticality,max_criticality,criticality_exp\n";
++            for (auto net_id : net_list.nets()) {
++                if (net_list.net_is_ignored(net_id)) continue;
++                const auto& terminals = route_ctx.net_rr_terminals[net_id];
++                for (std::size_t ipin = 1; ipin < net_list.net_pins(net_id).size(); ++ipin) {
++                    const auto pin = net_list.net_pin(net_id, ipin);
++                    const bool clock = route_ctx.is_clock_net[net_id];
++                    const float raw = clock ? router_opts.max_criticality :
++                        calculate_clb_net_pin_criticality(*timing_info, netlist_pin_lookup, pin, is_flat);
++                    const float used = get_net_pin_criticality(timing_info.get(), netlist_pin_lookup,
++                        router_opts.max_criticality, router_opts.criticality_exp, net_id, pin, is_flat);
++                    const float delay = net_delay[net_id][ipin];
++                    if (!std::isfinite(raw) || !std::isfinite(used) || !std::isfinite(delay) ||
++                        raw < 0 || raw > 1 || used < 0 || used > 1 || delay < 0) {
++                        VPR_FATAL_ERROR(VPR_ERROR_ROUTE, "Invalid native initial timing value\n");
++                    }
++                    initial_stream << std::size_t(net_id) << ',' << ipin << ','
++                        << std::size_t(terminals.at(0)) << ',' << std::size_t(terminals.at(ipin)) << ','
++                        << clock << ',' << delay << ',' << raw << ',' << used << ','
++                        << router_opts.max_criticality << ',' << router_opts.criticality_exp << '\n';
++                }
++            }
++            initial_stream.close();
++            if (!initial_stream) VPR_FATAL_ERROR(VPR_ERROR_ROUTE, "Failed writing initial timing CSV\n");
++        }
+     }
+ 
+     std::unique_ptr<NetPinTimingInvalidator> pin_timing_invalidator;

@@ -1,0 +1,15 @@
+{
+  "status": "pass",
+  "scope": "allocation-free exception-free Q20 scoring CPU differential; uses signed 128-bit intermediates; not integrated or HLS synthesized",
+  "random_queries": 5000,
+  "valid": 4457,
+  "errors": 543,
+  "explicit_floor_case": 1,
+  "explicit_status_cases": 3,
+  "random_seed": 39,
+  "files": {
+    "score_array.hpp": "0d6bb16f23bad42a48fa39e464945b3afdba2ebaeac63427f90f706aa252c1a0",
+    "score_array_test.cpp": "88bd2495ecb3ddd4af7b19931373cc9f7529f7bc0e0720414aa0d25ce51763a8",
+    "CMakeLists.txt": "44f0ba1b23dd1604c08c9151334843daec9ff0d7b67c434da7864e5c5ad4ddc9"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "status": "SPECIFICATION_ONLY_NOT_EXECUTED",
+  "arm_order": [
+    "online",
+    "cold",
+    "cold",
+    "online"
+  ],
+  "steps": [
+    1,
+    2,
+    3
+  ],
+  "online_stages": [
+    "persistent_context_setup_once_per_arm",
+    "own_prior_committed_state_history_generation",
+    "persistent_proof_feedback",
+    "independent_persistent_production_audit_full_bank_rounds_history_events",
+    "fresh_serialization",
+    "fresh_native_FULL_budget_paths",
+    "fresh_canonical_FULL_STA_zero_counters",
+    "independent_native_quality",
+    "same_store_stage_cached_validate_commit",
+    "independent_committed_state_audit"
+  ],
+  "cold_stages": [
+    "same_given_step0_store_initialization",
+    "fresh_native_routing_FULL_budget_paths",
+    "fresh_canonical_FULL_STA_zero_counters",
+    "independent_native_quality",
+    "same_store_stage_validate_commit",
+    "independent_committed_state_audit"
+  ],
+  "start": "Before context/store setup and first production; no archived bank or selected route read for online production. Given step0 state only.",
+  "end": "After epoch3 committed state independent audit, all artifact writing and necessary source/input authentication included.",
+  "required_identity": "Per step same native commands, design.blif/design.net/design.place/graph/endpoints/budget bytes across arms. Resume seed exists only for online; declare this treatment explicitly.",
+  "independent_inventory_contract": "One originalXML immutable inventory authenticated before construction and graphsha at production/audit boundaries; full physical/Fraction oracle, no cache certificate acceptance in independent oracle.",
+  "timing_scope": "Positive-control target-derived budgets/identity traces and precompiled binary supplied; their construction and exhaustive fault qualification excluded. No independently specified timing target or cross-family claim.",
+  "expected_wire": {
+    "online": [
+      2448,
+      2666,
+      2592
+    ],
+    "cold": [
+      2430,
+      2677,
+      2646
+    ]
+  },
+  "cpd_ns": [
+    4.74739,
+    4.87739,
+    4.87739
+  ],
+  "completeness": "All516 connections perstep, epoch0->1->2->3 same store; next online input is actual immediately prior committed state.",
+  "authentication_boundary": "Per-step necessary producer/audit/native/source/input authentication and writes are timed. Cross-arm final archival verification and final aggregate receipt performed after individual timers; independent post-experiment verification outside deployment timing."
+}

@@ -1,0 +1,9 @@
+{
+  "status": "pass",
+  "compile": "g++ -std=c++17 -O2 -Wall -Wextra -Werror test_external_boundaries.cpp",
+  "binary": "/tmp/tileplace-external-boundaries-test",
+  "cases": 12,
+  "coverage": "external pool offset independence, x/y/subtile/layer sensitivity with signed extrema, member and kind differences, malformed kind/member/trial ranges, source wide ID, pool scaling overflow; errors preserve scored input",
+  "scope": "CPU external forbidden primitive, not full RTL/native",
+  "source_sha256": "086172fe3a7529eaa9cc7636ca7b6d6bba58de5fe4cec422761806c98da42320"
+}

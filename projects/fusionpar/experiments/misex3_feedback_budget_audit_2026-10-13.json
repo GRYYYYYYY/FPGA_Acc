@@ -1,0 +1,18 @@
+{
+  "schema": "FUSIONPAR_INDEPENDENT_PUBLICATION_AUDIT_V1",
+  "pass": true,
+  "suite": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/misex3_feedback_budget_v1",
+  "suite_audit_sha256": "c41b0e0a8c88376495de216e67444b8b00b1bbf7ab808e8fd5739c5a204c5630",
+  "auditor_sha256": "46e3ddd9adf80af76c640ee22248939ed6ffea91a8317c752c7fb5ac8546166f",
+  "counts": {
+    "runs": 10,
+    "qor_commits": 10,
+    "protocol_commits": 0,
+    "aborts": 80,
+    "timing_barriers": 20,
+    "placement_repairs": 25,
+    "native_feedback_checks": 15,
+    "baseline_route_commits": 0
+  },
+  "scope": "full serialized state/version/timing reconstruction and archived native bindings; not independent P&R performance replication"
+}

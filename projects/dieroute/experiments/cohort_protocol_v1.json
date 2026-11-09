@@ -1,0 +1,16 @@
+{
+  "schema": "dieroute.cohort_protocol.v1",
+  "status": "development_only_not_a_complete_paper_cohort",
+  "architecture": "VTR arch/multi_die/stratixiv_3d/3d_full_OPIN_inter_die_stratixiv_arch.timing.xml",
+  "architecture_sha256": "ed0372a061afe8782c5291bde2a9587f9feb124326227e98af699bbe7959c0f2",
+  "vpr_revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+  "input_circuit_directory": "vtr_flow/benchmarks/blif/4",
+  "development_cases": ["diffeq", "alu4", "ex5p"],
+  "functional_microbenchmarks": ["rca_5bit", "directed protocol fixtures"],
+  "reserved_validation_cases": ["apex2", "frisc", "elliptic"],
+  "development_native_configuration": {"device": "auto", "channel_width": 80, "seed": 1, "workers": 1},
+  "selection_policy": "Algorithm choices may use development cases only. Freeze the algorithm/configuration before opening reserved validation results. A changed algorithm requires a new validation phase; do not relabel development measurements as held-out.",
+  "failure_policy": "Archive all failures. Native routability at the declared width is required for paired QoR; any width change is a named protocol revision and must apply to both methods.",
+  "remaining_scope": ["real commercial SLR/SLL front-end and legal routing", "larger representative designs", "multiple seeds and confidence intervals", "die, topology, SLL capacity and HBM/PE scaling", "timing-updated strong baselines", "physical board performance and energy"],
+  "claim_limit": "These VTR architecture-model cases are useful development evidence; they do not satisfy all G3/G4/G5 requirements or establish commercial deployment performance."
+}

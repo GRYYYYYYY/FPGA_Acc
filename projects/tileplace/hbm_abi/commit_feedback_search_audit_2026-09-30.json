@@ -1,0 +1,25 @@
+{
+  "status": "pass",
+  "scope": "CPU commit then feedback refresh/rejection/whole-version restore; not native VPR closure",
+  "fixtures": 12,
+  "commits": 12,
+  "feedback_updates": 12,
+  "rejected_feedback": 36,
+  "restores": 12,
+  "color_comparisons": 336,
+  "resident_protocol_smoke": {
+    "status": "pass",
+    "snapshot": "diffeq strict",
+    "blocks": 202,
+    "commands": [
+      "READY",
+      "DUMP",
+      "QUIT"
+    ]
+  },
+  "files": {
+    "test_commit_feedback_search.py": "38432f5176937ea4794e4ee359d313cecbee7c0ddb75ab31ca376275f3fa0ef3",
+    "native_snapshot_server.cpp": "eb2a24541c7d51249a427dc3a0b9d502bdf576929cb18398facc68da8c8e6ded",
+    "feedback_search.hpp": "a94063e73b4a3e07842cd437ee969f9b697a1bf29b89ce15d542e7d449ac74e4"
+  }
+}

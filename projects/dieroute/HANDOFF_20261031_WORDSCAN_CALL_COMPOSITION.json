@@ -1,0 +1,47 @@
+{
+  "observed_ns": 1793430802037626709,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_SELECTOR_PREFIX_LIFETIME.json",
+    "sha256": "12e31582d9a3bb64d4c85f756dd0e38912105d35974a20870e1bf713a4a902db"
+  },
+  "progress": {
+    "report": "work/resident_wordscan_call_composition_20261031/review.json",
+    "report_sha256": "b3877066a5994dc3cfc4d9009e45b24704e37eca5539e4274f1a8d04d57e655f",
+    "independent_review": "work/resident_wordscan_call_composition_20261031/independent_review.json",
+    "independent_review_sha256": "c9e2d542c1645df581f57727781432bbbf8e28ffc20ac5e6c33004091f5743d4",
+    "feasible_UNSAT_queries": 7,
+    "reachable_states": 152,
+    "unique_edges": 207,
+    "source_control_input_cases": 2432,
+    "independent_scan_oracle_cases": 337,
+    "invalid_empty_rank_negative_cases": 8,
+    "wordscan_parent_lifetime_in_projection": true,
+    "wordscan_argument_holding_in_projection": true,
+    "actual_prefix_word_population_relation_proved": false,
+    "actual_whole_select_semantics_proved": false,
+    "old_monolithic_population_UNKNOWN_results_retained": true,
+    "HDL_simulation_executed": false,
+    "full_sequential_HDL_equivalence_proved": false,
+    "scope": "Source-bound select_r10state/wordscan12state coupled binary projection includes registered start,captured end/valid flags,argument freshness and qualified word/count provenance. Parent5validblock initializes rank/limit,parent6capturesbase+launches,parent7holdsallthree arguments. Across repeated calls every nonidle scan state and terminal result is owned by parent7/start1;new child idle cannot falsely terminate. Flags captured2stay through9;valid word5and count8captures precede decision9and foundterminal10. Actual count/value capture semantics are reused from prior SHA-verified88register/two-read coherence and frozen-Ccount UNSATevidence,rather than rerun. The new staged population semantic lemmas/finalmask support conditional composition of that frozen Ccount with true wordcardinality;old monolithic bit_sum UNKNOWNresults remain retained. Four source BVqueries connect actual parent33bit size/27bit limit/64bitbase and positive signed33rank to admitted shape caps and15bitvalid RAMaddress. Three LIAcontract lemmas show a residual rank below the sum of8validword populations cannot hit exhaustion/invalidtail,and skipping preserves rankuntil a positive-count word is found. This mathematical contract is CONDITIONAL on exact matching prefix and actual word counts/stable valid words;this report does not prove actual memorycontents satisfy it. Other parent cases are conservative syntactic targets,and scan end/valid/countdecisions abstracted binary atoms. Actual outerget/execute lifetime,successful encoding delivery,bit-helpersemantics,whole select/get/RTL/native/4state/timing/board acceptance remain open. No DUT/process/input/cache/guard/budget changes or HDL/HLS/native flow.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v255_20261031/matrix.json",
+    "sha256": "0f4467661f0ec13f61607cdcc70caa706311c4b99fa1cf0ed220eb6771a49f77"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v255.json",
+    "sha256": "0281231e45b1ad1632d008b3f1006b3f0060ce9c8414a82c4dcd20ff39e2da48"
+  },
+  "next_action": "Match generated six-step bit helper data/guard updates and its select_rparent lifetime to frozen reference rank-halving semantics. Wordscan parent-held arguments and conditional rank-population progress are now checked using earlier count/coherence evidence. Exact encoded marker/prefix/word relation and outergetlifetime remain open. Poll original handles first;retain guards/budgets/inputs/caches/failed evidence and original populationUNKNOWNs.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

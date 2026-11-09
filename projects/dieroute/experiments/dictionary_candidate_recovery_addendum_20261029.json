@@ -1,0 +1,36 @@
+{
+  "recorded_ns": 1793306378660180778,
+  "status": "candidate_full28878_RTL_live_one_completed_no_acceptance",
+  "source_sha256": {
+    "work/resident_dictionary_binary_discovery_candidate_20261029/full_program_review.json": "a4cf6dec4da90e0ede473038d3dbec364c22d60fc29c74d5c5a0450a0e69e105",
+    "work/resident_dictionary_binary_discovery_candidate_20261029/independent_HLS_comparison_20261029.json": "7e0d02828da0560f720c731d878320f11da892dd6a579fe9a182e4168268cbd7",
+    "work/resident_dictionary_binary_discovery_candidate_20261029/discovery_operation_comparison.json": "20215a91e5a5bb70d819040b598e4c411932a04be142d18dfa52c2ee242be24e",
+    "work/resident_dictionary_binary_discovery_candidate_20261029/native_configuration_generation_review_20261029.json": "d650d908721f100316315355b373ccfe7a0f56fd28167a168ba09745290a63d9",
+    "work/resident_dictionary_binary_discovery_candidate_20261029/RTL_positive_native_monitors_v5/protocol.json": "615195c3faa3d9f4265ab29db692696ba21527e56b3bdfe1445f84f2ca50ce16",
+    "work/resident_dictionary_binary_discovery_candidate_20261029/RTL_positive_native_monitors_v5/launch_receipt.json": "49c43f1b657b80f01037665b55fc038459ff71b48f17b0610d87e42fa868d331",
+    "work/resident_dictionary_binary_discovery_candidate_20261029/RTL_positive_native_monitors_v5/pipeline.launch.json": "b27890ac1420a3affe297fb253b04a27242192f5cd336af09332cd8c47c673aa",
+    "work/resident_dictionary_binary_discovery_candidate_20261029/actual_RTL_runtime_receipt_20261029.json": "7072f3eacf6695da1907e2f4ec6f84d2571954827e29b7e2c86a80c8a04176eb"
+  },
+  "current_candidate_directory": "work/resident_dictionary_binary_discovery_candidate_20261029",
+  "active_RTL_directory": "work/resident_dictionary_binary_discovery_candidate_20261029/RTL_positive_native_monitors_v5",
+  "preserved_failures": [
+    "Original graph RTL cumulative1e9-cycle watchdog timeout",
+    "RTL_positive missing fifo_para.vh",
+    "RTL_positive_headers_v2 stale monitor hierarchy",
+    "native_setup_v3 stopped for unintended dense C TV generation; explicit manual stop receipt retained"
+  ],
+  "validated_scope": [
+    "331 host field differential cases",
+    "Original full28878 host program expected replies exact with ASAN/UBSAN",
+    "Candidate HLS exit0, delta420LUT423FF, other estimated resource counts unchanged",
+    "Native bootstrap configuration only, no positive RTL acceptance"
+  ],
+  "open_work": [
+    "Wait existing verified xsimk handle; do not restart slow/silent simulation",
+    "Independent full replies, source, transaction and observer audit after terminal",
+    "Negative observer canary required before positive adoption",
+    "Postroute/platform/board gates remain open"
+  ],
+  "frozen_denominators_unchanged": true,
+  "research_complete": false
+}

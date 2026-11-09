@@ -37,6 +37,11 @@ def main() -> int:
     parser.add_argument("--netlist", type=Path, required=True)
     parser.add_argument("--place", type=Path, required=True)
     parser.add_argument("--rr-graph", type=Path)
+    parser.add_argument(
+        "--source-echo",
+        type=Path,
+        help="Reuse a place_macros.echo emitted by the frozen baseline VPR run",
+    )
     parser.add_argument("--work", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--report", type=Path, required=True)
@@ -62,6 +67,38 @@ def main() -> int:
             raise ContractError("architecture does not match the packed-netlist architecture id")
         if attrs.get("atom_netlist_id") != f"SHA256:{sha256(circuit)}":
             raise ContractError("circuit does not match the packed-netlist atom-netlist id")
+
+        if args.source_echo:
+            source_echo = absolute(args.source_echo)
+            _header, rows = parse_place(place)
+            placements = {row["name"]: row for row in rows}
+            _macros, summary = parse_vpr_place_macros(source_echo, placements)
+            output = args.output.resolve()
+            output.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(source_echo, output)
+            report = {
+                "schema": "TILEPLACE_VPR_MACRO_CAPTURE_V1",
+                "status": "pass",
+                "mode": "reuse_frozen_baseline_echo",
+                "seed": args.seed,
+                "channel_width": args.channel_width,
+                "placement_consistency": "inherited_from_frozen_baseline_vpr",
+                "macros": summary,
+                "inputs": {
+                    "vpr": {"path": str(vpr), "sha256": sha256(vpr)},
+                    "architecture": {"path": str(architecture), "sha256": sha256(architecture)},
+                    "circuit": {"path": str(circuit), "sha256": sha256(circuit)},
+                    "netlist": {"path": str(netlist), "sha256": sha256(netlist)},
+                    "place": {"path": str(place), "sha256": sha256(place)},
+                    "source_echo": {"path": str(source_echo), "sha256": sha256(source_echo)},
+                },
+                "output": {"path": str(output), "sha256": sha256(output)},
+            }
+            report_path = args.report.resolve()
+            report_path.parent.mkdir(parents=True, exist_ok=True)
+            report_path.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
+            print(json.dumps({"status": "pass", **summary, "sha256": sha256(output)}, sort_keys=True))
+            return 0
 
         work = args.work.resolve()
         work.mkdir(parents=True, exist_ok=True)

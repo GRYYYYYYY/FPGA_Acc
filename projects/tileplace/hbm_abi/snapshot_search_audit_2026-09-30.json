@@ -1,0 +1,19 @@
+{
+  "status": "pass",
+  "scope": "strict binary metadata and CSR costs to CPU candidate search; STL containers remain; commit/restore search integration not yet tested",
+  "fixtures": 12,
+  "unit_candidate_sets": 60,
+  "color_forbidden_sets": 48,
+  "host_inputs": [
+    "config",
+    "guards",
+    "forbidden identities",
+    "selector"
+  ],
+  "files": {
+    "flat_search_metadata.hpp": "a4281dd96c31cb1348f4ce15fe431f37830bd39d1cfac2e287e7318efc53d1b2",
+    "snapshot_search.hpp": "e4cdbd50bd4e62b90e2a70ef0756cfea34f059f35ed93814ee5faad56045c271",
+    "snapshot_search_query.cpp": "0d2ded1d8bd1fbeac4c82ff37b5d1eccae853b70eebb9df89df6188dbc8a7250",
+    "test_snapshot_search.py": "e386219ca994e318c9a8aeafa1cad358dc9e56898f4816aa2bc27c51a2106cf5"
+  }
+}

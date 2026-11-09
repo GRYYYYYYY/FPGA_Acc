@@ -1,0 +1,129 @@
+{
+  "schema": "dieroute.initial_evidence.v1",
+  "verified_utc": "2026-10-13T04:36:03.039117+00:00",
+  "research_complete": false,
+  "board_performance_claim": false,
+  "status": "native_multidie_PR_reference_and_independent_corridor_protocol_verified",
+  "cases": [
+    {
+      "case": "rca5",
+      "manifest": "work/pr_reference_rca5_20261013/reference.json",
+      "manifest_sha256": "ecc91b68398275ae5d02384356276f9bd095ed3b1dffdd998f58bbdaf6f4dd30",
+      "verified_artifact_count": 78,
+      "node_count": 14060,
+      "die_count": 2,
+      "tasks": {
+        "count": 17,
+        "cross_die_endpoints": 5,
+        "connections_sha256": "32565cef9eff9d9647d6799e04e69d06caa012f05452559d5abee79f374897f2"
+      },
+      "repeat_count": 5,
+      "deterministic": true,
+      "native_validation": {
+        "legal": true,
+        "total_wirelength": 117,
+        "critical_path_delay_ns": 6.39229,
+        "baseline_wirelength": 118,
+        "baseline_cpd_ns": 6.39229,
+        "wirelength_delta_percent": -0.8474576271186418,
+        "cpd_delta_percent": 0.0
+      }
+    },
+    {
+      "case": "diffeq",
+      "manifest": "work/pr_reference_diffeq_20261013/reference.json",
+      "manifest_sha256": "09fc17eb02624a66c96ede9c1da802f771c53afa0a3d58dba3b7e76ceef7cef1",
+      "verified_artifact_count": 78,
+      "node_count": 69848,
+      "die_count": 2,
+      "tasks": {
+        "count": 2073,
+        "cross_die_endpoints": 506,
+        "connections_sha256": "d956a8a172039f5c7563bf33210b977ed4535ec10be4042d58032a9809cdaa42"
+      },
+      "repeat_count": 5,
+      "deterministic": true,
+      "native_validation": {
+        "legal": true,
+        "total_wirelength": 9093,
+        "critical_path_delay_ns": 7.65476,
+        "baseline_wirelength": 8639,
+        "baseline_cpd_ns": 7.61372,
+        "wirelength_delta_percent": 5.255237874754015,
+        "cpd_delta_percent": 0.5390269145700177
+      }
+    }
+  ],
+  "checks": [
+    {
+      "label": "ctest",
+      "command": [
+        "ctest",
+        "--test-dir",
+        "build",
+        "--output-on-failure"
+      ],
+      "returncode": 0,
+      "log": "work/verification_20261013/ctest.log",
+      "sha256": "c44269e75e22c938a51d23d18344f885e5a8315a9a48d856d407ec6c6c75ef47"
+    },
+    {
+      "label": "asan_ubsan",
+      "command": [
+        "./build/corridor_sanitized"
+      ],
+      "returncode": 0,
+      "log": "work/verification_20261013/asan_ubsan.log",
+      "sha256": "d6b9e1dd4f69ccdbfbbd1166df5f9b66b13bd19ff0c07b442a8395f268bbd0a2"
+    },
+    {
+      "label": "diff_check",
+      "command": [
+        "git",
+        "diff",
+        "--check",
+        "--",
+        "."
+      ],
+      "returncode": 0,
+      "log": "work/verification_20261013/diff_check.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "source_sha256": {
+    "CMakeLists.txt": "a50d714ffcbf50b83cc22b6bd86971b77611888ee2f07a6e40fb704f590a753e",
+    "README.md": "1f9844b8582e0e65dee6e52f8f5a92d09d484b46314196d103a2fb57d949b243",
+    "experiments/research_plan.json": "68425e84c7485b8b1c9d419bd47483e4f5cff9c8d4835107651c83e82b7c1478",
+    "include/corridor.hpp": "fbec3a431c8fd7787023f53848d3ee2cb4dd8b2bbf5a6550b7766e94958c161c",
+    "include/dieroute.hpp": "53ac0e049b7d81061d39648bbf6882c28f688e61f90e95dee3d344fa93302f20",
+    "src/corridor.cpp": "8c4b42d56ca1c1d6c855d2de458115b57b161c40549cfa9b2d6e7d49af99da77",
+    "src/dieroute.cpp": "d0560995d4c02a35190a958e4664b4ee61df4e412604bc0c427a796a9eaffb74",
+    "tb/corridor_tb.cpp": "4ce3f2fadcd792fad63a94250f3fc70ebb136167108b087aa4762faa8e2df986",
+    "tb/dieroute_tb.cpp": "e8584da9a679b5876f1ffc59c4c1d622198b0cd35c1883ec8390700193893d7e",
+    "tb/topology_converter_test.py": "393703ed08ace88219933200ad1fca7e6963c0e143bc4a370726bb02f58e54fd",
+    "tools/export_vpr_topology.py": "d16f544d8969eb311088560d969cc2040c05174646fa51376b3f1594b10d5185",
+    "tools/run_native_case.py": "281d46e1a7f801ebefefc0dce7fbed8ace6b38f91bf6c43f4f77a0c5c20b7690",
+    "tools/run_pr_reference.py": "a3f151db4b88da2b6dd0ddc54dbe76e52ceb20182a1ebf0d1fbc4c7a33ab5b8c"
+  },
+  "next_required": "Integrate corridor reservations with exact RR resource aliasing, same-net route-tree sharing, PR commit/rip-up and local-route failure repair; then full native QoR and hardware gates.",
+  "limitations": [
+    "Corridor protocol is not connected to PR yet",
+    "Fixed-criticality ordinary CPU PR baseline only",
+    "No claim of independent SLL capacity from crossing-edge counts",
+    "diffeq WL increases 5.26% versus VPR",
+    "No physical board performance or energy",
+    "Formal cohort, ablations, hardware and paper gates remain open"
+  ],
+  "failed_attempts": [
+    {
+      "manifest": "work/native_rca5_2die_cw32_20261013/run.json",
+      "sha256": "30407b3ad41880dd6ab3311a8aaabbaf15afa880976f9b91bed1ac64101fbfa4",
+      "returncode": 1
+    },
+    {
+      "manifest": "work/native_mult2_2die_cw32_20261013/run.json",
+      "sha256": "f19ee034ac15e628be02714a71c0181b9a66035075483d6da7e39c2508063f5f",
+      "returncode": -6
+    }
+  ]
+}

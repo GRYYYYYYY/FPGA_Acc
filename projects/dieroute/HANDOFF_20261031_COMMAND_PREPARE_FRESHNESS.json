@@ -1,0 +1,44 @@
+{
+  "observed_ns": 1793443833216590120,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_CONTROL_COMMAND_ADAPTER.json",
+    "sha256": "a3fd13fad85045d2aec7f25358999af2292a4f74522dd29b79a342853772afed"
+  },
+  "progress": {
+    "report": "work/resident_command_prepare_freshness_20261031/review.json",
+    "report_sha256": "66140d2212edd92cbdba24881c04504082eda56c97bfb2c20778dfb046904951",
+    "independent_review": "work/resident_command_prepare_freshness_20261031/independent_review.json",
+    "independent_review_sha256": "7d6fbe4d8eebf15533316e6b6a5a8e1fc90eaeb3d7fe040211669bf72b65c6b5",
+    "final_review": "work/resident_command_prepare_freshness_20261031/final_review.json",
+    "final_review_sha256": "9f791893baefd7ec0e685e2e0258051f11931a0043497670f24dd75c5dc171cd",
+    "new_feasible_UNSAT_queries": 16,
+    "valid_startup_cases": 64,
+    "coupled_old_RHS_edge_pairs": 192,
+    "held_context_cases": 448,
+    "rejected_shape_start_cases": 192,
+    "conditional_command_to_prepare_base_shape_freshness_checked": true,
+    "scope": "Conditionaltop/execute/preparefreshness:16feasibleBVsourceclock/partialcapture/FSMqueries and64continuousintegerclockprojectioncases. Top1capturescurrentdata/commandbase;74AWreadyatomicallysetsregisteredexecutestartandmoves75whilebaseshold. Acceptedexecute22capturesfreshN/E/Pandpreparestart1;simultaneousprepare1seesoldstart0andstaysidle. Followingacceptedprepare1cannotidle-doneandcapturescurrentmeta/rev;state2then capturesN/E/Psnapshotsbeforestate3. Sourcewriterinventoryprovesbasesonly1/dimensionsonly2;3/9/10/21holdschecked,execute25holdsnewshape,startclearsatterminalready.192rejected22casesleaveshape/startunchanged. Priorouterownershipandcommandreader/controladapter/inputholdingcontractsremaincomponentpremises;notunifiedfullRTL/4state/native/externalprotocolorboardproof. Checkerstate1-dimensionandcontext-rebindingfailuresretainedascheckererrors,notDUTbugs.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v276_20261031/matrix.json",
+    "sha256": "4b3cd56e3235e0bdab1ec40195e02ddc3e79948689c2c51fae6da6504c802f8f"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v276.json",
+    "sha256": "ce93455953df4e068b3d2368208dfbc543f55338d7965830665378e8d2b92981"
+  },
+  "next_action": "Consolidateconditionalhostlayout->control512command->top/execute/preparefreshness->reversewordimage/prefix->getoffset/successcontracts withanexplicitrequirement/evidence/residual-premisetable. AuditfullG6remainingnativepositive/negative/gateimplementationstatus andotherG1-G8criticalpaths;avoidmistaking accumulatedlocalproofcountsforgateclosure. Continueoriginalnativehandleswithoutrestart,keepguards/budgets/cohort/failures/UNKNOWNs/externalprotocol/fullRTL/boardgaps.",
+  "previous_goal_turn_classification": "progress_and_verified_wait_v275",
+  "current_goal_turn_classification": "progress_and_verified_wait",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

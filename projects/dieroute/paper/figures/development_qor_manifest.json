@@ -1,0 +1,83 @@
+{
+  "status": "audited_plot_data_exported",
+  "rows": [
+    {
+      "id": 0,
+      "label": "Original downstream",
+      "wire_percent": 11.361754966887428,
+      "cpd_percent": 2.276578923520667,
+      "expansions_m": 33.933212
+    },
+    {
+      "id": 1,
+      "label": "Entry stop",
+      "wire_percent": 11.22723509933774,
+      "cpd_percent": 0.7886154387799715,
+      "expansions_m": 36.318898
+    },
+    {
+      "id": 2,
+      "label": "Fine flat",
+      "wire_percent": 11.454884105960272,
+      "cpd_percent": 0.963504531596171,
+      "expansions_m": 20.526839
+    },
+    {
+      "id": 3,
+      "label": "Fine entry",
+      "wire_percent": 10.947847682119205,
+      "cpd_percent": 3.2698739736072735,
+      "expansions_m": 34.616243
+    },
+    {
+      "id": 4,
+      "label": "Local first",
+      "wire_percent": 13.348509933774832,
+      "cpd_percent": 0.6154971110488461,
+      "expansions_m": 35.213033
+    },
+    {
+      "id": 5,
+      "label": "Cleanup",
+      "wire_percent": 10.554635761589415,
+      "cpd_percent": 0.7886154387799715,
+      "expansions_m": 58.389107
+    },
+    {
+      "id": 6,
+      "label": "Zero seed",
+      "wire_percent": -1.47971854304636,
+      "cpd_percent": 6.551101676289561,
+      "expansions_m": 30.604774
+    },
+    {
+      "id": 7,
+      "label": "Half seed",
+      "wire_percent": 2.742135761589415,
+      "cpd_percent": 0.33602871555993286,
+      "expansions_m": 33.318139
+    },
+    {
+      "id": 8,
+      "label": "Span price",
+      "wire_percent": 8.950745033112572,
+      "cpd_percent": 2.2384553928650686,
+      "expansions_m": 34.284264
+    }
+  ],
+  "source_sha256": {
+    "experiments/wide_timing_cohort_audit_20261013.json": "41f486d41a35b10fc1e1bf6f5fe130b8938ea3b4322d28fe3f6d3fc61cc9dac5",
+    "work/rr_upstream_target_stop_variant_20261014/independent_audit.json": "f1f9c18f62602799211034444f92ed29850451b232d1590fafeed207df6af618",
+    "work/rr_cost_precision_variant_20261014/independent_audit.json": "9a7a2e1f998b9b6ff0350d0c6a1a3429cbe6e4d7a837585c46a5c3c0443beb7b",
+    "work/rr_local_task_order_variant_20261014/independent_audit.json": "e9d629762c098adef9a5b2a0bc26805eec3325e00b53b917bd7c91b5ebfb9a6a",
+    "work/rr_wide_cleanup_variant_20261014/independent_audit.json": "4e8e88c2c9eacf307b31f7eb313e8735957f2f635029e9110d6fdd24432a9ee4",
+    "work/rr_wide_cleanup_disabled_control_20261014/cleanup_comparison.json": "12b416879fc889f4bdfa645b113b4584922b74005d42f20c601755d54fd144cf",
+    "work/rr_tree_seed_zero_variant_20261014/tree_seed_comparison.json": "c6dbc3fbe7c89ab5e7e1f145c28057eba794594927d1fbc41095e4915e8e6275",
+    "work/rr_tree_seed_midpoint_variant_20261014/tree_seed_midpoint_comparison.json": "9db0a15729a6b51a08803007fea20c7da1e35b1fe027af0e6b77da996e526a30",
+    "work/rr_main_span_cost_variant_20261014/span_price_comparison.json": "21a0394d8232488ebc0b02bff7198842b4a767745eac898e85dd8a3c2d281421",
+    "tools/export_development_qor_plot.py": "7732dd89c20c1f74c0405293fb1a7114d0d406d6f1392219f789034dbc28ba83"
+  },
+  "scope": "Nine ex5p development variants; completed evidence only, including matched-source cleanup, seed-weight and span-price controls. Not a general or board comparison",
+  "research_complete": false,
+  "board_result": false
+}

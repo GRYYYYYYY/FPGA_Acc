@@ -1,0 +1,51 @@
+{
+  "binary_sha256": "f3af52bc73b0beeb4a0154ef9e6547f3451dbc019ab6db53d192b95f6397c4ef",
+  "cases": [
+    {
+      "weight": "10ps",
+      "width": 8,
+      "index": 0,
+      "producer": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/trial_mux_native_joint_10ps_w8m0_quality_gate.py",
+      "verifier": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/verify_mux_native_joint_10ps_w8m0_quality_gate.py",
+      "producer_sha256": "448b3dfabef3c512e198860babc71db6f60756e517a714d6c2f4b6f75664d913",
+      "verifier_sha256": "086246d0984e8dad5fd5b2fd84e71453f28b9149547dd709729ccd91107d325c"
+    },
+    {
+      "weight": "10ps",
+      "width": 8,
+      "index": 2,
+      "producer": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/trial_mux_native_joint_10ps_w8m2_quality_gate.py",
+      "verifier": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/verify_mux_native_joint_10ps_w8m2_quality_gate.py",
+      "producer_sha256": "77d8ce50dec7b2db85f2000caa05d8f54f82972e0c969f9873a5623fcd2d69fd",
+      "verifier_sha256": "900c06bba7e20a7e3d62420103ec840d5f7a53be2eeeb25cf96979fb22e90782"
+    },
+    {
+      "weight": "50ps",
+      "width": 8,
+      "index": 2,
+      "producer": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/trial_mux_native_joint_50ps_w8m2_quality_gate.py",
+      "verifier": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/verify_mux_native_joint_50ps_w8m2_quality_gate.py",
+      "producer_sha256": "055a2acca8b2d7729565914142a4ea6f83d699ea0ce0a8f86447f173ae8e2349",
+      "verifier_sha256": "ba58f71e922dd9cb4205fc3247c9f073772b7fb8879b72576ab38934ac607f34"
+    },
+    {
+      "weight": "50ps",
+      "width": 8,
+      "index": 3,
+      "producer": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/trial_mux_native_joint_50ps_w8m3_quality_gate.py",
+      "verifier": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/verify_mux_native_joint_50ps_w8m3_quality_gate.py",
+      "producer_sha256": "d6ec49396b66e84889c214316cda856f4c8742e63fbf4ac58a2c3d6f175a03b5",
+      "verifier_sha256": "914be20f08a3321c147e988d749b37cbf06d6523a16e2f442a3332899e899cb6"
+    },
+    {
+      "weight": "10ps",
+      "width": 32,
+      "index": 3,
+      "producer": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/trial_mux_native_joint_10ps_w32m3_quality_gate.py",
+      "verifier": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/verify_mux_native_joint_10ps_w32m3_quality_gate.py",
+      "producer_sha256": "3e1c5e24e68a999f9e1f9fbd69f9b0fb1f80c1f2b28d6cd8ef0abba1df7eb181",
+      "verifier_sha256": "4c2659193143107a88a16102549625f930613bd92ad7e214e0ec93bfe71c71c1"
+    }
+  ],
+  "policy": "Prespecified five-case native joint gate integration regression: two known joint improvements, two CPD-good/wire-bad candidates(width8 and32), one CPD+wire-bad candidate. Re-execute native coldreference and candidate import with new binary, selected canonical FULLSTA plus independent originalXML geometry/path/capacity audits. Archived predictor content, not live predictor/lifecycle measurement or heldout validation."
+}

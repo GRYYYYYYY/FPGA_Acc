@@ -1,0 +1,693 @@
+{
+  "schema": "dieroute.native_signoff_progress.v1",
+  "finished_ns": 1791914693329518174,
+  "research_complete": false,
+  "board_result": false,
+  "device_programmed": false,
+  "active_owned_experiment_processes": [],
+  "evidence": [
+    {
+      "path": "work/u280_native_hold_repair_extended_v1_20261013/manifest.json",
+      "sha256": "949f6ea6a17179e74116c40ce6f0abbd19ad11e222b0badaaabc609f199e7df5"
+    },
+    {
+      "path": "work/u280_native_noop_extended_v1_20261013/manifest.json",
+      "sha256": "ab42937648ba50b558e522ba7dd98e8ccae1d7af0c0d1e2a2952969d760a093b"
+    },
+    {
+      "path": "work/u280_native_hold_repair_extended_audit_v1_20261013/audit.json",
+      "sha256": "af34aaa378b4510dd117b5e7fee3a51cc85255992ac8fbbda9b2bbcd5151f6e9"
+    },
+    {
+      "path": "work/u280_native_delay_control_audit_v2_20261013/audit.json",
+      "sha256": "18147815f93bfc3f31b9da49bc6a2d045e25fdf518ebc077b5bd4190fe2d07f6"
+    },
+    {
+      "path": "work/u280_native_delay_feature_diagnostic_v2_20261013/audit.json",
+      "sha256": "431f1275fae192c59cce4d515b6ea193d5435da0b79d1c008bc034751cc638cb"
+    },
+    {
+      "path": "work/u280_native_hold_repair_bitstream_v1_20261013/manifest.json",
+      "sha256": "0a22ef13b4189bdf58ac06d18a31d5568c431e946f35275b89a305b84c1ed911"
+    },
+    {
+      "path": "work/u280_native_hold_repair_bitstream_v2_20261013/manifest.json",
+      "sha256": "a991ebe3c50ce313ff169d262cd5e4c7269d11dfe60a63ced2213be17d1f5ab4"
+    },
+    {
+      "path": "work/u280_native_hold_repair_bitstream_v3_20261013/manifest.json",
+      "sha256": "27ea37dfbe64be61ef39c6f471757924da27aba73c489c77a6fc01ea2b47cd4d"
+    },
+    {
+      "path": "work/native_libudev_probe_20261013/audit.json",
+      "sha256": "877da2feb0c0d8a5b82bca4045074b80b3164d87ce182f171ab692c069f3817c"
+    },
+    {
+      "path": "work/u280_native_node_delay_v2_20261013/manifest.json",
+      "sha256": "511b5a80fbfb9094a1aa87336feb84f3a436789095a0ec9c29737bd8302882d1"
+    },
+    {
+      "path": "work/u280_native_sdk_delay_diagnostic_v1_20261013/audit.json",
+      "sha256": "871602c2755ea0cb199064248c91815e681e85909b5632407fd9db5c4d2d0660"
+    },
+    {
+      "path": "work/u280_native_hold_repair_bitstream_audit_v3_20261013/audit.json",
+      "sha256": "dc195460b0fe51ed163129db01f94e9af61d257fb7db2872f9f907a5df8123df"
+    },
+    {
+      "path": "work/native_signoff_build_20261013/ctest_final.log",
+      "sha256": "dcb6c0f07ff8091703e889e7bc25985049b44f93d194759d62b19a9f726c1131"
+    }
+  ],
+  "bus_skew": {
+    "constraints": 392,
+    "evaluated": 391,
+    "single_endpoint_no_comparison": 1,
+    "violations": 0,
+    "minimum_slack_ns": "1.700",
+    "all_coverage_and_reported_values_equal": true
+  },
+  "delay_control": {
+    "selected_nets": 70,
+    "load_pins": 307,
+    "delay_objects_per_stage": 614,
+    "noop_physical_inventory_equal": true,
+    "noop_all_observed_delays_equal": true,
+    "identical_tree_comparisons": [
+      {
+        "left": "original",
+        "right": "noop",
+        "identical_tree_nets": 70,
+        "delay_objects": 614,
+        "changed_delay_objects": []
+      },
+      {
+        "left": "original",
+        "right": "proposal",
+        "identical_tree_nets": 26,
+        "delay_objects": 64,
+        "changed_delay_objects": []
+      },
+      {
+        "left": "original",
+        "right": "repair",
+        "identical_tree_nets": 31,
+        "delay_objects": 90,
+        "changed_delay_objects": []
+      },
+      {
+        "left": "noop",
+        "right": "proposal",
+        "identical_tree_nets": 26,
+        "delay_objects": 64,
+        "changed_delay_objects": []
+      },
+      {
+        "left": "noop",
+        "right": "repair",
+        "identical_tree_nets": 31,
+        "delay_objects": 90,
+        "changed_delay_objects": []
+      },
+      {
+        "left": "proposal",
+        "right": "repair",
+        "identical_tree_nets": 65,
+        "delay_objects": 588,
+        "changed_delay_objects": []
+      }
+    ],
+    "restored_nets": [
+      303560,
+      303585,
+      303653,
+      454074,
+      454077
+    ],
+    "repair_delays_match_their_tree_snapshot": true,
+    "unchanged_path_witnesses": [
+      {
+        "task": 27983,
+        "net": 303554,
+        "to_pin": "level0_i/ulp/axi_ic_ctrl_mgmt_slr1/xbar/inst/gen_sasd.crossbar_sasd_0/reg_slice_r/m_payload_i_reg[0]/CE",
+        "same_complete_net_tree": false,
+        "delays": {
+          "total": {
+            "FAST_MIN": {
+              "original": 120,
+              "noop": 120,
+              "proposal": 123,
+              "repair": 123
+            },
+            "FAST_MAX": {
+              "original": 174,
+              "noop": 174,
+              "proposal": 177,
+              "repair": 177
+            },
+            "SLOW_MIN": {
+              "original": 160,
+              "noop": 160,
+              "proposal": 162,
+              "repair": 162
+            },
+            "SLOW_MAX": {
+              "original": 275,
+              "noop": 275,
+              "proposal": 282,
+              "repair": 282
+            }
+          },
+          "interconnect": {
+            "FAST_MIN": {
+              "original": 91,
+              "noop": 91,
+              "proposal": 94,
+              "repair": 94
+            },
+            "FAST_MAX": {
+              "original": 117,
+              "noop": 117,
+              "proposal": 120,
+              "repair": 120
+            },
+            "SLOW_MIN": {
+              "original": 119,
+              "noop": 119,
+              "proposal": 121,
+              "repair": 121
+            },
+            "SLOW_MAX": {
+              "original": 211,
+              "noop": 211,
+              "proposal": 218,
+              "repair": 218
+            }
+          }
+        }
+      },
+      {
+        "task": 28255,
+        "net": 303653,
+        "to_pin": "level0_i/ulp/axi_ic_ctrl_mgmt_slr1/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/s_arvalid_reg[0]_i_1/I1",
+        "same_complete_net_tree": false,
+        "delays": {
+          "total": {
+            "FAST_MIN": {
+              "original": 179,
+              "noop": 179,
+              "proposal": 175,
+              "repair": 179
+            },
+            "FAST_MAX": {
+              "original": 234,
+              "noop": 234,
+              "proposal": 229,
+              "repair": 234
+            },
+            "SLOW_MIN": {
+              "original": 227,
+              "noop": 227,
+              "proposal": 224,
+              "repair": 227
+            },
+            "SLOW_MAX": {
+              "original": 322,
+              "noop": 322,
+              "proposal": 316,
+              "repair": 322
+            }
+          },
+          "interconnect": {
+            "FAST_MIN": {
+              "original": 179,
+              "noop": 179,
+              "proposal": 175,
+              "repair": 179
+            },
+            "FAST_MAX": {
+              "original": 234,
+              "noop": 234,
+              "proposal": 229,
+              "repair": 234
+            },
+            "SLOW_MIN": {
+              "original": 227,
+              "noop": 227,
+              "proposal": 224,
+              "repair": 227
+            },
+            "SLOW_MAX": {
+              "original": 322,
+              "noop": 322,
+              "proposal": 316,
+              "repair": 322
+            }
+          }
+        }
+      }
+    ]
+  },
+  "bitstream": {
+    "status": "native_bitstream_checks_passed",
+    "design": {
+      "part": "xcu280-fsvh2892-2L-e",
+      "design": "design_1",
+      "cells": "831714",
+      "nets": "3760846"
+    },
+    "route": "8352727942decd9ab63a826fef0f0f67e189a14d136b1eda0715e3f815ca7de6",
+    "drc": {
+      "total": 222,
+      "rules": {
+        "DPIP-2": {
+          "severity": "Warning",
+          "count": 28
+        },
+        "DPOP-3": {
+          "severity": "Warning",
+          "count": 36
+        },
+        "DPOP-4": {
+          "severity": "Warning",
+          "count": 96
+        },
+        "FLBO-1": {
+          "severity": "Warning",
+          "count": 5
+        },
+        "LOCE-1": {
+          "severity": "Warning",
+          "count": 3
+        },
+        "PDCN-1569": {
+          "severity": "Warning",
+          "count": 27
+        },
+        "REQP-1774": {
+          "severity": "Warning",
+          "count": 2
+        },
+        "REQP-1776": {
+          "severity": "Warning",
+          "count": 2
+        },
+        "REQP-1858": {
+          "severity": "Warning",
+          "count": 22
+        },
+        "RTSTAT-10": {
+          "severity": "Warning",
+          "count": 1
+        }
+      },
+      "severities": {
+        "Warning": 222
+      }
+    },
+    "ruledeck_metadata": {
+      "name": "bitstream_checks",
+      "factory": "true",
+      "declared_size": "6085",
+      "enumerated_checks": "6053",
+      "enumeration_apis_equal": "true"
+    },
+    "disabled_rules": [],
+    "bitstreams": [
+      {
+        "file": "candidate.bit",
+        "bytes": 50943997,
+        "sha256": "082872b44c00ca6fa7c71d0f8c4300d9aa755eb53dd1eaa6ac996b3ef609f61d",
+        "header": {
+          "design": "level0_wrapper;COMPRESS=TRUE;UserID=0XFFFFFFFF;Version=2022.2",
+          "part": "xcu280-fsvh2892-2L-e",
+          "date": "2026/10/13",
+          "time": "17:43:45",
+          "payload_offset": 133,
+          "payload_bytes": 50943864,
+          "sync_offset_within_payload": 80
+        }
+      },
+      {
+        "file": "candidate_pblock_dynamic_region_partial.bit",
+        "bytes": 53680286,
+        "sha256": "72963a3ae6ee7b846445e2ece7508468afc6b8a8fbce42e55cf9b15ccd0f6ed9",
+        "header": {
+          "design": "level0_wrapper;PARTIAL=TRUE;COMPRESS=TRUE;UserID=0XFFFFFFFF;Version=2022.2",
+          "part": "xcu280-fsvh2892-2L-e",
+          "date": "2026/10/13",
+          "time": "17:59:17",
+          "payload_offset": 146,
+          "payload_bytes": 53680140,
+          "sync_offset_within_payload": 80
+        }
+      }
+    ],
+    "enumerated_rules_equal_reference": true,
+    "previous_attempt_payload_comparisons": [
+      {
+        "file": "candidate.bit",
+        "previous_payload_sha256": "ada0f710b278688e46f5cc31a1ebf005b9089c3461711c1516628d779cdfbb82",
+        "current_payload_sha256": "ada0f710b278688e46f5cc31a1ebf005b9089c3461711c1516628d779cdfbb82",
+        "payload_equal": true
+      },
+      {
+        "file": "candidate_pblock_dynamic_region_partial.bit",
+        "previous_payload_sha256": "8352727942decd9ab63a826fef0f0f67e189a14d136b1eda0715e3f815ca7de6",
+        "current_payload_sha256": "8352727942decd9ab63a826fef0f0f67e189a14d136b1eda0715e3f815ca7de6",
+        "payload_equal": true
+      }
+    ],
+    "limits": [
+      "Envelope parsing does not independently decode configuration frames or verify their hardware meaning.",
+      "This is bitstream generation for the rerouted workload, not a DieRoute accelerator implementation.",
+      "No xclbin deployment compatibility, device programming, board performance or energy claim."
+    ]
+  },
+  "feature_diagnostic": {
+    "physical_tasks": 298,
+    "logical_loads": 305,
+    "unique_tree_load_rows": 578,
+    "nets": 70,
+    "repeated_tree_load_rows_removed": 32,
+    "policy": {
+      "folds": 5,
+      "fold_key": "sha256(dieroute.delay.dev.v1:<net>) mod 5",
+      "ridge_penalty": 1.0,
+      "weighting": "equal unique tree/load rows",
+      "normalization": "training fold only",
+      "controls_used_for_fitting": false,
+      "predictions_clipped": false
+    },
+    "results": {
+      "path": {
+        "FAST_MIN": {
+          "rows": 578,
+          "nets": 70,
+          "mae_ps": 85.4710835153805,
+          "net_macro_mae_ps": 26.476328892793163,
+          "rmse_ps": 171.0755890752818,
+          "p95_absolute_error_ps": 482.41387655121116,
+          "maximum_absolute_error_ps": 521.8142231669999,
+          "minimum_signed_error_ps": -521.8142231669999,
+          "maximum_signed_error_ps": 104.53544285859994,
+          "negative_predictions": 0
+        },
+        "FAST_MAX": {
+          "rows": 578,
+          "nets": 70,
+          "mae_ps": 99.72043343830576,
+          "net_macro_mae_ps": 34.46680600444317,
+          "rmse_ps": 196.83401626096654,
+          "p95_absolute_error_ps": 548.1434877763986,
+          "maximum_absolute_error_ps": 608.5547412440237,
+          "minimum_signed_error_ps": -608.5547412440237,
+          "maximum_signed_error_ps": 138.86754536855312,
+          "negative_predictions": 0
+        },
+        "SLOW_MIN": {
+          "rows": 578,
+          "nets": 70,
+          "mae_ps": 95.13417015478561,
+          "net_macro_mae_ps": 34.16477183910664,
+          "rmse_ps": 177.78541088020623,
+          "p95_absolute_error_ps": 492.06269125108975,
+          "maximum_absolute_error_ps": 551.0143153073523,
+          "minimum_signed_error_ps": -551.0143153073523,
+          "maximum_signed_error_ps": 135.235072678988,
+          "negative_predictions": 0
+        },
+        "SLOW_MAX": {
+          "rows": 578,
+          "nets": 70,
+          "mae_ps": 141.0895219755976,
+          "net_macro_mae_ps": 56.77837970637438,
+          "rmse_ps": 270.4114351288953,
+          "p95_absolute_error_ps": 748.781475133781,
+          "maximum_absolute_error_ps": 899.9086295955967,
+          "minimum_signed_error_ps": -899.9086295955967,
+          "maximum_signed_error_ps": 230.82732328936208,
+          "negative_predictions": 0
+        }
+      },
+      "tree": {
+        "FAST_MIN": {
+          "rows": 578,
+          "nets": 70,
+          "mae_ps": 86.30609647155985,
+          "net_macro_mae_ps": 24.58293505110849,
+          "rmse_ps": 116.84982106614726,
+          "p95_absolute_error_ps": 251.7350493861377,
+          "maximum_absolute_error_ps": 285.90365021644084,
+          "minimum_signed_error_ps": -285.90365021644084,
+          "maximum_signed_error_ps": 254.75823310198075,
+          "negative_predictions": 0
+        },
+        "FAST_MAX": {
+          "rows": 578,
+          "nets": 70,
+          "mae_ps": 186.8378475678349,
+          "net_macro_mae_ps": 35.56045055366497,
+          "rmse_ps": 287.5470683926471,
+          "p95_absolute_error_ps": 621.7269044871882,
+          "maximum_absolute_error_ps": 689.7686732574166,
+          "minimum_signed_error_ps": -124.67913929432115,
+          "maximum_signed_error_ps": 689.7686732574166,
+          "negative_predictions": 0
+        },
+        "SLOW_MIN": {
+          "rows": 578,
+          "nets": 70,
+          "mae_ps": 157.7522603808733,
+          "net_macro_mae_ps": 33.23895988190223,
+          "rmse_ps": 248.24099440966182,
+          "p95_absolute_error_ps": 555.1307948362846,
+          "maximum_absolute_error_ps": 616.2485776320195,
+          "minimum_signed_error_ps": -127.60785002463845,
+          "maximum_signed_error_ps": 616.2485776320195,
+          "negative_predictions": 0
+        },
+        "SLOW_MAX": {
+          "rows": 578,
+          "nets": 70,
+          "mae_ps": 247.1337014793225,
+          "net_macro_mae_ps": 55.45035738013043,
+          "rmse_ps": 381.9259471505099,
+          "p95_absolute_error_ps": 792.9919986278437,
+          "maximum_absolute_error_ps": 875.8947876384973,
+          "minimum_signed_error_ps": -256.16649799102106,
+          "maximum_signed_error_ps": 875.8947876384973,
+          "negative_predictions": 0
+        }
+      }
+    },
+    "predicted_corner_order_inversions": {
+      "path": {
+        "FAST": 0,
+        "SLOW": 0
+      },
+      "tree": {
+        "FAST": 0,
+        "SLOW": 0
+      }
+    },
+    "routing_cost_ready": false,
+    "limits": [
+      "Development-only grouped cross-validation within one previously studied design and prefix-selected net cohort; not a representative held-out benchmark.",
+      "Tile spans, intent counts and descendant counts are features, not calibrated wire length, capacitance or an admissible search heuristic.",
+      "Site-internal load differences and buffering are not fully represented. No guaranteed timing-error bound, setup/hold acceptance or route QoR follows.",
+      "No-op and repaired snapshots provide controls only. Existing C++ routing and native acceptance are unchanged."
+    ]
+  },
+  "sdk_diagnostic": {
+    "nodes": 4138,
+    "node_status_counts": {
+      "resolved": 2440,
+      "helper_zero_unmodeled": 1698
+    },
+    "multi_slr_node_status_counts": {
+      "helper_zero_unmodeled": 66
+    },
+    "eligible_rows": 578,
+    "excluded_rows": 0,
+    "results": {
+      "raw_sdk_helper": {
+        "FAST_MIN": {
+          "rows": 578,
+          "nets": 70,
+          "mae_ps": 1719.3823529411766,
+          "net_macro_mae_ps": 624.2876300768552,
+          "rmse_ps": 2149.7973707524434,
+          "p95_absolute_error_ps": 3319,
+          "maximum_absolute_error_ps": 3534,
+          "minimum_signed_error_ps": -131,
+          "maximum_signed_error_ps": 3534,
+          "negative_predictions": 0
+        },
+        "FAST_MAX": {
+          "rows": 578,
+          "nets": 70,
+          "mae_ps": 923.5346020761245,
+          "net_macro_mae_ps": 369.8387133295365,
+          "rmse_ps": 1160.4371350015724,
+          "p95_absolute_error_ps": 1807,
+          "maximum_absolute_error_ps": 1934,
+          "minimum_signed_error_ps": -471,
+          "maximum_signed_error_ps": 1934,
+          "negative_predictions": 0
+        },
+        "SLOW_MIN": {
+          "rows": 578,
+          "nets": 70,
+          "mae_ps": 1191.8840830449826,
+          "net_macro_mae_ps": 432.28089119023747,
+          "rmse_ps": 1500.9363772827012,
+          "p95_absolute_error_ps": 2316,
+          "maximum_absolute_error_ps": 2442,
+          "minimum_signed_error_ps": -255,
+          "maximum_signed_error_ps": 2442,
+          "negative_predictions": 0
+        },
+        "SLOW_MAX": {
+          "rows": 578,
+          "nets": 70,
+          "mae_ps": 461.03287197231833,
+          "net_macro_mae_ps": 213.65025574550995,
+          "rmse_ps": 548.0919829730298,
+          "p95_absolute_error_ps": 1097,
+          "maximum_absolute_error_ps": 1172,
+          "minimum_signed_error_ps": -1172,
+          "maximum_signed_error_ps": 381,
+          "negative_predictions": 0
+        }
+      },
+      "affine_sdk": {
+        "FAST_MIN": {
+          "rows": 578,
+          "nets": 70,
+          "mae_ps": 138.32640532867654,
+          "net_macro_mae_ps": 123.10068727528763,
+          "rmse_ps": 171.58091967863777,
+          "p95_absolute_error_ps": 336.3693601739851,
+          "maximum_absolute_error_ps": 393.3760342574319,
+          "minimum_signed_error_ps": -393.3760342574319,
+          "maximum_signed_error_ps": 320.5841083105065,
+          "negative_predictions": 0
+        },
+        "FAST_MAX": {
+          "rows": 578,
+          "nets": 70,
+          "mae_ps": 221.62888069778407,
+          "net_macro_mae_ps": 274.81013429401713,
+          "rmse_ps": 272.2315808484403,
+          "p95_absolute_error_ps": 537.3777359706526,
+          "maximum_absolute_error_ps": 572.1565975001031,
+          "minimum_signed_error_ps": -567.6683098796948,
+          "maximum_signed_error_ps": 572.1565975001031,
+          "negative_predictions": 0
+        },
+        "SLOW_MIN": {
+          "rows": 578,
+          "nets": 70,
+          "mae_ps": 191.49407391108133,
+          "net_macro_mae_ps": 172.31132301716409,
+          "rmse_ps": 228.78914345571994,
+          "p95_absolute_error_ps": 405.8592475010478,
+          "maximum_absolute_error_ps": 467.63607518295703,
+          "minimum_signed_error_ps": -467.63607518295703,
+          "maximum_signed_error_ps": 446.4817478317891,
+          "negative_predictions": 0
+        },
+        "SLOW_MAX": {
+          "rows": 578,
+          "nets": 70,
+          "mae_ps": 320.1817445886464,
+          "net_macro_mae_ps": 405.0419684483248,
+          "rmse_ps": 402.19867452738055,
+          "p95_absolute_error_ps": 803.3722385016708,
+          "maximum_absolute_error_ps": 870.4590195315895,
+          "minimum_signed_error_ps": -870.4590195315895,
+          "maximum_signed_error_ps": 845.5328369936005,
+          "negative_predictions": 0
+        }
+      },
+      "affine_sdk_sll": {
+        "FAST_MIN": {
+          "rows": 578,
+          "nets": 70,
+          "mae_ps": 126.15361195393629,
+          "net_macro_mae_ps": 49.11884248381426,
+          "rmse_ps": 177.87459217120133,
+          "p95_absolute_error_ps": 423.17066300710985,
+          "maximum_absolute_error_ps": 477.823395784525,
+          "minimum_signed_error_ps": -477.823395784525,
+          "maximum_signed_error_ps": 220.16794913923331,
+          "negative_predictions": 0
+        },
+        "FAST_MAX": {
+          "rows": 578,
+          "nets": 70,
+          "mae_ps": 154.30411938995437,
+          "net_macro_mae_ps": 61.90754354217152,
+          "rmse_ps": 212.04925573403176,
+          "p95_absolute_error_ps": 491.50175649597077,
+          "maximum_absolute_error_ps": 550.1746378254029,
+          "minimum_signed_error_ps": -550.1746378254029,
+          "maximum_signed_error_ps": 266.3611561293924,
+          "negative_predictions": 0
+        },
+        "SLOW_MIN": {
+          "rows": 578,
+          "nets": 70,
+          "mae_ps": 170.82765960706638,
+          "net_macro_mae_ps": 66.2647772535501,
+          "rmse_ps": 232.1027493812664,
+          "p95_absolute_error_ps": 520.4276730910497,
+          "maximum_absolute_error_ps": 585.6100197466476,
+          "minimum_signed_error_ps": -585.6100197466476,
+          "maximum_signed_error_ps": 300.7448040841982,
+          "negative_predictions": 0
+        },
+        "SLOW_MAX": {
+          "rows": 578,
+          "nets": 70,
+          "mae_ps": 228.70546876513865,
+          "net_macro_mae_ps": 94.7017076823963,
+          "rmse_ps": 309.71934705621163,
+          "p95_absolute_error_ps": 704.9623234923174,
+          "maximum_absolute_error_ps": 803.3672318804529,
+          "minimum_signed_error_ps": -803.3672318804529,
+          "maximum_signed_error_ps": 409.17889336743156,
+          "negative_predictions": 0
+        }
+      }
+    },
+    "limits": [
+      "The raw helper sum is a component approximation, not a complete RWRoute timing model or a process-corner estimate.",
+      "Helper zeros, including cross-SLR resources, do not assert physical zero delay. U-turn penalties and unsupported nodes are explicitly excluded from numeric fits.",
+      "Exploratory grouped validation uses the same previously studied single-design development cohort; no independent held-out performance claim.",
+      "Affine fits lack complete branch-loading, buffering and site models, guaranteed error bounds, timing acceptance and joint route QoR."
+    ]
+  },
+  "checks": {
+    "ctest_passed": 29,
+    "ctest_total": 29
+  },
+  "failed_attempts": [
+    "Bitstream v1 stopped before write_bitstream: deck SIZE is 6085 but both enumeration APIs return 6053 even without a design.",
+    "Bitstream v2 wrote both files but aborted with exit 134 in WebTalk/libudev. A local allocator/deep-binding probe reproduced the failure. Process-local system-libudev preload then yielded a complete fresh v3 run with exit 0; v2 retains failed status.",
+    "SDK node-delay v1 lacked timing text files in its isolated runtime. V2 copies and hashes those SDK files in a new output runtime."
+  ],
+  "environment_recovery": {
+    "probe": "work/native_libudev_probe_20261013/audit.json",
+    "isolated_override": "LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libudev.so.1.7.2",
+    "global_settings_changed": false,
+    "license_checks_modified": false
+  },
+  "remaining": [
+    "Calibrated min/max tree-aware timing and physical length model; diagnostic ridge models are not suitable routing costs.",
+    "Native corridor/shadow integration, full-design routing and representative high-fanout/held-out coverage.",
+    "VTR and commercial joint wirelength/CPD gates, complete ablations and scaling.",
+    "DieRoute accelerator HLS/RTL/HBM implementation, physical-board performance/energy, paper and final research audit."
+  ]
+}

@@ -1,0 +1,1585 @@
+{
+  "schema": "dieroute.native_owner_push_progress.v1",
+  "status": "verified",
+  "finished_ns": 1791939976529660788,
+  "research_complete": false,
+  "live_native_backend": true,
+  "board_result": false,
+  "full_router_in_hardware": false,
+  "active_owned_experiment_processes": [],
+  "per_case": {
+    "sync1": {
+      "repeats": 5,
+      "workers": 4,
+      "period": 1,
+      "canonical_files_equal": [
+        "route/paths.csv",
+        "route/proposals.csv",
+        "route/persistent_shadow_checks.csv",
+        "route/trees.csv",
+        "route/audit.json",
+        "route/worker_shadow_messages.bin",
+        "route/persistent_shadow_reads.csv",
+        "route/iterations.csv",
+        "route/selection.csv",
+        "route/summary_hbm_owners.csv",
+        "route/summary_hbm_caches.csv",
+        "route/transactions.csv",
+        "route/owner_usage.csv",
+        "route/usage.csv",
+        "route/accepted_work.csv",
+        "route/conflicts.csv",
+        "route/summary_hbm_topology.bin",
+        "route/proposal_paths.csv",
+        "route/readsets.bin",
+        "route/connections.csv",
+        "route/transaction_passes.csv",
+        "route/persistent_shadow_branches.csv"
+      ],
+      "publication_rows_equal_except_zero_scans": true,
+      "transactions_per_repeat": {
+        "transactions": 97,
+        "replays": 23,
+        "conflicts": 346,
+        "reads": 20857691,
+        "discarded_expanded": 2045477,
+        "label_packets": 194852
+      },
+      "shadows_per_repeat": {
+        "publications": 107,
+        "publication_scans": 0,
+        "updates": 107,
+        "queries": 44847,
+        "stale_observations": 12,
+        "stale_proposals": 11,
+        "snapshot_stale_observations": 0,
+        "cache_stale_proposals": 0,
+        "fetches": 20013,
+        "forced_refreshes": 23,
+        "hits": 24834,
+        "tail_updates": 7,
+        "retained_entries": 20013
+      },
+      "endpoint_per_repeat": {
+        "commands": 156705,
+        "writes": 87024,
+        "rejections": 12,
+        "pump_launches": 321,
+        "dirty_queue_visits": 212,
+        "published_updates": 107
+      },
+      "operations_per_repeat": {
+        "1": 46891,
+        "6": 20013,
+        "3": 20120,
+        "5": 44847,
+        "4": 24834
+      },
+      "old_endpoint_calls_per_repeat": 767139,
+      "new_endpoint_calls_per_repeat": 157026,
+      "repeat_sha256": [
+        "31d939ef946272f2ec1de56c51ccb3495d1e3acf159f4e2c44245eb1caf0c669",
+        "31d939ef946272f2ec1de56c51ccb3495d1e3acf159f4e2c44245eb1caf0c669",
+        "31d939ef946272f2ec1de56c51ccb3495d1e3acf159f4e2c44245eb1caf0c669",
+        "31d939ef946272f2ec1de56c51ccb3495d1e3acf159f4e2c44245eb1caf0c669",
+        "31d939ef946272f2ec1de56c51ccb3495d1e3acf159f4e2c44245eb1caf0c669"
+      ],
+      "peak_observed_overlapping_proposals": 4
+    },
+    "sync3": {
+      "repeats": 5,
+      "workers": 4,
+      "period": 3,
+      "canonical_files_equal": [
+        "route/paths.csv",
+        "route/proposals.csv",
+        "route/persistent_shadow_checks.csv",
+        "route/trees.csv",
+        "route/audit.json",
+        "route/worker_shadow_messages.bin",
+        "route/persistent_shadow_reads.csv",
+        "route/iterations.csv",
+        "route/selection.csv",
+        "route/summary_hbm_owners.csv",
+        "route/summary_hbm_caches.csv",
+        "route/transactions.csv",
+        "route/owner_usage.csv",
+        "route/usage.csv",
+        "route/accepted_work.csv",
+        "route/conflicts.csv",
+        "route/summary_hbm_topology.bin",
+        "route/proposal_paths.csv",
+        "route/readsets.bin",
+        "route/connections.csv",
+        "route/transaction_passes.csv",
+        "route/persistent_shadow_branches.csv"
+      ],
+      "publication_rows_equal_except_zero_scans": true,
+      "transactions_per_repeat": {
+        "transactions": 99,
+        "replays": 25,
+        "conflicts": 340,
+        "reads": 24220029,
+        "discarded_expanded": 3514020,
+        "label_packets": 220146
+      },
+      "shadows_per_repeat": {
+        "publications": 57,
+        "publication_scans": 0,
+        "updates": 102,
+        "queries": 51095,
+        "stale_observations": 16,
+        "stale_proposals": 13,
+        "snapshot_stale_observations": 5,
+        "cache_stale_proposals": 3,
+        "fetches": 20013,
+        "forced_refreshes": 25,
+        "hits": 31082,
+        "tail_updates": 7,
+        "retained_entries": 20013
+      },
+      "endpoint_per_repeat": {
+        "commands": 169196,
+        "writes": 87019,
+        "rejections": 16,
+        "pump_launches": 172,
+        "dirty_queue_visits": 216,
+        "published_updates": 102
+      },
+      "operations_per_repeat": {
+        "1": 46891,
+        "6": 20013,
+        "3": 20115,
+        "5": 51095,
+        "4": 31082
+      },
+      "old_endpoint_calls_per_repeat": 528316,
+      "new_endpoint_calls_per_repeat": 169368,
+      "repeat_sha256": [
+        "290524785403a909e67d4fb209bb4373c1d9c1447dd442b221e0600870d5f25e",
+        "290524785403a909e67d4fb209bb4373c1d9c1447dd442b221e0600870d5f25e",
+        "290524785403a909e67d4fb209bb4373c1d9c1447dd442b221e0600870d5f25e",
+        "290524785403a909e67d4fb209bb4373c1d9c1447dd442b221e0600870d5f25e",
+        "290524785403a909e67d4fb209bb4373c1d9c1447dd442b221e0600870d5f25e"
+      ],
+      "peak_observed_overlapping_proposals": 4
+    },
+    "serial3": {
+      "repeats": 5,
+      "workers": 1,
+      "period": 3,
+      "canonical_files_equal": [
+        "route/paths.csv",
+        "route/proposals.csv",
+        "route/persistent_shadow_checks.csv",
+        "route/trees.csv",
+        "route/audit.json",
+        "route/worker_shadow_messages.bin",
+        "route/persistent_shadow_reads.csv",
+        "route/iterations.csv",
+        "route/selection.csv",
+        "route/summary_hbm_owners.csv",
+        "route/summary_hbm_caches.csv",
+        "route/transactions.csv",
+        "route/owner_usage.csv",
+        "route/usage.csv",
+        "route/accepted_work.csv",
+        "route/conflicts.csv",
+        "route/summary_hbm_topology.bin",
+        "route/proposal_paths.csv",
+        "route/readsets.bin",
+        "route/connections.csv",
+        "route/transaction_passes.csv",
+        "route/persistent_shadow_branches.csv"
+      ],
+      "publication_rows_equal_except_zero_scans": true,
+      "transactions_per_repeat": {
+        "transactions": 78,
+        "replays": 4,
+        "conflicts": 0,
+        "reads": 18902734,
+        "discarded_expanded": 1381435,
+        "label_packets": 189650
+      },
+      "shadows_per_repeat": {
+        "publications": 30,
+        "publication_scans": 0,
+        "updates": 41,
+        "queries": 44366,
+        "stale_observations": 5,
+        "stale_proposals": 4,
+        "snapshot_stale_observations": 5,
+        "cache_stale_proposals": 4,
+        "fetches": 8827,
+        "hits": 35539,
+        "forced_refreshes": 4,
+        "tail_updates": 2,
+        "retained_entries": 8827
+      },
+      "endpoint_per_repeat": {
+        "commands": 144491,
+        "writes": 64586,
+        "rejections": 5,
+        "pump_launches": 90,
+        "dirty_queue_visits": 41,
+        "published_updates": 41
+      },
+      "operations_per_repeat": {
+        "1": 46891,
+        "6": 8827,
+        "3": 8868,
+        "5": 44366,
+        "4": 35539
+      },
+      "old_endpoint_calls_per_repeat": 519433,
+      "new_endpoint_calls_per_repeat": 144581,
+      "repeat_sha256": [
+        "9f606af854d769da5c5e375845843c3a7a4462733036fbb042315cad9d5ca20d",
+        "9f606af854d769da5c5e375845843c3a7a4462733036fbb042315cad9d5ca20d",
+        "9f606af854d769da5c5e375845843c3a7a4462733036fbb042315cad9d5ca20d",
+        "9f606af854d769da5c5e375845843c3a7a4462733036fbb042315cad9d5ca20d",
+        "9f606af854d769da5c5e375845843c3a7a4462733036fbb042315cad9d5ca20d"
+      ],
+      "peak_observed_overlapping_proposals": 1
+    }
+  },
+  "hw_emulation": {
+    "passed": true,
+    "total_launches": 168,
+    "cases": {
+      "1": {
+        "owner_launches": 69,
+        "receiver_launches": 15,
+        "total_launches": 84,
+        "state_uploads": 0,
+        "repeats": 3,
+        "boundary_slots": 3,
+        "all_deterministic_outputs_equal_c_model": true
+      },
+      "3": {
+        "owner_launches": 69,
+        "receiver_launches": 15,
+        "total_launches": 84,
+        "state_uploads": 0,
+        "repeats": 3,
+        "boundary_slots": 3,
+        "all_deterministic_outputs_equal_c_model": true
+      }
+    },
+    "xclbin_sha256": "e7426b2cfd025e3882f40ef2a1ee6c58268a015811c906b6f8a1b7b91399b96e"
+  },
+  "tests": {
+    "ctest": 42,
+    "valid_crc_mutations_rejected": 20,
+    "wrong_commit_boundary_rejected": 2,
+    "asan_ubsan_component_and_host": true,
+    "tsan_component_and_host": true,
+    "multibatch_and_coalesced_tombstone_drain": true
+  },
+  "evidence": [
+    {
+      "path": "experiments/native_owner_push_plan_v1.json",
+      "sha256": "7c6e35a0e47ede8e03af3e2be892a03b1d5826c22970cef0af00f3b11761cac2"
+    },
+    {
+      "path": "experiments/native_owner_push_schema_v1.json",
+      "sha256": "70b45d06ed92d807a26cb55ce2ff340e0c666562d46560869e4a8e5b603bf1bb"
+    },
+    {
+      "path": "experiments/native_whole_net_profile_20261014.json",
+      "sha256": "b96c725c54382138d1b2af7f334b65ba6ffa1f3be5c0eaf6f524652cededc3b9"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_owner_push_sync1_v1_20261014/route/transactions.csv",
+      "sha256": "539e76827b2dfb104cd5d5534ec83365ddd52b737cef5553c491b687f3390e5b"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_owner_push_sync1_v1_20261014/route/proposals.csv",
+      "sha256": "2203cc1d753de4bff8fc727125f346a0961bf2fadbdaa751708f80770d3f8abd"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_owner_push_sync1_v1_20261014/route/proposal_paths.csv",
+      "sha256": "e09edd67ceae4b91f8135deee18aae5286fc2ad01ed004d839a3eb4246292081"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_owner_push_sync1_v1_20261014/route/trees.csv",
+      "sha256": "1cc40db746b080dddce4abf0942d090b4e2086da723687bc5a597882c131bb65"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_owner_push_sync1_v1_20261014/route/owner_usage.csv",
+      "sha256": "2f59ccbfaf07766a25ddadcfc99c8c70c1c63a85539806f9417e26ae87ba22aa"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_owner_push_sync3_v1_20261014/route/transactions.csv",
+      "sha256": "be07b69b039e0bd4f89742721c968410674dc89e7eccf48b602526ac4de7607a"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_owner_push_sync3_v1_20261014/route/proposals.csv",
+      "sha256": "1b03457e399e02ec5ef1f60558131e6b961154ddd579033fd980d704e86de4c4"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_owner_push_sync3_v1_20261014/route/proposal_paths.csv",
+      "sha256": "adc1ba0521b2c82561c9e205a04ca945299383fa709ba55ef97ea9ed17d1be27"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_owner_push_sync3_v1_20261014/route/trees.csv",
+      "sha256": "1cc40db746b080dddce4abf0942d090b4e2086da723687bc5a597882c131bb65"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_owner_push_sync3_v1_20261014/route/owner_usage.csv",
+      "sha256": "2f59ccbfaf07766a25ddadcfc99c8c70c1c63a85539806f9417e26ae87ba22aa"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_owner_push_serial3_v1_20261014/route/transactions.csv",
+      "sha256": "e14450c6a756abd4ad7cd31c31bb4098d8a675636c3a26f530c681ea28ba29d4"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_owner_push_serial3_v1_20261014/route/proposals.csv",
+      "sha256": "2b3c32a4a630687395d58eb5eb38e222ac7c487f5c542026ceabafcc935c2d2d"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_owner_push_serial3_v1_20261014/route/proposal_paths.csv",
+      "sha256": "c22a91d6dbcd3929f2a115207974980e675569c175ecfbecd6c508c3e0f8c14b"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_owner_push_serial3_v1_20261014/route/trees.csv",
+      "sha256": "1cc40db746b080dddce4abf0942d090b4e2086da723687bc5a597882c131bb65"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_owner_push_serial3_v1_20261014/route/owner_usage.csv",
+      "sha256": "2f59ccbfaf07766a25ddadcfc99c8c70c1c63a85539806f9417e26ae87ba22aa"
+    },
+    {
+      "path": "experiments/native_whole_net_hardware_requirements_v1.json",
+      "sha256": "8265e3fa068cf2727f6263a9f90f569163173173f822773bbef159434e00fea9"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/manifest.json",
+      "sha256": "549b5d58a598ff75c89d495947970b3f22d5fa25c28a7d4967cbae657a719cfb"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/native_worker_shadows.hpp",
+      "sha256": "3d5f8fcd481d8134c4737db5bda8065c7856195b10cabc7ebcf13fd4a019793b"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/native_monotone.hpp",
+      "sha256": "96eae720126ed8fd68a009e381f0ce0bf1bdbba3bc2ac88d659223f81182086e"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/native_route_state.hpp",
+      "sha256": "b2f40393d4ba96cf7f402f9cd9799f80dbca3a9615ca5790a0c1355462dc215f"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/run_native_cohort.py",
+      "sha256": "2b712bfa312e3e41dd43d72dfe0abc6441a4fd23fd928463b5df34f2964bf820"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/native_quotient.hpp",
+      "sha256": "d8d066491d40b6a398720ebde77ef33380a0a2518df879dc4bf34200f30814c1"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/label_packet.hpp",
+      "sha256": "4b6ac60a56113bc599f4b51a1b9f065950f1b001eabfd63ff763a07dec30dd86"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/summary_hbm.cpp",
+      "sha256": "c621f1766a44186e862c4b70891310ba3b0826954e4f2c84c7b00af6ac00819a"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/native_summary_hbm.hpp",
+      "sha256": "e708abf1a4b51354c95cb9db0480247d5f6de9fd0b90a7d48001170868aa20e4"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/native_corridor.hpp",
+      "sha256": "4aae055df096a1296a588982aaf975522305d5f426f83971995ffe9fa4cf54e0"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/run_native_case.py",
+      "sha256": "281d46e1a7f801ebefefc0dce7fbed8ace6b38f91bf6c43f4f77a0c5c20b7690"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/native_die_access.hpp",
+      "sha256": "b6dcdaeae71262851f87ad35fe598e405960a781a3b6c733e58fcdf1e56ce630"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/router",
+      "sha256": "f36a4c944eb3b5637d4b42a51de0098d140c5db9fb797349c8f4514265b451b8"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/route_native_parallel.cpp",
+      "sha256": "7825a540647860746efe0e789453088be02e16a8f70cee9f6c9ad4ea986f5afc"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/route_native_cohort.cpp",
+      "sha256": "83143023824eba1dca2b31e1105bb3b0496661fd46fef8736ef758fdd90bdfe7"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/summary_hbm.hpp",
+      "sha256": "55177ca09b0b07e2e23b38d8430052b405ff9617b6049613663baf3eeb3e401c"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/native_net_transaction.hpp",
+      "sha256": "d01149844d2436f0a400664f8ef6443872333d72c98468ef1d2559acbaba1d87"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/run.log",
+      "sha256": "85052d1783185bdd2b79047f3d1b4e4fcb0e466fc0a30d6268c628ded9abcf06"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/owner_publish_hbm.cpp",
+      "sha256": "10c760dd144cfd3407a3a6e7c027e8550cc6d3c8ca0d317a4b16dea50a86ebfd"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/native_csr_io.hpp",
+      "sha256": "0940b5963db189d755cb8293918c1820c9564af0b48ba766461f0a6195e2a6a1"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/owner_publish_hbm.hpp",
+      "sha256": "05e1551a7238d430b413a401a1832913fa5e61f98dc268399461f154479eed43"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/sparse_search.hpp",
+      "sha256": "8fa6018007d2844cee1ce1038321a860831cdab92286c9a8a29a2446c9fa40be"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/sparse_table.hpp",
+      "sha256": "dbcd6c9b9fe52911ff3cdd3f95260978f37dabce9c7f369d703ea66c834b1da6"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/sparse_label_worker.hpp",
+      "sha256": "49b583ce14a93f3e70dea9233ced91111517b74cb7421e65dfadf7c5b1c986e4"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/native_boundary_shadow.hpp",
+      "sha256": "2e43f9bbe2bf72879775d29845137c28dfa5a5f0de1c4e701dfce51783315ce5"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/route/paths.csv",
+      "sha256": "2f3ebe68bdd3f233f4dfe915d8106e621a59ad397100caa6d9335a692cbee65d"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/route/proposals.csv",
+      "sha256": "2203cc1d753de4bff8fc727125f346a0961bf2fadbdaa751708f80770d3f8abd"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/route/persistent_shadow_publications.csv",
+      "sha256": "5fc5c07fae37ed5537311de3ad9b57cc604c086b2ec4afb14fdca64256c54822"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/route/persistent_shadow_checks.csv",
+      "sha256": "0db4e250de843616fdf3b61eb4c61a55ce9b54492ef40e36f2a81ee5f3cea219"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/route/trees.csv",
+      "sha256": "1cc40db746b080dddce4abf0942d090b4e2086da723687bc5a597882c131bb65"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/route/audit.json",
+      "sha256": "a551c96b80f609e09ee73b5c0c4c6f8a2ab701d913242ee553bdc0377e9fc9ae"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/route/execution.csv",
+      "sha256": "bd686f718267708b911e1ec102bac27506c1a72c8c7f5428d4fefc41afd347ab"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/route/worker_shadow_messages.bin",
+      "sha256": "a077f1c7f69a01c631ada4c6a538f67b9faa74977b40c2c6a48296750f38f46d"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/route/persistent_shadow_reads.csv",
+      "sha256": "c8e7191deff65a9ae3666a143328766f0bb24e706854352682dc5106cf57c93d"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/route/iterations.csv",
+      "sha256": "8695206e09243b478a2569f549ca47d2c71d5f05fe28c88d6e3a5b4ac247dda2"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/route/selection.csv",
+      "sha256": "af88f471a14d36fa5ece15bd6f2e23e33339a17cba188ad459a05ca5c170e94d"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/route/summary_hbm_owners.csv",
+      "sha256": "e866287d4c171bf2b39c8a7e6cc9d3006e49ee8c147a6df802147dfaaf9d1c25"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/route/summary_hbm_caches.csv",
+      "sha256": "1f68c13e80f97529281f8303954331109195ac78e887e3e93a47f4483c175248"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/route/summary_hbm_subscriptions.csv",
+      "sha256": "e762ded4ecde07e5a6a800e52388d16b4e5508411dfdebc07307872774726af4"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/route/summary_hbm_frames.bin",
+      "sha256": "78d810b3aaf6c03911f90ba1020b29eb946f2c88f50e6ad172e1c51096afda6f"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/route/transactions.csv",
+      "sha256": "539e76827b2dfb104cd5d5534ec83365ddd52b737cef5553c491b687f3390e5b"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/route/owner_usage.csv",
+      "sha256": "2f59ccbfaf07766a25ddadcfc99c8c70c1c63a85539806f9417e26ae87ba22aa"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/route/usage.csv",
+      "sha256": "6d6c5e4ec5db5427bb299f0e425cf9dfe5188b5964bbe451a15ebe6844c7321c"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/route/accepted_work.csv",
+      "sha256": "c3fa254f4f473baf71d229f2d5b322ead1a33f3b7bd38ee48fa642e6f3506467"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/route/conflicts.csv",
+      "sha256": "73caf0bced1594ec0620efbe57c5f1d22bd7c4c5a652278851f8dcc9162e8591"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/route/summary_hbm_topology.bin",
+      "sha256": "362264a4ad7e30b52344a1a617d792e2b7dac3cdb6941d36f26be6ca96d3bcbb"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/route/proposal_paths.csv",
+      "sha256": "e09edd67ceae4b91f8135deee18aae5286fc2ad01ed004d839a3eb4246292081"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/route/readsets.bin",
+      "sha256": "9e9365ddafbfb6980f05be46f6ec286a3d3babdf25caee041057c14f150d56d7"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/route/connections.csv",
+      "sha256": "f6694f8350976fe24acde950f6711076726bc42f05cfe205855abdca63119e10"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/route/transaction_passes.csv",
+      "sha256": "9c9b2a576a35b159b7591ebb0d262654c80891afe8bd0f9e36725bc2d62c345f"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_v1_20261014/route/persistent_shadow_branches.csv",
+      "sha256": "c03df4633df935f48d0a491e972d38bee8f013b35f77f632c7908566724555b4"
+    },
+    {
+      "path": "include/native_worker_shadows.hpp",
+      "sha256": "3d5f8fcd481d8134c4737db5bda8065c7856195b10cabc7ebcf13fd4a019793b"
+    },
+    {
+      "path": "include/native_monotone.hpp",
+      "sha256": "96eae720126ed8fd68a009e381f0ce0bf1bdbba3bc2ac88d659223f81182086e"
+    },
+    {
+      "path": "include/native_route_state.hpp",
+      "sha256": "b2f40393d4ba96cf7f402f9cd9799f80dbca3a9615ca5790a0c1355462dc215f"
+    },
+    {
+      "path": "tools/run_native_cohort.py",
+      "sha256": "2b712bfa312e3e41dd43d72dfe0abc6441a4fd23fd928463b5df34f2964bf820"
+    },
+    {
+      "path": "include/native_quotient.hpp",
+      "sha256": "d8d066491d40b6a398720ebde77ef33380a0a2518df879dc4bf34200f30814c1"
+    },
+    {
+      "path": "include/label_packet.hpp",
+      "sha256": "4b6ac60a56113bc599f4b51a1b9f065950f1b001eabfd63ff763a07dec30dd86"
+    },
+    {
+      "path": "src/summary_hbm.cpp",
+      "sha256": "c621f1766a44186e862c4b70891310ba3b0826954e4f2c84c7b00af6ac00819a"
+    },
+    {
+      "path": "include/native_summary_hbm.hpp",
+      "sha256": "e708abf1a4b51354c95cb9db0480247d5f6de9fd0b90a7d48001170868aa20e4"
+    },
+    {
+      "path": "include/native_corridor.hpp",
+      "sha256": "4aae055df096a1296a588982aaf975522305d5f426f83971995ffe9fa4cf54e0"
+    },
+    {
+      "path": "tools/run_native_case.py",
+      "sha256": "281d46e1a7f801ebefefc0dce7fbed8ace6b38f91bf6c43f4f77a0c5c20b7690"
+    },
+    {
+      "path": "include/native_die_access.hpp",
+      "sha256": "b6dcdaeae71262851f87ad35fe598e405960a781a3b6c733e58fcdf1e56ce630"
+    },
+    {
+      "path": "work/native_owner_push_build_20261014/dieroute_native_parallel",
+      "sha256": "f36a4c944eb3b5637d4b42a51de0098d140c5db9fb797349c8f4514265b451b8"
+    },
+    {
+      "path": "tools/route_native_parallel.cpp",
+      "sha256": "7825a540647860746efe0e789453088be02e16a8f70cee9f6c9ad4ea986f5afc"
+    },
+    {
+      "path": "tools/route_native_cohort.cpp",
+      "sha256": "83143023824eba1dca2b31e1105bb3b0496661fd46fef8736ef758fdd90bdfe7"
+    },
+    {
+      "path": "include/summary_hbm.hpp",
+      "sha256": "55177ca09b0b07e2e23b38d8430052b405ff9617b6049613663baf3eeb3e401c"
+    },
+    {
+      "path": "include/native_net_transaction.hpp",
+      "sha256": "d01149844d2436f0a400664f8ef6443872333d72c98468ef1d2559acbaba1d87"
+    },
+    {
+      "path": "src/owner_publish_hbm.cpp",
+      "sha256": "10c760dd144cfd3407a3a6e7c027e8550cc6d3c8ca0d317a4b16dea50a86ebfd"
+    },
+    {
+      "path": "include/native_csr_io.hpp",
+      "sha256": "0940b5963db189d755cb8293918c1820c9564af0b48ba766461f0a6195e2a6a1"
+    },
+    {
+      "path": "include/owner_publish_hbm.hpp",
+      "sha256": "05e1551a7238d430b413a401a1832913fa5e61f98dc268399461f154479eed43"
+    },
+    {
+      "path": "include/sparse_search.hpp",
+      "sha256": "8fa6018007d2844cee1ce1038321a860831cdab92286c9a8a29a2446c9fa40be"
+    },
+    {
+      "path": "include/sparse_table.hpp",
+      "sha256": "dbcd6c9b9fe52911ff3cdd3f95260978f37dabce9c7f369d703ea66c834b1da6"
+    },
+    {
+      "path": "include/sparse_label_worker.hpp",
+      "sha256": "49b583ce14a93f3e70dea9233ced91111517b74cb7421e65dfadf7c5b1c986e4"
+    },
+    {
+      "path": "include/native_boundary_shadow.hpp",
+      "sha256": "2e43f9bbe2bf72879775d29845137c28dfa5a5f0de1c4e701dfce51783315ce5"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_cohort_audit_v1_20261014/audit.json",
+      "sha256": "ba873861fac35c27485c3b935e711065766fbeec29f755c49bba25491faeb51e"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_cohort_audit_v1_20261014/audit_native_cohort.py",
+      "sha256": "ba4d071e405e078fca6d98d755b7ee6cc6dc0b78331ada7096408fe55bec417e"
+    },
+    {
+      "path": "tools/audit_native_cohort.py",
+      "sha256": "ba4d071e405e078fca6d98d755b7ee6cc6dc0b78331ada7096408fe55bec417e"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_cohort_audit_v1_20261014/audit_native_owner.py",
+      "sha256": "4ba1b6a6e9817772dbce012bd3c033ba3b0020d07963d1dfdead7e0be63b803d"
+    },
+    {
+      "path": "tools/audit_native_owner.py",
+      "sha256": "4ba1b6a6e9817772dbce012bd3c033ba3b0020d07963d1dfdead7e0be63b803d"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_cohort_audit_v1_20261014/run_native_case.py",
+      "sha256": "281d46e1a7f801ebefefc0dce7fbed8ace6b38f91bf6c43f4f77a0c5c20b7690"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_protocol_audit_v1_20261014/audit.json",
+      "sha256": "e89bde202961210b19243de48eecc3c9face9209d3e9dd7c7a27e04feeabcc25"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_protocol_audit_v1_20261014/audit_native_parallel.py",
+      "sha256": "3483e02bbd70c57ea39bda55c2be36177d918471f863bfecc8c14f7c83094e2d"
+    },
+    {
+      "path": "tools/audit_native_parallel.py",
+      "sha256": "3483e02bbd70c57ea39bda55c2be36177d918471f863bfecc8c14f7c83094e2d"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_protocol_audit_v1_20261014/audit_native_label_transport.py",
+      "sha256": "6c36d953ebb3215f43942639b08d0308817a240f001cc01235b67e27d9264f9b"
+    },
+    {
+      "path": "tools/audit_native_label_transport.py",
+      "sha256": "6c36d953ebb3215f43942639b08d0308817a240f001cc01235b67e27d9264f9b"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_protocol_audit_v1_20261014/audit_native_persistent_shadows.py",
+      "sha256": "e5af290b33f9407ea5b8f73642d6c4ddc6dbfcb4b54b9e36e2bf399f054a8781"
+    },
+    {
+      "path": "tools/audit_native_persistent_shadows.py",
+      "sha256": "e5af290b33f9407ea5b8f73642d6c4ddc6dbfcb4b54b9e36e2bf399f054a8781"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_protocol_audit_v1_20261014/audit_native_summary_hbm.py",
+      "sha256": "07c617872c83469d8684a36639d927b106bdef20d47d99dc7be468112f54477e"
+    },
+    {
+      "path": "tools/audit_native_summary_hbm.py",
+      "sha256": "07c617872c83469d8684a36639d927b106bdef20d47d99dc7be468112f54477e"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_protocol_audit_v1_20261014/audit_native_owner_publish.py",
+      "sha256": "e1460e33ba132f8c2ff18529fc56fcbd6db7288ce4d81fd68f5b9fe0b4172012"
+    },
+    {
+      "path": "tools/audit_native_owner_publish.py",
+      "sha256": "e1460e33ba132f8c2ff18529fc56fcbd6db7288ce4d81fd68f5b9fe0b4172012"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync1_protocol_audit_v1_20261014/run_native_case.py",
+      "sha256": "281d46e1a7f801ebefefc0dce7fbed8ace6b38f91bf6c43f4f77a0c5c20b7690"
+    },
+    {
+      "path": "work/u280_native_summary_hbm_sync1_v1_20261013/manifest.json",
+      "sha256": "3c512dd715ec8992cfb7e4f6e5dff5d0b941ec729f944b96ad77439db33e60ad"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/manifest.json",
+      "sha256": "7fda6c1cdf82232a2f48ea1dc4694ed482b30662b1cd3e93c1d1495bda7b2436"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/native_worker_shadows.hpp",
+      "sha256": "3d5f8fcd481d8134c4737db5bda8065c7856195b10cabc7ebcf13fd4a019793b"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/native_monotone.hpp",
+      "sha256": "96eae720126ed8fd68a009e381f0ce0bf1bdbba3bc2ac88d659223f81182086e"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/native_route_state.hpp",
+      "sha256": "b2f40393d4ba96cf7f402f9cd9799f80dbca3a9615ca5790a0c1355462dc215f"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/run_native_cohort.py",
+      "sha256": "2b712bfa312e3e41dd43d72dfe0abc6441a4fd23fd928463b5df34f2964bf820"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/native_quotient.hpp",
+      "sha256": "d8d066491d40b6a398720ebde77ef33380a0a2518df879dc4bf34200f30814c1"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/label_packet.hpp",
+      "sha256": "4b6ac60a56113bc599f4b51a1b9f065950f1b001eabfd63ff763a07dec30dd86"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/summary_hbm.cpp",
+      "sha256": "c621f1766a44186e862c4b70891310ba3b0826954e4f2c84c7b00af6ac00819a"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/native_summary_hbm.hpp",
+      "sha256": "e708abf1a4b51354c95cb9db0480247d5f6de9fd0b90a7d48001170868aa20e4"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/native_corridor.hpp",
+      "sha256": "4aae055df096a1296a588982aaf975522305d5f426f83971995ffe9fa4cf54e0"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/run_native_case.py",
+      "sha256": "281d46e1a7f801ebefefc0dce7fbed8ace6b38f91bf6c43f4f77a0c5c20b7690"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/native_die_access.hpp",
+      "sha256": "b6dcdaeae71262851f87ad35fe598e405960a781a3b6c733e58fcdf1e56ce630"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/router",
+      "sha256": "f36a4c944eb3b5637d4b42a51de0098d140c5db9fb797349c8f4514265b451b8"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/route_native_parallel.cpp",
+      "sha256": "7825a540647860746efe0e789453088be02e16a8f70cee9f6c9ad4ea986f5afc"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/route_native_cohort.cpp",
+      "sha256": "83143023824eba1dca2b31e1105bb3b0496661fd46fef8736ef758fdd90bdfe7"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/summary_hbm.hpp",
+      "sha256": "55177ca09b0b07e2e23b38d8430052b405ff9617b6049613663baf3eeb3e401c"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/native_net_transaction.hpp",
+      "sha256": "d01149844d2436f0a400664f8ef6443872333d72c98468ef1d2559acbaba1d87"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/run.log",
+      "sha256": "5179a33dbc144975e2d8e9ccce8d583bf5d539190c1bb488a83b16cf4aff43ca"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/owner_publish_hbm.cpp",
+      "sha256": "10c760dd144cfd3407a3a6e7c027e8550cc6d3c8ca0d317a4b16dea50a86ebfd"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/native_csr_io.hpp",
+      "sha256": "0940b5963db189d755cb8293918c1820c9564af0b48ba766461f0a6195e2a6a1"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/owner_publish_hbm.hpp",
+      "sha256": "05e1551a7238d430b413a401a1832913fa5e61f98dc268399461f154479eed43"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/sparse_search.hpp",
+      "sha256": "8fa6018007d2844cee1ce1038321a860831cdab92286c9a8a29a2446c9fa40be"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/sparse_table.hpp",
+      "sha256": "dbcd6c9b9fe52911ff3cdd3f95260978f37dabce9c7f369d703ea66c834b1da6"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/sparse_label_worker.hpp",
+      "sha256": "49b583ce14a93f3e70dea9233ced91111517b74cb7421e65dfadf7c5b1c986e4"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/native_boundary_shadow.hpp",
+      "sha256": "2e43f9bbe2bf72879775d29845137c28dfa5a5f0de1c4e701dfce51783315ce5"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/route/paths.csv",
+      "sha256": "2f3ebe68bdd3f233f4dfe915d8106e621a59ad397100caa6d9335a692cbee65d"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/route/proposals.csv",
+      "sha256": "1b03457e399e02ec5ef1f60558131e6b961154ddd579033fd980d704e86de4c4"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/route/persistent_shadow_publications.csv",
+      "sha256": "27bd2421f6d0ba3eb308785f9b829f4770ad123f1e38bfe6f284c1509f8b22eb"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/route/persistent_shadow_checks.csv",
+      "sha256": "1bf28db8de7ce88ad681d4cf751d8072b80aa6820ec9c8a462967c05caa2562d"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/route/trees.csv",
+      "sha256": "1cc40db746b080dddce4abf0942d090b4e2086da723687bc5a597882c131bb65"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/route/audit.json",
+      "sha256": "a551c96b80f609e09ee73b5c0c4c6f8a2ab701d913242ee553bdc0377e9fc9ae"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/route/execution.csv",
+      "sha256": "318fcd3834e170b05931a672ec6da3a552d4ae257dbdabff3ac7fbb21ef00fdb"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/route/worker_shadow_messages.bin",
+      "sha256": "63782b4fc02351be7823671b2ff53c1a15bb3d9df93547e48db43305e9f31e95"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/route/persistent_shadow_reads.csv",
+      "sha256": "6649dd303ad8291aabf2d91b5e369aa32a665d894cee41dc9a8b8251804611b8"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/route/iterations.csv",
+      "sha256": "2b196e39376f1fb090fe29d68e44ebe2f3504e2c1e36305a58f677e188938b15"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/route/selection.csv",
+      "sha256": "af88f471a14d36fa5ece15bd6f2e23e33339a17cba188ad459a05ca5c170e94d"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/route/summary_hbm_owners.csv",
+      "sha256": "e866287d4c171bf2b39c8a7e6cc9d3006e49ee8c147a6df802147dfaaf9d1c25"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/route/summary_hbm_caches.csv",
+      "sha256": "1f68c13e80f97529281f8303954331109195ac78e887e3e93a47f4483c175248"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/route/summary_hbm_subscriptions.csv",
+      "sha256": "e762ded4ecde07e5a6a800e52388d16b4e5508411dfdebc07307872774726af4"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/route/summary_hbm_frames.bin",
+      "sha256": "021f7167883f8187080bf9a4f0a32c21113e47f551680aa31ebd4434e6d0c109"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/route/transactions.csv",
+      "sha256": "be07b69b039e0bd4f89742721c968410674dc89e7eccf48b602526ac4de7607a"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/route/owner_usage.csv",
+      "sha256": "2f59ccbfaf07766a25ddadcfc99c8c70c1c63a85539806f9417e26ae87ba22aa"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/route/usage.csv",
+      "sha256": "6d6c5e4ec5db5427bb299f0e425cf9dfe5188b5964bbe451a15ebe6844c7321c"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/route/accepted_work.csv",
+      "sha256": "c3fa254f4f473baf71d229f2d5b322ead1a33f3b7bd38ee48fa642e6f3506467"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/route/conflicts.csv",
+      "sha256": "531883fb6af3c082922b749ea45a7e7fe3157453be2a10cf95b4d3d0f917114b"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/route/summary_hbm_topology.bin",
+      "sha256": "362264a4ad7e30b52344a1a617d792e2b7dac3cdb6941d36f26be6ca96d3bcbb"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/route/proposal_paths.csv",
+      "sha256": "adc1ba0521b2c82561c9e205a04ca945299383fa709ba55ef97ea9ed17d1be27"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/route/readsets.bin",
+      "sha256": "95f2fe14bc28e36475dbc3e552b7350a6f19a613271c279fdcce377ec64cd36b"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/route/connections.csv",
+      "sha256": "f6694f8350976fe24acde950f6711076726bc42f05cfe205855abdca63119e10"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/route/transaction_passes.csv",
+      "sha256": "0b3c0cf7d7f03367c26674f503f1f8e8ca3961ffe2be41fed7a36e52c7638aba"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_v1_20261014/route/persistent_shadow_branches.csv",
+      "sha256": "59fcd33851c7f48be081cb20c98395e4906204696505e039d926cefb8b8d093f"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_cohort_audit_v1_20261014/audit.json",
+      "sha256": "66333702d9efdb04552d64a8ccac509f38c64b920277c191bf09bf9ce05ea4d0"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_cohort_audit_v1_20261014/audit_native_cohort.py",
+      "sha256": "ba4d071e405e078fca6d98d755b7ee6cc6dc0b78331ada7096408fe55bec417e"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_cohort_audit_v1_20261014/audit_native_owner.py",
+      "sha256": "4ba1b6a6e9817772dbce012bd3c033ba3b0020d07963d1dfdead7e0be63b803d"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_cohort_audit_v1_20261014/run_native_case.py",
+      "sha256": "281d46e1a7f801ebefefc0dce7fbed8ace6b38f91bf6c43f4f77a0c5c20b7690"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_protocol_audit_v1_20261014/audit.json",
+      "sha256": "fefdf00441a52af4d02078e7fb24ab2caf760f3b7a62e8b2c03ee9cce14e2844"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_protocol_audit_v1_20261014/audit_native_parallel.py",
+      "sha256": "3483e02bbd70c57ea39bda55c2be36177d918471f863bfecc8c14f7c83094e2d"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_protocol_audit_v1_20261014/audit_native_label_transport.py",
+      "sha256": "6c36d953ebb3215f43942639b08d0308817a240f001cc01235b67e27d9264f9b"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_protocol_audit_v1_20261014/audit_native_persistent_shadows.py",
+      "sha256": "e5af290b33f9407ea5b8f73642d6c4ddc6dbfcb4b54b9e36e2bf399f054a8781"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_protocol_audit_v1_20261014/audit_native_summary_hbm.py",
+      "sha256": "07c617872c83469d8684a36639d927b106bdef20d47d99dc7be468112f54477e"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_protocol_audit_v1_20261014/audit_native_owner_publish.py",
+      "sha256": "e1460e33ba132f8c2ff18529fc56fcbd6db7288ce4d81fd68f5b9fe0b4172012"
+    },
+    {
+      "path": "work/u280_native_owner_push_sync3_protocol_audit_v1_20261014/run_native_case.py",
+      "sha256": "281d46e1a7f801ebefefc0dce7fbed8ace6b38f91bf6c43f4f77a0c5c20b7690"
+    },
+    {
+      "path": "work/u280_native_summary_hbm_sync3_v1_20261013/manifest.json",
+      "sha256": "ed0f9518b20d8a49e900d419ef8facc02efa5add2f8a9c68ea07aab95257aa75"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/manifest.json",
+      "sha256": "5eed188e70a59e7fdea73dfb18573ce20d28d691ba3c83e155c120c16c5813bd"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/native_worker_shadows.hpp",
+      "sha256": "3d5f8fcd481d8134c4737db5bda8065c7856195b10cabc7ebcf13fd4a019793b"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/native_monotone.hpp",
+      "sha256": "96eae720126ed8fd68a009e381f0ce0bf1bdbba3bc2ac88d659223f81182086e"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/native_route_state.hpp",
+      "sha256": "b2f40393d4ba96cf7f402f9cd9799f80dbca3a9615ca5790a0c1355462dc215f"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/run_native_cohort.py",
+      "sha256": "2b712bfa312e3e41dd43d72dfe0abc6441a4fd23fd928463b5df34f2964bf820"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/native_quotient.hpp",
+      "sha256": "d8d066491d40b6a398720ebde77ef33380a0a2518df879dc4bf34200f30814c1"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/label_packet.hpp",
+      "sha256": "4b6ac60a56113bc599f4b51a1b9f065950f1b001eabfd63ff763a07dec30dd86"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/summary_hbm.cpp",
+      "sha256": "c621f1766a44186e862c4b70891310ba3b0826954e4f2c84c7b00af6ac00819a"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/native_summary_hbm.hpp",
+      "sha256": "e708abf1a4b51354c95cb9db0480247d5f6de9fd0b90a7d48001170868aa20e4"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/native_corridor.hpp",
+      "sha256": "4aae055df096a1296a588982aaf975522305d5f426f83971995ffe9fa4cf54e0"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/run_native_case.py",
+      "sha256": "281d46e1a7f801ebefefc0dce7fbed8ace6b38f91bf6c43f4f77a0c5c20b7690"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/native_die_access.hpp",
+      "sha256": "b6dcdaeae71262851f87ad35fe598e405960a781a3b6c733e58fcdf1e56ce630"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/router",
+      "sha256": "f36a4c944eb3b5637d4b42a51de0098d140c5db9fb797349c8f4514265b451b8"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/route_native_parallel.cpp",
+      "sha256": "7825a540647860746efe0e789453088be02e16a8f70cee9f6c9ad4ea986f5afc"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/route_native_cohort.cpp",
+      "sha256": "83143023824eba1dca2b31e1105bb3b0496661fd46fef8736ef758fdd90bdfe7"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/summary_hbm.hpp",
+      "sha256": "55177ca09b0b07e2e23b38d8430052b405ff9617b6049613663baf3eeb3e401c"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/native_net_transaction.hpp",
+      "sha256": "d01149844d2436f0a400664f8ef6443872333d72c98468ef1d2559acbaba1d87"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/run.log",
+      "sha256": "662023edf97d8c7f9eaec373e41704d1ceccd4c3912b8097004a111c76d21140"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/owner_publish_hbm.cpp",
+      "sha256": "10c760dd144cfd3407a3a6e7c027e8550cc6d3c8ca0d317a4b16dea50a86ebfd"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/native_csr_io.hpp",
+      "sha256": "0940b5963db189d755cb8293918c1820c9564af0b48ba766461f0a6195e2a6a1"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/owner_publish_hbm.hpp",
+      "sha256": "05e1551a7238d430b413a401a1832913fa5e61f98dc268399461f154479eed43"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/sparse_search.hpp",
+      "sha256": "8fa6018007d2844cee1ce1038321a860831cdab92286c9a8a29a2446c9fa40be"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/sparse_table.hpp",
+      "sha256": "dbcd6c9b9fe52911ff3cdd3f95260978f37dabce9c7f369d703ea66c834b1da6"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/sparse_label_worker.hpp",
+      "sha256": "49b583ce14a93f3e70dea9233ced91111517b74cb7421e65dfadf7c5b1c986e4"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/native_boundary_shadow.hpp",
+      "sha256": "2e43f9bbe2bf72879775d29845137c28dfa5a5f0de1c4e701dfce51783315ce5"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/route/paths.csv",
+      "sha256": "2f3ebe68bdd3f233f4dfe915d8106e621a59ad397100caa6d9335a692cbee65d"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/route/proposals.csv",
+      "sha256": "2b3c32a4a630687395d58eb5eb38e222ac7c487f5c542026ceabafcc935c2d2d"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/route/persistent_shadow_publications.csv",
+      "sha256": "d8f3ff0f44832568b734d97dd07f11ff516ce53aec935eef7a4932411ef10c43"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/route/persistent_shadow_checks.csv",
+      "sha256": "0dfdce3b77f24174a131f9e1c3560d7e1b7f9b2f4452f6a15ac57767b6f7e4ba"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/route/trees.csv",
+      "sha256": "1cc40db746b080dddce4abf0942d090b4e2086da723687bc5a597882c131bb65"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/route/audit.json",
+      "sha256": "1833c5db8164d12483acf1347989fb1f2864df7ca4c6e2df67b1c5f272f8af2d"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/route/execution.csv",
+      "sha256": "359bec895a20b1156bf0b000ec9a5a6c14e3fda1181b4ac10fad3286a76f4ece"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/route/worker_shadow_messages.bin",
+      "sha256": "2fde1a74bd8c5b55fa25c6202f14c59e2606cce75de7064d203e49959a194785"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/route/persistent_shadow_reads.csv",
+      "sha256": "4342fcdea856d4ee351a406919b3fc02ffe4039678d264993ebeb95ed8a6342b"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/route/iterations.csv",
+      "sha256": "60f043b1ce5b694d87b63f96b3b8978b9af52c576911e4a7d66b4362f71d72ba"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/route/selection.csv",
+      "sha256": "af88f471a14d36fa5ece15bd6f2e23e33339a17cba188ad459a05ca5c170e94d"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/route/summary_hbm_owners.csv",
+      "sha256": "e866287d4c171bf2b39c8a7e6cc9d3006e49ee8c147a6df802147dfaaf9d1c25"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/route/summary_hbm_caches.csv",
+      "sha256": "0d2c673c54ed50a8ac99c7d8411a02115caacf2e9daac43adad5c497ad9bd556"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/route/summary_hbm_subscriptions.csv",
+      "sha256": "f560bafabd3cd17aefe2a19721541adaeccb517c48cada6474135879a7a270d2"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/route/summary_hbm_frames.bin",
+      "sha256": "8613322c8bd3006a81dccadb325f5d45aafa1e852e4d26c9baacd9113aec1e89"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/route/transactions.csv",
+      "sha256": "e14450c6a756abd4ad7cd31c31bb4098d8a675636c3a26f530c681ea28ba29d4"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/route/owner_usage.csv",
+      "sha256": "2f59ccbfaf07766a25ddadcfc99c8c70c1c63a85539806f9417e26ae87ba22aa"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/route/usage.csv",
+      "sha256": "6d6c5e4ec5db5427bb299f0e425cf9dfe5188b5964bbe451a15ebe6844c7321c"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/route/accepted_work.csv",
+      "sha256": "c3fa254f4f473baf71d229f2d5b322ead1a33f3b7bd38ee48fa642e6f3506467"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/route/conflicts.csv",
+      "sha256": "4df4806c8678eb92934dcf729e45cbff66d14c71a1d41951cd34e26ea07a4cad"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/route/summary_hbm_topology.bin",
+      "sha256": "362264a4ad7e30b52344a1a617d792e2b7dac3cdb6941d36f26be6ca96d3bcbb"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/route/proposal_paths.csv",
+      "sha256": "c22a91d6dbcd3929f2a115207974980e675569c175ecfbecd6c508c3e0f8c14b"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/route/readsets.bin",
+      "sha256": "6191c4b3681a08ab94bd7b9246b26abf72a824a76cb6396599eab66431046bd6"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/route/connections.csv",
+      "sha256": "f6694f8350976fe24acde950f6711076726bc42f05cfe205855abdca63119e10"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/route/transaction_passes.csv",
+      "sha256": "382b3f41307366dc10aafd99a15874317b973d6962e2fd945bae645f7c2cd43c"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_v1_20261014/route/persistent_shadow_branches.csv",
+      "sha256": "2bdc7b7c2a83426c7e4a0df06bf9ecc60ce330f72aefd149cd76495b3a19c4dd"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_cohort_audit_v1_20261014/audit.json",
+      "sha256": "e670c88a65b582512d1afd0ddc52b929947799d54abd5922eb66021e7f0286ed"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_cohort_audit_v1_20261014/audit_native_cohort.py",
+      "sha256": "ba4d071e405e078fca6d98d755b7ee6cc6dc0b78331ada7096408fe55bec417e"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_cohort_audit_v1_20261014/audit_native_owner.py",
+      "sha256": "4ba1b6a6e9817772dbce012bd3c033ba3b0020d07963d1dfdead7e0be63b803d"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_cohort_audit_v1_20261014/run_native_case.py",
+      "sha256": "281d46e1a7f801ebefefc0dce7fbed8ace6b38f91bf6c43f4f77a0c5c20b7690"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_protocol_audit_v1_20261014/audit.json",
+      "sha256": "6ba74ea5e061363f3c5fb1e40c1d720435b7dc862472ae3e5b9f33ffbfe6a7c1"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_protocol_audit_v1_20261014/audit_native_parallel.py",
+      "sha256": "3483e02bbd70c57ea39bda55c2be36177d918471f863bfecc8c14f7c83094e2d"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_protocol_audit_v1_20261014/audit_native_label_transport.py",
+      "sha256": "6c36d953ebb3215f43942639b08d0308817a240f001cc01235b67e27d9264f9b"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_protocol_audit_v1_20261014/audit_native_persistent_shadows.py",
+      "sha256": "e5af290b33f9407ea5b8f73642d6c4ddc6dbfcb4b54b9e36e2bf399f054a8781"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_protocol_audit_v1_20261014/audit_native_summary_hbm.py",
+      "sha256": "07c617872c83469d8684a36639d927b106bdef20d47d99dc7be468112f54477e"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_protocol_audit_v1_20261014/audit_native_owner_publish.py",
+      "sha256": "e1460e33ba132f8c2ff18529fc56fcbd6db7288ce4d81fd68f5b9fe0b4172012"
+    },
+    {
+      "path": "work/u280_native_owner_push_serial3_protocol_audit_v1_20261014/run_native_case.py",
+      "sha256": "281d46e1a7f801ebefefc0dce7fbed8ace6b38f91bf6c43f4f77a0c5c20b7690"
+    },
+    {
+      "path": "work/u280_native_summary_hbm_serial3_v1_20261013/manifest.json",
+      "sha256": "27cefb99da755ad6f230e86c1bc9ca1c77a36d686f6c7829df0def96690a0395"
+    },
+    {
+      "path": "work/native_owner_push_hw_emu_v1_20261014/manifest.json",
+      "sha256": "21a247eabbe7d3f9ee2fdf393bca5c6b644ff14841bf0c6fcdb86574d0a2eec7"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/host/owner_publish_xrt.cpp",
+      "sha256": "a3d23f5209d7777efe5a19b5915bc64da9f0d88e5175cdcccb4ac7d7c5b650a3"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/tools/route_native_parallel.cpp",
+      "sha256": "7825a540647860746efe0e789453088be02e16a8f70cee9f6c9ad4ea986f5afc"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/include/corridor.hpp",
+      "sha256": "fbec3a431c8fd7787023f53848d3ee2cb4dd8b2bbf5a6550b7766e94958c161c"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/include/dieroute.hpp",
+      "sha256": "53ac0e049b7d81061d39648bbf6882c28f688e61f90e95dee3d344fa93302f20"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/include/edge_routes.hpp",
+      "sha256": "e9dcfc8e17c0c95c24dafb58076fbc50535337f5efca26457b046e1950bffd7b"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/include/label_packet.hpp",
+      "sha256": "4b6ac60a56113bc599f4b51a1b9f065950f1b001eabfd63ff763a07dec30dd86"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/include/native_boundary_shadow.hpp",
+      "sha256": "2e43f9bbe2bf72879775d29845137c28dfa5a5f0de1c4e701dfce51783315ce5"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/include/native_corridor.hpp",
+      "sha256": "4aae055df096a1296a588982aaf975522305d5f426f83971995ffe9fa4cf54e0"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/include/native_csr_io.hpp",
+      "sha256": "0940b5963db189d755cb8293918c1820c9564af0b48ba766461f0a6195e2a6a1"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/include/native_die_access.hpp",
+      "sha256": "b6dcdaeae71262851f87ad35fe598e405960a781a3b6c733e58fcdf1e56ce630"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/include/native_monotone.hpp",
+      "sha256": "96eae720126ed8fd68a009e381f0ce0bf1bdbba3bc2ac88d659223f81182086e"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/include/native_net_transaction.hpp",
+      "sha256": "d01149844d2436f0a400664f8ef6443872333d72c98468ef1d2559acbaba1d87"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/include/native_quotient.hpp",
+      "sha256": "d8d066491d40b6a398720ebde77ef33380a0a2518df879dc4bf34200f30814c1"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/include/native_route_state.hpp",
+      "sha256": "b2f40393d4ba96cf7f402f9cd9799f80dbca3a9615ca5790a0c1355462dc215f"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/include/native_summary_hbm.hpp",
+      "sha256": "e708abf1a4b51354c95cb9db0480247d5f6de9fd0b90a7d48001170868aa20e4"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/include/native_timing_feedback.hpp",
+      "sha256": "f9fc08c943b69fd8a49640aa4ded4a64c549a39b566f66780c7b722803ce84bb"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/include/native_worker_shadows.hpp",
+      "sha256": "3d5f8fcd481d8134c4737db5bda8065c7856195b10cabc7ebcf13fd4a019793b"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/include/owner_publish_hbm.hpp",
+      "sha256": "05e1551a7238d430b413a401a1832913fa5e61f98dc268399461f154479eed43"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/include/routing_policy.hpp",
+      "sha256": "c1b4bc618eec7c1360a86fa6ddd91842824003a9feac345afab1ca7c500e4745"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/include/rr_backend.hpp",
+      "sha256": "164015c5e17024339fc9e6013c85e99f91015da928fa88f2e17ea390470f18fe"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/include/rr_state_view.hpp",
+      "sha256": "d91e20300a92c51c93a69e42c3ec792d77dfd31ed572e7b35935ef968e2ef6dc"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/include/sparse_label_worker.hpp",
+      "sha256": "49b583ce14a93f3e70dea9233ced91111517b74cb7421e65dfadf7c5b1c986e4"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/include/sparse_search.hpp",
+      "sha256": "8fa6018007d2844cee1ce1038321a860831cdab92286c9a8a29a2446c9fa40be"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/include/sparse_table.hpp",
+      "sha256": "dbcd6c9b9fe52911ff3cdd3f95260978f37dabce9c7f369d703ea66c834b1da6"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/include/speculative_backend.hpp",
+      "sha256": "e1fd45961efdcb1a3272274213d074657c61f50e88bb8951553462fa1c8c2056"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/include/summary_hbm.hpp",
+      "sha256": "55177ca09b0b07e2e23b38d8430052b405ff9617b6049613663baf3eeb3e401c"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/include/wide_costs.hpp",
+      "sha256": "6f0aa86008f1cfbdaf19b6a85f7409a148ac804ef0f0ef22b71e06eb75db41fe"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_build_20261014/native_parallel_xrt",
+      "sha256": "20011b5ccdbeeb345bfe93aae9f54beffb0d1d8f8d3460fdc9677cbbcc1f39c5"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_hw_emu_link_v2_20261013/summary.xclbin",
+      "sha256": "e7426b2cfd025e3882f40ef2a1ee6c58268a015811c906b6f8a1b7b91399b96e"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_hw_emu_link_v2_20261013/manifest.json",
+      "sha256": "d5adc77c29c43d42ceb08efdc9f154c184fbe77db5d86382ad99854d8e0650b0"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_semantic_fixture_20261014/input/worker_cross/graph/nodes.bin",
+      "sha256": "fbbd1e17b7c113cec54fac8c4d10295e82e51030ea8c97d737feddf41da194d2"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_semantic_fixture_20261014/input/worker_cross/graph/pips.bin",
+      "sha256": "e468a5f65d92798f3d723a914f76ac13182d31393b64883a821518714e2596fe"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_semantic_fixture_20261014/input/worker_cross/search/offsets.bin",
+      "sha256": "321d4ff572d909bc3e1f827de5ccf8d2f68ff62a04c412c716580b72809d95b5"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_semantic_fixture_20261014/input/worker_cross/search/exclusive_net.bin",
+      "sha256": "192cc24e5d2a9ba44ef555807345dd5e9dce20ba265e6c713ba35d516b25d9a5"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_semantic_fixture_20261014/input/worker_cross/search/arcs.bin",
+      "sha256": "ee3b90253620009b635b1072685a57e2e84d99de4d52ab19a93c1814161e8ff9"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_semantic_fixture_20261014/input/worker_cross/search/node_protection.bin",
+      "sha256": "54d74e148a070f58bd45224b152b5c592da3747da4fa2b40c0c85b88a0266501"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_semantic_fixture_20261014/input/worker_cross/footprint/owners.bin",
+      "sha256": "281b02b10f5f4997e5bf8c93343e6f2aa8bc81ffad6d6813c593181ebceda12a"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_semantic_fixture_20261014/input/worker_cross/footprint/tasks.bin",
+      "sha256": "2dd748144bbf63988a444a4c497e9c522b659b3d22302e52eb485bd4bbfa4e00"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_semantic_fixture_20261014/input/worker_cross/footprint/nets.bin",
+      "sha256": "f5a5fd42d16a20302798ef6ed309979b43003d2320d9f0e8ea9831a92759fb4b"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_semantic_fixture_20261014/input/worker_cross/mapping/footprint_node_map.bin",
+      "sha256": "921c803abfa6ac88f44f7ab19198e5c137d1c7183e8e6912757a6263e8dee0a5"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_semantic_fixture_20261014/input/worker_cross/quotient/node_groups.bin",
+      "sha256": "67acb90dd574c4f81c45dc174a90401d74e447f8ef30902d01039894d8a79a82"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_semantic_fixture_20261014/input/worker_cross/quotient/audit.json",
+      "sha256": "2d5a575f349bb782d36dc90086f1d5dbad29499ff58462dca9b76a73e93d16f9"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_semantic_fixture_20261014/input/worker_cross/quotient/groups.bin",
+      "sha256": "bf6951bd78f2bc2d7abc614166679b76d06cf3794b9b1a2fcc997415485a3f0a"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_semantic_fixture_20261014/input/worker_cross/quotient/reverse_offsets.bin",
+      "sha256": "52ad6d87f2e65db5ee08c2c5f7a5af9d6c9be18b66bdc3b95924eb0321af9bef"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_semantic_fixture_20261014/input/worker_cross/quotient/reverse_sources.bin",
+      "sha256": "f37498cf388ae16ab867f51757e2b190ee03f6fbb10e27ab1ba380db31745bb5"
+    },
+    {
+      "path": "work/native_owner_push_hw_emu_v1_20261014/sync1/audit.json",
+      "sha256": "6cffa65baf0971f45d575805f0135a21d0c921ea33f74d4881eb6e0736f2b459"
+    },
+    {
+      "path": "work/native_owner_push_hw_emu_v1_20261014/sync1/run.log",
+      "sha256": "f3353a7b60a092d054e698cc231afdeded4d4e5b88dd7394181810d6c277af4f"
+    },
+    {
+      "path": "work/native_owner_push_hw_emu_v1_20261014/sync3/audit.json",
+      "sha256": "d5df95daa518714aa95f0a54a9a20c709971cab74b15db4c90163888560893e0"
+    },
+    {
+      "path": "work/native_owner_push_hw_emu_v1_20261014/sync3/run.log",
+      "sha256": "6919f65311caa5748cb2c10dbbe3c4f9c040ca4ddafb519b94bb678bca61ca02"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/sync1_protocol.log",
+      "sha256": "67de957190ba7eddd772d598557ced428f6c0cae34053f1ba65bca0d0fb05dbd"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/dieroute_native_push_config.log",
+      "sha256": "05f04af67769b332f4268a8c7fd0d2d060d406379fab3f2574de89f8d7c2e005"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/emulate.log",
+      "sha256": "a24ccee54837ce32dcf6f2e813af252828cf791f65b1ade4eedd5f0338e04bce"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/sanitize_config.log",
+      "sha256": "adb0d9969c043ee2bd5107df3fe7200845463f846bd68e0bb89197dd5ab732a9"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/serial3_protocol.log",
+      "sha256": "148c8c5e71f47db6b03b4b8f1eefbf0a5a2da9e71eaf2861b1c70ae7df01b23f"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/tsan_host.log",
+      "sha256": "97fc1722ed9b7cb34a5a6f90c4a342c9a1aa23c7d27d117a68d854afa6779e48"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/audit.log",
+      "sha256": "ad1912a7e6d380acc7694cf7217d2a274af80730416de0894c9f6fb6f083d1b4"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/tsan_config.log",
+      "sha256": "e621150d0b298cca1243faa7528dd3d9c8c44d02c867e7c1f6ef8c8f97e9cad6"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/sync3_cohort.log",
+      "sha256": "3a8bc87e7d2ba9af8965db68a7bf1d8696e74742e566391887f4b1bb88bd3461"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/sync3_protocol.log",
+      "sha256": "0cd1446e06e5f61dad5945b27310bc35813916775506fb6de86c1db39d26234b"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/xrt_build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/tsan_component.log",
+      "sha256": "70beb2599ea5ac46d355dd5424a06c65251f12906e9c82be833a5c14cf701bce"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/sync1_run.log",
+      "sha256": "8bdb7112d9e07f23c1bb9f51513f794f02fed20abde5926d3c5b9c1c42f6a57b"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/config.log",
+      "sha256": "e8dc69709e0310c477b96ffd770e6ea3c49e6c2b6efa05596c6584d3e33dce70"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/sanitize_host.log",
+      "sha256": "453c2e5291102632bee3d329ab5fb7bd2e9c27444a9e9de1f64bb07c25eb83fb"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/sanitize_build.log",
+      "sha256": "ab2bc66bd2c2eb2102022c003ee0ba3c6c222a81de9f7fc6f752f1aa94190f1a"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/sanitize_component.log",
+      "sha256": "70beb2599ea5ac46d355dd5424a06c65251f12906e9c82be833a5c14cf701bce"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/component.log",
+      "sha256": "7a4b19542fd20f505d1128448f89b8beffe0b7b68b3335351470518642d3932a"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/sanitize.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/serial3_run.log",
+      "sha256": "4e9630b669242159da292cda7e27eea024b3807ed231bc1e36b4b263ea3d17b8"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/sync3_run.log",
+      "sha256": "5bd75a209c5b681f595b930a3f7abf84705a11f4a5ec15fe33095d0e9120f1d6"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/run.log",
+      "sha256": "2af2e1918c532e9aa451d39a59446a0172575d9d847a31d2e1934fdfa4d29ad7"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/ctest_v2.log",
+      "sha256": "d46f95ecb1d9b86cf281f11f13e379ae7bfa08cf3dfc34960211624b1f469afa"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/component_v2.log",
+      "sha256": "d08cad0072b3cbfeba3a9d26193bb44a5acdb198dbcf4a3d5cc9bd0a688a1853"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/serial3_cohort.log",
+      "sha256": "8b483f1a7ce4efcc5fb96fa021ec864f4578c62b11c6a68e8faa62833e0a175f"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/semantic_fixture.log",
+      "sha256": "7b423fe17d544db598d1fd7c19eceeb46b79d2991ecaa3dbbd1c75ff6cdaa25f"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/profile_commit.log",
+      "sha256": "df8ffc766e184d5e9f5c28eedfe56f8c37d34e5d766f45366f2dd8612af0f77b"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/tsan_build.log",
+      "sha256": "cfc06b6db5f83caaaace0d649d5cd2d59ed6134022bfbf8d6ce0745a70f1a4a5"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/dieroute_native_push_build.log",
+      "sha256": "aa26dfa82a07990bc6573b3b354f9285a0fc4666a839463bdd10a239ea368422"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/build.log",
+      "sha256": "24c68c242f64c9b1b7c2bb3496aa4ac5aaab4a7800742f5ca7b3408049913fb2"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/sync1_cohort.log",
+      "sha256": "b061dabcb6225319e2ddd9d8c81bb6ff90fd7faaf94cb3fe758824d18b18276b"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/component_build_v2.log",
+      "sha256": "3354efe0ed3d03124cd5c5ad5208c8b1ff31321e6ae3778fe3f888e41862c9dc"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_owner_push_scripts_20261014/ctest.log",
+      "sha256": "c2d1fc407e48955923ddb2fa6e79f30654fb8e606526c7c0007fc9beb9a7efbc"
+    },
+    {
+      "path": "host/owner_publish_xrt.cpp",
+      "sha256": "a3d23f5209d7777efe5a19b5915bc64da9f0d88e5175cdcccb4ac7d7c5b650a3"
+    },
+    {
+      "path": "work/owner_publish_verification_20261013/verification.json",
+      "sha256": "82462ed282aaeb276b2cabc6d596d949ea5f4f6054328fd7776b18ad97b4e40b"
+    },
+    {
+      "path": "work/owner_publish_hw_emu_link_v2_20261013/summary.xclbin",
+      "sha256": "e7426b2cfd025e3882f40ef2a1ee6c58268a015811c906b6f8a1b7b91399b96e"
+    }
+  ],
+  "limitations": [
+    "Fresh real-graph routing uses C-model; XRT routes small 3-boundary-slot fixtures",
+    "Search, net-set authority and atomic commit remain on CPU",
+    "Host submits committed owner tuples and dispatches output packets between joined phases",
+    "All empty pump calls are counted; fewer polling commands do not establish lower latency or HBM bytes",
+    "No new physical QoR, physical implementation timing, board throughput or energy"
+  ],
+  "next_work": "Implement whole-net hardware validation/atomic publication and cross-owner capacity protocol; autonomous/batched transport; mapping/migration/topology ablations; full representative QoR, platform implementation and board evaluation."
+}

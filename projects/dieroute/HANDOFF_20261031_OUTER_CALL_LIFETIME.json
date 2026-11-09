@@ -1,0 +1,41 @@
+{
+  "observed_ns": 1793422798958577408,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_INSTALL_SINGLEWORD_HIERARCHY.json",
+    "sha256": "58c414627b271161797b6c3e891996579753948dc55088a221abbf1d5516d89c"
+  },
+  "progress": {
+    "report": "work/resident_outer_call_lifetime_20261031/review.json",
+    "report_sha256": "15de91f822bd1c56003655e6ddf8a3def6960050b1efdd106e03b1db7f4ba8a1",
+    "independent_review": "work/resident_outer_call_lifetime_20261031/independent_review.json",
+    "independent_review_sha256": "3acae57402e1e549757cbdec38b0adb020c4a932a80c83e6b4f366e3e02f5dda",
+    "reachable_states": 489,
+    "unique_transitions": 586,
+    "source_FSM_cases": 491,
+    "active_prepare_states": 20,
+    "full_sequential_HDL_equivalence_proved": false,
+    "cross_call_response_identity_proved": false,
+    "HDL_simulation_executed": false,
+    "scope": "Reset-started finite control overapproximation couples the actual top144-state,execute326-state and prepare21-state FSMs with their two registered start signals. Shared internal synchronous reset/clock bindings,start set/clear priority,child idle-done versus terminal-done/ready and critical launch/wait transitions are source-exact. Every other case may choose any of its actual source target states on every edge,ignoring unrelated data/guards;this is a conservative control projection,not a datapath simulation. Closed reachable states prove every non-idle execute state has top75/start1;every non-idle prepare state has execute25/top75/bothstarts1. At entry to each wait the still-idle child has start1,so idle done cannot falsely complete a fresh call. Starts hold through the child terminal sampling edge;parent changes state only alongside child terminal return/ready. Thus actual active prepare remains connected through execute25/top75 under earlier source mux facts;this supplies the outer lifetime condition missing from local delimiter/portal call proofs. Assumes a common asserted internal reset before operation,legal binary FSM states and no midcall reset. Raw external reset deassertion latency is not analyzed;top uses its existing reset pipeline. Unrelated control-atom relationships,child datapaths,request/response ordering and return drain for all consumers are not modeled. Not full sequential/4stateHDL equivalence,external response identity,actual native acceptance,watchdog/timing or board performance. No native/HLS flow,DUT/process/input/cache/guard/budget changes.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v235_20261031/matrix.json",
+    "sha256": "c0f4b26c13c70eb3ced2a9970cf1384a911d3ce40142c868074140529f5bb5c9"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v235.json",
+    "sha256": "8f6ca571bb48e283b4bc64daeaa12b6a139ca28a5f7fb7556dded3e61e657ac6"
+  },
+  "next_action": "Verify outstanding request/return drain for the remaining read64,prepare initial scan and edge-operator consumers,then compose cross-call ownership. Outer reset-started call lifetime now holds in the conservative control projection;data/response identity and full sequential HDL/native acceptance remain. Continue original jobs without guard/budget/input/cache changes.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

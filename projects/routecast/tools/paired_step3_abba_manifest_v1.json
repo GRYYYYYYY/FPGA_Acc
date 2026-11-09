@@ -1,0 +1,47 @@
+{
+  "plans": [
+    {
+      "arm": 0,
+      "mode": "online",
+      "commands": [
+        "tools/trial_paired_step3_abba_v1_arm0.py",
+        "tools/verify_paired_step3_abba_v1_arm0.py"
+      ],
+      "report": "adder_online_production_cost_replay_v10pair0_2026-10-09/verification.json",
+      "native": "online_cost_replay_v10pair0_adder_online_full_native_v1_2026-10-09"
+    },
+    {
+      "arm": 1,
+      "mode": "cold",
+      "commands": [
+        "tools/run_paired_step3_abba_v1_arm1_native.py",
+        "tools/run_paired_step3_abba_v1_arm1_canonical.py",
+        "tools/run_paired_step3_abba_v1_arm1_quality.py"
+      ],
+      "report": "paired_step3_abba_v1_arm1_quality_2026-10-09/verification.json",
+      "native": "paired_step3_abba_v1_arm1_native_2026-10-09"
+    },
+    {
+      "arm": 2,
+      "mode": "cold",
+      "commands": [
+        "tools/run_paired_step3_abba_v1_arm2_native.py",
+        "tools/run_paired_step3_abba_v1_arm2_canonical.py",
+        "tools/run_paired_step3_abba_v1_arm2_quality.py"
+      ],
+      "report": "paired_step3_abba_v1_arm2_quality_2026-10-09/verification.json",
+      "native": "paired_step3_abba_v1_arm2_native_2026-10-09"
+    },
+    {
+      "arm": 3,
+      "mode": "online",
+      "commands": [
+        "tools/trial_paired_step3_abba_v1_arm3.py",
+        "tools/verify_paired_step3_abba_v1_arm3.py"
+      ],
+      "report": "adder_online_production_cost_replay_v10pair3_2026-10-09/verification.json",
+      "native": "online_cost_replay_v10pair3_adder_online_full_native_v1_2026-10-09"
+    }
+  ],
+  "scope": "Fixed ABBA order online/cold/cold/online. Outer wall clock first entry subprocess through terminal independent quality verification, including setup, subprocess startup, all actual search/validation/output and receipt checks. Provided inputs/budgets/identitytrace/build excluded. Same target-derived model budget; single case, not independent timing or general acceleration."
+}

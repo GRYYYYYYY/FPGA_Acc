@@ -1,0 +1,8 @@
+"""Serialized-semantic full forecast equality, including all paths and work events."""
+import json
+from pathlib import Path
+from pre_route_endpoints import sha
+root=Path(__file__).resolve().parents[1];out=root/'experiments/mux_sparse_demand_2026-10-06';p=json.loads((out/'protocol.json').read_text());r=json.loads((out/'receipt.json').read_text());assert r['protocol_sha256']==sha(out/'protocol.json') and r['all_cases_retained'];assert all(sha(root/'tools'/n)==h for n,h in p['sources_sha256'].items());rows=[]
+for c,row in zip(p['cases'],r['rows']):
+ assert (c['data_width'],c['channels'])==(row['data_width'],row['channels']);assert sha(c['endpoint_path'])==c['endpoint_sha256'] and sha(c['baseline'])==c['baseline_sha256'];file=out/f"mux_w{c['data_width']}_c{c['channels']}.json";assert sha(file)==row['candidate_sha256'];q=json.loads(file.read_text());old=json.loads(Path(c['baseline']).read_text());assert q==old;rows.append({'data_width':c['data_width'],'channels':c['channels'],'entire_serialized_forecast_exact':True,'connections':q['completed_connections'],'expanded_nodes':sum(x['expanded'] for x in q['events']),'search_s':row['search_s'],'archive_baseline_search_s':row['baseline_search_s'],'fresh_over_archive_ratio':row['search_s']/row['baseline_search_s']});print(rows[-1],flush=True)
+(out/'verification.json').write_text(json.dumps({'receipt_sha256':sha(out/'receipt.json'),'verifier_sha256':sha(Path(__file__)),'rows':rows,'scope':'All9 entireJSONvaluepath/cost/delay/ledger/events/expansion exact. Producerin-memorycomparisonfalse dueintledgerkeysversusJSONstrkeys; serializedcomparison authoritative. Timingssinglefreshvsarchive,not pairedstatisticalspeedup.'},indent=2)+'\n')

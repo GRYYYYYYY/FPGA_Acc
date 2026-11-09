@@ -1,0 +1,41 @@
+{
+  "schema": "dieroute.task_migration_protocol.v1",
+  "status": "design_frozen_implementation_not_started",
+  "purpose": "Close actual execution-location migration gap without treating legacy counters as migration",
+  "source_sha256": {
+    "include/dieroute.hpp": "53ac0e049b7d81061d39648bbf6882c28f688e61f90e95dee3d344fa93302f20",
+    "src/dieroute.cpp": "d0560995d4c02a35190a958e4664b4ee61df4e412604bc0c427a796a9eaffb74",
+    "include/speculative_backend.hpp": "e1fd45961efdcb1a3272274213d074657c61f50e88bb8951553462fa1c8c2056",
+    "src/speculative_backend.cpp": "d3e1439a69b832beb0bd877877a557a0b8ad27cff14c02d6e50d9d517d91cae3",
+    "include/rr_backend.hpp": "164015c5e17024339fc9e6013c85e99f91015da928fa88f2e17ea390470f18fe"
+  },
+  "observed_current_behavior": {
+    "legacy": "dieroute_kernel selects smaller endpoint queue and increments counters;does not execute transferred search state",
+    "speculative": "Fixed windows,worker slot assignment,observer uses owners[task.source],all snapshot reads finish before ordered authority commit"
+  },
+  "required_invariants": [
+    "Physical resource owner never changes because a task migrates",
+    "Task identity,epoch,priority,net,seed set and criticality preserved across transfer",
+    "Destination worker uses destination observer shadow view;all authority-dependent reads retained in validation journal",
+    "Migration alone does not grant capacity or publish paths",
+    "Fixed original commit order retained;stale proposals replay against authority;failed transfer has no authority side effects",
+    "Explicit source/destination queues,enqueue/dequeue/execution receipts bind every moved task to actual destination work",
+    "Count transferred task/seed bytes,queue work,replayed reads and unused migrated proposals;no zero-cost transfer assumption for cycle/performance claims"
+  ],
+  "required_controls": [
+    "Migration disabled exact legacy compatibility",
+    "Static source placement",
+    "Static destination placement",
+    "Criticality/congestion aware migration with policy frozen before validation"
+  ],
+  "required_validation": [
+    "Actual RRBackend task execution in the migrated location,including stale remote shadow conflict and rejected capacity",
+    "Same-net sharing,unreachable transfer destination,queue saturation,duplicate/stale task receipt and deterministic ordering",
+    "Five-repeat complete native routing with independent task/queue/read-set/commit replay",
+    "Matched quality gates and representative scaling;CPU work/proxy bytes separate from hardware measured latency/bandwidth",
+    "Joint owner/search/publication implementation and physical performance remain required for full research"
+  ],
+  "implementation_policy": "Use isolated copied source;do not modify sources pinned by running jobs. Do not retune frozen present-schedule cohort or open heldout inputs. New migration policy evaluated independently after explicit source/config freeze.",
+  "board_result": false,
+  "research_complete": false
+}

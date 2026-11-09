@@ -1,0 +1,42 @@
+{
+  "observed_ns": 1793423529988216127,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_REMAINING_READ_COMPLETION.json",
+    "sha256": "4a1be488a6f4d8987814a2be8dd6f349b16b8155d0fe93a0663e8ade31f2f069"
+  },
+  "progress": {
+    "report": "work/resident_remaining_caller_ownership_20261031/review.json",
+    "report_sha256": "dd9b11f667694dda46bb3b7d76110a67e67f4d6af285833d8d96361434802413",
+    "independent_review": "work/resident_remaining_caller_ownership_20261031/independent_review.json",
+    "independent_review_sha256": "a3c2c71c8a09152cd7c12d4a1252776d99e30035eed88330c803c558c8172773",
+    "coupled_control_states": 2638,
+    "unique_transitions": 2904,
+    "mux_queries_unsat": 40,
+    "critical_parent_truth_cases": 18912,
+    "mux_integer_truth_cases": 32832,
+    "full_sequential_HDL_equivalence_proved": false,
+    "cross_call_response_identity_proved": false,
+    "HDL_simulation_executed": false,
+    "scope": "Three reset-started source-control/count compositions couple execute/read64,prepare/initial-scan,and edge-builder/edge-operator with actual registered parent starts,shared clock/reset and child completion/ready. All launch cases and cases transitively depending on the selected child done/ready are source-evaluated;other parent cases nondeterministically choose any source target. Child source guards/counts use the preceding audit,filtered to the actual parent start. Scan parent call predicate is captured at2and held;all binary old predicate/scan-needed seeds are included. Unrelated1/2bit data/control leaves vary freely. No midcall reset. Closed state sets show a non-idle child or asserted child start always has its parent in the selected wait:read64eight states28/30/36/38/44/135/145/147,initial scan3with saved predicate0,edge operator36/126. Source broadcasts ARREADY/RVALID/RDATA unchanged;all four ARADDR/ARLEN/ARVALID/RREADY pins select that child in every active wait for arbitrary other binary flags. Initial scan tracks its actual exit-ready/done-cache behavior;other children clear start only on terminal ready. This composes local request-count completion with immediate parent selection/lifetime,not global intended response identity. Other simultaneous helpers/data paths,parent input memory correctness,all remaining delimiter/builder call nesting,full sequential/4stateHDL equivalence,native acceptance,watchdog/timing and board evidence remain open. Correct causal external responses and adapter source-model contracts remain premises. No DUT/native process/input/cache/guard/budget changes or new HLS/Vivado flow.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v237_20261031/matrix.json",
+    "sha256": "49d2059a6eeb616e894c67855e957ed50073b04ad8058b0846dd651c0e9e9c91"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v237.json",
+    "sha256": "f3b78766c8a85a502bba983061148a9c7a6582aaab6d57c3c932e76a59ec6907"
+  },
+  "next_action": "Verify prepare-to-edge-builder and forward/reverse builder call lifetimes,then compose all caller selections with leaf request-drain/adapter credit contracts. Immediate parents of all remaining3leaves now retain selection through active calls;global intended response/pointer identity and full sequential/native acceptance remain. Preserve original jobs/guards/budgets/inputs/caches.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

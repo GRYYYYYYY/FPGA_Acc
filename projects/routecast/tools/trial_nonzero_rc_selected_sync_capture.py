@@ -1,0 +1,9 @@
+"""Native route/delay capture around packing sync for complete predicted trees."""
+import json,os,shutil,subprocess,re
+from pathlib import Path
+from pre_route_endpoints import sha
+root=Path(__file__).resolve().parents[1];parent=root/'experiments/nonzero_rc_selected_native_import_2026-10-06';r=json.loads((parent/'receipt.json').read_text());v=json.loads((parent/'verification.json').read_text());assert v['receipt_sha256']==sha(parent/'receipt.json') and v['native_FULL_success'] and all(sha(p)==h for p,h in r['files_sha256'].items());out=root/'experiments/nonzero_rc_selected_sync_capture_2026-10-06';out.mkdir();work=root/'work/nonzero_rc_selected_sync_capture_2026-10-06';work.mkdir();source=root/'work/nonzero_rc_selected_native_import_2026-10-06'
+for n in ('design.blif','design.net','design.place','design.route'):shutil.copyfile(source/n,work/n)
+binary=root/'build/native_route_delay_capture_2026-10-06/routecast_sync_capture_vpr';provenance=json.loads((binary.parent/'receipt.json').read_text());assert sha(binary)==provenance['binary_sha256'];cmd=r['command'].copy();cmd[0]=str(binary);env={k:v for k,v in os.environ.items() if not k.startswith('ROUTECAST_')};env['ROUTECAST_SYNC_CAPTURE_DIR']=str(work)
+with (work/'capture.log').open('w') as f:code=subprocess.run(cmd,cwd=work,env=env,stdout=f,stderr=subprocess.STDOUT,timeout=60).returncode
+log=(work/'capture.log').read_text();cpd=re.search(r'Final critical path delay \(least slack\):\s*([0-9.]+)',log);result={'exit_code':code,'cpd_ns':float(cpd[1]) if cpd else None,'parent_receipt_sha256':sha(parent/'receipt.json'),'command':cmd,'binary_sha256':sha(binary),'source_sha256':sha(Path(__file__)),'files_sha256':{str(p):sha(p) for p in work.iterdir() if p.is_file()}};(out/'receipt.json').write_text(json.dumps(result,indent=2)+'\n');print('capture',code,result['cpd_ns'])

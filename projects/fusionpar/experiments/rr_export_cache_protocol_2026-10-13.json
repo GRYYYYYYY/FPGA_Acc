@@ -1,0 +1,37 @@
+{
+  "schema": "FUSIONPAR_RR_EXPORT_CACHE_PROTOCOL_V1",
+  "designs": [
+    "ex5p",
+    "alu4",
+    "misex3"
+  ],
+  "backends": [
+    "xml",
+    "sqlite"
+  ],
+  "modes": [
+    "sequential_shared_tree_reuse",
+    "interleaved_tree_reuse"
+  ],
+  "attempts": 3,
+  "repeats_per_mode_backend": 5,
+  "tree_timing_weight_q": 0,
+  "cache_build": "All imported CSR nodes and edge pairs; same native XML decoder; full database round-trip equality; preserve parallel-switch ambiguity",
+  "checks": [
+    "113 existing C++ checks plus Python metadata boundary tests",
+    "Identical graph binaries/design.txt across backends",
+    "Full state/event/timing determinism and equivalence for every paired run",
+    "Byte equality of candidate.state, candidate.place, candidate.route, quality.txt, timing.txt, connection_delays.txt and native timing output for each validation index",
+    "Native legality, QoR and publication/version audits remain enabled",
+    "Cache checksum before and after every candidate; cache graph/implementation metadata must match bundle; no silent fallback",
+    "All binding and full-cache build/verification costs charged to cache arm, including first use",
+    "XML arm must reproduce prior archived state/event/timing outputs"
+  ],
+  "limits": [
+    "Cache is shared conversion infrastructure, not FusionPAR algorithm contribution",
+    "Three development designs; no FPGA or held-out result",
+    "Five host repeats share one measured conversion per backend/design, not five independent preparations",
+    "Same three-primary generator budget does not equal batch/interleaved compute",
+    "Cache remains opt-in pending broader validation"
+  ]
+}

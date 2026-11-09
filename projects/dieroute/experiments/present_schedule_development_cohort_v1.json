@@ -1,0 +1,48 @@
+{
+  "schema": "dieroute.present_schedule_development_cohort.v1",
+  "status": "fixed_config_cohort_validation",
+  "objective": "Validate the fixed ex5p-positive zero-firstwarmstart preset on all declareddevelopmentcases with matched-sourcelegacycontrols before any reservedvalidation.",
+  "selected_present_schedule_mode": 2,
+  "control_present_schedule_mode": 0,
+  "cases": [
+    "diffeq",
+    "alu4",
+    "ex5p"
+  ],
+  "new_native_cases": [
+    "diffeq",
+    "alu4"
+  ],
+  "reuse_ex5p": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/rr_present_schedule_variant_20261015/result.json",
+  "fixed": {
+    "case": "All3declareddevelopmentcases;source/configfrozen",
+    "heldout": "apex2/frisc/elliptic remain unopened",
+    "repeats": 5,
+    "ordinary_schedule_mode": 0,
+    "issue_width": 4,
+    "max_iterations": 30,
+    "min_timing_iterations": 3,
+    "cost_model": "vpr_style",
+    "cost_state_bits": 64,
+    "cost_scale": 1,
+    "tree_timing_weight_q": 128,
+    "geometry_weight": 64,
+    "task_order": "preserve",
+    "history_increment_q": 256,
+    "feedback_threshold_q": 0,
+    "feedback_local_delay_guard": false,
+    "supplemental_transaction_mode": 0,
+    "cleanup_passes": 0,
+    "speculative_workers": 0
+  },
+  "native_baseline_provenance": "For diffeq/alu4,run source-bound strict-hook VPR baseline5times with original inputs/options and comparecanonical/quality/RRgraph to unchanged stronghistoricalreference. After candidates,compare alltheir first-repeat timing-epoch CSV outputs to source-boundhook.",
+  "selection_policy": "No parameterchangeson diffeq/alu4;preserve every failure. Reservedapex2/frisc/ellipticremain unopened. This is developmentvalidation,not heldoutgeneralization orfinalalgorithmfreeze.",
+  "acceptance": "All3 cases must pass originalnativelegality,zeroadditionalfailures,WL/CPDnondegradation anddeclaredmodelcrossingedge/destinationnondegradation;commercialphysicalSLL/G4andallotherresearchgatesremainseparate.",
+  "source_evidence_sha256": {
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/rr_present_schedule_variant_20261015/result.json": "5855c654bba7b044434432c7e70cb76f36245758f7b61839b00597ad2747db60",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/experiments/cohort_protocol_v1.json": "77c9ad51e0504180bfcaa8fee3119510eeebdfd7f0341115a6020515a447c350",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/vpr_source_bound_timing_build_20261015/result.json": "6a5de93f5e1b961185fdf6119a328456800b2905c2db70c3155cd31f1c753b5a"
+  },
+  "board_result": false,
+  "research_complete": false
+}

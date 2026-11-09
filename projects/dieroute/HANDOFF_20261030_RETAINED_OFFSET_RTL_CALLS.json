@@ -1,0 +1,23 @@
+{
+  "observed_ns": 1793403016962996304,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261030_INSTALL_STAGE_ATTRIBUTION.json",
+    "sha256": "2f7fdc9d43adcc4b33fd6962301224f064ff66467638b808285582602bddc4f9"
+  },
+  "progress": {
+    "review": "work/resident_forward_install_validation_candidate_20261030/host_stage_profile/retained_RTL_offset_calls_review.json",
+    "sha256": "44c1f043c7a9ee7a0475c9f3bc631c916c2adf6870c630c4c47514f6abc44a1f",
+    "scope": "Both discarded offset calls retained and caller completion stalls present in actual native2022.2 parent RTL; no future candidate benefit measured.",
+    "research_complete": false
+  },
+  "next_action": "Stage attribution plus actual parent RTL now supports investigation of discarded Store::put(3)/put(5) calls: caller states123/125 still wait for completion; reverse/portal selector paths remain. No new candidate removal implemented. P7 forward validation retains full host proof with synthesis prepared only. Preserve existing22 processes, original20GiB queue priority and all budgets; no RTL canary/adoption before full positive terminal proof. Latest artifact ledger v11,9697/9968 original fields bound,271 remaining; all8 gates open.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

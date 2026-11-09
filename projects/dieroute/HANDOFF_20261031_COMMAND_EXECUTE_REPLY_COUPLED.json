@@ -1,0 +1,51 @@
+{
+  "observed_ns": 1793448365612780220,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_PUBLIC_EXECUTE_REPLY_COUPLED.json",
+    "sha256": "2423e1a5a537d11731b5f450541195df0fd35363bf7f50a313892834c817ad12"
+  },
+  "progress": {
+    "report": "work/resident_command_execute_reply_coupled_20261031/review.json",
+    "report_sha256": "870650ba61de4cb7499372618d0026a1c0bd816dd62938047d6f9aaa95fac725",
+    "consistency_review": "work/resident_command_execute_reply_coupled_20261031/consistency_review.json",
+    "consistency_review_sha256": "7eae79bff068fc216e9c27bf2affc9dfd60f6acdabd9f093323837e0d74006b5",
+    "final_review": "work/resident_command_execute_reply_coupled_20261031/final_review.json",
+    "final_review_sha256": "8ca763df1535b2b3f452ea112fba535d7efaebfff83895b63e3c3e9452b61665",
+    "source_event_calls": 192,
+    "source_event_edges": 48630,
+    "command_word_writes": 3072,
+    "reader_RVALID_stalls": 6617,
+    "new_SMT_queries": 0,
+    "new_native_accepted_cases": 0,
+    "full_public_host_roundtrip_proved": false,
+    "scope": "Onecommonreset192retained-state source-event calls now traverse source top1..144, actual control512adapter/reader/flow into16execute port holding registers, source publicexecute/zero-fieldshelpers/finish, source replywriter/flow and replyadapter. No direct execute commandword or terminal9output or internalreplypacket injection. Independent memory/protocol oracle checks195commandAR/384R/3072wordwrites and195replyAW/384W/195successfulB/192logical replies; all64page slots at3ranges/schedules, reserved poison4..15includinglastword. Underlying get remains delayed success/data contract72calls; published graphmetadata/install/privateencodedmemory and accepted configuration start/continue/raw pointer values remain admitted. Actual AXILite bus frontend not simulated. External stable valid R/B presentation and ordered successful responses/object nonalias/binaryreset/noabort/componentrefinement remain premises. Idle execute evaluator reuses only identical-state/context self-transitions previously witnessed by full source evaluation, never active states; source images/DUT/192cases/originalCPU90s/AS1GiB unchanged. Parsed source expressions compiled to masked-integer lambdas compare with original evaluator at first use and periodic997calls; not a universal compiler proof. Finite source-event evidence is not universal wholeRTL/X/native/300MHz/board or completehost/install proof. Initial90CPUguard exit retained; no partial batch accepted. Full192batch completes under unchanged90CPU/1GiB after parser-AST integer compilation with14301original-evaluator comparisons over11343873calls, and807identical-state/context idle stutter witnesses reused40448times. These optimizations change evaluator work only; rawinvalid-data stimuli/actualFIFOcapacities/source images remain retained. No new solver/native/workload/gate acceptance.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v284_20261031/matrix.json",
+    "sha256": "faf13cb0416feb67613920f29e497594802fd3da60a2f5136090af8db20b007d"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v284.json",
+    "sha256": "64070611b9ca2b740ea6eff9c8c8b31458ed712db8559edf000bc90f1e7065e1"
+  },
+  "current_runtime_observation": {
+    "path": "work/resident_command_execute_reply_coupled_20261031/runtime_observation.json",
+    "sha256": "2413732dc98756d7ee8a7f0e3790b3659ee322d9e4e6cda1fdc4ba7cd2aab072",
+    "scope": "Fresh actual process identities; no native acceptance; Owner supervisor failure retained."
+  },
+  "previous_goal_turn_classification": "progress_and_verified_wait_v283",
+  "current_goal_turn_classification": "progress_and_verified_wait",
+  "next_action": "Remove underlying get contract for reverse kind3 using actual generated get/selector/prefix/wordscan/bitselect source and encodedword/prefix memory images; preserve failure paths and generic kinds1/7 obligations rather than inherit unproved data correctness. Published session/shape/ready still requires complete install/prepare evidence. Connect accepted AXILite register/start/continue transactions if needed for full host claim. Current finite command-memory->reply trace is conditional source evidence only. Prioritize any actual native terminal audit; retain Owner supervisor quota failure/absent guard+negative, no restart/adoption. AllG1-G8 originalstrictcapacity/async/mapping/migration,representativeQoR/ablations,300MHz/board/artifact/paper requirements remain open.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "owner_supervisor_failure_retained": true,
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending;820separate transitive/466root gaps;paper unchanged.",
+  "research_complete": false
+}

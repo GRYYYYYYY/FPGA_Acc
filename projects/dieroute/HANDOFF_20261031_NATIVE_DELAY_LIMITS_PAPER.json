@@ -1,0 +1,36 @@
+{
+  "observed_ns": 1793407533498894565,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_RETAINED_REPORT_REFERENCES_SCOPE_CORRECTED.json",
+    "sha256": "393cb3e993cd3952feeb3f213db9eb1ded5995140705cb1918d4dfc45e32a701"
+  },
+  "progress": {
+    "PDF": "work/native_delay_limits_paper_update_20261031/paper/dieroute.pdf",
+    "PDF_sha256": "5ef1d7626748cbf13ca41dd61feb88f383f0ff59536164bc12b6fbd3d7c49ae0",
+    "source_bundle": "work/native_delay_limits_paper_update_20261031/dieroute_native_delay_limits_draft_sources.tar.gz",
+    "source_bundle_sha256": "4b3a7e68149c5d947907b6057328e4f9572390f53bccd958ef9e1cc5b0cd1cf6",
+    "pages": 34,
+    "scope": "Document compilation and evidence integration only: base evaluation22Oct, formal45review27Oct, literature30Oct, frozen U280 development diagnostics31Oct. Retained diagnostics expose ordering/representation limits; no model adoption, new native/RTL/physical experiment, heldout guarantee, error tolerance or gate closure. Original11workloads/311096searches/45formal slots,37passes/8failures and absent physical U280 retained.",
+    "research_complete": false,
+    "manifest": "work/native_delay_limits_paper_update_20261031/manuscript_update_manifest.json",
+    "manifest_sha256": "f5cf885bf787b008be178d459f8c4986666f1aa737bcbb0b35c2a900efb0bb67"
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v185_20261031/matrix.json",
+    "sha256": "d06430bcfe78b4957876d0aefed9f21cb96f41b2bcaba12ac81a39d8d2fe6b93"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v185.json",
+    "sha256": "9566c2df2c3e6d6f6f348cac5695af5a17e5ff3d9acb019818c20a69d039bfcf"
+  },
+  "next_action": "Current integrated draft is34pages with frozen U280 delay ranking/alias/structure limits, not calibrated routing costs. Original formal45/37passes/8failures retained. Source/evidence110file bundle independently recompiled, full PDF text identical. Artifact ledger staysv19,9823/9968associated and145pending, plus820separate transitive/466root gaps. Preserve all30watched handles, original guards/watchdogs and sole strict-native queue owner. Review real full terminal positives before canaries/adoption; no quiet-job restart, large trace or sparseTV scan.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

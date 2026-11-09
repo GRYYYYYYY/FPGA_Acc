@@ -1,0 +1,53 @@
+{
+  "schema": "FUSIONPAR_VALIDATION_INPUT_COVERAGE_FAILURE_V1",
+  "observed_utc": "2026-10-13T12:53:10.126138+00:00",
+  "design": "tseng",
+  "root_clock_nets": [
+    "pclk"
+  ],
+  "net": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/tseng/baseline/tseng.net",
+    "sha256": "e0b1f26cdc9006f8a511a85831aebac6be3052d9b76812b7c6b6d7cfae854939"
+  },
+  "converter": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/prepare_vpr_bundle.py",
+    "sha256": "789c497087d62cd8a7a0dbeb08f871f535107454d6e92ab9042e7c2f2e7c7ab0"
+  },
+  "failures": [
+    {
+      "track": "equal_evaluation_feedback",
+      "phase": "conversion",
+      "exit_status": 1,
+      "prepare_seconds": 0.986494954,
+      "host_calls": 0,
+      "receipt": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/tseng/equal_evaluation_feedback/prepare.process.json",
+        "sha256": "5dff0e5ac709fef1610651261166c90a945a3cfd07aa27618acebbbc240e4c6a"
+      },
+      "stderr": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/tseng/equal_evaluation_feedback/prepare.stderr.log",
+        "sha256": "32417a892d29aaf729c0d70a1f4358c5dfe84200184a7f7bbbe3b72a0f86f4cf"
+      }
+    },
+    {
+      "track": "shared_staged_vs_interleaved",
+      "phase": "conversion",
+      "exit_status": 1,
+      "prepare_seconds": 0.930936182,
+      "host_calls": 0,
+      "receipt": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/tseng/shared_staged_vs_interleaved/prepare.process.json",
+        "sha256": "28a8c66f5a912c80f0abd8292d1f4071b4a2dc663b6cce1cbb21674bcb1c5419"
+      },
+      "stderr": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/tseng/shared_staged_vs_interleaved/prepare.stderr.log",
+        "sha256": "32417a892d29aaf729c0d70a1f4358c5dfe84200184a7f7bbbe3b72a0f86f4cf"
+      }
+    }
+  ],
+  "classification": "Explicit unsupported root-clock input boundary; no host candidate evaluation; retained in selected-six denominator",
+  "limits": [
+    "Cohort measurements ended; independent audits still running",
+    "No source or policy change and no replacement design"
+  ]
+}

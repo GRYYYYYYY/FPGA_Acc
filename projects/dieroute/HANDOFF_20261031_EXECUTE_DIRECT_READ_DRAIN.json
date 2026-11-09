@@ -1,0 +1,43 @@
+{
+  "observed_ns": 1793425406796810337,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_DELIMITER_COUPLED_LIFETIME.json",
+    "sha256": "8923f7f3ff95ac5595c289890971fedc814d7d9a14547c72f4e4c2f2f860ac95"
+  },
+  "progress": {
+    "report": "work/resident_execute_direct_read_drain_20261031/review.json",
+    "report_sha256": "39139afb4cc0ee5e48360cab1fcd290994cd3bd23e945ae524d9057b09c8ee70",
+    "independent_review": "work/resident_execute_direct_read_drain_20261031/independent_review.json",
+    "independent_review_sha256": "aa20d699ef6d3e83b1ef1b0cf4b629d16b86dc817088bb6ee8fbbe3a34e58a1a",
+    "direct_consumer_modules": 7,
+    "static_request_sites": 15,
+    "static_return_sites": 15,
+    "execute_states": 327,
+    "execute_edges": 408,
+    "maximum_execute_direct_debt": 2,
+    "unified_whole_program_model_proved": false,
+    "intended_response_identity_proved": false,
+    "HDL_simulation_executed": false,
+    "scope": "Complete source-bound consumer inventory identifies7direct install-read modules:6leaves plus execute itself,with15static request/return sites each. Six-leaf completion proofs never covered execute-local transactions. Execute directly accepts at49/50/159/247and consumes at119/120/229/317. Source exact ready/valid guards and corresponding FSM hold/advance cases are truth-checked;every other326-state case nondeterministically chooses any actual source target. Reset-started closure tracks a ghost FIFO of accepted execute-local request sites and a one-cycle consumption pulse. At most2execute-local words are unmatched:49and50can both be accepted before119/120consume in that order. Other direct pairs159->229and247->317also match. All helper wait states25/28/30/36/38/44/135/145/147and execute idle1/terminal326have zero direct-request debt and zero direct-consumption pulse. The queue contains only execute-local requests;helper traffic relies on separately proved caller/drain contracts. Ghost labels establish local source control ordering,not physical/AXI response identity or addresses. Assumes reset-started legal binary states and no midcall reset;unrelated data/other helper guards are overapproximated. This is not a unified whole-program model,full sequential/4stateHDL equivalence,intended pointer/data/response correctness,native completion,fairness,watchdog/timing or board performance. Two outstanding requests is a control-model capability,not observed hardware concurrency. No native flow,DUT/process/input/cache/guard/budget changes.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v242_20261031/matrix.json",
+    "sha256": "6ba4e02414ad6b6f871b56fe8e52154410c0288fa095de8dc15f1d48fa66fab3"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v242.json",
+    "sha256": "07448dce817430fccacb6c7f59cfb3a27246558312df4748f8d9a5e4a054453e"
+  },
+  "next_action": "Compose all7direct-consumer contracts,including execute-local two-outstanding requests,with caller selection and adapter credit/count contracts. Inventory now distinguishes6leaf consumers from the parent execute direct path. Actual source address/pointer/data correspondence,external response identity and full sequential/native acceptance remain;preserve original jobs/guards/budgets/inputs/caches.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

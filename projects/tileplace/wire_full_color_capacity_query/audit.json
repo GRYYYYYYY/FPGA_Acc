@@ -1,0 +1,23 @@
+{
+  "status": "pass",
+  "change": "root and chain scratch backing/capacities honor requested limits; descriptor upper bound retains min(limit,site_count) because actual root cardinality bounded by site count",
+  "build": "g++ -std=c++17 -O2 -Wall -Wextra -Werror full_color_query.cpp",
+  "regression": "../work/full_color_dense_geometry_2026-09-30/audit.json",
+  "queries": 1024,
+  "original_limits": {
+    "candidate_limit": 128,
+    "chain_limit": 16
+  },
+  "site_count": 9,
+  "selected_kinds": [
+    "move",
+    "swap",
+    "chain2",
+    "chain3"
+  ],
+  "sources": {
+    "host_scratch_words.hpp": "2f0e146d7949b3ea91ccef935bac1619f540f720ade800745d403da1a7b6f78d",
+    "full_color_query.cpp": "b6acd8067370210ff0b3a8d946e5d78da8eb2964db655211a225df8eb2047a11"
+  },
+  "scope": "independent corrected host query version; existing resident/native sealed version and live HLS untouched; not integrated into resident version yet"
+}

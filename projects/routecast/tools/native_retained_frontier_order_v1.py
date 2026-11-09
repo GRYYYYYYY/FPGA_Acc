@@ -1,0 +1,70 @@
+"""Whole-NET retained-native initialization with atomic raw fallback.
+Caller supplies frozen matched budgets and a lazy capacity-positive fallback.
+Cross-NET overuse is a prediction, never legal route admission.
+"""
+from retained_criticality_tree_seed_v1 import seed
+from raw_retained_tree_expand_v1 import expand
+
+from types import MappingProxyType
+
+class Rejected(ValueError):pass
+class SelectionError(RuntimeError):pass
+
+def initialize(graph,fields,kinds,queries,old_records,budgets,edge_slots,fallback,*,frontier_probe,emit=None):
+ if not queries:raise ValueError('empty NET')
+ if emit is not None and not callable(emit):raise ValueError('trace callback')
+ source=queries[0]['source'];net=queries[0]['net_id'];qs={q['connection_id']:q for q in queries};old={r['connection_id']:r for r in old_records}
+ if len(qs)!=len(queries) or len(old)!=len(old_records) or set(qs)!=set(old) or len({q['sink'] for q in queries})!=len(queries):raise ValueError('NET connection domain')
+ if len(kinds)!=graph.n or len(fields['capacities'])!=graph.n:raise ValueError('node domain')
+ for cid,q in qs.items():
+  if q['source']!=source or q['net_id']!=net or old[cid]['net_id']!=net:raise ValueError('NET identity')
+  if type(budgets[cid]) is not int or not 0<=budgets[cid]<2**128:raise ValueError('budget domain')
+  if any(type(q[k]) is not int or not 0<=q[k]<graph.n for k in ['source','sink']):raise ValueError('endpoint domain')
+  if kinds[q['source']]!='SOURCE' or kinds[q['sink']]!='SINK':raise ValueError('terminal types')
+ def validate(answers,subset):
+  if set(answers)!=set(subset):raise Rejected('incomplete NET')
+  parents={};owned=set()
+  for cid in subset:
+   q=qs[cid];a=answers[cid];u=source;visited={u};value=graph.initial[u]
+   if fields['capacities'][u]<=0:raise Rejected('disabled source')
+   edges=a['physical_edge_ids']
+   for index,eid in enumerate(edges):
+    if type(eid) is not int or eid<0:raise Rejected('edge ID')
+    try:slot=edge_slots[eid]
+    except (KeyError,IndexError):raise Rejected('absent edge')
+    if type(slot) is not int or not 0<=slot<len(graph.inc) or fields['edge_ids'][slot]!=eid or not graph.offsets[u]<=slot<graph.offsets[u+1]:raise Rejected('arc source')
+    v=graph.dest[slot]
+    if v in visited or fields['capacities'][v]<=0:raise Rejected('cycle or disabled resource')
+    if index<len(edges)-1 and kinds[v] in ('SOURCE','SINK'):raise Rejected('interior terminal')
+    if kinds[v]!='SINK':
+     if v in parents and parents[v]!=(u,slot):raise Rejected('parent conflict')
+     parents[v]=(u,slot)
+    visited.add(v);value+=graph.inc[slot];u=v
+   if u!=q['sink'] or value!=a['delay'] or value>budgets[cid]:raise Rejected('endpoint/raw budget')
+   owned.update(visited)
+  return owned
+ def publish(event):
+  if emit is None:return
+  try:emit(MappingProxyType(event))
+  except Exception as error:raise SelectionError('selection trace failed') from error
+ def select(tree,remaining):
+  try:scores=tuple((cid,frontier_probe.capture(tree,qs[cid]['sink'])['projected_min_tile_L1']) for cid in sorted(remaining))
+  except Exception as error:raise SelectionError('invalid source frontier context; not routing fallback') from error
+  cid,gap=min(scores,key=lambda x:(x[1] is None,0 if x[1] is None else x[1],x[0]));publish(dict(phase='select',net_id=net,connection_id=cid,candidates=scores,tree_nodes=len(tree.arrival)));return cid
+ eligible=sorted(cid for cid,q in qs.items() if (old[cid]['source'],old[cid]['sink'])==(source,q['sink']))
+ answers={};repair_calls=0;reason=None
+ try:
+  for cid in eligible:answers[cid]=dict(old[cid]['answer'],physical_edge_ids=list(old[cid]['answer']['physical_edge_ids']))
+  validate(answers,eligible)
+  tree=graph.tree(source);seed(tree,[(qs[cid]['sink'],[edge_slots[e] for e in answers[cid]['physical_edge_ids']],budgets[cid]) for cid in eligible])
+  remaining=set(qs)-set(eligible)
+  while remaining:
+   cid=select(tree,remaining);remaining.remove(cid)
+   repair_calls+=1;result=expand(tree,qs[cid]['sink'],budgets[cid])
+   publish(dict(phase='expanded',net_id=net,connection_id=cid,status=result['status'],committed=result['committed'],raw=result.get('raw'),path_edge_ids=tuple(fields['edge_ids'][slot] for slot in result.get('path_slots',()))))
+   if not result['committed']:raise Rejected(result['status'])
+   answers[cid]=dict(status='FOUND',physical_edge_ids=[fields['edge_ids'][s] for s in result['path_slots']],delay=result['raw'])
+  owned=validate(answers,qs)
+ except (Rejected,ValueError) as error:
+  reason=str(error);answers=fallback();owned=validate(answers,qs)
+ return dict(answers=answers,retained_connection_ids=eligible if reason is None else [],attempted_retained_connection_ids=eligible,repair_calls=repair_calls,whole_NET_fallback=reason is not None,fallback_reason=reason,owner_nodes=sorted(owned))

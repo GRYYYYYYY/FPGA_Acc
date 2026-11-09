@@ -1,0 +1,292 @@
+{
+  "schema": "dieroute.wide_cost_progress.v1",
+  "research_status": "active_incomplete",
+  "board_result": false,
+  "implemented": [
+    "authoritative u64 present/history sidecar and checked controller",
+    "checked additive and multiplicative RR scoring without unused-objective overflow",
+    "little-endian cost schema and logical resource audit",
+    "native xcu280 partial SLR wire-membership diagnostic"
+  ],
+  "upstream_controller_unchanged": {
+    "path": "../persistroute/src/accelerated_pathfinder.cpp",
+    "sha256": "bc02685f60db5ee761454a086bd80074d0d55cfed1acc451dd642352b71c80e7"
+  },
+  "verification": {
+    "work/wide_cost_verification_20261013/pre_fix_build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/wide_cost_verification_20261013/current_core_comparison.json": "a29dd294899d984608a96af0e087e378913d48caff95fb91e8d9a75ea5fe994c",
+    "work/wide_cost_verification_20261013/asan_ubsan.log": "d163cf599319e7c664f2896755186a319dcfddd23c3d8ead5adb581d92ec6943",
+    "work/wide_cost_verification_20261013/legacy_comparison.json": "63f6347a525792a66d550f3c7b6bdce4cc4ad95f17b674f6b2ed7a84c7bd7f22",
+    "work/wide_cost_verification_20261013/current_diffeq.json": "4e5b029a95f77a09e1d59984a89c02ff092df8372011940f19e36946e4930ec9",
+    "work/wide_cost_verification_20261013/pre_fix_regression.log": "2fe2ad2ab4dbf9250e7db4bde0a9eded6c1de973eae879a6a4873168a6312f9a",
+    "work/wide_cost_verification_20261013/controller_provenance.json": "41fe03e0550599b79bc06e7c7d0665732663bb1ae32ab6745703b1a953e00647",
+    "work/wide_cost_verification_20261013/asan_build_retry.log": "610daaa85dc0be551bc82cd802460cc0129bbeebef8cbce6255756422bfee98c",
+    "work/wide_cost_verification_20261013/controller_port.diff": "b3ff372d01f1d1fff20fbdc228c30b3361b4a8afb3b90d54d4cfa57ea998eb12",
+    "work/wide_cost_verification_20261013/asan_final.log": "5b8ca2ff9ebf67033d88f5a8a4725ad986baa5b38cb487034ef4a83053f726c4",
+    "work/wide_cost_verification_20261013/current_alu4.json": "dbcf4f4be26d2b1c11cbca9a6c72e36709fbde2d7399dc8880c3a348b7dce513",
+    "work/wide_cost_verification_20261013/pre_fix_regression.json": "33d59c2e98e2d12fd2feec82c2de8af3b80666664bda5e122fc3ae3f9c20352f",
+    "work/wide_cost_verification_20261013/current_ex5p.json": "16bf48bea4f4a9be07ac29c743751fe69d5154438150660fe2c49f49ba80e1cd",
+    "work/wide_cost_verification_20261013/asan_final_build.log": "0eafbd6ada36d997ef27de1e0644525182c35d64630ee02428b2a5b3f0063f57",
+    "work/wide_cost_verification_20261013/current_diffeq.log": "446f895ee70af40c190625a55bc58e62db0f741feab123cbcb0e140937c77b3c",
+    "work/wide_cost_verification_20261013/current_alu4.log": "446f895ee70af40c190625a55bc58e62db0f741feab123cbcb0e140937c77b3c",
+    "work/wide_cost_verification_20261013/build.log": "18b601ccff094b8955c9a11d40c66ed67e0b9d0d435799698722c06068de0096",
+    "work/wide_cost_verification_20261013/current_ex5p.log": "09eb23211ccfb553258866e6d1502ac88c9210a17b5b71c147cdeda3461f08ea",
+    "work/wide_cost_verification_20261013/ctest.log": "94def5c8e766aa6319c79793f8c2e3244ce4026b85c7e06f47de69571fc2a94e",
+    "work/wide_cost_verification_20261013/asan_build.log": "c1e0174adf27471b26f7d30a58d4e0dcbd4be347c039fbff847b03aecf496340"
+  },
+  "completed_experiments": [
+    {
+      "manifest": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/rr_pair_diffeq_widecost_v1_20261013/pair.json",
+      "audit": "experiments/wide_cost_audit_20261013.json",
+      "modes": {
+        "flat": {
+          "status": "passed",
+          "repeats_verified": 5,
+          "deterministic_outputs_and_counters": true,
+          "native_qor": {
+            "total_wirelength": 8663,
+            "critical_path_delay_ns": 7.66508,
+            "baseline_wirelength": 8639,
+            "baseline_cpd_ns": 7.61372,
+            "wirelength_delta_percent": 0.2778099317050531,
+            "cpd_delta_percent": 0.6745716942571978
+          }
+        },
+        "downstream": {
+          "status": "passed",
+          "repeats_verified": 5,
+          "deterministic_outputs_and_counters": true,
+          "native_qor": {
+            "total_wirelength": 8628,
+            "critical_path_delay_ns": 7.66154,
+            "baseline_wirelength": 8639,
+            "baseline_cpd_ns": 7.61372,
+            "wirelength_delta_percent": -0.12732955203148544,
+            "cpd_delta_percent": 0.6280766826203266
+          }
+        },
+        "downstream_bounded": {
+          "status": "passed",
+          "repeats_verified": 5,
+          "deterministic_outputs_and_counters": true,
+          "native_qor": {
+            "total_wirelength": 8628,
+            "critical_path_delay_ns": 7.66154,
+            "baseline_wirelength": 8639,
+            "baseline_cpd_ns": 7.61372,
+            "wirelength_delta_percent": -0.12732955203148544,
+            "cpd_delta_percent": 0.6280766826203266
+          }
+        }
+      }
+    },
+    {
+      "manifest": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/rr_pair_alu4_widecost_v1_20261013/pair.json",
+      "audit": "experiments/wide_cost_audit_20261013.json",
+      "modes": {
+        "flat": {
+          "status": "passed",
+          "repeats_verified": 5,
+          "deterministic_outputs_and_counters": true,
+          "native_qor": {
+            "total_wirelength": 7260,
+            "critical_path_delay_ns": 10.1899,
+            "baseline_wirelength": 7733,
+            "baseline_cpd_ns": 9.49369,
+            "wirelength_delta_percent": -6.116642958748219,
+            "cpd_delta_percent": 7.333397235426897
+          }
+        },
+        "downstream": {
+          "status": "passed",
+          "repeats_verified": 5,
+          "deterministic_outputs_and_counters": true,
+          "native_qor": {
+            "total_wirelength": 7184,
+            "critical_path_delay_ns": 10.4801,
+            "baseline_wirelength": 7733,
+            "baseline_cpd_ns": 9.49369,
+            "wirelength_delta_percent": -7.099443941549199,
+            "cpd_delta_percent": 10.39016441446896
+          }
+        },
+        "downstream_bounded": {
+          "status": "passed",
+          "repeats_verified": 5,
+          "deterministic_outputs_and_counters": true,
+          "native_qor": {
+            "total_wirelength": 7184,
+            "critical_path_delay_ns": 10.4801,
+            "baseline_wirelength": 7733,
+            "baseline_cpd_ns": 9.49369,
+            "wirelength_delta_percent": -7.099443941549199,
+            "cpd_delta_percent": 10.39016441446896
+          }
+        }
+      }
+    },
+    {
+      "manifest": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/rr_pair_ex5p_widecost_v1_20261013/pair.json",
+      "audit": "experiments/wide_cost_audit_20261013.json",
+      "modes": {
+        "flat": {
+          "status": "passed",
+          "repeats_verified": 5,
+          "deterministic_outputs_and_counters": true,
+          "native_qor": {
+            "total_wirelength": 9552,
+            "critical_path_delay_ns": 11.2044,
+            "baseline_wirelength": 9664,
+            "baseline_cpd_ns": 9.60037,
+            "wirelength_delta_percent": -1.1589403973509937,
+            "cpd_delta_percent": 16.708001879094247
+          }
+        },
+        "downstream": {
+          "status": "passed",
+          "repeats_verified": 5,
+          "deterministic_outputs_and_counters": true,
+          "native_qor": {
+            "total_wirelength": 9527,
+            "critical_path_delay_ns": 10.9403,
+            "baseline_wirelength": 9664,
+            "baseline_cpd_ns": 9.60037,
+            "wirelength_delta_percent": -1.41763245033113,
+            "cpd_delta_percent": 13.957066238072091
+          }
+        },
+        "downstream_bounded": {
+          "status": "passed",
+          "repeats_verified": 5,
+          "deterministic_outputs_and_counters": true,
+          "native_qor": {
+            "total_wirelength": 9527,
+            "critical_path_delay_ns": 10.9403,
+            "baseline_wirelength": 9664,
+            "baseline_cpd_ns": 9.60037,
+            "wirelength_delta_percent": -1.41763245033113,
+            "cpd_delta_percent": 13.957066238072091
+          }
+        }
+      }
+    },
+    {
+      "manifest": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/rr_pair_diffeq_timing_widecost_v1_20261013/pair.json",
+      "audit": "experiments/wide_timing_diffeq_audit_20261013.json",
+      "modes": {
+        "flat": {
+          "status": "passed",
+          "repeats_verified": 5,
+          "deterministic_outputs_and_counters": true,
+          "native_qor": {
+            "total_wirelength": 9235,
+            "critical_path_delay_ns": 7.60939,
+            "baseline_wirelength": 8639,
+            "baseline_cpd_ns": 7.61372,
+            "wirelength_delta_percent": 6.898946637342296,
+            "cpd_delta_percent": -0.05687101705866837
+          }
+        },
+        "downstream_bounded": {
+          "status": "passed",
+          "repeats_verified": 5,
+          "deterministic_outputs_and_counters": true,
+          "native_qor": {
+            "total_wirelength": 8996,
+            "critical_path_delay_ns": 7.61167,
+            "baseline_wirelength": 8639,
+            "baseline_cpd_ns": 7.61372,
+            "wirelength_delta_percent": 4.1324227341127395,
+            "cpd_delta_percent": -0.02692507736034022
+          }
+        }
+      }
+    },
+    {
+      "manifest": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/rr_pair_alu4_timing_widecost_v1_20261013/pair.json",
+      "audit": "experiments/wide_timing_alu4_audit_20261013.json",
+      "modes": {
+        "flat": {
+          "status": "passed",
+          "repeats_verified": 5,
+          "deterministic_outputs_and_counters": true,
+          "native_qor": {
+            "total_wirelength": 8321,
+            "critical_path_delay_ns": 9.43037,
+            "baseline_wirelength": 7733,
+            "baseline_cpd_ns": 9.49369,
+            "wirelength_delta_percent": 7.603776024828646,
+            "cpd_delta_percent": -0.6669693238351093
+          }
+        },
+        "downstream_bounded": {
+          "status": "passed",
+          "repeats_verified": 5,
+          "deterministic_outputs_and_counters": true,
+          "native_qor": {
+            "total_wirelength": 8353,
+            "critical_path_delay_ns": 9.43037,
+            "baseline_wirelength": 7733,
+            "baseline_cpd_ns": 9.49369,
+            "wirelength_delta_percent": 8.017586964955381,
+            "cpd_delta_percent": -0.6669693238351093
+          }
+        }
+      }
+    }
+  ],
+  "audits": {
+    "experiments/wide_cost_audit_20261013.json": "02f5213c198a24be1c7e5823dcf15675ff93abf0630071655e2522aaee0b2d8b",
+    "experiments/wide_timing_diffeq_audit_20261013.json": "94264c87cf4d29379e8c53ad990c401023e5c4192494d41e7a424923f5a1f577",
+    "experiments/wide_timing_alu4_audit_20261013.json": "09fc93df10eab9e2eb2d973da536dda7f288f1b8b541c750aaa883c382e03c36",
+    "experiments/native_slr_census_audit_20261013.json": "f77675123c39e81561a72981da2f7c3db4c38d910ac1dba6ba5013077e6c6372"
+  },
+  "active_processes": [
+    {
+      "manifest": "work/rr_pair_ex5p_timing_widecost_v1_20261013/pair.json",
+      "manifest_status_at_checkpoint": "running",
+      "session_id": 28600,
+      "step": "flat_3",
+      "pid": 3685534,
+      "pid_live": true,
+      "cmdline": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/rr_pair_ex5p_timing_widecost_v1_20261013/build/dieroute_rr /inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/rr_pair_ex5p_timing_widecost_v1_20261013/input /inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/rr_pair_ex5p_timing_widecost_v1_20261013/topology /inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/rr_pair_ex5p_timing_widecost_v1_20261013/flat_3 flat "
+    }
+  ],
+  "preliminary_failure": "ex5p timing flat first completed repeats retain one overused resource at the frozen 30-iteration limit; do not claim legality or native QoR for these failed routes",
+  "open_gates": [
+    "joint WL/CPD",
+    "concurrent reservations and boundary shadow",
+    "complete commercial SLR/SLL resource semantics and routed-design validation",
+    "representative held-out cohort and five ablations",
+    "HLS/HBM implementation",
+    "physical U280 performance and energy",
+    "paper/artifact completion"
+  ],
+  "source_sha256": {
+    "include/wide_costs.hpp": "d419d03080708deb6345b3d67793faf13c22fbcb47af4f67e560d4051c5b07a2",
+    "include/rr_backend.hpp": "f079a4d8596fba78bac9026db75273b7d34e612f3785cea7443afb1e16578af5",
+    "include/corridor.hpp": "fbec3a431c8fd7787023f53848d3ee2cb4dd8b2bbf5a6550b7766e94958c161c",
+    "include/dieroute.hpp": "53ac0e049b7d81061d39648bbf6882c28f688e61f90e95dee3d344fa93302f20",
+    "src/dieroute.cpp": "d0560995d4c02a35190a958e4664b4ee61df4e412604bc0c427a796a9eaffb74",
+    "src/wide_controller.cpp": "085961c4fc2cf9bc426725886e1212db6c6a2f26d0f447eaab324453e61a75e7",
+    "src/rr_backend.cpp": "ee801af4fd2184bc3de43ad82626eb4c806a30d5b5f2aacc0512d4b3c692d1d5",
+    "src/wide_costs.cpp": "c4ce8fcdc2bf27b57c92cea0eb088c98d961c440f8c311f232811f7e94fbb622",
+    "src/corridor.cpp": "8c4b42d56ca1c1d6c855d2de458115b57b161c40549cfa9b2d6e7d49af99da77",
+    "host/rr_host.cpp": "2ba28bafa41891a862bffdf7af65c3bf8c1a4c5d70c1bbb111a6efadbbfd5088",
+    "tools/export_vpr_topology.py": "64205dd46adf56c41e8a8f514da10c8320af441eefb9b6d91bd9bfa750c22659",
+    "tools/run_native_case.py": "281d46e1a7f801ebefefc0dce7fbed8ace6b38f91bf6c43f4f77a0c5c20b7690",
+    "tools/run_rr_pair.py": "787d91189cbfd67fe5c0159db41431ffeb0dee77c02e2c74a03725a46d0ca37c",
+    "tools/run_pr_reference.py": "a3f151db4b88da2b6dd0ddc54dbe76e52ceb20182a1ebf0d1fbc4c7a33ab5b8c",
+    "tools/SlrNodeProbe.java": "12fd0af865ca02d2b733f0da1c398d60dab7ee8c9dad1e3284e27c76fcb593cb",
+    "tools/audit_slr_census.py": "a3c39f0c93d4df8a8504fbfa28e2fe2325fa6555d5c531e1a627b6f85f12591b",
+    "tools/native_base_costs.py": "4c53b76416c2ba68304419b68e41129350ba00d2c27af33a03ea097502aef879",
+    "tools/audit_rr_experiments.py": "cc776822626518bda8f078576c536a9a9be575d67cd6fcb1e754f6ce3d3aa121",
+    "tb/wide_costs_tb.cpp": "e0d87bb941f4b0dd1b40c5fa92390b75dd87347b4dd2ff25f984fdaadfbe33f2",
+    "tb/crossing_metrics_test.py": "0ccba3a070783638a080b759c89209749d0458aec2b620224ee718c4a1536c24",
+    "tb/topology_converter_test.py": "5c6fb61e6ee379ebe9f51248119d464ea301d07c2018cbca20061742999941c5",
+    "tb/rr_backend_tb.cpp": "d33a0556b0661fda431f03a9fcf40a222c779617606a18bcecd03e8ed3a9c696",
+    "tb/corridor_tb.cpp": "4ce3f2fadcd792fad63a94250f3fc70ebb136167108b087aa4762faa8e2df986",
+    "tb/dieroute_tb.cpp": "e8584da9a679b5876f1ffc59c4c1d622198b0cd35c1883ec8390700193893d7e",
+    "tb/native_base_costs_test.py": "47544cb03d6e6efe5f2a757c023a11087b73f8c5ad54f7d1fcd68c0036d80564"
+  }
+}

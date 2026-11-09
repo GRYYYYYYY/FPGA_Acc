@@ -1,0 +1,27 @@
+{
+  "schema": "dieroute.native_policy.v1",
+  "scope": "immutable CPU routing admission for provisional signal-net candidates; not complete commercial design qualification",
+  "design_binding": "The frozen run manifest binds policy objects to the DCP footprint, native graph and mapping hashes. Header architecture fingerprint alone does not identify the design; host raw sidecar length checks do not authenticate that provenance.",
+  "full_native_objects": {
+    "header": "shared FPGAACCP 64-byte header, schema 0.1, native CSR architecture fingerprint and CRC64/ECMA-182",
+    "node_protection.bin": {"object_type": "0x44520004", "record_bytes": 1, "index": "full native electrical node ID"},
+    "terminal_net.bin": {"object_type": "0x44520005", "record_bytes": 4, "index": "full native electrical node ID", "record": "little-endian footprint net ID; 0xffffffff means no exclusive candidate pin owner"},
+    "pip_protection.bin": {"object_type": "0x44520006", "record_bytes": 1, "index": "full native PIP catalog ID, NOT CSR arc ID"}
+  },
+  "node_mask": {"1": "background net footprint", "2": "partition pin", "4": "tied GND/VCC", "8": "empty native member getter", "16": "clock intent"},
+  "clock_intents": "dictionary names beginning NODE_GLOBAL_, or CLKPIN, GLOBAL, BUFGROUT, REFCLK; original candidate footprint must pass without exceptions",
+  "pip_mask": {"4": "fixed", "8": "route-through", "16": "stub", "32": "start stub", "128": "missing endpoint or end-wire-null"},
+  "terminal_ownership": "every candidate source/sink pin node is permanently reserved for its net across rip-up; different candidate nets sharing a terminal node reject conversion",
+  "runtime": {
+    "API": "shared immutable RoutingPolicy supplied to RRBackend, SpeculativeBackend and route_wide_pathfinder_edges",
+    "host_sidecars": {".node_protection": "one raw u8 per PR node", ".terminal_net": "one raw little-endian u32 per PR node", ".edge_protection": "one raw u8 per PR CSR edge"},
+    "mapping_requirement": "When constructing a PR view, map native nodes to its node order and expand native pip_protection[edge_ref >> 1] into each directed CSR edge. Never copy the native PIP-indexed table as the CSR-edge table. Full-view conversion is not implemented by this schema alone.",
+    "activation": "any host sidecar requires all three, exact lengths, edge identity and 64-bit costs; there is no overuse override",
+    "search": "hard-denied nodes/edges omitted from local, flat and reverse-lookahead expansion and corridor proposals; foreign terminal seeds reject",
+    "commit": "current proposal paths independently rechecked before any write; policy-required proposals cannot use policy-free commit; stale snapshots remain replayable",
+    "epochs": "protected occupancy, capacity, owner, version and logical u64 costs unchanged during initialization, rip-up and all congestion epochs; cost fields in the PR resource record remain reserved zero under the existing wide-state ABI",
+    "sources": "incoming native arcs do not make a source invalid; exclusive terminal ownership prevents other nets borrowing it"
+  },
+  "full_graph_audit": "every provisional original candidate pin, PIP and task must pass the policy; counts include all directed arcs before net-specific and remaining site/tile admissibility checks",
+  "remaining": ["complete signal tile/site/pin accessibility restrictions", "full PR graph/view packing and commercial workload routing", "commercial capacities and delays", "edge-aware timing adapter", "DCP writeback and native design legality/QoR", "HLS/HBM enforcement"]
+}

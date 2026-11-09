@@ -1,0 +1,18 @@
+{
+  "status": "pass",
+  "scope": "array-only transaction sorting by score/host identity rank and conflict selection; not full identity encoding, search integration or HLS synthesis",
+  "transaction_sets": 1000,
+  "set_sizes": "0 through 64",
+  "random_seed": 37,
+  "atomic_fault_cases": 2,
+  "preconditions": [
+    "unique full proposal identity ranks supplied by host",
+    "canonical unit identity IDs",
+    "distinct caller scratch/output buffers with count capacity"
+  ],
+  "files": {
+    "selection.hpp": "7f5a351e1c791fae07216a5748c8197c0826c7026c0fc248acfdafa70908fabf",
+    "selection_test.cpp": "63a204fa5db62b7433786e8aed2675c609df823291067fa05deaf7098990e56b",
+    "CMakeLists.txt": "f75faa8c77a4192cffcbfaf64b93cc3baf130480fcd844db2641ae84a2b85adc"
+  }
+}

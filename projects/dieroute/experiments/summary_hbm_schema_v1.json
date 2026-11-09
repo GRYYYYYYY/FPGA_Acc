@@ -1,0 +1,41 @@
+{
+  "schema": "dieroute.summary_hbm_abi.v1",
+  "scope": "Synthesizable bounded summary endpoint; full net ownership/transactions remain in the CPU controller",
+  "packet": "Exact native persistent-shadow 64-byte payload, little-endian, unchanged kinds 1/2/3",
+  "topology": "Immutable sorted unique global-node slots, u64 node:u32 + full SLR mask:u8 + reserved zero:u24. Lowest set bit is the owner; only shared boundary nodes are present.",
+  "storage": "One owner-summary slot per node per logical-die CU, accessible only by that owner. One non-authoritative receiver record per lane/slot in each worker CU. Record u64 words: session, occupancy, history, version, topology entry, 0,0,0.",
+  "owner_install": "Trusted controller supplies a committed summary. Kernel checks expected previous version, session, full membership and increasing version; same-version equal-value is idempotent. This does not calculate net-set occupancy or commit an entire net.",
+  "operations": {
+    "owner_install": 1,
+    "owner_fetch": 2,
+    "shadow_receive": 3,
+    "shadow_inspect": 4,
+    "owner_validate": 5
+  },
+  "command": "128 bytes: packet followed by u64 descriptor words op:u32|lane:u32, slot, expected owner version for install only, 0,0,0,0,0",
+  "response": "128 bytes: packet (or fetched summary reply) followed by status, command ticket, op|lane<<32, slot, wrote_state,0,0,0",
+  "completion": "64 bytes: new command-read ticket, new response-write ticket, consumed count, launch_error, state writes, rejected commands, session,0",
+  "status": {
+    "ok": 0,
+    "duplicate": 1,
+    "stale": 2,
+    "bad_packet": 3,
+    "bad_address": 4,
+    "bad_role": 5,
+    "missing": 6,
+    "compare_failed": 7,
+    "value_conflict": 8,
+    "bad_record": 9
+  },
+  "queue": "Independent input/output ring capacities are powers of two <=2^20. Monotonic u64 tickets never wrap. Consume at most min(available commands, response credits, max_steps, remaining output ticket range). Invalid launch or no response credit causes no command consumption and no state mutation. Each consumed command returns one response, including rejected commands.",
+  "lifecycle": "Controller owns buffers between launches and supplies strictly increasing sessions when resetting/checkpointing/changing slot mapping. Prior-session entries are logically absent; packets from a different current session are rejected. Uninitialized owner fetches fail rather than fabricating a zero summary.",
+  "interfaces": "512-bit separate AXI masters for ingress, owner state, receiver state and egress; 64-bit read-only topology master. Completion shares egress. Explicit U280 bank configuration exists but requires linked-platform evidence.",
+  "coherence": "Controller owns buffers between launches. No host DMA or another CU may access a writable buffer while this CU owns it; responses become consumable after kernel completion. Owner installation/validation execute serially within a CU; cross-CU full-net atomicity is not implemented.",
+  "limits": [
+    "No full router or whole-net hardware commit",
+    "No autonomous subscription scanner or inter-CU network scheduler",
+    "No simultaneous host producer/device consumer memory-coherence claim",
+    "No board performance, energy, or routed platform timing claim from HLS/cosim/hw_emu",
+    "C-model real-trace replay covers receiver/lookup; owner operations have separate directed RTL fixtures"
+  ]
+}

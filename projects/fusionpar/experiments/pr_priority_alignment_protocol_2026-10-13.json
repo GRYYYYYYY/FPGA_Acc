@@ -1,0 +1,22 @@
+{
+  "schema": "FUSIONPAR_PR_PRIORITY_ALIGNMENT_PROTOCOL_V1",
+  "reason": "A TP placement changes native route traversal order. The default importer uses traversal-derived IDs as PR priorities, adding an ordering variable to a placement comparison.",
+  "observed_before_new_TP_PR_outputs": true,
+  "reference": "Each design original-baseline bundle from sequential_retained_v1",
+  "identity_key": [
+    "net",
+    "net_pin_index"
+  ],
+  "required_checks": [
+    "Equal stable connection identity sets and packed-netlist hash",
+    "Current ID may differ; PR priority must equal the reference connection ID",
+    "All input and priority-reference files SHA-bound",
+    "Keep raw default-trace-order runs separately; do not choose priority policy based on QoR"
+  ],
+  "observed_historical_trace_order_differences": {
+    "ex5p": 806,
+    "alu4": 268,
+    "misex3": 1108
+  },
+  "followup": "After current frozen suites finish, add optional priority-reference import and rerun PR on reproduced TP outputs with original-baseline priorities; same 30-iteration PR config and no QoR tuning"
+}

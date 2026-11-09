@@ -1,0 +1,15 @@
+{
+  "status": "pass",
+  "scope": "array-only changed-endpoint Manhattan guard CPU differential; not integrated or HLS synthesized",
+  "queries": 2000,
+  "accepted": 376,
+  "rejected": 1624,
+  "fault_cases": 2,
+  "extreme_threshold_cases": 2,
+  "random_seed": 34,
+  "reference": "independent cpp_snapshot distance and full candidate placement",
+  "files": {
+    "guard_array.hpp": "fef0989a2dfe0633503d90f12db8ceefc4c03643b1e336022e374f57b5c9b23a",
+    "guard_array_test.cpp": "a9af687f746e272fd6bccb4271a80f326e86f12a544f5a73130b4f3426e006f9"
+  }
+}

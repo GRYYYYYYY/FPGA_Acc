@@ -17,32 +17,76 @@ extern "C" void routecast_kernel(const Tile tiles[MAX_TILES], const EdgeTemplate
 #pragma HLS INTERFACE s_axilite port=return bundle=control
 #endif
     SketchMetrics out{};
-    if(tile_count>MAX_TILES||edge_count>MAX_EDGES||dirty_count>MAX_DIRTY){*metrics=out;return;}
+    if(tile_count>MAX_TILES || edge_count>MAX_EDGES || dirty_count>MAX_DIRTY ||
+       hop_limit>MAX_HOPS){out.invalid_batch=1; *metrics=out; return;}
+    // Validate CSR before any mutation, including unreachable rows.
+    for(std::uint32_t i=0;i<tile_count;++i){
+        if(tiles[i].edge_begin>edge_count ||
+           tiles[i].edge_count>edge_count-tiles[i].edge_begin){
+            out.invalid_batch=1; *metrics=out; return;
+        }
+    }
+    for(std::uint32_t e=0;e<edge_count;++e){
+        if(edges[e].dst>=tile_count){out.invalid_batch=1; *metrics=out; return;}
+    }
+    std::uint32_t path[MAX_HOPS];
     for(std::uint32_t c=0;c<dirty_count;++c){
-        std::uint32_t current=dirty[c].source_tile;
-        for(std::uint32_t hop=0;hop<hop_limit && current!=dirty[c].sink_tile;++hop){
-            if(current>=tile_count) break;
-            const Tile t=tiles[current]; std::uint32_t best=0xffffffffU; std::uint64_t best_score=~std::uint64_t{0};
+        const DirtyConnection connection=dirty[c];
+        if(connection.source_tile>=tile_count || connection.sink_tile>=tile_count ||
+           connection.flags!=0){
+            ++out.invalid_connections; ++out.failed; continue;
+        }
+        std::uint32_t current=connection.source_tile, length=0;
+        const Tile sink=tiles[connection.sink_tile];
+        bool overflow=false;
+        for(std::uint32_t hop=0;hop<hop_limit && current!=connection.sink_tile;++hop){
+            const Tile t=tiles[current];
+            const std::uint32_t current_distance=
+                (t.x>sink.x?t.x-sink.x:sink.x-t.x)+
+                (t.y>sink.y?t.y-sink.y:sink.y-t.y);
+            std::uint32_t best=0xffffffffU;
+            std::uint64_t best_score=~std::uint64_t{0};
             for(std::uint32_t j=0;j<t.edge_count;++j){
 #ifdef __SYNTHESIS__
 #pragma HLS PIPELINE II=1
 #endif
-                const std::uint32_t e=t.edge_begin+j; if(e>=edge_count) break; ++out.edge_visits;
-                const EdgeTemplate edge=edges[e]; if(edge.dst>=tile_count) continue;
-                const std::uint32_t dx=tiles[edge.dst].x>tiles[dirty[c].sink_tile].x?tiles[edge.dst].x-tiles[dirty[c].sink_tile].x:tiles[dirty[c].sink_tile].x-tiles[edge.dst].x;
-                const std::uint32_t dy=tiles[edge.dst].y>tiles[dirty[c].sink_tile].y?tiles[edge.dst].y-tiles[dirty[c].sink_tile].y:tiles[dirty[c].sink_tile].y-tiles[edge.dst].y;
-                const std::uint32_t current_distance=tiles[current].x>tiles[dirty[c].sink_tile].x?tiles[current].x-tiles[dirty[c].sink_tile].x:tiles[dirty[c].sink_tile].x-tiles[current].x;
-                const std::uint32_t current_dy=tiles[current].y>tiles[dirty[c].sink_tile].y?tiles[current].y-tiles[dirty[c].sink_tile].y:tiles[dirty[c].sink_tile].y-tiles[current].y;
-                if(dx+dy>=current_distance+current_dy) continue;
-                const std::uint64_t congestion=demand_q[e]/(edge.capacity?edge.capacity:1);
-                const std::uint64_t score=(dx+dy)*256+congestion*64+edge.segment_class*8+edge.pin_class*4;
-                if(score<best_score||(score==best_score&&e<best)){best=e;best_score=score;}
+                const std::uint32_t e=t.edge_begin+j;
+                ++out.edge_visits;
+                const EdgeTemplate edge=edges[e];
+                if(edge.capacity==0) continue;
+                const Tile dst=tiles[edge.dst];
+                const std::uint32_t distance=
+                    (dst.x>sink.x?dst.x-sink.x:sink.x-dst.x)+
+                    (dst.y>sink.y?dst.y-sink.y:sink.y-dst.y);
+                if(distance>=current_distance) continue;
+                const std::uint64_t congestion=demand_q[e]/edge.capacity;
+                const std::uint64_t score=static_cast<std::uint64_t>(distance)*256+
+                    congestion*64+static_cast<std::uint64_t>(edge.segment_class)*8+
+                    static_cast<std::uint64_t>(edge.pin_class)*4;
+                if(score<best_score || (score==best_score && e<best)){
+                    best=e; best_score=score;
+                }
             }
             if(best==0xffffffffU) break;
-            demand_q[best]+=dirty[c].demand_q; ++out.updates;
-            if(demand_q[best]>out.max_demand_q) out.max_demand_q=demand_q[best];
-            if(demand_q[best]>static_cast<std::uint32_t>(edges[best].capacity)*256U) ++out.saturated;
+            if(demand_q[best]>0xffffffffU-connection.demand_q){overflow=true; break;}
+            path[length++]=best;
             current=edges[best].dst;
+        }
+        if(current!=connection.sink_tile){
+            ++out.failed;
+            if(overflow) ++out.overflow_rejections;
+            continue;
+        }
+        ++out.completed;
+        // Strict distance decrease prevents cycles and duplicate path edges.
+        // Commit only after the complete candidate passes overflow checks.
+        for(std::uint32_t i=0;i<length;++i){
+            const std::uint32_t e=path[i];
+            demand_q[e]+=connection.demand_q;
+            ++out.updates;
+            if(demand_q[e]>out.max_demand_q) out.max_demand_q=demand_q[e];
+            if(demand_q[e]>static_cast<std::uint32_t>(edges[e].capacity)*256U)
+                ++out.saturated;
         }
     }
     *metrics=out;

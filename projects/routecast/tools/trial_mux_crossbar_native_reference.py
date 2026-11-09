@@ -1,0 +1,14 @@
+"""Frozen nonlinear-family original native pack/place/route reference cohort."""
+import json,os,re,shutil,subprocess,time
+from pathlib import Path
+from pre_route_endpoints import sha
+root=Path(__file__).resolve().parents[1];freeze=root/'experiments/mux_crossbar_family_freeze_2026-10-06';frontend=root/'experiments/mux_crossbar_frontend_2026-10-06';p=json.loads((freeze/'protocol.json').read_text());fr=json.loads((frontend/'receipt.json').read_text());assert fr['protocol_sha256']==sha(frontend/'protocol.json');assert json.loads((frontend/'protocol.json').read_text())['family_receipt_sha256']==sha(freeze/'receipt.json');out=root/'experiments/mux_crossbar_native_reference_2026-10-06';out.mkdir();work=root/'work/mux_crossbar_native_reference_2026-10-06';work.mkdir();shared=root.parent/'tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07';binary=shared/'build_tileplace_vpr/vpr/vpr';arch=shared/'vtr_flow/arch/timing/k6_frac_N10_40nm.xml';cases=[]
+for row in fr['rows']:
+ w=row['width'];src=frontend/f'w{w}/design.blif';assert sha(src)==row['mapped_sha256'];d=work/f'w{w}';d.mkdir();shutil.copyfile(src,d/'design.blif');cases.append({'width':w,'cwd':str(d),'input_sha256':sha(d/'design.blif'),'command':[str(binary),str(arch),'design.blif','--route_chan_width','128','--num_workers','1','--seed','1','--max_router_iterations','100','--check_route','full','--write_rr_graph','rr_graph.xml']})
+(out/'protocol.json').write_text(json.dumps({'cases':cases,'binary_sha256':sha(binary),'architecture_sha256':sha(arch),'family_protocol_sha256':sha(freeze/'protocol.json'),'frontend_receipt_sha256':sha(frontend/'receipt.json'),'source_sha256':sha(Path(__file__)),'timeout_s':180,'scope':'Entirefrozenmuxfamily originalVPRpack/place/FULLroute/STA,width128,no predictorfeedback. Nativepressurewidth32/64 runlateronfixedsameplacement;preservefailure/timeout.'},indent=2)+'\n');rows=[];env={k:v for k,v in os.environ.items() if not k.startswith('ROUTECAST_')}
+for c in cases:
+ d=Path(c['cwd']);t=time.monotonic();timeout=False
+ try:
+  with (d/'run.log').open('w') as f:code=subprocess.run(c['command'],cwd=d,env=env,stdout=f,stderr=subprocess.STDOUT,timeout=180).returncode
+ except subprocess.TimeoutExpired:code=None;timeout=True
+ log=(d/'run.log').read_text();m=re.search(r'Final critical path delay \(least slack\):\s*([0-9.]+)',log);row={'width':c['width'],'exit_code':code,'timeout':timeout,'native_success':code==0 and 'VPR succeeded' in log and 'Completed routing consistency check successfully.' in log,'cpd_ns':float(m[1]) if m else None,'wall_s':time.monotonic()-t,'files_sha256':{str(f):sha(f) for f in d.iterdir() if f.is_file()}};rows.append(row);(out/'receipt.json').write_text(json.dumps({'protocol_sha256':sha(out/'protocol.json'),'rows':rows,'all_cases_retained':len(rows)==len(cases)},indent=2)+'\n');print(row['width'],code,row['cpd_ns'],row['wall_s'],flush=True)

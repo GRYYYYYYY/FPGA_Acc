@@ -1,0 +1,59 @@
+{
+  "observed_ns": 1793436064463915573,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_PREFIX_CALL_CONTROL.json",
+    "sha256": "555d557d9f58826ced0f9ee55f65d20893314dd4696f533cff51212cff5186b0"
+  },
+  "progress": {
+    "report": "work/resident_prefix_parameterized_data_20261031/review.json",
+    "report_sha256": "2151882976fd4abfe840b6a0da3da12a46dfa7445dfb6959332e58f962328527",
+    "final_review": "work/resident_prefix_parameterized_data_20261031/final_review.json",
+    "final_review_sha256": "7d6bcdcb7fc3810c72d9caa0a5643bcfada4704239babb1b1f7886850a241bcb",
+    "composition_review": "work/resident_prefix_parameterized_data_20261031/composition_review.json",
+    "composition_review_sha256": "574bd982a846a01835593ede616f3f9e50f27aee4f79e3a238ab88d67ac49a74",
+    "independent_review": "work/resident_prefix_parameterized_data_20261031/independent_review.json",
+    "independent_review_sha256": "5d413f647b6a8afed390e3766fdc21e8ec92c2c7cf6b8fc011dae6047b197c67",
+    "full_call_review": "work/resident_prefix_parameterized_data_20261031/full_call_review.json",
+    "full_call_review_sha256": "90a2a4c5e6520450950bb2c1abe364cff7083ca19feefedb1ec1c6de8b297133",
+    "geometry_snapshot_scope": "work/resident_prefix_parameterized_data_20261031/geometry_snapshot_scope.json",
+    "geometry_snapshot_scope_sha256": "d92bb4215110fd554350f8d892c43b192fafdb7901cbdb19d0c52e62002a2439",
+    "new_feasible_UNSAT_queries": 29,
+    "bitvector_queries": 28,
+    "integer_induction_queries": 1,
+    "normalized_scenarios": 32,
+    "symbolic_count_identities": 200,
+    "saved_flag_checks": 256,
+    "required_read_checks": 256,
+    "physical_integer_scenarios": 70,
+    "independent_count_cases": 420,
+    "continuous_full_helper_calls": 32,
+    "full_call_source_edges": 864,
+    "conditional_stable_binary_word_prefix_recurrence_checked": true,
+    "actual_encoded_memory_contract_proved": false,
+    "full_sequential_HDL_equivalence_proved": false,
+    "HDL_simulation_executed": false,
+    "scope": "Conditional source-model stable-binary-word prefix recurrence assembled from200symbolic count identities/32startup-overlap cases,28feasibleBVgeometry/shape checks,32source fold projections,16zero-total bases,source register calendar/counter/caller proofs,and one feasibleLIAinduction bound. Existing8localBVfold/bound lemmas justify nonwrapping64bit adds and exact32bit slots. Seventy physical-index integer cases (420counts/560flags/560reads) and32continuous fullhelper calls independently agree. Giveninitialized stablebinaryM[0..W-1],validstableB/Wandadmitted reset/onehot/memory source assumptions:P[0]=0;P[b+1]=P[b]+sum(popcount(M[8b+j]) forvalidj);finaltotal=P[B],0<=P[b]<=512b<2^32. Actual installedmarkerwordvalues,graphencodingidentity,global4stateRTL/native/runtime/timing/board remain unproved. This is checked lemma composition,notmonolithic sequential HDL equivalence. OriginalmonolithicfoldUNKNOWN remainsUNKNOWN;initial checker64bit intermediate/15bit port mismatchpreservedandcorrected. No DUT/process/input/cache/guard/budgetchanges,newnativefloworadoption. Live exit test uses physical counterK+delta. Word predicates use savedmul,which is8Kafter current valid capture. At successor phase0 it updates to8(K+1)onlyifnonexit;onexit it retains8K. The separate delta0anddelta1guard lemmas cover both retained and advanced cases;do not treat the query frame as asserting all geometry registers carrythe same delta simultaneously. Required current reads0..7usefresh8K+j;exit redundantreadaddresses may reuseoldbase. Snapshotguard/RHSpreservation plus200case identities supports the source geometryquotient,with sourcecounter/shape/flowassumptions stated in the composition report. Startup is only physicalK0;steady arbitraryKiscovered. No global4state/nativeclaim.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v264_20261031/matrix.json",
+    "sha256": "9a6dcd5fc2913ce58823ed5a95608585d83a738d9e69f77618e996a50c6ed5b6"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v264.json",
+    "sha256": "49ae0616053f2f87676c6f69e6d3e7d87af15dd232e5850ce6ad082112526d6d"
+  },
+  "next_action": "Discharge the conditional prefix recurrence initialized-binary-word premise:prove reverseclearloop initializes exactlyWvalidwords,andmarkerRMWbuildsetsbitsi+offset_iwithoutclobber/reordering under actualURAMtiming. Prove accepted offsetsequence monotone/endpoints and actual frozen read64reverse-slot provenance,then combine totaln+1/ready andunaryselect-getdelimiter contracts. Retain explicit4state/native/ROM/boardgaps andall originalhandles/guards/budgets/inputs/caches/failures/UNKNOWNs. Do not assume exit savedmul advances;geometry predicates splitlivecounter andretainedsavedbase.",
+  "previous_goal_turn_classification": "progress_and_verified_wait_v263_registered",
+  "current_goal_turn_classification": "progress_and_verified_wait",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

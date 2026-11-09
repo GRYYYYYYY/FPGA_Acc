@@ -1,0 +1,73 @@
+{
+  "status": "actual_publisher_cmodel_to_binding_directed_rtl_passed",
+  "verified_ns": 1791985295556429479,
+  "binding_cases": 16,
+  "journal_cost_cases": 3,
+  "inputs": {
+    "include/native_search_hbm_summary_binding.hpp": "9831b669b3e7a649167525a5a86b72d00640e4d48a47fe604433d5052463abb6",
+    "tb/native_search_hbm_summary_binding_tb.cpp": "49ed7cd558f74139aa70b81bec5492dc8ef64c34c138b4d15309e6899053600d",
+    "include/native_worker_shadows.hpp": "3d5f8fcd481d8134c4737db5bda8065c7856195b10cabc7ebcf13fd4a019793b",
+    "include/native_search_hbm_observation.hpp": "37b4e2dcf02c69427f761501bceec5513ae38e2442156fcc1d584e50a3e464ce"
+  },
+  "wire_source": "Existing NativeSummaryPacket encode/decode format",
+  "checks": [
+    "session",
+    "node",
+    "canonical owner membership",
+    "worker membership",
+    "reply/update opcode",
+    "serial ticket",
+    "reserved bits",
+    "finite history",
+    "reject output preservation",
+    "bound observation journal and overflow logging"
+  ],
+  "remaining": [
+    "Actual owner publisher or receiver binding in live search",
+    "Exclusive snapshot epoch handoff proof",
+    "HLS/RTL and combined worker integration"
+  ],
+  "scope": "Packet field binding and journal adapter only; no authenticity, freshness, asynchronous owner or live hardware proof",
+  "board_result": false,
+  "research_complete": false,
+  "actual_publisher_cmodel": {
+    "status": "passed",
+    "verified_ns": 1791985486674533317,
+    "publisher_calls": 2,
+    "observations": 2,
+    "serial_rejections": 1,
+    "costs": [
+      23,
+      15
+    ],
+    "source_hashes": {
+      "tb/native_search_owner_binding_tb.cpp": "1fff809185ac579f9c5a3bb3007e378d3ba790d4ba6544aeca1f293d15b47833",
+      "src/owner_publish_hbm.cpp": "10c760dd144cfd3407a3a6e7c027e8550cc6d3c8ca0d317a4b16dea50a86ebfd"
+    },
+    "scope": "Actual owner subscribe reply and coalesced update C-model packets; fixture checks receipts/metadata before packet binding; no live native routing or joint publisher RTL proof"
+  },
+  "binding_hls": {
+    "status": "passed",
+    "manifest": "work/native_search_owner_binding_hls_v1_20261014/manifest.json",
+    "directed_top_calls": 3,
+    "audit": "work/native_search_owner_binding_hls_v1_20261014/audit.json"
+  },
+  "owner_envelope_cpu": {
+    "status": "passed",
+    "verified_ns": 1791985592469852224,
+    "successful_bindings": 2,
+    "rejected_corrupt_envelopes": 16,
+    "inputs": {
+      "include/native_search_hbm_summary_envelope.hpp": "295729464769e10fd7579ed1df55a39b1b651832399c50b62afbf62ffe22d663",
+      "tb/native_search_owner_envelope_tb.cpp": "bcc675f34f6dfc7e8a75bdc82118d682cefcaa528c0d421b96e029ceda163d2c",
+      "src/owner_publish_hbm.cpp": "10c760dd144cfd3407a3a6e7c027e8550cc6d3c8ca0d317a4b16dea50a86ebfd"
+    },
+    "scope": "Actual publisher C-model success receipt and publication metadata bound to expected operation/ticket/lane/slot; corruption preserves output; not live routing or joint RTL proof"
+  },
+  "owner_envelope_rtl": {
+    "status": "passed",
+    "audit": "work/native_search_owner_envelope_hls_v2_20261014/audit.json",
+    "prior_wrapper_failure": "work/native_search_owner_envelope_hls_v1_20261014/manifest.json"
+  },
+  "owner_worker_pipeline": "experiments/native_search_owner_worker_pipeline_20261014.json"
+}

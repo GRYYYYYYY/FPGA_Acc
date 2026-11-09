@@ -1,0 +1,41 @@
+{
+  "observed_ns": 1793417278290454351,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_PREFIX_COUNT_PROVENANCE.json",
+    "sha256": "d9f20b7eb4d689f5de2ae0c350af0c04ffe06b1c2d0b1c1d0b4a14bd19041611"
+  },
+  "progress": {
+    "report": "work/resident_prefix_request_order_20261031/review.json",
+    "report_sha256": "54f1f6d14dc8a147595206e20701dfb1c36ef686fbe41a07b417de641fc94685",
+    "independent_review": "work/resident_prefix_request_order_20261031/independent_review.json",
+    "independent_review_sha256": "37fa6489e82bf7ee672c13cac7bdf71bc22dbbad6087b2e322c915698c6e317d",
+    "local_builder_modules": 3,
+    "abstract_partial_capture_cases": 26004,
+    "independent_address_cases": 69344,
+    "local_QFBV_queries_unsat": 3,
+    "upper_RAM_request_return_mapping_proved": false,
+    "tail_suppression_proved": false,
+    "watchdog_failure_verdict": null,
+    "scope": "SHA-bound local request-address mux and partial-register captures for three existing2022.2 prefix builders. Assume admitted nonexit round,iter0/iter1 enabled,legal binary one-hot phases0..7,no reset,low constant register fields settled. The extracted address path issues8*block+phase without local port truncation for the frozen block ranges. Final partially filled blocks still issue speculative tail addresses; the source has address<word_limit comparators, but comparator pipeline alignment,tail suppression,upper RAM bounds/ownership/return latency,word numerical correctness, startup/drain,real prefix contents and full-runtime/timing/watchdog acceptance are not proved here. No DUT/input/trace/TV reads or edits,native/HLS execution,process control,guard changes or candidate adoption.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v213_20261031/matrix.json",
+    "sha256": "867f0e3e39bdd3340df4f1992ecf84dc73d63876060eca3fc8098e9a8db551d5"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v213.json",
+    "sha256": "ded77dc3fa84af6bedbc1bd65f5fc6fdcf8f9d29bed2b14ae7cd061e74ac4d33"
+  },
+  "next_action": "Verify actual words RAM request/return routing and bounds handling,including logical speculative tail slots,then validity flag capture/masking and count arithmetic before composing numerical prefix contents. Preserve original full jobs/guards/budgets and terminal prerequisite.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

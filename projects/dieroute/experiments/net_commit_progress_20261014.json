@@ -1,0 +1,214 @@
+{
+  "schema": "dieroute.net_commit_component_progress.v1",
+  "status": "verified_component",
+  "finished_ns": 1791944459037291052,
+  "independent_trace_calls": 270,
+  "semantic_corruptions_rejected": 35,
+  "full_ctest_passed": 46,
+  "sanitizers": "ASan/UBSan: directed, adversarial and native differential/long-footprint",
+  "native_live_authority": false,
+  "research_complete": false,
+  "remaining": [
+    "Fresh native routing using hardware-derived authority and deltas, with CPU state only as a separate reference",
+    "Joint publisher/receiver/net-commit platform connection budget and full graph HBM capacity proof",
+    "Full design/held-out QoR, migration/mapping/topology ablations and strict cross-owner capacity protocol",
+    "Physical timing, board execution, end-to-end performance/energy, paper and artifact completion"
+  ],
+  "verification": "work/net_commit_verification_v1_20261014/verification.json",
+  "verification_sha256": "9945431376884c10ab36cf0ed874bb064d4e766346651005e2a54e583a3b5358",
+  "hls": {
+    "schema": "dieroute.net_commit_hls_audit.v1",
+    "status": "verified",
+    "c_rtl_pass": true,
+    "rtl_calls": 75,
+    "target_ns": 4.0,
+    "uncertainty_ns": 1.08,
+    "effective_budget_ns": 2.92,
+    "estimated_period_ns": 2.92,
+    "resources": {
+      "BRAM_18K": 0,
+      "DSP": 35,
+      "FF": 79498,
+      "LUT": 100316,
+      "URAM": 0
+    },
+    "master_ports": {
+      "M_AXI_TRAFFIC": 512,
+      "M_AXI_GRAPH": 64,
+      "M_AXI_AUTHORITY": 512
+    },
+    "arguments": 27,
+    "xo_sha256": "64c958fb446eb2b245fad58b1c1cc4b3eda5ebf16a8ae96ebe0a9a814e6417cb",
+    "source_sha256": {
+      "include/net_commit_hbm.hpp": "4635df9f6002365cfcd70e5366f0debed57f5f97fdaae843f4e4277f5ef1d396",
+      "include/summary_hbm.hpp": "55177ca09b0b07e2e23b38d8430052b405ff9617b6049613663baf3eeb3e401c",
+      "src/net_commit_hbm.cpp": "84d5550636cd7bfd12b34176294ca29bd57c0cc15e2a17e11a3c6de32252260c",
+      "tb/net_commit_hbm_tb.cpp": "02ef27deb8fbdd917eb43ab6974042d8020a254de7f91b38eb5f82d3fc222f92",
+      "tb/net_commit_adversarial_tb.cpp": "ff701e59022a5692ae7a0ba75bbc0bb22b3bde6b21a47f50378857ba4198f93e",
+      "tb/net_commit_fixture.hpp": "9312545be2f939b5f32e0f5a03dfdca43b5e026c8103819bd31c937f30b2377b",
+      "tools/run_net_commit_hls.tcl": "1ffe015c03e68e4bb6889ff8237e1c439c88f3e8eecb837b881a38be25e7033f"
+    },
+    "cosim_cycles": {
+      "latency_min": 274,
+      "latency_avg": 4152,
+      "latency_max": 24364,
+      "interval_min": 269,
+      "interval_avg": 4167,
+      "interval_max": 24359,
+      "total": 311096
+    },
+    "evidence_sha256": {
+      "manifest.json": "d26d716da47cf145c6c127d797632961afee8c581df6a7f98396143fc94959ff",
+      "run.log": "2a372efa9feded918a0333e2910887c5cb8c7bf1382fa7e03b3f077f0bbb2a2e",
+      "project/u280/syn/report/dieroute_net_commit_hbm_csynth.xml": "d70a1438e51b59656c798a8472f58646c3e0e322e35cb8ef7835ce7c5d800490",
+      "project/u280/sim/report/dieroute_net_commit_hbm_cosim.rpt": "eeaa9e87ec1900f4c12eedeae645451c2592f456a8ecbc27890f2bcaffdc67af",
+      "project/u280/syn/verilog/dieroute_net_commit_hbm.v": "4fd0df71b55192642f6586220b2780d29d4308839e6fb3e198c86fa6f15fcfde"
+    },
+    "physical_timing": false,
+    "board_result": false
+  },
+  "platform": {
+    "schema": "dieroute.net_commit_platform_audit.v1",
+    "status": "verified",
+    "target": "hw_emu",
+    "pointer_connections": 15,
+    "unique_banks": 3,
+    "argument_banks": {
+      "command": "HBM[0]",
+      "policy": "HBM[1]",
+      "offsets": "HBM[1]",
+      "arcs": "HBM[1]",
+      "reads": "HBM[0]",
+      "shadows": "HBM[0]",
+      "branches": "HBM[0]",
+      "paths": "HBM[0]",
+      "resources": "HBM[2]",
+      "trees": "HBM[2]",
+      "nets": "HBM[2]",
+      "control": "HBM[2]",
+      "scratch": "HBM[0]",
+      "deltas": "HBM[0]",
+      "completion": "HBM[0]"
+    },
+    "xclbin_sha256": "5f4d86bfd7cd961ba46766a15249039a5358ebc140dce55f4502df99a375c9c0",
+    "input_manifest_sha256": "2762e8ddb05459a7f25ef3cc7329e8c911611066b352a80f5d4c012cb38f51fa",
+    "clocks": {
+      "clock_freq_topology": {
+        "m_count": "2",
+        "m_clock_freq": [
+          {
+            "m_freq_Mhz": "300",
+            "m_type": "DATA",
+            "m_name": "DATA_CLK"
+          },
+          {
+            "m_freq_Mhz": "300",
+            "m_type": "KERNEL",
+            "m_name": "KERNEL_CLK"
+          }
+        ]
+      }
+    },
+    "auditor_sha256": "89200c858c597facdafe6f8258c6937d4c00469d2ae1ce0e563e9a9e130dd21f",
+    "physical_placement": false,
+    "physical_timing": false,
+    "board_result": false,
+    "scope": "Standalone component with one logical-owner authority master; full graph and joint publisher/receiver integration remain unverified"
+  },
+  "xrt_cases": [
+    {
+      "name": "directed",
+      "command": [
+        "bash",
+        "-c",
+        "source /inspire/hdd/global_user/guoruiyuan-253208540291/Xilinx/Vitis/2022.2/settings64.sh && source /inspire/hdd/global_user/guoruiyuan-253208540291/U280_2022.2/xrt_runtime/opt/xilinx/xrt/setup.sh >/dev/null && exec /inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/net_commit_hw_emu_v2_20261014/directed/host"
+      ],
+      "status": "passed",
+      "explicit_injection_mode": false,
+      "runtime_environment": {
+        "XCL_EMULATION_MODE": "hw_emu",
+        "EMCONFIG_PATH": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/net_commit_hw_emu_v2_20261014",
+        "DIEROUTE_NET_COMMIT_XCLBIN": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/net_commit_hw_emu_link_v1_20261014/net_commit.xclbin",
+        "DIEROUTE_NET_COMMIT_TRACE": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/net_commit_hw_emu_v2_20261014/directed/trace.bin"
+      },
+      "pid": 1864469,
+      "returncode": 0,
+      "calls": 36,
+      "authority_uploads": 0,
+      "all_trace_bytes_equal_c_model": true,
+      "trace_sha256": "37513f854dbae202a78373dde86ef4f8722d79b75c024b755034288db54b7166"
+    },
+    {
+      "name": "adversarial",
+      "command": [
+        "bash",
+        "-c",
+        "source /inspire/hdd/global_user/guoruiyuan-253208540291/Xilinx/Vitis/2022.2/settings64.sh && source /inspire/hdd/global_user/guoruiyuan-253208540291/U280_2022.2/xrt_runtime/opt/xilinx/xrt/setup.sh >/dev/null && exec /inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/net_commit_hw_emu_v2_20261014/adversarial/host"
+      ],
+      "status": "passed",
+      "explicit_injection_mode": true,
+      "runtime_environment": {
+        "XCL_EMULATION_MODE": "hw_emu",
+        "EMCONFIG_PATH": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/net_commit_hw_emu_v2_20261014",
+        "DIEROUTE_NET_COMMIT_XCLBIN": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/net_commit_hw_emu_link_v1_20261014/net_commit.xclbin",
+        "DIEROUTE_NET_COMMIT_TRACE": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/net_commit_hw_emu_v2_20261014/adversarial/trace.bin"
+      },
+      "pid": 2102590,
+      "returncode": 0,
+      "calls": 39,
+      "authority_uploads": 32,
+      "all_trace_bytes_equal_c_model": true,
+      "trace_sha256": "8ed3600963feb6d7b37d9cc83bed9921b241daaafe3abd757a71644a3ab4aba5"
+    }
+  ],
+  "xrt_guard": {
+    "schema": "dieroute.net_commit_xrt_guard.v1",
+    "status": "passed",
+    "started_ns": 1791944384926616723,
+    "inputs": {
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/net_commit_hw_emu_link_v1_20261014/net_commit.xclbin": "5f4d86bfd7cd961ba46766a15249039a5358ebc140dce55f4502df99a375c9c0",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/net_commit_hw_emu_v2_20261014/emconfig.json": "7a896fd919c9baa7fc2aa1079eb1a78b7ca08ce3414f600a1499ee5a97ad99d5",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/host/net_commit_xrt.cpp": "74499432a249670284eed536b42fa33c1fcf805fc4cad8a7088ecdcff4a0e06b",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/tb/net_commit_xrt_guard_tb.cpp": "0571eb4cacedc474d5f391879ca3c181e011cf06b1c83c1d1dfc650310188ae6",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/tb/net_commit_fixture.hpp": "9312545be2f939b5f32e0f5a03dfdca43b5e026c8103819bd31c937f30b2377b",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/include/net_commit_hbm.hpp": "4635df9f6002365cfcd70e5366f0debed57f5f97fdaae843f4e4277f5ef1d396",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/include/summary_hbm.hpp": "55177ca09b0b07e2e23b38d8430052b405ff9617b6049613663baf3eeb3e401c"
+    },
+    "build_command": [
+      "g++",
+      "-std=c++17",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-I/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/net_commit_xrt_guard_v1_20261014/source/include",
+      "-I/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/net_commit_xrt_guard_v1_20261014/source/tb",
+      "-isystem",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/U280_2022.2/xrt_runtime/opt/xilinx/xrt/include",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/net_commit_xrt_guard_v1_20261014/source/host/net_commit_xrt.cpp",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/net_commit_xrt_guard_v1_20261014/source/tb/net_commit_xrt_guard_tb.cpp",
+      "-L/inspire/hdd/global_user/guoruiyuan-253208540291/U280_2022.2/xrt_runtime/opt/xilinx/xrt/lib",
+      "-Wl,-rpath,/inspire/hdd/global_user/guoruiyuan-253208540291/U280_2022.2/xrt_runtime/opt/xilinx/xrt/lib",
+      "-lxrt_coreutil",
+      "-luuid",
+      "-pthread",
+      "-o",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/net_commit_xrt_guard_v1_20261014/host"
+    ],
+    "run_command": [
+      "bash",
+      "-c",
+      "source /inspire/hdd/global_user/guoruiyuan-253208540291/Xilinx/Vitis/2022.2/settings64.sh && source /inspire/hdd/global_user/guoruiyuan-253208540291/U280_2022.2/xrt_runtime/opt/xilinx/xrt/setup.sh >/dev/null && exec /inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/net_commit_xrt_guard_v1_20261014/host"
+    ],
+    "board_result": false,
+    "explicit_injection_mode": false,
+    "pid": 2376126,
+    "returncode": 0,
+    "finished_ns": 1791944437983942870,
+    "actual_kernel_calls": 6,
+    "rejected_host_overwrites": 4,
+    "authority_uploads": 0,
+    "inputs_unchanged": true
+  },
+  "xrt_kernel_calls": 81
+}

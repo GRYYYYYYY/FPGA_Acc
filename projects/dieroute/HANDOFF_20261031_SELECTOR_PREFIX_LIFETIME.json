@@ -1,0 +1,46 @@
+{
+  "observed_ns": 1793430364098459920,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_SELECTOR_PREFIX_REFINEMENT.json",
+    "sha256": "eb5e9f81d920bf42ffde37612c797ddb6a12638787231e1ae4f863a3a84e5426"
+  },
+  "progress": {
+    "report": "work/resident_selector_prefix_lifetime_20261031/review.json",
+    "report_sha256": "64f1161075dc019825fa0c46ce9173922e818ba7ff1eddb14749b1c28fdaf985",
+    "independent_review": "work/resident_selector_prefix_lifetime_20261031/independent_review.json",
+    "independent_review_sha256": "482db24d0cb1800d6ed9931dff9d15568a41b60fb701f4a1bcbdffe397072113",
+    "feasible_UNSAT_queries": 2,
+    "reachable_states": 23,
+    "unique_edges": 40,
+    "source_control_input_cases": 368,
+    "independent_postsearch_RAM_token_cases": 512,
+    "search_parent_lifetime_in_projection": true,
+    "search_argument_holding_in_projection": true,
+    "postsearch_parent4_address_validity_assumed": false,
+    "actual_prefix_memory_contract_proved": false,
+    "actual_whole_select_semantics_proved": false,
+    "HDL_simulation_executed": false,
+    "full_sequential_HDL_equivalence_proved": false,
+    "scope": "Source-bound coupled select_r10state/search-helper4phase binary control projection reuses prior verified helper enable/flow equations. Parent acceptance captures hi_reg_489and ordinal32on the same edge as registered helperstart;their sole writers are parent1and cannot update during parent2. All unrelated parent transitions conservatively admit source targets,and callerstart/eligibility/intervalpredicate may vary each edge. Reset-started closure across repeated calls proves every active helperphase/commit has parent2withstart1and captured operands;fresh phase0start masks old cache,while actual exit-ready/intdone clearsstart and permits parentdeparture together. This discharges v253active-held-start/internal-operand-hold and local select_rprefix routing premises in the binary projection,without requiring upstream live ordinal remain stable after capture. Source parent3reads selectedblock prefix and parent4/5continue CE. Two-read BRAMnonblocking order proves parent5gets P[block]even though parent4address can beundefined;do NOT claim its address stable/valid every enabled read. Two feasible BVqueries support token/residual arithmetic under stable initialized correct Pblock/WE0/valid block and cap. Actual outerget/execute lifetime/argument/readyfieldholding and correct prefixcontent remain composition obligations;wordscan/bit-helperand full select/get/RTL/native correctness not proved. No4state/resetabort/native/ROMload/timing/board claims,new HDL/HLSflow,DUT/process/input/cache/guard/budget changes.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v254_20261031/matrix.json",
+    "sha256": "26704d61f9c3b82341bad69cd53243492126d3167b7aa84ee11e40c07e2da721"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v254.json",
+    "sha256": "0e8841335e33653ed2ab865d69f7f1081d38fcc544e6de6348648d3a6f378228"
+  },
+  "next_action": "Match generated wordscan and six-step bit helper to frozen reference rank/select semantics,including actual selected word/count/residual capture timing. Local select_r/search-helper heldstart and captured-argument obligations are now checked;outergetownership/readyfields and exact encoded marker/prefix memories remain open. Poll original handles first;preserve guards/budgets/inputs/caches/failed evidence and do not infer native acceptance.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

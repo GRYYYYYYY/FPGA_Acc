@@ -1,0 +1,43 @@
+{
+  "observed_ns": 1793414784135527925,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_WORDSCAN_BITVECTOR_CORRESPONDENCE.json",
+    "sha256": "60d98991e1d4bae8481369c7d2427d531e715311c35cb673fa4830575084f336"
+  },
+  "progress": {
+    "report": "work/resident_wordscan_capture_coherence_20261031/review.json",
+    "report_sha256": "d2f1f6898811f87ffd1e8314d78ca266d6c23de5723a1c4421810201dea023db",
+    "independent_review": "work/resident_wordscan_capture_coherence_20261031/independent_review.json",
+    "independent_review_sha256": "cfa7ff381780186233e8b45ff60566a0d95a2549c4d005c3929f57e092cf8bfc",
+    "admitted_word_capture_unrolls": 2,
+    "arbitrary_initial_count_value_registers_per_module": 88,
+    "arbitrary_initial_URAM_output_registers_per_module": 2,
+    "nested_read_route_combinations": 98,
+    "count_state9_direct_C_queries_unsat": 2,
+    "global_sequential_RTL_equivalence_proved": false,
+    "runtime_all_call_count_correspondence_proved": false,
+    "whole_program_lower_bound_certified": false,
+    "watchdog_failure_verdict": null,
+    "scope": "Source-bound finite symbolic word-iteration unroll, not HDL simulation or complete Verilog equivalence. For one admitted valid-address iteration, flags latched at2remain valid and address stable through9. Nested selector parent waits at7, caller/execute in the enumerated admitted wait intervals;98routing combinations have combinational request/return and WE0. Two CE-gated URAM read registers deliver the arbitrary unchanged requested memory word by state5. All88count/value registers start arbitrary and capture under actual state5/6/7/8guards. After unroll, state9count depends only on that word and equals the earlier same-word composition structurally; direct C query is reported separately. Assumes initialized stable memory at the admitted address, legal one-hot/shared-clock/no-mid-call-reset and the stated nested intervals. Actual graph contents/build validity, address/ordinal correctness, all-word/all-call/global reachability, other datapaths, interval serialization and whole-program timing/watchdog remain unproved. No original program/trace/TV/.dat read, simulator/HLS flow, DUT edit, new persistent owner, process control, guard/watchdog change or adoption. Previous three bit_sum timeout UNKNOWNs remain unresolved.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v206_20261031/matrix.json",
+    "sha256": "4237f672f5af3c2d292b66e522577cc993ad82abe18fff3a5a35f84d01db8770"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v206.json",
+    "sha256": "c0b4cd4818a1afa41ccc7faeaf39c27f52d02cca228cd5b415694ee792abee41"
+  },
+  "next_action": "Admitted word-iteration register/data coherence established under stated memory/nesting premises. Next check scan address/k/ordinal updates and admitted-iteration correspondence, build/content validity and global call serialization before any whole-program watchdog claim. Preserve all original full jobs, guards and queue priorities; three independent bit_sum UNKNOWNs remain retained.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

@@ -1,0 +1,24 @@
+"""Register known-family forward measurement before target routing outcomes."""
+import pathlib,json,hashlib
+R=pathlib.Path(__file__).resolve().parents[1]
+def sha(p):
+ h=hashlib.sha256()
+ with pathlib.Path(p).open('rb') as f:
+  for b in iter(lambda:f.read(8*1024*1024),b''):h.update(b)
+ return h.hexdigest()
+O=R/'experiments/mmc_prospective_pressure_protocol_v1_2026-10-19';I=R/'experiments/mmc_prospective_swap_predictor_inputs_v2_2026-10-19';M=R/'experiments/mmc_prospective_swap_initializers_v1_2026-10-19'
+binary=R/'build/native_owner_trace_v1_2026-10-18/sequence_vpr';bp=binary.parent/'receipt.json';b=json.loads(bp.read_text());assert sha(binary)==b['binary_sha256'] and b['read_only_hooks_original_routing_source_recovered_exactly']
+proof=I/'verification.json';v=json.loads(proof.read_text());assert v['status']=='three_predictor_input_adapters_verified'
+for p,h in v['bindings'].items():assert sha(p)==h,p
+arch=R/'experiments/async_reset_arch_candidate_v2_2026-10-08/architecture.xml';source=R/'experiments/mmc_native_source_checkpoint_v1_2026-10-18'
+files=[pathlib.Path(__file__).resolve(),proof,bp,binary,arch,M/'protocol.json',source/'initial.json',source/'independent_xml_verification_v1.json']
+commands=[]
+for i in range(1,4):
+ name=f'episode_{i:02d}';inputdir=I/name;meta=json.loads((inputdir/'demand/endpoints.json').read_text());graph=pathlib.Path(meta['inputs']['graph']['path']);files.extend([graph,inputdir/'demand/endpoints.json',inputdir/'staged_input_verification_v1.json']);files.extend(inputdir/'mmc'/n for n in ['design.net','design.place','design.blif'])
+ out=R/'experiments/mmc_prospective_pressure_native_v1_2026-10-19'/name/'cold';assert not out.exists()
+ commands.append(dict(episode=name,cwd=str(out),argv=[str(binary),str(arch),'design.blif','--route','--net_file','design.net','--place_file','design.place','--route_file','output.route','--read_rr_graph',str(graph),'--route_chan_width','128','--num_workers','1','--seed','1','--max_router_iterations','100','--check_route','full'],environment_clear_prefix='ROUTECAST_',environment_set={'ROUTECAST_NATIVE_OWNER_TRACE':str(out/'owner_trace.tsv')},input_directory=str(inputdir/'mmc')))
+bindings={str(p):sha(p) for p in set(files)}
+P=dict(schema='MMC_KNOWN_FAMILY_FORWARD_PRESSURE_PROTOCOL_V1',bindings=bindings,episodes=['episode_01','episode_02','episode_03'],native_commands=commands,launch_requires='All3 initializer independent XML/Fraction audits pass; bind every finalized prediction before native launch',max_native_concurrency=1,child_address_space_limit_bytes=32*2**30,timeout_seconds=None,primary_candidate='native_retained initial ledger, unchanged V2',primary_controls=['raw_min initial ledger, unchanged V2','provided previous_native occupancy','uniform risk'],primary_target='sum checkpoint overflow units at iteration_end_after_local_opins, iterations2 through terminal',cutoff_iteration=1,domain='all positive-capacity CHANX/CHANY RR nodes, including zeros',expected_domain_size=258720,top_k=12936,tie_rule='primary capture averages uniformly over the boundary-score tie; supplemental fixed order descending score then ascending numeric RR ID',primary_metrics=['tie-averaged captured future pressure mass','Spearman using average ranks'],primary_gate='Every episode: candidate nonregresses in both primary metrics versus each primary control and strictly improves at least one versus each. Spearman epsilon1e-12, capture exact Fraction. Undefined rho or zero future mass => unassessable, never pass. All3 required; no case replacement.',secondary_targets=['future peak overflow','future overflow frequency','legal final occupancy, original fixed-ID metrics reported separately'],prefix_diagnostics=['iteration1 overflow','iteration1 tracked-NET occupancy lower bound; unknown external occupancy retained as intervals'],native_work_targets=['iterations2throughterminal NET_operations','connection_operations','heap_pushes','heap_pops'],native_admission=['native exit0 and FULL route check','independent exact endpoint multiset/graph arcs/capacity check','canonical reload semantic check, ignored-pin counters recorded separately','independent trace replay all checkpoints, final NET unions and exact per-iteration work'],failure_policy='Retain failures as failures; do not change layout, seed, width, budgets, rounds, model or K after outcomes.',scope='New registered runs on known MMC family. Not strict unseen-family validation. Initial sketches are not legal routes. Prefix acquisition and source acquisition cost are not free. Native trace timings include instrumentation; no complete-flow gain, causal utility, physical STA or hardware claim.',native_target_jobs_launched=0)
+O.mkdir()
+with (O/'protocol.json').open('x') as f:json.dump(P,f,indent=2);f.write('\n')
+print('FROZEN',O/'protocol.json',sha(O/'protocol.json'))

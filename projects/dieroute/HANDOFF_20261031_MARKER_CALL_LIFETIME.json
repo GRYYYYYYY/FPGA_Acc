@@ -1,0 +1,45 @@
+{
+  "observed_ns": 1793439868857161688,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_REVERSE_MARKER_RMW.json",
+    "sha256": "cc4bb55071137b2710b422b6a8956d35f212cff6c11e661be66a25a51bb62533"
+  },
+  "progress": {
+    "report": "work/resident_marker_call_lifetime_20261031/review.json",
+    "report_sha256": "b443ba9968cbbd573cb97a25b00779392e2971a4a8dcfcec87521adeb77e5473",
+    "quotient_review": "work/resident_marker_call_lifetime_20261031/quotient_review.json",
+    "quotient_review_sha256": "cf8055276b48311543e3d613432557181ee6468d1800d6da342214d1db3bd1cf",
+    "final_review": "work/resident_marker_call_lifetime_20261031/final_review.json",
+    "final_review_sha256": "1e4c7706c82b3ae53dc7a25c0b2c7cd1e1f583882d86ee89b2b82dfe95101904",
+    "states": 9261,
+    "edges": 13501,
+    "new_feasible_UNSAT_queries": 5,
+    "whole_call_control_checked_in_binary_projection": true,
+    "whole_marker_datapath_proved": false,
+    "actual_encoded_memory_contract_proved": false,
+    "scope": "Source projected whole-call control exploration,9261states/13501edges/32binaryinitialseeds;cacheinitialization beforevalidRMW,parent5ownership,AR/Rbackpressure,unresetcoldenddrain,ready72-before-done0,andcompletionafterlastpendingwrite. Cachecoherence annotation composes priorconditionalRMWlemma;it is notanindependentdatapathproof. FivefeasibleBVcounterarithmetic lemmas;fullcounterselector/previousoffsetlifetimes remainopen. Separate source flag quotient crosscheck8192savedflagcontrolcases/4096old-live72snapshotcases;sharedtypedparser,notindependentsimulator. Reset-startedbinaryprojection excludesglobal4stateRTL andactualAXIdecodedpayload/completeencodedimage. No newnativepass,physicaltiming,boardresult oradoption.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v267_20261031/matrix.json",
+    "sha256": "dcf4081eafcc6f86b7d063b71aeca19531b113cf51cfdafeac580c015aca5af1"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v267.json",
+    "sha256": "44615a2f66b43950860c4939e9dc595d74ebf9c65c81090e8498d11e1b40a191"
+  },
+  "next_action": "Prove source33bitrowcounter selector/0and72snapshotassociation andpreviousoffset lifetime across0..72/stalls:initialrow0,eachvalidatedrowadvancesexactlyonce,rows0..nthenoneexitingn+1dummy. ProveactualsingleAXIread32request/response/capturetransportsintendedreverseslot;thencomposewordclear,markerRMWandcallcontrol,prefixrecurrence/readytotaln+1andunaryselect-getcontracts intoactualencodedimage. Preserveoriginaljobs/guards/budgets/inputs/caches/failures/UNKNOWNsandnative/full4state/physicalboardgaps.",
+  "previous_goal_turn_classification": "no_progress_goal_restatement_revalidated_with_actual_process_poll_and_newproofaudit",
+  "current_goal_turn_classification": "progress_and_verified_wait",
+  "latest_original_owner_observation": "PID710564 matchingidentity/live501of3379,notterminal/notaccepted",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

@@ -1,0 +1,48 @@
+{
+  "observed_ns": 1793431665064194610,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_BITSELECT_STEP_REFINEMENT.json",
+    "sha256": "4e56ec3f5fa052618be0c61fa2edcf9a017e99829fd56745fe58d300de94dca2"
+  },
+  "progress": {
+    "report": "work/resident_bitselect_call_composition_20261031/review.json",
+    "report_sha256": "a3563c45b4583cf5325a98f8bf71d84b7ecc6f408f952a78d7cd1d7d89bcd302",
+    "independent_review": "work/resident_bitselect_call_composition_20261031/independent_review.json",
+    "independent_review_sha256": "0f353ddf02b629bb84e86a574576497df5700ae2e664e61ad74b48e7c8d4ea0a",
+    "source_capture_review": "work/resident_bitselect_call_composition_20261031/source_capture_and_checker_review.json",
+    "source_capture_review_sha256": "99fe17a7e9c50bf5bda0c9da095e670d36a00f620ce38ecdadbab27daf0a1046",
+    "feasible_mask_UNSAT_queries": 6,
+    "initial_control_seeds": 32,
+    "reachable_states": 321,
+    "unique_edges": 573,
+    "full_integer_source_calls": 145,
+    "invalid_rank_negative_calls": 4,
+    "full_six_step_call_control_proved_in_projection": true,
+    "bit_parent_helper_lifetime_proved_in_projection": true,
+    "actual_encoded_memory_contract_proved": false,
+    "actual_whole_select_semantics_proved": false,
+    "HDL_simulation_executed": false,
+    "full_sequential_HDL_equivalence_proved": false,
+    "scope": "Source-bound coupled select_r10state/bithelper5phase control and iteration provenance projection starts from32combinations of old3bitstep/exitflag/parentcondition;source enables/start/cache/reset bases fixed. Source phase0reload/step0,phase3increment,delayed half/mask,and phase1bit/phase2value/rank commits are tracked with call-relative tags. Closed repeated-call graph proves exactly six admitted count samples and bit/value commits in order0..5;terminalphase3step6follows all6commits with no seventh. Every active child phase/commit stays parent9/start1;parentreload registers are writtenonly7and held8/9. Parent9captures finalvaluebit on the same done edge;direct child bit/rank remain held through parent10. Input freshness on parent7successful wordscan completion composes prior source return-valid contract;actual payload validity remains conditional. Six BVqueries establish actual32bitmask construction forhalf32..1includinghalf32truncationwrap. Together with prior24local count/data queries,this supplies their coherent six-step control/capture preconditions in the binary source projection;with valid initial rank<wordpopulation,the reference rank-halving contract conditionally yields selected bit/value1/rank0. This is assume-guarantee source-model composition,not a monolithic sequential HDLproof. Actual encoded marker/prefix/word populations/outergetlifetime,full parent position reconstruction,4state/resetabort/native/ROMload/timing/board claims remain open. No DUT/process/input/cache/guard/budget changes or new HDL/HLS/native flow.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v257_20261031/matrix.json",
+    "sha256": "713809c9dd15c75c127d5651e8d531002fb468c59dee492bdce15e4855dca77c"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v257.json",
+    "sha256": "96cfdb6d868434ff549b9081645420868b6149ba87d8aeb24e4e09c9d0bfef92"
+  },
+  "next_action": "Check select_rparent final position reconstruction and retval/output propagation using the established prefixsearch,wordscan and six-step bithelper contracts;then couple outerget/execute ownership/readyfields. Exact encoded marker/prefix/word content relation remains unproved and execute ignores get success. Poll original handles first;preserve guards/budgets/inputs/caches/retainedfailures/oldUNKNOWNs and do not infer native acceptance.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

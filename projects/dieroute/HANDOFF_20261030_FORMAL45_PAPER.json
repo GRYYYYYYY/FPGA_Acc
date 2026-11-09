@@ -1,0 +1,29 @@
+{
+  "objective": "Complete DieRoute research under the existing five-paper protocol",
+  "previous_recovery": {
+    "path": "HANDOFF_20261030_PROTOCOL_ROLE_AUDIT.md",
+    "sha256": "1def52f4e8360247693aac6f758cdba8b3e4a4bf9ef605038486ec16b48b37e6"
+  },
+  "new_progress": {
+    "PDF": "work/formal45_paper_update_20261030/paper/dieroute.pdf",
+    "PDF_sha256": "16f8fa17008c61eebac5c62c8f3fbfc14ae8858dac05c7986da0b425034d7ca9",
+    "source_bundle": "work/formal45_paper_update_20261030/dieroute_formal45_draft_sources.tar.gz",
+    "source_bundle_sha256": "8e623a8f84d67316f01013822bb97a8d98ab12d4cf81046ef80a7f56119399f6",
+    "scope": "Base evaluation22Oct; additive formal45 cohort reviewed27Oct; literature30Oct. No research gate closed. Document compilation only, not experiment reproduction.",
+    "research_complete": false,
+    "manifest": "work/formal45_paper_update_20261030/manuscript_update_manifest.json",
+    "manifest_sha256": "40d1fa664a90d6357cc14503664711eb701de23b5cff641aea966afa8d1c1705"
+  },
+  "matrix_unchanged": "work/current_research_claim_matrix_v169_20261030/matrix.json",
+  "matrix_sha256": "446133e0dce4dcab18078f172ac588054abf93e2635fa6479519df7b15d5fa76",
+  "critical_path": "experiments/critical_path_20261030_v169.md",
+  "runtime_snapshot": "work/resident_CSR_membership_validation_candidate_20261029/latest_all_jobs_verified_wait.json",
+  "latest_runtime_observation": "Ten simulation identities, five watchers and two physical queues live; all six candidate supervisors/pipelines identities live. No new positive acceptance. Main search log advanced to7005827179000ps at5/256.",
+  "next_actions": [
+    "Poll exact existing handles and CPU/resource samples; do not restart quiet jobs.",
+    "Audit full original positive RTL only after actual terminal success, before any observer canary or adoption.",
+    "Continue original G1-G8 requirements; this update addresses only a missing manuscript cohort report.",
+    "Retain all45 slots, all8 formal failures, original11 workloads/311096 searches, original budgets/watchdogs and absent physical U280 limitation."
+  ],
+  "research_complete": false
+}

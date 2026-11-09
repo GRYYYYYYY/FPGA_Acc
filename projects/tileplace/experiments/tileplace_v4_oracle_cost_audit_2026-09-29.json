@@ -1,0 +1,1077 @@
+{
+  "cases": [
+    {
+      "accepted_closures": 1,
+      "accepted_transactions": 1,
+      "accepted_vpr_subprocess_wall_s": 3.5784858874976635,
+      "case": "pdc",
+      "closure_calls": 16,
+      "rejected_vpr_subprocess_wall_s": 52.57692123949528,
+      "search_report": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_v4_heldout/pdc/report.json",
+        "sha256": "dd19de3a314d9d3548c1ad195c9ef269f5bd12717146719d62e516c08c92ec2d"
+      },
+      "total_vpr_subprocess_wall_s": 56.15540712699294,
+      "trials": [
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/pdc/trial_01/vpr_native_closure.json",
+            "sha256": "ec194ee2483b013f34f937df9b5b6d296567719e9d2b803aa8408298256fec5c"
+          },
+          "trial": 1,
+          "vpr_subprocess_wall_s": 3.4166239239275455
+        },
+        {
+          "accepted": true,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/pdc/trial_02/vpr_native_closure.json",
+            "sha256": "a91d06c395e8163a40ec33ecc89299e19013851595ed5038ac93685fb938f29e"
+          },
+          "trial": 2,
+          "vpr_subprocess_wall_s": 3.5784858874976635
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/pdc/trial_03/vpr_native_closure.json",
+            "sha256": "fa12a7460c88dce4451e3d46624fd9ea5e3b02f5f3a67870069b8958118a2839"
+          },
+          "trial": 3,
+          "vpr_subprocess_wall_s": 3.3149552028626204
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/pdc/trial_04/vpr_native_closure.json",
+            "sha256": "825636e7385aeed25887fcd8b9206a5c80be018de48416171d299af33b477a6b"
+          },
+          "trial": 4,
+          "vpr_subprocess_wall_s": 3.703169871121645
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/pdc/trial_05/vpr_native_closure.json",
+            "sha256": "e0d1d026ef251be6d9ac79bb52b242bd4816d353d91fb2b90b64711651ae3ae8"
+          },
+          "trial": 5,
+          "vpr_subprocess_wall_s": 3.3456978015601635
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/pdc/trial_06/vpr_native_closure.json",
+            "sha256": "f83577714aab281ad0b1d62512169be8c6593bc4d0513a6f82b84c6094b1a608"
+          },
+          "trial": 6,
+          "vpr_subprocess_wall_s": 3.3611554708331823
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/pdc/trial_07/vpr_native_closure.json",
+            "sha256": "39d35bb47696eb5ef3e38c969aa9ee1345462d115a2e029b7b249bde90f29652"
+          },
+          "trial": 7,
+          "vpr_subprocess_wall_s": 3.6303001437336206
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/pdc/trial_08/vpr_native_closure.json",
+            "sha256": "bbcdad5f05a9e193c8d8356d45ccf73ac19d155aca0f3589121eb4d16c98c8d0"
+          },
+          "trial": 8,
+          "vpr_subprocess_wall_s": 3.5762181412428617
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/pdc/trial_09/vpr_native_closure.json",
+            "sha256": "4cfb6f6bd074d0aedbcce282d8c4cecfd4a276d3923ad0acd91aa8b2e51e8116"
+          },
+          "trial": 9,
+          "vpr_subprocess_wall_s": 3.2990931682288647
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/pdc/trial_10/vpr_native_closure.json",
+            "sha256": "e557edc76565e1045986a43a11e7f7c9ad042a929fe3d272c9cff2ae58bcce9d"
+          },
+          "trial": 10,
+          "vpr_subprocess_wall_s": 3.470266479998827
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/pdc/trial_11/vpr_native_closure.json",
+            "sha256": "73da931ef6c711c5ffefe4eae0ed8357e760369fd21a09a629f76767c917e059"
+          },
+          "trial": 11,
+          "vpr_subprocess_wall_s": 3.873186692595482
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/pdc/trial_12/vpr_native_closure.json",
+            "sha256": "3966e5bc6390d25551dc0401619e983639e923dac3fe62026e404f98259fec1e"
+          },
+          "trial": 12,
+          "vpr_subprocess_wall_s": 3.847146663814783
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/pdc/trial_13/vpr_native_closure.json",
+            "sha256": "4549e870931f6b6bf6e4e3482bcc382167cdbb27c24ecfa2a5b77e31ed4457e2"
+          },
+          "trial": 13,
+          "vpr_subprocess_wall_s": 3.4121672064065933
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/pdc/trial_14/vpr_native_closure.json",
+            "sha256": "c44da2347b9c97b5da6a05f9c3ff09c9b50ea4d85bb77492986ed0db870459d9"
+          },
+          "trial": 14,
+          "vpr_subprocess_wall_s": 3.3160162679851055
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/pdc/trial_15/vpr_native_closure.json",
+            "sha256": "5bdfc217e252c7aaefbe6ec0011b6e5b3dd0b22da13edaf975f357a2b397c4f0"
+          },
+          "trial": 15,
+          "vpr_subprocess_wall_s": 3.545532824471593
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/pdc/trial_16/vpr_native_closure.json",
+            "sha256": "63d731e806419fc1bfb4f9ec6afaccee791fa7a13a469f5a8459b2fd5992d462"
+          },
+          "trial": 16,
+          "vpr_subprocess_wall_s": 3.46539138071239
+        }
+      ]
+    },
+    {
+      "accepted_closures": 0,
+      "accepted_transactions": 0,
+      "accepted_vpr_subprocess_wall_s": 0,
+      "case": "dsip",
+      "closure_calls": 16,
+      "rejected_vpr_subprocess_wall_s": 17.42022697068751,
+      "search_report": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_v4_heldout/dsip/report.json",
+        "sha256": "4b2b49efb2f6c06cef34318b2dbd66732167e27c353f8dba9b54e37aa6161ad0"
+      },
+      "total_vpr_subprocess_wall_s": 17.42022697068751,
+      "trials": [
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/dsip/trial_01/vpr_native_closure.json",
+            "sha256": "5d31fbcc9ef61ef2a1aa8a54cb1ddf3fbc01139469a3970826f212b398913391"
+          },
+          "trial": 1,
+          "vpr_subprocess_wall_s": 1.1467902176082134
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/dsip/trial_02/vpr_native_closure.json",
+            "sha256": "55e8f5e25243cfddbf86213e7ceee9d9e8ea65107e54cfb90d6408431712461b"
+          },
+          "trial": 2,
+          "vpr_subprocess_wall_s": 1.0737535078078508
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/dsip/trial_03/vpr_native_closure.json",
+            "sha256": "239d657e355b245660a959108b58061f03629f21e01d3ee5c6e7696421631950"
+          },
+          "trial": 3,
+          "vpr_subprocess_wall_s": 1.0765754636377096
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/dsip/trial_04/vpr_native_closure.json",
+            "sha256": "6255fb24cd470d710551d3ee2b2d46a6db1e005d483c737af4dade54527423f5"
+          },
+          "trial": 4,
+          "vpr_subprocess_wall_s": 1.1183665357530117
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/dsip/trial_05/vpr_native_closure.json",
+            "sha256": "d21322958ffc392f96404f167e9884b34aaea2163f6fb7497cafd49521f2050b"
+          },
+          "trial": 5,
+          "vpr_subprocess_wall_s": 1.0619619116187096
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/dsip/trial_06/vpr_native_closure.json",
+            "sha256": "e1210643f0c4cac758f7c1148d3f6d24a07bdfe4b27e091df60831caa61e7ef5"
+          },
+          "trial": 6,
+          "vpr_subprocess_wall_s": 1.0789866410195827
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/dsip/trial_07/vpr_native_closure.json",
+            "sha256": "637095b4e131c6ede4cd0d4b35e7567167c391d12e42fa429753537f177a5854"
+          },
+          "trial": 7,
+          "vpr_subprocess_wall_s": 1.0639893915504217
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/dsip/trial_08/vpr_native_closure.json",
+            "sha256": "2a217cf822899df652e3bcacdac8f3919ef90001d2565a2421ba11d1eb7464f5"
+          },
+          "trial": 8,
+          "vpr_subprocess_wall_s": 1.095420479774475
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/dsip/trial_09/vpr_native_closure.json",
+            "sha256": "f05354283874ac49526a02af71dfb771ab7426c85226bcdf7e18492783138da3"
+          },
+          "trial": 9,
+          "vpr_subprocess_wall_s": 1.0846030917018652
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/dsip/trial_10/vpr_native_closure.json",
+            "sha256": "d82bb654b532da84d0ef3ed63ce112185a331b9cfcaf8238c8279161e4596e9f"
+          },
+          "trial": 10,
+          "vpr_subprocess_wall_s": 1.0996341221034527
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/dsip/trial_11/vpr_native_closure.json",
+            "sha256": "72ee51e05835336904266703b9bc223ce1ebd42e47d1faa2e60e31a171f939f1"
+          },
+          "trial": 11,
+          "vpr_subprocess_wall_s": 1.0624880213290453
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/dsip/trial_12/vpr_native_closure.json",
+            "sha256": "577760ef0e99e989189b46d5e7487f782901173f54dfbab955d911a2faef2907"
+          },
+          "trial": 12,
+          "vpr_subprocess_wall_s": 1.094041733071208
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/dsip/trial_13/vpr_native_closure.json",
+            "sha256": "a31eed11ccb48e4db32b3d0164480cc9e984291d0ede5672943d6ea0fdf9d1ad"
+          },
+          "trial": 13,
+          "vpr_subprocess_wall_s": 1.0909301806241274
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/dsip/trial_14/vpr_native_closure.json",
+            "sha256": "40c7be85c91961791e8158a097f8802bc986ecf9ce5c668bef69b273c4619671"
+          },
+          "trial": 14,
+          "vpr_subprocess_wall_s": 1.1193969808518887
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/dsip/trial_15/vpr_native_closure.json",
+            "sha256": "a4931c8e3dac92a62529f72cbe59338ba5f829fc2b393042f23c0ff4bee3e1cc"
+          },
+          "trial": 15,
+          "vpr_subprocess_wall_s": 1.0699282102286816
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/dsip/trial_16/vpr_native_closure.json",
+            "sha256": "201d500b4eeecdff529638de897a8797c8a2af2177f4b6bcff4946526ad88548"
+          },
+          "trial": 16,
+          "vpr_subprocess_wall_s": 1.083360482007265
+        }
+      ]
+    },
+    {
+      "accepted_closures": 2,
+      "accepted_transactions": 2,
+      "accepted_vpr_subprocess_wall_s": 195.1827973369509,
+      "case": "bnn",
+      "closure_calls": 16,
+      "rejected_vpr_subprocess_wall_s": 1377.7105812057853,
+      "search_report": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_v4_heldout/bnn/report_retry1.json",
+        "sha256": "a9217ecf733989a3b8299f45a55a601d6c3bb27dd4bd53d57fcb1c1003d6b7b6"
+      },
+      "total_vpr_subprocess_wall_s": 1572.8933785427362,
+      "trials": [
+        {
+          "accepted": true,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/bnn_retry1/trial_01/vpr_native_closure.json",
+            "sha256": "bcded8e252e6f7aa599f20fb8b51ed15200bccbc7354df43639d8c945e87f095"
+          },
+          "trial": 1,
+          "vpr_subprocess_wall_s": 97.66176325827837
+        },
+        {
+          "accepted": true,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/bnn_retry1/trial_02/vpr_native_closure.json",
+            "sha256": "65678cbbc3a1905f3af25ca9ba272925104504bff8acac1944fa980cc9d98e0e"
+          },
+          "trial": 2,
+          "vpr_subprocess_wall_s": 97.52103407867253
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/bnn_retry1/trial_03/vpr_native_closure.json",
+            "sha256": "f09b0ed146f7a8fca39843d5b8a4aed5d27f9bc8be39351fd35d2651a43e7af0"
+          },
+          "trial": 3,
+          "vpr_subprocess_wall_s": 97.44097572378814
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/bnn_retry1/trial_04/vpr_native_closure.json",
+            "sha256": "82d42c6abe757dab8ebb918ae8ecc886808fe16597083e1bf99501b186de8b0e"
+          },
+          "trial": 4,
+          "vpr_subprocess_wall_s": 99.98285804875195
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/bnn_retry1/trial_05/vpr_native_closure.json",
+            "sha256": "e30204ef4926b26af5b6f09206bca79cd7ff97f677bf71558bd316f29cbae349"
+          },
+          "trial": 5,
+          "vpr_subprocess_wall_s": 96.31338134035468
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/bnn_retry1/trial_06/vpr_native_closure.json",
+            "sha256": "5fa333e90bc113c14b42dcbc4246a9b841b37cec90e325606702a482901b0b75"
+          },
+          "trial": 6,
+          "vpr_subprocess_wall_s": 101.75607499852777
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/bnn_retry1/trial_07/vpr_native_closure.json",
+            "sha256": "8f2640bc63304aa64732bd583895e4fdb2cc45923ec5a7077b4fb2b0a54a5ece"
+          },
+          "trial": 7,
+          "vpr_subprocess_wall_s": 98.30949507467449
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/bnn_retry1/trial_08/vpr_native_closure.json",
+            "sha256": "65213c1bc211651f51232541e34683edfa42c32dac242813ac3f0bf9026fbc7e"
+          },
+          "trial": 8,
+          "vpr_subprocess_wall_s": 98.82885055243969
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/bnn_retry1/trial_09/vpr_native_closure.json",
+            "sha256": "d39e596169522cf9280e012bbba11db6601c6e9ac89c8e840b29b0b4c789540b"
+          },
+          "trial": 9,
+          "vpr_subprocess_wall_s": 98.21660489030182
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/bnn_retry1/trial_10/vpr_native_closure.json",
+            "sha256": "e61c4c2656567d12b3b9438b5d84c9e7327ce59cf66ae6997bef50126c411d95"
+          },
+          "trial": 10,
+          "vpr_subprocess_wall_s": 97.15389418043196
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/bnn_retry1/trial_11/vpr_native_closure.json",
+            "sha256": "ce4ef8580dc3398bd0a04c167d4d8fc8f2dcd4c940d330c829209560da40d7cc"
+          },
+          "trial": 11,
+          "vpr_subprocess_wall_s": 96.2563739195466
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/bnn_retry1/trial_12/vpr_native_closure.json",
+            "sha256": "67675656c61609404522c1b7bd652633944d91707b8974076019f4479d77bc71"
+          },
+          "trial": 12,
+          "vpr_subprocess_wall_s": 103.58945717848837
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/bnn_retry1/trial_13/vpr_native_closure.json",
+            "sha256": "f2e8eaf24afa0b9fea930d539aa08e86a6cb1363ce9fbbb9891e514ccf9a9793"
+          },
+          "trial": 13,
+          "vpr_subprocess_wall_s": 99.60366853140295
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/bnn_retry1/trial_14/vpr_native_closure.json",
+            "sha256": "4dc36d1b8d48f9e6d7cad24017340cb83f477c84c9e72e8f08b2b2774f1884d6"
+          },
+          "trial": 14,
+          "vpr_subprocess_wall_s": 98.40647760033607
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/bnn_retry1/trial_15/vpr_native_closure.json",
+            "sha256": "c3dd638051cd1bb18f4a454b0199a4c8adc8525758f313d9eb78ceb39fbf86df"
+          },
+          "trial": 15,
+          "vpr_subprocess_wall_s": 95.67091729491949
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/bnn_retry1/trial_16/vpr_native_closure.json",
+            "sha256": "92134a40ad4bd84abbd730df1de96999dcf8e2be3129514deedfa5fd0b259c1f"
+          },
+          "trial": 16,
+          "vpr_subprocess_wall_s": 96.18155187182128
+        }
+      ]
+    },
+    {
+      "accepted_closures": 3,
+      "accepted_transactions": 4,
+      "accepted_vpr_subprocess_wall_s": 293.0161394290626,
+      "case": "gemm_layer",
+      "closure_calls": 15,
+      "rejected_vpr_subprocess_wall_s": 1153.0945599284023,
+      "search_report": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_v4_heldout/gemm_layer/report_retry1.json",
+        "sha256": "1036c6d876f4c7a9fdfef2866792fa76674511159a2b6868a27658b6b477aaae"
+      },
+      "total_vpr_subprocess_wall_s": 1446.110699357465,
+      "trials": [
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/gemm_layer_retry1/trial_01/vpr_native_closure.json",
+            "sha256": "4dcf5c47a1305477d78ad16b049e364f27bbbe8896de6b11efbe78f14b2d9bf9"
+          },
+          "trial": 1,
+          "vpr_subprocess_wall_s": 94.93493967503309
+        },
+        {
+          "accepted": true,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/gemm_layer_retry1/trial_02/vpr_native_closure.json",
+            "sha256": "df8c3c63afd217df49d2008b33bb40542c454ed3f5bcff97c4641dba79742971"
+          },
+          "trial": 2,
+          "vpr_subprocess_wall_s": 96.83834374696016
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/gemm_layer_retry1/trial_03/vpr_native_closure.json",
+            "sha256": "70616c21f51e85151cf1d588c8e1e48de48d195a9374778e0cb96e5bac3db2a2"
+          },
+          "trial": 3,
+          "vpr_subprocess_wall_s": 94.83004567958415
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/gemm_layer_retry1/trial_04/vpr_native_closure.json",
+            "sha256": "251307bb65421664ff6019e29e48106ec486ca8b3ad06063cfdcc2657d203f99"
+          },
+          "trial": 4,
+          "vpr_subprocess_wall_s": 97.39068478532135
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/gemm_layer_retry1/trial_05/vpr_native_closure.json",
+            "sha256": "180dc9672910f72e18cb4136a2fe0602867906c0f99e45a447c4e3d418915896"
+          },
+          "trial": 5,
+          "vpr_subprocess_wall_s": 96.7165166027844
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/gemm_layer_retry1/trial_06/vpr_native_closure.json",
+            "sha256": "16ea07281b8b8ff2ae5e7455e915eb1ddd3f0a54d93614c482e34efb742ac008"
+          },
+          "trial": 6,
+          "vpr_subprocess_wall_s": 94.78301584534347
+        },
+        {
+          "accepted": true,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/gemm_layer_retry1/trial_07/vpr_native_closure.json",
+            "sha256": "b5ec04b30384fae813df5c350d1b02906f13555647924bbf6d26646d2a9b0123"
+          },
+          "trial": 7,
+          "vpr_subprocess_wall_s": 95.38588718138635
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/gemm_layer_retry1/trial_08/vpr_native_closure.json",
+            "sha256": "3c67a6edbe21cf22d2bbf30160961ed632e5a59454457d4fae391618834cffd1"
+          },
+          "trial": 8,
+          "vpr_subprocess_wall_s": 96.15558144822717
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/gemm_layer_retry1/trial_09/vpr_native_closure.json",
+            "sha256": "c45405b65cd189d04dfb0aee973bf89b6e7f336a3cd03c8af46d6287931e78e5"
+          },
+          "trial": 9,
+          "vpr_subprocess_wall_s": 97.47664925269783
+        },
+        {
+          "accepted": true,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/gemm_layer_retry1/trial_10/vpr_native_closure.json",
+            "sha256": "a0df985e737aee8bbbc894e9ba9113ddd80558aae62a55b5ce3c64161b923648"
+          },
+          "trial": 10,
+          "vpr_subprocess_wall_s": 100.79190850071609
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/gemm_layer_retry1/trial_11/vpr_native_closure.json",
+            "sha256": "cc014d6c4e5c6ec2222b08f19f413db25d34f3a4771744b6f22798e7173fbd8c"
+          },
+          "trial": 11,
+          "vpr_subprocess_wall_s": 95.97998024336994
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/gemm_layer_retry1/trial_12/vpr_native_closure.json",
+            "sha256": "42aae88efd02c8c85af8756d976bfa4ba98666cfc698db46629cff8ec6236a4e"
+          },
+          "trial": 12,
+          "vpr_subprocess_wall_s": 96.13022962026298
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/gemm_layer_retry1/trial_13/vpr_native_closure.json",
+            "sha256": "beafa07f3bf8542c5b2cd1acac1e23287d02c8c768362d8a7eee9d738e1f5312"
+          },
+          "trial": 13,
+          "vpr_subprocess_wall_s": 95.81388947181404
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/gemm_layer_retry1/trial_14/vpr_native_closure.json",
+            "sha256": "bffebc51109da3f60a1cc4014bd3de6e753a18854586c200e3090f11d1365ebf"
+          },
+          "trial": 14,
+          "vpr_subprocess_wall_s": 96.59874729812145
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/gemm_layer_retry1/trial_15/vpr_native_closure.json",
+            "sha256": "2155e4bd1103c26dbdf9a17470d205de68d3cef05b6f3be2549e9460b90ee04d"
+          },
+          "trial": 15,
+          "vpr_subprocess_wall_s": 96.28428000584245
+        }
+      ]
+    },
+    {
+      "accepted_closures": 8,
+      "accepted_transactions": 8,
+      "accepted_vpr_subprocess_wall_s": 19458.170132111758,
+      "case": "tdarknet_like.small",
+      "closure_calls": 20,
+      "rejected_vpr_subprocess_wall_s": 29114.843083109707,
+      "search_report": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_v4_heldout/tdarknet_like.small/report_retry1.json",
+        "sha256": "fefb71bb09c4b97ff1bf382d9592bf311c71f3a19c882862cf3f387c92392ef2"
+      },
+      "total_vpr_subprocess_wall_s": 48573.013215221465,
+      "trials": [
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/tdarknet_like.small_retry1/trial_01/vpr_native_closure.json",
+            "sha256": "d433a935a99c53a33b9eb5c3d1d6e5135f085d4390fadf051b00b1555ab8df05"
+          },
+          "trial": 1,
+          "vpr_subprocess_wall_s": 2449.784765886143
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/tdarknet_like.small_retry1/trial_02/vpr_native_closure.json",
+            "sha256": "0ea9e434db6d8c45ecece983c424048bdc149c9747b0b355c631f91c3bc58d98"
+          },
+          "trial": 2,
+          "vpr_subprocess_wall_s": 2452.2255814727396
+        },
+        {
+          "accepted": true,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/tdarknet_like.small_retry1/trial_03/vpr_native_closure.json",
+            "sha256": "6121b505d1b266b008d8f9fc5d5bb6c3f2a40c1dd5e46b616ed4ef71fcac858f"
+          },
+          "trial": 3,
+          "vpr_subprocess_wall_s": 2455.9062408544123
+        },
+        {
+          "accepted": true,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/tdarknet_like.small_retry1/trial_04/vpr_native_closure.json",
+            "sha256": "533150c930039568ed0fc75dd5167074e9694d62fe8c9366f5444288096b6f6b"
+          },
+          "trial": 4,
+          "vpr_subprocess_wall_s": 2427.0539718717337
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/tdarknet_like.small_retry1/trial_05/vpr_native_closure.json",
+            "sha256": "d4cb26a2a9874c5dd5223c7faf284d373bad5a3310bd8adaa0d8b543c84aa87d"
+          },
+          "trial": 5,
+          "vpr_subprocess_wall_s": 2425.698081271723
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/tdarknet_like.small_retry1/trial_06/vpr_native_closure.json",
+            "sha256": "96d00ad1ace6d58a403a11d6a6961ff1f6cbeee06795abfc7a0cd63c11ff1938"
+          },
+          "trial": 6,
+          "vpr_subprocess_wall_s": 2429.1327858436853
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/tdarknet_like.small_retry1/trial_07/vpr_native_closure.json",
+            "sha256": "0d296aa7a4bcf1f9e15a9c45a6f85959674f7efa62542cb5015b5e2a7cc92f9e"
+          },
+          "trial": 7,
+          "vpr_subprocess_wall_s": 2429.6458832472563
+        },
+        {
+          "accepted": true,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/tdarknet_like.small_retry1/trial_08/vpr_native_closure.json",
+            "sha256": "480bcf9189540794b9729f9aceb4ca647517499b4a79ee3de91372199b8be309"
+          },
+          "trial": 8,
+          "vpr_subprocess_wall_s": 2437.050848055631
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/tdarknet_like.small_retry1/trial_09/vpr_native_closure.json",
+            "sha256": "ae2a99ccf8d55024955a07840d9f134a1fd724294d55f98e16e6aee87dd72aca"
+          },
+          "trial": 9,
+          "vpr_subprocess_wall_s": 2414.386392476037
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/tdarknet_like.small_retry1/trial_10/vpr_native_closure.json",
+            "sha256": "84ce10408fb023aa170ae077f9b37a3d7b92f194ff1e04823e6048c0de0eaa56"
+          },
+          "trial": 10,
+          "vpr_subprocess_wall_s": 2413.387887123972
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/tdarknet_like.small_retry1/trial_11/vpr_native_closure.json",
+            "sha256": "7eac486c49b91ed51c688a532cb90f9eaf78e4666a03b9d1d938af24f5d39e4a"
+          },
+          "trial": 11,
+          "vpr_subprocess_wall_s": 2429.5266857557
+        },
+        {
+          "accepted": true,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/tdarknet_like.small_retry1/trial_12/vpr_native_closure.json",
+            "sha256": "c765f6a42b82b94cddd624f5da6e94a240041edfb17dd51f49f40311e44a8a1c"
+          },
+          "trial": 12,
+          "vpr_subprocess_wall_s": 2416.2426111362875
+        },
+        {
+          "accepted": true,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/tdarknet_like.small_retry1/trial_13/vpr_native_closure.json",
+            "sha256": "8022220a8b2a65fa56e995e112aa7538127d9f71b741b0475d5137779aa25b6c"
+          },
+          "trial": 13,
+          "vpr_subprocess_wall_s": 2450.085562802851
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/tdarknet_like.small_retry1/trial_14/vpr_native_closure.json",
+            "sha256": "0ac110a289562efc56a5c0e761db77155ae0f2b92f4073e84c3cd94690b58205"
+          },
+          "trial": 14,
+          "vpr_subprocess_wall_s": 2424.2372231204063
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/tdarknet_like.small_retry1/trial_15/vpr_native_closure.json",
+            "sha256": "c2deb5f6f998203e5dfbd781eb367da7797a24030c88233bcc107880dc5c15b1"
+          },
+          "trial": 15,
+          "vpr_subprocess_wall_s": 2425.8497130479664
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/tdarknet_like.small_retry1/trial_16/vpr_native_closure.json",
+            "sha256": "f85b2a46680315fad2905c242a10c6b703d0228d2a422e4f194f943fcd0f0867"
+          },
+          "trial": 16,
+          "vpr_subprocess_wall_s": 2415.1063929144293
+        },
+        {
+          "accepted": true,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/tdarknet_like.small_retry1/trial_17/vpr_native_closure.json",
+            "sha256": "d611b6398c9677b8fa8b55a75016499027dceda38532b23f4d456145ec8145ad"
+          },
+          "trial": 17,
+          "vpr_subprocess_wall_s": 2419.560426702723
+        },
+        {
+          "accepted": true,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/tdarknet_like.small_retry1/trial_18/vpr_native_closure.json",
+            "sha256": "e1e30b9c8e9082a1ee53dc6f5935b175eaaf888767b05c27a3c0974b59af12ef"
+          },
+          "trial": 18,
+          "vpr_subprocess_wall_s": 2430.982954280451
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/tdarknet_like.small_retry1/trial_19/vpr_native_closure.json",
+            "sha256": "1f12c7843f4b81c0159c646851d90e7c20418c871f8b801f4bd1d8cf1062d2c8"
+          },
+          "trial": 19,
+          "vpr_subprocess_wall_s": 2405.8616909496486
+        },
+        {
+          "accepted": true,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/tdarknet_like.small_retry1/trial_20/vpr_native_closure.json",
+            "sha256": "d5ab442017fdc67b5a4655d76a36514f465f81c579284978ce097176eae9f532"
+          },
+          "trial": 20,
+          "vpr_subprocess_wall_s": 2421.2875164076686
+        }
+      ]
+    },
+    {
+      "accepted_closures": 2,
+      "accepted_transactions": 7,
+      "accepted_vpr_subprocess_wall_s": 56.53094178251922,
+      "case": "ucsb_152_tap_fir",
+      "closure_calls": 24,
+      "rejected_vpr_subprocess_wall_s": 608.3256101105362,
+      "search_report": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_v4_heldout/ucsb_152_tap_fir/report_retry1.json",
+        "sha256": "4769400f9da6cb67b68fa001e27e41813a1061f485efb1a304228e1ddbfa122a"
+      },
+      "total_vpr_subprocess_wall_s": 664.8565518930554,
+      "trials": [
+        {
+          "accepted": true,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/ucsb_152_tap_fir_retry1/trial_01/vpr_native_closure.json",
+            "sha256": "815eb1b3bb73b355ce6dbc02a40f808eb9e8cae179149511278113f5deac23ac"
+          },
+          "trial": 1,
+          "vpr_subprocess_wall_s": 28.61988230422139
+        },
+        {
+          "accepted": true,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/ucsb_152_tap_fir_retry1/trial_02/vpr_native_closure.json",
+            "sha256": "c0edebbbd0152d6f43a768d48c33b647a50c3cf28404767ceb565516b2d03977"
+          },
+          "trial": 2,
+          "vpr_subprocess_wall_s": 27.91105947829783
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/ucsb_152_tap_fir_retry1/trial_03/vpr_native_closure.json",
+            "sha256": "8e6bcb9ae3916ff78b9479b767f61b201054b0e8890848b9dab3d6742d25f964"
+          },
+          "trial": 3,
+          "vpr_subprocess_wall_s": 28.060692435130477
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/ucsb_152_tap_fir_retry1/trial_04/vpr_native_closure.json",
+            "sha256": "570352d90ba5be98827c7c57aa1b4f82ae7e376e5453ce32aeb587f99e671f61"
+          },
+          "trial": 4,
+          "vpr_subprocess_wall_s": 28.01192825101316
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/ucsb_152_tap_fir_retry1/trial_05/vpr_native_closure.json",
+            "sha256": "c8b48c718e2bbcf80bf49d2ed5e6d12f5452ed0f01c43324294ace1d7d49dae3"
+          },
+          "trial": 5,
+          "vpr_subprocess_wall_s": 27.61432370916009
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/ucsb_152_tap_fir_retry1/trial_06/vpr_native_closure.json",
+            "sha256": "f84b7b6eba907ba8ea44cbc93b69fd419f19557ffc578761bcf4db8c8d312e24"
+          },
+          "trial": 6,
+          "vpr_subprocess_wall_s": 27.569581056013703
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/ucsb_152_tap_fir_retry1/trial_07/vpr_native_closure.json",
+            "sha256": "fb0245613ef380ec38aed1499d3f995e15b21e86b022ac806f626186e72e43e8"
+          },
+          "trial": 7,
+          "vpr_subprocess_wall_s": 27.72342424094677
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/ucsb_152_tap_fir_retry1/trial_08/vpr_native_closure.json",
+            "sha256": "133ec7f97df840831df3597c50659f66b9a94b40988f418091a415002b4d6274"
+          },
+          "trial": 8,
+          "vpr_subprocess_wall_s": 27.765387576073408
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/ucsb_152_tap_fir_retry1/trial_09/vpr_native_closure.json",
+            "sha256": "72035ddf0cc19be24658f017351ec01ce2c59b2f28c96d859ff9946bce711595"
+          },
+          "trial": 9,
+          "vpr_subprocess_wall_s": 27.98227690346539
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/ucsb_152_tap_fir_retry1/trial_10/vpr_native_closure.json",
+            "sha256": "ee29d6a4bbe404b85b91846ed7cde35b47674629d17220bb27bd9d07d3f078a1"
+          },
+          "trial": 10,
+          "vpr_subprocess_wall_s": 28.30140247568488
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/ucsb_152_tap_fir_retry1/trial_11/vpr_native_closure.json",
+            "sha256": "e63e325a6e03b669119e3d9b9b4e576191a2e61030ee2d398d96a1fc21d74d78"
+          },
+          "trial": 11,
+          "vpr_subprocess_wall_s": 27.96790524572134
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/ucsb_152_tap_fir_retry1/trial_12/vpr_native_closure.json",
+            "sha256": "0d7ef350f2d6b51024f86a2345049a458d6be8cff9b12a172bc7fcac3072d78c"
+          },
+          "trial": 12,
+          "vpr_subprocess_wall_s": 27.33029207959771
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/ucsb_152_tap_fir_retry1/trial_13/vpr_native_closure.json",
+            "sha256": "a732d8d6d72143979dc22b0c5e752f8272574204acb23f340a8023e7d4344caf"
+          },
+          "trial": 13,
+          "vpr_subprocess_wall_s": 28.415838062763214
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/ucsb_152_tap_fir_retry1/trial_14/vpr_native_closure.json",
+            "sha256": "16deecf459ad59cfcc71c37978a32de4cc923e485777313f9844f67bd2fd6d91"
+          },
+          "trial": 14,
+          "vpr_subprocess_wall_s": 27.730937886983156
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/ucsb_152_tap_fir_retry1/trial_15/vpr_native_closure.json",
+            "sha256": "a713ff0912f7a1d6933cad5502c9703d99ff7d84da218f9b1bab35ae0588ac24"
+          },
+          "trial": 15,
+          "vpr_subprocess_wall_s": 27.53040893562138
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/ucsb_152_tap_fir_retry1/trial_16/vpr_native_closure.json",
+            "sha256": "40a03312d0ac44c67c6e74b63f4c943f5c22ce2de3bec600994fb2a47705ac9a"
+          },
+          "trial": 16,
+          "vpr_subprocess_wall_s": 28.03817359916866
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/ucsb_152_tap_fir_retry1/trial_17/vpr_native_closure.json",
+            "sha256": "82d3ac073cc86a4c0f4e1d699f05220fc6e0da8d072521caecb72a2dad1402d1"
+          },
+          "trial": 17,
+          "vpr_subprocess_wall_s": 27.392689855769277
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/ucsb_152_tap_fir_retry1/trial_18/vpr_native_closure.json",
+            "sha256": "6378a0acdc3f48af890a5179a198ac37e293b59b361326cdc4cf64e6aeebb3fb"
+          },
+          "trial": 18,
+          "vpr_subprocess_wall_s": 27.606048423796892
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/ucsb_152_tap_fir_retry1/trial_19/vpr_native_closure.json",
+            "sha256": "b78915e28e61f36a5a40c8f84828b0e0256daabaf6f40eee8b9ad1476d253587"
+          },
+          "trial": 19,
+          "vpr_subprocess_wall_s": 27.28117816336453
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/ucsb_152_tap_fir_retry1/trial_20/vpr_native_closure.json",
+            "sha256": "0e23cec76b392e3fe6b8526d1fe7ecc5c0eb9c9f7ee91aea45bf2652fd5427a1"
+          },
+          "trial": 20,
+          "vpr_subprocess_wall_s": 27.03136528097093
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/ucsb_152_tap_fir_retry1/trial_21/vpr_native_closure.json",
+            "sha256": "ae8758f9f980f7f0410d029a1d15c6b59777dbe5d0083aa985a4899c431c5cc9"
+          },
+          "trial": 21,
+          "vpr_subprocess_wall_s": 27.424580870196223
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/ucsb_152_tap_fir_retry1/trial_22/vpr_native_closure.json",
+            "sha256": "020b8a16e8cfedcc63641e13015f2f54bb23d5dfef9f28cd222880324e0382c6"
+          },
+          "trial": 22,
+          "vpr_subprocess_wall_s": 27.361374996602535
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/ucsb_152_tap_fir_retry1/trial_23/vpr_native_closure.json",
+            "sha256": "fa38ac01641fe7874c629bcc64c13c9775f1d1b9ac20c900a9d956d9a37ec9b7"
+          },
+          "trial": 23,
+          "vpr_subprocess_wall_s": 26.93807348050177
+        },
+        {
+          "accepted": false,
+          "closure_report": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/tileplace_v4_heldout_runs/ucsb_152_tap_fir_retry1/trial_24/vpr_native_closure.json",
+            "sha256": "1e71cad19f1307b379ff799861dc45fd6340885d575c1c2b4b0287602559fb6c"
+          },
+          "trial": 24,
+          "vpr_subprocess_wall_s": 27.24772658199072
+        }
+      ]
+    }
+  ],
+  "excluded": [
+    "baseline/input preparation",
+    "Python proposal search",
+    "feedback refresh",
+    "closure-driver validation and hashing",
+    "output serialization",
+    "earlier interrupted or infrastructure-retry traces"
+  ],
+  "limitations": [
+    "Archived single-run observations, not controlled repeated performance measurements",
+    "Not V4 end-to-end time, not total historical experiment cost, and not a speedup",
+    "No equal-time search comparator"
+  ],
+  "matrix": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_v4_heldout_matrix_2026-09-05.json",
+    "sha256": "744a02558869acc6baafbced927f3bf16fdd12690bcd08bce00d0accd22498cf"
+  },
+  "measurement_scope": "Sum of recorded time.monotonic durations around synchronous VPR subprocess.run calls in the selected frozen search traces",
+  "schema": "TILEPLACE_V4_ARCHIVED_ORACLE_COST_V1",
+  "status": "pass"
+}

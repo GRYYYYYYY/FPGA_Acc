@@ -1,0 +1,28 @@
+{
+  "observed_ns": 1793401255025850426,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261030_ORIGINAL_XRT_FRONTIER.json",
+    "sha256": "71313bb71cd445be0abe4c6cd6e80dd6b78bd527dacc51decfdb04daa5b9f46e"
+  },
+  "review": {
+    "review": "work/original_joint_XRT_backend_runtime_review_20261030/review.json",
+    "review_sha256": "e0bf81553f6d42e49c5e005701e0949d71a74ed4d90eeb2115747726ef45e657",
+    "monitor_extension": "work/original_joint_XRT_backend_runtime_review_20261030/monitor_extension_review.json",
+    "monitor_extension_sha256": "9d73fd15631e4a2e774158ce984835d72c819d56460a989fcff5fca1d2b5da43",
+    "backend_pids": [
+      157861,
+      1493619
+    ],
+    "functional_verdict": "INCONCLUSIVE",
+    "scope": "Exact native XRT XSim backends live with CPU activity; empty crash logs and no checked explicit crash/error signature. This is runtime observability only, not logical-time progress, complete routing, device-state correctness or hardware/board acceptance.",
+    "research_complete": false
+  },
+  "next_action": "Existing bounded poller now watches the two exact platform xsimk engines in addition to both original XRT hosts, the10 native RTL simulations, queues/watchers and strict-native v2 headroom waiter. Preserve all handles, sources and guards. Empty crash logs and active CPU are not a PASS or evidence that logical time advances. No failure signature currently justifies RTL edits, vendor patch, cache eviction, timeout/restart or claim of tool defect. Continue original full objective while waiting for actual terminal evidence.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

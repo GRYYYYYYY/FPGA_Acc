@@ -1,0 +1,9 @@
+import json,subprocess,sys
+from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+from pre_route_endpoints import sha
+r=Path.cwd();out=r/'build/native_verbose_sync_v1_2026-10-08';out.mkdir();p=json.loads((r/'build/native_net_identity_only_v2_2026-10-07/protocol.json').read_text());base=(r/'build/native_candidate_move_accept_scoped_2026-10-06/source/sync_once.cpp').read_text();decl=base[base.index('using Nets ='):base.index('\n#include <cstdint>')];s='#include "globals.h"\n#include "vpr_context.h"\n'+decl+'\nextern "C" void wrapped_sync(const Nets& n,const DeviceContext& d,AtomContext& a,ClusteringContext& c,const PlacementContext& p,const bool&) {const bool verbose=true;real_sync(n,d,a,c,p,verbose);}\n';src=out/'hook.cpp';src.write_text(s);obj=out/'hook.o';exe=out/'verbose_sync_vpr';cmd=[*p['compile'][:-4],'-c',str(src),'-o',str(obj)];symbol=decl.split('__real__')[1].split('"')[0]
+link=[str(exe) if x==p['link'][p['link'].index('-o')+1] else x for x in p['link']];link=[x for x in link if not x.endswith('/hook.o') and not x.startswith('-Wl,--wrap=')];link[1:1]=[str(obj),'-Wl,--wrap='+symbol];bindings={k:sha(k) for k in p['inputs_sha256']};(out/'protocol.json').write_text(json.dumps({'compile':cmd,'link':link,'bindings':bindings,'source_sha256':sha(src),'scope':'Original VPR link objects unchanged, sync wrapper forces verbose logging only; no counter or route changes.'},indent=2)+'\n')
+for stage,command in [('compile',cmd),('link',link)]:
+ with (out/(stage+'.log')).open('w') as f:subprocess.run(command,stdout=f,stderr=subprocess.STDOUT,timeout=120,check=True)
+assert all(sha(k)==v for k,v in bindings.items());(out/'receipt.json').write_text(json.dumps({'binary_sha256':sha(exe),'source_sha256':sha(src),'bindings':bindings},indent=2)+'\n');print(exe)

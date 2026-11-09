@@ -1,0 +1,15 @@
+{
+  "status": "pass",
+  "compile": "g++ -std=c++17 -O2 -Wall -Wextra -Werror test_full_fixture_chain.cpp",
+  "binary": "/tmp/tileplace-full-fixture-chain-test",
+  "frozen_python_trials": 16,
+  "fixtures": 2,
+  "coverage": "all five enumeration kind outputs compared including order, owner IDs and complete trial coordinates; actual enumeration -> evaluate -> identity -> best -> dedup -> conflict select -> atomic commit. Independent analytic all-block HPWL expected no acceptance in singleton fixture, macro translation to x2/3 selected with score -419431.",
+  "limits": "CPU only, two 1D fixtures, one owner group, one all-block net, zero timing/congestion weights; no whole-path RTL/native or board execution",
+  "sources": {
+    "encode_rank_words.hpp": "3c9128d41236a5e7be1c9cd77ece957a93577328acd046808061ca9e46b683a4",
+    "evaluate_batch_words.hpp": "72a66a3f6e553c4f48ab64a1051dcc3a4e15af8dc612b568b2c6d4a3ae514e61",
+    "test_full_fixture_chain.cpp": "ea728e1953571b4373d552f9edd895507ed6aa2c437946c1a6cd4ccb6892842b",
+    "enumerate_descriptors.hpp": "cf21f5c0170e09dd0bd68939208e758009c51c901c15b14da0dd2653cc728da0"
+  }
+}

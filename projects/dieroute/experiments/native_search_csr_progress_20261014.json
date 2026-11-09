@@ -1,0 +1,28 @@
+{
+  "status": "directed_hls_and_rtl_passed",
+  "verified_ns": 1791987432620460006,
+  "cases": 9,
+  "inputs": {
+    "include/native_search_hbm_csr.hpp": "e4ea122c435cfd6eac7afd0df5ef492b0426fd15c896c881d67d83801990ac0c",
+    "tb/native_search_hbm_csr_tb.cpp": "df18db9430ba2d2d2300454c7132661cfb03172a055b20ca045b1ed440bcc106"
+  },
+  "abi": "Native commit uint64 CSR arcs and policy word (exclusive net, membership, forbidden)",
+  "checks": [
+    "Resumable cursor and visit budget",
+    "Forbidden and foreign-net filtering",
+    "Canonical owner/membership",
+    "End output preservation",
+    "Malformed arc/policy rejection preserves cursor, visits and output"
+  ],
+  "remaining": [
+    "Joint CSR/worker/owner hardware integration",
+    "Autonomous worker expansion and owner request dispatch",
+    "Dynamic owner cost and full-capacity RTL proof"
+  ],
+  "scope": "Immutable CSR row traversal component only; no autonomous search or dynamic owner proof",
+  "board_result": false,
+  "research_complete": false,
+  "hls_rtl": "work/native_search_csr_hls_v1_20261014/audit.json",
+  "native_differential": "work/native_hbm_csr_probe_v1_20261014/manifest.json",
+  "full_native_csr_worker_cmodel": "work/native_csr_worker_2m_probe_v2_20261014/manifest.json"
+}

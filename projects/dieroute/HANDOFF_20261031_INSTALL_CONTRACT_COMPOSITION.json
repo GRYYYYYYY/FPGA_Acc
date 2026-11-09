@@ -1,0 +1,42 @@
+{
+  "observed_ns": 1793425932830447223,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_EXECUTE_DIRECT_READ_DRAIN.json",
+    "sha256": "35e0d8ca21e88ecea3f8d49aaf9e182f25c0d5a43096ec0c75123714c9343d12"
+  },
+  "progress": {
+    "report": "work/resident_install_contract_composition_20261031/review.json",
+    "report_sha256": "0e8d18aea4139ab6aedcffa9f7c9d13c5b3924f1a270012084460068adf98995",
+    "independent_review": "work/resident_install_contract_composition_20261031/independent_review.json",
+    "independent_review_sha256": "2ba68599c39bdfd91572ed5685ab019a77ff511be649f48e1dc8caf9b9cb39be",
+    "direct_owners": 7,
+    "pairwise_frame_conflicts": 21,
+    "local_and_composition_queries_unsat": 25,
+    "conditional_total_unconsumed_or_retiring_bound": 2,
+    "conditional_credit_and_response_bound": 2,
+    "full_RTL_refinement_proved": false,
+    "native_capacity_bottleneck_diagnosed": false,
+    "HDL_simulation_executed": false,
+    "scope": "Assume-guarantee composition over seven direct consumer contracts,not a new unified whole-program state exploration. Current SHA-bound component reports/state sets establish local debt+one-cycle-pulse maxima2for execute-direct and1for each of6leaves,and necessary ancestor caller frames. Source12consumer hierarchy edges preserve common clock/consumer reset and RVALID broadcasts. Frames are conservatively weakened by omitting saved predicate conjuncts;all21pairs are still disjoint at execute or prepare.25feasible QF_LIA contradictions UNSAT prove total unconsumed-or-retiring words<=2,global pulse<=1,and conditional adapter credit/companion/data totals<=2. A nonempty model with totals2/credits2/buffered2is feasible in the contract relaxation,not an actual runtime witness. The buffer/capacity corollary explicitly assumes accepted>=reserved>=consumed>=retired,component debts/pulses match those prefix differences,and the prior C=B+D+Ppartition. Given these contracts and verified16credit/256response capacities,inner cells cannot hit full. Consumer no-empty-read and singleword premises have prior binary source proofs. This is a conditional capacity bound,not diagnosis of the currently running native jobs or measured hardware occupancy/performance. Full generatedRTL refinement,external ordered/correct RLAST1return causality and data identity,correct pointers/offsets/installed memory,consumer/adapter reset-empty timing and4state/midcall-reset semantics are not discharged here. Component frames apply after common asserted consumer reset with binary state/data controls;adapter reset wiring is recorded separately. No fairness/eventual native completion,timing/watchdog/board or gate closure follows. No native flow,DUT/process/input/cache/guard/budget changes.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v243_20261031/matrix.json",
+    "sha256": "7c48331322c4e30d7d8c8f5cb22a55df8d7938bd98e3fd8bd14a6319d67e53bf"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v243.json",
+    "sha256": "1a0d6468fd7af339ac0086e8e91b7a2892731cfd72501106e0d0f17ce1ca38e7"
+  },
+  "next_action": "Discharge remaining full-RTL source-model interface/reset and intended request-address/data correspondence obligations. Seven-owner frame/counter composition now yields conditional total2and capacity bounds;do not diagnose native waiting from these conditional results. Continue original terminal monitoring without changing jobs/guards/budgets/inputs/caches.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

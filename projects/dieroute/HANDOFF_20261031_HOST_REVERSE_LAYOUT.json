@@ -1,0 +1,46 @@
+{
+  "observed_ns": 1793442246376908157,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_REVERSE_GET_COMPOSITION.json",
+    "sha256": "d371b68783c5de454543e04d3d5102f727e60ba7bea09364de67cf49abcb8cf4"
+  },
+  "progress": {
+    "report": "work/resident_host_reverse_layout_20261031/review.json",
+    "report_sha256": "739cff8d971edeeeebe187e4e1cf9d4caee3a57897ec7903b25b7e576bdf379b",
+    "independent_review": "work/resident_host_reverse_layout_20261031/independent_review.json",
+    "independent_review_sha256": "cd3363c890aa1186017bc2c25b9e537c9fe607d2fa223fe809b0c5d64b5edc6b",
+    "final_review": "work/resident_host_reverse_layout_20261031/final_review.json",
+    "final_review_sha256": "7f7a1da15d9b1ad6dddbbf8d5f61ac5292f252a3263d60ee14a150ae559f1336",
+    "new_feasible_UNSAT_queries": 7,
+    "current_original_program_command_records": 28878,
+    "current_original_program_header_bytes_read": 7623840,
+    "synthetic_actual_builder_cases": 24,
+    "synthetic_reverse_slots": 465,
+    "conditional_host_reverse_layout_geometry_checked": true,
+    "actual_command_reader_values_proved": false,
+    "actual_original_payload_freshly_verified": false,
+    "scope": "Host/protocol/actualRTLpreparelayoutbridge:7feasibleBVlemmas provevalidcommandshape32/20/18casts,meta/rev=section2/3,Orev16(n+e)8alignment,exact5752357wordboundandallreverse32/aligned64fetchesinsidepayload;histogram/prefixuint32nowrap. Currentreadonlyoriginalprogramheader/28878recordscanreads7623840bytes,skipspayloads,verifiesn/e/p/span/installheadersagainstarchivedlayout/Cmetadata. Frozenactualbuilder24privatesyntheticgraphs/465reverseoffsetslotsmatchoriginalindependentroundtripverifierandseparatedestinationcount/byte-laneoracle. ActualpreprocessedbenchisSHA-boundtocandidateRTLprotocol. Largeoriginalgraph/program/TVpayloadhashesremainarchivedevidence,nofreshlargecontentverification. ActualRTLcommandreaderwordidentity,fullacceptedstart/shapevaluepath,externalprotocol/fullRTL/native/boardremainopen.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v273_20261031/matrix.json",
+    "sha256": "5b950dad04c99771ec17e5f07f49671974fba06cb206f997c4acf1440fa70264"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v273.json",
+    "sha256": "a7051418e572abf32a11df843ae6a5c3705ec04aefa484ed98483db2ea3cbe68"
+  },
+  "next_action": "Proveactualtopcommandreader16wordrequest/index/responsecapturemapscommand[j]tolocalholdingregisterj,thenp_read2/3/4commanddimensionsandexecute22shape/startfreshnessbeforeprepareacceptedstate1;previousv249provedholdingonly. Useactualcontrol_wordsadapter/sourceunitsandcorrectexternalprotocol,notcommandvalueinjection. RetainarchivedfullpayloadvalidityevidencewithoutTV/trace/sparsepayloadreads;preservealloriginalhandles/guards/budgets/caches/failures/UNKNOWNs/native/fullRTL/boardgaps.",
+  "previous_goal_turn_classification": "progress_and_verified_wait_v272",
+  "current_goal_turn_classification": "progress_and_verified_wait",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

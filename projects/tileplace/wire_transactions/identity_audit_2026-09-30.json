@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "identities": 500,
+  "comparison_pairs": 5000,
+  "reference": "original ProposalIdentity tuple and typed identity comparator",
+  "scope": "CPU external-word full identity compare, caller validates all ranges; not selector or HLS yet",
+  "sources": {
+    "test_identity_words.cpp": "671633fa4b6a02696021afe65e9da50a6a1b9c4f019bf2f029fb2687b18ad428",
+    "identity_words.hpp": "bc812f6bc681afc22088ceba86f3eb42343f3c13c310e7534a2d5e14ef2977e3"
+  }
+}

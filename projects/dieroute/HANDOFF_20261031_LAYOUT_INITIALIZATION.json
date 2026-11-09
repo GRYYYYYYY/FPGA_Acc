@@ -1,0 +1,49 @@
+{
+  "observed_ns": 1793428347463061246,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_READ64_CALLER_OFFSETS.json",
+    "sha256": "e703dbb446166e699a2718935c1fda860dea6162a015bd9cac9b819991aa7355"
+  },
+  "progress": {
+    "report": "work/resident_layout_initialization_20261031/review.json",
+    "report_sha256": "70bd34a1b714103d5597b8411b0ddc69ae4cef7a7748506b7b15363a9d9cfe3d",
+    "independent_review": "work/resident_layout_initialization_20261031/independent_review.json",
+    "independent_review_sha256": "126ae89149d2c0352320fcb613de65d391170f1e4d4fb91a4bab4a1989446e0a",
+    "scope_clarification": "work/resident_layout_initialization_20261031/scope_clarification.json",
+    "scope_clarification_sha256": "7e65895c595f7b8c6aaf49761b8554619bde59632726848fd201d66b5f9f063a",
+    "feasible_UNSAT_queries": 61,
+    "counts_words": 9,
+    "zero_calls": 2,
+    "layout_calls": 2,
+    "local_idle_prefix_edges": 8,
+    "layout_last_write_relative_edge": 14,
+    "layout_last_write_same_parent_done_sampling_edge": true,
+    "ROM_expected_image_matches_frozen_metadata": true,
+    "actual_ROM_file_freshly_verified": false,
+    "actual_ROM_load_observed": false,
+    "actual_RTL_caller_offsets_equal_C_slots_proved": false,
+    "HDL_simulation_executed": false,
+    "full_sequential_HDL_equivalence_proved": false,
+    "scope": "Source-interpreted bounded binary helper audit with symbolic64bit stable n/e/p and stale datapath registers. Parent source muxes write all9counts words during states13/14terminal/15/16/17without port conflicts. Zero helper source clocks/guards and common flow-control clauses run two calls with no reset between,writing offsets0..8zero. Parent read16/capture17source clauses connect offset0to reg_1787and layout seed. Layout helper clock blocks/combinational muxes/assignments are parsed and evaluated with simultaneous nonblocking updates,source multiplier actual a/b+buff0/1/2chain (64bit signed product lowerbits),synchronous count/ROM reads,kpipeline/enables,flowinit/cache and parent start clearing at exit-ready. Two contiguous-start calls,with a reset at the first idle prefix and8idleclocks before each,produce ordered writes1..8matching symbolic Cprefix sums modulo64. This is a bounded local source model,not a general Verilog simulator or fullRTL equivalence. Counts stable/source parent-state progression,proper helper ownership/routing,reset and ROMdelivery are explicit contracts. Eight idle clocks before each call flush arbitrary binary exit-history registers that have no reset;flowdone cache may initially be arbitrary but accepted start masks/clears it. This startup prefix is a local precondition,not yet a coupled parent proof. The expected9word ROMimage153bytes generated from frozen C sizes has SHA256identical to both frozen protocol syn/sim ROMdat entries,without opening/statting/hashing any dat/TV/trace. Actual current ROMfile integrity/presence/readmemh success is NOT verified;the model uses those expected constants. No native runtime/ROMload observation,arbitrary initiation schedules/abort/4state behavior,full parent/helper coupled reachability,execute loop-index bounds or actual whole RTL caller offsets equal Cslots is proved. Addresses and multipliers are evaluated under source-width semantics;all data equality queries use fixed10s/256MiB budgets. No original process/input/cache/guard/budget/DUT changes or new HDL/HLS/native flow.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v247_20261031/matrix.json",
+    "sha256": "659fd8bcbcaefa3ed344fa01b1148311de8cade1a3e4eae31f0f3d8b39c6650b"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v247.json",
+    "sha256": "56fa6a7323fea7d1a38521cd8bbd2dc0748f20949b6582f9e7cad4f2b8b8cd93"
+  },
+  "next_action": "Establish coupled parent/zero/layout helper startup,ownership and live input stability obligations,including the8idleedge standalone prefix and terminal same-edge write;then execute loop-index initialization/update/bounds correspondence. Expected sizesROMimage matches frozen metadata only;do not assert current file integrity or native readmemh success without permitted evidence. First poll original jobs and keep all guards/budgets/inputs/caches/retained failures.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

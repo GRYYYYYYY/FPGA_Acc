@@ -1,0 +1,54 @@
+{
+  "observed_ns": 1793433083275071283,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_REVERSE_SELECTOR_OWNERSHIP.json",
+    "sha256": "c54c0f500c8cb536dab40b745ec6652334993b03e7ddfc4ce8f983f25d4ec003"
+  },
+  "progress": {
+    "report": "work/resident_reverse_build_commit_20261031/review.json",
+    "report_sha256": "730e13d5858c9a1d0f2a9e426aca643d644ddbd5bdcfc5cb8e22547273ceec09",
+    "independent_review": "work/resident_reverse_build_commit_20261031/independent_review.json",
+    "independent_review_sha256": "5be1272ab72a3a8029835086686f45ba43221896874ba19b36353a99da0d5b58",
+    "publication_and_checker_clarification": "work/resident_reverse_build_commit_20261031/publication_and_checker_clarification.json",
+    "publication_and_checker_clarification_sha256": "95d069ef0f6e1209ca6722ec4844314d4877b5675f8f04446cde1052ef37442d",
+    "ownership_states": 353,
+    "ownership_edges": 451,
+    "source_control_input_cases": 11296,
+    "ready_history_states": 43,
+    "ready_history_edges": 117,
+    "ready_history_input_cases": 120,
+    "terminal_cases": 10,
+    "shape_boundary_cases": 100,
+    "feasible_UNSAT_queries": 8,
+    "scalar_publication_and_terminal_ready_checked_in_projection": true,
+    "ready_truth_conditional_on_helper_status_and_total": true,
+    "overall_prepare_success_proved": false,
+    "actual_encoded_memory_contract_proved": false,
+    "actual_whole_select_semantics_proved": false,
+    "HDL_simulation_executed": false,
+    "full_sequential_HDL_equivalence_proved": false,
+    "scope": "Reset-started conservative source control projection couples execute326/prepare21/reversebuild8 and registered starts. Active reversebuild remains prepare10 inside execute25, so direct scalar valid pulses can be captured there; parent stored n/e have sole execute22 writers and remain held. Eight feasible source BVqueries establish exact input validity, direct shape outputs,33bit length,24bit blocks/27bit words,port capacities,and total==n+1 check target. Independent review evaluates exact critical start/FSM/mux controls and builds finite stale-ready history to check failure clearing and fresh terminal success. This is conditional reversebuild scalar publication/ownership,not proof prepare overall success,actual helper transactions,read/clear/marker/prefix contents,total_out equal actual population,correct original command values,full selector/getdelimiter provenance,4state/resetabort or native/board behavior. No DUT/process/input/cache/guard/budget changes or new HDL/HLS/native flow. Separate typed source evaluator reproduces353state/451edge ownership closure and explores stale binary ready/condition histories over repeated reversebuild calls. At terminal8 ready-valid is1 and ready equals fresh return; invalid input and marker failure return0 regardless old ready; success requires fresh n/entries and blocks pulses, valid input, marker acceptance and observed total==n+1. Helper statuses and total are admitted boundary observations; actual memory content, marker/prefix coherence, overall prepare success, full sequential RTL/4state/native acceptance remain unproved.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v260_20261031/matrix.json",
+    "sha256": "175ed8827358f14c2d84984df86984bc7cd3b31c4e8bebe34956083c3b939466"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v260.json",
+    "sha256": "b544faf4c903b4d5cb91b208059275584f440725466ff86c79fc73a9e0a00f2f"
+  },
+  "next_action": "Connect reversebuild admitted marker acceptance and total observation to actual clear/marker/prefix helper semantics and memory transactions. In particular prove prefix differences equal actual stored word populations and successful marker construction establishes n+1 correct delimiters; compose prepare success/result provenance without assuming it. Poll original handles first and preserve all original guards/budgets/inputs/caches/retained failures and old UNKNOWNs.",
+  "previous_goal_turn_classification": "progress_and_verified_wait_v259_independent_review_registered",
+  "current_goal_turn_classification": "progress_and_verified_wait",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

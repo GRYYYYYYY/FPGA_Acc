@@ -1,0 +1,50 @@
+{
+  "observed_ns": 1793443138014380786,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_COMMAND_READER_VALUES.json",
+    "sha256": "7be2cba0c3d05f8911293863aef42ade5c65d06d7be4a9b592b910fdd75dac12"
+  },
+  "progress": {
+    "report": "work/resident_control_command_adapter_20261031/review.json",
+    "report_sha256": "fdb2549dccc9927423d0e30bfc7f01540bf95b7520bd0cc70fd4165ff18c0ba3",
+    "independent_review": "work/resident_control_command_adapter_20261031/independent_review.json",
+    "independent_review_sha256": "a75e4d57dd6ceaab657b33337e1a0920d750471ab7ede591252a85e6e5a96d17",
+    "core_order_review": "work/resident_control_command_adapter_20261031/core_order_review.json",
+    "core_order_review_sha256": "019877d91447b9f0a2e62e687c8140909cb085f96d08b2cdbec48e47c25a64d8",
+    "final_review": "work/resident_control_command_adapter_20261031/final_review.json",
+    "final_review_sha256": "52d106753ef18e37a1c42ef620b8baa182d6ee62a88cd99e3de471b992024b4c",
+    "new_feasible_UNSAT_queries": 6,
+    "core_symbolic_transition_cases": 640,
+    "coupled_command_calls": 192,
+    "source_event_edges": 18424,
+    "page_crossing_calls": 3,
+    "physical_bursts": 195,
+    "physical_beats": 384,
+    "command_words_checked": 3072,
+    "conditional_control128_packet_order_and_reader_values_checked": true,
+    "external_protocol_correctness_proved": false,
+    "scope": "Actual512controladapter128bytecommand accepted-streamcontract:6BVgeometry/flaglemmas,640symbolicpayloadcontroltransitionsand192coupledsource-eventadapter/reader calls. Correct64alignedvalid128byteobjectexpandsoneARLEN1burst exceptpageoffset4032whichgives2ARLEN0;allsectionslen0/1andvalidSloop0. Sourcecounter/captureprioritiesandorderedR/S/Asectionstreamcheckedforarbitraryinput/ARready/creditavailability. ControlFIFO/slice/SRL/blockmembodiesareexactmodule-name-onlyrenamesofpreviousgenericordercontracts,now512/513/514payloads.192calls/195bursts/384beats/3072wordswithactualsource readeranddelayedcreditpulseallmatch;192casescoverall64pagepositionsat3addressranges,1528readerstalls. ExternalcorrectorderedRID0memory/primitive source-modelcontractsremainpremises;notfullRTL/4state/native/boardorlivenessproof.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v275_20261031/matrix.json",
+    "sha256": "f4661555a0902fbb2cbbec04128a3c85f16c82192cc0fa972451ac86cc575e14"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v275.json",
+    "sha256": "8164ff52ebf2de4f63faabf186e3796e8331a77ea3a276a1d026e6b59b80e2dc"
+  },
+  "next_action": "Bindtopstate1capturedcommandbase/state2singleaccepted128byteAR/state72-73readercompletion/top75execute16portvalues;thenproveexecute22simultaneousnewshape/startcapturebeforeprepareacceptedstate1computesmeta/rev. Composev273hostlayout/v274readervalues/v275controladapter/v249holdingwithconditionalreversegetcontract. Preserveexternalcorrectmemory/primitivebinarysource-model/fullRTL/native/boardpremisesandalloriginalhandles/guards/budgets/inputs/caches/failures/UNKNOWNs.",
+  "previous_goal_turn_classification": "progress_and_verified_wait_v274",
+  "current_goal_turn_classification": "progress_and_verified_wait",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

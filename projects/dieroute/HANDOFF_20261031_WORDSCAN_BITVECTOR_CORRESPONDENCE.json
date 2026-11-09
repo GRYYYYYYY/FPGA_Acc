@@ -1,0 +1,43 @@
+{
+  "observed_ns": 1793414510503568257,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_RETAINED_PREPARATION_METADATA.json",
+    "sha256": "17993409e474410702fdc0d0e997df7859664c9ae11d6d0aa60f2f6cb9f7a240"
+  },
+  "progress": {
+    "report": "work/resident_wordscan_bitvector_audit_20261031/C_correspondence_review.json",
+    "report_sha256": "0ccb04169c0f4891b2f8614dc82e43ebbcd88ed4302b48aeba6240efc902d823",
+    "independent_review": "work/resident_wordscan_bitvector_audit_20261031/independent_review.json",
+    "independent_review_sha256": "e8dcbb69972fbe4ce8dfb444cd5ba5f2daabf3e28433ffe176f542dad9d35540",
+    "direct_C_correspondence_unsat_queries": 2,
+    "retained_bit_sum_unknown_queries": 3,
+    "concrete_translation_vectors_per_module": 384,
+    "same_word_premise_proved_in_running_DUT": false,
+    "sequential_RTL_equivalence_proved": false,
+    "runtime_count_correspondence_proved": false,
+    "whole_program_lower_bound_certified": false,
+    "watchdog_failure_verdict": null,
+    "scope": "Direct local arithmetic correspondence to the frozen C SWAR expression for the same arbitrary64bit word. Inlined registers and live word input share that word by assumption; supported Verilog expression translation is trusted only for this projection. An UNSAT query excludes disagreement with C arithmetic in this projection, not complete Verilog/sequential equivalence, correctness of C versus bit_sum, actual capture timing/guards or memory delivery, runtime call/loop counts, watchdog outcome or research gate acceptance. No original program/trace/TV read or DUT/job/budget/guard change.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v205_20261031/matrix.json",
+    "sha256": "67762d2012ce221b0f5ce800c24f9cf22d4b2706bc53fcbb06e2b6c0f6928fce"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v205.json",
+    "sha256": "06dee4463b76eced5cc324c99230f2722ac71904182cc89c0b7417ec9a592f49"
+  },
+  "next_action": "Arithmetic C correspondence holds only in same-word projection; next verify live BRAM word versus captured registers and capture guards/cycles. Do not rerun timeout bit_sum queries with expanded bounds or promote this to actual full timing/watchdog acceptance. Preserve original full jobs and queue.",
+  "tools": "Private fixed-version Z3wheel SHA8c42de82...verified and extracted under work/resident_wordscan_bitvector_audit_20261031/python_deps; no system install. Initial missing-pip/import timing and parser failures retained in local sources/preflight metadata. Installer complete, no persistent new owner.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

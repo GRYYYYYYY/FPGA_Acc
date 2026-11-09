@@ -1,0 +1,42 @@
+{
+  "observed_ns": 1793400783862622688,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261030_STRICT_NATIVE_GUARD_FAILURE.json",
+    "sha256": "e3011b805cca4c7e5b48340a90e1738595e95ce355a75c7f63c9b3d880e8d0b0"
+  },
+  "candidate": {
+    "review": "work/strict_SLL_commit_candidate_20261030/native_fullgraph_mapped_capacity_v2/preparation_and_queue_review.json",
+    "review_sha256": "fb2b7d62bb905ddf16319a362db0f3c9fce9c10e4c3afd391cb171aa5c192aee",
+    "protocol": "work/strict_SLL_commit_candidate_20261030/native_fullgraph_mapped_capacity_v2/protocol.json",
+    "protocol_sha256": "d7c3d883f0db36b4d73dc0a378790196df03018ee3ddf317f3218f98860f2c93",
+    "supervisor_pid": 556957,
+    "supervisor_start_ticks": 1765550355,
+    "status": "waiting_for_original_20GiB_headroom",
+    "native_process_launched": false,
+    "full_native_repeats_verified": 0,
+    "scope": "Host-only immutable mapping/residency change; original complete graph91,975,782nodes/341nets/729connections/5repeats and all original label/iteration/guard limits remain. No native execution has started for this candidate, and no full native/RTL/hardware/concurrency/QoR gate is closed. Two original live XRT chains hold the shared graph, so no cache advice was applied.",
+    "research_complete": false
+  },
+  "original_live_XRT_holders": {
+    "review": "work/strict_SLL_commit_candidate_20261030/native_fullgraph_mapped_capacity_v2/original_XRT_holders_live_review.json",
+    "sha256": "e5015cf048173211da241e616e831b2c9bf935433988c79bd783e640edcc8c72",
+    "hosts": [
+      {
+        "pid": 118304,
+        "start_ticks": 1621827367
+      },
+      {
+        "pid": 1439575,
+        "start_ticks": 1622811221
+      }
+    ]
+  },
+  "next_action": "Keep the v2 supervisor as the only owner; it waits for20GiB and launches the unchanged complete five-repeat command once. Preserve the failed v1 attempt and all original positive RTL/XRT chains. Do not evict shared graph cache, stop or restart original jobs for resource pressure or quiet logs. At actual terminal review complete outputs and the source-bound original five-repeat evidence; no current native or RTL acceptance.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

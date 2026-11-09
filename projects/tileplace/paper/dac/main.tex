@@ -1,0 +1,846 @@
+\documentclass[sigconf,anonymous,review]{acmart}
+
+\setcopyright{none}
+\settopmatter{printfolios=true}
+\renewcommand\footnotetextcopyrightpermission[1]{}
+\pagestyle{plain}
+\acmConference[Anonymous review]{Anonymous review submission}{}{}
+\acmYear{}
+\copyrightyear{}
+\acmISBN{}
+\acmDOI{}
+
+\usepackage{booktabs}
+\usepackage{multirow}
+\newcommand{\system}{\textsc{TilePlace}}
+\newcommand{\vpr}{\textsc{VPR}}
+\newcommand{\hpwl}{\textsc{HPWL}}
+\setlength{\emergencystretch}{1.5em}
+\input{../generated/summary_macros.tex}
+
+\begin{document}
+
+\title{TilePlace: Deterministic Routed-Oracle Transactional Refinement for Heterogeneous FPGA Placement}
+
+\author{Anonymous Author(s)}
+\affiliation{\institution{Anonymous Institution}}
+
+\begin{abstract}
+Detailed FPGA placement must improve a legal packed placement without breaking
+heterogeneous-site compatibility, native macros, fixed I/O, or regional
+constraints.  Parallel local refinement further requires reproducible conflict
+resolution, while placement proxies alone cannot reliably predict routed
+timing.  \system{} evaluates atomic move, swap, chain, and macro transactions
+against immutable page snapshots and deterministically selects disjoint site
+and touched-net write sets.  A bounded native \vpr{} route-and-analysis oracle
+then accepts timing improvements, rolls back rejected batches, bisects them to
+atomic transactions, and records incumbent-specific no-goods so that
+surrogate-good but oracle-bad moves are not retried.  Accepted closures refresh
+routed critical-path and congestion feedback.
+
+In a prospectively source-sealed local cohort, 9/13 designs complete paired
+evaluation with identical repeated search trajectories and 404 audited native
+closures. On this successful subset, geometric-mean CPD and routed wirelength
+decrease by $1.944\%$ and $0.213\%$, respectively; 7/9 improve CPD. Four
+failures remain in the cohort denominator: one architecture-model mismatch
+and three CPU input-generator capacity failures. These logic-oriented results
+do not establish architectural generalization or strict historical blindness.
+A separate ten-design reference matrix documents mechanism coverage.
+An archived six-case aggregate is retained with an unresolved timing-parser
+provenance gap. All results use CPU refinement and native \vpr{} validation.
+No FPGA acceleration claim is made.
+\end{abstract}
+
+\begin{CCSXML}
+<ccs2012>
+ <concept>
+  <concept_id>10010520.10010575.10010755</concept_id>
+  <concept_desc>Computer systems organization~Reconfigurable computing</concept_desc>
+  <concept_significance>500</concept_significance>
+ </concept>
+ <concept>
+  <concept_id>10010520.10010575.10010577</concept_id>
+  <concept_desc>Computer systems organization~Hardware-software codesign</concept_desc>
+  <concept_significance>300</concept_significance>
+ </concept>
+</ccs2012>
+\end{CCSXML}
+\ccsdesc[500]{Computer systems organization~Reconfigurable computing}
+\ccsdesc[300]{Computer systems organization~Hardware-software codesign}
+\keywords{FPGA placement, deterministic transactions, timing-driven placement, heterogeneous FPGA}
+
+\maketitle
+
+\section{Introduction}
+
+FPGA placement couples discrete legality with routed quality of results (QoR).
+Logic clusters, DSPs, memories, and I/O occupy different physical tiles and
+subtiles; carry and cascade structures impose relative placement; and native
+constraints may fix coordinates or restrict blocks to unions of regions.
+Meanwhile, placement objectives are only proxies for the routed wirelength and
+critical-path delay (CPD) reported after routing.  These properties make a
+small local move structurally global: it changes site occupancy, every
+incident net, and potentially multiple timing connections.
+
+Analytical placers scale global optimization through continuous relaxation
+and legalization, including heterogeneous FPGA systems such as
+DREAMPlaceFPGA and AMF-Placer~\cite{rajarathnam2022dreamplacefpga,liang2024amf}.
+They solve a broader placement problem, often beginning from flat primitives
+and performing their own packing or targeting a commercial device backend.
+In contrast, a post-placement refinement pass must preserve the exact packed
+netlist and all native legality already established by the baseline flow.  It
+should also compose with the same router so that paired routed QoR is
+interpretable.
+
+Parallel refinement introduces a second challenge.  Independent pages can
+still touch the same multi-pin net, while a macro may span page boundaries.
+Accepting proposals by completion order makes the output dependent on thread
+scheduling; locking individual sites does not protect net-cost updates or
+macro atomicity.  \system{} instead treats every candidate move as a
+transaction over sites and nets.  Proposal evaluation reads one placement
+snapshot.  A deterministic commit order accepts only transactions whose
+old/new site write sets and touched-net sets are disjoint from earlier accepted
+transactions.  This yields reproducible batches and exposes parallel proposal
+semantics without claiming speedup from the current Python prototype.
+
+This paper makes four contributions:
+\begin{itemize}
+ \item a deterministic transaction protocol for moves, swaps, short chains,
+ and native macros that captures both site and touched-net conflicts;
+ \item exact incremental touched-net wire updates and connection-specific
+ timing/congestion surrogates, including endpoint reconstruction for
+ heterogeneous, multi-height, and multi-capacity physical tiles;
+ \item a bounded routed-oracle controller with exact rollback, stable batch
+ bisection, incumbent-specific no-goods, and feedback refresh from the worst
+ current routed timing paths; and
+ \item fail-closed support for native macro, fixed, and regional constraints,
+ with an evaluation protocol that separates development,
+ held-out, previously probed macro stress, and constrained evidence.
+\end{itemize}
+
+The contribution is a reproducible constrained refinement mechanism with a
+preregistered routed-QoR result, not a claim of superiority over independent
+placers or a claim of hardware acceleration.
+
+\section{Background and Motivation}
+
+\subsection{Packed FPGA placement}
+
+\vpr{} represents the placed design as clustered blocks over an architecture
+grid~\cite{betz1997vpr,vtr8}.  Let block $b$ occupy a legal location
+$\ell_b=(x_b,y_b,z_b)$, where $z$ identifies a subtile.  A placement is legal
+only if every block matches the physical tile type, every occupied subtile is
+unique, all fixed and regional constraints hold, and each macro retains its
+member offsets.  A post-placement method cannot silently repack logic to
+repair an illegal move because that changes the comparison's netlist.
+
+For a net $n$ with placed pin set $P_n$, the common bounding-box estimate is
+\begin{equation}
+ H_n = (\max_{p\in P_n}x_p-\min_{p\in P_n}x_p)
+     +(\max_{p\in P_n}y_p-\min_{p\in P_n}y_p).
+\end{equation}
+Moving transaction $T$ only changes nets incident to members of $T$; denote
+this touched set by $N(T)$.  Exact incremental evaluation therefore needs to
+recompute $H_n$ only for $n\in N(T)$, rather than sweep the full design.
+
+\subsection{Why connection timing matters}
+
+A multi-sink net has one source but multiple routed timing connections.  A
+net-level maximum criticality multiplied by one bounding box loses sink
+identity: a move can shorten low-criticality geometry while lengthening the
+critical source--sink pair.  \system{} uses a connection-star surrogate
+\begin{equation}
+ C(P)=\sum_{c=(s,t)} q_c\bigl(|x_s-x_t|+|y_s-y_t|\bigr),
+ \label{eq:timing}
+\end{equation}
+where $q_c\in[0,65535]$ is quantized setup criticality exported from
+\vpr{}/Tatum. In the current fixed-source development runs, this static CSV
+comes from a patched analysis supplied with PersistRoute connection delays:
+consecutive path-edge quantized delays are summed before Tatum analysis.
+These weights are proxy-derived, rather than criticalities computed from the
+native baseline route delays. They are distinct from the current native
+routed setup-path feedback and from the CPD/wirelength acceptance oracle.
+The original proxy-only policy protects connections with
+$q_c\ge 60000$ using an input-relative guard:
+\begin{equation}
+ d_c(P') \le d_c(P_0).
+ \label{eq:guard}
+\end{equation}
+This guard protects critical geometry without forcing every local wire
+estimate to be non-increasing, and remains part of the frozen ten-case
+reference evidence.  V4 disables this geometric guard and instead uses the
+native acceptance rule in Equation~\ref{eq:oracle}; routed top-path feedback
+still augments Equation~\ref{eq:timing} during candidate ranking.
+
+\section{TilePlace Method}
+
+\begin{figure*}[t]
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{c@{\;$\rightarrow$\;}c@{\;$\rightarrow$\;}c@{\;$\rightarrow$\;}c@{\;$\rightarrow$\;}c}
+\fbox{\shortstack{VPR placement,\\netlist, timing}} &
+\fbox{\shortstack{top routed paths\\congestion feedback}} &
+\fbox{\shortstack{snapshot proposals\\move/swap/chain/macro}} &
+\fbox{\shortstack{deterministic batch\\site + net conflicts}} &
+\fbox{\shortstack{native VPR oracle\\accept or rollback}}
+\end{tabular}
+\caption{\system{} refines an already legal packed placement.  Proposal
+evaluation is parallelizable, while fixed-order conflict filtering makes each
+committed batch deterministic and macro-atomic.}
+\Description{A left-to-right flow starts from VPR inputs, extracts routed
+feedback, evaluates snapshot transactions, forms a deterministic nonconflicting
+batch, and uses VPR routing and analysis as an acceptance oracle.}
+\label{fig:flow}
+\end{figure*}
+
+Figure~\ref{fig:flow} summarizes the refinement and native-validation path.
+
+\subsection{Pages, colors, and candidate transactions}
+
+The device is partitioned into $2\times2$ pages.  A four-color assignment
+ensures that pages of the same color do not share a side or corner.  During a
+color phase, a movable singleton or macro root enumerates compatible target
+sites in its source page and eight neighboring pages.  Candidate generation is
+bounded at 64 sites and uses stable coordinate and identifier tie breaks.
+Occupied targets induce atomic swaps or two-/three-unit chains;
+shape-compatible macros may swap as whole objects.  The routed-oracle
+configuration focuses initiating units on blocks appearing in the 20 worst
+current setup paths.  Helper units may still participate in a swap or chain,
+so timing focus does not compromise atomic legality.
+
+Page coloring is a locality and scheduling device, not a proof of
+independence.  Nets can span arbitrary distance and macros can cross page
+boundaries.  Correctness is therefore enforced by the transaction protocol,
+not by page geometry alone.
+
+Figure~\ref{fig:algorithm} gives the complete routed-oracle schedule.  The outer
+epoch and color loops are sequential barriers, whereas proposals within one
+color read the same immutable snapshot and may be evaluated concurrently.
+Candidate scores use integer wire and quantized timing costs, avoiding
+floating-point reduction-order differences.  Sorting and conflict filtering
+occur only after every proposal in the phase has been materialized.  Proxy
+improvement is necessary for proposing a transaction but is never reported as
+final QoR.
+
+\begin{figure}[t]
+\centering
+\begin{minipage}{0.96\columnwidth}
+\small
+\begin{tabular}{@{}rp{0.84\columnwidth}@{}}
+1: & Validate the input placement, native constraints, and macro offsets.\\
+2: & Partition the device into pages and assign four deterministic colors.\\
+3: & Run native routing/analysis; extract congestion and 20 worst setup paths.\\
+4: & \textbf{for} epoch $=1\ldots4$ and color $=0\ldots3$ \textbf{do}\\
+5: & \quad Freeze placement, occupancy, touched-net, and feedback snapshots.\\
+6: & \quad Enumerate legal move/swap/chain/macro transactions; skip no-goods.\\
+7: & \quad Score exact touched-net plus timing/congestion proxy deltas.\\
+8: & \quad Form one stable, site/net-disjoint batch and invoke the native oracle.\\
+9: & \quad If rejected, restore exactly, bisect stably, and blacklist rejected atoms.\\
+10: & \quad If accepted, commit and refresh routed timing/congestion feedback.\\
+11: & Stop after 24 closures, four epochs, or exhaustion of the candidate frontier.\\
+\end{tabular}
+\end{minipage}
+\caption{Deterministic routed-oracle transaction schedule.}
+\Description{Eleven pseudocode steps validate the input, create colored pages,
+extract routed feedback, evaluate transactions, form deterministic batches,
+and use native VPR closure to accept, roll back, or bisect them.}
+\label{fig:algorithm}
+\end{figure}
+
+\subsection{Macro-aware proposal transactions}
+
+A native macro is represented by one root and fixed member offsets.  Moving a
+root materializes all target member sites; the proposal is rejected if any
+member has no compatible site, violates a constraint, collides with an
+unmoved block, or duplicates another member's target.  Thus, a carry or
+cascade is never split into independently accepted block moves.
+
+For proposal $T$, \system{} records the old and new occupied sites
+$S(T)=S_{old}(T)\cup S_{new}(T)$ and all touched nets $N(T)$.  It computes the
+before/after objective from one immutable snapshot.  Proposals are sorted by
+improvement followed by stable transaction identity.  In that order, $T_i$ is
+accepted iff
+\begin{equation}
+ S(T_i)\cap S_A=\emptyset \quad\land\quad
+ N(T_i)\cap N_A=\emptyset,
+\end{equation}
+where $S_A,N_A$ are unions from previously accepted proposals.  Accepted
+write sets are then applied together.  Every accepted transaction therefore
+has the same before state assumed during evaluation and the batch is
+equivalent to its deterministic serial commit order.
+
+\subsection{Native oracle, rollback, and no-good frontier}
+
+Let $P_0$ be the baseline and $P_i$ the current incumbent.  A candidate
+$P'$ is accepted only if native placement, routing, and analysis succeed,
+$WL(P')\le 1.005WL(P_0)$, and either
+\begin{equation}
+ CPD(P_i)-CPD(P')\ge 0.001\,\mathrm{ns},
+ \label{eq:oracle}
+\end{equation}
+or CPD is exactly equal and routed wirelength strictly decreases.  Thus a
+surrogate score can spend an oracle call but cannot directly alter the
+incumbent.  The wirelength cap is baseline-relative rather than
+incumbent-relative, preventing a sequence of individually acceptable timing
+moves from accumulating unbounded routing cost.
+
+Before an oracle call, the controller snapshots every block position.  A
+rejected batch restores that snapshot exactly and is split at its stable
+midpoint; the first and second halves are tried in order while budget remains.
+A rejected atomic transaction ID enters a no-good set associated with the
+current incumbent.  Later color visits choose the next-ranked non-no-good
+candidate instead of repeating the same proxy optimum.  Any accepted
+placement clears the set because routed feedback and the incumbent have
+changed.  This frontier mechanism is what distinguishes bounded exploration
+from repeatedly querying the oracle with one known-bad local optimum.
+
+After acceptance, \system{} extracts edge pressure from the new route and
+block pairs from the 20 worst setup paths, then refreshes both feedback terms
+before further proposal generation.  The run is capped at 24 candidate
+closures and four epochs.  Every failed closure consumes budget, so tool
+failure cannot silently create extra search opportunities.
+
+\subsection{Determinism and legality argument}
+
+\paragraph{Deterministic selection.}
+For a fixed contract, a phase has a fixed snapshot, movable-object order,
+candidate-site order, integer objective, and proposal identity.  Proposal
+evaluation therefore produces the same multiset regardless of worker
+completion order.  The total sort key fixes one proposal sequence.  Scanning
+that sequence updates $S_A$ and $N_A$ by deterministic set union, so an
+induction over the sequence gives the same accept/reject decision at every
+position.  Applying the accepted transactions to disjoint site write sets
+then yields one unique next placement.  Induction over colors and epochs gives
+one unique final placement.  The 1/2/4/8-worker equality experiment tests this
+argument at the implementation boundary, including serialized snapshots and
+worker result collection.
+
+The routed controller adds only stable operations: trial numbering follows
+epoch/color order, batch bisection uses a fixed midpoint, atomic no-goods use
+the complete transaction identity, and rollback restores the pre-trial map.
+With fixed \vpr{} binary, seed, channel width, and router options, each oracle
+response therefore determines one next controller state.  The experiment
+records every transaction ID, candidate-placement hash, closure hash, decision,
+and reason so this state transition is auditable even when a run terminates at
+its closure budget.
+
+\paragraph{Legality preservation.}
+The input is legal by construction and by native \vpr{} checking.  Each
+proposal materializes every macro member, verifies type/subtile compatibility,
+fixed and regional constraints, member offsets, and all target occupancies.
+Within a committed batch, disjoint site sets prevent two transactions from
+vacating or acquiring the same location.  Blocks outside a transaction are
+unchanged, and a macro is represented by exactly one root transaction, so no
+accepted operation can split it.  Consequently each batch preserves the
+contract-level legality invariants.  This argument is deliberately backed by
+a fail-closed validator and native \vpr{} closure rather than used as a
+replacement for tool validation.
+
+\subsection{Endpoint reconstruction}
+
+The timing exporter provides routed RR SOURCE/SINK terminals, clustered pins,
+and atom timing pins.  Mapping only a placement root coordinate fails for
+multi-height DSP and memory blocks because RR terminals may lie on any tile in
+the physical footprint.  \system{} maps such terminals to the root block after
+testing the full block-type width/height footprint.  For I/O tiles containing
+multiple subtiles, RR class stride and packed pin role disambiguate blocks that
+share $(x,y)$.  Mapping is fail-closed: every connection must identify one
+clustered source and sink before optimization.
+
+Across the main matrix, all \MappedConnections{} routed connections map to
+clustered endpoints.  \MappedAtomPins{} also map to atom timing pins.  The
+remaining \UnmappedAtomPins{} comprise 4,440 in \texttt{conv\_layer} and 111
+in Titan23 \texttt{stereo\_vision}; they are explicitly retained in the wire
+objective with zero timing criticality rather than discarded or reported as
+atom-mapped.
+
+\subsection{Native constraints and validation}
+
+The input contract preserves architecture hashes, block types and subtiles,
+macro offsets, and native \vpr{} partition constraints.  Region import retains
+atom-regex matching, atom-to-cluster intersection, unions of rectangular
+regions, layer/subtile bounds, and partially fixed dimensions.  The validator
+rejects wrong-type occupancy, duplicate occupancy, broken macro offsets, and
+fixed or regional violations.
+
+Every reported output is then consumed by the same \vpr{} revision used for
+its baseline.  Isolated work directories prevent \vpr{} from rewriting the
+archived placement header or creating post-routing netlists beside frozen
+inputs.  A result is accepted only after placement consistency, routing
+consistency, successful routing, and timing analysis all pass.
+
+\section{Experimental Methodology}
+
+\subsection{Cases and cohort discipline}
+
+The development cohort contains \texttt{diffeq}, \texttt{frisc},
+\texttt{elliptic}, and \texttt{clma}.  Timing model, guard threshold, page
+size, and all search parameters were selected only on these cases.  The frozen
+policy was then applied to \texttt{spmv}, \texttt{softmax},
+\texttt{attention\_layer}, and Titan23 \texttt{neuron} and
+\texttt{stereo\_vision}.  The Titan cases introduce
+a second architecture family~\cite{murray2013titan,talaei2023titan2}; the
+Koios designs supply heterogeneous machine-learning workloads~\cite{arora2021koios}.
+
+\texttt{conv\_layer} had participated in an earlier $4\times4$ probe, so it is
+reported as a previously probed macro-stress cohort, not as post-freeze
+validation.  The official \vpr{} \texttt{apex4} fixed-I/O case was separately
+preregistered and is not merged into the unconstrained aggregate.  A second
+Titan23 \texttt{stereo\_vision} was outcome-blind preregistered before its
+exact Titan 2.0 BLIF/SDC inputs were acquired.  The observed result is retained
+without parameter changes.
+
+The routed-oracle extension uses a second, explicitly separate protocol.  Its
+four development cases are \texttt{diffeq}, \texttt{frisc},
+\texttt{elliptic}, and \texttt{clma}; its held-out cases are \texttt{pdc},
+\texttt{dsip}, \texttt{bnn}, \texttt{gemm\_layer},
+\texttt{tdarknet\_like.small}, and \texttt{ucsb\_152\_tap\_fir}.  The V4
+record was sealed before any V4 held-out candidate closure, with fixed
+weights 2/2/1 for connection timing, routed timing, and congestion, 20 timing
+paths, no geometric critical-distance guard, and at most 24 closures.  The
+development gate required improving CPD geometric mean with every case inside
+the wirelength cap.  After it passed, neither cases nor parameters could
+change.  These six held-out outcomes are not merged with the earlier ten-case
+matrix: the former test the routed-oracle method, while the latter documents
+the original page-transaction mechanism and its constraint/endpoint coverage.
+
+\begin{table}[t]
+\centering
+\scriptsize
+\caption{Main-matrix cohort membership.  Macro entries are
+macro/member counts; ``macro stress'' is excluded from post-freeze claims.}
+\label{tab:cohorts}
+\resizebox{\columnwidth}{!}{\input{../generated/cohort_table.tex}}
+\end{table}
+
+Table~\ref{tab:cohorts} exposes the role of every retained point rather than
+pooling all non-development designs under one label.  The first eight designs
+use the COFFE 22-nm architecture family; the final two use Titan23 Stratix-IV.
+The post-freeze aggregate contains exactly five cases, while
+\texttt{conv\_layer} remains in the overall ten-case aggregate solely as a
+previously probed stress test for native macros and optional timing-pin export.
+
+\subsection{Paired routing protocol}
+
+Each comparison fixes the exact VTR revision, architecture, packed netlist,
+seed, channel width, router options, and one router worker.  Baseline and
+candidate differ only in placement.  We report post-route wirelength, CPD, and
+routing iterations.  Geometric-mean percentage changes are computed from
+candidate/baseline ratios.  For the original ten-case reference flow,
+complete CPU runs are repeated and placement plus report outputs must be
+byte-identical.  V4 instead archives the full deterministic controller trace
+and every native closure under its sealed budget; it is not granted duplicate
+oracle calls beyond that budget merely to create a repeatability statistic.
+
+The executable baseline study rebuilds the same VTR revision with Eigen 3.4.0.
+It pairs conventional timing-driven simulated annealing with the legacy
+cluster-level \texttt{--enable\_analytic\_placer true} path followed by
+quench.  The integrated \texttt{--analytical\_place} flow is excluded because
+it couples packing and placement.  Log markers verify that the analytical
+solver is both created and timed.
+
+\subsection{Tool, host, and evidence protocol}
+
+All academic closures use VTR commit
+\texttt{8cb20aa5293b5ce5}\allowbreak\texttt{f6a05c88b37b38e1305d9b07}.  The correctness binary and
+the Eigen-enabled baseline binary are separately hashed; the latter is used
+only for the six paired conventional/AP runs.  Experiments execute on Ubuntu
+22.04 with Intel Xeon Gold 6530 CPUs.  Reference runtime measurements pin one
+logical CPU, perform three warm-ups and seven measured repetitions, and retain
+all samples rather than only medians.
+
+Each experiment record stores commands, input and output hashes, placement
+hashes, router parameters, endpoint-mapping counts, native closure markers,
+and per-case QoR.  The paper generator checks the frozen V4 held-out,
+ten-case, and constrained-matrix SHA-256 values; verifies V4 configuration,
+closure budget, trial state chains, cohort membership, and aggregate counts;
+and emits all result tables directly from the records.  A mismatch aborts
+generation.  Large RR graphs and build trees
+are not treated as paper evidence unless their provenance and compact hashes
+are present in the experiment record.
+
+The two architecture families differ in device model and workload source, but
+each baseline/candidate pair remains internal to one fixed architecture,
+packed netlist, placement header, timing constraints, and router invocation.
+No cross-family absolute WL or CPD comparison is made.  This distinction is
+important because the aggregate is a geometric mean of paired ratios, not a
+normalization of raw metrics across devices.
+
+\section{Results}
+
+\subsection{Archived V4 results and provenance limitation}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Archived V4 routed QoR; parser provenance is not uniform.  CPD is in ns.  ``Closures''
+counts every native route-and-analysis oracle call; ``Accepts'' counts atomic
+transactions committed after native acceptance.}
+\label{tab:v4}
+\input{../generated/v4_table.tex}
+\end{table*}
+
+Table~\ref{tab:v4} preserves six archived native-legal outputs with
+CPD/WL geometric-mean changes of \VFourCpdGeo\%/\VFourWlGeo\%,
+\VFourStrict/6 strict CPD improvements, and maximum WL increase
+\VFourWorstWl\%. All registered numerical gates pass, but parser drift
+prevents a verified single-implementation held-out interpretation.
+The largest case improves CPD by $21.289\%$ after 20/24 closures and eight
+accepted transactions. Rejected candidates and rollback decisions remain
+archived. The four historical development cases are method-selection evidence
+and excluded from this aggregate.
+
+\IfFileExists{../generated/fixed_development_table.tex}{
+\subsection{Fixed-implementation development replay}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Current generic-parser implementation replay on already observed
+ development designs. CPD is in ns. These are development outcomes, not
+ additional unseen held-out samples.}
+\label{tab:fixeddev}
+\input{../generated/fixed_development_table.tex}
+\end{table*}
+
+A separate source-sealed protocol fixes the generic indexed-port parser and
+exact integer pressure-prefix implementation for all four development designs.
+It retains four existing \texttt{diffeq} runs and executes two runs each for
+\texttt{frisc}, \texttt{elliptic}, and \texttt{clma}. Candidate placements,
+transaction costs, proposal phases, decisions, and numerical feedback must
+match exactly within each design. An independent artifact audit verifies every
+native trial's candidate binding, output hashes, and placement/routing success
+markers before Table~\ref{tab:fixeddev} is generated. All 176 native trials
+pass the audit. CPD decreases by $1.825\%$ in geometric mean while wirelength
+increases by $0.168\%$; the largest CPD reduction is $6.261\%$ on
+\texttt{frisc}. This replay establishes
+repeatability for the current implementation on these observed designs; it
+does not reconstruct the historical parser sources or restore an unseen-data
+interpretation of the archived six-case aggregate.
+}{ }
+
+\subsection{Prospectively source-sealed local cohort}
+
+\begin{table}[t]
+\centering
+\small
+\caption{All 13 registered local designs. Geometric means use the nine
+successful paired evaluations; failed cases remain in the cohort denominator.}
+\label{tab:newcohort}
+\input{../generated/new_cohort_table.tex}
+\end{table}
+
+Before observing refinement outcomes, a complete execution protocol seals
+all 13 designs, source and binary hashes, architecture, seed 1, channel width
+200, weights 2/2/1, four epochs, 24 closures, and 20 feedback paths. Each
+successful design has two repetitions with exact full-trajectory equality.
+There are no retries or outcome-based parameter changes. Native baselines
+generate the packed netlist, placement, macros, and RR graph. The fixed CPU
+input generator has a 30-iteration limit; completed paths supply quantized
+proxy edge delays to the static timing exporter. Native \vpr{} remains the
+legality and final QoR oracle. This input chain differs from the archived
+iteration-zero timing export and is evaluated separately.
+
+Table~\ref{tab:newcohort} reports all outcomes. Nine designs complete paired
+evaluation; an independent audit verifies 404 native trials and both repeated
+trajectories. CPD improves on seven and is unchanged on two, with successful-subset
+geometric-mean CPD/WL changes of $-1.944\%/-0.213\%$.
+\texttt{adder} lacks its required architecture model.
+\texttt{ex1010}, \texttt{s298}, and \texttt{s38417} have legal native
+baselines, but their CPU input paths retain 8, 2, and 2 overused resources
+after 30 iterations; refinement is not launched. These failures limit
+end-to-end coverage and cannot be interpreted as native QoR rejections.
+Local exposure review has incomplete historical coverage, so source sealing
+does not establish strict blindness or heterogeneous-architecture generalization.
+
+\subsection{Same-router routed QoR}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Paired native \vpr{} routed QoR. CPD is in ns; $\dagger$ denotes the
+previously probed macro-stress cohort.  All other non-development cases are
+post-freeze validation.}
+\label{tab:qor}
+\input{../generated/qor_table.tex}
+\end{table*}
+
+Table~\ref{tab:qor} retains the earlier ten-case mechanism-coverage matrix:
+WL/CPD geometric-mean changes are \QorWlGeo\%/\QorCpdGeo\%, with
+5/10 WL improvements and 9/10 non-regressing CPDs. Worst WL/CPD regressions
+are $+0.439\%/+0.017\%$; these negative outcomes are retained.
+Titan23 \texttt{neuron} preserves 101 macros (204 members) and maps 77,106
+connections to both clustered and atom timing endpoints. Its WL increases
+$0.088\%$ with unchanged CPD. \texttt{conv\_layer} preserves 43 macros
+(86 members). \texttt{stereo\_vision} preserves 150 macros (300 members)
+and clustered endpoints for 81,610 connections; 111 unmatched atom timing
+pins remain in wire cost with explicitly zero criticality. This matrix
+provides mechanism coverage, not additional source-sealed cohort samples.
+
+\subsection{Fixed-I/O constrained QoR}
+
+Two official VTR XML cases first validate native region and fixed-coordinate
+import, including injected violations and deterministic recovery.  The
+separate preregistered \texttt{apex4} QoR point maps all 2,263 timing
+connections and preserves all \FixedIoClusters{} coordinate-fixed I/O
+clusters.  Native routing changes wirelength from 10,023 to 10,044
+(\ConstrainedWl\%) and CPD from 5.20192 to 5.22600\,ns
+(\ConstrainedCpd\%), while iterations increase from 19 to 21.  This retained
+negative result demonstrates constraint compatibility, not constrained-QoR
+improvement, and is excluded from Table~\ref{tab:qor}.
+
+\subsection{Executable placement baselines}
+
+\begin{table}[t]
+\centering
+\scriptsize
+\caption{Routed change (\%) versus conventional \vpr{} placement on identical
+packed netlists and router settings.}
+\label{tab:baseline}
+\resizebox{\columnwidth}{!}{\input{../generated/baseline_table.tex}}
+\end{table}
+
+Table~\ref{tab:baseline} compares both refinements with conventional
+placement.  Conventional runs reproduce every frozen baseline wirelength, CPD,
+and iteration count.  The cluster-level analytical path is legal and changes
+every placement, but degrades geometric-mean wirelength/CPD by
+\ApWlGeo\%/\ApCpdGeo\%; it improves wirelength on 0/6 cases and preserves or
+improves CPD on 0/6.  This is a reproducible result for that experimental
+wirelength-oriented \vpr{} path, not evidence against external timing-driven
+placers.
+
+DREAMPlaceFPGA and AMF-Placer were pinned and audited as executable-source
+candidates.  The former begins from flat Bookshelf or FPGA Interchange input
+and performs packing/legalization; the latter extracts primitive, device, and
+timing data from a Vivado design and returns placement Tcl.  Running either in
+the present table would change the netlist, architecture, or routing backend.
+A fair comparison therefore requires a separately preregistered external-format
+cohort and is not fabricated here.
+
+\subsection{Ablations}
+
+\begin{table}[t]
+\centering
+\small
+\caption{Page-size selection on the four-case development cohort.  Bold is
+selected by minimum routed-wirelength geometric mean.}
+\label{tab:pages}
+\input{../generated/page_table.tex}
+\end{table}
+
+Table~\ref{tab:pages} selects $2\times2$ pages.  On \texttt{diffeq}, replacing
+connection-specific cost by net-maximum criticality times \hpwl{} gives
+$-0.428\%$ wirelength but $+0.896\%$ CPD.  Connection-star cost without the
+guard gives $-0.143\%$ wirelength but $+0.846\%$ CPD.  Equation~\ref{eq:guard}
+changes routed wirelength by $-0.791\%$ with unchanged CPD and is selected.
+Weights 1, 2, and 4 produce the same placement under the guard.  A stricter
+per-transaction \hpwl{} non-increase rule is rejected because its four-case
+wirelength geometric mean is $+0.006\%$.
+
+The archived routed-oracle development sequence motivates the frontier mechanism. On
+\texttt{diffeq}, routed-timing weights 2, 4, and 8 without no-goods all stop
+after eight closures at the same placement: CPD is unchanged and wirelength
+changes by $-0.934\%$.  The trace shows that later epochs repeatedly select
+already rejected proxy-best atoms.  Holding the least aggressive weight 2
+fixed and adding incumbent-specific no-goods uses 16 closures, accepts five
+transactions, and changes CPD/wirelength by $-1.013\%$/$+0.022\%$.  Across
+the four development cases, the resulting V4 CPD/wirelength geometric means
+are $-0.804\%$/$+0.026\%$, with strict CPD improvement on 3/4 cases.  This
+comparison motivates the frontier, but parser provenance remains unresolved;
+it does not establish a controlled fixed-implementation ablation.
+
+\subsection{Fixed-source suppression ablation}
+
+\begin{table*}[t]
+\centering
+\small
+\caption{Rejected-singleton suppression enabled versus disabled under the same
+source-sealed implementation. Changes use the disabled arm as denominator;
+call and accepted-transaction counts are enabled/disabled.}
+\label{tab:frontierfixed}
+\input{../generated/frontier_ablation_table.tex}
+\end{table*}
+
+A separate protocol runs both arms twice on each of the four already observed
+ development designs, fixing the generic indexed-port parser, input hashes,
+weights, four epochs and 24-closure upper budget. The control disables only
+proposal suppression; rejection tracking, stopping rules, rollback, stable
+bisection and feedback refresh remain unchanged. Full traces match within
+each arm, and an independent audit verifies all 272 native trials.
+Table~\ref{tab:frontierfixed} shows no additional CPD benefit on any design.
+Only \texttt{diffeq} reduces wirelength by five units, while its native calls
+increase from eight to sixteen. The wirelength geometric-mean change is
+$-0.014\%$. The other three designs have equal QoR and call counts;
+\texttt{elliptic} terminates by the epoch limit with suppression and by a
+stalled frontier without it. This controlled comparison does not support
+attributing the current development timing improvement to suppression.
+It neither resolves historical parser provenance nor supplies unseen-data
+validation.
+
+\subsection{Runtime and parallel semantics}
+
+\begin{table}[t]
+\centering
+\small
+\caption{Earlier single-core Python reference refinement, excluding V4 oracle calls, after three warm-ups and
+seven measured repetitions on logical CPU 31.}
+\label{tab:runtime}
+\resizebox{\columnwidth}{!}{\input{../generated/runtime_table.tex}}
+\end{table}
+
+Table~\ref{tab:runtime} includes contract loading, optimization, placement
+writing, validation, and JSON reporting.  Medians range from 0.545 to
+59.672\,s; these measurements cover the earlier guarded reference algorithm,
+not the V4 routed-oracle search or \vpr{} end-to-end time.  Skipping
+before-cost calculations for disabled guards improves four-case implementation
+runtime by \GuardRuntimeSpeedup$\times$ with identical placement hashes.
+
+Proposal evaluation with 1, 2, 4, and 8 fork workers produces identical
+objectives, conflict counts, accepted transactions, and placement hashes on
+all four development cases.  On the largest \texttt{clma} case, controlled
+medians are 4.046/4.112/4.190/4.104\,s.  Python snapshot serialization and IPC
+dominate, so we claim deterministic parallel semantics but no CPU scaling.
+
+V4 additionally invokes native routing and analysis for accepted and rejected
+candidates, and refreshes feedback after acceptance.  Its closure budget bounds
+the number of oracle calls, not wall time.  The frozen held-out results do not
+provide controlled repeated end-to-end V4 timings or an equal-time search
+comparison; the reported QoR gain therefore does not establish time efficiency.
+
+\section{Related Work}
+
+VPR established the widely used academic packing, placement, and routing
+flow~\cite{betz1997vpr}; later VTR releases expanded architecture modeling,
+timing analysis, and reproducible benchmark infrastructure~\cite{vtr8}.
+Titan and Koios broaden academic evaluation toward large heterogeneous and
+machine-learning designs~\cite{murray2013titan,talaei2023titan2,arora2021koios}.
+
+Analytical FPGA placement combines continuous global optimization with
+architecture-specific packing and legalization.  DREAMPlaceFPGA uses a GPU
+deep-learning toolkit for heterogeneous placement~\cite{rajarathnam2022dreamplacefpga},
+while AMF-Placer develops mixed-size timing-driven analytical placement for
+commercial FPGA fabrics~\cite{liang2024amf}.  These systems target full
+placement flows.  Earlier analytical methods addressed heterogeneous
+resources and routing-architecture awareness~\cite{gort2012analytical,chen2015routingaware};
+UTPlaceF couples physical packing with congestion-aware placement, and
+elfPlace uses an electrostatic formulation for large heterogeneous
+devices~\cite{li2018utplacef,li2019elfplace}.  Timing-driven treatment of
+dedicated routing paths further shows why architecture-specific structures
+cannot be reduced to interchangeable grid points~\cite{nikolic2020dedicated}.
+\system{} instead starts from a fixed legal clustered
+placement and studies deterministic, native-constraint-preserving local
+transactions under an unchanged router.  This narrower problem definition is
+why external placer results cannot be merged into the same-packed-netlist
+table without a new cohort.
+
+Parallel placement methods commonly decompose spatial work or batch local
+moves.  \system{}'s distinction is that page separation is only a proposal
+mechanism: correctness explicitly includes site writes, net writes, and macro
+members, followed by a fixed commit order.  The transaction representation is
+also intended as a future hardware boundary, although the present paper does
+not evaluate such hardware.
+
+FPGA-accelerated FPGA placement demonstrates that move evaluation can be
+mapped to reconfigurable hardware~\cite{dhar2019accelerated}.  That result
+motivates a future implementation but does not establish performance for the
+current routed-oracle transaction algorithm.  In particular, this paper separates the
+CPU algorithm from the repository's bounded HLS toy kernel and reports no
+emulation-derived or estimated acceleration.
+
+\section{Threats to Validity}
+
+\paragraph{Internal validity.}
+A development timing replay discovered an implementation-provenance gap.
+On the same hashed initial timing report, the current generic indexed-port
+parser produces 52 feedback edges for \texttt{diffeq}, versus 37 in the archive;
+the full replay changes the search trajectory and final QoR.  The four
+archived development summaries and the \texttt{pdc}/\texttt{dsip} summaries
+match a diagnostic restricted-port parser instead.  Configuration and VPR
+hashes therefore do not establish that all runs used one implementation.
+The archived placements and numerical metrics are retained, but neither the
+original development gate nor the six-case aggregate currently establishes
+outcome-blind validation of a single frozen parser.  Count-level diagnostic
+matches alone do not prove historical source identity.  Performance samples
+from the mismatching replay are excluded from paired timing results.
+
+Paired native routing controls revision, architecture, packed netlist, seed,
+channel width, constraints, and router worker count.  Byte-identical repeats
+for the reference flow, full V4 trial traces, and fail-closed generation reduce
+accidental run mixing.  V4 does not receive oracle calls beyond its registered
+budget for duplicate runs.  These controls do not eliminate bugs shared by the
+exporter and refinement code.  Native \vpr{}
+placement/routing consistency and analysis provide an independent consumer,
+while injected legality violations exercise fixed, region, occupancy, and
+macro rejection paths.  The 4,551 connections without atom timing-pin matches
+remain a known measurement limitation: they still affect wire cost but have
+zero timing criticality, and their count is disclosed per affected design.
+
+\paragraph{Construct validity.}
+The optimization objective uses HPWL and Manhattan connection distance, but
+the reported outcomes are routed wirelength and CPD.  This avoids presenting
+the surrogate as final QoR; it also exposes cases where local proxy
+improvement fails to reduce routed wirelength.  CPD is one timing summary and
+does not characterize total negative slack, congestion distribution, power,
+or routability at tighter channel widths.  Runtime covers the complete Python
+reference flow but is neither full \vpr{} runtime nor accelerator throughput.
+
+\paragraph{External validity.}
+Nine successful evaluations from 13 registered local designs, the archived
+six-case aggregate, an earlier ten-case coverage matrix, one fixed-I/O QoR
+point, and two architecture families are insufficient for broad
+superiority claims.  Only one constrained case contributes routed QoR, and the executable
+cluster-level analytical path is a useful same-netlist control but not a proxy
+for modern independent placers.  Results therefore support a deterministic
+post-placement refinement mechanism under the tested academic flows, not a
+universal ranking of FPGA placement systems.
+
+\section{Limitations and Future Work}
+
+The source-sealed local cohort completes paired evaluation on 9/13 designs;
+its geometric means exclude four recorded failures. Initial static timing
+depends on a proxy-delay input generator whose capacity failures limit coverage.
+The archived six-case aggregate has unresolved parser provenance. The ten-case
+reference matrix, one constrained QoR case, and two architecture families
+broaden mechanism coverage without resolving these validation limits. Although routed
+feedback enters candidate ranking, its Manhattan congestion projection remains
+an approximation of routed detours.  Broader preregistered suites and richer
+incremental routed features are required before stronger superiority claims.
+
+The current implementation is a Python research reference.  Its process-based
+proposal path verifies semantics but does not scale.  A C++ shared-snapshot
+implementation is the appropriate next CPU baseline.  The repository's
+existing HLS kernel is a bounded toy and does not implement this method; there
+is no physical U280 runtime, power, or energy evidence.  Consequently, the
+paper makes no acceleration or efficiency claim.
+
+Finally, the executable \vpr{} analytical baseline is not a substitute for
+DREAMPlaceFPGA or AMF-Placer.  A separate Bookshelf/FPGA-Interchange/Vivado
+cohort must freeze conversion, packing, constraints, routing backend, and
+timing boundaries before external placer comparisons can be reported.
+
+\section{Conclusion}
+
+\system{} demonstrates that page-local FPGA placement refinement can retain
+determinism and native legality when proposals are treated as macro-aware site
+and net transactions and native routing is the acceptance oracle.  Exact
+rollback, stable bisection, and an incumbent-specific no-good frontier convert
+routed feedback into bounded exploration. A fixed-source four-design
+suppression ablation finds no additional CPD benefit and only a five-unit
+wirelength reduction on \texttt{diffeq}, with twice as many native calls.
+The source-sealed local cohort completes 9/13 paired evaluations with identical
+repeats, 404 audited native trials, and successful-subset CPD/WL geometric-mean
+changes of $-1.944\%/-0.213\%$. Four failures limit end-to-end coverage.
+The archived six-case matrix meets its numerical QoR thresholds with
+\VFourWlGeo\% routed-wirelength and \VFourCpdGeo\% CPD geometric-mean changes
+and \VFourStrict/6 strict CPD improvements.  Timing-parser provenance must
+be resolved before treating this aggregate as a single frozen implementation.
+The result is a CPU/VPR
+algorithmic foundation for future scalable and hardware implementations, not
+yet an FPGA accelerator.
+
+\clearpage
+\setlength{\bibsep}{0pt}
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+
+\end{document}

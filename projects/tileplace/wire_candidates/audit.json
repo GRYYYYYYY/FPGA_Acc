@@ -1,0 +1,10 @@
+{
+  "status": "pass",
+  "differential_cases": 3000,
+  "atomic_errors": 3,
+  "scope": "External ABI words candidate roots vs typed array reference; random negative coordinates, layers, types, page sizes, limits, signed source extremes. No RTL or native search integration yet.",
+  "sha256": {
+    "root_words.hpp": "8e904c337d1c8980475b0ef109e8d80a44f0bf088438e31edab3ed7498c362cf",
+    "test_root_words.cpp": "ee2eccbc4642e12d7ee5af13bcf2359899d4f9c1ea4f50fecd403a8b32ebe62e"
+  }
+}

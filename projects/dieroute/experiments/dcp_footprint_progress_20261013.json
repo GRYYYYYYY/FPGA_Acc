@@ -1,0 +1,82 @@
+{
+  "schema": "dieroute.dcp_footprint_progress.v1",
+  "captured_utc": "2026-10-13T09:37:16.275530+00:00",
+  "research_status": "active_incomplete",
+  "board_result": false,
+  "routes_recomputed": false,
+  "implemented": [
+    "Complete original DCP used-resource footprint, native electrical-node membership and immutable owner classification",
+    "All provisional candidate source-sink tasks and fixed/background nets retained",
+    "Independent C++ membership/PIP/owner/task coverage and directed reachability verification",
+    "Full prior native inventory cross-check and native per-boundary SLL tally match"
+  ],
+  "verified_counts": {
+    "schema": "dieroute.footprint_audit.v1",
+    "structural_checks_passed": true,
+    "nets": 963825,
+    "nodes": 12201318,
+    "member_wires": 34653665,
+    "pins": 2928754,
+    "pips": 11500192,
+    "owners": 12201318,
+    "candidate_nets": 418310,
+    "candidate_tasks": 1194028,
+    "cross_slr_candidate_tasks": 12720,
+    "unreachable_candidate_nets": 0,
+    "unreachable_candidate_sinks": 0,
+    "multi_owner_nodes": 0,
+    "shared_candidate_background_nodes": 0,
+    "protected_partition_nodes": 261,
+    "candidate_nets_touching_partition_pins": 0,
+    "partition_pins": 261,
+    "missing_partition_nodes": 0,
+    "missing_pip_endpoints": 0,
+    "missing_pin_nodes": 0,
+    "owned_cross_slr_laguna_nodes": 15502,
+    "candidate_owned_sll_nodes": 4680,
+    "background_owned_sll_nodes": 10822,
+    "sll_membership_counts": {
+      "3": 9747,
+      "6": 5755
+    },
+    "scope": "used-resource identity, ownership, task coverage and directed PIP reachability; not capacity, unused adjacency, delay or rerouting validation"
+  },
+  "candidate_hierarchy_counts": {
+    "ulp": 416553,
+    "outside_ulp": 1757
+  },
+  "fixture_checks": [
+    {
+      "path": "work/dcp_footprint_fixture_v2_20261013/tests.json",
+      "sha256": "286953c7b440b3629b59a135199b6485d9e0691ed37a9ba2baea0b58219c3357",
+      "cases": 14
+    },
+    {
+      "path": "work/dcp_footprint_fixture_sanitizer_20261013/tests.json",
+      "sha256": "286953c7b440b3629b59a135199b6485d9e0691ed37a9ba2baea0b58219c3357",
+      "cases": 14
+    }
+  ],
+  "evidence": {
+    "work/u280_dcp_footprint_v1_20261013/manifest.json": "aceaacf6955d8023056898cf18757dee8f2bcc7ac4904a44626d85efecea7b63",
+    "work/u280_dcp_footprint_cross_audit_v1_20261013/manifest.json": "43ee5361111c4432d3ddfe7b3b3ba53264186756225a013265690a05c1bb46e2",
+    "work/u280_dcp_footprint_cross_audit_v1_20261013/binary_audit/audit.json": "6ec21b80421a10cd9a5c29a575c3b9af0eaf5b5109116c30269d5b582fb20adb",
+    "work/dcp_footprint_verification_20261013/source_sha256.json": "3a3e9869e303b35d85c62b9312ccede48ae53d7670d9bfaa90e7eb7969852a2e",
+    "work/dcp_footprint_verification_20261013/final_checks.json": "ae30450796ac8a03756bc5b5ad08e1f5e1451d506d1c137f31ba6961433cc294",
+    "work/dcp_footprint_verification_20261013/candidate_scope.json": "45738e595254450b9b56b68064a7868a3bc21a672a0ae7ae452cc7390b6ef95a",
+    "work/dcp_footprint_verifier_build_v3_20261013/verify": "9630f0516a418828e3377f1cff67f54eaf4031ea857dcdf6091c1a13f2200005",
+    "work/dcp_footprint_verifier_sanitizer_20261013/verify": "0726631e17268cd03efb05a24c6616aeda98b49d6b104e7cb3c6cc06958d0644"
+  },
+  "source_snapshot": "work/dcp_footprint_verification_20261013/source",
+  "prior_evidence": "experiments/edif_connectivity_progress_20261013.json",
+  "measurement_scope": "Original routed DCP resource identity and occupancy, not new routing, available graph legality, timing/QoR or hardware performance",
+  "remaining": [
+    "Complete unused commercial RR adjacency and edge identity",
+    "Native commercial delay calibration including SLL, capacities and route-through/clock restrictions",
+    "Freeze cohort/task policy without selecting by QoR outcome",
+    "Integrate background occupied resources and fixed partition pins into controller and ABI",
+    "Actual DieRoute rerouting, DCP rewrite and native legality/QoR",
+    "All research G2-G8 obligations remain as recorded in research_plan.json"
+  ],
+  "active_processes": []
+}

@@ -1,0 +1,21 @@
+{
+  "status": "pass",
+  "scope": "C++ array-selection color statistics and selected-only Python audit; no full Python candidate enumeration in tested calls; CPU/STL control and host encoding remain",
+  "fixtures": 12,
+  "color_calls": 144,
+  "reference_checked": [
+    "candidate identities and scores",
+    "all phase statistics",
+    "apply and feedback refresh",
+    "snapshot restore"
+  ],
+  "enumeration_sentinel": "TilePlaceV2Engine.propose_color patched to raise during every fast call",
+  "files": {
+    "fast_transaction_proposals.hpp": "79788a74c7458e3d5838c17ed2be5a19561926b34b2a25dc73726e77cbdf36c1",
+    "fast_transaction_search.hpp": "b44398d610bd479b87f3b111711db013ccd10125f4d8834fe3c34434db058714",
+    "fast_transaction_feedback_search.hpp": "0df70baa77236fb784af88c2b684c1705d45fbe4e225253d9777e863a24dd40a",
+    "fast_transaction_native_server.cpp": "c3077d2c11b3e8a01a5690ffabf9a706c5e5afebd6d5ab415422e6124b97ace1",
+    "fast_transaction_adapter.py": "d5b82e7286ea37b210ee89136ef2cb7e6fe8ff9bd7edb24e98473e4fb9bf3c74",
+    "test_fast_transaction_adapter.py": "87d1310137ca2fdac82617d4a532c603c0880d882f60dfba867bf5eec895fefc"
+  }
+}

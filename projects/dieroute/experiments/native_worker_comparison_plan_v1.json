@@ -1,0 +1,35 @@
+{
+  "schema": "dieroute.native_worker_comparison_plan.v1",
+  "scope": "Die-local sparse labels/queues with owner-mediated boundary access, deterministic serial reference; fixed 70-net development cohort",
+  "repeats": 5,
+  "cases": {
+    "control": {
+      "run": "work/u280_native_worker_control_v1_20261013",
+      "cohort_audit": "work/u280_native_worker_control_cohort_audit_v1_20261013",
+      "protocol_audit": "work/u280_native_worker_control_protocol_audit_v1_20261013",
+      "prior_reference": "work/u280_native_owner_partition_v1_20261013"
+    },
+    "local": {
+      "run": "work/u280_native_worker_local_v1_20261013",
+      "cohort_audit": "work/u280_native_worker_local_cohort_audit_v1_20261013",
+      "protocol_audit": "work/u280_native_worker_local_protocol_audit_v1_20261013",
+      "prior_reference": "work/u280_native_owner_partition_v1_20261013"
+    },
+    "reentry": {
+      "run": "work/u280_native_worker_reentry_v1_20261013",
+      "cohort_audit": "work/u280_native_worker_reentry_cohort_audit_v1_20261013",
+      "protocol_audit": "work/u280_native_worker_reentry_protocol_audit_v1_20261013",
+      "prior_reference": "work/u280_native_defer_reentry_v1_20261013"
+    }
+  },
+  "required_equalities": "All CSV journals existing in the prior corresponding reference remain byte-identical. Control/local also have identical owner inventories. Worker counters and demand-read journals repeat exactly and pass independent authority replay.",
+  "not_established": [
+    "parallel worker execution",
+    "persistent delayed worker-shadow cadence",
+    "HBM storage/transport",
+    "task migration",
+    "new native QoR signoff",
+    "board speedup/energy",
+    "research completion"
+  ]
+}

@@ -1,0 +1,223 @@
+{
+  "schema": "dieroute.native_timing_feedback_progress.v1",
+  "verified_utc": "2026-10-13T16:14:29.045568+00:00",
+  "research_complete": false,
+  "board_result": false,
+  "active_owned_experiment_processes": [],
+  "changes": [
+    "Checked import of complete sparse native tree/ownership/history/version checkpoints.",
+    "Serial C++ two-sided setup/hold policy with exact tree/context/epoch binding, explicit coverage and whole-checkpoint publication.",
+    "Rejected candidates retain every authority field; private repair restores original whole nets and recursively restores conflicting proposed nets.",
+    "Audited repair-to-DCP serialization, full exported connectivity preservation, native route/DRC/timing/SLL and fresh per-load timing before C++ acceptance.",
+    "Exact unchanged-path native delay counterexamples constrain the next timing model."
+  ],
+  "source_sha256": {
+    "include/native_route_state.hpp": "cfc66f9693ef1802db9fab48d193ec55cd5d9bbee0a37c0bbc1181dc9af1176b",
+    "include/native_timing_feedback.hpp": "d07568727e012dc96a3b5cec22abe2102aee12d3ffbce33ea2e24f75d12c7406",
+    "tools/native_timing_feedback.cpp": "cf78b60f5b40bfdc4e80ca360b747a55a88810ae1a1890ef5dae18835f087feb",
+    "tools/run_native_timing_feedback.py": "8b1febb8cc620529b0f4c631e2cee540668f83d8d0d7d0c19d241efa11060fd5",
+    "tools/audit_native_timing_feedback.py": "11c4f14ae109b1ef7348092ef2cd6f1398ec4c74788650d16b87cd162edc9878",
+    "tools/write_native_cohort.py": "4c65820d431d75e0ffaf7528568a2c9601c36ef62cdc6263a7962036ba3a4fca",
+    "tools/run_native_load_slacks.py": "c041ed0d1faafacc68c529cc3fde15e8a3f0155e88aa14d98c50e1b6680526c7",
+    "tools/verify_native_feedback_repair.py": "330de6abfd69a9d25b7301b30f83149dbc615eda3278abaa5985735fbc75ff31",
+    "tools/audit_native_cohort_sll.py": "cc37f17fe00558793e9d718f819b833ac8be11ae36987672e8ebbe39482a6bfa",
+    "tools/analyze_native_path_model_limits.py": "e76124ecfb797943cb18d0c7ee5aba90608f93e2b4e72e59f8c32784f318f856",
+    "tools/repeat_native_feedback.py": "9195f6bceab80783872e4e7c74b4585c1aa6ac92ae2126e276e8ef08a91038ed",
+    "tb/native_timing_feedback_tb.cpp": "75a7343aa806728c72d18bbc5dc514cae471d472ec2196036eb467a96b9afc2c",
+    "tb/native_timing_feedback_host_test.py": "5007cda405d43500495cec54581189acb3ac9fe254e37af11f865ee495365798",
+    "CMakeLists.txt": "1de32f110421b25fce40ca892707161e42f37144b02eb5e3f5debfa2a1b9c273",
+    "README.md": "409e3d8a8eb5e1c1feba97e13292bc98734f76b139dd006023993e03f15157a5",
+    "experiments/native_timing_feedback_schema_v1.json": "eec865c689549dfa3475b83de7cf4d18e03f028cdaf434724ad6e4d07ade23ee",
+    "experiments/research_plan.json": "e8f446a2290aca4c82a5ef41cca6af68957cd1774855a83fd9e7afd2a740bcf4"
+  },
+  "evidence": [
+    {
+      "path": "work/u280_native_timing_feedback_v1_20261013/manifest.json",
+      "sha256": "e9c78be52b72b911dc736c0855f87a6f499d36a44dca918f9b6443bd21a388e8"
+    },
+    {
+      "path": "work/u280_native_timing_feedback_audit_v1_20261013/audit.json",
+      "sha256": "627b20b4c016905110a3eb9455b7b83512a73a186756a21d87aa5fdff171aeeb"
+    },
+    {
+      "path": "work/u280_native_hold_repair_writeback_v1_20261013/manifest.json",
+      "sha256": "7662ff833001b3207a42e0f2d4ff42dadf2b92034555a54c20f054303601794d"
+    },
+    {
+      "path": "work/u280_native_hold_repair_native_v1_20261013/manifest.json",
+      "sha256": "e913079769ac6331833e4bdb0c6eaa0d0a8f44c25847d5b13bfc03789caeb965"
+    },
+    {
+      "path": "work/u280_native_hold_repair_load_slacks_v1_20261013/manifest.json",
+      "sha256": "96237378de8427ec90402485cbe90ab4a98fe7d6f7cf1abfeeda9ba5aff9f857"
+    },
+    {
+      "path": "work/u280_native_hold_repair_verification_v1_20261013/manifest.json",
+      "sha256": "ef70ef890f8b87337ba05c4fe4153ba21bdca2f49b191a3f06f352c39a8bbe8c"
+    },
+    {
+      "path": "work/u280_native_hold_repair_repeat_v1_20261013/manifest.json",
+      "sha256": "917aa5bd51945cf33ce9604310e8de8cf1d0de639e42e2bba45a33b647e3d1dd"
+    },
+    {
+      "path": "work/u280_native_hold_repair_dcp_audit_v1_20261013.json",
+      "sha256": "f8d3c8eb0d360b5457946c74ff9230a47f3ab07c60b73b7765f5094871aae203"
+    },
+    {
+      "path": "work/u280_native_hold_repair_connectivity_audit_v1_20261013/provenance.json",
+      "sha256": "a74fbbabc561f3a2e22baa8020bbcfa829e689e37a55e237237cd64994a987d9"
+    },
+    {
+      "path": "work/u280_native_hold_repair_members_v1_20261013.json",
+      "sha256": "fb938a9324cd57cb5fa4fe606077d8010385b6d248df4acb565f85a89b731ea6"
+    },
+    {
+      "path": "work/u280_native_hold_repair_sll_v1_20261013.json",
+      "sha256": "2db2d31761233f21887f18e10f84032eb88fe449cc41b58b628d8417da394347"
+    },
+    {
+      "path": "work/u280_native_path_model_limits_v2_20261013/audit.json",
+      "sha256": "e88b38564a616f249bd9d07bfdf090e6e65a8c6a77cf9bc7f853d3bca140b741"
+    },
+    {
+      "path": "work/native_feedback_build_20261013/ctest_final.log",
+      "sha256": "0be2a8d8748ca76a3c27c832ec9ed1674598ec38304bea41e5a5d23847f7a473"
+    },
+    {
+      "path": "work/native_feedback_build_20261013/host_fixture.log",
+      "sha256": "f8abf0ae33f01e68dcd6e02e78107e86cd9b8d142344f3878831f545d5ed4120"
+    },
+    {
+      "path": "work/native_feedback_asan_20261013/ctest.log",
+      "sha256": "5369c14efe54657ce1c20e093f6aa2fae4ca9c299cd8359c37d53667bd4e6333"
+    }
+  ],
+  "policy_scope": "Declared 70-net/298-task development cohort; positive margin floors are experimental ablations and not production defaults.",
+  "policy_replay": {
+    "zero_floor": {
+      "setup_violations": 0,
+      "hold_violations": 0,
+      "selected_scope_accepted": true,
+      "restored_nets": [],
+      "tree_pips": 2528
+    },
+    "hold20": {
+      "setup_violations": 0,
+      "hold_violations": 1,
+      "selected_scope_accepted": false,
+      "restored_nets": [
+        303560,
+        303585,
+        303653,
+        454074,
+        454077
+      ],
+      "tree_pips": 2542
+    },
+    "setup1434": {
+      "setup_violations": 1,
+      "hold_violations": 0,
+      "selected_scope_accepted": false,
+      "restored_nets": [
+        288522,
+        454078
+      ],
+      "tree_pips": 2481
+    }
+  },
+  "fresh_hold_repair": {
+    "selected_scope_accepted": true,
+    "authority_epoch": 1,
+    "load_timing": {
+      "min": {
+        "finite": 284,
+        "minimum_slack_ns": "0.029",
+        "reported_unconstrained": 23,
+        "missing": 0
+      },
+      "max": {
+        "finite": 284,
+        "minimum_slack_ns": "1.433",
+        "reported_unconstrained": 23,
+        "missing": 0
+      }
+    },
+    "selected_nets": 70,
+    "changed_selected_nets": 39,
+    "original_pips": 2516,
+    "repair_pips": 2542,
+    "native_checks": {
+      "fully_routed_without_errors": true,
+      "no_drc_errors_or_critical_warnings": true,
+      "same_design_size_as_noop": true,
+      "same_primitive_utilization_as_noop": true,
+      "independent_original_and_new_sll_match_native": true,
+      "same_routable_count_as_original": true
+    },
+    "global_timing": {
+      "wns_ns": 0.016,
+      "tns_ns": 0.0,
+      "setup_failing_endpoints": 0,
+      "setup_total_endpoints": 1186883,
+      "whs_ns": 0.006,
+      "ths_ns": 0.0,
+      "hold_failing_endpoints": 0,
+      "hold_total_endpoints": 1183318,
+      "wpws_ns": 0.0,
+      "tpws_ns": 0.0,
+      "pulse_failing_endpoints": 0,
+      "pulse_total_endpoints": 462165
+    },
+    "sll_utilization": {
+      "SLR2 <-> SLR1": 5755,
+      "SLR1 <-> SLR0": 9747,
+      "Total SLLs Used": 15502
+    },
+    "drc_severities": {
+      "Warning": 438,
+      "Advisory": 5
+    },
+    "logical_leaf_instances": 774385,
+    "logical_endpoints": 4537722
+  },
+  "repetition": {
+    "repeats": 5,
+    "compared_files_per_repeat": 13,
+    "all_artifacts_equal": true,
+    "scope": "Same repaired candidate and frozen oracle through C++; no repeated native STA or routing search"
+  },
+  "checks": {
+    "ctest_passed": 27,
+    "ctest_total": 27,
+    "host_cases_inside_ctest": 10,
+    "asan_ubsan_passed": 2
+  },
+  "model_counterexamples": {
+    "identical_physical_paths": 37,
+    "identical_path_loads": 38,
+    "changed_delay_loads": 2,
+    "witnesses": [
+      {
+        "task": 27983,
+        "net": 303554,
+        "same_complete_net_tree": false,
+        "total_slow_max_delta_ps": 7,
+        "interconnect_slow_max_delta_ps": 7
+      },
+      {
+        "task": 28255,
+        "net": 303653,
+        "same_complete_net_tree": false,
+        "total_slow_max_delta_ps": -6,
+        "interconnect_slow_max_delta_ps": -6
+      }
+    ]
+  },
+  "remaining": [
+    "Fresh repaired-candidate bus-skew and bitstream acceptance.",
+    "No-op net-delay control to separate serialization effects, followed by calibrated min/max tree-aware timing and length costs.",
+    "Native corridor/shadow integration, full-design routing and representative held-out workload coverage.",
+    "VTR and commercial joint wirelength/CPD quality gates, complete ablations and scaling.",
+    "DieRoute HLS/RTL/HBM implementation, physical-board performance and energy, paper and full final artifact audit."
+  ]
+}

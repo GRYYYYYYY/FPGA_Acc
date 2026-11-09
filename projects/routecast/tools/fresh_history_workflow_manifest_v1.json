@@ -1,0 +1,24 @@
+{
+  "scripts": [
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/run_fresh_history_workflow_v1_stage00.py",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/run_fresh_history_workflow_v1_stage01.py",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/run_fresh_history_workflow_v1_stage02.py",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/run_fresh_history_workflow_v1_stage03.py",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/run_fresh_history_workflow_v1_stage04.py",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/run_fresh_history_workflow_v1_stage05.py",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/run_fresh_history_workflow_v1_stage06.py",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/run_fresh_history_workflow_v1_stage07.py",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/run_fresh_history_workflow_v1_stage08.py",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/run_fresh_history_workflow_v1_stage09.py"
+  ],
+  "directories": {
+    "net_atomic_repair_v3_2026-10-09": "fresh_history_workflow_v1_stage_0_2026-10-09",
+    "history_bank_joint_selection_v1_2026-10-09": "fresh_history_workflow_v1_stage_1_2026-10-09",
+    "history_bank_feedback_v1_2026-10-09": "fresh_history_workflow_v1_stage_2_2026-10-09",
+    "history_bank_feedback_serialization_v1_2026-10-09": "fresh_history_workflow_v1_stage_3_2026-10-09",
+    "history_bank_feedback_native_v1_2026-10-09": "fresh_history_workflow_v1_stage_4_2026-10-09",
+    "history_bank_feedback_canonical_v1_2026-10-09": "fresh_history_workflow_v1_stage_5_2026-10-09",
+    "history_bank_feedback_native_quality_v2_2026-10-09": "fresh_history_workflow_v1_stage_6_2026-10-09"
+  },
+  "scope": "One fresh step1 complete route acceptance workflow. Includes all 10 subprocesses, graph setup, history generation, joint selection, feedback, independent audits, serialization, native/canonical/quality; excludes given input/budget construction and transaction publication. No matched cold timing or multi-step claim."
+}

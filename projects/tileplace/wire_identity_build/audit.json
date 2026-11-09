@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "command": "g++ -std=c++17 -O2 -Wall -Wextra -Werror test_identity_build.cpp; /tmp/tileplace-identity-build-test",
+  "independent_nested_member_references": 3000,
+  "atomic_faults": 7,
+  "scope": "CPU only; not integrated or RTL validated",
+  "sources": {
+    "test_identity_build.cpp": "1417b8f2cb205cb7450c7c9e2175cbacf4a15418df47365b398d86566d235cb0",
+    "identity_build_words.hpp": "c686eebe65fdb6a45a07ad3556fc2b92403aeca77f1bf708be2c5956c507ce19"
+  }
+}

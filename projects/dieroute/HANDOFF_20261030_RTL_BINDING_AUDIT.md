@@ -1,0 +1,17 @@
+# DieRoute 恢复入口：RTL basename清单上下文审计 — 2026-10-30
+
+原目标未完成；权威矩阵仍v169/314条，关键路径 experiments/critical_path_20261030_v169.md，八门槛均开放。11语料/311096搜索、45正式槽及原预算保持；正式终态37通过/8存储失败不替换。原要求见 HANDOFF_20261021.md；9仿真和终态监控背景见 HANDOFF_20261030_PORTAL_EDGE_RTL.md；旧CPU包50相对引用审计及完整范围见 HANDOFF_20261030_RELATIVE_AUDIT.md；论文/文献背景仍 HANDOFF_20261030_PAPER.md。
+
+本轮只读处理原401相对声明中的四个RTL basename schema，共287条：P3原生配置review的95 DUT_syn、P3准备记录的95 DUT_source和13 monitor_source，以及旧语言/私有路径修复preflight记录的84 generated_DUT_files_unchanged。证据目录仍 work/research_artifact_dependency_inventory_20261030；新工具 resolve_rtl_basename_bindings.py，新报告 rtl_basename_binding_resolution.json，独立字段/指针复核 rtl_basename_resolution_review.json。
+
+基准按冻结上下文确定：P3的actual runtime receipt给出绝对pipeline cwd，指向runnable project/solution1/sim/verilog；冻结protocol逐项绑定同项目syn及sim副本和准备/原生review文档。原生DUT_syn采用generated_monitor_source_sha256绝对路径指向的同一HLS solution下syn/verilog角色解释，并与冻结runnable protocol绑定的同名同SHA syn副本交叉验证。此同solution解释在报告中明确标注；多个工程角色副本分别记录，物理来源唯一性不是本项证明内容。旧84个DUT由冻结DUT_Verilog命令的绝对xvlog参数直接定位，冻结repair.py源码明确该字段来自syn/verilog且要求sim副本相同，本轮也实际核验两份副本内容。
+
+四schema共287声明均与声明哈希一致，共检查468个不同物理文件。这里468是本轮DUT/monitor/generator等检查对象数量，与先前468个未绑定研究根路径不是同一集合，不能据此宣称根路径问题解决。95/95/13/84声明均精确对应原401 census中的指针与哈希，使用正确JSON pointer转义。
+
+P3准备记录的两个copied-stage旧hash（prj和dataflow_monitor.sv）按既存preparation_metadata_clarification逐条对应到最终protocol hash及当前文件。旧hash作为历史阶段保留，未修改活动文件以匹配旧元数据。此两条属于阶段说明，不额外计入287相对声明。
+
+加上上一轮已解析50条CPU包相对引用，共处理337/401，剩64条完整记录在 rtl_basename_resolution_review.json 的remaining_relative_declarations。两轮指针集合不重叠，原1181根JSON/census SHA与已登记plan一致；各引用源再次匹配冻结根SHA。后续64条主要为旧修复包、其他短相对源码和历史handoff/plan版本引用；需要逐schema确定基准/版本，不能只找同名文件。完整传递闭包、先前468根路径显式来源及G8仍开放；新候选文件不继承旧1753库存覆盖。
+
+本轮没有新编译、仿真验收、性能或QoR结论，也没有改变任何活动绑定源或旧报告。9条仿真、4终态监控和2后续队列实际身份仍live，五候选资源心跳正常，暂无新增完整RTL accepted。最新poll：python3 -B work/resident_portal_install_edge_candidate_20261030/poll_existing_jobs.py；共享可更新记录仍CSR目录latest_all_jobs_verified_wait.json。继续按实际句柄等待终态；禁止因静默/观察超时重启/停止，原图、28878用例、十亿周期、正向后负向流程和资源守卫保持。
+
+后续继续原全部研究门槛、实际终态复核与完整依赖闭包。U280无实卡，无板上速度/能耗、平台fit或300MHz达标结论。文献稿仍32页独立文献更新/22October评测快照，不是最终全实验稿。所有失败及分母保留，无commit/push。

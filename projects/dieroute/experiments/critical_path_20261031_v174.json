@@ -1,0 +1,123 @@
+{
+  "schema": "dieroute.critical_path.v174",
+  "recorded_ns": 1793404881124811105,
+  "matrix": {
+    "path": "work/current_research_claim_matrix_v174_20261031/matrix.json",
+    "sha256": "f02bf08922ab88155a792b02b73bdf540d04c60ab412bc698f9309a92f8cbb9f"
+  },
+  "scope": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "gate_requirements": [
+    {
+      "id": "G1",
+      "requirement": "Frozen inputs, baseline sources and commands; true layer/SLR metadata; graph and route round trip",
+      "status": "in_progress",
+      "remaining": "70-net/298-connection writeback, full exported logical connectivity, setup/hold repair, all 614 load observations, fresh repaired bus-skew and native full/partial bitstream generation are verified. No-op serialization has identical physical inventories and selected four-corner delays. The repaired workload bitstream passes with exit 0 after a process-local system-libudev preload; prior failed attempts are retained. Full-design routing, calibrated timing/length feedback and joint QoR remain open."
+    },
+    {
+      "id": "G2",
+      "requirement": "C++ complete routing closure with exact occupancy, net sharing, corridor release/repair, deterministic transactions and five-repeat hashes",
+      "status": "in_progress",
+      "remaining": "Complete-net kernel authority is integrated in native C-model routing with five-repeat independent evidence. Strict concurrent capacity grants, joint online XRT execution, autonomous asynchronous ownership/publication and full commercial routing remain open."
+    },
+    {
+      "id": "G3",
+      "requirement": "At least one credible multi-die workload cohort plus parameterized topology/capacity scaling; microbenchmarks alone insufficient",
+      "status": "in_progress",
+      "remaining": "Three original VTR development cases and one commercial U28070net cohort exist,not representative heldout coverage. SixSBtopology/capacitynativebaselines,fullgraphpack/nooproundtrips,andnativeindexedcostrebasesnowverifiedforoneCLB/IOcircuit,plusfresh3layerdiffeq/alu4nativebaselinesandfullgraph/nooproundtrips. MatchedDieRoutererouting,repeatedQoR/scaling,heterogeneousworkloadsandreservedvalidationremainopen."
+    },
+    {
+      "id": "G4",
+      "requirement": "Native legality; route failures do not increase; SLL use, CPD and wirelength do not degrade relative to frozen strong baselines",
+      "status": "in_progress",
+      "remaining": "Fixed zero-first configuration passes ex5p but fails joint quality on diffeq wirelength and alu4 CPD. Fanout schedule factorial also fails strong ex5p joint gates. Full commercial physical SLL/WL/CPD, route-failure and representative development/heldout/multi-seed requirements remain unverified; seed-weight and fanout/present interaction studies completed with joint-quality failures. No tolerance relaxation or heldout tuning."
+    },
+    {
+      "id": "G5",
+      "requirement": "E-DR1 reservation, E-DR2 mapping, E-DR3 shadow, E-DR4 migration, E-DR5 topology ablations",
+      "status": "in_progress",
+      "remaining": "Owner-managed publication removes host subscription polling in fresh native routing, with all empty queue pumps accounted. The fixed development cohort still has a weak delay-versus-payload tradeoff: period 3 saves only 320 logical payload bytes per repeat versus period 1 while increasing search work. Full reservation, mapping, shadow alternatives, migration and topology ablations remain open; endpoint-call reduction does not prove measured HBM bandwidth or latency."
+    },
+    {
+      "id": "G6",
+      "requirement": "HLS csim/csynth/cosim; actual HBM interfaces and connectivity; U280 implementation timing and resource reports",
+      "status": "in_progress",
+      "remaining": "Complete full native 70-net/298-connection XRT execution and independent audit; implement and verify hardware search/asynchronous transport and mapping/migration/strict capacity; obtain physical U280 routed timing/resource and board execution evidence."
+    },
+    {
+      "id": "G7",
+      "requirement": "Physical board end-to-end >=3x target, energy, repeated runs and statistical evidence; never substitute emulation time",
+      "status": "pending_external_hardware",
+      "remaining": "Physical board availability and actual end-to-end>=3x/energy/repeated-run evidence required."
+    },
+    {
+      "id": "G8",
+      "requirement": "Paper, claim matrix, reproducible artifact bundle and gate-by-gate final audit",
+      "status": "in_progress",
+      "remaining": "Snapshot subtree evidence matrix and reference-integrity audit exist; paper, full architecture/QoR claim matrix, reproducible artifact bundle and full gate-by-gate final audit remain open."
+    }
+  ],
+  "priorities": [
+    {
+      "order": 1,
+      "task": "Preserve six full28878RTL candidates and original primary/metadata/joint/Owner jobs; wait exact identities and evaluate actual complete positives before observer-negative tests.",
+      "condition": "Original full graph/program/oracles and1e9cumulative watchdog; no quiet-job restart or partial progress acceptance."
+    },
+    {
+      "order": 2,
+      "task": "Existing strict mapped-native v2 retains sole execution owner; complete original91975782node/341net/729connection/5repeat run when headroom permits.",
+      "condition": "Original20GiB prestart/12GiB RSS/global72GiB and all algorithm budgets; v1failure retained. No duplicate/retry/guard relaxation."
+    },
+    {
+      "order": 3,
+      "task": "When the four original XRT chains terminate, independently review full routing/search/path/authority outputs and recorded exit evidence.",
+      "condition": "No success from initialization,96partial calls,CPU or unknown exit code. Snapshot observer only records terminal facts."
+    },
+    {
+      "order": 4,
+      "task": "Synthesize forward-validation parent P7 under original guards, then independently evaluate discarded-offset child P8 against actual parent synthesis before full RTL.",
+      "condition": "Both currently host-only; no new owner while existing queue headroom unavailable. Source-operation reductions are not hardware cycles."
+    },
+    {
+      "order": 5,
+      "task": "Continue original QoR/heldout/scaling/heterogeneous and five full-system ablation requirements; retain all failures and frozen strong baselines.",
+      "condition": "No heldout tuning or tolerance relaxation; no component/CPU substitution for physical QoR or concurrent hardware."
+    },
+    {
+      "order": 6,
+      "task": "Complete remaining artifact dependency/provenance/primary-literature/final-paper work.",
+      "condition": "Ledger9745/9968partial with223pending,820separate transitive/466root gaps; dated33page draft is not final research reproduction."
+    },
+    {
+      "order": 7,
+      "task": "Obtain actual board execution and full physical timing/resource evidence.",
+      "condition": "No enumerated physical U280; no claimed300MHz,>=3x or energy result from emulation."
+    }
+  ],
+  "runtime_observation": {
+    "path": "work/current_research_claim_matrix_v170_20261030/runtime_observation.json",
+    "sha256": "dad25840508a5dbde9c4b168eb9fce01302824065e2f8bb6b3b8a21af49cabb1",
+    "scope": "Fresh identities only; no claim of progress or acceptance."
+  },
+  "research_complete": false,
+  "retained_quality_counterexamples": [
+    {
+      "case": "posterior_apex2_seed1_stage9_delay_first_exchange",
+      "review": "work/apex2_stage9_terminal_reconciliation_20261030/review.json",
+      "review_sha256": "903f1d51334e44769cac3ca8548173905b2dbd1c4cf068a775ca49e09ff62c5b",
+      "native_legal": true,
+      "joint_quality_pass": false,
+      "wirelength_delta_vs_frozen_baseline": 1,
+      "cpd_delta_ps_vs_frozen_baseline": "26.3",
+      "rerun": false,
+      "adopted": false,
+      "scope": "Existing negative result reconciled; no heldout tuning or tolerance relaxation."
+    }
+  ]
+}

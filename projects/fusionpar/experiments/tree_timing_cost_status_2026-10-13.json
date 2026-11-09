@@ -1,0 +1,759 @@
+{
+  "schema": "FUSIONPAR_TREE_TIMING_COST_RESULTS_V1",
+  "study": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/tree_timing_cost_v1/study.json",
+    "sha256": "31453fc50cbe698c5601d05352c6e59afc8d453bb5732492b9f1b118da259a28"
+  },
+  "summarizer": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/summarize_validation_costs.py",
+    "sha256": "266444f44190ac1d17f76fea9d85e6f2d510967630533e94a26dce827657c7b8"
+  },
+  "references": {
+    "ex5p": {
+      "original_quality": {
+        "wirelength": 9857,
+        "cpd_ns": 5.8858
+      },
+      "TP_native_quality": {
+        "wirelength": 9868,
+        "cpd_ns": 5.61423
+      },
+      "archived_placer_wall_ns": 57942519418,
+      "pipeline": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/ex5p_frozen_tp_pr_v2/pipeline.json",
+        "sha256": "92aee5dc32f96d56ec6a7d94494757b38f0bfbc58c204a1adcc61baf38f40c7e"
+      },
+      "baseline": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/baseline/baseline.json",
+        "sha256": "95dc8263c8b4170177f30f3681f051e1afcee3b365d7b2731a8c49fbb769411e"
+      }
+    },
+    "alu4": {
+      "original_quality": {
+        "wirelength": 9580,
+        "cpd_ns": 5.96812
+      },
+      "TP_native_quality": {
+        "wirelength": 9561,
+        "cpd_ns": 5.96812
+      },
+      "archived_placer_wall_ns": 62266957818,
+      "pipeline": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/alu4_frozen_tp_pr_v2/pipeline.json",
+        "sha256": "14bddde30d5c7c3f1d3d989d77af02f40ff1391a09102ee4b9e593862e4e5cdf"
+      },
+      "baseline": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/alu4/baseline/baseline.json",
+        "sha256": "f960607a47b5038a8ea53bd5a20a6fc21776087832a7dce1c493fdd74ef2ec44"
+      }
+    },
+    "misex3": {
+      "original_quality": {
+        "wirelength": 10323,
+        "cpd_ns": 5.08031
+      },
+      "TP_native_quality": {
+        "wirelength": 10269,
+        "cpd_ns": 5.038
+      },
+      "archived_placer_wall_ns": 100331071425,
+      "pipeline": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/misex3_frozen_tp_pr_v2/pipeline.json",
+        "sha256": "5e6a2cd07c524db7aa38a5b59d58879b0528810f5748b33d73a74a2a3a072b26"
+      },
+      "baseline": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/misex3/baseline/baseline.json",
+        "sha256": "8d7511d337121d96694336e324dcead4bcb01156ca9d83cea8ec6ed9daaee1b6"
+      }
+    }
+  },
+  "counts": {
+    "runs": 54,
+    "qor_commits": 16,
+    "protocol_commits": 0,
+    "aborts": 32,
+    "timing_barriers": 100,
+    "placement_repairs": 0,
+    "native_feedback_checks": 0,
+    "baseline_route_commits": 30
+  },
+  "rows": [
+    {
+      "design": "ex5p",
+      "arm": "fixed",
+      "weight_q8": 0,
+      "mode": "route_only",
+      "repeats": 5,
+      "quality": {
+        "wirelength": 9818,
+        "cpd_ns": 6.63478
+      },
+      "completed_runs": 5,
+      "eligible_runs": 0,
+      "commits_per_repeat": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "median_host_seconds": 8.465422094,
+      "median_charged_seconds": 10.874027066,
+      "median_phase_seconds": {
+        "bindings_after": 0.102124199,
+        "bindings_before": 0.108602799,
+        "candidate_read": 0.094151052,
+        "certificate_and_bridge_write": 0.03726713,
+        "manifest_read": 0.011960094,
+        "native_check": 1.32597502,
+        "placement_export_and_contract_check": 0.036425381,
+        "route_decode_and_accounting": 0.135452989,
+        "route_export": 0.081193254,
+        "rr_graph_decode": 1.692123723,
+        "tail_or_failure": 0.016858184,
+        "timing_export": 1.282944903
+      },
+      "equal_to_old_zero_weight": true
+    },
+    {
+      "design": "ex5p",
+      "arm": "fixed",
+      "weight_q8": 256,
+      "mode": "route_only",
+      "repeats": 5,
+      "quality": {
+        "wirelength": 10781,
+        "cpd_ns": 5.63868
+      },
+      "completed_runs": 5,
+      "eligible_runs": 0,
+      "commits_per_repeat": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "median_host_seconds": 8.070063785,
+      "median_charged_seconds": 10.164391648,
+      "median_phase_seconds": {
+        "bindings_after": 0.099919573,
+        "bindings_before": 0.108194375,
+        "candidate_read": 0.094646961,
+        "certificate_and_bridge_write": 0.039593264,
+        "manifest_read": 0.012197717,
+        "native_check": 1.29042537,
+        "placement_export_and_contract_check": 0.034590868,
+        "route_decode_and_accounting": 0.136130344,
+        "route_export": 0.078137623,
+        "rr_graph_decode": 1.676239442,
+        "tail_or_failure": 0.017947244,
+        "timing_export": 1.244498761
+      },
+      "equal_to_old_zero_weight": false
+    },
+    {
+      "design": "ex5p",
+      "arm": "controller",
+      "weight_q8": 0,
+      "mode": "interleaved_tree_reuse",
+      "repeats": 2,
+      "quality": {
+        "wirelength": 9849,
+        "cpd_ns": 5.83751
+      },
+      "completed_runs": 2,
+      "eligible_runs": 2,
+      "commits_per_repeat": [
+        1,
+        1
+      ],
+      "median_host_seconds": 12.550679053500001,
+      "median_charged_seconds": 14.6225646105,
+      "median_phase_seconds": {
+        "bindings_after": 0.1963141305,
+        "bindings_before": 0.2202764425,
+        "candidate_read": 0.19648635250000002,
+        "certificate_and_bridge_write": 0.07241772399999999,
+        "manifest_read": 0.023899596,
+        "native_check": 2.6377634665,
+        "placement_export_and_contract_check": 0.073275901,
+        "route_decode_and_accounting": 0.2656184085,
+        "route_export": 0.151928278,
+        "rr_graph_decode": 3.3965081395,
+        "tail_or_failure": 0.036259713,
+        "timing_export": 2.5016753745
+      },
+      "equal_to_old_zero_weight": true
+    },
+    {
+      "design": "ex5p",
+      "arm": "controller",
+      "weight_q8": 0,
+      "mode": "sequential_shared_tree_reuse",
+      "repeats": 2,
+      "quality": {
+        "wirelength": 9849,
+        "cpd_ns": 5.83751
+      },
+      "completed_runs": 2,
+      "eligible_runs": 2,
+      "commits_per_repeat": [
+        1,
+        1
+      ],
+      "median_host_seconds": 5.9738111625000005,
+      "median_charged_seconds": 8.0456967195,
+      "median_phase_seconds": {
+        "bindings_after": 0.09772544,
+        "bindings_before": 0.10767001100000001,
+        "candidate_read": 0.098087601,
+        "certificate_and_bridge_write": 0.0362279695,
+        "manifest_read": 0.012542151500000001,
+        "native_check": 1.290256726,
+        "placement_export_and_contract_check": 0.0353583665,
+        "route_decode_and_accounting": 0.136837932,
+        "route_export": 0.078071379,
+        "rr_graph_decode": 1.7090072815,
+        "tail_or_failure": 0.016699593,
+        "timing_export": 1.273462895
+      },
+      "equal_to_old_zero_weight": true
+    },
+    {
+      "design": "ex5p",
+      "arm": "controller",
+      "weight_q8": 256,
+      "mode": "interleaved_tree_reuse",
+      "repeats": 2,
+      "quality": {
+        "wirelength": 9857,
+        "cpd_ns": 5.8858
+      },
+      "completed_runs": 2,
+      "eligible_runs": 2,
+      "commits_per_repeat": [
+        0,
+        0
+      ],
+      "median_host_seconds": 13.071645393,
+      "median_charged_seconds": 15.151038081,
+      "median_phase_seconds": {
+        "bindings_after": 0.199642789,
+        "bindings_before": 0.221026913,
+        "candidate_read": 0.2227890055,
+        "certificate_and_bridge_write": 0.0707970825,
+        "manifest_read": 0.0250675725,
+        "native_check": 2.556181599,
+        "placement_export_and_contract_check": 0.0716839425,
+        "route_decode_and_accounting": 0.267151285,
+        "route_export": 0.160622038,
+        "rr_graph_decode": 3.4271002245,
+        "tail_or_failure": 0.0318471855,
+        "timing_export": 2.518245299
+      },
+      "equal_to_old_zero_weight": false
+    },
+    {
+      "design": "ex5p",
+      "arm": "controller",
+      "weight_q8": 256,
+      "mode": "sequential_shared_tree_reuse",
+      "repeats": 2,
+      "quality": {
+        "wirelength": 9857,
+        "cpd_ns": 5.8858
+      },
+      "completed_runs": 2,
+      "eligible_runs": 2,
+      "commits_per_repeat": [
+        0,
+        0
+      ],
+      "median_host_seconds": 6.0813494185,
+      "median_charged_seconds": 8.160742106499999,
+      "median_phase_seconds": {
+        "bindings_after": 0.098453261,
+        "bindings_before": 0.1101162345,
+        "candidate_read": 0.0983091025,
+        "certificate_and_bridge_write": 0.037514568,
+        "manifest_read": 0.0150333815,
+        "native_check": 1.4442201955,
+        "placement_export_and_contract_check": 0.034348311,
+        "route_decode_and_accounting": 0.135183453,
+        "route_export": 0.073731796,
+        "rr_graph_decode": 1.6813230264999999,
+        "tail_or_failure": 0.017024736999999998,
+        "timing_export": 1.259797736
+      },
+      "equal_to_old_zero_weight": false
+    },
+    {
+      "design": "alu4",
+      "arm": "fixed",
+      "weight_q8": 256,
+      "mode": "route_only",
+      "repeats": 5,
+      "quality": {
+        "wirelength": 10250,
+        "cpd_ns": 5.91881
+      },
+      "completed_runs": 5,
+      "eligible_runs": 0,
+      "commits_per_repeat": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "median_host_seconds": 11.732048556,
+      "median_charged_seconds": 14.846591029,
+      "median_phase_seconds": {
+        "bindings_after": 0.124653063,
+        "bindings_before": 0.132417293,
+        "candidate_read": 0.132849836,
+        "certificate_and_bridge_write": 0.046906157,
+        "manifest_read": 0.014050576,
+        "native_check": 1.661927251,
+        "placement_export_and_contract_check": 0.043898565,
+        "route_decode_and_accounting": 0.16962173,
+        "route_export": 0.087338032,
+        "rr_graph_decode": 2.373836413,
+        "tail_or_failure": 0.019858401,
+        "timing_export": 1.62110635
+      },
+      "equal_to_old_zero_weight": false
+    },
+    {
+      "design": "alu4",
+      "arm": "fixed",
+      "weight_q8": 0,
+      "mode": "route_only",
+      "repeats": 5,
+      "quality": {
+        "wirelength": 9630,
+        "cpd_ns": 6.80247
+      },
+      "completed_runs": 5,
+      "eligible_runs": 0,
+      "commits_per_repeat": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "median_host_seconds": 11.215670428,
+      "median_charged_seconds": 14.150887203,
+      "median_phase_seconds": {
+        "bindings_after": 0.12870041,
+        "bindings_before": 0.133685005,
+        "candidate_read": 0.138042151,
+        "certificate_and_bridge_write": 0.048508774,
+        "manifest_read": 0.014073316,
+        "native_check": 1.7524876,
+        "placement_export_and_contract_check": 0.043586085,
+        "route_decode_and_accounting": 0.157852732,
+        "route_export": 0.086187751,
+        "rr_graph_decode": 2.351787659,
+        "tail_or_failure": 0.025254374,
+        "timing_export": 1.575894284
+      },
+      "equal_to_old_zero_weight": true
+    },
+    {
+      "design": "alu4",
+      "arm": "controller",
+      "weight_q8": 256,
+      "mode": "interleaved_tree_reuse",
+      "repeats": 2,
+      "quality": {
+        "wirelength": 9544,
+        "cpd_ns": 5.96812
+      },
+      "completed_runs": 2,
+      "eligible_runs": 2,
+      "commits_per_repeat": [
+        3,
+        3
+      ],
+      "median_host_seconds": 14.937551169999999,
+      "median_charged_seconds": 17.768115123,
+      "median_phase_seconds": {
+        "bindings_after": 0.24988584600000002,
+        "bindings_before": 0.2721507415,
+        "candidate_read": 0.2624045355,
+        "certificate_and_bridge_write": 0.09388903,
+        "manifest_read": 0.029766286500000003,
+        "native_check": 3.357557824,
+        "placement_export_and_contract_check": 0.09425003800000001,
+        "route_decode_and_accounting": 0.31076404700000004,
+        "route_export": 0.17015713049999998,
+        "rr_graph_decode": 4.7177814445,
+        "tail_or_failure": 0.043476749499999995,
+        "timing_export": 3.233211018
+      },
+      "equal_to_old_zero_weight": false
+    },
+    {
+      "design": "alu4",
+      "arm": "controller",
+      "weight_q8": 256,
+      "mode": "sequential_shared_tree_reuse",
+      "repeats": 2,
+      "quality": {
+        "wirelength": 9558,
+        "cpd_ns": 5.96812
+      },
+      "completed_runs": 2,
+      "eligible_runs": 2,
+      "commits_per_repeat": [
+        1,
+        1
+      ],
+      "median_host_seconds": 7.339895579,
+      "median_charged_seconds": 10.170459531999999,
+      "median_phase_seconds": {
+        "bindings_after": 0.127166066,
+        "bindings_before": 0.133987525,
+        "candidate_read": 0.138551023,
+        "certificate_and_bridge_write": 0.0509460085,
+        "manifest_read": 0.016644578,
+        "native_check": 1.6345643189999999,
+        "placement_export_and_contract_check": 0.044748903,
+        "route_decode_and_accounting": 0.158281703,
+        "route_export": 0.0838960855,
+        "rr_graph_decode": 2.3611612465,
+        "tail_or_failure": 0.022289406,
+        "timing_export": 1.5802633794999998
+      },
+      "equal_to_old_zero_weight": false
+    },
+    {
+      "design": "alu4",
+      "arm": "controller",
+      "weight_q8": 0,
+      "mode": "interleaved_tree_reuse",
+      "repeats": 2,
+      "quality": {
+        "wirelength": 9548,
+        "cpd_ns": 5.96812
+      },
+      "completed_runs": 2,
+      "eligible_runs": 2,
+      "commits_per_repeat": [
+        2,
+        2
+      ],
+      "median_host_seconds": 14.7179055995,
+      "median_charged_seconds": 17.5151331805,
+      "median_phase_seconds": {
+        "bindings_after": 0.252549662,
+        "bindings_before": 0.26900779350000004,
+        "candidate_read": 0.26117559,
+        "certificate_and_bridge_write": 0.09795753500000001,
+        "manifest_read": 0.0285017025,
+        "native_check": 3.326678038,
+        "placement_export_and_contract_check": 0.0844841325,
+        "route_decode_and_accounting": 0.314442149,
+        "route_export": 0.168891348,
+        "rr_graph_decode": 4.6713889275,
+        "tail_or_failure": 0.048213863999999995,
+        "timing_export": 3.2276702835
+      },
+      "equal_to_old_zero_weight": true
+    },
+    {
+      "design": "alu4",
+      "arm": "controller",
+      "weight_q8": 0,
+      "mode": "sequential_shared_tree_reuse",
+      "repeats": 2,
+      "quality": {
+        "wirelength": 9580,
+        "cpd_ns": 5.96812
+      },
+      "completed_runs": 2,
+      "eligible_runs": 2,
+      "commits_per_repeat": [
+        0,
+        0
+      ],
+      "median_host_seconds": 7.069133915,
+      "median_charged_seconds": 9.866361496,
+      "median_phase_seconds": {
+        "bindings_after": 0.12498878199999999,
+        "bindings_before": 0.13670874100000002,
+        "candidate_read": 0.12939085649999998,
+        "certificate_and_bridge_write": 0.048397676,
+        "manifest_read": 0.014104332,
+        "native_check": 1.5908995694999999,
+        "placement_export_and_contract_check": 0.0413325505,
+        "route_decode_and_accounting": 0.1633091195,
+        "route_export": 0.0839895235,
+        "rr_graph_decode": 2.3132383785,
+        "tail_or_failure": 0.0238487785,
+        "timing_export": 1.599647842
+      },
+      "equal_to_old_zero_weight": true
+    },
+    {
+      "design": "misex3",
+      "arm": "fixed",
+      "weight_q8": 0,
+      "mode": "route_only",
+      "repeats": 5,
+      "quality": {
+        "wirelength": 10305,
+        "cpd_ns": 5.95697
+      },
+      "completed_runs": 5,
+      "eligible_runs": 0,
+      "commits_per_repeat": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "median_host_seconds": 10.654728633,
+      "median_charged_seconds": 13.377535168,
+      "median_phase_seconds": {
+        "bindings_after": 0.11672435,
+        "bindings_before": 0.124083713,
+        "candidate_read": 0.11676679,
+        "certificate_and_bridge_write": 0.045992787,
+        "manifest_read": 0.014016447,
+        "native_check": 1.527143287,
+        "placement_export_and_contract_check": 0.041422462,
+        "route_decode_and_accounting": 0.154642117,
+        "route_export": 0.089058571,
+        "rr_graph_decode": 2.093859371,
+        "tail_or_failure": 0.021458014,
+        "timing_export": 1.481770558
+      },
+      "equal_to_old_zero_weight": true
+    },
+    {
+      "design": "misex3",
+      "arm": "fixed",
+      "weight_q8": 256,
+      "mode": "route_only",
+      "repeats": 5,
+      "quality": {
+        "wirelength": 11188,
+        "cpd_ns": 5.15081
+      },
+      "completed_runs": 5,
+      "eligible_runs": 0,
+      "commits_per_repeat": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "median_host_seconds": 10.350048243,
+      "median_charged_seconds": 12.950045578,
+      "median_phase_seconds": {
+        "bindings_after": 0.117403713,
+        "bindings_before": 0.122710683,
+        "candidate_read": 0.113708641,
+        "certificate_and_bridge_write": 0.044047097,
+        "manifest_read": 0.013866642,
+        "native_check": 1.485010007,
+        "placement_export_and_contract_check": 0.041182226,
+        "route_decode_and_accounting": 0.153764716,
+        "route_export": 0.089003881,
+        "rr_graph_decode": 2.079777937,
+        "tail_or_failure": 0.02198699,
+        "timing_export": 1.456040505
+      },
+      "equal_to_old_zero_weight": false
+    },
+    {
+      "design": "misex3",
+      "arm": "controller",
+      "weight_q8": 0,
+      "mode": "interleaved_tree_reuse",
+      "repeats": 2,
+      "quality": {
+        "wirelength": 10323,
+        "cpd_ns": 5.08031
+      },
+      "completed_runs": 2,
+      "eligible_runs": 2,
+      "commits_per_repeat": [
+        0,
+        0
+      ],
+      "median_host_seconds": 13.630802749499999,
+      "median_charged_seconds": 16.1281887265,
+      "median_phase_seconds": {
+        "bindings_after": 0.229062581,
+        "bindings_before": 0.2984453525,
+        "candidate_read": 0.230472995,
+        "certificate_and_bridge_write": 0.095012551,
+        "manifest_read": 0.027919731,
+        "native_check": 3.133426981,
+        "placement_export_and_contract_check": 0.083527347,
+        "route_decode_and_accounting": 0.31400687699999996,
+        "route_export": 0.1697799125,
+        "rr_graph_decode": 4.184106649,
+        "tail_or_failure": 0.040431716,
+        "timing_export": 2.958044372
+      },
+      "equal_to_old_zero_weight": true
+    },
+    {
+      "design": "misex3",
+      "arm": "controller",
+      "weight_q8": 0,
+      "mode": "sequential_shared_tree_reuse",
+      "repeats": 2,
+      "quality": {
+        "wirelength": 10323,
+        "cpd_ns": 5.08031
+      },
+      "completed_runs": 2,
+      "eligible_runs": 2,
+      "commits_per_repeat": [
+        0,
+        0
+      ],
+      "median_host_seconds": 6.661885982499999,
+      "median_charged_seconds": 9.1592719595,
+      "median_phase_seconds": {
+        "bindings_after": 0.121702753,
+        "bindings_before": 0.121659961,
+        "candidate_read": 0.123435303,
+        "certificate_and_bridge_write": 0.049108903499999995,
+        "manifest_read": 0.0172257785,
+        "native_check": 1.5237860465,
+        "placement_export_and_contract_check": 0.044381279999999995,
+        "route_decode_and_accounting": 0.159626585,
+        "route_export": 0.08946913349999999,
+        "rr_graph_decode": 2.167194982,
+        "tail_or_failure": 0.0225299815,
+        "timing_export": 1.4717129725000002
+      },
+      "equal_to_old_zero_weight": true
+    },
+    {
+      "design": "misex3",
+      "arm": "controller",
+      "weight_q8": 256,
+      "mode": "interleaved_tree_reuse",
+      "repeats": 2,
+      "quality": {
+        "wirelength": 10323,
+        "cpd_ns": 5.08031
+      },
+      "completed_runs": 2,
+      "eligible_runs": 2,
+      "commits_per_repeat": [
+        0,
+        0
+      ],
+      "median_host_seconds": 13.471787958499998,
+      "median_charged_seconds": 16.0755011985,
+      "median_phase_seconds": {
+        "bindings_after": 0.23443329200000002,
+        "bindings_before": 0.2449376315,
+        "candidate_read": 0.295000045,
+        "certificate_and_bridge_write": 0.1001530225,
+        "manifest_read": 0.0280585475,
+        "native_check": 3.0515150085,
+        "placement_export_and_contract_check": 0.084475491,
+        "route_decode_and_accounting": 0.30286706,
+        "route_export": 0.17486476,
+        "rr_graph_decode": 4.0761293325,
+        "tail_or_failure": 0.0436106655,
+        "timing_export": 2.970543713
+      },
+      "equal_to_old_zero_weight": false
+    },
+    {
+      "design": "misex3",
+      "arm": "controller",
+      "weight_q8": 256,
+      "mode": "sequential_shared_tree_reuse",
+      "repeats": 2,
+      "quality": {
+        "wirelength": 10323,
+        "cpd_ns": 5.08031
+      },
+      "completed_runs": 2,
+      "eligible_runs": 2,
+      "commits_per_repeat": [
+        0,
+        0
+      ],
+      "median_host_seconds": 6.4761327605000005,
+      "median_charged_seconds": 9.0798460005,
+      "median_phase_seconds": {
+        "bindings_after": 0.115199301,
+        "bindings_before": 0.122661716,
+        "candidate_read": 0.1149805605,
+        "certificate_and_bridge_write": 0.0443195455,
+        "manifest_read": 0.014383211,
+        "native_check": 1.466831008,
+        "placement_export_and_contract_check": 0.0413182035,
+        "route_decode_and_accounting": 0.1532071505,
+        "route_export": 0.08393908750000001,
+        "rr_graph_decode": 2.056090674,
+        "tail_or_failure": 0.0208200755,
+        "timing_export": 1.483642169
+      },
+      "equal_to_old_zero_weight": false
+    }
+  ],
+  "validation_profiles": 132,
+  "costs": {
+    "profiled_body_seconds": 385.903000855,
+    "host_native_interval_seconds": 398.450029186,
+    "host_total_seconds": 555.716378182,
+    "phase_seconds": {
+      "manifest_read": 0.924030007,
+      "bindings_before": 8.185024924,
+      "candidate_read": 7.920733995,
+      "placement_export_and_contract_check": 2.711487259,
+      "route_decode_and_accounting": 9.863931005,
+      "rr_graph_decode": 135.202444264,
+      "route_export": 13.926252749,
+      "native_check": 99.61769081,
+      "timing_export": 95.656884812,
+      "bindings_after": 7.595355164,
+      "certificate_and_bridge_write": 2.949498396,
+      "tail_or_failure": 1.34966747
+    },
+    "phase_fraction_of_profiled_body": {
+      "manifest_read": 0.00239446183355075,
+      "bindings_before": 0.02121005772400163,
+      "candidate_read": 0.020525194096575976,
+      "placement_export_and_contract_check": 0.007026344063125904,
+      "route_decode_and_accounting": 0.025560648616739557,
+      "rr_graph_decode": 0.3503534410575917,
+      "route_export": 0.036087443523748805,
+      "native_check": 0.25814178845276864,
+      "timing_export": 0.24787805381161657,
+      "bindings_after": 0.01968203187633126,
+      "certificate_and_bridge_write": 0.007643108214927436,
+      "tail_or_failure": 0.0034974267290218014
+    },
+    "scope": "Aggregate all 54 development runs; fractions are of profiled adapter bodies, not whole P&R or FPGA time"
+  },
+  "limits": [
+    "Development designs only",
+    "No claim that Q8=256 is an exact native RC model",
+    "No physical FPGA evidence",
+    "FPGA/complete P&R claims remain deferred",
+    "No new TP execution in this study",
+    "Fixed placement: five repeats; controller mechanism study: two repeats",
+    "Validation-body intervals exclude Python startup and cost-report write",
+    "Keep native quality checks and timing export in end-to-end cost",
+    "No per-design winning-weight selection; default remains zero pending broader evidence",
+    "TP native-routed outputs remain available references; failed full rerouting is not forced into their cost"
+  ]
+}

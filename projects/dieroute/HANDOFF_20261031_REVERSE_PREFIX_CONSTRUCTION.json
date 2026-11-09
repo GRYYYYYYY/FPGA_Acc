@@ -1,0 +1,52 @@
+{
+  "observed_ns": 1793433533694105992,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_REVERSE_BUILD_COMMIT.json",
+    "sha256": "21deac5da865ab666f89e982593edc8eae87e394f659a29dbbcd302635ba5f64"
+  },
+  "progress": {
+    "report": "work/resident_reverse_prefix_construction_20261031/review.json",
+    "report_sha256": "41028892b6dbc76803bf6c1d6923c84890645dbb7c7d0b95c4244f80d8c95b98",
+    "independent_review": "work/resident_reverse_prefix_construction_20261031/independent_review.json",
+    "independent_review_sha256": "ae5e24b5b55719c2a99a2f18e93ac4799ef95d0416de1c591feb325217aef10e",
+    "proof_scope_and_retained_failures": "work/resident_reverse_prefix_construction_20261031/proof_scope_and_retained_failures.json",
+    "proof_scope_and_retained_failures_sha256": "1ae55cdf2fc798a52d2d58dc61de1a16d35390958ac16cabec3cab6bcd2fe0ac",
+    "reference_population_binding": "work/resident_reverse_prefix_construction_20261031/reference_population_binding.json",
+    "reference_population_binding_sha256": "4912d17a8d2e3544607394111104d2c9c3647d7d4de0cec18d338d598619249d",
+    "feasible_UNSAT_queries": 42,
+    "numeric_calls": 12,
+    "numeric_source_clocks": 404,
+    "registers": 705,
+    "partial_LHS_slices": 64,
+    "independent_source_fold_cases": 384,
+    "monolithic_fold_UNKNOWN_retained": true,
+    "universal_temporal_association_proved": false,
+    "actual_encoded_memory_contract_proved": false,
+    "actual_whole_select_semantics_proved": false,
+    "HDL_simulation_executed": false,
+    "full_sequential_HDL_equivalence_proved": false,
+    "scope": "Conditional reverse prefix-construction evidence: eight source population cones equal frozen C population under coherent-word cuts;34source BVqueries prove15bit lane addresses,tail predicates,12bit prefix next-block address,and local conditional-add/bound lemmas yielding no32bit prefix truncation under block<=3411/count<=64. Twelve continuous source integer calls (1..32words/1..4blocks),404clocks,705random/stale data/control registers and64partial-LHS slices match every prefix write and final total against actual memory-word Python bit_count. Last prefix write coincides with helper done in these cases. Independent actual reverse RAM type/execute25-prepare10-build7 routing/WE0,two CE-read registers and flow init/cache clauses are source-checked,plus384new source fold boundary cases. Universal temporal association of all saved counts/flags,allcapacity/allcalls,actual installed memory identity,prefix/word validity,overall prepare success,full sequential4stateRTL/native/timing/board remain unproved. One original monolithic eight-fold10sUNKNOWN and hierarchy parser failure are preserved;separate local lemmas/corrected inactive-guard parser do not rerun native execution or establish the original monolithic solver result. No DUT/process/input/cache/guard/budget changes or HDL/HLS/native flow.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v261_20261031/matrix.json",
+    "sha256": "76364d2e72b4b20bb4a385832159e8e7606ffb349981e9de009ea3ee386f04a0"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v261.json",
+    "sha256": "1dfc380665cb2bf524b4fe029a5a9335898a06038da051edc7830254f8baaec1"
+  },
+  "next_action": "Strengthen twelve-call prefix temporal observations to source-wide count/flag/read-token association and helper startup/drain lifetime; then prove clear/marker construction establishes actual stable word values and prefix differences equal actual populations. Compose overall prepare success and full select/getdelimiter provenance without assuming it. Keep monolithic fold UNKNOWN and earlier UNKNOWNs unresolved unless a distinct valid proof closes their semantic requirement. Poll original handles and preserve original guards/budgets/inputs/caches/failures.",
+  "previous_goal_turn_classification": "progress_and_verified_wait_v260_registered",
+  "current_goal_turn_classification": "progress_and_verified_wait",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

@@ -1,0 +1,45 @@
+{
+  "observed_ns": 1793427615375046166,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_INSTALL_RESET_ALIGNMENT.json",
+    "sha256": "d77d15c51db79aa9e5259a86b1187ce2feb69da4de049da7e3ca5cb34c72d6b3"
+  },
+  "progress": {
+    "report": "work/resident_read64_reference_20261031/review.json",
+    "report_sha256": "6bb3b1f0efbf3eeb15d40c6624e97f936705d9dffb99615c6257763dbc529255",
+    "independent_review": "work/resident_read64_reference_20261031/independent_review.json",
+    "independent_review_sha256": "46bc1027eca748ef5fe7533aad0e18b2e3bd3c99d6d6187c18ecdef96b6846aa",
+    "feasible_UNSAT_queries": 13,
+    "caller_offset_hold_certificates": 8,
+    "C_payload_slots": 8,
+    "source_FSM_binary_cases": 2320,
+    "tag_model_states": 220,
+    "tag_model_edges": 232,
+    "base_stability_required_not_enforced_here": true,
+    "actual_RTL_caller_offsets_equal_C_slots_proved": false,
+    "valid_return_identity_assumed": true,
+    "HDL_simulation_executed": false,
+    "full_sequential_HDL_equivalence_proved": false,
+    "scope": "SHA-bound read64helper semantic audit against identical frozen Protocol/Store C bodies. Four feasible BV queries cover signed61bit internal address roundtrip,adjacent Cword addresses with8byte-aligned stable base modulo64,and64bit return mux/32bit concat equality for arbitrary words/offsets. Frozen C deliberately uses fixed32bit shifts for any nonzero offset%8;with4byte alignment this equals an8byte little-endian gather. Nine feasible integer queries cover total payload byte-size alignment/uint64nonoverflow and all8Protocol read64call-slot word-read bounds under explicit n/e/puint32and per-slot index bounds. These are C-layout/index preconditions,not proven actual RTL offset-register values. Eight caller certificates show each offset register has no dynamic writer in its selected wait;two constant low3bit writes are0after a reset clock and remain0. Existing caller lifetime keeps that wait until completion. Source data base is passed directly and must remain stable,including the live second-address calculation at73. A reset-started finite freshness projection includes unconditional junk captures while RVALID0at72/144and proves state145uses active-valid recaptures;valid return words are assumed to be the intended ordered memory words. Source assignments and data widths are bound,not a fullRTL sequential extraction. Defined Cmemory behavior additionally requires a valid8byte-aligned base object covering the declared words,no physical base+span overflow,and the assumed slot index bounds. Actual caller offset-value/C-layout correspondence,external data identity,base immutability enforcement,4state/midcall reset/fullRTL refinement,native success,watchdog/timing or board behavior remain open. No original process/input/cache/guard/budget changes,new native/HLS flow or DUT edits.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v245_20261031/matrix.json",
+    "sha256": "4bccf9b92376299ad31112f4dfb3b58cd993074a11413e3d31c5fb3c320a7ffc"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v245.json",
+    "sha256": "6104a61845c0190d550b546ee418efdb1bbee0e9511ca25c6795398de72b0449"
+  },
+  "next_action": "Trace the eight actual execute read64 offset-register value cones to frozen C layout/loop expressions, including reset/start initialization and loop index bounds. The helper itself has conditional address/fixed32 return semantics and valid-capture provenance evidence;external data identity and live base stability remain assumptions. First poll original native handles and retain all guards/budgets/inputs/caches;do not infer native completion or timing from local proofs.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

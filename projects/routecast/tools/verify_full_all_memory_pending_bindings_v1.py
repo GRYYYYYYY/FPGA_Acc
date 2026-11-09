@@ -1,0 +1,22 @@
+"""Actual slice driver bindings plus all-memory pointwise pending-write induction."""
+from pathlib import Path
+import json,hashlib,subprocess
+R=Path(__file__).resolve().parents[1];E=R/'experiments';D=E/'full_all_memory_pending_relation_v1_2026-10-09';D.mkdir(exist_ok=False);sf=E/'full_ram_mapping_candidate_v1_2026-10-09/structural.json';pf=E/'full_ram_lane_plan_v1_2026-10-09/plan.json';m=next(iter(json.load(open(sf))['modules'].values()));plan=json.load(open(pf));Y=Path('/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_frontend/bin/yosys');records=[]
+for mi,mem in enumerate(plan['memories']):
+ name=mem['name'];nets=m['netnames'];root=lambda k:nets[name+'.'+k]['bits'];slices=[];W=mem['width'];A=(mem['size']-1).bit_length();groups={}
+ for si,lane in enumerate(mem['slices']):
+  prefix=name+f'.s{si}.';net=lambda k:nets[prefix+k];start,stop=lane['start'],lane['stop'];width=stop-start;port=lane['read_port'];assert net('we')['bits']==root('WE');assert net('clk')['bits']==root('CLK');assert net('wa')['bits']==root('WA')+['0']*(10-A);assert net('ra')['bits']==root('RA')[port*A:(port+1)*A]+['0']*(10-A);assert net('re')['bits']==root('RE')[port:port+1];assert net('data')['bits']==root('WD')[start:stop]+['0']*(20-width);assert net('q')['bits'][:width]==root('Q')[port*W+start:port*W+stop]
+  drivers={}
+  for state,inp in [('pw','we'),('pa','wa'),('pd','data'),('er','re')]:
+   q=net(state)['bits'];matches=[(n,c) for n,c in m['cells'].items() if c['connections'].get('Q')==q];assert len(matches)==1;n,c=matches[0];assert c['type']=='$dff' and c['connections']['D']==net(inp)['bits'] and c['connections']['CLK']==root('CLK');drivers[state]={'cell':n,'description':c}
+  assert net('pw')['attributes'].get('init')=='0' and net('er')['attributes'].get('init')=='0';ram=m['cells'][prefix+'ram'];assert ram['connections']['we1']==net('pw')['bits'] and ram['connections']['we2']==['0'];assert ram['connections']['addr1']==net('pa')['bits'] and ram['connections']['data1']==net('pd')['bits'];assert ram['connections']['addr2']==net('ra')['bits'] and ram['connections']['out2']==net('raw')['bits'];groups.setdefault((start,stop),[]).append(si);slices.append({'slice':si,'logical_read_port':port,'retained_range':[start,stop],'drivers':drivers,'macro':ram})
+ rtl=f'''module miter(input old_we,new_we,input [{A-1}:0] old_addr,new_addr,observe,input [{W-1}:0] old_data,new_data,physical_word,output bad);
+wire [{W-1}:0] logical_word=(old_we && old_addr==observe)?old_data:physical_word;
+wire [{W-1}:0] logical_next=(new_we && new_addr==observe)?new_data:logical_word;
+wire [{W-1}:0] physical_next=(old_we && old_addr==observe)?old_data:physical_word;
+wire [{W-1}:0] related_next=(new_we && new_addr==observe)?new_data:physical_next;
+assign bad=logical_next!=related_next; endmodule
+''';v=D/f'memory_{mi}.v';ys=D/f'memory_{mi}.ys';log=D/f'memory_{mi}.log';v.write_text(rtl);ys.write_text(f'read_verilog {v.name}\nhierarchy -check -top miter\nproc\nopt\ncheck -assert\nsat -verify -prove bad 0 -show bad\n')
+ with log.open('w') as out:code=subprocess.run([str(Y),'-s',ys.name],cwd=D,stdout=out,stderr=subprocess.STDOUT,timeout=15).returncode
+ ok=code==0 and 'no model found: SUCCESS' in log.read_text();assert ok;records.append({'memory':name,'width':W,'address_width':A,'slice_count':len(slices),'slices':slices,'replicated_range_groups':[{'range':list(k),'slices':v} for k,v in groups.items()],'pointwise_sat_success':ok,'exit_code':code})
+receipt={'records':records,'memory_count':len(records),'slice_count':sum(r['slice_count'] for r in records),'scope':'All actual slice pending/control/register/macro connections audited, all logical widths/address domains pointwise abstract array step proved. Common WE/WA, per-range common WD imply enabled pending controls agree after an edge; pw init0 supplies inactive pending base, not physical/logical initial memory equality. Replicas need initial array correspondence independently. Actual macro synchronous write semantics and visible initial equality remain premises. No Full/native-export/physical-init admission.','functional_admission':False,'bindings':{str(f):hashlib.sha256(f.read_bytes()).hexdigest() for f in [Path(__file__),sf,pf,Y,*D.iterdir()] if f.is_file()}};(D/'receipt.json').write_text(json.dumps(receipt,indent=2)+'\n');print(json.dumps({'memories':len(records),'slices':receipt['slice_count'],'all_pointwise_sat_passed':True}))

@@ -1,0 +1,8 @@
+"""Diagnostic relaxation: retain actual original clauses except shared-parent constraints."""
+import json,time
+from pathlib import Path
+from pre_route_endpoints import sha
+from native_resume_prototype.source_binding_v2 import closure
+from certified_cnf_dependency_cdcl_v1 import solve
+R=Path(__file__).resolve().parents[1];E=R/'experiments';D=E/'adder_full905_capacity_only_v1_2026-10-09';D.mkdir(exist_ok=False);vp=E/'adder_full905_cnf_structure_verification_v1_2026-10-09/verification.json';v=json.loads(vp.read_text());bindings={**v['bindings'],str(vp):sha(vp),**closure([Path(__file__)])};assert all(sha(p)==h for p,h in bindings.items());ep=E/'adder_full905_cnf_v1_2026-10-09/encoding.json';cnf=json.loads(ep.read_text());parentvars={i for i,r in enumerate(cnf['variables'],1) if r['kind']=='NET_PARENT'};indices=[i for i,c in enumerate(cnf['clauses']) if not any(abs(x) in parentvars for x in c)];clauses=[cnf['clauses'][i] for i in indices];start=time.perf_counter();result=solve(clauses,len(cnf['variables']),10000);seconds=time.perf_counter()-start
+p=D/'result.json';p.write_text(json.dumps(dict(retained_original_clause_indices=indices,result=result),indent=2)+'\n');bindings[str(p)]=sha(p);bindings[str(ep)]=sha(ep);assert all(sha(p)==h for p,h in bindings.items());out=dict(bindings=bindings,status=result['status'],clauses=len(clauses),visited_nodes=result['visited_nodes'],solve_seconds=seconds,scope='Parent-free diagnostic relaxation, not a legal route; SAT lacks parent check, UNSAT requires independent RUP replay.');(D/'verification.json').write_text(json.dumps(out,indent=2)+'\n');print({k:v for k,v in out.items() if k!='bindings'})

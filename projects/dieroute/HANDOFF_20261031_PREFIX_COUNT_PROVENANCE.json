@@ -1,0 +1,42 @@
+{
+  "observed_ns": 1793416914573311839,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_PREFIX_ACCUMULATOR_PROJECTION.json",
+    "sha256": "3442e51443e21935cbd7a1d23d725c7d6b2ee11ac10b518f753d244c0b295e7f"
+  },
+  "progress": {
+    "report": "work/resident_prefix_count_provenance_20261031/review.json",
+    "report_sha256": "9f9d70786727a3bb37790fb88be6087e2ec20a5830ab5e3191f5e30394dc1ec1",
+    "independent_review": "work/resident_prefix_count_provenance_20261031/independent_review.json",
+    "independent_review_sha256": "8572f80ed1be02f03abf3429a29be5ef0e43d165da0cc34b7fdff9b31f695c8b",
+    "local_builder_modules": 3,
+    "steady_count_output_provenance_samples": 24,
+    "all24_outputs_only_expected_return_source": true,
+    "actual_memory_address_correspondence_proved": false,
+    "arithmetic_population_equivalence_proved_here": false,
+    "startup_and_tail_proved": false,
+    "whole_program_lower_bound_certified": false,
+    "watchdog_failure_verdict": null,
+    "scope": "Conservative bit-level source provenance analysis of24prefix-build count outputs in three SHA-bound existing RTL modules. Simulate30abstract phase clocks with arbitrary per-bit old register provenance and a fresh opaque live read-return word each cycle; support actual full and partial nonblocking writes. Arithmetic carry dependencies conservatively include lower input bits; no cancellation is assumed. The analyzed region is a steady interior pipeline with both iteration enables1,loop-exit flag0,all per-word validity flags1,no stalls,and legal binary one-hot/no-reset operation. These flag values are explicit premises,not observed runtime facts. Sample slots0..7at cycles22..29; expected live-read sources are cycles18..25. A singleton expected dependency excludes any other old/read-return source in this conservative projection,not wrong arithmetic or bit permutation. Does not prove actual memory address/return correspondence, arithmetic population values, startup/drain/tail behavior, actual graph/prefix contents, global RTL equivalence or runtime count/timing/watchdog. No .dat/program/trace/TV input, HDL flow,DUT edit,process control,guard/watchdog change or adoption.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v212_20261031/matrix.json",
+    "sha256": "08c960206b813ec1ffb12cd28d54292063b9ed5fc42e8588d8eb3e67d9c8a26a"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v212.json",
+    "sha256": "083047ddf8bc1b8ded973350d95f4766b7af5a3adc764ccd2425def8164365f2"
+  },
+  "next_action": "Steady/all-valid local count output source tags align to eight distinct expected read-return cycles. Next verify arithmetic values and actual request-address/return routing,then startup/tail flags and data/build validity. Do not turn this provenance-only projection into numeric prefix/global timing acceptance. Preserve original full jobs/guards/budgets and terminal prerequisite.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

@@ -1,0 +1,37 @@
+{
+  "cases": [
+    {
+      "all_repeats_exact": true,
+      "case": "diffeq",
+      "cpd_change_pct": 0.0,
+      "repeats": 4,
+      "verified_native_trials": 64,
+      "wirelength_change_pct": -0.05492694716027202
+    },
+    {
+      "all_repeats_exact": true,
+      "case": "frisc",
+      "cpd_change_pct": -6.2614532046894595,
+      "repeats": 2,
+      "verified_native_trials": 32,
+      "wirelength_change_pct": 0.31040925803145214
+    },
+    {
+      "all_repeats_exact": true,
+      "case": "elliptic",
+      "cpd_change_pct": -0.7650040775194933,
+      "repeats": 2,
+      "verified_native_trials": 32,
+      "wirelength_change_pct": 0.32932050203080543
+    }
+  ],
+  "implementation_sha256": "0f8a684ae7dc745fceb257d62a71bd8f34f61bf41db5cc515dfb641b6557d2a3",
+  "matrix": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_fixed_development_2026-09-29/progress.json",
+    "sha256": "2cbaa583dd905f041f23aa09c6a4012bb36e5955cc2d3caab038d8327f38f961"
+  },
+  "protocol_sha256": "7b4ef8f4c99e70435770c144b6ac0d061a33e3f0dff6f6352d42e43d44ec3396",
+  "schema": "TILEPLACE_FIXED_DEVELOPMENT_ARTIFACT_AUDIT_V1",
+  "scope": "Completed development cases only; no claim about historical mixed-parser held-out evaluation",
+  "status": "partial"
+}

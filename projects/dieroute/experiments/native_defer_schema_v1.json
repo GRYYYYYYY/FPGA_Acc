@@ -1,0 +1,18 @@
+{
+  "schema": "dieroute.native_budget_schedule.v1",
+  "scope": "Serial CPU whole-net scheduling on the existing joint corridor search. No distributed capacity grant or hardware acceleration claim.",
+  "modes": {
+    "0": "Immediate fallback: existing behavior, default unchanged.",
+    "1": "Defer only if no complete candidate exists and a joint attempt hit the resource budget. Return budget_exhausted with no full-graph retry or retained reservation. Other failures still fall back immediately.",
+    "2": "Full-graph rescue: skip constrained discovery and search unresolved tasks directly in the full graph."
+  },
+  "controller": "Start each pending net/epoch in mode 1 when enabled. Retry unresolved tasks in fixed order while the tree gains nodes. If a pass makes no growth and has an accepted budget deferral, switch once to mode 2. Continue rescue retries only while the tree grows, then stop normally. A valid complete candidate is never deferred.",
+  "shadow": "Validate the complete decision-read journal before using its result. Replay stale calls; the accepted invocation alone determines the deferral/pass decision. Every invocation still contributes to work counters.",
+  "work_accounting": "Joint, constrained-local, and full-graph detailed work counters sum exactly to total detailed expansions/edge visits, including partial work on overflow. Per-attempt search status and work are logged separately from final invocation status. Quotient work remains a separate epoch counter.",
+  "evidence": "cohort_passes.csv records before/after tree sizes, failed tasks, accepted budget deferrals, rescue state and continuation. Independent schedule verification derives expected task order, no-search shared sinks, retry conditions, rescue transition, and termination from reconstructed authority snapshots; it does not trust phase labels alone.",
+  "limits": [
+    "Budget exhaustion is not a proof of unreachable routing. Full-graph rescue can still exhaust the same budget.",
+    "Shared-tree growth may change subsequent paths; equivalence to immediate fallback is tested, not assumed in general.",
+    "No new physical QoR or board result follows from CPU work counts."
+  ]
+}

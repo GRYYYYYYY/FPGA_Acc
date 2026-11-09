@@ -1,0 +1,52 @@
+{
+  "observed_ns": 1793436691551613789,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_PREFIX_STABLE_MEMORY_RECURRENCE.json",
+    "sha256": "3304fdffade64443a0a8d592ea6c3dbfce61bf76d8e50c4ce8976b460b40c91e"
+  },
+  "progress": {
+    "report": "work/resident_reverse_word_clear_20261031/review.json",
+    "report_sha256": "502409f578a71ad859cd2df932a781632488bebc6fe9072eff216c91a7a81428",
+    "independent_review": "work/resident_reverse_word_clear_20261031/independent_review.json",
+    "independent_review_sha256": "775f08701bd9930f2daa6af829499587030164e4b8bf3dceb4c593a18004c0b4",
+    "source_binding_and_scope": "work/resident_reverse_word_clear_20261031/source_binding_and_scope.json",
+    "source_binding_and_scope_sha256": "83fa508c9aff2c2847038fdfbc4cf3f60f61bcf7683cc3161ef8d3ddd4c41c38",
+    "final_review": "work/resident_reverse_word_clear_20261031/final_review.json",
+    "final_review_sha256": "5a4c535409fb225ed3a3a9776cd0db67f12d7ceb813b9de6649d5f21e23afaa3",
+    "states": 13,
+    "edges": 21,
+    "feasible_UNSAT_queries": 6,
+    "independent_clear_calls": 10,
+    "zero_write_edges": 54800,
+    "source_clock_edges": 54840,
+    "stale_read_output_counterexamples": 10,
+    "conditional_valid_word_storage_zero_after_clear_checked": true,
+    "read_pipeline_zero_after_clear_proved": false,
+    "actual_encoded_memory_contract_proved": false,
+    "HDL_simulation_executed": false,
+    "full_sequential_HDL_equivalence_proved": false,
+    "scope": "Reset-started binary source clearparent8/one-phasehelper/e1/start/flowinit-cache projection. Valid stableW1..27295 premise;firstinit0index cannotexit. Writes occur onlyparent3/start1/e1with prior accepted validindex snapshot;terminaldi coincides lastwrite,clears e1/start,and parent4hasno wordaccess. Six sourceBVlemmas prove positiveW firststep,equality,15bitincrement/no-wrap/progress,actualsaved addressinRAM,and zero data. Counter/snapshot uniqueclocks plus induction give exactlyonezero write to each0..W-1,noneW;actual URAMwriteprimitive andexecute25/prepare10/build3writepath checked. Actual wordcontents are zero after finalwrite under admitted validprotocol/sourceRAM assumptions,regardless prior storage;this doesnotassert q0readpipeline outputs are zero because URAMread-first mayretain olddata. MarkerRMWmust establish fresh two-read delivery separately. Global4stateRTL/native/actualmarkerencodedmemory/board remain unproved. No DUT/process/input/cache/guard/budgetchanges ornew HDL/HLS/native flow. Clear helper always stays onehotphase0;sourceflowoutputsreadyexit,notinternalreadyat eachactiveedge. Caller3waits actualdone,lastzero write is accepted before advancing4;parent4has no wordaccess andsetsmarkerstartfor5. StorageM[0..W-1]zero includes allpaddingbits of lastvalidword,independentof oldM;URAMread-first two-registeroutput can remainold/nonzeroafterclear. Ten poisoned-memory counterexamples are source-model boundary examples,not observednative failures orproof globallyreachablecommand histories. Marker freshstart/RMWreadpriming/bitupdate andactualencoding remain separate required proofs. No dat/TV/trace contents read,no original flow change. Independent poisoned-memory cases supply arbitrary oldstorage/readregistervalues beforeeachcase whilehelperregisters/counter/flow/cache persist;they are component-leveltests,not reconstructedglobalnativehistories. This discharges zero storage at clearcompletion undervalidknownW/sourceprotocol assumptions,not marker-RMWreadfreshness orpostmarkerencoding. Lastvalidwordpaddingbitsare zero as part of64bitwrite. No gate/native acceptance follows.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v265_20261031/matrix.json",
+    "sha256": "9c524967282f8a21fe95b67bd32bfaac976acd3b8ad7a430e52deeffdf7330df"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v265.json",
+    "sha256": "26c834647bf469a8383f0a7a3ab3b503c6617f2f82dd74a8b0cd40056b67b895"
+  },
+  "next_action": "Prove reverse markerRMW actual read-address/CE/capture/write sequence delivers fresh cleared/current word after2enabledURAMreads despite nonzero oldq0,then ORs onlyvalidated bit i+offset_iwithoutclobbering prior markers. Check accepted offsetvalidation(monotone,range,endpoints)and actual frozen read64reverse-slot provenance. Clear storage initialization is nowchecked conditionally;readpipelineisnotcleared bythatcontract. Compose resulting initializedmarkerwordimage withstable-memoryprefixrecurrence,readytotaln+1andunaryselect/getdelimiter contracts. Preserve alloriginalhandles/guards/budgets/inputs/caches/failures/UNKNOWNs and4state/native/boardgaps.",
+  "previous_goal_turn_classification": "progress_and_verified_wait_v264_registered",
+  "current_goal_turn_classification": "progress_and_verified_wait",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

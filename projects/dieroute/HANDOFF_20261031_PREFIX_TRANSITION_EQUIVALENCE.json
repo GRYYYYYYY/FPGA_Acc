@@ -1,0 +1,41 @@
+{
+  "observed_ns": 1793411691416373370,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_SELECTOR_ITERATION_SPACING.json",
+    "sha256": "43058429a871239e4a8b6300ebb4fac3f967ef49c299f3963d14fe9a96263c82"
+  },
+  "progress": {
+    "report": "work/resident_prefix_transition_equivalence_20261031/review.json",
+    "report_sha256": "098820c7f1670349d8086268c0926c3a896b5497f23a82c2ad8298182bebc193",
+    "independent_review": "work/resident_prefix_transition_equivalence_20261031/independent_review.json",
+    "independent_review_sha256": "7f8bc28801c17f6eec2ccd906f03a248e10843df2df639fd4f51d3360b8f3350",
+    "interval_pairs": 7528926,
+    "branch_updates_checked": 15057852,
+    "local_prefix_transition_arithmetic_matches": true,
+    "runtime_prefix_count_correspondence_proved": false,
+    "whole_program_lower_bound_certified": false,
+    "watchdog_failure_verdict": null,
+    "scope": "Local prefix binary-search transition and finite-width audit, using SHA-bound C++ and two existing2022.2 RTL helpers. All lo<hi intervals within frozen template shape bounds are enumerated, both comparator outcomes checked, with matching next lo/hi, strict interval shrink, no64bit addition wrap or narrowed-address truncation. For admitted ordinal<=n<=773272, unsigned32bit ordinal exactly represents C uint64; every uint32 prefix value has the same unsigned order when zero-extended to C uint64. Thus identical valid initial bounds and identical per-iteration prefix values imply identical logical search transitions/iteration counts by induction. Those premises are not established for the running DUT: no RTL build-state correctness, BRAM contents/read latency, caller operand delivery, complete pipeline sequential equivalence, dynamic accepted-call counts, all successful calls, word/bit helper correctness or global serial/timing proof. No new RTL/HLS/native experiment, program/trace/TV read, DUT edit, watchdog/guard change or adoption; no actual timeout verdict.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v201_20261031/matrix.json",
+    "sha256": "f11bb40321f07919dd2b72f023052cdc64ddb8ccb6cf1866a235ecb840c0209a"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v201.json",
+    "sha256": "843c53c21dd77e59ce21364e8d8b9ecc076e7b9d1a82626f2ee338022eb8e161"
+  },
+  "next_action": "Arithmetic width/update mismatch excluded locally within frozen shape bounds. Check RTL prefix build/content, BRAM read latency, caller operands and sequential realization before asserting runtime prefix-iteration correspondence. Word/bit, serialization and complete terminal verification remain required; do not infer actual watchdog failure.",
+  "runtime": "30exact handles confirmed live, terminal watchers empty; global63.368GiB, original strict queue headroom unmet. No job/watchdog/guard/adoption change.",
+  "artifact_ledger_unchanged": "v24:9878/9968associated,90pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

@@ -1,0 +1,31 @@
+{
+  "schema": "dieroute.native_persistent_shadow_schema.v1",
+  "ownership": "Each CPU net lane has one non-authoritative summary cache per logical die worker. Only the lowest-membership die owns mutable resource state. Caches contain occupancy/history/version, never writable net-owner sets.",
+  "lifecycle": "Reset with a strictly larger session at each independent repetition or checkpoint generation. Subscribed entries persist across tasks, nets, windows and routing iterations within that session.",
+  "publication": "Before global window indices divisible by the period, refresh all lanes against current authority. Send only changed subscribed entries. Every rejected whole-net proposal forces a refresh of its lane before a fresh serial replay. Drain all lane caches against final authority at repetition end, including zero-occupancy tombstones.",
+  "fetch": "A missing entry sends a fixed 64-byte request to its owner and receives a 64-byte summary reply from the immutable search snapshot. Hits use the stored value without a hidden current-state lookup.",
+  "packet": {
+    "bytes": 64,
+    "endianness": "little-endian",
+    "words_u64": ["session", "node:u32,owner:u8,worker:u8,kind:u8,reserved_zero:u8", "occupancy", "history", "version", "serial", "zero", "zero"],
+    "kind": {"fetch_request": 1, "fetch_reply": 2, "publication": 3},
+    "request": "occupancy/history/version must be zero; reply keeps session/serial/node/owner/worker",
+    "receiver": "Reject other sessions and older versions. Equal-version equal-value delivery is idempotent; equal-version different value is an error. Wrong owner/observer membership and reserved bits are rejected.",
+    "checkpoint_rule": "Authority version regression requires a new cache session; a periodic refresh cannot silently overwrite a newer cached version."
+  },
+  "validation": "The ordinary full node footprint still validates the immutable input snapshot. Every actual remote cached observation additionally validates its consumed occupancy/history/version against current authority, including observations outside the selected path. Either kind of conflict rejects the whole net without state mutation. Stale overflow can replay; current overflow remains a failure.",
+  "cost": "Stale summaries may change candidate paths and costs. Private candidate writes do not publish summaries. Cached cost subtracts this net's ownership only as known in the immutable input snapshot. The selected physical PIP die and selected corridor/fallback flag identify the cost source for independent path replay.",
+  "capture": {
+    "worker_shadow_messages.bin": "FPGAACCP schema 0.1, type 0x44520022, architecture fingerprint and CRC64. Each 128-byte record has 64 bytes of metadata and one 64-byte encoded packet.",
+    "metadata_u64": ["repeat", "iteration", "wave", "lane_slot", "attempt", "reason", "sequence_within_event", "zero"],
+    "reason": {"proposal_fetch": 0, "periodic_refresh": 1, "forced_replay_refresh": 2, "final_drain": 3},
+    "final_drain": "iteration=UINT32_MAX and wave=total global window count",
+    "persistent_shadow_reads.csv": "Every actual cached query, including branch/worker/node, consumed summary and hit/miss",
+    "persistent_shadow_checks.csv": "Per-proposal observation and stale-observation counts",
+    "persistent_shadow_branches.csv": "Whether selected branch uses constrained worker costs rather than centralized fallback costs",
+    "persistent_shadow_publications.csv": "Every refresh event, including empty events; global window, scanned entries, emitted messages and retained entries",
+    "repeat_normalization": "Only message session and repeat differ across repetitions; all other frame fields and relative sequencing must match. Capture order is deterministic proposal order, not measured network scheduling."
+  },
+  "accounting": "Packets = 2*cold_fetches + changed_updates, with final drain included. Payload bytes = 64*packets. Cache hits, refresh scans, stale observations and all discarded/replayed searches are reported separately. No savings are claimed from omitting tail updates.",
+  "limitations": ["CPU search phases and publication remain separated by joins; no asynchronous authority writers", "Validation request/response wire traffic, physical framing and HBM latency are not implemented", "No task migration, physical QoR or board performance conclusion", "Independent audit replays recorded observations and delivery provenance, not all off-path search decisions"]
+}

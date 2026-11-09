@@ -1,0 +1,16 @@
+"""All selected requests preserved in bounded owner expansion, frozen failure replay."""
+import sys,json,time
+from pathlib import Path
+R=Path(__file__).resolve().parents[1];sys.path[:0]=[str(R/'tools'),str(R/'tools/native_resume_prototype')]
+from pre_route_endpoints import sha
+from source_binding_v2 import closure
+from nonzero_rc_endpoint_context import load_endpoints
+from remaining_delay_session_cache_v5 import RemainingDelayCache
+from pending_owner_joint_repair_v3 import repair
+base=R/'experiments/mcnc_prospective_v1_2026-10-07/bigkey';parent=R/'experiments/mcnc_prefix_wire04_v11_2026-10-07/bigkey';out=R/'experiments/bigkey_pending_owner_repair_v1_2026-10-07';out.mkdir();ep=base/'endpoints.json';eventfile=parent/'batch2.json';floorfile=parent/'floors.json';bindings={str(p):sha(p) for p in (ep,eventfile,floorfile)};bindings.update({v['path']:v['sha256'] for v in json.loads(ep.read_text())['inputs'].values()});bindings.update(closure([Path(__file__)]));(out/'protocol.json').write_text(json.dumps(dict(bindings=bindings,policy='All selected pending queries preserved, whole owners max4, release sets max4, each DFS64 with memo/edge/validatedseed, deadline120s, max4screens/32conditioned ownerchecks, FIFO256, weight0.04ns.',scope='Post-outcome failure component, not fresh full cohort/native/heldout or original 8-batch success.'))+'\n');begin=time.perf_counter();graph,digest,nodes,f,rc,queries=load_endpoints(ep);event=json.loads(eventfile.read_text());selected=event['selection']['queries'];floors={(r['source'],r['sink']):r['minimum_integer'] for r in json.loads(floorfile.read_text())};spans=[1+int(n.find('loc').get('xhigh'))-int(n.find('loc').get('xlow'))+int(n.find('loc').get('yhigh'))-int(n.find('loc').get('ylow')) if n.get('type') in ('CHANX','CHANY') else 0 for n in nodes];cache=RemainingDelayCache(graph,digest,f,rc,out/'bounds',max_entries=256);start=time.perf_counter()
+def observe(attempt,release,branch,states,solution):
+ work=out/f"attempt{attempt}_branch{branch['index']}";work.mkdir();(work/'branch.json').write_text(json.dumps(dict(released_net_ids=release,branch=branch))+'\n')
+ for net,state in states.items():(work/f'net{net}.json').write_text(json.dumps(state)+'\n')
+ if solution is not None:(work/'joint_candidate.json').write_text(json.dumps(solution)+'\n')
+ print(attempt,branch['index'],branch['status'],release,flush=True)
+result=repair(cache.fields,cache.rc,event['before_records'],selected,event['released_net_ids'],floors,spans,4*(rc.scale//10**11),len(queries),remaining_cache=cache,deadline=start+120,observer=observe);cache.finalize();(out/'result.json').write_text(json.dumps(result)+'\n');(out/'cache_receipt.json').write_text(json.dumps(cache.summary())+'\n');assert all(sha(k)==v for k,v in bindings.items());(out/'receipt.json').write_text(json.dumps(dict(bindings=bindings,status=result['status'],before=len(event['before_records']),selected_ids=[q['connection_id'] for q in selected],completed=None if result['solution'] is None else result['solution']['completed_connections'],global_required=len(queries),total_seconds=time.perf_counter()-begin,files={str(p):sha(p) for p in out.rglob('*') if p.is_file()}),indent=2)+'\n');print('FINAL',result['status'],flush=True)

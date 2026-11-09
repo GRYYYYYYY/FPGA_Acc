@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "cases": 1000,
+  "scope": "two candidate groups, full nested identity+signed four-dimensional trial, forbidden identity filtering, negative score and stable best selection, empty groups, atomic invalid group. Remaining fault coverage and HLS/search integration pending.",
+  "sha256": {
+    "test_best_words.cpp": "1fc531edccab6506c7025d1d7c68ce18a3e25ea9bb24123d97265b5e8f75c211",
+    "identity_words.hpp": "2ddedd73a313331800102900cc360ddfbdb8d439f98d0f20cf307f5323a368fc",
+    "best_words.hpp": "4d3a352cdafee0de4525868abf6774b54708a4f4f98b61fd1f55793b4244b9bc",
+    "host_best.hpp": "38f5d179bf74ea86d56841d055b139778269ab964f43274f9f2b7e059f1c1f54"
+  },
+  "reference_identity_storage": "owned value tuples; 1000 cases rerun pass"
+}

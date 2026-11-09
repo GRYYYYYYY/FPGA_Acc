@@ -1,0 +1,32 @@
+{
+  "observed_ns": 1793403624291274005,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261030_DISCARDED_OFFSET_HOST.json",
+    "sha256": "d8b6e4bb0443b2c98748ac29a981dfa68a1dab4a1fd53f6e45fc26785cb44257"
+  },
+  "progress": {
+    "review": "work/recovered_original_search_runtime_20261030/review.json",
+    "review_sha256": "afc978c3669ce2274ee8c05de080a1ed6737340ed367b78c8320cd1c1b026db8",
+    "independent_review": "work/recovered_original_search_runtime_20261030/independent_review.json",
+    "independent_review_sha256": "64fb12ccc895c9a64093b6d7718941a8d577fcd1caf8789c41cc8a12d91ea7e6",
+    "watched_handles_before": 22,
+    "watched_handles_after": 29,
+    "additional_live_snapshot_search_hosts": 2,
+    "additional_live_snapshot_search_engines": 2,
+    "additional_old_caller_diagnostic_handles": 3,
+    "cache_advice_applied": false,
+    "new_acceptances": 0,
+    "scope": "Fresh PID/start identity and engine CPU liveness plus bounded existing logs and selected source/binary checks. No complete original graph rehash, artifact acceptance, full search/RTL terminal, tool-defect/deadlock diagnosis, live FSM/API progress, speedup or board proof. Do not reclaim live graph mappings or terminate these quiet jobs to create headroom. Resource analysis is an observation, not permission to change limits.",
+    "research_complete": false
+  },
+  "next_action": "Monitor29 exact identities with existing poller; seven recovered records add full-graph snapshot XRT2120302/start1625378632+engine2139932/start1625381079, sharded host1902502/start1626188865+engine1929756/start1626191331, old unsafe-caller diagnostic engine289744/start1693728685+owner4171391/start1693690856+pipeline30099/start1693697549. Both snapshot XRT outputs absent; initialization milestone and CPU do not prove search progress. Diagnostic remains0/156 batches and0/39536 accepted calls. Do not stop or reclaim these live mappings. Current headroom15.24GiB below unchanged20GiB queue guard. P7 HLS prepared only; P8 host verified, not synthesized. Artifact ledger unchangedv11:9697/9968 content-associated,271 remaining,820 separate transitive/466root gaps. Preserve all8 gates and existing failures.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

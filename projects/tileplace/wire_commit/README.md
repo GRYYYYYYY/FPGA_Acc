@@ -1,0 +1,1 @@
+外部 word 位置提交核心。读取 transaction13 的 trial range 和选择索引，整批验证索引、范围、未知/超宽 block ID、重复 block 及数组缩放后，再原地更新 position2。Block8 按 ID 严格排序且唯一由调用方保证；输入输出 backing 和不重叠由 host 验证。仅位置提交，不更新成本缓存或反馈。3000 独立 map 参考、5 个失败原子用例，以及 word selector→commit 的共享网络拒绝/无冲突接受组合通过。尚未 RTL 或 native commit 接入。

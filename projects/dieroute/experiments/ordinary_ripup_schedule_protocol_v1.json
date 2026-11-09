@@ -1,0 +1,56 @@
+{
+  "schema": "dieroute.ordinary_ripup_schedule_protocol.v1",
+  "status": "design_frozen_implementation_pending",
+  "objective": "Isolate ordinary incumbent lifetime and connection scheduling as potential contributors to native quality gaps; keep original research gates.",
+  "source_evidence_sha256": {
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/rr_router_policy_comparison_20261015/comparison.json": "672088bda52e4f99ac6bd920b85009bb975d3de6323d5ac150b56a2fd3f5a27e",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/rr_supplemental_net_transaction_variant_20261015/three_arm_comparison.json": "678dd538facfe99bdc9df86548f702493af46fe2be5b9276eff7884003a0cd55",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/rr_supplemental_net_transaction_variant_20261015/auditor_mutation_checks/audit.json": "7fa6a54491cffaeb9f4a095883430ed1b6c9bf43885faf299419f30f40777c85"
+  },
+  "modes": {
+    "0_bulk_wave": "Existing behavior:remove every pending ordinary net before the first wave,refresh owners once,then connection waves with issue width4.",
+    "1_dispatch_wave": "Retain each pending incumbent until immediately before the batch containing its first connection. Rip up first-dispatched nets in that batch,refresh owners once,then generate fresh seeds and execute the same connection-wave batches. Later connections reuse the newly built partial tree.",
+    "2_serial_net": "Retain incumbents until each net is selected in the existing net order. Rip up that net immediately before its first connection,then complete all its connections one at a time before moving to the next pending net. Effective issue width1 is explicit."
+  },
+  "fixed": {
+    "case": "ex5p development only",
+    "repeats": 5,
+    "heldout": "apex2/frisc/elliptic remain unopened",
+    "cost_state_bits": 64,
+    "cost_model": "vpr_style",
+    "cost_scale": 1,
+    "route_tree_timing_weight_q": 128,
+    "geometry_weight": 64,
+    "task_order": "preserve",
+    "max_iterations": 30,
+    "min_timing_iterations": 3,
+    "present_start_q": 256,
+    "present_multiplier_q": 512,
+    "history_increment_q": 256,
+    "criticality_feedback_threshold_q": 0,
+    "feedback_local_delay_guard": false,
+    "supplemental_transaction_mode": 0,
+    "cleanup_passes": 0,
+    "speculative_workers": 0
+  },
+  "invariants": [
+    "Mode0 preserves all existing common output artifacts/counters/native QoR; new metadata and ripup sidecars are explicit additions.",
+    "Each pending ordinary net is reset exactly once per noninitial epoch. First epoch has no incumbent ripups.",
+    "Ripup removes only that net from owner membership; other incumbents and already-published branches survive. Refresh once per bulk/first-dispatch group before search.",
+    "Seeds are generated after any required ripup,never from an unremoved old tree. Within a connection wave each net appears at most once,so moving seed construction to actual dispatch must preserve mode0 seeds.",
+    "Every connection of each pending net is attempted once; failure bookkeeping and shared-node occupancy remain exact.",
+    "Source net ordering remains unchanged:initial input priority,then leading connection criticality/priority/id. This is not a VPR fanout-order replication.",
+    "No legal-subtree pruning or alternate congestion schedule is introduced. Deferred and serial modes reject unsupported feedback/private-trial/edge/worker/cleanup combinations."
+  ],
+  "trace": "Add deterministic ordinary_ripups CSV:iteration,net_id,dispatch_batch,phase,tree_nodes_before,routed_connections_before. Phase0 bulk records share one pre-first-batch refresh; phases1/2 record first-dispatch refresh groups. Record effective issue width in existing epoch audit. No wall time in deterministic trace.",
+  "validation": [
+    "Boundary fixtures for first epoch,once/net ripup,retained unrelated incumbents,shared nodes,failed first connection and fresh seeds.",
+    "Complete backend/controller ASan/UBSan; mode0 five-repeat parent compatibility.",
+    "Independent logical paths/pending/ripup schedule and resource-version history replay supporting effective issue width1.",
+    "Five-repeat native legality/determinism and full matched-source/config/environment three-arm comparison; refreshed-hash corrupt-fixture checks."
+  ],
+  "acceptance": "Original joint native WL/CPD/SLL and no-extra-failure gates unchanged. CPU serialization is an accuracy diagnostic,not an acceleration or physical throughput claim.",
+  "limitations": "Current local VPR code/log differences motivate controls,not causal attribution or exact VPR equivalence. Its complete original as-built source identity is unverified. No new heldout tuning,clock reduction,hardware execution or novelty claim.",
+  "research_complete": false,
+  "board_result": false
+}

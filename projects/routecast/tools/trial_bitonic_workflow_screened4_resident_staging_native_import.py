@@ -1,0 +1,22 @@
+"""Import complete initial candidates into original VPR FULL/STA, retain all outcomes."""
+import json,os,re,shutil,subprocess,time
+from pathlib import Path
+from pre_route_endpoints import sha
+from serialize_live_native_candidate import serialize
+ROOT=Path(__file__).resolve().parents[1];parent=ROOT/'experiments/bitonic_workflow_screened4_resident_live_staging_2026-10-07';out=ROOT/'experiments/bitonic_workflow_screened4_resident_staging_native_import_2026-10-07';r=json.loads((parent/'receipt.json').read_text());v=json.loads((parent/'verification.json').read_text());assert v['receipt_sha256']==sha(parent/'receipt.json');out.mkdir();shared=ROOT.parent/'tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07';binary=shared/'build_tileplace_vpr/vpr/vpr';arch=shared/'vtr_flow/arch/timing/k6_frac_N10_40nm.xml';identity=ROOT/'build/native_net_identity_capture_2026-10-06/routecast_net_identity_vpr';sources=[Path(__file__),ROOT/'tools/serialize_live_native_candidate.py'];protocol=dict(parent_receipt_sha256=sha(parent/'receipt.json'),parent_verification_sha256=sha(parent/'verification.json'),sources={str(f):sha(f) for f in sources},binaries={str(f):sha(f) for f in (binary,arch,identity)},cohort=[4,8,16],timeout_s=180,scope='Complete independently audited new-placement staged candidates only, allcase failures retained. Original VPR analysis FULL/STA, native identity derived from packed pins. Raw synchronization may fix packing; zero-fixup canonical/selectedpath preservation pending. New placement targets; old placement QoR cannot be used as a quality baseline; no fresh joint quality gate or accepted loop gain.');(out/'protocol.json').write_text(json.dumps(protocol,indent=2)+'\n');rows=[];env={k:v for k,v in os.environ.items() if not k.startswith('ROUTECAST_')}
+def run(cmd,work,log,environment):
+ with log.open('w') as stream:return subprocess.run(cmd,cwd=work,env=environment,stdout=stream,stderr=subprocess.STDOUT,timeout=180).returncode
+for row in r['rows']:
+ n=row['count'];file=parent/f'n{n}/run0_resident.json';assert sha(file)==row['runs'][0]['update_sha256'];update=json.loads(file.read_text());c=update['repair'] or update['incremental'];result=dict(count=n,candidate_sha256=sha(file),status='INCOMPLETE_NOT_SUBMITTED',failure=c['failure'])
+ if c['failure'] is None:
+  work=out/f'n{n}';work.mkdir();src=ROOT/f'work/bitonic_native_reference_2026-10-07/n{n}';ep=parent/f'n{n}/target.json';graph=src/'rr_graph.xml';start=time.perf_counter()
+  try:
+   for name in ('design.blif','design.net'):shutil.copyfile(src/name,work/name)
+   shutil.copyfile(parent/f'n{n}/swapped.place',work/'design.place')
+   cmd=[str(binary),str(arch),'design.blif','--analysis','--net_file','design.net','--place_file','design.place','--route_file','design.route','--read_rr_graph',str(graph),'--route_chan_width','128','--num_workers','1','--check_route','full'];icmd=cmd.copy();icmd[0]=str(identity);icmd[icmd.index('--route_file')+1]='missing.route';table=work/'identity.jsonl';code=run(icmd,work,work/'identity.log',{**env,'ROUTECAST_NET_IDENTITY_FILE':str(table)});assert code==1 and table.exists()
+   text,bindings=serialize(c,ep,table,work/'design.place');(work/'design.route').write_text(text);(work/'bindings.json').write_text(json.dumps(bindings,indent=2)+'\n');input_hash=sha(work/'design.route');code=run(cmd,work,work/'import.log',env);log=(work/'import.log').read_text();assert code==0 and 'Completed routing consistency check successfully.' in log and 'VPR succeeded' in log
+   result.update(status='RAW_NATIVE_FULL_STA_SUCCESS',native_exit_code=code,cpd_ns=re.findall(r'Final critical path delay \(least slack\):\s*([0-9.]+)',log)[-1],serialized_input_sha256=input_hash,serialized_file_unchanged=input_hash==sha(work/'design.route'),packing_mismatches=re.findall(r'Found (\d+) mismatches',log),packing_fixups=re.findall(r'Fixed (\d+) routing traces',log),command=cmd,failure=None)
+  except Exception as ex:result.update(status='IMPORT_FAILED',error=repr(ex))
+  result.update(seconds=time.perf_counter()-start,files={str(f):sha(f) for f in work.iterdir() if f.is_file()})
+ rows.append(result);print(n,result['status'],result.get('error'),result.get('cpd_ns'),flush=True);(out/'receipt.json').write_text(json.dumps(dict(protocol_sha256=sha(out/'protocol.json'),rows=rows,complete=len(rows)==3),indent=2)+'\n')
+assert all(sha(f)==h for f,h in protocol['sources'].items()) and all(sha(f)==h for f,h in protocol['binaries'].items())

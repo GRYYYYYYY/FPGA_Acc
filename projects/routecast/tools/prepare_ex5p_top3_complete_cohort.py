@@ -1,0 +1,8 @@
+"""Complete frozen top3 external feedback targets, including output terminals."""
+import json
+from pathlib import Path
+from pre_route_endpoints import sha
+root=Path(__file__).resolve().parents[1];out=root/'experiments/ex5p_top3_complete_cohort_2026-10-06';out.mkdir();inputs=root/'experiments/ex5p_top3_cohort_2026-10-06/receipt.json';outputs=root/'experiments/ex5p_top3_output_bindings_2026-10-06/receipt.json';selected=root/'experiments/ex5p_critical_coupled2_2026-10-06/receipt.json';a=json.loads(inputs.read_text());b=json.loads(outputs.read_text());s=json.loads(selected.read_text());byid={r['connection_id']:r for r in s['records']};assert not b['unresolved_arcs'];p={'inputs_sha256':{str(x):sha(x) for x in (inputs,outputs,selected)},'top_k':3,'policy':'Union unique externalLUTinput connections and outputpadterminals for frozen top3 paths. No arbitrary input/terminal omission; packedinternal arcs tracked separately.'};(out/'protocol.json').write_text(json.dumps(p,indent=2)+'\n');groups={r['connection_id']:r for r in a['bindings']}
+for row in b['bindings']:
+ cid=row['connection_id'];assert cid not in groups;rec=byid[cid];assert row['physical_edge_ids']==rec['answer']['physical_edge_ids'];groups[cid]={**row,'source':rec['source'],'sink':rec['sink'],'delay_integer':rec['answer']['delay'],'logical_contributors':[row['timing_arc']]}
+assert len(groups)==19;r={'bindings':list(groups.values()),'internal_or_unresolved':a['internal_or_unresolved'],'protocol_sha256':sha(out/'protocol.json'),'source_sha256':sha(Path(__file__))};(out/'receipt.json').write_text(json.dumps(r,indent=2)+'\n');print('complete cohort',len(groups),'externalconnections')

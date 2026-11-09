@@ -1,0 +1,13 @@
+"""Unchanged onepass soft capacity transfer on all frozen nonlinear-family cases."""
+import json,time
+from pathlib import Path
+from pre_route_endpoints import sha,extract
+from persistent_rc_context import PersistentRCContext
+from pressure_capacity_forecast import forecast
+root=Path(__file__).resolve().parents[1];native=root/'experiments/mux_crossbar_channel_pressure_2026-10-06';np=json.loads((native/'protocol.json').read_text());freeze=root/'experiments/mux_crossbar_family_freeze_2026-10-06';fp=json.loads((freeze/'protocol.json').read_text());sources={n:sha(root/'tools'/n) for n in ('pressure_capacity_forecast.py','persistent_rc_context.py','pre_route_endpoints.py')};assert all(h==fp['sources_sha256'][n] for n,h in sources.items());out=root/'experiments/mux_crossbar_soft_transfer_2026-10-06';out.mkdir();cases=[]
+for c in np['cases']:
+ d=Path(c['cwd']);w=c['data_width'];ch=c['channels'];dst=out/f'mux_w{w}_c{ch}';dst.mkdir();t=time.monotonic();ep,mapping=extract(d/'design.net',d/'design.place',d/'rr_graph.xml');(dst/'endpoints.json').write_text(json.dumps(ep,indent=2)+'\n');(dst/'mapping.json').write_text(json.dumps(mapping,indent=2)+'\n');cases.append({'data_width':w,'channels':ch,'endpoint_path':str(dst/'endpoints.json'),'endpoint_sha256':sha(dst/'endpoints.json'),'frontend_s':time.monotonic()-t})
+(out/'protocol.json').write_text(json.dumps({'cases':cases,'sources_sha256':sources,'family_protocol_sha256':sha(freeze/'protocol.json'),'source_sha256':sha(Path(__file__)),'scope':'Entire9case nonlinear local family transferred under previouslyfrozenonepasssoftpolicy, no native route/STA labels to predictor; no labeldependent tuning. Samearchitecture,onefamily not universalholdout. Softcapacity forecast not nativelegal routing.'},indent=2)+'\n');rows=[]
+for c in cases:
+ t=time.monotonic();ctx=PersistentRCContext(c['endpoint_path']);setup=time.monotonic()-t;t=time.monotonic();result=forecast(ctx,True);elapsed=time.monotonic()-t;file=out/f"gf2_d{c['data_width']}_w{c['channels']}_soft.json";file.write_text(json.dumps(result,indent=2)+'\n');rows.append({'data_width':c['data_width'],'channels':c['channels'],'mode':'soft','status':result['status'],'completed_connections':result['completed_connections'],'required_connections':result['required_connections'],'overflow_units':result['overflow_units'],'setup_s':setup,'search_s':elapsed,'candidate_sha256':sha(file)});assert sha(c['endpoint_path'])==c['endpoint_sha256'];print(c['data_width'],c['channels'],result['status'],result['completed_connections'],result['required_connections'],result['overflow_units'],flush=True)
+(out/'receipt.json').write_text(json.dumps({'protocol_sha256':sha(out/'protocol.json'),'rows':rows,'all_cases_retained':True},indent=2)+'\n')

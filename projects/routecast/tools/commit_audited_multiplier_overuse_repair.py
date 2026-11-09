@@ -1,0 +1,38 @@
+"""Publish audited full-NET avoidance witness with complete private validation."""
+import json,shutil,hashlib
+from pathlib import Path
+from collections import Counter
+from prepared_csr import read
+from buffered_rc_context import load
+from csr_exact_buffered_rc import ExactBufferedRC
+from immutable_xml_prediction_audit import ImmutableXMLAudit
+from incremental_channel_pressure import ChannelPressure
+from move_prediction_transaction import MoveState,MovePredictionTransaction
+from pre_route_endpoints import sha
+root=Path(__file__).resolve().parents[1];base=root/'experiments';name='mult_5x5';out=base/'multiplier_audited_overuse_repair_transaction_2026-10-06';out.mkdir();shutil.copyfile(Path(__file__),out/'source.py');bindings={}
+def readjson(p):bindings[str(p)]=sha(p);return json.loads(p.read_text())
+parent=base/'multiplier_rc_repeated_sweeps_2026-10-06'/name;prior=readjson(parent/'receipt.json');assert all(sha(parent/n)==h for n,h in prior['outputs_sha256'].items());proof=readjson(base/'multiplier_avoidance_candidates_xml_audit_2026-10-06/verification.json');assert all(sha(p)==h for p,h in proof['inputs_sha256'].items());candidatefile=base/'multiplier_rc_overuse_avoidance_2026-10-06/mult_5x5_net_19_candidate.json';assert proof['inputs_sha256'][str(candidatefile)]==sha(candidatefile);candidate=readjson(candidatefile);previous=readjson(parent/'iteration_4_prediction.json');eps=readjson(parent/'iteration_4_endpoints.json');budgets=readjson(parent/'iteration_4_budgets.json');protocol=readjson(base/'multiplier_family_predictions_2026-10-06'/name/'sparse_reset/protocol.json');graph=protocol['inputs']['graph'];xml=ImmutableXMLAudit(graph['path'],graph['sha256']);m,f=read(base/'multiplier_family_length_switch_csr_2026-10-06'/name/'csr',graph['sha256']);rc=ExactBufferedRC(f,*load(base/'multiplier_cw300_exact_buffered_rc_classes_2026-10-06'/name,graph['sha256']));bindings.update(prior['inputs_sha256']);changed={r['connection_id'] for r in candidate['connections'] if r!=next(x for x in previous['connections'] if x['connection_id']==r['connection_id'])};assert changed and all(r['net_id']==19 for r in candidate['connections'] if r['connection_id'] in changed)
+encode=lambda x:(json.dumps(x)+'\n').encode()
+def pressure(pred):
+ p=ChannelPressure(f['types'],f['capacities']);p.refresh(Counter({int(n):v for n,v in pred['node_occupancy'].items()}),range(m['nodes']));return p.payload(graph['sha256']).encode()
+placement=(base/'multiplier_placement_swap_2026-10-06'/name/'swapped.place').read_bytes();old=MoveState(5,hashlib.sha256(encode(bindings)).hexdigest(),placement,encode(eps),encode(previous),encode(budgets),pressure(previous),b'[]');tx=MovePredictionTransaction(old)
+def build(s,fault=None):
+ pred=json.loads(encode(candidate));audit=xml.verify(eps,pred,topology=True);assert audit['all_physical_and_union_checks_passed'];assert audit['all_type_overuse_units']==0
+ net=next(x for x in audit['net_union_topology']['nets'] if x['net_id']==19);assert not net['internal_multi_incoming_nodes'] and not net['cyclic_union'] and not net['source_has_incoming']
+ if fault=='after_audit':raise RuntimeError(fault)
+ payload=pressure(pred)
+ if fault=='after_pressure':raise RuntimeError(fault)
+ if fault=='invalid_budget_witness':pred['connections'][0]['sink']+=1
+ return MoveState(s.epoch+1,s.context,s.placement,s.endpoints,encode(pred),s.budgets,payload,b'[]')
+def validate(s):
+ assert s.placement==old.placement and s.endpoints==old.endpoints and s.budgets==old.budgets and s.search_cache==b'[]';pred=json.loads(s.prediction);bs={r['connection_id']:r for r in budgets}
+ for r in pred['connections']:
+  b=bs[r['connection_id']];assert all(r[k]==b[k] for k in ('net_id','source','sink'));from fractions import Fraction
+  assert rc.path(r['source'],r['sink'],r['physical_edge_ids'])<=Fraction(*b['exact_delay_s'])
+ assert s.pressure==pressure(pred);return True
+failures=[]
+for fault in ('after_audit','after_pressure','invalid_budget_witness'):
+ status=tx.commit(5,lambda s:build(s,fault),validate);assert status=='FAILED' and tx.snapshot() is old;failures.append(fault)
+assert tx.commit(5,build,validate)=='COMMITTED';current=tx.snapshot();assert current.epoch==6
+(out/'prediction.json').write_bytes(current.prediction);(out/'candidate.pressure').write_bytes(current.pressure);assert all(sha(p)==h for p,h in bindings.items())
+(out/'receipt.json').write_text(json.dumps({'inputs_sha256':bindings,'source_sha256':sha(out/'source.py'),'prediction_sha256':sha(out/'prediction.json'),'pressure_sha256':sha(out/'candidate.pressure'),'changed_connections':sorted(changed),'previous_epoch':5,'published_epoch':6,'old_overflow':1,'new_overflow':0,'failed_snapshot_identity_preserved':failures,'scope':'Audited offline wholeNET19 witness validated and published via private immutable snapshot. Original placement/endpoints/budgets retained, empty cache. No search inside transaction, native legality/STA/performance or filesystem atomicity claim.'},indent=2)+'\n');print({'published_epoch':6,'overflow':0,'changed':sorted(changed),'failures':failures})

@@ -1,0 +1,32 @@
+{
+  "observed_ns": 1793403761592766962,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261030_RECOVERED_SEARCH_RUNTIME.json",
+    "sha256": "85678ec7dde7e71b5a12e1f27089dcb6b601d0ad09b26ce2e1b8a766381869cb"
+  },
+  "progress": {
+    "protocol": "work/recovered_snapshot_terminal_observer_20261030/protocol.json",
+    "protocol_sha256": "2aacf750a2b03c2d4ab6fe4eb219c324635d88515b236eddb50c757dde14d062",
+    "launch": "work/recovered_snapshot_terminal_observer_20261030/launch_receipt.json",
+    "review": "work/recovered_snapshot_terminal_observer_20261030/independent_launch_review.json",
+    "review_sha256": "217c7d26001f02a5a4d22ac56222db91a153ef7776b0155dcb47246df142cd13",
+    "observer_pid": 3172165,
+    "observer_start_ticks": 1765855441,
+    "status": "actual_readonly_observer_pending_two_live_original_chains",
+    "monitored_handle_count": 30,
+    "poll_seconds": 30,
+    "experiment_acceptances": 0,
+    "scope": "One read-only terminal observer, exact existing host/backend handles only. No kill/restart/resubmit/input mutation/cache advice, full graph reads or acceptance. Re-poll transient observation errors; missing original identity or terminal process state is evidence of ending, not success. Both original identities must end before per-chain terminal artifact metadata is captured. Exit code may remain unknown for non-child/reaped processes.",
+    "research_complete": false
+  },
+  "next_action": "Monitor30 exact identities through existing poller. New observer3172165/start1765855441 checks the two original live snapshot-search host/backend pairs every30s; both former managers are absent. On both identities ending it saves terminal metadata with unknown exit status retained; it never accepts or restarts a run. Main-model full result/graph/path/authority audit still required. All original limits, failures and eight gates remain; existing mapped strict-native waits20GiB headroom, P7 HLS prepared only/P8 host-only verified. Ledger v11 unchanged9697/9968,271 original fields pending;820 separate transitive/466root gaps.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

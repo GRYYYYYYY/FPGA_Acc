@@ -1,0 +1,10 @@
+"""Full12 whole-result/cache parity and setup cost inventory."""
+import json
+from pathlib import Path
+from pre_route_endpoints import sha
+ROOT=Path(__file__).resolve().parents[1];old=ROOT/'experiments/owner50_serial_2026-10-07_predictor';new=ROOT/'experiments/owner50_compact_import_probe_2026-10-07';p=json.loads((new/'protocol.json').read_text());r=json.loads((new/'receipt.json').read_text());prior=json.loads((old/'receipt.json').read_text());assert len(r['rows'])==len(prior['rows'])==12;assert r['protocol_sha256']==sha(new/'protocol.json') and all(sha(f)==h for f,h in p['sources'].items());rows=[]
+for a,b in zip(prior['rows'],r['rows']):
+ assert {k:v for k,v in a.items() if k not in ('loop_seconds','result_sha256')}=={k:v for k,v in b.items() if k not in ('loop_seconds','result_sha256')};w,i=b['width'],b['index']
+ if b['status']=='PRIOR_ALLOCATION_SKIP':rows.append(dict(width=w,index=i,status=b['status']));continue
+ af=old/f'w{w}_m{i}/result.json';bf=new/f'w{w}_m{i}/result.json';assert af.read_bytes()==bf.read_bytes() and sha(bf)==b['result_sha256'];assert (af.parent/'cache_stats.json').read_bytes()==(bf.parent/'cache_stats.json').read_bytes();setup=json.loads((bf.parent/'setup_times.json').read_text());assert all(v>=0 for v in setup.values());assert sum(setup.values())<=b['loop_seconds'];rows.append(dict(width=w,index=i,status=b['status'],result_sha256=sha(bf),setup_times=setup,loop_seconds=b['loop_seconds']))
+(new/'verification.json').write_text(json.dumps(dict(receipt_sha256=sha(new/'receipt.json'),verifier_sha256=sha(Path(__file__)),rows=rows,scope='ALL12 fresh actualconsumer outcomes; every searched whole result andcachebytes identical prior serialworkflow. Private importer only removed unused map. Setup phase inventory single instrumented observations; no paired speed/accepted-lifecycle/nativepublication or independent full importer-error contract.'),indent=2)+'\n');print('Compact import full12 actualconsumer byte parity',flush=True);print([(x['width'],x['index'],x.get('setup_times')) for x in rows],flush=True)

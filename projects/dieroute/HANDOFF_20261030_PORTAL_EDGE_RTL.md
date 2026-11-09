@@ -1,0 +1,17 @@
+# DieRoute 恢复入口：portal内部边读取候选实际全28878 RTL运行 — 2026-10-30
+
+原目标未完成。当前矩阵仍v169/314条，关键路径 experiments/critical_path_20261030_v169.md，八门槛均开放；11语料/311096搜索、45正式槽、原成本/周期预算保持。正式45终态37通过/8存储失败不替换。原目标见 HANDOFF_20261021.md，主机/综合与等价范围见不变的 HANDOFF_20261030_PORTAL_EDGE.md，其他RTL背景见 HANDOFF_20261030_ROW_CURSOR_RTL.md，论文/文献/依赖审计背景见 HANDOFF_20261030_PAPER.md。
+
+本轮把 `work/resident_portal_install_edge_candidate_20261030` 推进到实际完整原始28878 RTL。新原生2022.2 cosim -setup只用312字节配置bootstrap生成监控/配置，exit0/24.074秒/峰值973807616bytes/无守卫触发。克隆1620文件/208647036bytes的本候选HLS工程，不复制/哈希巨大稀疏完整TV输入。独立核验96DUT与新综合输出逐字相同、155端口匹配；新增portal_install_edge.v已加入prj且实际编译成功。13监控来自本次原生生成；Cpost预处理源只应用derivation.json两处代码差异和私有路径重定位，可逆恢复父源，实际重新构建exit0。
+
+preparation.json保留明确标注copied-stage的父fixture重定位ledger，并单独绑定原生生成后最终simulation-source库存；最终库存与protocol/实际文件已核验。旧复制阶段的监控哈希不冒充最终监控库存。活动绑定源无修改。
+
+实际启动协议绑定256文件、8缓存inode/size/mtime身份；原图N773272/E973552/P170628、5752357安装words、原28878调用、十亿累计周期watchdog、xelab -O0/-mt off、12GiB自身/72GiB全局/20GiB启动守卫保持。启动前实测22.248GiB余量。日志已有3个time0模型零初始化、3个known-write绑定、原1/28878进度。这个1只证明安装前unavailable读取完成，完整图安装/全部正向/负向仍未证明，独立accepted仍0。见 actual_RTL_launch_binding_review_20261030.json、actual_RTL_runtime_receipt_20261030.json。
+
+新候选实际句柄：supervisor2151138/start1764236061；pipeline2151239/start1764236072；xsim2183016/start1764239927。终态监控2218804/start1764244613只拥有本候选，terminal_watcher_protocol.json绑定相同v2审计器（SHA4e37f23e8f3683bedcd6651189eb3a2d7545df06bb5db15e138e5056635ffea0）。等三句柄实际退出，成功终态才执行全部28878回复/Cpost/完整性能行/observer独立审计。失败和资源守卫终态保留，不自动重试或采用。
+
+原8条仿真/3终态监控/2后续队列保持，现共9仿真/4终态监控/2队列，15个核心句柄及五候选另外10个supervisor/pipeline身份纳入核验。最新工具：python3 -B work/resident_portal_install_edge_candidate_20261030/poll_existing_jobs.py。共享可更新记录仍为CSR目录 latest_all_jobs_verified_wait.json。初次加入后所有句柄live、五候选资源心跳新鲜、内存约58.386GiB/80GiB；数字是观察而非长期保证。不得因日志静默/观察超时重启或停止任务。
+
+负向fixture已准备，只有reply观察器数据与banner两处变更，逆变换恢复正向。通用 full28878_observer_canary_tools_20261030/prepare_and_run.py 对本候选的只读门控检查返回75，缺完整正向证明时没有创建负向执行目录。之后必须等完整正向v2通过、三句柄消失和资源核验，再显式 --run；不能继承父候选正负向证明。
+
+下一步等待精确进程的实际终态并独立复核；继续原制品完整依赖闭包、创新性对比、全QoR及实现门槛。主机安装select减少32.6%与静态调用点消除不等于RTL加速；总延迟undef，十亿周期预算未通过，不能给出可靠完成时间。所有失败/分母保留；无实卡U280，无板上速度/能耗、平台fit或300MHz达标结论。文献稿仍32页独立文献更新/22October评测快照，不是最终全实验稿。无commit/push。

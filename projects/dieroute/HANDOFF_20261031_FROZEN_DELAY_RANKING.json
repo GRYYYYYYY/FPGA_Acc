@@ -1,0 +1,39 @@
+{
+  "recorded_ns": 1793405692404051060,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_PHYSICAL_MODEL_PRIMARY_REVIEW.json",
+    "sha256": "17a7bdac8e4cb3f448edfc7805b2cb85e0de4286ad841891c872083ccb4f66b2"
+  },
+  "progress": {
+    "review": "work/native_frozen_delay_ranking_audit_20261031/review.json",
+    "review_sha256": "2b27ca782d70f71f74334f1bf2f25ea3a88320db1008b4f7fe65f08b4335ed7f",
+    "independent_review": "work/native_frozen_delay_ranking_audit_20261031/independent_review.json",
+    "independent_review_sha256": "d1080f6ba059e5767d0cd7b469d2d75d2072ae314ec49b55eb033b1f603094f8",
+    "pairs_per_model_corner": 273,
+    "nets_with_pairs": 44,
+    "model_corner_cells": 20,
+    "cells_with_robust_reversal": 20,
+    "quantity": "native interconnect delay in integer picoseconds; not total net delay, setup/hold slack, CPD, or end-to-end latency",
+    "routing_cost_ready": false,
+    "scope": "Posterior direction audit of already frozen fivefold whole-net development predictions. Same exact net/task/pin and distinct complete-tree hashes are paired; every route variant of a net remains in its original excluded validation fold. Printed numeric predictions are compared as Decimal without clipping/refitting; the >=1ps subset only reports reversal magnitude at the native recorded unit and changes no acceptance tolerance. Pairs share nets/loads and are not independent repeats. No new native query, model fit/selection, heldout validation, calibrated error guarantee, safe route acceptance, timing closure, speedup or board claim. Raw four-stage interconnect CSV was joined to every original/proposal dataset observation. Reversals disprove exact pair ordering in this observed sample, not universal model usefulness or correctness on new designs. The20cells reuse the same273pairs and are not5460independent cases.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v177_20261031/matrix.json",
+    "sha256": "a8973949b44d422e1e8ca765aeb05453c711260347c9e9d2401a9e3b8c8bca7d"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v177.json",
+    "sha256": "ed6242fa0702d8c211260812a2e7f31f14e1af00a83d10c90c1cc1bd436919dc"
+  },
+  "next_action": "Keep commercial routing calibration open: frozen OOF interconnect predictions fail exact pair ordering in all20model/corner cells on273same-endpoint pairs/44nets. Observations joined to original raw native CSV; no refit/heldout tuning or routing-cost adoption. Do not mistake20reused cells for independent repeats or interconnect for slack/CPD. Current matrix333claims preserves332prior claims. Preserve30watched handles and full-positive/canary/resource conditions; artifact ledger remainsv15:9757/9968associated,211pending,820separate transitive/466root gaps. No new native/RTL/board pass.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

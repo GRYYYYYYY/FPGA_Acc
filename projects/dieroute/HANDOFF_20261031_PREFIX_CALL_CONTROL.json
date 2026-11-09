@@ -1,0 +1,51 @@
+{
+  "observed_ns": 1793435101980680794,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_PREFIX_CAPTURE_ASSOCIATION.json",
+    "sha256": "08acfc86b0cd3f0ac767e88800c54a91eb6c05f4d4afc0936e5e33ed25c7055b"
+  },
+  "progress": {
+    "report": "work/resident_prefix_call_control_20261031/review.json",
+    "report_sha256": "2ba39bb2c5d4067983863c1b6367971c1a878f6d072d50b61adb95287fe49bf9",
+    "independent_review": "work/resident_prefix_call_control_20261031/independent_review.json",
+    "independent_review_sha256": "0959b00a2debbe5614232a6e71825d69bc212849c67a813691bf10669667aa10",
+    "source_binding_and_scope": "work/resident_prefix_call_control_20261031/source_binding_and_scope.json",
+    "source_binding_and_scope_sha256": "a23b9fa0a0882d3389afaae61eda205fd4f97abaf9e3c746b0a2506d0f232153",
+    "states": 55,
+    "edges": 126,
+    "feasible_UNSAT_queries": 5,
+    "independent_counter_call_cases": 8,
+    "independent_counter_source_control_edges": 54816,
+    "terminal_coincides_last_prefix_write_in_projection": true,
+    "total_data_same_fold_source5_capture_checked": true,
+    "stable_valid_blocks_assumed": true,
+    "arbitrary_block_population_data_translation_proved": false,
+    "actual_encoded_memory_contract_proved": false,
+    "universal_complete_prefix_semantics_proved": false,
+    "HDL_simulation_executed": false,
+    "full_sequential_HDL_equivalence_proved": false,
+    "scope": "Reset-started binary source control projection couples reversebuild8/prefix8phases/registeredstart/flow init-cache,with two arbitrary unreset savedexit seeds and source clocks/criticalFSM/ready/done evaluation. Stable valid B1..3412 is a premise; non-first phase0exitpredicate is conservative. Every active helper remains parent7/start1;first accepted blockcannotexit;each prefixwrite6has prior valid block snapshot and fresh total/data captured5fromsamefold;terminal6coincides finalwrite and totalvalid;freshstart masks olddonecache;total remains held in parent8. Source blockcounter/next-prefix snapshots get5feasible BVinduction lemmas for initialization,exactexit,increment/range/strictdistance/12bitfit. These compose local control/count prerequisites but do not prove arbitrary-block data/address translation,total equals actualpopulation for everyblock,fullprefix memory contents,overallprepare/fullselect/global4stateRTL/native/board acceptance. No DUT/process/input/cache/guard/budgetchanges or new HDL/HLS/native flow. B1..3412stable is an admitted valid scalar contract. Source-bound control/sizeholding andcounter induction support startup/drain/fresh completion at parent7->8. Eight independent repeated counter calls are index/control tests,not native performance;sample8B+6 is local source-model position only. Samefold5total/data capture andwrite6are associated,but full fold/population semantics at arbitrary blocks and actualinstalledmemory remain open. Original boolean checker failure was an attempted evaluation of unrelated data destinations in shared clock;exact scalar guard projection corrects it withoutsource/native retry.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v263_20261031/matrix.json",
+    "sha256": "27d80dd39f9522243c3d14db6af180160266de9c95a04463d27457c300350f81"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v263.json",
+    "sha256": "53a67f92206a75ee0b6b0873f549b91f8fdfea718dfe66e3ce76be5caecb7c07"
+  },
+  "next_action": "Lift normalized per-block population capture identities to arbitrary actual block indices and first-iteration iter1=0,using source counter/snapshot induction and actual saved flags. Compose bounded total/prefix values through all blocks and finalwrite,then prove clear/marker construction establishes actual stable memory contents and overallprepare/fullselect/getdelimiter provenance. Keep exit redundant-read addresses unconstrained except required word delivery;preserve original native handles/guards/budgets/inputs/caches/failures and allUNKNOWNs.",
+  "previous_goal_turn_classification": "progress_and_verified_wait_v262_registered",
+  "current_goal_turn_classification": "progress_and_verified_wait",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

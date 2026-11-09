@@ -1,0 +1,47 @@
+{
+  "schema": "dieroute.native_timing_feedback_contract.v1",
+  "implementation": "include/native_timing_feedback.hpp",
+  "scope": "Serial C++ whole-checkpoint selected-load timing publication and repair, with independent native graph and DCP verification",
+  "observations": {
+    "identity": ["frozen logical load ID", "physical net ID", "setup or hold"],
+    "coverage": ["finite signed integer ps", "explicitly reported unconstrained", "missing path"],
+    "required": "Exactly one setup and one hold observation for every frozen load; all selected nets represented; the same keys and coverage class in baseline and candidate",
+    "missing": "Never a zero slack, never accepted",
+    "unconstrained": "Rejected by default; an explicit policy may preserve reported unconstrained coverage without claiming timing constraints were met there",
+    "path_changes": "Worst through-load paths may change startpoint/end/corner; observed slack is evaluated directly, not converted to an isolated additive PIP delay budget"
+  },
+  "binding": {
+    "context": "SHA256 of verified original DCP, cohort, logical/physical mapping, query source and load set identities",
+    "trees": "Exact canonical complete selected-tree serialization, including node, parent, PIP direction key and depth; no lossy hash used inside C++",
+    "epoch": "Candidate oracle must equal current authority epoch plus one; exhaustion and replay reject",
+    "producer_boundary": "Python verifies frozen manifest/input/artifact digests and exact DCP-to-tree lineage before converting native observations. Raw C++ CLI input is not a cryptographic attestation of a Vivado run."
+  },
+  "publication": {
+    "baseline": "Must already satisfy the selected policy; otherwise construction fails",
+    "candidate": "Complete independently checked shared trees and ownership, with current full-candidate timing oracle",
+    "accept": "Allocate the complete candidate and oracle before swapping serial authority and advancing epoch",
+    "reject": "No change to authority trees, ownership, history, resource versions or timing epoch",
+    "resource_versions": "This is whole-checkpoint epoch publication. Imported resource history/versions belong to that checkpoint; consumers must invalidate all old views on epoch change and cannot compare resource versions across checkpoint epochs alone.",
+    "concurrency": "No concurrent borrowers or workers during publication; distributed/native shadow publication is not implemented by this controller"
+  },
+  "repair": {
+    "seed": "Whole physical nets with finite setup/hold slack below the explicit policy floor",
+    "closure": "If an original tree would occupy another proposed net's resource, recursively restore that net too; at worst the entire selected baseline is restored and reported explicitly",
+    "mutation": "Private proposal copy only; rip up restored nets, retain roots, then insert original directed tree PIPs in increasing depth",
+    "metadata": "History remains unchanged and every nonroot owner removal/addition increments that resource's private version once; overflow rejects without changing inputs",
+    "acceptance": "Every repair needs new full-candidate native timing, even if individual original net delays are known; old timing cannot be attached to changed trees"
+  },
+  "experiment_policies": [
+    {"name": "zero_floor", "setup_ps": 0, "hold_ps": 0},
+    {"name": "hold20", "setup_ps": 0, "hold_ps": 20},
+    {"name": "setup1434", "setup_ps": 1434, "hold_ps": 0}
+  ],
+  "policy_status": "Development ablations on the declared 70-net cohort. Positive margin floors are experimental choices, not user requirements, universal FPGA rules or held-out tuned defaults.",
+  "not_proven": [
+    "calibrated min/max routing cost model",
+    "full-design joint wirelength/CPD non-degradation",
+    "native SLL corridor and distributed shadow integration",
+    "bitstream acceptance",
+    "physical U280 performance or energy"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "observed_ns": 1793444636602301830,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_CHAIN_GATE_AUDIT.json",
+    "sha256": "e25c1b0f4d21574fa963f85a962440672f2f6228ad125846e0a73af53cf4ae94"
+  },
+  "progress": {
+    "report": "work/resident_public_reply_packing_20261031/review.json",
+    "report_sha256": "13675d2c80b3a7b83c38b9eafd025a9708ba38a421ae3bc6693e4d549ee7e7a3",
+    "independent_review": "work/resident_public_reply_packing_20261031/independent_review.json",
+    "independent_review_sha256": "863278db543e0228c69d716c3226596d00878e63fcb4df189759ed74076a3692",
+    "final_review": "work/resident_public_reply_packing_20261031/final_review.json",
+    "final_review_sha256": "368637102f9034d1308025640452f83563fb227ca69451158adb41a9df2cdece",
+    "new_feasible_UNSAT_queries": 21,
+    "continuous_integer_calls": 96,
+    "internal_WREADY_stalls": 686,
+    "accepted_internal_packets": 192,
+    "public_host_roundtrip_proved": false,
+    "scope": "Symbolic whole generated reply-loop source call from arbitrary stale registers after common reset/8idle clocks packs9symbolic64inputs plus7hardwiredzero slots into exactly2ordered512bit internal W packets, full64byte strobe. Sixteen actual four-level mux source lane identities,2packet values,arbitrary internal WREADYstall register/data holds and aligned signed58 address roundtrip checked. Static top75 capture/wiring map connects execute return permutation to writer ports. Does not yet prove execute status/value provenance, public dispatch/get lifetime, complete top done/start freshness, reply m_axi write-adapter burst/ordering/B-response handling, external AXI WVALID stability, full RTL/X/native/300MHz/board behavior. Internal leaf WVALID is gated by internal WREADY; external AXI claims require adapter proof. Separate integer interpreter96continuouscalls/2615edges/686internalWREADYstalls/192acceptedpackets agrees with independent128byte frame concatenation. Initial arbitrary ap_done_reg stall projection SAT retained as checker context error; active stall requires done_reg0. No external/public/native acceptance.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v278_20261031/matrix.json",
+    "sha256": "18f6e8bc9c85e7648e495acbe99fb61e40ebf5dd7c0c930c48d82f5fd6e3cf12"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v278.json",
+    "sha256": "e19f9e45f53335bebee5eb7d3808ddf270ef2dbd27100dc98e81a662f4bf11c9"
+  },
+  "current_runtime_observation": {
+    "path": "work/resident_public_reply_packing_20261031/runtime_observation.json",
+    "sha256": "d01154c1eaf3bf6609eef8f2b5bf8384df390702fa610ea9c47d35ee3083df2b",
+    "scope": "Fresh /proc identities; original Owner supervisor loss retained; no native acceptance."
+  },
+  "previous_goal_turn_classification": "progress_and_verified_wait_v277",
+  "current_goal_turn_classification": "progress_and_verified_wait",
+  "next_action": "Connect public op2 reserved-field validation/ready/session gates and get9success/value captures to terminal status/length/a/b, then finish/execute326->top75->writer startup freshness. Independently verify actual reply write-adapter two-packet order, 4KiB splits and physicalB-to-logicalcompletion semantics. Use source-bound projections with explicit assumptions; retain original native handles, Owner supervisor quota failure, all UNKNOWN/failure/cohort/gate/budget boundaries. Full prepare dictionary/pool/forward/portal success remains required; new obligation inventory is not a proof.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "owner_supervisor_failure_retained": true,
+  "artifact_ledger_unchanged": "v26:9890/9968,78pending;820separate transitive/466root gaps;paper unchanged.",
+  "research_complete": false
+}

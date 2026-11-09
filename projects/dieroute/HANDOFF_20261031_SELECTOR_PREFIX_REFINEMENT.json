@@ -1,0 +1,47 @@
+{
+  "observed_ns": 1793430085157234757,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_UNARY_REFERENCE_SEMANTICS.json",
+    "sha256": "18da65017796472b79cae579b8d354feab0749cd0f6d1093d51f1caa45b17390"
+  },
+  "progress": {
+    "report": "work/resident_selector_prefix_refinement_20261031/review.json",
+    "report_sha256": "ccbc172423279f8702dda5a2b3afca47b39da670512521398cd815862718a8ad",
+    "independent_review": "work/resident_selector_prefix_refinement_20261031/independent_review.json",
+    "independent_review_sha256": "ed376791c85f3a06d50d75d9a703b85e63aac15b0043f9345078ca2248d99c7f",
+    "feasible_UNSAT_queries": 10,
+    "control_states": 9,
+    "control_edges": 13,
+    "source_control_input_cases": 36,
+    "independent_prefix_searches": 254,
+    "independent_phase_clocks": 6080,
+    "search_address_width": 12,
+    "maximum_blocks": 3412,
+    "actual_prefix_memory_contract_proved": false,
+    "actual_whole_select_semantics_proved": false,
+    "parent_helper_lifetime_coupled_here": false,
+    "HDL_simulation_executed": false,
+    "full_sequential_HDL_equivalence_proved": false,
+    "scope": "SHA-bound select_r/search-helper local refinement under stable valid ordinal<=773272,blocks1..3412,0<=lo<=hi<=blocks+1,and matching stable initialized prefixRAM/WE0. Actual unsigned64midpoint/saved63bits+constantzero/12bitaddress and parent25bitinitialhi/33bitresidualrank preserve reference values under caps. Source32bit prefix/ordinal comparator and saved muxes produce exactly reference lo=mid+1orhi=mid,with range preservation and strict search interval progress. Source sole lo/hi writers are phase0;phase1snapshots,phase3comparison capture and four nonstalled phases are checked. Two CE-gated BRAMread registers deliver RAM[mid] by phase3sampling if the known admitted read path remains selected. A reset-started finite control projection assumes active caller holds start through helper exit-ready,uses arbitrary loop predicate per phase1,and checks snapshot/compare freshness before commits across repeated calls. It does not itself couple parentselect_rorouterget ownership,start/ready lifetime or live operands;those remain composition premises. Source parent result/block/residual arithmetic is checked,not entire parent completion or memoryidentity. Ten feasible QFBVqueries and control closure support conditional prefix-search refinement;actual prefixcontent correctness,wordscan/bit-helpersemantic/timing,encoded-memory contract,argument lifetime,wholeRTL/4state/native/ROMload/timing/board acceptance remain open. No DUT/process/input/cache/guard/budget changes or new HDL/HLS/native flow.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v253_20261031/matrix.json",
+    "sha256": "393a44f5d412eef79bcb4dbf31e52679223d8f91f437ff0789edead492bcdc88"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v253.json",
+    "sha256": "167f0e219b56cb8fc5806a11b04badb08fbe5348577c58af2999afc181b0c20e"
+  },
+  "next_action": "Couple select_r parent/search-helper start/ready/argumentholding to discharge conditional prefix-search lifetime,then match source wordscan and six-step bit helper to frozen reference semantic contract. Actual encoded marker/prefix memory remains unproved and execute still ignores get success. Poll original handles first;retain guards/budgets/inputs/caches/failed evidence and do not infer native acceptance from local proofs.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

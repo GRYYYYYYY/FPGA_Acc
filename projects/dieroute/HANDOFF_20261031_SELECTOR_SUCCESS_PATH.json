@@ -1,0 +1,42 @@
+{
+  "observed_ns": 1793411183521792609,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_NATIVE_FAILURE_INPUT_ROLES.json",
+    "sha256": "d942c903995b6a9127e98999bc58efcebe0a511d6a00c71a98acf9dd08805a61"
+  },
+  "progress": {
+    "report": "work/resident_selector_success_path_20261031/review_v2.json",
+    "report_sha256": "2b9ee4063f0054a72d4c2d5232f32b67fbcce5b0917613cc3645ba43e4bf334a",
+    "independent_review": "work/resident_selector_success_path_20261031/independent_review.json",
+    "independent_review_sha256": "4bbc2ed0ca99635549623302a3e7e8f085534375c745ef9d4031075ee7e9e0dc",
+    "stable_ready_cases": 4096,
+    "stable_ready_successes_without_state9": 0,
+    "unconstrained_ready_abstract_early_success_cases": 64,
+    "caller_ready_stability_proved": false,
+    "actual_runtime_call_counts_proved": false,
+    "whole_program_lower_bound_certified": false,
+    "watchdog_failure_verdict": null,
+    "scope": "Local two-state selector return/control abstraction, source-fragment checked against two SHA-bound existing Vivado2022.2 HLS RTL modules. Accepted transaction starts at state1 and completion is sampled at state10; legal one-hot operation, no mid-call reset, completed helper waits, and stable ready input are assumed. All initial six predicate/return bits are enumerated. Helper results are unconstrained binary outcomes; wait stutters, X/Z semantics, datapath arithmetic, helper timing and caller integration are not modeled. Stable-ready success implies visiting state9 locally. If ready changes between entry and completion, a local abstract early-exit success is possible through stale guards; this is not shown reachable in the actual caller or running DUT and is not a diagnosed hardware bug. Does not prove every projected host call succeeds in RTL, source/RTL count equivalence, serial composition, whole-program timing or watchdog failure. No new synthesis/simulation, DUT edit, program/trace/TV access, job control, adoption or formal outcome change.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v198_20261031/matrix.json",
+    "sha256": "8ed9ec576923d3c794ecf2497b20479f9f017dc754c99cf00d0e3840e4ce5b21"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v198.json",
+    "sha256": "ce0234fffa55e5bc466b1c9c5285716a200032cbabceea98581ff01283a2b104"
+  },
+  "next_action": "Trace live ready inputs through actual get/put callers and prove transaction stability or produce an actually reachable counterexample. Still require runtime/full control count and timing composition; do not declare watchdog failure from local abstraction.",
+  "runtime": "Fresh poll confirmed30exact live identities; all terminal watchers empty. Some timestamps advanced. Memory63.37GiB, original20GiB prestart condition unmet. No stop/restart/new owner or guard/watchdog change.",
+  "artifact_ledger_unchanged": "v24:9878/9968associated,90pending; separate820transitive/466root gaps.34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

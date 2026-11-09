@@ -1,0 +1,21 @@
+<rr_graph tool_name="routecast-test" tool_version="synthetic-v1">
+<switches><switch id="5" type="mux" name="mux"><timing Tdel="1e-10"/></switch></switches>
+<segments><segment id="9" name="L1"><timing R_per_meter="0" C_per_meter="0"/></segment></segments>
+<rr_nodes>
+<node id="10" type="SOURCE" capacity="1"><loc xlow="0" ylow="0" xhigh="0" yhigh="0" ptc="0"/></node>
+<node id="20" type="OPIN" capacity="1"><loc xlow="0" ylow="0" xhigh="0" yhigh="0" ptc="3" side="RIGHT"/></node>
+<node id="30" type="CHANX" direction="INC_DIR" capacity="1"><loc xlow="0" ylow="0" xhigh="1" yhigh="0" ptc="0"/><segment segment_id="9"/></node>
+<node id="40" type="IPIN" capacity="1"><loc xlow="1" ylow="0" xhigh="1" yhigh="0" ptc="2" side="LEFT"/></node>
+<node id="50" type="SINK" capacity="1"><loc xlow="1" ylow="0" xhigh="1" yhigh="0" ptc="0"/></node>
+<node id="60" type="SINK" capacity="1"><loc xlow="1" ylow="1" xhigh="1" yhigh="1" ptc="0"/></node>
+<node id="70" type="SOURCE" capacity="1"><loc xlow="0" ylow="0" xhigh="0" yhigh="0" ptc="1"/></node>
+</rr_nodes>
+<rr_edges>
+<edge src_node="10" sink_node="20" switch_id="5"/>
+<edge src_node="20" sink_node="30" switch_id="5"/>
+<edge src_node="30" sink_node="40" switch_id="5"/>
+<edge src_node="40" sink_node="50" switch_id="5"/>
+<edge src_node="40" sink_node="60" switch_id="5"/>
+<edge src_node="70" sink_node="20" switch_id="5"/>
+</rr_edges>
+</rr_graph>

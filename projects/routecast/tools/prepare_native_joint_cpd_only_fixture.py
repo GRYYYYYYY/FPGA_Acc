@@ -1,0 +1,15 @@
+"""Bind physically complete, model-rejected50ps w8m0 as negative gate fixture."""
+import json
+from pathlib import Path
+from pre_route_endpoints import sha
+ROOT=Path(__file__).resolve().parents[1];parent=ROOT/'experiments/mux_owner_wire_50ps_development_2026-10-07';file=parent/'w8_m0/result.json';d=json.loads(file.read_text());assert d['candidate_model_gate']['status']=='ACTUAL_MODEL_TIMING_REJECTED';assert d['result']['status']=='COMPLETE_CANDIDATE' and d['result']['candidate']['failure'] is None
+proofs={}
+for name in ('control_timing','physical_budget','floor','choice','observation','history_cost'):
+ f=file.parent/f'{name}_verification.json';v=json.loads(f.read_text());assert v['result_sha256']==sha(file);proofs[str(f)]=sha(f)
+out=ROOT/'experiments/native_joint_cpd_only_fixture_2026-10-07';out.mkdir()
+(out/'input_verification.json').write_text(json.dumps(dict(result_sha256=sha(file),proofs=proofs,source_sha256=sha(Path(__file__)),scope='Adversarial integration fixture only: complete physically audited50ps w8m0 is MODEL-TIMING-REJECTED and must not be submitted by normal live policy. Force through native joint gate to verify CPD-only rejection with lower wire. Not native input admission/acceptance eligibility.'),indent=2)+'\n')
+old='mux_owner_wire_50ps_w8m2';new='mux_native_joint_cpd_only_w8m0';src=ROOT/f'tools/trial_{old}_quality_gate.py';dst=ROOT/f'tools/trial_{new}_quality_gate.py';assert not dst.exists()
+s=src.read_text().replace(old,new).replace('(8,2)','(8,0)').replace('w8_m2','w8_m0').replace('build/loaded_native_quality_gate_v2_2026-10-06/gate_vpr','build/native_joint_qor_gate_2026-10-07/gate_vpr');needle="assert json.loads((parent/'w8_m0/native_input_verification.json').read_text())['result_sha256']==pr['rows'][0]['result_sha256']";assert needle in s
+s=s.replace(needle,"fixture=ROOT/'experiments/native_joint_cpd_only_fixture_2026-10-07/input_verification.json';assert json.loads(fixture.read_text())['result_sha256']==pr['rows'][0]['result_sha256']");s=s.replace("sha(parent/'w8_m0/native_input_verification.json')","sha(fixture)").replace('Focused w8m2 ONLY complete audited fixed-cap candidate, actual-model pass independently checked.','Forced model-timing-rejected complete w8m0 negative fixture; NOT normal policy admission.');dst.write_text(s)
+vsrc=ROOT/'tools/verify_mux_native_joint_50ps_w8m2_quality_gate.py';vdst=ROOT/f'tools/verify_{new}_quality_gate.py';assert not vdst.exists();vdst.write_text(vsrc.read_text().replace('mux_native_joint_50ps_w8m2',new))
+(out/'protocol.json').write_text(json.dumps(dict(input_verification_sha256=sha(out/'input_verification.json'),producer_sha256=sha(dst),verifier_sha256=sha(vdst),binary_sha256=sha(ROOT/'build/native_joint_qor_gate_2026-10-07/gate_vpr'),policy='Additional prespecified negative integration fixture, not outcome tuning: complete50psw8m0 lower wire but timing regression; candidate forced past model gate only in isolated test, expected native reference selection. Native canonical FULLSTA and independent wire/path proof required.'),indent=2)+'\n');print('Prepared forced CPD-only rejection fixture')

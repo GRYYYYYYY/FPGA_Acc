@@ -1,0 +1,42 @@
+{
+  "observed_ns": 1793419365928365683,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_DELIMITER_VALIDATION_FLAGS.json",
+    "sha256": "fe3144aff62516a1d127937f2b768a59116430cf2e66c8db9f8d688b70366b59"
+  },
+  "progress": {
+    "report": "work/resident_delimiter_internal_read_stalls_20261031/review.json",
+    "report_sha256": "175e68a93b7cf115e7fdd0ee77b161f89be72acc6f73f2cf4bd2d4bbd6e16303",
+    "independent_review": "work/resident_delimiter_internal_read_stalls_20261031/independent_review.json",
+    "independent_review_sha256": "59d524797278602471dc01feb7123a0c27fd59a4d8f46b6491fc27429ab9201e",
+    "internal_read_stall_paths": 3,
+    "guard_truth_cases": 48,
+    "abstract_response_delay_samples": 15,
+    "retained_inactive_capture_cases": 6,
+    "active_internal_read_stalls_checked": true,
+    "global_control_or_outer_AXI_protocol_proved": false,
+    "HDL_simulation_executed": false,
+    "watchdog_failure_verdict": null,
+    "scope": "SHA-bound source-fragment boolean/stall audit of three delimiter child internal install-read channels. Top module evidence distinguishes adapter I_ARLEN32/internal request path from outward ARLEN8AXI path;this audit does not establish outer AXI protocol compliance. For legal binary/no-reset operation at1or71,the source truth tables hold state1while an active needed request lacks internal ARREADY,and state71while an active needed read lacks internal RVALID. Internal request/RREADY qualify with corresponding availability. With iter0enabled,a needed returned-word capture occurs only with RVALID;address register updates only at0,so holds during1/71waits. Five abstract response delays per family check capture-once after waiting. These are local source-event models,not HDL/native simulations. Some unconstrained iter0inactive snapshots can clock data without an internal transfer;they are explicitly retained and are not asserted reachable or functionally observed. The active-iteration proof must not be generalized to all clocks. Does not prove actual request/response association,top adapter transport/ordering,all operand snapshots/global control,cache invariant,actual delimiter/prefix contents,full timing/watchdog or gate closure. No .dat/trace/TV reads,native/HLS flow,DUT edits,original process controls,guard/budget changes or adoption.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v222_20261031/matrix.json",
+    "sha256": "f67c031d79337fa5768ff9d0355fa6cd6f74954fb819f01b3c5592722f35f1b8"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v222.json",
+    "sha256": "84b7a46ac6d10ad6ba5a1f83f352bbdb909346c946256481a94ad3b9f6a479cd"
+  },
+  "next_action": "Trace top adapter/internal response association and parent operand/iteration ownership. Audit inactive capture propagation before extending active-iteration stall results to all clocks. Continue previous-offset/cache invariant and complete delimiter coverage requirements. Preserve original jobs,guards,budgets and all eight gates.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

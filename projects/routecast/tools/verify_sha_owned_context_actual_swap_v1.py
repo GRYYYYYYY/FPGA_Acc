@@ -1,0 +1,27 @@
+"""Full actual endpoint delta and new-context versus independent rebuild scientific verification."""
+import json,ast
+from pathlib import Path
+from pre_route_endpoints import sha
+R=Path(__file__).resolve().parents[1];D=R/'experiments/sha_owned_context_actual_swap_v1_2026-10-10';p=D/'verification.json';v=json.loads(p.read_text());assert all(sha(k)==h for k,h in v['bindings'].items());protocol=json.loads((D/'protocol.json').read_text());assert all(sha(k)==h for k,h in protocol['bindings'].items());assert [r['arm'] for r in v['rows']]==['old_cold_context','new_warm_context','new_original_rebuild'];oldmodel=R/'tools/run_resident_actual_old_linear_undo_model_v13.py';newmodel=R/'tools/run_resident_owned_static_context_model_v1.py';assert ast.dump(ast.parse(newmodel.read_text().replace('from owned_static_rr_context_v1 import load_endpoints','from class_cached_rc_endpoint_context_v1 import load_endpoints')))==ast.dump(ast.parse(oldmodel.read_text()));old=json.loads(Path(protocol['old_endpoints']).read_text());new=json.loads(Path(protocol['new_endpoints']).read_text());a={q['connection_id']:q for q in old['connections']};b={q['connection_id']:q for q in new['connections']};assert len(a)==len(b)==6273 and a.keys()==b.keys();changed={c for c in a if (a[c]['source'],a[c]['sink'])!=(b[c]['source'],b[c]['sink'])};assert changed==set(protocol['changed_connections']) and len(changed)==53;bindings={str(x):sha(x) for x in [Path(__file__).resolve(),p,D/'protocol.json',oldmodel,newmodel,Path(protocol['old_endpoints']),Path(protocol['new_endpoints'])]}
+for arm,queries in [('old_cold_context',a),('new_warm_context',b),('new_original_rebuild',b)]:
+ B=D/arm
+ for filename in ['initial.json','sketch.json','round0.json','round1.json']:
+  pp=B/'model'/filename;state=json.loads(pp.read_text());records={x['connection_id']:x for x in state['records']};assert records.keys()==queries.keys() and len(state['records'])==6273
+  for cid,q in queries.items():assert {k:records[cid][k] for k in q}==q
+  bindings[str(pp)]=sha(pp)
+ for rel in ['handoff/receipt.json','model/receipt.json','model/shared_audit_receipt.json']:
+  pp=B/rel;proof=json.loads(pp.read_text())
+  for section in ['bindings','files']:assert all(sha(k)==h for k,h in proof.get(section,{}).items())
+  bindings[str(pp)]=sha(pp)
+ assert proof['all_three_complete_audits_pass'] and proof['fresh_independent_graph_context'] and proof['diagnostics']['independent_xml_parses']==2
+ for filename in ['initial_physical_verification.json','sketch_physical_verification.json','verification.json']:
+  pp=B/'model'/filename;proof=json.loads(pp.read_text());assert all(sha(k)==h for k,h in proof['bindings'].items());assert proof['all_original_queries_xml_fraction_rc_budgets_singleparent_and_uniqueNET_and_independent_ledgers_pass'];bindings[str(pp)]=sha(pp)
+ assert proof['complete_atomic_NET_replay_epochs_affected_schedule_priceupdates_and_full_rebuild_pass'] and proof['complete_fallback_attempt_membership_actual_old_objective_and_budget_checks_pass']
+A=D/'new_warm_context';B=D/'new_original_rebuild'
+for rel in ['model/initial.json','model/sketch.json','model/round0.json','model/round1.json','native/subset.json','native/bindings.json']:
+ pp=A/rel;qq=B/rel;assert json.loads(pp.read_text())==json.loads(qq.read_text());bindings.update({str(pp):sha(pp),str(qq):sha(qq)})
+x=json.loads((A/'model/receipt.json').read_text());y=json.loads((B/'model/receipt.json').read_text());assert x.keys()==y.keys() and len(x['rounds'])==len(y['rounds'])==2;events=0
+for u,w in zip(x['rounds'],y['rounds']):assert u.keys()==w.keys() and {k:z for k,z in u.items() if k not in ['seconds','state_file']}=={k:z for k,z in w.items() if k not in ['seconds','state_file']};events+=len(u['events'])
+assert (A/'native/seed.route').read_bytes()==(B/'native/seed.route').read_bytes()
+for pp in [A/'native/seed.route',B/'native/seed.route']:bindings[str(pp)]=sha(pp)
+assert v['rows'][0]['owned_context']['loads']==v['rows'][1]['owned_context']['loads']==1 and v['rows'][0]['owned_context']['accesses']==1 and v['rows'][1]['owned_context']['accesses']==2;assert all(sha(k)==h for k,h in bindings.items());(D/'independent_verification.json').write_text(json.dumps(dict(bindings=bindings,all6273_records_allstates_match_current_endpoint=True,all53_changed_physical_endpoint_ids_applied=True,all_new_states_and_handoff_equal_original_full_rebuild=True,all_new_feedback_events_equal=events,all3_complete_independent_audits_each_phase_pass=True,seed_bytes_equal=True,rows=v['rows'],scope='Actual legal swap static-context reuse full equivalence. Every endpoint query and full model recomputed; no dynamic incremental path algorithm or fullnative/canonical/strictfamily/hardware gain. First cold-context cost retained.'),indent=2)+'\n');print('INDEPENDENT ACTUAL SWAP FULL PARITY',events)

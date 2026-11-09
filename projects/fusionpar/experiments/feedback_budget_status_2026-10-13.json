@@ -1,0 +1,1297 @@
+{
+  "schema": "FUSIONPAR_FEEDBACK_BUDGET_RESULTS_V1",
+  "designs": {
+    "ex5p": {
+      "modes": {
+        "interleaved_tree_reuse": {
+          "quality": {
+            "wirelength": 9844,
+            "cpd_ns": 5.83751
+          },
+          "samples": [
+            {
+              "repeat": 0,
+              "host_seconds": 31.442891457,
+              "charged_seconds": 33.655938282,
+              "commits": 3,
+              "native_adapter_seconds": 25.720421015,
+              "routing_seconds": 1.407912414,
+              "aborts": 6,
+              "repairs": 0,
+              "repair_commits": 0,
+              "kernel_searches": 1204,
+              "expanded": 1121051
+            },
+            {
+              "repeat": 1,
+              "host_seconds": 39.377260457,
+              "charged_seconds": 41.590307282,
+              "commits": 3,
+              "native_adapter_seconds": 33.630641438,
+              "routing_seconds": 1.435867346,
+              "aborts": 6,
+              "repairs": 0,
+              "repair_commits": 0,
+              "kernel_searches": 1204,
+              "expanded": 1121051
+            },
+            {
+              "repeat": 2,
+              "host_seconds": 31.591716022,
+              "charged_seconds": 33.804762847,
+              "commits": 3,
+              "native_adapter_seconds": 25.641088354,
+              "routing_seconds": 1.532413846,
+              "aborts": 6,
+              "repairs": 0,
+              "repair_commits": 0,
+              "kernel_searches": 1204,
+              "expanded": 1121051
+            },
+            {
+              "repeat": 3,
+              "host_seconds": 31.535968885,
+              "charged_seconds": 33.74901571,
+              "commits": 3,
+              "native_adapter_seconds": 25.814191968,
+              "routing_seconds": 1.397108461,
+              "aborts": 6,
+              "repairs": 0,
+              "repair_commits": 0,
+              "kernel_searches": 1204,
+              "expanded": 1121051
+            },
+            {
+              "repeat": 4,
+              "host_seconds": 31.443546856,
+              "charged_seconds": 33.656593681,
+              "commits": 3,
+              "native_adapter_seconds": 25.864084538,
+              "routing_seconds": 1.328617019,
+              "aborts": 6,
+              "repairs": 0,
+              "repair_commits": 0,
+              "kernel_searches": 1204,
+              "expanded": 1121051
+            }
+          ],
+          "median_host_seconds": 31.535968885,
+          "median_native_adapter_seconds": 25.814191968,
+          "median_routing_seconds": 1.407912414,
+          "median_charged_seconds": 33.74901571,
+          "trajectory_repeat0": [
+            {
+              "evaluation": 0,
+              "quality": {
+                "wirelength": 9857,
+                "cpd_ns": 5.8858
+              }
+            },
+            {
+              "evaluation": 1,
+              "quality": {
+                "wirelength": 9849,
+                "cpd_ns": 5.83751
+              },
+              "phase": "primary",
+              "status": "committed",
+              "proposal": 0,
+              "kernel_searches": 455,
+              "expanded": 380885
+            },
+            {
+              "evaluation": 2,
+              "quality": {
+                "wirelength": 9849,
+                "cpd_ns": 5.83751
+              },
+              "phase": "primary",
+              "status": "quality_rejected",
+              "proposal": 1,
+              "kernel_searches": 76,
+              "expanded": 53402
+            },
+            {
+              "evaluation": 3,
+              "quality": {
+                "wirelength": 9849,
+                "cpd_ns": 5.83751
+              },
+              "phase": "primary",
+              "status": "quality_rejected",
+              "proposal": 2,
+              "kernel_searches": 133,
+              "expanded": 127786
+            },
+            {
+              "evaluation": 4,
+              "quality": {
+                "wirelength": 9846,
+                "cpd_ns": 5.83751
+              },
+              "phase": "primary",
+              "status": "committed",
+              "proposal": 3,
+              "kernel_searches": 84,
+              "expanded": 68666
+            },
+            {
+              "evaluation": 5,
+              "quality": {
+                "wirelength": 9846,
+                "cpd_ns": 5.83751
+              },
+              "phase": "primary",
+              "status": "quality_rejected",
+              "proposal": 4,
+              "kernel_searches": 126,
+              "expanded": 117900
+            },
+            {
+              "evaluation": 6,
+              "quality": {
+                "wirelength": 9844,
+                "cpd_ns": 5.83751
+              },
+              "phase": "primary",
+              "status": "committed",
+              "proposal": 5,
+              "kernel_searches": 1,
+              "expanded": 8740
+            },
+            {
+              "evaluation": 7,
+              "quality": {
+                "wirelength": 9844,
+                "cpd_ns": 5.83751
+              },
+              "phase": "primary",
+              "status": "quality_rejected",
+              "proposal": 6,
+              "kernel_searches": 126,
+              "expanded": 118021
+            },
+            {
+              "evaluation": 8,
+              "quality": {
+                "wirelength": 9844,
+                "cpd_ns": 5.83751
+              },
+              "phase": "primary",
+              "status": "quality_rejected",
+              "proposal": 7,
+              "kernel_searches": 112,
+              "expanded": 143839
+            },
+            {
+              "evaluation": 9,
+              "quality": {
+                "wirelength": 9844,
+                "cpd_ns": 5.83751
+              },
+              "phase": "primary",
+              "status": "quality_rejected",
+              "proposal": 8,
+              "kernel_searches": 91,
+              "expanded": 101812
+            }
+          ],
+          "final_state_sha256": "dcbf3082b441a4f9062eddded0225c9c8a07a799693e8ad8b3d6293d8169e7bf"
+        },
+        "interleaved_tree_feedback": {
+          "quality": {
+            "wirelength": 9844,
+            "cpd_ns": 5.83751
+          },
+          "samples": [
+            {
+              "repeat": 0,
+              "host_seconds": 31.43624508,
+              "charged_seconds": 33.649291905,
+              "commits": 3,
+              "native_adapter_seconds": 25.744648037,
+              "routing_seconds": 1.447965653,
+              "aborts": 6,
+              "repairs": 4,
+              "repair_commits": 1,
+              "kernel_searches": 1296,
+              "expanded": 1128564
+            },
+            {
+              "repeat": 1,
+              "host_seconds": 31.567477302,
+              "charged_seconds": 33.780524127,
+              "commits": 3,
+              "native_adapter_seconds": 26.084548288,
+              "routing_seconds": 1.524799155,
+              "aborts": 6,
+              "repairs": 4,
+              "repair_commits": 1,
+              "kernel_searches": 1296,
+              "expanded": 1128564
+            },
+            {
+              "repeat": 2,
+              "host_seconds": 31.257578059,
+              "charged_seconds": 33.470624884,
+              "commits": 3,
+              "native_adapter_seconds": 25.860268989,
+              "routing_seconds": 1.511308314,
+              "aborts": 6,
+              "repairs": 4,
+              "repair_commits": 1,
+              "kernel_searches": 1296,
+              "expanded": 1128564
+            },
+            {
+              "repeat": 3,
+              "host_seconds": 31.307638797,
+              "charged_seconds": 33.520685622,
+              "commits": 3,
+              "native_adapter_seconds": 25.858111976,
+              "routing_seconds": 1.565112904,
+              "aborts": 6,
+              "repairs": 4,
+              "repair_commits": 1,
+              "kernel_searches": 1296,
+              "expanded": 1128564
+            },
+            {
+              "repeat": 4,
+              "host_seconds": 30.954396746,
+              "charged_seconds": 33.167443571,
+              "commits": 3,
+              "native_adapter_seconds": 25.566706443,
+              "routing_seconds": 1.418877806,
+              "aborts": 6,
+              "repairs": 4,
+              "repair_commits": 1,
+              "kernel_searches": 1296,
+              "expanded": 1128564
+            }
+          ],
+          "median_host_seconds": 31.307638797,
+          "median_native_adapter_seconds": 25.858111976,
+          "median_routing_seconds": 1.511308314,
+          "median_charged_seconds": 33.520685622,
+          "trajectory_repeat0": [
+            {
+              "evaluation": 0,
+              "quality": {
+                "wirelength": 9857,
+                "cpd_ns": 5.8858
+              }
+            },
+            {
+              "evaluation": 1,
+              "quality": {
+                "wirelength": 9849,
+                "cpd_ns": 5.83751
+              },
+              "phase": "primary",
+              "status": "committed",
+              "proposal": 0,
+              "kernel_searches": 455,
+              "expanded": 380885
+            },
+            {
+              "evaluation": 2,
+              "quality": {
+                "wirelength": 9849,
+                "cpd_ns": 5.83751
+              },
+              "phase": "primary",
+              "status": "quality_rejected",
+              "proposal": 1,
+              "kernel_searches": 76,
+              "expanded": 53402
+            },
+            {
+              "evaluation": 3,
+              "quality": {
+                "wirelength": 9846,
+                "cpd_ns": 5.83751
+              },
+              "phase": "placement_repair",
+              "status": "committed",
+              "proposal": 1,
+              "kernel_searches": 84,
+              "expanded": 68666
+            },
+            {
+              "evaluation": 4,
+              "quality": {
+                "wirelength": 9846,
+                "cpd_ns": 5.83751
+              },
+              "phase": "primary",
+              "status": "quality_rejected",
+              "proposal": 3,
+              "kernel_searches": 126,
+              "expanded": 117900
+            },
+            {
+              "evaluation": 5,
+              "quality": {
+                "wirelength": 9846,
+                "cpd_ns": 5.83751
+              },
+              "phase": "placement_repair",
+              "status": "quality_rejected",
+              "proposal": 3,
+              "kernel_searches": 146,
+              "expanded": 128310
+            },
+            {
+              "evaluation": 6,
+              "quality": {
+                "wirelength": 9846,
+                "cpd_ns": 5.83751
+              },
+              "phase": "placement_repair",
+              "status": "quality_rejected",
+              "proposal": 3,
+              "kernel_searches": 136,
+              "expanded": 124308
+            },
+            {
+              "evaluation": 7,
+              "quality": {
+                "wirelength": 9844,
+                "cpd_ns": 5.83751
+              },
+              "phase": "primary",
+              "status": "committed",
+              "proposal": 6,
+              "kernel_searches": 1,
+              "expanded": 8740
+            },
+            {
+              "evaluation": 8,
+              "quality": {
+                "wirelength": 9844,
+                "cpd_ns": 5.83751
+              },
+              "phase": "primary",
+              "status": "quality_rejected",
+              "proposal": 7,
+              "kernel_searches": 126,
+              "expanded": 118021
+            },
+            {
+              "evaluation": 9,
+              "quality": {
+                "wirelength": 9844,
+                "cpd_ns": 5.83751
+              },
+              "phase": "placement_repair",
+              "status": "quality_rejected",
+              "proposal": 7,
+              "kernel_searches": 146,
+              "expanded": 128332
+            }
+          ],
+          "final_state_sha256": "dcbf3082b441a4f9062eddded0225c9c8a07a799693e8ad8b3d6293d8169e7bf"
+        }
+      },
+      "audit": {
+        "schema": "FUSIONPAR_INDEPENDENT_PUBLICATION_AUDIT_V1",
+        "pass": true,
+        "suite": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/ex5p_feedback_budget_v1",
+        "suite_audit_sha256": "a867101da375fa0a1613fa3ec269c7f2d359bedbf531b62361d37f7f8b4475da",
+        "auditor_sha256": "46e3ddd9adf80af76c640ee22248939ed6ffea91a8317c752c7fb5ac8546166f",
+        "counts": {
+          "runs": 10,
+          "qor_commits": 30,
+          "protocol_commits": 0,
+          "aborts": 60,
+          "timing_barriers": 40,
+          "placement_repairs": 20,
+          "native_feedback_checks": 15,
+          "baseline_route_commits": 0
+        },
+        "scope": "full serialized state/version/timing reconstruction and archived native bindings; not independent P&R performance replication"
+      },
+      "evidence": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/ex5p_feedback_budget_v1/audit.json",
+          "sha256": "a867101da375fa0a1613fa3ec269c7f2d359bedbf531b62361d37f7f8b4475da"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/ex5p_feedback_budget_audit_2026-10-13.json",
+          "sha256": "6ea0d8ee71ced3cfe0777a9ba5913917628be8632c035d602102c39a333e14c6"
+        }
+      ]
+    },
+    "alu4": {
+      "modes": {
+        "interleaved_tree_reuse": {
+          "quality": {
+            "wirelength": 9510,
+            "cpd_ns": 5.93739
+          },
+          "samples": [
+            {
+              "repeat": 0,
+              "host_seconds": 38.013037472,
+              "charged_seconds": 41.186304482,
+              "commits": 4,
+              "native_adapter_seconds": 33.56257327,
+              "routing_seconds": 0.780816553,
+              "aborts": 5,
+              "repairs": 0,
+              "repair_commits": 0,
+              "kernel_searches": 470,
+              "expanded": 601919
+            },
+            {
+              "repeat": 1,
+              "host_seconds": 37.362613015,
+              "charged_seconds": 40.535880025,
+              "commits": 4,
+              "native_adapter_seconds": 32.950854122,
+              "routing_seconds": 0.776032795,
+              "aborts": 5,
+              "repairs": 0,
+              "repair_commits": 0,
+              "kernel_searches": 470,
+              "expanded": 601919
+            },
+            {
+              "repeat": 2,
+              "host_seconds": 38.567629474,
+              "charged_seconds": 41.740896484,
+              "commits": 4,
+              "native_adapter_seconds": 34.113403501,
+              "routing_seconds": 0.782217049,
+              "aborts": 5,
+              "repairs": 0,
+              "repair_commits": 0,
+              "kernel_searches": 470,
+              "expanded": 601919
+            },
+            {
+              "repeat": 3,
+              "host_seconds": 38.320103198,
+              "charged_seconds": 41.493370208,
+              "commits": 4,
+              "native_adapter_seconds": 33.92363722,
+              "routing_seconds": 0.755597748,
+              "aborts": 5,
+              "repairs": 0,
+              "repair_commits": 0,
+              "kernel_searches": 470,
+              "expanded": 601919
+            },
+            {
+              "repeat": 4,
+              "host_seconds": 38.206901616,
+              "charged_seconds": 41.380168626,
+              "commits": 4,
+              "native_adapter_seconds": 33.811214166,
+              "routing_seconds": 0.742514302,
+              "aborts": 5,
+              "repairs": 0,
+              "repair_commits": 0,
+              "kernel_searches": 470,
+              "expanded": 601919
+            }
+          ],
+          "median_host_seconds": 38.206901616,
+          "median_native_adapter_seconds": 33.811214166,
+          "median_routing_seconds": 0.776032795,
+          "median_charged_seconds": 41.380168626,
+          "trajectory_repeat0": [
+            {
+              "evaluation": 0,
+              "quality": {
+                "wirelength": 9580,
+                "cpd_ns": 5.96812
+              }
+            },
+            {
+              "evaluation": 1,
+              "quality": {
+                "wirelength": 9559,
+                "cpd_ns": 5.96812
+              },
+              "phase": "primary",
+              "status": "committed",
+              "proposal": 0,
+              "kernel_searches": 47,
+              "expanded": 63249
+            },
+            {
+              "evaluation": 2,
+              "quality": {
+                "wirelength": 9559,
+                "cpd_ns": 5.96812
+              },
+              "phase": "primary",
+              "status": "quality_rejected",
+              "proposal": 1,
+              "kernel_searches": 69,
+              "expanded": 79755
+            },
+            {
+              "evaluation": 3,
+              "quality": {
+                "wirelength": 9548,
+                "cpd_ns": 5.96812
+              },
+              "phase": "primary",
+              "status": "committed",
+              "proposal": 2,
+              "kernel_searches": 1,
+              "expanded": 2263
+            },
+            {
+              "evaluation": 4,
+              "quality": {
+                "wirelength": 9548,
+                "cpd_ns": 5.96812
+              },
+              "phase": "primary",
+              "status": "quality_rejected",
+              "proposal": 3,
+              "kernel_searches": 69,
+              "expanded": 79898
+            },
+            {
+              "evaluation": 5,
+              "quality": {
+                "wirelength": 9539,
+                "cpd_ns": 5.96812
+              },
+              "phase": "primary",
+              "status": "committed",
+              "proposal": 4,
+              "kernel_searches": 24,
+              "expanded": 33387
+            },
+            {
+              "evaluation": 6,
+              "quality": {
+                "wirelength": 9539,
+                "cpd_ns": 5.96812
+              },
+              "phase": "primary",
+              "status": "quality_rejected",
+              "proposal": 5,
+              "kernel_searches": 69,
+              "expanded": 80055
+            },
+            {
+              "evaluation": 7,
+              "quality": {
+                "wirelength": 9539,
+                "cpd_ns": 5.96812
+              },
+              "phase": "primary",
+              "status": "quality_rejected",
+              "proposal": 6,
+              "kernel_searches": 71,
+              "expanded": 90540
+            },
+            {
+              "evaluation": 8,
+              "quality": {
+                "wirelength": 9510,
+                "cpd_ns": 5.93739
+              },
+              "phase": "primary",
+              "status": "committed",
+              "proposal": 7,
+              "kernel_searches": 51,
+              "expanded": 92412
+            },
+            {
+              "evaluation": 9,
+              "quality": {
+                "wirelength": 9510,
+                "cpd_ns": 5.93739
+              },
+              "phase": "primary",
+              "status": "quality_rejected",
+              "proposal": 8,
+              "kernel_searches": 69,
+              "expanded": 80360
+            }
+          ],
+          "final_state_sha256": "bbe2de77c2d6716b547cb07f6d2be1ff004de9d4d1146a19c8ba1797ab9dd307"
+        },
+        "interleaved_tree_feedback": {
+          "quality": {
+            "wirelength": 9485,
+            "cpd_ns": 5.96812
+          },
+          "samples": [
+            {
+              "repeat": 0,
+              "host_seconds": 38.09568009,
+              "charged_seconds": 41.2689471,
+              "commits": 5,
+              "native_adapter_seconds": 33.945883115,
+              "routing_seconds": 0.86566544,
+              "aborts": 4,
+              "repairs": 3,
+              "repair_commits": 1,
+              "kernel_searches": 506,
+              "expanded": 659797
+            },
+            {
+              "repeat": 1,
+              "host_seconds": 37.242731679,
+              "charged_seconds": 40.415998689,
+              "commits": 5,
+              "native_adapter_seconds": 33.133307026,
+              "routing_seconds": 0.851169637,
+              "aborts": 4,
+              "repairs": 3,
+              "repair_commits": 1,
+              "kernel_searches": 506,
+              "expanded": 659797
+            },
+            {
+              "repeat": 2,
+              "host_seconds": 37.360889121,
+              "charged_seconds": 40.534156131,
+              "commits": 5,
+              "native_adapter_seconds": 33.219585555,
+              "routing_seconds": 0.865453945,
+              "aborts": 4,
+              "repairs": 3,
+              "repair_commits": 1,
+              "kernel_searches": 506,
+              "expanded": 659797
+            },
+            {
+              "repeat": 3,
+              "host_seconds": 37.458065239,
+              "charged_seconds": 40.631332249,
+              "commits": 5,
+              "native_adapter_seconds": 33.38167409,
+              "routing_seconds": 0.769938001,
+              "aborts": 4,
+              "repairs": 3,
+              "repair_commits": 1,
+              "kernel_searches": 506,
+              "expanded": 659797
+            },
+            {
+              "repeat": 4,
+              "host_seconds": 38.00377257,
+              "charged_seconds": 41.17703958,
+              "commits": 5,
+              "native_adapter_seconds": 33.964598217,
+              "routing_seconds": 0.767317011,
+              "aborts": 4,
+              "repairs": 3,
+              "repair_commits": 1,
+              "kernel_searches": 506,
+              "expanded": 659797
+            }
+          ],
+          "median_host_seconds": 37.458065239,
+          "median_native_adapter_seconds": 33.38167409,
+          "median_routing_seconds": 0.851169637,
+          "median_charged_seconds": 40.631332249,
+          "trajectory_repeat0": [
+            {
+              "evaluation": 0,
+              "quality": {
+                "wirelength": 9580,
+                "cpd_ns": 5.96812
+              }
+            },
+            {
+              "evaluation": 1,
+              "quality": {
+                "wirelength": 9559,
+                "cpd_ns": 5.96812
+              },
+              "phase": "primary",
+              "status": "committed",
+              "proposal": 0,
+              "kernel_searches": 47,
+              "expanded": 63249
+            },
+            {
+              "evaluation": 2,
+              "quality": {
+                "wirelength": 9559,
+                "cpd_ns": 5.96812
+              },
+              "phase": "primary",
+              "status": "quality_rejected",
+              "proposal": 1,
+              "kernel_searches": 69,
+              "expanded": 79755
+            },
+            {
+              "evaluation": 3,
+              "quality": {
+                "wirelength": 9542,
+                "cpd_ns": 5.96812
+              },
+              "phase": "placement_repair",
+              "status": "committed",
+              "proposal": 1,
+              "kernel_searches": 78,
+              "expanded": 101986
+            },
+            {
+              "evaluation": 4,
+              "quality": {
+                "wirelength": 9531,
+                "cpd_ns": 5.96812
+              },
+              "phase": "primary",
+              "status": "committed",
+              "proposal": 3,
+              "kernel_searches": 1,
+              "expanded": 2296
+            },
+            {
+              "evaluation": 5,
+              "quality": {
+                "wirelength": 9494,
+                "cpd_ns": 5.96812
+              },
+              "phase": "primary",
+              "status": "committed",
+              "proposal": 4,
+              "kernel_searches": 71,
+              "expanded": 95373
+            },
+            {
+              "evaluation": 6,
+              "quality": {
+                "wirelength": 9494,
+                "cpd_ns": 5.96812
+              },
+              "phase": "primary",
+              "status": "quality_rejected",
+              "proposal": 5,
+              "kernel_searches": 71,
+              "expanded": 94583
+            },
+            {
+              "evaluation": 7,
+              "quality": {
+                "wirelength": 9494,
+                "cpd_ns": 5.96812
+              },
+              "phase": "placement_repair",
+              "status": "quality_rejected",
+              "proposal": 5,
+              "kernel_searches": 71,
+              "expanded": 84095
+            },
+            {
+              "evaluation": 8,
+              "quality": {
+                "wirelength": 9494,
+                "cpd_ns": 5.96812
+              },
+              "phase": "placement_repair",
+              "status": "quality_rejected",
+              "proposal": 5,
+              "kernel_searches": 74,
+              "expanded": 105653
+            },
+            {
+              "evaluation": 9,
+              "quality": {
+                "wirelength": 9485,
+                "cpd_ns": 5.96812
+              },
+              "phase": "primary",
+              "status": "committed",
+              "proposal": 8,
+              "kernel_searches": 24,
+              "expanded": 32807
+            }
+          ],
+          "final_state_sha256": "d6692932d41249b7ba3a2620b87bfa733b52f5915b759f53f4491cdbf08e9e73"
+        }
+      },
+      "audit": {
+        "schema": "FUSIONPAR_INDEPENDENT_PUBLICATION_AUDIT_V1",
+        "pass": true,
+        "suite": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/alu4_feedback_budget_v1",
+        "suite_audit_sha256": "2d7f3acb383addfa276de5b644ee4ee35f68ff5776e736ad6845022e37c7607a",
+        "auditor_sha256": "46e3ddd9adf80af76c640ee22248939ed6ffea91a8317c752c7fb5ac8546166f",
+        "counts": {
+          "runs": 10,
+          "qor_commits": 45,
+          "protocol_commits": 0,
+          "aborts": 45,
+          "timing_barriers": 55,
+          "placement_repairs": 15,
+          "native_feedback_checks": 10,
+          "baseline_route_commits": 0
+        },
+        "scope": "full serialized state/version/timing reconstruction and archived native bindings; not independent P&R performance replication"
+      },
+      "evidence": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/alu4_feedback_budget_v1/audit.json",
+          "sha256": "2d7f3acb383addfa276de5b644ee4ee35f68ff5776e736ad6845022e37c7607a"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/alu4_feedback_budget_audit_2026-10-13.json",
+          "sha256": "554a100836e09536440188d35558107662ff6291acc783f732885075b728bf3c"
+        }
+      ]
+    },
+    "misex3": {
+      "modes": {
+        "interleaved_tree_reuse": {
+          "quality": {
+            "wirelength": 10319,
+            "cpd_ns": 5.08031
+          },
+          "samples": [
+            {
+              "repeat": 0,
+              "host_seconds": 34.78341018,
+              "charged_seconds": 37.565836672,
+              "commits": 1,
+              "native_adapter_seconds": 30.814477966,
+              "routing_seconds": 1.008068843,
+              "aborts": 8,
+              "repairs": 0,
+              "repair_commits": 0,
+              "kernel_searches": 697,
+              "expanded": 784427
+            },
+            {
+              "repeat": 1,
+              "host_seconds": 34.34659443,
+              "charged_seconds": 37.129020922,
+              "commits": 1,
+              "native_adapter_seconds": 30.334847558,
+              "routing_seconds": 1.016185895,
+              "aborts": 8,
+              "repairs": 0,
+              "repair_commits": 0,
+              "kernel_searches": 697,
+              "expanded": 784427
+            },
+            {
+              "repeat": 2,
+              "host_seconds": 35.255106369,
+              "charged_seconds": 38.037532861,
+              "commits": 1,
+              "native_adapter_seconds": 31.298416298,
+              "routing_seconds": 0.992862962,
+              "aborts": 8,
+              "repairs": 0,
+              "repair_commits": 0,
+              "kernel_searches": 697,
+              "expanded": 784427
+            },
+            {
+              "repeat": 3,
+              "host_seconds": 34.517047842,
+              "charged_seconds": 37.299474334,
+              "commits": 1,
+              "native_adapter_seconds": 30.632052039,
+              "routing_seconds": 0.938772208,
+              "aborts": 8,
+              "repairs": 0,
+              "repair_commits": 0,
+              "kernel_searches": 697,
+              "expanded": 784427
+            },
+            {
+              "repeat": 4,
+              "host_seconds": 33.517854098,
+              "charged_seconds": 36.30028059,
+              "commits": 1,
+              "native_adapter_seconds": 29.672044044,
+              "routing_seconds": 0.929235551,
+              "aborts": 8,
+              "repairs": 0,
+              "repair_commits": 0,
+              "kernel_searches": 697,
+              "expanded": 784427
+            }
+          ],
+          "median_host_seconds": 34.517047842,
+          "median_native_adapter_seconds": 30.632052039,
+          "median_routing_seconds": 0.992862962,
+          "median_charged_seconds": 37.299474334,
+          "trajectory_repeat0": [
+            {
+              "evaluation": 0,
+              "quality": {
+                "wirelength": 10323,
+                "cpd_ns": 5.08031
+              }
+            },
+            {
+              "evaluation": 1,
+              "quality": {
+                "wirelength": 10323,
+                "cpd_ns": 5.08031
+              },
+              "phase": "primary",
+              "status": "quality_rejected",
+              "proposal": 0,
+              "kernel_searches": 78,
+              "expanded": 92208
+            },
+            {
+              "evaluation": 2,
+              "quality": {
+                "wirelength": 10323,
+                "cpd_ns": 5.08031
+              },
+              "phase": "primary",
+              "status": "quality_rejected",
+              "proposal": 1,
+              "kernel_searches": 114,
+              "expanded": 124611
+            },
+            {
+              "evaluation": 3,
+              "quality": {
+                "wirelength": 10323,
+                "cpd_ns": 5.08031
+              },
+              "phase": "primary",
+              "status": "quality_rejected",
+              "proposal": 2,
+              "kernel_searches": 76,
+              "expanded": 82378
+            },
+            {
+              "evaluation": 4,
+              "quality": {
+                "wirelength": 10319,
+                "cpd_ns": 5.08031
+              },
+              "phase": "primary",
+              "status": "committed",
+              "proposal": 3,
+              "kernel_searches": 1,
+              "expanded": 5620
+            },
+            {
+              "evaluation": 5,
+              "quality": {
+                "wirelength": 10319,
+                "cpd_ns": 5.08031
+              },
+              "phase": "primary",
+              "status": "quality_rejected",
+              "proposal": 4,
+              "kernel_searches": 78,
+              "expanded": 92676
+            },
+            {
+              "evaluation": 6,
+              "quality": {
+                "wirelength": 10319,
+                "cpd_ns": 5.08031
+              },
+              "phase": "primary",
+              "status": "quality_rejected",
+              "proposal": 5,
+              "kernel_searches": 114,
+              "expanded": 124599
+            },
+            {
+              "evaluation": 7,
+              "quality": {
+                "wirelength": 10319,
+                "cpd_ns": 5.08031
+              },
+              "phase": "primary",
+              "status": "quality_rejected",
+              "proposal": 6,
+              "kernel_searches": 76,
+              "expanded": 82408
+            },
+            {
+              "evaluation": 8,
+              "quality": {
+                "wirelength": 10319,
+                "cpd_ns": 5.08031
+              },
+              "phase": "primary",
+              "status": "quality_rejected",
+              "proposal": 7,
+              "kernel_searches": 63,
+              "expanded": 57339
+            },
+            {
+              "evaluation": 9,
+              "quality": {
+                "wirelength": 10319,
+                "cpd_ns": 5.08031
+              },
+              "phase": "primary",
+              "status": "quality_rejected",
+              "proposal": 8,
+              "kernel_searches": 97,
+              "expanded": 122588
+            }
+          ],
+          "final_state_sha256": "13c4b56b55001654baea4755bdbd7978376f389880f2fb6b9c7b5a2278aa6d4e"
+        },
+        "interleaved_tree_feedback": {
+          "quality": {
+            "wirelength": 10319,
+            "cpd_ns": 5.08031
+          },
+          "samples": [
+            {
+              "repeat": 0,
+              "host_seconds": 37.618470136,
+              "charged_seconds": 40.400896628,
+              "commits": 1,
+              "native_adapter_seconds": 34.094885565,
+              "routing_seconds": 1.10951603,
+              "aborts": 8,
+              "repairs": 5,
+              "repair_commits": 0,
+              "kernel_searches": 729,
+              "expanded": 839654
+            },
+            {
+              "repeat": 1,
+              "host_seconds": 35.795997554,
+              "charged_seconds": 38.578424046,
+              "commits": 1,
+              "native_adapter_seconds": 32.281323571,
+              "routing_seconds": 1.066376521,
+              "aborts": 8,
+              "repairs": 5,
+              "repair_commits": 0,
+              "kernel_searches": 729,
+              "expanded": 839654
+            },
+            {
+              "repeat": 2,
+              "host_seconds": 34.658614717,
+              "charged_seconds": 37.441041209,
+              "commits": 1,
+              "native_adapter_seconds": 31.174469309,
+              "routing_seconds": 1.102285231,
+              "aborts": 8,
+              "repairs": 5,
+              "repair_commits": 0,
+              "kernel_searches": 729,
+              "expanded": 839654
+            },
+            {
+              "repeat": 3,
+              "host_seconds": 34.475016328,
+              "charged_seconds": 37.25744282,
+              "commits": 1,
+              "native_adapter_seconds": 31.029111146,
+              "routing_seconds": 1.055567913,
+              "aborts": 8,
+              "repairs": 5,
+              "repair_commits": 0,
+              "kernel_searches": 729,
+              "expanded": 839654
+            },
+            {
+              "repeat": 4,
+              "host_seconds": 34.158766704,
+              "charged_seconds": 36.941193196,
+              "commits": 1,
+              "native_adapter_seconds": 30.64528322,
+              "routing_seconds": 0.998101347,
+              "aborts": 8,
+              "repairs": 5,
+              "repair_commits": 0,
+              "kernel_searches": 729,
+              "expanded": 839654
+            }
+          ],
+          "median_host_seconds": 34.658614717,
+          "median_native_adapter_seconds": 31.174469309,
+          "median_routing_seconds": 1.066376521,
+          "median_charged_seconds": 37.441041209,
+          "trajectory_repeat0": [
+            {
+              "evaluation": 0,
+              "quality": {
+                "wirelength": 10323,
+                "cpd_ns": 5.08031
+              }
+            },
+            {
+              "evaluation": 1,
+              "quality": {
+                "wirelength": 10323,
+                "cpd_ns": 5.08031
+              },
+              "phase": "primary",
+              "status": "quality_rejected",
+              "proposal": 0,
+              "kernel_searches": 78,
+              "expanded": 92208
+            },
+            {
+              "evaluation": 2,
+              "quality": {
+                "wirelength": 10323,
+                "cpd_ns": 5.08031
+              },
+              "phase": "placement_repair",
+              "status": "quality_rejected",
+              "proposal": 0,
+              "kernel_searches": 97,
+              "expanded": 117856
+            },
+            {
+              "evaluation": 3,
+              "quality": {
+                "wirelength": 10323,
+                "cpd_ns": 5.08031
+              },
+              "phase": "placement_repair",
+              "status": "quality_rejected",
+              "proposal": 0,
+              "kernel_searches": 125,
+              "expanded": 148974
+            },
+            {
+              "evaluation": 4,
+              "quality": {
+                "wirelength": 10323,
+                "cpd_ns": 5.08031
+              },
+              "phase": "primary",
+              "status": "quality_rejected",
+              "proposal": 3,
+              "kernel_searches": 114,
+              "expanded": 124611
+            },
+            {
+              "evaluation": 5,
+              "quality": {
+                "wirelength": 10323,
+                "cpd_ns": 5.08031
+              },
+              "phase": "placement_repair",
+              "status": "quality_rejected",
+              "proposal": 3,
+              "kernel_searches": 76,
+              "expanded": 82378
+            },
+            {
+              "evaluation": 6,
+              "quality": {
+                "wirelength": 10323,
+                "cpd_ns": 5.08031
+              },
+              "phase": "placement_repair",
+              "status": "quality_rejected",
+              "proposal": 3,
+              "kernel_searches": 63,
+              "expanded": 57331
+            },
+            {
+              "evaluation": 7,
+              "quality": {
+                "wirelength": 10319,
+                "cpd_ns": 5.08031
+              },
+              "phase": "primary",
+              "status": "committed",
+              "proposal": 6,
+              "kernel_searches": 1,
+              "expanded": 5620
+            },
+            {
+              "evaluation": 8,
+              "quality": {
+                "wirelength": 10319,
+                "cpd_ns": 5.08031
+              },
+              "phase": "primary",
+              "status": "quality_rejected",
+              "proposal": 7,
+              "kernel_searches": 78,
+              "expanded": 92676
+            },
+            {
+              "evaluation": 9,
+              "quality": {
+                "wirelength": 10319,
+                "cpd_ns": 5.08031
+              },
+              "phase": "placement_repair",
+              "status": "quality_rejected",
+              "proposal": 7,
+              "kernel_searches": 97,
+              "expanded": 118000
+            }
+          ],
+          "final_state_sha256": "13c4b56b55001654baea4755bdbd7978376f389880f2fb6b9c7b5a2278aa6d4e"
+        }
+      },
+      "audit": {
+        "schema": "FUSIONPAR_INDEPENDENT_PUBLICATION_AUDIT_V1",
+        "pass": true,
+        "suite": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/misex3_feedback_budget_v1",
+        "suite_audit_sha256": "c41b0e0a8c88376495de216e67444b8b00b1bbf7ab808e8fd5739c5a204c5630",
+        "auditor_sha256": "46e3ddd9adf80af76c640ee22248939ed6ffea91a8317c752c7fb5ac8546166f",
+        "counts": {
+          "runs": 10,
+          "qor_commits": 10,
+          "protocol_commits": 0,
+          "aborts": 80,
+          "timing_barriers": 20,
+          "placement_repairs": 25,
+          "native_feedback_checks": 15,
+          "baseline_route_commits": 0
+        },
+        "scope": "full serialized state/version/timing reconstruction and archived native bindings; not independent P&R performance replication"
+      },
+      "evidence": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/misex3_feedback_budget_v1/audit.json",
+          "sha256": "c41b0e0a8c88376495de216e67444b8b00b1bbf7ab808e8fd5739c5a204c5630"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/misex3_feedback_budget_audit_2026-10-13.json",
+          "sha256": "bea102e052df5646301d7407dc3e1ca5160947962ed7a63638660275b303efc4"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "runs": 30,
+    "qor_commits": 85,
+    "protocol_commits": 0,
+    "aborts": 185,
+    "timing_barriers": 115,
+    "placement_repairs": 60,
+    "native_feedback_checks": 40,
+    "baseline_route_commits": 0
+  },
+  "protocol": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/feedback_budget_protocol_2026-10-13.json",
+    "sha256": "199b02c91a424834033e9af09e18d85de7c4e98885a8ee8f2d8b288d8878422a"
+  },
+  "limits": [
+    "Equal evaluated-candidate count, not equal search work or elapsed time",
+    "All three designs are development cases; no held-out generalization",
+    "Five semantic repetitions are not independent random design samples",
+    "All failures, feedback generation, native checking and timing work are charged",
+    "Per-evaluation trajectories are descriptive, not a tuned stopping policy",
+    "No RC predictor, physical FPGA results or universal fusion speedup claim"
+  ],
+  "summarizer": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/summarize_feedback_budget.py",
+    "sha256": "0ebe2da118ff8c7fe8a23c10f9c9e6a3b8c5c8b6081dca03c9c33213377d223d"
+  }
+}

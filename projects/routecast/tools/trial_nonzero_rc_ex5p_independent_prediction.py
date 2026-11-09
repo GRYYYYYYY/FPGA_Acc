@@ -1,0 +1,10 @@
+"""Full endpoint cohort, fixed1ns independent paths; not joint routing."""
+import json,time
+from pathlib import Path
+from collections import Counter
+from pre_route_endpoints import sha
+from nonzero_rc_endpoint_context import load_endpoints
+from native_capacity_rc_search import NativeCapacityRC
+root=Path(__file__).resolve().parents[1];parent=root/'experiments/nonzero_rc_ex5p_endpoints_2026-10-06';ep=parent/'endpoints.json';verified=json.loads((parent/'verification.json').read_text());assert verified['endpoint_sha256']==sha(ep);out=root/'experiments/nonzero_rc_ex5p_independent_prediction_2026-10-06';out.mkdir();protocol={'endpoint_sha256':sha(ep),'budget_ns':1,'max_labels':10000,'objective':'unit edge multiplied by other-demand+1, with empty other demand for EACH query','policy':'All pre-route endpoints, no native reference path/timing and no per-case tuning; independently generated paths never treated as joint legal tree','context_source_sha256':sha(root/'tools/nonzero_rc_endpoint_context.py'),'native_library_sha256':sha(root/'build/rc_capacity_native_2026-10-06/search.so')};(out/'protocol.json').write_text(json.dumps(protocol,indent=2)+'\n');start=time.monotonic();graph,digest,nodes,f,rc,queries=load_endpoints(ep);native=NativeCapacityRC(rc);native.set_other({});context_seconds=time.monotonic()-start;budget=rc.scale//10**9;start=time.monotonic();records=[]
+for q in queries:records.append({**q,'answer':native.query(q['source'],q['sink'],budget,max_labels=10000)})
+query_seconds=time.monotonic()-start;result={'records':records,'statuses':dict(Counter(q['answer']['status'] for q in records)),'connections':len(queries),'graph_sha256':digest,'scale':rc.scale,'budget_integer':budget,'context_seconds':context_seconds,'query_seconds':query_seconds,'protocol_sha256':sha(out/'protocol.json'),'source_sha256':sha(Path(__file__))};(out/'receipt.json').write_text(json.dumps(result,indent=2)+'\n');print('ex5p independent',result['statuses'],'context/query seconds',context_seconds,query_seconds)

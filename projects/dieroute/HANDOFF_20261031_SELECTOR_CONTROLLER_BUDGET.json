@@ -1,0 +1,38 @@
+{
+  "observed_ns": 1793410265765323227,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_SELECTOR_PIPELINE_COMPLETION.json",
+    "sha256": "40ab5ab069f87e5f9937e29889b3abd7103410279f675978f569de4a60e7dc1c"
+  },
+  "progress": {
+    "report": "work/resident_selector_controller_budget_20261031/review.json",
+    "report_sha256": "18226af13501f511a90e14f81df8ca0aa88310b4dc158bab96d30710f5c87da8",
+    "independent_review": "work/resident_selector_controller_budget_20261031/independent_conditional_budget_review.json",
+    "independent_review_sha256": "98751be2d127b6201e131d8047f09b950264144da366fb78ebfdc27fb20e57ef",
+    "conditional_sum": 1001882192,
+    "conditional_excess": 1882192,
+    "whole_program_lower_bound_certified": false,
+    "watchdog_failure_verdict": null,
+    "formal_outcomes_changed": false,
+    "scope": "Conditional source/control budget screen only. On a full valid selector path, states3/4/5/6/8 are disjoint from loop-wait states2/7/9 and contribute five distinct parent-controller intervals; entry1 and completion10 are deliberately excluded. Combining that local observation with projected hostQ/T/W and unproved serial/count/timing composition gives1,001,882,192cycles for two installs,1,882,192above original1e9watchdog. This is not a certified whole-program lower bound, observed timeout, actual watchdog failure, consumed-budget fraction or ETA. Do not stop/restart jobs, change watchdog/guards, count a formal failure, adopt P7/P8 or infer a hardware speedup from this screen. No new HLS/RTL flow, DUT edit or original program/trace/TV read.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v196_20261031/matrix.json",
+    "sha256": "4a31af7a34d2a51474509cdd56a44bf710bb3ac8f3d46186b6671ad3086b0def"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v196.json",
+    "sha256": "90fd1a4c9cd95f6d9a6e8f507d5ec79e38bcbfbbbfb48c93102f649883de44ab"
+  },
+  "next_action": "Conditional P6selector screen with five disjoint controller intervals is1001882192vs1e9, but five count/serial/timing/reset composition assumptions remain unproved. Do not stop/restart original jobs, change watchdog/guards, record a formal failure or adopt other candidates from this screen. Full dynamic path/call/iteration and integration timing evidence still needed. Preserve30watched identities, sole strict-native queue and original workloads/failures; actual complete terminal before canaries/adoption. Ledger v23 stays9865/9968associated,103pending plus820separate transitive/466root gaps; integrated34page draft unchanged. No new tool flow, DUT edit or original program/trace/TV read. Board absent; optional board-host question pending.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

@@ -1,0 +1,45 @@
+{
+  "observed_ns": 1793440224841446728,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_MARKER_CALL_LIFETIME.json",
+    "sha256": "0b5912bf25a18cf0f98edb1d470cf35137086925b32c11594eb5291fd1e4bd22"
+  },
+  "progress": {
+    "report": "work/resident_marker_row_lifetime_20261031/review.json",
+    "report_sha256": "e1b731738c870ba62660992659587e7ca8a90d9d04918ca254481abcdcddd413",
+    "independent_review": "work/resident_marker_row_lifetime_20261031/independent_review.json",
+    "independent_review_sha256": "eb33ad4fceb22e70d26b47e1123372c335b7111807d5bd78fce27284d2a7906c",
+    "final_review": "work/resident_marker_row_lifetime_20261031/final_review.json",
+    "final_review_sha256": "4ad56c2bb65c3088462aac4b5c566abfef34dba45cbb92a5c552ce56020f2f2a",
+    "new_feasible_UNSAT_queries": 79,
+    "continuous_integer_calls": 9,
+    "source_edges": 17080,
+    "AR_R_stalls": 145,
+    "row_previous_lifetime_checked": true,
+    "actual_decoded_AXI_row_identity_proved": false,
+    "actual_encoded_memory_contract_proved": false,
+    "scope": "Source row/previous-lifetime refinement conditional ondecodedrowreadercontract.79feasibleBVqueries(8boundary/update/bounds,71intermediateheldindex) establishinit0,pairednextindex/previousoffsetadvance0,holdthrough1..71and72snapshot.9continuousseparateinteger-sourcecallsincludinglong127then1,3validationfailures,randomAR/Rstalls andarbitraryupper32decodedbitsagree. Datareaderoutputinjectedwithintendedroworacle;actualAXIrequest/responseidentitystillopen. Companionv267control/v266validationandRMWsupportconditionalrowsequenceinduction;notwholeencodedimage/native/full4state/timing/boardproof.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v268_20261031/matrix.json",
+    "sha256": "d0774ee32c0d39d02c7049ac8a9b27b38923090cb9567f16838813a1b82b62de"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v268.json",
+    "sha256": "4b459ed1adea55f5e263725a003c5f01a109345acdb47cd130e09561040f720e"
+  },
+  "next_action": "Prove markeractualsingleAXIread32 requestaddress/AR/Rhandshake/71capture/72extraction transports intendedoffset_rev+i*4slot despiteAR/Rstalls andoldbuspayloads;distinguishinternalwordaddressfromwrapperbyteaddress andverifyadapteralignment. Thencomposewordclear,markerrow/validation/RMW/callcontrol,prefixrecurrence/readytotaln+1andunaryselect-getcontracts intoactualencodedimage. Preservealloriginaljobs/guards/budgets/inputs/caches/failures/UNKNOWNs/native/full4state/timing/boardgaps.",
+  "previous_goal_turn_classification": "progress_and_verified_wait_v267",
+  "current_goal_turn_classification": "progress_and_verified_wait",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

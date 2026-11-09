@@ -1,0 +1,80 @@
+{
+  "schema": "dieroute.native_defer_comparison_plan.v1",
+  "created_ns": 1791922632225575147,
+  "baseline": "flat_v4",
+  "cases": {
+    "flat_v4": {
+      "run": "work/u280_native_corridor_flat_v4_20261013",
+      "cohort_audit": "work/u280_native_corridor_flat_cohort_audit_v4_20261013"
+    },
+    "joint_v1": {
+      "run": "work/u280_native_joint_joint_v1_20261013",
+      "cohort_audit": "work/u280_native_joint_joint_cohort_audit_v1_20261013",
+      "protocol_audit": "work/u280_native_joint_joint_protocol_audit_v1_20261013"
+    },
+    "reentry_v1": {
+      "run": "work/u280_native_joint_reentry_v1_20261013",
+      "cohort_audit": "work/u280_native_joint_reentry_cohort_audit_v1_20261013",
+      "protocol_audit": "work/u280_native_joint_reentry_protocol_audit_v1_20261013"
+    },
+    "shadow_v1": {
+      "run": "work/u280_native_joint_reentry_shadow3_v1_20261013",
+      "cohort_audit": "work/u280_native_joint_reentry_shadow3_cohort_audit_v1_20261013",
+      "protocol_audit": "work/u280_native_joint_reentry_shadow3_protocol_audit_v1_20261013"
+    },
+    "immediate": {
+      "run": "work/u280_native_defer_immediate_v1_20261013",
+      "cohort_audit": "work/u280_native_defer_immediate_cohort_audit_v1_20261013",
+      "protocol_audit": "work/u280_native_defer_immediate_protocol_audit_v1_20261013"
+    },
+    "defer": {
+      "run": "work/u280_native_defer_defer_v1_20261013",
+      "cohort_audit": "work/u280_native_defer_defer_cohort_audit_v1_20261013",
+      "protocol_audit": "work/u280_native_defer_defer_protocol_audit_v1_20261013"
+    },
+    "reentry": {
+      "run": "work/u280_native_defer_reentry_v1_20261013",
+      "cohort_audit": "work/u280_native_defer_reentry_cohort_audit_v1_20261013",
+      "protocol_audit": "work/u280_native_defer_reentry_protocol_audit_v1_20261013"
+    },
+    "shadow3": {
+      "run": "work/u280_native_defer_shadow3_v1_20261013",
+      "cohort_audit": "work/u280_native_defer_shadow3_cohort_audit_v1_20261013",
+      "protocol_audit": "work/u280_native_defer_shadow3_protocol_audit_v1_20261013"
+    }
+  },
+  "required_equal_routes": [
+    [
+      "joint_v1",
+      "immediate"
+    ],
+    [
+      "reentry",
+      "shadow3"
+    ]
+  ],
+  "quotient_radius_pairs": [],
+  "protocol": "experiments/native_defer_schema_v1.json",
+  "controls": {
+    "repeats": 5,
+    "cohort": "Unchanged 70-net/298-connection development cohort, frozen outside footprint, CSR, quotient, costs, task ordering and label limit",
+    "attempt_limit": 8,
+    "defer_budget": [
+      false,
+      true
+    ],
+    "reentry": [
+      false,
+      true
+    ],
+    "shadow_sync_searches": [
+      0,
+      3
+    ]
+  },
+  "acceptance": {
+    "correctness": "Five converged deterministic repeats, independent PIP/cost/authority verification and exact whole-net schedule verification for every new run. Default immediate mode must preserve previous paths and iteration work.",
+    "work": "Separated phase counters include partial failures and stale replay; assert conservation. Report budget deferrals and rescue transitions independently.",
+    "quality": "Compare tree PIPs, SLL, and route identity; no physical WL/CPD or hardware speedup inference."
+  }
+}

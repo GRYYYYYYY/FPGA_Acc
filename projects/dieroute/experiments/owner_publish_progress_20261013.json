@@ -1,0 +1,777 @@
+{
+  "schema": "dieroute.owner_publish_progress.v1",
+  "status": "verified_component_and_replay",
+  "finished_ns": 1791938542575047100,
+  "research_complete": false,
+  "live_native_backend": false,
+  "board_result": false,
+  "active_owned_experiment_processes": [],
+  "per_case": {
+    "sync1": {
+      "repeats": 5,
+      "lanes": 4,
+      "per_repeat": {
+        "owner_commands": 111751,
+        "publisher_launches": 112027,
+        "receiver_launches": 44954,
+        "refresh_groups": 71,
+        "removed_lookup_commands": 610434,
+        "dirty_queue_visits": 285,
+        "published_updates": 107
+      },
+      "original_endpoint_calls_per_repeat": 767139,
+      "replacement_endpoint_calls_per_repeat": 156981,
+      "normalized_repeat_sha256": [
+        "0e0af861567b5ac69f2250ce0d17fcbeb76cef26e6765626c0a045dbd44b1983",
+        "0e0af861567b5ac69f2250ce0d17fcbeb76cef26e6765626c0a045dbd44b1983",
+        "0e0af861567b5ac69f2250ce0d17fcbeb76cef26e6765626c0a045dbd44b1983",
+        "0e0af861567b5ac69f2250ce0d17fcbeb76cef26e6765626c0a045dbd44b1983",
+        "0e0af861567b5ac69f2250ce0d17fcbeb76cef26e6765626c0a045dbd44b1983"
+      ],
+      "scope": "C-model replacement replay of audited native commands; source search not rerun; CPU dispatches output records; no board performance claim"
+    },
+    "sync3": {
+      "repeats": 5,
+      "lanes": 4,
+      "per_repeat": {
+        "owner_commands": 117999,
+        "publisher_launches": 118166,
+        "receiver_launches": 51197,
+        "refresh_groups": 41,
+        "removed_lookup_commands": 359120,
+        "dirty_queue_visits": 299,
+        "published_updates": 102
+      },
+      "original_endpoint_calls_per_repeat": 528316,
+      "replacement_endpoint_calls_per_repeat": 169363,
+      "normalized_repeat_sha256": [
+        "bc81c682d44b8c9b6f2cdca9ae22d3163e43a218bed76ef9d92989b4fa1eda0c",
+        "bc81c682d44b8c9b6f2cdca9ae22d3163e43a218bed76ef9d92989b4fa1eda0c",
+        "bc81c682d44b8c9b6f2cdca9ae22d3163e43a218bed76ef9d92989b4fa1eda0c",
+        "bc81c682d44b8c9b6f2cdca9ae22d3163e43a218bed76ef9d92989b4fa1eda0c",
+        "bc81c682d44b8c9b6f2cdca9ae22d3163e43a218bed76ef9d92989b4fa1eda0c"
+      ],
+      "scope": "C-model replacement replay of audited native commands; source search not rerun; CPU dispatches output records; no board performance claim"
+    },
+    "serial3": {
+      "repeats": 5,
+      "lanes": 1,
+      "per_repeat": {
+        "owner_commands": 100084,
+        "publisher_launches": 100194,
+        "receiver_launches": 44407,
+        "refresh_groups": 29,
+        "removed_lookup_commands": 374942,
+        "dirty_queue_visits": 41,
+        "published_updates": 41
+      },
+      "original_endpoint_calls_per_repeat": 519433,
+      "replacement_endpoint_calls_per_repeat": 144601,
+      "normalized_repeat_sha256": [
+        "463815db45192d7bb5d5770287ce0e3c5c922d05ac7dbfff61f676c97e827594",
+        "463815db45192d7bb5d5770287ce0e3c5c922d05ac7dbfff61f676c97e827594",
+        "463815db45192d7bb5d5770287ce0e3c5c922d05ac7dbfff61f676c97e827594",
+        "463815db45192d7bb5d5770287ce0e3c5c922d05ac7dbfff61f676c97e827594",
+        "463815db45192d7bb5d5770287ce0e3c5c922d05ac7dbfff61f676c97e827594"
+      ],
+      "scope": "C-model replacement replay of audited native commands; source search not rerun; CPU dispatches output records; no board performance claim"
+    }
+  },
+  "hls": {
+    "hls_estimated_period_ns": 2.92,
+    "clock_target_ns": 4.0,
+    "clock_uncertainty_ns": 1.08,
+    "estimated_resources": {
+      "BRAM_18K": 0,
+      "FF": 42144,
+      "LUT": 50845,
+      "URAM": 0,
+      "DSP": 0
+    },
+    "axi_data_widths": {
+      "M_AXI_TRAFFIC": 512,
+      "M_AXI_INDEX": 512,
+      "M_AXI_OWNER_STATE": 512,
+      "M_AXI_SUBSCRIPTIONS": 512,
+      "M_AXI_PUBLICATIONS": 512
+    },
+    "rtl_test_launches": 40
+  },
+  "platform": {
+    "compute_units": 6,
+    "pointer_connections": 45,
+    "unique_hbm_banks": 21,
+    "physical_placement_verified": false,
+    "physical_timing_verified": false
+  },
+  "hw_emulation": {
+    "passed": true,
+    "cases": {
+      "directed": {
+        "owner_launches": 40,
+        "receiver_launches": 0,
+        "launches_with_state_upload": 5
+      },
+      "sync1": {
+        "owner_launches": 48,
+        "receiver_launches": 15,
+        "launches_with_state_upload": 0,
+        "repeats": 3,
+        "boundary_slots": 3,
+        "all_replay_outputs_equal_c_model": true
+      },
+      "sync3": {
+        "owner_launches": 48,
+        "receiver_launches": 15,
+        "launches_with_state_upload": 0,
+        "repeats": 3,
+        "boundary_slots": 3,
+        "all_replay_outputs_equal_c_model": true
+      }
+    },
+    "total_launches": 166
+  },
+  "tests": {
+    "ctest": 41,
+    "semantic_mutations_rejected": 12,
+    "asan_ubsan_component": true,
+    "asan_ubsan_real_trace": true
+  },
+  "functional_source_equivalence": {
+    "passed": true,
+    "binary_sha256": "851fb69f7037fae35c5f580b78f21af3eba003435eb0764fa5b08712b90cdcb2",
+    "preprocessed_sha256": "5af11a079472db3ef8ce5d26355660abba658595a7b4ca4ebe7425181c93064f",
+    "source_v2_sha256": "29f8867f0a13cf21bb064237c7863e7629bbb69e95b46cc01ed808982b924b3b",
+    "source_v3_sha256": "10c760dd144cfd3407a3a6e7c027e8550cc6d3c8ca0d317a4b16dea50a86ebfd",
+    "scope": "Only synthesis interface directives changed; preprocessed host C-model and rebuilt replay executable are byte-identical."
+  },
+  "evidence": [
+    {
+      "path": "work/owner_publish_hls_audit_v3_20261013/audit.json",
+      "sha256": "25778f77d2dbfff519ba87c56b76ab7d38041e9dadcd983c723e5dc7cd8344dc"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_hls_v3_20261013/manifest.json",
+      "sha256": "d2e0b29bcf17633a074359fe603a7550cfe4ba6e9d682a6962025fd4f521f843"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_hls_v3_20261013/run.log",
+      "sha256": "ced6da29095dc6f5aa339cfc69932b901bcc28e84291a10832675c18bb338838"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_hls_v3_20261013/project/u280/syn/report/dieroute_owner_publish_hbm_csynth.xml",
+      "sha256": "561f063b3aa9cb49218bf45921b2a22ef3052e69c12b09c707b7b762dff0592c"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_hls_v3_20261013/project/u280/syn/report/dieroute_owner_publish_hbm_csynth.rpt",
+      "sha256": "ce435962d1012080428454c21a2cd05301b2656251dab305596c1f7b2fccc995"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_hls_v3_20261013/project/u280/sim/report/dieroute_owner_publish_hbm_cosim.rpt",
+      "sha256": "32f2a51e46a680304f3bfdcc1b4709eb3f540f09b187913eca6a92d535fea5dc"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_hls_v3_20261013/project/dieroute_owner_publish_hbm.xo",
+      "sha256": "54f3f1e795d64b0e322728bc4980d9b99fdc769a7db603a1f139d90db5ae53c6"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_hls_v3_20261013/project/u280/syn/verilog/dieroute_owner_publish_hbm.v",
+      "sha256": "227e08f189ff85012a22c8ae4a4f1594f0ab4a77db41b7eedcde1232818312e5"
+    },
+    {
+      "path": "include/summary_hbm.hpp",
+      "sha256": "55177ca09b0b07e2e23b38d8430052b405ff9617b6049613663baf3eeb3e401c"
+    },
+    {
+      "path": "include/owner_publish_hbm.hpp",
+      "sha256": "05e1551a7238d430b413a401a1832913fa5e61f98dc268399461f154479eed43"
+    },
+    {
+      "path": "src/owner_publish_hbm.cpp",
+      "sha256": "10c760dd144cfd3407a3a6e7c027e8550cc6d3c8ca0d317a4b16dea50a86ebfd"
+    },
+    {
+      "path": "tb/owner_publish_hbm_tb.cpp",
+      "sha256": "637bc5534f1a51ffbf3709ea883cf4ba845d3d9c4cf0830b1e03a48b1436e49a"
+    },
+    {
+      "path": "tools/run_owner_publish_hls.tcl",
+      "sha256": "8dcd4f0e7df2dea4737abd8e8e4b87e04003a2571c907fd63b44605ed9a4bd8d"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/functional_source_equivalence.json",
+      "sha256": "f326d6e3c1a77456a67854caaa3655b89428c2c1b54d237801154d1318765fd2"
+    },
+    {
+      "path": "work/owner_publish_build_20261013/dieroute_owner_publish_replay",
+      "sha256": "851fb69f7037fae35c5f580b78f21af3eba003435eb0764fa5b08712b90cdcb2"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/v2_kernel_preprocessed.cpp",
+      "sha256": "5af11a079472db3ef8ce5d26355660abba658595a7b4ca4ebe7425181c93064f"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/v3_kernel_preprocessed.cpp",
+      "sha256": "5af11a079472db3ef8ce5d26355660abba658595a7b4ca4ebe7425181c93064f"
+    },
+    {
+      "path": "work/owner_publish_replay_sync1_v1_20261013/manifest.json",
+      "sha256": "6890e6c2f934bf09b972eea3087b05cbe149d11dee3caf2e84d50ae8edd5cab9"
+    },
+    {
+      "path": "work/owner_publish_replay_sync1_v1_20261013/replay_tool",
+      "sha256": "851fb69f7037fae35c5f580b78f21af3eba003435eb0764fa5b08712b90cdcb2"
+    },
+    {
+      "path": "work/owner_publish_replay_sync1_v1_20261013/run.log",
+      "sha256": "c0777177fee213e3246bb4250975764630c784a482df2a9385b99c5123d28110"
+    },
+    {
+      "path": "work/owner_publish_replay_sync1_v1_20261013/replay/owners.csv",
+      "sha256": "e866287d4c171bf2b39c8a7e6cc9d3006e49ee8c147a6df802147dfaaf9d1c25"
+    },
+    {
+      "path": "work/owner_publish_replay_sync1_v1_20261013/replay/subscriptions.csv",
+      "sha256": "e762ded4ecde07e5a6a800e52388d16b4e5508411dfdebc07307872774726af4"
+    },
+    {
+      "path": "work/owner_publish_replay_sync1_v1_20261013/replay/caches.csv",
+      "sha256": "1f68c13e80f97529281f8303954331109195ac78e887e3e93a47f4483c175248"
+    },
+    {
+      "path": "work/owner_publish_replay_sync1_v1_20261013/replay/events.bin",
+      "sha256": "488e495a62669a5006382969beda1ed6ebadb405767ca4449369fbc7b58c6deb"
+    },
+    {
+      "path": "work/owner_publish_replay_sync1_v1_20261013/source/include/summary_hbm.hpp",
+      "sha256": "55177ca09b0b07e2e23b38d8430052b405ff9617b6049613663baf3eeb3e401c"
+    },
+    {
+      "path": "work/owner_publish_replay_sync1_v1_20261013/source/include/native_csr_io.hpp",
+      "sha256": "0940b5963db189d755cb8293918c1820c9564af0b48ba766461f0a6195e2a6a1"
+    },
+    {
+      "path": "work/owner_publish_replay_sync1_v1_20261013/source/include/owner_publish_hbm.hpp",
+      "sha256": "05e1551a7238d430b413a401a1832913fa5e61f98dc268399461f154479eed43"
+    },
+    {
+      "path": "work/owner_publish_replay_sync1_v1_20261013/source/tools/replay_owner_publish_hbm.cpp",
+      "sha256": "c9684a2c553db49ec9e156864246efa61cf346399d4ad29ce27f6126b3113c89"
+    },
+    {
+      "path": "work/owner_publish_replay_sync1_v1_20261013/source/src/summary_hbm.cpp",
+      "sha256": "c621f1766a44186e862c4b70891310ba3b0826954e4f2c84c7b00af6ac00819a"
+    },
+    {
+      "path": "work/owner_publish_replay_sync1_v1_20261013/source/src/owner_publish_hbm.cpp",
+      "sha256": "29f8867f0a13cf21bb064237c7863e7629bbb69e95b46cc01ed808982b924b3b"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_summary_hbm_sync1_v1_20261013/manifest.json",
+      "sha256": "3c512dd715ec8992cfb7e4f6e5dff5d0b941ec729f944b96ad77439db33e60ad"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_summary_hbm_sync1_protocol_audit_v1_20261013/audit.json",
+      "sha256": "c2e835826cd4840fe2403e86ce1003f52244500f4912306881b4e16dd4c79d14"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_summary_hbm_sync1_v1_20261013/route/summary_hbm_frames.bin",
+      "sha256": "1951289dc42990a25b5c1e8748b5f00ae40bf04d8268484210583ff8b2aaecb2"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_summary_hbm_sync1_v1_20261013/route/summary_hbm_topology.bin",
+      "sha256": "362264a4ad7e30b52344a1a617d792e2b7dac3cdb6941d36f26be6ca96d3bcbb"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_summary_hbm_sync1_v1_20261013/route/summary_hbm_owners.csv",
+      "sha256": "e866287d4c171bf2b39c8a7e6cc9d3006e49ee8c147a6df802147dfaaf9d1c25"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_summary_hbm_sync1_v1_20261013/route/summary_hbm_caches.csv",
+      "sha256": "1f68c13e80f97529281f8303954331109195ac78e887e3e93a47f4483c175248"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/include/summary_hbm.hpp",
+      "sha256": "55177ca09b0b07e2e23b38d8430052b405ff9617b6049613663baf3eeb3e401c"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/include/owner_publish_hbm.hpp",
+      "sha256": "05e1551a7238d430b413a401a1832913fa5e61f98dc268399461f154479eed43"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/include/native_csr_io.hpp",
+      "sha256": "0940b5963db189d755cb8293918c1820c9564af0b48ba766461f0a6195e2a6a1"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/src/summary_hbm.cpp",
+      "sha256": "c621f1766a44186e862c4b70891310ba3b0826954e4f2c84c7b00af6ac00819a"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/tools/replay_owner_publish_hbm.cpp",
+      "sha256": "c9684a2c553db49ec9e156864246efa61cf346399d4ad29ce27f6126b3113c89"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_build_20261013/dieroute_owner_publish_replay",
+      "sha256": "851fb69f7037fae35c5f580b78f21af3eba003435eb0764fa5b08712b90cdcb2"
+    },
+    {
+      "path": "work/owner_publish_replay_sync1_audit_v1_20261013/audit.json",
+      "sha256": "293c65022e9f65c2ad1eb21efd5f39a3273ee214fa04d2aa72b5460874f24b03"
+    },
+    {
+      "path": "tools/audit_owner_publish_replay.py",
+      "sha256": "53db12786a5704fcc80a8538f1d05da6048a1720b38bd7ab6910fc2cf668c310"
+    },
+    {
+      "path": "work/owner_publish_replay_sync3_v1_20261013/manifest.json",
+      "sha256": "5bc7217fde8112429bb587f4702baa1d65a8dd4585328f370388937ee8132728"
+    },
+    {
+      "path": "work/owner_publish_replay_sync3_v1_20261013/replay_tool",
+      "sha256": "851fb69f7037fae35c5f580b78f21af3eba003435eb0764fa5b08712b90cdcb2"
+    },
+    {
+      "path": "work/owner_publish_replay_sync3_v1_20261013/run.log",
+      "sha256": "f8087c9749cd50d37288615199e579f848e777eba5e4acdec9092fc0c8ff698e"
+    },
+    {
+      "path": "work/owner_publish_replay_sync3_v1_20261013/replay/owners.csv",
+      "sha256": "e866287d4c171bf2b39c8a7e6cc9d3006e49ee8c147a6df802147dfaaf9d1c25"
+    },
+    {
+      "path": "work/owner_publish_replay_sync3_v1_20261013/replay/subscriptions.csv",
+      "sha256": "e762ded4ecde07e5a6a800e52388d16b4e5508411dfdebc07307872774726af4"
+    },
+    {
+      "path": "work/owner_publish_replay_sync3_v1_20261013/replay/caches.csv",
+      "sha256": "1f68c13e80f97529281f8303954331109195ac78e887e3e93a47f4483c175248"
+    },
+    {
+      "path": "work/owner_publish_replay_sync3_v1_20261013/replay/events.bin",
+      "sha256": "c354bb8d2a51290bb9b5fdd38f4182d088a2b6724bf770addddcb2ade741e146"
+    },
+    {
+      "path": "work/owner_publish_replay_sync3_v1_20261013/source/include/summary_hbm.hpp",
+      "sha256": "55177ca09b0b07e2e23b38d8430052b405ff9617b6049613663baf3eeb3e401c"
+    },
+    {
+      "path": "work/owner_publish_replay_sync3_v1_20261013/source/include/native_csr_io.hpp",
+      "sha256": "0940b5963db189d755cb8293918c1820c9564af0b48ba766461f0a6195e2a6a1"
+    },
+    {
+      "path": "work/owner_publish_replay_sync3_v1_20261013/source/include/owner_publish_hbm.hpp",
+      "sha256": "05e1551a7238d430b413a401a1832913fa5e61f98dc268399461f154479eed43"
+    },
+    {
+      "path": "work/owner_publish_replay_sync3_v1_20261013/source/tools/replay_owner_publish_hbm.cpp",
+      "sha256": "c9684a2c553db49ec9e156864246efa61cf346399d4ad29ce27f6126b3113c89"
+    },
+    {
+      "path": "work/owner_publish_replay_sync3_v1_20261013/source/src/summary_hbm.cpp",
+      "sha256": "c621f1766a44186e862c4b70891310ba3b0826954e4f2c84c7b00af6ac00819a"
+    },
+    {
+      "path": "work/owner_publish_replay_sync3_v1_20261013/source/src/owner_publish_hbm.cpp",
+      "sha256": "29f8867f0a13cf21bb064237c7863e7629bbb69e95b46cc01ed808982b924b3b"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_summary_hbm_sync3_v1_20261013/manifest.json",
+      "sha256": "ed0f9518b20d8a49e900d419ef8facc02efa5add2f8a9c68ea07aab95257aa75"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_summary_hbm_sync3_protocol_audit_v1_20261013/audit.json",
+      "sha256": "9ec69e9aa645ad97691bf9b895638bef763ce7a14411efdee2064cc4b8476859"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_summary_hbm_sync3_v1_20261013/route/summary_hbm_frames.bin",
+      "sha256": "52265cf07ce829b1901174e33a29e537108f74d9c01cafb2f8ce093798d1c3f9"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_summary_hbm_sync3_v1_20261013/route/summary_hbm_topology.bin",
+      "sha256": "362264a4ad7e30b52344a1a617d792e2b7dac3cdb6941d36f26be6ca96d3bcbb"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_summary_hbm_sync3_v1_20261013/route/summary_hbm_owners.csv",
+      "sha256": "e866287d4c171bf2b39c8a7e6cc9d3006e49ee8c147a6df802147dfaaf9d1c25"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_summary_hbm_sync3_v1_20261013/route/summary_hbm_caches.csv",
+      "sha256": "1f68c13e80f97529281f8303954331109195ac78e887e3e93a47f4483c175248"
+    },
+    {
+      "path": "work/owner_publish_replay_sync3_audit_v1_20261013/audit.json",
+      "sha256": "decd4a10e0170a03707c62eb86915d03955c7d4cf4a7d125d70a10dd3600833a"
+    },
+    {
+      "path": "work/owner_publish_replay_serial3_v1_20261013/manifest.json",
+      "sha256": "cc8a247d736bcb40e5be4e15f766a8392032f783e2223f608e9c8fb7770c3f70"
+    },
+    {
+      "path": "work/owner_publish_replay_serial3_v1_20261013/replay_tool",
+      "sha256": "851fb69f7037fae35c5f580b78f21af3eba003435eb0764fa5b08712b90cdcb2"
+    },
+    {
+      "path": "work/owner_publish_replay_serial3_v1_20261013/run.log",
+      "sha256": "e3142cb4183405560a97594c483e2e4d74fd596e27a88c54c96127f0f867b591"
+    },
+    {
+      "path": "work/owner_publish_replay_serial3_v1_20261013/replay/owners.csv",
+      "sha256": "e866287d4c171bf2b39c8a7e6cc9d3006e49ee8c147a6df802147dfaaf9d1c25"
+    },
+    {
+      "path": "work/owner_publish_replay_serial3_v1_20261013/replay/subscriptions.csv",
+      "sha256": "f560bafabd3cd17aefe2a19721541adaeccb517c48cada6474135879a7a270d2"
+    },
+    {
+      "path": "work/owner_publish_replay_serial3_v1_20261013/replay/caches.csv",
+      "sha256": "0d2c673c54ed50a8ac99c7d8411a02115caacf2e9daac43adad5c497ad9bd556"
+    },
+    {
+      "path": "work/owner_publish_replay_serial3_v1_20261013/replay/events.bin",
+      "sha256": "497624880961b5cd97b11f7eb9f25ba84ddb6741bc95033ed1e7c02580d5c678"
+    },
+    {
+      "path": "work/owner_publish_replay_serial3_v1_20261013/source/include/summary_hbm.hpp",
+      "sha256": "55177ca09b0b07e2e23b38d8430052b405ff9617b6049613663baf3eeb3e401c"
+    },
+    {
+      "path": "work/owner_publish_replay_serial3_v1_20261013/source/include/native_csr_io.hpp",
+      "sha256": "0940b5963db189d755cb8293918c1820c9564af0b48ba766461f0a6195e2a6a1"
+    },
+    {
+      "path": "work/owner_publish_replay_serial3_v1_20261013/source/include/owner_publish_hbm.hpp",
+      "sha256": "05e1551a7238d430b413a401a1832913fa5e61f98dc268399461f154479eed43"
+    },
+    {
+      "path": "work/owner_publish_replay_serial3_v1_20261013/source/tools/replay_owner_publish_hbm.cpp",
+      "sha256": "c9684a2c553db49ec9e156864246efa61cf346399d4ad29ce27f6126b3113c89"
+    },
+    {
+      "path": "work/owner_publish_replay_serial3_v1_20261013/source/src/summary_hbm.cpp",
+      "sha256": "c621f1766a44186e862c4b70891310ba3b0826954e4f2c84c7b00af6ac00819a"
+    },
+    {
+      "path": "work/owner_publish_replay_serial3_v1_20261013/source/src/owner_publish_hbm.cpp",
+      "sha256": "29f8867f0a13cf21bb064237c7863e7629bbb69e95b46cc01ed808982b924b3b"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_summary_hbm_serial3_v1_20261013/manifest.json",
+      "sha256": "27cefb99da755ad6f230e86c1bc9ca1c77a36d686f6c7829df0def96690a0395"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_summary_hbm_serial3_protocol_audit_v1_20261013/audit.json",
+      "sha256": "71dfa4a7176b2b672bbf58d6b4bc9ea5b5e5c556a571bf3cee04bca1ceed2218"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_summary_hbm_serial3_v1_20261013/route/summary_hbm_frames.bin",
+      "sha256": "f31ec03bba6e6ac674f5f2c929659e8155090c82f3961b4418e6bd4802a64dca"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_summary_hbm_serial3_v1_20261013/route/summary_hbm_topology.bin",
+      "sha256": "362264a4ad7e30b52344a1a617d792e2b7dac3cdb6941d36f26be6ca96d3bcbb"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_summary_hbm_serial3_v1_20261013/route/summary_hbm_owners.csv",
+      "sha256": "e866287d4c171bf2b39c8a7e6cc9d3006e49ee8c147a6df802147dfaaf9d1c25"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_summary_hbm_serial3_v1_20261013/route/summary_hbm_caches.csv",
+      "sha256": "0d2c673c54ed50a8ac99c7d8411a02115caacf2e9daac43adad5c497ad9bd556"
+    },
+    {
+      "path": "work/owner_publish_replay_serial3_audit_v1_20261013/audit.json",
+      "sha256": "f6935dc3b36818f61234acc6f91f1aa2cabfb21ac5c0c39bcfed3a29b1a2440d"
+    },
+    {
+      "path": "work/owner_publish_sanitize_real_serial3_20261013/events.bin",
+      "sha256": "497624880961b5cd97b11f7eb9f25ba84ddb6741bc95033ed1e7c02580d5c678"
+    },
+    {
+      "path": "work/owner_publish_sanitize_real_serial3_20261013/owners.csv",
+      "sha256": "e866287d4c171bf2b39c8a7e6cc9d3006e49ee8c147a6df802147dfaaf9d1c25"
+    },
+    {
+      "path": "work/owner_publish_sanitize_real_serial3_20261013/caches.csv",
+      "sha256": "0d2c673c54ed50a8ac99c7d8411a02115caacf2e9daac43adad5c497ad9bd556"
+    },
+    {
+      "path": "work/owner_publish_sanitize_real_serial3_20261013/subscriptions.csv",
+      "sha256": "f560bafabd3cd17aefe2a19721541adaeccb517c48cada6474135879a7a270d2"
+    },
+    {
+      "path": "work/owner_publish_platform_audit_v2_20261013/audit.json",
+      "sha256": "d76a234cc9fd97bd469bf0f09d12c397429751080c9a41ce11d56f618d967c83"
+    },
+    {
+      "path": "work/owner_publish_hw_emu_link_v2_20261013/manifest.json",
+      "sha256": "d5adc77c29c43d42ceb08efdc9f154c184fbe77db5d86382ad99854d8e0650b0"
+    },
+    {
+      "path": "work/owner_publish_hw_emu_link_v2_20261013/summary.xclbin",
+      "sha256": "e7426b2cfd025e3882f40ef2a1ee6c58268a015811c906b6f8a1b7b91399b96e"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/summary_hbm_hls_v4_20261013/manifest.json",
+      "sha256": "5e5c4f4fb24242fa2f5e08634a15f0a4b8979af2f10a61b09ffb12356a3b6176"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_hw_emu_link_v2_20261013/dieroute_owner_publish_hbm.xo",
+      "sha256": "54f3f1e795d64b0e322728bc4980d9b99fdc769a7db603a1f139d90db5ae53c6"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_hls_audit_v3_20261013/audit.json",
+      "sha256": "25778f77d2dbfff519ba87c56b76ab7d38041e9dadcd983c723e5dc7cd8344dc"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_hw_emu_link_v2_20261013/dieroute_summary_hbm.xo",
+      "sha256": "abf9882957373f73f212b13e06aa52ea889866f23c45da1f362c8e07b349578a"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_hw_emu_link_v2_20261013/connectivity.cfg",
+      "sha256": "c3cda02a29319bd1bfa781852dba0fe9ddd220cc902838e73f419b8d17730997"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/U280_2022.2/dev_platform/opt/xilinx/platforms/xilinx_u280_gen3x16_xdma_1_202211_1/xilinx_u280_gen3x16_xdma_1_202211_1.xpfm",
+      "sha256": "33ffbb50935e524e4feafd0cb3b8c39429a7f911b0c42dff065e2f3097fe2bc6"
+    },
+    {
+      "path": "work/owner_publish_hw_emu_run_v1_20261013/manifest.json",
+      "sha256": "8d7f331de38aa1bfb3db54359b76844fef73dae5fa69e3bd1fd8e50cc15e191c"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_hw_emu_link_v2_20261013/manifest.json",
+      "sha256": "d5adc77c29c43d42ceb08efdc9f154c184fbe77db5d86382ad99854d8e0650b0"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_hw_emu_link_v2_20261013/summary.xclbin",
+      "sha256": "e7426b2cfd025e3882f40ef2a1ee6c58268a015811c906b6f8a1b7b91399b96e"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/host/owner_publish_xrt.cpp",
+      "sha256": "a3d23f5209d7777efe5a19b5915bc64da9f0d88e5175cdcccb4ac7d7c5b650a3"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/tools/build_owner_publish_xrt.sh",
+      "sha256": "80fcacd966a23496e2e3d1eaa09988296145d746cbf5ad9f1c09a5abe2e54453"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/tb/owner_publish_hbm_tb.cpp",
+      "sha256": "637bc5534f1a51ffbf3709ea883cf4ba845d3d9c4cf0830b1e03a48b1436e49a"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_build_20261013/owner_publish_xrt_tb",
+      "sha256": "eded69e7e616267793d8e0401fc931cdf22a0559eea361012591d93f2e9cb75f"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_build_20261013/owner_publish_xrt_replay",
+      "sha256": "69fb848bd3a65375d906e914a9ec87c18b82cb09afb70dc6c8398922cdacfc05"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_semantic_fixture_20261013/input/summary_hbm_1/route/summary_hbm_frames.bin",
+      "sha256": "ff4f56b661ee9fe86a7a6027cbc4f7fbd78b04e68fa10380e3618b15262321a2"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_semantic_fixture_20261013/input/summary_hbm_1/route/summary_hbm_topology.bin",
+      "sha256": "f82649ca9055e77a78c7fd35672569dceab312a10effd298fbcf262c6c697b3d"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_semantic_fixture_20261013/input/summary_hbm_1/route/summary_hbm_owners.csv",
+      "sha256": "58554fd31ff14ac1941f4cc6b8671ac8aa42dae40901458c38f1f7ca82720a01"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_semantic_fixture_20261013/input/summary_hbm_1/route/summary_hbm_caches.csv",
+      "sha256": "980141e361b5ef78739c4ac4178163ff7b4a2037f66ccc270a701dd1945cf53e"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_semantic_fixture_20261013/input/summary_hbm_3/route/summary_hbm_frames.bin",
+      "sha256": "ff4f56b661ee9fe86a7a6027cbc4f7fbd78b04e68fa10380e3618b15262321a2"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_semantic_fixture_20261013/input/summary_hbm_3/route/summary_hbm_topology.bin",
+      "sha256": "f82649ca9055e77a78c7fd35672569dceab312a10effd298fbcf262c6c697b3d"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_semantic_fixture_20261013/input/summary_hbm_3/route/summary_hbm_owners.csv",
+      "sha256": "58554fd31ff14ac1941f4cc6b8671ac8aa42dae40901458c38f1f7ca82720a01"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_semantic_fixture_20261013/input/summary_hbm_3/route/summary_hbm_caches.csv",
+      "sha256": "980141e361b5ef78739c4ac4178163ff7b4a2037f66ccc270a701dd1945cf53e"
+    },
+    {
+      "path": "work/owner_publish_hw_emu_run_v1_20261013/directed/run.log",
+      "sha256": "b4fdc606ab75fc6ded635c95b66510f79381ba40dbfb10e29265e79a61be5367"
+    },
+    {
+      "path": "work/owner_publish_hw_emu_run_v1_20261013/sync1/run.log",
+      "sha256": "4f2369e3dad3a906d828b39ff12d3d42d12d57e91ad6dd1e2e29d1372c6e42ff"
+    },
+    {
+      "path": "work/owner_publish_hw_emu_run_v1_20261013/sync1/audit.json",
+      "sha256": "691a24db2f11fe3ab879201cc2e7f5b9eaaf59b096d0ce2ac980f5e78428c220"
+    },
+    {
+      "path": "work/owner_publish_hw_emu_run_v1_20261013/sync3/run.log",
+      "sha256": "e0ceccbb0f74907e4192fd10615ab6b50fdbd67d18e37e9c46dd0f8d2c33677b"
+    },
+    {
+      "path": "work/owner_publish_hw_emu_run_v1_20261013/sync3/audit.json",
+      "sha256": "691a24db2f11fe3ab879201cc2e7f5b9eaaf59b096d0ce2ac980f5e78428c220"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/emulate.log",
+      "sha256": "00bf3726c0182b3fb2b6b14133c37c22e1e22c3b3dfee2a087f2f1d26627990b"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/reconfigure.log",
+      "sha256": "0f8025d8c9c3e936315cdacf95391d8c66e458d592b6b0e1d7056b71cdd92ac2"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/rebuild_v3.log",
+      "sha256": "9bd4a276a43fb6f99c79320a820d47efef0bb11a5250122624600be9ddeeb599"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/sanitize_replay.log",
+      "sha256": "72c0bf66f7d7e2481bf193bfd50c9b944f0b8a4599507454f1c7a7337f8c9a56"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/serial3_audit.log",
+      "sha256": "d6de37fd16ffaa721198bdd9776249f85d0c113668bbb33504cc029548c10b16"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/sanitize_test.log",
+      "sha256": "dee4d458db717927ec1b168ae317eed48f5ecfd7c137981d58c404c6e71bdf0e"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/hls_v2.log",
+      "sha256": "e9bca2eddf9ba75460feddc0d40397e6431dbf840d2432103238183c936b5dc1"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/test.log",
+      "sha256": "59e2c6de50b48ad7530a52163953678db82610efc08b0498efaa84ee3d8bd034"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/sanitize_real.log",
+      "sha256": "e3142cb4183405560a97594c483e2e4d74fd596e27a88c54c96127f0f867b591"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/xrt_build.log",
+      "sha256": "64b742980a3bef8f5d54a0ade0bbabb4729a81ee36ce48b43252dba95344b7f3"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/replay_matrix.log",
+      "sha256": "ac8e2b6a836067e4ba4343bca87512ed0b3ada252b40de05c8907737aa513f22"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/configure.log",
+      "sha256": "1a6708a79d7c7bf972ed6776f5b970435bd0a933e2a75b45fd59e803f4cea3bb"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/rebuild.log",
+      "sha256": "1a87c4f9c5dcf04aca5a309a078980c58541e8b962214654c82f427d1f8c72eb"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/ctest_v3.log",
+      "sha256": "bf29efaf7ec837afd070184e401338e5fb788657e5a62b3dade02eef31568bbc"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/hls_audit_v3.log",
+      "sha256": "d71f1027a24ae4843df4e126fe2a9dbfc1d95b4af3d7ab2b9b5cd52830cb8cc3"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/test_v2.log",
+      "sha256": "59e2c6de50b48ad7530a52163953678db82610efc08b0498efaa84ee3d8bd034"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/sanitize_rebuild_v3.log",
+      "sha256": "7fdf812c83c3dab12870a7d83113309e7a377e9faea630bd73312931cbc1e89d"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/link.log",
+      "sha256": "19daa36a47306ad34b3fb5bf8bbdf85ac2810b40b484c48934610cac78e89fbc"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/sanitize_configure.log",
+      "sha256": "4f8f7eb7c6eaef31d92e9d415c5d50e2253adfbe3419744a4ae69d08958728e4"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/sanitize_build.log",
+      "sha256": "93d15b9175e993e225bcc0c848dd7e33ed20d34aa730ae4e5960148836144494"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/full_build.log",
+      "sha256": "b47164d7e6f0449ac062ee34c1ff62334b3245f35c99b5dac75e1989647e62b7"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/sync1_audit.log",
+      "sha256": "1a29682691b2cd3cdf7aa91265827ba4ed1dbd5562e550c81e6ac971397e1a84"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/xrt_build_v2.log",
+      "sha256": "0bd6dd4eec6349a2f771341998e218d4f45a7aaa79be6720351f30ee8a111d6e"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/sync3_audit.log",
+      "sha256": "64311c712356ff661a081577ddb2eed9b5670716e37405f5a5610eed9ffe271c"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/replay_build.log",
+      "sha256": "12553ef8a4f550bc50dbe2cce70419b364445878958793fa50de4dc7cc1899bd"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/link_v2.log",
+      "sha256": "3eb4f5658354f796c39f7d9fd5a207536f1262bb5303f5b5a726dc1fa48b8cea"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/semantic_fixture.log",
+      "sha256": "2b3d6bf4cdf1b5b1a9f74d3542f9e2b31ab3a57b7f0cd72c005c17b111997b41"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/hls_v1.log",
+      "sha256": "a6aac9d305219938fa7eaf1ce0f691babe8b421e3bf5ca583007718bd77ca822"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/hls_v3.log",
+      "sha256": "258159d21dd999eaf818b05e9825c9d2fda2dfec08a17f4ccedd6a7ba6568167"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/build.log",
+      "sha256": "945db13b89c20d0ccbc39a89e05d3a5e2a8cad9bc314f29c8a74df2220366186"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/fixture_replay.log",
+      "sha256": "72c0bf66f7d7e2481bf193bfd50c9b944f0b8a4599507454f1c7a7337f8c9a56"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/configure_v3.log",
+      "sha256": "0f8025d8c9c3e936315cdacf95391d8c66e458d592b6b0e1d7056b71cdd92ac2"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/platform_audit.log",
+      "sha256": "fdad443015844193cea1d17e6142f4d09bc2039dcf641107df3336b91d2e8c43"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/hls_audit.log",
+      "sha256": "c3bfa94446d97d2a0aeaa12eec9d03aee68f2c5e27a7a9262be3eb24c1a0bcc8"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/owner_publish_scripts_20261013/ctest.log",
+      "sha256": "f498d0f8eb2cb27686bc045a875bd6d39585315539409c1ca1938520e50c3823"
+    },
+    {
+      "path": "experiments/owner_publish_plan_v1.json",
+      "sha256": "7425f4332cf8e837a3066a3cf22474cd14181ae2122b4c5e75f6a7957b35bfb1"
+    },
+    {
+      "path": "experiments/owner_publish_schema_v1.json",
+      "sha256": "ec4bfa36e5e260f6e26cd3db4c67b0cac5754e89a0b75fe487f3be467d9f541f"
+    }
+  ],
+  "limitations": [
+    "Real workload evidence is replacement replay of previously audited native commands; source search was not re-executed",
+    "CPU supplies committed owner tuples, schedules kernel launches and dispatches output records",
+    "No full hardware search/whole-net commit, asynchronous DMA or crash-atomic claim",
+    "No physical implementation timing, board performance/energy or new physical QoR"
+  ],
+  "next_work": "Integrate owner_subscribe and hardware pending-queue drain into NativeSummaryHbm/NativeHbmShadows; add mode 2 and native publication/command audit; rerun fresh 3x5 routing and XRT small routing fixtures. Then full-net hardware commit, mapping/migration and QoR gates."
+}

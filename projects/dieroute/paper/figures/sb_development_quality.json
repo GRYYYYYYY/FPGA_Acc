@@ -1,0 +1,60 @@
+{
+  "status": "three_case_native_quality_normalized_plot_rendered",
+  "cases": [
+    {
+      "case": "ex5p",
+      "iterations": 9,
+      "native_legal": true,
+      "wirelength": 12255,
+      "cpd_ns": 10.8661,
+      "baseline_wirelength": 11615,
+      "baseline_cpd_ns": 10.4531,
+      "model_crossings": 828,
+      "baseline_model_crossings": 999,
+      "joint_gate_pass": false,
+      "wirelength_ratio": 1.055101162290142,
+      "cpd_ratio": 1.0395098104868412
+    },
+    {
+      "case": "diffeq",
+      "iterations": 6,
+      "native_legal": true,
+      "wirelength": 11392,
+      "cpd_ns": 7.74186,
+      "baseline_wirelength": 13004,
+      "baseline_cpd_ns": 7.76709,
+      "model_crossings": 690,
+      "baseline_model_crossings": 727,
+      "joint_gate_pass": true,
+      "wirelength_ratio": 0.87603814211012,
+      "cpd_ratio": 0.9967516792003183
+    },
+    {
+      "case": "alu4",
+      "iterations": 8,
+      "native_legal": true,
+      "wirelength": 10158,
+      "cpd_ns": 10.2458,
+      "baseline_wirelength": 10620,
+      "baseline_cpd_ns": 10.3971,
+      "model_crossings": 707,
+      "baseline_model_crossings": 886,
+      "joint_gate_pass": true,
+      "wirelength_ratio": 0.9564971751412429,
+      "cpd_ratio": 0.9854478652701233
+    }
+  ],
+  "source_sha256": {
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/sb_three_layer_development_matched_20261015/interpretation.json": "93f9682291db6d1862914a176e14b04e9ae3d5377e5aea733ef4d83aeb2dd9d5",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/tools/plot_sb_development_quality.py": "d12f212401632be4bfe4e8e7b02052b45ca9b171700566322a7ecbb2610f970c",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/sb_quality_plot_preparation_20261015/attempt1.json": "a3646eee7e8a9ef9f6c2401eb1c2d63335ae2063a5d3aaff4c0c12576e9656a7"
+  },
+  "artifacts": {
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/paper/figures/sb_development_quality.tex": "a124784dcfca4d122a41d3f757331dd6cb006a10a1dae943115b74bbee7a3ae3",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/paper/figures/sb_development_quality.pdf": "dffaaa1078296f196c362073f8112b5e91263250a8f61beca040d21e622d3e1f",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/paper/figures/sb_development_quality.png": "22bf924f0f3efb749d626d88f6f1de9ff95119d4323d3d48688b53ae30b685fb"
+  },
+  "scope": "Onecandidatepointpercase,normalizedtoeachnativebaseline. GreenregiononlyWL/CPD;allthreelegal/crossingchecksfromsource. NotcrosscaseParetodominance,repeat,adoptionorphysicalclaim. Matplotlibattemptretained;installedPGFPlotsusedwithoutchangingdata.",
+  "board_result": false,
+  "research_complete": false
+}

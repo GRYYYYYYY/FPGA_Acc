@@ -1,0 +1,29 @@
+{
+  "status": "pass",
+  "real_queries": 3002,
+  "constrained_queries": 6024,
+  "fault_status_cases": 3,
+  "scope": "array-only CPU C simulation; no synthesis/performance claim",
+  "files": [
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/hbm_abi/pressure_array_core.cpp",
+      "sha256": "af6eafbcaeec0e059af0e6dea876ba06b8073d58e488ecf4d7f31657ae1d66c7"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/hbm_abi/pressure_array_core.hpp",
+      "sha256": "0892a6bc4155348825cb3a6cda618764f115380002a8f61253a9086ae63281fb"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/hbm_abi/pressure_array_tb.cpp",
+      "sha256": "b5e20b8d4ed79fa88483ca117dd6cfabe56ae5b74b79dd8e8f6edc1571c4cb5a"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/hbm_abi/test_pressure_array_core.py",
+      "sha256": "86f0715aad61937340d554be50b8ede094605794b631ae13d147cb90b0dfafaa"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/hbm_strict_snapshot_diffeq_2026-09-30/snapshot.bin",
+      "sha256": "a95ef41376fe656536d836b12da83857853592d9516ef66125db49879f6a73c7"
+    }
+  ]
+}

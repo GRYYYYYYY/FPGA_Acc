@@ -1,0 +1,71 @@
+{
+  "status": "small_joint_xrt_and_joined_session_handoff_verified",
+  "updated_ns": 1791987305749992433,
+  "compile_manifest": "work/native_owner_worker_hw_emu_link_v1_20261014/manifest.json",
+  "link_manifest": "work/native_owner_worker_hw_emu_link_v1_20261014/link_manifest.json",
+  "connectivity": "work/native_owner_worker_hw_emu_link_v1_20261014/connectivity.cfg",
+  "connectivity_sha256": "7b301a2fe7372bf12884337ce033afebcf4ea45640cedcf3b0eea64040203742",
+  "source_inputs": "work/native_owner_worker_hw_emu_link_v1_20261014/inputs.json",
+  "reused_owner_xo_sha256": "54f3f1e795d64b0e322728bc4980d9b99fdc769a7db603a1f139d90db5ae53c6",
+  "cus": [
+    "owner_die0",
+    "search_worker",
+    "owner_binding"
+  ],
+  "shared_buffers": [
+    {
+      "producer": "owner_die0.responses/updates",
+      "consumer": "owner_binding.packet/envelope",
+      "hbm": 0
+    },
+    {
+      "producer": "owner_binding.output_words",
+      "consumer": "search_worker.observation_words",
+      "hbm": 13
+    }
+  ],
+  "remaining": [
+    "Live native routing/search adapter with actual owner resources",
+    "Autonomous CSR traversal and asynchronous transport",
+    "Full-capacity RTL execution and actual full-platform integration",
+    "Mapping/migration/topology ablations and physical implementation/board gates"
+  ],
+  "scope": "Small joint hw_emu image, no full-native routing or physical implementation/board evidence",
+  "board_result": false,
+  "research_complete": false,
+  "compiled_xo_hashes": {
+    "worker": "282de4e3433f8aaaba1f41937c68a45ae53d0e5b8ad442e51256333c89c3a111",
+    "envelope": "716f9d408b7330ee99cbffbcd045485f978e7bab918e98f22ca6dcffa2c589fb"
+  },
+  "host_source": "host/native_owner_worker_joint_xrt.cpp",
+  "host_source_sha256": "e17b4757016d6ebeed7f0100ebaa02043e31c86ac70345f84787a4bafce40765",
+  "execution_manifest": "work/native_owner_worker_joint_xrt_v1_20261014/manifest.json",
+  "execution_status": "passed",
+  "planned_actual_cu_calls": {
+    "owner": 2,
+    "binding": 3,
+    "worker": 7
+  },
+  "cpu_kernel_linked": false,
+  "xo_argument_abi_audit": "work/native_owner_worker_hw_emu_link_v1_20261014/xo_abi_audit.json",
+  "actual_packaged_master_count": 9,
+  "xclbin_metadata_audit": "work/native_owner_worker_hw_emu_link_v1_20261014/xclbin_metadata_audit.json",
+  "execution_audit": "work/native_owner_worker_joint_xrt_v1_20261014/audit.json",
+  "actual_cu_calls": 12,
+  "completed": [
+    "Both new XO compilations and source hashes",
+    "Packaged XO ABI and auditor corruption checks",
+    "Three-CU platform link and final memory metadata",
+    "Twelve actual XRT calls with direct shared BO handoff",
+    "Independent call/status/source/image audit",
+    "Joined session/epoch rollover: old packet and old observation rejected at actual CUs, resource version reused"
+  ],
+  "handoff_execution": {
+    "status": "passed",
+    "manifest": "work/native_owner_worker_joint_handoff_xrt_v1_20261014/manifest.json",
+    "expected_actual_cu_calls": 21,
+    "same_image": true,
+    "audit": "work/native_owner_worker_joint_handoff_xrt_v1_20261014/independent_audit.json",
+    "actual_cu_calls": 21
+  }
+}

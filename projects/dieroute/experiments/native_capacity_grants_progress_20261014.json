@@ -1,0 +1,264 @@
+{
+  "status": "native_commit_interface_tests_passed",
+  "finished_ns": 1791972589925619368,
+  "source_sha256": {
+    "include/native_capacity_grants.hpp": "20d2e5a6e19ccc95b63d1579498ea8ae5fea92e27346f453247b361461e5e6b7",
+    "tb/native_capacity_grants_tb.cpp": "7e72f65b1bfb137c43fa534a805d86b233b1a0e1c6e456d8e4884ce36d9822c2",
+    "include/native_sll_grant_commit.hpp": "0b0e71af2953ce6bfa680a9a0a3dd3837c9b9e001f8c44b7a7f06a2e3326da9d",
+    "tb/native_sll_grant_commit_tb.cpp": "db47bc22ecd53abf79bad7ca01233b8413c58281e4638fc831d7f56946979eb9",
+    "CMakeLists.txt": "de55264fac17c178a90b615dc67d64322581eece3add72b5ab5e014f99824a67",
+    "include/native_net_transaction_strict.hpp": "e0acac4422f4b164fd8d8297200e30d5a3a875f24f2c3c482d7c311b2808673d",
+    "tb/native_strict_sll_search_tb.cpp": "51e4bbbd657568d628cb5bcd20e0b60a34856ed9487c35eebbab2249307cf846",
+    "tools/route_native_strict_parallel.cpp": "fa7d4480bfa079f7b2a981eb2f39a1d7b7bb5744d5722430c185cfbf1b4a2ed0",
+    "tools/run_native_strict_cohort.py": "f162dd911d1919dc971f1b411f0306aff9e82dd5b34205692c84054f16a38b7a"
+  },
+  "normal_test": "passed -Wall -Wextra -Werror",
+  "sanitizers": "ASan/UBSan passed",
+  "retained_initial_failure": "Unsorted request test initially returned capacity at first resource before detecting later out-of-order ID; fixed by whole-request canonical preflight before observing capacity.",
+  "scope": "Tentative electrical-node grants integrated with existing native whole-net CPU commit interface in directed tests; complete boundary union includes attachments and all found branch paths. Committed occupancy stays solely in NativeRouteState. Production router, strict scheduling and hardware integration remain open.",
+  "remaining": [
+    "Integrate complete actual SLL unions into native proposals",
+    "Bind successful grants and versions to net-kernel commit within one arbiter critical section",
+    "Evaluate deadlock-free release/retry and negotiated-versus-strict routing convergence on representative full workloads",
+    "Synthesize owner-mediated hardware grant transport and validate concurrent requests"
+  ],
+  "research_complete": false,
+  "board_result": false,
+  "native_commit_interface": "include/native_sll_grant_commit.hpp",
+  "native_commit_test": "tb/native_sll_grant_commit_tb.cpp",
+  "native_commit_normal_test": "passed -Wall -Wextra -Werror",
+  "native_commit_sanitizers": "ASan/UBSan passed",
+  "native_commit_initial_test_correction": "Fixture used hops=1 for attachment at depth 1; existing native accept correctly rejected it. Fixture now derives full hops from current attachment depth.",
+  "native_commit_binding": "Submit callback receives the exact proposal used to derive the complete SLL union; callback remains trusted to perform atomic native commit under shared arbiter.",
+  "native_commit_added_checks": [
+    "Outstanding different-net tentative hold prevents commit dispatch and authority mutation",
+    "Stale whole-net proposal prevents dispatch and leaves no grants",
+    "Releasing a tentative blocker allows actual existing native commit"
+  ],
+  "native_70_net_capacity_diagnostics": {
+    "configs": [
+      "serial3",
+      "sync1",
+      "sync3"
+    ],
+    "all_final_occupancy_replays_verified": true,
+    "overused_nodes_per_epoch": [
+      2,
+      1,
+      0
+    ],
+    "overused_SLL_nodes_per_epoch": [
+      0,
+      0,
+      0
+    ],
+    "strict_SLL_denied_recorded_commits": 0,
+    "implication": "Current development cohort does not exercise SLL capacity contention; require actual contested-SLL workload, not a pass inferred from this cohort.",
+    "evidence": "work/native_joint_authority_scripts_20261014/native_strict_sll_counterfactual.json"
+  },
+  "contention_workload_run": "work/u280_native_contention_341nets_v1_20261014/manifest.json",
+  "contention_workload_status": "passed_independent_audits",
+  "contention_workload_scope": "341 actual complete native nets / 729 tasks / 508 cross-die tasks, C-model development run; requires post-run occupancy/protocol audit before inferring contention",
+  "cmake_build": "work/native_capacity_build_20261014",
+  "ctest": {
+    "passed": 3,
+    "scope": "Only the three capacity/grant/strict-search tests",
+    "log": "work/native_capacity_build_20261014/Testing/Temporary/LastTest.log"
+  },
+  "contention_router_pid": 2975407,
+  "contention_341net_diagnostics": {
+    "evidence": "work/native_joint_authority_scripts_20261014/native_341net_sll_counterfactual.json",
+    "overused_nodes_per_epoch": [
+      26,
+      5,
+      2,
+      0
+    ],
+    "overused_SLL_nodes_per_epoch": [
+      2,
+      0,
+      0,
+      0
+    ],
+    "strict_SLL_denied_recorded_commits": 2,
+    "final_occupancy_verified": true,
+    "scope": "Recorded negotiated C-model trajectory; strict-mode replay/rerouting and full protocol audit remain pending"
+  },
+  "strict_search_profile": "include/native_net_transaction_strict.hpp",
+  "strict_search_test": "tb/native_strict_sll_search_tb.cpp",
+  "strict_search_checks": [
+    "Occupied SLL avoided with a longer valid alternative",
+    "Rejected off-path SLL recorded in complete dynamic read footprint",
+    "Foreign-net ripup invalidates old strict proposal"
+  ],
+  "strict_search_sanitizers": "ASan/UBSan passed",
+  "strict_search_scope": "Directed CPU snapshot search tests; production scheduling, 341-net strict rerouting and hardware integration remain pending.",
+  "strict_router": "tools/route_native_strict_parallel.cpp",
+  "strict_cohort_driver": "tools/run_native_strict_cohort.py",
+  "strict_fixtures": {
+    "evidence": "work/native_strict_sll_fixtures_v1_20261014/manifest.json",
+    "status": "passed",
+    "repeats_each": 3,
+    "interior_kernel_calls": 51,
+    "cross_kernel_calls": 18,
+    "scope": "Live C-model route with strict search/grants and unchanged commit/publisher/receiver kernels, independent protocol replay; not XRT"
+  },
+  "strict_341net_run": "work/u280_native_strict_sll_341nets_v1_20261014/manifest.json",
+  "strict_341net_status": "passed_independent_audits",
+  "strict_cmake_target": "dieroute_native_strict_parallel",
+  "strict_cmake_verification": "work/native_strict_sll_cmake_cross_fixture_v1_20261014/verification.json",
+  "strict_341net_audit_queue": "work/native_joint_authority_scripts_20261014/strict_contention_audit_queue.json",
+  "strict_341net_recorded_occupancy": {
+    "epochs": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "overused_nodes": [
+      23,
+      5,
+      2,
+      0
+    ],
+    "overused_SLL_nodes": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "strict_SLL_conflicting_recorded_commits": 0,
+    "final_occupancy_verified": true,
+    "evidence": "work/native_joint_authority_scripts_20261014/native_strict_341net_sll_diagnostics.json",
+    "limits": "One C-model development repetition, full protocol audit pending; no hardware grant or full-design QoR claim"
+  },
+  "contention_protocol_audit": "work/u280_native_contention_341nets_audit_v1_20261014/parallel/audit.json",
+  "contention_cohort_audit": "work/u280_native_contention_341nets_audit_v1_20261014/cohort/audit.json",
+  "matched_repeat_pair": "work/native_strict_sll_repeat_pair_v1_20261014/manifest.json",
+  "matched_repeat_pair_status": "passed_independent_five_repeat_audits",
+  "baseline_same_cmake_verification": "work/native_baseline_cmake_cross_fixture_v1_20261014/verification.json",
+  "per_repeat_sll_analyzer": "tools/analyze_native_sll_repeats.py",
+  "strict_341net_cohort_audit": "work/u280_native_strict_sll_341nets_audit_v1_20261014/cohort/audit.json",
+  "strict_341net_protocol_audit": "work/u280_native_strict_sll_341nets_audit_v1_20261014/parallel/audit.json",
+  "strict_341net_capacity_verified": true,
+  "development_mode_comparison": "work/native_joint_authority_scripts_20261014/native_341net_development_mode_comparison.json",
+  "repeat_baseline_status": "five_routes_and_protocol_audit_passed",
+  "repeat_baseline_kernel_calls": 4560,
+  "repeat_strict_status": "five_routes_protocol_and_each_repeat_capacity_passed",
+  "matched_repeat_pair_verification": "work/native_strict_sll_repeat_pair_v1_20261014/verification.json",
+  "matched_repeat_pair_verification_sha256": "2262e98b95c26017f9474239d5fa18759e05c5aa599ec07c2e88099e34df945e",
+  "repeat_strict_kernel_calls": 4445,
+  "five_repeat_mode_comparison": "work/native_strict_sll_repeat_pair_v1_20261014/mode_comparison.json",
+  "native_sll_predictions": {
+    "baseline": "work/native_strict_sll_repeat_pair_v1_20261014/baseline_native_sll_prediction.json",
+    "strict": "work/native_strict_sll_repeat_pair_v1_20261014/strict_native_sll_prediction.json",
+    "original_total": 15502,
+    "expected_total_each_mode": 15502,
+    "boundary_counts": [
+      9747,
+      5755
+    ],
+    "scope": "Independent source-bound electrical NODE_LAGUNA_DATA count prediction, pending native utilization checks; no final SLL reduction claim"
+  },
+  "native_writeback_pair": "work/native_strict_sll_native_pair_v1_20261014/manifest.json",
+  "native_writeback_status": "passed_physical_reload_verified",
+  "native_full_logical_connectivity_status": "queued_after_native_checks",
+  "native_physical_QoR_status": "checks_running",
+  "paired_native_validation": {
+    "manifest": "work/native_strict_sll_stub_preserved_native_checks_v2_20261014/manifest.json",
+    "sha256": "5765913afea5493ff09e16031baf38148e11bf80086006b9768546eca642b844",
+    "status": "reports_completed_hold_regression_open",
+    "cases": {
+      "baseline": {
+        "reports_generated_and_parsed": true,
+        "checks": {
+          "fully_routed_without_errors": true,
+          "no_drc_errors_or_critical_warnings": true,
+          "setup_summary_nonnegative": true,
+          "hold_summary_nonnegative": false
+        },
+        "default_native_gate_passed": false,
+        "parsed_report_sha256": "4e4cf98147a5d0b19b969b27ef1e768a019347b88a2418c15508dcbf730c7e14"
+      },
+      "strict": {
+        "reports_generated_and_parsed": true,
+        "checks": {
+          "fully_routed_without_errors": true,
+          "no_drc_errors_or_critical_warnings": true,
+          "setup_summary_nonnegative": true,
+          "hold_summary_nonnegative": false
+        },
+        "default_native_gate_passed": false,
+        "parsed_report_sha256": "0398bc3cd1b758827bdae47257bb9457d13ad0a6195769629d51f5267dd4402c"
+      }
+    },
+    "native_sll_total_both_modes": 15502,
+    "logical_connectivity": "work/native_strict_sll_connectivity_v2_20261014/manifest.json",
+    "hold_diagnostics": "work/native_strict_hold_diagnostics_v1_20261014/manifest.json",
+    "board_result": false,
+    "research_complete": false,
+    "logical_connectivity_status": "passed",
+    "logical_connectivity_manifest_sha256": "2c6b213eee5896f8aafcecb9521cbd246c0253ff52c643de1679c8c0c954c70a",
+    "logical_connectivity_scope": "Complete declared terminal/component and leaf equality; encrypted internals excluded; repaired DCP binding via identical embedded EDIF payload."
+  },
+  "updated_ns": 1791980388482662409,
+  "targeted_hold_repair": {
+    "status": "paired_default_native_connectivity_and_bus_skew_verified",
+    "diagnostics": "work/native_strict_hold_diagnostics_v1_20261014/manifest.json",
+    "pin_mapping": "work/native_strict_hold_pin_mapping_v1_20261014/manifest.json",
+    "restoration": "work/native_strict_pair_hold_restore_v1_20261014/manifest.json",
+    "independent_audit": "work/native_strict_pair_hold_restore_audit_v2_20261014/audit.json",
+    "writeback": "work/native_strict_pair_hold_writeback_v2_20261014/manifest.json",
+    "native_revalidation": "work/native_strict_pair_hold_native_checks_v1_20261014/manifest.json",
+    "logical_revalidation": "work/native_strict_pair_hold_connectivity_v1_20261014/manifest.json",
+    "restored_nets": [
+      455288,
+      456285
+    ],
+    "full_cohort_nets": 341,
+    "tasks": 729,
+    "native_timing_accepted": true,
+    "board_result": false,
+    "research_complete": false,
+    "baseline_native_checks": {
+      "reports_generated_and_parsed": true,
+      "checks": {
+        "fully_routed_without_errors": true,
+        "no_drc_errors_or_critical_warnings": true,
+        "setup_summary_nonnegative": true,
+        "hold_summary_nonnegative": true
+      },
+      "default_native_gate_passed": true,
+      "parsed_report_sha256": "0aa8b69fd113e1c45af5a5e5763da7d7af12ac317a38da94df67ad77c476d56f"
+    },
+    "extended_revalidation": "work/native_strict_pair_hold_extended_v1_20261014/manifest.json",
+    "paired_native_checks": {
+      "baseline": {
+        "reports_generated_and_parsed": true,
+        "checks": {
+          "fully_routed_without_errors": true,
+          "no_drc_errors_or_critical_warnings": true,
+          "setup_summary_nonnegative": true,
+          "hold_summary_nonnegative": true
+        },
+        "default_native_gate_passed": true,
+        "parsed_report_sha256": "0aa8b69fd113e1c45af5a5e5763da7d7af12ac317a38da94df67ad77c476d56f"
+      },
+      "strict": {
+        "reports_generated_and_parsed": true,
+        "checks": {
+          "fully_routed_without_errors": true,
+          "no_drc_errors_or_critical_warnings": true,
+          "setup_summary_nonnegative": true,
+          "hold_summary_nonnegative": true
+        },
+        "default_native_gate_passed": true,
+        "parsed_report_sha256": "cc41ce0cea3fde15df4f06d5a4d54a3b3645ae4d11b1ac369bbb2972f752444a"
+      }
+    },
+    "native_manifest_sha256": "6d17aff634223239001bd2661b7060cc792d62dcbf378b3b378a914b34277e1f",
+    "logical_connectivity_manifest_sha256": "456b7040d3c26f019f1a12595798ee27ad9922869a5261471a758dbe832f7425",
+    "logical_connectivity_scope": "Full declared leaf/top bits and component membership; encrypted internals excluded",
+    "extended_verification": "work/native_joint_authority_scripts_20261014/paired_hold_repair_extended_verification.json"
+  }
+}

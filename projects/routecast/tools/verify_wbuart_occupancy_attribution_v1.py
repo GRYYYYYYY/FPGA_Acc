@@ -1,0 +1,16 @@
+"""Check diagnostic errors directly from audited ledgers and CID paths."""
+import json,hashlib
+from pathlib import Path
+R=Path(__file__).resolve().parents[1];E=R/'experiments';D=E/'wbuart_net_occupancy_attribution_v1_2026-10-20'
+def read(p):return json.loads(Path(p).read_text())
+def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def main():
+ p=D/'verification.json';v=read(p);assert all(sha(k)==h for k,h in v['bindings'].items());st=read(E/'wbuart_quality_stage_diagnosis_v1_2026-10-20/verification.json');workflow=read(E/'wbuart_native_evaluation_v1_2026-10-20/workflow.json');count=0;summary=[]
+ for row in v['rows']:
+  case=next(c for c in workflow['comparisons'] if c['case']==row['case']);spec=read(case['specification']);truth={int(n):x for n,x in read(spec['label_physical_audit'])['node_occupancy'].items()};ids=[json.loads(s)['id'] for s in (Path(spec['domain_proof']).parent/'resources.jsonl').read_text().splitlines()];stages=next(r['stages'] for r in st['rows'] if r['case']==row['case']);queries={q['connection_id']:q for q in read(spec['endpoint'])['connections']};source=read(stages[0]['frame']);prior={q['connection_id']:q for q in source['records']};base={int(n):x for n,x in source['ledger'].items()};old=sum(abs(base.get(n,0)-truth.get(n,0)) for n in ids)
+  for stage,result in zip(stages,row['stages']):
+   assert stage['stage']==result['stage'];frame=read(stage['frame']);ledger={int(n):x for n,x in frame['ledger'].items()};new=sum(abs(ledger.get(n,0)-truth.get(n,0)) for n in ids);assert old==result['source_channel_occupancy_L1_error'] and new==result['channel_occupancy_L1_error'] and new-old==result['error_delta_vs_source'];same=[q for q in frame['records'] if (queries[q['connection_id']]['source'],queries[q['connection_id']]['sink'])==(prior[q['connection_id']]['source'],prior[q['connection_id']]['sink'])];changed=sum(q['answer']['physical_edge_ids']!=prior[q['connection_id']]['answer']['physical_edge_ids'] for q in same);assert changed==sum(c['unchanged_endpoint_CIDs_path_changed'] for c in result['categories'].values());assert len(same)==sum(c['unchanged_endpoint_CIDs'] for c in result['categories'].values());count+=1
+  warm=next(s for s in row['stages'] if s['stage']=='native_retained/warm');final=next(s for s in row['stages'] if s['stage']=='native_retained/warm_timing_round_updated/round1');summary.append({'case':row['case'],'warm_error_delta':warm['error_delta_vs_source'],'primary_final_error_delta':final['error_delta_vs_source'],'warm_unchanged_CID_paths_changed':sum(c['unchanged_endpoint_CIDs_path_changed'] for c in warm['categories'].values()),'final_unchanged_CID_paths_changed':sum(c['unchanged_endpoint_CIDs_path_changed'] for c in final['categories'].values()),'final_endpoint_unchanged_NET_category':final['categories']['endpoint_unchanged']})
+ assert count==99
+ (D/'independent_ledger_and_CID_verification_v1.json').write_text(json.dumps({'status':'ALL99_L1_ERRORS_AND_UNCHANGED_ENDPOINT_PATH_COUNTS_VERIFIED','stages':count,'summary':summary,'scope':'Independent ledger arithmetic and direct CID edge-list comparisons; category support decomposition remains producer checked, not independent graph reconstruction. L1 is diagnostic only.','bindings':{str(p):sha(p),str(Path(__file__)):sha(__file__)}},indent=2)+'\n');print(json.dumps(summary))
+if __name__=='__main__':main()

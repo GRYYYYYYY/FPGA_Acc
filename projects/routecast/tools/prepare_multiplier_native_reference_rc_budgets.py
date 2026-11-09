@@ -1,0 +1,47 @@
+"""Compare actual archived native terminal paths to diagnostic fixed budgets."""
+import json,shutil,xml.etree.ElementTree as ET
+from pathlib import Path
+from decimal import Decimal
+from fractions import Fraction
+from collections import defaultdict
+from audit_native_route import NET,NODE
+from pre_route_endpoints import sha
+root=Path(__file__).resolve().parents[1];base=root/'experiments';out=base/'multiplier_native_reference_rc_budgets_2026-10-06';out.mkdir();shutil.copyfile(Path(__file__),out/'source.py');proofroot=base/'multiplier_terminal_cut_xml_certificate_2026-10-06';proof=json.loads((proofroot/'verification.json').read_text());assert sha(proofroot/'verification.json')=='feedab2772a2b09f1a4388c8546b573707b4afcd396a6d88ac924b59786ef200';assert all(sha(p)==h for p,h in proof['inputs_sha256'].items());graph=next(p for p in proof['inputs_sha256'] if p.endswith('rr_graph.xml'));route=root/'work/multiplier_persistent_search_live_swap_2026-10-06/mult_6x6/00_off/design.route';priorroot=base/'multiplier_persistent_search_live_swap_2026-10-06/mult_6x6';prior=json.loads((priorroot/'receipt.json').read_text());truth=next(r for r in prior['results'] if r['run']==0 and r['mode']=='off');assert sha(route)==truth['route_sha256'];protocol=json.loads((priorroot/'protocol.json').read_text());assert sha(priorroot/'protocol.json')==prior['protocol_sha256'];assert protocol['inputs']['rr_graph']['sha256']==sha(graph);placement=root/'work/multiplier_persistent_search_live_swap_2026-10-06/mult_6x6/00_off/design.place';assert sha(placement)==sha(base/'multiplier_placement_swap_2026-10-06/mult_6x6/swapped.place');text=route.read_text();assert 'Placement_ID: SHA256:'+sha(placement) in text
+xml=ET.parse(graph).getroot();number=lambda s:Fraction(Decimal(s));nodes={};switches={};arcs=defaultdict(list)
+for n in xml.find('rr_nodes'):
+ t=n.find('timing');nodes[int(n.get('id'))]=(number(t.get('R')),number(t.get('C')),n.get('type'))
+for s in xml.find('switches'):
+ assert s.get('type') in ('buffer','mux','tristate');t=s.find('timing');assert number(t.get('Cinternal','0'))==0;switches[int(s.get('id'))]=(number(t.get('R','0')),number(t.get('Tdel','0')))
+for eid,e in enumerate(xml.find('rr_edges')):arcs[(int(e.get('src_node')),int(e.get('sink_node')),int(e.get('switch_id')))].append(eid)
+net=None;prefix={};current=None;sw=None;records=[];paths=defaultdict(list);netnodes=defaultdict(set)
+for line in text.splitlines():
+ match=NET.match(line)
+ if match:net=int(match[1]);prefix={};current=None;sw=None;continue
+ match=NODE.match(line)
+ if not match:
+  assert not line.lstrip().startswith('Node:');continue
+ nid,kind,newswitch=int(match[1]),match[2],int(match[3]);assert nodes[nid][2]==kind;netnodes[net].add(nid)
+ if kind=='SOURCE':
+  assert not prefix;r,c,_=nodes[nid];state=(nid,(),(nid,),r*c/2)
+ elif nid in prefix and kind!='SINK':state=prefix[nid]
+ else:
+  assert current in prefix;assert arcs[(current,nid,sw)];source,path,nodepath,delay=prefix[current];r,c,_=nodes[nid];sr,intrinsic=switches[sw];state=(source,path+(min(arcs[(current,nid,sw)]),),nodepath+(nid,),delay+(sr+r/2)*c+intrinsic)
+ prefix[nid]=state;current=nid;sw=newswitch
+ if kind=='SINK':
+  source,path,nodepath,delay=state;paths[(net,source,nid)].append({'physical_edge_ids':list(path),'delay':delay,'terminal_ipin':nodepath[-2]})
+assert sha(route)==truth['route_sha256'];assert sha(graph)==protocol['inputs']['rr_graph']['sha256']
+endpointfile=base/'multiplier_placement_swap_2026-10-06/mult_6x6/endpoints.json';endpoints=json.loads(endpointfile.read_text());groups=defaultdict(list)
+for r in endpoints['connections']:groups[(r['net_id'],r['source'],r['sink'])].append(r)
+assert set(groups)==set(paths);assert all(len(groups[k])==len(paths[k]) for k in groups)
+from math import lcm
+scale=1
+for values in paths.values():
+ for value in values:scale=lcm(scale,value['delay'].denominator)
+ambiguities=[];witness=[]
+for key,rows in sorted(groups.items()):
+ values=paths[key];budget=max(x['delay'] for x in values)
+ if len(rows)>1:ambiguities.append({'net_id':key[0],'source':key[1],'sink':key[2],'endpoint_occurrences':len(rows),'native_occurrences':len(values),'policy':'class_group_maximum_no_pin_identity_inferred'})
+ for r in rows:records.append({**r,'exact_delay_s':[budget.numerator,budget.denominator],'scaled_integer_budget':int(budget*scale)})
+ witness.append({'net_id':key[0],'source':key[1],'sink':key[2],'native_paths':[{'physical_edge_ids':v['physical_edge_ids'],'exact_delay_s':[v['delay'].numerator,v['delay'].denominator]} for v in values]})
+(out/'budgets.json').write_text(json.dumps(sorted(records,key=lambda r:r['connection_id']),indent=2)+'\n');(out/'native_class_witness.json').write_text(json.dumps(witness,indent=2)+'\n')
+(out/'receipt.json').write_text(json.dumps({'source_sha256':sha(out/'source.py'),'graph_sha256':sha(graph),'native_route_sha256':sha(route),'native_receipt_sha256':sha(priorroot/'receipt.json'),'placement_sha256':sha(placement),'endpoints_sha256':sha(endpointfile),'budgets_sha256':sha(out/'budgets.json'),'native_class_witness_sha256':sha(out/'native_class_witness.json'),'integer_scale':scale,'connections':len(records),'ambiguous_class_groups':ambiguities,'budget_policy':'same_layout_native_reference_class_group_maximum','scope':'Postroute calibration/replay only, not pre-route prediction or user timing constraint. Exact XML buffered connection expansion, no native STA/float parity. Repeated raw-SINK occurrences get conservative maximum group delay; no individual packed-pin identity guessed. Original constant-predictor budgets unchanged.'},indent=2)+'\n');print(len(records),scale,len(ambiguities))

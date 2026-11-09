@@ -1,0 +1,1091 @@
+{
+  "schema": "dieroute.native_worker_progress.v1",
+  "finished_ns": 1791925827888555600,
+  "research_complete": false,
+  "board_result": false,
+  "joint_qor_passed": false,
+  "native_design_legal": null,
+  "active_owned_experiment_processes": [],
+  "evidence": [
+    {
+      "path": "experiments/native_worker_comparison_plan_v1.json",
+      "sha256": "cdaff5266292e731d13566f9fbcdd0fde980780f6f59b6815f7f0a351270b8ec"
+    },
+    {
+      "path": "experiments/native_worker_schema_v1.json",
+      "sha256": "6bcb1afbd1901bc85092eed35d0447509872096c06506c57e6ab3dfe3974fa4f"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/manifest.json",
+      "sha256": "18d8170e030ac0d8ec06cebd43564c09406f032bf2ffb49041285bfc61fc59db"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/native_monotone.hpp",
+      "sha256": "96eae720126ed8fd68a009e381f0ce0bf1bdbba3bc2ac88d659223f81182086e"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/native_route_state.hpp",
+      "sha256": "b2f40393d4ba96cf7f402f9cd9799f80dbca3a9615ca5790a0c1355462dc215f"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/run_native_cohort.py",
+      "sha256": "67577c27429922ec27e00ba72278e6577b7575a49f938f1b783a8caf9a445fc8"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/native_quotient.hpp",
+      "sha256": "d8d066491d40b6a398720ebde77ef33380a0a2518df879dc4bf34200f30814c1"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/native_corridor.hpp",
+      "sha256": "6295ae0ce76fa7eb95e9f35839a77a7ecc3f0f67d03b3b7c8ea22740d2c0f2f9"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/run_native_case.py",
+      "sha256": "281d46e1a7f801ebefefc0dce7fbed8ace6b38f91bf6c43f4f77a0c5c20b7690"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/native_die_access.hpp",
+      "sha256": "b6dcdaeae71262851f87ad35fe598e405960a781a3b6c733e58fcdf1e56ce630"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/router",
+      "sha256": "2752cf6967501675aeca1681adc47a0d0557800bc703de8a6c315d576ab15d49"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/route_native_cohort.cpp",
+      "sha256": "4182efaf97aff05ad51faad2109cd5bacadd4ba460d8a80aacdc2061aa1faed7"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/run.log",
+      "sha256": "eff69e96969d866c2fbb0a60fbd75cec0ed4b98c22b4c588e94b08c795424871"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/native_csr_io.hpp",
+      "sha256": "4199a076276be5229034dcc64772f0aeedbc944d05dad5880106c76400b218fc"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/sparse_search.hpp",
+      "sha256": "218e54b7fa865a44ad66f1d846d667c45915679536d6f920e9f1f43bc034852e"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/native_boundary_shadow.hpp",
+      "sha256": "2e43f9bbe2bf72879775d29845137c28dfa5a5f0de1c4e701dfce51783315ce5"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/route/paths.csv",
+      "sha256": "2f3ebe68bdd3f233f4dfe915d8106e621a59ad397100caa6d9335a692cbee65d"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/route/worker_access.csv",
+      "sha256": "7d8710fe98e58f43b93a7cc37bfe307fc62f82c585e36186ad1f781a475fe5c2"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/route/corridor_candidates.csv",
+      "sha256": "f86370b022b8c73782d64fd22080608ca9f7aafbb1ee2e8282cf3b488b21c742"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/route/shadow_trace.csv",
+      "sha256": "abd204a2056440db21abbbeca590af0b0e0605d1d5b731f0994c69b0760f2ad8"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/route/shadow_final.csv",
+      "sha256": "aa877035346f35d574f98cd1dd3061beb23daf5d2405aa5352d01bf6f4abacec"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/route/trees.csv",
+      "sha256": "1cc40db746b080dddce4abf0942d090b4e2086da723687bc5a597882c131bb65"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/route/audit.json",
+      "sha256": "60c4af97c0b61634ce5f78309ef6ef7fcf1b5ba63a547bc94f328b219962053d"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/route/worker_queues.csv",
+      "sha256": "5bea7e2dac1c008717936e1ec96fd700d380f7960bdd474996253bf701588feb"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/route/iterations.csv",
+      "sha256": "7dd95cc3bca716ec905ab04a2e77982ec214e719ea34c9128998b27c5e7aa5b7"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/route/shadow_reads.csv",
+      "sha256": "c51a56f5045dd876eb7bf2da530398bcf0f3b677529be52b6a38f3a6ddf6f279"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/route/worker_reads.csv",
+      "sha256": "6d10f91d1ac1358205cb535c2f03c9851c1de5ba7cb2a9739dc0152e4f01a6d6"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/route/selection.csv",
+      "sha256": "af88f471a14d36fa5ece15bd6f2e23e33339a17cba188ad459a05ca5c170e94d"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/route/corridor_paths.csv",
+      "sha256": "2aebb8e6e0db7e924109ed258f6a8e7065da999018ab0a47ab52493bb2151a45"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/route/shadow_metrics.csv",
+      "sha256": "f55fae03c7277e5bf1828b4cb82f7e950fe334d54ea5b04d034d81d24845ac3f"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/route/corridor_trace.csv",
+      "sha256": "226543b5781bc75d2bb9d968c705a7e3178ef414b83824c8dacc700cdcdfe1a4"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/route/owner_usage.csv",
+      "sha256": "2f59ccbfaf07766a25ddadcfc99c8c70c1c63a85539806f9417e26ae87ba22aa"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/route/usage.csv",
+      "sha256": "6d6c5e4ec5db5427bb299f0e425cf9dfe5188b5964bbe451a15ebe6844c7321c"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/route/corridor_runs.csv",
+      "sha256": "0933ae86cc0c380bf564600e1326d4a2447a4bdb2ef3468ee4d7e8940f9c152d"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/route/cohort_passes.csv",
+      "sha256": "4ac30e5a58974a1861efc1a59b707b7c1d40e044bd833427c241c36e53148b2d"
+    },
+    {
+      "path": "work/u280_native_worker_control_v1_20261013/route/connections.csv",
+      "sha256": "f6694f8350976fe24acde950f6711076726bc42f05cfe205855abdca63119e10"
+    },
+    {
+      "path": "work/u280_native_worker_control_cohort_audit_v1_20261013/audit.json",
+      "sha256": "73e77f0c5df6ffda8aa1c505e41b69766fd2db325f33685451ab3a01c37510ff"
+    },
+    {
+      "path": "work/u280_native_worker_control_cohort_audit_v1_20261013/audit_native_cohort.py",
+      "sha256": "af8ad8214e8a66be12b10d17bfe9eaa721b27abc206babe11b9090a5b0526e27"
+    },
+    {
+      "path": "work/u280_native_worker_control_cohort_audit_v1_20261013/audit_native_owner.py",
+      "sha256": "4ba1b6a6e9817772dbce012bd3c033ba3b0020d07963d1dfdead7e0be63b803d"
+    },
+    {
+      "path": "work/u280_native_worker_control_cohort_audit_v1_20261013/run_native_case.py",
+      "sha256": "281d46e1a7f801ebefefc0dce7fbed8ace6b38f91bf6c43f4f77a0c5c20b7690"
+    },
+    {
+      "path": "work/u280_native_worker_control_protocol_audit_v1_20261013/audit.json",
+      "sha256": "d3dc08a4d3e7aff554a66224bb2bc160f98813af7fa27f997f0443aaba2de861"
+    },
+    {
+      "path": "work/u280_native_worker_control_protocol_audit_v1_20261013/audit_native_corridor.py",
+      "sha256": "cd38b74251560f37926a1f7cb718b6f119444db3792f16bf611b8a6ffadcd3f8"
+    },
+    {
+      "path": "work/u280_native_worker_control_protocol_audit_v1_20261013/run_native_case.py",
+      "sha256": "281d46e1a7f801ebefefc0dce7fbed8ace6b38f91bf6c43f4f77a0c5c20b7690"
+    },
+    {
+      "path": "work/u280_native_worker_control_protocol_audit_v1_20261013/audit_native_boundary_shadow.py",
+      "sha256": "72cc72999bb93b66ea900b500bbe747b96e249b95bcaae390cf2049d848f16ad"
+    },
+    {
+      "path": "work/u280_native_worker_control_protocol_audit_v1_20261013/audit_native_schedule.py",
+      "sha256": "4a36b69760b3fad4a651f67f6afb3bc68171c164f84c2ec4724522a23d435b58"
+    },
+    {
+      "path": "work/u280_native_worker_control_protocol_audit_v1_20261013/audit_native_workers.py",
+      "sha256": "0587a235f196df3440fa6f65b3d95afa60111c297f8a061b94bc5f783ce569a2"
+    },
+    {
+      "path": "work/u280_native_owner_partition_v1_20261013/manifest.json",
+      "sha256": "c9649ab7c691ce51b5e212214e97d50c3e02b4f2bf75fb71a80f52357b2008be"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/manifest.json",
+      "sha256": "85e8445299de2ed3bc226358a9537d5660d73dff6317b6c92e3e94645e987062"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/native_monotone.hpp",
+      "sha256": "96eae720126ed8fd68a009e381f0ce0bf1bdbba3bc2ac88d659223f81182086e"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/native_route_state.hpp",
+      "sha256": "b2f40393d4ba96cf7f402f9cd9799f80dbca3a9615ca5790a0c1355462dc215f"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/run_native_cohort.py",
+      "sha256": "67577c27429922ec27e00ba72278e6577b7575a49f938f1b783a8caf9a445fc8"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/native_quotient.hpp",
+      "sha256": "d8d066491d40b6a398720ebde77ef33380a0a2518df879dc4bf34200f30814c1"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/native_corridor.hpp",
+      "sha256": "6295ae0ce76fa7eb95e9f35839a77a7ecc3f0f67d03b3b7c8ea22740d2c0f2f9"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/run_native_case.py",
+      "sha256": "281d46e1a7f801ebefefc0dce7fbed8ace6b38f91bf6c43f4f77a0c5c20b7690"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/native_die_access.hpp",
+      "sha256": "b6dcdaeae71262851f87ad35fe598e405960a781a3b6c733e58fcdf1e56ce630"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/router",
+      "sha256": "2752cf6967501675aeca1681adc47a0d0557800bc703de8a6c315d576ab15d49"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/route_native_cohort.cpp",
+      "sha256": "4182efaf97aff05ad51faad2109cd5bacadd4ba460d8a80aacdc2061aa1faed7"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/run.log",
+      "sha256": "eff69e96969d866c2fbb0a60fbd75cec0ed4b98c22b4c588e94b08c795424871"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/native_csr_io.hpp",
+      "sha256": "4199a076276be5229034dcc64772f0aeedbc944d05dad5880106c76400b218fc"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/sparse_search.hpp",
+      "sha256": "218e54b7fa865a44ad66f1d846d667c45915679536d6f920e9f1f43bc034852e"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/native_boundary_shadow.hpp",
+      "sha256": "2e43f9bbe2bf72879775d29845137c28dfa5a5f0de1c4e701dfce51783315ce5"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/route/paths.csv",
+      "sha256": "2f3ebe68bdd3f233f4dfe915d8106e621a59ad397100caa6d9335a692cbee65d"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/route/worker_access.csv",
+      "sha256": "ff30b20e20589cc9b83c1b987da7b2d5daaf979a69ce7a5189d472e4dcffe0f3"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/route/corridor_candidates.csv",
+      "sha256": "f86370b022b8c73782d64fd22080608ca9f7aafbb1ee2e8282cf3b488b21c742"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/route/shadow_trace.csv",
+      "sha256": "abd204a2056440db21abbbeca590af0b0e0605d1d5b731f0994c69b0760f2ad8"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/route/shadow_final.csv",
+      "sha256": "aa877035346f35d574f98cd1dd3061beb23daf5d2405aa5352d01bf6f4abacec"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/route/trees.csv",
+      "sha256": "1cc40db746b080dddce4abf0942d090b4e2086da723687bc5a597882c131bb65"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/route/audit.json",
+      "sha256": "60c4af97c0b61634ce5f78309ef6ef7fcf1b5ba63a547bc94f328b219962053d"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/route/worker_queues.csv",
+      "sha256": "cc0023a7819d832a6635e44acfae949aded3b3eab976d9af62a39fa6f362dcd6"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/route/iterations.csv",
+      "sha256": "7dd95cc3bca716ec905ab04a2e77982ec214e719ea34c9128998b27c5e7aa5b7"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/route/shadow_reads.csv",
+      "sha256": "c51a56f5045dd876eb7bf2da530398bcf0f3b677529be52b6a38f3a6ddf6f279"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/route/worker_reads.csv",
+      "sha256": "84c5fa5461b9d3da06b74a1ca48bf3c25dd2b0dfcab9cb0c7b99d1dd8b640776"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/route/selection.csv",
+      "sha256": "af88f471a14d36fa5ece15bd6f2e23e33339a17cba188ad459a05ca5c170e94d"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/route/corridor_paths.csv",
+      "sha256": "2aebb8e6e0db7e924109ed258f6a8e7065da999018ab0a47ab52493bb2151a45"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/route/shadow_metrics.csv",
+      "sha256": "f55fae03c7277e5bf1828b4cb82f7e950fe334d54ea5b04d034d81d24845ac3f"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/route/corridor_trace.csv",
+      "sha256": "226543b5781bc75d2bb9d968c705a7e3178ef414b83824c8dacc700cdcdfe1a4"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/route/owner_usage.csv",
+      "sha256": "2f59ccbfaf07766a25ddadcfc99c8c70c1c63a85539806f9417e26ae87ba22aa"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/route/usage.csv",
+      "sha256": "6d6c5e4ec5db5427bb299f0e425cf9dfe5188b5964bbe451a15ebe6844c7321c"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/route/corridor_runs.csv",
+      "sha256": "0933ae86cc0c380bf564600e1326d4a2447a4bdb2ef3468ee4d7e8940f9c152d"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/route/cohort_passes.csv",
+      "sha256": "4ac30e5a58974a1861efc1a59b707b7c1d40e044bd833427c241c36e53148b2d"
+    },
+    {
+      "path": "work/u280_native_worker_local_v1_20261013/route/connections.csv",
+      "sha256": "f6694f8350976fe24acde950f6711076726bc42f05cfe205855abdca63119e10"
+    },
+    {
+      "path": "work/u280_native_worker_local_cohort_audit_v1_20261013/audit.json",
+      "sha256": "096c9ea9eec51743bb9bac54308b0dd0a8a88abe0d9ea7c33673b73e872b91f6"
+    },
+    {
+      "path": "work/u280_native_worker_local_cohort_audit_v1_20261013/audit_native_cohort.py",
+      "sha256": "af8ad8214e8a66be12b10d17bfe9eaa721b27abc206babe11b9090a5b0526e27"
+    },
+    {
+      "path": "work/u280_native_worker_local_cohort_audit_v1_20261013/audit_native_owner.py",
+      "sha256": "4ba1b6a6e9817772dbce012bd3c033ba3b0020d07963d1dfdead7e0be63b803d"
+    },
+    {
+      "path": "work/u280_native_worker_local_cohort_audit_v1_20261013/run_native_case.py",
+      "sha256": "281d46e1a7f801ebefefc0dce7fbed8ace6b38f91bf6c43f4f77a0c5c20b7690"
+    },
+    {
+      "path": "work/u280_native_worker_local_protocol_audit_v1_20261013/audit.json",
+      "sha256": "4f2fccea9f25838e338da246725ffd3c7b0e2537688a25fae3c4c2dfedd98491"
+    },
+    {
+      "path": "work/u280_native_worker_local_protocol_audit_v1_20261013/audit_native_corridor.py",
+      "sha256": "cd38b74251560f37926a1f7cb718b6f119444db3792f16bf611b8a6ffadcd3f8"
+    },
+    {
+      "path": "work/u280_native_worker_local_protocol_audit_v1_20261013/run_native_case.py",
+      "sha256": "281d46e1a7f801ebefefc0dce7fbed8ace6b38f91bf6c43f4f77a0c5c20b7690"
+    },
+    {
+      "path": "work/u280_native_worker_local_protocol_audit_v1_20261013/audit_native_boundary_shadow.py",
+      "sha256": "72cc72999bb93b66ea900b500bbe747b96e249b95bcaae390cf2049d848f16ad"
+    },
+    {
+      "path": "work/u280_native_worker_local_protocol_audit_v1_20261013/audit_native_schedule.py",
+      "sha256": "4a36b69760b3fad4a651f67f6afb3bc68171c164f84c2ec4724522a23d435b58"
+    },
+    {
+      "path": "work/u280_native_worker_local_protocol_audit_v1_20261013/audit_native_workers.py",
+      "sha256": "0587a235f196df3440fa6f65b3d95afa60111c297f8a061b94bc5f783ce569a2"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/manifest.json",
+      "sha256": "0fc5ff92f4730d53f795e7c5fe54d1c6e3eeb84c7c43c1da3918f88424bcc7bc"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/native_monotone.hpp",
+      "sha256": "96eae720126ed8fd68a009e381f0ce0bf1bdbba3bc2ac88d659223f81182086e"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/native_route_state.hpp",
+      "sha256": "b2f40393d4ba96cf7f402f9cd9799f80dbca3a9615ca5790a0c1355462dc215f"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/run_native_cohort.py",
+      "sha256": "67577c27429922ec27e00ba72278e6577b7575a49f938f1b783a8caf9a445fc8"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/native_quotient.hpp",
+      "sha256": "d8d066491d40b6a398720ebde77ef33380a0a2518df879dc4bf34200f30814c1"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/native_corridor.hpp",
+      "sha256": "6295ae0ce76fa7eb95e9f35839a77a7ecc3f0f67d03b3b7c8ea22740d2c0f2f9"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/run_native_case.py",
+      "sha256": "281d46e1a7f801ebefefc0dce7fbed8ace6b38f91bf6c43f4f77a0c5c20b7690"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/native_die_access.hpp",
+      "sha256": "b6dcdaeae71262851f87ad35fe598e405960a781a3b6c733e58fcdf1e56ce630"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/router",
+      "sha256": "2752cf6967501675aeca1681adc47a0d0557800bc703de8a6c315d576ab15d49"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/route_native_cohort.cpp",
+      "sha256": "4182efaf97aff05ad51faad2109cd5bacadd4ba460d8a80aacdc2061aa1faed7"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/run.log",
+      "sha256": "30e15de6d1b0c3e8f8e4e722928b730b9ed6e71ed7784714b5a0c355102a0db7"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/native_csr_io.hpp",
+      "sha256": "4199a076276be5229034dcc64772f0aeedbc944d05dad5880106c76400b218fc"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/sparse_search.hpp",
+      "sha256": "218e54b7fa865a44ad66f1d846d667c45915679536d6f920e9f1f43bc034852e"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/native_boundary_shadow.hpp",
+      "sha256": "2e43f9bbe2bf72879775d29845137c28dfa5a5f0de1c4e701dfce51783315ce5"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/route/paths.csv",
+      "sha256": "2f3ebe68bdd3f233f4dfe915d8106e621a59ad397100caa6d9335a692cbee65d"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/route/worker_access.csv",
+      "sha256": "36bbf50ea6e22d61f878ed70574aaa5e33564923291f43bee1e355e3f6f29894"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/route/corridor_candidates.csv",
+      "sha256": "f86370b022b8c73782d64fd22080608ca9f7aafbb1ee2e8282cf3b488b21c742"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/route/shadow_trace.csv",
+      "sha256": "abd204a2056440db21abbbeca590af0b0e0605d1d5b731f0994c69b0760f2ad8"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/route/shadow_final.csv",
+      "sha256": "aa877035346f35d574f98cd1dd3061beb23daf5d2405aa5352d01bf6f4abacec"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/route/trees.csv",
+      "sha256": "1cc40db746b080dddce4abf0942d090b4e2086da723687bc5a597882c131bb65"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/route/audit.json",
+      "sha256": "60c4af97c0b61634ce5f78309ef6ef7fcf1b5ba63a547bc94f328b219962053d"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/route/worker_queues.csv",
+      "sha256": "b598e0d16856f5d595a95c3d8fa9082d91e5e8641d6db130e2bcd22c7ac023b6"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/route/iterations.csv",
+      "sha256": "4b2f0f3deba24434fc8a4945b2e6dd1e9161047e34ebf610518962d61bda972e"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/route/shadow_reads.csv",
+      "sha256": "c51a56f5045dd876eb7bf2da530398bcf0f3b677529be52b6a38f3a6ddf6f279"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/route/worker_reads.csv",
+      "sha256": "0fcbe80773af3486fa3add2a832f6e19cab9c1acecefe186064d815a0accc13c"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/route/selection.csv",
+      "sha256": "af88f471a14d36fa5ece15bd6f2e23e33339a17cba188ad459a05ca5c170e94d"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/route/corridor_paths.csv",
+      "sha256": "2aebb8e6e0db7e924109ed258f6a8e7065da999018ab0a47ab52493bb2151a45"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/route/shadow_metrics.csv",
+      "sha256": "f55fae03c7277e5bf1828b4cb82f7e950fe334d54ea5b04d034d81d24845ac3f"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/route/corridor_trace.csv",
+      "sha256": "41392846f24cfc1a1f4a768be4b41391a9ea4712f151d699469413cdd698f794"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/route/owner_usage.csv",
+      "sha256": "2f59ccbfaf07766a25ddadcfc99c8c70c1c63a85539806f9417e26ae87ba22aa"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/route/usage.csv",
+      "sha256": "6d6c5e4ec5db5427bb299f0e425cf9dfe5188b5964bbe451a15ebe6844c7321c"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/route/corridor_runs.csv",
+      "sha256": "1d50d39cc8f9fe5289aae6908adf63faea02976cb45e2016c0766294159e2e7f"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/route/cohort_passes.csv",
+      "sha256": "4ac30e5a58974a1861efc1a59b707b7c1d40e044bd833427c241c36e53148b2d"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_v1_20261013/route/connections.csv",
+      "sha256": "f6694f8350976fe24acde950f6711076726bc42f05cfe205855abdca63119e10"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_cohort_audit_v1_20261013/audit.json",
+      "sha256": "0e9344478725f69db5bec46bc27ba322269d028a5cdfef59351d25f8cdeb0766"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_cohort_audit_v1_20261013/audit_native_cohort.py",
+      "sha256": "af8ad8214e8a66be12b10d17bfe9eaa721b27abc206babe11b9090a5b0526e27"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_cohort_audit_v1_20261013/audit_native_owner.py",
+      "sha256": "4ba1b6a6e9817772dbce012bd3c033ba3b0020d07963d1dfdead7e0be63b803d"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_cohort_audit_v1_20261013/run_native_case.py",
+      "sha256": "281d46e1a7f801ebefefc0dce7fbed8ace6b38f91bf6c43f4f77a0c5c20b7690"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_protocol_audit_v1_20261013/audit.json",
+      "sha256": "c18e24ca3d72f5bbf6fc260e78e2df8485de9f5f73d4511d1ce3f01a7c4a8630"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_protocol_audit_v1_20261013/audit_native_corridor.py",
+      "sha256": "cd38b74251560f37926a1f7cb718b6f119444db3792f16bf611b8a6ffadcd3f8"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_protocol_audit_v1_20261013/run_native_case.py",
+      "sha256": "281d46e1a7f801ebefefc0dce7fbed8ace6b38f91bf6c43f4f77a0c5c20b7690"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_protocol_audit_v1_20261013/audit_native_boundary_shadow.py",
+      "sha256": "72cc72999bb93b66ea900b500bbe747b96e249b95bcaae390cf2049d848f16ad"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_protocol_audit_v1_20261013/audit_native_schedule.py",
+      "sha256": "4a36b69760b3fad4a651f67f6afb3bc68171c164f84c2ec4724522a23d435b58"
+    },
+    {
+      "path": "work/u280_native_worker_reentry_protocol_audit_v1_20261013/audit_native_workers.py",
+      "sha256": "0587a235f196df3440fa6f65b3d95afa60111c297f8a061b94bc5f783ce569a2"
+    },
+    {
+      "path": "work/u280_native_defer_reentry_v1_20261013/manifest.json",
+      "sha256": "ec7f57163b57e8da1352b926d8592c7432fc3d1a856297d694d69810f533786c"
+    },
+    {
+      "path": "work/native_worker_build_20261013/worker_ctest_v2.log",
+      "sha256": "71a86eb80847e95273c5d26bad0484ba6a71f758d9bdc69066bee3f0cf18370a"
+    },
+    {
+      "path": "work/native_worker_build_20261013/guided_ctest.log",
+      "sha256": "efc45cea044b13ab83e12424058cbc6844d1d120049228618808d1bfddf50650"
+    },
+    {
+      "path": "work/native_worker_sanitize_20261013/ctest.log",
+      "sha256": "7f125a9bd98ff146c8c7bbada1b5591d50226e96b8341e7ef3f480b40c4c3b79"
+    },
+    {
+      "path": "work/native_worker_build_20261013/worker_build.log",
+      "sha256": "d3401726fbc1b9d5f184d3b45c14a99657417c177a5daba57cde3e515fd428e1"
+    },
+    {
+      "path": "work/native_worker_build_20261013/configure.log",
+      "sha256": "768697d7aaff0040df6e9c037fe8147d496c5ea23dee491e69648e4ee8962db7"
+    },
+    {
+      "path": "work/native_worker_build_20261013/route_build.log",
+      "sha256": "cc4799b2002aa100ff0fbb5a360d9581aa15be06726e83c0253b1035d3d1eff2"
+    },
+    {
+      "path": "work/native_worker_build_20261013/guided_build.log",
+      "sha256": "59d2204043cb54f127583a74baf434f68315c652fe1ccd3417a8d8d42a950316"
+    },
+    {
+      "path": "work/native_worker_build_20261013/build.log",
+      "sha256": "300b3198e3bea8ea180c3a5f4602d9066147c35522bfd7e1a93ee071aa11cfae"
+    },
+    {
+      "path": "work/native_worker_build_20261013/worker_ctest.log",
+      "sha256": "55fb610c6780ac45b8a31ebe044978b47a6d5fccd2bd4d521582360074938567"
+    },
+    {
+      "path": "work/native_worker_build_20261013/ctest.log",
+      "sha256": "78b3232d839737580d669f9ae207cc4ca58eb78a955915d504914c58bb66c729"
+    },
+    {
+      "path": "work/native_worker_sanitize_20261013/build.log",
+      "sha256": "861e15e681af9c078e067e2eec6eeb1daf3d407d8451a0a48eec6f81af9bc476"
+    },
+    {
+      "path": "work/native_worker_comparison_v1_20261013/comparison.json",
+      "sha256": "a4b6f4fbb63b4c40c1292df21a3137e09f7104b40f61abaf6ad2f449e99983e2"
+    }
+  ],
+  "tests": {
+    "ctest_passed": 34,
+    "sanitizer_tests_passed": 7,
+    "dense_queue_comparisons": 3000,
+    "guided_comparisons": 1500,
+    "global_budget_combinations": 18,
+    "off_path_owned_and_checkpoint_invalidation": true,
+    "nonlocal_and_forged_membership_denied": true,
+    "partial_work_on_exception": true,
+    "worker_journal_mutations_rejected": true
+  },
+  "implementation": "Separate per-die sparse label tables and priority queues; deterministic global-min arbiter; physical-stage owned access plus demand-cached owner boundary summaries and precommit validation",
+  "per_case": {
+    "control": {
+      "repeats": 5,
+      "prior_journals_equal": [
+        "route/paths.csv",
+        "route/corridor_candidates.csv",
+        "route/shadow_trace.csv",
+        "route/shadow_final.csv",
+        "route/trees.csv",
+        "route/iterations.csv",
+        "route/shadow_reads.csv",
+        "route/selection.csv",
+        "route/corridor_paths.csv",
+        "route/shadow_metrics.csv",
+        "route/corridor_trace.csv",
+        "route/owner_usage.csv",
+        "route/usage.csv",
+        "route/corridor_runs.csv",
+        "route/cohort_passes.csv",
+        "route/connections.csv"
+      ],
+      "per_repeat_work": {
+        "expanded": 7830970,
+        "edge_visits": 32165180,
+        "quotient_expanded": 147981897,
+        "quotient_edge_visits": 1100467159
+      },
+      "worker_totals_per_repeat": {},
+      "worker_distribution_per_repeat": {},
+      "logical_boundary_messages_per_repeat": 0,
+      "owner_inventory": {
+        "unique_owner_inventory_verified": true,
+        "partitioned": true,
+        "records": [
+          {
+            "repeat": 0,
+            "owner": 0,
+            "records": 983,
+            "boundary_records": 19
+          },
+          {
+            "repeat": 0,
+            "owner": 1,
+            "records": 1062,
+            "boundary_records": 17
+          },
+          {
+            "repeat": 0,
+            "owner": 2,
+            "records": 564,
+            "boundary_records": 0
+          },
+          {
+            "repeat": 1,
+            "owner": 0,
+            "records": 983,
+            "boundary_records": 19
+          },
+          {
+            "repeat": 1,
+            "owner": 1,
+            "records": 1062,
+            "boundary_records": 17
+          },
+          {
+            "repeat": 1,
+            "owner": 2,
+            "records": 564,
+            "boundary_records": 0
+          },
+          {
+            "repeat": 2,
+            "owner": 0,
+            "records": 983,
+            "boundary_records": 19
+          },
+          {
+            "repeat": 2,
+            "owner": 1,
+            "records": 1062,
+            "boundary_records": 17
+          },
+          {
+            "repeat": 2,
+            "owner": 2,
+            "records": 564,
+            "boundary_records": 0
+          },
+          {
+            "repeat": 3,
+            "owner": 0,
+            "records": 983,
+            "boundary_records": 19
+          },
+          {
+            "repeat": 3,
+            "owner": 1,
+            "records": 1062,
+            "boundary_records": 17
+          },
+          {
+            "repeat": 3,
+            "owner": 2,
+            "records": 564,
+            "boundary_records": 0
+          },
+          {
+            "repeat": 4,
+            "owner": 0,
+            "records": 983,
+            "boundary_records": 19
+          },
+          {
+            "repeat": 4,
+            "owner": 1,
+            "records": 1062,
+            "boundary_records": 17
+          },
+          {
+            "repeat": 4,
+            "owner": 2,
+            "records": 564,
+            "boundary_records": 0
+          }
+        ],
+        "scope": "Final shard inventory including empty version/history tombstones; no concurrency or HBM claim"
+      }
+    },
+    "local": {
+      "repeats": 5,
+      "prior_journals_equal": [
+        "route/paths.csv",
+        "route/corridor_candidates.csv",
+        "route/shadow_trace.csv",
+        "route/shadow_final.csv",
+        "route/trees.csv",
+        "route/iterations.csv",
+        "route/shadow_reads.csv",
+        "route/selection.csv",
+        "route/corridor_paths.csv",
+        "route/shadow_metrics.csv",
+        "route/corridor_trace.csv",
+        "route/owner_usage.csv",
+        "route/usage.csv",
+        "route/corridor_runs.csv",
+        "route/cohort_passes.csv",
+        "route/connections.csv"
+      ],
+      "per_repeat_work": {
+        "expanded": 7830970,
+        "edge_visits": 32165180,
+        "quotient_expanded": 147981897,
+        "quotient_edge_visits": 1100467159
+      },
+      "worker_totals_per_repeat": {
+        "owned_reads": 28206603,
+        "requests": 37697,
+        "cache_hits": 0,
+        "validations": 37697,
+        "calls": 308,
+        "expanded": 7830970,
+        "edge_visits": 32165180,
+        "pushes": 19928546,
+        "transfers": 39120,
+        "labels": 19622025,
+        "attempts": 308
+      },
+      "worker_distribution_per_repeat": {
+        "0": {
+          "owned_reads": 1814912,
+          "requests": 0,
+          "cache_hits": 0,
+          "validations": 0,
+          "expanded": 557280,
+          "edge_visits": 1978219,
+          "pushes": 1502585,
+          "transfers": 5171,
+          "labels": 1489286
+        },
+        "1": {
+          "owned_reads": 16693830,
+          "requests": 5171,
+          "cache_hits": 0,
+          "validations": 5171,
+          "expanded": 4467581,
+          "edge_visits": 18844105,
+          "pushes": 11773313,
+          "transfers": 33361,
+          "labels": 11597126
+        },
+        "2": {
+          "owned_reads": 9697861,
+          "requests": 32526,
+          "cache_hits": 0,
+          "validations": 32526,
+          "expanded": 2806109,
+          "edge_visits": 11342856,
+          "pushes": 6652648,
+          "transfers": 588,
+          "labels": 6535613
+        }
+      },
+      "logical_boundary_messages_per_repeat": 150788,
+      "owner_inventory": {
+        "unique_owner_inventory_verified": true,
+        "partitioned": true,
+        "records": [
+          {
+            "repeat": 0,
+            "owner": 0,
+            "records": 983,
+            "boundary_records": 19
+          },
+          {
+            "repeat": 0,
+            "owner": 1,
+            "records": 1062,
+            "boundary_records": 17
+          },
+          {
+            "repeat": 0,
+            "owner": 2,
+            "records": 564,
+            "boundary_records": 0
+          },
+          {
+            "repeat": 1,
+            "owner": 0,
+            "records": 983,
+            "boundary_records": 19
+          },
+          {
+            "repeat": 1,
+            "owner": 1,
+            "records": 1062,
+            "boundary_records": 17
+          },
+          {
+            "repeat": 1,
+            "owner": 2,
+            "records": 564,
+            "boundary_records": 0
+          },
+          {
+            "repeat": 2,
+            "owner": 0,
+            "records": 983,
+            "boundary_records": 19
+          },
+          {
+            "repeat": 2,
+            "owner": 1,
+            "records": 1062,
+            "boundary_records": 17
+          },
+          {
+            "repeat": 2,
+            "owner": 2,
+            "records": 564,
+            "boundary_records": 0
+          },
+          {
+            "repeat": 3,
+            "owner": 0,
+            "records": 983,
+            "boundary_records": 19
+          },
+          {
+            "repeat": 3,
+            "owner": 1,
+            "records": 1062,
+            "boundary_records": 17
+          },
+          {
+            "repeat": 3,
+            "owner": 2,
+            "records": 564,
+            "boundary_records": 0
+          },
+          {
+            "repeat": 4,
+            "owner": 0,
+            "records": 983,
+            "boundary_records": 19
+          },
+          {
+            "repeat": 4,
+            "owner": 1,
+            "records": 1062,
+            "boundary_records": 17
+          },
+          {
+            "repeat": 4,
+            "owner": 2,
+            "records": 564,
+            "boundary_records": 0
+          }
+        ],
+        "scope": "Final shard inventory including empty version/history tombstones; no concurrency or HBM claim"
+      }
+    },
+    "reentry": {
+      "repeats": 5,
+      "prior_journals_equal": [
+        "route/paths.csv",
+        "route/corridor_candidates.csv",
+        "route/shadow_trace.csv",
+        "route/shadow_final.csv",
+        "route/trees.csv",
+        "route/iterations.csv",
+        "route/shadow_reads.csv",
+        "route/selection.csv",
+        "route/corridor_paths.csv",
+        "route/shadow_metrics.csv",
+        "route/corridor_trace.csv",
+        "route/usage.csv",
+        "route/corridor_runs.csv",
+        "route/cohort_passes.csv",
+        "route/connections.csv"
+      ],
+      "per_repeat_work": {
+        "expanded": 7838557,
+        "edge_visits": 32198428,
+        "quotient_expanded": 150664894,
+        "quotient_edge_visits": 1121141835
+      },
+      "worker_totals_per_repeat": {
+        "owned_reads": 28238581,
+        "requests": 37705,
+        "cache_hits": 0,
+        "validations": 37705,
+        "calls": 308,
+        "expanded": 7838557,
+        "edge_visits": 32198428,
+        "pushes": 19936133,
+        "transfers": 39125,
+        "labels": 19629612,
+        "attempts": 527
+      },
+      "worker_distribution_per_repeat": {
+        "0": {
+          "owned_reads": 1815432,
+          "requests": 0,
+          "cache_hits": 0,
+          "validations": 0,
+          "expanded": 557424,
+          "edge_visits": 1978739,
+          "pushes": 1502729,
+          "transfers": 5176,
+          "labels": 1489430
+        },
+        "1": {
+          "owned_reads": 16723784,
+          "requests": 5179,
+          "cache_hits": 0,
+          "validations": 5179,
+          "expanded": 4474738,
+          "edge_visits": 18875288,
+          "pushes": 11780470,
+          "transfers": 33361,
+          "labels": 11604283
+        },
+        "2": {
+          "owned_reads": 9699365,
+          "requests": 32526,
+          "cache_hits": 0,
+          "validations": 32526,
+          "expanded": 2806395,
+          "edge_visits": 11344401,
+          "pushes": 6652934,
+          "transfers": 588,
+          "labels": 6535899
+        }
+      },
+      "logical_boundary_messages_per_repeat": 150820,
+      "owner_inventory": {
+        "unique_owner_inventory_verified": true,
+        "partitioned": true,
+        "records": [
+          {
+            "repeat": 0,
+            "owner": 0,
+            "records": 983,
+            "boundary_records": 19
+          },
+          {
+            "repeat": 0,
+            "owner": 1,
+            "records": 1062,
+            "boundary_records": 17
+          },
+          {
+            "repeat": 0,
+            "owner": 2,
+            "records": 564,
+            "boundary_records": 0
+          },
+          {
+            "repeat": 1,
+            "owner": 0,
+            "records": 983,
+            "boundary_records": 19
+          },
+          {
+            "repeat": 1,
+            "owner": 1,
+            "records": 1062,
+            "boundary_records": 17
+          },
+          {
+            "repeat": 1,
+            "owner": 2,
+            "records": 564,
+            "boundary_records": 0
+          },
+          {
+            "repeat": 2,
+            "owner": 0,
+            "records": 983,
+            "boundary_records": 19
+          },
+          {
+            "repeat": 2,
+            "owner": 1,
+            "records": 1062,
+            "boundary_records": 17
+          },
+          {
+            "repeat": 2,
+            "owner": 2,
+            "records": 564,
+            "boundary_records": 0
+          },
+          {
+            "repeat": 3,
+            "owner": 0,
+            "records": 983,
+            "boundary_records": 19
+          },
+          {
+            "repeat": 3,
+            "owner": 1,
+            "records": 1062,
+            "boundary_records": 17
+          },
+          {
+            "repeat": 3,
+            "owner": 2,
+            "records": 564,
+            "boundary_records": 0
+          },
+          {
+            "repeat": 4,
+            "owner": 0,
+            "records": 983,
+            "boundary_records": 19
+          },
+          {
+            "repeat": 4,
+            "owner": 1,
+            "records": 1062,
+            "boundary_records": 17
+          },
+          {
+            "repeat": 4,
+            "owner": 2,
+            "records": 564,
+            "boundary_records": 0
+          }
+        ],
+        "scope": "Final shard inventory including empty version/history tombstones; no concurrency or HBM claim"
+      }
+    }
+  },
+  "limitation": "Serial worker execution and global generation invalidation. No concurrent mutation; full-graph rescue remains an explicit controller fallback. Persistent delayed worker-shadow cadence, explicit cross-worker label-probe transport, HBM mapping/transport and migration remain open.",
+  "next_work": "Implement delayed per-worker summary publication/invalidation and deterministic overlapping tasks; map worker storage/queues onto HBM and measure migration/topology ablations without changing electrical identity."
+}

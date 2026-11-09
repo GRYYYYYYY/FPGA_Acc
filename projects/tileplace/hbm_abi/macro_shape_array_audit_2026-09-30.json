@@ -1,0 +1,18 @@
+{
+  "status": "pass",
+  "scope": "array-only typed four-dimensional macro shape comparison; not integrated/HLS synthesized",
+  "queries": 2000,
+  "equal": 666,
+  "different": 1334,
+  "fault_cases": 2,
+  "extreme_cases": 2,
+  "nonroot_member_order": "random permutations",
+  "preconditions": [
+    "unique validated unit members",
+    "unique current locations"
+  ],
+  "files": {
+    "macro_shape_array.hpp": "78632240f0cf463c9344d1cb3233aea23b1a16fae01ffe8c7f1cf127bf5edcc0",
+    "macro_shape_array_test.cpp": "621d33d112ffa308029c600ed3a58bee0345d443e0cd51f611a5149c3c2be9da"
+  }
+}

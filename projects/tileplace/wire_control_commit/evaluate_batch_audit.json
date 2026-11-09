@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "compile": "g++ -std=c++17 -O2 -Wall -Wextra -Werror test_evaluate_batch.cpp",
+  "binary": "/tmp/tileplace-evaluate-batch-test",
+  "analytic_batches": 1000,
+  "scope": "CPU descriptor -> changed/write union -> legality/guard/touched/cost/score -> scored descriptor/conflict pools. No rank commit invocation, enumeration, RTL or native integration. Error branches not fully tested.",
+  "sources": {
+    "evaluate_batch_words.hpp": "72a66a3f6e553c4f48ab64a1051dcc3a4e15af8dc612b568b2c6d4a3ae514e61",
+    "test_evaluate_batch.cpp": "8659247124afd2ef1fd58af1c37cc5753c757621897bc558404f094553f03965"
+  }
+}

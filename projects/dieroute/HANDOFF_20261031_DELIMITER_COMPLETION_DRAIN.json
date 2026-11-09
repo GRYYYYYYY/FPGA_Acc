@@ -1,0 +1,41 @@
+{
+  "observed_ns": 1793421917742362998,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_PORTAL_CALL_LIFETIME.json",
+    "sha256": "557a618801c320b057ab10424dcca5ce841873b609ca929669d9fe15e650712b"
+  },
+  "progress": {
+    "report": "work/resident_delimiter_completion_drain_20261031/review.json",
+    "report_sha256": "79f89262d39152b360d0f5e1e86c8c738bf45b24ded1f4a31fefce97d5573b52",
+    "independent_review": "work/resident_delimiter_completion_drain_20261031/independent_review.json",
+    "independent_review_sha256": "6e8c472b296578dbc85d8dc9ef4e1548bafa1e710212bbe83956bd5d22c279fc",
+    "control_model_states": 2280,
+    "input_labelled_edges": 5352,
+    "forward_done_may_overlap_retirement_pulse": true,
+    "unmatched_internal_reads_at_done": 0,
+    "actual_adapter_credit_retirement_proved": false,
+    "external_response_identity_proved": false,
+    "HDL_simulation_executed": false,
+    "scope": "Finite conservative control/transaction-count model for three SHA-bound delimiter loops and their actual flow-control done cache,parent held-start protocol,73phase traversal and single internal word requests. Source read predicates/iter0registers hold between0and72;requests stall at1until internal ARREADY,and returns stall at71until internal RVALID. Everyphase0read-needed bit and phase72exit predicate is nondeterministic;phase0may hold or advance independently,overapproximating idle/exit guards. Launch may occur at any phase,overapproximating parent state4. Caller start can clear only on actual exit-ready72. Other data/validation conditions are not modeled. Binary reset/idle initial states include arbitrary old read-needed and reverse/portal exit-pending bits;no midcall reset. Exhaustive closure establishes at most one unmatched accepted internal request,whose live range lies in phases2..71with active held start;every internal consumption has a prior request. Public done cannot overlap an unmatched or newly accepted internal request. Reverse/portal direct done is at0;forward direct done is at72. Forward may assert done concurrently with the one-cycle registered internal-consumption retirement pulse;the pulse drains on the same sampling edge and does not remain afterward in the count projection. This timing is retained,not mislabeled as pre-edge fully retired credit. The pulse is a proof ghost corresponding to the equal-width adapter pulse under earlier local contracts;actual descriptor presence/need_rlast,all-schedule credit FIFO correctness and external AXI response identity/errors remain separate premises/open work. The model does not establish full generated-RTL equivalence,execute/top initiation or ownership for every consumer,actual installed data,pointer identity,native success,watchdog/timing or board performance. No original process/input/cache/guard/budget changes or new native/HLS flow.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v231_20261031/matrix.json",
+    "sha256": "5babdebb82618cae71d57210149739f90115da53163204847dc8579ef50e44e2"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v231.json",
+    "sha256": "c0d76e70175a222e64e16bbc7e3a94efccd67772cf45b3bee754e305ed011260"
+  },
+  "next_action": "Verify execute/top call lifetime and actual descriptor/need_rlast conditions for the forward completion-edge retirement pulse. Delimiter internal request/consume drain holds in the conservative local model,not full HDL or external response identity. Extend checks to other consumers;continue original jobs without changing guards,budgets,inputs or caches.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

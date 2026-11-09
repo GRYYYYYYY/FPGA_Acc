@@ -1,0 +1,1171 @@
+{
+  "schema": "dieroute.native_owner_progress.v1",
+  "finished_ns": 1791924469168702965,
+  "research_complete": false,
+  "board_result": false,
+  "joint_qor_passed": false,
+  "native_design_legal": null,
+  "active_owned_experiment_processes": [],
+  "evidence": [
+    {
+      "path": "experiments/native_owner_comparison_plan_v1.json",
+      "sha256": "de648e9666cd10dadb88bdce8123eecc76bbde951c6f86f43be7390bf7d58343"
+    },
+    {
+      "path": "experiments/native_owner_schema_v1.json",
+      "sha256": "b73707ee6a9c3bbd5988c3de98f286618990f7871a13646251afb8d0757327d3"
+    },
+    {
+      "path": "work/u280_native_owner_control_v1_20261013/manifest.json",
+      "sha256": "e412943efb9c00d219f87c264d6a2978902b26a4e09d68dbfa5c94736afc8202"
+    },
+    {
+      "path": "work/u280_native_owner_control_v1_20261013/native_monotone.hpp",
+      "sha256": "96eae720126ed8fd68a009e381f0ce0bf1bdbba3bc2ac88d659223f81182086e"
+    },
+    {
+      "path": "work/u280_native_owner_control_v1_20261013/native_route_state.hpp",
+      "sha256": "a156db87eede10defedc31266a135dc5060cb3292b1485bee28999e5e64de31e"
+    },
+    {
+      "path": "work/u280_native_owner_control_v1_20261013/run_native_cohort.py",
+      "sha256": "fdada2b1368e2c1a02c24ff2aa9a0df0b16794b49111e8866525185d252b3a21"
+    },
+    {
+      "path": "work/u280_native_owner_control_v1_20261013/native_quotient.hpp",
+      "sha256": "d8d066491d40b6a398720ebde77ef33380a0a2518df879dc4bf34200f30814c1"
+    },
+    {
+      "path": "work/u280_native_owner_control_v1_20261013/native_corridor.hpp",
+      "sha256": "98764cbd4df1fb1c3dfb1fc05a2cdcd331dd05d505c41de1b6f12b17a83897a3"
+    },
+    {
+      "path": "work/u280_native_owner_control_v1_20261013/run_native_case.py",
+      "sha256": "281d46e1a7f801ebefefc0dce7fbed8ace6b38f91bf6c43f4f77a0c5c20b7690"
+    },
+    {
+      "path": "work/u280_native_owner_control_v1_20261013/router",
+      "sha256": "fd07c3ea469fdf2ead8d8a0ea1f549b3bf0974b5940694d0ff1ba94ee343a751"
+    },
+    {
+      "path": "work/u280_native_owner_control_v1_20261013/route_native_cohort.cpp",
+      "sha256": "6cc75f8fd6f1129eaf0c1dadbcbce4ed9a21c7a972210d5af59af5c7e6c80115"
+    },
+    {
+      "path": "work/u280_native_owner_control_v1_20261013/run.log",
+      "sha256": "eff69e96969d866c2fbb0a60fbd75cec0ed4b98c22b4c588e94b08c795424871"
+    },
+    {
+      "path": "work/u280_native_owner_control_v1_20261013/native_csr_io.hpp",
+      "sha256": "4199a076276be5229034dcc64772f0aeedbc944d05dad5880106c76400b218fc"
+    },
+    {
+      "path": "work/u280_native_owner_control_v1_20261013/sparse_search.hpp",
+      "sha256": "b670dfae9479c2b698ab26bcc9256d7de4aa3ca01cc145868453b5c4add1fb69"
+    },
+    {
+      "path": "work/u280_native_owner_control_v1_20261013/native_boundary_shadow.hpp",
+      "sha256": "2e43f9bbe2bf72879775d29845137c28dfa5a5f0de1c4e701dfce51783315ce5"
+    },
+    {
+      "path": "work/u280_native_owner_control_v1_20261013/route/paths.csv",
+      "sha256": "2f3ebe68bdd3f233f4dfe915d8106e621a59ad397100caa6d9335a692cbee65d"
+    },
+    {
+      "path": "work/u280_native_owner_control_v1_20261013/route/corridor_candidates.csv",
+      "sha256": "f86370b022b8c73782d64fd22080608ca9f7aafbb1ee2e8282cf3b488b21c742"
+    },
+    {
+      "path": "work/u280_native_owner_control_v1_20261013/route/shadow_trace.csv",
+      "sha256": "abd204a2056440db21abbbeca590af0b0e0605d1d5b731f0994c69b0760f2ad8"
+    },
+    {
+      "path": "work/u280_native_owner_control_v1_20261013/route/shadow_final.csv",
+      "sha256": "aa877035346f35d574f98cd1dd3061beb23daf5d2405aa5352d01bf6f4abacec"
+    },
+    {
+      "path": "work/u280_native_owner_control_v1_20261013/route/trees.csv",
+      "sha256": "1cc40db746b080dddce4abf0942d090b4e2086da723687bc5a597882c131bb65"
+    },
+    {
+      "path": "work/u280_native_owner_control_v1_20261013/route/audit.json",
+      "sha256": "60c4af97c0b61634ce5f78309ef6ef7fcf1b5ba63a547bc94f328b219962053d"
+    },
+    {
+      "path": "work/u280_native_owner_control_v1_20261013/route/iterations.csv",
+      "sha256": "7dd95cc3bca716ec905ab04a2e77982ec214e719ea34c9128998b27c5e7aa5b7"
+    },
+    {
+      "path": "work/u280_native_owner_control_v1_20261013/route/shadow_reads.csv",
+      "sha256": "c51a56f5045dd876eb7bf2da530398bcf0f3b677529be52b6a38f3a6ddf6f279"
+    },
+    {
+      "path": "work/u280_native_owner_control_v1_20261013/route/selection.csv",
+      "sha256": "af88f471a14d36fa5ece15bd6f2e23e33339a17cba188ad459a05ca5c170e94d"
+    },
+    {
+      "path": "work/u280_native_owner_control_v1_20261013/route/corridor_paths.csv",
+      "sha256": "2aebb8e6e0db7e924109ed258f6a8e7065da999018ab0a47ab52493bb2151a45"
+    },
+    {
+      "path": "work/u280_native_owner_control_v1_20261013/route/shadow_metrics.csv",
+      "sha256": "f55fae03c7277e5bf1828b4cb82f7e950fe334d54ea5b04d034d81d24845ac3f"
+    },
+    {
+      "path": "work/u280_native_owner_control_v1_20261013/route/corridor_trace.csv",
+      "sha256": "226543b5781bc75d2bb9d968c705a7e3178ef414b83824c8dacc700cdcdfe1a4"
+    },
+    {
+      "path": "work/u280_native_owner_control_v1_20261013/route/owner_usage.csv",
+      "sha256": "a7df6e59936be1cacc9e6d50e8525a781d18010561cf73861569cc384fbf6ad2"
+    },
+    {
+      "path": "work/u280_native_owner_control_v1_20261013/route/usage.csv",
+      "sha256": "6d6c5e4ec5db5427bb299f0e425cf9dfe5188b5964bbe451a15ebe6844c7321c"
+    },
+    {
+      "path": "work/u280_native_owner_control_v1_20261013/route/corridor_runs.csv",
+      "sha256": "0933ae86cc0c380bf564600e1326d4a2447a4bdb2ef3468ee4d7e8940f9c152d"
+    },
+    {
+      "path": "work/u280_native_owner_control_v1_20261013/route/cohort_passes.csv",
+      "sha256": "4ac30e5a58974a1861efc1a59b707b7c1d40e044bd833427c241c36e53148b2d"
+    },
+    {
+      "path": "work/u280_native_owner_control_v1_20261013/route/connections.csv",
+      "sha256": "f6694f8350976fe24acde950f6711076726bc42f05cfe205855abdca63119e10"
+    },
+    {
+      "path": "work/u280_native_owner_control_cohort_audit_v1_20261013/audit.json",
+      "sha256": "9b68cd94f5cd0f533a30ea5fad26e6adedbca2267457ddf9a795e0045b9c37c9"
+    },
+    {
+      "path": "work/u280_native_owner_control_cohort_audit_v1_20261013/audit_native_cohort.py",
+      "sha256": "cb20fbac98e8d1149b069bc5e0ba5278ab4ee4bbba0cf4a4d9108acd7b4cc00c"
+    },
+    {
+      "path": "work/u280_native_owner_control_cohort_audit_v1_20261013/audit_native_owner.py",
+      "sha256": "4ba1b6a6e9817772dbce012bd3c033ba3b0020d07963d1dfdead7e0be63b803d"
+    },
+    {
+      "path": "work/u280_native_owner_control_cohort_audit_v1_20261013/run_native_case.py",
+      "sha256": "281d46e1a7f801ebefefc0dce7fbed8ace6b38f91bf6c43f4f77a0c5c20b7690"
+    },
+    {
+      "path": "work/u280_native_owner_control_protocol_audit_v1_20261013/audit.json",
+      "sha256": "413905a1f8f48f32ad27d47d4be400b3b87671668df7a430a829568751c3d226"
+    },
+    {
+      "path": "work/u280_native_owner_control_protocol_audit_v1_20261013/audit_native_corridor.py",
+      "sha256": "f07176e0dbdea98134aafa4143c21a87032bd60ffc541ff8ce2f50c60f1deb89"
+    },
+    {
+      "path": "work/u280_native_owner_control_protocol_audit_v1_20261013/run_native_case.py",
+      "sha256": "281d46e1a7f801ebefefc0dce7fbed8ace6b38f91bf6c43f4f77a0c5c20b7690"
+    },
+    {
+      "path": "work/u280_native_owner_control_protocol_audit_v1_20261013/audit_native_boundary_shadow.py",
+      "sha256": "72cc72999bb93b66ea900b500bbe747b96e249b95bcaae390cf2049d848f16ad"
+    },
+    {
+      "path": "work/u280_native_owner_control_protocol_audit_v1_20261013/audit_native_schedule.py",
+      "sha256": "4a36b69760b3fad4a651f67f6afb3bc68171c164f84c2ec4724522a23d435b58"
+    },
+    {
+      "path": "work/u280_native_defer_defer_v1_20261013/manifest.json",
+      "sha256": "24ae4f52ad519aae24fe0bc5a327a6f77c91ad329f89614da5e17f6ebeaaf25b"
+    },
+    {
+      "path": "work/u280_native_owner_partition_v1_20261013/manifest.json",
+      "sha256": "c9649ab7c691ce51b5e212214e97d50c3e02b4f2bf75fb71a80f52357b2008be"
+    },
+    {
+      "path": "work/u280_native_owner_partition_v1_20261013/native_monotone.hpp",
+      "sha256": "96eae720126ed8fd68a009e381f0ce0bf1bdbba3bc2ac88d659223f81182086e"
+    },
+    {
+      "path": "work/u280_native_owner_partition_v1_20261013/native_route_state.hpp",
+      "sha256": "a156db87eede10defedc31266a135dc5060cb3292b1485bee28999e5e64de31e"
+    },
+    {
+      "path": "work/u280_native_owner_partition_v1_20261013/run_native_cohort.py",
+      "sha256": "fdada2b1368e2c1a02c24ff2aa9a0df0b16794b49111e8866525185d252b3a21"
+    },
+    {
+      "path": "work/u280_native_owner_partition_v1_20261013/native_quotient.hpp",
+      "sha256": "d8d066491d40b6a398720ebde77ef33380a0a2518df879dc4bf34200f30814c1"
+    },
+    {
+      "path": "work/u280_native_owner_partition_v1_20261013/native_corridor.hpp",
+      "sha256": "98764cbd4df1fb1c3dfb1fc05a2cdcd331dd05d505c41de1b6f12b17a83897a3"
+    },
+    {
+      "path": "work/u280_native_owner_partition_v1_20261013/run_native_case.py",
+      "sha256": "281d46e1a7f801ebefefc0dce7fbed8ace6b38f91bf6c43f4f77a0c5c20b7690"
+    },
+    {
+      "path": "work/u280_native_owner_partition_v1_20261013/router",
+      "sha256": "fd07c3ea469fdf2ead8d8a0ea1f549b3bf0974b5940694d0ff1ba94ee343a751"
+    },
+    {
+      "path": "work/u280_native_owner_partition_v1_20261013/route_native_cohort.cpp",
+      "sha256": "6cc75f8fd6f1129eaf0c1dadbcbce4ed9a21c7a972210d5af59af5c7e6c80115"
+    },
+    {
+      "path": "work/u280_native_owner_partition_v1_20261013/run.log",
+      "sha256": "eff69e96969d866c2fbb0a60fbd75cec0ed4b98c22b4c588e94b08c795424871"
+    },
+    {
+      "path": "work/u280_native_owner_partition_v1_20261013/native_csr_io.hpp",
+      "sha256": "4199a076276be5229034dcc64772f0aeedbc944d05dad5880106c76400b218fc"
+    },
+    {
+      "path": "work/u280_native_owner_partition_v1_20261013/sparse_search.hpp",
+      "sha256": "b670dfae9479c2b698ab26bcc9256d7de4aa3ca01cc145868453b5c4add1fb69"
+    },
+    {
+      "path": "work/u280_native_owner_partition_v1_20261013/native_boundary_shadow.hpp",
+      "sha256": "2e43f9bbe2bf72879775d29845137c28dfa5a5f0de1c4e701dfce51783315ce5"
+    },
+    {
+      "path": "work/u280_native_owner_partition_v1_20261013/route/paths.csv",
+      "sha256": "2f3ebe68bdd3f233f4dfe915d8106e621a59ad397100caa6d9335a692cbee65d"
+    },
+    {
+      "path": "work/u280_native_owner_partition_v1_20261013/route/corridor_candidates.csv",
+      "sha256": "f86370b022b8c73782d64fd22080608ca9f7aafbb1ee2e8282cf3b488b21c742"
+    },
+    {
+      "path": "work/u280_native_owner_partition_v1_20261013/route/shadow_trace.csv",
+      "sha256": "abd204a2056440db21abbbeca590af0b0e0605d1d5b731f0994c69b0760f2ad8"
+    },
+    {
+      "path": "work/u280_native_owner_partition_v1_20261013/route/shadow_final.csv",
+      "sha256": "aa877035346f35d574f98cd1dd3061beb23daf5d2405aa5352d01bf6f4abacec"
+    },
+    {
+      "path": "work/u280_native_owner_partition_v1_20261013/route/trees.csv",
+      "sha256": "1cc40db746b080dddce4abf0942d090b4e2086da723687bc5a597882c131bb65"
+    },
+    {
+      "path": "work/u280_native_owner_partition_v1_20261013/route/audit.json",
+      "sha256": "60c4af97c0b61634ce5f78309ef6ef7fcf1b5ba63a547bc94f328b219962053d"
+    },
+    {
+      "path": "work/u280_native_owner_partition_v1_20261013/route/iterations.csv",
+      "sha256": "7dd95cc3bca716ec905ab04a2e77982ec214e719ea34c9128998b27c5e7aa5b7"
+    },
+    {
+      "path": "work/u280_native_owner_partition_v1_20261013/route/shadow_reads.csv",
+      "sha256": "c51a56f5045dd876eb7bf2da530398bcf0f3b677529be52b6a38f3a6ddf6f279"
+    },
+    {
+      "path": "work/u280_native_owner_partition_v1_20261013/route/selection.csv",
+      "sha256": "af88f471a14d36fa5ece15bd6f2e23e33339a17cba188ad459a05ca5c170e94d"
+    },
+    {
+      "path": "work/u280_native_owner_partition_v1_20261013/route/corridor_paths.csv",
+      "sha256": "2aebb8e6e0db7e924109ed258f6a8e7065da999018ab0a47ab52493bb2151a45"
+    },
+    {
+      "path": "work/u280_native_owner_partition_v1_20261013/route/shadow_metrics.csv",
+      "sha256": "f55fae03c7277e5bf1828b4cb82f7e950fe334d54ea5b04d034d81d24845ac3f"
+    },
+    {
+      "path": "work/u280_native_owner_partition_v1_20261013/route/corridor_trace.csv",
+      "sha256": "226543b5781bc75d2bb9d968c705a7e3178ef414b83824c8dacc700cdcdfe1a4"
+    },
+    {
+      "path": "work/u280_native_owner_partition_v1_20261013/route/owner_usage.csv",
+      "sha256": "2f59ccbfaf07766a25ddadcfc99c8c70c1c63a85539806f9417e26ae87ba22aa"
+    },
+    {
+      "path": "work/u280_native_owner_partition_v1_20261013/route/usage.csv",
+      "sha256": "6d6c5e4ec5db5427bb299f0e425cf9dfe5188b5964bbe451a15ebe6844c7321c"
+    },
+    {
+      "path": "work/u280_native_owner_partition_v1_20261013/route/corridor_runs.csv",
+      "sha256": "0933ae86cc0c380bf564600e1326d4a2447a4bdb2ef3468ee4d7e8940f9c152d"
+    },
+    {
+      "path": "work/u280_native_owner_partition_v1_20261013/route/cohort_passes.csv",
+      "sha256": "4ac30e5a58974a1861efc1a59b707b7c1d40e044bd833427c241c36e53148b2d"
+    },
+    {
+      "path": "work/u280_native_owner_partition_v1_20261013/route/connections.csv",
+      "sha256": "f6694f8350976fe24acde950f6711076726bc42f05cfe205855abdca63119e10"
+    },
+    {
+      "path": "work/u280_native_owner_partition_cohort_audit_v1_20261013/audit.json",
+      "sha256": "a31f6202f8a4cc43cda9f4835c81a1dbd98465444a835c282acd4ef64d2634aa"
+    },
+    {
+      "path": "work/u280_native_owner_partition_cohort_audit_v1_20261013/audit_native_cohort.py",
+      "sha256": "cb20fbac98e8d1149b069bc5e0ba5278ab4ee4bbba0cf4a4d9108acd7b4cc00c"
+    },
+    {
+      "path": "work/u280_native_owner_partition_cohort_audit_v1_20261013/audit_native_owner.py",
+      "sha256": "4ba1b6a6e9817772dbce012bd3c033ba3b0020d07963d1dfdead7e0be63b803d"
+    },
+    {
+      "path": "work/u280_native_owner_partition_cohort_audit_v1_20261013/run_native_case.py",
+      "sha256": "281d46e1a7f801ebefefc0dce7fbed8ace6b38f91bf6c43f4f77a0c5c20b7690"
+    },
+    {
+      "path": "work/u280_native_owner_partition_protocol_audit_v1_20261013/audit.json",
+      "sha256": "fe3ddb2062c39a1ea0a225ea8faa49dc8543120f6673a59bf2d6b16b10653fff"
+    },
+    {
+      "path": "work/u280_native_owner_partition_protocol_audit_v1_20261013/audit_native_corridor.py",
+      "sha256": "f07176e0dbdea98134aafa4143c21a87032bd60ffc541ff8ce2f50c60f1deb89"
+    },
+    {
+      "path": "work/u280_native_owner_partition_protocol_audit_v1_20261013/run_native_case.py",
+      "sha256": "281d46e1a7f801ebefefc0dce7fbed8ace6b38f91bf6c43f4f77a0c5c20b7690"
+    },
+    {
+      "path": "work/u280_native_owner_partition_protocol_audit_v1_20261013/audit_native_boundary_shadow.py",
+      "sha256": "72cc72999bb93b66ea900b500bbe747b96e249b95bcaae390cf2049d848f16ad"
+    },
+    {
+      "path": "work/u280_native_owner_partition_protocol_audit_v1_20261013/audit_native_schedule.py",
+      "sha256": "4a36b69760b3fad4a651f67f6afb3bc68171c164f84c2ec4724522a23d435b58"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_v1_20261013/manifest.json",
+      "sha256": "e7f8a32e7fa7293ccd553dc3485eb220f39648e2f9645827858067ba1c52a55b"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_v1_20261013/native_monotone.hpp",
+      "sha256": "96eae720126ed8fd68a009e381f0ce0bf1bdbba3bc2ac88d659223f81182086e"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_v1_20261013/native_route_state.hpp",
+      "sha256": "a156db87eede10defedc31266a135dc5060cb3292b1485bee28999e5e64de31e"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_v1_20261013/run_native_cohort.py",
+      "sha256": "fdada2b1368e2c1a02c24ff2aa9a0df0b16794b49111e8866525185d252b3a21"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_v1_20261013/native_quotient.hpp",
+      "sha256": "d8d066491d40b6a398720ebde77ef33380a0a2518df879dc4bf34200f30814c1"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_v1_20261013/native_corridor.hpp",
+      "sha256": "98764cbd4df1fb1c3dfb1fc05a2cdcd331dd05d505c41de1b6f12b17a83897a3"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_v1_20261013/run_native_case.py",
+      "sha256": "281d46e1a7f801ebefefc0dce7fbed8ace6b38f91bf6c43f4f77a0c5c20b7690"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_v1_20261013/router",
+      "sha256": "fd07c3ea469fdf2ead8d8a0ea1f549b3bf0974b5940694d0ff1ba94ee343a751"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_v1_20261013/route_native_cohort.cpp",
+      "sha256": "6cc75f8fd6f1129eaf0c1dadbcbce4ed9a21c7a972210d5af59af5c7e6c80115"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_v1_20261013/run.log",
+      "sha256": "30e15de6d1b0c3e8f8e4e722928b730b9ed6e71ed7784714b5a0c355102a0db7"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_v1_20261013/native_csr_io.hpp",
+      "sha256": "4199a076276be5229034dcc64772f0aeedbc944d05dad5880106c76400b218fc"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_v1_20261013/sparse_search.hpp",
+      "sha256": "b670dfae9479c2b698ab26bcc9256d7de4aa3ca01cc145868453b5c4add1fb69"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_v1_20261013/native_boundary_shadow.hpp",
+      "sha256": "2e43f9bbe2bf72879775d29845137c28dfa5a5f0de1c4e701dfce51783315ce5"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_v1_20261013/route/paths.csv",
+      "sha256": "2f3ebe68bdd3f233f4dfe915d8106e621a59ad397100caa6d9335a692cbee65d"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_v1_20261013/route/corridor_candidates.csv",
+      "sha256": "8d521dd556a368c232367a7176ac8b0772d203fade9816ce57766610523a3447"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_v1_20261013/route/shadow_trace.csv",
+      "sha256": "9a6db85e4e7b07d643f5f329b18a20d77d13b6c1c3f13eff62df64d342902530"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_v1_20261013/route/shadow_final.csv",
+      "sha256": "2ec6b9bfaceb2e19379a398b2316dc1124833a2b766d65d0737d33db6c533793"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_v1_20261013/route/trees.csv",
+      "sha256": "1cc40db746b080dddce4abf0942d090b4e2086da723687bc5a597882c131bb65"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_v1_20261013/route/audit.json",
+      "sha256": "60c4af97c0b61634ce5f78309ef6ef7fcf1b5ba63a547bc94f328b219962053d"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_v1_20261013/route/iterations.csv",
+      "sha256": "a35a397747d5e2e00aea3b748e062e2ca5b9181cc826970e542db79206644986"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_v1_20261013/route/shadow_reads.csv",
+      "sha256": "68d2684e8beb87ab3358280ce5f073b198c978a5be1c333d76b2d2719ca8323c"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_v1_20261013/route/selection.csv",
+      "sha256": "af88f471a14d36fa5ece15bd6f2e23e33339a17cba188ad459a05ca5c170e94d"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_v1_20261013/route/corridor_paths.csv",
+      "sha256": "2463a0f4cb3c6d56b91abf878aa47fb316320ac567ee67ec75af08f56b38e6ff"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_v1_20261013/route/shadow_metrics.csv",
+      "sha256": "dd587ce8ec95ebf46375c73f4f51096514c2be86ae65782f819f074b0a88197e"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_v1_20261013/route/corridor_trace.csv",
+      "sha256": "2e9fdec544ada1923977d9bcd4050bdd581b0b4256120cdfedffa15bfb7aae35"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_v1_20261013/route/owner_usage.csv",
+      "sha256": "2f59ccbfaf07766a25ddadcfc99c8c70c1c63a85539806f9417e26ae87ba22aa"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_v1_20261013/route/usage.csv",
+      "sha256": "6d6c5e4ec5db5427bb299f0e425cf9dfe5188b5964bbe451a15ebe6844c7321c"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_v1_20261013/route/corridor_runs.csv",
+      "sha256": "4e1003e38c8f224e4e4701a271b8d6c417c8ad7c711eb8562bace3e9d62f727b"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_v1_20261013/route/cohort_passes.csv",
+      "sha256": "4ac30e5a58974a1861efc1a59b707b7c1d40e044bd833427c241c36e53148b2d"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_v1_20261013/route/connections.csv",
+      "sha256": "f6694f8350976fe24acde950f6711076726bc42f05cfe205855abdca63119e10"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_cohort_audit_v1_20261013/audit.json",
+      "sha256": "6d5a4eb047ec3b09aad64bba37cf75d3a9efe348b744772d013e658ec5a6ae5b"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_cohort_audit_v1_20261013/audit_native_cohort.py",
+      "sha256": "cb20fbac98e8d1149b069bc5e0ba5278ab4ee4bbba0cf4a4d9108acd7b4cc00c"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_cohort_audit_v1_20261013/audit_native_owner.py",
+      "sha256": "4ba1b6a6e9817772dbce012bd3c033ba3b0020d07963d1dfdead7e0be63b803d"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_cohort_audit_v1_20261013/run_native_case.py",
+      "sha256": "281d46e1a7f801ebefefc0dce7fbed8ace6b38f91bf6c43f4f77a0c5c20b7690"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_protocol_audit_v1_20261013/audit.json",
+      "sha256": "d58d97d4349cdaabe058afe2d0fcc722061058c56d10e306cc4503109acad033"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_protocol_audit_v1_20261013/audit_native_corridor.py",
+      "sha256": "f07176e0dbdea98134aafa4143c21a87032bd60ffc541ff8ce2f50c60f1deb89"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_protocol_audit_v1_20261013/run_native_case.py",
+      "sha256": "281d46e1a7f801ebefefc0dce7fbed8ace6b38f91bf6c43f4f77a0c5c20b7690"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_protocol_audit_v1_20261013/audit_native_boundary_shadow.py",
+      "sha256": "72cc72999bb93b66ea900b500bbe747b96e249b95bcaae390cf2049d848f16ad"
+    },
+    {
+      "path": "work/u280_native_owner_shadow3_protocol_audit_v1_20261013/audit_native_schedule.py",
+      "sha256": "4a36b69760b3fad4a651f67f6afb3bc68171c164f84c2ec4724522a23d435b58"
+    },
+    {
+      "path": "work/u280_native_defer_shadow3_v1_20261013/manifest.json",
+      "sha256": "a304200bb13c2150458d38792473e5b0301789c6c39750cd3827fb8e7abfebe1"
+    },
+    {
+      "path": "work/native_owner_build_20261013/ctest.log",
+      "sha256": "c7fafdcf1ac83c5949e1b9ee5156cebbdda3a34fba166f7d14d687c1c31792af"
+    },
+    {
+      "path": "work/native_owner_sanitize_20261013/ctest.log",
+      "sha256": "8eb200eba3affeff2793697fd52c20cc2ea20cf7392cbb16d20170d5ea310e11"
+    },
+    {
+      "path": "work/native_owner_build_20261013/feedback_ctest_v2.log",
+      "sha256": "c6ad076aa4dc24e9e67c826c6babfd082be327fc3035d12894b09d90d40c75ac"
+    },
+    {
+      "path": "work/native_owner_build_20261013/configure.log",
+      "sha256": "000aa0ad76075280a6af27b256a9b4dce7399a8a757928dff5216577ba01aea4"
+    },
+    {
+      "path": "work/native_owner_build_20261013/feedback_ctest.log",
+      "sha256": "0abbcbb210659b87d260bdc17088573c868ba23a4e46eee82506b558eb66ff26"
+    },
+    {
+      "path": "work/native_owner_build_20261013/feedback_build.log",
+      "sha256": "422f46475e70f4c56fdf1e7a6d8aac3aa1cdfa658252f7facbc543e1611317b0"
+    },
+    {
+      "path": "work/native_owner_build_20261013/build.log",
+      "sha256": "042104214d576765ed352dbdeb599d51f181a26f5e8bb2b5034b57783c2fdfcf"
+    },
+    {
+      "path": "work/native_owner_sanitize_20261013/feedback_ctest_v2.log",
+      "sha256": "99ff59f28f79d5f151ad6a9d5b88d700a29f877d19770e7d3737ee8d57119b4e"
+    },
+    {
+      "path": "work/native_owner_sanitize_20261013/feedback_ctest.log",
+      "sha256": "3b81c78a194bb5a0a507ce638b56de4bea00b8420d246604b67407c58c1250f0"
+    },
+    {
+      "path": "work/native_owner_sanitize_20261013/feedback_build.log",
+      "sha256": "8e5b9e671c92ac2c8e27c1bc983965ca5739bd51fb8e51f220f7f039809542ef"
+    },
+    {
+      "path": "work/native_owner_sanitize_20261013/build.log",
+      "sha256": "a2bdc1f3c2112bbd6463b6f90d146f66ec08e36003c413296b93a65b26f712f2"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/manifest.json",
+      "sha256": "59fc3a46c4b0c2ed0d74df047773e0239eb56b6012ef12902e73751b4c5ee978"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/hold20.log",
+      "sha256": "c3e442cd51f70f0d1cf9ba915f1eb1b9ee4efd1dd4cea72b9e21fde92d2a0c37"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/feedback",
+      "sha256": "d7c4a4398f512b0c09faa0a27c1c4548c2ccae9e45cf569d54da02aeb81a51ad"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/prepared.log",
+      "sha256": "7a5f6f093f2d480d889bf4c5dab1e028e4060b409ac37b28e205da65a25985ca"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/setup1434.log",
+      "sha256": "b053a6c5371fa795469f2de55c2b7a34a59aa5787281d1d51e76e35218b862e6"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/zero_floor.log",
+      "sha256": "b5a28869e51f34d849d2dd6b52627fbf4bd9c54997098df099b63a67c8497b58"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/prepared/baseline/tree_identity.txt",
+      "sha256": "99e45600983e2d2d2fe9316964deb350a8cfa3488753991767c993e081153084"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/prepared/baseline/trees.csv",
+      "sha256": "2866c07b85999e2fc11867c292ffa764384c9c00ed2c7973e8258dc5f255cb98"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/prepared/baseline/owner_usage.csv",
+      "sha256": "c0848a83d24e8e2755cf1cbd50e42b7ba636d344be5ecb4f39c682fc6d191f11"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/prepared/baseline/usage.csv",
+      "sha256": "e82e0b33860e7ab2e126b7ae603d4a97aa1329af8d37dc6a3999f06449f27f77"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/prepared/proposal/tree_identity.txt",
+      "sha256": "b3e5b6155bc6c7804e0594eb89969e6e7ae7db27c8c56da24220c7d99b912f41"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/prepared/proposal/trees.csv",
+      "sha256": "2d283112541a59fa78be0ee4fa53c9147b464d6aac28c766e73455a9a4592f6a"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/prepared/proposal/owner_usage.csv",
+      "sha256": "c6667cae7d3dd91d16b141c4b3cf871aa5a0c4dcbd8cb2170b06e812172225f3"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/prepared/proposal/usage.csv",
+      "sha256": "959dfa8d46f48775b229867f04619aceb8af8f8a85175457cbbcaedf0f5dd343"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/zero_floor/decision.json",
+      "sha256": "f7b4f5048e068d95c96b6936430f7c690613e957d3d5dbbba1411356e9097b36"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/zero_floor/authority/tree_identity.txt",
+      "sha256": "b3e5b6155bc6c7804e0594eb89969e6e7ae7db27c8c56da24220c7d99b912f41"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/zero_floor/authority/trees.csv",
+      "sha256": "2d283112541a59fa78be0ee4fa53c9147b464d6aac28c766e73455a9a4592f6a"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/zero_floor/authority/owner_usage.csv",
+      "sha256": "c6667cae7d3dd91d16b141c4b3cf871aa5a0c4dcbd8cb2170b06e812172225f3"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/zero_floor/authority/usage.csv",
+      "sha256": "959dfa8d46f48775b229867f04619aceb8af8f8a85175457cbbcaedf0f5dd343"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/zero_floor/baseline/tree_identity.txt",
+      "sha256": "99e45600983e2d2d2fe9316964deb350a8cfa3488753991767c993e081153084"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/zero_floor/baseline/trees.csv",
+      "sha256": "2866c07b85999e2fc11867c292ffa764384c9c00ed2c7973e8258dc5f255cb98"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/zero_floor/baseline/owner_usage.csv",
+      "sha256": "c0848a83d24e8e2755cf1cbd50e42b7ba636d344be5ecb4f39c682fc6d191f11"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/zero_floor/baseline/usage.csv",
+      "sha256": "e82e0b33860e7ab2e126b7ae603d4a97aa1329af8d37dc6a3999f06449f27f77"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/zero_floor/proposal/tree_identity.txt",
+      "sha256": "b3e5b6155bc6c7804e0594eb89969e6e7ae7db27c8c56da24220c7d99b912f41"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/zero_floor/proposal/trees.csv",
+      "sha256": "2d283112541a59fa78be0ee4fa53c9147b464d6aac28c766e73455a9a4592f6a"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/zero_floor/proposal/owner_usage.csv",
+      "sha256": "c6667cae7d3dd91d16b141c4b3cf871aa5a0c4dcbd8cb2170b06e812172225f3"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/zero_floor/proposal/usage.csv",
+      "sha256": "959dfa8d46f48775b229867f04619aceb8af8f8a85175457cbbcaedf0f5dd343"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/zero_floor/candidate/tree_identity.txt",
+      "sha256": "b3e5b6155bc6c7804e0594eb89969e6e7ae7db27c8c56da24220c7d99b912f41"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/zero_floor/candidate/trees.csv",
+      "sha256": "2d283112541a59fa78be0ee4fa53c9147b464d6aac28c766e73455a9a4592f6a"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/zero_floor/candidate/owner_usage.csv",
+      "sha256": "c6667cae7d3dd91d16b141c4b3cf871aa5a0c4dcbd8cb2170b06e812172225f3"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/zero_floor/candidate/usage.csv",
+      "sha256": "959dfa8d46f48775b229867f04619aceb8af8f8a85175457cbbcaedf0f5dd343"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/hold20/decision.json",
+      "sha256": "39afbc6bf51af546eb36bba434d206cb8b382c39dcad68d5b432c1988ddb5cba"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/hold20/authority/tree_identity.txt",
+      "sha256": "99e45600983e2d2d2fe9316964deb350a8cfa3488753991767c993e081153084"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/hold20/authority/trees.csv",
+      "sha256": "2866c07b85999e2fc11867c292ffa764384c9c00ed2c7973e8258dc5f255cb98"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/hold20/authority/owner_usage.csv",
+      "sha256": "c0848a83d24e8e2755cf1cbd50e42b7ba636d344be5ecb4f39c682fc6d191f11"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/hold20/authority/usage.csv",
+      "sha256": "e82e0b33860e7ab2e126b7ae603d4a97aa1329af8d37dc6a3999f06449f27f77"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/hold20/baseline/tree_identity.txt",
+      "sha256": "99e45600983e2d2d2fe9316964deb350a8cfa3488753991767c993e081153084"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/hold20/baseline/trees.csv",
+      "sha256": "2866c07b85999e2fc11867c292ffa764384c9c00ed2c7973e8258dc5f255cb98"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/hold20/baseline/owner_usage.csv",
+      "sha256": "c0848a83d24e8e2755cf1cbd50e42b7ba636d344be5ecb4f39c682fc6d191f11"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/hold20/baseline/usage.csv",
+      "sha256": "e82e0b33860e7ab2e126b7ae603d4a97aa1329af8d37dc6a3999f06449f27f77"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/hold20/proposal/tree_identity.txt",
+      "sha256": "b3e5b6155bc6c7804e0594eb89969e6e7ae7db27c8c56da24220c7d99b912f41"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/hold20/proposal/trees.csv",
+      "sha256": "2d283112541a59fa78be0ee4fa53c9147b464d6aac28c766e73455a9a4592f6a"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/hold20/proposal/owner_usage.csv",
+      "sha256": "c6667cae7d3dd91d16b141c4b3cf871aa5a0c4dcbd8cb2170b06e812172225f3"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/hold20/proposal/usage.csv",
+      "sha256": "959dfa8d46f48775b229867f04619aceb8af8f8a85175457cbbcaedf0f5dd343"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/hold20/candidate/tree_identity.txt",
+      "sha256": "340ed6464e4449629269b7d9ce05a59c7ea69cc67e6128d5bdea983fb05e848f"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/hold20/candidate/trees.csv",
+      "sha256": "1cc257bd1bd7a650c1c28f350788abc7785bf7bb6e9097a25f4a727c86f12a11"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/hold20/candidate/owner_usage.csv",
+      "sha256": "e14a390b70cd0a39dbb128c2f68f5643f03dad97a01cdbad478000cbe05ae5ec"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/hold20/candidate/usage.csv",
+      "sha256": "a044d96dc408713d8154a853420f2df48edc74ce3d01734366ffb4cf08f3312d"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/setup1434/decision.json",
+      "sha256": "d1516232f8b1f3a4aaae311ce8e964c9bfa4497ec89d67d6dd2d6cf161a28e84"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/setup1434/authority/tree_identity.txt",
+      "sha256": "99e45600983e2d2d2fe9316964deb350a8cfa3488753991767c993e081153084"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/setup1434/authority/trees.csv",
+      "sha256": "2866c07b85999e2fc11867c292ffa764384c9c00ed2c7973e8258dc5f255cb98"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/setup1434/authority/owner_usage.csv",
+      "sha256": "c0848a83d24e8e2755cf1cbd50e42b7ba636d344be5ecb4f39c682fc6d191f11"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/setup1434/authority/usage.csv",
+      "sha256": "e82e0b33860e7ab2e126b7ae603d4a97aa1329af8d37dc6a3999f06449f27f77"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/setup1434/baseline/tree_identity.txt",
+      "sha256": "99e45600983e2d2d2fe9316964deb350a8cfa3488753991767c993e081153084"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/setup1434/baseline/trees.csv",
+      "sha256": "2866c07b85999e2fc11867c292ffa764384c9c00ed2c7973e8258dc5f255cb98"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/setup1434/baseline/owner_usage.csv",
+      "sha256": "c0848a83d24e8e2755cf1cbd50e42b7ba636d344be5ecb4f39c682fc6d191f11"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/setup1434/baseline/usage.csv",
+      "sha256": "e82e0b33860e7ab2e126b7ae603d4a97aa1329af8d37dc6a3999f06449f27f77"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/setup1434/proposal/tree_identity.txt",
+      "sha256": "b3e5b6155bc6c7804e0594eb89969e6e7ae7db27c8c56da24220c7d99b912f41"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/setup1434/proposal/trees.csv",
+      "sha256": "2d283112541a59fa78be0ee4fa53c9147b464d6aac28c766e73455a9a4592f6a"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/setup1434/proposal/owner_usage.csv",
+      "sha256": "c6667cae7d3dd91d16b141c4b3cf871aa5a0c4dcbd8cb2170b06e812172225f3"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/setup1434/proposal/usage.csv",
+      "sha256": "959dfa8d46f48775b229867f04619aceb8af8f8a85175457cbbcaedf0f5dd343"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/setup1434/candidate/tree_identity.txt",
+      "sha256": "0db88c0168df05b12b9e22ba3947e0bee04d08af8840b97759cf486c479eeca3"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/setup1434/candidate/trees.csv",
+      "sha256": "c91128203aee1b30862f407ee07c270a9e18df5726ec889760f4110fdeab13e3"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/setup1434/candidate/owner_usage.csv",
+      "sha256": "869c08d8861d71a3f32abdf75459ad23cd924f684198080a4cffca6de1238bb9"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/setup1434/candidate/usage.csv",
+      "sha256": "f856d14463b8ec7b4992bad5fa5a07ab109375ab4150b0ff37598247debca1f7"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/source/include/native_route_state.hpp",
+      "sha256": "a156db87eede10defedc31266a135dc5060cb3292b1485bee28999e5e64de31e"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/source/include/native_timing_feedback.hpp",
+      "sha256": "f9fc08c943b69fd8a49640aa4ded4a64c549a39b566f66780c7b722803ce84bb"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/source/include/native_csr_io.hpp",
+      "sha256": "4199a076276be5229034dcc64772f0aeedbc944d05dad5880106c76400b218fc"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/source/include/sparse_search.hpp",
+      "sha256": "b670dfae9479c2b698ab26bcc9256d7de4aa3ca01cc145868453b5c4add1fb69"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_v1_20261013/source/tools/native_timing_feedback.cpp",
+      "sha256": "a28dc3af9f095a5fbfdf043d4f91a11d9d7a424630a9fcb67eaeddcdcf331051"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_audit_v1_20261013/audit.json",
+      "sha256": "52b04c0a77aa6f3c7debf2cb45a9ce28ade3e5cee41fc8f352cd4f848aee2ce4"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_audit_v1_20261013/auditor.py",
+      "sha256": "206bdd3e890abdfcd163b90ce6f87b716b54c23a2da8efc0b7d0358f2b4c8d30"
+    },
+    {
+      "path": "work/u280_native_owner_feedback_audit_v1_20261013/audit_native_owner.py",
+      "sha256": "4ba1b6a6e9817772dbce012bd3c033ba3b0020d07963d1dfdead7e0be63b803d"
+    },
+    {
+      "path": "work/native_owner_comparison_v1_20261013/comparison.json",
+      "sha256": "05fcc1e4484ecb686391a9b3b0994b847112e9bea2edf52a20dbb28fd0b1955b"
+    }
+  ],
+  "tests": {
+    "ctest_passed": 33,
+    "sanitizer_targets_passed": 6,
+    "cross_owner_operations": 1000,
+    "late_owner_overflow_atomicity": true,
+    "checkpoint_and_timing_layout_preserved": true,
+    "wrong_owner_inventory_rejected": true
+  },
+  "feedback": {
+    "historical_timing_replay": true,
+    "fresh_native_timing": false,
+    "policies": 4,
+    "owner_inventories_verified": 14,
+    "canonical_states_and_decisions_identical": true,
+    "hold20_restored_nets": [
+      303560,
+      303585,
+      303653,
+      454074,
+      454077
+    ]
+  },
+  "implementation": "Single-owner partitioned native authority with full electrical membership retained, serial atomic cross-owner updates and canonical merge export",
+  "per_case": {
+    "control": {
+      "repeats": 5,
+      "prior_journals_equal": [
+        "route/paths.csv",
+        "route/corridor_candidates.csv",
+        "route/shadow_trace.csv",
+        "route/shadow_final.csv",
+        "route/trees.csv",
+        "route/iterations.csv",
+        "route/shadow_reads.csv",
+        "route/selection.csv",
+        "route/corridor_paths.csv",
+        "route/shadow_metrics.csv",
+        "route/corridor_trace.csv",
+        "route/usage.csv",
+        "route/corridor_runs.csv",
+        "route/cohort_passes.csv",
+        "route/connections.csv"
+      ],
+      "per_repeat_work": {
+        "expanded": 7830970,
+        "edge_visits": 32165180,
+        "quotient_expanded": 147981897,
+        "quotient_edge_visits": 1100467159
+      },
+      "owner_inventory": {
+        "unique_owner_inventory_verified": true,
+        "partitioned": false,
+        "records": [
+          {
+            "repeat": 0,
+            "owner": 0,
+            "records": 2609,
+            "boundary_records": 36
+          },
+          {
+            "repeat": 1,
+            "owner": 0,
+            "records": 2609,
+            "boundary_records": 36
+          },
+          {
+            "repeat": 2,
+            "owner": 0,
+            "records": 2609,
+            "boundary_records": 36
+          },
+          {
+            "repeat": 3,
+            "owner": 0,
+            "records": 2609,
+            "boundary_records": 36
+          },
+          {
+            "repeat": 4,
+            "owner": 0,
+            "records": 2609,
+            "boundary_records": 36
+          }
+        ],
+        "scope": "Final shard inventory including empty version/history tombstones; no concurrency or HBM claim"
+      }
+    },
+    "partition": {
+      "repeats": 5,
+      "prior_journals_equal": [
+        "route/paths.csv",
+        "route/corridor_candidates.csv",
+        "route/shadow_trace.csv",
+        "route/shadow_final.csv",
+        "route/trees.csv",
+        "route/iterations.csv",
+        "route/shadow_reads.csv",
+        "route/selection.csv",
+        "route/corridor_paths.csv",
+        "route/shadow_metrics.csv",
+        "route/corridor_trace.csv",
+        "route/usage.csv",
+        "route/corridor_runs.csv",
+        "route/cohort_passes.csv",
+        "route/connections.csv"
+      ],
+      "per_repeat_work": {
+        "expanded": 7830970,
+        "edge_visits": 32165180,
+        "quotient_expanded": 147981897,
+        "quotient_edge_visits": 1100467159
+      },
+      "owner_inventory": {
+        "unique_owner_inventory_verified": true,
+        "partitioned": true,
+        "records": [
+          {
+            "repeat": 0,
+            "owner": 0,
+            "records": 983,
+            "boundary_records": 19
+          },
+          {
+            "repeat": 0,
+            "owner": 1,
+            "records": 1062,
+            "boundary_records": 17
+          },
+          {
+            "repeat": 0,
+            "owner": 2,
+            "records": 564,
+            "boundary_records": 0
+          },
+          {
+            "repeat": 1,
+            "owner": 0,
+            "records": 983,
+            "boundary_records": 19
+          },
+          {
+            "repeat": 1,
+            "owner": 1,
+            "records": 1062,
+            "boundary_records": 17
+          },
+          {
+            "repeat": 1,
+            "owner": 2,
+            "records": 564,
+            "boundary_records": 0
+          },
+          {
+            "repeat": 2,
+            "owner": 0,
+            "records": 983,
+            "boundary_records": 19
+          },
+          {
+            "repeat": 2,
+            "owner": 1,
+            "records": 1062,
+            "boundary_records": 17
+          },
+          {
+            "repeat": 2,
+            "owner": 2,
+            "records": 564,
+            "boundary_records": 0
+          },
+          {
+            "repeat": 3,
+            "owner": 0,
+            "records": 983,
+            "boundary_records": 19
+          },
+          {
+            "repeat": 3,
+            "owner": 1,
+            "records": 1062,
+            "boundary_records": 17
+          },
+          {
+            "repeat": 3,
+            "owner": 2,
+            "records": 564,
+            "boundary_records": 0
+          },
+          {
+            "repeat": 4,
+            "owner": 0,
+            "records": 983,
+            "boundary_records": 19
+          },
+          {
+            "repeat": 4,
+            "owner": 1,
+            "records": 1062,
+            "boundary_records": 17
+          },
+          {
+            "repeat": 4,
+            "owner": 2,
+            "records": 564,
+            "boundary_records": 0
+          }
+        ],
+        "scope": "Final shard inventory including empty version/history tombstones; no concurrency or HBM claim"
+      }
+    },
+    "shadow3": {
+      "repeats": 5,
+      "prior_journals_equal": [
+        "route/paths.csv",
+        "route/corridor_candidates.csv",
+        "route/shadow_trace.csv",
+        "route/shadow_final.csv",
+        "route/trees.csv",
+        "route/iterations.csv",
+        "route/shadow_reads.csv",
+        "route/selection.csv",
+        "route/corridor_paths.csv",
+        "route/shadow_metrics.csv",
+        "route/corridor_trace.csv",
+        "route/usage.csv",
+        "route/corridor_runs.csv",
+        "route/cohort_passes.csv",
+        "route/connections.csv"
+      ],
+      "per_repeat_work": {
+        "expanded": 9066125,
+        "edge_visits": 37385095,
+        "quotient_expanded": 152714062,
+        "quotient_edge_visits": 1136308750
+      },
+      "owner_inventory": {
+        "unique_owner_inventory_verified": true,
+        "partitioned": true,
+        "records": [
+          {
+            "repeat": 0,
+            "owner": 0,
+            "records": 983,
+            "boundary_records": 19
+          },
+          {
+            "repeat": 0,
+            "owner": 1,
+            "records": 1062,
+            "boundary_records": 17
+          },
+          {
+            "repeat": 0,
+            "owner": 2,
+            "records": 564,
+            "boundary_records": 0
+          },
+          {
+            "repeat": 1,
+            "owner": 0,
+            "records": 983,
+            "boundary_records": 19
+          },
+          {
+            "repeat": 1,
+            "owner": 1,
+            "records": 1062,
+            "boundary_records": 17
+          },
+          {
+            "repeat": 1,
+            "owner": 2,
+            "records": 564,
+            "boundary_records": 0
+          },
+          {
+            "repeat": 2,
+            "owner": 0,
+            "records": 983,
+            "boundary_records": 19
+          },
+          {
+            "repeat": 2,
+            "owner": 1,
+            "records": 1062,
+            "boundary_records": 17
+          },
+          {
+            "repeat": 2,
+            "owner": 2,
+            "records": 564,
+            "boundary_records": 0
+          },
+          {
+            "repeat": 3,
+            "owner": 0,
+            "records": 983,
+            "boundary_records": 19
+          },
+          {
+            "repeat": 3,
+            "owner": 1,
+            "records": 1062,
+            "boundary_records": 17
+          },
+          {
+            "repeat": 3,
+            "owner": 2,
+            "records": 564,
+            "boundary_records": 0
+          },
+          {
+            "repeat": 4,
+            "owner": 0,
+            "records": 983,
+            "boundary_records": 19
+          },
+          {
+            "repeat": 4,
+            "owner": 1,
+            "records": 1062,
+            "boundary_records": 17
+          },
+          {
+            "repeat": 4,
+            "owner": 2,
+            "records": 564,
+            "boundary_records": 0
+          }
+        ],
+        "scope": "Final shard inventory including empty version/history tombstones; no concurrency or HBM claim"
+      }
+    }
+  },
+  "limitation": "Search/validation remain serial; boundary shadows still use a source observer. No stage-local concurrent workers, HBM implementation or hardware claim.",
+  "next_work": "Implement stage-local access and boundary message/validation semantics, then HBM mapping and migration ablations; retain all open research gates."
+}

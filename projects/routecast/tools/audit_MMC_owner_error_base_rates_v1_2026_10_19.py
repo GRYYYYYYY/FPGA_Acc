@@ -1,0 +1,15 @@
+"""Class denominators and overlap with archived pressure selection; no refitting."""
+import json
+from pathlib import Path
+from collections import Counter
+from pre_route_endpoints import sha
+R=Path(__file__).resolve().parents[1]
+def read(p):return json.loads(p.read_text())
+def main():
+ out=R/'experiments/mmc_owner_error_base_rates_v1_2026-10-19';out.mkdir(exist_ok=False);source=R/'experiments/mmc_owner_gain_sign_classes_v1_2026-10-19/results.json';x=read(source);scopep=R/'experiments/mmc_prior_wider_context_failure_scope_audit_v1_2026-10-19/audit.json';scope=read(scopep);assert len(scope['rows'])==12 and all(not r['gate'] for r in scope['rows']);selectionp=R/'experiments/mmc_old_owner_pressure_context_v1_2026-10-18/selection.json';selection=read(selectionp);rows=[];bindings={str(p):sha(p) for p in [source,scopep,selectionp,Path(__file__).resolve()]}
+ for r in x['rows']:
+  case=r['case'];gs={k:v for k,v in r['groups'].items() if k.startswith('selected_positive|')};focus=gs['selected_positive|single/unchanged'];total=sum(g['NETs'] for g in gs.values());harm=sum(g.get('pred+_true-',0) for g in gs.values());other=total-focus['NETs'];fh=focus.get('pred+_true-',0)
+  cp=R/f'experiments/mmc_owner_frequency_development_v1_2026-10-19/{case}/choices.jsonl';op=R/f'experiments/mmc_aggregate_L1_oracle_v1_2026-10-19/{case}/choices.jsonl';assert sha(cp)==x['bindings'][str(cp)] and sha(op)==x['bindings'][str(op)];choices={c['net_id']:c for c in map(json.loads,cp.open())};truth={c['net_id']:c['aggregate_gain'] for c in map(json.loads,op.open())};harmful={n for n,c in choices.items() if c['pick']=='B' and c['expected_gain_scaled']>0 and truth[n]<0};assert len(harmful)==harm;selected={n for n,c in choices.items() if c['pick']=='B' and c['expected_gain_scaled']>0};pressure=set(next(z for z in selection['rows'] if z['case']==case)['net_ids']);table=Counter((n in pressure,n in harmful) for n in selected);assert sum(table.values())==total
+  rows.append(dict(case=case,selected_positive_NETs=total,harmful_NETs=harm,focus_NETs=focus['NETs'],focus_harmful=fh,focus_prevalence=focus['NETs']/total,focus_harm_rate=fh/focus['NETs'],other_harm_rate=(harm-fh)/other,focus_to_other_risk_ratio=(fh/focus['NETs'])/((harm-fh)/other),old_pressure_selected_NETs=len(pressure),positive_selected_pressure_overlap=sum(n in pressure for n in selected),harmful_pressure_overlap=len(harmful&pressure),pressure_by_harm_table={str(k):v for k,v in sorted(table.items())}));bindings.update({str(p):sha(p) for p in [cp,op]});print(case,'focus_risk_ratio',rows[-1]['focus_to_other_risk_ratio'],'oldpressure_harmful_overlap',len(harmful&pressure),'/',harm,flush=True)
+ with (out/'results.json').open('x') as f:json.dump(dict(status='ALL3_CLASS_DENOMINATORS_AND_ARCHIVED_OWNER_PRESSURE_OVERLAPS_ACCOUNTED',rows=rows,bindings=bindings,scope='Descriptive exposed-data risks; no significance/causality claim. Archived scope audit establishes12 failed original gates but overlap does not simulate new outcomes. No model or gate changes.'),f,indent=2)
+if __name__=='__main__':main()

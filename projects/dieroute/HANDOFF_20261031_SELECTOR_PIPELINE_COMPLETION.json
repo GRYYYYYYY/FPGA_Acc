@@ -1,0 +1,40 @@
+{
+  "observed_ns": 1793409989328713402,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_SELECTOR_CALL_ATTRIBUTION.json",
+    "sha256": "075bbe41d558cdc98cc7f4f94dba959e110dfbc3ead0593b8cda83a21a0d3935"
+  },
+  "progress": {
+    "report": "work/resident_selector_pipeline_completion_20261031/review.json",
+    "report_sha256": "002c024fe9a438138bd5f9d8790c41e8e211bc8eb334db70f2527f182f37af78",
+    "independent_review": "work/resident_selector_pipeline_completion_20261031/independent_completion_review.json",
+    "independent_review_sha256": "03b18ddb2e0b9ef156c74433bdc3bc6d926db9896c64f6eefc33ced0ec83df85",
+    "helpers": 2,
+    "reported_loop_latency": 33,
+    "reported_function_latency": 35,
+    "abstract_first_done_index": 33,
+    "abstract_first_idle_index": 34,
+    "HDL_simulation_executed": false,
+    "whole_program_cycle_bound_proven": false,
+    "scope": "Source-bound abstract control model for two existing six-step selector helpers, not HDL simulation or full netlist equivalence. Cycle0 is the combinational launch view in pipeline stage0; start is held until ready then dropped at the next edge. Reset control registers, legal FSM, two-state values and no mid-call reset assumed; eight initial step values and two initial comparison values enumerated. Constant-zero stage stalls and step-only exit are observed in RTL. Model first done at index33 and post-handshake idle at34; XML reports loop33/function35. Exact tool/report/RTL observation conventions are not proved equivalent: neither function35 nor the apparent difference may be multiplied into an end-to-end watchdog bound without a scheduling/overlap argument. No datapath result, C-to-RTL dynamic count, full cycle bound, watchdog verdict, ETA, new HLS/Vivado/simulator flow, DUT edit or adoption.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v195_20261031/matrix.json",
+    "sha256": "590c9bb6cef4e0b31d4be5f680ac2b085ff127c7edf54f4dd2e954e07f4b6cca"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v195.json",
+    "sha256": "d45b0380ed2404a6c03947a1de873150d4ab4b2ffa4483dfc9229b3f5cc99617"
+  },
+  "next_action": "Two selector bit-loop helpers report XMLloop33/function35, while source-derived abstract control model has firstdone index33/idle34 under stated launch/handshake convention. Do not equate model labels with measured RTL latency or add report differences as per-call overhead without scheduling proof. Full dynamic call-count/cycle/overlap correspondence and watchdog verdict remain open. Preserve30watched handles, sole strict-native queue owner and original workloads/guards/watchdogs/failures; actual full terminal before canaries/adoption. Ledger v23 stays9865/9968associated,103pending plus820separate transitive/466root gaps; integrated34page draft retained. No new tool flow/DUT edit or original program/trace/TV payload read. Board absent; optional board-host question pending.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

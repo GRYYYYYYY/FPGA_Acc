@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "wire_queries": 20000,
+  "reference": "typed array pressure core over500 randomized nonempty pressure fixtures",
+  "scope": "CPU dynamic external word reader; backing capacity/canonical records host validated; no RTL yet",
+  "sources": {
+    "pressure_words.hpp": "3412283663b6cfbc3b6b7858cc9426d3e0ade2d7a4f4fe489faac9799a6e2f85",
+    "test_wire.cpp": "c97ba646c95c16f58cc86786dd631a158036b7f77d3bc91f47c8e7c2fca0172c"
+  },
+  "atomic_wire_errors": 5
+}

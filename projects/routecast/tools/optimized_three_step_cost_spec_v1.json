@@ -1,0 +1,83 @@
+{
+  "status": "SPECIFICATION_ONLY_NOT_EXECUTED",
+  "arm_order": [
+    "online",
+    "cold",
+    "cold",
+    "online"
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "production": "tools/trial_adder_step1_from_inputs_checked_v6.py",
+      "verification": "tools/verify_adder_step1_from_inputs_checked_v6.py",
+      "prefix": "adder_step1_from_inputs_checked",
+      "version": 6
+    },
+    {
+      "step": 2,
+      "production": "tools/trial_adder_optimized_step2_checked_v10.py",
+      "verification": "tools/verify_adder_optimized_step2_checked_v10.py",
+      "prefix": "adder_optimized_step2_checked",
+      "version": 10
+    },
+    {
+      "step": 3,
+      "production": "tools/trial_adder_optimized_step3_checked_v11.py",
+      "verification": "tools/verify_adder_optimized_step3_checked_v11.py",
+      "prefix": "adder_optimized_step3_checked",
+      "version": 11,
+      "initial_native_version": 12
+    }
+  ],
+  "online_expected_wire": [
+    2465,
+    2679,
+    2615
+  ],
+  "cold_expected_wire": [
+    2430,
+    2677,
+    2646
+  ],
+  "cpd_ns": [
+    4.74739,
+    4.87739,
+    4.87739
+  ],
+  "connections_per_step": 516,
+  "required_online_stages": [
+    "fresh_candidate_generation",
+    "independent_candidate_formula_full_proof_model_audit",
+    "serialization",
+    "native_full_and_budget_audit",
+    "canonical_reload",
+    "independent_native_quality",
+    "existing_bank_optimization",
+    "independent_optimized_path_event_audit",
+    "optimized_serialization",
+    "optimized_native_full_and_budget_audit",
+    "optimized_canonical_reload",
+    "independent_optimized_quality",
+    "actual_same_store_stage_validate_commit"
+  ],
+  "required_cold_stages": [
+    "native_full_and_budget_audit",
+    "canonical_reload",
+    "independent_native_quality",
+    "actual_same_store_stage_validate_commit"
+  ],
+  "start_boundary": "Before first generation/native subprocess; initial given step0 ledger initialization included in each arm",
+  "end_boundary": "After final actual epoch3 publication and independent committed-path audit",
+  "freshness": "Every arm and every step uses new output namespaces; next online production reads immediately prior actually optimized selection, guarded by corresponding actual quality bindings. No archived bank reuse.",
+  "scope": "Three fixed placements of one development design; supplied step0 state, endpoints, target-derived budgets, identity trace and compiled binary. Input creation and exhaustive fault injection qualification excluded from deployment runtime; all production proof/path/native checks and actual publication included. No independent timing specification or cross-family speedup.",
+  "required_checks": [
+    "same_native_commands_and_input_bytes_per_step_across_modes",
+    "all516_model_budgets_and_physical_capacity_parent",
+    "canonical_zero_counters_and_full_named_paths",
+    "actual_prior_optimized_state_lineage",
+    "same_store_epochs0_1_2_3",
+    "sum_all_required_stage_outer_wallclock",
+    "source_and_input_hash_authentication"
+  ]
+}

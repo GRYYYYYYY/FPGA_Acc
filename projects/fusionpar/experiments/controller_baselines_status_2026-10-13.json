@@ -1,0 +1,757 @@
+{
+  "schema": "FUSIONPAR_CONTROLLER_BASELINES_V1",
+  "designs": {
+    "ex5p": {
+      "modes": {
+        "interleaved_tree_reuse": {
+          "repeats": 5,
+          "quality": {
+            "wirelength": 9849,
+            "cpd_ns": 5.83751
+          },
+          "commits_per_repeat": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "aborts_per_repeat": [
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "host_seconds": [
+            13.030934256,
+            12.929451246,
+            12.760386602,
+            13.011465567,
+            12.791122379
+          ],
+          "median_host_seconds": 12.929451246,
+          "median_charged_seconds": 15.516037102,
+          "final_state_sha256": "e00f07d40bb84acfdacf46c4b617e9d8870178cf97b103017566d3b5b63f0d79"
+        },
+        "sequential_shared_tree_reuse": {
+          "repeats": 5,
+          "quality": {
+            "wirelength": 9849,
+            "cpd_ns": 5.83751
+          },
+          "commits_per_repeat": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "aborts_per_repeat": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "host_seconds": [
+            5.933570622,
+            6.121426925,
+            6.066582241,
+            6.053764869,
+            6.04868129
+          ],
+          "median_host_seconds": 6.053764869,
+          "median_charged_seconds": 8.640350725,
+          "final_state_sha256": "e00f07d40bb84acfdacf46c4b617e9d8870178cf97b103017566d3b5b63f0d79"
+        },
+        "sequential_tree_reuse": {
+          "repeats": 5,
+          "quality": {
+            "wirelength": 9849,
+            "cpd_ns": 5.83751
+          },
+          "commits_per_repeat": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "aborts_per_repeat": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "host_seconds": [
+            6.115139292,
+            5.969999132,
+            6.018013442,
+            6.044165782,
+            5.973656176
+          ],
+          "median_host_seconds": 6.018013442,
+          "median_charged_seconds": 8.604599298,
+          "final_state_sha256": "e00f07d40bb84acfdacf46c4b617e9d8870178cf97b103017566d3b5b63f0d79"
+        }
+      },
+      "audits": {
+        "staged": {
+          "schema": "FUSIONPAR_INDEPENDENT_PUBLICATION_AUDIT_V1",
+          "pass": true,
+          "suite": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/ex5p_sequential_retained_v1",
+          "suite_audit_sha256": "bb1a6aeef2fe1d5a68f44cf927e1d797cc53c87f2e08669bc09f519bb34bc2dd",
+          "auditor_sha256": "b6d1bbdaefd4c6c98a714da1fb49ec39b3c601512fa37bb7f2ebc086d3974c02",
+          "counts": {
+            "runs": 15,
+            "qor_commits": 15,
+            "protocol_commits": 0,
+            "aborts": 10,
+            "timing_barriers": 30,
+            "placement_repairs": 0,
+            "native_feedback_checks": 0,
+            "baseline_route_commits": 0
+          },
+          "scope": "full serialized state/version/timing reconstruction and archived native bindings; not independent P&R performance replication"
+        },
+        "pipeline": {
+          "schema": "FUSIONPAR_INDEPENDENT_PUBLICATION_AUDIT_V1",
+          "pass": true,
+          "suite": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/ex5p_frozen_tp_pr_v2/routing",
+          "suite_audit_sha256": "47bc048f8f5166bfe81bd6d70bb827a043a6058f69e4b61f1d450fa792713aa6",
+          "auditor_sha256": "b6d1bbdaefd4c6c98a714da1fb49ec39b3c601512fa37bb7f2ebc086d3974c02",
+          "counts": {
+            "runs": 5,
+            "qor_commits": 0,
+            "protocol_commits": 0,
+            "aborts": 0,
+            "timing_barriers": 10,
+            "placement_repairs": 0,
+            "native_feedback_checks": 0,
+            "baseline_route_commits": 5
+          },
+          "scope": "full serialized state/version/timing reconstruction and archived native bindings; not independent P&R performance replication"
+        }
+      },
+      "priority_alignment": {
+        "connections": 1916,
+        "encoded_priorities_verified": true,
+        "different_from_trace_index": 806
+      },
+      "pipeline": {
+        "placer_quality": {
+          "wirelength": 9868,
+          "cpd_ns": 5.61423
+        },
+        "placer_closures": 24,
+        "placer_repeats": 1,
+        "PR_repeats": 5,
+        "placer_matches_historical_final_place": true,
+        "placer_reused_from_this_session": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/ex5p_frozen_tp_pr_v1",
+        "rows": [
+          {
+            "repeat": 0,
+            "completed_PR_route": true,
+            "quality": {
+              "wirelength": 9818,
+              "cpd_ns": 6.63478
+            },
+            "within_original_2pct_gate": false,
+            "placer_wall_ns": 57942519418,
+            "conversion_plus_PR_wall_ns": 11293666378,
+            "charged_placer_plus_PR_wall_ns": 69236185796,
+            "event_status": [
+              "committed"
+            ]
+          },
+          {
+            "repeat": 1,
+            "completed_PR_route": true,
+            "quality": {
+              "wirelength": 9818,
+              "cpd_ns": 6.63478
+            },
+            "within_original_2pct_gate": false,
+            "placer_wall_ns": 57942519418,
+            "conversion_plus_PR_wall_ns": 11209079087,
+            "charged_placer_plus_PR_wall_ns": 69151598505,
+            "event_status": [
+              "committed"
+            ]
+          },
+          {
+            "repeat": 2,
+            "completed_PR_route": true,
+            "quality": {
+              "wirelength": 9818,
+              "cpd_ns": 6.63478
+            },
+            "within_original_2pct_gate": false,
+            "placer_wall_ns": 57942519418,
+            "conversion_plus_PR_wall_ns": 11201988183,
+            "charged_placer_plus_PR_wall_ns": 69144507601,
+            "event_status": [
+              "committed"
+            ]
+          },
+          {
+            "repeat": 3,
+            "completed_PR_route": true,
+            "quality": {
+              "wirelength": 9818,
+              "cpd_ns": 6.63478
+            },
+            "within_original_2pct_gate": false,
+            "placer_wall_ns": 57942519418,
+            "conversion_plus_PR_wall_ns": 11359073597,
+            "charged_placer_plus_PR_wall_ns": 69301593015,
+            "event_status": [
+              "committed"
+            ]
+          },
+          {
+            "repeat": 4,
+            "completed_PR_route": true,
+            "quality": {
+              "wirelength": 9818,
+              "cpd_ns": 6.63478
+            },
+            "within_original_2pct_gate": false,
+            "placer_wall_ns": 57942519418,
+            "conversion_plus_PR_wall_ns": 10788601139,
+            "charged_placer_plus_PR_wall_ns": 68731120557,
+            "event_status": [
+              "committed"
+            ]
+          }
+        ]
+      },
+      "median_charged_TP_PR_seconds": 69.151598505,
+      "eligible_PR_repeats": 0,
+      "evidence": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/ex5p_sequential_retained_v1/audit.json",
+          "sha256": "bb1a6aeef2fe1d5a68f44cf927e1d797cc53c87f2e08669bc09f519bb34bc2dd"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/ex5p_frozen_tp_pr_v2/pipeline.json",
+          "sha256": "92aee5dc32f96d56ec6a7d94494757b38f0bfbc58c204a1adcc61baf38f40c7e"
+        }
+      ]
+    },
+    "alu4": {
+      "modes": {
+        "interleaved_tree_reuse": {
+          "repeats": 5,
+          "quality": {
+            "wirelength": 9548,
+            "cpd_ns": 5.96812
+          },
+          "commits_per_repeat": [
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "aborts_per_repeat": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "host_seconds": [
+            15.189192583,
+            15.219982313,
+            15.092308073,
+            15.089825318,
+            14.791126241
+          ],
+          "median_host_seconds": 15.092308073,
+          "median_charged_seconds": 18.221120248,
+          "final_state_sha256": "11dcf21046259708bd890bc2370863754061984600b57bc5de770f086bfa397f"
+        },
+        "sequential_shared_tree_reuse": {
+          "repeats": 5,
+          "quality": {
+            "wirelength": 9580,
+            "cpd_ns": 5.96812
+          },
+          "commits_per_repeat": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "aborts_per_repeat": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "host_seconds": [
+            7.374563442,
+            7.194721523,
+            7.296493213,
+            7.319915478,
+            7.178806269
+          ],
+          "median_host_seconds": 7.296493213,
+          "median_charged_seconds": 10.425305388,
+          "final_state_sha256": "949b44530ba9662d4902d7f106b49160190733ee60bf27c14e657d77a2beca2b"
+        },
+        "sequential_tree_reuse": {
+          "repeats": 5,
+          "quality": {
+            "wirelength": 9580,
+            "cpd_ns": 5.96812
+          },
+          "commits_per_repeat": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "aborts_per_repeat": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "host_seconds": [
+            7.317914856,
+            7.213869918,
+            7.431664782,
+            7.419963802,
+            7.276704104
+          ],
+          "median_host_seconds": 7.317914856,
+          "median_charged_seconds": 10.446727031,
+          "final_state_sha256": "949b44530ba9662d4902d7f106b49160190733ee60bf27c14e657d77a2beca2b"
+        }
+      },
+      "audits": {
+        "staged": {
+          "schema": "FUSIONPAR_INDEPENDENT_PUBLICATION_AUDIT_V1",
+          "pass": true,
+          "suite": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/alu4_sequential_retained_v1",
+          "suite_audit_sha256": "a4990588c5749dd2728a1f9fe9c276efdc92b2a8fbdc2d850251bef74a231809",
+          "auditor_sha256": "b6d1bbdaefd4c6c98a714da1fb49ec39b3c601512fa37bb7f2ebc086d3974c02",
+          "counts": {
+            "runs": 15,
+            "qor_commits": 10,
+            "protocol_commits": 0,
+            "aborts": 15,
+            "timing_barriers": 25,
+            "placement_repairs": 0,
+            "native_feedback_checks": 0,
+            "baseline_route_commits": 0
+          },
+          "scope": "full serialized state/version/timing reconstruction and archived native bindings; not independent P&R performance replication"
+        },
+        "pipeline": {
+          "schema": "FUSIONPAR_INDEPENDENT_PUBLICATION_AUDIT_V1",
+          "pass": true,
+          "suite": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/alu4_frozen_tp_pr_v2/routing",
+          "suite_audit_sha256": "4557c9d6dddf2e955447791bf5670e147290f8d013938ffea0df899d7b3d057e",
+          "auditor_sha256": "b6d1bbdaefd4c6c98a714da1fb49ec39b3c601512fa37bb7f2ebc086d3974c02",
+          "counts": {
+            "runs": 5,
+            "qor_commits": 0,
+            "protocol_commits": 0,
+            "aborts": 0,
+            "timing_barriers": 10,
+            "placement_repairs": 0,
+            "native_feedback_checks": 0,
+            "baseline_route_commits": 5
+          },
+          "scope": "full serialized state/version/timing reconstruction and archived native bindings; not independent P&R performance replication"
+        }
+      },
+      "priority_alignment": {
+        "connections": 2331,
+        "encoded_priorities_verified": true,
+        "different_from_trace_index": 268
+      },
+      "pipeline": {
+        "placer_quality": {
+          "wirelength": 9561,
+          "cpd_ns": 5.96812
+        },
+        "placer_closures": 24,
+        "placer_repeats": 1,
+        "PR_repeats": 5,
+        "placer_matches_historical_final_place": true,
+        "placer_reused_from_this_session": null,
+        "rows": [
+          {
+            "repeat": 0,
+            "completed_PR_route": true,
+            "quality": {
+              "wirelength": 9630,
+              "cpd_ns": 6.80247
+            },
+            "within_original_2pct_gate": false,
+            "placer_wall_ns": 62266957818,
+            "conversion_plus_PR_wall_ns": 15372950991,
+            "charged_placer_plus_PR_wall_ns": 77639908809,
+            "event_status": [
+              "committed"
+            ]
+          },
+          {
+            "repeat": 1,
+            "completed_PR_route": true,
+            "quality": {
+              "wirelength": 9630,
+              "cpd_ns": 6.80247
+            },
+            "within_original_2pct_gate": false,
+            "placer_wall_ns": 62266957818,
+            "conversion_plus_PR_wall_ns": 15285395354,
+            "charged_placer_plus_PR_wall_ns": 77552353172,
+            "event_status": [
+              "committed"
+            ]
+          },
+          {
+            "repeat": 2,
+            "completed_PR_route": true,
+            "quality": {
+              "wirelength": 9630,
+              "cpd_ns": 6.80247
+            },
+            "within_original_2pct_gate": false,
+            "placer_wall_ns": 62266957818,
+            "conversion_plus_PR_wall_ns": 14939975235,
+            "charged_placer_plus_PR_wall_ns": 77206933053,
+            "event_status": [
+              "committed"
+            ]
+          },
+          {
+            "repeat": 3,
+            "completed_PR_route": true,
+            "quality": {
+              "wirelength": 9630,
+              "cpd_ns": 6.80247
+            },
+            "within_original_2pct_gate": false,
+            "placer_wall_ns": 62266957818,
+            "conversion_plus_PR_wall_ns": 15337176235,
+            "charged_placer_plus_PR_wall_ns": 77604134053,
+            "event_status": [
+              "committed"
+            ]
+          },
+          {
+            "repeat": 4,
+            "completed_PR_route": true,
+            "quality": {
+              "wirelength": 9630,
+              "cpd_ns": 6.80247
+            },
+            "within_original_2pct_gate": false,
+            "placer_wall_ns": 62266957818,
+            "conversion_plus_PR_wall_ns": 15334751206,
+            "charged_placer_plus_PR_wall_ns": 77601709024,
+            "event_status": [
+              "committed"
+            ]
+          }
+        ]
+      },
+      "median_charged_TP_PR_seconds": 77.601709024,
+      "eligible_PR_repeats": 0,
+      "evidence": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/alu4_sequential_retained_v1/audit.json",
+          "sha256": "a4990588c5749dd2728a1f9fe9c276efdc92b2a8fbdc2d850251bef74a231809"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/alu4_frozen_tp_pr_v2/pipeline.json",
+          "sha256": "14bddde30d5c7c3f1d3d989d77af02f40ff1391a09102ee4b9e593862e4e5cdf"
+        }
+      ]
+    },
+    "misex3": {
+      "modes": {
+        "interleaved_tree_reuse": {
+          "repeats": 5,
+          "quality": {
+            "wirelength": 10323,
+            "cpd_ns": 5.08031
+          },
+          "commits_per_repeat": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "aborts_per_repeat": [
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "host_seconds": [
+            13.765899838,
+            13.818215474,
+            14.27156242,
+            13.652321498,
+            13.626376874
+          ],
+          "median_host_seconds": 13.765899838,
+          "median_charged_seconds": 16.481394142,
+          "final_state_sha256": "8735037d0a55b3f9e6200ebba782dd48a62dfeedda93bc1e8349c98f567ef443"
+        },
+        "sequential_shared_tree_reuse": {
+          "repeats": 5,
+          "quality": {
+            "wirelength": 10323,
+            "cpd_ns": 5.08031
+          },
+          "commits_per_repeat": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "aborts_per_repeat": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "host_seconds": [
+            6.712514453,
+            6.573511625,
+            6.604436596,
+            6.661298679,
+            6.895532912
+          ],
+          "median_host_seconds": 6.661298679,
+          "median_charged_seconds": 9.376792983,
+          "final_state_sha256": "8735037d0a55b3f9e6200ebba782dd48a62dfeedda93bc1e8349c98f567ef443"
+        },
+        "sequential_tree_reuse": {
+          "repeats": 5,
+          "quality": {
+            "wirelength": 10323,
+            "cpd_ns": 5.08031
+          },
+          "commits_per_repeat": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "aborts_per_repeat": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "host_seconds": [
+            6.683579857,
+            6.899238691,
+            6.645503884,
+            6.812579728,
+            7.022158353
+          ],
+          "median_host_seconds": 6.812579728,
+          "median_charged_seconds": 9.528074032,
+          "final_state_sha256": "8735037d0a55b3f9e6200ebba782dd48a62dfeedda93bc1e8349c98f567ef443"
+        }
+      },
+      "audits": {
+        "staged": {
+          "schema": "FUSIONPAR_INDEPENDENT_PUBLICATION_AUDIT_V1",
+          "pass": true,
+          "suite": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/misex3_sequential_retained_v1",
+          "suite_audit_sha256": "cca84c12457e75a5b0f14a5017196363d99291e56c76944924a2b755e9f04058",
+          "auditor_sha256": "b6d1bbdaefd4c6c98a714da1fb49ec39b3c601512fa37bb7f2ebc086d3974c02",
+          "counts": {
+            "runs": 15,
+            "qor_commits": 0,
+            "protocol_commits": 0,
+            "aborts": 25,
+            "timing_barriers": 15,
+            "placement_repairs": 0,
+            "native_feedback_checks": 0,
+            "baseline_route_commits": 0
+          },
+          "scope": "full serialized state/version/timing reconstruction and archived native bindings; not independent P&R performance replication"
+        },
+        "pipeline": {
+          "schema": "FUSIONPAR_INDEPENDENT_PUBLICATION_AUDIT_V1",
+          "pass": true,
+          "suite": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/misex3_frozen_tp_pr_v2/routing",
+          "suite_audit_sha256": "9b34e165e80892280929adc388a5d309c8aac9912c102944dc28ae3bbc3d3985",
+          "auditor_sha256": "b6d1bbdaefd4c6c98a714da1fb49ec39b3c601512fa37bb7f2ebc086d3974c02",
+          "counts": {
+            "runs": 5,
+            "qor_commits": 0,
+            "protocol_commits": 0,
+            "aborts": 0,
+            "timing_barriers": 10,
+            "placement_repairs": 0,
+            "native_feedback_checks": 0,
+            "baseline_route_commits": 5
+          },
+          "scope": "full serialized state/version/timing reconstruction and archived native bindings; not independent P&R performance replication"
+        }
+      },
+      "priority_alignment": {
+        "connections": 2365,
+        "encoded_priorities_verified": true,
+        "different_from_trace_index": 1108
+      },
+      "pipeline": {
+        "placer_quality": {
+          "wirelength": 10269,
+          "cpd_ns": 5.038
+        },
+        "placer_closures": 24,
+        "placer_repeats": 1,
+        "PR_repeats": 5,
+        "placer_matches_historical_final_place": true,
+        "placer_reused_from_this_session": null,
+        "rows": [
+          {
+            "repeat": 0,
+            "completed_PR_route": true,
+            "quality": {
+              "wirelength": 10305,
+              "cpd_ns": 5.95697
+            },
+            "within_original_2pct_gate": false,
+            "placer_wall_ns": 100331071425,
+            "conversion_plus_PR_wall_ns": 16568866859,
+            "charged_placer_plus_PR_wall_ns": 116899938284,
+            "event_status": [
+              "committed"
+            ]
+          },
+          {
+            "repeat": 1,
+            "completed_PR_route": true,
+            "quality": {
+              "wirelength": 10305,
+              "cpd_ns": 5.95697
+            },
+            "within_original_2pct_gate": false,
+            "placer_wall_ns": 100331071425,
+            "conversion_plus_PR_wall_ns": 14952047771,
+            "charged_placer_plus_PR_wall_ns": 115283119196,
+            "event_status": [
+              "committed"
+            ]
+          },
+          {
+            "repeat": 2,
+            "completed_PR_route": true,
+            "quality": {
+              "wirelength": 10305,
+              "cpd_ns": 5.95697
+            },
+            "within_original_2pct_gate": false,
+            "placer_wall_ns": 100331071425,
+            "conversion_plus_PR_wall_ns": 16534221479,
+            "charged_placer_plus_PR_wall_ns": 116865292904,
+            "event_status": [
+              "committed"
+            ]
+          },
+          {
+            "repeat": 3,
+            "completed_PR_route": true,
+            "quality": {
+              "wirelength": 10305,
+              "cpd_ns": 5.95697
+            },
+            "within_original_2pct_gate": false,
+            "placer_wall_ns": 100331071425,
+            "conversion_plus_PR_wall_ns": 14543219029,
+            "charged_placer_plus_PR_wall_ns": 114874290454,
+            "event_status": [
+              "committed"
+            ]
+          },
+          {
+            "repeat": 4,
+            "completed_PR_route": true,
+            "quality": {
+              "wirelength": 10305,
+              "cpd_ns": 5.95697
+            },
+            "within_original_2pct_gate": false,
+            "placer_wall_ns": 100331071425,
+            "conversion_plus_PR_wall_ns": 15478596496,
+            "charged_placer_plus_PR_wall_ns": 115809667921,
+            "event_status": [
+              "committed"
+            ]
+          }
+        ]
+      },
+      "median_charged_TP_PR_seconds": 115.809667921,
+      "eligible_PR_repeats": 0,
+      "evidence": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/misex3_sequential_retained_v1/audit.json",
+          "sha256": "cca84c12457e75a5b0f14a5017196363d99291e56c76944924a2b755e9f04058"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/misex3_frozen_tp_pr_v2/pipeline.json",
+          "sha256": "5e6a2cd07c524db7aa38a5b59d58879b0528810f5748b33d73a74a2a3a072b26"
+        }
+      ]
+    }
+  },
+  "staged_counts": {
+    "runs": 45,
+    "qor_commits": 25,
+    "protocol_commits": 0,
+    "aborts": 50,
+    "timing_barriers": 70,
+    "placement_repairs": 0,
+    "native_feedback_checks": 0,
+    "baseline_route_commits": 0
+  },
+  "fixed_placement_PR_counts": {
+    "runs": 15,
+    "qor_commits": 0,
+    "protocol_commits": 0,
+    "aborts": 0,
+    "timing_barriers": 30,
+    "placement_repairs": 0,
+    "native_feedback_checks": 0,
+    "baseline_route_commits": 15
+  },
+  "limits": [
+    "Three development designs; no held-out evaluation",
+    "Equal primary budgets do not imply equal evaluated moves or compute",
+    "One reproduced TP run per design, then five PR runs, not five full pipelines",
+    "TP and FP objectives and budgets differ; no speedup ratio",
+    "Native-legal PR outputs outside the common QoR gate are ineligible",
+    "CPU/C-model only; no physical FPGA results"
+  ],
+  "summarizer": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/summarize_controller_baselines.py",
+    "sha256": "fb8a584d1311d6bdc173ac09b77a098ec93d94f02c23ec4fdaf082a16d7656db"
+  }
+}

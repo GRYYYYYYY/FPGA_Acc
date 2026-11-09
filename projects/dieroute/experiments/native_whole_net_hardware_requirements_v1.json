@@ -1,0 +1,21 @@
+{
+  "schema": "dieroute.native_whole_net_hardware_requirements.v1",
+  "status": "requirements_only_not_implemented",
+  "reason": "Online owner-summary publication is now implemented; the remaining commit authority is still NativeRouteState on CPU",
+  "reference_sources": ["include/native_net_transaction.hpp::native_validate_net", "include/native_net_transaction.hpp::native_commit_net", "include/native_route_state.hpp::accept", "include/native_route_state.hpp::ripup", "include/native_route_state.hpp::negotiate"],
+  "requirements": [
+    "Authoritative resource state must cover interior and boundary nodes, including absent/zero records and every off-path read. The 46848-slot boundary directory is insufficient.",
+    "Maintain exact net membership, occupancy, history and monotonically increasing versions under unique owner assignment; count shared route-tree resources once per net.",
+    "Validate the complete canonical proposal read set, input net tree, present/timing epoch and every consumed stale summary before any authoritative mutation. Version-only checks require an explicit invariant linking versions to all value and membership changes.",
+    "Stage every successful branch in the proposal, including attachment, parent/PIP/depth, sink continuity, permitted nodes and exact integer cost recomputation under the same net-sharing semantics.",
+    "Validate all offsets, list/pool capacities, queue credits and overflow conditions before applying any owner or tree updates; any rejected or late-invalid proposal leaves every owner and net tree unchanged.",
+    "Across owner banks, preserve the fixed native net order and a single visibility point. A serialized joined-phase commit is an initial implementation boundary, not evidence of concurrent distributed grants or crash atomicity.",
+    "Support initialization, multi-branch growth, rip-up, negotiated history increments, replay and complete final authority export. Hardware cannot depend on host overwrites of post-commit owner values as its source of truth.",
+    "Publish changed boundary summaries from accepted hardware authority; eliminate the current CPU committed-tuple installation path for claims of hardware-owned commits.",
+    "Independently replay actual commands and bind them to fresh native proposals and final native routes. Exercise cross-owner conflicts, off-path stale reads, shared nets, empty/tombstone resources, capacity exhaustion, late invalid branches and deterministic repeated results.",
+    "Budget graph, owner membership, tree, transaction and output storage against actual U280 HBM capacity. State only what is physically connected; a sparse fixture is not a full-graph hardware capacity proof.",
+    "Account for every preflight, commit, rollback/replay, transfer, empty launch and queue stall. Reconcile kernel interfaces with the existing six-CU 30-master port budget before another joint platform link."
+  ],
+  "following_work": ["Autonomous or batched search/commit transport", "Strict cross-owner concurrent capacity grants if claimed", "Mapping/migration/topology ablations", "Representative full-design physical QoR", "U280 routed timing, board throughput and energy"],
+  "research_complete": false
+}

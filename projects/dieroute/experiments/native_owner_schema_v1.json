@@ -1,0 +1,13 @@
+{
+  "schema": "dieroute.native_owner_protocol.v1",
+  "authority": "Exactly one NativeUse record (net set, history, version) in one of at most eight independent maps. No global authoritative map or global resource index. Trees remain controller metadata.",
+  "owner_rule": "Lowest set bit of complete immutable electrical-node SLR membership. Shared boundary resources are not cloned; membership remains unchanged for topology/search.",
+  "mode": "--owner-partition; optional argv[19] 0/1. Default single-owner control.",
+  "layout": "Copied policy identity and immutable topology provider; copies deep-copy shard records. Swap exchanges layout, shards and trees together. Timing controller rejects candidate layout changes. Checkpoint import accepts explicit layout.",
+  "publication": "All path/edge/depth/overflow checks, allocation and owner routing precede any authoritative write. Per-owner staged map nodes then transfer/swap without allocation or callbacks, followed by tree-node publication. Serial logical atomicity only.",
+  "ripup": "Preflight all affected records and save direct pointers before erasing any owner net; retain root and empty history/version tombstones.",
+  "negotiation": "Check every shard and construct pending-net set before changing any history/version.",
+  "export": "Canonical global node order via at-most-eight-way iterator merge; owner_usage.csv enumerates actual maps in owner/node/net order, including tombstones.",
+  "shadow": "Existing immutable boundary summaries and source-observer read validation. This change does not implement stage-local observers or a distributed network.",
+  "evidence_plan": "experiments/native_owner_comparison_plan_v1.json"
+}

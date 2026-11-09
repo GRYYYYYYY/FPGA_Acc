@@ -1,0 +1,44 @@
+{
+  "schema": "dieroute.native_owner_push_plan.v1",
+  "cases": {
+    "sync1": {
+      "workers": 4,
+      "period": 1,
+      "run": "work/u280_native_owner_push_sync1_v1_20261014",
+      "cohort_audit": "work/u280_native_owner_push_sync1_cohort_audit_v1_20261014",
+      "protocol_audit": "work/u280_native_owner_push_sync1_protocol_audit_v1_20261014",
+      "baseline": "work/u280_native_summary_hbm_sync1_v1_20261013"
+    },
+    "sync3": {
+      "workers": 4,
+      "period": 3,
+      "run": "work/u280_native_owner_push_sync3_v1_20261014",
+      "cohort_audit": "work/u280_native_owner_push_sync3_cohort_audit_v1_20261014",
+      "protocol_audit": "work/u280_native_owner_push_sync3_protocol_audit_v1_20261014",
+      "baseline": "work/u280_native_summary_hbm_sync3_v1_20261013"
+    },
+    "serial3": {
+      "workers": 1,
+      "period": 3,
+      "run": "work/u280_native_owner_push_serial3_v1_20261014",
+      "cohort_audit": "work/u280_native_owner_push_serial3_cohort_audit_v1_20261014",
+      "protocol_audit": "work/u280_native_owner_push_serial3_protocol_audit_v1_20261014",
+      "baseline": "work/u280_native_summary_hbm_serial3_v1_20261013"
+    }
+  },
+  "repeats": 5,
+  "scope": "Live owner-managed subscriptions and queued publications drive native costs and validation; CPU still orchestrates joined phases and full-net commit",
+  "criteria": [
+    "All canonical journals, read sets and logical summary packets equal matching scan-endpoint baseline; publication scans become zero",
+    "Five repeated read sets, queries, deliveries and commit decisions deterministic",
+    "Independent cache-delivery and actual observed-summary replay, including off-path stale observations",
+    "Forced refresh before serial replay; subscribed cache tail fully drained",
+    "All speculative/replay work and cold fetch/publication payloads accounted"
+  ],
+  "not_established": [
+    "Asynchronous authority writers or physical network delivery",
+    "HBM mapping, migration, latency or energy",
+    "Autonomous hardware queue scheduling",
+    "Representative full-design physical QoR"
+  ]
+}

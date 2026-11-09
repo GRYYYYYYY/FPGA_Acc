@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "compile": "g++ -std=c++17 -O2 -Wall -Wextra -Werror test_control_commit.cpp",
+  "binary": "/tmp/tileplace-control-commit-test",
+  "cases": 25,
+  "coverage": "five kind identities x disjoint/shared-net/encoding-fault/selection-fault/commit-duplicate-fault",
+  "scope": "CPU identity-select-commit composition; inputs pre-scored/per-unit-best/deduplicated. Kind tests validate encoding, not five-kind enumeration semantics. No RTL or native integration.",
+  "sources": {
+    "test_control_commit.cpp": "b071e93818d78640201fd5e4cdb4a56d490a4e27c472229a20f32a02f4b64749",
+    "control_commit_words.hpp": "d0fb7cebea0872fc6662e0adde0b5cbf1d216546de2d7cef13e78c6843160f2e"
+  }
+}

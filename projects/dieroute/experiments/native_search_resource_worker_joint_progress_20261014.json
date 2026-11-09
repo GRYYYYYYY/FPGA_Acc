@@ -1,0 +1,46 @@
+{
+  "status": "small_joint_xrt_search_path_publication_and_membership_verified",
+  "updated_ns": 1791990605323997166,
+  "compile_manifest": "work/native_resource_worker_hw_emu_link_v1_20261014/manifest.json",
+  "link_manifest": "work/native_resource_worker_hw_emu_link_v1_20261014/link_manifest.json",
+  "connectivity": "work/native_resource_worker_hw_emu_link_v1_20261014/connectivity.cfg",
+  "resource_hls_rtl": "work/native_search_resource_hls_v2_20261014/audit.json",
+  "reuse_inputs": "work/native_resource_worker_hw_emu_link_v1_20261014/inputs.json",
+  "remaining": [
+    "Live native routing integration with dynamic authority",
+    "Autonomous CSR and owner dispatch",
+    "Asynchronous handoff/coherence",
+    "Full capacity RTL, QoR/ablation and physical board gates"
+  ],
+  "scope": "Small three-CU joint hw_emu fixture; no full native route, asynchronous snapshot or board proof",
+  "board_result": false,
+  "research_complete": false,
+  "execution_manifest": "work/native_resource_worker_joint_xrt_v1_20261014/manifest.json",
+  "host_sources": [
+    "host/native_resource_commit_xrt.cpp",
+    "host/native_resource_worker_xrt.cpp",
+    "tb/native_search_resource_worker_commit_xrt_tb.cpp"
+  ],
+  "planned_actual_calls": {
+    "commit": 10,
+    "resource_reader": 4,
+    "worker": 12
+  },
+  "shared_buffers": [
+    "Commit policy/resources/control directly supplied to resource CU",
+    "Resource output directly supplied to worker CU",
+    "Frontier output directly supplied as relaxation parent"
+  ],
+  "production_kernel_cpp_linked": false,
+  "execution_audit": "work/native_resource_worker_joint_xrt_v1_20261014/independent_audit.json",
+  "actual_cu_calls": 26,
+  "published_worker_path": {
+    "status": "passed",
+    "actual_cu_calls": 29,
+    "audit": "work/native_resource_worker_publish_xrt_v1_20261014/trace_audit.json",
+    "source_path": "Derived from worker label ancestry/PIPs and checked against native authority tree",
+    "membership_query": true,
+    "authority_reuploads": 0,
+    "final_route_legality": false
+  }
+}

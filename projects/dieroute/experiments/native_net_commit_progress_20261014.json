@@ -1,0 +1,265 @@
+{
+  "schema": "dieroute.native_net_commit_progress.v1",
+  "status": "verified_c_model_online_integration",
+  "finished_ns": 1791947954165441423,
+  "substrate": "CPU C model linked to synthesizable complete-net, owner-publisher and receiver kernels",
+  "cases": {
+    "sync1": {
+      "run": "work/u280_native_net_commit_sync1_v1_20261014",
+      "cohort_audit": "work/u280_native_net_commit_sync1_cohort_audit_v1_20261014",
+      "protocol_audit": "work/u280_native_net_commit_sync1_protocol_audit_v1_20261014",
+      "baseline": "work/u280_native_owner_push_sync1_v1_20261014",
+      "repeats": 5,
+      "kernel": {
+        "crc_checker_sha256": "6792fb4693976788bb316f82bf0fc22715064cc0e721b059e6e28f4495845fd7",
+        "verified": true,
+        "kernel_calls": 870,
+        "op_counts": {
+          "1": 5,
+          "2": 350,
+          "3": 485,
+          "5": 10,
+          "4": 20
+        },
+        "max_checked_reads": 2823767,
+        "proposals_bound": 485,
+        "ripups_bound": 20,
+        "negotiations_bound": 10,
+        "publisher_values_bound": 234455,
+        "authority_transitions_replayed": true,
+        "scope": "Online synthesizable kernel execution with hardware-derived snapshots and deltas; execution substrate must be established separately, not a board claim"
+      },
+      "normalized_repeats": {
+        "status": "passed",
+        "repeats": 5,
+        "calls_per_repeat": [
+          174,
+          174,
+          174,
+          174,
+          174
+        ],
+        "normalized_frame_hashes": [
+          "827b0a97fe263e12517a6e1e9ed06d60bb1a64b14c4c51bbdebe5e03a63c9cc8",
+          "827b0a97fe263e12517a6e1e9ed06d60bb1a64b14c4c51bbdebe5e03a63c9cc8",
+          "827b0a97fe263e12517a6e1e9ed06d60bb1a64b14c4c51bbdebe5e03a63c9cc8",
+          "827b0a97fe263e12517a6e1e9ed06d60bb1a64b14c4c51bbdebe5e03a63c9cc8",
+          "827b0a97fe263e12517a6e1e9ed06d60bb1a64b14c4c51bbdebe5e03a63c9cc8"
+        ],
+        "normalized_publication_hashes": [
+          "7b21c2b740ca06223a01ee7739d0cc62e0fa9a939a3eacc9441c61ef36c86807",
+          "7b21c2b740ca06223a01ee7739d0cc62e0fa9a939a3eacc9441c61ef36c86807",
+          "7b21c2b740ca06223a01ee7739d0cc62e0fa9a939a3eacc9441c61ef36c86807",
+          "7b21c2b740ca06223a01ee7739d0cc62e0fa9a939a3eacc9441c61ef36c86807",
+          "7b21c2b740ca06223a01ee7739d0cc62e0fa9a939a3eacc9441c61ef36c86807"
+        ],
+        "normalization": [
+          "repeat ordinal",
+          "session tokens",
+          "global call sequence to per-repeat sequence",
+          "INITIALIZE previous-session revision ignored by kernel"
+        ],
+        "observed_peak_records": {
+          "reads": 2823767,
+          "shadows": 16445,
+          "branches": 118,
+          "path_nodes": 670,
+          "deltas": 670,
+          "resources": 2609,
+          "tree_highwater": 2598,
+          "nets": 70
+        },
+        "scope": "Determinism of recorded ABI and inventory bytes; development cohort peaks are not full-design capacity guarantees"
+      },
+      "equal_canonical_outputs": 24,
+      "native_totals": {
+        "transactions": 485,
+        "replays": 115,
+        "conflicts": 1730,
+        "reads": 104288455,
+        "discarded_expanded": 10227385,
+        "label_packets": 974260
+      }
+    },
+    "sync3": {
+      "run": "work/u280_native_net_commit_sync3_v1_20261014",
+      "cohort_audit": "work/u280_native_net_commit_sync3_cohort_audit_v1_20261014",
+      "protocol_audit": "work/u280_native_net_commit_sync3_protocol_audit_v1_20261014",
+      "baseline": "work/u280_native_owner_push_sync3_v1_20261014",
+      "repeats": 5,
+      "kernel": {
+        "crc_checker_sha256": "6792fb4693976788bb316f82bf0fc22715064cc0e721b059e6e28f4495845fd7",
+        "verified": true,
+        "kernel_calls": 880,
+        "op_counts": {
+          "1": 5,
+          "2": 350,
+          "3": 495,
+          "5": 10,
+          "4": 20
+        },
+        "max_checked_reads": 2823767,
+        "proposals_bound": 495,
+        "ripups_bound": 20,
+        "negotiations_bound": 10,
+        "publisher_values_bound": 234455,
+        "authority_transitions_replayed": true,
+        "scope": "Online synthesizable kernel execution with hardware-derived snapshots and deltas; execution substrate must be established separately, not a board claim"
+      },
+      "normalized_repeats": {
+        "status": "passed",
+        "repeats": 5,
+        "calls_per_repeat": [
+          176,
+          176,
+          176,
+          176,
+          176
+        ],
+        "normalized_frame_hashes": [
+          "73bbf011ebf2f0a6b21a7781b95e177047b1d0b8d6908b652626065a21ae7d35",
+          "73bbf011ebf2f0a6b21a7781b95e177047b1d0b8d6908b652626065a21ae7d35",
+          "73bbf011ebf2f0a6b21a7781b95e177047b1d0b8d6908b652626065a21ae7d35",
+          "73bbf011ebf2f0a6b21a7781b95e177047b1d0b8d6908b652626065a21ae7d35",
+          "73bbf011ebf2f0a6b21a7781b95e177047b1d0b8d6908b652626065a21ae7d35"
+        ],
+        "normalized_publication_hashes": [
+          "eac1918de8f39a0753a8139f64cbf44ef4531b92e42745e89703781e98146a00",
+          "eac1918de8f39a0753a8139f64cbf44ef4531b92e42745e89703781e98146a00",
+          "eac1918de8f39a0753a8139f64cbf44ef4531b92e42745e89703781e98146a00",
+          "eac1918de8f39a0753a8139f64cbf44ef4531b92e42745e89703781e98146a00",
+          "eac1918de8f39a0753a8139f64cbf44ef4531b92e42745e89703781e98146a00"
+        ],
+        "normalization": [
+          "repeat ordinal",
+          "session tokens",
+          "global call sequence to per-repeat sequence",
+          "INITIALIZE previous-session revision ignored by kernel"
+        ],
+        "observed_peak_records": {
+          "reads": 2823767,
+          "shadows": 16445,
+          "branches": 118,
+          "path_nodes": 670,
+          "deltas": 670,
+          "resources": 2609,
+          "tree_highwater": 2598,
+          "nets": 70
+        },
+        "scope": "Determinism of recorded ABI and inventory bytes; development cohort peaks are not full-design capacity guarantees"
+      },
+      "equal_canonical_outputs": 24,
+      "native_totals": {
+        "transactions": 495,
+        "replays": 125,
+        "conflicts": 1700,
+        "reads": 121100145,
+        "discarded_expanded": 17570100,
+        "label_packets": 1100730
+      }
+    },
+    "serial3": {
+      "run": "work/u280_native_net_commit_serial3_v1_20261014",
+      "cohort_audit": "work/u280_native_net_commit_serial3_cohort_audit_v1_20261014",
+      "protocol_audit": "work/u280_native_net_commit_serial3_protocol_audit_v1_20261014",
+      "baseline": "work/u280_native_owner_push_serial3_v1_20261014",
+      "repeats": 5,
+      "kernel": {
+        "crc_checker_sha256": "6792fb4693976788bb316f82bf0fc22715064cc0e721b059e6e28f4495845fd7",
+        "verified": true,
+        "kernel_calls": 775,
+        "op_counts": {
+          "1": 5,
+          "2": 350,
+          "3": 390,
+          "5": 10,
+          "4": 20
+        },
+        "max_checked_reads": 2823767,
+        "proposals_bound": 390,
+        "ripups_bound": 20,
+        "negotiations_bound": 10,
+        "publisher_values_bound": 234455,
+        "authority_transitions_replayed": true,
+        "scope": "Online synthesizable kernel execution with hardware-derived snapshots and deltas; execution substrate must be established separately, not a board claim"
+      },
+      "normalized_repeats": {
+        "status": "passed",
+        "repeats": 5,
+        "calls_per_repeat": [
+          155,
+          155,
+          155,
+          155,
+          155
+        ],
+        "normalized_frame_hashes": [
+          "74ceffa17786b40417ffcdb2ef05bdffa2ee71606e040fcf4722c75b2a515ff3",
+          "74ceffa17786b40417ffcdb2ef05bdffa2ee71606e040fcf4722c75b2a515ff3",
+          "74ceffa17786b40417ffcdb2ef05bdffa2ee71606e040fcf4722c75b2a515ff3",
+          "74ceffa17786b40417ffcdb2ef05bdffa2ee71606e040fcf4722c75b2a515ff3",
+          "74ceffa17786b40417ffcdb2ef05bdffa2ee71606e040fcf4722c75b2a515ff3"
+        ],
+        "normalized_publication_hashes": [
+          "fad5a5d51a6cd26676864e55e60dafef784f3edf77218d7564d4faa79134c6ed",
+          "fad5a5d51a6cd26676864e55e60dafef784f3edf77218d7564d4faa79134c6ed",
+          "fad5a5d51a6cd26676864e55e60dafef784f3edf77218d7564d4faa79134c6ed",
+          "fad5a5d51a6cd26676864e55e60dafef784f3edf77218d7564d4faa79134c6ed",
+          "fad5a5d51a6cd26676864e55e60dafef784f3edf77218d7564d4faa79134c6ed"
+        ],
+        "normalization": [
+          "repeat ordinal",
+          "session tokens",
+          "global call sequence to per-repeat sequence",
+          "INITIALIZE previous-session revision ignored by kernel"
+        ],
+        "observed_peak_records": {
+          "reads": 2823767,
+          "shadows": 16445,
+          "branches": 118,
+          "path_nodes": 670,
+          "deltas": 670,
+          "resources": 2609,
+          "tree_highwater": 2598,
+          "nets": 70
+        },
+        "scope": "Determinism of recorded ABI and inventory bytes; development cohort peaks are not full-design capacity guarantees"
+      },
+      "equal_canonical_outputs": 24,
+      "native_totals": {
+        "transactions": 390,
+        "replays": 20,
+        "conflicts": 0,
+        "reads": 94513670,
+        "discarded_expanded": 6907175,
+        "label_packets": 948250
+      }
+    }
+  },
+  "real_cohort_kernel_calls": 2525,
+  "small_online_kernel_calls": 177,
+  "semantic_corruptions_rejected": 40,
+  "ctest_passed": 48,
+  "sanitizers": "ASan/UBSan: four fresh online cases, three repeats each, both CPU and kernel modes",
+  "xrt_host_build": "passed; combined host compiled with XRT adapters and no CPU kernel implementation; no joint xclbin execution",
+  "component_core_sha256": "84d5550636cd7bfd12b34176294ca29bd57c0cc15e2a17e11a3c6de32252260c",
+  "component_evidence": "experiments/net_commit_progress_20261014.json",
+  "verification": "work/native_net_commit_verification_v1_20261014/verification.json",
+  "native_live_authority": true,
+  "joint_native_xrt_verified": false,
+  "board_result": false,
+  "research_complete": false,
+  "remaining": [
+    "Joint net-commit/owner/receiver hardware platform and live routing through XRT",
+    "Verified full graph HBM placement and sufficient peak authority/staging capacities",
+    "Autonomous transport, search acceleration, strict cross-owner capacity grants, mapping/migration ablations",
+    "Representative full-design and held-out wirelength/timing QoR",
+    "Physical accelerator implementation, board performance/energy, paper and artifact completion"
+  ],
+  "resolved_diagnostics": [
+    "CRC checker misleading-indentation warning fixed and its regression rerun",
+    "Initial sanitizer build command named nonexistent quotient target; native router built successfully and corrected quotient target built before successful sanitized runs"
+  ],
+  "verification_sha256": "e8c45233fb9c808f20b76e2ff9964fdb969feb3cb49f2170f02e3a5db3623988",
+  "next_hardware_plan": "experiments/native_joint_authority_hardware_plan_v1.json"
+}

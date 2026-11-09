@@ -1,0 +1,35 @@
+{
+  "schema": "FUSIONPAR_FEEDBACK_EVALUATION_BUDGET_V1",
+  "designs": [
+    "ex5p",
+    "alu4",
+    "misex3"
+  ],
+  "repeats": 5,
+  "evaluation_budget": 9,
+  "modes": [
+    "interleaved_tree_reuse",
+    "interleaved_tree_feedback"
+  ],
+  "baseline": "Next unseen legal HPWL-ranked proposal after each evaluation; retained routing",
+  "feedback": "After route failure or native QoR rejection, prioritize up to two unseen witness-guided bounded-radius alternatives; every evaluated alternative consumes one of the same nine total slots; no recursive repair; return to primary HPWL ordering when repairs exhaust or a repair commits",
+  "shared": [
+    "Initial legal state and native timing snapshots",
+    "Same PR kernels, affected-net scope and unchanged-endpoint retention",
+    "Same strict native (WL,CPD) improvement with initial 2% guards",
+    "Complete-placement duplicate suppression",
+    "All candidate, proposal, feedback, native validation and failure costs included"
+  ],
+  "analysis": [
+    "Require nine actual evaluations in both modes for matched-attempt interpretation; otherwise report exhaustion and no matched claim",
+    "Record all five repetitions, native state audits and semantic hashes",
+    "Equal attempt count is not equal expanded-node count or equal wall time",
+    "Compare with archived three-attempt controller only as budget scaling, not a paired feedback control",
+    "No parameter tuning or best-repeat selection on these outputs"
+  ],
+  "limits": [
+    "Development designs only",
+    "Exact routing and native QoR feedback, no RC predictor",
+    "No hardware performance or independent FusionPAR speedup claim"
+  ]
+}

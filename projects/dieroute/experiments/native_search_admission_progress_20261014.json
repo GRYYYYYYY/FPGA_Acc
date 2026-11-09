@@ -1,0 +1,15 @@
+{
+  "status": "directed_and_full_capacity_two_epoch_rtl_passed",
+  "updated_ns": 1791981976670847918,
+  "directed_audit": "work/native_search_admission_hls_v2_20261014/audit.json",
+  "large_run": "work/native_search_admission_hls_large_v1_20261014/manifest.json",
+  "expected_large_calls": 2057,
+  "table_capacity": 1024,
+  "epochs": 2,
+  "epoch_transition_scope": "Coordinator resets queued count; kernel reuses stale slots. Autonomous reset/session ownership not implemented.",
+  "exclusive_access_required": true,
+  "full_search_implemented": false,
+  "board_result": false,
+  "research_complete": false,
+  "full_capacity_audit": "work/native_search_admission_hls_large_v1_20261014/audit.json"
+}

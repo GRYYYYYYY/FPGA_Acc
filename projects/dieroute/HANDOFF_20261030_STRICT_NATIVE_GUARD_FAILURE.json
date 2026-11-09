@@ -1,0 +1,26 @@
+{
+  "observed_ns": 1793400310614946811,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261030_STRICT_SLL_ENDPOINT.json",
+    "sha256": "c46c7b4835ffc8c68203c1678fdcd98e81daaafb588b23cd8d57b287c6851812"
+  },
+  "failed_attempt": {
+    "review": "work/strict_SLL_commit_candidate_20261030/native_fullgraph_integration/failed_attempt_review.json",
+    "review_sha256": "24f0c49625305556e7662dfd5c130c26a708efe09c68d064363cfa0fd81e1e49",
+    "protocol": "work/strict_SLL_commit_candidate_20261030/native_fullgraph_integration/protocol.json",
+    "protocol_sha256": "cfa5bb402f5ad1d4873db05c878328335a4021f9b04673ce5efbccffa913034b",
+    "status": "own12GiB_RSS_guard_failure_retained",
+    "full_native_repeats_verified": 0,
+    "scope": "Original complete native graph,341nets/729connections,5planned repeats; failed after initialization/root setup, before any proposal call. No full native or RTL acceptance.",
+    "research_complete": false
+  },
+  "next_action": "A separate host-adapter candidate can mmap the exact full immutable capacity input rather than allocate a resident vector. Consider bounded release of read-only graph mapping residency only at serial boundaries where all search futures have joined. Preserve original graph,341nets/729connections,5repeats,2M labels,12epochs and12GiB RSS/32GiB virtual/global72GiB limits. No automatic retry of this failed attempt.",
+  "original_RTL_action": "Keep all existing positive RTL jobs and owners; audit actual terminal transitions before canaries. The failed CPU job is gone and must not be treated as running or silently retried.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

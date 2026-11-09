@@ -1,0 +1,13 @@
+"""Receipt-derived cost/outcome summary, not new physical or workflow proof."""
+import json,hashlib
+from pathlib import Path
+R=Path(__file__).resolve().parents[1];out=R/'experiments/misex_net466_trials_cost_v2_2026-10-07';out.mkdir();bindings={};rows=[]
+def read(p):
+ raw=p.read_bytes();bindings[str(p)]=hashlib.sha256(raw).hexdigest();return json.loads(raw)
+for version in range(1,19):
+ p=R/f'experiments/misex_net466_extra_owner_joint_v{version}_2026-10-07';r=read(p/'receipt.json');protocol=read(p/'protocol.json');event=read(p/'event.json');assert r['protocol_sha256']==bindings[str(p/'protocol.json')];assert len(event['before_records'])==2167;assert event['selection']['requested_connection_ids']==list(range(2167,2172));assert r['completed'] is None
+ proof=read(p/'branch_verification_dedup.json');assert proof['bindings'][str(p/'receipt.json')]==bindings[str(p/'receipt.json')]
+ rows.append(dict(version=version,component_seconds=r['total_component_seconds'],candidate_attempts=len(r['attempts']),archived_entries=sum(len(a['branches']) for a in r['attempts']),complete_candidate=False,owner_limit=protocol['policy'].get('owner_limit'),statuses=[a['status'] for a in r['attempts']],full_state_proof=str(p/'branch_verification_dedup.json')))
+assert all(hashlib.sha256(Path(p).read_bytes()).hexdigest()==h for p,h in bindings.items());total=sum(r['component_seconds'] for r in rows);(out/'receipt.json').write_text(json.dumps(dict(bindings=bindings,rows=rows,total_component_seconds=total,complete_candidates=0,checkpoint_completed=2167,checkpoint_required=2449,scope='Sum of recorded component timers of18 post-outcome trials at same failed window. Policies/work budgets differ. Excludes previous cohort, owner diagnostics, input/proof preflight where outside timers, independent audits, pooling, native routing and final workflow. Not wall time, speedup or matched-work comparison.'),indent=2)+'\n')
+lines=['# NET466 exploration cost','',f'18 trials: {total:.6f} component seconds; no complete batch; checkpoint2167/2449.','', '| Trial | Component seconds | Candidate attempts | Archived entries |','| --- | ---: | ---: | ---: |']
+lines.extend(f"| v{r['version']} | {r['component_seconds']:.3f} | {r['candidate_attempts']} | {r['archived_entries']} |" for r in rows);lines.extend(['','These are component timer sums, not wall time or full workflow cost. Search policies and release limits differ. Prior proposal diagnostics, proof/input preflight outside component timers, independent audits, tree packing and native routing are excluded. No complete-route QoR or net-time gain follows from this record.']);(out/'JOURNAL.md').write_text('\n'.join(lines)+'\n');print('Component cost sum',total)

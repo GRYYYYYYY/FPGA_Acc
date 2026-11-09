@@ -1,0 +1,160 @@
+{
+  "status": "three_separate_completed_five_pair_CPU_configurations_rendered",
+  "cases": [
+    {
+      "case": "ex5p",
+      "scale": 1,
+      "rows": [
+        {
+          "case": "ex5p",
+          "cost_scale": 1,
+          "pair": 1,
+          "parent_seconds": 468.170780456,
+          "candidate_seconds": 431.071811383,
+          "time_reduction_percent": 7.924238466327493
+        },
+        {
+          "case": "ex5p",
+          "cost_scale": 1,
+          "pair": 2,
+          "parent_seconds": 470.086914457,
+          "candidate_seconds": 429.051663084,
+          "time_reduction_percent": 8.72929028888202
+        },
+        {
+          "case": "ex5p",
+          "cost_scale": 1,
+          "pair": 3,
+          "parent_seconds": 485.901425867,
+          "candidate_seconds": 434.729429842,
+          "time_reduction_percent": 10.531353336470083
+        },
+        {
+          "case": "ex5p",
+          "cost_scale": 1,
+          "pair": 4,
+          "parent_seconds": 466.035399696,
+          "candidate_seconds": 428.54164886,
+          "time_reduction_percent": 8.045258119974918
+        },
+        {
+          "case": "ex5p",
+          "cost_scale": 1,
+          "pair": 5,
+          "parent_seconds": 471.36454189,
+          "candidate_seconds": 433.399655937,
+          "time_reduction_percent": 8.054251556719693
+        }
+      ],
+      "median_reduction_percent": 8.054251556719693
+    },
+    {
+      "case": "diffeq",
+      "scale": 256,
+      "rows": [
+        {
+          "case": "diffeq",
+          "cost_scale": 256,
+          "pair": 1,
+          "parent_seconds": 324.188625457,
+          "candidate_seconds": 299.071811527,
+          "time_reduction_percent": 7.747592591995945
+        },
+        {
+          "case": "diffeq",
+          "cost_scale": 256,
+          "pair": 2,
+          "parent_seconds": 323.537973322,
+          "candidate_seconds": 303.188415821,
+          "time_reduction_percent": 6.289696783365573
+        },
+        {
+          "case": "diffeq",
+          "cost_scale": 256,
+          "pair": 3,
+          "parent_seconds": 322.43304678,
+          "candidate_seconds": 295.782164199,
+          "time_reduction_percent": 8.265555546229175
+        },
+        {
+          "case": "diffeq",
+          "cost_scale": 256,
+          "pair": 4,
+          "parent_seconds": 309.847261058,
+          "candidate_seconds": 295.012055842,
+          "time_reduction_percent": 4.787909102486143
+        },
+        {
+          "case": "diffeq",
+          "cost_scale": 256,
+          "pair": 5,
+          "parent_seconds": 319.664137223,
+          "candidate_seconds": 295.730777874,
+          "time_reduction_percent": 7.487032970578089
+        }
+      ],
+      "median_reduction_percent": 7.487032970578089
+    },
+    {
+      "case": "alu4",
+      "scale": 256,
+      "rows": [
+        {
+          "case": "alu4",
+          "cost_scale": 256,
+          "pair": 1,
+          "parent_seconds": 503.700385062,
+          "candidate_seconds": 450.734883897,
+          "time_reduction_percent": 10.515279069814598
+        },
+        {
+          "case": "alu4",
+          "cost_scale": 256,
+          "pair": 2,
+          "parent_seconds": 499.290958417,
+          "candidate_seconds": 466.11010442,
+          "time_reduction_percent": 6.645594805521771
+        },
+        {
+          "case": "alu4",
+          "cost_scale": 256,
+          "pair": 3,
+          "parent_seconds": 506.326955596,
+          "candidate_seconds": 464.103666478,
+          "time_reduction_percent": 8.339135148018883
+        },
+        {
+          "case": "alu4",
+          "cost_scale": 256,
+          "pair": 4,
+          "parent_seconds": 503.954009326,
+          "candidate_seconds": 466.46036266,
+          "time_reduction_percent": 7.43989450865663
+        },
+        {
+          "case": "alu4",
+          "cost_scale": 256,
+          "pair": 5,
+          "parent_seconds": 504.506406437,
+          "candidate_seconds": 468.100364388,
+          "time_reduction_percent": 7.21617041617214
+        }
+      ],
+      "median_reduction_percent": 7.43989450865663
+    }
+  ],
+  "source_sha256": {
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/upstream_hash_five_pair_summary_20261018/audit.json": "d27097b8c5b7721f9d288e588e8161c7cf47eab05235c0462df0a70ed8275de0",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/upstream_hash_crosscase_pairs_20261018/independent_case_audit_diffeq.json": "0dc9f6c4113d032e3e0729d790fdb32901026ec2ab51f71478a718330f9fc06b",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/upstream_hash_crosscase_pairs_20261018/independent_case_audit_alu4.json": "3f119c3778c9596f0e73a2a02408c0a214b93db9773a308e0f27ff56a84f033f",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/tools/plot_upstream_hash_three_case_pairs.py": "21ce1a2eb6b9a70c34f2a2dca23cbd068c33807b29b61b7898e1f80066177e99"
+  },
+  "artifacts_sha256": {
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/paper/figures/upstream_hash_three_case_pairs.tex": "ddd1465ad302aed98083d5e30ef16c53259a1de6447ff2967e527c504b7d1986",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/paper/figures/upstream_hash_three_case_pairs.tsv": "6a23bcdc4f9f517c82f90e4e2c491a7d226c45014f51d792c4c35026a28e48bd",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/paper/figures/upstream_hash_three_case_pairs.pdf": "5756a925deaf2c4ea82869e93231512a33a5ccae3e644edfb94cba4f941e5a3d",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/paper/figures/upstream_hash_three_case_pairs.png": "a4e488bc3310df7dd9015a0e8ad9a3572655f4c3cf3749a4007ee869ca1ffe03"
+  },
+  "scope": "Separate CPU process-time comparisons; cost scales retained. No pooled statistical estimate, representative guarantee, adoption or physical FPGA result.",
+  "research_complete": false
+}

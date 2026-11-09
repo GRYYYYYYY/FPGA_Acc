@@ -1,0 +1,46 @@
+{
+  "schema": "dieroute.native_joint_authority_hardware_plan.v1",
+  "status": "joint_platform_verified_online_xrt_in_progress",
+  "problem": "Three five-master receivers plus three five-master publishers plus the three-master net authority would require 33 kernel masters before platform connections",
+  "prior_failure": {
+    "path": "work/owner_publish_hw_emu_link_v1_20261013/run.log",
+    "sha256": "e08f42345c3ec82d828820485beddd83be9afdfb3135ff3469d50a62c9881cb6",
+    "diagnostic": "You have run out of port connections on /hmss_0. All 33 connections are used (0 ports prohibited)",
+    "interpretation": "A 36-kernel-master earlier composition failed; exact usable master budget must be established by actual new link, not assumed from this message"
+  },
+  "proposed_change": "Give each receiver a shared command/response/completion traffic AXI bundle, reducing receiver masters from five to four; keep net authority graph and authority ports distinct",
+  "proposed_kernel_masters": 30,
+  "proposed_banks": {
+    "receiver_response": "same bank as its command, replacing HBM4/12/20 with HBM0/8/16",
+    "net_traffic": 24,
+    "net_graph": 25,
+    "net_authority": 26
+  },
+  "required_evidence": [
+    "Freeze separate candidate source; prove non-synthesis preprocessed semantics identical",
+    "Fresh receiver csim, csynth and RTL cosim, strict port/timing/resource audit",
+    "Joint seven-CU U280 link, 60 pointer bindings and actual HBM group audit",
+    "Both XRT adapters load the same joint xclbin; verify shared platform context works",
+    "Run fresh interior/cross-die congestion fixtures at periods1/3 with CPU kernels absent",
+    "Check kernel read/conflict/state and unchanged publications against independent replay and C-model bytes",
+    "Verify zero host authority overwrites and publisher/receiver state uploads in ordinary routing"
+  ],
+  "small_fixture_limits": {
+    "nodes_max": 15,
+    "arcs_max": 14,
+    "read_records_max": 9,
+    "shadow_records_max": 3,
+    "successful_branches_max": 2,
+    "path_records_max": 7,
+    "shard_capacity": 16,
+    "net_capacity": 2,
+    "tree_capacity": 64,
+    "scratch_capacity": 128,
+    "delta_capacity": 32
+  },
+  "remaining_full_graph": "Existing XRT fixture BOs do not hold the real graph or its 2823767-record footprint. A bounded joint fixture does not establish full graph device execution or HBM placement.",
+  "board_result": false,
+  "receiver_hls": "work/summary_hbm_shared_hls_audit_v1_20261014/audit.json",
+  "joint_link": "work/native_joint_authority_hw_emu_link_v1_20261014/manifest.json",
+  "progress": "experiments/native_joint_authority_progress_20261014.json"
+}

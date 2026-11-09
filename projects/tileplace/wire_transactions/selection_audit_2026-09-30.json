@@ -1,0 +1,14 @@
+{
+  "status": "pass",
+  "candidate_sets": 1000,
+  "candidate_counts": "0-64",
+  "atomic_wire_faults": 6,
+  "reference": "original full-identity transaction selection",
+  "scope": "CPU external words selector; no HLS/search integration yet",
+  "sources": {
+    "test_identity_words.cpp": "671633fa4b6a02696021afe65e9da50a6a1b9c4f019bf2f029fb2687b18ad428",
+    "identity_words.hpp": "bc812f6bc681afc22088ceba86f3eb42343f3c13c310e7534a2d5e14ef2977e3",
+    "test_selection_words.cpp": "032d91ef626f1ccdc0f96174ad3b4a3e68f8e2f91b7d061da86a4796517263a7",
+    "selection_words.hpp": "e26d4190b8a8326381324435d7aa2000886547598be647757b78f43f12246eb6"
+  }
+}

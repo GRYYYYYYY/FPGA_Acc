@@ -1,0 +1,28 @@
+{
+  "observed_ns": 1793403188685314990,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261030_RETAINED_OFFSET_RTL_CALLS.json",
+    "sha256": "a434c65d5f2dded02bdd3e337eabca06404b7e3b3c4b5198fa3a5e630d15a533"
+  },
+  "progress": {
+    "status": "full_host_verified_no_HLS_or_RTL_launch",
+    "derivation": "work/resident_discarded_offset_checks_candidate_20261030/derivation.json",
+    "host_correctness": "work/resident_discarded_offset_checks_candidate_20261030/host_correctness_review.json",
+    "host_correctness_sha256": "511f1eacdae81a0b4ac75189beda292965a3524711b98749a61babaa7b86af70",
+    "host_profile": "work/resident_discarded_offset_checks_candidate_20261030/host_index_profile/review.json",
+    "parent": "work/resident_forward_install_validation_candidate_20261030",
+    "scope": "Private candidate host equivalence and source-level operation-count proof only. The counts add side effects and are not HLS cycles, timing fractions, speedup, resource results, live RTL progress or acceptance. No synthesis/RTL process for this candidate has been started; all original jobs, watchdogs, limits and failures retained.",
+    "next": "First synthesize and independently review P7 under original guards, then measure this isolated child against that actual parent. Full original positive RTL and negative canary gate remain mandatory before adoption.",
+    "research_complete": false
+  },
+  "next_action": "All original22 monitored handles and resource/watchdog constraints preserved. P7 still has prepared-only native2022.2 HLS, no owner launched; this child removes only discarded Store::put(3)/put(5) calls and has original full28878 host plus directed62028 invalid-offset/recovery proof. Parent first actual synthesis and schedule review required before child synthesis comparison. No new full RTL proof/adoption/clock/speedup claim. Existing mapped strict-native v2 keeps its original20GiB headroom queue. Artifact ledger remains v11,9697/9968 associated,271 remaining, separate820transitive/466root gaps.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

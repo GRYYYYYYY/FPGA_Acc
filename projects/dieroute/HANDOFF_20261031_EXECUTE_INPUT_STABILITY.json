@@ -1,0 +1,47 @@
+{
+  "observed_ns": 1793428909428993913,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_LAYOUT_COUPLED_STARTUP.json",
+    "sha256": "e443f24a639ff709b9616307e7c9d1b9a6b230ab83b86948e8fd035ac974e692"
+  },
+  "progress": {
+    "report": "work/resident_execute_input_stability_20261031/review.json",
+    "report_sha256": "8c15e108082a93ce90ff73bae99218414d62fdf1cabe848944ddf7e156d04297",
+    "independent_review": "work/resident_execute_input_stability_20261031/independent_review.json",
+    "independent_review_sha256": "685bb1d0e390acf8fac3c5f0a194bb93d5aa6da5d46efd70bba7990d936bf30b",
+    "initial_exit_compare_seeds": 4,
+    "reachable_states": 440,
+    "unique_edges": 919,
+    "command_words_held": 16,
+    "data_base_holding_register": "data_read_reg_652",
+    "independent_binary_input_cases": 3520,
+    "disabled_capture_guard_cases": 512,
+    "internal_dimension_and_base_stability_discharged_in_projection": true,
+    "software_busy_data_write_prohibition_required_for_internal_hold": false,
+    "command_value_identity_proved": false,
+    "actual_ROM_load_observed": false,
+    "HDL_simulation_executed": false,
+    "full_sequential_HDL_equivalence_proved": false,
+    "scope": "SHA-bound top144state/command-reader binary source-control projection includes registered readerstart,two pipeline enables,saved exit/current compare,and completion cache. Four arbitrary binary unreset exit/compare seeds cover startup;current compare/readpredicate/RVALID vary freely,overapproximating actual data relationships. Source exact stall freezes saved control/enables;readyclears start,and done samples registered exit only when unstalled. All syntactic parent targets are allowed except source-exact command wait73. Closed graph across repeated calls proves top74has readerstart0/enable1=0,and top75additionally enable2=0;hence all16sole command-register capture guards are false throughout top75. All16execute p_read ports directly bind64bit command-reader holding-register outputs;data binds topdata_read_reg_652,whose only writer is topstate1. Existing SHA-verified outer lifetime supplies every active execute state is top75,and previous helper lifetimes keep layout/read64under that execute call. Thus execute command words including n/e/p and its captured data base remain stable for the full active execute call and nested layout/read64calls,without assuming software refrain from AXI-Lite data writes while busy. Raw interface data may change;the executed base is already latched. This discharges internal live-dimension/base stability premises of local v245-v248audits in the source projection. Does not prove command acquisition value/byte identity,valid pointer/alignment/object bounds,external memory immutability/return identity,actual ROMload,loop-index bounds,4state/resetabort/full sequential HDL refinement or native/timing/board behavior. Proper common reset,binary/legal source control and no midcall reset remain premises. No DUT/process/input/cache/guard/budget changes or HDL/HLS/native flow.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v249_20261031/matrix.json",
+    "sha256": "7b023ecea2a9b51a122a06856b777da102297f2721cf8bd402d86a0fc80c9227"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v249.json",
+    "sha256": "b659bb662ba897d5ddd41b11d3a18edf3e162cbe75402886b5030600273a37e2"
+  },
+  "next_action": "Prove execute loop-index initialization/update/bounds correspondence for the eight read64caller slots using now-established internal n/e/p/base hold. Actual command acquisition word/byte identity,ROMload/currentfileintegrity and valid memoryobject/external return contracts remain open. First poll original handles and retain all guards/budgets/inputs/caches/failed evidence;do not infer native success from control proofs.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

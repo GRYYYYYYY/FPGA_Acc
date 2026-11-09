@@ -1,0 +1,38 @@
+{
+  "observed_ns": 1793408645158781451,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_RETAINED_WHOLETRACE_PROOFS.json",
+    "sha256": "4706cd948835df5cf4a1c053c0ce376dec68052172e711eb0494e0311fb60fe8"
+  },
+  "progress": {
+    "report": "work/research_artifact_dependency_inventory_20261030/retained_revision_role_resolution_20261031.json",
+    "report_sha256": "c972ac58f9ca94f46dcd8239b838bcb7dc0436538404ba417f041f7ae57c377b",
+    "independent_review": "work/research_artifact_dependency_inventory_20261030/retained_revision_role_resolution_review_20261031.json",
+    "independent_review_sha256": "5d11fc5b4a3ff6103288a19cbe8224354fa4af91e23c7c1b639b216e879b5ced",
+    "ledger": "work/research_artifact_dependency_inventory_20261030/original_hash_field_content_ledger_v23_20261031.json",
+    "ledger_sha256": "752cb1695da2a25bc02540f7f4ba9e1a35402167eff1f42a6c880282657c50ac",
+    "cumulative_original_fields_bound": 9865,
+    "original_fields_not_bound": 103,
+    "root_paths_without_compatible_binding": 466,
+    "scope": "Sixteen original fields bind six preserved reviewer variants, six before/after RTL files, two final active project files and two HLS metadata representations. Pre-open metadata is reconstructed from the declared one-testbench replacement and archived as current reconstructed bytes; terminal metadata is retained, and original v1failure stays failed. Three RTL derivatives pass exact single-attribute inverse checks, without new synthesis, simulation or timing claims. Two intermediate path-replacement snapshot digests remain unresolved; final files are not substituted for them. No active source edit, HLS/Vivado query, trace/TV read, replay or new acceptance; reconstructed byte equality does not restore missing historical provenance.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v191_20261031/matrix.json",
+    "sha256": "2d8a7f7fcd3774fdcf1ac51cece5a46c9747a50dff508419c568343542a15294"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v191.json",
+    "sha256": "f83a97516e4918ff1f5d3bc0c7e224e6e3daba54542ccb35007cf76f06f3e35e"
+  },
+  "next_action": "Ledger v23:9865/9968original fields associated,103pending over35phases;820separate transitive/466root gaps remain. Sixteen reviewer/RTL/project/metadata fields bound, three exact RTL attribute inverses. Expected pre-open metadata explicitly reconstructed; retained terminal metadata differs and original v1failure stays failed. Two intermediate path-replacement snapshot digests remain pending. No new HLS/Vivado/native/RTL execution or trace/TV access. Preserve30watched identities and sole strict-native queue owner, original workloads/watchdogs/guards/failures. Six full28878auditors retain1482matching dependencies and remain unexecuted pending actual terminal. Integrated34page draft and absent board unchanged; optional board-host question pending.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

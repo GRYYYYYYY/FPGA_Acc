@@ -1,0 +1,18 @@
+{
+  "status": "pass",
+  "validation": "CTest array_cost_search_integration passed",
+  "guarded_unit_queries": 60,
+  "guarded_color_queries": 48,
+  "resident_calls": 144,
+  "state_checks": [
+    "commit",
+    "feedback",
+    "restore"
+  ],
+  "scope": "CPU strict snapshot arrays costs integrated; host candidate control/encoding retains STL; no native closure yet",
+  "sources": {
+    "cost_feedback_search.hpp": "4d78777de72afb7e2c7c8419ca3c8279adea1cd9660c37e6caa2b25dbe4991e8",
+    "cost_pair_array.hpp": "880d4fd2ff2f6d5d2bad486a52191208ea00a87f7a7fe405eb61a1a935fa5050",
+    "cost_search.hpp": "6cf9e08f1f0c803c76b2d719c345e30350349255c9716fa73db3f06cdb3704e1"
+  }
+}

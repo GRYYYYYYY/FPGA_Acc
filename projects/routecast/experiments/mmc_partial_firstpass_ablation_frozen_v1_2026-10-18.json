@@ -1,0 +1,51 @@
+{
+  "status": "frozen_before_partial_cohort",
+  "created_utc": "2026-10-18T06:40:58.393330+00:00",
+  "bindings": {
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/run_mmc_partial_firstpass_native_case_v1_2026_10_18.py": "5f5358abc60316d01ce94be86e22a5d0d9193a139dbe27cb0308889a9c69d414",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/run_mmc_partial_firstpass_native_cohort_v1_2026_10_18.py": "2a11554834a4e9642ec5d55b94c46767085b59779d680f907d2375a40f502b58",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/verify_mmc_partial_firstpass_comparison_v1_2026_10_18.py": "32717a7244b3666319ef7226cac1fad2f1cca92b18cdde6bacb1b51429c0412d",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/build/native_partial_net_firstpass_v1_2026-10-18/receipt.json": "c89fc9910c021b07b77b4453c2a2839e061b907a19ca8934d320ab394526c8c5",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/build/native_partial_net_firstpass_v1_2026-10-18/source_contract_verification_v1.json": "a5614d349554377a40af3085db5408e249412670da006fad796e48837300f02e",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/build/native_partial_net_firstpass_v1_2026-10-18/native_admission_source_contract_v1.json": "63064f3c22997a927d942756f6ff754be9f707fdd64a8849558a20c345dc3d6f",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/experiments/mmc_old_branch_prune_seeds_v1_2026-10-18/case_01/seed.route": "5cb1bb70746b4522895d918f9512ffc6e82e9ba087aa504d0f5d377d91dbee17",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/experiments/mmc_old_branch_prune_seeds_v1_2026-10-18/case_02/seed.route": "c4127a7b55e1f8862cc7e1d2116ff85d00f695a786956fabdb7bb65f485e0738",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/experiments/mmc_old_branch_prune_seeds_v1_2026-10-18/case_03/seed.route": "f128883da24a33a3db1e1d6280b1be598f68b21573842c061f3a0b2509f4f08a"
+  },
+  "cases": [
+    "case_01",
+    "case_02",
+    "case_03"
+  ],
+  "arms": [
+    "off",
+    "on"
+  ],
+  "max_concurrent_cases": 3,
+  "num_workers": 1,
+  "only_runtime_difference": "ROUTECAST_PRESERVE_PARTIAL_FIRST_ITERATION=1 for on; same binary, seeds and native settings",
+  "hypothesis": "Admitted partial NETs retaining legal old siblings through first native iteration reduce first-iteration rerouted connection operations relative to default whole NET reset.",
+  "mechanism_observations": [
+    "eligible NET/present/pending counts",
+    "first iteration rerouted connection and NET operations, heap pushes, overused nodes"
+  ],
+  "final_observations": [
+    "iterations",
+    "summed heap pushes and rerouted NET/connection operations",
+    "independent native wirelength",
+    "printed diagnostic CPD"
+  ],
+  "mandatory_admission": [
+    "both off/on baseline equivalence proofs",
+    "all6 complete115572queries native FULL physical canonical pass",
+    "all3 flag-off bytes and integer counters equal prior supported engine partial controls",
+    "independent original XML wire and every iteration integer replay"
+  ],
+  "limitations": [
+    "All3 exposed development placements; no heldout claim",
+    "Concurrent unbalanced clocks cannot establish end-to-end gain",
+    "Experimental architecture CPD diagnostic only",
+    "Original failed15arm screen unchanged",
+    "No switch to a per-case chosen arm"
+  ]
+}

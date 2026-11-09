@@ -1,0 +1,27 @@
+\documentclass[tikz,border=4pt]{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[width=6.7in,height=4.2in,xmin=.84,xmax=1.08,ymin=.975,ymax=1.055,grid=major,grid style={gray!15},xlabel={Wirelength / native baseline of each case},ylabel={CPD / native baseline of each case},title={Remaining tail: native development quality},title style={font=\small},tick label style={font=\small},label style={font=\small}]
+\path[fill=green!8,draw=none] (axis cs:.84,.975) rectangle (axis cs:1,1);
+\addplot[gray,dashed,forget plot] coordinates {(1,.975) (1,1.055)};
+\addplot[gray,dashed,forget plot] coordinates {(.84,1) (1.08,1)};
+\addplot[only marks,mark=x,gray,mark size=3pt] coordinates {(1,1)};
+\node[anchor=south west,font=\scriptsize,text=gray] at (axis cs:1.002,1.002) {Native baseline};
+\addplot[only marks,mark=*,mark size=3pt,red!75!black] coordinates {(1.0551011623,1.0395098105)};
+\draw[thin,red!75!black] (axis cs:1.0551011623,1.0395098105) -- (axis cs:1.035,1.049);
+\node[anchor=north east,text=red!75!black,font=\scriptsize] at (axis cs:1.035,1.049) {\shortstack{ex5p\\$+5.51\%$ WL / $+3.95\%$ CPD}};
+\addplot[only marks,mark=*,mark size=3pt,blue!70!black] coordinates {(0.8760381421,0.9967516792)};
+\draw[thin,blue!70!black] (axis cs:0.8760381421,0.9967516792) -- (axis cs:0.845,1.012);
+\node[anchor=north west,text=blue!70!black,font=\scriptsize] at (axis cs:0.845,1.012) {\shortstack{diffeq\\$-12.40\%$ WL / $-0.32\%$ CPD}};
+\addplot[only marks,mark=*,mark size=3pt,orange!80!black] coordinates {(0.9564971751,0.9854478653)};
+\draw[thin,orange!80!black] (axis cs:0.9564971751,0.9854478653) -- (axis cs:0.965,0.981);
+\node[anchor=south west,text=orange!80!black,font=\scriptsize] at (axis cs:0.965,0.981) {\shortstack{alu4\\$-4.35\%$ WL / $-1.46\%$ CPD}};
+\node[anchor=south west,text=green!40!black,font=\scriptsize] at (axis cs:.842,.976) {WL and CPD do not increase};
+\end{axis}
+\node[anchor=north,font=\scriptsize] at (current bounding box.south) {One run per case; all legal; crossings do not increase; no adoption.};
+\end{tikzpicture}
+\end{document}

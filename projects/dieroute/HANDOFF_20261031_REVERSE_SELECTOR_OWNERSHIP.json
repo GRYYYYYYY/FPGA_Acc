@@ -1,0 +1,49 @@
+{
+  "observed_ns": 1793432600646618813,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_SELECTOR_RETURN_REFINEMENT.json",
+    "sha256": "23091f52fb365afacdb04d336eeb3b0896e3942f3086816f6ec6b40f4de8b6d6"
+  },
+  "progress": {
+    "report": "work/resident_reverse_selector_ownership_20261031/review.json",
+    "report_sha256": "2838a22f99f53369f3e99e8d7bd8d8a05096940f286ca3f2b7fa57b2c12ee6c7",
+    "independent_review": "work/resident_reverse_selector_ownership_20261031/independent_review.json",
+    "independent_review_sha256": "388514c610c78717492c13ae1e1deb80e545d24af6f3e1d189d623b626dd24cc",
+    "states": 1066,
+    "edges": 1673,
+    "source_control_input_cases": 8528,
+    "kind3_dispatch_cases": 1024,
+    "shared_reset_priority_cases": 3072,
+    "feasible_UNSAT_queries": 2,
+    "reverse_live_ready_shape_ordinal_holding_proved_in_projection": true,
+    "outer_get_ownership_proved_in_projection": true,
+    "ready_true_or_shape_value_correctness_proved": false,
+    "actual_encoded_memory_contract_proved": false,
+    "actual_whole_select_semantics_proved": false,
+    "HDL_simulation_executed": false,
+    "full_sequential_HDL_equivalence_proved": false,
+    "scope": "Reset-started finite binary source control projection couples execute326states,get58states,select_r10states,and two registered starts. Critical launch/waits,readyterminal and idle-done are retained;other cases allow all source targets,with exact conditional execute244launch. Kind3valid/invaliddispatch to33/15is independently checked by2feasible BVqueries. Closed repeated-call graph proves every active get remains in an actual executegetwait/start1,and every active selector remains in a getselectorwait/start1inside that outer wait. Fresh asserted starts prevent idle-done from ending new calls. This strengthens earlier admitted ready intervals with reset-started hierarchy ownership in this projection. For reverse get34,all four actual ready/n/entries/blocksregisters have sole writeexecute25,disjoint from every outergetwait. Same direct field/selector muxbinding therefore stays constant through selector10completion;source execute130/132holdkind3and ordinal0/node+1register,whose sole writer128is disjoint. Thus reverse selector live ready/shape/ordinal holding premises are discharged in this source projection,including v258stable-ready premise for these calls. This is holding/ownership,NOT proof readyistrue,storedshapeequalsvalidcommand,ordinalwithinshape,exact encoded marker/prefix/wordvalues,select/getsuccess or reverse delimiteridentity/range. Actual runtime/global4state/resetabort/full sequential RTL/native/ROMload/timing/board behavior remain unproved. No DUT/process/input/cache/guard/budget changes or HDL/HLS/native flow.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v259_20261031/matrix.json",
+    "sha256": "ee45c75884ec289eb2464b0bfc724a3ddbb4d3ea616dd1df259d566cb06c9db2"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v259.json",
+    "sha256": "a95934e6922566202fc0c35dd01932373f50b30cbd7946124cce057c2303460b"
+  },
+  "next_action": "Connect successful reverse prepare/build to ready truth, correct stored shape and exact encoded marker/prefix/word contracts, including whether actual prefix differences equal actual word populations. Local selector helper/return and reverse live argument holding now checked conditionally; actual full select/get delimiter provenance remains open. Poll original handles first; preserve original guards/budgets/inputs/caches/retained failures/old UNKNOWNs.",
+  "previous_goal_turn_classification": "no_progress_status_explanation_only_revalidated_by_fresh_original_handle_poll_and_new_independent_review",
+  "current_goal_turn_classification": "progress_and_verified_wait",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

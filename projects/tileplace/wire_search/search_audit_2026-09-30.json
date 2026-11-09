@@ -1,0 +1,24 @@
+{
+  "status": "pass",
+  "CTest": "wire_search_integration",
+  "guarded_unit_queries": 60,
+  "guarded_color_queries": 48,
+  "resident_calls": 144,
+  "state_checks": [
+    "commit",
+    "feedback",
+    "restore"
+  ],
+  "scope": "CPU search uses same external ABI words cost core as HLS; candidate control/state/encoding retain containers; no full accelerator",
+  "sources": {
+    "wire_search_query.cpp": "1d626edf56ec46dc9042742e323c6cf9a179cf04dd72ad59ea44e8d7c61411a1",
+    "test_wire_search.py": "1d6b2f89de853ea21b033f087024d63b20ad277687bede52c22a125592394175",
+    "wire_cost_state.hpp": "a3089968c411312aef09abb3bee61bf7dfafca909ac2de07697bbafc54b95e9a",
+    "run_wire_native.py": "712758461639268bd7d8ab0f0f5b94749e6e7310e2fb18e29cb091cbaa6164b9",
+    "test_wire_adapter.py": "65053d0ac626ecd53d38826788407102f445933c25c44525331dd471dad1e8e4",
+    "wire_search.hpp": "2f7ca49d34abce8a12b40d21a8231b976871fd32d10c51a04495f26fefa96a30",
+    "wire_feedback_search.hpp": "f611e7e3820858e658ab69b92806a3cf16b88f8cc6bc806c88b9d069b149c142",
+    "wire_mutable_cost.hpp": "cbb04ce4cb1507e91a32c353fd1348dd0a046d1a80e1fae4929933b6f5906b7a",
+    "wire_native_server.cpp": "b70b34e847fbd84972464ef7b5a23a949b85e933efc11262ee629a988f4b3b6d"
+  }
+}

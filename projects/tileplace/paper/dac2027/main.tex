@@ -1,0 +1,405 @@
+\documentclass[conference,10pt]{IEEEtran}
+\pdfmapfile{+ucr.map}
+\usepackage{amsmath,amssymb,booktabs,graphicx}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdfauthor={},pdftitle={TilePlace: Deterministic Transactional Placement Refinement with a Full-Color Hardware Kernel}}
+\newcommand{\system}{\textsc{TilePlace}}
+\newcommand{\vpr}{\textsc{VPR}}
+\setlength{\emergencystretch}{1em}
+
+\begin{document}
+\title{TilePlace: Deterministic Transactional Placement Refinement with a Full-Color Hardware Kernel}
+\author{Anonymous authors}
+\maketitle
+
+\begin{abstract}
+TilePlace refines legal FPGA placements using deterministic transactions and
+a native routed acceptance oracle. It separates integer candidate selection
+from routing decisions, preserves complete macro identities, and implements
+a color invocation as an explicit-array hardware kernel. In a source-sealed
+13-design CPU cohort, nine designs complete paired evaluation; their geometric
+mean critical-path delay and wirelength changes are $-1.944\%$ and $-0.213\%$.
+Four failures remain in the denominator. The verified hardware baseline passes
+nine RTL transactions and a nine-case native differential regression. Internal
+4\,ns timing closure remains unresolved. These results establish the current
+functional scope, without claiming physical-board speedup, power, or energy.
+\end{abstract}
+
+\begin{IEEEkeywords}
+FPGA placement, deterministic transactions, routed feedback, high-level synthesis.
+\end{IEEEkeywords}
+
+\noindent\textbf{Working draft, not submission-ready.}
+Final same-source timing closure, implementation adoption, and manuscript
+acceptance remain pending. Numerical claims below distinguish the completed
+CPU cohort, the verified hardware baseline, and diagnostic timing candidates.
+
+\section{Introduction}
+
+FPGA placement must respect heterogeneous sites, subtiles, fixed blocks,
+regions, and macros while controlling routed delay and congestion.
+VPR supplies a native placement, routing, and timing reference for this
+problem~\cite{betz1997vpr,vtr8}. A local geometric improvement, however, does
+not by itself demonstrate better routed timing. A proposal can reduce a net's
+bounding box while lengthening its critical source--sink connection, or can
+displace a macro member into an illegal site.
+
+\system{} addresses the post-placement refinement problem. Starting from a
+legal packed placement, it enumerates bounded local transactions, ranks them
+with integer costs, and constructs a deterministic nonconflicting batch.
+Native routing and timing analysis decide whether that batch becomes the
+new incumbent. Rejection restores the pre-trial placement exactly; stable
+bisection and complete rejected identities permit bounded exploration of
+alternative proposals.
+
+This separation also defines a hardware boundary. A color computation may
+evaluate and select transactions while the host retains expensive routed
+acceptance and feedback. The challenge is to preserve complete transaction
+identities, shared-snapshot semantics, and conflict sets across an explicit
+memory interface. Checking only final coordinates or a scalar cost can miss
+errors in scratch records consumed by later stages.
+
+The work contributes a deterministic transaction contract for routed-oracle
+refinement; a full-color integer kernel and native adapter implementing that
+contract; and an evidence protocol linking complete writable-port RTL checks,
+native search trajectories, exact input identities, and physical reports to
+specific source snapshots. The present evaluation supports functional
+equivalence and a limited CPU QoR result. It does not yet establish internal
+4\,ns closure or application acceleration on a physical FPGA.
+
+\section{Deterministic Routed-Oracle Refinement}
+
+\subsection{Snapshots, proposals, and objective}
+
+A block location includes coordinates, layer, and subtile. Macros consist of
+a root and members with fixed relative offsets. Each candidate materializes
+all member destinations before checking type compatibility, occupancy,
+fixed or regional constraints, and macro shape. A failed member check rejects
+the complete candidate; members cannot commit independently.
+
+The evaluated protocol partitions the device into $2\times2$ pages with four
+colors. A phase freezes positions, occupancy, objective inputs, and feedback.
+An initiating unit searches its page and neighboring pages with a bound of
+64 target sites and stable coordinate and identifier tie breaks. Occupied
+targets produce swaps and chains of two or three units; compatible macros
+may swap as complete objects. The routed protocol focuses initiating units
+on blocks in the 20 worst current setup paths. Helper units can still
+participate in a transaction.
+
+Page coloring establishes a deterministic schedule, not independence:
+long nets and macros can cross page boundaries. For each transaction $T$,
+the computation records the old/new occupied-site union $S(T)$ and all
+touched nets $N(T)$. It recomputes objective changes against the same frozen
+snapshot. The wire term uses touched-net bounding boxes. A connection-aware
+timing term retains sink identity:
+\begin{equation}
+C(P)=\sum_{c=(s,t)}q_c\bigl(|x_s-x_t|+|y_s-y_t|\bigr),
+\end{equation}
+where $q_c$ is a quantized criticality in $[0,65535]$.
+Routed setup-path and congestion feedback augment proposal ranking.
+
+The source-sealed cohort's initial timing weights come from a fixed CPU path
+generator and a patched timing exporter supplied with its quantized edge
+delays. They are proxy-derived weights, not measurements of native baseline
+route delay. The native routed oracle remains the final QoR criterion.
+
+\subsection{Selection and legality}
+
+Candidates are ordered by improvement and stable transaction identity.
+Scanning that order accepts $T$ only if
+\begin{equation}
+S(T)\cap S_A=\emptyset\quad\text{and}\quad N(T)\cap N_A=\emptyset,
+\end{equation}
+where $S_A,N_A$ accumulate previously accepted transactions. The explicit
+kernel also carries unit conflict ranges. Complete identities include
+operation kind, nested member contents, and trial coordinates, rather than
+relying on pool positions or host indices.
+
+For a fixed input contract, enumeration and integer evaluation yield one
+ordered candidate sequence. An induction over the conflict scan gives one
+accepted batch. Because accepted transactions have disjoint old/new site
+sets and touched nets, each retains the before-state used during evaluation,
+and applying the batch is equivalent to its deterministic serial order.
+Member legality checks preserve macro structure and occupancy. These
+arguments assume valid input backing and are supplemented by native
+placement and routing validation.
+
+\subsection{Routed acceptance and bounded exploration}
+
+Let $P_0$ be the baseline and $P_i$ the current incumbent. A proposed $P'$ is
+accepted only if native placement, routing, and timing checks succeed,
+\begin{equation}
+WL(P')\le1.005\,WL(P_0),
+\end{equation}
+and either $CPD(P_i)-CPD(P')\ge0.001$\,ns or CPD is exactly equal and routed
+wirelength strictly decreases. The cap is baseline-relative, preventing
+successive timing improvements from accumulating unlimited wire cost.
+
+Before a trial, the controller snapshots all positions. Rejection restores
+them exactly and splits a non-atomic batch at its stable midpoint, trying
+halves in fixed order while budget remains. A rejected atomic identity enters
+an incumbent-specific forbidden set. Later visits consider the next-ranked
+available proposal. Acceptance clears this set and refreshes native setup-path
+and congestion feedback because the incumbent has changed.
+
+The protocol allows four epochs and 24 candidate closures. Every failed
+closure consumes budget. With fixed routing binary, seed, channel width,
+and options, the resulting controller trace can be checked transaction by
+transaction, including placement hashes, decisions, restoration, and feedback.
+Determinism does not imply that every local optimum is explored or that a
+bounded run finds the best placement.
+
+\input{../dac/hardware_method.tex}
+
+\section{Evaluation Protocol}
+
+\subsection{Separate questions and evidence}
+
+We distinguish four questions. CPU QoR asks whether the routed controller
+improves paired native placements. Native differential regression asks whether
+the shared integer implementation preserves search and feedback behavior.
+C/RTL co-simulation asks whether the explicit AXI top matches complete
+expected output arrays for its fixtures. Physical implementation asks whether
+that specific generated design satisfies internal timing and routing gates.
+A passing result at one boundary cannot replace another.
+
+Experiments use Ubuntu 22.04 and Intel Xeon Gold 6530 hosts. Native closures
+use VTR revision \texttt{8cb20aa5293b5ce5}\allowbreak
+\texttt{f6a05c88b37b38e1305d9b07}; binary hashes accompany the records.
+Hardware generation and implementation use Vitis HLS and Vivado 2022.2.
+The OOC target is XCU280 at 4\,ns, with the clock constraint read before
+synthesis. No physical U280 execution is available in the recorded environment.
+
+\subsection{Source-sealed CPU cohort}
+
+Before refinement outcomes, the execution protocol seals 13 local designs,
+source and binary identities, architecture, seed 1, channel width 200,
+objective weights 2/2/1, four epochs, 24 closures, and 20 feedback paths.
+Baseline and candidate use the same packed netlist and routing options with
+one router worker. Each successful design has two complete repetitions.
+There are no outcome-based parameter changes or retries. Geometric means
+use candidate/baseline ratios over successful pairs; failures remain visible
+in the registered denominator.
+
+Native baseline runs generate placement, macros, and routing resources.
+The input path generator has a fixed 30-iteration limit. Failure to produce
+a valid input ends that case before refinement. This distinction prevents
+input failures from being described as unsuccessful placement optimizations.
+The local exposure review is incomplete, so source sealing does not establish
+strict historical blindness or broad architecture generalization.
+
+\subsection{Functional hardware baseline}
+
+The verified baseline has two distinct RTL suites. Five transactions exercise
+the five operation kinds; four additional transactions include external
+forbidden fallback behavior. Each transaction compares all 30 writable ports,
+giving 150 and 120 complete typed-array comparisons. Acceptance also requires
+C postchecking, a co-simulation PASS, an actual zero process return code,
+and unchanged frozen sources. These are fixture-level equivalence checks,
+not exhaustive proofs for arbitrary instances or malformed memories.
+
+The native regression executes nine successful cohort cases through the
+integer adapter. Independent checks compare complete search and feedback
+signatures and final placements, verify commands against the reference
+configuration, and match all actual input identities to the references.
+This regression contains 202 native trials and 88 checked color calls with
+129 unique frozen input files. It is separate from the CPU cohort's 404
+trials across two repetitions; adding these counts would overstate coverage.
+
+\section{Results and Current Limits}
+
+\subsection{Paired routed QoR}
+
+\begin{table}[t]
+\centering\small
+\caption{All registered CPU cases. Geometric means use nine successful pairs;
+four failures remain in the cohort denominator.}
+\label{tab:cohort}
+\input{../generated/new_cohort_table.tex}
+\end{table}
+
+Nine of 13 registered designs complete evaluation (Table~\ref{tab:cohort}).
+The independent audit verifies both repeated trajectories and 404 native
+trials. Seven designs improve CPD and two preserve it. The successful-subset
+geometric-mean CPD and routed wirelength changes are $-1.944\%$ and
+$-0.213\%$, respectively. The largest observed CPD changes are
+$-5.680\%$ for \texttt{tseng}, $-4.614\%$ for \texttt{ex5p}, and
+$-3.991\%$ for \texttt{apex2}. These are paired post-route CPU results, not
+hardware throughput measurements.
+
+\texttt{adder} lacks a required architecture model. \texttt{ex1010},
+\texttt{s298}, and \texttt{s38417} have legal native baselines but retain
+8, 2, and 2 overused resources in the CPU input path generator after its
+30-iteration limit. Refinement is not launched for these cases. Their
+exclusion from the geometric mean is an execution limitation, not a claim
+that the method would improve them.
+
+\subsection{Suppression ablation and provenance}
+
+A separate four-design fixed-source ablation compares rejected-identity
+suppression enabled and disabled under the same input and feedback parser.
+It finds no CPD advantage. In \texttt{diffeq}, suppression changes the trace
+from eight to sixteen closure calls and enables one accepted transaction,
+reducing wirelength by $0.055\%$ relative to disabled suppression. The other
+three cases preserve final QoR; paired geometric-mean wirelength changes by
+$-0.014\%$. Thus the mechanism can expose an alternative transaction, but
+this experiment does not establish a general timing benefit.
+
+Earlier archived cohorts have a timing-parser provenance gap: a fixed-source
+replay reconstructs a different initial feedback edge set from the same
+timing report. Their recorded outcomes are retained in the artifact history,
+but are not pooled into the source-sealed result above or used to support
+a single-frozen-implementation claim.
+
+\subsection{Functional correctness and internal timing}
+
+The verified October 4 baseline passes both full RTL suites and the native
+regression described above. With the 4\,ns constraint applied before
+synthesis, its routed OOC implementation has WNS $-0.660$\,ns, TNS
+$-1455.593$\,ns, and 10,507 failing setup endpoints. All 335,892 routable
+nets are routed and hold checks pass; setup timing does not.
+
+An independent experiment starts from that baseline's archived routed
+checkpoint and applies post-route physical optimization followed by routing
+without timing relaxation. WNS improves to $-0.589$\,ns, but TNS remains
+$-1450.798$\,ns with 10,506 failing setup endpoints. All 335,894 nets are
+routed and hold checks pass. This experiment preserves the baseline's
+logical implementation and original checkpoint; it still does not meet the
+4\,ns gate.
+
+\begin{table}[t]
+\centering\small
+\setlength{\tabcolsep}{3pt}
+\caption{Completed October 12--14 internal 4\,ns OOC experiments. Each row
+is a separate candidate and all fail setup timing. WNS and TNS are in ns;
+fails counts setup endpoints. Rows are diagnostic
+experiments, not a controlled causal ablation.}
+\label{tab:ooc}
+\input{../generated/ooc_experiments_compact_table.tex}
+\end{table}
+
+Table~\ref{tab:ooc} retains 22 completed timing candidates. The best WNS in
+this set is $-0.153$\,ns for the best-dimension-guard candidate, with TNS
+$-10.711$\,ns and 328 failing setup endpoints. Its 332,910 nets are fully
+routed; hold and pulse-width checks pass, and DRC reports 25 warnings with
+no critical warnings or errors. It still fails the timing gate. Moreover,
+the baseline's correctness results cannot be transferred to this changed
+candidate. A final implementation must satisfy both functional and physical
+gates with its own source bindings.
+
+A separate post-route optimization of the roots shift-end candidate improves
+its WNS from $-0.237$ to $-0.170$\,ns, with TNS $-53.134$\,ns and 896 setup
+failures. This physical variant also fails the unchanged 4\,ns gate.
+Post-route optimization of best-dimension-guard reduces its WNS to
+$-0.086$\,ns, with TNS $-7.674$\,ns and 292 setup failures. All 332,917
+nets are routed and hold checks pass, but setup closure remains unresolved.
+A subsequent AggressiveExplore pass on that checkpoint reaches WNS
+$-0.073$\,ns and TNS $-7.164$\,ns, with 287 setup failures. Its 332,921
+nets are fully routed, hold and pulse-width checks pass, and DRC reports no
+critical warnings or errors. This improvement still does not meet 4\,ns.
+A further fanout-oriented physical pass reaches WNS $-0.067$\,ns and TNS
+$-5.634$\,ns, with 267 setup failures and 332,923 fully routed nets. Hold,
+pulse-width, and DRC error checks pass; the setup timing gate remains open.
+Alternate critical-cell replication from that checkpoint further improves
+WNS to $-0.050$\,ns and TNS to $-4.143$\,ns, with 251 setup failures.
+All 332,923 nets remain routed, and hold, pulse-width and DRC error checks
+pass. An iterative AggressiveExplore pass then reaches WNS $-0.047$\,ns
+and TNS $-3.488$\,ns, with 224 setup failures and 332,925 fully routed
+nets. Hold, pulse-width and DRC error checks still pass, but setup timing
+remains below the unchanged 4\,ns requirement for this logical candidate.
+
+Intermediate HLS estimates and partially completed simulations do not close
+that gap. Register-boundary inspection can reject an ineffective scheduling
+change before implementation, but does not establish timing improvement.
+For example, capturing the position ID before binary search produces the
+intended RTL boundary, yet its routed WNS is $-0.346$\,ns, worse than its
+best-dimension-guard parent's $-0.153$\,ns. Its worst reported path crosses
+selection member-range checking and AXI read control. A separate registered
+64-bit search-condition return also forms its intended RTL boundary, yet
+reaches WNS $-0.479$\,ns with 4,513 setup failures. Its worst path crosses
+enumeration control and the position-memory AXI read-buffer enable;
+eight of the 20 reported worst paths still end at position-query register
+enables. Replacing the position search interval with a full-width start and
+remaining length removes the low/high loop comparison in generated RTL,
+but reaches WNS $-0.388$\,ns with 1,162 setup failures. Its worst reported
+path crosses identity control and the unit-members AXI read-buffer enable.
+Registering the exact 32-bit position-ID predicate also forms its intended
+boundary, but reaches WNS $-0.323$\,ns with 1,380 setup failures. Its worst
+path crosses identity count comparison and commit return control; routing
+accounts for 85.8\% of that path's data delay.
+Local boundary formation therefore does not establish whole-kernel timing
+closure.
+No result here measures board latency, throughput, transfer costs, power,
+or energy. A clock target alone cannot be converted into application speedup.
+
+\subsection{Baseline resources and simulated fixture cost}
+
+The verified baseline's routed report uses 180,887 CLB LUTs, 223,917 CLB
+registers, 68.5 block-RAM tiles, 46 DSPs, and no UltraRAM. LUT and register
+utilization are $13.88\%$ and $8.59\%$ of the target, respectively. These
+counts belong to the baseline implementation above; they cannot be combined
+with a different candidate's timing to describe one realized design.
+
+\begin{table}[t]
+\centering\small
+\caption{Verified baseline fixture latency in XSim clock cycles. Each row
+summarizes its entire suite, including the generated AXI memory model.}
+\label{tab:cycles}
+\input{../generated/baseline_fixture_cycles_table.tex}
+\end{table}
+
+Table~\ref{tab:cycles} reports the range of per-invocation latency from
+completed co-simulation. Transaction records reproduce the summary minima,
+maxima, integer averages, and total execution cycles. These fixtures exercise
+complete color invocations, not isolated move-operation costs. Their ranges
+do not bound benchmark workloads or later candidates. In particular, the
+simulation's 4\,ns clock setting is not achieved physical timing; multiplying
+cycles by that target would not establish board runtime. The large cycle
+counts also preclude assuming high throughput from resource fit alone.
+
+\section{Related Work}
+
+VPR and VTR provide architecture-aware placement and routed evaluation
+infrastructure~\cite{betz1997vpr,vtr8}. Analytical approaches address broader
+placement and packing objectives: routing-architecture-aware
+placement~\cite{chen2015routingaware}, UTPlaceF~\cite{li2018utplacef},
+elfPlace~\cite{li2019elfplace}, DREAMPlaceFPGA~\cite{rajarathnam2022dreamplacefpga},
+and AMF-Placer 2.0~\cite{liang2024amf}. FPGA-accelerated placement has also
+been studied~\cite{dhar2019accelerated}. \system{} operates after a legal
+packed placement and makes native routing an explicit acceptance boundary.
+The present evidence does not provide a runtime or QoR comparison against
+those distinct end-to-end flows. Its hardware contribution is the explicit
+full-color transaction implementation and its verification boundary.
+
+\section{Limitations and Reproducibility}
+
+The successful CPU subset is small and logic-oriented, uses one routing seed
+and fixed budgets, and depends on a proxy input generator with capacity
+failures. Surrogate weights and local proposal bounds may exclude useful
+transactions. Stable bisection and suppression improve exploration discipline
+without guaranteeing optimality. A complete runtime study must separately
+measure proposal computation, memory transfers, native routing, feedback, and
+rollback; the current functional evidence cannot predict their balance.
+
+The artifact separates frozen source, fixture definitions, native reference
+inputs, commands, terminal return codes, full typed outputs, search traces,
+and implementation reports. Table generation checks their recorded identities
+and stops on mismatch. Failed timing variants and failed CPU cases remain
+visible. Final release requires a single adopted source manifest linking the
+passing RTL, native, and routed results, followed by a manuscript update and
+complete anonymity and format checks. Those release conditions remain open.
+
+\section{Conclusion}
+
+\system{} separates deterministic local transaction selection from native
+routed acceptance and implements the color computation across a fully
+checked explicit-word interface. The source-sealed CPU cohort improves
+successful-subset routed CPD by $1.944\%$, while the verified hardware
+baseline passes the stated functional regressions. Internal 4\,ns timing
+closure and final implementation adoption remain unresolved; physical-board
+acceleration is not established.
+
+\clearpage
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+\end{document}

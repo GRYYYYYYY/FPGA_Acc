@@ -1,0 +1,14 @@
+"""Frozen SHA160 placement after complete 893 packed FF bit audit."""
+import json,sys,subprocess,shutil,os,time,xml.etree.ElementTree as ET
+from pathlib import Path
+R=Path(__file__).resolve().parents[1];sys.path.insert(0,str(R/'tools'))
+from pre_route_endpoints import sha
+proof=R/'experiments/sha1_packed_FF_v2_2026-10-10/all_FF_signal_verification_v1.json';v=json.loads(proof.read_text());assert v['all_ordinary_FF_names_and_nonopen_D_clk_Q_pins_match_original_bits'] and v['ordinary_FF_count']==893 and v['primitive_counts']=={} and all(sha(k)==h for k,h in v['bindings'].items())
+source=R/'experiments/sha1_native_pack_v1_2026-10-10/sha1';rp=source.parent/'receipt.json';prp=source.parent/'protocol.json';r=json.loads(rp.read_text());assert r['exit_code']==0 and r['status']=='PACK_NATIVE_SUCCESS_PENDING_PACKED_SIGNAL_AUDIT' and all(sha(k)==h for group in ['bindings','files'] for k,h in r[group].items())
+V=R/'build/native_candidate_retained_search_2026-10-06/sequence_vpr';ARCH=R/'experiments/async_reset_arch_candidate_v2_2026-10-08/architecture.xml';D=R/'experiments/sha1_fixed_place_v1_2026-10-10';D.mkdir();w=D/'sha1';w.mkdir();bindings={str(p):sha(p) for p in [Path(__file__),proof,rp,prp,V,ARCH]}
+for f in ['design.blif','design.net']:shutil.copyfile(source/f,w/f);bindings[str(source/f)]=sha(source/f);bindings[str(w/f)]=sha(w/f)
+root=ET.parse(w/'design.net').getroot();assert root.get('architecture_id')=='SHA256:'+sha(ARCH) and root.get('atom_netlist_id')=='SHA256:'+sha(w/'design.blif');cmd=[str(V),str(ARCH),'design.blif','--place','--net_file','design.net','--place_file','design.place','--route_chan_width','128','--num_workers','1','--seed','1'];(D/'protocol.json').write_text(json.dumps(dict(bindings=bindings,command=cmd,timeout_seconds=1200,scope='Full original SHA160 compatibility input, one frozen placement attempt with unchanged arch/width128/worker1/seed1. No route labels, no QoR tuning/case selection or source size reduction. All failures retained. Original HDL/characterized async timing/global family gates unresolved.'),indent=2)+'\n');tick=time.perf_counter()
+with (w/'place.log').open('w') as f:
+ try:code=subprocess.run(cmd,cwd=w,env={k:v for k,v in os.environ.items() if not k.startswith('ROUTECAST_')},stdout=f,stderr=subprocess.STDOUT,timeout=1200).returncode
+ except subprocess.TimeoutExpired:code='TIMEOUT'
+assert not list(w.glob('*.route')) and all(sha(k)==h for k,h in bindings.items());(D/'receipt.json').write_text(json.dumps(dict(bindings=bindings,exit_code=code,seconds=time.perf_counter()-tick,status='NATIVE_PLACE_SUCCESS_PENDING_AUDIT' if code==0 and 'VPR succeeded' in (w/'place.log').read_text() else 'PLACE_FAILED_OR_TIMEOUT',files={str(p):sha(p) for p in w.iterdir() if p.is_file()},native_route_labels_generated=False),indent=2)+'\n');print('SHA1 PLACE',code,flush=True)

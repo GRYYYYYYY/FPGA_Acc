@@ -1,0 +1,14 @@
+{
+  "status": "pass",
+  "reference_pairs": 2000,
+  "nonempty_pressure": true,
+  "reference": "original C++ and typed-array cost_pair",
+  "atomic_wire_errors": [
+    "unknown net",
+    "routed overflow"
+  ],
+  "sources": {
+    "cost_pair_words.hpp": "f3e240e1e4696c3d39ce29f9d07335d5b5bfe7c9fb85b91879a928531dc5bdcd",
+    "test_cost_pair_words.cpp": "48f02e323cf0fd8fc2e9c06197a85b4031728509b503c5998d16466332a6f92f"
+  }
+}

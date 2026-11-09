@@ -1,0 +1,128 @@
+{
+  "case": "titan23_stereo_vision",
+  "claim_boundary": "This is the outcome-blind preregistered second Titan23 point. The exact Titan 2.0.0 BLIF/SDC hashes were verified before TilePlace execution. The optional timing oracle explicitly labels 111 atom-pin-unmapped connections; all remain in wire accounting.",
+  "connections": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/titan23_stereo_vision_input_capture/connections.csv",
+    "rows": 81610,
+    "sha256": "f2651423efe90f134c858c87e87339f974c7b99803c3b300c1c937c9637bc337",
+    "size_bytes": 18156567
+  },
+  "contract": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/titan23_stereo_vision_seed3_cw300_endpoints/manifest.json",
+    "sha256": "553eeff1d83a1b7c6d9b8296683173bc9909f83c85d05825ce5b66da8196a41e",
+    "size_bytes": 5014
+  },
+  "date": "2026-09-02",
+  "frozen_correctness_binary": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+    "sha256": "a90dc1b3380ebda705e85f176db0cc3d6be1b71ab9ee887db819febc8b62bafc",
+    "size_bytes": 7935624
+  },
+  "native_macros": {
+    "macro_count": 150,
+    "member_count": 300,
+    "output": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/titan23_stereo_vision_seed3_cw300/vpr_place_macros.echo",
+      "sha256": "57c0b18243b84cbacf902da824e6253cb568dbef5de2ed5338948049b248f11d",
+      "size_bytes": 82300
+    },
+    "report": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/titan23_stereo_vision_seed3_cw300/vpr_macro_capture.json",
+      "sha256": "d893f61c63e8f69da28b3594e7ea3ecca460078160b781278724e6cd7db13b8a",
+      "size_bytes": 4706
+    },
+    "source": "vpr_place_macros_echo"
+  },
+  "official_archive": {
+    "integrity": "gzip -t and complete tar listing passed",
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/titan_download_2026-09-01/titan_release_2.0.0_blif.tar.gz",
+    "sha256": "fcaef6462961bf752999d59e3a5d826c55ec55fc9f2eaf44bc7ae4aebdd0e432",
+    "size_bytes": 1059033941,
+    "url": "https://www.eecg.utoronto.ca/~vaughn/titan/titan_release_2.0.0_blif.tar.gz"
+  },
+  "preregistration": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/titan23_stereo_vision_preregistration_2026-09-01.json",
+    "sha256": "a1931afb8f4de616c6f87ac7edbac08cb5ea4725b21a2ee7d5089562f1a48d56",
+    "size_bytes": 2748
+  },
+  "rr_graph": {
+    "edges": 39165143,
+    "generation": "written before expected copied-placement route identity failure",
+    "nodes": 3593250,
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/titan23_stereo_vision_input_capture/rr_graph.xml",
+    "sha256": "21c77e38c8e63626c9962de89fa5edc841be419c67f173cc076a31eae6180199",
+    "size_bytes": 3261812683
+  },
+  "schema": "TILEPLACE_TITAN23_STEREO_VISION_INPUT_CAPTURE_V1",
+  "source_inputs": {
+    "architecture": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/titan/stratixiv_arch.timing.xml",
+      "sha256": "0d3a4f0459af9a883329b934dea81f6a025c18a0ad10c63cbed3d2f8cac4c12b",
+      "size_bytes": 4948452
+    },
+    "circuit": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/titan23_stereo_vision_input_capture/stereo_vision_stratixiv_arch_timing.blif",
+      "sha256": "515426efda12b7c0f9c2414871cdd6cb2d1c21619de151934201a26e1b815762",
+      "size_bytes": 88818253
+    },
+    "packed_netlist": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/titan23_stereo_vision_seed3_cw300/stereo_vision_stratixiv_arch_timing.net",
+      "sha256": "aa5fac2699614a382ba5f10855957f5b0ecae95aa615c74614d2085ed51dd605",
+      "size_bytes": 229348310
+    },
+    "placement": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/titan23_stereo_vision_seed3_cw300/stereo_vision_stratixiv_arch_timing.place",
+      "sha256": "90d3067328296636b67e5ffebd6baf1edd2cc7acdf827e9ce055260c93a30c7f",
+      "size_bytes": 662385
+    },
+    "route": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/titan23_stereo_vision_seed3_cw300/design.route",
+      "sha256": "72f222c6c57a2eae9fe4ffae38e317e35f5449e2232eef2d301fdea25197460f",
+      "size_bytes": 42455176
+    },
+    "sdc": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/titan23_stereo_vision_input_capture/stereo_vision_stratixiv_arch_timing.sdc",
+      "sha256": "392cbdc288bbabd7cbfa4edf638f6c644997ec5ca5cd06a451873b6b22c43e4c",
+      "size_bytes": 3583
+    }
+  },
+  "source_run": {
+    "channel_width": 300,
+    "cohort": "PersistRoute frozen serial baseline",
+    "cpd_ns": 7.51746,
+    "initial_pres_fac": 1.0,
+    "max_router_iterations": 400,
+    "router_lookahead": "map",
+    "router_profiler_astar_fac": 1.5,
+    "routing_iterations": 15,
+    "seed": 3,
+    "vpr_revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+    "wirelength": 592827
+  },
+  "status": "pass",
+  "timing_export": {
+    "atom_timing_pin_mapped": 81499,
+    "atom_timing_pin_unmapped": 111,
+    "connections_at_or_above_threshold": 1053,
+    "critical_path_delay_ps": 7517,
+    "criticality_q_threshold": 60000,
+    "fully_labeled": true,
+    "input": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/titan23_stereo_vision_input_capture/reference_timing.input.csv",
+      "sha256": "415d007380b835fd586b2195cdd68a2a0275838c95e8de2e2f0311fc57731c3f",
+      "size_bytes": 3637936
+    },
+    "output": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/titan23_stereo_vision_input_capture/reference_timing.output.csv",
+      "sha256": "b59ec93b7ae6684dadfa4e19abd526cdd03a1451c16e01c0344e5ca6091070bf",
+      "size_bytes": 2268866
+    },
+    "rows": 81610,
+    "unmapped_policy": "explicit timing_pin_mapped=0 with criticality_q=0; retained in wire cost"
+  },
+  "timing_export_binary": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr_timing_optional/vpr/vpr",
+    "sha256": "58c84e686fb622bd732b8f6c07d506c5efae318fe1adf57180dd4df89c0cb6b2",
+    "size_bytes": 8062104
+  }
+}

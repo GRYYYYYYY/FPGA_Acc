@@ -1,0 +1,51 @@
+{
+  "schema": "dieroute.present_schedule_protocol.v1",
+  "status": "design_frozen_implementation_pending",
+  "objective": "Isolate congestion-factor trajectories on fixed ordinary bulk-wave scheduling; do not mistake zero-start multiplicative rounding for the explicit first-to-second transition.",
+  "modes": {
+    "0_legacy": "Original config:256 then doubled each epoch, no added cap.",
+    "1_slow_growth": "256 first;333 second; rounded Q8 multiplier333/256 thereafter, capped256000.",
+    "2_zero_first_warm_start": "0 first;128 second; rounded Q8 multiplier333/256 thereafter, capped256000."
+  },
+  "fixed": {
+    "case": "ex5p development only",
+    "heldout": "apex2/frisc/elliptic remain unopened",
+    "repeats": 5,
+    "ordinary_schedule_mode": 0,
+    "issue_width": 4,
+    "max_iterations": 30,
+    "min_timing_iterations": 3,
+    "cost_model": "vpr_style",
+    "cost_state_bits": 64,
+    "cost_scale": 1,
+    "tree_timing_weight_q": 128,
+    "geometry_weight": 64,
+    "task_order": "preserve",
+    "history_increment_q": 256,
+    "feedback_threshold_q": 0,
+    "feedback_local_delay_guard": false,
+    "supplemental_transaction_mode": 0,
+    "cleanup_passes": 0,
+    "speculative_workers": 0
+  },
+  "invariants": [
+    "Mode0 exact common output, counters and native quality compatibility with ordinary bulk parent.",
+    "Every noninitial update computes explicit next factor before resource version/cost publication. History update, pending, net order, seed and ordinary scheduling semantics unchanged.",
+    "Modes1/2 reject edge-mode,feedback,cleanup,transactions,workers,nonbulk schedules and incompatible underlying cost coefficients.",
+    "Explicit first-to-second transition; no implicit 0->1 Q8 growth. Q8 multiplier333 is1.30078125, not exact1.3. Cap1000 is explicit and does not imply exact VPR cost semantics."
+  ],
+  "validation": [
+    "Compile and inherited regressions; actual complete controller fixtures for all3 trajectories, first transition,cap,resource version and overflow behavior.",
+    "Full library ASan/UBSan and actual host file traces independently replayed.",
+    "Five-repeat native source/config/environment controls, exact mode0 parent compatibility, complete resource-version replay and consistently rehashed native corruption fixtures."
+  ],
+  "acceptance": "Original joint WL/CPD/SLL and no-extra-failure gates unchanged. Full study not complete until original research gates verified.",
+  "source_evidence_sha256": {
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/rr_present_schedule_semantics_20261015/profile.json": "2ea5343d7bf8c5facf90c3ce5a1dcfcd1d0b9ed1ac6041d0304050f6ae38bad9",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/rr_present_schedule_semantics_20261015/interpretation.json": "86a10be2f4ff444fe72dd12c9b7000aa1c23d63fb55d47647a38b830ada092a9",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/rr_ordinary_schedule_variant_20261015/bulk_arm_result.json": "ca42da11e4dc52cbba6537810012594ab9beda2ad29d52d54b1f476623259585"
+  },
+  "scope": "Quantized congestion-schedule diagnostic, not exact VPR equivalence, baseline as-built provenance, physical acceleration or quality benefit. Existing ordinary-scheduling runs remain frozen and uninterrupted.",
+  "board_result": false,
+  "research_complete": false
+}

@@ -1,0 +1,8 @@
+import json,hashlib,time
+from pathlib import Path
+from combinational_cut_export_v2 import export
+from audit_vexriscv_cut_export_v2 import audit
+R=Path(__file__).resolve().parents[1];E=R/'experiments';D=E/'briey_lowered_combinational_cut_v1_2026-10-09';D.mkdir(exist_ok=False);p=E/'briey_lowered_synthesis_v1_2026-10-09/design.json'
+proof=E/'briey_lowered_synthesis_verification_v1_2026-10-09/verification.json'
+sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest();authority=json.loads(proof.read_text());assert all(sha(path)==digest for path,digest in authority['bindings'].items());before=sha(p);m=json.loads(p.read_text())['modules']['Briey'];start=time.perf_counter();text,boundary=export(m);assert sha(p)==before
+(D/'original.blif').write_text(text);(D/'sequential_boundary.json').write_text(json.dumps(boundary)+'\n');paths=[proof,p,Path(__file__).resolve(),R/'tools/combinational_cut_export_v2.py',R/'tools/audit_vexriscv_cut_export_v2.py',D/'original.blif',D/'sequential_boundary.json'];bindings={str(p):sha(p) for p in paths};(D/'protocol.json').write_text(json.dumps(dict(bindings=bindings,scope='Lowered experimental Briey compatibility export/audit, not outcome-based family selection, ABC mapping or native input.'),indent=2)+'\n');result=audit(m,text,boundary);assert all(sha(p)==h for p,h in bindings.items());(D/'verification.json').write_text(json.dumps(dict(bindings=bindings,result=result,seconds=time.perf_counter()-start,scope='Independent all-gate truth and cut-boundary audit including negative-edge original records. No mapped cut, whole HDL equivalence or native timing proof.'),indent=2)+'\n');print(result,flush=True)

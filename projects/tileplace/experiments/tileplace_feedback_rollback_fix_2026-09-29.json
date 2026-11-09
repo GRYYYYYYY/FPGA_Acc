@@ -1,0 +1,60 @@
+{
+  "status": "unit_verified_native_pending",
+  "implementation": {
+    "schema": "TILEPLACE_IMPLEMENTATION_V1",
+    "sha256": "2fa6e2324a971d8489bba12d49115f91d0a56874c0ee5200224d72e4f8a9f689",
+    "parser": {
+      "mode": "generic-indexed-port-v1",
+      "path_flags": 32,
+      "path_pattern": "^#Path\\s+(\\d+)\\s*$",
+      "point_flags": 32,
+      "point_pattern": "^\\s*(\\S+)\\.[^\\s.\\[]+\\[\\d+\\]"
+    },
+    "sources": [
+      {
+        "name": "prepare_route_feedback.py",
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_route_feedback.py",
+        "sha256": "eaf3198dadf5d7c860a42b0134872f3553028ea74d82b9a46294e48af58c3353"
+      },
+      {
+        "name": "prepare_timing_feedback.py",
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_timing_feedback.py",
+        "sha256": "ff830e3d30bfaf3d48517a8c547f64d76ee76e77efb8225ee0bad64689639627"
+      },
+      {
+        "name": "run_tileplace_v2.py",
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/run_tileplace_v2.py",
+        "sha256": "bfbe7f38db1f37ab98416fcd6c2c79176c2bcfa428ad3fb6b02988ce61a0cfcf"
+      },
+      {
+        "name": "run_vpr_closure.py",
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/run_vpr_closure.py",
+        "sha256": "012cc3570765f2abd420c5144ee066e1161c8338efd67e2b6cc592c06940da34"
+      },
+      {
+        "name": "tileplace_provenance.py",
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/tileplace_provenance.py",
+        "sha256": "4952b986d2fd1d22261c3045e5fda54462b4dfd1af5c84c2d7831c06c579af43"
+      },
+      {
+        "name": "tileplace_v2.py",
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/tileplace_v2.py",
+        "sha256": "bf7a24da1a342175e4e14096d7f21e6611fd362e634aa0d0e105d82ffad58f9a"
+      },
+      {
+        "name": "tileplace_vpr.py",
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/tileplace_vpr.py",
+        "sha256": "355535e49a0ec47b485e8c374e34fa35ee323fbf406b731b920ca40ab582d364"
+      }
+    ]
+  },
+  "scope": "Atomic feedback failure recovery; earlier native matrices remain bound to earlier sources",
+  "validation": [
+    "41-test suite passed before final extra pressure test",
+    "2 pressure-prefix tests and 10 controller tests passed after final changes"
+  ],
+  "changes": [
+    "Restore prior timing and pressure on partial feedback failure",
+    "Build pressure indexes before committing new snapshot"
+  ]
+}

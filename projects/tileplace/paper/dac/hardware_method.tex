@@ -1,0 +1,114 @@
+% Working section: structural description of the verified October 4 baseline.
+% Final adoption and timing results must be bound before submission.
+\section{Full-Color Hardware Computation}
+\label{sec:hardware}
+
+\subsection{Boundary between local selection and routed acceptance}
+
+The hardware computation implements one color invocation of the integer
+transaction algorithm. Its inputs are an immutable placement snapshot,
+unit and member metadata, objective data, configuration, and forbidden
+transaction identities. Its outputs are selected transactions, updated local
+positions, diagnostics, and per-kind counts. The host retains the epoch and
+color schedule, native VPR routing and timing analysis, closure budget,
+rollback, batch bisection, and feedback refresh. Consequently, selection by
+the color computation is a proposal to the routed controller; it does not
+establish an improvement in routed critical-path delay.
+
+The native integration enforces this distinction by invoking the shared
+integer implementation on a private copy of the position array. It decodes
+the selected records into the proposal protocol consumed by the existing
+controller. A rejected native closure therefore restores the incumbent at
+the host boundary, independently of the local position updates used to
+construct a proposal. The native integration is an implementation equivalence
+path, not a measurement of host-to-device transfers or board execution.
+
+\begin{figure}[t]
+\centering
+\small
+\begin{tabular}{@{}c@{}}
+Host snapshot and forbidden identities\\
+$\downarrow$\\
+\fbox{Eligibility and five-kind enumeration}\\
+$\downarrow$\\
+\fbox{Trial legality and integer evaluation}\\
+$\downarrow$\\
+\fbox{External filtering and identity encoding}\\
+$\downarrow$\\
+\fbox{Per-group best, deduplication, conflicts}\\
+$\downarrow$\\
+\fbox{Batch validation, local commit, statistics}\\
+$\downarrow$\\
+Host proposal decoding and native routed oracle
+\end{tabular}
+\caption{Functional order within one color invocation and its host boundary.
+The boxes do not denote concurrent streaming stages or an achieved
+initiation interval.}
+\label{fig:hardware-color}
+\end{figure}
+
+\subsection{Explicit identities and conflict sets}
+
+The top-level computation enumerates moves, swaps, macro swaps, and chains
+of two or three units. Descriptors retain their indices throughout
+evaluation, including unchanged and rejected candidates with zero score.
+Canonical identities encode the operation kind, complete nested unit members,
+and trial coordinates. External forbidden identities are compared across
+their respective pools using complete identity contents. Pool offsets or
+host unit numbers alone are insufficient to identify the same transaction.
+
+For each descriptor, evaluation derives touched-net ranges and the sorted,
+deduplicated union of old and trial occupied sites. Both sides of a move
+belong to its conflict set: checking only destination sites would omit
+dependencies created by vacating a location. Explicit offsets carry the
+descriptor's ranges through evaluation and encoding. Selection applies the
+stable ranking, per-group choice, identity deduplication, and conflict checks
+before any local position commit.
+
+The commit operation uses two passes. The first validates the entire selected
+batch, including record ranges, known block identifiers, and repeated blocks.
+Only after these checks succeed does the second pass write positions.
+Evaluation itself leaves positions unchanged. This contract assumes canonical
+input backing and pairwise disjoint scratch buffers; scratch from a failed
+invocation is discarded. It provides algorithmic batch validation, without
+claiming a fault-tolerant memory transaction mechanism.
+
+\subsection{Word interface and capacity}
+
+The synthesized top exposes explicit arrays with 8-, 32-, and 64-bit element
+types, 51 logical AXI master bundles, and an AXI-Lite control interface.
+Configuration occupies indices 0--35. Fourteen result words report stage and
+status, enumeration and movement counts, and the five accepted-kind counts.
+The complete C/RTL comparison checks all 30 writable ports, including scratch
+arrays and positions, rather than checking only a final objective value.
+
+Logical master bundles do not specify physical HBM channel assignments.
+The current out-of-context (OOC) implementation does not establish platform
+arbitration, bandwidth, host-device transfer cost, or application throughput.
+Likewise, the fixture's \texttt{depth=4096} interface declarations are not proof
+that arbitrary benchmark instances fit. The deployment contract must also
+account for input counts, checked ranges, scratch capacities, host allocation,
+and the eventual memory mapping.
+
+\subsection{Preserving semantics while changing scheduling}
+
+The timing experiments change scheduling and function sharing while retaining
+integer widths and transaction semantics. An explicit C++ temporary is not
+sufficient evidence of a cycle boundary: HLS may retain a combinational
+same-state bypass. Each boundary experiment therefore inspects the generated
+RTL, identifies the capture and consuming states, and binds that observation
+to the exact generated source. A separate experiment inlines trial-location
+decoding to reduce a shared address-selection path; its structural check
+examines the resulting module and address logic instead of claiming a new
+register boundary.
+
+The physical flow reads a 4\,ns clock constraint before synthesis for
+\texttt{xcu280-fsvh2892-2L-e}, then places, optimizes, and routes the generated
+design. Acceptance requires the same candidate to pass full functional
+regression and final setup, hold, pulse-width, internal-constraint, routing,
+and DRC checks. The process must actually exit successfully, with frozen
+source and output hashes verified. HLS frequency estimates and intermediate
+placement estimates cannot substitute for the final routed report. Because
+this OOC flow supplies no input/output delays, even a passing result would
+establish internal timing only; physical U280 performance requires separate
+platform integration and execution evidence.

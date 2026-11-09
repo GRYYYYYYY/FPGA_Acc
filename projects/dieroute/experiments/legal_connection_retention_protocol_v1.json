@@ -1,0 +1,57 @@
+{
+  "schema": "dieroute.legal_connection_retention.v1",
+  "status": "design_frozen_implementation_pending",
+  "objective": "Isolate retention of complete legal connection paths on congestion-only high-fanout pending nets. Original research objective and quality gates unchanged.",
+  "modes": {
+    "0": "Unchanged whole-net reset parent.",
+    "1": "For noninitial pending reason exactly4 and >=16 exported connections,retain routed paths whose every path resource is not over capacity in the pre-bulk occupancy snapshot. Keep root-connected union of retained paths;drop all others and search only missing connections. All other ordinary events reset whole net."
+  },
+  "fixed": {
+    "case": "ex5p development only",
+    "heldout": "apex2/frisc/elliptic remain unopened",
+    "repeats": 5,
+    "ordinary_schedule_mode": 0,
+    "issue_width": 4,
+    "present_start_q": 256,
+    "present_multiplier_q": 512,
+    "history_increment_q": 256,
+    "tree_timing_weight_q": 128,
+    "geometry_weight": 64,
+    "cost_scale": 1,
+    "cost_state_bits": 64,
+    "cost_model": "vpr_style",
+    "task_order": "preserve",
+    "max_iterations": 30,
+    "min_timing_iterations": 3,
+    "feedback_threshold": 0,
+    "transaction_mode": 0,
+    "cleanup_passes": 0,
+    "workers": 0
+  },
+  "invariants": [
+    "Pruning eligibility excludes initial routing,forced timing and failed-connection pending bits. Exactly16 exported connections is eligible;this is not native logical fanout equivalence.",
+    "All pruning decisions use occupancy before the first bulk owner refresh;prior pending-net removals must not change the decision snapshot.",
+    "Retained tree is the union of complete old legal task paths plus the root. No dangling prefix retention,edge reparenting,new path construction or cost changes.",
+    "Remove only discarded old owner memberships;shared retained nodes stay owned exactly once/net. Root never counts as a dynamic route resource.",
+    "Retained routed task paths/depth/delay remain unchanged;only missing tasks dispatched and seeded from current retained/grown tree.",
+    "Mode0 preserves all21 common deterministic artifacts,counters and native QoR. Two added sidecars empty in mode0.",
+    "Reject nonbulk/edge/feedback/transaction/cleanup/worker combinations in this isolated probe."
+  ],
+  "trace": {
+    "legal_retention.csv": "iteration,net_id,reasons,eligible,tree_nodes_before,tree_nodes_after,kept_connections,dropped_connections,before_route_hash,after_route_hash",
+    "retention_connections.csv": "iteration,net_id,task_id,retained"
+  },
+  "validation": [
+    "Complete controller fixtures with16/15threshold,forced timing,failed tasks,shared prefixes/duplicate sinks and final occupancy.",
+    "Inherited regressions and mode0 fixture compatibility;full library ASan/UBSan;actual host traces independently replayed.",
+    "Five-repeat paired native legality,determinism,full sources/config/environment matching,mode0parentcompatibility,resource-version replay and consistently rehashed negativefixtures."
+  ],
+  "acceptance": "Original native legality/failure/SLL/CPD/WL nondegradation gates. No extra tolerance,heldout tuning or development-only adoption.",
+  "scope": "Controlled complete-path retention,not full VPR branch pruning,fanout-order replication,timing-ripup reproduction,asynchronous hardware protocol or speedup claim. Current cost study remains frozen and running.",
+  "source_evidence_sha256": {
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/vpr_source_bound_net_setup_observation_20261015/result.json": "eaa39f5e02f645685d7c428944c69890799a3e15100fa4c738688c1a2188b23b",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/rr_ordinary_schedule_variant_20261015/three_arm_comparison.json": "cc7b2d11b53b27fcde74897a3fcc92a4b38aeed51e01b7a58e88e8413918ca0c"
+  },
+  "board_result": false,
+  "research_complete": false
+}

@@ -1,0 +1,43 @@
+{
+  "schema": "dieroute.native_vpr_net_setup_observation.v1",
+  "status": "frozen_observation_design",
+  "objective": "Observe actual source-bound native net setup/pruning decisions and retained sinks,without changing routing policy.",
+  "parent_baseline": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/vpr_source_bound_rebuild_v2_20261015/result.json",
+  "patch": "experiments/vpr_net_setup_observation_v1.patch",
+  "source_evidence_sha256": {
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/vpr_source_bound_rebuild_v2_20261015/source_vtr/vpr/src/route/route_net.cpp": "fd5d7495f2abef4c40a7b36dd8abf1a5e9b2736f3fe6fc16d0477694dce0b586",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/vpr_source_bound_rebuild_v2_20261015/result.json": "2912e3fc3e39123fcab71705b46d00a678d4293e520be9cff0642351ffd9aea9",
+    "experiments/vpr_net_setup_observation_v1.patch": "fd24a5d743e91429109a8adf724262647165549f38f146b821f774db7a904f3a"
+  },
+  "fixed": {
+    "case": "ex5p development only",
+    "native_repeats": 5,
+    "baseline_options": "Same architecture,circuit,seed1,num_workers1,channel80,deviceauto and all defaults. No new command flags.",
+    "min_incremental_reroute_fanout": 16,
+    "heldout": "Reserved designs remain unopened."
+  },
+  "trace_fields": [
+    "iteration",
+    "net_id",
+    "logical_sink_count",
+    "action",
+    "had_incumbent",
+    "old_remaining_sinks",
+    "new_remaining_sinks",
+    "first_iteration",
+    "hold_ripup"
+  ],
+  "actions": {
+    "0": "whole net reset",
+    "1": "nonempty partial prune result,possibly zero complete retained sinks",
+    "2": "fully pruned then reset"
+  },
+  "validation": [
+    "Only route_net.cpp changed from frozen source;patched clean build with full dependency/link/runtime audit.",
+    "Five full native repetitions must preserve original canonical net/place/route bytes,WL/CPD and RR graph structure.",
+    "Event rows deterministic across5runs;ordered iterations,nonincreasing fanout among actual setup calls,branch predicates and sink cardinalities independently checked."
+  ],
+  "scope": "Actual setup-call observations,not a search oracle,complete VPR control trace,unique retained connections or counterfactual work savings. Logging may affect runtime;no acceleration comparison. Existing profiling functions are no-ops and built-in printed summaries omit final-iteration calls,so this logs at the actual setup boundary.",
+  "board_result": false,
+  "research_complete": false
+}

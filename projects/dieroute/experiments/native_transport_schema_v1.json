@@ -1,0 +1,51 @@
+{
+  "schema": "dieroute.native_label_transport_schema.v1",
+  "scope": "Explicit remote-label boundary for serial die-local search reference",
+  "payload_bytes": 64,
+  "byte_order": "little-endian",
+  "words_u64": [
+    "search_epoch: monotonically increasing across SparseSearch calls",
+    "request_id: nonzero correlation id; probe and its relax share an id",
+    "node:u32, opcode:u8, from:u8, to:u8, status:u8",
+    "cost:u64",
+    "priority:u64",
+    "hops:u32, parent:u32",
+    "edge:u32, flags:u32",
+    "expected or current label version:u64"
+  ],
+  "endpoints": {"workers": "0..7", "controller": 8},
+  "opcodes": {"probe": 1, "probe_reply": 2, "relax": 3, "relax_reply": 4, "trace": 5, "trace_reply": 6},
+  "status": {"ok": 0, "accepted": 1, "stale": 2, "protected_label": 3, "dominated": 4, "budget": 5, "epoch": 6, "overflow": 7},
+  "flags": {"present": 1, "closed": 2, "root": 4, "created_ack_only": 8},
+  "invariants": [
+    "Exactly one receiver owns each canonical search label and queue entry",
+    "Probe and trace requests have zero payload words 3..7",
+    "Snapshot version is zero iff absent; absent cost is UINT64_MAX and ancestry/edge are UINT32_MAX",
+    "New label requires serialized coordinator credit; updates do not consume new credit",
+    "Accepted seed, close or relaxation increments label version without wraparound",
+    "Relaxation validates expected version, root/closed protection and strict cost/hops/parent/edge improvement",
+    "An identical retried update is rejected as stale and cannot enqueue twice; no cached-ACK exactly-once service is claimed",
+    "Wrong search epoch receives an empty epoch-reject response without mutation",
+    "Every captured request has a matching response with reversed endpoints and identical epoch/id/node",
+    "Monotone internal boundary labels have all incoming relaxations captured; their only unlogged transition is local close",
+    "Successful traceback packets match physical candidate cost, hops, parent and directed PIP through the attachment root"
+  ],
+  "capture": {
+    "file": "worker_packets.bin",
+    "header": "Shared FPGAACCP 64-byte header, schema 0.1, type 0x44520020, architecture fingerprint, CRC64-ECMA, flags=1",
+    "record_bytes": 128,
+    "metadata_u64": ["repeat", "search", "replay", "attempt", "sequence", "zero", "zero", "zero"],
+    "payload_offset": 64,
+    "metrics": "worker_transport.csv: per attempt and receiver, probes/protected probes/relaxes/accepted/rejected/traces/epoch rejects",
+    "repeat_normalization": "Subtract the first captured search epoch of each repetition; retain all other bytes and relative epochs",
+    "wire_payload_accounting": "64 * captured packet count; the additional 64 bytes per record are archive metadata"
+  },
+  "limitations": [
+    "Serial global-min arbitration, no asynchronous network or concurrent worker correctness claim",
+    "Credit is checked in a serialized coordinator; parallel admission needs reserved credits",
+    "Capture excludes seed distribution, queue-head arbitration, resource-authority summaries and physical framing",
+    "Independent replay does not reconstruct every local heap operation or every off-path accumulated cost",
+    "Fallback full-graph searches remain centralized and separately counted",
+    "No measured HBM, hardware latency, board performance or energy"
+  ]
+}

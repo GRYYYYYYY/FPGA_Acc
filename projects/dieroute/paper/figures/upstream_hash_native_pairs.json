@@ -1,0 +1,42 @@
+{
+  "status": "five_audited_native_CPU_pairs_rendered",
+  "rows": [
+    {
+      "pair": 1,
+      "parent_seconds": "468.170780456",
+      "candidate_seconds": "431.071811383"
+    },
+    {
+      "pair": 2,
+      "parent_seconds": "470.086914457",
+      "candidate_seconds": "429.051663084"
+    },
+    {
+      "pair": 3,
+      "parent_seconds": "485.901425867",
+      "candidate_seconds": "434.729429842"
+    },
+    {
+      "pair": 4,
+      "parent_seconds": "466.035399696",
+      "candidate_seconds": "428.54164886"
+    },
+    {
+      "pair": 5,
+      "parent_seconds": "471.36454189",
+      "candidate_seconds": "433.399655937"
+    }
+  ],
+  "source_sha256": {
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/upstream_target_hash_native_pairs_20261018/independent_pair_audit.json": "917eb0b2ad74d5115c5282a1695344e6a13a3107c307160afbf9a9fbb1b9421a",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/tools/plot_upstream_hash_native_pairs.py": "119f6e49783c4cac488bc6d729fc8aafc3a58cbd37a718e1557478be55446225"
+  },
+  "artifacts_sha256": {
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/paper/figures/upstream_hash_native_pairs.tex": "f1bd2d21f6fd6d89ee05814101e70e63b8cf25742e44ac24d4d3aa226acec2dd",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/paper/figures/upstream_hash_native_pairs.tsv": "b3bc51dd0eb0deccfa260dd931d7949125ef777b6cb35ffd64e6f3c1d2741a53",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/paper/figures/upstream_hash_native_pairs.pdf": "296442611d16e41c34b1df3127d64ccb2f5b839a24d17606cd0fcbe655fe40ca",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/paper/figures/upstream_hash_native_pairs.png": "317ff61048fae448c4f0d624e565a6bc19009fa030fe6bf52e5c61b5e2c8fcb6"
+  },
+  "scope": "Complete wrapper process time on one development case; shared-host/caching effects retained. No cross-case generalization, adoption or physical FPGA claim.",
+  "research_complete": false
+}

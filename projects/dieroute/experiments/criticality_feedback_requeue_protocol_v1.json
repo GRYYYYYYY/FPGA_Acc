@@ -1,0 +1,49 @@
+{
+  "status": "design_frozen_implementation_pending",
+  "hypothesis": "Newly critical connections may retain a path selected at lower criticality because ordinary pending nets are driven by failure/overuse. A bounded supplemental net requeue may improve timing; no benefit or stopping bug is assumed.",
+  "evidence": [
+    "work/rr_attachment_trace_variant_20261014/attachment_audit_1.json",
+    "work/rr_attachment_trace_variant_20261014/compatibility_1.json",
+    "work/rr_attachment_trace_variant_20261014/feedback_profile_1.json"
+  ],
+  "development_case": "ex5p",
+  "selection_rule": "After each actual STA update, identify nets with any connection crossing from below the existing criticality cap64880 to at/above it. Add a net only if ordinary next-pending does not already contain it and it has not previously received a supplemental requeue in this run. Apply uniformly to all nets; task934 is motivation, not a selection condition.",
+  "budget_rule": "Keep max30 routing iterations. At most one supplemental requeue per net; only consume that allowance for an actual additional scheduled net. At the iteration limit preserve a legal converged route and log unserved feedback rather than reporting a timing-refinement failure as loss of routing legality.",
+  "control": {
+    "tree_seed_weight_q": 128,
+    "criticality_feedback_threshold_q": 0
+  },
+  "candidate": {
+    "tree_seed_weight_q": 128,
+    "criticality_feedback_threshold_q": 64880
+  },
+  "fixed": [
+    "same core/source/runner for control and candidate",
+    "cost_scale1",
+    "preserve task order",
+    "min_timing_iterations3",
+    "native indexed costs and timing updates",
+    "no cleanup",
+    "serial CPU node-mode wide authority"
+  ],
+  "required_component_checks": [
+    "Default-disabled path/authority/counter equivalence",
+    "New critical net is additionally rerouted and uses fresh criticality",
+    "Already-pending net does not consume supplemental allowance",
+    "Once-per-net bound across repeated cap crossings",
+    "Legal route retained when no iteration budget remains",
+    "Reject enabling feedback without a timing analyzer",
+    "No effects on another net ownership/version state"
+  ],
+  "required_workload_evidence": [
+    "Five repetitions per configuration with deterministic traces",
+    "Record raw cap-crossing events, ordinary/supplemental pending decisions and budget skips",
+    "Independent transition/pending/attachment/authority replay",
+    "Matched-source/config/input/environment comparison",
+    "Native VPR legality/WL/CPD/crossing validation"
+  ],
+  "acceptance": "Existing G4 joint baseline gates remain unchanged; do not adopt on a single improved metric or this development case alone.",
+  "scope": "CPU algorithmic ablation for quality diagnosis, not a new DieRoute architecture or hardware result. Heldout designs remain unopened.",
+  "research_complete": false,
+  "board_result": false
+}

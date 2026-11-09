@@ -1,0 +1,6 @@
+"""Require exact once-only all-target connection coverage, not a selected subset."""
+import json,sys
+from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+from pre_route_endpoints import sha
+ROOT=Path(__file__).resolve().parents[2];w,i=map(int,sys.argv[1:]);base=ROOT/f'experiments/native_resume_full_exchange_delay_0.01_w{w}_m{i}_2026-10-07';rp=base/'receipt.json';vp=base/'verification.json';r=json.loads(rp.read_text());v=json.loads(vp.read_text());ep=ROOT/f'experiments/mux_budget_move_cohort_2026-10-06/w{w}_m{i}/target_endpoints.json';meta=json.loads(ep.read_text());expected={q['connection_id']:q for q in meta['connections']};records=[x for row in r['rows'] for x in row['records']];assert len(records)==len(expected);assert {x['query']['connection_id']:x['query'] for x in records}==expected;assert v['receipt_sha256']==sha(rp) and v['connections']==len(expected);assert len({row['net'] for row in r['rows']})==len(r['rows']);names={meta['net_names'][str(q['net_id'])] for q in expected.values()};assert {row['net'] for row in r['rows']}==names;result=dict(all_target_connections_exact_once=True,connections=len(records),nets=len(names),bindings={str(f):sha(f) for f in (rp,vp,ep,Path(__file__))});(base/'coverage_verification.json').write_text(json.dumps(result,indent=2)+'\n');print(w,len(records),len(names),'all-target coverage')

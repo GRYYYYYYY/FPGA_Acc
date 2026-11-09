@@ -1,0 +1,53 @@
+{
+  "schema": "dieroute.native_search_graph_contract.v1",
+  "scope": "Full native adjacency qualified for fixed existing candidate pin access; not full design rerouting or native implementation legality",
+  "design_binding": "Parent manifests bind the original DCP footprint, native node/PIP maps, raw CSR, admission policy, access analysis and SDK runtime. The architecture fingerprint alone does not bind the design.",
+  "container": "FPGAACCP 64-byte header, schema 0.1, little-endian, payload CRC64/ECMA-182 and architecture fingerprint as in native_csr_schema_v1.json",
+  "identity": {
+    "nodes": "Original full-device electrical node IDs; isolated/blocked nodes remain in the index space",
+    "nets": "Original DCP footprint net IDs; 0xffffffff means no exclusive net",
+    "edges": "(native PIP catalog ID << 1) | direction, in the full device namespace; parallel PIPs retain distinct keys",
+    "native_tile": "Use raw nodes.bin column 3 (SDK representative tile), not column 1 (canonical member tile), for tile-class admission"
+  },
+  "access_objects": {
+    "core_nodes.bin": {"type": "0x44520007", "record_bytes": 1, "count": "node_count", "record": "boolean: native tile type INT, LAG_LAG or LAGUNA_TILE"},
+    "private_owner.bin": {"type": "0x44520008", "record_bytes": 4, "count": "node_count", "record": "net ID for a noncore original candidate node, otherwise 0xffffffff"},
+    "access_arcs.bin": {"type": "0x44520009", "record_bytes": 16, "record": ["net:u32", "PIP_key:u32", "source_node:u32", "destination_node:u32"], "coverage": "Every and only original directed candidate PIP touching a noncore node"},
+    "nonterminal_components.csv": "Must contain no component rows before search qualification; nonterminal noncore transit requires a separate model"
+  },
+  "search_objects": {
+    "offsets.bin": {"type": "0x44520001", "record_bytes": 8, "count": "node_count+1", "record": "u64 CSR offset"},
+    "arcs.bin": {"type": "0x44520002", "record_bytes": 8, "record": ["destination_node:u32", "PIP_key:u32"], "ordering": "Exact retained subsequence of each raw source slice, sorted by destination then key"},
+    "node_protection.bin": {"type": "0x4452000a", "record_bytes": 1, "count": "node_count"},
+    "exclusive_net.bin": {"type": "0x4452000b", "record_bytes": 4, "count": "node_count"},
+    "laguna_input.bin": {"type": "0x4452000c", "record_bytes": 1, "count": "node_count", "record": "boolean SDK-topology Laguna input classification"}
+  },
+  "hard_admission": {
+    "inherited": "Preserve all node/PIP protection and candidate terminal ownership from native_policy_schema_v1.json",
+    "node_bit_32": "Unused noncore node",
+    "node_bit_64": "Unowned core NODE_PINFEED that is not a Laguna input",
+    "exclusive_net": "Candidate pin owners plus net-private original noncore nodes plus original core-to-noncore sink boundary nodes; conflicts reject conversion",
+    "arcs": "Both endpoint masks and native pip_protection[PIP_key >> 1] must be zero; endpoints cannot have different exclusive owners; retain core-core arcs or exact original noncore access arcs only",
+    "runtime_requirement": "CSR membership alone does not authorize a particular net. A search/commit consumer must enforce exclusive_net against the current net, including seeds and rip-up; full-device consumption is still pending."
+  },
+  "laguna_topology": {
+    "SDK_reference": "For every Utils.getLagunaTileTypes() tile and every UBUMP-prefixed wire, take its native node, then two getAllUphillNodes() steps. Record second-step nodes on Utils.isInterConnect tiles and require NODE_PINFEED.",
+    "C++_construction": "Mark predecessors of native NODE_LAGUNA_DATA nodes, then INT NODE_PINFEED predecessors of those marked nodes. Do not require the UBUMP root to have multiple SLR memberships.",
+    "independent_check": "SDK exports sorted native (tile address, wire index) pairs for input nodes and UBUMP roots. Independent C++ verifier proves the complete NODE_LAGUNA_DATA root set and Laguna input table equal these SDK sets.",
+    "SDK_files": "inputs.bin and ubump_nodes.bin: raw little-endian pairs of u32, no FPGAACCP header; hashes and SDK/runtime provenance in SDK run manifest",
+    "crossing_warning": "Single-SLR device-edge UBUMPs are part of SDK topology; they are not additional cross-SLR resources. Crossing counts must use full node membership."
+  },
+  "validation": [
+    "Independent full verifier reconstructs private and projected owners from original pins/PIPs, not builder access records",
+    "Every raw arc is checked against independent admission; filtered offsets and exact ordered arc sequence must agree",
+    "All original candidate PIPs remain in their original direction and are permitted to their original net",
+    "Corruption fixtures repair payload CRC so semantic checks, not merely checksums, must reject them"
+  ],
+  "limitations": [
+    "Original site/pin access choices are fixed; no alternate output selection, LUT-input swapping or new intra-site routing",
+    "Preserving original PIPs does not establish legality or reachability of arbitrary new routes",
+    "No physical delay, capacity or artificial unit cost is supplied",
+    "No complete commercial workload routed, DCP writeback, timing/QoR comparison or hardware result",
+    "This native CSR is not the existing host PR packing or HLS kernel ABI; storage size is not HBM feasibility evidence"
+  ]
+}

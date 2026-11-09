@@ -1,0 +1,3254 @@
+{
+  "schema": "dieroute.native_defer_progress.v1",
+  "finished_ns": 1791923285237703560,
+  "research_complete": false,
+  "board_result": false,
+  "native_design_legal": null,
+  "joint_qor_passed": false,
+  "active_owned_experiment_processes": [],
+  "evidence": [
+    {
+      "path": "experiments/native_defer_comparison_plan_v1.json",
+      "sha256": "37c252890240215c5ad24fe1c3dd69474f0f395997392fe438850833860d201e"
+    },
+    {
+      "path": "experiments/native_defer_schema_v1.json",
+      "sha256": "a8a9b75e42ad2fc6b40be05231298f40524715c6c78fb6a5ec5680732b791344"
+    },
+    {
+      "path": "work/native_defer_comparison_v1_20261013/comparison.json",
+      "sha256": "3cd9fca2e205da4c5c48a1a27fdf1942df275df8389f79b143c0162a1cccba01"
+    },
+    {
+      "path": "work/native_defer_comparison_v1_20261013/summary.csv",
+      "sha256": "065842d3c5e674d2c345915b17e2e6eee9903e6e0656e517db20bf438cdea35b"
+    },
+    {
+      "path": "work/native_defer_build_20261013/ctest.log",
+      "sha256": "646e98c3dfaa5bf3b99b85369ee66f9a39d322d42507fc27a3f3ce62e70f99a2"
+    },
+    {
+      "path": "work/native_defer_build_20261013/exception_ctest.log",
+      "sha256": "f152d849b2e33981bdf421aa0ae0bf54083876b9650d92ebed9cf758d8f10a81"
+    },
+    {
+      "path": "work/native_defer_sanitize_20261013/ctest.log",
+      "sha256": "13452ae1c976c0c9e1a88ee23d91bd25cc0bd0dcba2c8dd30035d47c10f1559d"
+    },
+    {
+      "path": "work/native_defer_sanitize_20261013/exception_ctest.log",
+      "sha256": "43d01cb7788ccb343a474f0a01500f85404291f05c9c15b5b577bf409232d795"
+    },
+    {
+      "path": "work/native_joint_verification_20261013/verification.json",
+      "sha256": "6da29d40b72677492e11b9b675236582e139431eaeaada285f260898eecc8b16"
+    },
+    {
+      "path": "work/u280_native_corridor_flat_v4_20261013/manifest.json",
+      "sha256": "86e1346a78430f5467e2a8ba8892cf43e6b3b113618d5cd4f8c9e10d00a69f7b"
+    },
+    {
+      "path": "work/u280_native_corridor_flat_cohort_audit_v4_20261013/audit.json",
+      "sha256": "e9236d1a732976760fd8c59330b0eb7c785d7659f8b6011cd399c9006cbf18dc"
+    },
+    {
+      "path": "work/u280_native_joint_joint_v1_20261013/manifest.json",
+      "sha256": "0235678adf7ae79418097e14274e38ff78504ab6ad38cb793913f0bf1f383bc0"
+    },
+    {
+      "path": "work/u280_native_joint_joint_cohort_audit_v1_20261013/audit.json",
+      "sha256": "155fcb419a8ed4072a00e5f44e96e04e4aa9115d1075629f72d017fd6308c1f4"
+    },
+    {
+      "path": "work/u280_native_joint_joint_protocol_audit_v1_20261013/audit.json",
+      "sha256": "3bde4193d31476b35bffa1a5c22ef5253eeb525313f22d74bf89e16636f6df42"
+    },
+    {
+      "path": "work/u280_native_joint_reentry_v1_20261013/manifest.json",
+      "sha256": "1f96dfffba8239f60e88b962880c11b80cfd2189c0c4f1f06678192a1df97c75"
+    },
+    {
+      "path": "work/u280_native_joint_reentry_cohort_audit_v1_20261013/audit.json",
+      "sha256": "6ce508f6c08e99109ec603fce62e9e0f9d0369f4028c7c10f3f2ec59533ab0f7"
+    },
+    {
+      "path": "work/u280_native_joint_reentry_protocol_audit_v1_20261013/audit.json",
+      "sha256": "633aea4d426b1ad2b0698f782e662e30ef2b2619622f2610725e1f9befbc3a9a"
+    },
+    {
+      "path": "work/u280_native_joint_reentry_shadow3_v1_20261013/manifest.json",
+      "sha256": "1b4985ba7989ea9f45d3672e369dda67d957b2805cb83038dfd4f4e3318b9231"
+    },
+    {
+      "path": "work/u280_native_joint_reentry_shadow3_cohort_audit_v1_20261013/audit.json",
+      "sha256": "5ed300ac8cfc74b1cf08d92120f8ae9ce71ef62260f8748e30c7f9f05c9bf3c8"
+    },
+    {
+      "path": "work/u280_native_joint_reentry_shadow3_protocol_audit_v1_20261013/audit.json",
+      "sha256": "74649c796ccb7874c7b483b3cf70a8dec33d9a1a20f9ff51ceab23cbbe7c4d08"
+    },
+    {
+      "path": "work/u280_native_defer_immediate_v1_20261013/manifest.json",
+      "sha256": "06b0fa1e05ab74e35a27d10702729a15693b71cc497d00b1c9cda2289b8de7f7"
+    },
+    {
+      "path": "work/u280_native_defer_immediate_cohort_audit_v1_20261013/audit.json",
+      "sha256": "980c4362b270aa6aae5f4aa3038d9d03d37cc7eac4e37faf7a6bc8a27dfd739a"
+    },
+    {
+      "path": "work/u280_native_defer_immediate_protocol_audit_v1_20261013/audit.json",
+      "sha256": "858858999a3be97bab38d313f69d8c85ab7a9a46bed464d57e76fd3b8fc277cc"
+    },
+    {
+      "path": "work/u280_native_defer_defer_v1_20261013/manifest.json",
+      "sha256": "24ae4f52ad519aae24fe0bc5a327a6f77c91ad329f89614da5e17f6ebeaaf25b"
+    },
+    {
+      "path": "work/u280_native_defer_defer_cohort_audit_v1_20261013/audit.json",
+      "sha256": "88ec6ff50c0def78c46c3b9236ce0e9a9798f8eb6ed11f798971707fdad8ab32"
+    },
+    {
+      "path": "work/u280_native_defer_defer_protocol_audit_v1_20261013/audit.json",
+      "sha256": "6e6156fe9b16e9bd2f42442c399a97ef2145384dc887e87872a5554788a4a5f4"
+    },
+    {
+      "path": "work/u280_native_defer_reentry_v1_20261013/manifest.json",
+      "sha256": "ec7f57163b57e8da1352b926d8592c7432fc3d1a856297d694d69810f533786c"
+    },
+    {
+      "path": "work/u280_native_defer_reentry_cohort_audit_v1_20261013/audit.json",
+      "sha256": "159c6e4e496df9403623ebc0737a7dabbddb85cdb5e1186c0090836759b6e1ae"
+    },
+    {
+      "path": "work/u280_native_defer_reentry_protocol_audit_v1_20261013/audit.json",
+      "sha256": "fc4c594b584b782a6d2ba3d99484eff3c071dc09f4cef6a853245a548783d77b"
+    },
+    {
+      "path": "work/u280_native_defer_shadow3_v1_20261013/manifest.json",
+      "sha256": "a304200bb13c2150458d38792473e5b0301789c6c39750cd3827fb8e7abfebe1"
+    },
+    {
+      "path": "work/u280_native_defer_shadow3_cohort_audit_v1_20261013/audit.json",
+      "sha256": "b0a8351e5a3b4ec2a0fd5b39fc2ce70453c508923338e0f7d0b61cff4b079827"
+    },
+    {
+      "path": "work/u280_native_defer_shadow3_protocol_audit_v1_20261013/audit.json",
+      "sha256": "59b7f214b531df3a437e0b83b607a03279416a7feb0660ff1f94385f6252409d"
+    }
+  ],
+  "protocol": "experiments/native_defer_schema_v1.json",
+  "plan": "experiments/native_defer_comparison_plan_v1.json",
+  "tests": {
+    "ctest_passed": 32,
+    "sanitizer_targets_passed": 2,
+    "exception_partial_work_verified": true,
+    "tree_growth_recovers_without_duplicate_fallback": true,
+    "stalled_tree_full_graph_rescue_succeeds": true,
+    "rescue_budget_exhaustion_terminates": true,
+    "wrong_phase_status_and_work_mutations_rejected": true
+  },
+  "per_repeat": {
+    "flat_v4": {
+      "tree_pips": 2528,
+      "net_pips": {
+        "192155": 1,
+        "287908": 6,
+        "287909": 42,
+        "287910": 6,
+        "287911": 6,
+        "288043": 10,
+        "288044": 22,
+        "288045": 12,
+        "288046": 14,
+        "288047": 10,
+        "288048": 10,
+        "288049": 12,
+        "288050": 18,
+        "288340": 9,
+        "288341": 8,
+        "288342": 8,
+        "288343": 10,
+        "288344": 7,
+        "288345": 7,
+        "288346": 8,
+        "288347": 10,
+        "288348": 8,
+        "288349": 10,
+        "288350": 6,
+        "288351": 11,
+        "288522": 670,
+        "288934": 13,
+        "288935": 20,
+        "288936": 12,
+        "288937": 12,
+        "288938": 13,
+        "288939": 10,
+        "288940": 10,
+        "288941": 8,
+        "288942": 11,
+        "288943": 13,
+        "288944": 13,
+        "288945": 14,
+        "288946": 12,
+        "288947": 8,
+        "288948": 11,
+        "288949": 13,
+        "293543": 17,
+        "300291": 125,
+        "303554": 172,
+        "303555": 43,
+        "303556": 44,
+        "303557": 59,
+        "303558": 51,
+        "303559": 54,
+        "303560": 57,
+        "303561": 57,
+        "303562": 85,
+        "303565": 44,
+        "303585": 46,
+        "303589": 53,
+        "303590": 32,
+        "303594": 27,
+        "303643": 126,
+        "303653": 67,
+        "454074": 26,
+        "454075": 25,
+        "454076": 21,
+        "454077": 27,
+        "454078": 24,
+        "454079": 22,
+        "454080": 21,
+        "454081": 25,
+        "454082": 23,
+        "454083": 21
+      },
+      "net_sll_nodes": {
+        "192155": [],
+        "287908": [],
+        "287909": [
+          23234466
+        ],
+        "287910": [],
+        "287911": [],
+        "288043": [],
+        "288044": [],
+        "288045": [],
+        "288046": [],
+        "288047": [],
+        "288048": [],
+        "288049": [],
+        "288050": [],
+        "288340": [],
+        "288341": [],
+        "288342": [],
+        "288343": [],
+        "288344": [],
+        "288345": [],
+        "288346": [],
+        "288347": [],
+        "288348": [],
+        "288349": [],
+        "288350": [],
+        "288351": [],
+        "288522": [
+          24502435,
+          61221828
+        ],
+        "288934": [],
+        "288935": [],
+        "288936": [],
+        "288937": [],
+        "288938": [],
+        "288939": [],
+        "288940": [],
+        "288941": [],
+        "288942": [],
+        "288943": [],
+        "288944": [],
+        "288945": [],
+        "288946": [],
+        "288947": [],
+        "288948": [],
+        "288949": [],
+        "293543": [
+          27645289
+        ],
+        "300291": [
+          56597696
+        ],
+        "303554": [
+          29273339,
+          57689825
+        ],
+        "303555": [
+          24495855
+        ],
+        "303556": [
+          24374292
+        ],
+        "303557": [
+          23106323
+        ],
+        "303558": [
+          24389812
+        ],
+        "303559": [
+          23349463
+        ],
+        "303560": [
+          25797620
+        ],
+        "303561": [
+          23349453
+        ],
+        "303562": [
+          24374305,
+          54172438
+        ],
+        "303565": [
+          25676034
+        ],
+        "303585": [
+          25797618,
+          54050854
+        ],
+        "303589": [
+          29808651,
+          55849511
+        ],
+        "303590": [
+          55849510
+        ],
+        "303594": [
+          54555893
+        ],
+        "303643": [
+          25406770
+        ],
+        "303653": [
+          25797616,
+          55325405
+        ],
+        "454074": [
+          55603598
+        ],
+        "454075": [
+          55082268
+        ],
+        "454076": [
+          56711924
+        ],
+        "454077": [
+          55856089
+        ],
+        "454078": [
+          56468780
+        ],
+        "454079": [
+          58316470
+        ],
+        "454080": [
+          56468788
+        ],
+        "454081": [
+          54954257
+        ],
+        "454082": [
+          55068296
+        ],
+        "454083": [
+          56590361
+        ]
+      },
+      "selected_sll": {
+        "6": 17,
+        "3": 19
+      },
+      "iterations": 3,
+      "overuse_by_epoch": [
+        2,
+        1,
+        0
+      ],
+      "expanded": 7841282,
+      "edge_visits": 32270334,
+      "quotient_expanded": 147981897,
+      "quotient_edge_visits": 1100467159,
+      "shadow_replays": 0,
+      "logical_deliveries": 0,
+      "complete_routing_and_five_repeats_verified": true,
+      "physical_die_path_census": {
+        "paths": 298,
+        "die_walk_histogram": {
+          "2": 16,
+          "2>1": 16,
+          "0": 19,
+          "2>1>0": 122,
+          "1": 21,
+          "0>1": 46,
+          "0>1>2": 16,
+          "1>0": 16,
+          "1>2": 26
+        },
+        "paths_with_die_reentry": [],
+        "paths_with_incidental_internal_boundaries": [],
+        "unique_incidental_boundary_nodes": [],
+        "directed_transition_occurrences": {
+          "2>1": 138,
+          "1>0": 138,
+          "0>1": 62,
+          "1>2": 42
+        },
+        "scope": "Final source-to-sink paths, including designated endpoint SLR transitions. Occurrences shared by multiple sinks are counted per path; these are not distinct SLL occupancy counts."
+      },
+      "tree_pip_delta_vs_flat_percent": 0.0,
+      "expanded_delta_vs_flat_percent": 0.0,
+      "per_net_pip_delta_vs_flat": {
+        "192155": 0,
+        "287908": 0,
+        "287909": 0,
+        "287910": 0,
+        "287911": 0,
+        "288043": 0,
+        "288044": 0,
+        "288045": 0,
+        "288046": 0,
+        "288047": 0,
+        "288048": 0,
+        "288049": 0,
+        "288050": 0,
+        "288340": 0,
+        "288341": 0,
+        "288342": 0,
+        "288343": 0,
+        "288344": 0,
+        "288345": 0,
+        "288346": 0,
+        "288347": 0,
+        "288348": 0,
+        "288349": 0,
+        "288350": 0,
+        "288351": 0,
+        "288522": 0,
+        "288934": 0,
+        "288935": 0,
+        "288936": 0,
+        "288937": 0,
+        "288938": 0,
+        "288939": 0,
+        "288940": 0,
+        "288941": 0,
+        "288942": 0,
+        "288943": 0,
+        "288944": 0,
+        "288945": 0,
+        "288946": 0,
+        "288947": 0,
+        "288948": 0,
+        "288949": 0,
+        "293543": 0,
+        "300291": 0,
+        "303554": 0,
+        "303555": 0,
+        "303556": 0,
+        "303557": 0,
+        "303558": 0,
+        "303559": 0,
+        "303560": 0,
+        "303561": 0,
+        "303562": 0,
+        "303565": 0,
+        "303585": 0,
+        "303589": 0,
+        "303590": 0,
+        "303594": 0,
+        "303643": 0,
+        "303653": 0,
+        "454074": 0,
+        "454075": 0,
+        "454076": 0,
+        "454077": 0,
+        "454078": 0,
+        "454079": 0,
+        "454080": 0,
+        "454081": 0,
+        "454082": 0,
+        "454083": 0
+      },
+      "changed_sll_net_ids": [],
+      "larger_trees_with_same_sll_ids": []
+    },
+    "joint_v1": {
+      "tree_pips": 2528,
+      "net_pips": {
+        "192155": 1,
+        "287908": 6,
+        "287909": 42,
+        "287910": 6,
+        "287911": 6,
+        "288043": 10,
+        "288044": 22,
+        "288045": 12,
+        "288046": 14,
+        "288047": 10,
+        "288048": 10,
+        "288049": 12,
+        "288050": 18,
+        "288340": 9,
+        "288341": 8,
+        "288342": 8,
+        "288343": 10,
+        "288344": 7,
+        "288345": 7,
+        "288346": 8,
+        "288347": 10,
+        "288348": 8,
+        "288349": 10,
+        "288350": 6,
+        "288351": 11,
+        "288522": 670,
+        "288934": 13,
+        "288935": 20,
+        "288936": 12,
+        "288937": 12,
+        "288938": 13,
+        "288939": 10,
+        "288940": 10,
+        "288941": 8,
+        "288942": 11,
+        "288943": 13,
+        "288944": 13,
+        "288945": 14,
+        "288946": 12,
+        "288947": 8,
+        "288948": 11,
+        "288949": 13,
+        "293543": 17,
+        "300291": 125,
+        "303554": 172,
+        "303555": 43,
+        "303556": 44,
+        "303557": 59,
+        "303558": 51,
+        "303559": 54,
+        "303560": 57,
+        "303561": 57,
+        "303562": 85,
+        "303565": 44,
+        "303585": 46,
+        "303589": 53,
+        "303590": 32,
+        "303594": 27,
+        "303643": 126,
+        "303653": 67,
+        "454074": 26,
+        "454075": 25,
+        "454076": 21,
+        "454077": 27,
+        "454078": 24,
+        "454079": 22,
+        "454080": 21,
+        "454081": 25,
+        "454082": 23,
+        "454083": 21
+      },
+      "net_sll_nodes": {
+        "192155": [],
+        "287908": [],
+        "287909": [
+          23234466
+        ],
+        "287910": [],
+        "287911": [],
+        "288043": [],
+        "288044": [],
+        "288045": [],
+        "288046": [],
+        "288047": [],
+        "288048": [],
+        "288049": [],
+        "288050": [],
+        "288340": [],
+        "288341": [],
+        "288342": [],
+        "288343": [],
+        "288344": [],
+        "288345": [],
+        "288346": [],
+        "288347": [],
+        "288348": [],
+        "288349": [],
+        "288350": [],
+        "288351": [],
+        "288522": [
+          24502435,
+          61221828
+        ],
+        "288934": [],
+        "288935": [],
+        "288936": [],
+        "288937": [],
+        "288938": [],
+        "288939": [],
+        "288940": [],
+        "288941": [],
+        "288942": [],
+        "288943": [],
+        "288944": [],
+        "288945": [],
+        "288946": [],
+        "288947": [],
+        "288948": [],
+        "288949": [],
+        "293543": [
+          27645289
+        ],
+        "300291": [
+          56597696
+        ],
+        "303554": [
+          29273339,
+          57689825
+        ],
+        "303555": [
+          24495855
+        ],
+        "303556": [
+          24374292
+        ],
+        "303557": [
+          23106323
+        ],
+        "303558": [
+          24389812
+        ],
+        "303559": [
+          23349463
+        ],
+        "303560": [
+          25797620
+        ],
+        "303561": [
+          23349453
+        ],
+        "303562": [
+          24374305,
+          54172438
+        ],
+        "303565": [
+          25676034
+        ],
+        "303585": [
+          25797618,
+          54050854
+        ],
+        "303589": [
+          29808651,
+          55849511
+        ],
+        "303590": [
+          55849510
+        ],
+        "303594": [
+          54555893
+        ],
+        "303643": [
+          25406770
+        ],
+        "303653": [
+          25797616,
+          55325405
+        ],
+        "454074": [
+          55603598
+        ],
+        "454075": [
+          55082268
+        ],
+        "454076": [
+          56711924
+        ],
+        "454077": [
+          55856089
+        ],
+        "454078": [
+          56468780
+        ],
+        "454079": [
+          58316470
+        ],
+        "454080": [
+          56468788
+        ],
+        "454081": [
+          54954257
+        ],
+        "454082": [
+          55068296
+        ],
+        "454083": [
+          56590361
+        ]
+      },
+      "selected_sll": {
+        "6": 17,
+        "3": 19
+      },
+      "iterations": 3,
+      "overuse_by_epoch": [
+        2,
+        1,
+        0
+      ],
+      "expanded": 9576624,
+      "edge_visits": 39324214,
+      "quotient_expanded": 149611787,
+      "quotient_edge_visits": 1112514429,
+      "shadow_replays": 0,
+      "logical_deliveries": 0,
+      "complete_routing_and_five_repeats_verified": true,
+      "physical_die_path_census": {
+        "paths": 298,
+        "die_walk_histogram": {
+          "2": 16,
+          "2>1": 16,
+          "0": 19,
+          "2>1>0": 122,
+          "1": 21,
+          "0>1": 46,
+          "0>1>2": 16,
+          "1>0": 16,
+          "1>2": 26
+        },
+        "paths_with_die_reentry": [],
+        "paths_with_incidental_internal_boundaries": [],
+        "unique_incidental_boundary_nodes": [],
+        "directed_transition_occurrences": {
+          "2>1": 138,
+          "1>0": 138,
+          "0>1": 62,
+          "1>2": 42
+        },
+        "scope": "Final source-to-sink paths, including designated endpoint SLR transitions. Occurrences shared by multiple sinks are counted per path; these are not distinct SLL occupancy counts."
+      },
+      "corridor_metrics": {
+        "plans": 308,
+        "local_searches": 0,
+        "flat_searches": 2,
+        "repairs": 0,
+        "fallbacks": 2,
+        "reserved": 40,
+        "released": 0,
+        "retained": 40,
+        "overcapacity": 0,
+        "ranked": 0,
+        "expanded": 9576624,
+        "edge_visits": 39324214,
+        "cost_prunes": 0,
+        "joint_searches": 308
+      },
+      "better_reentry_candidates": 0,
+      "better_portal_candidates": 0,
+      "search_work_partition": {
+        "recorded": false,
+        "joint_expanded": null,
+        "joint_edge_visits": null,
+        "local_expanded": null,
+        "local_edge_visits": null,
+        "flat_expanded": null,
+        "flat_edge_visits": null
+      },
+      "controller_schedule": {
+        "verified": false
+      },
+      "accepted_fallback_diagnostic": {
+        "invocations": 2,
+        "successful": 0,
+        "final_status_histogram": {
+          "2": 2
+        },
+        "later_completed_constrained_in_same_epoch": [
+          210,
+          211
+        ],
+        "scope": "Final status of the whole invocation after fallback; does not identify the earlier constrained-discovery failure status."
+      },
+      "accepted_candidate_diagnostic": {
+        "invocations": 306,
+        "strict_cost_improvements": 0,
+        "equal_cost_tie_changes": 0,
+        "cost_saved_vs_first_complete": 0,
+        "selected_attempt_histogram": {
+          "0": 306
+        },
+        "scope": "Per accepted invocation at its current tree/occupancy; excludes stale invocations. These are incremental algorithm costs, not physical delay, wirelength or globally optimized final-tree savings."
+      },
+      "attempt_status_histogram_including_replays": null,
+      "tree_pip_delta_vs_flat_percent": 0.0,
+      "expanded_delta_vs_flat_percent": 22.13084544083481,
+      "per_net_pip_delta_vs_flat": {
+        "192155": 0,
+        "287908": 0,
+        "287909": 0,
+        "287910": 0,
+        "287911": 0,
+        "288043": 0,
+        "288044": 0,
+        "288045": 0,
+        "288046": 0,
+        "288047": 0,
+        "288048": 0,
+        "288049": 0,
+        "288050": 0,
+        "288340": 0,
+        "288341": 0,
+        "288342": 0,
+        "288343": 0,
+        "288344": 0,
+        "288345": 0,
+        "288346": 0,
+        "288347": 0,
+        "288348": 0,
+        "288349": 0,
+        "288350": 0,
+        "288351": 0,
+        "288522": 0,
+        "288934": 0,
+        "288935": 0,
+        "288936": 0,
+        "288937": 0,
+        "288938": 0,
+        "288939": 0,
+        "288940": 0,
+        "288941": 0,
+        "288942": 0,
+        "288943": 0,
+        "288944": 0,
+        "288945": 0,
+        "288946": 0,
+        "288947": 0,
+        "288948": 0,
+        "288949": 0,
+        "293543": 0,
+        "300291": 0,
+        "303554": 0,
+        "303555": 0,
+        "303556": 0,
+        "303557": 0,
+        "303558": 0,
+        "303559": 0,
+        "303560": 0,
+        "303561": 0,
+        "303562": 0,
+        "303565": 0,
+        "303585": 0,
+        "303589": 0,
+        "303590": 0,
+        "303594": 0,
+        "303643": 0,
+        "303653": 0,
+        "454074": 0,
+        "454075": 0,
+        "454076": 0,
+        "454077": 0,
+        "454078": 0,
+        "454079": 0,
+        "454080": 0,
+        "454081": 0,
+        "454082": 0,
+        "454083": 0
+      },
+      "changed_sll_net_ids": [],
+      "larger_trees_with_same_sll_ids": []
+    },
+    "reentry_v1": {
+      "tree_pips": 2528,
+      "net_pips": {
+        "192155": 1,
+        "287908": 6,
+        "287909": 42,
+        "287910": 6,
+        "287911": 6,
+        "288043": 10,
+        "288044": 22,
+        "288045": 12,
+        "288046": 14,
+        "288047": 10,
+        "288048": 10,
+        "288049": 12,
+        "288050": 18,
+        "288340": 9,
+        "288341": 8,
+        "288342": 8,
+        "288343": 10,
+        "288344": 7,
+        "288345": 7,
+        "288346": 8,
+        "288347": 10,
+        "288348": 8,
+        "288349": 10,
+        "288350": 6,
+        "288351": 11,
+        "288522": 670,
+        "288934": 13,
+        "288935": 20,
+        "288936": 12,
+        "288937": 12,
+        "288938": 13,
+        "288939": 10,
+        "288940": 10,
+        "288941": 8,
+        "288942": 11,
+        "288943": 13,
+        "288944": 13,
+        "288945": 14,
+        "288946": 12,
+        "288947": 8,
+        "288948": 11,
+        "288949": 13,
+        "293543": 17,
+        "300291": 125,
+        "303554": 172,
+        "303555": 43,
+        "303556": 44,
+        "303557": 59,
+        "303558": 51,
+        "303559": 54,
+        "303560": 57,
+        "303561": 57,
+        "303562": 85,
+        "303565": 44,
+        "303585": 46,
+        "303589": 53,
+        "303590": 32,
+        "303594": 27,
+        "303643": 126,
+        "303653": 67,
+        "454074": 26,
+        "454075": 25,
+        "454076": 21,
+        "454077": 27,
+        "454078": 24,
+        "454079": 22,
+        "454080": 21,
+        "454081": 25,
+        "454082": 23,
+        "454083": 21
+      },
+      "net_sll_nodes": {
+        "192155": [],
+        "287908": [],
+        "287909": [
+          23234466
+        ],
+        "287910": [],
+        "287911": [],
+        "288043": [],
+        "288044": [],
+        "288045": [],
+        "288046": [],
+        "288047": [],
+        "288048": [],
+        "288049": [],
+        "288050": [],
+        "288340": [],
+        "288341": [],
+        "288342": [],
+        "288343": [],
+        "288344": [],
+        "288345": [],
+        "288346": [],
+        "288347": [],
+        "288348": [],
+        "288349": [],
+        "288350": [],
+        "288351": [],
+        "288522": [
+          24502435,
+          61221828
+        ],
+        "288934": [],
+        "288935": [],
+        "288936": [],
+        "288937": [],
+        "288938": [],
+        "288939": [],
+        "288940": [],
+        "288941": [],
+        "288942": [],
+        "288943": [],
+        "288944": [],
+        "288945": [],
+        "288946": [],
+        "288947": [],
+        "288948": [],
+        "288949": [],
+        "293543": [
+          27645289
+        ],
+        "300291": [
+          56597696
+        ],
+        "303554": [
+          29273339,
+          57689825
+        ],
+        "303555": [
+          24495855
+        ],
+        "303556": [
+          24374292
+        ],
+        "303557": [
+          23106323
+        ],
+        "303558": [
+          24389812
+        ],
+        "303559": [
+          23349463
+        ],
+        "303560": [
+          25797620
+        ],
+        "303561": [
+          23349453
+        ],
+        "303562": [
+          24374305,
+          54172438
+        ],
+        "303565": [
+          25676034
+        ],
+        "303585": [
+          25797618,
+          54050854
+        ],
+        "303589": [
+          29808651,
+          55849511
+        ],
+        "303590": [
+          55849510
+        ],
+        "303594": [
+          54555893
+        ],
+        "303643": [
+          25406770
+        ],
+        "303653": [
+          25797616,
+          55325405
+        ],
+        "454074": [
+          55603598
+        ],
+        "454075": [
+          55082268
+        ],
+        "454076": [
+          56711924
+        ],
+        "454077": [
+          55856089
+        ],
+        "454078": [
+          56468780
+        ],
+        "454079": [
+          58316470
+        ],
+        "454080": [
+          56468788
+        ],
+        "454081": [
+          54954257
+        ],
+        "454082": [
+          55068296
+        ],
+        "454083": [
+          56590361
+        ]
+      },
+      "selected_sll": {
+        "6": 17,
+        "3": 19
+      },
+      "iterations": 3,
+      "overuse_by_epoch": [
+        2,
+        1,
+        0
+      ],
+      "expanded": 9584211,
+      "edge_visits": 39357462,
+      "quotient_expanded": 152294784,
+      "quotient_edge_visits": 1133189105,
+      "shadow_replays": 0,
+      "logical_deliveries": 0,
+      "complete_routing_and_five_repeats_verified": true,
+      "physical_die_path_census": {
+        "paths": 298,
+        "die_walk_histogram": {
+          "2": 16,
+          "2>1": 16,
+          "0": 19,
+          "2>1>0": 122,
+          "1": 21,
+          "0>1": 46,
+          "0>1>2": 16,
+          "1>0": 16,
+          "1>2": 26
+        },
+        "paths_with_die_reentry": [],
+        "paths_with_incidental_internal_boundaries": [],
+        "unique_incidental_boundary_nodes": [],
+        "directed_transition_occurrences": {
+          "2>1": 138,
+          "1>0": 138,
+          "0>1": 62,
+          "1>2": 42
+        },
+        "scope": "Final source-to-sink paths, including designated endpoint SLR transitions. Occurrences shared by multiple sinks are counted per path; these are not distinct SLL occupancy counts."
+      },
+      "corridor_metrics": {
+        "plans": 527,
+        "local_searches": 0,
+        "flat_searches": 2,
+        "repairs": 0,
+        "fallbacks": 2,
+        "reserved": 40,
+        "released": 0,
+        "retained": 40,
+        "overcapacity": 0,
+        "ranked": 0,
+        "expanded": 9584211,
+        "edge_visits": 39357462,
+        "cost_prunes": 219,
+        "joint_searches": 527
+      },
+      "better_reentry_candidates": 0,
+      "better_portal_candidates": 0,
+      "search_work_partition": {
+        "recorded": false,
+        "joint_expanded": null,
+        "joint_edge_visits": null,
+        "local_expanded": null,
+        "local_edge_visits": null,
+        "flat_expanded": null,
+        "flat_edge_visits": null
+      },
+      "controller_schedule": {
+        "verified": false
+      },
+      "accepted_fallback_diagnostic": {
+        "invocations": 2,
+        "successful": 0,
+        "final_status_histogram": {
+          "2": 2
+        },
+        "later_completed_constrained_in_same_epoch": [
+          210,
+          211
+        ],
+        "scope": "Final status of the whole invocation after fallback; does not identify the earlier constrained-discovery failure status."
+      },
+      "accepted_candidate_diagnostic": {
+        "invocations": 306,
+        "strict_cost_improvements": 0,
+        "equal_cost_tie_changes": 0,
+        "cost_saved_vs_first_complete": 0,
+        "selected_attempt_histogram": {
+          "0": 306
+        },
+        "scope": "Per accepted invocation at its current tree/occupancy; excludes stale invocations. These are incremental algorithm costs, not physical delay, wirelength or globally optimized final-tree savings."
+      },
+      "attempt_status_histogram_including_replays": null,
+      "tree_pip_delta_vs_flat_percent": 0.0,
+      "expanded_delta_vs_flat_percent": 22.22760257825187,
+      "per_net_pip_delta_vs_flat": {
+        "192155": 0,
+        "287908": 0,
+        "287909": 0,
+        "287910": 0,
+        "287911": 0,
+        "288043": 0,
+        "288044": 0,
+        "288045": 0,
+        "288046": 0,
+        "288047": 0,
+        "288048": 0,
+        "288049": 0,
+        "288050": 0,
+        "288340": 0,
+        "288341": 0,
+        "288342": 0,
+        "288343": 0,
+        "288344": 0,
+        "288345": 0,
+        "288346": 0,
+        "288347": 0,
+        "288348": 0,
+        "288349": 0,
+        "288350": 0,
+        "288351": 0,
+        "288522": 0,
+        "288934": 0,
+        "288935": 0,
+        "288936": 0,
+        "288937": 0,
+        "288938": 0,
+        "288939": 0,
+        "288940": 0,
+        "288941": 0,
+        "288942": 0,
+        "288943": 0,
+        "288944": 0,
+        "288945": 0,
+        "288946": 0,
+        "288947": 0,
+        "288948": 0,
+        "288949": 0,
+        "293543": 0,
+        "300291": 0,
+        "303554": 0,
+        "303555": 0,
+        "303556": 0,
+        "303557": 0,
+        "303558": 0,
+        "303559": 0,
+        "303560": 0,
+        "303561": 0,
+        "303562": 0,
+        "303565": 0,
+        "303585": 0,
+        "303589": 0,
+        "303590": 0,
+        "303594": 0,
+        "303643": 0,
+        "303653": 0,
+        "454074": 0,
+        "454075": 0,
+        "454076": 0,
+        "454077": 0,
+        "454078": 0,
+        "454079": 0,
+        "454080": 0,
+        "454081": 0,
+        "454082": 0,
+        "454083": 0
+      },
+      "changed_sll_net_ids": [],
+      "larger_trees_with_same_sll_ids": []
+    },
+    "shadow_v1": {
+      "tree_pips": 2528,
+      "net_pips": {
+        "192155": 1,
+        "287908": 6,
+        "287909": 42,
+        "287910": 6,
+        "287911": 6,
+        "288043": 10,
+        "288044": 22,
+        "288045": 12,
+        "288046": 14,
+        "288047": 10,
+        "288048": 10,
+        "288049": 12,
+        "288050": 18,
+        "288340": 9,
+        "288341": 8,
+        "288342": 8,
+        "288343": 10,
+        "288344": 7,
+        "288345": 7,
+        "288346": 8,
+        "288347": 10,
+        "288348": 8,
+        "288349": 10,
+        "288350": 6,
+        "288351": 11,
+        "288522": 670,
+        "288934": 13,
+        "288935": 20,
+        "288936": 12,
+        "288937": 12,
+        "288938": 13,
+        "288939": 10,
+        "288940": 10,
+        "288941": 8,
+        "288942": 11,
+        "288943": 13,
+        "288944": 13,
+        "288945": 14,
+        "288946": 12,
+        "288947": 8,
+        "288948": 11,
+        "288949": 13,
+        "293543": 17,
+        "300291": 125,
+        "303554": 172,
+        "303555": 43,
+        "303556": 44,
+        "303557": 59,
+        "303558": 51,
+        "303559": 54,
+        "303560": 57,
+        "303561": 57,
+        "303562": 85,
+        "303565": 44,
+        "303585": 46,
+        "303589": 53,
+        "303590": 32,
+        "303594": 27,
+        "303643": 126,
+        "303653": 67,
+        "454074": 26,
+        "454075": 25,
+        "454076": 21,
+        "454077": 27,
+        "454078": 24,
+        "454079": 22,
+        "454080": 21,
+        "454081": 25,
+        "454082": 23,
+        "454083": 21
+      },
+      "net_sll_nodes": {
+        "192155": [],
+        "287908": [],
+        "287909": [
+          23234466
+        ],
+        "287910": [],
+        "287911": [],
+        "288043": [],
+        "288044": [],
+        "288045": [],
+        "288046": [],
+        "288047": [],
+        "288048": [],
+        "288049": [],
+        "288050": [],
+        "288340": [],
+        "288341": [],
+        "288342": [],
+        "288343": [],
+        "288344": [],
+        "288345": [],
+        "288346": [],
+        "288347": [],
+        "288348": [],
+        "288349": [],
+        "288350": [],
+        "288351": [],
+        "288522": [
+          24502435,
+          61221828
+        ],
+        "288934": [],
+        "288935": [],
+        "288936": [],
+        "288937": [],
+        "288938": [],
+        "288939": [],
+        "288940": [],
+        "288941": [],
+        "288942": [],
+        "288943": [],
+        "288944": [],
+        "288945": [],
+        "288946": [],
+        "288947": [],
+        "288948": [],
+        "288949": [],
+        "293543": [
+          27645289
+        ],
+        "300291": [
+          56597696
+        ],
+        "303554": [
+          29273339,
+          57689825
+        ],
+        "303555": [
+          24495855
+        ],
+        "303556": [
+          24374292
+        ],
+        "303557": [
+          23106323
+        ],
+        "303558": [
+          24389812
+        ],
+        "303559": [
+          23349463
+        ],
+        "303560": [
+          25797620
+        ],
+        "303561": [
+          23349453
+        ],
+        "303562": [
+          24374305,
+          54172438
+        ],
+        "303565": [
+          25676034
+        ],
+        "303585": [
+          25797618,
+          54050854
+        ],
+        "303589": [
+          29808651,
+          55849511
+        ],
+        "303590": [
+          55849510
+        ],
+        "303594": [
+          54555893
+        ],
+        "303643": [
+          25406770
+        ],
+        "303653": [
+          25797616,
+          55325405
+        ],
+        "454074": [
+          55603598
+        ],
+        "454075": [
+          55082268
+        ],
+        "454076": [
+          56711924
+        ],
+        "454077": [
+          55856089
+        ],
+        "454078": [
+          56468780
+        ],
+        "454079": [
+          58316470
+        ],
+        "454080": [
+          56468788
+        ],
+        "454081": [
+          54954257
+        ],
+        "454082": [
+          55068296
+        ],
+        "454083": [
+          56590361
+        ]
+      },
+      "selected_sll": {
+        "6": 17,
+        "3": 19
+      },
+      "iterations": 3,
+      "overuse_by_epoch": [
+        2,
+        1,
+        0
+      ],
+      "expanded": 10811779,
+      "edge_visits": 44544129,
+      "quotient_expanded": 154343952,
+      "quotient_edge_visits": 1148356020,
+      "shadow_replays": 4,
+      "logical_deliveries": 86,
+      "complete_routing_and_five_repeats_verified": true,
+      "physical_die_path_census": {
+        "paths": 298,
+        "die_walk_histogram": {
+          "2": 16,
+          "2>1": 16,
+          "0": 19,
+          "2>1>0": 122,
+          "1": 21,
+          "0>1": 46,
+          "0>1>2": 16,
+          "1>0": 16,
+          "1>2": 26
+        },
+        "paths_with_die_reentry": [],
+        "paths_with_incidental_internal_boundaries": [],
+        "unique_incidental_boundary_nodes": [],
+        "directed_transition_occurrences": {
+          "2>1": 138,
+          "1>0": 138,
+          "0>1": 62,
+          "1>2": 42
+        },
+        "scope": "Final source-to-sink paths, including designated endpoint SLR transitions. Occurrences shared by multiple sinks are counted per path; these are not distinct SLL occupancy counts."
+      },
+      "corridor_metrics": {
+        "plans": 531,
+        "local_searches": 0,
+        "flat_searches": 2,
+        "repairs": 0,
+        "fallbacks": 2,
+        "reserved": 45,
+        "released": 0,
+        "retained": 45,
+        "overcapacity": 0,
+        "ranked": 0,
+        "expanded": 10811779,
+        "edge_visits": 44544129,
+        "cost_prunes": 219,
+        "joint_searches": 531
+      },
+      "better_reentry_candidates": 0,
+      "better_portal_candidates": 0,
+      "search_work_partition": {
+        "recorded": false,
+        "joint_expanded": null,
+        "joint_edge_visits": null,
+        "local_expanded": null,
+        "local_edge_visits": null,
+        "flat_expanded": null,
+        "flat_edge_visits": null
+      },
+      "controller_schedule": {
+        "verified": false
+      },
+      "accepted_fallback_diagnostic": {
+        "invocations": 2,
+        "successful": 0,
+        "final_status_histogram": {
+          "2": 2
+        },
+        "later_completed_constrained_in_same_epoch": [
+          210,
+          211
+        ],
+        "scope": "Final status of the whole invocation after fallback; does not identify the earlier constrained-discovery failure status."
+      },
+      "accepted_candidate_diagnostic": {
+        "invocations": 306,
+        "strict_cost_improvements": 0,
+        "equal_cost_tie_changes": 0,
+        "cost_saved_vs_first_complete": 0,
+        "selected_attempt_histogram": {
+          "0": 306
+        },
+        "scope": "Per accepted invocation at its current tree/occupancy; excludes stale invocations. These are incremental algorithm costs, not physical delay, wirelength or globally optimized final-tree savings."
+      },
+      "attempt_status_histogram_including_replays": null,
+      "tree_pip_delta_vs_flat_percent": 0.0,
+      "expanded_delta_vs_flat_percent": 37.88279773639056,
+      "per_net_pip_delta_vs_flat": {
+        "192155": 0,
+        "287908": 0,
+        "287909": 0,
+        "287910": 0,
+        "287911": 0,
+        "288043": 0,
+        "288044": 0,
+        "288045": 0,
+        "288046": 0,
+        "288047": 0,
+        "288048": 0,
+        "288049": 0,
+        "288050": 0,
+        "288340": 0,
+        "288341": 0,
+        "288342": 0,
+        "288343": 0,
+        "288344": 0,
+        "288345": 0,
+        "288346": 0,
+        "288347": 0,
+        "288348": 0,
+        "288349": 0,
+        "288350": 0,
+        "288351": 0,
+        "288522": 0,
+        "288934": 0,
+        "288935": 0,
+        "288936": 0,
+        "288937": 0,
+        "288938": 0,
+        "288939": 0,
+        "288940": 0,
+        "288941": 0,
+        "288942": 0,
+        "288943": 0,
+        "288944": 0,
+        "288945": 0,
+        "288946": 0,
+        "288947": 0,
+        "288948": 0,
+        "288949": 0,
+        "293543": 0,
+        "300291": 0,
+        "303554": 0,
+        "303555": 0,
+        "303556": 0,
+        "303557": 0,
+        "303558": 0,
+        "303559": 0,
+        "303560": 0,
+        "303561": 0,
+        "303562": 0,
+        "303565": 0,
+        "303585": 0,
+        "303589": 0,
+        "303590": 0,
+        "303594": 0,
+        "303643": 0,
+        "303653": 0,
+        "454074": 0,
+        "454075": 0,
+        "454076": 0,
+        "454077": 0,
+        "454078": 0,
+        "454079": 0,
+        "454080": 0,
+        "454081": 0,
+        "454082": 0,
+        "454083": 0
+      },
+      "changed_sll_net_ids": [],
+      "larger_trees_with_same_sll_ids": []
+    },
+    "immediate": {
+      "tree_pips": 2528,
+      "net_pips": {
+        "192155": 1,
+        "287908": 6,
+        "287909": 42,
+        "287910": 6,
+        "287911": 6,
+        "288043": 10,
+        "288044": 22,
+        "288045": 12,
+        "288046": 14,
+        "288047": 10,
+        "288048": 10,
+        "288049": 12,
+        "288050": 18,
+        "288340": 9,
+        "288341": 8,
+        "288342": 8,
+        "288343": 10,
+        "288344": 7,
+        "288345": 7,
+        "288346": 8,
+        "288347": 10,
+        "288348": 8,
+        "288349": 10,
+        "288350": 6,
+        "288351": 11,
+        "288522": 670,
+        "288934": 13,
+        "288935": 20,
+        "288936": 12,
+        "288937": 12,
+        "288938": 13,
+        "288939": 10,
+        "288940": 10,
+        "288941": 8,
+        "288942": 11,
+        "288943": 13,
+        "288944": 13,
+        "288945": 14,
+        "288946": 12,
+        "288947": 8,
+        "288948": 11,
+        "288949": 13,
+        "293543": 17,
+        "300291": 125,
+        "303554": 172,
+        "303555": 43,
+        "303556": 44,
+        "303557": 59,
+        "303558": 51,
+        "303559": 54,
+        "303560": 57,
+        "303561": 57,
+        "303562": 85,
+        "303565": 44,
+        "303585": 46,
+        "303589": 53,
+        "303590": 32,
+        "303594": 27,
+        "303643": 126,
+        "303653": 67,
+        "454074": 26,
+        "454075": 25,
+        "454076": 21,
+        "454077": 27,
+        "454078": 24,
+        "454079": 22,
+        "454080": 21,
+        "454081": 25,
+        "454082": 23,
+        "454083": 21
+      },
+      "net_sll_nodes": {
+        "192155": [],
+        "287908": [],
+        "287909": [
+          23234466
+        ],
+        "287910": [],
+        "287911": [],
+        "288043": [],
+        "288044": [],
+        "288045": [],
+        "288046": [],
+        "288047": [],
+        "288048": [],
+        "288049": [],
+        "288050": [],
+        "288340": [],
+        "288341": [],
+        "288342": [],
+        "288343": [],
+        "288344": [],
+        "288345": [],
+        "288346": [],
+        "288347": [],
+        "288348": [],
+        "288349": [],
+        "288350": [],
+        "288351": [],
+        "288522": [
+          24502435,
+          61221828
+        ],
+        "288934": [],
+        "288935": [],
+        "288936": [],
+        "288937": [],
+        "288938": [],
+        "288939": [],
+        "288940": [],
+        "288941": [],
+        "288942": [],
+        "288943": [],
+        "288944": [],
+        "288945": [],
+        "288946": [],
+        "288947": [],
+        "288948": [],
+        "288949": [],
+        "293543": [
+          27645289
+        ],
+        "300291": [
+          56597696
+        ],
+        "303554": [
+          29273339,
+          57689825
+        ],
+        "303555": [
+          24495855
+        ],
+        "303556": [
+          24374292
+        ],
+        "303557": [
+          23106323
+        ],
+        "303558": [
+          24389812
+        ],
+        "303559": [
+          23349463
+        ],
+        "303560": [
+          25797620
+        ],
+        "303561": [
+          23349453
+        ],
+        "303562": [
+          24374305,
+          54172438
+        ],
+        "303565": [
+          25676034
+        ],
+        "303585": [
+          25797618,
+          54050854
+        ],
+        "303589": [
+          29808651,
+          55849511
+        ],
+        "303590": [
+          55849510
+        ],
+        "303594": [
+          54555893
+        ],
+        "303643": [
+          25406770
+        ],
+        "303653": [
+          25797616,
+          55325405
+        ],
+        "454074": [
+          55603598
+        ],
+        "454075": [
+          55082268
+        ],
+        "454076": [
+          56711924
+        ],
+        "454077": [
+          55856089
+        ],
+        "454078": [
+          56468780
+        ],
+        "454079": [
+          58316470
+        ],
+        "454080": [
+          56468788
+        ],
+        "454081": [
+          54954257
+        ],
+        "454082": [
+          55068296
+        ],
+        "454083": [
+          56590361
+        ]
+      },
+      "selected_sll": {
+        "6": 17,
+        "3": 19
+      },
+      "iterations": 3,
+      "overuse_by_epoch": [
+        2,
+        1,
+        0
+      ],
+      "expanded": 9576624,
+      "edge_visits": 39324214,
+      "quotient_expanded": 149611787,
+      "quotient_edge_visits": 1112514429,
+      "shadow_replays": 0,
+      "logical_deliveries": 0,
+      "complete_routing_and_five_repeats_verified": true,
+      "physical_die_path_census": {
+        "paths": 298,
+        "die_walk_histogram": {
+          "2": 16,
+          "2>1": 16,
+          "0": 19,
+          "2>1>0": 122,
+          "1": 21,
+          "0>1": 46,
+          "0>1>2": 16,
+          "1>0": 16,
+          "1>2": 26
+        },
+        "paths_with_die_reentry": [],
+        "paths_with_incidental_internal_boundaries": [],
+        "unique_incidental_boundary_nodes": [],
+        "directed_transition_occurrences": {
+          "2>1": 138,
+          "1>0": 138,
+          "0>1": 62,
+          "1>2": 42
+        },
+        "scope": "Final source-to-sink paths, including designated endpoint SLR transitions. Occurrences shared by multiple sinks are counted per path; these are not distinct SLL occupancy counts."
+      },
+      "corridor_metrics": {
+        "plans": 308,
+        "local_searches": 0,
+        "flat_searches": 2,
+        "repairs": 0,
+        "fallbacks": 2,
+        "reserved": 40,
+        "released": 0,
+        "retained": 40,
+        "overcapacity": 0,
+        "ranked": 0,
+        "expanded": 9576624,
+        "edge_visits": 39324214,
+        "cost_prunes": 0,
+        "joint_searches": 308,
+        "budget_deferrals": 0,
+        "joint_expanded": 7830970,
+        "joint_edge_visits": 32165180,
+        "local_expanded": 0,
+        "local_edge_visits": 0,
+        "flat_expanded": 1745654,
+        "flat_edge_visits": 7159034
+      },
+      "better_reentry_candidates": 0,
+      "better_portal_candidates": 0,
+      "search_work_partition": {
+        "recorded": true,
+        "joint_expanded": 7830970,
+        "joint_edge_visits": 32165180,
+        "local_expanded": 0,
+        "local_edge_visits": 0,
+        "flat_expanded": 1745654,
+        "flat_edge_visits": 7159034
+      },
+      "controller_schedule": {
+        "verified": true,
+        "passes": 75,
+        "rescue_transitions": 0,
+        "accepted_budget_deferrals": 0,
+        "searches": 308
+      },
+      "accepted_fallback_diagnostic": {
+        "invocations": 2,
+        "successful": 0,
+        "final_status_histogram": {
+          "2": 2
+        },
+        "later_completed_constrained_in_same_epoch": [
+          210,
+          211
+        ],
+        "scope": "Final status of the whole invocation after fallback; does not identify the earlier constrained-discovery failure status."
+      },
+      "accepted_candidate_diagnostic": {
+        "invocations": 306,
+        "strict_cost_improvements": 0,
+        "equal_cost_tie_changes": 0,
+        "cost_saved_vs_first_complete": 0,
+        "selected_attempt_histogram": {
+          "0": 306
+        },
+        "scope": "Per accepted invocation at its current tree/occupancy; excludes stale invocations. These are incremental algorithm costs, not physical delay, wirelength or globally optimized final-tree savings."
+      },
+      "attempt_status_histogram_including_replays": {
+        "0": 306,
+        "2": 2
+      },
+      "tree_pip_delta_vs_flat_percent": 0.0,
+      "expanded_delta_vs_flat_percent": 22.13084544083481,
+      "per_net_pip_delta_vs_flat": {
+        "192155": 0,
+        "287908": 0,
+        "287909": 0,
+        "287910": 0,
+        "287911": 0,
+        "288043": 0,
+        "288044": 0,
+        "288045": 0,
+        "288046": 0,
+        "288047": 0,
+        "288048": 0,
+        "288049": 0,
+        "288050": 0,
+        "288340": 0,
+        "288341": 0,
+        "288342": 0,
+        "288343": 0,
+        "288344": 0,
+        "288345": 0,
+        "288346": 0,
+        "288347": 0,
+        "288348": 0,
+        "288349": 0,
+        "288350": 0,
+        "288351": 0,
+        "288522": 0,
+        "288934": 0,
+        "288935": 0,
+        "288936": 0,
+        "288937": 0,
+        "288938": 0,
+        "288939": 0,
+        "288940": 0,
+        "288941": 0,
+        "288942": 0,
+        "288943": 0,
+        "288944": 0,
+        "288945": 0,
+        "288946": 0,
+        "288947": 0,
+        "288948": 0,
+        "288949": 0,
+        "293543": 0,
+        "300291": 0,
+        "303554": 0,
+        "303555": 0,
+        "303556": 0,
+        "303557": 0,
+        "303558": 0,
+        "303559": 0,
+        "303560": 0,
+        "303561": 0,
+        "303562": 0,
+        "303565": 0,
+        "303585": 0,
+        "303589": 0,
+        "303590": 0,
+        "303594": 0,
+        "303643": 0,
+        "303653": 0,
+        "454074": 0,
+        "454075": 0,
+        "454076": 0,
+        "454077": 0,
+        "454078": 0,
+        "454079": 0,
+        "454080": 0,
+        "454081": 0,
+        "454082": 0,
+        "454083": 0
+      },
+      "changed_sll_net_ids": [],
+      "larger_trees_with_same_sll_ids": []
+    },
+    "defer": {
+      "tree_pips": 2528,
+      "net_pips": {
+        "192155": 1,
+        "287908": 6,
+        "287909": 42,
+        "287910": 6,
+        "287911": 6,
+        "288043": 10,
+        "288044": 22,
+        "288045": 12,
+        "288046": 14,
+        "288047": 10,
+        "288048": 10,
+        "288049": 12,
+        "288050": 18,
+        "288340": 9,
+        "288341": 8,
+        "288342": 8,
+        "288343": 10,
+        "288344": 7,
+        "288345": 7,
+        "288346": 8,
+        "288347": 10,
+        "288348": 8,
+        "288349": 10,
+        "288350": 6,
+        "288351": 11,
+        "288522": 670,
+        "288934": 13,
+        "288935": 20,
+        "288936": 12,
+        "288937": 12,
+        "288938": 13,
+        "288939": 10,
+        "288940": 10,
+        "288941": 8,
+        "288942": 11,
+        "288943": 13,
+        "288944": 13,
+        "288945": 14,
+        "288946": 12,
+        "288947": 8,
+        "288948": 11,
+        "288949": 13,
+        "293543": 17,
+        "300291": 125,
+        "303554": 172,
+        "303555": 43,
+        "303556": 44,
+        "303557": 59,
+        "303558": 51,
+        "303559": 54,
+        "303560": 57,
+        "303561": 57,
+        "303562": 85,
+        "303565": 44,
+        "303585": 46,
+        "303589": 53,
+        "303590": 32,
+        "303594": 27,
+        "303643": 126,
+        "303653": 67,
+        "454074": 26,
+        "454075": 25,
+        "454076": 21,
+        "454077": 27,
+        "454078": 24,
+        "454079": 22,
+        "454080": 21,
+        "454081": 25,
+        "454082": 23,
+        "454083": 21
+      },
+      "net_sll_nodes": {
+        "192155": [],
+        "287908": [],
+        "287909": [
+          23234466
+        ],
+        "287910": [],
+        "287911": [],
+        "288043": [],
+        "288044": [],
+        "288045": [],
+        "288046": [],
+        "288047": [],
+        "288048": [],
+        "288049": [],
+        "288050": [],
+        "288340": [],
+        "288341": [],
+        "288342": [],
+        "288343": [],
+        "288344": [],
+        "288345": [],
+        "288346": [],
+        "288347": [],
+        "288348": [],
+        "288349": [],
+        "288350": [],
+        "288351": [],
+        "288522": [
+          24502435,
+          61221828
+        ],
+        "288934": [],
+        "288935": [],
+        "288936": [],
+        "288937": [],
+        "288938": [],
+        "288939": [],
+        "288940": [],
+        "288941": [],
+        "288942": [],
+        "288943": [],
+        "288944": [],
+        "288945": [],
+        "288946": [],
+        "288947": [],
+        "288948": [],
+        "288949": [],
+        "293543": [
+          27645289
+        ],
+        "300291": [
+          56597696
+        ],
+        "303554": [
+          29273339,
+          57689825
+        ],
+        "303555": [
+          24495855
+        ],
+        "303556": [
+          24374292
+        ],
+        "303557": [
+          23106323
+        ],
+        "303558": [
+          24389812
+        ],
+        "303559": [
+          23349463
+        ],
+        "303560": [
+          25797620
+        ],
+        "303561": [
+          23349453
+        ],
+        "303562": [
+          24374305,
+          54172438
+        ],
+        "303565": [
+          25676034
+        ],
+        "303585": [
+          25797618,
+          54050854
+        ],
+        "303589": [
+          29808651,
+          55849511
+        ],
+        "303590": [
+          55849510
+        ],
+        "303594": [
+          54555893
+        ],
+        "303643": [
+          25406770
+        ],
+        "303653": [
+          25797616,
+          55325405
+        ],
+        "454074": [
+          55603598
+        ],
+        "454075": [
+          55082268
+        ],
+        "454076": [
+          56711924
+        ],
+        "454077": [
+          55856089
+        ],
+        "454078": [
+          56468780
+        ],
+        "454079": [
+          58316470
+        ],
+        "454080": [
+          56468788
+        ],
+        "454081": [
+          54954257
+        ],
+        "454082": [
+          55068296
+        ],
+        "454083": [
+          56590361
+        ]
+      },
+      "selected_sll": {
+        "6": 17,
+        "3": 19
+      },
+      "iterations": 3,
+      "overuse_by_epoch": [
+        2,
+        1,
+        0
+      ],
+      "expanded": 7830970,
+      "edge_visits": 32165180,
+      "quotient_expanded": 147981897,
+      "quotient_edge_visits": 1100467159,
+      "shadow_replays": 0,
+      "logical_deliveries": 0,
+      "complete_routing_and_five_repeats_verified": true,
+      "physical_die_path_census": {
+        "paths": 298,
+        "die_walk_histogram": {
+          "2": 16,
+          "2>1": 16,
+          "0": 19,
+          "2>1>0": 122,
+          "1": 21,
+          "0>1": 46,
+          "0>1>2": 16,
+          "1>0": 16,
+          "1>2": 26
+        },
+        "paths_with_die_reentry": [],
+        "paths_with_incidental_internal_boundaries": [],
+        "unique_incidental_boundary_nodes": [],
+        "directed_transition_occurrences": {
+          "2>1": 138,
+          "1>0": 138,
+          "0>1": 62,
+          "1>2": 42
+        },
+        "scope": "Final source-to-sink paths, including designated endpoint SLR transitions. Occurrences shared by multiple sinks are counted per path; these are not distinct SLL occupancy counts."
+      },
+      "corridor_metrics": {
+        "plans": 308,
+        "local_searches": 0,
+        "flat_searches": 0,
+        "repairs": 0,
+        "fallbacks": 0,
+        "reserved": 40,
+        "released": 0,
+        "retained": 40,
+        "overcapacity": 0,
+        "ranked": 0,
+        "expanded": 7830970,
+        "edge_visits": 32165180,
+        "cost_prunes": 0,
+        "joint_searches": 308,
+        "budget_deferrals": 2,
+        "joint_expanded": 7830970,
+        "joint_edge_visits": 32165180,
+        "local_expanded": 0,
+        "local_edge_visits": 0,
+        "flat_expanded": 0,
+        "flat_edge_visits": 0
+      },
+      "better_reentry_candidates": 0,
+      "better_portal_candidates": 0,
+      "search_work_partition": {
+        "recorded": true,
+        "joint_expanded": 7830970,
+        "joint_edge_visits": 32165180,
+        "local_expanded": 0,
+        "local_edge_visits": 0,
+        "flat_expanded": 0,
+        "flat_edge_visits": 0
+      },
+      "controller_schedule": {
+        "verified": true,
+        "passes": 75,
+        "rescue_transitions": 0,
+        "accepted_budget_deferrals": 2,
+        "searches": 308
+      },
+      "accepted_fallback_diagnostic": {
+        "invocations": 0,
+        "successful": 0,
+        "final_status_histogram": {},
+        "later_completed_constrained_in_same_epoch": [],
+        "scope": "Final status of the whole invocation after fallback; does not identify the earlier constrained-discovery failure status."
+      },
+      "accepted_candidate_diagnostic": {
+        "invocations": 306,
+        "strict_cost_improvements": 0,
+        "equal_cost_tie_changes": 0,
+        "cost_saved_vs_first_complete": 0,
+        "selected_attempt_histogram": {
+          "0": 306
+        },
+        "scope": "Per accepted invocation at its current tree/occupancy; excludes stale invocations. These are incremental algorithm costs, not physical delay, wirelength or globally optimized final-tree savings."
+      },
+      "attempt_status_histogram_including_replays": {
+        "0": 306,
+        "2": 2
+      },
+      "tree_pip_delta_vs_flat_percent": 0.0,
+      "expanded_delta_vs_flat_percent": -0.13150910782191438,
+      "per_net_pip_delta_vs_flat": {
+        "192155": 0,
+        "287908": 0,
+        "287909": 0,
+        "287910": 0,
+        "287911": 0,
+        "288043": 0,
+        "288044": 0,
+        "288045": 0,
+        "288046": 0,
+        "288047": 0,
+        "288048": 0,
+        "288049": 0,
+        "288050": 0,
+        "288340": 0,
+        "288341": 0,
+        "288342": 0,
+        "288343": 0,
+        "288344": 0,
+        "288345": 0,
+        "288346": 0,
+        "288347": 0,
+        "288348": 0,
+        "288349": 0,
+        "288350": 0,
+        "288351": 0,
+        "288522": 0,
+        "288934": 0,
+        "288935": 0,
+        "288936": 0,
+        "288937": 0,
+        "288938": 0,
+        "288939": 0,
+        "288940": 0,
+        "288941": 0,
+        "288942": 0,
+        "288943": 0,
+        "288944": 0,
+        "288945": 0,
+        "288946": 0,
+        "288947": 0,
+        "288948": 0,
+        "288949": 0,
+        "293543": 0,
+        "300291": 0,
+        "303554": 0,
+        "303555": 0,
+        "303556": 0,
+        "303557": 0,
+        "303558": 0,
+        "303559": 0,
+        "303560": 0,
+        "303561": 0,
+        "303562": 0,
+        "303565": 0,
+        "303585": 0,
+        "303589": 0,
+        "303590": 0,
+        "303594": 0,
+        "303643": 0,
+        "303653": 0,
+        "454074": 0,
+        "454075": 0,
+        "454076": 0,
+        "454077": 0,
+        "454078": 0,
+        "454079": 0,
+        "454080": 0,
+        "454081": 0,
+        "454082": 0,
+        "454083": 0
+      },
+      "changed_sll_net_ids": [],
+      "larger_trees_with_same_sll_ids": []
+    },
+    "reentry": {
+      "tree_pips": 2528,
+      "net_pips": {
+        "192155": 1,
+        "287908": 6,
+        "287909": 42,
+        "287910": 6,
+        "287911": 6,
+        "288043": 10,
+        "288044": 22,
+        "288045": 12,
+        "288046": 14,
+        "288047": 10,
+        "288048": 10,
+        "288049": 12,
+        "288050": 18,
+        "288340": 9,
+        "288341": 8,
+        "288342": 8,
+        "288343": 10,
+        "288344": 7,
+        "288345": 7,
+        "288346": 8,
+        "288347": 10,
+        "288348": 8,
+        "288349": 10,
+        "288350": 6,
+        "288351": 11,
+        "288522": 670,
+        "288934": 13,
+        "288935": 20,
+        "288936": 12,
+        "288937": 12,
+        "288938": 13,
+        "288939": 10,
+        "288940": 10,
+        "288941": 8,
+        "288942": 11,
+        "288943": 13,
+        "288944": 13,
+        "288945": 14,
+        "288946": 12,
+        "288947": 8,
+        "288948": 11,
+        "288949": 13,
+        "293543": 17,
+        "300291": 125,
+        "303554": 172,
+        "303555": 43,
+        "303556": 44,
+        "303557": 59,
+        "303558": 51,
+        "303559": 54,
+        "303560": 57,
+        "303561": 57,
+        "303562": 85,
+        "303565": 44,
+        "303585": 46,
+        "303589": 53,
+        "303590": 32,
+        "303594": 27,
+        "303643": 126,
+        "303653": 67,
+        "454074": 26,
+        "454075": 25,
+        "454076": 21,
+        "454077": 27,
+        "454078": 24,
+        "454079": 22,
+        "454080": 21,
+        "454081": 25,
+        "454082": 23,
+        "454083": 21
+      },
+      "net_sll_nodes": {
+        "192155": [],
+        "287908": [],
+        "287909": [
+          23234466
+        ],
+        "287910": [],
+        "287911": [],
+        "288043": [],
+        "288044": [],
+        "288045": [],
+        "288046": [],
+        "288047": [],
+        "288048": [],
+        "288049": [],
+        "288050": [],
+        "288340": [],
+        "288341": [],
+        "288342": [],
+        "288343": [],
+        "288344": [],
+        "288345": [],
+        "288346": [],
+        "288347": [],
+        "288348": [],
+        "288349": [],
+        "288350": [],
+        "288351": [],
+        "288522": [
+          24502435,
+          61221828
+        ],
+        "288934": [],
+        "288935": [],
+        "288936": [],
+        "288937": [],
+        "288938": [],
+        "288939": [],
+        "288940": [],
+        "288941": [],
+        "288942": [],
+        "288943": [],
+        "288944": [],
+        "288945": [],
+        "288946": [],
+        "288947": [],
+        "288948": [],
+        "288949": [],
+        "293543": [
+          27645289
+        ],
+        "300291": [
+          56597696
+        ],
+        "303554": [
+          29273339,
+          57689825
+        ],
+        "303555": [
+          24495855
+        ],
+        "303556": [
+          24374292
+        ],
+        "303557": [
+          23106323
+        ],
+        "303558": [
+          24389812
+        ],
+        "303559": [
+          23349463
+        ],
+        "303560": [
+          25797620
+        ],
+        "303561": [
+          23349453
+        ],
+        "303562": [
+          24374305,
+          54172438
+        ],
+        "303565": [
+          25676034
+        ],
+        "303585": [
+          25797618,
+          54050854
+        ],
+        "303589": [
+          29808651,
+          55849511
+        ],
+        "303590": [
+          55849510
+        ],
+        "303594": [
+          54555893
+        ],
+        "303643": [
+          25406770
+        ],
+        "303653": [
+          25797616,
+          55325405
+        ],
+        "454074": [
+          55603598
+        ],
+        "454075": [
+          55082268
+        ],
+        "454076": [
+          56711924
+        ],
+        "454077": [
+          55856089
+        ],
+        "454078": [
+          56468780
+        ],
+        "454079": [
+          58316470
+        ],
+        "454080": [
+          56468788
+        ],
+        "454081": [
+          54954257
+        ],
+        "454082": [
+          55068296
+        ],
+        "454083": [
+          56590361
+        ]
+      },
+      "selected_sll": {
+        "6": 17,
+        "3": 19
+      },
+      "iterations": 3,
+      "overuse_by_epoch": [
+        2,
+        1,
+        0
+      ],
+      "expanded": 7838557,
+      "edge_visits": 32198428,
+      "quotient_expanded": 150664894,
+      "quotient_edge_visits": 1121141835,
+      "shadow_replays": 0,
+      "logical_deliveries": 0,
+      "complete_routing_and_five_repeats_verified": true,
+      "physical_die_path_census": {
+        "paths": 298,
+        "die_walk_histogram": {
+          "2": 16,
+          "2>1": 16,
+          "0": 19,
+          "2>1>0": 122,
+          "1": 21,
+          "0>1": 46,
+          "0>1>2": 16,
+          "1>0": 16,
+          "1>2": 26
+        },
+        "paths_with_die_reentry": [],
+        "paths_with_incidental_internal_boundaries": [],
+        "unique_incidental_boundary_nodes": [],
+        "directed_transition_occurrences": {
+          "2>1": 138,
+          "1>0": 138,
+          "0>1": 62,
+          "1>2": 42
+        },
+        "scope": "Final source-to-sink paths, including designated endpoint SLR transitions. Occurrences shared by multiple sinks are counted per path; these are not distinct SLL occupancy counts."
+      },
+      "corridor_metrics": {
+        "plans": 527,
+        "local_searches": 0,
+        "flat_searches": 0,
+        "repairs": 0,
+        "fallbacks": 0,
+        "reserved": 40,
+        "released": 0,
+        "retained": 40,
+        "overcapacity": 0,
+        "ranked": 0,
+        "expanded": 7838557,
+        "edge_visits": 32198428,
+        "cost_prunes": 219,
+        "joint_searches": 527,
+        "budget_deferrals": 2,
+        "joint_expanded": 7838557,
+        "joint_edge_visits": 32198428,
+        "local_expanded": 0,
+        "local_edge_visits": 0,
+        "flat_expanded": 0,
+        "flat_edge_visits": 0
+      },
+      "better_reentry_candidates": 0,
+      "better_portal_candidates": 0,
+      "search_work_partition": {
+        "recorded": true,
+        "joint_expanded": 7838557,
+        "joint_edge_visits": 32198428,
+        "local_expanded": 0,
+        "local_edge_visits": 0,
+        "flat_expanded": 0,
+        "flat_edge_visits": 0
+      },
+      "controller_schedule": {
+        "verified": true,
+        "passes": 75,
+        "rescue_transitions": 0,
+        "accepted_budget_deferrals": 2,
+        "searches": 308
+      },
+      "accepted_fallback_diagnostic": {
+        "invocations": 0,
+        "successful": 0,
+        "final_status_histogram": {},
+        "later_completed_constrained_in_same_epoch": [],
+        "scope": "Final status of the whole invocation after fallback; does not identify the earlier constrained-discovery failure status."
+      },
+      "accepted_candidate_diagnostic": {
+        "invocations": 306,
+        "strict_cost_improvements": 0,
+        "equal_cost_tie_changes": 0,
+        "cost_saved_vs_first_complete": 0,
+        "selected_attempt_histogram": {
+          "0": 306
+        },
+        "scope": "Per accepted invocation at its current tree/occupancy; excludes stale invocations. These are incremental algorithm costs, not physical delay, wirelength or globally optimized final-tree savings."
+      },
+      "attempt_status_histogram_including_replays": {
+        "0": 306,
+        "2": 2,
+        "4": 219
+      },
+      "tree_pip_delta_vs_flat_percent": 0.0,
+      "expanded_delta_vs_flat_percent": -0.0347519704048449,
+      "per_net_pip_delta_vs_flat": {
+        "192155": 0,
+        "287908": 0,
+        "287909": 0,
+        "287910": 0,
+        "287911": 0,
+        "288043": 0,
+        "288044": 0,
+        "288045": 0,
+        "288046": 0,
+        "288047": 0,
+        "288048": 0,
+        "288049": 0,
+        "288050": 0,
+        "288340": 0,
+        "288341": 0,
+        "288342": 0,
+        "288343": 0,
+        "288344": 0,
+        "288345": 0,
+        "288346": 0,
+        "288347": 0,
+        "288348": 0,
+        "288349": 0,
+        "288350": 0,
+        "288351": 0,
+        "288522": 0,
+        "288934": 0,
+        "288935": 0,
+        "288936": 0,
+        "288937": 0,
+        "288938": 0,
+        "288939": 0,
+        "288940": 0,
+        "288941": 0,
+        "288942": 0,
+        "288943": 0,
+        "288944": 0,
+        "288945": 0,
+        "288946": 0,
+        "288947": 0,
+        "288948": 0,
+        "288949": 0,
+        "293543": 0,
+        "300291": 0,
+        "303554": 0,
+        "303555": 0,
+        "303556": 0,
+        "303557": 0,
+        "303558": 0,
+        "303559": 0,
+        "303560": 0,
+        "303561": 0,
+        "303562": 0,
+        "303565": 0,
+        "303585": 0,
+        "303589": 0,
+        "303590": 0,
+        "303594": 0,
+        "303643": 0,
+        "303653": 0,
+        "454074": 0,
+        "454075": 0,
+        "454076": 0,
+        "454077": 0,
+        "454078": 0,
+        "454079": 0,
+        "454080": 0,
+        "454081": 0,
+        "454082": 0,
+        "454083": 0
+      },
+      "changed_sll_net_ids": [],
+      "larger_trees_with_same_sll_ids": []
+    },
+    "shadow3": {
+      "tree_pips": 2528,
+      "net_pips": {
+        "192155": 1,
+        "287908": 6,
+        "287909": 42,
+        "287910": 6,
+        "287911": 6,
+        "288043": 10,
+        "288044": 22,
+        "288045": 12,
+        "288046": 14,
+        "288047": 10,
+        "288048": 10,
+        "288049": 12,
+        "288050": 18,
+        "288340": 9,
+        "288341": 8,
+        "288342": 8,
+        "288343": 10,
+        "288344": 7,
+        "288345": 7,
+        "288346": 8,
+        "288347": 10,
+        "288348": 8,
+        "288349": 10,
+        "288350": 6,
+        "288351": 11,
+        "288522": 670,
+        "288934": 13,
+        "288935": 20,
+        "288936": 12,
+        "288937": 12,
+        "288938": 13,
+        "288939": 10,
+        "288940": 10,
+        "288941": 8,
+        "288942": 11,
+        "288943": 13,
+        "288944": 13,
+        "288945": 14,
+        "288946": 12,
+        "288947": 8,
+        "288948": 11,
+        "288949": 13,
+        "293543": 17,
+        "300291": 125,
+        "303554": 172,
+        "303555": 43,
+        "303556": 44,
+        "303557": 59,
+        "303558": 51,
+        "303559": 54,
+        "303560": 57,
+        "303561": 57,
+        "303562": 85,
+        "303565": 44,
+        "303585": 46,
+        "303589": 53,
+        "303590": 32,
+        "303594": 27,
+        "303643": 126,
+        "303653": 67,
+        "454074": 26,
+        "454075": 25,
+        "454076": 21,
+        "454077": 27,
+        "454078": 24,
+        "454079": 22,
+        "454080": 21,
+        "454081": 25,
+        "454082": 23,
+        "454083": 21
+      },
+      "net_sll_nodes": {
+        "192155": [],
+        "287908": [],
+        "287909": [
+          23234466
+        ],
+        "287910": [],
+        "287911": [],
+        "288043": [],
+        "288044": [],
+        "288045": [],
+        "288046": [],
+        "288047": [],
+        "288048": [],
+        "288049": [],
+        "288050": [],
+        "288340": [],
+        "288341": [],
+        "288342": [],
+        "288343": [],
+        "288344": [],
+        "288345": [],
+        "288346": [],
+        "288347": [],
+        "288348": [],
+        "288349": [],
+        "288350": [],
+        "288351": [],
+        "288522": [
+          24502435,
+          61221828
+        ],
+        "288934": [],
+        "288935": [],
+        "288936": [],
+        "288937": [],
+        "288938": [],
+        "288939": [],
+        "288940": [],
+        "288941": [],
+        "288942": [],
+        "288943": [],
+        "288944": [],
+        "288945": [],
+        "288946": [],
+        "288947": [],
+        "288948": [],
+        "288949": [],
+        "293543": [
+          27645289
+        ],
+        "300291": [
+          56597696
+        ],
+        "303554": [
+          29273339,
+          57689825
+        ],
+        "303555": [
+          24495855
+        ],
+        "303556": [
+          24374292
+        ],
+        "303557": [
+          23106323
+        ],
+        "303558": [
+          24389812
+        ],
+        "303559": [
+          23349463
+        ],
+        "303560": [
+          25797620
+        ],
+        "303561": [
+          23349453
+        ],
+        "303562": [
+          24374305,
+          54172438
+        ],
+        "303565": [
+          25676034
+        ],
+        "303585": [
+          25797618,
+          54050854
+        ],
+        "303589": [
+          29808651,
+          55849511
+        ],
+        "303590": [
+          55849510
+        ],
+        "303594": [
+          54555893
+        ],
+        "303643": [
+          25406770
+        ],
+        "303653": [
+          25797616,
+          55325405
+        ],
+        "454074": [
+          55603598
+        ],
+        "454075": [
+          55082268
+        ],
+        "454076": [
+          56711924
+        ],
+        "454077": [
+          55856089
+        ],
+        "454078": [
+          56468780
+        ],
+        "454079": [
+          58316470
+        ],
+        "454080": [
+          56468788
+        ],
+        "454081": [
+          54954257
+        ],
+        "454082": [
+          55068296
+        ],
+        "454083": [
+          56590361
+        ]
+      },
+      "selected_sll": {
+        "6": 17,
+        "3": 19
+      },
+      "iterations": 3,
+      "overuse_by_epoch": [
+        2,
+        1,
+        0
+      ],
+      "expanded": 9066125,
+      "edge_visits": 37385095,
+      "quotient_expanded": 152714062,
+      "quotient_edge_visits": 1136308750,
+      "shadow_replays": 4,
+      "logical_deliveries": 86,
+      "complete_routing_and_five_repeats_verified": true,
+      "physical_die_path_census": {
+        "paths": 298,
+        "die_walk_histogram": {
+          "2": 16,
+          "2>1": 16,
+          "0": 19,
+          "2>1>0": 122,
+          "1": 21,
+          "0>1": 46,
+          "0>1>2": 16,
+          "1>0": 16,
+          "1>2": 26
+        },
+        "paths_with_die_reentry": [],
+        "paths_with_incidental_internal_boundaries": [],
+        "unique_incidental_boundary_nodes": [],
+        "directed_transition_occurrences": {
+          "2>1": 138,
+          "1>0": 138,
+          "0>1": 62,
+          "1>2": 42
+        },
+        "scope": "Final source-to-sink paths, including designated endpoint SLR transitions. Occurrences shared by multiple sinks are counted per path; these are not distinct SLL occupancy counts."
+      },
+      "corridor_metrics": {
+        "plans": 531,
+        "local_searches": 0,
+        "flat_searches": 0,
+        "repairs": 0,
+        "fallbacks": 0,
+        "reserved": 45,
+        "released": 0,
+        "retained": 45,
+        "overcapacity": 0,
+        "ranked": 0,
+        "expanded": 9066125,
+        "edge_visits": 37385095,
+        "cost_prunes": 219,
+        "joint_searches": 531,
+        "budget_deferrals": 2,
+        "joint_expanded": 9066125,
+        "joint_edge_visits": 37385095,
+        "local_expanded": 0,
+        "local_edge_visits": 0,
+        "flat_expanded": 0,
+        "flat_edge_visits": 0
+      },
+      "better_reentry_candidates": 0,
+      "better_portal_candidates": 0,
+      "search_work_partition": {
+        "recorded": true,
+        "joint_expanded": 9066125,
+        "joint_edge_visits": 37385095,
+        "local_expanded": 0,
+        "local_edge_visits": 0,
+        "flat_expanded": 0,
+        "flat_edge_visits": 0
+      },
+      "controller_schedule": {
+        "verified": true,
+        "passes": 75,
+        "rescue_transitions": 0,
+        "accepted_budget_deferrals": 2,
+        "searches": 308
+      },
+      "accepted_fallback_diagnostic": {
+        "invocations": 0,
+        "successful": 0,
+        "final_status_histogram": {},
+        "later_completed_constrained_in_same_epoch": [],
+        "scope": "Final status of the whole invocation after fallback; does not identify the earlier constrained-discovery failure status."
+      },
+      "accepted_candidate_diagnostic": {
+        "invocations": 306,
+        "strict_cost_improvements": 0,
+        "equal_cost_tie_changes": 0,
+        "cost_saved_vs_first_complete": 0,
+        "selected_attempt_histogram": {
+          "0": 306
+        },
+        "scope": "Per accepted invocation at its current tree/occupancy; excludes stale invocations. These are incremental algorithm costs, not physical delay, wirelength or globally optimized final-tree savings."
+      },
+      "attempt_status_histogram_including_replays": {
+        "0": 310,
+        "2": 2,
+        "4": 219
+      },
+      "tree_pip_delta_vs_flat_percent": 0.0,
+      "expanded_delta_vs_flat_percent": 15.620443187733834,
+      "per_net_pip_delta_vs_flat": {
+        "192155": 0,
+        "287908": 0,
+        "287909": 0,
+        "287910": 0,
+        "287911": 0,
+        "288043": 0,
+        "288044": 0,
+        "288045": 0,
+        "288046": 0,
+        "288047": 0,
+        "288048": 0,
+        "288049": 0,
+        "288050": 0,
+        "288340": 0,
+        "288341": 0,
+        "288342": 0,
+        "288343": 0,
+        "288344": 0,
+        "288345": 0,
+        "288346": 0,
+        "288347": 0,
+        "288348": 0,
+        "288349": 0,
+        "288350": 0,
+        "288351": 0,
+        "288522": 0,
+        "288934": 0,
+        "288935": 0,
+        "288936": 0,
+        "288937": 0,
+        "288938": 0,
+        "288939": 0,
+        "288940": 0,
+        "288941": 0,
+        "288942": 0,
+        "288943": 0,
+        "288944": 0,
+        "288945": 0,
+        "288946": 0,
+        "288947": 0,
+        "288948": 0,
+        "288949": 0,
+        "293543": 0,
+        "300291": 0,
+        "303554": 0,
+        "303555": 0,
+        "303556": 0,
+        "303557": 0,
+        "303558": 0,
+        "303559": 0,
+        "303560": 0,
+        "303561": 0,
+        "303562": 0,
+        "303565": 0,
+        "303585": 0,
+        "303589": 0,
+        "303590": 0,
+        "303594": 0,
+        "303643": 0,
+        "303653": 0,
+        "454074": 0,
+        "454075": 0,
+        "454076": 0,
+        "454077": 0,
+        "454078": 0,
+        "454079": 0,
+        "454080": 0,
+        "454081": 0,
+        "454082": 0,
+        "454083": 0
+      },
+      "changed_sll_net_ids": [],
+      "larger_trees_with_same_sll_ids": []
+    }
+  },
+  "predeclared_route_equalities": [
+    [
+      "joint_v1",
+      "immediate"
+    ],
+    [
+      "reentry",
+      "shadow3"
+    ]
+  ],
+  "observed_routes_equal_to_baseline": [
+    "flat_v4",
+    "joint_v1",
+    "reentry_v1",
+    "shadow_v1",
+    "immediate",
+    "defer",
+    "reentry",
+    "shadow3"
+  ],
+  "findings": {
+    "tree_pips": 2528,
+    "selected_sll": 36,
+    "detailed_expansion_reduction_vs_immediate_percent": 18.228281699271054,
+    "detailed_expansion_delta_vs_flat_percent": -0.13150910782191438,
+    "removed_full_graph_work": {
+      "immediate": "immediate",
+      "deferred": "defer",
+      "complete_constrained_journals_equal": true,
+      "removed_flat_expanded": 1745654,
+      "removed_flat_edge_visits": 7159034
+    },
+    "quotient_work_equals_flat": true,
+    "conclusion": "Deferring budget-limited joint calls removes redundant failed full-graph searches without changing any constrained candidate journal or final route/authority on this cohort. Explicit no-growth rescue remains available and is independently tested. Counters are not latency or hardware speedup."
+  },
+  "default_iteration_counters_identical_to_previous_joint": true,
+  "limitations": [
+    "Single fixed 70-net development cohort; no held-out or full-design generalization.",
+    "No rescue transition was needed in this development cohort; rescue correctness evidence comes from explicit physical-graph fixtures, including successful and still-budget-limited rescue.",
+    "Deferral can change tree growth and later choices on other workloads. Equivalence is measured here, not a universal guarantee under a finite search budget.",
+    "The baseline equality is to the initial flat reroute, not the later hold-repaired tree. No fresh physical WL/CPD or DCP/STA/DRC signoff.",
+    "Still a serial centralized authority and source-observer shadow reference, not die-local concurrent ownership or a HBM accelerator."
+  ],
+  "next_work": [
+    "Implement and verify a single authoritative owner partition per electrical resource, with stage-local access and explicit boundary communication instead of the current centralized authority/source-observer overlay.",
+    "Extend the same scheduling and cost protocol to representative held-out cohorts and full-design routing.",
+    "Complete physical QoR, HBM/die mapping and migration/topology ablations, accelerator synthesis/implementation, board performance/energy, paper and reproducible artifact acceptance."
+  ]
+}

@@ -1,0 +1,23 @@
+<rr_graph>
+<block_types>
+<block_type id="1" name="core" width="1" height="2">
+<pin_class type="INPUT"><pin ptc="0">core.I[0]</pin></pin_class>
+<pin_class type="OUTPUT"><pin ptc="1">core.O[0]</pin></pin_class>
+</block_type>
+<block_type id="2" name="io" width="1" height="1">
+<pin_class type="INPUT"><pin ptc="0">io[0].pad[0]</pin></pin_class>
+<pin_class type="OUTPUT"><pin ptc="1">io[0].out[0]</pin></pin_class>
+<pin_class type="INPUT"><pin ptc="2">io[1].pad[0]</pin></pin_class>
+<pin_class type="OUTPUT"><pin ptc="3">io[1].out[0]</pin></pin_class>
+</block_type>
+</block_types>
+<grid>
+<grid_loc x="1" y="1" layer="0" block_type_id="1" width_offset="0" height_offset="0"/>
+<grid_loc x="2" y="1" layer="0" block_type_id="2" width_offset="0" height_offset="0"/>
+</grid>
+<rr_nodes>
+<node id="10" type="SOURCE" capacity="1"><loc xlow="1" xhigh="1" ylow="1" yhigh="2" layer="0" ptc="1"/></node>
+<node id="50" type="SINK" capacity="1"><loc xlow="2" xhigh="2" ylow="1" yhigh="1" layer="0" ptc="2"/></node>
+</rr_nodes>
+<rr_edges/>
+</rr_graph>

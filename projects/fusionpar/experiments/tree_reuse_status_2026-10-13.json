@@ -1,0 +1,665 @@
+{
+  "schema": "FUSIONPAR_TREE_REUSE_STATUS_V1",
+  "research_status": "local_development_QoR_improvements_not_independent_fusion_benefit",
+  "stable_speedup_claim": false,
+  "designs": {
+    "ex5p": {
+      "repeats": 2,
+      "deterministic": true,
+      "tree_control_equivalent_to_pr": true,
+      "baseline": {
+        "wirelength": 9857,
+        "cpd_ns": 5.8858
+      },
+      "counts": {
+        "runs": 6,
+        "qor_commits": 2,
+        "protocol_commits": 0,
+        "aborts": 16,
+        "timing_barriers": 8,
+        "placement_repairs": 0,
+        "native_feedback_checks": 0
+      },
+      "modes": {
+        "interleaved": {
+          "runs": 2,
+          "commits": 0,
+          "aborts": 6,
+          "final_qor": {
+            "wirelength": 9857,
+            "cpd_ns": 5.8858
+          },
+          "WL_change_pct": 0.0,
+          "CPD_change_pct": 0.0,
+          "kernel_searches_per_run": [
+            2938,
+            2938
+          ],
+          "retained_connections_per_run": [
+            0,
+            0
+          ],
+          "event_statuses_repeat_0": [
+            "quality_rejected",
+            "quality_rejected",
+            "quality_rejected"
+          ],
+          "process_wall_s": [
+            17.58313941,
+            15.994285387
+          ],
+          "median_process_wall_s": 16.7887123985,
+          "charged_wall_s": [
+            20.049317296,
+            18.460463273
+          ],
+          "median_charged_wall_s": 19.2548902845,
+          "routing_s": [
+            4.101701578,
+            4.235160263
+          ],
+          "median_routing_s": 4.1684309205000005,
+          "native_validation_s": [
+            11.844461095,
+            10.090713438
+          ],
+          "median_native_validation_s": 10.9675872665
+        },
+        "interleaved_tree_control": {
+          "runs": 2,
+          "commits": 0,
+          "aborts": 6,
+          "final_qor": {
+            "wirelength": 9857,
+            "cpd_ns": 5.8858
+          },
+          "WL_change_pct": 0.0,
+          "CPD_change_pct": 0.0,
+          "kernel_searches_per_run": [
+            2938,
+            2938
+          ],
+          "retained_connections_per_run": [
+            0,
+            0
+          ],
+          "event_statuses_repeat_0": [
+            "quality_rejected",
+            "quality_rejected",
+            "quality_rejected"
+          ],
+          "process_wall_s": [
+            15.370824377,
+            16.58300889
+          ],
+          "median_process_wall_s": 15.9769166335,
+          "charged_wall_s": [
+            17.837002263,
+            19.049186776
+          ],
+          "median_charged_wall_s": 18.4430945195,
+          "routing_s": [
+            3.405238314,
+            3.329352188
+          ],
+          "median_routing_s": 3.367295251,
+          "native_validation_s": [
+            10.297501993,
+            11.586425815
+          ],
+          "median_native_validation_s": 10.941963904
+        },
+        "interleaved_tree_reuse": {
+          "runs": 2,
+          "commits": 2,
+          "aborts": 4,
+          "final_qor": {
+            "wirelength": 9849,
+            "cpd_ns": 5.83751
+          },
+          "WL_change_pct": -0.08116059653038299,
+          "CPD_change_pct": -0.8204492167589783,
+          "kernel_searches_per_run": [
+            664,
+            664
+          ],
+          "retained_connections_per_run": [
+            1229,
+            1229
+          ],
+          "event_statuses_repeat_0": [
+            "committed",
+            "quality_rejected",
+            "quality_rejected"
+          ],
+          "process_wall_s": [
+            13.01568936,
+            13.477535802
+          ],
+          "median_process_wall_s": 13.246612581,
+          "charged_wall_s": [
+            15.481867246,
+            15.943713688
+          ],
+          "median_charged_wall_s": 15.712790467000001,
+          "routing_s": [
+            0.778475967,
+            0.800550585
+          ],
+          "median_routing_s": 0.789513276,
+          "native_validation_s": [
+            10.20945417,
+            10.903864812
+          ],
+          "median_native_validation_s": 10.556659491000001
+        }
+      },
+      "matched_candidates_repeat_0": [
+        {
+          "control_proposal": 0,
+          "reuse_proposal": 0,
+          "before": "4bd7d9c3d3fb5dd6",
+          "moves": [
+            [
+              35,
+              99,
+              197,
+              0
+            ],
+            [
+              72,
+              197,
+              99,
+              0
+            ]
+          ],
+          "control_kernel_searches": 900,
+          "reuse_kernel_searches": 455,
+          "retained_connections": 324,
+          "control_status": "quality_rejected",
+          "reuse_status": "committed"
+        }
+      ]
+    },
+    "alu4": {
+      "repeats": 2,
+      "deterministic": true,
+      "tree_control_equivalent_to_pr": true,
+      "baseline": {
+        "wirelength": 9580,
+        "cpd_ns": 5.96812
+      },
+      "counts": {
+        "runs": 6,
+        "qor_commits": 4,
+        "protocol_commits": 0,
+        "aborts": 14,
+        "timing_barriers": 10,
+        "placement_repairs": 0,
+        "native_feedback_checks": 0
+      },
+      "modes": {
+        "interleaved": {
+          "runs": 2,
+          "commits": 0,
+          "aborts": 6,
+          "final_qor": {
+            "wirelength": 9580,
+            "cpd_ns": 5.96812
+          },
+          "WL_change_pct": 0.0,
+          "CPD_change_pct": 0.0,
+          "kernel_searches_per_run": [
+            5434,
+            5434
+          ],
+          "retained_connections_per_run": [
+            0,
+            0
+          ],
+          "event_statuses_repeat_0": [
+            "quality_rejected",
+            "quality_rejected",
+            "quality_rejected"
+          ],
+          "process_wall_s": [
+            24.647361615,
+            24.689956987
+          ],
+          "median_process_wall_s": 24.668659300999998,
+          "charged_wall_s": [
+            27.739074446,
+            27.781669818
+          ],
+          "median_charged_wall_s": 27.760372132,
+          "routing_s": [
+            9.912679115,
+            9.522735594
+          ],
+          "median_routing_s": 9.7177073545,
+          "native_validation_s": [
+            13.343460618,
+            13.771100251
+          ],
+          "median_native_validation_s": 13.5572804345
+        },
+        "interleaved_tree_control": {
+          "runs": 2,
+          "commits": 0,
+          "aborts": 6,
+          "final_qor": {
+            "wirelength": 9580,
+            "cpd_ns": 5.96812
+          },
+          "WL_change_pct": 0.0,
+          "CPD_change_pct": 0.0,
+          "kernel_searches_per_run": [
+            5434,
+            5434
+          ],
+          "retained_connections_per_run": [
+            0,
+            0
+          ],
+          "event_statuses_repeat_0": [
+            "quality_rejected",
+            "quality_rejected",
+            "quality_rejected"
+          ],
+          "process_wall_s": [
+            23.4650628,
+            23.50695238
+          ],
+          "median_process_wall_s": 23.48600759,
+          "charged_wall_s": [
+            26.556775631,
+            26.598665211
+          ],
+          "median_charged_wall_s": 26.577720421000002,
+          "routing_s": [
+            8.62734709,
+            8.622050376
+          ],
+          "median_routing_s": 8.624698733,
+          "native_validation_s": [
+            13.394494968,
+            13.459163164
+          ],
+          "median_native_validation_s": 13.426829066
+        },
+        "interleaved_tree_reuse": {
+          "runs": 2,
+          "commits": 4,
+          "aborts": 2,
+          "final_qor": {
+            "wirelength": 9548,
+            "cpd_ns": 5.96812
+          },
+          "WL_change_pct": -0.3340292275574086,
+          "CPD_change_pct": 0.0,
+          "kernel_searches_per_run": [
+            117,
+            117
+          ],
+          "retained_connections_per_run": [
+            2177,
+            2177
+          ],
+          "event_statuses_repeat_0": [
+            "committed",
+            "quality_rejected",
+            "committed"
+          ],
+          "process_wall_s": [
+            15.089084833,
+            14.92558964
+          ],
+          "median_process_wall_s": 15.0073372365,
+          "charged_wall_s": [
+            18.180797664,
+            18.017302471
+          ],
+          "median_charged_wall_s": 18.099050067500002,
+          "routing_s": [
+            0.19442779,
+            0.204093791
+          ],
+          "median_routing_s": 0.1992607905,
+          "native_validation_s": [
+            13.444316123,
+            13.231271484
+          ],
+          "median_native_validation_s": 13.3377938035
+        }
+      },
+      "matched_candidates_repeat_0": [
+        {
+          "control_proposal": 0,
+          "reuse_proposal": 0,
+          "before": "ccce26babe8d2e41",
+          "moves": [
+            [
+              83,
+              405,
+              272,
+              0
+            ],
+            [
+              105,
+              272,
+              405,
+              0
+            ]
+          ],
+          "control_kernel_searches": 1801,
+          "reuse_kernel_searches": 47,
+          "retained_connections": 1068,
+          "control_status": "quality_rejected",
+          "reuse_status": "committed"
+        }
+      ]
+    },
+    "misex3": {
+      "repeats": 2,
+      "deterministic": true,
+      "tree_control_equivalent_to_pr": true,
+      "baseline": {
+        "wirelength": 10323,
+        "cpd_ns": 5.08031
+      },
+      "counts": {
+        "runs": 6,
+        "qor_commits": 0,
+        "protocol_commits": 0,
+        "aborts": 18,
+        "timing_barriers": 6,
+        "placement_repairs": 0,
+        "native_feedback_checks": 0
+      },
+      "modes": {
+        "interleaved": {
+          "runs": 2,
+          "commits": 0,
+          "aborts": 6,
+          "final_qor": {
+            "wirelength": 10323,
+            "cpd_ns": 5.08031
+          },
+          "WL_change_pct": 0.0,
+          "CPD_change_pct": 0.0,
+          "kernel_searches_per_run": [
+            4769,
+            4769
+          ],
+          "retained_connections_per_run": [
+            0,
+            0
+          ],
+          "event_statuses_repeat_0": [
+            "quality_rejected",
+            "quality_rejected",
+            "quality_rejected"
+          ],
+          "process_wall_s": [
+            21.310457506,
+            21.142076865
+          ],
+          "median_process_wall_s": 21.2262671855,
+          "charged_wall_s": [
+            24.031939533,
+            23.863558892
+          ],
+          "median_charged_wall_s": 23.9477492125,
+          "routing_s": [
+            7.782049541,
+            7.7354367
+          ],
+          "median_routing_s": 7.7587431205,
+          "native_validation_s": [
+            12.351000564,
+            12.154103369
+          ],
+          "median_native_validation_s": 12.2525519665
+        },
+        "interleaved_tree_control": {
+          "runs": 2,
+          "commits": 0,
+          "aborts": 6,
+          "final_qor": {
+            "wirelength": 10323,
+            "cpd_ns": 5.08031
+          },
+          "WL_change_pct": 0.0,
+          "CPD_change_pct": 0.0,
+          "kernel_searches_per_run": [
+            4769,
+            4769
+          ],
+          "retained_connections_per_run": [
+            0,
+            0
+          ],
+          "event_statuses_repeat_0": [
+            "quality_rejected",
+            "quality_rejected",
+            "quality_rejected"
+          ],
+          "process_wall_s": [
+            19.852367989,
+            20.879904228
+          ],
+          "median_process_wall_s": 20.3661361085,
+          "charged_wall_s": [
+            22.573850016,
+            23.601386255
+          ],
+          "median_charged_wall_s": 23.0876181355,
+          "routing_s": [
+            6.6439584,
+            6.199409045
+          ],
+          "median_routing_s": 6.4216837225,
+          "native_validation_s": [
+            11.987465609,
+            13.505528586
+          ],
+          "median_native_validation_s": 12.7464970975
+        },
+        "interleaved_tree_reuse": {
+          "runs": 2,
+          "commits": 0,
+          "aborts": 6,
+          "final_qor": {
+            "wirelength": 10323,
+            "cpd_ns": 5.08031
+          },
+          "WL_change_pct": 0.0,
+          "CPD_change_pct": 0.0,
+          "kernel_searches_per_run": [
+            268,
+            268
+          ],
+          "retained_connections_per_run": [
+            2731,
+            2731
+          ],
+          "event_statuses_repeat_0": [
+            "quality_rejected",
+            "quality_rejected",
+            "quality_rejected"
+          ],
+          "process_wall_s": [
+            14.016265594,
+            13.763158845
+          ],
+          "median_process_wall_s": 13.8897122195,
+          "charged_wall_s": [
+            16.737747621,
+            16.484640872
+          ],
+          "median_charged_wall_s": 16.6111942465,
+          "routing_s": [
+            0.4179468,
+            0.395304421
+          ],
+          "median_routing_s": 0.4066256105,
+          "native_validation_s": [
+            12.437000939,
+            12.235881161
+          ],
+          "median_native_validation_s": 12.336441050000001
+        }
+      },
+      "matched_candidates_repeat_0": [
+        {
+          "control_proposal": 0,
+          "reuse_proposal": 0,
+          "before": "9edaada21c4de9d5",
+          "moves": [
+            [
+              19,
+              209,
+              212,
+              0
+            ],
+            [
+              56,
+              212,
+              209,
+              0
+            ]
+          ],
+          "control_kernel_searches": 1560,
+          "reuse_kernel_searches": 78,
+          "retained_connections": 892,
+          "control_status": "quality_rejected",
+          "reuse_status": "quality_rejected"
+        },
+        {
+          "control_proposal": 1,
+          "reuse_proposal": 1,
+          "before": "9edaada21c4de9d5",
+          "moves": [
+            [
+              14,
+              185,
+              261,
+              0
+            ],
+            [
+              66,
+              261,
+              185,
+              0
+            ]
+          ],
+          "control_kernel_searches": 1593,
+          "reuse_kernel_searches": 114,
+          "retained_connections": 941,
+          "control_status": "quality_rejected",
+          "reuse_status": "quality_rejected"
+        },
+        {
+          "control_proposal": 2,
+          "reuse_proposal": 2,
+          "before": "9edaada21c4de9d5",
+          "moves": [
+            [
+              66,
+              261,
+              234,
+              0
+            ],
+            [
+              71,
+              234,
+              261,
+              0
+            ]
+          ],
+          "control_kernel_searches": 1616,
+          "reuse_kernel_searches": 76,
+          "retained_connections": 898,
+          "control_status": "quality_rejected",
+          "reuse_status": "quality_rejected"
+        }
+      ]
+    }
+  },
+  "totals": {
+    "runs": 18,
+    "qor_commits": 6,
+    "protocol_commits": 0,
+    "aborts": 48,
+    "timing_barriers": 24,
+    "placement_repairs": 0,
+    "native_feedback_checks": 0
+  },
+  "evidence": [
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/ex5p_tree_reuse_development_v2/audit.json",
+      "sha256": "883cf1195ff5a3ac8552650092137f96f16766b09ef9b5f362f5de92332e6ff6"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/ex5p_tree_reuse_v2_audit_2026-10-13.json",
+      "sha256": "71b0e4940907dbef98b346a748669362446b68db4e55dc9b5c9ae2357c3cd7fe"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/ex5p_tree_reuse_development_v2/build/Testing/Temporary/LastTest.log",
+      "sha256": "65009c8b6ab9f3667dd4f4b5b2457c8ab8c3de4830aff273985e341b031ffc14"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/alu4_tree_reuse_development_v2/audit.json",
+      "sha256": "59fb98e2dd1c832d4d208081c995cd5ca5c4f551126be6a8ac9e01653e1aeae2"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/alu4_tree_reuse_v2_audit_2026-10-13.json",
+      "sha256": "90c4c00469725bca0bab7d7f564a70be640223adb8623d96357a007a56eeac15"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/alu4_tree_reuse_development_v2/build/Testing/Temporary/LastTest.log",
+      "sha256": "a55399e1164f99e1908276f18dabe2834f82ff5bf9bdf5bfd5b6ececa6cf8ca9"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/misex3_tree_reuse_development_v2/audit.json",
+      "sha256": "f27122ba199ec38a1b8840080ee5229b24ebba751be0d0612805a49ef88e1cd1"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/misex3_tree_reuse_v2_audit_2026-10-13.json",
+      "sha256": "a75331483406924d277e6b28a7a546d48dd0376bfbae652f2adf079b71a69df9"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/misex3_tree_reuse_development_v2/build/Testing/Temporary/LastTest.log",
+      "sha256": "08216381aeceafee71588da7667b49a88f229929033e9b381533fa0a2c1d4c55"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/summarize_tree_reuse.py",
+      "sha256": "57e72f67b113fefb9f785e51bbd8bf4dd259b7b16827fbb5b8cc1a94bc9a5a10"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/tree_reuse_io_fix_protocol_2026-10-13.json",
+      "sha256": "73bb95c59e8499921ebe313875809d9c5a9ff09779e5db0f71b497b86498a7aa"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/io_pad_regression_2026-10-13.json",
+      "sha256": "61eee82623cb561fefac1bbc04ec2169a1aeab27772e7c7bda1b7a51488e6560"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/tree_reuse_protocol_2026-10-13.json",
+      "sha256": "86b96dad7a0d1db9a720b8141e21c3a4e1ea5152c627ba18694c950534451baa"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/strong_baseline_inventory_2026-10-13.json",
+      "sha256": "7bf8aae20e80211c58d07a9c73862cd0ffa318666d1d03c85d3e8c149ca90e9b"
+    }
+  ],
+  "limitations": [
+    "Development inputs, not held-out validation",
+    "Two repeats test semantic reproducibility, not statistical timing stability",
+    "After a commit, later proposals may differ across modes",
+    "Sequential retained-tree and best placer + PR controls remain required",
+    "No physical FPGA measurements; router timers include CPU scratch/control work"
+  ],
+  "same_source_hashes_across_suites": true,
+  "unit_checks": 97
+}

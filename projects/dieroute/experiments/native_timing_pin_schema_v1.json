@@ -1,0 +1,31 @@
+{
+  "schema": "dieroute.native_timing_pin_mapping.v1",
+  "status": "cpu_conversion_and_native_oracle",
+  "identity": "(net_id, native logical load pin, physical BEL pin) maps through existing used site routing to a physical SitePinInst and frozen ConnectionTask ID, or to a proven internal source driver.",
+  "exported_evidence": [
+    "Complete selected-net site pin identities and native node representatives",
+    "Explicit logical-to-physical BEL pin mappings",
+    "All labelled wires and their BEL pins for selected net/site pairs",
+    "Used site PIP input/output endpoints",
+    "Independent SDK routed-site-pin observations"
+  ],
+  "invariants": [
+    "No new route is chosen and no DCP is written.",
+    "Every mapped input matches the exact footprint task pin and native PIP writeback preparation.",
+    "Each traversed site wire has one driver and each mux output has one enabled site PIP.",
+    "Unselected muxes, cycles, wrong net labels, ambiguous drivers and unsupported route-throughs are rejected.",
+    "A site-local load and the net source output site pin must reach the same functional BEL driver.",
+    "SDK and independent exported-connectivity results agree.",
+    "Every selected physical task has native logical-load delay coverage."
+  ],
+  "cardinality": "Multiple logical loads may share a physical task; a site-local load has no intersite routing task. Keep each logical load independently; do not average their delays.",
+  "observation_units": {
+    "native_net_delay": "ps",
+    "native_timing_path": "ns",
+    "path_depth": "directed PIP count, not physical wirelength"
+  },
+  "min_max_semantics": "Net-delay corner observations include site portions. Full-path slack depends additionally on clock paths, other cells/nets and timing constraints. Neither is a static additive PIP weight.",
+  "no_reported_path": "Missing native path queries remain explicit; they are not zero slack, a timing pass, or a demonstrated reason for absence.",
+  "evidence": "experiments/native_pin_mapping_progress_20261013.json",
+  "reported_unconstrained_path": "An object exists but SLACK, REQUIREMENT and REQUIRED_TIME are empty and the detailed native report states Slack: inf. Preserve the path but do not assign a finite slack or count a timing pass."
+}

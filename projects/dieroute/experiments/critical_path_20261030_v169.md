@@ -1,0 +1,13 @@
+# DieRoute critical path v169 — 2026-10-30
+
+Original11 workloads/311096 searches,45formal slots, frozen budgets, gate requirements and all eight open statuses remain unchanged. Existing RTL/watchdog/guard identities, queues and retained failures remain as specified in `experiments/critical_path_20261030_v167.md`; selected primary-method evidence is in v168.
+
+G8 progress: `work/related_work_thesis_paper_update_20261030/paper/dieroute.pdf` is an independently compiled32page literature-only fork of the22October evaluation snapshot. Six literal source edits update dates/scope, selected author-thesis comparison, attribution and bibliography scope. Exact inverse recovers the frozen parent source; all other compilation inputs are unchanged. New text distinguishes journal metadata/abstract review from selected author-thesis methods. Evaluation and figure inputs retain the explicitly dated22October scope.
+
+Compilation exits0 with no unresolved references/citations or overfull hboxes. Required new scope text and all eight parent numeric tokens pass. Rendered pages1,2,32 were inspected: title/abstract dates, related-work paragraph and reference10 are readable with no observed clipping/overlap. The PDF is a reviewable dated draft, not the final research manuscript.
+
+`dieroute_literature_draft_sources.tar.gz` contains96bound compilation inputs, including the build entry point and pre-rendered figures. Actual extraction into a separate directory, source-hash verification and fresh compilation pass; the entire32page PDF text is byte-equal. This is document compilation reproducibility only; figure regeneration, experiment reproduction and full research artifact closure remain separate. Evidence is in `literature_update_manifest.json`, `build_review.json`, `visual_review.json` and `relocated_build_review.json` in the fork root.
+
+Priority remains actual full28878 positive terminal review for the dictionary,CSR and population shift/add candidates, then source-bound observer-only negative canary. Preserve all active inputs,1e9cumulative watchdog and original guards. Two terminal watchers own their existing captured cases; no restart for quiet logs. Prepared negative execution tools remain gated on full positive v2 proof.
+
+Independent remaining G8 work includes the original research artifact dependency/transitive-provenance audit and remaining primary literature/novelty comparison. The small document source package does not replace these requirements. Do not rehash/copy/densify huge sparse TV or substitute a smaller workload. Physical U280 is unavailable; platform timing/resources,physical speed/energy and final-paper acceptance remain open.

@@ -1,0 +1,57 @@
+{
+  "schema": "dieroute.native_boundary_shadow_protocol.v1",
+  "authority": "Existing NativeRouteState is the sole serial authority; no concurrent mutation during search or between validation and acceptance.",
+  "topology": {
+    "resource": "canonical electrical node ID",
+    "membership": "complete native SLR mask",
+    "boundary": "mask has at least two bits",
+    "summary_owner": "lowest member SLR",
+    "observer": "source SLR from footprint task",
+    "broadcast_domain": "all SLR indices in the complete native graph and task metadata"
+  },
+  "summary": {
+    "fields": [
+      "distinct_net_occupancy:u64",
+      "history:u64",
+      "resource_version:u64"
+    ],
+    "capacity": "one distinct net per mutable electrical node",
+    "net_owner_set_replicated": false,
+    "absence": "implicit occupancy=history=version=0",
+    "tombstones": "retained after ripup",
+    "fixed_outside_occupancy": "immutable eligibility mask, never speculative"
+  },
+  "search": {
+    "local_and_nonboundary": "read serial authority",
+    "remote_boundary": "immutable last-published snapshot",
+    "shared_tree": "all tree nodes remain authoritative multi-source seeds; own-net occupancy is never double-counted",
+    "cost": "1 + history + present * other_net_count",
+    "heuristic": "existing consistent quotient hop lower bound; every traversed cost >=1",
+    "read_journal": "all evaluated remote boundary costs, including nonselected alternatives",
+    "failed_outcomes": "validate exhausted, label-budget, hop-limited and overflow outcomes as well as found paths"
+  },
+  "commit": {
+    "validation": "compare each observed occupancy/history/version against authority and check checkpoint epoch",
+    "stale": "discard speculative outcome and rerun once against current serial authority before accepting",
+    "current_overflow": "reject with error",
+    "mutation": "existing checked NativeRouteState.accept only; no speculative authority writes",
+    "checkpoint_replacement": "invalidate all previous views even when resource versions coincide"
+  },
+  "publication": {
+    "interval": "number of actual sparse searches, not logical loads already in the tree",
+    "atomicity": "immutable CPU snapshot replacement",
+    "version": "monotonic; equal version requires equal value",
+    "final_drain": true
+  },
+  "metrics": {
+    "logical_deliveries": "changed summaries times (die_count-1), including final drain; zero-state baseline implicit",
+    "physical_bytes_measured": false,
+    "hardware_latency_measured": false
+  },
+  "limitations": [
+    "Boundary overlay atop serial authority, not die-local partitioned authority or concurrent native routing.",
+    "No corridor reservation or task migration added by this protocol.",
+    "Existing hop/congestion objective and frozen-outside cohort scope remain; no timing/QoR improvement claim.",
+    "No hardware message encoding, network/HBM counters, accelerator implementation or board result."
+  ]
+}

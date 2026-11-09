@@ -1,0 +1,15 @@
+{
+  "status": "pass",
+  "scope": "array-only occupancy and unit ownership CPU differential; not integrated or HLS synthesized",
+  "queries": 4000,
+  "hits": 2007,
+  "misses": 1993,
+  "extreme_queries": 20,
+  "empty_layout_cases": 1,
+  "random_seed": 35,
+  "precondition": "validated unique current locations and block unit IDs",
+  "files": {
+    "occupancy_array.hpp": "24937a055320b25413b27dc606b0163a79c3dcfad13445a3852632ef1633103f",
+    "occupancy_array_test.cpp": "73c44d902363a27e1a1124c54d1b8a33dea36246f54c3e5d7a798fbc3b862b4e"
+  }
+}

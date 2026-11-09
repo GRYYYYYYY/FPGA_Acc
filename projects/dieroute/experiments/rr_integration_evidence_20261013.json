@@ -1,0 +1,211 @@
+{
+  "schema": "dieroute.rr_integration_evidence.v1",
+  "verified_utc": "2026-10-13T04:51:08.359589+00:00",
+  "research_complete": false,
+  "qor_gate_passed": false,
+  "board_result": false,
+  "experiments": [
+    {
+      "version": 1,
+      "manifest": "work/rr_pair_diffeq_v1_20261013/pair.json",
+      "manifest_sha256": "b68101019cff079807d0da21c6620066f5fad43785652940a6f6e4f12f47a4e5",
+      "source_files_verified": 31,
+      "modes": {
+        "flat": {
+          "semantic_counters_identical": true,
+          "repeat_count": 5,
+          "native_qor": {
+            "legal": true,
+            "total_wirelength": 9285,
+            "critical_path_delay_ns": 7.66331,
+            "wirelength_delta_percent": 7.477717328394484,
+            "cpd_delta_percent": 0.6513241884387622
+          },
+          "counters": {
+            "schema": "dieroute.rr_golden.v1",
+            "mode": "flat",
+            "legal": true,
+            "execution": "serial_cpp_reference",
+            "board_result": false,
+            "iterations": 3,
+            "tasks": 2073,
+            "overused_resources": 0,
+            "expanded": 7349510,
+            "edge_visits": 29700881,
+            "planned": 0,
+            "local_searches": 0,
+            "flat_searches": 2647,
+            "reserved_resources": 0,
+            "aborted_reservations": 0,
+            "committed_corridors": 0,
+            "repairs": 0,
+            "fallbacks": 0,
+            "committed_crossings": 380,
+            "overcapacity_reservations": 0
+          },
+          "median_cpu_wall_ms": 2640.94,
+          "final_unique_net_crossing_edges": 323,
+          "final_unique_net_crossing_destination_resources": 323
+        },
+        "hierarchical": {
+          "semantic_counters_identical": true,
+          "repeat_count": 5,
+          "native_qor": {
+            "legal": true,
+            "total_wirelength": 9791,
+            "critical_path_delay_ns": 7.80484,
+            "wirelength_delta_percent": 13.334876721842814,
+            "cpd_delta_percent": 2.510205261028786
+          },
+          "counters": {
+            "schema": "dieroute.rr_golden.v1",
+            "mode": "hierarchical",
+            "legal": true,
+            "execution": "serial_cpp_reference",
+            "board_result": false,
+            "iterations": 4,
+            "tasks": 2073,
+            "overused_resources": 0,
+            "expanded": 31141492,
+            "edge_visits": 140214635,
+            "planned": 3759,
+            "local_searches": 3960,
+            "flat_searches": 131,
+            "reserved_resources": 2720,
+            "aborted_reservations": 2318,
+            "committed_corridors": 201,
+            "repairs": 1159,
+            "fallbacks": 131,
+            "committed_crossings": 332,
+            "overcapacity_reservations": 0
+          },
+          "median_cpu_wall_ms": 10372.9,
+          "final_unique_net_crossing_edges": 283,
+          "final_unique_net_crossing_destination_resources": 283
+        }
+      }
+    },
+    {
+      "version": 2,
+      "manifest": "work/rr_pair_diffeq_v2_20261013/pair.json",
+      "manifest_sha256": "e216538eba6acfb7d5f0e6e7ae1d82127574d3a99e0e5af8ffbaa50f93fbce6d",
+      "source_files_verified": 31,
+      "modes": {
+        "flat": {
+          "semantic_counters_identical": true,
+          "repeat_count": 5,
+          "native_qor": {
+            "legal": true,
+            "total_wirelength": 9285,
+            "critical_path_delay_ns": 7.66331,
+            "wirelength_delta_percent": 7.477717328394484,
+            "cpd_delta_percent": 0.6513241884387622
+          },
+          "counters": {
+            "schema": "dieroute.rr_golden.v1",
+            "mode": "flat",
+            "legal": true,
+            "execution": "serial_cpp_reference",
+            "board_result": false,
+            "iterations": 3,
+            "tasks": 2073,
+            "overused_resources": 0,
+            "expanded": 7349510,
+            "edge_visits": 29700881,
+            "planned": 0,
+            "local_searches": 0,
+            "flat_searches": 2647,
+            "reserved_resources": 0,
+            "aborted_reservations": 0,
+            "committed_corridors": 0,
+            "repairs": 0,
+            "fallbacks": 0,
+            "committed_crossings": 380,
+            "overcapacity_reservations": 0,
+            "structurally_pruned_portals": 0
+          },
+          "median_cpu_wall_ms": 2590.48,
+          "final_unique_net_crossing_edges": 323,
+          "final_unique_net_crossing_destination_resources": 323
+        },
+        "hierarchical": {
+          "semantic_counters_identical": true,
+          "repeat_count": 5,
+          "native_qor": {
+            "legal": true,
+            "total_wirelength": 9965,
+            "critical_path_delay_ns": 7.88315,
+            "wirelength_delta_percent": 15.348998726704476,
+            "cpd_delta_percent": 3.538743216193918
+          },
+          "counters": {
+            "schema": "dieroute.rr_golden.v1",
+            "mode": "hierarchical",
+            "legal": true,
+            "execution": "serial_cpp_reference",
+            "board_result": false,
+            "iterations": 13,
+            "tasks": 2073,
+            "overused_resources": 0,
+            "expanded": 3899951,
+            "edge_visits": 15967953,
+            "planned": 2900,
+            "local_searches": 3270,
+            "flat_searches": 0,
+            "reserved_resources": 740,
+            "aborted_reservations": 0,
+            "committed_corridors": 370,
+            "repairs": 0,
+            "fallbacks": 0,
+            "committed_crossings": 370,
+            "overcapacity_reservations": 12,
+            "structurally_pruned_portals": 14623980
+          },
+          "median_cpu_wall_ms": 1905.06,
+          "final_unique_net_crossing_edges": 283,
+          "final_unique_net_crossing_destination_resources": 283
+        }
+      }
+    }
+  ],
+  "checks": [
+    {
+      "command": [
+        "ctest",
+        "--test-dir",
+        "build",
+        "--output-on-failure"
+      ],
+      "returncode": 0,
+      "log": "work/rr_verification_v2_20261013/ctest.log",
+      "sha256": "b929ec6f772ac7360aa60beb0af976dccd9b39ccc58ecf1f8528f5fe2a619580"
+    },
+    {
+      "command": [
+        "./build-sanitized/rr_backend_tb"
+      ],
+      "returncode": 0,
+      "log": "work/rr_verification_v2_20261013/asan_ubsan.log",
+      "sha256": "d2f3003cf8701351d688e3b1693854771669e2df8d78f9ad274e5ff53e027387"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check",
+        "--",
+        "."
+      ],
+      "returncode": 0,
+      "log": "work/rr_verification_v2_20261013/diff_check.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "limitations": [
+    "Serial candidate-local RR reservation journal only; concurrent shadow coherence remains open",
+    "Intermediate negotiated overuse is allowed and counted; native final capacity is checked",
+    "VPR model crossing resources are not commercial physical SLL measurements",
+    "v2 reduces expansions but fails QoR and takes 13 iterations",
+    "Fixed criticality and a single development benchmark; held-out cohort, timing mode, HBM/RTL, board and paper pending"
+  ]
+}

@@ -1,0 +1,571 @@
+{
+  "status": "pass",
+  "scope": "CPU four-color selection at fixed baseline layout and feedback; includes C++ IPC, selected audit and layout verification; excludes initialization, feedback parsing, VPR and layout changes",
+  "cpu_affinity": [
+    31
+  ],
+  "platform": "Linux-5.15.0-119-generic-x86_64-with-glibc2.35",
+  "repetitions": 5,
+  "warmups": 1,
+  "cases": [
+    {
+      "case": "diffeq",
+      "blocks": 202,
+      "samples": [
+        {
+          "repetition": 0,
+          "order": [
+            "python",
+            "cpp"
+          ],
+          "python": 19.07850510813296,
+          "cpp": 3.475455956533551
+        },
+        {
+          "repetition": 1,
+          "order": [
+            "cpp",
+            "python"
+          ],
+          "cpp": 3.412951311096549,
+          "python": 19.073719238862395
+        },
+        {
+          "repetition": 2,
+          "order": [
+            "python",
+            "cpp"
+          ],
+          "python": 19.12990277260542,
+          "cpp": 3.433288076892495
+        },
+        {
+          "repetition": 3,
+          "order": [
+            "cpp",
+            "python"
+          ],
+          "cpp": 3.4198806546628475,
+          "python": 19.092986589297652
+        },
+        {
+          "repetition": 4,
+          "order": [
+            "python",
+            "cpp"
+          ],
+          "python": 19.23141914792359,
+          "cpp": 3.4569232389330864
+        }
+      ],
+      "python_median_s": 19.092986589297652,
+      "cpp_median_s": 3.433288076892495,
+      "median_wall_speedup": 5.561137359198507,
+      "exact_audits_and_stats": true
+    },
+    {
+      "case": "tseng",
+      "blocks": 237,
+      "samples": [
+        {
+          "repetition": 0,
+          "order": [
+            "python",
+            "cpp"
+          ],
+          "python": 7.356972616165876,
+          "cpp": 1.0033463966101408
+        },
+        {
+          "repetition": 1,
+          "order": [
+            "cpp",
+            "python"
+          ],
+          "cpp": 1.0248811095952988,
+          "python": 7.397943960502744
+        },
+        {
+          "repetition": 2,
+          "order": [
+            "python",
+            "cpp"
+          ],
+          "python": 7.419580392539501,
+          "cpp": 1.009514145553112
+        },
+        {
+          "repetition": 3,
+          "order": [
+            "cpp",
+            "python"
+          ],
+          "cpp": 1.0176756270229816,
+          "python": 7.499748965725303
+        },
+        {
+          "repetition": 4,
+          "order": [
+            "python",
+            "cpp"
+          ],
+          "python": 7.474021915346384,
+          "cpp": 1.0173714011907578
+        }
+      ],
+      "python_median_s": 7.419580392539501,
+      "cpp_median_s": 1.0173714011907578,
+      "median_wall_speedup": 7.292892628842754,
+      "exact_audits_and_stats": true
+    },
+    {
+      "case": "apex2",
+      "blocks": 173,
+      "samples": [
+        {
+          "repetition": 0,
+          "order": [
+            "python",
+            "cpp"
+          ],
+          "python": 13.47228580340743,
+          "cpp": 3.9913084991276264
+        },
+        {
+          "repetition": 1,
+          "order": [
+            "cpp",
+            "python"
+          ],
+          "cpp": 3.995353603735566,
+          "python": 13.40534457191825
+        },
+        {
+          "repetition": 2,
+          "order": [
+            "python",
+            "cpp"
+          ],
+          "python": 13.474886029958725,
+          "cpp": 3.9767240080982447
+        },
+        {
+          "repetition": 3,
+          "order": [
+            "cpp",
+            "python"
+          ],
+          "cpp": 3.988828983157873,
+          "python": 13.473403269425035
+        },
+        {
+          "repetition": 4,
+          "order": [
+            "python",
+            "cpp"
+          ],
+          "python": 13.602266639471054,
+          "cpp": 4.123584233224392
+        }
+      ],
+      "python_median_s": 13.473403269425035,
+      "cpp_median_s": 3.9913084991276264,
+      "median_wall_speedup": 3.3756857612910385,
+      "exact_audits_and_stats": true
+    }
+  ],
+  "files": [
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/cohort_native_baseline_diffeq_2026-09-29/diffeq.place",
+      "sha256": "e784bc6695bdcc5fdba27400de277395ff7406f06680ab6624562596a623120c"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/cohort_native_baseline_diffeq_2026-09-29/diffeq.route",
+      "sha256": "f91ff4bf9aa2203edc616462c81fc85971d3e9d312a3847f8214bd43887dd761"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/cohort_native_baseline_diffeq_2026-09-29/rr_graph.xml",
+      "sha256": "681e63aafaea6e3fa596d74f5a6d836d351ddff7e63679f1d236b4fe698834d6"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/cohort_native_baseline_diffeq_2026-09-29/report_timing.setup.rpt",
+      "sha256": "a01328eaa65b3cebb0d9ca54d868564a92684eae50cf73aa662eea628a2ddfef"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/cohort_native_baseline_diffeq_2026-09-29/diffeq.net",
+      "sha256": "1ceb244ed8861bbeaecdcc961ca48c131ce5182dfc279a074854ab5fcbaab043"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/cohort_fresh_input_diffeq_2026-09-29/contract/blocks.jsonl",
+      "sha256": "34331d8e9595e2bd5ad8b10249c92c0599ba10b076554ad69aef5bf44c51bfb0"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/cohort_fresh_input_diffeq_2026-09-29/contract/manifest.json",
+      "sha256": "82cbb2e473d7356cddb6c3d11883f0360e7a80933894bd6cc509c8994f50c832"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/cohort_fresh_input_diffeq_2026-09-29/contract/nets.jsonl",
+      "sha256": "d6a172557087ba58c67de9518d8020c2d301f8963210f49dd6532818ebab401f"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/cohort_fresh_input_diffeq_2026-09-29/contract/reference_validation.json",
+      "sha256": "6382bab24feac80945dcfb2109afa749391cf1c032ec3124ea5a316b15a63a4e"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/cohort_fresh_input_diffeq_2026-09-29/contract/sites.jsonl",
+      "sha256": "0e73bdbfb6b08e9fd04b271f57d127dc7859615b03f99d750b8814ef6c48c53a"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/tseng/baseline/tseng.place",
+      "sha256": "4a5ddde79b84734edcd841eca4a6827219e6bcfc8457df7be91d820c168009d9"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/tseng/baseline/tseng.route",
+      "sha256": "690fdd0b423c1a88f5a414d99b46cd0b2a4aefaeb600c1bea08e1ae2c70ca6ec"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/tseng/baseline/rr_graph.xml",
+      "sha256": "cbcf784b9d3fef1efdc4d3527320d9fca5c73e4175cb162c167d1f0fc39ef483"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/tseng/baseline/report_timing.setup.rpt",
+      "sha256": "0a3dae4214876409fbf2d2ac58e4092cfe680b3417b8d7eabfcb6cddcdb4d371"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/tseng/baseline/tseng.net",
+      "sha256": "e0b1f26cdc9006f8a511a85831aebac6be3052d9b76812b7c6b6d7cfae854939"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/tseng/inputs/contract/blocks.jsonl",
+      "sha256": "b24f07b225b30cc784840305eabb2bccfff34ca692204cf0b99ec143416c4231"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/tseng/inputs/contract/manifest.json",
+      "sha256": "a9aa3047d61a0f219cfd34377405ccd58451fba8ceac5eb65eac262802f56f34"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/tseng/inputs/contract/nets.jsonl",
+      "sha256": "c8e185ecf15da0ed647c33b5c0725c91c7ae42bcfa341165b71401d8f24d057a"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/tseng/inputs/contract/reference_validation.json",
+      "sha256": "804d70ce0f13a41bb4b478e41a40b02635f2d49a43fa98e812ad4f6a987df3e7"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/tseng/inputs/contract/sites.jsonl",
+      "sha256": "88a97cd78aa2ce1307c16b9c5bb4a3477bf162c41f725d63f05e0f7fe3db5984"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/apex2/baseline/apex2.place",
+      "sha256": "823b7c7ce2033e56f8265c6ce0825d16e2abf9c8c9e522e300969cea3ed20d3a"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/apex2/baseline/apex2.route",
+      "sha256": "b4dfd2353938aea1499e028375db451a37ea46a246e76853639f0a2d5f396c6d"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/apex2/baseline/rr_graph.xml",
+      "sha256": "a0d70a8b089612086ce1b692a9b7253eabec3fab66ccd904cf19940c5e1bd9a2"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/apex2/baseline/report_timing.setup.rpt",
+      "sha256": "b3ad6b69b3c5eb4cd68fba5485862c9ced14d4152eb1b3c88b51db8c4f3b95a0"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/apex2/baseline/apex2.net",
+      "sha256": "108ba6b040c3886dbe4b67e7826ed1b9556b5eda40a978032ae7a0b1ccf84162"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/apex2/inputs/contract/blocks.jsonl",
+      "sha256": "c7dd4f94cfdea7ad379aeca03996d2744f4f12c4ed3d884eb72319bd3645126e"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/apex2/inputs/contract/manifest.json",
+      "sha256": "5d4c6bfe1a3227cf1dd69df851a63b31e125f126142ff5933ccad68dfa1dda44"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/apex2/inputs/contract/nets.jsonl",
+      "sha256": "213459d660461e437def8beb9feaea53d18ed67b9ed6fd1390a79c4426f3aa1b"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/apex2/inputs/contract/reference_validation.json",
+      "sha256": "9715fd82c8ede8b99978e7d05746b5276bf98d0c01d663b42556a4456408f535"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/apex2/inputs/contract/sites.jsonl",
+      "sha256": "46140d95d2b7a6d062220edfdf3748e4ca5b824e24a4023e5940893b12a70a05"
+    },
+    {
+      "path": "/tmp/tileplace_state_server_fast",
+      "sha256": "566c481b9471d2119a6d9c1e92af7dc113e1293fefa6f312b8b7eb623b0ce9e5"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/cpp_snapshot/transactions.hpp",
+      "sha256": "08236ebcf821b64914fbc65ce47c2595c36bded187ce600a8087b13680437208"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/cpp_snapshot/net_cost.hpp",
+      "sha256": "7b7e46b367838fa35bbbf18a35ad76ed2c1f13dfc722a63ba849e5d7de32b79c"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/cpp_snapshot/placement.hpp",
+      "sha256": "ee20e173304a43f55d19e1413f68327fae751a02b7bf54a54e98b7af7dd8fb6d"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/cpp_snapshot/proposals_fast.hpp",
+      "sha256": "1bbda2ce6bf1d6cca70d887f4f5d71326ba80a6f8a2a2a925ca4d38701bcbe33"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/cpp_snapshot/search_state.hpp",
+      "sha256": "010e2b2c488a3d733c3b186d0b0b4022b4f8801d314e36b5684cdf542e34fd6b"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/cpp_snapshot/pressure_snapshot.hpp",
+      "sha256": "3ee055e9bd1eb9990e8185c32e4a084005caa809267ccfa9b176d8b97639263d"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/cpp_snapshot/proposals.hpp",
+      "sha256": "6974babece9681027f2652a2fcad495e99e196b06cbf63bfa3dd03b8f9376b8e"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/cpp_snapshot/score.hpp",
+      "sha256": "9aa2c1bb641972ea004d2fc85b216a6c1140f9069f7c037e7bbd3e9495dbfc91"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/cpp_snapshot/state_server_fast.cpp",
+      "sha256": "7d91dc7dd6b5d5521b79ee7aec4a92ecc23bf0507ce62464daecb947e8c4c680"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/cpp_snapshot/fast_adapter.py",
+      "sha256": "73b70c0de95a3d40558024a2fd3628ca79d751c650197205536ae70d249ede8f"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/cpp_snapshot/persistent_adapter.py",
+      "sha256": "b74592f203e4da17bbd971e635c5411e162e796fb9a00972ede1f970087ca7db"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/cpp_snapshot/compare_proposals.py",
+      "sha256": "e24e2f4b4ed627b52f5857e5409884791d2ea50525caea8cc71e9f1e43142527"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/cpp_snapshot/benchmark_color_selection.py",
+      "sha256": "a0a2c584c3eda5faac06b15e87658bb79a56ed244e7726483cf3bd5fe310a76d"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/audit_archived_search.py",
+      "sha256": "6720ec9fb253a6d527a4cd6928e4767dff62642f605a559fc015241b48deab1a"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/audit_cohort_input_pilot.py",
+      "sha256": "12b07bad19568616c00c47b962484391f8b9d88781811ca6e22b732d7e928552"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/audit_fixed_development.py",
+      "sha256": "c91e541350cbd5ecb8f1b099f3f015550849586976f6775e94f1f13c615825b9"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/audit_frontier_ablation.py",
+      "sha256": "8a34f7b11f0d8017e5f7e5b5f59306ccd3f4938125206c880fe441028b3b3fcc"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/audit_new_cohort.py",
+      "sha256": "df015760f65e0d9d246b2c718bf39cb2d673ce4e3251d2b15b1c3817cbd83c7d"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/audit_v4_timing_parser.py",
+      "sha256": "686a9e39dd379154d2456433522373d2630b341ffe6958d74ee2b640d8aff554"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/benchmark_tileplace_research.py",
+      "sha256": "8cb86050cdd4cd7b92368b2c3b2030f608dedcf8638e4565787e9ef73af631cd"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/capture_vpr_macros.py",
+      "sha256": "9909c4c532020f6e90c1034801399a3de14e1fcc91d23d46afc3d0701b741b50"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/finalize_fixed_development.py",
+      "sha256": "bd6ca1693ad0ab1e5231fbf73357c6ac0c1496b7ff88b2cd083e56286e1c3ac2"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/paths_to_proxy_timing.py",
+      "sha256": "7550998dd590b6fafe0bb7952d9bd8c7fb5793ef8da4fe23584fe072fcd878df"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_constrained_qor_matrix.py",
+      "sha256": "7f80b3d02013e0f581371ba13a3fd50d7c1efc816de0b874c638faf938b73722"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_correctness_matrix.py",
+      "sha256": "10497661897dffbca82c4fc6f489eca2c1d0e26bbfb9de32da2ae3017a9886e1"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_cpu_runtime_sixcase_matrix.py",
+      "sha256": "acd23522fc5cdecc4b7266ddda45c8212ae5bdc5a6e314b4e2a09d210cdeeeeb"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_external_constraint_matrix.py",
+      "sha256": "2f62279ffa2e71fbab46c3022446eb3f5fa94dbfce19790a978a54016d94acf6"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_new_cohort_protocol.py",
+      "sha256": "0d3b60a278b938fe653bb5bc632e23d7477fe245f3e4a4f257ddc95259b2f276"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_new_cohort_results.py",
+      "sha256": "5347f4e31f483b53ee62160d69e6b476c5b7335697773b73d06cfd4858d84814"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_oracle_rr_cache.py",
+      "sha256": "73bd10f4adfa544efce60c943f18d158b590d6e3a3baf99da5fee3c3511735be"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_page_incremental_probe.py",
+      "sha256": "e8446fa222dd45fab5d5a0312873aa70dc96085cb26d28431285f23a0555b4b0"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_page_size_ablation.py",
+      "sha256": "5d9ffcd7f9c71862fc665243c916ded998f0b54ccbf8fbeae6bd9c3a492da6c5"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_parallel_proposal_matrix.py",
+      "sha256": "4532dedf34bb5ddd476e260878d292fcce41b19f8ae1de5fe308ce8d0abe03ee"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_reference_timing_input.py",
+      "sha256": "9f80a16c934ce4b0f513852350d85570ad31d4f340fa8fd9d19af4ef5dc29451"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_route_feedback.py",
+      "sha256": "eaf3198dadf5d7c860a42b0134872f3553028ea74d82b9a46294e48af58c3353"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_runtime_ablation.py",
+      "sha256": "e59f41335f7ee550c486bc62aaa1289723d5d211fc75c8af709d7a3317ea6868"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_tileplace_blif_case.py",
+      "sha256": "2c775107ded42276db574f74a21581221f8ff269ba829ced7d159c3badfe7b98"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_tileplace_v4_development_matrix.py",
+      "sha256": "d32701dcbb9d000cb9a56b1c8d0e3764014e1daa696f08f777aa1e7e5ce8f7cb"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_tileplace_v4_heldout_matrix.py",
+      "sha256": "43691cfbd17cc6dc0203afc817fa1eac183182428da616dc688907e35cc4eee4"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_timing_extended_matrix.py",
+      "sha256": "c7b81508df074bf761eec87f74f864e0f737f5c07fe79a1665356dbfbdbba252"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_timing_feedback.py",
+      "sha256": "ff830e3d30bfaf3d48517a8c547f64d76ee76e77efb8225ee0bad64689639627"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_timing_guard_ablation.py",
+      "sha256": "735a8a418c6fb0c8b9bf74297debb3cc4ef85e71ad9baf7cd600e4e1c0c52ebb"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_timing_macro_extended_matrix.py",
+      "sha256": "1d0aa7c7f69ae954f6eb44c9de7b6bd4ae26bff83d261f7c56de78c4797fabe1"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_timing_multicase_matrix.py",
+      "sha256": "a7d35056d8d284268add3e1cabe9860f822f16501b4d20243080512f467a9647"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_timing_titan_extended_matrix.py",
+      "sha256": "5c7160dbad1f30d48e520824c72b9454a7783ddc30365fe9478c2c1355d8fc96"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_timing_titan_stereo_extended_matrix.py",
+      "sha256": "25caa788801ff7f2f3a12c78a0b67f96446edd8dda8fce0b10226412f1f91063"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_titan23_stereo_input_capture.py",
+      "sha256": "0be245a8d03d6586f0b9cd3593b8c406c24ca5d9588c6c226e2e90a043e55cd2"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_v4_generic_timing_summary.py",
+      "sha256": "50e2b42afd9f16110d08bba6eb739eaf2494a2055f64022a77383da8a983f63d"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_v4_oracle_cost_audit.py",
+      "sha256": "152f1db9ad73fe2bba2d5101feada12f5f2771b6efff9eca6180d29206792378"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_v4_prefix_timing_comparison.py",
+      "sha256": "32354aa7227f37c8817ce388aeda3a06d9a3b6a4d975917a72b90c2caacf859d"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_vpr_placement_baseline_matrix.py",
+      "sha256": "c7b503c401d6c7c02f55254008057f4c0c5b4551445f3251bc80475672716aeb"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/record_native_baseline.py",
+      "sha256": "8d40a08b361da563df5463881284ce4573a8e21f7353cca1e56d336fab5a9154"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/run_external_constraint_case.py",
+      "sha256": "42b62fc4179fb87ccafa24b3ba81abfcd6ddd5d8b402805d8570fde074ebb48c"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/run_external_constraint_probe.py",
+      "sha256": "f94614e86fc606f1f04032f072edcd28f1ac31e5872cca5c674e38723285af09"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/run_fixed_development.py",
+      "sha256": "de4201b9ae5bdf06f3707af1116c20722191304b7c29499b0d8feecb5e4512d0"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/run_new_cohort.py",
+      "sha256": "d65863b59539f8fbdecb0487b929eba5c31b843915c32d540ad9694fa32767c5"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/run_real_legalization_probe.py",
+      "sha256": "a3bb0df85d35a9e4677cf698f073e336f4fa93e8e9f0f1c059dddc6f1c3e0142"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/run_tileplace_v2.py",
+      "sha256": "bfbe7f38db1f37ab98416fcd6c2c79176c2bcfa428ad3fb6b02988ce61a0cfcf"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/run_v4_timing_protocol.py",
+      "sha256": "b84785c6f59297bbfb88685bfa0a735395b165d4f7180840395b5a219589e24d"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/run_vpr_closure.py",
+      "sha256": "012cc3570765f2abd420c5144ee066e1161c8338efd67e2b6cc592c06940da34"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/run_vpr_placement_baseline.py",
+      "sha256": "562304add41abf9106e3c7323ac9d37faa061834e1594d38c76562b7c621da40"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/run_vpr_placement_baseline_suite.py",
+      "sha256": "fff350ccbda6a89ca8dc45f46b90ac1a1dedf7e8f3d315862e994b72a5887854"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/tileplace_provenance.py",
+      "sha256": "4952b986d2fd1d22261c3045e5fda54462b4dfd1af5c84c2d7831c06c579af43"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/tileplace_research.py",
+      "sha256": "2441c4b8c8e01ed50371e1fc9749cec4fab23f732203bcd92c914db178f5c8e3"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/tileplace_v2.py",
+      "sha256": "bf7a24da1a342175e4e14096d7f21e6611fd362e634aa0d0e105d82ffad58f9a"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/tileplace_vpr.py",
+      "sha256": "355535e49a0ec47b485e8c374e34fa35ee323fbf406b731b920ca40ab582d364"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/verify_archived_implementation.py",
+      "sha256": "575bffa74595db655da2f6b4589ebdf12bf9df825c8660744d6e1cc0ccf075b3"
+    }
+  ]
+}

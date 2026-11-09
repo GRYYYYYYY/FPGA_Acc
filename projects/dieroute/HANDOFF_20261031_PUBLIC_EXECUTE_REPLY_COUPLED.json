@@ -1,0 +1,58 @@
+{
+  "observed_ns": 1793447379534582173,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_WRITER_ADAPTER_COUPLED.json",
+    "sha256": "a5d918310a10a3f506a306b6242c4487dfc1e1f3a783d50a3572ba2e73bffa09"
+  },
+  "progress": {
+    "report": "work/resident_public_execute_reply_coupled_20261031/review.json",
+    "report_sha256": "05b48b04b9690687925fadab6bac7d37ce007aaa811d88c09f9d74f04522c6ea",
+    "finish_sampling_review": "work/resident_public_execute_reply_coupled_20261031/finish_sampling_review.json",
+    "finish_sampling_review_sha256": "10855d413c3e8ea5636b618e9104bb2985af11f550bbc4977b482faf51d2caad",
+    "consistency_review": "work/resident_public_execute_reply_coupled_20261031/consistency_review.json",
+    "consistency_review_sha256": "ffefc3ccfac469f5c6bf25b43b1e18b3267fc771c6d277515eed9abfe6788471",
+    "final_review": "work/resident_public_execute_reply_coupled_20261031/final_review.json",
+    "final_review_sha256": "8c2e4a92e475b20652dd1002eb41f711d87ab08c72326296960ac0723c417cef",
+    "source_event_calls": 192,
+    "source_event_edges": 30287,
+    "new_feasible_UNSAT_queries": 13,
+    "status_counts": {
+      "0": 48,
+      "1": 96,
+      "3": 24,
+      "4": 24
+    },
+    "get_contract_calls": 72,
+    "full_public_host_roundtrip_proved": false,
+    "new_native_accepted_cases": 0,
+    "scope": "192retained-state source-event calls now execute actual public-read parent FSM1/2/3/4/5/8/9/10/11/325/326, source zero/field helpers and their actual flow clocks, finish current metadata/return-pregs, selected top reply states and source writer/flow/write-adapter. No injected execute terminal9outputs or precomputed replypackets. Independent protocol-priority/byte oracle checks48success/96invalid/24unavailable/24stale at externalAW/W/B; all192execute completions are current,72acceptedget contracts invoke with actual kind/index and delayed done. Onecommonreset; helper/top/writer/adapter state persists and topdone cleared only by modeled continueack. Command16words at executeports, published graph metadata per command, and get child success/data/delay remain explicit admitted contracts; actual get/encodedmemory/install/AXILiteacquisition not jointly simulated. Upstream top2..73 admission and acceptedsoftwareack/correctordered successful externalresponses/sourcecomponentrefinement/binaryreset/noabort remain premises. Finite source-event evidence is not universal fullparent/RTL/X/native/timing/board or fullhost roundtrip proof. Pure finish output computation is skipped only in8public states where13feasibleBV source-clock queries prove all6metadataregisters hold regardless of finishvalues;5samplingstates still evaluate actual finish source. Original90CPU/1GiB and192cases preserved. Initial loader name collision and two90CPUguard exits retained; profiler first3diagnostic is not an additional acceptance cohort. New13queries concern sampling only, not whole-source correctness.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v283_20261031/matrix.json",
+    "sha256": "38c86dece675d7261c3699b252e408728a9f44b018f305de8ce4415bbf294952"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v283.json",
+    "sha256": "a587d8c2f4b6522f35e56d7d4e65a408451f33d47ec70a2c49c303c3771ce47e"
+  },
+  "current_runtime_observation": {
+    "path": "work/resident_public_execute_reply_coupled_20261031/runtime_observation.json",
+    "sha256": "b898483adea47c6408f1145a0605d2ac818dfbeb6ff437c650acddcaffe67be3",
+    "scope": "Fresh actual identities; no native acceptance; Owner supervisor failure retained."
+  },
+  "previous_goal_turn_classification": "progress_and_verified_wait_v282",
+  "current_goal_turn_classification": "progress_and_verified_wait",
+  "next_action": "Remove remaining admitted boundaries in order: source command512/controladapter+reader acquisition into execute16ports; reverse kind3 get/selector actual encodedword+prefix memory into delayedgetcontract interface. Published graph shape/session/ready still requires actual complete install/prepare evidence; no substitution by synthetic successfulget. Preserve source done-latch/continueack semantics and all external successful response/binary/reset/object premises. Review any native actual terminal and independent proofs first, retain Owner quota supervisor failure/missing guard+negative, no restart/adoption. All eight gates and strictcapacity/async/mapping/migration, representativeQoR/ablations,300MHz/board/artifact/paper requirements remain open.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "owner_supervisor_failure_retained": true,
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending;820separate transitive/466root gaps;paper unchanged.",
+  "research_complete": false
+}

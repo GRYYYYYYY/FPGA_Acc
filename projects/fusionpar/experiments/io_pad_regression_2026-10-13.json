@@ -1,0 +1,55 @@
+{
+  "schema": "FUSIONPAR_IO_PAD_NATIVE_REGRESSION_V1",
+  "pass": true,
+  "same_candidate_state_sha256": "209d86ecb369b06cf069783961e54a9fd665859b8d4bbf8e9448533d272e3e31",
+  "before_native_legal": false,
+  "after_native_legal": true,
+  "after_quality": {
+    "wirelength": 9548,
+    "cpd_ns": 5.96812
+  },
+  "fix": "Native Pad nodes omit logical pin names, using physical I/O types learned from baseline Pad descriptions",
+  "evidence": [
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/alu4_tree_reuse_development_v1/interleaved_tree_reuse_0/validation_3/candidate.state",
+      "sha256": "209d86ecb369b06cf069783961e54a9fd665859b8d4bbf8e9448533d272e3e31"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/alu4_tree_reuse_development_v1/interleaved_tree_reuse_0/validation_3/native.json",
+      "sha256": "0780c0c960d61f5f2b5681b90167029f5a6c4c0510843ac93b359c1bbf5c454e"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/alu4_tree_reuse_development_v1/interleaved_tree_reuse_0/validation_3/native/vpr_analysis.stderr",
+      "sha256": "b3b6436edffa4a73d6f74c923ef245259bfd55eee7c70cd0243037a87f6403ea"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/io_pad_revalidation_v1/validation_v2/candidate.state",
+      "sha256": "209d86ecb369b06cf069783961e54a9fd665859b8d4bbf8e9448533d272e3e31"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/io_pad_revalidation_v1/validation_v2/validation.json",
+      "sha256": "7ff9427ade42e49ebb5b4509293541076609be1f6786bd2ea4e06b2490ed86ec"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/io_pad_revalidation_v1/validate_v2.process.json",
+      "sha256": "746421ee6d122dcab6144dd0db330f40295c1e095129b91d58ee56163bc71d95"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/validate_candidate.py",
+      "sha256": "05f1393ceb68bc01774e1b73036c73678e19d598d589c67015f3b89f4a590fdd"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/io_pad_revalidation_v1/validation_v2/native.json",
+      "sha256": "7da661342b19c63c3d5e369ad201be9eb96d3fd93e61982db259acfca9e0e5c4"
+    }
+  ],
+  "identical_native_inputs_except_route_serialization": {
+    "vpr_sha256": "a90dc1b3380ebda705e85f176db0cc3d6be1b71ab9ee887db819febc8b62bafc",
+    "arch_sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179",
+    "circuit_sha256": "2e83026772493ee6ed422873be2197a01a81be9296f72b9fe0ada7d268599b50",
+    "net_sha256": "103c9ee7888c6dd9997e499abf1bd8f0e193b6e481e4462baf9980bb0e8badd4",
+    "place_sha256": "3dc9ec1260c23b467cce921657e7a891ae02f9e38562a7c60680327f9fd6d850",
+    "rr_graph_sha256": "a74c4f591beed4abf8dcb8dc7a79cc583f2cffe2fd0e2803a86f8e57c4dce34f",
+    "sdc_sha256": null
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "schema": "dieroute.edge_identity.v1",
+  "scope": "explicit CPU PR-ABI backend/controller extension; not a production HLS ABI or commercial design qualification",
+  "activation": {"DIEROUTE_EDGE_IDENTITY": 1, "DIEROUTE_COST_BITS": 64},
+  "csr_edge_id": "u32 index into frozen PR-format Edge array, including distinct parallel arcs",
+  "native_edge_ref": {
+    "file": "topology_prefix.edge_ref",
+    "encoding": "one little-endian u32 (catalog_pip_id << 1) | reversed per CSR edge",
+    "constraints": "native PIP catalog IDs below 2^31; unique key per directed CSR edge; reverse only for bidirectional PIPs",
+    "namespace": "the immutable native PIP catalog frozen with this graph, not a universal PIP ID; subset catalogs can renumber the full-device IDs",
+    "trust_boundary": "packer validates native endpoint membership/direction; host checks length and uniqueness; native DB verifier resolves selected PIPs independently. Host alone cannot authenticate catalog provenance. Freeze all graph, sidecar and catalog SHA-256 values together."
+  },
+  "api": {
+    "EdgeBatchResult": "KernelBatchResult plus edge_paths aligned one-to-one with candidates; one CSR edge per candidate branch child",
+    "RRProposal": "explicit requires_edge_identity plus branch edge_path; legacy commit rejects edge-required proposals",
+    "WidePathfinderResult": "task_edges aligned with all routed tasks (source-to-sink including shared prefix); tree_edges contains one selected edge per net/tree child",
+    "timing": "EdgeTimingAnalyzer sees complete task edge paths; tree seed delay follows selected edges; host rejects the legacy node-only external timing command in edge mode"
+  },
+  "path_edges_csv": ["task_id", "path_index", "parent", "child", "edge_id", "native_pip_key"],
+  "tree_edges_csv": ["net_id", "parent", "child", "edge_id", "native_pip_key"],
+  "non_native_output": "native_pip_key is empty; CSR edge identity remains explicit",
+  "route_hash_schema": {
+    "name": "task_nodes_and_csr_edges_v1",
+    "encoding": "existing byte-wise FNV-style hash_word(u64), initial 1469598103934665603 and multiplier 1099511628211; per task in input order: task ID, routed flag, node count, nodes, edge count, edges",
+    "precondition": "identical frozen graph/sidecar/catalog hashes and configuration; not comparable with legacy task_nodes_v1 hashes"
+  },
+  "transaction_path_hash": "same hash_word seed; attachment, candidate child nodes, selected branch edge IDs; legacy mode hashes remain unchanged",
+  "intra_node_slr_transition": "no extra edge, node, hop, delay or occupancy entry",
+  "validation": "selected edge must belong to parent CSR slice and terminate at child; task prefixes must agree with the selected net tree; stale resource reads checked before validation/replay; rejected current edge traces do not mutate authority",
+  "remaining": ["full protected/admissible commercial adjacency", "actual site-pin access semantics", "calibrated capacity and edge timing", "commercial edge-aware external timing adapter", "complete DCP route writeback and native QoR", "HLS/HBM implementation"]
+}

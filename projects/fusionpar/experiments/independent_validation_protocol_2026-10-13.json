@@ -1,0 +1,54 @@
+{
+  "schema": "FUSIONPAR_INDEPENDENT_INPUT_VALIDATION_PROTOCOL_V1",
+  "status": "preregistered_not_run",
+  "input_root": "../tileplace/experiments/tileplace_new_cohort_2026-09-29",
+  "selection_rule": "Every remaining design with baseline/baseline.json, inputs/contract/manifest.json and inputs/vpr_input.nodes after excluding the three FusionPAR development designs; no filtering on FusionPAR output or baseline QoR",
+  "development_exclusions": ["ex5p", "alu4", "misex3"],
+  "designs": ["apex2", "des", "s38584.1", "seq", "spla", "tseng"],
+  "missing_contract_inputs": ["ex1010", "s298", "s38417"],
+  "repeats": 5,
+  "tracks": [
+    {
+      "id": "shared_staged_vs_interleaved",
+      "modes": ["sequential_shared_tree_reuse", "interleaved_tree_reuse"],
+      "attempts": 3,
+      "budget_semantics": "Same requested primary count; staged combines legal nonoverlapping moves into a batch while interleaved reselects after each commit. Actual native evaluation and moved-block counts must be reported; this is not an equal-native-evaluation comparison."
+    },
+    {
+      "id": "equal_evaluation_feedback",
+      "modes": ["interleaved_tree_reuse", "interleaved_tree_feedback"],
+      "attempts": 9,
+      "budget_semantics": "Primary and repair both consume the nine-evaluation budget; require both modes to reach nine before labeling equal evaluations. Candidate exhaustion retained and reported."
+    }
+  ],
+  "fixed_policy": {
+    "rr_export_backend": "xml",
+    "tree_timing_weight_q": 0,
+    "timing": "Native full connection criticality at initial state and each accepted commit",
+    "acceptance": "Strict native (WL, CPD) lexicographic improvement; both metrics <=102% original baseline",
+    "sketch": "bypass",
+    "repair": "Existing bounded failure-feedback repair; no per-design policy changes",
+    "start": "Original legal routed baseline, no pre-optimization by TP or FusionPAR"
+  },
+  "freeze_and_execution": [
+    "Bind all input artifacts, source inventory and native binaries before outcome inspection; preserve per-suite source copies and verify unchanged sources across the full cohort",
+    "Preflight only the supported converter/identity/contract boundary; preserve every failure without replacing a design or adapting the policy",
+    "Use the same XML backend and policy on every design and mode, including slower or unsuccessful runs",
+    "Run measurement subprocesses sequentially; complete all measurements before independent audits",
+    "Archive every host process, candidate, native certificate, timing update, failure and complete costs; charge full measured conversion to each sample and separately report build costs"
+  ],
+  "required_analysis": [
+    "Five-repeat full state/event/timing determinism and independent atomic-publication/native legality audits",
+    "Per-design legal final quality, strict-improvement counts, actual evaluations, moved instances, repair attempts, searches, node expansions and wall time",
+    "All initialization/conversion, candidate generation, native validation/STA, rejection and fallback costs retained; no sum of overlapping nested timers",
+    "Report coverage denominator of all six selected inputs, including unsupported and failed cases",
+    "No tuning after results; any algorithm change starts a new development phase and invalidates this cohort as untouched validation for the changed policy"
+  ],
+  "limits": [
+    "Independent of FusionPAR development outcomes, not a universally untouched dataset: these inputs have prior TilePlace provenance",
+    "Local routed-design refinement, not full P&R from packing",
+    "Homogeneous single-layer supported mapping boundary; unsupported input is a coverage failure, not zero runtime",
+    "Shared-stage and equal-evaluation controls isolate different questions; neither establishes superiority over all mature placers",
+    "No physical U280, HBM throughput, board power or FPGA speedup claim"
+  ]
+}

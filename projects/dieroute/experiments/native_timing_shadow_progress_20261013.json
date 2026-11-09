@@ -1,0 +1,316 @@
+{
+  "schema": "dieroute.native_timing_shadow_progress.v1",
+  "captured_utc": "2026-10-13T14:22:05.124616+00:00",
+  "research_status": "active_incomplete",
+  "previous_goal_turn": "no progress: dependency/status response only; this continuation revalidated terminal jobs, repaired and tested timing audit, independently verified state-view parity and archived evidence",
+  "implemented": [
+    "Paired read-only native bus-skew and four-corner net-delay query runner",
+    "Direction-preserving collection identity and numeric/coverage validation with adverse fixtures",
+    "Borrowed worker resource/cost views with immutable sparse boundary overlays",
+    "Boundary-only summary storage and independent frozen-workload parity audit"
+  ],
+  "timing": {
+    "schema": "dieroute.native_extended_timing_audit.v1",
+    "status": "passed",
+    "manifests": {
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_timing_original_v2_20261013/manifest.json": "3367acc34c4363478ab5a41313bda7ca92d775579e3539a266720a2d5cbeb516",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_timing_routed_v1_20261013/manifest.json": "edbc22a72a7f311d55c097594714b6b8fbd002102dc2fc295e3236890ad5ead6"
+    },
+    "auditor_sha256": "d066090ac7236042c78376ea1b1f9898f60211302d274b5aebed76487aaf989a",
+    "constraint_identity": "direction-preserving literal get_cells member multiset; exact text for other expressions; normalized numeric requirement; source position excluded",
+    "bus_skew": {
+      "constraints": 392,
+      "evaluated": 391,
+      "single_endpoint_no_comparison": 1,
+      "violations": 0,
+      "minimum_slack_ns": "1.700",
+      "all_coverage_and_reported_values_equal": true
+    },
+    "selected_nets": 70,
+    "logical_load_pins_per_mode": 307,
+    "native_delay_objects": 614,
+    "estimated_delays_accepted": false,
+    "net_delay_units": "ps",
+    "timing_path_units": "ns",
+    "net_delay_changes": {
+      "total": {
+        "FAST_MIN": {
+          "decreased": 102,
+          "increased": 165,
+          "unchanged": 40,
+          "min_delta_ps": "-608",
+          "max_delta_ps": "1388"
+        },
+        "FAST_MAX": {
+          "decreased": 105,
+          "increased": 162,
+          "unchanged": 40,
+          "min_delta_ps": "-796",
+          "max_delta_ps": "1748"
+        },
+        "SLOW_MIN": {
+          "decreased": 105,
+          "increased": 161,
+          "unchanged": 41,
+          "min_delta_ps": "-852",
+          "max_delta_ps": "1741"
+        },
+        "SLOW_MAX": {
+          "decreased": 103,
+          "increased": 164,
+          "unchanged": 40,
+          "min_delta_ps": "-1194",
+          "max_delta_ps": "2589"
+        }
+      },
+      "interconnect": {
+        "FAST_MIN": {
+          "decreased": 102,
+          "increased": 165,
+          "unchanged": 40,
+          "min_delta_ps": "-608",
+          "max_delta_ps": "1388"
+        },
+        "FAST_MAX": {
+          "decreased": 105,
+          "increased": 162,
+          "unchanged": 40,
+          "min_delta_ps": "-796",
+          "max_delta_ps": "1748"
+        },
+        "SLOW_MIN": {
+          "decreased": 105,
+          "increased": 161,
+          "unchanged": 41,
+          "min_delta_ps": "-852",
+          "max_delta_ps": "1741"
+        },
+        "SLOW_MAX": {
+          "decreased": 103,
+          "increased": 164,
+          "unchanged": 40,
+          "min_delta_ps": "-1194",
+          "max_delta_ps": "2589"
+        }
+      }
+    },
+    "targeted_paths": {
+      "original": {
+        "original_worst_min": {
+          "STARTPOINT_PIN": "level0_i/blp/blp_i/ss_hif/inst/pcie/inst/bd_39ab_pcie_0_pcie_4_0_pipe_inst/pcie4_0_512b_intfc_mod/pcie_4_0_512b_intfc_int_mod/pcie_4_0_512b_cq_intfc_mod/pcie_4_0_512b_cq_output_mux_blk/out_data_o_reg[72]/C",
+          "ENDPOINT_PIN": "level0_i/blp/blp_i/ss_hif/inst/pcie_axi_bridge_mgmt/inst/axis_cq_controller/gen_turbo.skid_cq_tdata_reg[72]/D",
+          "DELAY_TYPE": "min",
+          "CORNER": "Slow",
+          "SLACK": "0.006",
+          "DATAPATH_DELAY": "0.129",
+          "DATAPATH_LOGIC_DELAY": "0.061",
+          "DATAPATH_NET_DELAY": "0.068",
+          "REQUIRED_TIME": "1.837",
+          "REQUIREMENT": "0.000",
+          "STARTPOINT_CLOCK_DELAY": "1.714",
+          "ENDPOINT_CLOCK_DELAY": "1.957"
+        },
+        "original_worst_max": {
+          "STARTPOINT_PIN": "level0_i/blp/blp_i/ss_hif/inst/pcie/inst/bd_39ab_pcie_0_pcie_4_0_pipe_inst/pcie4_0_512b_intfc_mod/pcie_4_0_512b_intfc_int_mod/pcie_4_0_512b_cq_intfc_mod/pcie_4_0_512b_cq_output_mux_blk/out_data_o_reg[72]/C",
+          "ENDPOINT_PIN": "level0_i/blp/blp_i/ss_hif/inst/pcie_axi_bridge_mgmt/inst/axis_cq_controller/gen_turbo.skid_cq_tdata_reg[72]/D",
+          "DELAY_TYPE": "max",
+          "CORNER": "Slow",
+          "SLACK": "3.718",
+          "DATAPATH_DELAY": "0.238",
+          "DATAPATH_LOGIC_DELAY": "0.081",
+          "DATAPATH_NET_DELAY": "0.157",
+          "REQUIRED_TIME": "5.886",
+          "REQUIREMENT": "4.000",
+          "STARTPOINT_CLOCK_DELAY": "1.930",
+          "ENDPOINT_CLOCK_DELAY": "1.725"
+        },
+        "routed_worst_min": {
+          "STARTPOINT_PIN": "level0_i/ulp/axi_ic_ctrl_mgmt_slr1/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/C",
+          "ENDPOINT_PIN": "level0_i/ulp/axi_ic_ctrl_mgmt_slr1/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg_replica_1/D",
+          "DELAY_TYPE": "min",
+          "CORNER": "Slow",
+          "SLACK": "0.029",
+          "DATAPATH_DELAY": "0.645",
+          "DATAPATH_LOGIC_DELAY": "0.081",
+          "DATAPATH_NET_DELAY": "0.564",
+          "REQUIRED_TIME": "5.934",
+          "REQUIREMENT": "0.000",
+          "STARTPOINT_CLOCK_DELAY": "5.318",
+          "ENDPOINT_CLOCK_DELAY": "5.524"
+        },
+        "routed_worst_max": {
+          "STARTPOINT_PIN": "level0_i/ulp/axi_ic_ctrl_mgmt_slr1/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/C",
+          "ENDPOINT_PIN": "level0_i/ulp/axi_ic_ctrl_mgmt_slr1/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg_replica_1/D",
+          "DELAY_TYPE": "max",
+          "CORNER": "Slow",
+          "SLACK": "18.257",
+          "DATAPATH_DELAY": "1.325",
+          "DATAPATH_LOGIC_DELAY": "0.115",
+          "DATAPATH_NET_DELAY": "1.210",
+          "REQUIRED_TIME": "25.055",
+          "REQUIREMENT": "20.000",
+          "STARTPOINT_CLOCK_DELAY": "5.473",
+          "ENDPOINT_CLOCK_DELAY": "5.363"
+        }
+      },
+      "routed": {
+        "original_worst_min": {
+          "STARTPOINT_PIN": "level0_i/blp/blp_i/ss_hif/inst/pcie/inst/bd_39ab_pcie_0_pcie_4_0_pipe_inst/pcie4_0_512b_intfc_mod/pcie_4_0_512b_intfc_int_mod/pcie_4_0_512b_cq_intfc_mod/pcie_4_0_512b_cq_output_mux_blk/out_data_o_reg[72]/C",
+          "ENDPOINT_PIN": "level0_i/blp/blp_i/ss_hif/inst/pcie_axi_bridge_mgmt/inst/axis_cq_controller/gen_turbo.skid_cq_tdata_reg[72]/D",
+          "DELAY_TYPE": "min",
+          "CORNER": "Slow",
+          "SLACK": "0.006",
+          "DATAPATH_DELAY": "0.129",
+          "DATAPATH_LOGIC_DELAY": "0.061",
+          "DATAPATH_NET_DELAY": "0.068",
+          "REQUIRED_TIME": "1.837",
+          "REQUIREMENT": "0.000",
+          "STARTPOINT_CLOCK_DELAY": "1.714",
+          "ENDPOINT_CLOCK_DELAY": "1.957"
+        },
+        "original_worst_max": {
+          "STARTPOINT_PIN": "level0_i/blp/blp_i/ss_hif/inst/pcie/inst/bd_39ab_pcie_0_pcie_4_0_pipe_inst/pcie4_0_512b_intfc_mod/pcie_4_0_512b_intfc_int_mod/pcie_4_0_512b_cq_intfc_mod/pcie_4_0_512b_cq_output_mux_blk/out_data_o_reg[72]/C",
+          "ENDPOINT_PIN": "level0_i/blp/blp_i/ss_hif/inst/pcie_axi_bridge_mgmt/inst/axis_cq_controller/gen_turbo.skid_cq_tdata_reg[72]/D",
+          "DELAY_TYPE": "max",
+          "CORNER": "Slow",
+          "SLACK": "3.718",
+          "DATAPATH_DELAY": "0.238",
+          "DATAPATH_LOGIC_DELAY": "0.081",
+          "DATAPATH_NET_DELAY": "0.157",
+          "REQUIRED_TIME": "5.886",
+          "REQUIREMENT": "4.000",
+          "STARTPOINT_CLOCK_DELAY": "1.930",
+          "ENDPOINT_CLOCK_DELAY": "1.725"
+        },
+        "routed_worst_min": {
+          "STARTPOINT_PIN": "level0_i/ulp/axi_ic_ctrl_mgmt_slr1/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/C",
+          "ENDPOINT_PIN": "level0_i/ulp/axi_ic_ctrl_mgmt_slr1/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg_replica_1/D",
+          "DELAY_TYPE": "min",
+          "CORNER": "Slow",
+          "SLACK": "0.004",
+          "DATAPATH_DELAY": "0.616",
+          "DATAPATH_LOGIC_DELAY": "0.081",
+          "DATAPATH_NET_DELAY": "0.535",
+          "REQUIRED_TIME": "5.930",
+          "REQUIREMENT": "0.000",
+          "STARTPOINT_CLOCK_DELAY": "5.318",
+          "ENDPOINT_CLOCK_DELAY": "5.524"
+        },
+        "routed_worst_max": {
+          "STARTPOINT_PIN": "level0_i/ulp/axi_ic_ctrl_mgmt_slr1/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg/C",
+          "ENDPOINT_PIN": "level0_i/ulp/axi_ic_ctrl_mgmt_slr1/xbar/inst/gen_sasd.crossbar_sasd_0/addr_arbiter_inst/gen_no_arbiter.grant_rnw_reg_replica_1/D",
+          "DELAY_TYPE": "max",
+          "CORNER": "Slow",
+          "SLACK": "18.329",
+          "DATAPATH_DELAY": "1.253",
+          "DATAPATH_LOGIC_DELAY": "0.115",
+          "DATAPATH_NET_DELAY": "1.138",
+          "REQUIRED_TIME": "25.055",
+          "REQUIREMENT": "20.000",
+          "STARTPOINT_CLOCK_DELAY": "5.473",
+          "ENDPOINT_CLOCK_DELAY": "5.363"
+        }
+      }
+    },
+    "board_result": false,
+    "changes_routes": false,
+    "scope": "Native min/max net delays at both process corners and whole-design bus skew, plus paired setup/hold timing of two explicitly selected paths",
+    "limits": [
+      "Logical load-pin delays are not yet mapped one-to-one to physical site-pin ConnectionTasks.",
+      "Native route net delays depend on route, fanout and corner; they are not a static per-PIP additive model.",
+      "No bitstream acceptance, joint physical wirelength/CPD proof or board performance claim."
+    ]
+  },
+  "worst_slow_max_regression": {
+    "net_id": "288522",
+    "net_name": "level0_i/ii_level0_pipe/inst/pxi_ii_core/inst/s_ip_axi_ctrl_mgmt_01/inst/w.w_pipe/Q[0]",
+    "mode": "total",
+    "to_pin": "level0_i/ulp/ulp_ucs/inst/frequency_counters/axi_ic_ctrl_mgmt_freq/s00_couplers/auto_cc/inst/gen_clock_conv.gen_async_lite_conv.clock_conv_lite_fwd_w/handshake/src_hsdata_ff_reg[0]/D",
+    "FAST_MIN_before_ps": "2273",
+    "FAST_MIN_after_ps": "3661",
+    "FAST_MIN_delta_ps": "1388",
+    "FAST_MAX_before_ps": "3512",
+    "FAST_MAX_after_ps": "5260",
+    "FAST_MAX_delta_ps": "1748",
+    "SLOW_MIN_before_ps": "3002",
+    "SLOW_MIN_after_ps": "4743",
+    "SLOW_MIN_delta_ps": "1741",
+    "SLOW_MAX_before_ps": "5171",
+    "SLOW_MAX_after_ps": "7760",
+    "SLOW_MAX_delta_ps": "2589"
+  },
+  "timing_interpretation": [
+    "Native bus-skew coverage and reported values match; 391 evaluated constraints pass and one single-endpoint constraint has no comparison.",
+    "Local net-delay regressions are substantial despite unchanged global setup WNS; no joint QoR acceptance.",
+    "Worst SLOW_MAX regression belongs to net 288522, also the deferred-retry high-fanout net; association is not evidence of causation.",
+    "Paired targeted hold slack 29 to 4 ps; global WHS 6 to 4 ps alone understates local loss.",
+    "307 logical load pins per delay mode are not yet mapped one-to-one to 298 physical site-pin connection tasks."
+  ],
+  "state_view_parity": {
+    "schema": "dieroute.rr_state_view_independent_audit.v1",
+    "passed": true,
+    "producer_sha256": "0691d2c01a9c4912191bf7fb4665e32967960789ef7e1b0f80aca43eaccb9101",
+    "legacy_sha256": "18995a7064f2926d83aaacd3b2dd630ecfcf6f9eec203c4534cb5fbb0b10b9a0",
+    "candidate_sha256": "842b50a134986299596bad12dd95e1986cabc2ee57a37bc6f506e2643e03c75b",
+    "serial_control_summaries": {
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/quotient_legacy_20261013/diffeq.json": "1579b3de160ea5f2f810a0392ab50ed493d8afd5dd090a1b6779641ec4230f31",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/quotient_legacy_20261013/alu4.json": "00288a641814a8ea2df3ceed4e5d31d359d4382ba55b0a5eff2598a013581ee7",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/quotient_legacy_20261013/ex5p.json": "d6078ec9f18a6470909ab47e3ecc0785201319bec1862f2dba96fa60ea2a01e2"
+    },
+    "serial_cases": 3,
+    "speculative_modes": 2,
+    "candidate_repeats_per_mode": 5,
+    "artifacts_per_speculative_run": 8,
+    "runs_rehashed": 15,
+    "all_non_wall_counters_equal": true,
+    "board_result": false,
+    "limit": "Behavioral parity and immutable borrowed-view structure; no performance or hardware evidence"
+  },
+  "structural_fixture": {
+    "nodes": 100000,
+    "boundaries": 2,
+    "dies": 2,
+    "summary_records": 6,
+    "remote_overlay_records_per_view": 1,
+    "interior_pointer_alias_verified": true
+  },
+  "validation": {
+    "ctest": "24/24 passed",
+    "native_timing_adverse_fixtures": "10/10 passed",
+    "asan_ubsan": "5/5 passed",
+    "tsan": "1/1 passed",
+    "unchanged_cpp_binary_confirmed_by_independent_audit": true
+  },
+  "failures_retained": [
+    "Original timing-run v1 rejected a legacy manifest missing newer optional flags before starting Vivado; actual dependency digest checks retained.",
+    "Timing audit v1 rejected reordered get_cells collections.",
+    "Timing audit v2 rejected backslash-wrapped collection expressions; v3-v5 preserve complete From/To member multisets after only explicit line continuation normalization."
+  ],
+  "board_result": false,
+  "active_processes": [],
+  "limits": [
+    "Single commercial development checkpoint and 70-net selection, not full-design or held-out routing.",
+    "Commercial native corridor/shadow, calibrated setup/hold/length cost, bitstream acceptance and joint QoR remain open.",
+    "Static worker topology/index duplication and full hardware HBM data plane remain open.",
+    "G1-G8 remain open; G4 VTR joint quality gate failed; G7 lacks physical hardware."
+  ],
+  "next_work": [
+    "Map native logical load pins to existing physical site-pin tasks and close timing provenance at that boundary.",
+    "Use paired setup/hold data to diagnose net 288522 and net 303585; develop timing-aware acceptance/feedback without treating fanout-dependent native delays as static additive PIP weights.",
+    "Integrate commercial native corridor/shadow state and expand entire-net cohorts toward full routing.",
+    "Complete hardware, representative workloads, scaling, all five ablations, physical-board measurements and paper."
+  ],
+  "evidence": {
+    "work/u280_native_timing_original_v2_20261013/manifest.json": "3367acc34c4363478ab5a41313bda7ca92d775579e3539a266720a2d5cbeb516",
+    "work/u280_native_timing_routed_v1_20261013/manifest.json": "edbc22a72a7f311d55c097594714b6b8fbd002102dc2fc295e3236890ad5ead6",
+    "work/u280_native_timing_audit_v5_20261013/audit.json": "f24eec964c9cfccd12052dfccc390bd4cf5f4a3b19742e31aa2e1cd5120de763",
+    "work/u280_native_timing_audit_v5_20261013/net_delay_deltas.csv": "728d5e661b30cb03f1953077e7005966750112c04a07088f1fdd7c1c97626861",
+    "work/native_shadow_view_comparison_v1_20261013/manifest.json": "0691d2c01a9c4912191bf7fb4665e32967960789ef7e1b0f80aca43eaccb9101",
+    "work/native_shadow_view_independent_v1_20261013/audit.json": "21e3bb2d39a4e5fcb6c1f4cb9f179392323cc5a66ddb57ef76e921666e4f2805",
+    "work/native_shadow_view_build_20261013/ctest_timing.log": "287559c9b526c7458b06b103fdd092215446c5ff3a44ecfd29e4777042490944",
+    "work/native_shadow_view_build_20261013/native_timing_fixture.log": "38eeff1237d74275801617a271eced659e08b1cad8069897d18e659ae40641d8",
+    "work/native_shadow_view_asan_20261013/ctest.log": "be8ed26ab076a6fbe8235a855b002dfb0818154c735d070f96a26add4134d3c5",
+    "work/native_shadow_view_tsan_20261013/ctest.log": "2c4e2079b8886289e77c3db706d14cc83934bf7ffc3f2329da04a16f95be8e02"
+  },
+  "verification_directory": "work/native_timing_shadow_verification_20261013"
+}

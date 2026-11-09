@@ -1,0 +1,64 @@
+{
+  "schema": "dieroute.supplemental_net_transaction_protocol.v1",
+  "status": "design_frozen_implementation_pending",
+  "objective": "Test whole-net candidate acceptance for supplemental timing reroutes without erasing unrelated authority updates; retain all original research gates.",
+  "evidence_sha256": {
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/rr_local_delay_feedback_variant_20261014/three_arm_comparison.json": "32f7f9242ba5e4eeba44834b06c6686dc480925404f1bb9df2c065880459ccea",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/rr_local_delay_feedback_variant_20261014/local_outcome_profile.json": "8dfd3c5b027c3ab4eef19faca28fd306098ee7bdf942894f35d08d6d5913a56a",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/rr_local_delay_feedback_variant_20261014/feedback_audit_2.json": "1224701a4638978a3e9270ebe30d7794966b9feaae2b81c894d5a2968e326a16",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/rr_local_delay_feedback_variant_20261014/version_audit_2.json": "bd360cbb10f83809710a3eaaeda5a2e4436ba1d89c035c7e62c245a4b825126c"
+  },
+  "scope": "Serial CPU node-mode wide controller only. No external persistent hardware executor, edge identity, workers, cleanup or asynchronous authority.",
+  "schedule": [
+    "Mode0 preserves parent interleaved semantics byte-for-byte except new metadata/empty trace.",
+    "Modes1/2 identify only pending nets with reason8 and retain their complete old trees while ordinary pending nets are ripped up and routed.",
+    "After ordinary routing finishes, process supplemental nets in current deterministic net order, using frozen per-epoch costs/criticalities.",
+    "Each trial clones the current resources/costs/tasks and reconstructs dynamic owner membership from all current trees. Rip up and reroute only the candidate net in the private snapshot, with the same allow-overuse setting in modes1/2. No unrelated execution may interleave.",
+    "Mode1 accepts a complete trial unconditionally; incomplete trials keep the current tree. Mode2 additionally applies all safeguards below.",
+    "On acceptance publish the candidate snapshot and candidate net tasks/tree as one serial visibility point, updating authoritative dynamic owner membership consistently. Rejection changes no authoritative resources, costs, versions, paths, trees or other nets. Work counters and trial logs still include attempted work."
+  ],
+  "safeguards": [
+    "All connections of the old and trial net are routed. Compare per-connection path delays using exactly the STA-input minimum-parallel-arc convention. Every trial delay must be no greater than its current old delay.",
+    "Unique-net-node wirelength cannot increase; at least one delay or wirelength must strictly improve.",
+    "For each resource, trial occupancy <= max(current occupancy, capacity), preventing new or increased overuse while allowing unchanged overuse elsewhere. Capacities, unrelated membership and cost/history coefficients remain unchanged.",
+    "All integer/version overflow and branch/tree identity checks apply. Reject before authoritative publication if any acceptance predicate fails."
+  ],
+  "allowance": "One scheduled supplemental attempt per net, consumed when originally scheduled whether trial accepted or rejected. Ordinary pending precedence and iteration budget unchanged. No repeated retry quota tuning.",
+  "trace_requirements": [
+    "Keep original ordinary-attachment schema byte-compatible when mode0.",
+    "Record each trial before/after authority and route hashes, net/order/epoch, complete/accepted/rejection predicates, old/trial wirelength and actual search work.",
+    "Record every trial connection identity, old/trial path and input-compatible delay, submitted seeds, selected attachment and branch, including rejected/incomplete candidates.",
+    "Trace candidate private ripups/commits/owner refresh/version transitions separately from authoritative publication; independent replay must distinguish rejected attempts from executed authority.",
+    "Count all failed/rejected trial searches, expansions, edge visits and telemetry; retain attempts when authoritative paths are restored."
+  ],
+  "experiment": {
+    "development": "ex5p only; apex2/frisc/elliptic unopened",
+    "repeats": 5,
+    "arms": [
+      "mode0 parent semantics",
+      "mode1 staged complete-trial acceptance",
+      "mode2 staged safeguarded acceptance"
+    ],
+    "matching": "Identical source/input/environment/config except mode; same-source staging control required to avoid attributing scheduling effects to acceptance predicates.",
+    "fixed": {
+      "route_tree_timing_weight_q": 128,
+      "cost_scale": 1,
+      "task_order": "preserve",
+      "cost_state_bits": 64,
+      "max_iterations": 30,
+      "criticality_feedback_threshold_q": 64880,
+      "feedback_local_delay_guard": true,
+      "cleanup_passes": 0
+    }
+  },
+  "validation": [
+    "Component tests: private reject byte-preservation, accepted publication, unrelated-net updates retained, shared nodes once/net, existing overuse unchanged, new overuse rejected, incomplete trial, parallel arcs, version overflow, allowance and budget.",
+    "Full backend/controller ASan/UBSan; parent mode0 five-repeat compatibility.",
+    "Independent complete ordinary+trial+publication replay, source/trace hash checks, refreshed-hash corrupt-fixture checks.",
+    "Five-repeat native legality/determinism and joint baseline QoR; exact counters include all private attempts."
+  ],
+  "acceptance": "Original joint baseline gates unchanged; no extra failures, WL/CPD/SLL degradation or hardware claims. Neither successful local guards nor improvements against a negative parent suffice for adoption.",
+  "limitations": "Observation of slower siblings motivates this test; retrospective rejection is not a counterfactual outcome. Keeping old trees during ordinary routing changes congestion/order, requiring mode1 control. Per-connection integer delay guards do not certify full native timing or global CPD. CPU private snapshots do not prove hardware atomicity.",
+  "research_complete": false,
+  "board_result": false
+}

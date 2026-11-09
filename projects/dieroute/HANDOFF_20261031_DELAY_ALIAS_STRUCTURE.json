@@ -1,0 +1,36 @@
+{
+  "recorded_ns": 1793406048302057592,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_DELAY_FEATURE_ALIASES.json",
+    "sha256": "7208ca945018333e600176d1a43d0482c970fe207eef9e44ed86dc642f8dc9a9"
+  },
+  "progress": {
+    "review": "work/native_delay_alias_structure_audit_20261031/review.json",
+    "review_sha256": "94346a3cec64f0df7d86f8af29abe582bc7213777b60791ac4a83e0fb3c56d5f",
+    "independent_review": "work/native_delay_alias_structure_audit_20261031/independent_review.json",
+    "independent_review_sha256": "78c4a92455d77899f261f39d3c421d16ff7246010977c2726164a1e376ac9b14",
+    "aliased_endpoint_groups": 4,
+    "all_ordered_node_and_pip_paths_differ": true,
+    "off_path_edge_change_groups": 0,
+    "scope": "Structural distinction audit of four already observed same-endpoint/fold exact190feature aliases. Uses original retained baseline/proposal tree CSVs and task selection only; no device-graph/trace/TV scan, tree alteration, feature tuning, model fit or native/RTL query. Exact path and off-path differences are observations, not a causal attribution of native delay differences to a specific missing electrical parameter. No new quality, timing closure, speedup, calibration or board acceptance.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v179_20261031/matrix.json",
+    "sha256": "f7555e776fb0feac0ba9a25077c6473a84f17018bcb421e16b76cc770251ee2c"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v179.json",
+    "sha256": "80c6a5fb0ea63013bd2ba9d9fdf3825c5270fc6c62a1dcfe8e4558426dff657c"
+  },
+  "next_action": "Keep the four190feature aliases distinct from older unchanged-path/off-path-loading controls: all four here have changed ordered node/PIP paths, and no off-path edge changes. Aggregation loses retained path identity, but no electrical cause or sufficient new model is proved. No input/model tuning or native query occurred. Current matrix335claims preserves334prior claims. Preserve30watched handles, original positive/canary/resource conditions, all8open gates and retained failures. Ledger remainsv15:9757/9968associated,211pending;820separate transitive/466root gaps.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

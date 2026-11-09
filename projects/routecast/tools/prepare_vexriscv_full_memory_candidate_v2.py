@@ -1,0 +1,13 @@
+"""Preserve collected native-memory obligations before bit-level mapping; no collision relaxation."""
+import json,hashlib,shutil,subprocess,time
+from pathlib import Path
+from collections import Counter
+R=Path(__file__).resolve().parents[1];E=R/'experiments';D=E/'vexriscv_full_memory_candidate_v2_2026-10-09';D.mkdir(exist_ok=False);B=E/'vexriscv_family_flattened_inventory_v1_2026-10-09';plan=json.loads((B/'protocol.json').read_text());sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest();source=B/'VexRiscvFull/design.v';yosys=Path(next(p for p in plan['bindings'] if p.endswith('/bin/yosys')));assert sha(yosys)==plan['bindings'][str(yosys)];original=json.loads((E/'prospective_family_candidates_2026-10-06/manifest.json').read_text());row=next(r for r in original['records'] if Path(r['archived_path']).stem=='VexRiscvFull');assert sha(source)==row['sha256'];shutil.copyfile(source,D/'design.v');script='read_verilog design.v\nsynth -top VexRiscvFull -flatten -noabc -run begin:fine\ncheck -assert\nwrite_json design.json\n';(D/'prepare.ys').write_text(script);bindings={str(p):sha(p) for p in (Path(__file__).resolve(),source,yosys,D/'design.v',D/'prepare.ys')};command=[str(yosys),'-s','prepare.ys'];(D/'protocol.json').write_text(json.dumps(dict(bindings=bindings,command=command,timeout_s=180,scope='Coarse memory -nomap candidate after bitblasted packing TIMEOUT; no no-rw-check, reset stripping or semantics relaxation. Not native input, equivalence proof, performance benchmark or outcome selection.'),indent=2)+'\n');start=time.perf_counter()
+with (D/'log.txt').open('x') as log:
+ try:code=subprocess.run(command,cwd=D,stdout=log,stderr=subprocess.STDOUT,timeout=180).returncode
+ except subprocess.TimeoutExpired:code='TIMEOUT'
+report=dict(bindings=bindings,exit_code=code,seconds=time.perf_counter()-start,admitted_for_prediction=False)
+if code==0:
+ modules=json.loads((D/'design.json').read_text())['modules'];assert len(modules)==1;m=modules['VexRiscvFull'];report['cell_types']=dict(Counter(c['type'] for c in m['cells'].values()));report['memories']=[dict(name=n,type=c['type'],parameters=c['parameters'],ports_widths={p:len(bits) for p,bits in c['connections'].items()}) for n,c in m['cells'].items() if c['type'].startswith('$mem')]
+if code==0:assert report['memories'], 'memory collection did not execute'
+report['files']={str(p):sha(p) for p in D.iterdir() if p.is_file()};(D/'receipt.json').write_text(json.dumps(report,indent=2)+'\n');print(code,'memories',len(report.get('memories',[])),flush=True)

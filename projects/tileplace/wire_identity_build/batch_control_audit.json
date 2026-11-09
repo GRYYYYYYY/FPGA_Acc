@@ -1,0 +1,15 @@
+{
+  "status": "pass",
+  "compile": "g++ -std=c++17 -O2 -Wall -Wextra -Werror test_batch_control.cpp -o /tmp/tileplace-batch-control-reference-test",
+  "run": "/tmp/tileplace-batch-control-reference-test",
+  "independent_tuple_reference_batches": 1000,
+  "candidates_per_batch": 12,
+  "coverage": "five-kind full identity construction -> forbidden filtering / per-group best / sorted stable dedup; targeted reversed macro owners, signed coordinates/layer sensitivity, malformed descriptor",
+  "scope": "CPU composition only; no RTL, native VPR integration, evaluation, conflict selection or commit",
+  "sources": {
+    "test_batch_control.cpp": "cee0bde067c4eade27c4de90779dff520f2f61587b1b6ae9fe8ea5b9f0d1201a",
+    "test_identity_build.cpp": "1417b8f2cb205cb7450c7c9e2175cbacf4a15418df47365b398d86566d235cb0",
+    "identity_build_words.hpp": "c686eebe65fdb6a45a07ad3556fc2b92403aeca77f1bf708be2c5956c507ce19",
+    "batch_words.hpp": "4a9ad03fe7a0f5df4815e618b3963ac61462ee62e5cfe88a6daf8be432e50887"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "status": "pass",
+  "scope": "exception-free Q20 array scoring integrated into CPU fast candidate search; host converts statuses to checked exceptions; host state/encoding/control remain STL; no scored native/HLS run",
+  "fixtures": 12,
+  "guarded_unit_sets": 60,
+  "guarded_color_sets": 48,
+  "selected_only_adapter_calls": 144,
+  "tests": "CMake build and CTest 2/2 pass",
+  "files": {
+    "scored_proposals.hpp": "3f79a219d9694687dab986811ffaf9776418df8c0edda529a7edd61429bef4ef",
+    "scored_search.hpp": "c99d12275f297943a06472c884aaedf7b24ac54f37f0354d1ca28340b7e56877",
+    "scored_feedback_search.hpp": "51a65ae76453efcec2a6bbbb3e1cd0a474de462df632216013a2b28efb960cfd",
+    "scored_native_server.cpp": "6b9477d762f22ea5d680c1f6c87e5929455fb9127d44c46ffc545cf8d26c26bb",
+    "test_scored_adapter.py": "80430fe1b7ccdc83e6a6d58cb2ff9b3b13c162084c7fce9a3dfce6edcccbccdb",
+    "test_scored_search.py": "6c3542aff15f15097a4ca3652f18cae1ac601d49f72da3014faaa2292f1a8e58"
+  }
+}

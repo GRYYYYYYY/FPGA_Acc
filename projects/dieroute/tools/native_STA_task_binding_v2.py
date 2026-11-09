@@ -1,0 +1,116 @@
+"""Read-only packed-wiring binding of native STA LUT-input arcs to route tasks.
+
+Only .names input arcs are bound. Terminal output-pad arcs remain unbound.
+No routing decisions or case-specific IDs are encoded here.
+"""
+import csv,re,xml.etree.ElementTree as E
+from decimal import Decimal
+from pathlib import Path
+from native_setup_path_parser import parse
+
+
+def make_binder(native_case, connections):
+    native=Path(native_case)
+    root=E.parse(native/'circuit.net').getroot()
+    parents={child:node for node in root.iter() for child in node}
+    def atom(name):
+        found = [b for b in root.iter('block') if b.get('name') == name and (not b.findall('block')) and (b.find('outputs/port') is not None)]
+        assert len(found) == 1
+        return found[0]
+
+    def chain(node):
+        out = []
+        while node is not root:
+            out.append(node)
+            node = parents[node]
+        return out
+
+    def port(block, name):
+        found = [p for section in ['inputs', 'outputs', 'clocks'] for p in block.findall(section + '/port') if p.get('name') == name]
+        assert len(found) == 1, (block.attrib, name)
+        return (found[0].text or '').split()
+
+    def matches(block, reference):
+        actual = block.get('instance', '')
+        return actual == reference or ('[' not in reference and re.sub('\\[\\d+\\]$', '', actual) == reference)
+
+    def resolve(block, name, index, trace=None, seen=None):
+        trace = [] if trace is None else trace
+        seen = set() if seen is None else seen
+        key = (id(block), name, index)
+        assert key not in seen
+        seen.add(key)
+        tokens = port(block, name)
+        assert index < len(tokens)
+        token = tokens[index]
+        trace.append(dict(block=block.get('name'), instance=block.get('instance'), port=name, index=index, value=token))
+        if token == 'open':
+            return (None, trace)
+        if '->' not in token:
+            return (token, trace)
+        m = re.fullmatch('([^\\.]+)\\.([^\\[]+)\\[(\\d+)\\]', token.split('->')[0])
+        assert m, token
+        (component, nextport, nextindex) = (m[1], m[2], int(m[3]))
+        parent = parents.get(block)
+
+        def endpoint_matches(node):
+            if not matches(node, component):
+                return False
+            ports = [po for section in ['inputs', 'outputs', 'clocks'] for po in node.findall(section + '/port') if po.get('name') == nextport]
+            return len(ports) == 1 and nextindex < len((ports[0].text or '').split())
+        if parent is not None and parent.tag == 'block' and endpoint_matches(parent):
+            target = parent
+        else:
+            found = [b for b in block.findall('block') if endpoint_matches(b)]
+            if not found and parent is not None:
+                found = [b for b in parent.findall('block') if endpoint_matches(b)]
+            assert len(found) == 1, (block.attrib, token, [v.attrib for v in found])
+            target = found[0]
+        return resolve(target, nextport, nextindex, trace, seen)
+    definitions={}
+    for line in (native/'circuit.blif').read_text().splitlines():
+        f=line.split()
+        if f and f[0]=='.names':definitions[f[-1]]=f[1:-1]
+    with Path(connections).open() as stream:tasks=list(csv.DictReader(stream))
+    positions={}
+    for line in (native/'circuit.place').read_text().splitlines():
+        f=line.split()
+        if len(f)>=6 and f[1].isdigit():positions[f[0]]=(int(f[1]),int(f[2]),int(f[4]))
+    needed={int(t['sink']) for t in tasks};nodes={};classes={}
+    for _,e in E.iterparse(native/'rr_graph.xml',events=['end']):
+        if e.tag=='block_type':
+            for i,c in enumerate(e.findall('pin_class')):
+                for pin in c.findall('pin'):classes[(e.get('name'),pin.text)]=i
+            e.clear()
+        elif e.tag=='node':
+            n=int(e.get('id'))
+            if n in needed:nodes[n]=dict(type=e.get('type'),loc={k:int(v) for k,v in e.find('loc').attrib.items() if k in ['xlow','ylow','layer','ptc']})
+            e.clear()
+        elif e.tag=='edge':e.clear()
+    assert set(nodes)==needed
+    by_net={}
+    for task in tasks:by_net.setdefault(task['net'],[]).append(task)
+
+    def bind(report,baseline_cpd_ns):
+        selected=[p for p in parse(Path(report).read_text()) if Decimal(p['effective_delay_ns'])>Decimal(str(baseline_cpd_ns))]
+        rows=[]
+        for path in selected:
+            for arc in path['arcs']:
+                m=re.fullmatch(r'(.*)\.in\[(\d+)\] \(\.names\)',arc['target'])
+                if not m:continue
+                name,index=m[1],int(m[2]);net=definitions[name][index];sink=atom(name)
+                rotation=sink.find("inputs/port_rotation_map[@name='in']")
+                assert rotation is not None
+                physical=[i for i,v in enumerate(rotation.text.split()) if v==str(index)];assert len(physical)==1
+                resolved,trace=resolve(sink,'in',physical[0]);assert resolved==net
+                cluster=chain(sink)[-1];intra=trace[-1]['instance']!=cluster.get('instance')
+                row=dict(endpoint=path['endpoint'],endpoint_arrival_ns=path['arrival_ns'],net=net,sink_atom=name,logical_input=index,physical_input=physical[0],printed_arc_ns=arc['increment_ns'],intracluster=intra)
+                if not intra:
+                    last=trace[-1];kind=re.sub(r'\[\d+\]$','',cluster.get('instance'))
+                    cls=classes[kind,kind+'.'+last['port']+'['+str(last['index'])+']'];pos=positions[cluster.get('name')]
+                    matches_task=[t for t in by_net.get(net,[]) if nodes[int(t['sink'])]['type']=='SINK' and tuple(nodes[int(t['sink'])]['loc'][k] for k in ['xlow','ylow','layer'])==pos and nodes[int(t['sink'])]['loc']['ptc']==cls]
+                    assert len(matches_task)==1,(net,matches_task)
+                    row['task']=matches_task[0]
+                rows.append(row)
+        return dict(paths=selected,arcs=rows,scope='Over-baseline printed endpoint paths; LUT input arcs only. Terminal output-pad arcs excluded; no route changes.')
+    return bind

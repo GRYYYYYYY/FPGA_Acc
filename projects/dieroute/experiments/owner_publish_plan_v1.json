@@ -1,0 +1,25 @@
+{
+  "schema": "dieroute.owner_publish_plan.v1",
+  "objective": "Replace host value polling with device-managed subscriptions, dirty-slot coalescing and bounded changed-only publications, then integrate into live native routing.",
+  "phases": {
+    "kernel_and_model": "implemented",
+    "hls_rtl": "v3_passed_40_calls_and_2.920ns_estimate",
+    "audited_real_trace_replacement": "passed_3x5_repeats",
+    "joint_platform_and_xrt": "passed: six CU, 30 masters, 45 pointer connections, 21 HBM banks; 166 actual XRT calls; 2 independently audited replay fixtures byte-equal C-model",
+    "live_native_backend": "verified: fresh 3x5 native routes, independent protocol/commit audit, 168 XRT calls; experiments/native_owner_push_progress_20261014.json"
+  },
+  "acceptance": [
+    "Exact subscribe/fetch snapshot and owner CAS semantics",
+    "Unique dirty slot, latest-value coalescing, per-worker/lane filtering",
+    "Output credits and ticket/session checks never lose pending work",
+    "Independent transcript replay bound to audited native source",
+    "Same canonical route outcomes and consumed-value validation after live integration",
+    "HLS/RTL and linked-platform functional evidence"
+  ],
+  "research_complete": false,
+  "excluded_inferences": [
+    "A trace replacement is not fresh router execution",
+    "HLS/cosim/hw_emu do not establish routed timing or board performance",
+    "Host buffer handoff does not establish asynchronous DMA or crash atomicity"
+  ]
+}

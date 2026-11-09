@@ -1,0 +1,47 @@
+{
+  "observed_ns": 1793441728467926887,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_REVERSE_ENCODED_IMAGE.json",
+    "sha256": "adbb66580e0ebf4aa1420417fccd4f5f1f75292cea7753bf5a4c7eff296b47a4"
+  },
+  "progress": {
+    "report": "work/resident_reverse_get_composition_20261031/review.json",
+    "report_sha256": "d24a7ed9eb355de2c48f3fd2a1ef62dcfb46ff8c2c8f4414988a451e4b0d06ce",
+    "independent_review": "work/resident_reverse_get_composition_20261031/independent_review.json",
+    "independent_review_sha256": "23f45c78741aa7bcb028e54a89f9210c3ef8e97f8ca20b1f27970ff3a0025560",
+    "final_review": "work/resident_reverse_get_composition_20261031/final_review.json",
+    "final_review_sha256": "01707e6dfc9810e56d1476c23e99c91b1de1593598dc2668b51c54cb08178af3",
+    "new_feasible_UNSAT_queries": 7,
+    "encoded_images": 8,
+    "selector_calls": 62,
+    "valid_calls": 38,
+    "failure_calls": 24,
+    "source_edges": 2741,
+    "conditional_reverse_get_offset_and_success_contract_checked": true,
+    "actual_encoded_memory_contract_proved": false,
+    "full_RTL_refinement_proved": false,
+    "scope": "Conditionalreverseencodedselect/getvalueprovenance composition:exactv271wordimage/prefixdischargessearch/wordscanpopulationpremises;source sixstepbithelper/terminal/outerownershipcontracts giveuniqueselectpositioni+a_i,success1. SevenfeasibleBVqueries useactualsource terminalandget35clockexpressions toprove decodedoffseta_i,endpoint0/eandadjacentmonotonebounds. Coupledselect_rplus3actualsourcehelpers runs62calls(38valid/24invalid-or-unready)on8SHA-boundprior-sourceimages/recordedprefixvalues through2CEBRAM/URAMmodels;allchildresultscomputed,oldq/helperstatesretained. Numericgetsubtractappliesseparatelyprovedgetbridge;get58/execute326notjointlyexecutedhere. Hosttable/layout/commandidentity,correctexternalmemoryandbinarycomponentrefinementremainpremises;notfull4stateRTL/native/boardproof.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v272_20261031/matrix.json",
+    "sha256": "9b2db6eec5130d1393d0b6f83264b283fdc3f4d32512fe388340cd3f786ecd3b"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v272.json",
+    "sha256": "845c36c4ff1ff94dfb3b57c136dcb9d864127576993476adc5a96d6c1612b764"
+  },
+  "next_action": "Auditactualhostpackedreverseoffsettable/layoutslot/bytealignmentandcommandvalueidentity againstfrozenCpacking/reader/sourceinterfaces;conditionalreversegetnowprovidesoffset/success/endpoints/monotonebounds butactualserializedinputidentityremainspremise. Connectsourceexecute cursor/boundaryupdates tothesegetvalues asneeded,withoutclaimingfullgraphsearchcorrectness. Preserveoriginalnativehandles/guards/budgets/inputs/caches/failures/UNKNOWNsandphysical/fullRTL/boardgaps;awaitnativecompletionwithoutrestart.",
+  "previous_goal_turn_classification": "progress_and_verified_wait_v271",
+  "current_goal_turn_classification": "progress_and_verified_wait",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

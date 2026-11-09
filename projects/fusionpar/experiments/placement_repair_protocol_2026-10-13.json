@@ -1,0 +1,43 @@
+{
+  "schema": "FUSIONPAR_PLACEMENT_REPAIR_DEVELOPMENT_V1",
+  "designs": [
+    "alu4",
+    "misex3"
+  ],
+  "ex5p_role": "pilot and failure diagnosis; all designs are development, no held-out claim",
+  "policy": {
+    "primary_attempts": 3,
+    "max_repairs_per_failed_primary": 2,
+    "trigger": [
+      "route_failed",
+      "quality_rejected"
+    ],
+    "native_delay_order": [
+      "baseline criticality descending",
+      "positive native delay increase descending",
+      "connection ID ascending"
+    ],
+    "fallback": "unique-net RR wire growth if no native delay increase",
+    "target": "first moved instance belonging to a feedback witness net",
+    "radius": "Manhattan x/y/subtile displacement no greater than failed target move",
+    "candidates": "same legal HPWL-ranked move/swap generator",
+    "cycles": "suppress repeated complete placements",
+    "recursive_repair": false
+  },
+  "acceptance": "strict native (wirelength, CPD) lexicographic improvement and both at most 102% of initial legal baseline",
+  "repeats": 2,
+  "modes": [
+    "sequential",
+    "sequential_shared",
+    "interleaved",
+    "interleaved_repair",
+    "interleaved_placement_repair"
+  ],
+  "cost": "all failed work and native validation retained in subprocess wall time; common conversion charged equally",
+  "limits": [
+    "not equal search budgets across modes",
+    "no best-placer baseline yet",
+    "native audit costs not optimized",
+    "no physical FPGA measurements"
+  ]
+}

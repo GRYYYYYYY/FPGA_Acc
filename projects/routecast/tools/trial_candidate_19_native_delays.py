@@ -1,0 +1,12 @@
+"""Fresh native per-node delay captures for matched candidate-19 routes."""
+import json,os,re,shutil,subprocess
+from pathlib import Path
+from pre_route_endpoints import sha
+root=Path(__file__).resolve().parents[1];out=root/'experiments/candidate_19_native_delays_2026-10-06';out.mkdir();work=root/'work/candidate_19_native_delays_2026-10-06';work.mkdir();build=root/'build/native_route_delay_capture_2026-10-06';binary=build/'routecast_sync_capture_vpr';br=json.loads((build/'receipt.json').read_text());assert sha(binary)==br['binary_sha256'];parent=root/'experiments/capacity_native_seed_continuation_2026-10-06/receipt.json';r=json.loads(parent.read_text());row=next(x for x in r['results'] if x['pair_index']==19 and x['mode']=='cold');results=[];env={k:v for k,v in os.environ.items() if not k.startswith('ROUTECAST_')}
+for label,source in [('seed',root/'work/capacity_synchronized_reload_2026-10-06/19/reload'),('dirty',root/'work/capacity_dirty_repair_trial_2026-10-06/19_seed'),('critical',root/'work/capacity_critical_dirty_repair_trial_2026-10-06/19_seed'),('cold',Path(row['cwd']))]:
+ cwd=work/label;cwd.mkdir();inputs={}
+ for n in ('design.net','design.place','design.blif'):shutil.copyfile(source/n,cwd/n);inputs[str(source/n)]=sha(source/n)
+ route=source/('design.route' if label=='seed' else 'output.route');shutil.copyfile(route,cwd/'design.route');inputs[str(route)]=sha(route);cmd=row['command'].copy();cmd[0]=str(binary);cmd[cmd.index('--route')]='--analysis';cmd[cmd.index('--route_file')+1]='design.route'
+ with (cwd/'run.log').open('w') as f:code=subprocess.run(cmd,cwd=cwd,env={**env,'ROUTECAST_SYNC_CAPTURE_DIR':str(cwd)},stdout=f,stderr=subprocess.STDOUT,timeout=60).returncode
+ log=(cwd/'run.log').read_text();assert code==0 and 'Completed routing consistency check successfully.' in log;cpd=float(re.search(r'Final critical path delay \(least slack\):\s*([0-9.]+)',log)[1]);results.append({'case':label,'cpd_ns':cpd,'command':cmd,'cwd':str(cwd),'inputs_sha256':inputs,'files_sha256':{str(p):sha(p) for p in cwd.iterdir() if p.is_file()}});print(label,cpd,flush=True)
+(out/'receipt.json').write_text(json.dumps({'results':results,'binary_sha256':sha(binary),'build_receipt_sha256':sha(build/'receipt.json'),'source_sha256':sha(Path(__file__)),'scope':'Native FLOAT per-node RC/delay at before/after packing sync, fresh original analysis; no independent RC accuracy guarantee until audited.'},indent=2)+'\n')

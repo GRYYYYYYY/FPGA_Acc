@@ -1,0 +1,29 @@
+{
+  "recorded_ns": 1793404069957909636,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261030_SNAPSHOT_TERMINAL_OBSERVER.json",
+    "sha256": "42fd8bb054dd8083a8205607348325cc7b8a6e7a2005847a6d7626d63c8850e4"
+  },
+  "progress": {
+    "matrix": "work/current_research_claim_matrix_v170_20261030/matrix_v2.json",
+    "matrix_sha256": "e4e842c526e364fc7a22cb8fecbedb16ed0f93ac94b0dd6d972a7aec0f797c88",
+    "independent_review": "work/current_research_claim_matrix_v170_20261030/independent_review.json",
+    "independent_review_sha256": "dc93afabca788e8214ebb46d1159c6bf40d2e120b83b07738249378b006c6b20",
+    "critical_path": "experiments/critical_path_20261030_v170_v2.json",
+    "critical_path_sha256": "29426376babcd2ef7713958b625f05325dfa313cb6c6c9d63eb39fc259a2267b",
+    "claims": 326,
+    "new_scoped_claims": 12,
+    "scope": "Evidence reconciliation only. Original314claims, all8open gates, 11workloads/311096searches/45formal slots/37passes8failures retained. No new acceptance or hardware claim.",
+    "research_complete": false
+  },
+  "next_action": "Use matrix_v2.json and critical_path_20261030_v170_v2.json as current evidence entry. Preserve30live watched identities and original positive/canary conditions, queues and guards. Six full28878RTL candidates unaccepted; P7prepared-only/P8host-only; mapped strict-native v2 waiting20GiB after retainedv1RSSfailure. No physical U280 performance/energy/300MHz claim. Dated33page formal45draft and ledger9697/9968 with271pending remain partial;820separate transitive/466root gaps. Prior314claims preserved rather than recertified. All8gates open and research objective remains incomplete.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

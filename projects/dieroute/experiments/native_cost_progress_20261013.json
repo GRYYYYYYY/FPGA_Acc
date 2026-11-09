@@ -1,0 +1,156 @@
+{
+  "schema": "dieroute.native_cost_progress.v1",
+  "verified_utc": "2026-10-13T05:46:00.568558+00:00",
+  "research_complete": false,
+  "board_result": false,
+  "active_processes": [],
+  "changes": [
+    "Native VPR echoed type/segment base-cost export with full graph mapping verification",
+    "Optional integer multiplicative congestion and criticality blend; all searches use one cost reference",
+    "Consistent approximately 0.99 criticality cap before tree seed construction and after timing feedback",
+    "u64 cost arithmetic checked; legacy u16 controller saturation now aborts instead of being silently accepted"
+  ],
+  "source_sha256": {
+    "src/rr_backend.cpp": "a5934d7f71faf769a84326618bd6b620d058560982565c80400ee4ee043079ee",
+    "include/rr_backend.hpp": "311c45dc2053062523d3251ebeb2b0011d1e77834463257d814645b9f840542a",
+    "host/rr_host.cpp": "d09f9e487828a9c924e28b2501220812423578d30339c03fb4d057a2e7fd8ded",
+    "tools/native_base_costs.py": "4c53b76416c2ba68304419b68e41129350ba00d2c27af33a03ea097502aef879",
+    "tools/run_rr_pair.py": "db102564212fb6529fdceed517d296d476bce8bccd87c76b2dfb5f21981476d4",
+    "tools/audit_rr_experiments.py": "0f7ee4a683d38fdf0dd81e080af91db37fee66a9fcbbda8741bddb34fdbed534",
+    "tb/rr_backend_tb.cpp": "ef3f978a841a12bfc2cf6da8c1fae11ccbb5f59e5cc03f72cf427c44ad254e8c",
+    "tb/native_base_costs_test.py": "47544cb03d6e6efe5f2a757c023a11087b73f8c5ad54f7d1fcd68c0036d80564"
+  },
+  "native_source_basis": {
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vpr/src/route/connection_router.cpp": "25770dbcc0179ccff6ec1c9c791e56f82ed0d4a11154df72055e86fcf03b3e1e",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vpr/src/route/route_common.h": "d7abdf4df31e6ad507ee2fa0f5e5f1bfdae1df4003de513df262a34ed959744e",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/libs/librrgraph/src/utils/alloc_and_load_rr_indexed_data.cpp": "8e2372f2dd10e10c5a1af4cca27a3bda77290c40e87cf6a2f36328c627a466b2"
+  },
+  "evidence": [
+    {
+      "path": "experiments/native_base_cost_audit_20261013.json",
+      "sha256": "3cc57e96736d0a00c4b8c07afb73b57c0dcc0d9fe5418acddc55e257a87c1522"
+    },
+    {
+      "path": "experiments/vpr_style_cost_audit_20261013.json",
+      "sha256": "aacd8c97d55c317c27cb5b91ce47be1ccfd7b3e66a086ba5a5964583c4bbc365"
+    },
+    {
+      "path": "experiments/fixed_point_retrospective_20261013.json",
+      "sha256": "bc18ebeb8f930000d98649ba4ac5b1a861f107e1a90f787017714cd1b683d019"
+    }
+  ],
+  "checks": [
+    {
+      "path": "work/native_cost_verification_20261013/ctest.log",
+      "sha256": "06151d8aef33a969dfe6097385ed66b6c38132e3d9fd151de1d5a2f587776484"
+    },
+    {
+      "path": "work/native_cost_verification_20261013/asan_ubsan.log",
+      "sha256": "d2f3003cf8701351d688e3b1693854771669e2df8d78f9ad274e5ff53e027387"
+    },
+    {
+      "path": "work/native_cost_verification_20261013/guard_valid.log",
+      "sha256": "446f895ee70af40c190625a55bc58e62db0f741feab123cbcb0e140937c77b3c"
+    },
+    {
+      "path": "work/native_cost_verification_20261013/guard_valid_comparison.json",
+      "sha256": "b9141d24fc0fd5df70f757530f50dbdbb5b49c8ea75c01a4b0fb79780bdf74da"
+    },
+    {
+      "path": "work/native_cost_verification_20261013/mapping_validation.json",
+      "sha256": "935ec806215db57829029141f584c9b8fc227dc1fc981aad4138c93bd8259369"
+    },
+    {
+      "path": "work/native_cost_verification_20261013/diff_check.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "retrospective_completed_experiments": 22,
+  "invalid_fixed_point_modes": [
+    {
+      "manifest": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/rr_pair_diffeq_v2_20261013/pair.json",
+      "mode": "hierarchical",
+      "saturation": {
+        "present_iterations": [
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "final_saturated_resources": 69848
+      }
+    },
+    {
+      "manifest": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/rr_pair_ex5p_vprcost_v1_20261013/pair.json",
+      "mode": "flat",
+      "saturation": {
+        "present_iterations": [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "final_saturated_resources": 43392
+      }
+    },
+    {
+      "manifest": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/rr_pair_ex5p_vprcost_v1_20261013/pair.json",
+      "mode": "downstream",
+      "saturation": {
+        "present_iterations": [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "final_saturated_resources": 43392
+      }
+    },
+    {
+      "manifest": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/rr_pair_ex5p_vprcost_v1_20261013/pair.json",
+      "mode": "downstream_bounded",
+      "saturation": {
+        "present_iterations": [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "final_saturated_resources": 43392
+      }
+    }
+  ],
+  "failed_experiments": [
+    {
+      "manifest": "work/rr_pair_ex5p_vprcost_overflow_guard_20261013/pair.json",
+      "manifest_sha256": "8216098c16cc5a3ca8f4c2fdbc6ffda3b557e5363d155cdff3d8893e053447be",
+      "reason": "expected saturation guard abort"
+    },
+    {
+      "manifest": "work/rr_pair_diffeq_timing_vprcost_v1_20261013/pair.json",
+      "manifest_sha256": "432c3806e5e457113bfd05ac540a501a2ab3299d294c24dcb88924da7bdb160c",
+      "termination_record": "work/rr_pair_diffeq_timing_vprcost_v1_20261013/termination.json",
+      "termination_sha256": "527bccf54fb42d6b21452574aa424da794366e8ef3da01fe35cb26db9d6c3690",
+      "reason": "two completed repeats already showed saturation; remaining repeats aborted, no native QoR validation claimed"
+    }
+  ],
+  "valid_fixed_criticality_vpr_style_diffeq": {
+    "wirelength": 8628,
+    "critical_path_delay_ns": 7.66154,
+    "wirelength_delta_percent": -0.12732955203148544,
+    "cpd_delta_percent": 0.6280766826203266,
+    "joint_qor_passed": false
+  },
+  "next_work": [
+    "Widen controller congestion state and serialization without modifying frozen upstream PR or silently clamping; preserve net sharing, replay, and timing semantics",
+    "Rerun failed ex5p and timing-updated diffeq plus the development cohort with valid wide arithmetic",
+    "Concurrent boundary protocol, commercial SLR/SLL input, HBM hardware, scaling/ablations, physical board measurements and paper remain required"
+  ]
+}

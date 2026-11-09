@@ -1,0 +1,43 @@
+{
+  "observed_ns": 1793422542428091494,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_INSTALL_NO_EMPTY_READ.json",
+    "sha256": "95c017a631d5aab11d929e2d5c31077efa4415b4ad0871a302d7a01b9fbd2ae4"
+  },
+  "progress": {
+    "report": "work/resident_install_singleword_hierarchy_20261031/review.json",
+    "report_sha256": "330b8d53e6ba228c618f4c7be18a1730c4b3c80d00242f2d150d4303c6b5c9ac",
+    "independent_review": "work/resident_install_singleword_hierarchy_20261031/independent_review.json",
+    "independent_review_sha256": "eb5042436576b0a4197b12de77701959842dd60466cfe143785939c9c406c5c4",
+    "modules_proved": 13,
+    "leaf_constants": 6,
+    "branch_certificates": 19,
+    "independent_symbolic_scenarios": 32948,
+    "internal_word_count": 1,
+    "outward_AXI_ARLEN_encoding_proved_here": false,
+    "full_sequential_HDL_equivalence_proved": false,
+    "external_response_identity_proved": false,
+    "HDL_simulation_executed": false,
+    "scope": "Source-bound structural induction over the complete13module/12instance install-read consumer hierarchy. All6leaf internal32bit ARLEN outputs are unconditionally32d1. Four builder wrappers and top adapter length wiring forward the same child whose ARVALID is gated;prepare and execute length/valid muxes have identical ordered guards,with child length/valid paired from actual instance ports or literal1/1. Inactive default length bx is preserved and occurs only with default ARVALID0. Consequently every binary-control top adapter internal I_ARVALID request has internal word-count I_ARLEN1,without one-hot/caller-reachability assumptions. This is an internal word count,not the outward AXI8bit ARLEN encoding. Together with the previous complete-hierarchy no-empty-read theorem,this discharges the singleword-traffic and nonempty-consumer premises of the local credit induction for this source configuration. External causal/correct one-beat returns and primitive source-model correspondence remain required. This does not prove request address/pointer identity,correct selected consumer,response association,full sequential/4stateRTL equivalence,actual native completion,watchdog/timing or board performance. No original process/input/cache/guard/budget changes or new HLS/Vivado flow.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v234_20261031/matrix.json",
+    "sha256": "78a34f3a85562f03f7a1cc5066c5910e7dc6e272c4987887ddecd03a1248b571"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v234.json",
+    "sha256": "dd72a5df4d386858be2efa16f44a9202bb8ff8cdc53857f4a76c4f62cb225aa6"
+  },
+  "next_action": "Verify execute/top call lifetime and cross-call request/response ownership;bind remaining primitive count contracts to global execution. Complete consumer hierarchy now proves binary internal no-empty-read and singleword requests. External causal/correct one-beat responses,source-model correspondence and full native acceptance remain. Continue original jobs without guard/budget/input/cache changes.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

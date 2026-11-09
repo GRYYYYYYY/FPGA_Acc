@@ -1,0 +1,17 @@
+"""Label-dependent diagnostic: perfect dirty NETs with clean source NETs frozen."""
+import json
+from pathlib import Path
+from collections import Counter
+from pre_route_endpoints import sha
+from diagnose_prince_native_route_churn_v2 import native
+from external_forecast_metrics_v1 import vectors,metrics,gate
+R=Path(__file__).resolve().parents[1];E=R/'experiments';D=E/'prince_dirty_oracle_v1_2026-10-20'
+def main():
+ D.mkdir(exist_ok=False);q=E/'prince_feedback_quality_v1_2026-10-20/verification.json';v=json.loads(q.read_text());bindings={str(q):sha(q),str(Path(__file__)):sha(__file__)};rows=[]
+ for x in v['rows']:
+  case=x['case'];w=case.split('/')[0];base=E/'prince_native_cohort_v1_2026-10-20'/w;src=base/'source';tar=E/'prince_native_cohort_v1_2026-10-20'/case;sp=src/'pre_route_endpoints.json';tp=tar/'pre_route_endpoints.json';s=json.loads(sp.read_text());t=json.loads(tp.read_text());old={a['connection_id']:a for a in s['connections']};names=t['net_names'];dirty={names[str(a['net_id'])] for a in t['connections'] if (a['source'],a['sink'])!=(old[a['connection_id']]['source'],old[a['connection_id']]['sink'])};allnames={names[str(a['net_id'])] for a in t['connections']};domainp=E/'prince_quality_domains_v1_2026-10-20'/w/'verification.json';domain=json.loads(domainp.read_text());rp=domainp.parent/'resources.jsonl';bp=domainp.parent/'spatial_bins.json';resources=list(map(json.loads,rp.open()));bins=json.loads(bp.read_text());ids={r['id'] for r in resources};a=native(src/'output.route',src/'physical_audit.json',ids);b=native(tar/'output.route',tar/'physical_audit.json',ids);ledger=Counter(n for name in allnames for n in (b.get(name,set()) if name in dirty else a.get(name,set())));truth=Counter(n for name in allnames for n in b.get(name,set()));physical=json.loads((tar/'physical_audit.json').read_text());assert all(truth[n]==physical['node_occupancy'].get(str(n),0) for n in ids)
+  result=metrics(vectors(resources,bins,dict(ledger),domain['graph_nodes']),vectors(resources,bins,dict(truth),domain['graph_nodes'],truth=True),domain['resource_k'],domain['spatial_k']);cp=Path(x['comparison']);original=json.loads(cp.read_text());checks={name:gate(result,original['metrics'][name]) for name in ['previous_native','raw_min_on']};row=dict(case=case,dirty_NETs=len(dirty),metrics=result,checks=checks,pass_both_controls=all(c['pass_primary_gate'] for c in checks.values()),over_capacity_resource_units=sum(max(0,ledger[n]-1) for n in ids));rows.append(row)
+  for p in [sp,tp,domainp,rp,bp,cp,src/'output.route',src/'physical_audit.json',tar/'output.route',tar/'physical_audit.json']:bindings[str(p)]=sha(p)
+  print('DIRTY_LABEL_ORACLE',case,row['pass_both_controls'],flush=True)
+ assert all(sha(p)==h for p,h in bindings.items());(D/'verification.json').write_text(json.dumps(dict(rows=rows,pass_cases=sum(x['pass_both_controls'] for x in rows),bindings=bindings,label_dependent=True,deployable_prediction=False,scope='Offline actual target dirty-NET CHANNEL unions plus exact source unchanged-NET unions. Not a predictor or ranking upper bound: nonlinear ranks/aggregation can favor other dirty routes. Passing shows this concrete oracle can meet a case gate; failure does not prove every dirty-only prediction fails. Mixed union may overflow, not a legal routed tree. Original9 gate/missing labels unchanged.'),indent=2,default=lambda x:dict(numerator=x.numerator,denominator=x.denominator))+'\n')
+if __name__=='__main__':main()

@@ -1,0 +1,39 @@
+{
+  "schema": "dieroute.native_route_state_contract.v1",
+  "scope": "Serial C++ commercial electrical-node golden authority; not a hardware ABI or distributed shadow protocol",
+  "identity": {
+    "node": "u32 native electrical-node ID from the independently audited complete graph",
+    "net": "u32 physical-net ID from the frozen full DCP footprint",
+    "pip": "u32 key=(native_PIP_id<<1)|direction; exact parallel PIP identity retained",
+    "none": 4294967295
+  },
+  "state": {
+    "tree": "One source and sparse node -> (parent, PIP key, source depth) map per net",
+    "resource": "Sparse node -> distinct net set, u64 history, u64 version",
+    "retained_empty_records": "Rip-up retains resource history/version, including zero-owner records",
+    "sharing": "All sinks of one net share a single tree; same-net prefix uses a node once",
+    "sources": "Source nodes remain owned during rip-up and are included in occupancy"
+  },
+  "cost": {
+    "new_node": "1 + history(node) + present * count(other nets using node)",
+    "existing_tree_seed": 0,
+    "lower_bound": "Consistent quotient hop distance is valid because each newly used edge costs at least one",
+    "not_modeled": ["calibrated physical delay", "wire length", "site/mux legality", "general VPR multi-capacity resources"]
+  },
+  "updates": {
+    "accept": "Validate complete branch, permissions, exact PIPs, attachment, no tree reentry, depth and version ranges before publication; stage all allocating structures first",
+    "ripup": "Release each non-root tree node once; preserve other net owners and history; precheck all ownership/version conditions",
+    "negotiate": "All owners of overused nodes are scheduled; history increases by increment*(distinct owners-1); check all overflows before mutation",
+    "version": "Increment on source acquisition, each new branch-node acquisition, rip-up and nonzero history update; never wrap",
+    "limitations": "In-process checked-error atomicity; not crash durability or native speculative transaction validation"
+  },
+  "cohort": {
+    "selection": "Take first N tasks per ordered source/sink SLR pair, then include every task of each selected net",
+    "outside_ownership": "Freeze original electrical-node footprint of every unselected net, including unselected candidate nets",
+    "static_policy": "Also honor background/partition/clock/access protections and exclusive terminal/access ownership",
+    "ordering": "Nets ordered by first original task ID; connections retain original task order",
+    "deferred_retry": "Retry failed sinks only when the same net tree has grown; preserve the label cap and count all extra searches",
+    "closure": "Every selected sink reachable from its original source, exact distinct-net occupancy and zero final overused nodes",
+    "native_legality": "Must separately write DCP and run native tool checks; electrical model convergence alone is insufficient"
+  }
+}

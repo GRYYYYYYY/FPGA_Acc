@@ -1,0 +1,12 @@
+"""Hash and native log closure, explicitly not physical or predictor audit."""
+import json,re
+from pathlib import Path
+from pre_route_endpoints import sha
+ROOT=Path(__file__).resolve().parents[1];front=ROOT/'experiments/bitonic_family_freeze_2026-10-07';out=ROOT/'experiments/bitonic_native_reference_2026-10-07'
+def read(p):return json.loads(p.read_text())
+p=read(out/'protocol.json');r=read(out/'receipt.json');fr=read(front/'receipt.json');fp=read(front/'protocol.json');assert r['complete'] and r['protocol_sha256']==sha(out/'protocol.json');assert p['frontend_receipt_sha256']==sha(front/'receipt.json') and fr['protocol_sha256']==sha(front/'protocol.json');assert fp['generator_sha256']==sha(ROOT/'tools/freeze_bitonic_family.py');assert all(sha(f)==h for f,h in p['inputs'].items());assert all(sha(ROOT/'tools'/n)==h for n,h in fp['frozen_predictor_sources'].items());assert [x['count'] for x in r['rows']]==[4,8,16];rows=[]
+for item,f in zip(r['rows'],fr['rows']):
+ n=item['count'];assert n==f['count'] and item['exit_code']==0 and not item['timed_out'];assert all(sha(path)==h for path,h in item['files'].items());assert all(sha(path)==h for path,h in f['files'].items());assert item['input_sha256']==sha(front/f'n{n}/design.blif');log=out/f'n{n}.log';assert item['log_sha256']==sha(log);text=log.read_text();assert 'Circuit successfully routed' in text or 'Successfully routed after' in text
+ artifacts={Path(path).name:path for path in item['files']};assert all(k in artifacts for k in ('design.net','design.place','design.route','rr_graph.xml'));assert sha(artifacts['design.blif'])==item['input_sha256']
+ rows.append(dict(count=n,mapped_luts=f['mapped_luts'],native_route_success=True,rrr_iterations=int(re.findall(r'Successfully routed after (\d+) routing iterations',text)[-1]),wirelength=int(re.findall(r'Total wirelength: (\d+)',text)[-1]),cpd_ns=re.findall(r'Final critical path delay \(least slack\): ([0-9.]+) ns',text)[-1],native_capture_seconds=item['seconds']))
+(out/'verification.json').write_text(json.dumps(dict(receipt_sha256=sha(out/'receipt.json'),verifier_sha256=sha(Path(__file__)),rows=rows,scope='All3 frozen variants bound to mapped frontend and untouched frozen policy sources. Log QoR values verified against hashes, rounded native reported precision. No independent routeXML audit, predictor run, hotspot accuracy or end-to-end gain. Local prospective family, not universal holdout.'),indent=2)+'\n');print(rows)

@@ -1,0 +1,18 @@
+"""Bind terminal full-cohort parity, cache, cost and historical native content."""
+import json
+from pathlib import Path
+from pre_route_endpoints import sha
+ROOT=Path(__file__).resolve().parents[1];out=ROOT/'experiments/mux_heuristic_single_scan_cohort_2026-10-07';old=ROOT/'experiments/mux_heuristic_budget_cohort_2026-10-07';read=lambda f:json.loads(f.read_text());r=read(out/'receipt.json');parity=read(out/'parity_verification.json');cache=read(out/'cache_verification.json');cost=read(out/'cost_lower_bound_snapshot.json');prior=read(old/'final_evidence.json');assert len(r['rows'])==12 and parity['complete'];assert parity['bindings'][str(out/'receipt.json')]==cache['receipt_sha256']==cost['online_receipt_sha256']==sha(out/'receipt.json');assert all(sha(f)==h for f,h in parity['bindings'].items());assert all(sha(f)==h for f,h in prior['files'].items());files={str(out/f):sha(out/f) for f in ('receipt.json','parity_verification.json','cache_verification.json','cost_lower_bound_snapshot.json')};files[str(old/'final_evidence.json')]=sha(old/'final_evidence.json');rows=[]
+for x,c,h in zip(r['rows'],cost['rows'],prior['rows']):
+ w,i=x['width'],x['index'];assert (w,i)==(c['width'],c['index'])==(h['width'],h['index']);row=dict(width=w,index=i,status=x['status'],cost_lower_bound_s=c.get('recorded_cost_lower_bound_s'),new_native_execution=False,selected_historical=None)
+ if x['status']=='ACTUAL_MODEL_PASS_NATIVE_PENDING':
+  work=old/f'w{w}_m{i}';nf=out/f'w{w}_m{i}/result.json';proof=read(work/'native_input_verification.json');assert proof['result_sha256']==sha(nf);files[str(work/'native_input_verification.json')]=sha(work/'native_input_verification.json')
+  if i in (0,2):
+   f=work/'native_evidence_reuse.json';v=read(f);assert v['result_sha256']==sha(nf) and v['predicted_route_sha256']==sha(work/'predicted.route');assert sha(f)==h['native_evidence_sha256'];files[str(f)]=sha(f);files[str(work/'predicted.route')]=sha(work/'predicted.route')
+  else:
+   assert (w,i)==(8,3);gate=ROOT/'experiments/mux_heuristic_w8m3_quality_gate_2026-10-07';canonical=ROOT/'experiments/mux_heuristic_w8m3_candidate_canonical_2026-10-07';gv=read(gate/'verification.json');cv=read(canonical/'verification.json');assert gv['receipt_sha256']==sha(gate/'receipt.json') and cv['receipt_sha256']==sha(canonical/'receipt.json');assert sha(gate/'verification.json')==h['native_evidence_sha256'] and sha(canonical/'verification.json')==h['candidate_canonical_sha256'];assert cv['candidate_route_sha256']==sha(gate/'w8_m3/predicted.route');assert all(sha(f)==v for rr in read(canonical/'receipt.json')['rows'] for f,v in rr['reload']['files'].items());files[str(gate/'verification.json')]=sha(gate/'verification.json');files[str(canonical/'verification.json')]=sha(canonical/'verification.json')
+  row.update(native_status='HISTORICAL_IDENTICAL_CONTENT',selected_historical=h['selected'],candidate_native_cpd_ns=h['native_cpd_ns'])
+ else:row['native_status']='NOT_SUBMITTED'
+ rows.append(row)
+assert sum(x['native_status']=='HISTORICAL_IDENTICAL_CONTENT' for x in rows)==3
+(out/'final_evidence.json').write_text(json.dumps(dict(source_sha256=sha(Path(__file__)),files=files,rows=rows,scope='All12 terminal, whole-result/cache byte parity and six archived independent audit bindings. Three complete candidates identical to authenticated historical native content, two historical forecast selections; no new native execution/serialization/publication. Host loop times single concurrent observations, all8 preparation+loop bounds still exceed cold accepted observations. No completion/QoR/generalization/accepted end-to-end net gain.'),indent=2)+'\n');print('Closed single-scan full12 evidence;3 historical native contents',flush=True)

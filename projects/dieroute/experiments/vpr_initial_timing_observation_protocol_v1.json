@@ -1,0 +1,19 @@
+{
+  "status": "observation_patch_frozen_before_build",
+  "parent": "work/vpr_source_bound_timing_build_20261015",
+  "modified_file": "vpr/src/route/route.cpp",
+  "env": "DIEROUTE_VPR_INITIAL_TIMING_CSV",
+  "point": "After native lookahead delay init and STA update,before any routing iteration",
+  "identity": "Native clustered net ID,net pin index,sourceRR,sinkRR,clock flag preserved;task mapping must be independently checked,especially duplicate sinkRRs",
+  "values": "Lookahead delay,policy-input criticality,native transformed route criticality,maxcrit/exponent;finite range checks;existing output refused",
+  "required_checks": [
+    "Clean source/dependency/link audit",
+    "Five canonical-compatible native repeats",
+    "Observe per-connection initial values without changing native final artifacts",
+    "Full logical pin/task identity mapping;fail ambiguous mappings"
+  ],
+  "scope": "Source-bound observation only;not initialization policy adoption,complete native equivalence or QoR improvement",
+  "patch_sha256": "cf89eb5fc1905e15edd5296d8ed8d3c285ccbb20ceb6cee5f9a9b0039429f898",
+  "board_result": false,
+  "research_complete": false
+}

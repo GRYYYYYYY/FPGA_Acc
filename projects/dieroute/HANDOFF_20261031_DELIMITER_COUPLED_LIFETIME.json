@@ -1,0 +1,42 @@
+{
+  "observed_ns": 1793425107730357375,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_DELIMITER_STARTUP.json",
+    "sha256": "8ef8049ac5608149691ed6b2c3fa970c82a462423c53557ae1fadf92a8d63986"
+  },
+  "progress": {
+    "report": "work/resident_delimiter_coupled_lifetime_20261031/review.json",
+    "report_sha256": "3071357718930f360cebe402807017a5b158116067068b5787515d67723a6362",
+    "independent_review": "work/resident_delimiter_coupled_lifetime_20261031/independent_review.json",
+    "independent_review_sha256": "d5c98f748d59ba77ef366668324be6388482e90d435cb3b4fb3e23e39f6cfa11",
+    "coupled_control_states": 4846,
+    "unique_transitions": 6997,
+    "mux_queries_unsat": 6,
+    "selected_port_paths": 12,
+    "full_sequential_HDL_equivalence_proved": false,
+    "intended_response_identity_proved": false,
+    "eventual_completion_proved": false,
+    "HDL_simulation_executed": false,
+    "scope": "Three reset-started conservative control/count compositions connect each delimiter builder to its73phase loop,including initial binary pending/flag0/1states,registered caller start,E0/E1,read-needed snapshot,exit-pending,one-bit forwarded-exit OR,done cache and unmatched/pulse ghosts. Parent launch4/wait5and start set/clear priority are source-bound;other parent cases choose any source target. Loop control uses source stage0idle logic,active request/return stalls,and precise exit/E1clear/capture rules from the bound startup/completion/exit-forwarding lemmas. Needed at0and live exit ORat72are nondeterministic. The forwarded ORtag is used at0only while E1valid;any such state comes immediately from72,where source capture equivalence applies. If it causes a hold,E1/pending clear on that edge. This preserves the correlation missing from the former independent hold/clear model. All reset-reachable repeated caller paths have active E0or accepted request/consume/unmatched debt only with parent5/start1. At most1internal request is unmatched;public completion causes parent wait departure only with debt0and no newly accepted request,and consumption-retirement pulse clears on that same sampling edge. ARADDR/ARLEN/ARVALID/RREADY select the child at5;return/ready broadcasts are direct. This supplies local delimiter caller selection/count drain across binary repeated calls,not an unconditional fullRTL equivalence or data/response identity theorem. Forwarded-OR/primitive control contracts underpin the projection;subordinate clear/prefix handshakes and parent data guards are overapproximated. No fairness/eventual native completion,X/Z/missing/midcall reset,original address/pointer/offset/cache/prefix correctness,external response IDs/errors,timing/watchdog or board acceptance is proved. Actual credit retirement still uses earlier conditional adapter contracts. No DUT/native process/input/cache/guard/budget changes or new HLS/Vivado flow.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v241_20261031/matrix.json",
+    "sha256": "9a497d4f7ac2662a5cffd176f5a1683668bdda750609bd55d0aca083f6b7ca0c"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v241.json",
+    "sha256": "b6d203058f83bb04e2fa283af861d8afc1253e0cd40427979f177aa42ea11aa5"
+  },
+  "next_action": "Compose complete hierarchy caller/count/credit contracts and identify remaining source-model and intended address/data correspondence obligations. All3delimiter immediate caller repeated-call count drain/selection now checked in binary control projection. External response causality/identity,pointer/installed contents and full sequential/native acceptance remain;preserve original jobs/guards/budgets/inputs/caches.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

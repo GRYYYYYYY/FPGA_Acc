@@ -1,0 +1,7 @@
+"""Independently validate removed clause roles and relaxed proof."""
+import json
+from pathlib import Path
+from pre_route_endpoints import sha
+from native_resume_prototype.source_binding_v2 import closure
+from verify_certified_cnf_dependency_cdcl_v1 import verify
+R=Path(__file__).resolve().parents[1];E=R/'experiments';B=E/'adder_full905_capacity_only_v1_2026-10-09';D=E/'adder_full905_capacity_only_verification_v1_2026-10-09';D.mkdir(exist_ok=False);vp=B/'verification.json';v=json.loads(vp.read_text());bindings={**v['bindings'],str(vp):sha(vp),**closure([Path(__file__)])};assert all(sha(p)==h for p,h in bindings.items());doc=json.loads((B/'result.json').read_text());cnf=json.loads((E/'adder_full905_cnf_v1_2026-10-09/encoding.json').read_text());indices=[i for i,c in enumerate(cnf['clauses']) if all(cnf['variables'][abs(x)-1]['kind']!='NET_PARENT' for x in c)];assert indices==doc['retained_original_clause_indices'];verify([cnf['clauses'][i] for i in indices],doc['result']);assert doc['result']['status']=='UNSAT';assert all(sha(p)==h for p,h in bindings.items());out=dict(bindings=bindings,status='CAPACITY_ONLY_FINITE_BANK_UNSAT',retained_clauses=len(indices),rup_additions=len(doc['result']['rup_additions']),scope='Original formula relaxation without NET_PARENT clauses independently UNSAT. Shared-parent constraints are unnecessary for current905 bank infeasibility. Not fullgraph infeasibility.');(D/'verification.json').write_text(json.dumps(out,indent=2)+'\n');print(out['status'])

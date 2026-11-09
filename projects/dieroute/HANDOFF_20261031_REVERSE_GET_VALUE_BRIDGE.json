@@ -1,0 +1,46 @@
+{
+  "observed_ns": 1793429559856472474,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_EXECUTE_LOOP_INDICES.json",
+    "sha256": "6ecde1d3b5018c8d484f877873c77268ae98ea5dd3a8ecb37b5ac798937a4562"
+  },
+  "progress": {
+    "report": "work/resident_reverse_get_value_bridge_20261031/review.json",
+    "report_sha256": "201a89cfba58ab80d4524ee61122eb00a52990296efb64b50dc5c8cac5935288",
+    "independent_review": "work/resident_reverse_get_value_bridge_20261031/independent_review.json",
+    "independent_review_sha256": "ce70a49a27932bbcd6a560781a54e5acb0bc38438f0366c4117c18bd9fa4f5bf",
+    "feasible_UNSAT_queries": 11,
+    "caller_reverse_waits": [
+      130,
+      132
+    ],
+    "post_prepare_CFG_states": 298,
+    "prior_applicable_reverse_BRAM_routes": 2,
+    "reverse_source_write_enables": 2,
+    "caller_checks_get_success": false,
+    "reverse_get_delimiter_value_provenance_proved": false,
+    "HDL_simulation_executed": false,
+    "full_sequential_HDL_equivalence_proved": false,
+    "scope": "SHA-bound source data/guard audit locates actual reverse delimiter path:execute getwait130kind3/index0capturesbegin,and wait132kind3/node+1register capturesend;both capture success-independent ap_return_1every wait edge,with final done-edge capture retained. Getkind3uses select_r in state34,unconditionally capturing position/success while waiting and advancing35only on selectdone. Source priority clock guards prove state35a=(success?position-index:0),retval=success;terminal15kind7override is disabled forkind3and returnmux exposes these heldregisters. The success flag is NOT checked by the execute delimiter caller;therefore this bridge does not establish successful or correct delimiter recovery. Reverse words/prefix WE can be asserted only in execute25prepare. Conservative same-command source CFGfrom27to326excludes25,so those memories are not rewritten after preparethrough reverse traversal;next commands excludedat326. Earlier SHA-verified BRAMreadpath has two applicable reverse routes for outer130/132,get34,selector-prefix2. Eleven feasible QFBV UNSAT queries check return subtract/flag/kind/index/WEfacts,with arbitrary other binary control atoms. Frozen prefix contents and select()semantic correctness/argumentholding/caller-lifetime and actual memorytoken identity remain obligations. Thus get()begin<=end<=eand full reverse-loop bounds are still unproved,as are command/ROMvalue identity,4state/fullRTL/native/timing/board behavior. No new native/HDL flow or original DUT/process/input/cache/guard/budget changes.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v251_20261031/matrix.json",
+    "sha256": "9d343809da04280a85c3aa2055ef103c464339dd9ac6ac2188dfa93e4993d98a"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v251.json",
+    "sha256": "b346f8b12b065bca4a51326726dc7358e8eb5889c15cac28d227a163567947e5"
+  },
+  "next_action": "Establish reverse unary marker/select semantic contract:validated rowprefix encoding,matching prefix/word contents,and selector successful rank-to-position correspondence;then compose get position-index with begin/end bounds and reverse loop invariants. Execute ignores get success,so do not assume success or treat zero-on-failure as a valid delimiter. Source transport and postprepare WEexclusion are now checked. First poll original handles and preserve all guards/budgets/inputs/caches/retained failures.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

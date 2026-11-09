@@ -1,0 +1,38 @@
+{
+  "observed_ns": 1793404881129268637,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261030_FIXED_POOL_GRAPH_INPUTS.json",
+    "sha256": "f4c0c78bb85a592ca6be8a7621c653b8404b792b2aa8a91484daf3abb4cdcb4e"
+  },
+  "progress": {
+    "report": "work/research_artifact_dependency_inventory_20261030/typed_review_report_role_resolution.json",
+    "report_sha256": "1b08f9a856a4b72820c287c0435d5c198193d6f7b38ff0fad4831275d3bc4aa6",
+    "independent_review": "work/research_artifact_dependency_inventory_20261030/typed_review_report_role_resolution_review_20261031.json",
+    "independent_review_sha256": "1f79782256506074337ba0bdea66855c6cf583bc4e2ee19683944306a855f660",
+    "ledger": "work/research_artifact_dependency_inventory_20261030/original_hash_field_content_ledger_v14_20261031.json",
+    "ledger_sha256": "b81fb40e4eb7ebda03195aa751561963b2fccd49f5faababec0a5576e0ef722b",
+    "cumulative_original_fields_bound": 9745,
+    "original_fields_not_bound": 223,
+    "root_paths_without_compatible_binding": 466,
+    "scope": "Typed content associations in the declared local case/reference/reviewer scopes. Four terminal-waiter review_sha256 values and one static-contract value are Python reviewer source digests, not result JSON hashes; the static reviewer remains prepared, not executed. Capacity/final/reference reports and completion-resolution JSON preserve their original stages/results, including failures. Current generator bytes are not missing historical production identity. No generator/script execution, C/native/RTL rerun, large payload/trace/TV read, new experiment/gate acceptance, or full artifact closure.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v174_20261031/matrix.json",
+    "sha256": "f02bf08922ab88155a792b02b73bdf540d04c60ab412bc698f9309a92f8cbb9f"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v174.json",
+    "sha256": "427d205f9990d74694c1b21a042fbe2e13264a1b1a8d4cdc00c05b4405582949"
+  },
+  "next_action": "Use ledger v14:9745/9968 original digest fields associated,223remaining over26phases. Fifteen retained files resolve19typed fields; four terminal-waiter digests and one static-contract digest refer to reviewer Python source, not result JSON. Static reviewer remains not executed; old capacity/final/reference checks are not new full hardware acceptance. Separate820transitive fields/466root gaps remain. Current matrix330claims preserves329prior claims. Preserve30watched identities, all original watchdogs/queues/guards/failures; no restart or huge trace/TV reads.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

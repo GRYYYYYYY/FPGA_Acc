@@ -1,0 +1,12 @@
+"""Explicit native AtomLookup mapping, unchanged old canonical analysis."""
+import json,os,re,shutil,subprocess
+from pathlib import Path
+from pre_route_endpoints import sha
+ROOT=Path(__file__).resolve().parents[1];base=ROOT/'experiments/mux_old_full_timing_graph_2026-10-06';out=ROOT/'experiments/mux_atom_timing_identity_2026-10-06';out.mkdir();r=json.loads((base/'receipt.json').read_text());binary=ROOT/'build/native_atom_timing_identity_v2_2026-10-06/routecast_atom_timing_identity_vpr';rows=[]
+(out/'protocol.json').write_text(json.dumps(dict(parent_receipt_sha256=sha(base/'receipt.json'),binary_sha256=sha(binary),source_sha256=sha(Path(__file__)),scope='Observation-only linkerwrap afteroriginalread_route; AtomLookup explicit external/internalpin->tnode, no ordering inference. Old canonical inputs, fullnativeanalysis. Node mapping must cover complete echo graph.'),indent=2)+'\n')
+for old in r['rows']:
+ w=old['width'];source=base/f'w{w}/canonical';work=out/f'w{w}';work.mkdir();inputs={}
+ for name in ('design.blif','design.net','design.place','design.route'):shutil.copyfile(source/name,work/name);inputs[str(source/name)]=sha(source/name)
+ cmd=old['command'].copy();cmd[0]=str(binary);env={k:v for k,v in os.environ.items()if not k.startswith('ROUTECAST_')};table=work/'atom_identity.jsonl';env['ROUTECAST_ATOM_TIMING_IDENTITY_FILE']=str(table)
+ with (work/'run.log').open('w')as stream:code=subprocess.run(cmd,cwd=work,env=env,stdout=stream,stderr=subprocess.STDOUT,timeout=60).returncode
+ assert code==0;log=(work/'run.log').read_text();cpd=float(re.findall(r'Final critical path delay \(least slack\):\s*([0-9.]+)',log)[-1]);assert cpd==old['cpd_ns'];assert re.search(r'Found (\d+) mismatches',log)[1]==re.search(r'Fixed (\d+) routing traces',log)[1]=='0';data=[json.loads(line)for line in table.read_text().splitlines()];graph=json.loads((base/f'w{w}_timing_graph.json').read_text());mapped={x['node_id']for x in data if x['node_id']is not None};assert mapped=={int(n)for n in graph['nodes']};assert all(sha(p)==h for p,h in inputs.items());rows.append(dict(width=w,cpd_ns=cpd,nodes=len(mapped),identity_rows=len(data),inputs=inputs,command=cmd,identity_sha256=sha(table),echo_sha256=sha(work/'timing_graph.analysis.echo'),log_sha256=sha(work/'run.log')));(out/'receipt.json').write_text(json.dumps(dict(protocol_sha256=sha(out/'protocol.json'),rows=rows),indent=2)+'\n');print(w,len(mapped),flush=True)

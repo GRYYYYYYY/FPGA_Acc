@@ -1,0 +1,18 @@
+"""Evaluator-only streaming node domain; all frozen full-cohort metrics."""
+import json,time,shutil
+from pathlib import Path
+from collections import defaultdict,Counter
+from fractions import Fraction
+import xml.etree.ElementTree as ET
+from pre_route_endpoints import sha
+from prediction_metrics import compare
+from stream_metric_domain import metric_domain
+out=Path('experiments/koios_cpp_recovery_evaluation_2026-10-05');parent=Path('experiments/koios_cpp_recovery_2026-10-05');native=Path('experiments/koios_spmv_native_path_audit_2026-10-04')
+if out.exists():raise ValueError('fresh output required')
+p=json.loads((parent/'protocol.json').read_text());r=json.loads((parent/'receipt.json').read_text());nr=json.loads((native/'receipt.json').read_text());assert r['protocol_sha256']==sha(parent/'protocol.json') and r['outputs']['prediction.json']==sha(parent/'prediction.json') and nr['native_sha256']==sha(native/'native.json')
+inputs={'graph':p['inputs']['rr_graph.xml'],'prediction':{'path':str((parent/'prediction.json').resolve()),'sha256':r['outputs']['prediction.json']},'native':{'path':str((native/'native.json').resolve()),'sha256':nr['native_sha256']},'endpoints':{'path':str((parent/'endpoints.json').resolve()),'sha256':r['outputs']['endpoints.json']}};assert all(sha(v['path'])==v['sha256'] for v in inputs.values());out.mkdir();(out/'source').mkdir()
+for f in Path(__file__).parent.glob('*.py'):shutil.copyfile(f,out/'source'/f.name)
+protocol={'inputs':inputs,'scope':'single Koios design/seed family-transfer measurement, not sufficient for family generalization or QoR','metrics':'same resource top5percent/spatialtop20/Spearman/MAE/overflow; boundary ties retained and reported; no posthoc k change','source_sha256':{f.name:sha(f) for f in (out/'source').glob('*.py')}};(out/'protocol.json').write_text(json.dumps(protocol,indent=2)+'\n');start=time.monotonic();pred=json.loads(Path(inputs['prediction']['path']).read_text());truth=json.loads(Path(inputs['native']['path']).read_text());endpoints=json.loads(Path(inputs['endpoints']['path']).read_text());assert len(pred['connections'])==len(endpoints['connections'])==15138
+fields=('connection_id','net_id','source','sink');assert Counter(tuple(v[k] for k in fields) for v in pred['connections'])==Counter(tuple(v[k] for k in fields) for v in endpoints['connections']);assert Counter((v['net_id'],v['source'],v['sink']) for v in truth['connections'])==Counter((v['net_id'],v['source'],v['sink']) for v in endpoints['connections'])
+pv=pred['node_occupancy'];tv=truth['node_occupancy'];resources_p,resources_t,sp,st,all_caps,counts=metric_domain(inputs['graph']['path'],pv,tv);resource=compare(resources_p,resources_t,max(1,len(resources_p)//20));spatial=compare(sp,st,20);overflow=sum(max(0,v-all_caps[n]) for n,v in pv.items())
+assert all(sha(v['path'])==v['sha256'] for v in inputs.values());reports={'resource':resource,'spatial':spatial,'overflow_units':overflow,'net_channel_touches_prediction':sum(pv.get(n,0) for n in resources_p),'net_channel_touches_native':sum(tv.get(n,0) for n in resources_t),'failed_connections':r['failed_connections']};(out/'spatial_maps.json').write_text(json.dumps({'prediction':sp,'native':st})+'\n');receipt={'protocol_sha256':sha(out/'protocol.json'),'exact_full15138_native_endpoint_multiset':True,'node_type_counts':dict(counts),'reports':reports,'evaluation_s':time.monotonic()-start,'inputs_unchanged':True,'spatial_maps_sha256':sha(out/'spatial_maps.json'),'interpretation':'top-k boundaries may be zero in sparse resource domain; report ties, no default-feedback/nativeQoR/family-generalization/net-benefit claim'};(out/'receipt.json').write_text(json.dumps(receipt,indent=2)+'\n');print(json.dumps(receipt),flush=True)

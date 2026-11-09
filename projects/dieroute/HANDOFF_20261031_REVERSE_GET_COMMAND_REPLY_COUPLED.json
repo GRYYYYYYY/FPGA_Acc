@@ -1,0 +1,53 @@
+{
+  "observed_ns": 1793449382037808145,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_COMMAND_EXECUTE_REPLY_COUPLED.json",
+    "sha256": "6c9e612c94828f4b1c6c314ddbef863fb90a50e41222f2bbbb73be2160f51d80"
+  },
+  "progress": {
+    "report": "work/resident_reverse_get_reply_coupled_20261031/review.json",
+    "report_sha256": "641b7095bf98114ae54aac75ab369d23f1abd93b0e1a3746b596eed97ed661bb",
+    "consistency_review": "work/resident_reverse_get_reply_coupled_20261031/consistency_review.json",
+    "consistency_review_sha256": "a69c823daf13008d92ce81da63030d2a07b24b5d37f13e35333d76fa54cf045b",
+    "final_review": "work/resident_reverse_get_reply_coupled_20261031/final_review.json",
+    "final_review_sha256": "53e58d656f7844aee6cb7c621c4796230aa4451ca43282b2c5305d30f4da56d1",
+    "calls": 192,
+    "source_event_edges": 51306,
+    "actual_reverse_get_calls": 48,
+    "actual_reverse_valid_calls": 24,
+    "actual_reverse_invalid_calls": 24,
+    "remaining_get_contract_calls": 24,
+    "new_SMT_queries": 0,
+    "new_native_accepted_cases": 0,
+    "scope": "Onecommonreset192retained-state source-event command->execute->reply calls now use actual generated get58state/selector/3helper source and2CEword/prefix RAM for48kind3calls (24valid/24invalidordinal), instead of get-data contracts. Synthetic admitted fullN773272/E973552 unary image with largezero-prefixplateau; source images/readstages shared across calls. Generic kinds1/7 retain24get contracts. Publishedgraph/install/acceptedAXILiteconfigstartcontinue and successful ordered external response/componentrefinement/binaryreset premises remain. The synthetic read-only image is not produced by original full install, and no original fullgraph/native/RTL/X/board success is inferred. Actual source port maps connect reverse hierarchy; omitted nonreverse helper outputs are fixed arbitrary binary values, unused kind3 paths. Inactive hierarchy junk uses0 only when all source FSMs idle; active invalid-address data remains arbitrary. Idle-transition memoization requires observed identical full source register/flow/RAM state and no CE; source caller memo includes complete hybrid hierarchy signature. Compiled expression differential checks and all original192cases/CPU90/AS1GiB retained. Finite observed hierarchy composition is not universal wholeRTL or complete publichost/installation proof. Provenance/fixture consistency review independently reconstructs192command hashes and168non-generic reply hashes. Remaining24generic replies are checked only by producer oracle. Compiler aggregate15326comparisons/12364118calls covers original11models, not added5reverse hierarchy models. Producer final report exists after all assertions, but original OSexit status is unavailable because tool session expired; no OSexit0 claim. No new SMT/native/workload/gate acceptance.",
+    "research_complete": false,
+    "full_public_host_roundtrip_proved": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v285_20261031/matrix.json",
+    "sha256": "c45d4bce94b01324ea47d21b882b15d4ca57f97ff15e578b3f212881927803e8"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v285.json",
+    "sha256": "824076af91fdd693fbfd665a67674f4950902de3f8c8c722cb562aeccdd920be"
+  },
+  "current_runtime_observation": {
+    "path": "work/resident_reverse_get_reply_coupled_20261031/runtime_observation.json",
+    "sha256": "337b8382ce92596a7d1824f1b84d09c679d3707504c86adfbeec34ab0c661b1f",
+    "scope": "Fresh30actual identities; no new native acceptance; Owner supervisor failure retained."
+  },
+  "previous_goal_turn_classification": "no_progress_goal_explanation_only",
+  "current_goal_turn_classification": "progress_and_verified_wait",
+  "next_action": "Prioritize actual native terminal review. Extend source get kinds1/7 through their actual generated helper/memory paths without reducing192cases or native workloads. Replace admitted synthetic reverse image with source installation/publication composition and original graph evidence before fullhost claim; accepted rawAXILite config/start/continue still requires bus frontend composition. Retain Owner missing guard/quota failure and absentcompletion; no restart/adoption. Originalall8gates,strictcapacity/async/mapping/migration/QoR/ablations/300MHz/board/artifacts/paper remain open.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "owner_supervisor_failure_retained": true,
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending;820separate transitive/466root gaps;paper unchanged.",
+  "research_complete": false
+}

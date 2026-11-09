@@ -1,0 +1,9 @@
+{
+  "status": "pass",
+  "cases": 1000,
+  "scope": "composed legality, guards, touched discovery, cost and score; analytic two-block HPWL/floor reference, occupied rejection and guard/capacity/CSR/negative weight faults. No RTL or search integration. Caller touched scratch may be written before downstream errors; result remains zero on failure.",
+  "sha256": {
+    "evaluate_words.hpp": "702a433a434741265d636f882d9ad636081fe08e0f9730b0ddb91b7043c4e472",
+    "test_evaluate_words.cpp": "6a59ce8e709c7173162121921105504ebd3d5f77408185f4ca9e2ca1f2cc1761"
+  }
+}

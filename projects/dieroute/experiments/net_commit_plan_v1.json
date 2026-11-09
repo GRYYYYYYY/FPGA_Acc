@@ -1,0 +1,48 @@
+{
+  "schema": "dieroute.net_commit_plan.v1",
+  "objective": "Move complete native net authority and atomic multi-branch commit into synthesizable hardware, then integrate fresh native routing",
+  "implemented_component": [
+    "All-node sharded resource hash tables",
+    "Exact resource-to-net and net-to-tree linked membership",
+    "Complete streamed read-version checks and consumed-shadow validation",
+    "CSR edge, node permission, tree ancestry, cost and overflow checks",
+    "Preflight journal with all-or-nothing authority publication",
+    "Root start, proposal commit, ripup/free-list reuse, negotiated history/present epoch, query and session reset",
+    "Hardware-derived resource deltas"
+  ],
+  "current_boundary": "Single serialized engine with explicit disjoint-buffer handoff and logical owner hash segments; CPU still owns the existing live router until integration",
+  "phases": {
+    "component": "verified component; not live native authority",
+    "hls_rtl": "v3 verified: 75 C/RTL calls, effective 2.920 ns budget met",
+    "independent_transcript_audit": "270 C-model calls, 75 byte-identical XRT calls, 35 semantic corruptions rejected",
+    "real_native_transaction_replay": "pending",
+    "joint_platform": "standalone link and 81 XRT calls verified; joint publisher/receiver integration pending",
+    "live_native_authority_integration": "pending"
+  },
+  "acceptance": [
+    "All read-set entries including absent/off-path interior nodes validated",
+    "Exact net sharing, tree ancestry and monotonic resource versions",
+    "Rejected request leaves resources, trees, nets and control byte-identical",
+    "Late malformed path, arithmetic overflow, pool/journal/output exhaustion cannot partially publish",
+    "No host overwrite of committed owner values in hardware-authority mode",
+    "Independent protocol replay and fresh routing compared to native CPU reference",
+    "HLS/RTL and XRT functional evidence with precise physical limits"
+  ],
+  "timing_target_ns": 4,
+  "research_complete": false,
+  "limitations": [
+    "Negotiated routing intentionally permits overuse; this is not a strict distributed capacity-grant protocol",
+    "Single master for authority does not establish physical multi-bank placement",
+    "No crash atomicity or concurrent DMA claim",
+    "Component tests do not establish a full FPGA router or board performance"
+  ],
+  "regression": {
+    "ctest_passed": 46,
+    "asan_ubsan_suites_passed": 3
+  },
+  "host_authority_guard": {
+    "actual_kernel_calls": 6,
+    "host_overwrite_attempts_rejected_before_launch": 4,
+    "authority_uploads": 0
+  }
+}

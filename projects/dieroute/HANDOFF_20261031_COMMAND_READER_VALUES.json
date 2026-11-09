@@ -1,0 +1,46 @@
+{
+  "observed_ns": 1793442604352808118,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_HOST_REVERSE_LAYOUT.json",
+    "sha256": "f61bca0d211127951863a17ee3bb8ca194e481b8a2ff9d23ca6ce1769cdb2b00"
+  },
+  "progress": {
+    "report": "work/resident_command_reader_values_20261031/review.json",
+    "report_sha256": "e583bf3354f159ae9f61ca4cc7e9997db1a89be5f0dd675a8e6e52647ac11788",
+    "independent_review": "work/resident_command_reader_values_20261031/independent_review.json",
+    "independent_review_sha256": "a448a16f084c6c64477f0e4fe7f12f08cf81a709ae01e1e7bbc14752f99806dc",
+    "final_review": "work/resident_command_reader_values_20261031/final_review.json",
+    "final_review_sha256": "3e7aaa7740e907a091157e1506b2fe4bf971c7b181001976ec6c1bab180064f9",
+    "new_feasible_UNSAT_queries": 19,
+    "integer_source_calls": 64,
+    "source_edges": 1377,
+    "RVALID_stalls": 24,
+    "accepted_packets_per_call": 2,
+    "command_words_per_call": 16,
+    "conditional_command_holding_values_from_two_packets_proved": true,
+    "control_adapter_ordered_packet_contract_proved": false,
+    "scope": "Commandreaderwhole-sourcecallvaluecontract:19feasibleBVqueries include16symbolicpacket-to-registerequalities fromarbitraryoldregisters/shift/indexandresetidlebase,whole-sourceRVALIDstallstutter,signed58bitwordaddressshift6roundtrip,andtwo512word128bytelength. Exactwrites0..15/done-word15sameedge;idleholds. Independentinteger-source64continuouscalls/1377edges/24stalls/128packetaccepts/1024writesagree;top16execute-portmappingboundtov249. Topstate2issuesoneARLEN2internal512wordrequest;leafARVALID0,soinstall64/singlewordadaptercontractdoesnotapply. Correctorderedtwo512packetcontrol-adapterresponseand64bytealignedcommandpointerremainpremises;fullcontroladapterburstsplit/order,acceptedexecute/preparefreshness/fullRTL/native/boardremainopen.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v274_20261031/matrix.json",
+    "sha256": "325fd16b95e69a86b196c2557612860a0b94ede464dd6747e0ce11c38d14f58d"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v274.json",
+    "sha256": "20b74251d1d873ab3bbb40a4786e4b149f72ea8255bb75ce3968afb96b9b44d9"
+  },
+  "next_action": "Proveactualcontrol_wordsadapterUSER_DW512/defaultbus512topstate2ARLEN2request->twoordered512responses,includingpossible64-aligned128bytecross-4Ksplit;do not reuseinstall64singlewordcredit/ordertheorem. Bindtopstate1capturedcommandbase/2acceptedrequest/72-73readerandtop75executeportvalues,thenexecute22shape/startsimultaneouscapturebeforeprepareacceptedstate1. Preservecorrectexternalprotocol/fullRTL/native/boardpremisesandalloriginalhandles/guards/budgets/inputs/caches/failures/UNKNOWNs.",
+  "previous_goal_turn_classification": "progress_and_verified_wait_v273",
+  "current_goal_turn_classification": "progress_and_verified_wait",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

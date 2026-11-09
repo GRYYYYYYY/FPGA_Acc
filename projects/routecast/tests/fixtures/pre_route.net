@@ -1,0 +1,12 @@
+<block name="pre_route.net" instance="FPGA_packed_netlist[0]">
+<inputs/><outputs>external_name</outputs><clocks/>
+<block name="cluster_name" instance="core[0]">
+<inputs><port name="I">open</port></inputs>
+<outputs><port name="O">child[0].out[0]-&gt;output_mux</port></outputs><clocks/>
+<block name="different_atom_name" instance="child[0]">
+<inputs/><outputs><port name="out">external_name</port></outputs><clocks/>
+</block></block>
+<block name="out:external_name" instance="io[9]">
+<inputs><port name="pad">external_name</port></inputs><outputs/><clocks/>
+</block>
+</block>

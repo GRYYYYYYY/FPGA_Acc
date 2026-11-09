@@ -1,0 +1,14 @@
+"""Offline batch feasibility diagnostic, not an online cache or matched end-to-end gain."""
+import sys,json,time,subprocess,statistics
+from pathlib import Path
+R=Path(__file__).resolve().parents[1];sys.path[:0]=[str(R/'tools'),str(R/'tools/native_resume_prototype')]
+from pre_route_endpoints import sha
+from source_binding_v2 import closure
+base=R/'experiments/bound_local_cost_v6_2026-10-07';out=R/'experiments/capped_bound_batch_cpp_v1_2026-10-07';out.mkdir();binary=R/'build/capped_bound_batch_cpp_v1_2026-10-07/compute';source=R/'tools/capped_bound_batch_cpp_v1/main.cpp';checker=R/'build/cache_bound_certificate_v2_2026-10-07/check';gf=base/'certificate_graph.bin';vp=base/'verification.json';proof=json.loads(vp.read_text());assert all(sha(k)==h for k,h in proof['bindings'].items());cache=json.loads((base/'0_old_cache.json').read_text());bindings={**closure([Path(__file__)]),str(binary):sha(binary),str(source):sha(source),str(checker):sha(checker),str(vp):sha(vp),str(gf):sha(gf),str(base/'0_old_cache.json'):sha(base/'0_old_cache.json')}
+for e in cache['events']:assert sha(e['path'])==e['sha256'];bindings[e['path']]=e['sha256']
+(out/'protocol.json').write_text(json.dumps(dict(bindings=bindings,scope='Offline batch prototype. 178 authenticated dsip publication sinks frozen before execution. Four fresh processes pay graph parse/reverse construction/compute/write/close and output SHA. Serialized graph preparation, parent source graph/model import, C++ compilation and independent checking excluded. No immediate hit requests, online deadline/eviction/session lifecycle or observer. Not matched old-cache workflow, statistical/unseen-family/physical-card or end-to-end gain.'),indent=2)+'\n');rows=[]
+for repeat in range(4):
+ work=out/f'repeat{repeat}';work.mkdir();start=time.perf_counter();run=subprocess.run([str(binary),str(gf),str(cache['cutoff_integer']),str(work),*[str(e['sink']) for e in cache['events']]],capture_output=True,text=True,timeout=120,check=True);assert json.loads(run.stdout)['publications']==178;hashes={str(work/f"sink{e['sink']}.bin"):sha(work/f"sink{e['sink']}.bin") for e in cache['events']};elapsed=time.perf_counter()-start
+ for e in cache['events']:assert hashes[str(work/f"sink{e['sink']}.bin")]==e['sha256']
+ arguments=[str(e['sink'])+':'+str(work/f"sink{e['sink']}.bin") for e in cache['events']];cert=json.loads(subprocess.run([str(checker),str(gf),*arguments],capture_output=True,text=True,timeout=120,check=True).stdout);assert cert['certificates']==178;bindings.update(hashes);rows.append(dict(repeat=repeat,compute_archive_and_hash_seconds=elapsed,all178_reference_bytes_exact=True,compiled_all_arc_certificate=cert));print(rows[-1],flush=True)
+assert all(sha(k)==h for k,h in bindings.items());(out/'receipt.json').write_text(json.dumps(dict(protocol_sha256=sha(out/'protocol.json'),rows=rows,median_seconds=statistics.median(r['compute_archive_and_hash_seconds'] for r in rows),bindings=bindings),indent=2)+'\n')

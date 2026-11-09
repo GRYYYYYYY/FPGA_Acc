@@ -1,0 +1,20 @@
+{
+  "schema": "dieroute.native_worker_protocol.v1",
+  "mode": "--die-workers requires --owner-partition --corridor-joint-portals and --shadow-sync-searches 0. Source-observer shadows are a different existing experiment.",
+  "resource_owner": "Lowest member SLR bit; one mutable authority record per electrical node. This is separate from search-label assignment.",
+  "search_worker": "For the fixed simple die sequence, each ordinary node executes on its die, each internal boundary label executes on the departure die, each root uses the first die and the terminal uses the designated sink die. A boundary resource remains one electrical node.",
+  "queues": "Independent epoch-tagged sparse label table and priority queue per worker. A deterministic arbiter chooses the minimum (potential+cost,cost,hops,node,parent) head, preserving the reference total order. Limits apply to the sum across workers.",
+  "transfers": "Improved relaxations enqueue at the unique destination worker, with no synthetic edge/cost/hop. Each cross-worker push counts one logical frontier transfer, including superseded queue entries. These are not measured wire bytes.",
+  "access": "A worker may query only resources with its membership bit, checked against immutable topology. Owned reads use owner_use(worker,node). A nonowned boundary invokes the unique owner summary service; only occupancy/history/version are returned. Summaries are cached immutably within the candidate phase and validated afterward, including off-path queries.",
+  "generation": "An immutable controller generation changes before a mutation becomes externally observable; all allocation precedes mutation. It guards local reads and whole-checkpoint ABA. Copies receive a new generation; failed mutations preserve the old one. Global invalidation is conservative. No thread may mutate authority concurrently with search or validate/commit in this implementation.",
+  "fallback": "Budget deferral and stalled-tree rescue remain. Full-graph fallback runs on the serial controller and is separately counted; it is not disguised as die-local work.",
+  "validation": "The serial driver rejects any unexpected invalidated candidate before publishing it. Component tests explicitly mutate authority and demonstrate rejection/fresh retry. A future parallel scheduler needs synchronized commit and replay, not unsynchronized use of these maps.",
+  "journals": [
+    "worker_queues.csv: per candidate/worker expansions, edge visits, pushes, cross-worker transfers and labels",
+    "worker_reads.csv: per invocation/worker/owner/node immutable occupancy/history/version responses",
+    "worker_access.csv: owned reads, boundary requests/cache hits/validations and acceptance of the read phase"
+  ],
+  "audit_scope": "Independent reconstruction validates all recorded boundary responses, ownership, repeated journals and counter conservation. It does not rerun every search; independent dense/Bellman-Ford tests verify queue semantics.",
+  "plan": "experiments/native_worker_comparison_plan_v1.json",
+  "transport_limit": "The frontier transfer counter counts successful cross-worker pushes, not all cross-worker label probes or rejected relaxations. The serial search coordinator still performs receiver-table lookups; a physical implementation needs explicit request/response transport and complete traffic accounting."
+}

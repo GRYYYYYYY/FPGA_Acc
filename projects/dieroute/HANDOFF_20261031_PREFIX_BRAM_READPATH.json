@@ -1,0 +1,44 @@
+{
+  "observed_ns": 1793411859569497581,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_PREFIX_TRANSITION_EQUIVALENCE.json",
+    "sha256": "e91b3c2d61a2aeb02037489a1324d7127b7e4892a3291f401d3a30ea58052c46"
+  },
+  "progress": {
+    "report": "work/resident_prefix_BRAM_readpath_20261031/review.json",
+    "report_sha256": "6d539659deefa5c42540cd10cfd435c699fef6e29c5528ce93845e0c07a0a6f7",
+    "independent_review": "work/resident_prefix_BRAM_readpath_20261031/independent_review.json",
+    "independent_review_sha256": "4b715bca9f5dcf551d378781a6aa0f777655994260914d616dc55b2b7617eb38",
+    "nested_routing_combinations": 98,
+    "memory_model_types": 2,
+    "actual_RAM_instance_bindings": 3,
+    "symbolic_two_enabled_edge_delivery_checked": true,
+    "HDL_simulation_executed": false,
+    "actual_prefix_memory_contents_validated": false,
+    "runtime_iteration_count_correspondence_proved": false,
+    "whole_program_lower_bound_certified": false,
+    "watchdog_failure_verdict": null,
+    "scope": "Read-only source/mux and symbolic data-token audit of existing SHA-bound2022.2 RTL. In98combinations of enumerated admitted nested caller/execute wait states, selected prefix address/CE and q return paths are combinational and BRAM WE is0. These are routing combinations, not98executed tests or globally reachable states. Both BRAM model types have two CE-gated read registers; with stable valid mid and enabled reads at stages1/2/3, stage3 comparator sampling sees RAM[mid] from stage1. Mid boundary registers update only at stage0. Assumes legal one-hot/shared-clock/no-mid-call-reset/properly nested prefix-parent state2, enabled helper stages and stable initialized memory. This is an abstract token projection, not HDL simulation or full sequential/netlist equivalence. Actual prefix build/content validity, all port widths/operand delivery, global reachability, full runtime iteration/call counts, word/bit helpers, serialization/whole-program timing and watchdog outcome remain unproved. No .dat memory image, original program/trace/TV payload read; no new flow/DUT edit/control/budget/guard/adoption change.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v202_20261031/matrix.json",
+    "sha256": "313bbe61f6ca484f19bf92c0d11745bf7291c48c45164c0a713b8f52ce35bc9e"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v202.json",
+    "sha256": "df1a2c1e632ef5e53a2367112066330b6e9130ee744244d7192d7c9f9660a2ab"
+  },
+  "next_action": "Source mux/read-register timing checked only for stated nested intervals. Next check prefix build/content correctness and actual argument delivery/sequential realization before runtime iteration-count claims; preserve full original execution and all timing/composition prerequisites.",
+  "runtime": "30exact handles confirmed live, all terminal watchers empty; global63.363GiB, original strict queue headroom unmet. No job/watchdog/guard/adoption change.",
+  "artifact_ledger_unchanged": "v24:9878/9968associated,90pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

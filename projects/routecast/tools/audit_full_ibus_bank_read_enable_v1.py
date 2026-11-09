@@ -1,0 +1,14 @@
+"""Actual source double inversion and two-slice read-enable capture bindings."""
+import json,hashlib
+from pathlib import Path
+R=Path(__file__).resolve().parents[1];files=[R/'experiments/full_original_unoptimized_proc_state_v1_2026-10-09/source_unoptimized.json',R/'experiments/full_ram_mapping_candidate_v1_2026-10-09/structural.json',R/'experiments/full_ibus_bank_read_boundary_v1_2026-10-09/audit.json'];s,n=[max(json.loads(f.read_text())['modules'].values(),key=lambda m:len(m['cells'])) for f in files[:2]];a=json.loads(files[2].read_text());ready_name='IBusCachedPlugin_iBusRsp_stages_1_input_ready';sr=s['netnames'][ready_name]['bits'];re=s['netnames']['IBusCachedPlugin_cache._zz_fetchStage_read_banksValue_0_dataMem_1']['bits'];sc=s['netnames']['IBusCachedPlugin_cache.io_cpu_fetch_isStuck']['bits'];defs=[]
+for output,inputbits in [(re,sc),(sc,sr)]:
+ matches=[{'cell':k,'definition':c} for k,c in s['cells'].items() if c['connections'].get('Y')==output];assert len(matches)==1;c=matches[0]['definition'];assert c['type']=='$logic_not' and c['connections']['A']==inputbits;defs+=matches
+nr=n['netnames'][ready_name]['bits'];assert nr==n['netnames']['IBusCachedPlugin_cache._zz_fetchStage_read_banksValue_0_dataMem_1']['bits']
+assert all(r['capture_control']==re for r in a['source_lanes'])
+slices=[]
+for er in sorted({r['er'] for r in a['structural_lanes']}):
+ r=next(r for r in a['structural_lanes'] if r['er']==er);c=r['er_register'];assert c['connections']['D']==nr and c['connections']['CLK']==[254];assert any(v['attributes'].get('init')=='0' for v in r['er_aliases']);slices.append({'er':er,'D':nr,'clock':[254],'explicit_init':'0','definition':c})
+inv=lambda x:{'0':'1','1':'0','x':'x'}[x];cases=[{'ready':x,'source_read_enable':inv(inv(x)),'structural_read_enable':x} for x in ['0','1','x']];assert all(c['source_read_enable']==c['structural_read_enable'] for c in cases)
+out={'source_ready_bits':sr,'source_inversions':defs,'structural_ready_bits':nr,'slice_er_registers':slices,'ternary_cases':cases,'conclusion':'Original read enable is double-not of stage1 inputready; structural readenable exactly aliases its own stage1 inputready. Both bank slice er D capture same actual readenable and explicit initial0, so no independent bank-slice enable premise is needed.','scope':'Readenable functions agree conditional on stage1 inputready correspondence, logical0/1/X domain. Does not establish upstream readiness/history, payload/rawarray relation, four-state scheduler, Z-level inputs or full replay admission.','hashes':{str(f.relative_to(R)):hashlib.sha256(f.read_bytes()).hexdigest() for f in files}}
+D=R/'experiments/full_ibus_bank_read_enable_v1_2026-10-09';D.mkdir(exist_ok=True);(D/'audit.json').write_text(json.dumps(out,indent=2)+'\n');print(json.dumps({'slices':len(slices),'cases':cases,'conclusion':out['conclusion']}))

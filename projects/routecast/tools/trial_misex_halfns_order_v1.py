@@ -1,0 +1,17 @@
+"""Two frozen whole-batch orders, same bounds/budgets/seed; no full claim."""
+import json,sys,time
+from pathlib import Path
+R=Path(__file__).resolve().parents[1];sys.path[:0]=[str(R/'tools'),str(R/'tools/native_resume_prototype')]
+from pre_route_endpoints import sha
+from source_binding_v2 import closure
+from nonzero_rc_endpoint_context import load_endpoints
+from remaining_delay_halfns_cache_v3 import RemainingDelayCache
+from tree_floor_pareto_cache_predictor_v6 import predict
+parent=R/'experiments/mcnc_bounded_owner_halfns_cache_v6_2026-10-07';base=R/'experiments/mcnc_prospective_v1_2026-10-07/misex3';out=R/'experiments/misex_halfns_order_v1_2026-10-07';out.mkdir();eventfile=parent/'misex3/batch5.json';floorfile=parent/'misex3/floors.json';ep=base/'endpoints.json';inputs={str(p):sha(p) for p in (eventfile,floorfile,ep,parent/'receipt.json')};inputs.update({v['path']:v['sha256'] for v in json.loads(ep.read_text())['inputs'].values()});sources=closure([Path(__file__)]);(out/'protocol.json').write_text(json.dumps(dict(inputs=inputs,sources=sources,policies=['failed_first_legacy','removed_first_then_failed'],scope='Post-outcome development order-only local batch. Same frozen tree/Pareto/budget/cache; no continuation/native/global completion/net gain.'))+'\n');event=json.loads(eventfile.read_text());graph,digest,nodes,f,rc,_=load_endpoints(ep);floors={(r['source'],r['sink']):r['minimum_integer'] for r in json.loads(floorfile.read_text())};spans=[1+int(n.find('loc').get('xhigh'))-int(n.find('loc').get('xlow'))+int(n.find('loc').get('yhigh'))-int(n.find('loc').get('ylow')) if n.get('type') in ('CHANX','CHANY') else 0 for n in nodes];release=set(event['released_net_ids']);kept=[r for r in event['before_records'] if r['net_id'] not in release];removed=sorted((r for r in event['before_records'] if r['net_id'] in release),key=lambda r:(r['net_id'],r['connection_id']));qs=[{k:r[k] for k in ('connection_id','net_id','source','sink')} for r in removed];rows=[]
+for key,queries in [('failed_first_legacy',[event['query']]+qs),('removed_first_then_failed',qs+[event['query']])]:
+ work=out/key;work.mkdir();cache=RemainingDelayCache(graph,digest,f,rc,work/'bounds');tick=time.perf_counter();state=predict(cache.fields,cache.rc,queries,floors,seed_records=kept,spans=spans,penalty=rc.scale//10**11,remaining_cache=cache);elapsed=time.perf_counter()-tick
+ if key=='failed_first_legacy':assert state['records']==event['working_records'] and state['failure']==event['batch_failure'] and state['ledger']=={int(n):v for n,v in event['working_ledger'].items()}
+ old={r['connection_id']:r for r in kept};new={r['connection_id']:r for r in state['records']};assert all(new[k]==v for k,v in old.items())
+ for rec in state['records']:assert rc.path(rec['source'],rec['sink'],rec['answer']['physical_edge_ids'])==rec['answer']['delay']<=rec['budget_integer']
+ (work/'candidate.json').write_text(json.dumps(state)+'\n');(work/'cache_receipt.json').write_text(json.dumps(cache.summary())+'\n');rows.append(dict(policy=key,completed=state['completed_connections'],failure=state['failure'],seconds=elapsed,committed_local=state['failure'] is None,files={str(p):sha(p) for p in work.rglob('*') if p.is_file()}));print(key,state['completed_connections'],state['failure'],flush=True)
+assert all(sha(p)==h for p,h in {**inputs,**sources}.items());(out/'receipt.json').write_text(json.dumps(dict(protocol_sha256=sha(out/'protocol.json'),rows=rows,global_required=2449,before_completed=len(event['before_records'])),indent=2)+'\n')

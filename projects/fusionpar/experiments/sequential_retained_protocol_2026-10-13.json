@@ -1,0 +1,28 @@
+{
+  "schema": "FUSIONPAR_RETAINED_SEQUENTIAL_PROTOCOL_V1",
+  "designs": [
+    "ex5p",
+    "alu4",
+    "misex3"
+  ],
+  "repeats": 5,
+  "primary_proposal_budget": 3,
+  "modes": [
+    "sequential_tree_reuse",
+    "sequential_shared_tree_reuse",
+    "interleaved_tree_reuse"
+  ],
+  "batch_policy": "Greedily combine non-overlapping proposals from the same initial HPWL-ranked top three; validate and publish one atomic batch",
+  "routing": "Identical FP retained-tree controller and PR HBM C-model kernels, affected-net scope and unchanged-endpoint branch retention",
+  "acceptance": "unchanged strict native (WL,CPD) improvement plus 2% initial guards",
+  "requirements": [
+    "Cold/shared batch state and event equality",
+    "Five-repeat state, event and timing determinism",
+    "Independent route/placement/version/retention audit"
+  ],
+  "limits": [
+    "Batch versus interleaving can have different candidate sequences and validation counts",
+    "Common conversion charged equally; all rejection costs retained",
+    "Development inputs only; no physical FPGA claim"
+  ]
+}

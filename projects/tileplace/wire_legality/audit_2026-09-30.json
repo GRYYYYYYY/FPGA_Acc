@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "random_queries": 5000,
+  "legal_queries": 1828,
+  "reference": "typed trial_legality_array",
+  "scope": "CPU external words legality; x/y randomized, layer/subtile0; extremes/rangefault/RTL still pending",
+  "sources": {
+    "trial_words.hpp": "da82d37ed737b15490888fe42b89f9dd373584151206aa39336a787869d8d28e",
+    "test_trial_words.cpp": "caf6bb07f864da18be3f8c59608ec4296d731563129866db117cbee0012c0346"
+  }
+}

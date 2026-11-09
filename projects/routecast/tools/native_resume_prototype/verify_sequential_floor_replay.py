@@ -1,0 +1,11 @@
+"""Full uncached floor recomputation for each genuine native update epoch."""
+import json,struct,subprocess,sys
+from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+from pre_route_endpoints import sha
+ROOT=Path(__file__).resolve().parents[2];base=ROOT/'experiments/native_resume_sequential_adder_2026-10-07';out=base/'uncached_floor_replay';out.mkdir(exist_ok=False);original=base/'floor_context/epoch_1/queries.bin';raw=original.read_bytes();magic,n,m,q=struct.unpack('<4Q',raw[:32]);size=8*((n+1)+m+m+n+n);prefix=raw[32:32+size];assert len(prefix)==size;binary=ROOT/'build/native_resume_rr_floor_cpp_2026-10-07/rr_floor';rows=[];bindings={str(original):sha(original),str(binary):sha(binary),str(Path(__file__)):sha(Path(__file__))};seen=set()
+for i in (1,2,3):
+ ep=ROOT/f'experiments/adder_tree_2L032_move_sequence_2026-10-06/step_{i}_endpoints.json';meta=json.loads(ep.read_text());queries=meta['connections'];payload=out/f'epoch{i}.bin';payload.write_bytes(struct.pack('<4Q',magic,n,m,len(queries))+prefix+b''.join(struct.pack('<3Q',x['connection_id'],x['source'],x['sink']) for x in queries));file=out/f'epoch{i}.jsonl'
+ with file.open('w') as stream:subprocess.run([str(binary),str(payload)],stdout=stream,stderr=subprocess.PIPE,check=True,timeout=120)
+ actual={a['connection_id']:a['minimum_integer'] for a in map(json.loads,file.read_text().splitlines())};rp=base/f'floor_context/epoch_{i}/receipt.json';r=json.loads(rp.read_text());expected={a['query']['connection_id']:a['minimum_integer'] for a in r['answers']};assert actual==expected and all(v is not None for v in actual.values());pairs={(x['source'],x['sink']) for x in queries};miss=pairs-seen;assert len(miss)==r['miss_pairs'] and r['hit_connections']==sum((x['source'],x['sink']) in seen for x in queries);seen.update(pairs);rows.append(dict(epoch=i,connections=len(queries),miss_pairs=len(miss),hit_connections=r['hit_connections'],all_uncached_values_exact=True));bindings.update({str(f):sha(f) for f in (ep,rp,payload,file)})
+assert all(sha(f)==h for f,h in bindings.items());(out/'verification.json').write_text(json.dumps(dict(rows=rows,bindings=bindings,scope='Full fresh-query C++ recomputation and independent cache-key/epoch replay; same integer graph model/kernel, not independently native STA or Dijkstra optimality.'),indent=2)+'\n');print(rows)

@@ -1,0 +1,43 @@
+{
+  "observed_ns": 1793420603679353458,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_INSTALL_CONTINUOUS_SINGLEWORD.json",
+    "sha256": "5b600f20e6e120cc7138756735f5f4b84c29f38adccbe8fc033192e205e0367a"
+  },
+  "progress": {
+    "report": "work/resident_install_regslice_transport_20261031/review.json",
+    "report_sha256": "7be41daff61c892241b02cb0e298b1688503fdb711951a8bf80307b7df365624",
+    "independent_review": "work/resident_install_regslice_transport_20261031/independent_review.json",
+    "independent_review_sha256": "44d84b5b2116e9e9b4837fa823883e694f54e82f844a4282be73cfb2262a11ec",
+    "regslice_reachable_controls": 4,
+    "regslice_transition_cases": 16,
+    "valid_transform_cases": 8,
+    "token_projection_clocks": 15504,
+    "accepted_consumed_tokens": 8000,
+    "conditional_accepted_stream_transport_order_checked": true,
+    "intended_request_response_identity_or_error_validation_proved": false,
+    "HDL_simulation_executed": false,
+    "watchdog_failure_verdict": null,
+    "scope": "SHA-bound local stream-preservation contracts for install adapter request96bit and return65bit register-slice instances,and the equal-width valid one-word load preprocessor. Reachable slice control states from reset ZERO/ready0are ZERO0,ZERO1,ONE1,TWO0. All16labelled transitions preserve an arbitrary symbolic accepted queue,capacity2and stalled valid head. Reset old payloads are arbitrary;unaccepted loads while empty remain invalid. Eight one-slot preprocessor transitions preserve token identity after the previously proved word-address conversion,conditional on valid one-word lengths and equal-width rreq_ready1. Eight1000token register-slice projections at actual payload widths check simultaneous transfer and periodic/random/initial backpressure against independent queues. These are source-event models,not RTL/native simulations. Wiring passes return payload intact from external response slice through bus_read tmp_data into load response FIFO and equal-width internal output;the earlier FIFO contract preserves its accepted order. This composes a conditional accepted-stream contract,not intended request identity. Read module RID/RRESPinputs occur only in declarations and do not validate response identity/errors on this payload path. External protocol correctness/response identity,credit retirement,caller ownership,actual offset contents/full HDL equivalence,timing/watchdog and gates remain open. Assumes binary controls,initial reset then no reset,default64bit data/address configuration and source/model correspondence. No .dat/trace/TV reads,native/HLS execution,DUT edits,process controls,guard/budget changes or adoption.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v227_20261031/matrix.json",
+    "sha256": "9f02191152ac5c1967498536ebd6ecb0c1a9641412d71a0b69f011cadafe9e30"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v227.json",
+    "sha256": "605e816f8569c22e8dd3f4198f312fe3d36bed9b8312e2d0b60dc2660d453cc7"
+  },
+  "next_action": "Verify response descriptor/credit retirement and caller ownership,with explicit assumptions on correct external response stream. Accepted-stream preservation does not prove request identity or bus error handling. Continue previous-offset/cache and full delimiter/prefix requirements,keeping original jobs/guards/budgets unchanged.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

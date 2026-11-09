@@ -1,0 +1,45 @@
+"""Exhaustive small-DAG owner release and budget-envelope oracle."""
+import sys,json,random,copy,time
+from pathlib import Path
+from collections import Counter
+R=Path(__file__).resolve().parents[1];sys.path[:0]=[str(R/'tools'),str(R/'tools/native_resume_prototype')]
+from budget_owner_screen_v2 import screen,witness_in_domain
+from pre_route_endpoints import sha
+from source_binding_v2 import closure
+out=R/'experiments/budget_owner_domain_contract_v2_2026-10-07';out.mkdir();sources=closure([Path(__file__)]);(out/'protocol.json').write_text(json.dumps(dict(sources=sources,seed=20261007,trials=300,scope='Exhaustive small DAG necessary-owner/envelope oracle, no arbitrary cyclic/native claim.'))+'\n');rng=random.Random(20261007);baseline_fail=0;successes=0
+for trial in range(300):
+ n=6;arcs=[(u,v,rng.randrange(6)) for u in range(n) for v in range(u+1,n) if rng.random()<.45];offset=[0];dest=[];inc=[]
+ for u in range(n):
+  for a,v,d in arcs:
+   if a==u:dest.append(v);inc.append(d)
+  offset.append(len(dest))
+ f=dict(row_offsets=offset,dest_ranks=dest,edge_ids=list(range(len(dest))),capacities=[rng.randrange(1,3) for _ in range(n)])
+ class RC:
+  increments=inc
+  def initial(self,u):return initial
+  def path(self,src,sink,edges):
+   u=src;d=initial
+   for e in edges:assert offset[u]<=e<offset[u+1];u=dest[e];d+=inc[e]
+   assert u==sink;return d
+ initial=rng.randrange(4);q=dict(net_id=99,source=0,sink=5);forbidden={u for u in range(n) if rng.random()<.1};owners={net:{u for u in range(n) if rng.random()<.4} for net in (99,101,303,707)};budget=rng.randrange(16);before=copy.deepcopy((f,owners));result=screen(f,RC(),q,forbidden,owners,budget)
+ def paths(extra=None,unrestricted=False):
+  other=Counter(u for net,own in owners.items() if net not in (99,extra) for u in own);allowed=lambda u:u not in forbidden and (unrestricted or f['capacities'][u]>other[u]);options=[]
+  def visit(u,d,used):
+   if d>budget or not allowed(u):return
+   if u==5:options.append((set(used),d));return
+   for s in range(offset[u],offset[u+1]):visit(dest[s],d+inc[s],used+[dest[s]])
+  visit(0,initial,[0]);return options
+ envelope=set().union(*(x[0] for x in paths(unrestricted=True))) if paths(unrestricted=True) else set();assert set(result['envelope_nodes'])==envelope
+ if not paths():
+  baseline_fail+=1
+  for net in (101,303,707):
+   if paths(net):assert net in result['candidates'];successes+=1
+ other=Counter(u for net,own in owners.items() if net!=99 for u in own)
+ for net in (101,303,707):
+  answer=witness_in_domain(f,RC(),q,result,other,owners[net],budget);options=paths(net);assert (answer is not None)==bool(options)
+  if answer is not None:assert answer['minimum_integer']==min(x[1] for x in options)
+ assert (f,owners)==before
+try:screen(f,RC(),q,forbidden,owners,budget,deadline=time.perf_counter()-1)
+except TimeoutError:pass
+else:raise AssertionError('expired screen allowed')
+assert all(sha(k)==v for k,v in sources.items());(out/'receipt.json').write_text(json.dumps(dict(protocol_sha256=sha(out/'protocol.json'),trials=300,baseline_failed_cases=baseline_fail,single_owner_successes_all_retained=successes,exact_dag_budget_envelope_pass=True,conditioned_domain_witness_oracle_cases=900,caller_unchanged=True,expired_request_rejected=True),indent=2)+'\n');print('PASS',baseline_fail,successes)

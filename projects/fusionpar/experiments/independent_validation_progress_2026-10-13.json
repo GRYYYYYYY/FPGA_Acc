@@ -1,0 +1,154 @@
+{
+  "schema": "FUSIONPAR_INDEPENDENT_VALIDATION_PROGRESS_V1",
+  "observed_utc": "2026-10-13T13:15:16.549924+00:00",
+  "status": "terminal_with_input_coverage_failures",
+  "all_suites_passed": false,
+  "runner_pid_present": false,
+  "historical_execution_handle": {
+    "pid": 3181649,
+    "session_id": 57992
+  },
+  "counts": {
+    "selected_designs": 6,
+    "expected_suites": 12,
+    "audited_suites": 8,
+    "failed_suites": 4,
+    "completed_host_runs": 80,
+    "qor_commits": 35,
+    "aborts": 405,
+    "timing_barriers": 115,
+    "placement_repairs": 105,
+    "fully_audited_designs": 4
+  },
+  "attempted_suites": 12,
+  "selected_designs": [
+    "apex2",
+    "des",
+    "s38584.1",
+    "seq",
+    "spla",
+    "tseng"
+  ],
+  "fully_audited_designs": [
+    "apex2",
+    "des",
+    "seq",
+    "spla"
+  ],
+  "unsupported_designs": [
+    "s38584.1",
+    "tseng"
+  ],
+  "study": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/study.json",
+    "sha256": "e7f5e0e63be5cb12ceca5a0898182e320985bbadc0af28f6bc5bb335747314da"
+  },
+  "freeze": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/freeze.json",
+    "sha256": "9a7a2dd52b0a5668042bfb16de8fa92e84aaedd8a381ff55e4b73fa44590a4f6"
+  },
+  "summary": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/independent_validation_status_2026-10-13.json",
+    "sha256": "e1b26dacf3f2895860a3ee25e456841c17e09f54b75e2bc7800cf7b8043b75c0"
+  },
+  "supervision": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/supervision.json",
+    "sha256": "90c494b1b6090431e330b9b10b4f75e8919258f9b9f29cb6f6ce3f02bfda9ae6"
+  },
+  "previous_progress_snapshot": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/progress_before_terminal.json",
+    "sha256": "5b0a358708d15a117cc6aa58e341433cc1191fe4d8c6e736861c027543971efc"
+  },
+  "results_report": "INDEPENDENT_VALIDATION_RESULTS.md",
+  "per_track_progress": [
+    {
+      "design": "apex2",
+      "track": "shared_staged_vs_interleaved",
+      "completed": true,
+      "audited": true,
+      "completed_host_processes": 10
+    },
+    {
+      "design": "apex2",
+      "track": "equal_evaluation_feedback",
+      "completed": true,
+      "audited": true,
+      "completed_host_processes": 10
+    },
+    {
+      "design": "des",
+      "track": "equal_evaluation_feedback",
+      "completed": true,
+      "audited": true,
+      "completed_host_processes": 10
+    },
+    {
+      "design": "des",
+      "track": "shared_staged_vs_interleaved",
+      "completed": true,
+      "audited": true,
+      "completed_host_processes": 10
+    },
+    {
+      "design": "s38584.1",
+      "track": "shared_staged_vs_interleaved",
+      "completed": false,
+      "audited": false,
+      "completed_host_processes": 0
+    },
+    {
+      "design": "s38584.1",
+      "track": "equal_evaluation_feedback",
+      "completed": false,
+      "audited": false,
+      "completed_host_processes": 0
+    },
+    {
+      "design": "seq",
+      "track": "equal_evaluation_feedback",
+      "completed": true,
+      "audited": true,
+      "completed_host_processes": 10
+    },
+    {
+      "design": "seq",
+      "track": "shared_staged_vs_interleaved",
+      "completed": true,
+      "audited": true,
+      "completed_host_processes": 10
+    },
+    {
+      "design": "spla",
+      "track": "shared_staged_vs_interleaved",
+      "completed": true,
+      "audited": true,
+      "completed_host_processes": 10
+    },
+    {
+      "design": "spla",
+      "track": "equal_evaluation_feedback",
+      "completed": true,
+      "audited": true,
+      "completed_host_processes": 10
+    },
+    {
+      "design": "tseng",
+      "track": "equal_evaluation_feedback",
+      "completed": false,
+      "audited": false,
+      "completed_host_processes": 0
+    },
+    {
+      "design": "tseng",
+      "track": "shared_staged_vs_interleaved",
+      "completed": false,
+      "audited": false,
+      "completed_host_processes": 0
+    }
+  ],
+  "limits": [
+    "All selected suites were attempted; four suites failed at conversion, so all_suites_passed remains false",
+    "Frozen protocol and raw execution_progress remain historical artifacts; study records final independent audits",
+    "No universal fusion or hardware performance benefit demonstrated"
+  ]
+}

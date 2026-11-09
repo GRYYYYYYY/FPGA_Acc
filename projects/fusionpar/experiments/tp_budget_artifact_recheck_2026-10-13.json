@@ -1,0 +1,43 @@
+{
+  "schema": "FUSIONPAR_TP_BUDGET_ARTIFACT_RECHECK_V1",
+  "pass": true,
+  "study": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/tp_nine_closure_reference_v1/study.json",
+    "sha256": "0253b754f9b1717305109533508fc4972e0a310c2ef1759ed99406005050af72"
+  },
+  "counts": {
+    "runs": 15,
+    "native_candidates": 135,
+    "canonical_contract_checks": 150
+  },
+  "sources": [
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/run_tp_budget_reference.py",
+      "sha256": "52b5910a974609316f6c2563a271c106b27abb393707a4d63cfb99a00e49fca2"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/pre_route_endpoints.py",
+      "sha256": "40ad4611760c4b1be22b75decef2b3330f6c923e5cf249e1ab2726fa0346ea74"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/tileplace_vpr.py",
+      "sha256": "355535e49a0ec47b485e8c374e34fa35ee323fbf406b731b920ca40ab582d364"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/tools/validate_vpr_route.py",
+      "sha256": "be890f7b4ef33f3d64f94ebd8824e18bdfcf66978177560f68755bfd85d4ec4b"
+    }
+  ],
+  "independent_validation_inventory": [
+    "apex2",
+    "des",
+    "s38584.1",
+    "seq",
+    "spla",
+    "tseng"
+  ],
+  "limits": [
+    "Artifact and count recheck; uses completed study native/contract results, not a new native execution",
+    "Independent cohort inventory only; no independent cohort conversion or execution yet"
+  ]
+}

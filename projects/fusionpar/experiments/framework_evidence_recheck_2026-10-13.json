@@ -1,0 +1,401 @@
+{
+  "schema": "FUSIONPAR_FRAMEWORK_EVIDENCE_RECHECK_V1",
+  "observed_utc": "2026-10-13T13:16:27.060530+00:00",
+  "pass": true,
+  "summary": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/independent_validation_status_2026-10-13.json",
+    "sha256": "e1b26dacf3f2895860a3ee25e456841c17e09f54b75e2bc7800cf7b8043b75c0"
+  },
+  "study": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/study.json",
+    "sha256": "e7f5e0e63be5cb12ceca5a0898182e320985bbadc0af28f6bc5bb335747314da"
+  },
+  "verifier": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/recheck_framework_evidence.py",
+    "sha256": "49857a1a0a442f29ee02747768c83091b7e4ee17360b1815bb11ac608b0e63fc"
+  },
+  "counts": {
+    "selected_designs": 6,
+    "expected_suites": 12,
+    "audited_suites": 8,
+    "failed_suites": 4,
+    "completed_host_runs": 80,
+    "qor_commits": 35,
+    "aborts": 405,
+    "timing_barriers": 115,
+    "placement_repairs": 105,
+    "fully_audited_designs": 4
+  },
+  "current_frozen_sources_checked": 7607,
+  "suites": [
+    {
+      "design": "apex2",
+      "track": "shared_staged_vs_interleaved",
+      "process_receipts": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/apex2/shared_staged_vs_interleaved/configure.process.json",
+          "sha256": "5d1f8857003c2b7f6f9fbfd6679e559788e711330524d6b3b3f37bc91a603819"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/apex2/shared_staged_vs_interleaved/build_command.process.json",
+          "sha256": "a858c87e21a867e3f0607f43edd50c750d49f449bba9b8a51372f22ad7475450"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/apex2/shared_staged_vs_interleaved/tests.process.json",
+          "sha256": "13f3723bd18b690ebf2a3d454ad0d4a7687ccaa1097b188cc5134a467dd52885"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/apex2/shared_staged_vs_interleaved/prepare.process.json",
+          "sha256": "9f10a6aa0fc4b221be0d2eba827a15ad2c07c0ef35fda45d91a5dc20b501cba4"
+        }
+      ],
+      "test_log": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/apex2/shared_staged_vs_interleaved/build/Testing/Temporary/LastTest.log",
+        "sha256": "dcc7018bec542b79b71f26ce6504a8d72b06b37f7e2a30b69d2982603dfe2d52"
+      },
+      "status": "audit_inputs_unchanged",
+      "publication_audit": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/apex2/shared_staged_vs_interleaved/publication_audit.json",
+        "sha256": "eabc83e68a4801cf7bb9fb38086364dc5b0729446b073f780f7dd360586709c8"
+      },
+      "archived_files_checked": 902
+    },
+    {
+      "design": "apex2",
+      "track": "equal_evaluation_feedback",
+      "process_receipts": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/apex2/equal_evaluation_feedback/configure.process.json",
+          "sha256": "d227bf3591b811ae0e36c32c567e42c1a11afa4a32dbbd1f3cc611cfd986bff5"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/apex2/equal_evaluation_feedback/build_command.process.json",
+          "sha256": "0335327f157f4dd9dce63bc644441871b236044ffb0c55619784c04acd10fedf"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/apex2/equal_evaluation_feedback/tests.process.json",
+          "sha256": "cadb2cbd732cea9642ecf5dcad648b4224a7c4864c7d34a911bc18c1d786cd57"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/apex2/equal_evaluation_feedback/prepare.process.json",
+          "sha256": "2a08af54db94b1b71a657eef338528c81f10ef474432eb90580211c14318dd6e"
+        }
+      ],
+      "test_log": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/apex2/equal_evaluation_feedback/build/Testing/Temporary/LastTest.log",
+        "sha256": "a1d6aef562f48849537532a8611965dab9fa6f1c2ee2571d15fc608b98245444"
+      },
+      "status": "audit_inputs_unchanged",
+      "publication_audit": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/apex2/equal_evaluation_feedback/publication_audit.json",
+        "sha256": "73d64c3049c26c362c24f427d2a7d3fd3cacf7589d3bd0d3924e33690188a31c"
+      },
+      "archived_files_checked": 2792
+    },
+    {
+      "design": "des",
+      "track": "equal_evaluation_feedback",
+      "process_receipts": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/des/equal_evaluation_feedback/configure.process.json",
+          "sha256": "3b11ecf589d77cbcd294937d32f79c7650b3d40831b270f00c5cb2636b4a723b"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/des/equal_evaluation_feedback/build_command.process.json",
+          "sha256": "06addbf2066634f9cfeb3f90d036110670392f03a0f9be41046a6c8d13d6ddc5"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/des/equal_evaluation_feedback/tests.process.json",
+          "sha256": "9faef2ba487f3e27574e8376b90e89398dd4e6bb990666ee440776a3eebe29cc"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/des/equal_evaluation_feedback/prepare.process.json",
+          "sha256": "22f709fdd4edc5e19b3f5f77e1ca427778697c62c0333a7641c1562e03f20f14"
+        }
+      ],
+      "test_log": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/des/equal_evaluation_feedback/build/Testing/Temporary/LastTest.log",
+        "sha256": "3775ae229af6288c4cb34cc32acde97d6f8408503e0145d380916110c35072cd"
+      },
+      "status": "audit_inputs_unchanged",
+      "publication_audit": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/des/equal_evaluation_feedback/publication_audit.json",
+        "sha256": "ff98c0a3621a175488148a77b5d8f9a04a8cb939cb2a4608bf2e6404bb13b89a"
+      },
+      "archived_files_checked": 2792
+    },
+    {
+      "design": "des",
+      "track": "shared_staged_vs_interleaved",
+      "process_receipts": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/des/shared_staged_vs_interleaved/configure.process.json",
+          "sha256": "c8c7876a879cc434bc547048e0ad7bab6a05e77917e1bca45d55501740968e68"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/des/shared_staged_vs_interleaved/build_command.process.json",
+          "sha256": "0cc89ee23bc9675b03fca264c3542a0e52e313645813dc3a3f6a4b2916ee7acf"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/des/shared_staged_vs_interleaved/tests.process.json",
+          "sha256": "ce54458b7f5efa66b6cf0f9ca1dd7c1bafa68cdd022438d40f66b5d26662fcd3"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/des/shared_staged_vs_interleaved/prepare.process.json",
+          "sha256": "1e47758a635a2ffe7d9fbd1eea33edd8d857c817e1fa7c892225640e36977fd7"
+        }
+      ],
+      "test_log": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/des/shared_staged_vs_interleaved/build/Testing/Temporary/LastTest.log",
+        "sha256": "0577d3716df2ea1c29393e0be3261f5df478f07ed798d984c4ed76c52f3c06fe"
+      },
+      "status": "audit_inputs_unchanged",
+      "publication_audit": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/des/shared_staged_vs_interleaved/publication_audit.json",
+        "sha256": "def9b7678f01628b893bfac7df067c1ae56eb49e6e120152f90ccb896f2fa390"
+      },
+      "archived_files_checked": 902
+    },
+    {
+      "design": "s38584.1",
+      "track": "shared_staged_vs_interleaved",
+      "process_receipts": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/s38584.1/shared_staged_vs_interleaved/configure.process.json",
+          "sha256": "7d4450da9abac00e9b6f4598df757c93baad0fa8d2437ae8bb967b2249acb7c1"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/s38584.1/shared_staged_vs_interleaved/build_command.process.json",
+          "sha256": "fada78681348ae7f8bb65505b36a8fb83279f7fbdf357687554f300396b730f9"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/s38584.1/shared_staged_vs_interleaved/tests.process.json",
+          "sha256": "aacb92855e8ca16336b72c8d7619c7a23936f066523c48f66deed1df6750601c"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/s38584.1/shared_staged_vs_interleaved/prepare.process.json",
+          "sha256": "cecaea05915a663449ddcc0ef949fef0d7e798b172820324f9ed5afbffbe7dac"
+        }
+      ],
+      "test_log": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/s38584.1/shared_staged_vs_interleaved/build/Testing/Temporary/LastTest.log",
+        "sha256": "d3d39f9dd85fda0f292283d64e329d6f64f19778cf97f49e0ea78393d3457df4"
+      },
+      "status": "unsupported_root_clock_zero_host_runs"
+    },
+    {
+      "design": "s38584.1",
+      "track": "equal_evaluation_feedback",
+      "process_receipts": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/s38584.1/equal_evaluation_feedback/configure.process.json",
+          "sha256": "b5f8562b78dc3c4abb083526145aaa1393902d2b897198a217c013c90d5277d2"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/s38584.1/equal_evaluation_feedback/build_command.process.json",
+          "sha256": "9d6a3563d94a687c1bc0d7463340c84b210518e432a08283118a75bb512bdd78"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/s38584.1/equal_evaluation_feedback/tests.process.json",
+          "sha256": "4b8303dd76607673b2804542edbadc1c399c98bd2f3bd067b724ffca78d70593"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/s38584.1/equal_evaluation_feedback/prepare.process.json",
+          "sha256": "6b68a2d8a379924b1da3f20f7dddf2ad3dd7bfe9749eb2aec3ecb253c620fdc8"
+        }
+      ],
+      "test_log": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/s38584.1/equal_evaluation_feedback/build/Testing/Temporary/LastTest.log",
+        "sha256": "215f43a697e5115639948e5064f06d6b2adb543b243b12a84145881242a7c4c8"
+      },
+      "status": "unsupported_root_clock_zero_host_runs"
+    },
+    {
+      "design": "seq",
+      "track": "equal_evaluation_feedback",
+      "process_receipts": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/seq/equal_evaluation_feedback/configure.process.json",
+          "sha256": "19dbc7efe3e80ca0b411466afdfbedeab3d403fcf07c0c56edcd7a2e2e10d22a"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/seq/equal_evaluation_feedback/build_command.process.json",
+          "sha256": "1ea49de00bd44f8428a2e64cc610d26eee85e9ccf474b84f684af6a151b7ce11"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/seq/equal_evaluation_feedback/tests.process.json",
+          "sha256": "2ae0b9cc2dcc275d1e2187966d1fe742f36c72cdd66b5c7bdd83720df6e624d7"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/seq/equal_evaluation_feedback/prepare.process.json",
+          "sha256": "42936eecbf2204bc471b052a73309652baa53e104e9e72047602b0cc4bd70009"
+        }
+      ],
+      "test_log": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/seq/equal_evaluation_feedback/build/Testing/Temporary/LastTest.log",
+        "sha256": "02872a96087eefcda5fc7adbae43b2df870792fac9cc684d28d469cf76d53729"
+      },
+      "status": "audit_inputs_unchanged",
+      "publication_audit": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/seq/equal_evaluation_feedback/publication_audit.json",
+        "sha256": "64e1ae3b3cc8b5c91126a52009d76127eeb84a831a698439f7096794ce5a6dc6"
+      },
+      "archived_files_checked": 2792
+    },
+    {
+      "design": "seq",
+      "track": "shared_staged_vs_interleaved",
+      "process_receipts": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/seq/shared_staged_vs_interleaved/configure.process.json",
+          "sha256": "3d8a635ce84a2132fe87b7e90ae425f8e19de7d4c7e840ec66f4b3146dee1a63"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/seq/shared_staged_vs_interleaved/build_command.process.json",
+          "sha256": "ab5eb82a930cad46710814bbefdad0ab0060ea7ae07911a8c5bcd549d4ef8999"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/seq/shared_staged_vs_interleaved/tests.process.json",
+          "sha256": "c0c34dd78d9f7d07bbe7f456d1cbd6df903a2b5838eee04d7148e9542ff51d9f"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/seq/shared_staged_vs_interleaved/prepare.process.json",
+          "sha256": "6eea183de050da0ebd78d4b2fe1b4ddfadd171897a896ddc4f62c4eb08b415b2"
+        }
+      ],
+      "test_log": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/seq/shared_staged_vs_interleaved/build/Testing/Temporary/LastTest.log",
+        "sha256": "3d18188e4f8f988da73098e585bf8d086af9a329071b9f744a1205c577ca6c37"
+      },
+      "status": "audit_inputs_unchanged",
+      "publication_audit": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/seq/shared_staged_vs_interleaved/publication_audit.json",
+        "sha256": "5f64c07522cbb832ea5cec14c46045ee136f83bed56a40105aa79d7b88c64cc5"
+      },
+      "archived_files_checked": 902
+    },
+    {
+      "design": "spla",
+      "track": "shared_staged_vs_interleaved",
+      "process_receipts": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/spla/shared_staged_vs_interleaved/configure.process.json",
+          "sha256": "547e8d69d7fffa96fbf57345d4e2890164a50eb85692b2fca50febc60bcd8df3"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/spla/shared_staged_vs_interleaved/build_command.process.json",
+          "sha256": "46fe7f6dea0fcdc49214d075098ddf2e7fa2d389f5fdf4f4f16ca021942b5ab9"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/spla/shared_staged_vs_interleaved/tests.process.json",
+          "sha256": "e2fcb706e6f1068bfb6be94bdbd0381068d36c6345ae92bd2f723caba7fc7d57"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/spla/shared_staged_vs_interleaved/prepare.process.json",
+          "sha256": "a59bc55a13a8a3ac62fffaaa681b24e9e22f588916030528cace6daf9e7ffcd6"
+        }
+      ],
+      "test_log": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/spla/shared_staged_vs_interleaved/build/Testing/Temporary/LastTest.log",
+        "sha256": "c5b255f3e5a5b162cb4cb0f08d9a30e9e98912cb4200477d8f5e37e18b778ca2"
+      },
+      "status": "audit_inputs_unchanged",
+      "publication_audit": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/spla/shared_staged_vs_interleaved/publication_audit.json",
+        "sha256": "7e08f6c127759d07c390a3fdb1d1e55126522b80f467569a1cca79df9663228c"
+      },
+      "archived_files_checked": 902
+    },
+    {
+      "design": "spla",
+      "track": "equal_evaluation_feedback",
+      "process_receipts": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/spla/equal_evaluation_feedback/configure.process.json",
+          "sha256": "b87a49a77fb95ea0351aebade046a9c90a430dbe714b2bd87feab9d7da066ec2"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/spla/equal_evaluation_feedback/build_command.process.json",
+          "sha256": "53ef7d4d1cfbdccbe5d2da07d9a64184c31c50522a554a3ca7dec1f0a544a22b"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/spla/equal_evaluation_feedback/tests.process.json",
+          "sha256": "2ffb31d69a0d612320f5ce25972c31fb88fbbbeb4056f74ffe1eafc313292a99"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/spla/equal_evaluation_feedback/prepare.process.json",
+          "sha256": "3483de10b511c931b02976afc998e16fffc3666f6e169eb166cf91b129166a84"
+        }
+      ],
+      "test_log": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/spla/equal_evaluation_feedback/build/Testing/Temporary/LastTest.log",
+        "sha256": "09e8c95aab89ddef8d17ca6bb2a450a858e8069e00a2c03d266343c245106ac9"
+      },
+      "status": "audit_inputs_unchanged",
+      "publication_audit": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/spla/equal_evaluation_feedback/publication_audit.json",
+        "sha256": "e1665e82070ad982b44c5d84796449f2780894330f6b376d4c976351fe313446"
+      },
+      "archived_files_checked": 2792
+    },
+    {
+      "design": "tseng",
+      "track": "equal_evaluation_feedback",
+      "process_receipts": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/tseng/equal_evaluation_feedback/configure.process.json",
+          "sha256": "41dbe16cda63e24a124c0d51f8725daca13cfa8848b5883f805a34afdf5a00c6"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/tseng/equal_evaluation_feedback/build_command.process.json",
+          "sha256": "751304e042947cb7ed4b5d9f82d274308763796cedeb8eb900cd44d494b005ef"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/tseng/equal_evaluation_feedback/tests.process.json",
+          "sha256": "47380c21ac4d7d333c28c7f279e4a646c775fb566264f377ebdba4e06aeb5acf"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/tseng/equal_evaluation_feedback/prepare.process.json",
+          "sha256": "5dff0e5ac709fef1610651261166c90a945a3cfd07aa27618acebbbc240e4c6a"
+        }
+      ],
+      "test_log": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/tseng/equal_evaluation_feedback/build/Testing/Temporary/LastTest.log",
+        "sha256": "5e10b840b3aa362596d42373be01705bcfaebae6de50cd06ab8c63f0e5364179"
+      },
+      "status": "unsupported_root_clock_zero_host_runs"
+    },
+    {
+      "design": "tseng",
+      "track": "shared_staged_vs_interleaved",
+      "process_receipts": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/tseng/shared_staged_vs_interleaved/configure.process.json",
+          "sha256": "e33560b2f5124d5477cdb42b48eaa582e0257cccd5cd40f4c9c175b64e5e12a9"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/tseng/shared_staged_vs_interleaved/build_command.process.json",
+          "sha256": "65f18935119398e54fac1c15b6b415f4a55c8ee3e5b47c49a40a54d6616a1880"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/tseng/shared_staged_vs_interleaved/tests.process.json",
+          "sha256": "85beed42a01c6eb91c774077859c99e0d8a4628002532e47f296c4ae886ee007"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/tseng/shared_staged_vs_interleaved/prepare.process.json",
+          "sha256": "28a8c66f5a912c80f0abd8292d1f4071b4a2dc663b6cce1cbb21674bcb1c5419"
+        }
+      ],
+      "test_log": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/tseng/shared_staged_vs_interleaved/build/Testing/Temporary/LastTest.log",
+        "sha256": "ca5a2c2376c18f933f017f12f707a32210f23a5e8476bc9fb6dd292f2bb0295a"
+      },
+      "status": "unsupported_root_clock_zero_host_runs"
+    }
+  ],
+  "limits": [
+    "Evidence recheck, not new native P&R or timing measurement",
+    "Framework validity is limited to supported routed-design refinement",
+    "Four of six inputs supported; no universal fusion or FPGA speedup claim"
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "schema": "TILEPLACE_V2_PREREGISTRATION_V1",
+  "method_version": "TilePlace-V3 routed-critical-path feedback",
+  "status": "sealed_before_v3_candidate_closure_execution",
+  "sealed_utc": "2026-09-03",
+  "parent_preregistration": {
+    "path": "projects/tileplace/experiments/tileplace_v2_preregistration_2026-09-03.json",
+    "sha256": "ecec0de4968760d128b39eef4252732437070b96dabe8aa28505acd495e4a557",
+    "inherited_without_change": [
+      "development_cases",
+      "held_out_cases",
+      "source_and_architecture_hashes",
+      "oracle_binary",
+      "seeds",
+      "channel_widths",
+      "acceptance_rule",
+      "publication_gate"
+    ]
+  },
+  "diagnostic_basis": {
+    "development_evidence_only": "TilePlace-V2 diffeq 2/0 kept CPD at 6.59759 ns and reduced routed wirelength from 9103 to 9003.",
+    "identified_failure_mode": "The input-relative q60000/slack0 per-edge guard removed all improving transactions for four of five clustered blocks on the current routed top path. The native timing-first oracle already rejects CPD regressions.",
+    "held_out_results_observed": false
+  },
+  "implementation": {
+    "epochs": 4,
+    "colors_per_epoch": 4,
+    "page_width": 2,
+    "page_height": 2,
+    "candidate_limit": 64,
+    "chain_candidate_limit": 16,
+    "transaction_kinds": ["move", "swap", "chain2", "chain3", "macro_swap"],
+    "focus_policy": "Initiating units are restricted to clustered blocks occurring on the 20 worst routed setup paths. Helper units may participate atomically in swaps and chains.",
+    "routed_timing_feedback": "Collapse each routed timing path into adjacent clustered-block edges. Weight path rank linearly from 65535 for rank 1 to 3276 for rank 20 and sum repeated edge weights.",
+    "feedback_refresh": "Refresh routed congestion and routed top-path timing feedback after every accepted native closure.",
+    "critical_distance_guard": "Disabled. The native timing-first oracle is the fail-closed timing guard.",
+    "development_configs": [
+      {
+        "timing_weight": 2,
+        "routed_timing_weight": 2,
+        "congestion_weight": 1,
+        "critical_distance_guard_q": 0,
+        "timing_feedback_paths": 20
+      },
+      {
+        "timing_weight": 2,
+        "routed_timing_weight": 4,
+        "congestion_weight": 1,
+        "critical_distance_guard_q": 0,
+        "timing_feedback_paths": 20
+      },
+      {
+        "timing_weight": 2,
+        "routed_timing_weight": 8,
+        "congestion_weight": 1,
+        "critical_distance_guard_q": 0,
+        "timing_feedback_paths": 20
+      }
+    ],
+    "development_selection": "Evaluate every configuration on all four inherited development cases with at most 24 native closures per case/configuration. Select lowest CPD geometric-mean ratio; break ties by wirelength geometric-mean ratio, then lower routed_timing_weight.",
+    "held_out_policy": "Freeze one selected configuration before any V3 held-out candidate closure and run only that configuration on the six inherited held-out cases."
+  },
+  "oracle": {
+    "vpr_sha256": "a90dc1b3380ebda705e85f176db0cc3d6be1b71ab9ee887db819febc8b62bafc",
+    "maximum_route_analysis_closures_per_case_configuration": 24,
+    "acceptance": "Native legal closure, routed wirelength at most 100.5% of the CPU baseline, and relative to the incumbent either CPD improves by at least 0.001 ns or reported CPD is exactly equal and routed wirelength strictly improves.",
+    "rejection": "Rollback and deterministic stable-half bisection while budget remains."
+  },
+  "publication_gate": {
+    "all_six_held_out_native_legal_and_deterministic": true,
+    "cpd_geomean_ratio_maximum": 0.99,
+    "minimum_strict_cpd_improvements": 3,
+    "wirelength_geomean_ratio_maximum": 1.0025,
+    "per_case_wirelength_ratio_maximum": 1.005
+  },
+  "prohibitions": [
+    "Do not change inherited cases, inputs, hashes, seeds, channel widths, or oracle binary.",
+    "Do not tune from held-out outcomes.",
+    "Do not overwrite frozen TilePlace-V1 or TilePlace-V2 evidence."
+  ]
+}

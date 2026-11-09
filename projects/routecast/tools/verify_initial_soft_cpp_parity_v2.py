@@ -1,0 +1,10 @@
+"""Authenticate physical initial-sketch proofs and compare every original query/tree/ledger."""
+import sys,json
+from pathlib import Path
+R=Path(__file__).resolve().parents[1];sys.path[:0]=[str(R/'tools'),str(R/'tools/native_resume_prototype')]
+from pre_route_endpoints import sha
+from source_binding_v2 import closure
+out=R/'experiments/initial_soft_cpp_parity_v2_2026-10-07';out.mkdir();bindings=closure([Path(__file__)]);rows=[]
+for name in ['bigkey','dsip','misex3']:
+ old=R/f'experiments/mcnc_budgeted_soft_demand_v1_2026-10-07/{name}';new=R/f'experiments/mcnc_budgeted_soft_demand_cpp_v2_2026-10-07/{name}';vp=old/'verification.json';v=json.loads(vp.read_text());assert v['all_original_queries_xml_fraction_rc_budgets_singleparent_and_uniqueNET_and_independent_ledgers_pass'];bindings.update(v['bindings']);bindings[str(vp)]=sha(vp);rp=new/'receipt.json';r=json.loads(rp.read_text());bindings.update(r['bindings']);bindings.update(r['files']);bindings[str(rp)]=sha(rp);assert json.loads((old/'sketch.json').read_text())==json.loads((new/'sketch.json').read_text());rows.append(dict(name=name,completed=v['completed'],overflow_units=v['overflow_units'],paid_cpp_initial_seconds=r['total_paid_prediction_seconds'],cpp_setup_seconds=r['cpp_setup_seconds'],cpp_search_seconds=r['cpp_search_seconds'],scope='All original path/parent/RC/floor/budget/uniqueNET and independent ledgers identical to physically audited reference; old full clipped fields and new early-sink weighted0 search are not asserted equal on unused nodes.'));print('PASS complete initial tree parity',name,v['completed'],flush=True)
+assert all(sha(k)==h for k,h in bindings.items());(out/'verification.json').write_text(json.dumps(dict(bindings=bindings,rows=rows,all_original_query_tree_and_demand_sketches_exactly_match=True,total_connections=sum(x['completed'] for x in rows),scope='Archived development physical scope/initial demand equivalence. No native final routing, repeated matched timing or whole workflow gain.'),indent=2)+'\n')

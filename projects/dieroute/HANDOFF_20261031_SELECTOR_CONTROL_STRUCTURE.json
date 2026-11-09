@@ -1,0 +1,37 @@
+{
+  "observed_ns": 1793409040385944168,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_RETAINED_REVISION_ROLES.json",
+    "sha256": "ffc3080498ddbd3ade0782d788768d66e4ef1b231c2909e288bfa10e1953c203"
+  },
+  "progress": {
+    "report": "work/resident_selector_control_structure_20261031/review.json",
+    "report_sha256": "1aa9accf3c9b3a3c1795f1a8a2b7812f4e26a67531338813559b772a229a90d1",
+    "independent_review": "work/resident_selector_control_structure_20261031/independent_structure_review.json",
+    "independent_review_sha256": "af88f42af80b3a523e3d7f71713af39564f71446ca4689e139f58092c74877e6",
+    "selector_instances": 4,
+    "outer_call_sites": 20,
+    "path_sensitive_sites_not_proven": 2,
+    "whole_program_serialization_proven": false,
+    "scope": "Read-only structural analysis of six native2022RTL files, each matched to live protocol hashes and original HLS-probe copies. Two selector definitions have10-state local controllers and three sequential child-done dispatch gates. Hierarchy contains four selector instances under distinct get/put instances. Eighteen of20outer start sites have explicit immediate successor done waits; two require path-sensitive start/predicate linkage, which is not proven here. No complete C-to-RTL operation-count correspondence, child pipeline-drain bound, whole-program latency bound, watchdog pass/failure/ETA, P7/P8 schedule projection or deadlock verdict. No tool flow, DUT edit, runtime observer, canary or acceptance action.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v192_20261031/matrix.json",
+    "sha256": "18498d06fcc0d17d7892c64c551a31df6b8a7d599c1e72f4226d28e7ebb61c43"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v192.json",
+    "sha256": "76d632b47431766bd3bc7ae17f7d6ee78ec7588cb38a1decab2a482c4ed67d4c"
+  },
+  "next_action": "P6selector local dispatch structure identified, not whole-program latency. Two helper definitions instantiate four times under get/put.18of20outer sites have explicit successor done waits; conditional get start at244 and predicated put wait at242(after start241) require path-sensitive proof. Do not sum all calls or infer watchdog failure until global serialization, C-to-RTL count correspondence and child-drain timing are established. Preserve30live watched handles, sole strict-native owner and all original guards/watchdogs/failures; actual terminal first. Ledger v23 stays9865/9968associated,103pending plus820separate transitive/466root gaps. Integrated34page draft retained; board absent and optional board-host question pending. No new flows/canaries/adoption or huge trace/sparseTV access.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

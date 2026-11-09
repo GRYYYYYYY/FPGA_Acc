@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "validation": "g++ -std=c++17 -O2 -Wall -Wextra -Werror test_full_color_entry.cpp; /tmp/tileplace-full-color-entry-test exit0",
+  "cases": 4,
+  "scope": "reusable CPU full_color input/scratch wrapper: eligibility -> multi-group five-kind enumeration -> evaluation -> exact identity -> indexed forbidden best -> dedup -> conflicts -> commit -> stats. Matches tested sequential chain and analytic expectations.",
+  "limits": "pointer-bearing struct wrapper is not HLS top; indexed forbidden only this invocation; no native integration, 2D independent validation or full RTL",
+  "sources": {
+    "test_full_color_entry.cpp": "248000d637b3f61248bfc5e34e3b92cfa8989059eced3358f01b57147266560a",
+    "full_color_words.hpp": "0a598a5ef310401332735da2fa11cc4604aece686a5073d196aa2223a11e1f39"
+  }
+}

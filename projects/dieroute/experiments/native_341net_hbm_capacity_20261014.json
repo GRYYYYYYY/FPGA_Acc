@@ -1,0 +1,61 @@
+{
+  "status": "existing_traffic_mapping_insufficient_candidate_static_budget_passed",
+  "finished_ns": 1791965148977713805,
+  "source_run": "work/u280_native_strict_sll_341nets_v1_20261014",
+  "abi_frames_reference_sha256": "e5b4914f1115451dce347578bb882d39e133ccc190feca8578346d17a9eb3573",
+  "configuration": {
+    "nodes": 91975782,
+    "arcs": 253648514,
+    "dies": 3,
+    "shard": 1048576,
+    "nets": 341,
+    "trees": 698368,
+    "scratch": 2095106,
+    "deltas": 3145728
+  },
+  "observed_peaks": {
+    "reads": 2836389,
+    "shadows": 16730,
+    "branches": 118,
+    "paths": 670
+  },
+  "calls_examined": 889,
+  "regions": {
+    "graph": {
+      "payload_bytes": 3500800632,
+      "planning_budget_bytes": 3502243840,
+      "existing_capacity_bytes": 4294967296,
+      "existing_mapping_fits": true,
+      "candidate_capacity_bytes": 4294967296,
+      "candidate_mapping_fits": true
+    },
+    "authority": {
+      "payload_bytes": 246044032,
+      "planning_budget_bytes": 251658240,
+      "existing_capacity_bytes": 268435456,
+      "existing_mapping_fits": true,
+      "candidate_capacity_bytes": 268435456,
+      "candidate_mapping_fits": true
+    },
+    "traffic": {
+      "payload_bytes": 515971568,
+      "planning_budget_bytes": 526385152,
+      "existing_capacity_bytes": 268435456,
+      "existing_mapping_fits": false,
+      "candidate_capacity_bytes": 805306368,
+      "candidate_mapping_fits": true
+    }
+  },
+  "candidate_mapping": {
+    "graph": "HBM[16:31]",
+    "authority": "HBM[12]",
+    "traffic": "HBM[13:15]"
+  },
+  "planning_allowance": "Each BO rounded up to 2 MiB; not an observed XRT alignment requirement",
+  "scope": "Uses configured full pool capacities and observed complete proposal sizes on the audited 341-net development run. Candidate link metadata, allocation and execution still required. Not a full-design bound.",
+  "board_result": false,
+  "candidate_config": "config/native_joint_authority_341net_u280.cfg",
+  "candidate_traffic_arguments": 8,
+  "candidate_link": "work/native_joint_authority_341net_link_v1_20261014/manifest.json",
+  "candidate_link_status": "submitted"
+}

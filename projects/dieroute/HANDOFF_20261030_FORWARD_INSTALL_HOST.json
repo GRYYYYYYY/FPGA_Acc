@@ -1,0 +1,26 @@
+{
+  "observed_ns": 1793402683671634948,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261030_MAPPED_ADAPTER_INTEGRATION.json",
+    "sha256": "f8a01819583687ddfb834793e832fde224bc732d8d80faf3fcb82bd3e553f797"
+  },
+  "progress": {
+    "status": "host_verified_HLS_prepared_not_launched",
+    "derivation": "work/resident_forward_install_validation_candidate_20261030/derivation.json",
+    "host_correctness": "work/resident_forward_install_validation_candidate_20261030/host_correctness_review.json",
+    "host_profile": "work/resident_forward_install_validation_candidate_20261030/host_index_profile/review.json",
+    "HLS_preparation": "work/resident_forward_install_validation_candidate_20261030/HLS_probe/preparation_review.json",
+    "scope": "Original full28878 host replies pass; select count1546544 lower per successful install. No RTL acceptance or hardware speedup.",
+    "research_complete": false
+  },
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "next_action": "Preserve all22 monitored jobs and guards. HLS probe is prepared only, with no new owner or process. Strict native mapped-v2 remains the existing20GiB queue. Future synthesis needs guarded single-owner launch; no canary/adoption before original full-positive terminal proof. Host operation count is not hardware latency.",
+  "research_complete": false
+}

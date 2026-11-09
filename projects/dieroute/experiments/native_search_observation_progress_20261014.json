@@ -1,0 +1,23 @@
+{
+  "status": "full_capacity_hls_and_rtl_passed",
+  "evidence": "work/native_search_observation_hls_v3_20261014/audit.json",
+  "rtl_transactions": 5,
+  "input_layout": "Eight uint64 words in the unchanged 64-byte observation field order",
+  "wrapper_alignment_fault_evidence": "work/native_search_observation_hls_v3_20261014/wrapper_fault_diagnosis.json",
+  "remaining": [
+    "Dynamic owner input and source binding in integrated search",
+    "Owner source/session/version binding in integrated search",
+    "Complete graph expansion and route reconstruction",
+    "Concurrent worker protocol and platform integration"
+  ],
+  "board_result": false,
+  "research_complete": false,
+  "full_capacity_rtl": {
+    "status": "passed",
+    "manifest": "work/native_search_observation_hls_large_v1_20261014/manifest.json",
+    "actual_top_calls": 1033,
+    "capacity": 1024,
+    "cpu_test": "passed",
+    "audit": "work/native_search_observation_hls_large_v1_20261014/audit.json"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "observed_ns": 1793420362402645366,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_INSTALL_SINGLEWORD_ADDRESS.json",
+    "sha256": "e8b9b952fc71e216069288c194e6c19c16e47845714f8820ea8397025a6af136"
+  },
+  "progress": {
+    "report": "work/resident_install_continuous_singleword_20261031/review.json",
+    "report_sha256": "aadc90071ed0b587bf02fedac324830631e69fba8437175a75b9755f4d24134c",
+    "independent_review": "work/resident_install_continuous_singleword_20261031/independent_review.json",
+    "independent_review_sha256": "4cf63d1502f4239f8fec7ea8cf04050a53b1c53537445cd72ae3477a4791db33",
+    "primary_control_combinations": 64,
+    "transition_certificate_cases": 512,
+    "continuous_model_clocks": 13298,
+    "accepted_emitted_requests": 4000,
+    "conditional_singleword_address_core_order_checked": true,
+    "intended_request_response_identity_proved": false,
+    "HDL_simulation_executed": false,
+    "watchdog_failure_verdict": null,
+    "scope": "SHA-bound conditional source/elastic-pipeline abstraction of the default64bit install bus-read address core for a stream containing only aligned singleword8byte requests from reset/empty state. Prior local address proof supplies one section/one loop metadata. The core has request/section/output slots;64primary occupancy/input combinations and512including arbitrary invalid-slot metadata check source update eligibility,count conservation and symbolic payload order. One-step ordered-payload equality is an inductive stream invariant under arbitrary availability inputs;source input/output register slices and prior load/FIFO stages remain separate components. An exact-width register projection for this singleword specialization tracks52bit section counter and5bit loop counter. Four continuous1000request runs cover all-ready,periodic/random credits and backpressure,initial stalls,high address bits and page-counter wrap. Each run accepts1000inputs and emits1000ordered ARLEN0requests,with1000credit-reservation pulses and at most three core-pending descriptors. These are abstract model executions,not HDL/native bus experiments. Credit availability is an input premise,not a proof of actual control/response FIFO matching. Mixed lengths,register-slice implementation,load/front-end ownership,external response identity/IDs/errors,full RTL/global contents,timing/watchdog and gates remain open. No .dat/trace/TV reads,native/HLS flow,DUT edits,process controls,guards/budgets changed or adoption.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v226_20261031/matrix.json",
+    "sha256": "5efa548182b86c977bf6ad6c960b873d9e320424ae62c91949d1dc9154a6e02b"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v226.json",
+    "sha256": "375dc605bac09a09e3868ea5642ebd864a20856f229376cc0a70bc7b42954c06"
+  },
+  "next_action": "Verify input/output register-slice stream preservation and response descriptor/credit retirement,then compose caller ownership and intended returned offset identity. Continuous singleword address core order is conditional on the stated specialization and supplied credit availability. Preserve original jobs,guards,budgets and eight gates.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

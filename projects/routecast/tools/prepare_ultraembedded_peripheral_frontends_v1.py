@@ -1,0 +1,22 @@
+"""Fixed peripheral frontend admission, all cases/outcomes before route labels."""
+import sys,json,time,subprocess,shutil
+from pathlib import Path
+from collections import Counter
+R=Path(__file__).resolve().parents[1];sys.path[:0]=[str(R/'tools'),str(R/'tools/native_resume_prototype')]
+from pre_route_endpoints import sha
+from source_binding_v2 import closure
+IP=R/'experiments/ultraembedded_lineage_inventory_v1_2026-10-08/inventory.json';inventory=json.loads(IP.read_text());assert not inventory['prior_project_family_marker_hits'];sources={c['filename']:c for c in inventory['candidates']};tp=R/'experiments/prospective_family_candidates_2026-10-06/frontend_availability.json';tool=json.loads(tp.read_text());yosys=Path(tool['yosys_path']);assert sha(yosys)==tool['sha256'];D=R/'experiments/ultraembedded_peripheral_frontends_v1_2026-10-08';D.mkdir();bindings={**closure([Path(__file__)]),str(IP):sha(IP),str(tp):sha(tp),str(yosys):sha(yosys)};cases=[]
+for name,filename,top in [('usb','usb_uart_core.v','usb_cdc_top'),('mmc','mmc_core.v','mmc_card')]:
+ source=sources[filename];assert not source['prior_exact_filename_or_source_hash_hits'] and sha(source['path'])==source['sha256'];w=D/name;w.mkdir();shutil.copyfile(source['path'],w/'design.v');bindings[source['path']]=source['sha256'];bindings[str(w/'design.v')]=sha(w/'design.v');script=w/'synth.ys';script.write_text(f'read_verilog design.v\nhierarchy -check -top {top}\nsynth -top {top} -flatten -lut 6\ndffunmap\ncheck -assert\nstat\nwrite_json design.json\nwrite_blif design.blif\n');bindings[str(script)]=sha(script);cases.append(dict(name=name,filename=filename,top=top,command=[str(yosys),'-s','synth.ys']))
+protocol=dict(bindings=bindings,cases=cases,timeout_per_case_seconds=120,order='usb then mmc, no macro/source/hardware projection edits or retries',admission='Pre-route structural diagnostic gate: at least100 LUTs and20 FFs, nonempty outputs, no print/blackbox/latch/unsupported cell types. Allowed LUT,ordinary pos/negedge DFF,positive-clock positive-reset DFF_PP0/PP1 only under existing experimental architecture. Serialized JSON/BLIF/packed-signal proof and original HDL relation remain separate.',future_evaluation='If fully admitted, unchanged original shared-span RC baseline,zero-price initial floors,50ps static/dynamic feedback,two rounds,full actual ignored-NET partition,width128 seed1 worker1 max100 and unchanged wholeNET selector. Fixed cold labels/all resource metrics, all outcomes retained, no tuning to family labels.',scope='Single upstream source family, USB/MMC are not two independent families. Scoped filename/hash prior-use inventory, aliases still separate gate; external/raw-history/domain independence unproven. Frontend only, no original HDL equivalence/characterized async timing/heldout/native/gain pass.')
+(D/'protocol.json').write_text(json.dumps(protocol,indent=2)+'\n');rows=[]
+for case in cases:
+ w=D/case['name'];tick=time.perf_counter()
+ with (w/'synthesis.log').open('w') as log:
+  try:code=subprocess.run(case['command'],cwd=w,stdout=log,stderr=subprocess.STDOUT,timeout=120).returncode
+  except subprocess.TimeoutExpired:code='TIMEOUT'
+ row=dict(name=case['name'],top=case['top'],exit_code=code,seconds=time.perf_counter()-tick,status='FRONTEND_FAILED_OR_TIMEOUT')
+ if code==0:
+  module=json.loads((w/'design.json').read_text())['modules'][case['top']];types=Counter(c['type'] for c in module['cells'].values());allowed={'$lut','$_DFF_P_','$_DFF_N_','$_DFF_PP0_','$_DFF_PP1_'};unsupported=sorted(set(types)-allowed);ffs=sum(v for k,v in types.items() if k.startswith('$_DFF_'));outputs=sum(len(p['bits']) for p in module['ports'].values() if p['direction']=='output');ok=types['$lut']>=100 and ffs>=20 and outputs>0 and not unsupported;row.update(status='STRUCTURAL_GATE_PASS_PENDING_PROOFS' if ok else 'STRUCTURAL_GATE_REJECTED',cell_types=dict(types),LUTs=types['$lut'],FFs=ffs,output_bits=outputs,unsupported_types=unsupported)
+ row['files']={str(p):sha(p) for p in w.iterdir() if p.is_file()};rows.append(row);(D/'rows.json').write_text(json.dumps(rows,indent=2)+'\n');print(case['name'],row['status'],row.get('LUTs'),row.get('FFs'),row.get('unsupported_types'),flush=True)
+assert all(sha(k)==h for k,h in bindings.items());(D/'receipt.json').write_text(json.dumps(dict(bindings=bindings,rows=rows,protocol_sha256=sha(D/'protocol.json'),native_labels_generated=False),indent=2)+'\n')

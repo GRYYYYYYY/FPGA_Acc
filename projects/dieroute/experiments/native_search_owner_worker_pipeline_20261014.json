@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "verified_ns": 1791986036308242116,
+  "inputs": {
+    "src/native_search_worker_hbm.cpp": "5d2df8908297545e96e2768c25fca35fc479f15e34109a663269499619afcab5",
+    "include/native_search_hbm_seed.hpp": "e91c1a9fa999aa9f9219732c68e201f65abc1e91743db1dbc953dfe00a23d7ed",
+    "include/native_search_hbm_queue.hpp": "967863f42b6c6bb67921ac2e7a60e8c48b90ce3a4bd5d9ce58a2078e6e5ab1eb",
+    "include/native_search_hbm_labels.hpp": "858dd88d17bd902b6930eb7df7828abafb611d566bf379023f14ec8a58d2b29a",
+    "include/native_search_hbm_frontier.hpp": "ac5cb229b91e3d19fd79a81c11236e40c3e54eb961211424c6e306fc4ded0021",
+    "include/native_search_hbm_label_ops.hpp": "4c652bae4d559bb75f431706e962147db3cb7a16e3c041d089a157ea4169dcc3",
+    "include/native_search_hbm_relax_observed.hpp": "05d5bd449b9b62c597db4d958c03defdeb1e809f7d67576bbdea7c8781366647",
+    "include/native_search_hbm_observation.hpp": "37b4e2dcf02c69427f761501bceec5513ae38e2442156fcc1d584e50a3e464ce",
+    "include/native_search_hbm_cost.hpp": "5d3c0551058893c917163699c46a99dbb8d8752572c5be110348b0147155dd26",
+    "include/native_search_hbm_admission.hpp": "56e202616d54b49a32763af64285a30b40a77b9c31d3d6d1cecde2de5caa2981",
+    "src/native_search_owner_envelope_hbm.cpp": "7f6f82ea8abb9971d3ad98b312334c98d726ee15e514695d54a2e6c2e0f23172",
+    "include/native_search_hbm_summary_envelope.hpp": "295729464769e10fd7579ed1df55a39b1b651832399c50b62afbf62ffe22d663",
+    "include/native_search_hbm_summary_binding.hpp": "9831b669b3e7a649167525a5a86b72d00640e4d48a47fe604433d5052463abb6",
+    "src/owner_publish_hbm.cpp": "10c760dd144cfd3407a3a6e7c027e8550cc6d3c8ca0d317a4b16dea50a86ebfd",
+    "include/owner_publish_hbm.hpp": "05e1551a7238d430b413a401a1832913fa5e61f98dc268399461f154479eed43",
+    "include/summary_hbm.hpp": "55177ca09b0b07e2e23b38d8430052b405ff9617b6049613663baf3eeb3e401c",
+    "tb/native_search_owner_worker_pipeline_tb.cpp": "5d59605b73943e2f12be1ec39a4d979f063e919677553aa65fdaf7304dab009d",
+    "include/sparse_label_worker.hpp": "49b583ce14a93f3e70dea9233ced91111517b74cb7421e65dfadf7c5b1c986e4",
+    "include/label_packet.hpp": "4b6ac60a56113bc599f4b51a1b9f065950f1b001eabfd63ff763a07dec30dd86",
+    "include/sparse_table.hpp": "dbcd6c9b9fe52911ff3cdd3f95260978f37dabce9c7f369d703ea66c834b1da6"
+  },
+  "publisher_cmodel_calls": 3,
+  "worker_cmodel_calls": 7,
+  "envelope_cmodel_calls": 23,
+  "checks": [
+    "Actual subscribe response and update feed observed relaxation",
+    "Costs28to20 equal existing SparseLabelWorker",
+    "Failed receipt does not dispatch or mutate search",
+    "Closed label discards old heap entry",
+    "Trace fields equal reference",
+    "Joined session9to10 handoff rejects old packet with reused version11"
+  ],
+  "scope": "Three actual kernel C-models in serialized fixture; session handoff is joined/exclusive, not asynchronous; no live native route, joint RTL or board proof",
+  "board_result": false,
+  "research_complete": false
+}

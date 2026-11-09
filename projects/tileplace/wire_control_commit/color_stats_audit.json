@@ -1,0 +1,14 @@
+{
+  "status": "pass",
+  "validation": "strict Werror builds, actual /tmp/tileplace-color-stats-chain-test and /tmp/tileplace-rank-stats-reference-test exit0",
+  "full_chain_cases": 4,
+  "independent_rank_batches": 2000,
+  "scope": "rank Result exposes proposals after dedup; color stats eligible/proposals/accepted/rejected/five kind counts. Analytic macro2 proposals/1 accepted/1 rejected checked; random dedup count independently matches tuple/map reference. No new RTL/native validation.",
+  "sources": {
+    "rank_commit_words.hpp": "d6244e2e4c38977fb28f9581e12c14b390e0a1abb28d7e7f8c6c4706145c107d",
+    "test_rank_reference.cpp": "374aaaa3af0ff93260bc4034fa9b8d5b3669fbb30fd7dc4db94e147376e00ffd",
+    "color_stats_words.hpp": "fc6313e1c51cdc00d94c6c6dc6817219601ee6f292f5cf95b15573bb5f4f60ae",
+    "test_color_fixture_chain.cpp": "48df4e4bbd13495f3bef87e5348cec694778f420d77427bf7112edd7af9331e4",
+    "control_commit_words.hpp": "48cc22cb100dbdb36d11a8d4e21bd07124e59c3708d55986b2f31ad493287f02"
+  }
+}

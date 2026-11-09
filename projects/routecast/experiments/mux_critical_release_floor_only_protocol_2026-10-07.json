@@ -1,0 +1,12 @@
+{
+  "sources": {
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/prepare_mux_critical_release_floor_only.py": "ce548c18e4a03f33d535b69eda647d2fff24541ee12d2956c763e99d5f0aa512",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/verify_mux_critical_release_floor_only.py": "a220c4fb7c6208ca9d412004ebf55cedef28886fe1171c75c83630394360693a"
+  },
+  "omitted_fields": [
+    "budgets_ns",
+    "model_budget_cpd_ns",
+    "interpolation"
+  ],
+  "policy": "Prospective full12 preparation-only change: remove unused24step budget interpolation; ALL other output fields must equal audited legacy source. Independent fullDAG/critical release/shortest certificates still required. No search/priority/history/cap change. Upstream allfanin floors and original timing/RR inputs remain additional. Single whole-process wall observation, not stable end-to-end speedup."
+}

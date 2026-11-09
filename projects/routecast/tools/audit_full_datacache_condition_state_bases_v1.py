@@ -1,0 +1,12 @@
+import hashlib,json
+from pathlib import Path
+R=Path(__file__).resolve().parents[1];E=R/'experiments';A=E/'full_structural_native_datacache_conditions_v1_2026-10-09/condition_audit.json';B=E/'full_paired_state_native_bridge_obligations_v1_2026-10-09/bridge_obligations.json';I=E/'full_source_structural_initial_obligations_v1_2026-10-09/initial_obligations.json';G=E/'full_native_ram_gates_v3_2026-10-09/gates.json';a=json.loads(A.read_text());m=max(json.loads(G.read_text())['modules'].values(),key=lambda x:len(x.get('cells',{})));bridge={r['intermediate_bit']:r for r in json.loads(B.read_text())['records']};initial={r['source_bit']:r for r in json.loads(I.read_text())['registers']};drivers={b:c for c in m['cells'].values() if 'DFF' in c['type'] for b in c['connections']['Q']};records=[]
+for old,new in a['leafmaps']['structural'].items():
+ old=int(old)
+ if new not in drivers:continue
+ r=bridge[old];assert r['native_candidates']==[new];init=initial[r['source_bit']];ff=drivers[new];reset=ff['type']=='$_DFF_PP0_'
+ if reset:assert ff['connections']['R']==[255] and init['reset_kind']=='asynchronous_reset' and init['reset_values']['ARST']=='0'
+ else:assert ff['type']=='$_DFF_P_' and init['reset_kind']=='no_reset'
+ records.append({'source_bit':r['source_bit'],'intermediate_bit':old,'native_bit':new,'source_initial_obligation':init,'native_actual_cell':ff,'matching_known_binary_reset_base':reset})
+assert len(records)==8 and sum(r['matching_known_binary_reset_base'] for r in records)==7;nonreset=next(r for r in records if not r['matching_known_binary_reset_base']);assert nonreset['native_bit']==624
+out={'state_bits':8,'matching_async_reset0_bits':7,'unreset_memory_enable_bit':nonreset,'records':records,'hashes':{str(p.relative_to(R)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [A,B,I,G]},'scope':'Exact source/intermediate/native state-lane join and matching reset metadata for8 condition premises. Seven have conditional known binary reset0 base; MEMORY_ENABLE has no reset and requires capture or validity-guarded relation. Does not prove reset event implementation, preservation, four-state startup or global equivalence.'};D=E/'full_datacache_condition_state_bases_v1_2026-10-09';D.mkdir(exist_ok=True);(D/'base_audit.json').write_text(json.dumps(out,indent=2)+'\n');print('Eight condition states joined:7 matching source/native async reset0,1 unreset MEMORY_ENABLE requiring guarded base')

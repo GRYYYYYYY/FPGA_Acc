@@ -1,0 +1,28 @@
+{
+  "sync1": {
+    "speculative_windows": 1620,
+    "speculative_replays": 2376,
+    "speculative_read_entries": 18064337,
+    "remote_shadow_reads": 5421906,
+    "shadow_messages": 163903,
+    "shadow_summary_payload_bytes": 5244896,
+    "expanded": 14858876,
+    "edge_visits": 66704303,
+    "manifest": "work/rr_pair_diffeq_speculative_sync1_v1_20261013/pair.json"
+  },
+  "sync3": {
+    "speculative_windows": 1620,
+    "speculative_replays": 2679,
+    "speculative_read_entries": 19573207,
+    "remote_shadow_reads": 5423381,
+    "shadow_messages": 163859,
+    "shadow_summary_payload_bytes": 5243488,
+    "expanded": 16312094,
+    "edge_visits": 74521343,
+    "manifest": "work/rr_pair_diffeq_speculative_v1_20261013/pair.json"
+  },
+  "seven_routing_artifacts_equal": true,
+  "summary_payload_change_percent": -0.026845146214526938,
+  "replay_change_percent": 12.75252525252526,
+  "scope": "logical boundary summary updates and CPU search work, not hardware traffic or speedup"
+}

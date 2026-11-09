@@ -1,0 +1,204 @@
+{
+  "plans": [
+    {
+      "arm": 0,
+      "mode": "online",
+      "steps": [
+        {
+          "step": 1,
+          "commands": [
+            "tools/run_paired_history_chain_v1_arm0_step1_subprocess00.py",
+            "tools/run_paired_history_chain_v1_arm0_step1_subprocess01.py",
+            "tools/run_paired_history_chain_v1_arm0_step1_subprocess02.py",
+            "tools/run_paired_history_chain_v1_arm0_step1_subprocess03.py",
+            "tools/run_paired_history_chain_v1_arm0_step1_subprocess04.py",
+            "tools/run_paired_history_chain_v1_arm0_step1_subprocess05.py",
+            "tools/run_paired_history_chain_v1_arm0_step1_subprocess06.py",
+            "tools/run_paired_history_chain_v1_arm0_step1_subprocess07.py",
+            "tools/run_paired_history_chain_v1_arm0_step1_subprocess08.py",
+            "tools/run_paired_history_chain_v1_arm0_step1_subprocess09.py"
+          ],
+          "report": "paired_history_chain_v1_arm0_step1_stage_6_2026-10-09/verification.json",
+          "native": "paired_history_chain_v1_arm0_step1_stage_4_2026-10-09",
+          "selection": "paired_history_chain_v1_arm0_step1_stage_2_2026-10-09/result.json"
+        },
+        {
+          "step": 2,
+          "commands": [
+            "tools/run_paired_history_chain_v1_arm0_step2_subprocess00.py",
+            "tools/run_paired_history_chain_v1_arm0_step2_subprocess01.py",
+            "tools/run_paired_history_chain_v1_arm0_step2_subprocess02.py",
+            "tools/run_paired_history_chain_v1_arm0_step2_subprocess03.py",
+            "tools/run_paired_history_chain_v1_arm0_step2_subprocess04.py",
+            "tools/run_paired_history_chain_v1_arm0_step2_subprocess05.py",
+            "tools/run_paired_history_chain_v1_arm0_step2_subprocess06.py",
+            "tools/run_paired_history_chain_v1_arm0_step2_subprocess07.py",
+            "tools/run_paired_history_chain_v1_arm0_step2_subprocess08.py",
+            "tools/run_paired_history_chain_v1_arm0_step2_subprocess09.py"
+          ],
+          "report": "paired_history_chain_v1_arm0_step2_stage_6_2026-10-09/verification.json",
+          "native": "paired_history_chain_v1_arm0_step2_stage_4_2026-10-09",
+          "selection": "paired_history_chain_v1_arm0_step2_stage_2_2026-10-09/result.json"
+        },
+        {
+          "step": 3,
+          "commands": [
+            "tools/run_paired_history_chain_v1_arm0_step3_subprocess00.py",
+            "tools/run_paired_history_chain_v1_arm0_step3_subprocess01.py",
+            "tools/run_paired_history_chain_v1_arm0_step3_subprocess02.py",
+            "tools/run_paired_history_chain_v1_arm0_step3_subprocess03.py",
+            "tools/run_paired_history_chain_v1_arm0_step3_subprocess04.py",
+            "tools/run_paired_history_chain_v1_arm0_step3_subprocess05.py",
+            "tools/run_paired_history_chain_v1_arm0_step3_subprocess06.py",
+            "tools/run_paired_history_chain_v1_arm0_step3_subprocess07.py",
+            "tools/run_paired_history_chain_v1_arm0_step3_subprocess08.py",
+            "tools/run_paired_history_chain_v1_arm0_step3_subprocess09.py"
+          ],
+          "report": "paired_history_chain_v1_arm0_step3_stage_6_2026-10-09/verification.json",
+          "native": "paired_history_chain_v1_arm0_step3_stage_4_2026-10-09",
+          "selection": "paired_history_chain_v1_arm0_step3_stage_2_2026-10-09/result.json"
+        }
+      ]
+    },
+    {
+      "arm": 1,
+      "mode": "cold",
+      "steps": [
+        {
+          "step": 1,
+          "commands": [
+            "tools/run_paired_history_chain_v1_arm1_step1_subprocess00.py",
+            "tools/run_paired_history_chain_v1_arm1_step1_subprocess01.py",
+            "tools/run_paired_history_chain_v1_arm1_step1_subprocess02.py"
+          ],
+          "report": "paired_history_chain_v1_arm1_step1_quality_v1_2026-10-09/verification.json",
+          "native": "paired_history_chain_v1_arm1_step1_native_v1_2026-10-09",
+          "selection": null
+        },
+        {
+          "step": 2,
+          "commands": [
+            "tools/run_paired_history_chain_v1_arm1_step2_subprocess00.py",
+            "tools/run_paired_history_chain_v1_arm1_step2_subprocess01.py",
+            "tools/run_paired_history_chain_v1_arm1_step2_subprocess02.py"
+          ],
+          "report": "paired_history_chain_v1_arm1_step2_quality_v1_2026-10-09/verification.json",
+          "native": "paired_history_chain_v1_arm1_step2_native_v1_2026-10-09",
+          "selection": null
+        },
+        {
+          "step": 3,
+          "commands": [
+            "tools/run_paired_history_chain_v1_arm1_step3_subprocess00.py",
+            "tools/run_paired_history_chain_v1_arm1_step3_subprocess01.py",
+            "tools/run_paired_history_chain_v1_arm1_step3_subprocess02.py"
+          ],
+          "report": "paired_history_chain_v1_arm1_step3_quality_v1_2026-10-09/verification.json",
+          "native": "paired_history_chain_v1_arm1_step3_native_v1_2026-10-09",
+          "selection": null
+        }
+      ]
+    },
+    {
+      "arm": 2,
+      "mode": "cold",
+      "steps": [
+        {
+          "step": 1,
+          "commands": [
+            "tools/run_paired_history_chain_v1_arm2_step1_subprocess00.py",
+            "tools/run_paired_history_chain_v1_arm2_step1_subprocess01.py",
+            "tools/run_paired_history_chain_v1_arm2_step1_subprocess02.py"
+          ],
+          "report": "paired_history_chain_v1_arm2_step1_quality_v1_2026-10-09/verification.json",
+          "native": "paired_history_chain_v1_arm2_step1_native_v1_2026-10-09",
+          "selection": null
+        },
+        {
+          "step": 2,
+          "commands": [
+            "tools/run_paired_history_chain_v1_arm2_step2_subprocess00.py",
+            "tools/run_paired_history_chain_v1_arm2_step2_subprocess01.py",
+            "tools/run_paired_history_chain_v1_arm2_step2_subprocess02.py"
+          ],
+          "report": "paired_history_chain_v1_arm2_step2_quality_v1_2026-10-09/verification.json",
+          "native": "paired_history_chain_v1_arm2_step2_native_v1_2026-10-09",
+          "selection": null
+        },
+        {
+          "step": 3,
+          "commands": [
+            "tools/run_paired_history_chain_v1_arm2_step3_subprocess00.py",
+            "tools/run_paired_history_chain_v1_arm2_step3_subprocess01.py",
+            "tools/run_paired_history_chain_v1_arm2_step3_subprocess02.py"
+          ],
+          "report": "paired_history_chain_v1_arm2_step3_quality_v1_2026-10-09/verification.json",
+          "native": "paired_history_chain_v1_arm2_step3_native_v1_2026-10-09",
+          "selection": null
+        }
+      ]
+    },
+    {
+      "arm": 3,
+      "mode": "online",
+      "steps": [
+        {
+          "step": 1,
+          "commands": [
+            "tools/run_paired_history_chain_v1_arm3_step1_subprocess00.py",
+            "tools/run_paired_history_chain_v1_arm3_step1_subprocess01.py",
+            "tools/run_paired_history_chain_v1_arm3_step1_subprocess02.py",
+            "tools/run_paired_history_chain_v1_arm3_step1_subprocess03.py",
+            "tools/run_paired_history_chain_v1_arm3_step1_subprocess04.py",
+            "tools/run_paired_history_chain_v1_arm3_step1_subprocess05.py",
+            "tools/run_paired_history_chain_v1_arm3_step1_subprocess06.py",
+            "tools/run_paired_history_chain_v1_arm3_step1_subprocess07.py",
+            "tools/run_paired_history_chain_v1_arm3_step1_subprocess08.py",
+            "tools/run_paired_history_chain_v1_arm3_step1_subprocess09.py"
+          ],
+          "report": "paired_history_chain_v1_arm3_step1_stage_6_2026-10-09/verification.json",
+          "native": "paired_history_chain_v1_arm3_step1_stage_4_2026-10-09",
+          "selection": "paired_history_chain_v1_arm3_step1_stage_2_2026-10-09/result.json"
+        },
+        {
+          "step": 2,
+          "commands": [
+            "tools/run_paired_history_chain_v1_arm3_step2_subprocess00.py",
+            "tools/run_paired_history_chain_v1_arm3_step2_subprocess01.py",
+            "tools/run_paired_history_chain_v1_arm3_step2_subprocess02.py",
+            "tools/run_paired_history_chain_v1_arm3_step2_subprocess03.py",
+            "tools/run_paired_history_chain_v1_arm3_step2_subprocess04.py",
+            "tools/run_paired_history_chain_v1_arm3_step2_subprocess05.py",
+            "tools/run_paired_history_chain_v1_arm3_step2_subprocess06.py",
+            "tools/run_paired_history_chain_v1_arm3_step2_subprocess07.py",
+            "tools/run_paired_history_chain_v1_arm3_step2_subprocess08.py",
+            "tools/run_paired_history_chain_v1_arm3_step2_subprocess09.py"
+          ],
+          "report": "paired_history_chain_v1_arm3_step2_stage_6_2026-10-09/verification.json",
+          "native": "paired_history_chain_v1_arm3_step2_stage_4_2026-10-09",
+          "selection": "paired_history_chain_v1_arm3_step2_stage_2_2026-10-09/result.json"
+        },
+        {
+          "step": 3,
+          "commands": [
+            "tools/run_paired_history_chain_v1_arm3_step3_subprocess00.py",
+            "tools/run_paired_history_chain_v1_arm3_step3_subprocess01.py",
+            "tools/run_paired_history_chain_v1_arm3_step3_subprocess02.py",
+            "tools/run_paired_history_chain_v1_arm3_step3_subprocess03.py",
+            "tools/run_paired_history_chain_v1_arm3_step3_subprocess04.py",
+            "tools/run_paired_history_chain_v1_arm3_step3_subprocess05.py",
+            "tools/run_paired_history_chain_v1_arm3_step3_subprocess06.py",
+            "tools/run_paired_history_chain_v1_arm3_step3_subprocess07.py",
+            "tools/run_paired_history_chain_v1_arm3_step3_subprocess08.py",
+            "tools/run_paired_history_chain_v1_arm3_step3_subprocess09.py"
+          ],
+          "report": "paired_history_chain_v1_arm3_step3_stage_6_2026-10-09/verification.json",
+          "native": "paired_history_chain_v1_arm3_step3_stage_4_2026-10-09",
+          "selection": "paired_history_chain_v1_arm3_step3_stage_2_2026-10-09/result.json"
+        }
+      ]
+    }
+  ],
+  "spec": "tools/history_three_step_cost_spec_v1.json",
+  "status": "PREPARED_NOT_EXECUTED"
+}

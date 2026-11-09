@@ -1,0 +1,41 @@
+{
+  "status": "source_bug_identified_before_on_results",
+  "created_utc": "2026-10-18T06:46:31.622854+00:00",
+  "bindings": {
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/experiments/mmc_old_branch_prune_seeds_v1_2026-10-18/case_01/receipt.json": "4dfa0a0436ee02810d24d3d2918f79a3bf728aca4ded10263524fb13ab877c11",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/experiments/mmc_multiplacement_inputs_v1_2026-10-18/case_01/demand/endpoints.json": "68ac3f5f4996b3ff6eabaa90dfb53d33a10f593ce34ca76e45d3add54b52b116",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/experiments/mmc_old_branch_prune_seeds_v1_2026-10-18/case_02/receipt.json": "53f8fad90faa33bb1f3d9ea7424f60ebc78aa2dd600b9e33dca90159e394fe41",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/experiments/mmc_multiplacement_inputs_v1_2026-10-18/case_02/demand/endpoints.json": "dfd0d86ad7ba51dd89db0d39db77607f24143dbd13ade4dd05254998a2c573af",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/experiments/mmc_old_branch_prune_seeds_v1_2026-10-18/case_03/receipt.json": "1261f50e7be27b4671bda8e54b3701c4212cb9e383dc9270edf9bbc9178ea5bf",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/experiments/mmc_multiplacement_inputs_v1_2026-10-18/case_03/demand/endpoints.json": "648b61a230c068a4ede9dce0a6a6466776b6927d0347a90f8b045828820a234b",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/run_mmc_partial_firstpass_native_case_v1_2026_10_18.py": "5f5358abc60316d01ce94be86e22a5d0d9193a139dbe27cb0308889a9c69d414"
+  },
+  "rows": [
+    {
+      "case": "case_01",
+      "eligible_partial_NETs": 11,
+      "eligible_present": 1379,
+      "eligible_pending": 11,
+      "all_pending": 62,
+      "pending_outside_eligible_partials": 51
+    },
+    {
+      "case": "case_02",
+      "eligible_partial_NETs": 19,
+      "eligible_present": 378,
+      "eligible_pending": 22,
+      "all_pending": 56,
+      "pending_outside_eligible_partials": 34
+    },
+    {
+      "case": "case_03",
+      "eligible_partial_NETs": 15,
+      "eligible_present": 346,
+      "eligible_pending": 18,
+      "all_pending": 165,
+      "pending_outside_eligible_partials": 147
+    }
+  ],
+  "error": "V1on postprocessor incorrectly equates pending queries inside existing partial NETs with all pending queries including entirely absent NETs.",
+  "recovery": "Preserve frozen v1 and native runs; require original six child exit0. Reuse admitted off audits, audit only existing on outputs with corrected partition-derived eligibility. No native rerun and no gate weakening."
+}

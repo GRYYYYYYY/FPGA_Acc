@@ -1,0 +1,18 @@
+{
+  "status": "pass",
+  "scope": "CPU binary snapshot candidate search after legal commit, rejected collision and restore; no native feedback update or HLS claim",
+  "fixtures": 12,
+  "legal_commits": 12,
+  "rejected_commits": 12,
+  "restores": 12,
+  "color_comparisons": 192,
+  "reference_state_api": [
+    "TilePlaceV2Engine.apply",
+    "TilePlaceV2Engine.restore"
+  ],
+  "files": {
+    "snapshot_search_server.cpp": "8172b5373a04a70e8376578b6a4c792f3718f2302ca4060d1d72564bee67dd1b",
+    "test_snapshot_search_state.py": "2a94848971722cf8bc5f5bfd729f78dec6972c1213265c7b1723bde92a99bb7c",
+    "snapshot_search.hpp": "e4cdbd50bd4e62b90e2a70ef0756cfea34f059f35ed93814ee5faad56045c271"
+  }
+}

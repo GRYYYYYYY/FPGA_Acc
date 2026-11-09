@@ -1,0 +1,11 @@
+{
+  "sources": {
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/integer_rc_context_memo.py": "6fa7f8271fe129c62c09846bda13edcf160009e30170e395de38c85d35632d66",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/nonzero_rc_endpoint_context_memo.py": "4412f4eafdf3c64d326ec38c59a4944e88ca921285ae550fb79634670f544050",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/persistent_rc_context_memo.py": "3d1462ecdadc8cd727838edd444b0993286e623284add1829fa6167207272b32",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/wire_penalty_rc_context_memo.py": "eada2341763a6b62e193b8207231172ed16488ccb0ebca8a99a31108286c2370",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/owner_union_wire_rc_context_memo.py": "961db989da92f1862cbe4efdea3b97ffd10f1ca6ff6c50c5711c41f8645153ab",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/routecast/tools/trial_owner50_memo_integer_probe.py": "af1ba33bbba4c60191edea45ae5d66853b702fcdff20dd3d51e6817b920a6118"
+  },
+  "policy": "Private exactIntegerRC constructor encodes each distinct exact Fraction increment once, reuses exact numerator integer for repeated values. Scale computation and subsequent encode/path unchanged. Private module chain, original modules unchanged. Fresh FULL12 actual50ps consumer must preserve whole result/cache bytes vs serialworkflow; no stable/end-to-end gain claim."
+}

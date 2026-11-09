@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "verified_ns": 1791984046666645909,
+  "random_graph_cases": 1000,
+  "seed": 928314,
+  "nodes_per_graph": "4 through 31",
+  "label_queue_journal_capacity": 1024,
+  "comparison": [
+    "found/exhausted status",
+    "expansion count",
+    "edge visit count",
+    "ordered dynamic observation node/version/occupancy/history",
+    "sink cost and hops",
+    "attachment and exact node/edge path"
+  ],
+  "inputs": {
+    "tb/native_search_hbm_search_differential_tb.cpp": "631112e56c7ff66d77afe54e4aefbcdce08768429cb6860450593e768638f873",
+    "include/sparse_search.hpp": "8fa6018007d2844cee1ce1038321a860831cdab92286c9a8a29a2446c9fa40be",
+    "include/sparse_label_worker.hpp": "49b583ce14a93f3e70dea9233ced91111517b74cb7421e65dfadf7c5b1c986e4",
+    "include/label_packet.hpp": "4b6ac60a56113bc599f4b51a1b9f065950f1b001eabfd63ff763a07dec30dd86",
+    "include/sparse_table.hpp": "dbcd6c9b9fe52911ff3cdd3f95260978f37dabce9c7f369d703ea66c834b1da6",
+    "include/native_search_hbm_relax_observed.hpp": "05d5bd449b9b62c597db4d958c03defdeb1e809f7d67576bbdea7c8781366647",
+    "include/native_search_hbm_observation.hpp": "37b4e2dcf02c69427f761501bceec5513ae38e2442156fcc1d584e50a3e464ce",
+    "include/native_search_hbm_cost.hpp": "5d3c0551058893c917163699c46a99dbb8d8752572c5be110348b0147155dd26",
+    "include/native_search_hbm_admission.hpp": "56e202616d54b49a32763af64285a30b40a77b9c31d3d6d1cecde2de5caa2981",
+    "include/native_search_hbm_queue.hpp": "967863f42b6c6bb67921ac2e7a60e8c48b90ce3a4bd5d9ce58a2078e6e5ab1eb",
+    "include/native_search_hbm_labels.hpp": "858dd88d17bd902b6930eb7df7828abafb611d566bf379023f14ec8a58d2b29a",
+    "include/native_search_hbm_frontier.hpp": "ac5cb229b91e3d19fd79a81c11236e40c3e54eb961211424c6e306fc4ded0021",
+    "include/native_search_hbm_label_ops.hpp": "4c652bae4d559bb75f431706e962147db3cb7a16e3c041d089a157ea4169dcc3"
+  },
+  "command": "g++ -std=c++17 -O2 -Wall -Wextra -Werror -Iinclude tb/native_search_hbm_search_differential_tb.cpp -o /tmp/dieroute_hbm_search_differential_tb; /tmp/dieroute_hbm_search_differential_tb",
+  "scope": "CPU composition of HBM frontier and observed relaxation on randomized graph fixtures with host seed setup and traceback; not native physical graph, graph-expansion RTL, asynchronous workers or board evidence",
+  "board_result": false,
+  "research_complete": false,
+  "collision_variant": {
+    "status": "passed",
+    "verified_ns": 1791984143822482059,
+    "random_graph_cases": 1000,
+    "node_ids": "local_index*1024 + trial%1024; every node hashes to same slot",
+    "source": "tb/native_search_hbm_search_collision_differential_tb.cpp",
+    "sha256": "402b037728ddf87388638650e613d6cad6ec6f0107f046aa1d44fd05f921d5aa",
+    "comparison": "Same complete-search checks including exact paths and ordered observations; trace uses actual label lookup",
+    "native_physical_graph": false
+  }
+}

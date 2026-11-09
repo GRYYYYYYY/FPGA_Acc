@@ -1,0 +1,13 @@
+{
+  "status": "pass",
+  "scope": "array-only per-trial site/type/region/fixed/occupancy CPU differential; macro shape and guard remain separate; not integrated or HLS synthesized",
+  "fixtures": 12,
+  "queries": 6804,
+  "valid_queries": 2085,
+  "fault_cases": 36,
+  "files": {
+    "trial_legality_array.hpp": "369f152e7138157355f7e2df24282c237210e1d4cdafad081f8eda418ab59840",
+    "trial_legality_array_query.cpp": "c43fbb0417e2522c97680cdcc413d1f7d2d15696e72edf2ada65e01b48766118",
+    "test_trial_legality_array.py": "e914129ef21a6210da3eed847efeab861149aac54b18631358620e982e31cc79"
+  }
+}

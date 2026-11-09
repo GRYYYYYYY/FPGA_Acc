@@ -1,0 +1,122 @@
+{
+  "schema": "dieroute.audited_rr_experiments.v1",
+  "board_result": false,
+  "research_complete": false,
+  "experiments": [
+    {
+      "manifest": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/rr_pair_diffeq_timing_v1_20261013/pair.json",
+      "manifest_sha256": "ae23a037bcab9e5675572ec35373f935f4a901c451be7e8694fac7d3ec00a00b",
+      "configuration": {
+        "repeats": 5,
+        "issue_width": 4,
+        "repair_attempts": 8,
+        "geometry_weight": 64,
+        "max_iterations": 30,
+        "initial_criticality_q": 32768,
+        "timing_updates": true,
+        "min_timing_iterations": 3
+      },
+      "case": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/native_diffeq_stratix2die_cw80_20261013",
+      "topology": {
+        "node_count": 69848,
+        "die_count": 2,
+        "tasks": {
+          "count": 2073,
+          "cross_die_endpoints": 506,
+          "connections_sha256": "d956a8a172039f5c7563bf33210b977ed4535ec10be4042d58032a9809cdaa42"
+        }
+      },
+      "verified_source_files": 32,
+      "modes": {
+        "flat": {
+          "status": "passed",
+          "repeats_verified": 5,
+          "deterministic_outputs_and_counters": true,
+          "counters": {
+            "schema": "dieroute.rr_golden.v1",
+            "mode": "flat",
+            "legal": true,
+            "execution": "serial_cpp_reference",
+            "board_result": false,
+            "iterations": 3,
+            "tasks": 2073,
+            "overused_resources": 0,
+            "expanded": 17836996,
+            "edge_visits": 73008197,
+            "planned": 0,
+            "local_searches": 0,
+            "flat_searches": 6219,
+            "reserved_resources": 0,
+            "aborted_reservations": 0,
+            "committed_corridors": 0,
+            "repairs": 0,
+            "fallbacks": 0,
+            "committed_crossings": 958,
+            "overcapacity_reservations": 0,
+            "structurally_pruned_portals": 0,
+            "downstream_searches": 0,
+            "downstream_expanded": 0,
+            "downstream_edge_visits": 0
+          },
+          "median_cpu_wall_ms": 31416.1,
+          "native_qor": {
+            "total_wirelength": 9344,
+            "critical_path_delay_ns": 7.63363,
+            "baseline_wirelength": 8639,
+            "baseline_cpd_ns": 7.61372,
+            "wirelength_delta_percent": 8.160666743836087,
+            "cpd_delta_percent": 0.261501604997294
+          },
+          "final_net_crossing_edges": 313,
+          "final_net_crossing_destinations": 313
+        },
+        "downstream": {
+          "status": "passed",
+          "repeats_verified": 5,
+          "deterministic_outputs_and_counters": true,
+          "counters": {
+            "schema": "dieroute.rr_golden.v1",
+            "mode": "downstream",
+            "legal": true,
+            "execution": "serial_cpp_reference",
+            "board_result": false,
+            "iterations": 6,
+            "tasks": 2073,
+            "overused_resources": 0,
+            "expanded": 34269549,
+            "edge_visits": 175105452,
+            "planned": 8106,
+            "local_searches": 8415,
+            "flat_searches": 0,
+            "reserved_resources": 3036,
+            "aborted_reservations": 1082,
+            "committed_corridors": 977,
+            "repairs": 0,
+            "fallbacks": 0,
+            "committed_crossings": 977,
+            "overcapacity_reservations": 14,
+            "structurally_pruned_portals": 59992563,
+            "downstream_searches": 1518,
+            "downstream_expanded": 26134447,
+            "downstream_edge_visits": 141289093
+          },
+          "median_cpu_wall_ms": 62154.6,
+          "native_qor": {
+            "total_wirelength": 9618,
+            "critical_path_delay_ns": 7.63336,
+            "baseline_wirelength": 8639,
+            "baseline_cpd_ns": 7.61372,
+            "wirelength_delta_percent": 11.33233013080217,
+            "cpd_delta_percent": 0.2579553752961816
+          },
+          "final_net_crossing_edges": 321,
+          "final_net_crossing_destinations": 321
+        }
+      },
+      "native_model_crossings": {
+        "net_crossing_edges": 345,
+        "net_crossing_destinations": 345
+      }
+    }
+  ]
+}

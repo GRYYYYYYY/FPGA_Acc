@@ -1,0 +1,240 @@
+{
+  "schema": "dieroute.critical_path.v202",
+  "recorded_ns": 1793411859565945760,
+  "matrix": {
+    "path": "work/current_research_claim_matrix_v202_20261031/matrix.json",
+    "sha256": "313bbe61f6ca484f19bf92c0d11745bf7291c48c45164c0a713b8f52ce35bc9e"
+  },
+  "scope": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "gate_requirements": [
+    {
+      "id": "G1",
+      "requirement": "Frozen inputs, baseline sources and commands; true layer/SLR metadata; graph and route round trip",
+      "status": "in_progress",
+      "remaining": "70-net/298-connection writeback, full exported logical connectivity, setup/hold repair, all 614 load observations, fresh repaired bus-skew and native full/partial bitstream generation are verified. No-op serialization has identical physical inventories and selected four-corner delays. The repaired workload bitstream passes with exit 0 after a process-local system-libudev preload; prior failed attempts are retained. Full-design routing, calibrated timing/length feedback and joint QoR remain open."
+    },
+    {
+      "id": "G2",
+      "requirement": "C++ complete routing closure with exact occupancy, net sharing, corridor release/repair, deterministic transactions and five-repeat hashes",
+      "status": "in_progress",
+      "remaining": "Complete-net kernel authority is integrated in native C-model routing with five-repeat independent evidence. Strict concurrent capacity grants, joint online XRT execution, autonomous asynchronous ownership/publication and full commercial routing remain open."
+    },
+    {
+      "id": "G3",
+      "requirement": "At least one credible multi-die workload cohort plus parameterized topology/capacity scaling; microbenchmarks alone insufficient",
+      "status": "in_progress",
+      "remaining": "Three original VTR development cases and one commercial U28070net cohort exist,not representative heldout coverage. SixSBtopology/capacitynativebaselines,fullgraphpack/nooproundtrips,andnativeindexedcostrebasesnowverifiedforoneCLB/IOcircuit,plusfresh3layerdiffeq/alu4nativebaselinesandfullgraph/nooproundtrips. MatchedDieRoutererouting,repeatedQoR/scaling,heterogeneousworkloadsandreservedvalidationremainopen."
+    },
+    {
+      "id": "G4",
+      "requirement": "Native legality; route failures do not increase; SLL use, CPD and wirelength do not degrade relative to frozen strong baselines",
+      "status": "in_progress",
+      "remaining": "Fixed zero-first configuration passes ex5p but fails joint quality on diffeq wirelength and alu4 CPD. Fanout schedule factorial also fails strong ex5p joint gates. Full commercial physical SLL/WL/CPD, route-failure and representative development/heldout/multi-seed requirements remain unverified; seed-weight and fanout/present interaction studies completed with joint-quality failures. No tolerance relaxation or heldout tuning."
+    },
+    {
+      "id": "G5",
+      "requirement": "E-DR1 reservation, E-DR2 mapping, E-DR3 shadow, E-DR4 migration, E-DR5 topology ablations",
+      "status": "in_progress",
+      "remaining": "Owner-managed publication removes host subscription polling in fresh native routing, with all empty queue pumps accounted. The fixed development cohort still has a weak delay-versus-payload tradeoff: period 3 saves only 320 logical payload bytes per repeat versus period 1 while increasing search work. Full reservation, mapping, shadow alternatives, migration and topology ablations remain open; endpoint-call reduction does not prove measured HBM bandwidth or latency."
+    },
+    {
+      "id": "G6",
+      "requirement": "HLS csim/csynth/cosim; actual HBM interfaces and connectivity; U280 implementation timing and resource reports",
+      "status": "in_progress",
+      "remaining": "Complete full native 70-net/298-connection XRT execution and independent audit; implement and verify hardware search/asynchronous transport and mapping/migration/strict capacity; obtain physical U280 routed timing/resource and board execution evidence."
+    },
+    {
+      "id": "G7",
+      "requirement": "Physical board end-to-end >=3x target, energy, repeated runs and statistical evidence; never substitute emulation time",
+      "status": "pending_external_hardware",
+      "remaining": "Physical board availability and actual end-to-end>=3x/energy/repeated-run evidence required."
+    },
+    {
+      "id": "G8",
+      "requirement": "Paper, claim matrix, reproducible artifact bundle and gate-by-gate final audit",
+      "status": "in_progress",
+      "remaining": "Snapshot subtree evidence matrix and reference-integrity audit exist; paper, full architecture/QoR claim matrix, reproducible artifact bundle and full gate-by-gate final audit remain open."
+    }
+  ],
+  "priorities": [
+    {
+      "order": 1,
+      "task": "Preserve six full28878RTL candidates and original primary/metadata/joint/Owner jobs; wait exact identities and evaluate actual complete positives before observer-negative tests.",
+      "condition": "Original full graph/program/oracles and1e9cumulative watchdog; no quiet-job restart or partial progress acceptance."
+    },
+    {
+      "order": 2,
+      "task": "Existing strict mapped-native v2 retains sole execution owner; complete original91975782node/341net/729connection/5repeat run when headroom permits.",
+      "condition": "Original20GiB prestart/12GiB RSS/global72GiB and all algorithm budgets; v1failure retained. No duplicate/retry/guard relaxation."
+    },
+    {
+      "order": 3,
+      "task": "When the four original XRT chains terminate, independently review full routing/search/path/authority outputs and recorded exit evidence.",
+      "condition": "No success from initialization,96partial calls,CPU or unknown exit code. Snapshot observer only records terminal facts."
+    },
+    {
+      "order": 4,
+      "task": "Synthesize forward-validation parent P7 under original guards, then independently evaluate discarded-offset child P8 against actual parent synthesis before full RTL.",
+      "condition": "Both currently host-only; no new owner while existing queue headroom unavailable. Source-operation reductions are not hardware cycles."
+    },
+    {
+      "order": 5,
+      "task": "Continue original QoR/heldout/scaling/heterogeneous and five full-system ablation requirements; retain all failures and frozen strong baselines.",
+      "condition": "No heldout tuning or tolerance relaxation; no component/CPU substitution for physical QoR or concurrent hardware."
+    },
+    {
+      "order": 6,
+      "task": "Complete remaining artifact dependency/provenance/primary-literature/final-paper work.",
+      "condition": "Ledger9878/9968partial with90pending,820separate transitive/466root gaps; dated34page draft is not final research reproduction."
+    },
+    {
+      "order": 7,
+      "task": "Obtain actual board execution and full physical timing/resource evidence.",
+      "condition": "No enumerated physical U280; no claimed300MHz,>=3x or energy result from emulation."
+    }
+  ],
+  "runtime_observation": {
+    "path": "work/current_research_claim_matrix_v170_20261030/runtime_observation.json",
+    "sha256": "dad25840508a5dbde9c4b168eb9fce01302824065e2f8bb6b3b8a21af49cabb1",
+    "scope": "Fresh identities only; no claim of progress or acceptance."
+  },
+  "research_complete": false,
+  "retained_quality_counterexamples": [
+    {
+      "case": "posterior_apex2_seed1_stage9_delay_first_exchange",
+      "review": "work/apex2_stage9_terminal_reconciliation_20261030/review.json",
+      "review_sha256": "903f1d51334e44769cac3ca8548173905b2dbd1c4cf068a775ca49e09ff62c5b",
+      "native_legal": true,
+      "joint_quality_pass": false,
+      "wirelength_delta_vs_frozen_baseline": 1,
+      "cpd_delta_ps_vs_frozen_baseline": "26.3",
+      "rerun": false,
+      "adopted": false,
+      "scope": "Existing negative result reconciled; no heldout tuning or tolerance relaxation."
+    }
+  ],
+  "physical_calibration_method_boundary": {
+    "review": "work/multidie_physical_model_primary_review_20261031/review.json",
+    "review_sha256": "78526f75f7842fbc5ab7185d5c0ed3e987bd010d9f48a9eb03f74930483e4355",
+    "calibration_implemented": false,
+    "imported_external_coefficients": false,
+    "scope": "Selected physical-model assumptions and comparison-boundary review only; no calibration, numerical import, reproduction or gate completion."
+  },
+  "frozen_delay_feedback_counterexamples": {
+    "review": "work/native_frozen_delay_ranking_audit_20261031/independent_review.json",
+    "review_sha256": "d1080f6ba059e5767d0cd7b469d2d75d2072ae314ec49b55eb033b1f603094f8",
+    "calibration_implemented": false,
+    "routing_cost_adopted": false,
+    "scope": "Posterior direction audit of already frozen fivefold whole-net development predictions. Same exact net/task/pin and distinct complete-tree hashes are paired; every route variant of a net remains in its original excluded validation fold. Printed numeric predictions are compared as Decimal without clipping/refitting; the >=1ps subset only reports reversal magnitude at the native recorded unit and changes no acceptance tolerance. Pairs share nets/loads and are not independent repeats. No new native query, model fit/selection, heldout validation, calibrated error guarantee, safe route acceptance, timing closure, speedup or board claim. Raw four-stage interconnect CSV was joined to every original/proposal dataset observation. Reversals disprove exact pair ordering in this observed sample, not universal model usefulness or correctness on new designs. The20cells reuse the same273pairs and are not5460independent cases."
+  },
+  "native_delay_feature_information_limits": {
+    "review": "work/native_delay_feature_alias_audit_20261031/independent_review.json",
+    "review_sha256": "13e82bd7b12fee7134d20c316e2b6eaa514c21d3f2604cff8ac8778e39493f30",
+    "current_representation_coefficient_tuning_not_sufficient_for_exact_alias_fit": true,
+    "calibration_implemented": false,
+    "scope": "Posterior exact-input identifiability audit of the already frozen native interconnect-delay development datasets. Group only the same net/task/pin/fold with distinct complete-tree identities and identical model input vectors. No cross-fold or cross-endpoint function assumption. Any lower bound is empirical for these recorded integer-ps targets and these unchanged representations, not a certified physical error bound, new-design generalization or route acceptance rule. No refit, coefficient/feature selection, native query/routing/RTL execution, acceptance tolerance change or hardware adoption."
+  },
+  "native_delay_alias_structural_distinction": {
+    "review": "work/native_delay_alias_structure_audit_20261031/independent_review.json",
+    "review_sha256": "78c4a92455d77899f261f39d3c421d16ff7246010977c2726164a1e376ac9b14",
+    "model_change_implemented": false,
+    "causal_electrical_attribution": false,
+    "scope": "Structural distinction audit of four already observed same-endpoint/fold exact190feature aliases. Uses original retained baseline/proposal tree CSVs and task selection only; no device-graph/trace/TV scan, tree alteration, feature tuning, model fit or native/RTL query. Exact path and off-path differences are observations, not a causal attribution of native delay differences to a specific missing electrical parameter. No new quality, timing closure, speedup, calibration or board acceptance."
+  },
+  "selector_watchdog_conditional_screen": {
+    "review": "work/resident_selector_watchdog_screen_20261031/review.json",
+    "review_sha256": "352b02f9cfab581a085cfe5b9257b2e22ccb4fc9bab5af1641cf2b83ab6056f3",
+    "independent_review": "work/resident_selector_watchdog_screen_20261031/independent_review.json",
+    "independent_review_sha256": "917d69dc626afd68d3919b55efdbb305e1e623b0dc4db0c9420ed4a26706cdb1",
+    "scope": "Conditional serialized selector loop-spacing/body arithmetic only; no whole-program latency bound, watchdog pass/fail verdict, ETA or measured acceleration. P7/P8 are unsynthesized counterfactuals. Existing jobs and budgets unchanged.",
+    "research_complete": false
+  },
+  "selector_success_path_composition_boundary": {
+    "report": "work/resident_selector_success_path_20261031/review_v2.json",
+    "report_sha256": "2b9ee4063f0054a72d4c2d5232f32b67fbcce5b0917613cc3645ba43e4bf334a",
+    "independent_review": "work/resident_selector_success_path_20261031/independent_review.json",
+    "independent_review_sha256": "4bbc2ed0ca99635549623302a3e7e8f085534375c745ef9d4031075ee7e9e0dc",
+    "stable_ready_cases": 4096,
+    "stable_ready_successes_without_state9": 0,
+    "unconstrained_ready_abstract_early_success_cases": 64,
+    "caller_ready_stability_proved": false,
+    "actual_runtime_call_counts_proved": false,
+    "whole_program_lower_bound_certified": false,
+    "watchdog_failure_verdict": null,
+    "scope": "Local two-state selector return/control abstraction, source-fragment checked against two SHA-bound existing Vivado2022.2 HLS RTL modules. Accepted transaction starts at state1 and completion is sampled at state10; legal one-hot operation, no mid-call reset, completed helper waits, and stable ready input are assumed. All initial six predicate/return bits are enumerated. Helper results are unconstrained binary outcomes; wait stutters, X/Z semantics, datapath arithmetic, helper timing and caller integration are not modeled. Stable-ready success implies visiting state9 locally. If ready changes between entry and completion, a local abstract early-exit success is possible through stale guards; this is not shown reachable in the actual caller or running DUT and is not a diagnosed hardware bug. Does not prove every projected host call succeeds in RTL, source/RTL count equivalence, serial composition, whole-program timing or watchdog failure. No new synthesis/simulation, DUT edit, program/trace/TV access, job control, adoption or formal outcome change.",
+    "research_complete": false,
+    "next_action": "Trace live ready inputs through actual get/put callers and prove transaction stability or produce an actually reachable counterexample. Still require runtime/full control count and timing composition; do not declare watchdog failure from local abstraction."
+  },
+  "selector_ready_nested_interval": {
+    "report": "work/resident_selector_ready_interval_20261031/review.json",
+    "report_sha256": "aea35da4ed45b79eb87ee3f77e8ccc1711c963733e9aece3660769e9aa157a95",
+    "independent_review": "work/resident_selector_ready_interval_20261031/independent_review.json",
+    "independent_review_sha256": "d71226dd65a690de8959abaf9936e4f1e21a1cd3ab71bf60716b55ec6328980c",
+    "nested_interval_ready_stability_established": true,
+    "inner_waits": 10,
+    "outer_waits": 20,
+    "ready_registers_with_sole_writer_at_state25": 3,
+    "global_reset_to_state_reachability_proved": false,
+    "all_projected_runtime_calls_successful_proved": false,
+    "whole_program_lower_bound_certified": false,
+    "watchdog_failure_verdict": null,
+    "scope": "Read-only binary, legal-one-hot, shared-clock, no-mid-call-reset nested-call interval invariant over three SHA-bound existing2022.2 RTL modules. At the10enumerated selector wait states, fixed mux/direct bindings select one ready register and caller done is0. While selector done is0 the caller holds that state; all20enumerated enclosing execute waits hold when caller done is0 (state242requires the previously checked admitted-call predicate). All three ready registers have exactly one clocked update site, execute state25, disjoint from these waits. Therefore in these properly nested admitted intervals ready remains stable through selector state10 completion sampling. No global reset-to-state reachability, arbitrary malformed hierarchy/control, X/Z behavior, all-start scheduling, runtime call counts, successful return of every projected call, helper cycle correspondence, serial cycle sum, certified program lower bound or actual watchdog verdict is established. The previous unstable-ready abstract witness is excluded within these stated nested intervals, not globally disproved or diagnosed as a reachable DUT bug. No new HLS/simulation, DUT edit, program/trace/TV read, job control, budget/guard change or adoption.",
+    "research_complete": false,
+    "next_action": "Ready instability is excluded for the enumerated properly nested admitted intervals. Next examine source/build invariants and RTL return/count correspondence for projected successful installs, plus helper-loop/timing and serial composition. Actual full terminal remains required; no timeout verdict or job changes."
+  },
+  "selector_iteration_counting_boundary": {
+    "report": "work/resident_selector_iteration_spacing_20261031/review.json",
+    "report_sha256": "fc163ffea78c6168fc1ab81a607f3a6646ea0ede109e9a4c502e58fa2b7b4865",
+    "independent_review": "work/resident_selector_iteration_spacing_20261031/independent_review.json",
+    "independent_review_sha256": "f7a87a416ae76a92400f72564641b4c18239948bf8a938335d3af595bc4d1a03",
+    "helper_modules": 4,
+    "prefix_continuation_spacing": 4,
+    "word_continuation_spacing": 8,
+    "source_to_RTL_dynamic_count_correspondence_proved": false,
+    "whole_program_lower_bound_certified": false,
+    "watchdog_failure_verdict": null,
+    "scope": "Read-only state-graph audit of four SHA-bound native2022.2 RTL loop helpers and existing synthesis reports. Within a single accepted, noncompleted invocation with legal one-hot control, no mid-call reset and admitted body iterations, the prefix continuation ring has4edges and word scan ring8edges, matching reported II. The associated expressions4*(T-Q) and8*(W-Q) are conditional first-to-last iteration-control-point distances if host T/W/Q equal the corresponding admitted RTL iteration and invocation counts. False prefix exit tests and invalid/end word-control passes are not host body/word visits. Idle, early-return and new-invocation transitions are not continuing-iteration rings. This does not prove the host-to-RTL count correspondence, datapath/memory correctness, disjointness from bit helper or parent intervals, serialization across calls/instances, integrated start/done latency, whole-program bound or actual watchdog failure. No new execution/tool flow, DUT edit, original program/trace/TV access, guard/budget change or adoption.",
+    "research_complete": false,
+    "next_action": "Source/RTL admitted-iteration and invocation count correspondence remains open; local4/8spacing alone does not close it. Establish build/select validity, count correspondence, interval disjointness and serial composition before any full watchdog claim; preserve actual ongoing execution."
+  },
+  "prefix_transition_equivalence_boundary": {
+    "report": "work/resident_prefix_transition_equivalence_20261031/review.json",
+    "report_sha256": "098820c7f1670349d8086268c0926c3a896b5497f23a82c2ad8298182bebc193",
+    "independent_review": "work/resident_prefix_transition_equivalence_20261031/independent_review.json",
+    "independent_review_sha256": "7f8bc28801c17f6eec2ccd906f03a248e10843df2df639fd4f51d3360b8f3350",
+    "interval_pairs": 7528926,
+    "branch_updates_checked": 15057852,
+    "local_prefix_transition_arithmetic_matches": true,
+    "runtime_prefix_count_correspondence_proved": false,
+    "whole_program_lower_bound_certified": false,
+    "watchdog_failure_verdict": null,
+    "scope": "Local prefix binary-search transition and finite-width audit, using SHA-bound C++ and two existing2022.2 RTL helpers. All lo<hi intervals within frozen template shape bounds are enumerated, both comparator outcomes checked, with matching next lo/hi, strict interval shrink, no64bit addition wrap or narrowed-address truncation. For admitted ordinal<=n<=773272, unsigned32bit ordinal exactly represents C uint64; every uint32 prefix value has the same unsigned order when zero-extended to C uint64. Thus identical valid initial bounds and identical per-iteration prefix values imply identical logical search transitions/iteration counts by induction. Those premises are not established for the running DUT: no RTL build-state correctness, BRAM contents/read latency, caller operand delivery, complete pipeline sequential equivalence, dynamic accepted-call counts, all successful calls, word/bit helper correctness or global serial/timing proof. No new RTL/HLS/native experiment, program/trace/TV read, DUT edit, watchdog/guard change or adoption; no actual timeout verdict.",
+    "research_complete": false,
+    "next_action": "Arithmetic width/update mismatch excluded locally within frozen shape bounds. Check RTL prefix build/content, BRAM read latency, caller operands and sequential realization before asserting runtime prefix-iteration correspondence. Word/bit, serialization and complete terminal verification remain required; do not infer actual watchdog failure."
+  },
+  "prefix_BRAM_readpath_boundary": {
+    "report": "work/resident_prefix_BRAM_readpath_20261031/review.json",
+    "report_sha256": "6d539659deefa5c42540cd10cfd435c699fef6e29c5528ce93845e0c07a0a6f7",
+    "independent_review": "work/resident_prefix_BRAM_readpath_20261031/independent_review.json",
+    "independent_review_sha256": "4b715bca9f5dcf551d378781a6aa0f777655994260914d616dc55b2b7617eb38",
+    "nested_routing_combinations": 98,
+    "memory_model_types": 2,
+    "actual_RAM_instance_bindings": 3,
+    "symbolic_two_enabled_edge_delivery_checked": true,
+    "HDL_simulation_executed": false,
+    "actual_prefix_memory_contents_validated": false,
+    "runtime_iteration_count_correspondence_proved": false,
+    "whole_program_lower_bound_certified": false,
+    "watchdog_failure_verdict": null,
+    "scope": "Read-only source/mux and symbolic data-token audit of existing SHA-bound2022.2 RTL. In98combinations of enumerated admitted nested caller/execute wait states, selected prefix address/CE and q return paths are combinational and BRAM WE is0. These are routing combinations, not98executed tests or globally reachable states. Both BRAM model types have two CE-gated read registers; with stable valid mid and enabled reads at stages1/2/3, stage3 comparator sampling sees RAM[mid] from stage1. Mid boundary registers update only at stage0. Assumes legal one-hot/shared-clock/no-mid-call-reset/properly nested prefix-parent state2, enabled helper stages and stable initialized memory. This is an abstract token projection, not HDL simulation or full sequential/netlist equivalence. Actual prefix build/content validity, all port widths/operand delivery, global reachability, full runtime iteration/call counts, word/bit helpers, serialization/whole-program timing and watchdog outcome remain unproved. No .dat memory image, original program/trace/TV payload read; no new flow/DUT edit/control/budget/guard/adoption change.",
+    "research_complete": false,
+    "next_action": "Source mux/read-register timing checked only for stated nested intervals. Next check prefix build/content correctness and actual argument delivery/sequential realization before runtime iteration-count claims; preserve full original execution and all timing/composition prerequisites."
+  }
+}

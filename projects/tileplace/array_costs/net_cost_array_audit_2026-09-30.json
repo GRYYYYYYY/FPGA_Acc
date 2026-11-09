@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "scope": "CPU array single-net HPWL, weighted Manhattan and minimum-path pressure with trial overlays; no routed timing, aggregate delta, HLS or board performance claim",
+  "random_reference_queries": 2000,
+  "atomic_error_cases": 8,
+  "extreme_coordinate_cases": 1,
+  "validation": "ctest array_net_cost_and_overlay passed",
+  "sources": {
+    "net_cost_array.hpp": "db98621d552192bd8afa6d06d1b4b99167d673059743e338f1d93d1c5529d5f8",
+    "net_cost_array_test.cpp": "a63e35071437c808e7a8d5927aea5ce27fc4843caf92c9d8c74e58e7886f4910"
+  }
+}

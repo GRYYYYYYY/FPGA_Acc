@@ -1,0 +1,29 @@
+"""All3exposed cases; cold-primary and both fixed supplemental policy labels,108vectors."""
+import json,sys,subprocess
+from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor,as_completed
+R=Path(__file__).resolve().parents[1];sys.path.insert(0,str(R/'tools/native_resume_prototype'))
+from pre_route_endpoints import sha
+from source_binding_v2 import closure
+F=R/'experiments/mmc_old_owner_pressure_feedback_v1_2026-10-18';cp=F/'cohort_complete.json';C=json.loads(cp.read_text());assert C['all3_final_and_every_event_independently_admitted'] and all(sha(p)==h for p,h in C['bindings'].items());spec=R/'experiments/mmc_old_owner_pressure_feedback_launch_v1_2026-10-18/protocol.json';P=json.loads(spec.read_text());plan=P['quality_plan'];assert plan['candidate']=='native_retained_owner_pressure_on' and plan['expected_full_domain_metric_vectors']==108 and plan['fixed_controls']==['native_retained_on','raw_min_on','previous_native'];scripts=[R/'tools/evaluate_mmc_old_owner_pressure_quality_case_v1_2026_10_18.py',R/'tools/verify_mmc_old_owner_pressure_quality_case_v1_2026_10_18.py'];sc=R/'experiments/mmc_old_owner_pressure_feedback_source_contract_v1_2026-10-18/quality_source_contract_v1.json';SC=json.loads(sc.read_text());assert SC['status']=='pass' and all(sha(p)==h for p,h in SC['bindings'].items());bindings={**C['bindings'],**SC['bindings'],str(cp):sha(cp),str(sc):sha(sc),str(spec):sha(spec),**closure([Path(__file__),*scripts])};D=R/'experiments/mmc_old_owner_pressure_quality_v1_2026-10-18';D.mkdir();(D/'logs').mkdir()
+for case in ['case_01','case_02','case_03']:
+ M=R/'experiments/mmc_multiplacement_models_v1_2026-10-18'/case;N=R/'experiments/mmc_multiplacement_cold_labels_v1_2026-10-18'/case;B=R/'experiments/mmc_partial_firstpass_recovery_v3_2026-10-18'/case;native_admissions={'cold':str((N/'verification.json').resolve()),'partial_seed_default':str((B/'verification.json').resolve()),'partial_seed_firstpass_preserve':str((B/'verification.json').resolve())};routes={'cold':str((N/'cold/output.route').resolve()),'partial_seed_default':str((B/'off/output.route').resolve()),'partial_seed_firstpass_preserve':str((B/'on/output.route').resolve())};labels={'cold':str((N/'cold/physical_audit.json').resolve()),'partial_seed_default':str((B/'off/physical_audit.json').resolve()),'partial_seed_firstpass_preserve':str((B/'on/physical_audit.json').resolve())}
+ for label in routes:
+  admitted=json.loads(Path(native_admissions[label]).read_text());assert admitted['all_native_physical_and_canonical_pass'] and admitted['bindings'][routes[label]]==sha(routes[label]) and admitted['bindings'][labels[label]]==sha(labels[label])
+ predictions={'raw_min_off':str(M/'raw_min/initial.json'),'raw_min_on':str(M/'feedback_on/raw_min/sketch.json'),'native_retained_off':str(M/'native_retained/initial.json'),'native_retained_on':str(M/'feedback_on/native_retained/sketch.json'),'previous_native':str(R/'experiments/mmc_native_source_checkpoint_v1_2026-10-18/initial.json'),'native_retained_owner_pressure_on':str(F/case/'model/sketch.json')};O=D/case;O.mkdir()
+ with (O/'protocol.json').open('x') as f:json.dump(dict(bindings={str(spec):sha(spec),str(cp):sha(cp),str(sc):sha(sc)},frozen_cohort_protocol=str(spec),frozen_cohort_protocol_sha256=sha(spec),endpoint=str(R/'experiments/mmc_multiplacement_inputs_v1_2026-10-18'/case/'demand/endpoints.json'),model_directory=str(M),context_admission=str(F/case/'audits/verification.json'),native_admissions=native_admissions,native_routes=routes,labels=labels,predictions=predictions,primary_candidate=plan['candidate'],primary_controls=plan['fixed_controls'],evidence_scope='Frozen fixed RRpressure old-owner context,6unchanged/candidateforecasts and3fixed labels. Cold primary retained, otherlabels supplemental; all3exposed cases,108independent vectors mandatory. No replacing old failedgates, selecting easier labels, new native QoR/time/heldout/hardware claim.'),f,indent=2)
+def run(case):
+ print('OWNER PRESSURE QUALITY START',case,flush=True)
+ for index,script in enumerate(scripts):
+  with (D/'logs'/(case+'_'+str(index)+'.log')).open('x') as f:code=subprocess.call([sys.executable,str(script),str(D/case)],cwd=R,stdout=f,stderr=subprocess.STDOUT)
+  if code:return dict(case=case,stage=index,exit_code=code)
+ return dict(case=case,exit_code=0)
+rows=[]
+with ThreadPoolExecutor(max_workers=3) as pool:
+ for f in as_completed([pool.submit(run,c) for c in ['case_01','case_02','case_03']]):rows.append(f.result());(D/'stages.json').write_text(json.dumps(rows,indent=2));print('OWNER PRESSURE QUALITY TERMINAL',rows[-1],flush=True)
+assert all(x['exit_code']==0 for x in rows);results=[]
+for case in ['case_01','case_02','case_03']:
+ p=D/case/'verification.json';v=json.loads(p.read_text());assert v['status']=='pass' and v['histogram_rank_topk_mae_checks']==36;bindings.update(v['bindings']);bindings[str(p)]=sha(p);r=json.loads((D/case/'comparison.json').read_text());results.append(dict(case=case,metrics=r['metrics'],fixed_metric_comparisons=r['primary_checks'],cold_primary_comparisons=[x for x in r['primary_checks'] if x['label']=='cold']))
+assert all(sha(p)==h for p,h in bindings.items())
+with (D/'research_decision_v1.json').open('x') as f:json.dump(dict(status='fixed_owner_pressure_context_all108metrics_verified',bindings=bindings,rows=results,all108_full_domain_metric_vectors_independently_verified=True,all3_cold_primary_fixed_comparison_rule_pass=all(x['pass_primary_gate'] for r in results for x in r['cold_primary_comparisons']),scope='Exposed scope ablation only. Coldlabel primary and2supplemental nativepolicylabels, no retroactive replacement of prior gates. Cached inputs and concurrent clocks do not establish fresh full-flow, native QoR, unseen-family or hardware gains.'),f,indent=2)
+print('ALL108OWNER PRESSURE QUALITY VECTORS VERIFIED',flush=True)

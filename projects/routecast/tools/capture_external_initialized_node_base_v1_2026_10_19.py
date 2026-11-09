@@ -1,0 +1,16 @@
+"""Existing immutable indexed-cost observer on new design/graph, route-free exit."""
+import json,os,shutil,subprocess,resource,time
+from pathlib import Path
+from pre_route_endpoints import sha
+R=Path(__file__).resolve().parents[1]
+def read(p):return json.loads(p.read_text())
+def main():
+ build=R/'build/native_indexed_cost_dump_v1_2026-10-10';bp=build/'receipt.json';b=read(bp);binary=build/'sequence_vpr';assert sha(binary)==b['binary_sha256'] and all(sha(p)==h for p,h in b['bindings'].items()) and all(sha(p)==h for p,h in b['source_sha256'].items());timing=R/'experiments/prospective_external_family_current_initial_timing_v1_2026-10-19';tp=timing/'protocol.json';t=read(tp);assert all(sha(p)==h for p,h in t['bindings'].items());out=R/'experiments/prospective_external_family_initialized_node_base_v1_2026-10-19';out.mkdir(exist_ok=False);work=out/'work';work.mkdir();bindings={str(p):sha(p) for p in [bp,binary,tp,timing/'verification.json',Path(__file__).resolve()]};start=time.perf_counter()
+ for name in ['design.blif','design.net','design.place']:
+  src=timing/'work'/name;shutil.copyfile(src,work/name);assert sha(src)==sha(work/name);bindings.update({str(p):sha(p) for p in [src,work/name]})
+ command=list(t['command']);command[0]=str(binary);env={k:v for k,v in os.environ.items() if not k.startswith('ROUTECAST_')};dump=work/'indexed.tsv';env['ROUTECAST_INDEXED_COST_DUMP']=str(dump);protocol=dict(command=command,environment_set={'ROUTECAST_INDEXED_COST_DUMP':str(dump)},bindings=bindings,phase='Native indexed-cost diagnostic exits immediately after route structures initialize, before routing or first criticality. Must prove T_quadratic0 and base=saved before treating prices as stable through fanout updates.',scope='New graph initialization metadata only. No MMC cost table reuse, source/final routed timing, paths, budgets or strict family claim.',AS_limit_bytes=8*2**30,timeout_seconds=None);(out/'protocol.json').write_text(json.dumps(protocol,indent=2));tick=time.perf_counter()
+ def limit():resource.setrlimit(resource.RLIMIT_AS,(8*2**30,8*2**30));resource.setrlimit(resource.RLIMIT_CORE,(0,0))
+ with (work/'native.log').open('x') as log:
+  child=subprocess.Popen(command,cwd=work,env=env,stdout=log,stderr=subprocess.STDOUT,preexec_fn=limit);stat=Path(f'/proc/{child.pid}/stat').read_text().rsplit(') ',1)[1].split();(out/'live_process.json').write_text(json.dumps(dict(pid=child.pid,start_ticks=stat[19]),indent=2));print('NODE_BASE_CAPTURE_CHILD',child.pid,flush=True);code=child.wait()
+ text=(work/'native.log').read_text();passed=code==0 and 'ROUTECAST indexed cost metadata exported before routing' in text and dump.exists() and not list(work.glob('*.route'));assert all(sha(p)==h for p,h in bindings.items());files=[out/'protocol.json',work/'native.log',*([dump] if dump.exists() else [])];(out/'receipt.json').write_text(json.dumps(dict(status='INITIALIZED_NODE_BASE_CAPTURED_PENDING_DOMAIN_AUDIT' if passed else 'INITIALIZED_NODE_BASE_CAPTURE_FAILED_RETAINED',passed=passed,exit_code=code,native_process_seconds=time.perf_counter()-tick,whole_component_seconds=time.perf_counter()-start,bindings={str(p):sha(p) for p in files},new_route_labels=False),indent=2));print('NODE_BASE_CAPTURE_TERMINAL',passed,code,flush=True);assert passed
+if __name__=='__main__':main()

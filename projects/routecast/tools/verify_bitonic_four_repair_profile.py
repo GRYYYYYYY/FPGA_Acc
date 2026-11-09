@@ -1,0 +1,10 @@
+"""Require whole candidate byte parity before interpreting instrumented phases."""
+import json
+from pathlib import Path
+from pre_route_endpoints import sha
+ROOT=Path(__file__).resolve().parents[1];out=ROOT/'experiments/bitonic_four_repair_profile_2026-10-07';old=ROOT/'experiments/bitonic_owned_four_repair_prediction_2026-10-07';r=json.loads((out/'receipt.json').read_text());p=json.loads((out/'protocol.json').read_text());v=json.loads((old/'verification.json').read_text());assert v['receipt_sha256']==sha(old/'receipt.json');assert r['complete'] and r['protocol_sha256']==sha(out/'protocol.json') and all(sha(f)==h for f,h in p['sources'].items());assert all(sha(f)==h for f,h in p['inputs'].items());assert [x['count'] for x in r['rows']]==[4,8,16];rows=[]
+for row in r['rows']:
+ n=row['count']
+ for name,key in [(f'n{n}.json','candidate_sha256'),(f'n{n}_initial.json','initial_sha256')]:assert (out/name).read_bytes()==(old/name).read_bytes() and sha(out/name)==row[key]
+ profile=out/f'n{n}_profile.json';stats=json.loads(profile.read_text());phases=stats['phases'];assert all(x['seconds']>=0 and x['calls']>=0 for x in phases.values());assert phases['query_total']['calls']==phases['native_query']['calls'];assert stats['reverse_cache']['payload_bytes']<=stats['reverse_cache']['payload_limit_bytes'];rows.append(dict(count=n,setup_seconds=row['setup_seconds'],initial_search_seconds=row['search_seconds'],repair_seconds=row['repair_seconds'],phases=phases,reverse_cache=stats['reverse_cache'],profile_sha256=sha(profile),candidate_sha256=row['candidate_sha256']))
+(out/'verification.json').write_text(json.dumps(dict(receipt_sha256=sha(out/'receipt.json'),verifier_sha256=sha(Path(__file__)),prior_verification_sha256=sha(old/'verification.json'),rows=rows,scope='All3 initial/final results byte-identical frozen50ps audited candidates. Same-run instrumentation, query_total nests other/native timers; other_publish includes reset calls outside query_total, never add/subtract clocks blindly. Source/binary/input bindings checked; 128MiB payload bound notRSS. Not stablepaired speedup or theoretical minimum.'),indent=2)+'\n');print(rows)

@@ -1,0 +1,180 @@
+{
+  "stages": [
+    {
+      "script": "online_cost_replay_stage_0_v1.py",
+      "original": "trial_adder_online_owner_retry_v1.py"
+    },
+    {
+      "script": "online_cost_replay_stage_1_v1.py",
+      "original": "verify_adder_online_owner_retry_v1.py"
+    },
+    {
+      "script": "online_cost_replay_stage_2_v1.py",
+      "original": "trial_adder_online_conflict_branch_v1.py"
+    },
+    {
+      "script": "online_cost_replay_stage_3_v1.py",
+      "original": "verify_adder_online_conflict_branch_v1.py"
+    },
+    {
+      "script": "online_cost_replay_stage_4_v1.py",
+      "original": "prepare_adder_online_candidate_bank_v1.py"
+    },
+    {
+      "script": "online_cost_replay_stage_5_v1.py",
+      "original": "verify_adder_online_candidate_bank_v2.py"
+    },
+    {
+      "script": "online_cost_replay_stage_6_v1.py",
+      "original": "trial_adder_online_detour_bank_v1.py"
+    },
+    {
+      "script": "online_cost_replay_stage_7_v1.py",
+      "original": "verify_adder_online_detour_bank_v2.py"
+    },
+    {
+      "script": "online_cost_replay_stage_8_v1.py",
+      "original": "trial_adder_online_bank_joint_v1.py"
+    },
+    {
+      "script": "online_cost_replay_stage_9_v1.py",
+      "original": "verify_adder_online_bank_joint_v1.py"
+    },
+    {
+      "script": "online_cost_replay_stage_10_v1.py",
+      "original": "trial_adder_online_proof_expand_v1.py"
+    },
+    {
+      "script": "online_cost_replay_stage_11_v1.py",
+      "original": "verify_adder_online_proof_expand_v1.py"
+    },
+    {
+      "script": "online_cost_replay_stage_12_v1.py",
+      "original": "trial_adder_online_bank_propagation_v1.py"
+    },
+    {
+      "script": "online_cost_replay_stage_13_v1.py",
+      "original": "verify_adder_online_bank_propagation_v1.py"
+    },
+    {
+      "script": "online_cost_replay_stage_14_v1.py",
+      "original": "trial_adder_online_component_solve_v1.py"
+    },
+    {
+      "script": "online_cost_replay_stage_15_v1.py",
+      "original": "verify_adder_online_component_v1.py"
+    },
+    {
+      "script": "online_cost_replay_stage_16_v1.py",
+      "original": "trial_adder_online_small_component_detours_v1.py"
+    },
+    {
+      "script": "online_cost_replay_stage_17_v1.py",
+      "original": "trial_adder_online_component_solve_v2.py"
+    },
+    {
+      "script": "online_cost_replay_stage_18_v1.py",
+      "original": "verify_adder_online_component_v2_propagation.py"
+    },
+    {
+      "script": "online_cost_replay_stage_19_v1.py",
+      "original": "verify_adder_online_component_v2.py"
+    },
+    {
+      "script": "online_cost_replay_stage_20_v1.py",
+      "original": "trial_adder_online_owner337_detours_v1.py"
+    },
+    {
+      "script": "online_cost_replay_stage_21_v1.py",
+      "original": "trial_adder_online_component_solve_v3.py"
+    },
+    {
+      "script": "online_cost_replay_stage_22_v1.py",
+      "original": "verify_adder_online_component_v3_propagation.py"
+    },
+    {
+      "script": "online_cost_replay_stage_23_v1.py",
+      "original": "verify_adder_online_component_v3.py"
+    },
+    {
+      "script": "online_cost_replay_stage_24_v1.py",
+      "original": "trial_adder_online_support_closure_v1.py"
+    },
+    {
+      "script": "online_cost_replay_stage_25_v1.py",
+      "original": "trial_adder_online_component_solve_v4.py"
+    },
+    {
+      "script": "online_cost_replay_stage_26_v1.py",
+      "original": "verify_adder_online_component_v4_propagation.py"
+    },
+    {
+      "script": "online_cost_replay_stage_27_v1.py",
+      "original": "verify_adder_online_component_v4.py"
+    },
+    {
+      "script": "online_cost_replay_stage_28_v1.py",
+      "original": "trial_adder_online_leaf_context_search_v1.py"
+    },
+    {
+      "script": "online_cost_replay_stage_29_v1.py",
+      "original": "trial_adder_online_component_solve_v5.py"
+    },
+    {
+      "script": "online_cost_replay_stage_30_v1.py",
+      "original": "verify_adder_online_full_selection_v1.py"
+    },
+    {
+      "script": "online_cost_replay_stage_31_v1.py",
+      "original": "serialize_adder_online_full_v1.py"
+    },
+    {
+      "script": "online_cost_replay_stage_32_v1.py",
+      "original": "trial_adder_online_full_native_v1.py"
+    },
+    {
+      "script": "online_cost_replay_stage_33_v1.py",
+      "original": "trial_adder_online_full_canonical_v1.py"
+    },
+    {
+      "script": "online_cost_replay_stage_34_v1.py",
+      "original": "verify_adder_online_full_native_quality_v1.py"
+    }
+  ],
+  "mapping": {
+    "adder_online_owner_retry_v1_2026-10-09": "online_cost_replay_v1_adder_online_owner_retry_v1_2026-10-09",
+    "adder_online_owner_retry_verification_v1_2026-10-09": "online_cost_replay_v1_adder_online_owner_retry_verification_v1_2026-10-09",
+    "adder_online_conflict_branch_v1_2026-10-09": "online_cost_replay_v1_adder_online_conflict_branch_v1_2026-10-09",
+    "adder_online_conflict_branch_verification_v1_2026-10-09": "online_cost_replay_v1_adder_online_conflict_branch_verification_v1_2026-10-09",
+    "adder_online_candidate_bank_v1_2026-10-09": "online_cost_replay_v1_adder_online_candidate_bank_v1_2026-10-09",
+    "adder_online_detour_bank_v1_2026-10-09": "online_cost_replay_v1_adder_online_detour_bank_v1_2026-10-09",
+    "adder_online_bank_joint_v1_2026-10-09": "online_cost_replay_v1_adder_online_bank_joint_v1_2026-10-09",
+    "adder_online_bank_joint_verification_v1_2026-10-09": "online_cost_replay_v1_adder_online_bank_joint_verification_v1_2026-10-09",
+    "adder_online_proof_expand_v1_2026-10-09": "online_cost_replay_v1_adder_online_proof_expand_v1_2026-10-09",
+    "adder_online_proof_expand_verification_v1_2026-10-09": "online_cost_replay_v1_adder_online_proof_expand_verification_v1_2026-10-09",
+    "adder_online_bank_propagation_v1_2026-10-09": "online_cost_replay_v1_adder_online_bank_propagation_v1_2026-10-09",
+    "adder_online_bank_propagation_verification_v1_2026-10-09": "online_cost_replay_v1_adder_online_bank_propagation_verification_v1_2026-10-09",
+    "adder_online_component_solve_v1_2026-10-09": "online_cost_replay_v1_adder_online_component_solve_v1_2026-10-09",
+    "adder_online_component_verification_v1_2026-10-09": "online_cost_replay_v1_adder_online_component_verification_v1_2026-10-09",
+    "adder_online_small_component_detours_v1_2026-10-09": "online_cost_replay_v1_adder_online_small_component_detours_v1_2026-10-09",
+    "adder_online_component_solve_v2_2026-10-09": "online_cost_replay_v1_adder_online_component_solve_v2_2026-10-09",
+    "adder_online_component_v2_propagation_verification_2026-10-09": "online_cost_replay_v1_adder_online_component_v2_propagation_verification_2026-10-09",
+    "adder_online_component_verification_v2_2026-10-09": "online_cost_replay_v1_adder_online_component_verification_v2_2026-10-09",
+    "adder_online_owner337_detours_v1_2026-10-09": "online_cost_replay_v1_adder_online_owner337_detours_v1_2026-10-09",
+    "adder_online_component_solve_v3_2026-10-09": "online_cost_replay_v1_adder_online_component_solve_v3_2026-10-09",
+    "adder_online_component_v3_propagation_verification_2026-10-09": "online_cost_replay_v1_adder_online_component_v3_propagation_verification_2026-10-09",
+    "adder_online_component_verification_v3_2026-10-09": "online_cost_replay_v1_adder_online_component_verification_v3_2026-10-09",
+    "adder_online_support_closure_v1_2026-10-09": "online_cost_replay_v1_adder_online_support_closure_v1_2026-10-09",
+    "adder_online_component_solve_v4_2026-10-09": "online_cost_replay_v1_adder_online_component_solve_v4_2026-10-09",
+    "adder_online_component_v4_propagation_verification_2026-10-09": "online_cost_replay_v1_adder_online_component_v4_propagation_verification_2026-10-09",
+    "adder_online_component_verification_v4_2026-10-09": "online_cost_replay_v1_adder_online_component_verification_v4_2026-10-09",
+    "adder_online_leaf_context_search_v1_2026-10-09": "online_cost_replay_v1_adder_online_leaf_context_search_v1_2026-10-09",
+    "adder_online_component_solve_v5_2026-10-09": "online_cost_replay_v1_adder_online_component_solve_v5_2026-10-09",
+    "adder_online_full_selection_verification_v1_2026-10-09": "online_cost_replay_v1_adder_online_full_selection_verification_v1_2026-10-09",
+    "adder_online_full_serialization_v1_2026-10-09": "online_cost_replay_v1_adder_online_full_serialization_v1_2026-10-09",
+    "adder_online_full_native_v1_2026-10-09": "online_cost_replay_v1_adder_online_full_native_v1_2026-10-09",
+    "adder_online_full_canonical_v1_2026-10-09": "online_cost_replay_v1_adder_online_full_canonical_v1_2026-10-09",
+    "adder_online_full_native_quality_v1_2026-10-09": "online_cost_replay_v1_adder_online_full_native_quality_v1_2026-10-09"
+  },
+  "scope": "Fresh archived prototype production replay, including all intermediate failed strategies and checks; supplied old states/graphs/endpoints/model budgets/identity traces excluded. Generates banks for steps1-3, final native candidate step3 only. Not optimized single-step algorithm or full input-to-hardware flow."
+}

@@ -1,0 +1,93 @@
+{
+  "schema": "dieroute.native_csr_progress.v1",
+  "captured_utc": "2026-10-13T10:26:38.841070+00:00",
+  "research_status": "active_incomplete",
+  "board_result": false,
+  "routes_recomputed": false,
+  "implemented": [
+    "Complete directed CSR retaining catalog PIP ID and traversal direction",
+    "Explicit omission ledger for missing-endpoint PIPs; route-throughs still represented",
+    "64-byte shared header with architecture fingerprint and independently checked CRC64",
+    "All original DCP PIP directions matched, including reversals",
+    "Dense immutable-resource metadata plus complete original candidate footprint compatibility audit"
+  ],
+  "verified_counts": {
+    "schema": "dieroute.native_csr_audit.v1",
+    "structural_checks_passed": true,
+    "nodes": 91975782,
+    "pips": 427282568,
+    "arcs": 427714823,
+    "missing_endpoint_pips": 321,
+    "nodes_with_outgoing_arcs": 85382442,
+    "max_outdegree": 739,
+    "parallel_destination_groups": 43884,
+    "parallel_extra_arcs": 43884,
+    "self_arcs": 0,
+    "original_DCP_PIPs_direction_matched": 11500192,
+    "original_reversed_PIPs": 5588,
+    "protection_masks": {
+      "0": 86195129,
+      "1": 5265609,
+      "3": 261,
+      "4": 476788,
+      "5": 37659,
+      "8": 336
+    },
+    "scope": "all PIP orientations and original DCP directions preserved; resource masks are metadata, not implemented controller protection"
+  },
+  "storage": {
+    "files": {
+      "offsets.bin": 735806328,
+      "protection.bin": 91975846,
+      "arcs.bin": 3421718648
+    },
+    "total_bytes": 4249500822,
+    "total_GiB": 3.9576560463756323,
+    "scope": "CSR offsets/arcs and immutable-resource metadata only; excludes geometry, timing, mutable state, route trees and queues"
+  },
+  "candidate_protection_check": {
+    "candidate_pins_checked": 1612338,
+    "candidate_pips_checked": 6479479,
+    "candidate_pins_on_protected_nodes": 0,
+    "candidate_pips_touching_protected_nodes": 0
+  },
+  "fixtures": [
+    {
+      "path": "work/native_csr_fixture_v2_20261013/tests.json",
+      "sha256": "cc8a4f515ff424373d54019837cce7848fad5c71c753310912149b2ed7e96a51",
+      "cases": 11
+    },
+    {
+      "path": "work/native_csr_fixture_sanitizer_20261013/tests.json",
+      "sha256": "cc8a4f515ff424373d54019837cce7848fad5c71c753310912149b2ed7e96a51",
+      "cases": 11
+    }
+  ],
+  "cmake_test": {
+    "path": "work/native_csr_cmake_20261013/ctest.log",
+    "scope": "new native_csr CTest only; legacy routing sources unchanged"
+  },
+  "source_snapshot": "work/native_csr_verification_20261013/source",
+  "prior_evidence": "experiments/native_device_graph_progress_20261013.json",
+  "evidence": {
+    "work/u280_native_csr_v1_20261013/manifest.json": "2442bf6cb64564da46501ff6e3b681ae31af06bb7d1242dbf95c22d3700707c8",
+    "work/u280_native_csr_v1_20261013/audit/audit.json": "b37938445e748a4610f3907c060a16aa6817bb317e34075edc8cc3d319a60faa",
+    "work/u280_native_csr_v1_20261013/csr/summary.json": "ca6c9892393080a4192a60ae5364dad45f095d0b1888ef085e9a083428b57b7d",
+    "work/u280_candidate_protection_audit_v1_20261013/audit.json": "30435980d88ae9d2c3e18c5c0a504d9754f98d0c7b90bb4f547e1dca35b64762",
+    "work/native_csr_verification_20261013/source_sha256.json": "66c5e836638437852f5c2bced2c9cc065e3ab26194267d195a0ef74050ee6f1d",
+    "work/native_csr_verification_20261013/final_checks.json": "22428325fbb58230b9c65a528e63faf5145c6bd2d4600de0fb75fa11907ee635",
+    "experiments/native_csr_schema_v1.json": "48d0afd24af879f6fe8637ca85aa607ad0d210898c1b4fea9419975e9e5f577d",
+    "work/native_csr_cmake_20261013/ctest.log": "debe0df70331daa2388083735d146ef3c1e79e1355d74b1fbdbfb8253b9c53e3",
+    "work/native_csr_sanitizer_20261013/build_native_csr": "d0deeacd71ebabe3523908d1f8500e50a5f5fd1e3e4a9c5f163c0f3482f1d156",
+    "work/native_csr_sanitizer_20261013/verify_native_csr": "8b3c91d2d939e99e61c9e8c728a018572e5c76ab8404ccbae9cb80f7b7b53b41"
+  },
+  "remaining": [
+    "Design-qualified tile/clock/route-through/site-pin access policy",
+    "PIP identity propagation through search, shared trees, commit/replay and DCP writeback; existing node-only RR interface still refuses parallel native PIPs",
+    "Controller enforcement of background/partition protection",
+    "Commercial delay and capacity calibration; no zero-delay quality claims",
+    "Additional compression/HBM layout and full end-to-end routing/hardware evaluation",
+    "Research plan G2-G8 remain open as recorded"
+  ],
+  "active_processes": []
+}

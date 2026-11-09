@@ -1,0 +1,47 @@
+{
+  "schema": "FUSIONPAR_TREE_TIMING_COST_PROTOCOL_V1",
+  "designs": [
+    "ex5p",
+    "alu4",
+    "misex3"
+  ],
+  "weights_q8": [
+    0,
+    256
+  ],
+  "hypothesis": "Charging approximate upstream tree delay may reduce native CPD loss; no guarantee because local edge delay is not full RC tree load",
+  "fixed_placement_arm": {
+    "input": "Verified frozen TP outputs from work/<design>_frozen_tp_pr_v2/case",
+    "mode": "route_only",
+    "repeats_per_weight": 5,
+    "attempts": 1,
+    "priority_reference": "Original work/<design>_sequential_retained_v1/bundle/manifest.json",
+    "QoR_gate_reference": "Original design baseline, not the TP snapshot or a changed per-arm gate",
+    "TP_stage": "Reuse archived reproduced TP output; do not label these runs as new complete TP pipelines"
+  },
+  "controller_arm": {
+    "input": "Original legal routed baselines",
+    "modes": [
+      "sequential_shared_tree_reuse",
+      "interleaved_tree_reuse"
+    ],
+    "repeats_per_weight": 2,
+    "attempts": 3,
+    "purpose": "Mechanism/development check, not final five-repeat performance validation",
+    "warning": "Batch has one atomic evaluation; interleaved may evaluate three; shared proposal budget is not equal compute"
+  },
+  "requirements": [
+    "Identical input identities, task priorities, candidate generator, native checking and timing policy across weights",
+    "No inner PR STA change, no search-cost model replacement, no mode-specific tuning",
+    "Weight-zero semantic state must reproduce previous corresponding frozen runs",
+    "Full-state and configuration audits, including rejected work and all samples",
+    "Per-validation non-overlapping cost ledger; native checks remain required decision work",
+    "Declare legal but QoR-ineligible outputs; do not select a winning weight per design"
+  ],
+  "limits": [
+    "Development designs only",
+    "No claim that Q8=256 is an exact native RC model",
+    "No physical FPGA evidence",
+    "FPGA/complete P&R claims remain deferred"
+  ]
+}

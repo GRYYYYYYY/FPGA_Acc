@@ -1,0 +1,1501 @@
+{
+  "schema": "FUSIONPAR_RR_EXPORT_CACHE_RESULTS_V1",
+  "study": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/rr_export_cache_v1/study.json",
+    "sha256": "a5f24ca5dcb34ad83d460ae4baecff27ad2c53c088d256a38200ccfcf1729854"
+  },
+  "summarizer": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/summarize_rr_cache_study.py",
+    "sha256": "90e31036b53476e8f180ebf08922127214da09f438ec68b21edb129c467ba21b"
+  },
+  "pilot": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/ex5p_rr_cache_pilot_v1/pilot.json",
+    "sha256": "37fb835079b013f71cc6accc4faaacab102f25fa58958c426609ac096c37fe8b"
+  },
+  "negative_controls": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/rr_cache_negative_v1/checks.json",
+    "sha256": "5f4a2ba49fe4650f48273a423bf8164baee2d94aad52a121c3efc6e6751d580a"
+  },
+  "counts": {
+    "runs": 60,
+    "qor_commits": 40,
+    "protocol_commits": 0,
+    "aborts": 80,
+    "timing_barriers": 100,
+    "placement_repairs": 0,
+    "native_feedback_checks": 0,
+    "baseline_route_commits": 0
+  },
+  "paired_native_validations": 90,
+  "byte_equality_checks": 630,
+  "designs": {
+    "ex5p": {
+      "modes": {
+        "sequential_shared_tree_reuse": {
+          "quality": {
+            "wirelength": 9849,
+            "cpd_ns": 5.83751
+          },
+          "samples": [
+            {
+              "repeat": 0,
+              "xml": {
+                "host_seconds": 5.962027379,
+                "charged_seconds": 8.40807564,
+                "phase_seconds": {
+                  "manifest_read": 0.015214709,
+                  "bindings_before": 0.10688526300000001,
+                  "candidate_read": 0.092483322,
+                  "placement_export_and_contract_check": 0.036325531,
+                  "route_decode_and_accounting": 0.12951644299999998,
+                  "rr_graph_decode": 1.6570128309999999,
+                  "route_export": 0.07427189000000001,
+                  "native_check": 1.358826084,
+                  "timing_export": 1.270842536,
+                  "bindings_after": 0.097011765,
+                  "certificate_and_bridge_write": 0.036652016999999995,
+                  "tail_or_failure": 0.016029748
+                },
+                "commits": 1,
+                "aborts": 0
+              },
+              "sqlite": {
+                "host_seconds": 4.522117041,
+                "charged_seconds": 9.388667663,
+                "phase_seconds": {
+                  "manifest_read": 0.012559338,
+                  "bindings_before": 0.115450126,
+                  "candidate_read": 0.094446796,
+                  "placement_export_and_contract_check": 0.033802705,
+                  "route_decode_and_accounting": 0.156197931,
+                  "rr_metadata_lookup": 0.162126789,
+                  "route_export": 0.069035245,
+                  "native_check": 1.29669506,
+                  "timing_export": 1.3257301830000001,
+                  "bindings_after": 0.114356228,
+                  "certificate_and_bridge_write": 0.050838434,
+                  "tail_or_failure": 0.010956459
+                },
+                "commits": 1,
+                "aborts": 0
+              }
+            },
+            {
+              "repeat": 1,
+              "xml": {
+                "host_seconds": 5.931108438,
+                "charged_seconds": 8.377156699,
+                "phase_seconds": {
+                  "manifest_read": 0.012840602999999999,
+                  "bindings_before": 0.10971476,
+                  "candidate_read": 0.093746811,
+                  "placement_export_and_contract_check": 0.033400216999999996,
+                  "route_decode_and_accounting": 0.13096659500000002,
+                  "rr_graph_decode": 1.696402298,
+                  "route_export": 0.080849964,
+                  "native_check": 1.2817284839999998,
+                  "timing_export": 1.270377389,
+                  "bindings_after": 0.09406877799999999,
+                  "certificate_and_bridge_write": 0.041964596,
+                  "tail_or_failure": 0.015361181
+                },
+                "commits": 1,
+                "aborts": 0
+              },
+              "sqlite": {
+                "host_seconds": 4.605521504,
+                "charged_seconds": 9.472072126,
+                "phase_seconds": {
+                  "manifest_read": 0.013306828,
+                  "bindings_before": 0.125774787,
+                  "candidate_read": 0.09620962599999999,
+                  "placement_export_and_contract_check": 0.037773079,
+                  "route_decode_and_accounting": 0.13426485700000002,
+                  "rr_metadata_lookup": 0.177532042,
+                  "route_export": 0.088285731,
+                  "native_check": 1.294223656,
+                  "timing_export": 1.279811204,
+                  "bindings_after": 0.121499345,
+                  "certificate_and_bridge_write": 0.039841536,
+                  "tail_or_failure": 0.010813652
+                },
+                "commits": 1,
+                "aborts": 0
+              }
+            },
+            {
+              "repeat": 2,
+              "xml": {
+                "host_seconds": 5.896543797,
+                "charged_seconds": 8.342592058,
+                "phase_seconds": {
+                  "manifest_read": 0.012493038000000001,
+                  "bindings_before": 0.110191263,
+                  "candidate_read": 0.096694559,
+                  "placement_export_and_contract_check": 0.034322243,
+                  "route_decode_and_accounting": 0.139238825,
+                  "rr_graph_decode": 1.658481305,
+                  "route_export": 0.072402817,
+                  "native_check": 1.280172131,
+                  "timing_export": 1.252674442,
+                  "bindings_after": 0.09431025700000001,
+                  "certificate_and_bridge_write": 0.033983021,
+                  "tail_or_failure": 0.014234775
+                },
+                "commits": 1,
+                "aborts": 0
+              },
+              "sqlite": {
+                "host_seconds": 4.394760364,
+                "charged_seconds": 9.261310986,
+                "phase_seconds": {
+                  "manifest_read": 0.012638174,
+                  "bindings_before": 0.116693648,
+                  "candidate_read": 0.094852783,
+                  "placement_export_and_contract_check": 0.034405464,
+                  "route_decode_and_accounting": 0.127990746,
+                  "rr_metadata_lookup": 0.14314743600000002,
+                  "route_export": 0.07011130099999999,
+                  "native_check": 1.272462091,
+                  "timing_export": 1.264381462,
+                  "bindings_after": 0.115399254,
+                  "certificate_and_bridge_write": 0.04093052,
+                  "tail_or_failure": 0.0105048
+                },
+                "commits": 1,
+                "aborts": 0
+              }
+            },
+            {
+              "repeat": 3,
+              "xml": {
+                "host_seconds": 6.246009067,
+                "charged_seconds": 8.692057328,
+                "phase_seconds": {
+                  "manifest_read": 0.012658317,
+                  "bindings_before": 0.107031727,
+                  "candidate_read": 0.09507722199999999,
+                  "placement_export_and_contract_check": 0.056630314,
+                  "route_decode_and_accounting": 0.178002545,
+                  "rr_graph_decode": 1.693838678,
+                  "route_export": 0.080048303,
+                  "native_check": 1.340794595,
+                  "timing_export": 1.276553969,
+                  "bindings_after": 0.09790555000000001,
+                  "certificate_and_bridge_write": 0.038500741,
+                  "tail_or_failure": 0.015133081999999999
+                },
+                "commits": 1,
+                "aborts": 0
+              },
+              "sqlite": {
+                "host_seconds": 4.645780533,
+                "charged_seconds": 9.512331155,
+                "phase_seconds": {
+                  "manifest_read": 0.012821982999999999,
+                  "bindings_before": 0.116608482,
+                  "candidate_read": 0.094211059,
+                  "placement_export_and_contract_check": 0.033240863,
+                  "route_decode_and_accounting": 0.145322182,
+                  "rr_metadata_lookup": 0.172854132,
+                  "route_export": 0.095697531,
+                  "native_check": 1.253785954,
+                  "timing_export": 1.284896528,
+                  "bindings_after": 0.12595024500000002,
+                  "certificate_and_bridge_write": 0.043381318,
+                  "tail_or_failure": 0.010639512
+                },
+                "commits": 1,
+                "aborts": 0
+              }
+            },
+            {
+              "repeat": 4,
+              "xml": {
+                "host_seconds": 5.971312002,
+                "charged_seconds": 8.417360263,
+                "phase_seconds": {
+                  "manifest_read": 0.012534792999999999,
+                  "bindings_before": 0.106045744,
+                  "candidate_read": 0.094858114,
+                  "placement_export_and_contract_check": 0.034587037,
+                  "route_decode_and_accounting": 0.13120567500000002,
+                  "rr_graph_decode": 1.642656292,
+                  "route_export": 0.12072335299999999,
+                  "native_check": 1.250595944,
+                  "timing_export": 1.261816712,
+                  "bindings_after": 0.199517003,
+                  "certificate_and_bridge_write": 0.036689018000000004,
+                  "tail_or_failure": 0.013635755
+                },
+                "commits": 1,
+                "aborts": 0
+              },
+              "sqlite": {
+                "host_seconds": 4.622114732,
+                "charged_seconds": 9.488665354,
+                "phase_seconds": {
+                  "manifest_read": 0.013217772,
+                  "bindings_before": 0.116215855,
+                  "candidate_read": 0.09228756199999999,
+                  "placement_export_and_contract_check": 0.034262269,
+                  "route_decode_and_accounting": 0.12862246700000002,
+                  "rr_metadata_lookup": 0.145701832,
+                  "route_export": 0.068798381,
+                  "native_check": 1.491801525,
+                  "timing_export": 1.277082687,
+                  "bindings_after": 0.120146964,
+                  "certificate_and_bridge_write": 0.041045820999999996,
+                  "tail_or_failure": 0.012370807000000001
+                },
+                "commits": 1,
+                "aborts": 0
+              }
+            }
+          ],
+          "medians": {
+            "xml": {
+              "host_seconds": 5.962027379,
+              "charged_seconds": 8.40807564
+            },
+            "sqlite": {
+              "host_seconds": 4.605521504,
+              "charged_seconds": 9.472072126
+            }
+          },
+          "median_RR_export_metadata_seconds": {
+            "xml": 1.658481305,
+            "sqlite": 0.162126789
+          }
+        },
+        "interleaved_tree_reuse": {
+          "quality": {
+            "wirelength": 9849,
+            "cpd_ns": 5.83751
+          },
+          "samples": [
+            {
+              "repeat": 0,
+              "xml": {
+                "host_seconds": 12.640087447,
+                "charged_seconds": 15.086135708,
+                "phase_seconds": {
+                  "manifest_read": 0.025020385,
+                  "bindings_before": 0.217026597,
+                  "candidate_read": 0.24544850000000001,
+                  "placement_export_and_contract_check": 0.10795427399999999,
+                  "route_decode_and_accounting": 0.263657904,
+                  "rr_graph_decode": 3.432594914,
+                  "route_export": 0.157463016,
+                  "native_check": 2.5328959380000002,
+                  "timing_export": 2.565582729,
+                  "bindings_after": 0.192426092,
+                  "certificate_and_bridge_write": 0.072134207,
+                  "tail_or_failure": 0.03341565
+                },
+                "commits": 1,
+                "aborts": 2
+              },
+              "sqlite": {
+                "host_seconds": 9.380184909,
+                "charged_seconds": 14.246735531,
+                "phase_seconds": {
+                  "manifest_read": 0.025283294,
+                  "bindings_before": 0.23482398300000001,
+                  "candidate_read": 0.194843777,
+                  "placement_export_and_contract_check": 0.069985052,
+                  "route_decode_and_accounting": 0.279053859,
+                  "rr_metadata_lookup": 0.290263746,
+                  "route_export": 0.142848103,
+                  "native_check": 2.5320331620000003,
+                  "timing_export": 2.527691781,
+                  "bindings_after": 0.235145926,
+                  "certificate_and_bridge_write": 0.115027862,
+                  "tail_or_failure": 0.023079963999999998
+                },
+                "commits": 1,
+                "aborts": 2
+              }
+            },
+            {
+              "repeat": 1,
+              "xml": {
+                "host_seconds": 12.5054992,
+                "charged_seconds": 14.951547461,
+                "phase_seconds": {
+                  "manifest_read": 0.026744287999999998,
+                  "bindings_before": 0.21524414999999997,
+                  "candidate_read": 0.19165043699999998,
+                  "placement_export_and_contract_check": 0.07031316600000001,
+                  "route_decode_and_accounting": 0.261381372,
+                  "rr_graph_decode": 3.450610963,
+                  "route_export": 0.147032345,
+                  "native_check": 2.586782199,
+                  "timing_export": 2.554283371,
+                  "bindings_after": 0.203746728,
+                  "certificate_and_bridge_write": 0.072318329,
+                  "tail_or_failure": 0.038242643
+                },
+                "commits": 1,
+                "aborts": 2
+              },
+              "sqlite": {
+                "host_seconds": 9.54301729,
+                "charged_seconds": 14.409567912,
+                "phase_seconds": {
+                  "manifest_read": 0.026553689999999998,
+                  "bindings_before": 0.235758437,
+                  "candidate_read": 0.192955469,
+                  "placement_export_and_contract_check": 0.070368828,
+                  "route_decode_and_accounting": 0.26343974400000003,
+                  "rr_metadata_lookup": 0.292050371,
+                  "route_export": 0.154622096,
+                  "native_check": 2.6455407939999995,
+                  "timing_export": 2.534136414,
+                  "bindings_after": 0.241666045,
+                  "certificate_and_bridge_write": 0.082374226,
+                  "tail_or_failure": 0.023803607999999997
+                },
+                "commits": 1,
+                "aborts": 2
+              }
+            },
+            {
+              "repeat": 2,
+              "xml": {
+                "host_seconds": 12.669403825,
+                "charged_seconds": 15.115452086,
+                "phase_seconds": {
+                  "manifest_read": 0.025048656000000002,
+                  "bindings_before": 0.214896609,
+                  "candidate_read": 0.21017141,
+                  "placement_export_and_contract_check": 0.071490313,
+                  "route_decode_and_accounting": 0.263054917,
+                  "rr_graph_decode": 3.3409018149999996,
+                  "route_export": 0.153860896,
+                  "native_check": 2.5272096669999997,
+                  "timing_export": 2.559384644,
+                  "bindings_after": 0.19202861300000001,
+                  "certificate_and_bridge_write": 0.10231188399999999,
+                  "tail_or_failure": 0.031627169
+                },
+                "commits": 1,
+                "aborts": 2
+              },
+              "sqlite": {
+                "host_seconds": 9.520277763,
+                "charged_seconds": 14.386828385,
+                "phase_seconds": {
+                  "manifest_read": 0.024691056,
+                  "bindings_before": 0.23208188400000002,
+                  "candidate_read": 0.197190224,
+                  "placement_export_and_contract_check": 0.07045069899999999,
+                  "route_decode_and_accounting": 0.26017614,
+                  "rr_metadata_lookup": 0.287747766,
+                  "route_export": 0.20905194300000002,
+                  "native_check": 2.6810720679999998,
+                  "timing_export": 2.502836481,
+                  "bindings_after": 0.23513788,
+                  "certificate_and_bridge_write": 0.081832391,
+                  "tail_or_failure": 0.024547733000000002
+                },
+                "commits": 1,
+                "aborts": 2
+              }
+            },
+            {
+              "repeat": 3,
+              "xml": {
+                "host_seconds": 12.752746197,
+                "charged_seconds": 15.198794458,
+                "phase_seconds": {
+                  "manifest_read": 0.027252361,
+                  "bindings_before": 0.213398268,
+                  "candidate_read": 0.24392003,
+                  "placement_export_and_contract_check": 0.071539242,
+                  "route_decode_and_accounting": 0.27202479,
+                  "rr_graph_decode": 3.3227042200000003,
+                  "route_export": 0.19995872599999998,
+                  "native_check": 2.696974861,
+                  "timing_export": 2.5722573339999997,
+                  "bindings_after": 0.19778998999999997,
+                  "certificate_and_bridge_write": 0.08514132299999999,
+                  "tail_or_failure": 0.035373245
+                },
+                "commits": 1,
+                "aborts": 2
+              },
+              "sqlite": {
+                "host_seconds": 9.432444188,
+                "charged_seconds": 14.29899481,
+                "phase_seconds": {
+                  "manifest_read": 0.025172716999999997,
+                  "bindings_before": 0.237133016,
+                  "candidate_read": 0.22185339899999998,
+                  "placement_export_and_contract_check": 0.07594638399999999,
+                  "route_decode_and_accounting": 0.257089179,
+                  "rr_metadata_lookup": 0.286611938,
+                  "route_export": 0.141841545,
+                  "native_check": 2.590690798,
+                  "timing_export": 2.5477604890000003,
+                  "bindings_after": 0.239100084,
+                  "certificate_and_bridge_write": 0.08433065000000001,
+                  "tail_or_failure": 0.029413975000000002
+                },
+                "commits": 1,
+                "aborts": 2
+              }
+            },
+            {
+              "repeat": 4,
+              "xml": {
+                "host_seconds": 12.648693016,
+                "charged_seconds": 15.094741277,
+                "phase_seconds": {
+                  "manifest_read": 0.025218234,
+                  "bindings_before": 0.21391026400000002,
+                  "candidate_read": 0.19637777699999998,
+                  "placement_export_and_contract_check": 0.070462087,
+                  "route_decode_and_accounting": 0.269064914,
+                  "rr_graph_decode": 3.3975903899999995,
+                  "route_export": 0.146379896,
+                  "native_check": 2.712420282,
+                  "timing_export": 2.5652574159999997,
+                  "bindings_after": 0.192000379,
+                  "certificate_and_bridge_write": 0.075301837,
+                  "tail_or_failure": 0.033388575000000004
+                },
+                "commits": 1,
+                "aborts": 2
+              },
+              "sqlite": {
+                "host_seconds": 9.583137745,
+                "charged_seconds": 14.449688367,
+                "phase_seconds": {
+                  "manifest_read": 0.025253795,
+                  "bindings_before": 0.230961734,
+                  "candidate_read": 0.19860415599999998,
+                  "placement_export_and_contract_check": 0.073925414,
+                  "route_decode_and_accounting": 0.266931907,
+                  "rr_metadata_lookup": 0.288139115,
+                  "route_export": 0.16178864299999998,
+                  "native_check": 2.5422278609999998,
+                  "timing_export": 2.5119392539999996,
+                  "bindings_after": 0.307843441,
+                  "certificate_and_bridge_write": 0.094555908,
+                  "tail_or_failure": 0.024959987000000003
+                },
+                "commits": 1,
+                "aborts": 2
+              }
+            }
+          ],
+          "medians": {
+            "xml": {
+              "host_seconds": 12.648693016,
+              "charged_seconds": 15.094741277
+            },
+            "sqlite": {
+              "host_seconds": 9.520277763,
+              "charged_seconds": 14.386828385
+            }
+          },
+          "median_RR_export_metadata_seconds": {
+            "xml": 3.3975903899999995,
+            "sqlite": 0.288139115
+          }
+        }
+      },
+      "full_preparation_seconds": {
+        "xml": 2.446048261,
+        "sqlite": 4.866550622
+      },
+      "cache_construction_and_roundtrip_seconds": 2.702227818,
+      "cache_bytes": 4878336,
+      "node_count": 27436,
+      "edge_pair_count": 278974,
+      "ambiguous_pair_count": 0
+    },
+    "alu4": {
+      "modes": {
+        "sequential_shared_tree_reuse": {
+          "quality": {
+            "wirelength": 9580,
+            "cpd_ns": 5.96812
+          },
+          "samples": [
+            {
+              "repeat": 0,
+              "xml": {
+                "host_seconds": 7.035380392,
+                "charged_seconds": 9.911557269,
+                "phase_seconds": {
+                  "manifest_read": 0.014976300000000001,
+                  "bindings_before": 0.13089367699999999,
+                  "candidate_read": 0.136068933,
+                  "placement_export_and_contract_check": 0.041079905,
+                  "route_decode_and_accounting": 0.166484503,
+                  "rr_graph_decode": 2.328293667,
+                  "route_export": 0.081446363,
+                  "native_check": 1.624727167,
+                  "timing_export": 1.5856864480000001,
+                  "bindings_after": 0.124946525,
+                  "certificate_and_bridge_write": 0.045507455,
+                  "tail_or_failure": 0.017272011
+                },
+                "commits": 0,
+                "aborts": 1
+              },
+              "sqlite": {
+                "host_seconds": 5.411565001,
+                "charged_seconds": 12.458434184,
+                "phase_seconds": {
+                  "manifest_read": 0.014765404,
+                  "bindings_before": 0.14808291,
+                  "candidate_read": 0.133830304,
+                  "placement_export_and_contract_check": 0.046838207,
+                  "route_decode_and_accounting": 0.16104850799999998,
+                  "rr_metadata_lookup": 0.151632134,
+                  "route_export": 0.083802365,
+                  "native_check": 1.9149075030000002,
+                  "timing_export": 1.5743761219999999,
+                  "bindings_after": 0.15216496699999998,
+                  "certificate_and_bridge_write": 0.0975008,
+                  "tail_or_failure": 0.014487444
+                },
+                "commits": 0,
+                "aborts": 1
+              }
+            },
+            {
+              "repeat": 1,
+              "xml": {
+                "host_seconds": 6.982493486,
+                "charged_seconds": 9.858670363,
+                "phase_seconds": {
+                  "manifest_read": 0.015054604999999999,
+                  "bindings_before": 0.131314974,
+                  "candidate_read": 0.13640605,
+                  "placement_export_and_contract_check": 0.042144439000000006,
+                  "route_decode_and_accounting": 0.153746596,
+                  "rr_graph_decode": 2.300525586,
+                  "route_export": 0.081673557,
+                  "native_check": 1.6252662990000002,
+                  "timing_export": 1.586783787,
+                  "bindings_after": 0.12320821099999998,
+                  "certificate_and_bridge_write": 0.045005561,
+                  "tail_or_failure": 0.017222939
+                },
+                "commits": 0,
+                "aborts": 1
+              },
+              "sqlite": {
+                "host_seconds": 5.063348458,
+                "charged_seconds": 12.110217641,
+                "phase_seconds": {
+                  "manifest_read": 0.014970218,
+                  "bindings_before": 0.15124564899999998,
+                  "candidate_read": 0.144283233,
+                  "placement_export_and_contract_check": 0.049178444,
+                  "route_decode_and_accounting": 0.15869773999999998,
+                  "rr_metadata_lookup": 0.163019103,
+                  "route_export": 0.07889265200000001,
+                  "native_check": 1.72364664,
+                  "timing_export": 1.5990071750000001,
+                  "bindings_after": 0.156516789,
+                  "certificate_and_bridge_write": 0.08240955,
+                  "tail_or_failure": 0.011188763000000001
+                },
+                "commits": 0,
+                "aborts": 1
+              }
+            },
+            {
+              "repeat": 2,
+              "xml": {
+                "host_seconds": 7.060641114,
+                "charged_seconds": 9.936817991,
+                "phase_seconds": {
+                  "manifest_read": 0.014725227,
+                  "bindings_before": 0.131115655,
+                  "candidate_read": 0.126707394,
+                  "placement_export_and_contract_check": 0.047112655,
+                  "route_decode_and_accounting": 0.148992695,
+                  "rr_graph_decode": 2.417245912,
+                  "route_export": 0.080403911,
+                  "native_check": 1.59968409,
+                  "timing_export": 1.579635584,
+                  "bindings_after": 0.11992028199999999,
+                  "certificate_and_bridge_write": 0.047525278000000004,
+                  "tail_or_failure": 0.019250507
+                },
+                "commits": 0,
+                "aborts": 1
+              },
+              "sqlite": {
+                "host_seconds": 5.089396642,
+                "charged_seconds": 12.136265825,
+                "phase_seconds": {
+                  "manifest_read": 0.014819816,
+                  "bindings_before": 0.149605647,
+                  "candidate_read": 0.132209209,
+                  "placement_export_and_contract_check": 0.042035072,
+                  "route_decode_and_accounting": 0.152660354,
+                  "rr_metadata_lookup": 0.154859196,
+                  "route_export": 0.083412318,
+                  "native_check": 1.6651591,
+                  "timing_export": 1.613702227,
+                  "bindings_after": 0.19706686,
+                  "certificate_and_bridge_write": 0.08662578700000001,
+                  "tail_or_failure": 0.013510389
+                },
+                "commits": 0,
+                "aborts": 1
+              }
+            },
+            {
+              "repeat": 3,
+              "xml": {
+                "host_seconds": 7.35543387,
+                "charged_seconds": 10.231610747,
+                "phase_seconds": {
+                  "manifest_read": 0.014941956,
+                  "bindings_before": 0.13052939,
+                  "candidate_read": 0.132500951,
+                  "placement_export_and_contract_check": 0.050184381,
+                  "route_decode_and_accounting": 0.153703276,
+                  "rr_graph_decode": 2.429138209,
+                  "route_export": 0.087256598,
+                  "native_check": 1.60554062,
+                  "timing_export": 1.765446794,
+                  "bindings_after": 0.125220911,
+                  "certificate_and_bridge_write": 0.04811563,
+                  "tail_or_failure": 0.019017281
+                },
+                "commits": 0,
+                "aborts": 1
+              },
+              "sqlite": {
+                "host_seconds": 4.958655847,
+                "charged_seconds": 12.00552503,
+                "phase_seconds": {
+                  "manifest_read": 0.016306896,
+                  "bindings_before": 0.143642421,
+                  "candidate_read": 0.13286388500000001,
+                  "placement_export_and_contract_check": 0.040793881000000004,
+                  "route_decode_and_accounting": 0.15148815300000001,
+                  "rr_metadata_lookup": 0.152778678,
+                  "route_export": 0.074824685,
+                  "native_check": 1.6211979539999999,
+                  "timing_export": 1.6667722839999999,
+                  "bindings_after": 0.14498491400000002,
+                  "certificate_and_bridge_write": 0.083831199,
+                  "tail_or_failure": 0.011523554
+                },
+                "commits": 0,
+                "aborts": 1
+              }
+            },
+            {
+              "repeat": 4,
+              "xml": {
+                "host_seconds": 7.118201574,
+                "charged_seconds": 9.994378451,
+                "phase_seconds": {
+                  "manifest_read": 0.015695872,
+                  "bindings_before": 0.129795789,
+                  "candidate_read": 0.134243224,
+                  "placement_export_and_contract_check": 0.041897401,
+                  "route_decode_and_accounting": 0.15524256,
+                  "rr_graph_decode": 2.454323332,
+                  "route_export": 0.092114821,
+                  "native_check": 1.609798568,
+                  "timing_export": 1.574484952,
+                  "bindings_after": 0.12395414500000002,
+                  "certificate_and_bridge_write": 0.046691544,
+                  "tail_or_failure": 0.021059375999999998
+                },
+                "commits": 0,
+                "aborts": 1
+              },
+              "sqlite": {
+                "host_seconds": 5.361559348,
+                "charged_seconds": 12.408428531,
+                "phase_seconds": {
+                  "manifest_read": 0.018098246999999998,
+                  "bindings_before": 0.14689478299999997,
+                  "candidate_read": 0.12976184699999999,
+                  "placement_export_and_contract_check": 0.042261116,
+                  "route_decode_and_accounting": 0.157403446,
+                  "rr_metadata_lookup": 0.158353293,
+                  "route_export": 0.07605219199999999,
+                  "native_check": 1.727365442,
+                  "timing_export": 1.821646634,
+                  "bindings_after": 0.14549932399999999,
+                  "certificate_and_bridge_write": 0.086312426,
+                  "tail_or_failure": 0.011660456
+                },
+                "commits": 0,
+                "aborts": 1
+              }
+            }
+          ],
+          "medians": {
+            "xml": {
+              "host_seconds": 7.060641114,
+              "charged_seconds": 9.936817991
+            },
+            "sqlite": {
+              "host_seconds": 5.089396642,
+              "charged_seconds": 12.136265825
+            }
+          },
+          "median_RR_export_metadata_seconds": {
+            "xml": 2.417245912,
+            "sqlite": 0.154859196
+          }
+        },
+        "interleaved_tree_reuse": {
+          "quality": {
+            "wirelength": 9548,
+            "cpd_ns": 5.96812
+          },
+          "samples": [
+            {
+              "repeat": 0,
+              "xml": {
+                "host_seconds": 14.535480423,
+                "charged_seconds": 17.4116573,
+                "phase_seconds": {
+                  "manifest_read": 0.029200759,
+                  "bindings_before": 0.262566828,
+                  "candidate_read": 0.259943826,
+                  "placement_export_and_contract_check": 0.095005279,
+                  "route_decode_and_accounting": 0.300919109,
+                  "rr_graph_decode": 4.636948974,
+                  "route_export": 0.187423118,
+                  "native_check": 3.215648614,
+                  "timing_export": 3.18344706,
+                  "bindings_after": 0.259400787,
+                  "certificate_and_bridge_write": 0.109957058,
+                  "tail_or_failure": 0.046630583999999996
+                },
+                "commits": 2,
+                "aborts": 1
+              },
+              "sqlite": {
+                "host_seconds": 11.301379447,
+                "charged_seconds": 18.34824863,
+                "phase_seconds": {
+                  "manifest_read": 0.030927830000000003,
+                  "bindings_before": 0.29468668699999995,
+                  "candidate_read": 0.262506323,
+                  "placement_export_and_contract_check": 0.083781172,
+                  "route_decode_and_accounting": 0.308311183,
+                  "rr_metadata_lookup": 0.307475465,
+                  "route_export": 0.152354676,
+                  "native_check": 3.371995943,
+                  "timing_export": 3.9666361400000003,
+                  "bindings_after": 0.298857262,
+                  "certificate_and_bridge_write": 0.174283617,
+                  "tail_or_failure": 0.033114841000000006
+                },
+                "commits": 2,
+                "aborts": 1
+              }
+            },
+            {
+              "repeat": 1,
+              "xml": {
+                "host_seconds": 14.492109671,
+                "charged_seconds": 17.368286548,
+                "phase_seconds": {
+                  "manifest_read": 0.029588381,
+                  "bindings_before": 0.263631944,
+                  "candidate_read": 0.258367523,
+                  "placement_export_and_contract_check": 0.084494968,
+                  "route_decode_and_accounting": 0.299917047,
+                  "rr_graph_decode": 4.673704301,
+                  "route_export": 0.160981762,
+                  "native_check": 3.2224298769999997,
+                  "timing_export": 3.1614924970000002,
+                  "bindings_after": 0.23556602100000001,
+                  "certificate_and_bridge_write": 0.091570838,
+                  "tail_or_failure": 0.03518784
+                },
+                "commits": 2,
+                "aborts": 1
+              },
+              "sqlite": {
+                "host_seconds": 10.600248524,
+                "charged_seconds": 17.647117707,
+                "phase_seconds": {
+                  "manifest_read": 0.031477858,
+                  "bindings_before": 0.29014951,
+                  "candidate_read": 0.267689736,
+                  "placement_export_and_contract_check": 0.08684471399999999,
+                  "route_decode_and_accounting": 0.3068706,
+                  "rr_metadata_lookup": 0.306723125,
+                  "route_export": 0.151854407,
+                  "native_check": 3.4200015020000003,
+                  "timing_export": 3.2653464580000002,
+                  "bindings_after": 0.30855157099999997,
+                  "certificate_and_bridge_write": 0.192403879,
+                  "tail_or_failure": 0.028517333000000002
+                },
+                "commits": 2,
+                "aborts": 1
+              }
+            },
+            {
+              "repeat": 2,
+              "xml": {
+                "host_seconds": 14.562069421,
+                "charged_seconds": 17.438246298,
+                "phase_seconds": {
+                  "manifest_read": 0.030323542,
+                  "bindings_before": 0.269622985,
+                  "candidate_read": 0.25851119499999997,
+                  "placement_export_and_contract_check": 0.084634466,
+                  "route_decode_and_accounting": 0.306382522,
+                  "rr_graph_decode": 4.602358217,
+                  "route_export": 0.165100945,
+                  "native_check": 3.341840477,
+                  "timing_export": 3.1690134539999995,
+                  "bindings_after": 0.24326153,
+                  "certificate_and_bridge_write": 0.093582989,
+                  "tail_or_failure": 0.041888009
+                },
+                "commits": 2,
+                "aborts": 1
+              },
+              "sqlite": {
+                "host_seconds": 10.566649155,
+                "charged_seconds": 17.613518338,
+                "phase_seconds": {
+                  "manifest_read": 0.033132679,
+                  "bindings_before": 0.29530870600000003,
+                  "candidate_read": 0.31077984000000003,
+                  "placement_export_and_contract_check": 0.09644424600000001,
+                  "route_decode_and_accounting": 0.35159096700000003,
+                  "rr_metadata_lookup": 0.32074497999999996,
+                  "route_export": 0.16344725300000001,
+                  "native_check": 3.25580839,
+                  "timing_export": 3.274089588,
+                  "bindings_after": 0.301529206,
+                  "certificate_and_bridge_write": 0.20862376900000001,
+                  "tail_or_failure": 0.02536366
+                },
+                "commits": 2,
+                "aborts": 1
+              }
+            },
+            {
+              "repeat": 3,
+              "xml": {
+                "host_seconds": 14.767876883,
+                "charged_seconds": 17.64405376,
+                "phase_seconds": {
+                  "manifest_read": 0.033987753,
+                  "bindings_before": 0.263583511,
+                  "candidate_read": 0.278985056,
+                  "placement_export_and_contract_check": 0.090074019,
+                  "route_decode_and_accounting": 0.309317194,
+                  "rr_graph_decode": 4.676700279,
+                  "route_export": 0.162605471,
+                  "native_check": 3.372204024,
+                  "timing_export": 3.184903532,
+                  "bindings_after": 0.273003807,
+                  "certificate_and_bridge_write": 0.14832866,
+                  "tail_or_failure": 0.046979935
+                },
+                "commits": 2,
+                "aborts": 1
+              },
+              "sqlite": {
+                "host_seconds": 10.378874981,
+                "charged_seconds": 17.425744164,
+                "phase_seconds": {
+                  "manifest_read": 0.02969592,
+                  "bindings_before": 0.293412242,
+                  "candidate_read": 0.257429569,
+                  "placement_export_and_contract_check": 0.08335282200000001,
+                  "route_decode_and_accounting": 0.30236359,
+                  "rr_metadata_lookup": 0.303024368,
+                  "route_export": 0.153711246,
+                  "native_check": 3.308008863,
+                  "timing_export": 3.195620355,
+                  "bindings_after": 0.291834695,
+                  "certificate_and_bridge_write": 0.168943656,
+                  "tail_or_failure": 0.024795473
+                },
+                "commits": 2,
+                "aborts": 1
+              }
+            },
+            {
+              "repeat": 4,
+              "xml": {
+                "host_seconds": 14.793947149,
+                "charged_seconds": 17.670124026,
+                "phase_seconds": {
+                  "manifest_read": 0.030361310000000002,
+                  "bindings_before": 0.262253619,
+                  "candidate_read": 0.261234243,
+                  "placement_export_and_contract_check": 0.08438620000000001,
+                  "route_decode_and_accounting": 0.303603885,
+                  "rr_graph_decode": 4.7727092760000005,
+                  "route_export": 0.16991416999999998,
+                  "native_check": 3.21842525,
+                  "timing_export": 3.1581729629999997,
+                  "bindings_after": 0.246197326,
+                  "certificate_and_bridge_write": 0.096836189,
+                  "tail_or_failure": 0.041625114000000005
+                },
+                "commits": 2,
+                "aborts": 1
+              },
+              "sqlite": {
+                "host_seconds": 10.646634615,
+                "charged_seconds": 17.693503798,
+                "phase_seconds": {
+                  "manifest_read": 0.030028100999999998,
+                  "bindings_before": 0.29962254099999996,
+                  "candidate_read": 0.25652755600000005,
+                  "placement_export_and_contract_check": 0.082482317,
+                  "route_decode_and_accounting": 0.30323549,
+                  "rr_metadata_lookup": 0.305698177,
+                  "route_export": 0.154218179,
+                  "native_check": 3.4649759220000003,
+                  "timing_export": 3.244209967,
+                  "bindings_after": 0.29724879400000004,
+                  "certificate_and_bridge_write": 0.185609254,
+                  "tail_or_failure": 0.030622217
+                },
+                "commits": 2,
+                "aborts": 1
+              }
+            }
+          ],
+          "medians": {
+            "xml": {
+              "host_seconds": 14.562069421,
+              "charged_seconds": 17.438246298
+            },
+            "sqlite": {
+              "host_seconds": 10.600248524,
+              "charged_seconds": 17.647117707
+            }
+          },
+          "median_RR_export_metadata_seconds": {
+            "xml": 4.673704301,
+            "sqlite": 0.306723125
+          }
+        }
+      },
+      "full_preparation_seconds": {
+        "xml": 2.876176877,
+        "sqlite": 7.046869183
+      },
+      "cache_construction_and_roundtrip_seconds": 4.087835016,
+      "cache_bytes": 7139328,
+      "node_count": 37838,
+      "edge_pair_count": 403206,
+      "ambiguous_pair_count": 0
+    },
+    "misex3": {
+      "modes": {
+        "sequential_shared_tree_reuse": {
+          "quality": {
+            "wirelength": 10323,
+            "cpd_ns": 5.08031
+          },
+          "samples": [
+            {
+              "repeat": 0,
+              "xml": {
+                "host_seconds": 6.44811806,
+                "charged_seconds": 9.153542072,
+                "phase_seconds": {
+                  "manifest_read": 0.015076539,
+                  "bindings_before": 0.12083382200000001,
+                  "candidate_read": 0.11254856899999999,
+                  "placement_export_and_contract_check": 0.045136158999999995,
+                  "route_decode_and_accounting": 0.149532347,
+                  "rr_graph_decode": 2.06186646,
+                  "route_export": 0.08321359,
+                  "native_check": 1.4546855719999998,
+                  "timing_export": 1.4758503969999999,
+                  "bindings_after": 0.118766956,
+                  "certificate_and_bridge_write": 0.051912229000000004,
+                  "tail_or_failure": 0.020943236
+                },
+                "commits": 0,
+                "aborts": 1
+              },
+              "sqlite": {
+                "host_seconds": 4.748318023,
+                "charged_seconds": 10.828992505,
+                "phase_seconds": {
+                  "manifest_read": 0.014510734,
+                  "bindings_before": 0.13378146800000001,
+                  "candidate_read": 0.11399269100000001,
+                  "placement_export_and_contract_check": 0.039845257,
+                  "route_decode_and_accounting": 0.15535622300000002,
+                  "rr_metadata_lookup": 0.162864117,
+                  "route_export": 0.079444722,
+                  "native_check": 1.633742429,
+                  "timing_export": 1.425977837,
+                  "bindings_after": 0.129791774,
+                  "certificate_and_bridge_write": 0.082533785,
+                  "tail_or_failure": 0.011672527
+                },
+                "commits": 0,
+                "aborts": 1
+              }
+            },
+            {
+              "repeat": 1,
+              "xml": {
+                "host_seconds": 6.338331396,
+                "charged_seconds": 9.043755408,
+                "phase_seconds": {
+                  "manifest_read": 0.014688508999999999,
+                  "bindings_before": 0.121343622,
+                  "candidate_read": 0.112123562,
+                  "placement_export_and_contract_check": 0.043600134,
+                  "route_decode_and_accounting": 0.147783324,
+                  "rr_graph_decode": 2.0116108,
+                  "route_export": 0.084884716,
+                  "native_check": 1.437605969,
+                  "timing_export": 1.454639711,
+                  "bindings_after": 0.116128511,
+                  "certificate_and_bridge_write": 0.042598422,
+                  "tail_or_failure": 0.020198087
+                },
+                "commits": 0,
+                "aborts": 1
+              },
+              "sqlite": {
+                "host_seconds": 4.626302004,
+                "charged_seconds": 10.706976486,
+                "phase_seconds": {
+                  "manifest_read": 0.014765786999999999,
+                  "bindings_before": 0.133187424,
+                  "candidate_read": 0.116514529,
+                  "placement_export_and_contract_check": 0.040339589999999995,
+                  "route_decode_and_accounting": 0.156025134,
+                  "rr_metadata_lookup": 0.16173858600000002,
+                  "route_export": 0.08112145,
+                  "native_check": 1.50518494,
+                  "timing_export": 1.465422501,
+                  "bindings_after": 0.13189926400000002,
+                  "certificate_and_bridge_write": 0.074435097,
+                  "tail_or_failure": 0.011364280000000001
+                },
+                "commits": 0,
+                "aborts": 1
+              }
+            },
+            {
+              "repeat": 2,
+              "xml": {
+                "host_seconds": 6.477733288,
+                "charged_seconds": 9.1831573,
+                "phase_seconds": {
+                  "manifest_read": 0.01460464,
+                  "bindings_before": 0.117942536,
+                  "candidate_read": 0.114539309,
+                  "placement_export_and_contract_check": 0.04042175,
+                  "route_decode_and_accounting": 0.161090671,
+                  "rr_graph_decode": 2.0429488219999996,
+                  "route_export": 0.081405489,
+                  "native_check": 1.543268691,
+                  "timing_export": 1.44101494,
+                  "bindings_after": 0.111959737,
+                  "certificate_and_bridge_write": 0.048933747,
+                  "tail_or_failure": 0.017437107
+                },
+                "commits": 0,
+                "aborts": 1
+              },
+              "sqlite": {
+                "host_seconds": 4.865878661,
+                "charged_seconds": 10.946553143,
+                "phase_seconds": {
+                  "manifest_read": 0.014666669,
+                  "bindings_before": 0.13311518,
+                  "candidate_read": 0.23561472,
+                  "placement_export_and_contract_check": 0.051729227,
+                  "route_decode_and_accounting": 0.19973282199999998,
+                  "rr_metadata_lookup": 0.176847704,
+                  "route_export": 0.078646719,
+                  "native_check": 1.563513957,
+                  "timing_export": 1.44086069,
+                  "bindings_after": 0.128938063,
+                  "certificate_and_bridge_write": 0.077439166,
+                  "tail_or_failure": 0.010746654
+                },
+                "commits": 0,
+                "aborts": 1
+              }
+            },
+            {
+              "repeat": 3,
+              "xml": {
+                "host_seconds": 6.397203815,
+                "charged_seconds": 9.102627827,
+                "phase_seconds": {
+                  "manifest_read": 0.014610742,
+                  "bindings_before": 0.11893994599999999,
+                  "candidate_read": 0.11433823000000001,
+                  "placement_export_and_contract_check": 0.040239387,
+                  "route_decode_and_accounting": 0.154620196,
+                  "rr_graph_decode": 2.030878734,
+                  "route_export": 0.100780562,
+                  "native_check": 1.4448831420000001,
+                  "timing_export": 1.4674750699999999,
+                  "bindings_after": 0.11506484,
+                  "certificate_and_bridge_write": 0.043487478999999996,
+                  "tail_or_failure": 0.018814627
+                },
+                "commits": 0,
+                "aborts": 1
+              },
+              "sqlite": {
+                "host_seconds": 4.782888878,
+                "charged_seconds": 10.86356336,
+                "phase_seconds": {
+                  "manifest_read": 0.016279466,
+                  "bindings_before": 0.135626113,
+                  "candidate_read": 0.116473694,
+                  "placement_export_and_contract_check": 0.042472442,
+                  "route_decode_and_accounting": 0.151961336,
+                  "rr_metadata_lookup": 0.1593962,
+                  "route_export": 0.084172103,
+                  "native_check": 1.5482957499999999,
+                  "timing_export": 1.54101548,
+                  "bindings_after": 0.136042669,
+                  "certificate_and_bridge_write": 0.082735667,
+                  "tail_or_failure": 0.014979791
+                },
+                "commits": 0,
+                "aborts": 1
+              }
+            },
+            {
+              "repeat": 4,
+              "xml": {
+                "host_seconds": 6.369656574,
+                "charged_seconds": 9.075080586,
+                "phase_seconds": {
+                  "manifest_read": 0.015072481999999998,
+                  "bindings_before": 0.119415043,
+                  "candidate_read": 0.112059349,
+                  "placement_export_and_contract_check": 0.040232920000000005,
+                  "route_decode_and_accounting": 0.148053296,
+                  "rr_graph_decode": 2.0186997289999997,
+                  "route_export": 0.08391098699999999,
+                  "native_check": 1.506561542,
+                  "timing_export": 1.423646061,
+                  "bindings_after": 0.11254447000000001,
+                  "certificate_and_bridge_write": 0.041716936999999996,
+                  "tail_or_failure": 0.019194524
+                },
+                "commits": 0,
+                "aborts": 1
+              },
+              "sqlite": {
+                "host_seconds": 4.767564639,
+                "charged_seconds": 10.848239121,
+                "phase_seconds": {
+                  "manifest_read": 0.014621611,
+                  "bindings_before": 0.137266002,
+                  "candidate_read": 0.122808348,
+                  "placement_export_and_contract_check": 0.041944877,
+                  "route_decode_and_accounting": 0.157648781,
+                  "rr_metadata_lookup": 0.168635347,
+                  "route_export": 0.08024777699999999,
+                  "native_check": 1.495260788,
+                  "timing_export": 1.547039922,
+                  "bindings_after": 0.136491759,
+                  "certificate_and_bridge_write": 0.084615632,
+                  "tail_or_failure": 0.013885233
+                },
+                "commits": 0,
+                "aborts": 1
+              }
+            }
+          ],
+          "medians": {
+            "xml": {
+              "host_seconds": 6.397203815,
+              "charged_seconds": 9.102627827
+            },
+            "sqlite": {
+              "host_seconds": 4.767564639,
+              "charged_seconds": 10.848239121
+            }
+          },
+          "median_RR_export_metadata_seconds": {
+            "xml": 2.030878734,
+            "sqlite": 0.162864117
+          }
+        },
+        "interleaved_tree_reuse": {
+          "quality": {
+            "wirelength": 10323,
+            "cpd_ns": 5.08031
+          },
+          "samples": [
+            {
+              "repeat": 0,
+              "xml": {
+                "host_seconds": 13.699897247,
+                "charged_seconds": 16.405321259,
+                "phase_seconds": {
+                  "manifest_read": 0.029434923,
+                  "bindings_before": 0.278204019,
+                  "candidate_read": 0.269607419,
+                  "placement_export_and_contract_check": 0.086606902,
+                  "route_decode_and_accounting": 0.304710098,
+                  "rr_graph_decode": 4.2654848229999995,
+                  "route_export": 0.17951447199999998,
+                  "native_check": 3.11955864,
+                  "timing_export": 2.9552052609999997,
+                  "bindings_after": 0.233764901,
+                  "certificate_and_bridge_write": 0.08347972000000001,
+                  "tail_or_failure": 0.036569408
+                },
+                "commits": 0,
+                "aborts": 3
+              },
+              "sqlite": {
+                "host_seconds": 10.110450435,
+                "charged_seconds": 16.191124917,
+                "phase_seconds": {
+                  "manifest_read": 0.029141192,
+                  "bindings_before": 0.27773422600000003,
+                  "candidate_read": 0.397763753,
+                  "placement_export_and_contract_check": 0.082063529,
+                  "route_decode_and_accounting": 0.308757818,
+                  "rr_metadata_lookup": 0.31586368800000003,
+                  "route_export": 0.170203663,
+                  "native_check": 3.0841507630000002,
+                  "timing_export": 3.0911385310000004,
+                  "bindings_after": 0.278706577,
+                  "certificate_and_bridge_write": 0.17795055,
+                  "tail_or_failure": 0.024133475
+                },
+                "commits": 0,
+                "aborts": 3
+              }
+            },
+            {
+              "repeat": 1,
+              "xml": {
+                "host_seconds": 13.399103252,
+                "charged_seconds": 16.104527264,
+                "phase_seconds": {
+                  "manifest_read": 0.029440532000000002,
+                  "bindings_before": 0.24337194,
+                  "candidate_read": 0.23272373899999999,
+                  "placement_export_and_contract_check": 0.082527291,
+                  "route_decode_and_accounting": 0.305836083,
+                  "rr_graph_decode": 4.243214238,
+                  "route_export": 0.17755216999999998,
+                  "native_check": 2.9532079719999995,
+                  "timing_export": 2.9357815680000003,
+                  "bindings_after": 0.23630283200000002,
+                  "certificate_and_bridge_write": 0.084588781,
+                  "tail_or_failure": 0.033828747
+                },
+                "commits": 0,
+                "aborts": 3
+              },
+              "sqlite": {
+                "host_seconds": 9.663523287,
+                "charged_seconds": 15.744197769,
+                "phase_seconds": {
+                  "manifest_read": 0.03093125,
+                  "bindings_before": 0.26985371,
+                  "candidate_read": 0.236236123,
+                  "placement_export_and_contract_check": 0.084817002,
+                  "route_decode_and_accounting": 0.320962105,
+                  "rr_metadata_lookup": 0.32374943899999997,
+                  "route_export": 0.16859634699999998,
+                  "native_check": 3.002209787,
+                  "timing_export": 2.904640996,
+                  "bindings_after": 0.278080312,
+                  "certificate_and_bridge_write": 0.166753914,
+                  "tail_or_failure": 0.023941465000000002
+                },
+                "commits": 0,
+                "aborts": 3
+              }
+            },
+            {
+              "repeat": 2,
+              "xml": {
+                "host_seconds": 13.172932832,
+                "charged_seconds": 15.878356844,
+                "phase_seconds": {
+                  "manifest_read": 0.028855012,
+                  "bindings_before": 0.239908514,
+                  "candidate_read": 0.233549435,
+                  "placement_export_and_contract_check": 0.080750406,
+                  "route_decode_and_accounting": 0.29922103899999997,
+                  "rr_graph_decode": 4.028274387,
+                  "route_export": 0.16617409400000002,
+                  "native_check": 2.945438418,
+                  "timing_export": 2.912788443,
+                  "bindings_after": 0.24295766600000002,
+                  "certificate_and_bridge_write": 0.086171461,
+                  "tail_or_failure": 0.044763168000000006
+                },
+                "commits": 0,
+                "aborts": 3
+              },
+              "sqlite": {
+                "host_seconds": 9.739342932,
+                "charged_seconds": 15.820017414,
+                "phase_seconds": {
+                  "manifest_read": 0.028895988999999997,
+                  "bindings_before": 0.272117139,
+                  "candidate_read": 0.22740908999999998,
+                  "placement_export_and_contract_check": 0.08452150200000001,
+                  "route_decode_and_accounting": 0.306376102,
+                  "rr_metadata_lookup": 0.327280216,
+                  "route_export": 0.169678967,
+                  "native_check": 3.0854726279999998,
+                  "timing_export": 2.8946307640000004,
+                  "bindings_after": 0.297210303,
+                  "certificate_and_bridge_write": 0.185087989,
+                  "tail_or_failure": 0.030645785999999998
+                },
+                "commits": 0,
+                "aborts": 3
+              }
+            },
+            {
+              "repeat": 3,
+              "xml": {
+                "host_seconds": 13.571665373,
+                "charged_seconds": 16.277089385,
+                "phase_seconds": {
+                  "manifest_read": 0.028834482,
+                  "bindings_before": 0.252997933,
+                  "candidate_read": 0.31764368,
+                  "placement_export_and_contract_check": 0.08678256300000001,
+                  "route_decode_and_accounting": 0.302108527,
+                  "rr_graph_decode": 4.113488993,
+                  "route_export": 0.177739021,
+                  "native_check": 3.071962702,
+                  "timing_export": 2.9957331770000004,
+                  "bindings_after": 0.2410232,
+                  "certificate_and_bridge_write": 0.089515181,
+                  "tail_or_failure": 0.039629632
+                },
+                "commits": 0,
+                "aborts": 3
+              },
+              "sqlite": {
+                "host_seconds": 9.964997046,
+                "charged_seconds": 16.045671528,
+                "phase_seconds": {
+                  "manifest_read": 0.030478805,
+                  "bindings_before": 0.27369167,
+                  "candidate_read": 0.237202693,
+                  "placement_export_and_contract_check": 0.08932482,
+                  "route_decode_and_accounting": 0.31283603000000004,
+                  "rr_metadata_lookup": 0.340602595,
+                  "route_export": 0.188349614,
+                  "native_check": 3.063197027,
+                  "timing_export": 2.965096735,
+                  "bindings_after": 0.274806448,
+                  "certificate_and_bridge_write": 0.16543749000000002,
+                  "tail_or_failure": 0.025528388
+                },
+                "commits": 0,
+                "aborts": 3
+              }
+            },
+            {
+              "repeat": 4,
+              "xml": {
+                "host_seconds": 13.453724884,
+                "charged_seconds": 16.159148896,
+                "phase_seconds": {
+                  "manifest_read": 0.02917459,
+                  "bindings_before": 0.240450449,
+                  "candidate_read": 0.227018084,
+                  "placement_export_and_contract_check": 0.08247905600000001,
+                  "route_decode_and_accounting": 0.303882497,
+                  "rr_graph_decode": 4.1249338259999995,
+                  "route_export": 0.166068687,
+                  "native_check": 3.159459117,
+                  "timing_export": 2.915028483,
+                  "bindings_after": 0.22655945900000002,
+                  "certificate_and_bridge_write": 0.092986973,
+                  "tail_or_failure": 0.034227068
+                },
+                "commits": 0,
+                "aborts": 3
+              },
+              "sqlite": {
+                "host_seconds": 9.691127456,
+                "charged_seconds": 15.771801938,
+                "phase_seconds": {
+                  "manifest_read": 0.029796004,
+                  "bindings_before": 0.306007523,
+                  "candidate_read": 0.270841876,
+                  "placement_export_and_contract_check": 0.081405587,
+                  "route_decode_and_accounting": 0.307114989,
+                  "rr_metadata_lookup": 0.32013466900000004,
+                  "route_export": 0.162492746,
+                  "native_check": 2.8894611840000004,
+                  "timing_export": 2.979399387,
+                  "bindings_after": 0.270096603,
+                  "certificate_and_bridge_write": 0.15880809099999998,
+                  "tail_or_failure": 0.020583403
+                },
+                "commits": 0,
+                "aborts": 3
+              }
+            }
+          ],
+          "medians": {
+            "xml": {
+              "host_seconds": 13.453724884,
+              "charged_seconds": 16.159148896
+            },
+            "sqlite": {
+              "host_seconds": 9.739342932,
+              "charged_seconds": 15.820017414
+            }
+          },
+          "median_RR_export_metadata_seconds": {
+            "xml": 4.1249338259999995,
+            "sqlite": 0.32374943899999997
+          }
+        }
+      },
+      "full_preparation_seconds": {
+        "xml": 2.705424012,
+        "sqlite": 6.080674482
+      },
+      "cache_construction_and_roundtrip_seconds": 3.598089318,
+      "cache_bytes": 6017024,
+      "node_count": 32920,
+      "edge_pair_count": 344820,
+      "ambiguous_pair_count": 0
+    }
+  },
+  "limits": [
+    "Cache is shared conversion infrastructure, not FusionPAR algorithm contribution",
+    "Three development designs; no FPGA or held-out result",
+    "Five host repeats share one measured conversion per backend/design, not five independent preparations",
+    "Same three-primary generator budget does not equal batch/interleaved compute",
+    "Cache remains opt-in pending broader validation"
+  ]
+}

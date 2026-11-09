@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "compile": "g++ -std=c++17 -O2 -Wall -Wextra -Werror test_external_full_color.cpp",
+  "binary": "/tmp/tileplace-external-full-color-test",
+  "cases": 4,
+  "scope": "full_color cross-pool external forbidden kind/member/trial exact equality, independently backed copied pools, same indexed-forbidden reference fallback and stats. CPU only; malformed pool/four-dimensional sensitivity not newly tested, no native or RTL.",
+  "sources": {
+    "test_external_full_color.cpp": "2c8c66043c5396ca0371cc44bc4b6ffbd288069c297775e11bd077fe4df9eec6",
+    "full_color_words.hpp": "b672049e88b119ccd78b70ca7739fe9652136eaf17841e7281b7a920c48113bb",
+    "external_forbidden_words.hpp": "a6a2befe125ff3fde2aa3b4fbb425159bcc5c28a454cf1e1f81bed0d963766a5"
+  }
+}

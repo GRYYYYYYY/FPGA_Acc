@@ -1,0 +1,14 @@
+{
+  "status": "pass",
+  "validation": "strict Werror compilation and actual binaries /tmp/tileplace-evaluate-rank-commit-test and /tmp/tileplace-evaluate-batch-faults-test exit0",
+  "analytic_composed_batches": 1000,
+  "fault_cases": 7,
+  "guard_rejection_cases": 1,
+  "scope": "CPU evaluate_batch -> encode_rank full sequential composition, two-block analytic singleton move. Scoring, stable indices, forbidden, final positions checked. No enumeration, diverse macro moves, native integration or RTL of this full path.",
+  "sources": {
+    "test_evaluate_batch_faults.cpp": "43197788ed28f9908ccf1c7b7e1ae3b856b6b77c4ece03292603f8707f171e34",
+    "encode_rank_words.hpp": "3c9128d41236a5e7be1c9cd77ece957a93577328acd046808061ca9e46b683a4",
+    "test_evaluate_rank_commit.cpp": "9097692729dd2ff75b03e4759cba0b6398aa9809e4e586addc5a71e2284b74dc",
+    "evaluate_batch_words.hpp": "72a66a3f6e553c4f48ab64a1051dcc3a4e15af8dc612b568b2c6d4a3ae514e61"
+  }
+}

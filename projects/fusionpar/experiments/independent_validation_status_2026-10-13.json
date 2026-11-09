@@ -1,0 +1,2005 @@
+{
+  "schema": "FUSIONPAR_INDEPENDENT_VALIDATION_RESULTS_V1",
+  "study": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/study.json",
+    "sha256": "e7f5e0e63be5cb12ceca5a0898182e320985bbadc0af28f6bc5bb335747314da"
+  },
+  "summarizer": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/summarize_independent_validation.py",
+    "sha256": "2f7d86309985721a8f214da08e374a291258726372615e0d4ad04de6a61ba8b9"
+  },
+  "counts": {
+    "selected_designs": 6,
+    "expected_suites": 12,
+    "audited_suites": 8,
+    "failed_suites": 4,
+    "completed_host_runs": 80,
+    "qor_commits": 35,
+    "aborts": 405,
+    "timing_barriers": 115,
+    "placement_repairs": 105,
+    "fully_audited_designs": 4
+  },
+  "designs": {
+    "apex2": {
+      "tracks": {
+        "shared_staged_vs_interleaved": {
+          "completed": true,
+          "audited": true,
+          "outer_seconds": 154.741290655,
+          "process": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/apex2/shared_staged_vs_interleaved_process.process.json",
+            "sha256": "362377341f84ab781713a450b8ef2dc85e7bed7bc5e457520d273d45045dda9b"
+          },
+          "evidence": [
+            {
+              "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/apex2/shared_staged_vs_interleaved/audit.json",
+              "sha256": "b5a8f7ea9c5f5ab9eb9c061d4133ed172c8dcb9e1b258dff0083b16d16341d54"
+            },
+            {
+              "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/apex2/shared_staged_vs_interleaved/publication_audit.json",
+              "sha256": "eabc83e68a4801cf7bb9fb38086364dc5b0729446b073f780f7dd360586709c8"
+            }
+          ],
+          "modes": {
+            "sequential_shared_tree_reuse": {
+              "quality": {
+                "wirelength": 16101,
+                "cpd_ns": 6.69869
+              },
+              "samples": [
+                {
+                  "repeat": 0,
+                  "host_seconds": 8.697467688,
+                  "charged_seconds": 12.261859761,
+                  "native_adapter_seconds": 7.717815284,
+                  "other_host_seconds": 0.715768517,
+                  "routing_seconds": 0.263883887,
+                  "evaluations": 1,
+                  "commits": 0,
+                  "aborts": 1,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 5,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 161,
+                  "expanded_nodes": 222510
+                },
+                {
+                  "repeat": 1,
+                  "host_seconds": 8.764553487,
+                  "charged_seconds": 12.32894556,
+                  "native_adapter_seconds": 7.829779605,
+                  "other_host_seconds": 0.65666288,
+                  "routing_seconds": 0.278111002,
+                  "evaluations": 1,
+                  "commits": 0,
+                  "aborts": 1,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 5,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 161,
+                  "expanded_nodes": 222510
+                },
+                {
+                  "repeat": 2,
+                  "host_seconds": 8.722860306,
+                  "charged_seconds": 12.287252379,
+                  "native_adapter_seconds": 7.804076445,
+                  "other_host_seconds": 0.660880705,
+                  "routing_seconds": 0.257903156,
+                  "evaluations": 1,
+                  "commits": 0,
+                  "aborts": 1,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 5,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 161,
+                  "expanded_nodes": 222510
+                },
+                {
+                  "repeat": 3,
+                  "host_seconds": 8.602417449,
+                  "charged_seconds": 12.166809522,
+                  "native_adapter_seconds": 7.685613808,
+                  "other_host_seconds": 0.654599265,
+                  "routing_seconds": 0.262204376,
+                  "evaluations": 1,
+                  "commits": 0,
+                  "aborts": 1,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 5,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 161,
+                  "expanded_nodes": 222510
+                },
+                {
+                  "repeat": 4,
+                  "host_seconds": 8.961419162,
+                  "charged_seconds": 12.525811235,
+                  "native_adapter_seconds": 8.037149978,
+                  "other_host_seconds": 0.666348188,
+                  "routing_seconds": 0.257920996,
+                  "evaluations": 1,
+                  "commits": 0,
+                  "aborts": 1,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 5,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 161,
+                  "expanded_nodes": 222510
+                }
+              ],
+              "median_host_seconds": 8.722860306,
+              "median_charged_seconds": 12.287252379,
+              "median_other_host_seconds": 0.660880705,
+              "median_native_adapter_seconds": 7.804076445,
+              "median_routing_seconds": 0.262204376,
+              "state_sha256": "fe4d0195cebf94ffbbca90b99c2ddfcefb2efa97dedfe3321b3fa10b6cdd5775"
+            },
+            "interleaved_tree_reuse": {
+              "quality": {
+                "wirelength": 16101,
+                "cpd_ns": 6.69869
+              },
+              "samples": [
+                {
+                  "repeat": 0,
+                  "host_seconds": 18.561091687,
+                  "charged_seconds": 22.12548376,
+                  "native_adapter_seconds": 15.676421356,
+                  "other_host_seconds": 2.60628815,
+                  "routing_seconds": 0.278382181,
+                  "evaluations": 3,
+                  "commits": 0,
+                  "aborts": 3,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 5,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 159,
+                  "expanded_nodes": 220778
+                },
+                {
+                  "repeat": 1,
+                  "host_seconds": 18.410545207,
+                  "charged_seconds": 21.97493728,
+                  "native_adapter_seconds": 15.499053575,
+                  "other_host_seconds": 2.640781478,
+                  "routing_seconds": 0.270710154,
+                  "evaluations": 3,
+                  "commits": 0,
+                  "aborts": 3,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 5,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 159,
+                  "expanded_nodes": 220778
+                },
+                {
+                  "repeat": 2,
+                  "host_seconds": 18.375407024,
+                  "charged_seconds": 21.939799097,
+                  "native_adapter_seconds": 15.520959048,
+                  "other_host_seconds": 2.581605509,
+                  "routing_seconds": 0.272842467,
+                  "evaluations": 3,
+                  "commits": 0,
+                  "aborts": 3,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 5,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 159,
+                  "expanded_nodes": 220778
+                },
+                {
+                  "repeat": 3,
+                  "host_seconds": 18.407146486,
+                  "charged_seconds": 21.971538559,
+                  "native_adapter_seconds": 15.493071113,
+                  "other_host_seconds": 2.647616025,
+                  "routing_seconds": 0.266459348,
+                  "evaluations": 3,
+                  "commits": 0,
+                  "aborts": 3,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 5,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 159,
+                  "expanded_nodes": 220778
+                },
+                {
+                  "repeat": 4,
+                  "host_seconds": 18.118063567,
+                  "charged_seconds": 21.68245564,
+                  "native_adapter_seconds": 15.32409554,
+                  "other_host_seconds": 2.525738897,
+                  "routing_seconds": 0.26822913,
+                  "evaluations": 3,
+                  "commits": 0,
+                  "aborts": 3,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 5,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 159,
+                  "expanded_nodes": 220778
+                }
+              ],
+              "median_host_seconds": 18.407146486,
+              "median_charged_seconds": 21.971538559,
+              "median_other_host_seconds": 2.60628815,
+              "median_native_adapter_seconds": 15.499053575,
+              "median_routing_seconds": 0.270710154,
+              "state_sha256": "fe4d0195cebf94ffbbca90b99c2ddfcefb2efa97dedfe3321b3fa10b6cdd5775"
+            }
+          },
+          "equal_evaluation_budget_matched": null,
+          "configuration_seconds": 0.535967178,
+          "build_seconds": 10.274383894,
+          "tests_seconds": 0.108189176,
+          "conversion_seconds": 3.564392073,
+          "final_lexicographic_comparison": "same"
+        },
+        "equal_evaluation_feedback": {
+          "completed": true,
+          "audited": true,
+          "outer_seconds": 497.621361511,
+          "process": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/apex2/equal_evaluation_feedback_process.process.json",
+            "sha256": "7c09615a0e2f2664f2a69140f73521d46602fc5464a9964f350b145c5f2927f0"
+          },
+          "evidence": [
+            {
+              "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/apex2/equal_evaluation_feedback/audit.json",
+              "sha256": "319da677c0899281f54df293fe24fce1ed275d5d91086c11f7704380c768da7a"
+            },
+            {
+              "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/apex2/equal_evaluation_feedback/publication_audit.json",
+              "sha256": "73d64c3049c26c362c24f427d2a7d3fd3cacf7589d3bd0d3924e33690188a31c"
+            }
+          ],
+          "modes": {
+            "interleaved_tree_reuse": {
+              "quality": {
+                "wirelength": 16091,
+                "cpd_ns": 6.69869
+              },
+              "samples": [
+                {
+                  "repeat": 0,
+                  "host_seconds": 46.312209838,
+                  "charged_seconds": 49.615759431,
+                  "native_adapter_seconds": 38.799126016,
+                  "other_host_seconds": 6.725032897,
+                  "routing_seconds": 0.788050925,
+                  "evaluations": 9,
+                  "commits": 2,
+                  "aborts": 7,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 14,
+                  "committed_instance_moves": 3,
+                  "unique_committed_instances": 2,
+                  "kernel_searches": 495,
+                  "expanded_nodes": 608329
+                },
+                {
+                  "repeat": 1,
+                  "host_seconds": 46.31791717,
+                  "charged_seconds": 49.621466763,
+                  "native_adapter_seconds": 38.853064922,
+                  "other_host_seconds": 6.665852817,
+                  "routing_seconds": 0.798999431,
+                  "evaluations": 9,
+                  "commits": 2,
+                  "aborts": 7,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 14,
+                  "committed_instance_moves": 3,
+                  "unique_committed_instances": 2,
+                  "kernel_searches": 495,
+                  "expanded_nodes": 608329
+                },
+                {
+                  "repeat": 2,
+                  "host_seconds": 46.56477858,
+                  "charged_seconds": 49.868328173,
+                  "native_adapter_seconds": 38.982790676,
+                  "other_host_seconds": 6.71652166,
+                  "routing_seconds": 0.865466244,
+                  "evaluations": 9,
+                  "commits": 2,
+                  "aborts": 7,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 14,
+                  "committed_instance_moves": 3,
+                  "unique_committed_instances": 2,
+                  "kernel_searches": 495,
+                  "expanded_nodes": 608329
+                },
+                {
+                  "repeat": 3,
+                  "host_seconds": 46.407390926,
+                  "charged_seconds": 49.710940519,
+                  "native_adapter_seconds": 38.94501795,
+                  "other_host_seconds": 6.6440487,
+                  "routing_seconds": 0.818324276,
+                  "evaluations": 9,
+                  "commits": 2,
+                  "aborts": 7,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 14,
+                  "committed_instance_moves": 3,
+                  "unique_committed_instances": 2,
+                  "kernel_searches": 495,
+                  "expanded_nodes": 608329
+                },
+                {
+                  "repeat": 4,
+                  "host_seconds": 46.903413472,
+                  "charged_seconds": 50.206963065,
+                  "native_adapter_seconds": 39.262861711,
+                  "other_host_seconds": 6.810189873,
+                  "routing_seconds": 0.830361888,
+                  "evaluations": 9,
+                  "commits": 2,
+                  "aborts": 7,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 14,
+                  "committed_instance_moves": 3,
+                  "unique_committed_instances": 2,
+                  "kernel_searches": 495,
+                  "expanded_nodes": 608329
+                }
+              ],
+              "median_host_seconds": 46.407390926,
+              "median_charged_seconds": 49.710940519,
+              "median_other_host_seconds": 6.71652166,
+              "median_native_adapter_seconds": 38.94501795,
+              "median_routing_seconds": 0.818324276,
+              "state_sha256": "6e4875fd07a4d453c489356a1d7e553fbfb1b7d0831db8b99f8970eea3f53b32"
+            },
+            "interleaved_tree_feedback": {
+              "quality": {
+                "wirelength": 16101,
+                "cpd_ns": 6.69869
+              },
+              "samples": [
+                {
+                  "repeat": 0,
+                  "host_seconds": 44.746413345,
+                  "charged_seconds": 48.049962938,
+                  "native_adapter_seconds": 39.205638002,
+                  "other_host_seconds": 4.719403064,
+                  "routing_seconds": 0.821372279,
+                  "evaluations": 9,
+                  "commits": 0,
+                  "aborts": 9,
+                  "repair_attempts": 6,
+                  "attempted_instance_moves": 15,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 489,
+                  "expanded_nodes": 606192
+                },
+                {
+                  "repeat": 1,
+                  "host_seconds": 45.060645751,
+                  "charged_seconds": 48.364195344,
+                  "native_adapter_seconds": 39.531888679,
+                  "other_host_seconds": 4.724780434,
+                  "routing_seconds": 0.803976638,
+                  "evaluations": 9,
+                  "commits": 0,
+                  "aborts": 9,
+                  "repair_attempts": 6,
+                  "attempted_instance_moves": 15,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 489,
+                  "expanded_nodes": 606192
+                },
+                {
+                  "repeat": 2,
+                  "host_seconds": 46.619048406,
+                  "charged_seconds": 49.922597999,
+                  "native_adapter_seconds": 41.05154257,
+                  "other_host_seconds": 4.683101795,
+                  "routing_seconds": 0.884404041,
+                  "evaluations": 9,
+                  "commits": 0,
+                  "aborts": 9,
+                  "repair_attempts": 6,
+                  "attempted_instance_moves": 15,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 489,
+                  "expanded_nodes": 606192
+                },
+                {
+                  "repeat": 3,
+                  "host_seconds": 49.982731487,
+                  "charged_seconds": 53.28628108,
+                  "native_adapter_seconds": 44.235050052,
+                  "other_host_seconds": 4.886518201,
+                  "routing_seconds": 0.861163234,
+                  "evaluations": 9,
+                  "commits": 0,
+                  "aborts": 9,
+                  "repair_attempts": 6,
+                  "attempted_instance_moves": 15,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 489,
+                  "expanded_nodes": 606192
+                },
+                {
+                  "repeat": 4,
+                  "host_seconds": 44.226093068,
+                  "charged_seconds": 47.529642661,
+                  "native_adapter_seconds": 38.694931896,
+                  "other_host_seconds": 4.726210055,
+                  "routing_seconds": 0.804951117,
+                  "evaluations": 9,
+                  "commits": 0,
+                  "aborts": 9,
+                  "repair_attempts": 6,
+                  "attempted_instance_moves": 15,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 489,
+                  "expanded_nodes": 606192
+                }
+              ],
+              "median_host_seconds": 45.060645751,
+              "median_charged_seconds": 48.364195344,
+              "median_other_host_seconds": 4.724780434,
+              "median_native_adapter_seconds": 39.531888679,
+              "median_routing_seconds": 0.821372279,
+              "state_sha256": "fe4d0195cebf94ffbbca90b99c2ddfcefb2efa97dedfe3321b3fa10b6cdd5775"
+            }
+          },
+          "equal_evaluation_budget_matched": true,
+          "configuration_seconds": 0.536055592,
+          "build_seconds": 10.383191841,
+          "tests_seconds": 0.112786264,
+          "conversion_seconds": 3.303549593,
+          "final_lexicographic_comparison": "interleaved_tree_reuse"
+        }
+      },
+      "initial_quality": {
+        "wirelength": 16101,
+        "cpd_ns": 6.69869
+      },
+      "initial_baseline": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/apex2/baseline/baseline.json",
+        "sha256": "98f9f0d744f137c0ff17f773fc2fe77164fe7f0d86ecb12f65821a86e0415a9b"
+      }
+    },
+    "des": {
+      "tracks": {
+        "equal_evaluation_feedback": {
+          "completed": true,
+          "audited": true,
+          "outer_seconds": 2110.441228841,
+          "process": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/des/equal_evaluation_feedback_process.process.json",
+            "sha256": "9988e2f121b50efd4959b51455229c585fc53350aa8627e737d82d246ad5cfc2"
+          },
+          "evidence": [
+            {
+              "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/des/equal_evaluation_feedback/audit.json",
+              "sha256": "27840ed287fb4491d2aaa7cb229989bdbf9ec4a2e84ed81f3c558b3ae51ab9a8"
+            },
+            {
+              "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/des/equal_evaluation_feedback/publication_audit.json",
+              "sha256": "ff98c0a3621a175488148a77b5d8f9a04a8cb939cb2a4608bf2e6404bb13b89a"
+            }
+          ],
+          "modes": {
+            "interleaved_tree_reuse": {
+              "quality": {
+                "wirelength": 12950,
+                "cpd_ns": 5.0153
+              },
+              "samples": [
+                {
+                  "repeat": 0,
+                  "host_seconds": 195.64088409,
+                  "charged_seconds": 200.157061619,
+                  "native_adapter_seconds": 45.529162698,
+                  "other_host_seconds": 141.930260519,
+                  "routing_seconds": 8.181460873,
+                  "evaluations": 9,
+                  "commits": 1,
+                  "aborts": 8,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 9,
+                  "committed_instance_moves": 1,
+                  "unique_committed_instances": 1,
+                  "kernel_searches": 4302,
+                  "expanded_nodes": 7842166
+                },
+                {
+                  "repeat": 1,
+                  "host_seconds": 200.968002231,
+                  "charged_seconds": 205.48417976,
+                  "native_adapter_seconds": 46.782353439,
+                  "other_host_seconds": 146.087827991,
+                  "routing_seconds": 8.097820801,
+                  "evaluations": 9,
+                  "commits": 1,
+                  "aborts": 8,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 9,
+                  "committed_instance_moves": 1,
+                  "unique_committed_instances": 1,
+                  "kernel_searches": 4302,
+                  "expanded_nodes": 7842166
+                },
+                {
+                  "repeat": 2,
+                  "host_seconds": 203.952424913,
+                  "charged_seconds": 208.468602442,
+                  "native_adapter_seconds": 46.146767616,
+                  "other_host_seconds": 149.548637927,
+                  "routing_seconds": 8.25701937,
+                  "evaluations": 9,
+                  "commits": 1,
+                  "aborts": 8,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 9,
+                  "committed_instance_moves": 1,
+                  "unique_committed_instances": 1,
+                  "kernel_searches": 4302,
+                  "expanded_nodes": 7842166
+                },
+                {
+                  "repeat": 3,
+                  "host_seconds": 203.140830479,
+                  "charged_seconds": 207.657008008,
+                  "native_adapter_seconds": 49.025039227,
+                  "other_host_seconds": 146.108146276,
+                  "routing_seconds": 8.007644976,
+                  "evaluations": 9,
+                  "commits": 1,
+                  "aborts": 8,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 9,
+                  "committed_instance_moves": 1,
+                  "unique_committed_instances": 1,
+                  "kernel_searches": 4302,
+                  "expanded_nodes": 7842166
+                },
+                {
+                  "repeat": 4,
+                  "host_seconds": 209.939563203,
+                  "charged_seconds": 214.455740732,
+                  "native_adapter_seconds": 49.599347824,
+                  "other_host_seconds": 152.182817336,
+                  "routing_seconds": 8.157398043,
+                  "evaluations": 9,
+                  "commits": 1,
+                  "aborts": 8,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 9,
+                  "committed_instance_moves": 1,
+                  "unique_committed_instances": 1,
+                  "kernel_searches": 4302,
+                  "expanded_nodes": 7842166
+                }
+              ],
+              "median_host_seconds": 203.140830479,
+              "median_charged_seconds": 207.657008008,
+              "median_other_host_seconds": 146.108146276,
+              "median_native_adapter_seconds": 46.782353439,
+              "median_routing_seconds": 8.157398043,
+              "state_sha256": "41f01c6a1420bc82c926d0648d60e4667761de728e8e5a84c97762251ed220c1"
+            },
+            "interleaved_tree_feedback": {
+              "quality": {
+                "wirelength": 12950,
+                "cpd_ns": 5.0153
+              },
+              "samples": [
+                {
+                  "repeat": 0,
+                  "host_seconds": 211.139561675,
+                  "charged_seconds": 215.655739204,
+                  "native_adapter_seconds": 45.451526826,
+                  "other_host_seconds": 157.660841797,
+                  "routing_seconds": 8.027193052,
+                  "evaluations": 9,
+                  "commits": 1,
+                  "aborts": 8,
+                  "repair_attempts": 3,
+                  "attempted_instance_moves": 11,
+                  "committed_instance_moves": 1,
+                  "unique_committed_instances": 1,
+                  "kernel_searches": 4298,
+                  "expanded_nodes": 7802250
+                },
+                {
+                  "repeat": 1,
+                  "host_seconds": 213.313949648,
+                  "charged_seconds": 217.830127177,
+                  "native_adapter_seconds": 45.53804313,
+                  "other_host_seconds": 159.806918793,
+                  "routing_seconds": 7.968987725,
+                  "evaluations": 9,
+                  "commits": 1,
+                  "aborts": 8,
+                  "repair_attempts": 3,
+                  "attempted_instance_moves": 11,
+                  "committed_instance_moves": 1,
+                  "unique_committed_instances": 1,
+                  "kernel_searches": 4298,
+                  "expanded_nodes": 7802250
+                },
+                {
+                  "repeat": 2,
+                  "host_seconds": 209.275115787,
+                  "charged_seconds": 213.791293316,
+                  "native_adapter_seconds": 45.006107342,
+                  "other_host_seconds": 156.275121206,
+                  "routing_seconds": 7.993887239,
+                  "evaluations": 9,
+                  "commits": 1,
+                  "aborts": 8,
+                  "repair_attempts": 3,
+                  "attempted_instance_moves": 11,
+                  "committed_instance_moves": 1,
+                  "unique_committed_instances": 1,
+                  "kernel_searches": 4298,
+                  "expanded_nodes": 7802250
+                },
+                {
+                  "repeat": 3,
+                  "host_seconds": 213.988123626,
+                  "charged_seconds": 218.504301155,
+                  "native_adapter_seconds": 45.409947308,
+                  "other_host_seconds": 160.309340632,
+                  "routing_seconds": 8.268835686,
+                  "evaluations": 9,
+                  "commits": 1,
+                  "aborts": 8,
+                  "repair_attempts": 3,
+                  "attempted_instance_moves": 11,
+                  "committed_instance_moves": 1,
+                  "unique_committed_instances": 1,
+                  "kernel_searches": 4298,
+                  "expanded_nodes": 7802250
+                },
+                {
+                  "repeat": 4,
+                  "host_seconds": 211.545596733,
+                  "charged_seconds": 216.061774262,
+                  "native_adapter_seconds": 45.981823706,
+                  "other_host_seconds": 157.461261417,
+                  "routing_seconds": 8.10251161,
+                  "evaluations": 9,
+                  "commits": 1,
+                  "aborts": 8,
+                  "repair_attempts": 3,
+                  "attempted_instance_moves": 11,
+                  "committed_instance_moves": 1,
+                  "unique_committed_instances": 1,
+                  "kernel_searches": 4298,
+                  "expanded_nodes": 7802250
+                }
+              ],
+              "median_host_seconds": 211.545596733,
+              "median_charged_seconds": 216.061774262,
+              "median_other_host_seconds": 157.660841797,
+              "median_native_adapter_seconds": 45.451526826,
+              "median_routing_seconds": 8.027193052,
+              "state_sha256": "41f01c6a1420bc82c926d0648d60e4667761de728e8e5a84c97762251ed220c1"
+            }
+          },
+          "equal_evaluation_budget_matched": true,
+          "configuration_seconds": 0.541417665,
+          "build_seconds": 10.794640089,
+          "tests_seconds": 0.107610553,
+          "conversion_seconds": 4.516177529,
+          "final_lexicographic_comparison": "same"
+        },
+        "shared_staged_vs_interleaved": {
+          "completed": true,
+          "audited": true,
+          "outer_seconds": 528.337104553,
+          "process": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/des/shared_staged_vs_interleaved_process.process.json",
+            "sha256": "8dde6e895575fc66936e9e2bf2103873683410a11a7f8d823e70a4f1e91397d9"
+          },
+          "evidence": [
+            {
+              "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/des/shared_staged_vs_interleaved/audit.json",
+              "sha256": "3ce353109f22cc5719a3701577fff4d7f59f38d3d044fc082e4fd0b975536fbd"
+            },
+            {
+              "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/des/shared_staged_vs_interleaved/publication_audit.json",
+              "sha256": "def9b7678f01628b893bfac7df067c1ae56eb49e6e120152f90ccb896f2fa390"
+            }
+          ],
+          "modes": {
+            "sequential_shared_tree_reuse": {
+              "quality": {
+                "wirelength": 12974,
+                "cpd_ns": 5.0153
+              },
+              "samples": [
+                {
+                  "repeat": 0,
+                  "host_seconds": 23.854738767,
+                  "charged_seconds": 28.364763028,
+                  "native_adapter_seconds": 9.232380149,
+                  "other_host_seconds": 13.717418248,
+                  "routing_seconds": 0.90494037,
+                  "evaluations": 1,
+                  "commits": 0,
+                  "aborts": 1,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 1,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 465,
+                  "expanded_nodes": 944683
+                },
+                {
+                  "repeat": 1,
+                  "host_seconds": 22.842313337,
+                  "charged_seconds": 27.352337598,
+                  "native_adapter_seconds": 8.943587753,
+                  "other_host_seconds": 12.99475953,
+                  "routing_seconds": 0.903966054,
+                  "evaluations": 1,
+                  "commits": 0,
+                  "aborts": 1,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 1,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 465,
+                  "expanded_nodes": 944683
+                },
+                {
+                  "repeat": 2,
+                  "host_seconds": 22.930435464,
+                  "charged_seconds": 27.440459725,
+                  "native_adapter_seconds": 8.924077333,
+                  "other_host_seconds": 13.074139827,
+                  "routing_seconds": 0.932218304,
+                  "evaluations": 1,
+                  "commits": 0,
+                  "aborts": 1,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 1,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 465,
+                  "expanded_nodes": 944683
+                },
+                {
+                  "repeat": 3,
+                  "host_seconds": 23.056244303,
+                  "charged_seconds": 27.566268564,
+                  "native_adapter_seconds": 9.060681507,
+                  "other_host_seconds": 13.077612603,
+                  "routing_seconds": 0.917950193,
+                  "evaluations": 1,
+                  "commits": 0,
+                  "aborts": 1,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 1,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 465,
+                  "expanded_nodes": 944683
+                },
+                {
+                  "repeat": 4,
+                  "host_seconds": 23.781633319,
+                  "charged_seconds": 28.29165758,
+                  "native_adapter_seconds": 9.66335537,
+                  "other_host_seconds": 13.185911601,
+                  "routing_seconds": 0.932366348,
+                  "evaluations": 1,
+                  "commits": 0,
+                  "aborts": 1,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 1,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 465,
+                  "expanded_nodes": 944683
+                }
+              ],
+              "median_host_seconds": 23.056244303,
+              "median_charged_seconds": 27.566268564,
+              "median_other_host_seconds": 13.077612603,
+              "median_native_adapter_seconds": 9.060681507,
+              "median_routing_seconds": 0.917950193,
+              "state_sha256": "c2fbbfc44f1cf02cbea8364e73c239c428596072905c5d794c63d0c36fc6d845"
+            },
+            "interleaved_tree_reuse": {
+              "quality": {
+                "wirelength": 12974,
+                "cpd_ns": 5.0153
+              },
+              "samples": [
+                {
+                  "repeat": 0,
+                  "host_seconds": 77.128275015,
+                  "charged_seconds": 81.638299276,
+                  "native_adapter_seconds": 18.788123734,
+                  "other_host_seconds": 55.195981163,
+                  "routing_seconds": 3.144170118,
+                  "evaluations": 3,
+                  "commits": 0,
+                  "aborts": 3,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 3,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 1650,
+                  "expanded_nodes": 3029994
+                },
+                {
+                  "repeat": 1,
+                  "host_seconds": 76.259566567,
+                  "charged_seconds": 80.769590828,
+                  "native_adapter_seconds": 17.942338991,
+                  "other_host_seconds": 55.244277894,
+                  "routing_seconds": 3.072949682,
+                  "evaluations": 3,
+                  "commits": 0,
+                  "aborts": 3,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 3,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 1650,
+                  "expanded_nodes": 3029994
+                },
+                {
+                  "repeat": 2,
+                  "host_seconds": 77.118820973,
+                  "charged_seconds": 81.628845234,
+                  "native_adapter_seconds": 18.584232671,
+                  "other_host_seconds": 55.416874061,
+                  "routing_seconds": 3.117714241,
+                  "evaluations": 3,
+                  "commits": 0,
+                  "aborts": 3,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 3,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 1650,
+                  "expanded_nodes": 3029994
+                },
+                {
+                  "repeat": 3,
+                  "host_seconds": 80.301374771,
+                  "charged_seconds": 84.811399032,
+                  "native_adapter_seconds": 18.751248873,
+                  "other_host_seconds": 58.346299772,
+                  "routing_seconds": 3.203826126,
+                  "evaluations": 3,
+                  "commits": 0,
+                  "aborts": 3,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 3,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 1650,
+                  "expanded_nodes": 3029994
+                },
+                {
+                  "repeat": 4,
+                  "host_seconds": 76.902674318,
+                  "charged_seconds": 81.412698579,
+                  "native_adapter_seconds": 18.227507776,
+                  "other_host_seconds": 55.449367025,
+                  "routing_seconds": 3.225799517,
+                  "evaluations": 3,
+                  "commits": 0,
+                  "aborts": 3,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 3,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 1650,
+                  "expanded_nodes": 3029994
+                }
+              ],
+              "median_host_seconds": 77.118820973,
+              "median_charged_seconds": 81.628845234,
+              "median_other_host_seconds": 55.416874061,
+              "median_native_adapter_seconds": 18.584232671,
+              "median_routing_seconds": 3.144170118,
+              "state_sha256": "c2fbbfc44f1cf02cbea8364e73c239c428596072905c5d794c63d0c36fc6d845"
+            }
+          },
+          "equal_evaluation_budget_matched": null,
+          "configuration_seconds": 0.549279541,
+          "build_seconds": 10.636685803,
+          "tests_seconds": 0.114465166,
+          "conversion_seconds": 4.510024261,
+          "final_lexicographic_comparison": "same"
+        }
+      },
+      "initial_quality": {
+        "wirelength": 12974,
+        "cpd_ns": 5.0153
+      },
+      "initial_baseline": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/baseline/baseline.json",
+        "sha256": "7d31cd5692dfced5cdeab78cebf66c56d1c1008445b71953b32b131b88cb4774"
+      }
+    },
+    "s38584.1": {
+      "tracks": {
+        "shared_staged_vs_interleaved": {
+          "completed": false,
+          "audited": false,
+          "outer_seconds": 17.651716348,
+          "process": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/s38584.1/shared_staged_vs_interleaved_process.process.json",
+            "sha256": "fdc1c8681c6581f1a82e30f3bae1028ca8aee3ce4a43dd31a78f0b109592f227"
+          },
+          "failures": [
+            {
+              "receipt": {
+                "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/s38584.1/shared_staged_vs_interleaved/prepare.process.json",
+                "sha256": "cecaea05915a663449ddcc0ef949fef0d7e798b172820324f9ed5afbffbe7dac"
+              },
+              "exit_status": 1,
+              "stderr": {
+                "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/s38584.1/shared_staged_vs_interleaved/prepare.stderr.log",
+                "sha256": "32417a892d29aaf729c0d70a1f4358c5dfe84200184a7f7bbbe3b72a0f86f4cf"
+              },
+              "stderr_tail": "Traceback (most recent call last):\n  File \"/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/prepare_vpr_bundle.py\", line 244, in <module>\n    print(json.dumps(prepare(p.parse_args()), indent=2))\n  File \"/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/prepare_vpr_bundle.py\", line 86, in prepare\n    raise ValueError('v1 importer does not silently omit root clock nets')\nValueError: v1 importer does not silently omit root clock nets\n"
+            }
+          ],
+          "completed_host_processes_before_failure": 0
+        },
+        "equal_evaluation_feedback": {
+          "completed": false,
+          "audited": false,
+          "outer_seconds": 18.11919419,
+          "process": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/s38584.1/equal_evaluation_feedback_process.process.json",
+            "sha256": "9c5e8767e8c3e7b902d8dfa18e17e1abfa3e46beb6466a6e75cefa657fc1aea0"
+          },
+          "failures": [
+            {
+              "receipt": {
+                "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/s38584.1/equal_evaluation_feedback/prepare.process.json",
+                "sha256": "6b68a2d8a379924b1da3f20f7dddf2ad3dd7bfe9749eb2aec3ecb253c620fdc8"
+              },
+              "exit_status": 1,
+              "stderr": {
+                "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/s38584.1/equal_evaluation_feedback/prepare.stderr.log",
+                "sha256": "32417a892d29aaf729c0d70a1f4358c5dfe84200184a7f7bbbe3b72a0f86f4cf"
+              },
+              "stderr_tail": "Traceback (most recent call last):\n  File \"/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/prepare_vpr_bundle.py\", line 244, in <module>\n    print(json.dumps(prepare(p.parse_args()), indent=2))\n  File \"/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/prepare_vpr_bundle.py\", line 86, in prepare\n    raise ValueError('v1 importer does not silently omit root clock nets')\nValueError: v1 importer does not silently omit root clock nets\n"
+            }
+          ],
+          "completed_host_processes_before_failure": 0
+        }
+      },
+      "initial_quality": {
+        "wirelength": 34858,
+        "cpd_ns": 6.90921
+      },
+      "initial_baseline": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/s38584.1/baseline/baseline.json",
+        "sha256": "0001d8e141581bf936efddcb3acf1a94931fb8e172dc4bc45ebd63bfa5fbe1e0"
+      }
+    },
+    "seq": {
+      "tracks": {
+        "equal_evaluation_feedback": {
+          "completed": true,
+          "audited": true,
+          "outer_seconds": 481.404365689,
+          "process": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/seq/equal_evaluation_feedback_process.process.json",
+            "sha256": "e17560c0358cddb0ed72920b0ba34a66d25a356f2fdf6efcdf0d54f8a047f085"
+          },
+          "evidence": [
+            {
+              "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/seq/equal_evaluation_feedback/audit.json",
+              "sha256": "1e2d049c9831152ee2322aae3a7b12a5a1bd26d68956dd9bbf0048537d2e8bbe"
+            },
+            {
+              "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/seq/equal_evaluation_feedback/publication_audit.json",
+              "sha256": "64e1ae3b3cc8b5c91126a52009d76127eeb84a831a698439f7096794ce5a6dc6"
+            }
+          ],
+          "modes": {
+            "interleaved_tree_reuse": {
+              "quality": {
+                "wirelength": 14163,
+                "cpd_ns": 5.45825
+              },
+              "samples": [
+                {
+                  "repeat": 0,
+                  "host_seconds": 45.679419306,
+                  "charged_seconds": 48.778739375,
+                  "native_adapter_seconds": 35.316057459,
+                  "other_host_seconds": 8.648961173,
+                  "routing_seconds": 1.714400674,
+                  "evaluations": 9,
+                  "commits": 1,
+                  "aborts": 8,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 18,
+                  "committed_instance_moves": 2,
+                  "unique_committed_instances": 2,
+                  "kernel_searches": 1126,
+                  "expanded_nodes": 1453947
+                },
+                {
+                  "repeat": 1,
+                  "host_seconds": 54.317887751,
+                  "charged_seconds": 57.41720782,
+                  "native_adapter_seconds": 44.045366999,
+                  "other_host_seconds": 8.607216322,
+                  "routing_seconds": 1.66530443,
+                  "evaluations": 9,
+                  "commits": 1,
+                  "aborts": 8,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 18,
+                  "committed_instance_moves": 2,
+                  "unique_committed_instances": 2,
+                  "kernel_searches": 1126,
+                  "expanded_nodes": 1453947
+                },
+                {
+                  "repeat": 2,
+                  "host_seconds": 44.539827512,
+                  "charged_seconds": 47.639147581,
+                  "native_adapter_seconds": 34.316057936,
+                  "other_host_seconds": 8.554280596,
+                  "routing_seconds": 1.66948898,
+                  "evaluations": 9,
+                  "commits": 1,
+                  "aborts": 8,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 18,
+                  "committed_instance_moves": 2,
+                  "unique_committed_instances": 2,
+                  "kernel_searches": 1126,
+                  "expanded_nodes": 1453947
+                },
+                {
+                  "repeat": 3,
+                  "host_seconds": 45.103429104,
+                  "charged_seconds": 48.202749173,
+                  "native_adapter_seconds": 34.930541924,
+                  "other_host_seconds": 8.5129741,
+                  "routing_seconds": 1.65991308,
+                  "evaluations": 9,
+                  "commits": 1,
+                  "aborts": 8,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 18,
+                  "committed_instance_moves": 2,
+                  "unique_committed_instances": 2,
+                  "kernel_searches": 1126,
+                  "expanded_nodes": 1453947
+                },
+                {
+                  "repeat": 4,
+                  "host_seconds": 45.32158023,
+                  "charged_seconds": 48.420900299,
+                  "native_adapter_seconds": 35.045249552,
+                  "other_host_seconds": 8.583833598,
+                  "routing_seconds": 1.69249708,
+                  "evaluations": 9,
+                  "commits": 1,
+                  "aborts": 8,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 18,
+                  "committed_instance_moves": 2,
+                  "unique_committed_instances": 2,
+                  "kernel_searches": 1126,
+                  "expanded_nodes": 1453947
+                }
+              ],
+              "median_host_seconds": 45.32158023,
+              "median_charged_seconds": 48.420900299,
+              "median_other_host_seconds": 8.583833598,
+              "median_native_adapter_seconds": 35.045249552,
+              "median_routing_seconds": 1.66948898,
+              "state_sha256": "f8b220ad273c98c29f12cd30874f1f345b7544ee7ae59c4641e55d525cf8ba12"
+            },
+            "interleaved_tree_feedback": {
+              "quality": {
+                "wirelength": 14193,
+                "cpd_ns": 5.45825
+              },
+              "samples": [
+                {
+                  "repeat": 0,
+                  "host_seconds": 42.86369931,
+                  "charged_seconds": 45.963019379,
+                  "native_adapter_seconds": 34.96166176,
+                  "other_host_seconds": 6.138051819,
+                  "routing_seconds": 1.763985731,
+                  "evaluations": 9,
+                  "commits": 1,
+                  "aborts": 8,
+                  "repair_attempts": 6,
+                  "attempted_instance_moves": 18,
+                  "committed_instance_moves": 2,
+                  "unique_committed_instances": 2,
+                  "kernel_searches": 1173,
+                  "expanded_nodes": 1534235
+                },
+                {
+                  "repeat": 1,
+                  "host_seconds": 44.359685101,
+                  "charged_seconds": 47.45900517,
+                  "native_adapter_seconds": 36.389205758,
+                  "other_host_seconds": 6.187675795,
+                  "routing_seconds": 1.782803548,
+                  "evaluations": 9,
+                  "commits": 1,
+                  "aborts": 8,
+                  "repair_attempts": 6,
+                  "attempted_instance_moves": 18,
+                  "committed_instance_moves": 2,
+                  "unique_committed_instances": 2,
+                  "kernel_searches": 1173,
+                  "expanded_nodes": 1534235
+                },
+                {
+                  "repeat": 2,
+                  "host_seconds": 42.212704229,
+                  "charged_seconds": 45.312024298,
+                  "native_adapter_seconds": 34.387991238,
+                  "other_host_seconds": 6.03957226,
+                  "routing_seconds": 1.785140731,
+                  "evaluations": 9,
+                  "commits": 1,
+                  "aborts": 8,
+                  "repair_attempts": 6,
+                  "attempted_instance_moves": 18,
+                  "committed_instance_moves": 2,
+                  "unique_committed_instances": 2,
+                  "kernel_searches": 1173,
+                  "expanded_nodes": 1534235
+                },
+                {
+                  "repeat": 3,
+                  "host_seconds": 42.355119412,
+                  "charged_seconds": 45.454439481,
+                  "native_adapter_seconds": 34.407972134,
+                  "other_host_seconds": 6.207778095,
+                  "routing_seconds": 1.739369183,
+                  "evaluations": 9,
+                  "commits": 1,
+                  "aborts": 8,
+                  "repair_attempts": 6,
+                  "attempted_instance_moves": 18,
+                  "committed_instance_moves": 2,
+                  "unique_committed_instances": 2,
+                  "kernel_searches": 1173,
+                  "expanded_nodes": 1534235
+                },
+                {
+                  "repeat": 4,
+                  "host_seconds": 42.668908568,
+                  "charged_seconds": 45.768228637,
+                  "native_adapter_seconds": 34.918032616,
+                  "other_host_seconds": 6.006976872,
+                  "routing_seconds": 1.74389908,
+                  "evaluations": 9,
+                  "commits": 1,
+                  "aborts": 8,
+                  "repair_attempts": 6,
+                  "attempted_instance_moves": 18,
+                  "committed_instance_moves": 2,
+                  "unique_committed_instances": 2,
+                  "kernel_searches": 1173,
+                  "expanded_nodes": 1534235
+                }
+              ],
+              "median_host_seconds": 42.668908568,
+              "median_charged_seconds": 45.768228637,
+              "median_other_host_seconds": 6.138051819,
+              "median_native_adapter_seconds": 34.918032616,
+              "median_routing_seconds": 1.763985731,
+              "state_sha256": "e4145ec047777231d53f2c5863e475d85ba2376f0cd9437da582599eea1861ec"
+            }
+          },
+          "equal_evaluation_budget_matched": true,
+          "configuration_seconds": 0.714426851,
+          "build_seconds": 10.637638535,
+          "tests_seconds": 0.107587996,
+          "conversion_seconds": 3.099320069,
+          "final_lexicographic_comparison": "interleaved_tree_reuse"
+        },
+        "shared_staged_vs_interleaved": {
+          "completed": true,
+          "audited": true,
+          "outer_seconds": 162.794991804,
+          "process": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/seq/shared_staged_vs_interleaved_process.process.json",
+            "sha256": "a877b62dfca02475010e3b975c5154519b9c17a45e23812a8642b17986b942cd"
+          },
+          "evidence": [
+            {
+              "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/seq/shared_staged_vs_interleaved/audit.json",
+              "sha256": "c19b6cf477362acf24a1b41259e448246b31433f9af9235d7c61896023acd1c0"
+            },
+            {
+              "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/seq/shared_staged_vs_interleaved/publication_audit.json",
+              "sha256": "5f64c07522cbb832ea5cec14c46045ee136f83bed56a40105aa79d7b88c64cc5"
+            }
+          ],
+          "modes": {
+            "sequential_shared_tree_reuse": {
+              "quality": {
+                "wirelength": 14194,
+                "cpd_ns": 5.45825
+              },
+              "samples": [
+                {
+                  "repeat": 0,
+                  "host_seconds": 8.233501685,
+                  "charged_seconds": 14.969836754,
+                  "native_adapter_seconds": 6.840123651,
+                  "other_host_seconds": 0.831798837,
+                  "routing_seconds": 0.561579197,
+                  "evaluations": 1,
+                  "commits": 0,
+                  "aborts": 1,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 6,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 392,
+                  "expanded_nodes": 557862
+                },
+                {
+                  "repeat": 1,
+                  "host_seconds": 8.260446692,
+                  "charged_seconds": 14.996781761,
+                  "native_adapter_seconds": 6.84878045,
+                  "other_host_seconds": 0.827998631,
+                  "routing_seconds": 0.583667611,
+                  "evaluations": 1,
+                  "commits": 0,
+                  "aborts": 1,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 6,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 392,
+                  "expanded_nodes": 557862
+                },
+                {
+                  "repeat": 2,
+                  "host_seconds": 8.461040279,
+                  "charged_seconds": 15.197375348,
+                  "native_adapter_seconds": 7.027036461,
+                  "other_host_seconds": 0.838454106,
+                  "routing_seconds": 0.595549712,
+                  "evaluations": 1,
+                  "commits": 0,
+                  "aborts": 1,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 6,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 392,
+                  "expanded_nodes": 557862
+                },
+                {
+                  "repeat": 3,
+                  "host_seconds": 8.403461896,
+                  "charged_seconds": 15.139796965,
+                  "native_adapter_seconds": 6.874076399,
+                  "other_host_seconds": 0.830960982,
+                  "routing_seconds": 0.698424515,
+                  "evaluations": 1,
+                  "commits": 0,
+                  "aborts": 1,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 6,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 392,
+                  "expanded_nodes": 557862
+                },
+                {
+                  "repeat": 4,
+                  "host_seconds": 8.385323521,
+                  "charged_seconds": 15.12165859,
+                  "native_adapter_seconds": 6.983029211,
+                  "other_host_seconds": 0.814001368,
+                  "routing_seconds": 0.588292942,
+                  "evaluations": 1,
+                  "commits": 0,
+                  "aborts": 1,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 6,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 392,
+                  "expanded_nodes": 557862
+                }
+              ],
+              "median_host_seconds": 8.385323521,
+              "median_charged_seconds": 15.12165859,
+              "median_other_host_seconds": 0.830960982,
+              "median_native_adapter_seconds": 6.874076399,
+              "median_routing_seconds": 0.588292942,
+              "state_sha256": "6a14b65689baf7d0f2b41f12463ad6c03625841316ea9eef96726543939b029b"
+            },
+            "interleaved_tree_reuse": {
+              "quality": {
+                "wirelength": 14194,
+                "cpd_ns": 5.45825
+              },
+              "samples": [
+                {
+                  "repeat": 0,
+                  "host_seconds": 17.862609822,
+                  "charged_seconds": 24.598944891,
+                  "native_adapter_seconds": 14.034372863,
+                  "other_host_seconds": 3.265963129,
+                  "routing_seconds": 0.56227383,
+                  "evaluations": 3,
+                  "commits": 0,
+                  "aborts": 3,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 6,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 379,
+                  "expanded_nodes": 494581
+                },
+                {
+                  "repeat": 1,
+                  "host_seconds": 17.762707699,
+                  "charged_seconds": 24.499042768,
+                  "native_adapter_seconds": 13.840607718,
+                  "other_host_seconds": 3.339258499,
+                  "routing_seconds": 0.582841482,
+                  "evaluations": 3,
+                  "commits": 0,
+                  "aborts": 3,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 6,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 379,
+                  "expanded_nodes": 494581
+                },
+                {
+                  "repeat": 2,
+                  "host_seconds": 17.913120986,
+                  "charged_seconds": 24.649456055,
+                  "native_adapter_seconds": 13.949532488,
+                  "other_host_seconds": 3.3980961,
+                  "routing_seconds": 0.565492398,
+                  "evaluations": 3,
+                  "commits": 0,
+                  "aborts": 3,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 6,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 379,
+                  "expanded_nodes": 494581
+                },
+                {
+                  "repeat": 3,
+                  "host_seconds": 17.821995107,
+                  "charged_seconds": 24.558330176,
+                  "native_adapter_seconds": 13.949085501,
+                  "other_host_seconds": 3.30449428,
+                  "routing_seconds": 0.568415326,
+                  "evaluations": 3,
+                  "commits": 0,
+                  "aborts": 3,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 6,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 379,
+                  "expanded_nodes": 494581
+                },
+                {
+                  "repeat": 4,
+                  "host_seconds": 17.994987115,
+                  "charged_seconds": 24.731322184,
+                  "native_adapter_seconds": 14.151526799,
+                  "other_host_seconds": 3.282240874,
+                  "routing_seconds": 0.561219442,
+                  "evaluations": 3,
+                  "commits": 0,
+                  "aborts": 3,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 6,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 379,
+                  "expanded_nodes": 494581
+                }
+              ],
+              "median_host_seconds": 17.862609822,
+              "median_charged_seconds": 24.598944891,
+              "median_other_host_seconds": 3.30449428,
+              "median_native_adapter_seconds": 13.949532488,
+              "median_routing_seconds": 0.565492398,
+              "state_sha256": "6a14b65689baf7d0f2b41f12463ad6c03625841316ea9eef96726543939b029b"
+            }
+          },
+          "equal_evaluation_budget_matched": null,
+          "configuration_seconds": 1.234664012,
+          "build_seconds": 18.190875065,
+          "tests_seconds": 0.264324047,
+          "conversion_seconds": 6.736335069,
+          "final_lexicographic_comparison": "same"
+        }
+      },
+      "initial_quality": {
+        "wirelength": 14194,
+        "cpd_ns": 5.45825
+      },
+      "initial_baseline": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/seq/baseline/baseline.json",
+        "sha256": "0ed6a0439ccac41bc4d798a5cbb79292d505c866463804dc83f554140eb678fe"
+      }
+    },
+    "spla": {
+      "tracks": {
+        "shared_staged_vs_interleaved": {
+          "completed": true,
+          "audited": true,
+          "outer_seconds": 391.558546272,
+          "process": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/spla/shared_staged_vs_interleaved_process.process.json",
+            "sha256": "f8c68ad349e6dfc7f7acea8e8b6b787e5aecd51745143b34ecfb7dc3a81dff8c"
+          },
+          "evidence": [
+            {
+              "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/spla/shared_staged_vs_interleaved/audit.json",
+              "sha256": "317d7faa7625d935476c27d77d3816053927dca843adcb0449d9c4982f1aee02"
+            },
+            {
+              "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/spla/shared_staged_vs_interleaved/publication_audit.json",
+              "sha256": "7e08f6c127759d07c390a3fdb1d1e55126522b80f467569a1cca79df9663228c"
+            }
+          ],
+          "modes": {
+            "sequential_shared_tree_reuse": {
+              "quality": {
+                "wirelength": 36337,
+                "cpd_ns": 7.65176
+              },
+              "samples": [
+                {
+                  "repeat": 0,
+                  "host_seconds": 21.268782783,
+                  "charged_seconds": 28.158139803,
+                  "native_adapter_seconds": 15.543102302,
+                  "other_host_seconds": 4.27802997,
+                  "routing_seconds": 1.447650511,
+                  "evaluations": 1,
+                  "commits": 0,
+                  "aborts": 1,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 6,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 491,
+                  "expanded_nodes": 1363591
+                },
+                {
+                  "repeat": 1,
+                  "host_seconds": 23.326954932,
+                  "charged_seconds": 30.216311952,
+                  "native_adapter_seconds": 17.60723582,
+                  "other_host_seconds": 4.303627131,
+                  "routing_seconds": 1.416091981,
+                  "evaluations": 1,
+                  "commits": 0,
+                  "aborts": 1,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 6,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 491,
+                  "expanded_nodes": 1363591
+                },
+                {
+                  "repeat": 2,
+                  "host_seconds": 20.971914886,
+                  "charged_seconds": 27.861271906,
+                  "native_adapter_seconds": 15.264324131,
+                  "other_host_seconds": 4.275613475,
+                  "routing_seconds": 1.43197728,
+                  "evaluations": 1,
+                  "commits": 0,
+                  "aborts": 1,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 6,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 491,
+                  "expanded_nodes": 1363591
+                },
+                {
+                  "repeat": 3,
+                  "host_seconds": 23.476139256,
+                  "charged_seconds": 30.365496276,
+                  "native_adapter_seconds": 17.70988736,
+                  "other_host_seconds": 4.305615602,
+                  "routing_seconds": 1.460636294,
+                  "evaluations": 1,
+                  "commits": 0,
+                  "aborts": 1,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 6,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 491,
+                  "expanded_nodes": 1363591
+                },
+                {
+                  "repeat": 4,
+                  "host_seconds": 21.4193268,
+                  "charged_seconds": 28.30868382,
+                  "native_adapter_seconds": 15.597432835,
+                  "other_host_seconds": 4.332168442,
+                  "routing_seconds": 1.489725523,
+                  "evaluations": 1,
+                  "commits": 0,
+                  "aborts": 1,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 6,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 491,
+                  "expanded_nodes": 1363591
+                }
+              ],
+              "median_host_seconds": 21.4193268,
+              "median_charged_seconds": 28.30868382,
+              "median_other_host_seconds": 4.303627131,
+              "median_native_adapter_seconds": 15.597432835,
+              "median_routing_seconds": 1.447650511,
+              "state_sha256": "97a13daa36adf974ed7fc92814a9661e200584763a5c689632cbbc8ddf47d2e0"
+            },
+            "interleaved_tree_reuse": {
+              "quality": {
+                "wirelength": 36337,
+                "cpd_ns": 7.65176
+              },
+              "samples": [
+                {
+                  "repeat": 0,
+                  "host_seconds": 49.962800284,
+                  "charged_seconds": 56.852157304,
+                  "native_adapter_seconds": 30.523784893,
+                  "other_host_seconds": 17.952951961,
+                  "routing_seconds": 1.48606343,
+                  "evaluations": 3,
+                  "commits": 0,
+                  "aborts": 3,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 6,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 488,
+                  "expanded_nodes": 1345307
+                },
+                {
+                  "repeat": 1,
+                  "host_seconds": 49.969559283,
+                  "charged_seconds": 56.858916303,
+                  "native_adapter_seconds": 30.825402861,
+                  "other_host_seconds": 17.690645462,
+                  "routing_seconds": 1.45351096,
+                  "evaluations": 3,
+                  "commits": 0,
+                  "aborts": 3,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 6,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 488,
+                  "expanded_nodes": 1345307
+                },
+                {
+                  "repeat": 2,
+                  "host_seconds": 49.867334425,
+                  "charged_seconds": 56.756691445,
+                  "native_adapter_seconds": 30.715262417,
+                  "other_host_seconds": 17.684481765,
+                  "routing_seconds": 1.467590243,
+                  "evaluations": 3,
+                  "commits": 0,
+                  "aborts": 3,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 6,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 488,
+                  "expanded_nodes": 1345307
+                },
+                {
+                  "repeat": 3,
+                  "host_seconds": 50.217287785,
+                  "charged_seconds": 57.106644805,
+                  "native_adapter_seconds": 30.829037801,
+                  "other_host_seconds": 17.925858315,
+                  "routing_seconds": 1.462391669,
+                  "evaluations": 3,
+                  "commits": 0,
+                  "aborts": 3,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 6,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 488,
+                  "expanded_nodes": 1345307
+                },
+                {
+                  "repeat": 4,
+                  "host_seconds": 49.640712374,
+                  "charged_seconds": 56.530069394,
+                  "native_adapter_seconds": 30.522831347,
+                  "other_host_seconds": 17.684753918,
+                  "routing_seconds": 1.433127109,
+                  "evaluations": 3,
+                  "commits": 0,
+                  "aborts": 3,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 6,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 488,
+                  "expanded_nodes": 1345307
+                }
+              ],
+              "median_host_seconds": 49.962800284,
+              "median_charged_seconds": 56.852157304,
+              "median_other_host_seconds": 17.690645462,
+              "median_native_adapter_seconds": 30.715262417,
+              "median_routing_seconds": 1.462391669,
+              "state_sha256": "97a13daa36adf974ed7fc92814a9661e200584763a5c689632cbbc8ddf47d2e0"
+            }
+          },
+          "equal_evaluation_budget_matched": null,
+          "configuration_seconds": 0.537226295,
+          "build_seconds": 10.324754411,
+          "tests_seconds": 0.116086294,
+          "conversion_seconds": 6.88935702,
+          "final_lexicographic_comparison": "same"
+        },
+        "equal_evaluation_feedback": {
+          "completed": true,
+          "audited": true,
+          "outer_seconds": 1280.061469156,
+          "process": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/spla/equal_evaluation_feedback_process.process.json",
+            "sha256": "d7eebf703393e3844dd2827f854cf7c36904d510c9021a4753a4e5a48c94baca"
+          },
+          "evidence": [
+            {
+              "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/spla/equal_evaluation_feedback/audit.json",
+              "sha256": "7a265f208d0b9f1ccc4c37faa4366b8eae1501de2f22365a14b684e3de7d88f8"
+            },
+            {
+              "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/spla/equal_evaluation_feedback/publication_audit.json",
+              "sha256": "e1665e82070ad982b44c5d84796449f2780894330f6b376d4c976351fe313446"
+            }
+          ],
+          "modes": {
+            "interleaved_tree_reuse": {
+              "quality": {
+                "wirelength": 36304,
+                "cpd_ns": 7.65176
+              },
+              "samples": [
+                {
+                  "repeat": 0,
+                  "host_seconds": 131.183868056,
+                  "charged_seconds": 141.354368365,
+                  "native_adapter_seconds": 81.156433448,
+                  "other_host_seconds": 45.836691269,
+                  "routing_seconds": 4.190743339,
+                  "evaluations": 9,
+                  "commits": 1,
+                  "aborts": 8,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 17,
+                  "committed_instance_moves": 1,
+                  "unique_committed_instances": 1,
+                  "kernel_searches": 1422,
+                  "expanded_nodes": 3828469
+                },
+                {
+                  "repeat": 1,
+                  "host_seconds": 129.206049174,
+                  "charged_seconds": 139.376549483,
+                  "native_adapter_seconds": 79.390389395,
+                  "other_host_seconds": 45.612369899,
+                  "routing_seconds": 4.20328988,
+                  "evaluations": 9,
+                  "commits": 1,
+                  "aborts": 8,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 17,
+                  "committed_instance_moves": 1,
+                  "unique_committed_instances": 1,
+                  "kernel_searches": 1422,
+                  "expanded_nodes": 3828469
+                },
+                {
+                  "repeat": 2,
+                  "host_seconds": 131.596790011,
+                  "charged_seconds": 141.76729032,
+                  "native_adapter_seconds": 81.13151494,
+                  "other_host_seconds": 46.302943113,
+                  "routing_seconds": 4.162331958,
+                  "evaluations": 9,
+                  "commits": 1,
+                  "aborts": 8,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 17,
+                  "committed_instance_moves": 1,
+                  "unique_committed_instances": 1,
+                  "kernel_searches": 1422,
+                  "expanded_nodes": 3828469
+                },
+                {
+                  "repeat": 3,
+                  "host_seconds": 127.263315312,
+                  "charged_seconds": 137.433815621,
+                  "native_adapter_seconds": 77.358173179,
+                  "other_host_seconds": 45.776797038,
+                  "routing_seconds": 4.128345095,
+                  "evaluations": 9,
+                  "commits": 1,
+                  "aborts": 8,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 17,
+                  "committed_instance_moves": 1,
+                  "unique_committed_instances": 1,
+                  "kernel_searches": 1422,
+                  "expanded_nodes": 3828469
+                },
+                {
+                  "repeat": 4,
+                  "host_seconds": 134.763843854,
+                  "charged_seconds": 144.934344163,
+                  "native_adapter_seconds": 84.598151063,
+                  "other_host_seconds": 46.000929411,
+                  "routing_seconds": 4.16476338,
+                  "evaluations": 9,
+                  "commits": 1,
+                  "aborts": 8,
+                  "repair_attempts": 0,
+                  "attempted_instance_moves": 17,
+                  "committed_instance_moves": 1,
+                  "unique_committed_instances": 1,
+                  "kernel_searches": 1422,
+                  "expanded_nodes": 3828469
+                }
+              ],
+              "median_host_seconds": 131.183868056,
+              "median_charged_seconds": 141.354368365,
+              "median_other_host_seconds": 45.836691269,
+              "median_native_adapter_seconds": 81.13151494,
+              "median_routing_seconds": 4.16476338,
+              "state_sha256": "f8b9711b506c9c4ebca174260d78cdf9a02b5cad4bf1572e46048c89c245711e"
+            },
+            "interleaved_tree_feedback": {
+              "quality": {
+                "wirelength": 36337,
+                "cpd_ns": 7.65176
+              },
+              "samples": [
+                {
+                  "repeat": 0,
+                  "host_seconds": 114.527894228,
+                  "charged_seconds": 124.698394537,
+                  "native_adapter_seconds": 77.76140707,
+                  "other_host_seconds": 31.76680727,
+                  "routing_seconds": 4.999679888,
+                  "evaluations": 9,
+                  "commits": 0,
+                  "aborts": 9,
+                  "repair_attempts": 6,
+                  "attempted_instance_moves": 18,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 1708,
+                  "expanded_nodes": 4572699
+                },
+                {
+                  "repeat": 1,
+                  "host_seconds": 115.607498829,
+                  "charged_seconds": 125.777999138,
+                  "native_adapter_seconds": 78.884213598,
+                  "other_host_seconds": 31.749173969,
+                  "routing_seconds": 4.974111262,
+                  "evaluations": 9,
+                  "commits": 0,
+                  "aborts": 9,
+                  "repair_attempts": 6,
+                  "attempted_instance_moves": 18,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 1708,
+                  "expanded_nodes": 4572699
+                },
+                {
+                  "repeat": 2,
+                  "host_seconds": 116.452566732,
+                  "charged_seconds": 126.623067041,
+                  "native_adapter_seconds": 79.365688692,
+                  "other_host_seconds": 32.040724913,
+                  "routing_seconds": 5.046153127,
+                  "evaluations": 9,
+                  "commits": 0,
+                  "aborts": 9,
+                  "repair_attempts": 6,
+                  "attempted_instance_moves": 18,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 1708,
+                  "expanded_nodes": 4572699
+                },
+                {
+                  "repeat": 3,
+                  "host_seconds": 114.645089857,
+                  "charged_seconds": 124.815590166,
+                  "native_adapter_seconds": 77.826244783,
+                  "other_host_seconds": 31.873437165,
+                  "routing_seconds": 4.945407909,
+                  "evaluations": 9,
+                  "commits": 0,
+                  "aborts": 9,
+                  "repair_attempts": 6,
+                  "attempted_instance_moves": 18,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 1708,
+                  "expanded_nodes": 4572699
+                },
+                {
+                  "repeat": 4,
+                  "host_seconds": 115.213589763,
+                  "charged_seconds": 125.384090072,
+                  "native_adapter_seconds": 78.275655382,
+                  "other_host_seconds": 31.993495658,
+                  "routing_seconds": 4.944438723,
+                  "evaluations": 9,
+                  "commits": 0,
+                  "aborts": 9,
+                  "repair_attempts": 6,
+                  "attempted_instance_moves": 18,
+                  "committed_instance_moves": 0,
+                  "unique_committed_instances": 0,
+                  "kernel_searches": 1708,
+                  "expanded_nodes": 4572699
+                }
+              ],
+              "median_host_seconds": 115.213589763,
+              "median_charged_seconds": 125.384090072,
+              "median_other_host_seconds": 31.873437165,
+              "median_native_adapter_seconds": 78.275655382,
+              "median_routing_seconds": 4.974111262,
+              "state_sha256": "97a13daa36adf974ed7fc92814a9661e200584763a5c689632cbbc8ddf47d2e0"
+            }
+          },
+          "equal_evaluation_budget_matched": true,
+          "configuration_seconds": 0.563274719,
+          "build_seconds": 10.382950506,
+          "tests_seconds": 0.106050373,
+          "conversion_seconds": 10.170500309,
+          "final_lexicographic_comparison": "interleaved_tree_reuse"
+        }
+      },
+      "initial_quality": {
+        "wirelength": 36337,
+        "cpd_ns": 7.65176
+      },
+      "initial_baseline": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/spla/baseline/baseline.json",
+        "sha256": "7881ff95114942caeddc2a3365a0f286750fdd3211817499e146a1b3d7e89817"
+      }
+    },
+    "tseng": {
+      "tracks": {
+        "equal_evaluation_feedback": {
+          "completed": false,
+          "audited": false,
+          "outer_seconds": 12.215230125,
+          "process": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/tseng/equal_evaluation_feedback_process.process.json",
+            "sha256": "0aba11962f2176e204d4c6da585e177f8b8314ef908d3554fd79b153006ac07a"
+          },
+          "failures": [
+            {
+              "receipt": {
+                "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/tseng/equal_evaluation_feedback/prepare.process.json",
+                "sha256": "5dff0e5ac709fef1610651261166c90a945a3cfd07aa27618acebbbc240e4c6a"
+              },
+              "exit_status": 1,
+              "stderr": {
+                "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/tseng/equal_evaluation_feedback/prepare.stderr.log",
+                "sha256": "32417a892d29aaf729c0d70a1f4358c5dfe84200184a7f7bbbe3b72a0f86f4cf"
+              },
+              "stderr_tail": "Traceback (most recent call last):\n  File \"/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/prepare_vpr_bundle.py\", line 244, in <module>\n    print(json.dumps(prepare(p.parse_args()), indent=2))\n  File \"/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/prepare_vpr_bundle.py\", line 86, in prepare\n    raise ValueError('v1 importer does not silently omit root clock nets')\nValueError: v1 importer does not silently omit root clock nets\n"
+            }
+          ],
+          "completed_host_processes_before_failure": 0
+        },
+        "shared_staged_vs_interleaved": {
+          "completed": false,
+          "audited": false,
+          "outer_seconds": 12.396074516,
+          "process": {
+            "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/tseng/shared_staged_vs_interleaved_process.process.json",
+            "sha256": "84d284477b6c860533fc690999136b9c5b0ef378c63eea18af51566f8d11226e"
+          },
+          "failures": [
+            {
+              "receipt": {
+                "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/tseng/shared_staged_vs_interleaved/prepare.process.json",
+                "sha256": "28a8c66f5a912c80f0abd8292d1f4071b4a2dc663b6cce1cbb21674bcb1c5419"
+              },
+              "exit_status": 1,
+              "stderr": {
+                "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/independent_validation_v1/tseng/shared_staged_vs_interleaved/prepare.stderr.log",
+                "sha256": "32417a892d29aaf729c0d70a1f4358c5dfe84200184a7f7bbbe3b72a0f86f4cf"
+              },
+              "stderr_tail": "Traceback (most recent call last):\n  File \"/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/prepare_vpr_bundle.py\", line 244, in <module>\n    print(json.dumps(prepare(p.parse_args()), indent=2))\n  File \"/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/prepare_vpr_bundle.py\", line 86, in prepare\n    raise ValueError('v1 importer does not silently omit root clock nets')\nValueError: v1 importer does not silently omit root clock nets\n"
+            }
+          ],
+          "completed_host_processes_before_failure": 0
+        }
+      },
+      "initial_quality": {
+        "wirelength": 5260,
+        "cpd_ns": 6.64179
+      },
+      "initial_baseline": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/tseng/baseline/baseline.json",
+        "sha256": "748189f55dd7b0678810375bc1fb786f3ef2abe89a81f872e28c8ce8fb6b8fa5"
+      }
+    }
+  },
+  "limits": [
+    "Independent of FusionPAR development outcomes, not a universally untouched dataset: these inputs have prior TilePlace provenance",
+    "Local routed-design refinement, not full P&R from packing",
+    "Homogeneous single-layer supported mapping boundary; unsupported input is a coverage failure, not zero runtime",
+    "Shared-stage and equal-evaluation controls isolate different questions; neither establishes superiority over all mature placers",
+    "No physical U280, HBM throughput, board power or FPGA speedup claim",
+    "Five repeats test determinism, not five independent designs",
+    "other_host_seconds subtracts disjoint host native-adapter and router intervals from enclosing host process; residual includes loading, proposal generation, snapshots, accounting, other validation and bookkeeping; not pure proposal time",
+    "native_adapter_seconds is the host interval including candidate state serialization, Python startup and full adapter subprocess; not VPR-only execution time",
+    "prepare/validation timers overlap nested routing/native work and are not added to the disjoint cost decomposition",
+    "Failed suite partial host processes are retained separately and do not count as a completed five-repeat comparison"
+  ]
+}

@@ -1,0 +1,16 @@
+"""Freeze old-layout perconnection delay budgets with explicit rounding guard."""
+import json,xml.etree.ElementTree as ET
+from fractions import Fraction
+from pathlib import Path
+from pre_route_endpoints import sha
+ROOT=Path(__file__).resolve().parents[1];out=ROOT/'experiments/mux_connection_budgets_2026-10-06';out.mkdir();base=ROOT/'experiments/mux_old_interblock_rc_2026-10-06';aggregated=ROOT/'experiments/mux_old_aggregated_timing_2026-10-06';r=json.loads((base/'receipt.json').read_text());assert all(sha(p)==h for p,h in r['bindings'].items());old=json.loads((aggregated/'verification.json').read_text());bindings={str(base/'receipt.json'):sha(base/'receipt.json'),str(aggregated/'verification.json'):sha(aggregated/'verification.json')};rows=[]
+for w in (8,16,32):
+ ep_path=ROOT/f'experiments/mux_live_placement_updates_2026-10-06/w{w}/original_endpoints.json';ep=json.loads(ep_path.read_text());graph=Path(ep['inputs']['graph']['path']);nodes={int(n.get('id')):n for n in ET.parse(graph).getroot().find('rr_nodes')};table=aggregated/f'w{w}/canonical/identity.jsonl';ident={r['name']:r for r in map(json.loads,table.read_text().splitlines())};queries={}
+ for q in ep['connections']:
+  loc=nodes[q['sink']].find('loc');site=tuple(int(loc.get(k,'0'))for k in ('xlow','ylow','layer','ptc'));key=(ep['net_names'][str(q['net_id'])],site);assert key not in queries;queries[key]=q
+ samples_path=base/f'w{w}.json';samples=json.loads(samples_path.read_text());paths=next(x for x in old['rows']if x['width']==w);cpd=Fraction(str(paths['cpd_ns']));arrivals={p['rank']:Fraction(str(p['arrival_ns']))for p in paths['report_paths']};counts={rank:sum(s['rank']==rank for s in samples)for rank in arrivals};budgets={};constraints=[]
+ for s in samples:
+  pin=next(p for p in ident[s['atom_net']]['pins']if p['index']==s['sink_pin_index']);site=tuple(pin[k]for k in ('x','y','layer','class'));q=queries[s['atom_net'],site];cid=q['connection_id'];headroom=cpd-arrivals[s['rank']]+Fraction(1,1000);assert headroom>=0;delay=Fraction(s['xml_rr_delay_ns']);budget=min(Fraction(1),delay+headroom/counts[s['rank']]);budgets[cid]=min(budgets.get(cid,Fraction(1)),budget);constraints.append(dict(rank=s['rank'],connection_id=cid,old_rr_ns=str(delay),guarded_path_headroom_ns=str(headroom),external_connections_on_path=counts[s['rank']],budget_ns=str(budget)))
+ file=out/f'w{w}.json';file.write_text(json.dumps(dict(budgets_ns={str(c):str(b)for c,b in budgets.items()},constraints=constraints,default_budget_ns='1',scope='Old accepted paths only; equal headroom sharing, min across observed paths, cap1ns; 0.001ns guard. Unreported connections use1ns. No global CPD guarantee; local/intracluster changes not modeled.'),indent=2)+'\n');rows.append(dict(width=w,budgeted_connections=len(budgets),total_connections=len(ep['connections']),minimum_budget_ns=float(min(budgets.values())),maximum_budget_ns=float(max(budgets.values())),sha256=sha(file)))
+ for p in (ep_path,graph,table,samples_path):bindings[str(p)]=sha(p)
+(out/'protocol.json').write_text(json.dumps(dict(source_sha256=sha(Path(__file__)),bindings=bindings,rows=rows,policy='Allthree frozen before prediction; oldnativeCPD and roundedpatharrival, exactoldRR, equal perpath external headroom/minintersection/cap1ns. Experimental, not safe globalSTA bound.'),indent=2)+'\n');print(rows)

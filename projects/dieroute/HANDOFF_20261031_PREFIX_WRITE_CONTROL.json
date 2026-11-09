@@ -1,0 +1,42 @@
+{
+  "observed_ns": 1793416021314632429,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_SWAR_COMPOSITIONAL_PROOF.json",
+    "sha256": "c92f196a2bcddadc5590d51e53e697be860d329216f0cedbbc6c6f31fa665fa3"
+  },
+  "progress": {
+    "report": "work/resident_prefix_write_control_20261031/review.json",
+    "report_sha256": "a3a33f737828c456332706d03582cc13dca8e549b8bc5d14f9d9ddf204334566",
+    "independent_review": "work/resident_prefix_write_control_20261031/independent_review.json",
+    "independent_review_sha256": "7549c6860e4778817fd63f7b83113f6ec0d4619206ea255105b43488c5bf1d89",
+    "local_builders": 3,
+    "abstract_control_cases": 63,
+    "tag_induction_queries_unsat": 3,
+    "numerical_prefix_data_correctness_proved": false,
+    "actual_RAM_contents_validated": false,
+    "global_sequential_RTL_equivalence_proved": false,
+    "whole_program_lower_bound_certified": false,
+    "watchdog_failure_verdict": null,
+    "scope": "Source-fragment-bound abstract local prefix-loop control/tag model for three existing2022.2 RTL builders and shared flow-control helper, not HDL simulation/full Verilog equivalence. Assumes reset control, legal binary one-hot operation,no mid-call reset,valid blocks1..frozen maximum,held start through first completion then dropped. Source stalls are constant0. Local parent success path issues prefix0/zero before loop dispatch. Child two-round tag pipeline yields writes at1..blocks,including last write with first completion in the stated model; no extra post-completion write in tested abstract continuations. Sampled block counts/seeds exercise startup/drain; integer induction arithmetic checks saved prior-next tag(r-1)+1=r and address capacity for arbitrary admitted rounds. A complete extracted-control sequential equivalence proof is not supplied. This establishes a local address/control correspondence only, not numeric accumulated prefix data, initialized bit words, actual upper-level RAM delivery/ownership, global reachability or full runtime counts/timing/watchdog. No original program/trace/TV/.dat input, HLS/simulator/native flow, DUT edit, process control, guard/watchdog change or adoption.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v210_20261031/matrix.json",
+    "sha256": "57882f35cf917f2a0d1600f28a9ef603b43ac56337565a86a612ae04c41b2a19"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v210.json",
+    "sha256": "8f2a79348b8c1327ae3626b809dadcbcb2010b1b8798cc437df916cfc2df9998"
+  },
+  "next_action": "Local prefix output address/control startup-drain checked in stated source-bound model. Next verify accumulated numeric data, word-read coherence/validity and actual upper-level prepare/execute/RAM delivery before prefix-content or all-call/timing claims. Preserve original full jobs/guards/budgets and actual terminal prerequisite.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

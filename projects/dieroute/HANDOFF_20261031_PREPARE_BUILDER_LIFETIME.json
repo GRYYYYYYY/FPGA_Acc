@@ -1,0 +1,42 @@
+{
+  "observed_ns": 1793423802653213890,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_REMAINING_CALLER_OWNERSHIP.json",
+    "sha256": "6155b48fe83d5e37c14944dc563fbc0d5e87e6093696492ab89f4e946f657b7e"
+  },
+  "progress": {
+    "report": "work/resident_prepare_builder_lifetime_20261031/review.json",
+    "report_sha256": "1b9a1b289dc2ef90c47f876b88c6e10e2b5c2a2ac530f0c9827a3bcfc786a5f5",
+    "independent_review": "work/resident_prepare_builder_lifetime_20261031/independent_review.json",
+    "independent_review_sha256": "d68c33202d74eeb5d7225ef97bd3baf1fbcf55d005ee565c6bb97a096e64bce6",
+    "coupled_states": 695,
+    "unique_transitions": 972,
+    "simultaneous_builders": 4,
+    "mux_queries_unsat": 16,
+    "mux_integer_truth_cases": 224,
+    "full_sequential_HDL_equivalence_proved": false,
+    "cross_call_response_identity_proved": false,
+    "HDL_simulation_executed": false,
+    "scope": "Reset-started simultaneous control overapproximation couples prepare21states to all4builders(147/9/8/8states),4registered starts and2saved returns. Source critical prepare cases5..12,capture/launch/clear priority,child idle-start gating,terminal done/ready and shared clock/reset are checked. Other parent and non-idle child cases may choose any source target each edge;data/other child guards are overapproximated. All4binary old saved-return seeds start with idle child FSMs/start0. No midcall reset. Closed reachability proves at most1builder is non-idle/started. Any active builder has prepare wait6/8/10/12respectively and held start1;portal also has both saved successes1. All16read request/dequeue mux checks UNSAT prove ARADDR/ARLEN/ARVALID/RREADY select that builder in its active wait;ARREADY/RVALID/RDATA broadcast directly. Combined with the earlier outer call lifetime and immediate edge-operator caller proof,this supplies prepare-to-builder lifetime/selection for the complete builder set. Not child internal loop start/drain equivalence,complete cross-call intended response identity,request pointer/data validity,full sequential/4stateRTL equivalence,native success,watchdog/timing or board acceptance. Other subordinate helper completion guards are nondeterministic;their data/handshakes require their own contracts. No DUT/native process/input/cache/guard/budget changes or new HLS/Vivado flow.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v238_20261031/matrix.json",
+    "sha256": "98de890d30593cd9ab4cf99d4da847d5727a17d161ad339b3c6c1e1283d389c1"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v238.json",
+    "sha256": "22099fea135e1d0b6c6440028860d0745a45194ae4f225a001a34689f7fb7feb"
+  },
+  "next_action": "Verify delimiter-loop-to-builder call lifetime for all3families and compose the complete consumer hierarchy with local request-drain/credit contracts. Prepare-to-all4builder lifetime/selection/mutual exclusion now holds in simultaneous reset-started control model. Intended pointer/data/response identity and full sequential/native acceptance remain;preserve original jobs/guards/budgets/inputs/caches.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

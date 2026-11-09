@@ -1,0 +1,38 @@
+{
+  "observed_ns": 1793405173542763085,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_TYPED_REVIEW_REPORT_ROLES.json",
+    "sha256": "c9bd93cf8eea4605806516ad0fafb4901a5e8140fd4286b168f6e1befd29b142"
+  },
+  "progress": {
+    "report": "work/research_artifact_dependency_inventory_20261030/program_prefix_role_resolution_20261031.json",
+    "report_sha256": "bdbaa14bc6b90b328cf99abb51e09769cb8ba92c7e27977c3d6863940e61f97b",
+    "independent_review": "work/research_artifact_dependency_inventory_20261030/program_prefix_role_resolution_review_20261031.json",
+    "independent_review_sha256": "8b8597cc57ba19613d21a3288916b0896c4318ed5c09f08a946867bacee18d47",
+    "ledger": "work/research_artifact_dependency_inventory_20261030/original_hash_field_content_ledger_v15_20261031.json",
+    "ledger_sha256": "9d5125da83a9b76216af60d9f52d3aecad65e62f2fe512acf77b02b10b2a4fc8",
+    "cumulative_original_fields_bound": 9757,
+    "original_fields_not_bound": 211,
+    "root_paths_without_compatible_binding": 466,
+    "scope": "Exact declared dense-program whole-file and bounded original trace prefix/tag1-payload associations. Single big-endian install frame is reconstructed from the original dense program offset576 using original TV encoding; no sparseTV file was opened, read or statted, and no current TV content proof is claimed. Prefix/payload hashes do not reverify whole traces, snapshot chronology or all jobs. Historical complete TV proof is retained, not rerun. No C/native/RTL execution, adoption, speedup or original scope/denominator change; current generator bindings do not reconstruct missing historical provenance.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v175_20261031/matrix.json",
+    "sha256": "10cadb467436588a40a39d9f6a6f99f4282dccf8c7de9fa7f52c41d83b9cb582"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v175.json",
+    "sha256": "aa271bfd31ac575596c7e94bb86bd80bf0ff747de28f5f3b28cf9bcc3bf29f37"
+  },
+  "next_action": "Use ledger v15:9757/9968 original fields associated,211remaining over27phases;820separate transitive/466root gaps unchanged. Prefix/payload reads do not recertify whole traces; reconstructed BE install frame does not revalidate current sparseTV. No TV was opened/read/statted. Current matrix331claims preserves330old claims. Preserve30monitored handles and full-positive/canary/20GiB/12GiB/global72guards; no restart, rerun or new hardware acceptance.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

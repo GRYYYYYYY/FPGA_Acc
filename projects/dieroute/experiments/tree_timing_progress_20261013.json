@@ -1,0 +1,103 @@
+{
+  "schema": "dieroute.tree_timing_progress.v1",
+  "verified_utc": "2026-10-13T05:23:39.745926+00:00",
+  "research_complete": false,
+  "board_result": false,
+  "active_processes": [],
+  "core_sha256": {
+    "src/rr_backend.cpp": "106ccc39843c9c8fa15799167c9705c0b1615a8ae7b7e40a5fea52f59efa0e2c",
+    "include/rr_backend.hpp": "0bb5bfeabaf25d9df6b465db1878d2e90a66b43656dccecd06f82c8a307e7b9a",
+    "host/rr_host.cpp": "ac6b240f174e10f04a789775cf2a917d1d034d624787162cfe6fea2393499c26"
+  },
+  "test_sha256": "1e7c7cfa857428d72eb8d7f13b7bbd488b157e02221e9ab91971c498efb35813",
+  "current_core_matches_frozen_timing_v2": true,
+  "implementation": [
+    "Exposed and recorded Q8 upstream route-tree timing weight; default remains zero",
+    "Portal preselection now includes seed cost consistently with detailed local search"
+  ],
+  "checks": [
+    {
+      "path": "work/tree_timing_verification_20261013/ctest.log",
+      "sha256": "0a16956e050f061c99328285067e4d1ccc40edf07abaa1bc18c2a02df4d80242"
+    },
+    {
+      "path": "work/tree_timing_verification_20261013/asan_ubsan.log",
+      "sha256": "d2f3003cf8701351d688e3b1693854771669e2df8d78f9ad274e5ff53e027387"
+    },
+    {
+      "path": "work/tree_timing_verification_20261013/regression_old_backend.log",
+      "sha256": "88224c942611fb7a6b7fd62cd1b9cd52bbe853dae589b8e2d891c8c450e88ad4"
+    },
+    {
+      "path": "work/tree_timing_verification_20261013/regression_reproduction.json",
+      "sha256": "f450207851ea9bc607fed5864dcce9a54705653e23a3e05add4066301aae56d4"
+    },
+    {
+      "path": "work/tree_timing_verification_20261013/config_validation.json",
+      "sha256": "234ba14a85d821ee25456ec789ed4eb3776683bdf8c3c270fb1d3033ba9726a6"
+    },
+    {
+      "path": "work/tree_timing_verification_20261013/diff_check.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "experiments/tree_timing_v1_audit_20261013.json",
+      "sha256": "f6b1a0f245397edc6e15fb507be63e36e09eae4beb461dde44a826e7b42b5fc6",
+      "experiments": 3
+    },
+    {
+      "path": "experiments/tree_timing_v2_audit_20261013.json",
+      "sha256": "c3f4f50f0f057c41167b8ad41a83532a11be568a8b3b841ab25cff1984efd517",
+      "experiments": 3
+    },
+    {
+      "path": "experiments/tree_timing_feedback_v1_audit_20261013.json",
+      "sha256": "d509513b58c35c7f86d94756007ae7d4d225f9a67c2ce3ece7f1bc692eca75f5",
+      "experiments": 1
+    },
+    {
+      "path": "experiments/tree_timing_feedback_v2_audit_20261013.json",
+      "sha256": "a66cea3a7795a853b7b9de3f1759113bf5febe2dbf168bc1110898ae15a009ca",
+      "experiments": 1
+    }
+  ],
+  "preselection_fix_native_output_comparison": [
+    {
+      "v1": "work/rr_pair_diffeq_tree256_v1_20261013/pair.json",
+      "v2": "work/rr_pair_diffeq_tree256_v2_20261013/pair.json",
+      "all_five_semantic_output_maps_identical": true
+    },
+    {
+      "v1": "work/rr_pair_alu4_tree256_v1_20261013/pair.json",
+      "v2": "work/rr_pair_alu4_tree256_v2_20261013/pair.json",
+      "all_five_semantic_output_maps_identical": true
+    },
+    {
+      "v1": "work/rr_pair_ex5p_tree256_v1_20261013/pair.json",
+      "v2": "work/rr_pair_ex5p_tree256_v2_20261013/pair.json",
+      "all_five_semantic_output_maps_identical": true
+    },
+    {
+      "v1": "work/rr_pair_diffeq_timing_tree256_v1_20261013/pair.json",
+      "v2": "work/rr_pair_diffeq_timing_tree256_v2_20261013/pair.json",
+      "all_five_semantic_output_maps_identical": true
+    }
+  ],
+  "result": "All eight experiment manifests audited. No joint VPR wirelength/CPD gate passes. Full weight improves some fixed-criticality timing results but generally increases wirelength; not selected as default.",
+  "latest_timing_diffeq": {
+    "weight_q": 256,
+    "mode": "downstream_bounded",
+    "iterations": 3,
+    "wirelength": 9525,
+    "critical_path_delay_ns": 7.63431,
+    "wirelength_delta_percent": 10.255816645445082,
+    "cpd_delta_percent": 0.2704328501704767
+  },
+  "next_work": [
+    "Study base/congestion/timing objective mismatch against native VPR source; assess joint quality instead of isolated timing improvement",
+    "Integrate concurrent authoritative boundary reservation and shadow version protocol into real RR closure",
+    "Commercial SLR/SLL input, larger/scaling cohorts, HBM hardware implementation, physical board evaluation and paper remain required"
+  ]
+}

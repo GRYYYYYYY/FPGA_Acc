@@ -1,0 +1,33 @@
+{
+  "status": "pass",
+  "scope": "separate canonical snapshot validator; low-level state and Python codec not yet strict by default",
+  "constrained_valid_fixtures": 12,
+  "real_diffeq_snapshot": "pass",
+  "malformed_snapshots_rejected": 8,
+  "files": [
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/hbm_abi/canonical_snapshot.hpp",
+      "sha256": "9e27b57be5af8a55371d4e0153ef3c22270c063f6343c2adecdcab56624343b3"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/hbm_abi/canonical_snapshot_query.cpp",
+      "sha256": "861815def2fb018544fc3439407ed312362f02e5adcf1a4eb05ce22baccc4d7d"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/hbm_abi/test_canonical_snapshot.py",
+      "sha256": "62bb859c866e3ffbfac83657190424cefcad72a58e0760a5cc0e4088c2ee6f25"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/hbm_abi/flat_placement.hpp",
+      "sha256": "306ac0419f9ec93ce02b220b8665a5896e213f14364b64a9ee114b283ee9671c"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/hbm_abi/flat_trial_cost.hpp",
+      "sha256": "7cc3f3eb2aa6772fa75c1c95df9c6220fa6c5509974e1ca77a69c5e2e824cb9a"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/hbm_abi/flat_pressure.hpp",
+      "sha256": "e6cbf85b8e45a72c2f74a64d97b608c3f59d39410258d794c2ce2fc140ab54e1"
+    }
+  ]
+}

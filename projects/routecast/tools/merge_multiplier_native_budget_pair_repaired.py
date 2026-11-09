@@ -1,0 +1,23 @@
+"""Evaluate audited-shape two-NET replacement, reference budgets explicit."""
+import json,shutil
+from pathlib import Path
+from collections import defaultdict,Counter
+from prepared_csr import read
+from buffered_rc_context import load
+from csr_exact_buffered_rc import ExactBufferedRC
+from immutable_xml_prediction_audit import ImmutableXMLAudit
+from pre_route_endpoints import sha
+root=Path(__file__).resolve().parents[1];base=root/'experiments';out=base/'multiplier_native_budget_pair_v3_2026-10-06';out.mkdir();shutil.copyfile(Path(__file__),out/'source.py');name='mult_6x6';parent=base/'multiplier_rc_repeated_sweeps_2026-10-06'/name;files=[parent/'iteration_4_prediction.json',base/'multiplier_native_budget_net4_displacement_2026-10-06/mult_6x6_net_4_candidate.json',base/'multiplier_rc_overuse_avoidance_2026-10-06/mult_6x6_net_11_candidate.json'];bindings={str(p):sha(p) for p in files};preds=[json.loads(p.read_text()) for p in files];rows=[r for r in preds[0]['connections'] if r['net_id'] not in (4,11)]+[r for r in preds[1]['connections'] if r['net_id']==4]+[r for r in preds[2]['connections'] if r['net_id']==11];rows.sort(key=lambda r:r['connection_id']);assert len(rows)==129==len({r['connection_id'] for r in rows});budgets=base/'multiplier_native_reference_rc_budgets_2026-10-06/budgets.json';bindings[str(budgets)]=sha(budgets);bs={r['connection_id']:r for r in json.loads(budgets.read_text())};graph=json.loads((base/'multiplier_family_predictions_2026-10-06'/name/'sparse_reset/protocol.json').read_text())['inputs']['graph'];m,f=read(base/'multiplier_family_length_switch_csr_2026-10-06'/name/'csr',graph['sha256']);rc=ExactBufferedRC(f,*load(base/'multiplier_cw300_exact_buffered_rc_classes_2026-10-06'/name,graph['sha256']));slots={f['edge_ids'][i]:(u,f['dest_ranks'][i]) for u in range(m['nodes']) for i in range(f['row_offsets'][u],f['row_offsets'][u+1])};unions=defaultdict(set);violations=[];from fractions import Fraction
+witnessfile=base/'multiplier_native_reference_rc_budgets_2026-10-06/native_class_witness.json';bindings[str(witnessfile)]=sha(witnessfile);witness={(x['net_id'],x['source'],x['sink']):x['native_paths'] for x in json.loads(witnessfile.read_text())}
+for r in rows:
+ if r['net_id']==26:
+  paths=witness[(r['net_id'],r['source'],r['sink'])];assert len(paths)==1;r['physical_edge_ids']=paths[0]['physical_edge_ids'];r['method']='native_reference_repair'
+for r in rows:
+ b=bs[r['connection_id']];assert all(r[k]==b[k] for k in ('net_id','source','sink'));delay=rc.path(r['source'],r['sink'],r['physical_edge_ids']);
+ if delay>Fraction(*b['exact_delay_s']):violations.append({'connection_id':r['connection_id'],'net_id':r['net_id'],'exact_delay_s':[delay.numerator,delay.denominator],'budget_s':b['exact_delay_s']})
+ unions[r['net_id']].add(r['source'])
+ for eid in r['physical_edge_ids']:unions[r['net_id']].update(slots[eid])
+occ=Counter(n for u in unions.values() for n in u);pred={**preds[0],'connections':rows,'node_occupancy':{str(n):v for n,v in occ.items() if v},'methods':dict(Counter(r['method'] for r in rows))};eps=json.loads((parent/'iteration_4_endpoints.json').read_text());xml=ImmutableXMLAudit(graph['path'],graph['sha256']);audit=xml.verify(eps,pred,topology=True)
+for net in (4,11,26):
+ r=next(x for x in audit['net_union_topology']['nets'] if x['net_id']==net);assert not r['cyclic_union'] and not r['internal_multi_incoming_nodes'] and not r['source_has_incoming']
+(out/'prediction.json').write_text(json.dumps(pred)+'\n');(out/'physical.json').write_text(json.dumps(audit,indent=2)+'\n');assert all(sha(p)==h for p,h in bindings.items());(out/'receipt.json').write_text(json.dumps({'source_sha256':sha(out/'source.py'),'inputs_sha256':bindings,'prediction_sha256':sha(out/'prediction.json'),'physical_sha256':sha(out/'physical.json'),'budget_policy':'same_layout_native_reference_class_group_maximum','overflow':audit['all_type_overuse_units'],'status':'REJECTED_RC' if violations else 'CANDIDATE','rc_violations':violations,'scope':'Offline NET4/11 combination plus complete NET26 native-reference repair, All129 path RC witnesses checked against postroute reference budgets; any violations reject candidate, XML physical/tree union audited. No live joint search/publication or performance claim.'},indent=2)+'\n');print('overflow',audit['all_type_overuse_units'],'violations',violations)

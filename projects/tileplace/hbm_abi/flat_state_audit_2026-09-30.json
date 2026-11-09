@@ -1,0 +1,34 @@
+{
+  "status": "pass",
+  "scope": "12 constrained fixture state transitions; no native HLS integration",
+  "fixtures": 12,
+  "legal_commits": 24,
+  "illegal_commits_rejected": 12,
+  "snapshot_restores": 12,
+  "files": [
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/hbm_abi/flat_state.hpp",
+      "sha256": "ebecd8ea6e5bf87fddadef4976bb0e629e6afd625083ef504c492cced8f4a582"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/hbm_abi/flat_mutable_cost.hpp",
+      "sha256": "fa8bd15f5ae63cd429d08276ddc0eb3ba1fabe2e025f7b0876231bf9060e65bb"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/hbm_abi/flat_placement.hpp",
+      "sha256": "306ac0419f9ec93ce02b220b8665a5896e213f14364b64a9ee114b283ee9671c"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/hbm_abi/flat_trial_cost.hpp",
+      "sha256": "7cc3f3eb2aa6772fa75c1c95df9c6220fa6c5509974e1ca77a69c5e2e824cb9a"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/hbm_abi/flat_state_query.cpp",
+      "sha256": "1932ede993cd964dbc999f1bdea395cd8ba42c588ca92a61b9fed0c54dc6bcb9"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/hbm_abi/test_flat_state.py",
+      "sha256": "4c27d8e2c3162044249e741f8718ac9a2e5c3ab7d5828cf96d9cc156bfc82046"
+    }
+  ]
+}

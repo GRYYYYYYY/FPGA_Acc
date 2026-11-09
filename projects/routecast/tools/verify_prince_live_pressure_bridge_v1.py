@@ -1,0 +1,17 @@
+"""Actual live owner copies -> frozen wholeNET pressure snapshots, no native mutation."""
+import json,struct
+from pathlib import Path
+from pre_route_endpoints import sha
+from owner_conditioned_pressure_v2 import Snapshot,PHASE
+R=Path(__file__).resolve().parents[1];E=R/'experiments';D=E/'prince_owned_ready_trial_v1_2026-10-20'
+def main():
+ ownp=D/'ownership_verification_v1.json';oldp=E/'prince_owner_pressure_v2_2026-10-20/verification.json';assert json.loads(ownp.read_text())['capture_frames']==227;old=json.loads(oldp.read_text());bindings={str(p):sha(p) for p in [ownp,oldp,Path(__file__),R/'tools/owner_conditioned_pressure_v2.py']};rows=[]
+ for row in old['rows']:
+  case=row['case'];i=row['iteration'];d=D/case/'capture';owner=d/'owners'/f'owners_{i}.bin';raw=owner.read_bytes();iteration,n=struct.unpack_from('<QQ',raw,8);assert iteration==i;offset=24;groups={}
+  for _ in range(n):
+   net,endpoint,count=struct.unpack_from('<QQQ',raw,offset);offset+=24;groups[net]=frozenset(struct.unpack_from('<'+'Q'*count,raw,offset));offset+=count*8
+  assert offset==len(raw);reference=Path(row['owner_payload']);assert sha(reference)==row['owner_sha256'];assert groups=={int(n):frozenset(nodes) for n,nodes in json.loads(reference.read_text()).items()};rp=E/'prince_quality_domains_v1_2026-10-20'/case.split('/')[0]/'resources.jsonl';caps={x['id']:x['capacity'] for x in map(json.loads,rp.open())};RR=d/'boundary'/f'iteration_{i}.bin';rr=RR.read_bytes();occupancy={n:occ for n,kind,occ,cap,word in struct.iter_unpack('<QIiiI',rr[24:]) if n in caps};phasep=d/'callback.tsv.owners.tsv';phase=[list(map(int,s.split())) for s in phasep.read_text().splitlines()][i-1];ids=(d/'identity.txt').read_text().splitlines();resolved=(d/'callback.tsv.resolved.sha256').read_text().strip();identity=(case,i,ids[0],ids[1],ids[2],ids[3],ids[6],resolved,PHASE);snapshot=Snapshot(identity,caps,occupancy,groups,phase[-1]);assert snapshot.pres_bits==row['pres_bits'];oldRR=E/'prince_resident_phase_trial_v1_2026-10-20'/case/'capture/boundary'/f'iteration_{i}.bin';previous={n:occ for n,kind,occ,cap,word in struct.iter_unpack('<QIiiI',oldRR.read_bytes()[24:]) if n in caps};assert occupancy==previous
+  net=next(n for n,nodes in groups.items() if nodes);node=next(iter(groups[net]));assert snapshot.view(net,identity).multiplier_bits(node)==snapshot.view(net,identity).multiplier_bits(node);rows.append(dict(case=case,iteration=i,roles=row['roles'],NETs=len(groups),identity=dict(case=case,iteration=i,graph=ids[0],netlist=ids[1],placement=ids[2],binary=ids[3],launch_configuration=ids[6],resolved_configuration=resolved,phase=PHASE),algebra_inputs_equal_previously_CPP_checked_reference=True))
+  for p in [owner,reference,rp,RR,oldRR,phasep,d/'identity.txt',d/'callback.tsv.resolved.sha256']:bindings[str(p)]=sha(p)
+ assert len(rows)==33 and all(sha(p)==h for p,h in bindings.items());(D/'pressure_input_bridge_verification_v1.json').write_text(json.dumps(dict(rows=rows,snapshots=33,bindings=bindings,scope='Copied guarded live owner/RR/pres/identity data admitted to frozen pre-release pressure snapshot. Count/capacity/owner/pres inputs exactly equal earlier independent CPP-scalar reference snapshots. Identity now also binds actual resolved native options. No additional native cost query, pressure injection, mutable owner release, connection-router equivalence or utility gain claimed.'),indent=2)+'\n');print('LIVE_PRESSURE_INPUT_BRIDGE_PASS',len(rows))
+if __name__=='__main__':main()

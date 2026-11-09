@@ -1,0 +1,46 @@
+{
+  "observed_ns": 1793440914383221495,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_MARKER_READ32_TRANSPORT.json",
+    "sha256": "7f3a45283af95231f9844695dcc5487657766f08225278c2b9908581fe19b07d"
+  },
+  "progress": {
+    "report": "work/resident_install_stream_identity_20261031/review.json",
+    "report_sha256": "f69132f47d7144a0d4555949642446fb077ce261de44c3086fb4797383647b89",
+    "independent_review": "work/resident_install_stream_identity_20261031/independent_review.json",
+    "independent_review_sha256": "9eb6cb0e0095065ddff84988767a305f9aa4c56c91fc474286c69a08cb6cd1b0",
+    "final_review": "work/resident_install_stream_identity_20261031/final_review.json",
+    "final_review_sha256": "283a235095f6a1264fc294b5a88966c94362dba099442c362a731c42fa51876f",
+    "new_feasible_UNSAT_queries": 7,
+    "coupled_event_runs": 4,
+    "requests_per_run": 456,
+    "drained_call_groups_per_run": 9,
+    "conditional_internal_response_identity_composed": true,
+    "external_protocol_correctness_proved": false,
+    "full_RTL_refinement_proved": false,
+    "actual_encoded_memory_contract_proved": false,
+    "scope": "Conditionalaccepted-streamidentitycomposition over14SHA-verifiedcomponentreports. SevenfeasibleSMTlemmas separateordinalprefixLIAfrompointwiseBV-arraypayloadreasoning;originalmixedqueryUNKNOWNretained. Internalresponsej equalsstableexternalmemory[(internalrequestj<<3)]undercomponentaccepted-prefix/ordercontracts andcorrectorderedonebeatID0externalreturns. Resetemptybase,drainedcallentry,andone-request-per-rowcomposemarkerrowiwithglobalordinalK+i. Fourcoupledcomponent-eventruns of456requests/ninedrainedgroupsincludeactual-depth69request/256response/16credit/16burstFIFOs,loadslot,request/response slices,addresscore anddelayedcreditretirement. Source-modelcontractsandcorrectexternalprotocolarestillpremises;nofullRTL/4state/native/completeimage/timing/boardorlivenessproof.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v270_20261031/matrix.json",
+    "sha256": "4b81e8b132ae26acfed6451825ef9ccd67116e78904fbb3454eded87bb93614f"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v270.json",
+    "sha256": "24c6f7dde971fb2bb2a0fe0b985166afdaa01a9e96c93a2938cc1d3c58326976"
+  },
+  "next_action": "Composeactualreversewordclear+markerrow/read32/validation/RMW/callcontrol+conditionalinstallstreamidentity into complete initializedunarywordimage forvalidmonotoneoffsettable. Connectstablememoryprefixrecurrence/readytotaln+1andunaryselect/getdelimitercontracts;check B/Oalignment/layout/hostslotvalueidentity. Keepcorrectexternalorderedmemoryprotocol andcomponent source-modelrefinementexplicit;no full4state/native/boardclaim. Preserveoriginaljobs/guards/budgets/inputs/caches/failures/UNKNOWNs.",
+  "previous_goal_turn_classification": "progress_and_verified_wait_v269",
+  "current_goal_turn_classification": "progress_and_verified_wait",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

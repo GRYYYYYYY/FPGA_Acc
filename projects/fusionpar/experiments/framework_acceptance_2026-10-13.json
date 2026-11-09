@@ -1,0 +1,300 @@
+{
+  "schema": "FUSIONPAR_INITIAL_FRAMEWORK_ACCEPTANCE_V1",
+  "observed_utc": "2026-10-13T13:19:13.738801+00:00",
+  "objective": "按照上述分析开展fusionpar工作",
+  "status": "initial_framework_implemented_and_verified",
+  "scope": "C++ joint transaction framework, real VPR closure, paired sequential/interleaved development evaluation",
+  "scope_source": "Original G1-G3 early framework plan; advanced upstream policies, DR and hardware optimization remain explicitly deferred",
+  "requirements": [
+    {
+      "id": "R1",
+      "requirement": "Replaceable TP/RC boundaries and real PR integration",
+      "assessment": "verified_with_declared_scope",
+      "evidence": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/include/joint_state.hpp",
+          "sha256": "db050ab6c442e4ae70d5b9cf3e2062ce92eb086e6d629aa2a17cdb20c5d367d9"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/CMakeLists.txt",
+          "sha256": "3905d4a86391ccf278a3c2a68c31d7b4b58f3f59ffecd9dcf8cca1830c8ad3b9"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/FRAMEWORK_CONTRACT.md",
+          "sha256": "22f4955e1add93daa6d195a3d311c0f6b79ad7e9d32684b02567667212702490"
+        }
+      ]
+    },
+    {
+      "id": "R2",
+      "requirement": "Unified placement/site/route/resource state and versions",
+      "assessment": "verified_with_declared_scope",
+      "evidence": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/include/joint_state.hpp",
+          "sha256": "db050ab6c442e4ae70d5b9cf3e2062ce92eb086e6d629aa2a17cdb20c5d367d9"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/src/joint_state.cpp",
+          "sha256": "4e9f1caca7311b9b955bdbc060b3246ec36dd3416c5debb2df2129c96afaa9bc"
+        }
+      ]
+    },
+    {
+      "id": "R3",
+      "requirement": "Atomic prepare/commit, failure isolation, stale timing/state and transaction ownership rejection",
+      "assessment": "verified_with_declared_scope",
+      "evidence": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/src/joint_state.cpp",
+          "sha256": "4e9f1caca7311b9b955bdbc060b3246ec36dd3416c5debb2df2129c96afaa9bc"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tb/joint_state_tb.cpp",
+          "sha256": "543f158fe3b1c4e1368b5a56366e54d375fc32bae58bdb53be712316ea4e5a2d"
+        }
+      ]
+    },
+    {
+      "id": "R4",
+      "requirement": "Affected-net endpoint remapping, exact shared occupancy and version updates",
+      "assessment": "verified_with_declared_scope",
+      "evidence": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/src/joint_state.cpp",
+          "sha256": "4e9f1caca7311b9b955bdbc060b3246ec36dd3416c5debb2df2129c96afaa9bc"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/audit_development.py",
+          "sha256": "4fce8add2fea4de971a78f7b37838ffc1cc6ca2c27a0b8a90456e1f5cf83fc04"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tb/joint_state_tb.cpp",
+          "sha256": "543f158fe3b1c4e1368b5a56366e54d375fc32bae58bdb53be712316ea4e5a2d"
+        }
+      ]
+    },
+    {
+      "id": "R5",
+      "requirement": "Placement constraints and explicit unsupported-input rejection",
+      "assessment": "verified_with_declared_scope",
+      "evidence": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/src/joint_state.cpp",
+          "sha256": "4e9f1caca7311b9b955bdbc060b3246ec36dd3416c5debb2df2129c96afaa9bc"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/prepare_vpr_bundle.py",
+          "sha256": "789c497087d62cd8a7a0dbeb08f871f535107454d6e92ab9042e7c2f2e7c7ab0"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/validate_candidate.py",
+          "sha256": "3ef39aa7fc06163aa6943d1605e5a3fc9ffe16aabc440d2a4a707e38f9415f33"
+        }
+      ]
+    },
+    {
+      "id": "R6",
+      "requirement": "Native timing barrier and complete current-revision connection snapshots",
+      "assessment": "verified_with_declared_scope",
+      "evidence": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/host/joint_host.cpp",
+          "sha256": "5f858c23d64fd81e6b742780e9a27152a6166b5ed7eb5cd28cc61a6140d1d3d2"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/validate_candidate.py",
+          "sha256": "3ef39aa7fc06163aa6943d1605e5a3fc9ffe16aabc440d2a4a707e38f9415f33"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/audit_development.py",
+          "sha256": "4fce8add2fea4de971a78f7b37838ffc1cc6ca2c27a0b8a90456e1f5cf83fc04"
+        }
+      ]
+    },
+    {
+      "id": "R7",
+      "requirement": "Legal routed-design to moved PR candidate to native validation and publication",
+      "assessment": "verified_with_declared_scope",
+      "evidence": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/prepare_vpr_bundle.py",
+          "sha256": "789c497087d62cd8a7a0dbeb08f871f535107454d6e92ab9042e7c2f2e7c7ab0"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/host/joint_host.cpp",
+          "sha256": "5f858c23d64fd81e6b742780e9a27152a6166b5ed7eb5cd28cc61a6140d1d3d2"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/validate_candidate.py",
+          "sha256": "3ef39aa7fc06163aa6943d1605e5a3fc9ffe16aabc440d2a4a707e38f9415f33"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/independent_validation_status_2026-10-13.json",
+          "sha256": "e1b26dacf3f2895860a3ee25e456841c17e09f54b75e2bc7800cf7b8043b75c0"
+        }
+      ]
+    },
+    {
+      "id": "R8",
+      "requirement": "Retained branches with paired empty-tree control",
+      "assessment": "verified_with_declared_scope",
+      "evidence": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/src/retained_router.cpp",
+          "sha256": "8e0a08a45caeb7024b2d9b982c5a2a7272323778b1755114ecef3eb2fd6aeea4"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tb/joint_state_tb.cpp",
+          "sha256": "543f158fe3b1c4e1368b5a56366e54d375fc32bae58bdb53be712316ea4e5a2d"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/TREE_REUSE_RESULTS.md",
+          "sha256": "115d9548067ced0fc797b40ad564e7bcd1ea7e6df12b6f94cceafa4f924e7bd0"
+        }
+      ]
+    },
+    {
+      "id": "R9",
+      "requirement": "Failure feedback, bounded placement repair, duplicate suppression and equal total evaluation budget",
+      "assessment": "verified_with_declared_scope",
+      "evidence": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/src/joint_repair.cpp",
+          "sha256": "e714555ad2e16451202ec1157eef04db4fbf840411d0eb9f6b2c53f5bd1fd09a"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/host/joint_host.cpp",
+          "sha256": "5f858c23d64fd81e6b742780e9a27152a6166b5ed7eb5cd28cc61a6140d1d3d2"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/feedback_budget_status_2026-10-13.json",
+          "sha256": "869955f7d273f5819138b829b9f32421462b3f0b72b496e4abfad070bec34213"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/feedback_budget_auditor_regression_2026-10-13.json",
+          "sha256": "e485d923fd0cf5412f828049bc910d047b2c6d9049fd6165c8db8f8591795cb9"
+        }
+      ]
+    },
+    {
+      "id": "R10",
+      "requirement": "Regression, repeated full semantics and independent publication audit",
+      "assessment": "verified_with_declared_scope",
+      "evidence": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tb/joint_state_tb.cpp",
+          "sha256": "543f158fe3b1c4e1368b5a56366e54d375fc32bae58bdb53be712316ea4e5a2d"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/audit_development.py",
+          "sha256": "4fce8add2fea4de971a78f7b37838ffc1cc6ca2c27a0b8a90456e1f5cf83fc04"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/framework_evidence_recheck_2026-10-13.json",
+          "sha256": "c9341a23740e8bb572058888758df66e2223d2efbc82db36cb725b15b6168cf4"
+        }
+      ]
+    },
+    {
+      "id": "R11",
+      "requirement": "Same-component staged/shared/interleaved and repair controls",
+      "assessment": "verified_with_declared_scope",
+      "evidence": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/controller_baselines_status_2026-10-13.json",
+          "sha256": "242b0089e9dc3d394bcacd1d9a65178e10f3708291792cbf70a1575d811799c9"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/independent_validation_status_2026-10-13.json",
+          "sha256": "e1b26dacf3f2895860a3ee25e456841c17e09f54b75e2bc7800cf7b8043b75c0"
+        }
+      ]
+    },
+    {
+      "id": "R12",
+      "requirement": "Strong TP reference with common final objective and explicit work/budget limitations",
+      "assessment": "verified_with_declared_scope",
+      "evidence": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/tp_checkpoint_contract_audit_2026-10-13.json",
+          "sha256": "0eeccbc0ec6bde8b2e1a66867a40e64428317b73616eaaf38ac7f04d31874b7d"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/tp_budget_reference_status_2026-10-13.json",
+          "sha256": "962ad7e543f2c2deeae7100bdce856ee709aee122d5dad7a490257fd92b4bc2b"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/tp_budget_artifact_recheck_2026-10-13.json",
+          "sha256": "108e0ba40135caf922c72d152cce3ca455ccee5b9bf11ee954a82611c1a60b62"
+        }
+      ]
+    },
+    {
+      "id": "R13",
+      "requirement": "Complete costs, frozen input selection and failure denominator",
+      "assessment": "verified_with_declared_scope",
+      "evidence": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/run_development.py",
+          "sha256": "69d98fb2481f2afdf891138020aaac87436b9b6c530ba475b7d91283ac47d37d"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/run_independent_validation.py",
+          "sha256": "7e1464d9960c5596ea52c2d4270c894fcea967b75a578b024040b2748544dbe4"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/independent_validation_protocol_2026-10-13.json",
+          "sha256": "e4ab9218373ae1bde288d7ac2a4f6fa30ceb562db8634a70e03a7263545d10a1"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/INDEPENDENT_VALIDATION_RESULTS.md",
+          "sha256": "e562437f8d808abd2edc66c69a32b386957667a222890338693d3ca0f8928448"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/framework_evidence_recheck_2026-10-13.json",
+          "sha256": "c9341a23740e8bb572058888758df66e2223d2efbc82db36cb725b15b6168cf4"
+        }
+      ]
+    }
+  ],
+  "acceptance_report": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/FRAMEWORK_ACCEPTANCE.md",
+    "sha256": "c7734e1f1b1635267dd6f8d81f24927cfa185b1d8ca5cec7a8b15d732176c27a"
+  },
+  "final_evidence_recheck": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/framework_evidence_recheck_2026-10-13.json",
+    "sha256": "c9341a23740e8bb572058888758df66e2223d2efbc82db36cb725b15b6168cf4"
+  },
+  "counts": {
+    "selected_designs": 6,
+    "expected_suites": 12,
+    "audited_suites": 8,
+    "failed_suites": 4,
+    "completed_host_runs": 80,
+    "qor_commits": 35,
+    "aborts": 405,
+    "timing_barriers": 115,
+    "placement_repairs": 105,
+    "fully_audited_designs": 4
+  },
+  "regression": {
+    "ctest_suites": 12,
+    "tests_per_suite": 3,
+    "cpp_joint_checks_per_suite": 113,
+    "python_cache_tests_per_suite": 6,
+    "method": "Existing completed logs rechecked against current frozen implementation, not a new test or native measurement"
+  },
+  "scientific_result": "No general fusion advantage demonstrated; equal-nine-evaluation feedback worse on three supported independent designs and equal on one",
+  "unimplemented_boundaries": [
+    "Root-clock/ignored-net support on s38584.1 and tseng",
+    "Advanced TP proposal integration and RC predictor evaluation",
+    "DR multi-die extension",
+    "Scalable proposal generation",
+    "Full P&R from packing",
+    "Concurrent disjoint joint publication",
+    "Binary/HBM ABI and complete HLS/RTL transaction loop",
+    "Physical FPGA measurements"
+  ],
+  "full_paper_or_hardware_completion": false
+}

@@ -1,0 +1,40 @@
+--- a/vpr/src/route/route_net.cpp
++++ b/vpr/src/route/route_net.cpp
+@@ -25,6 +25,10 @@
+ 
+     bool ripup_high_fanout_nets = check_hold(router_opts, worst_neg_slack);
+     int num_sinks = net_list.net_sinks(net_id).size();
++    const bool dieroute_had_tree = bool(tree);
++    const std::size_t dieroute_old_remaining = tree ? tree->get_remaining_isinks().size() : std::size_t(num_sinks);
++    int dieroute_setup_action = 0; // 0 full reset, 1 partial prune result, 2 fully pruned.
++
+ 
+     // for nets below a certain size (min_incremental_reroute_fanout), rip up any old routing
+     // otherwise, we incrementally reroute by reusing legal parts of the previous iteration
+@@ -63,6 +67,7 @@
+ 
+         if (pruned_tree2) { //Partially pruned
+             profiling::route_tree_preserved();
++            dieroute_setup_action = 1;
+ 
+             // Add back congestion for the pruned route tree
+             pathfinder_update_cost_from_route_tree(pruned_tree2->root(), 1);
+@@ -70,6 +75,7 @@
+             tree = std::move(pruned_tree2.value());
+         } else { // Fully destroyed
+             profiling::route_tree_pruned();
++            dieroute_setup_action = 2;
+ 
+             // Initialize only to source
+             tree = RouteTree(net_id);
+@@ -91,6 +97,10 @@
+         update_rr_route_inf_from_tree(tree->root());
+     }
+ 
++    VTR_LOG("DIEROUTE_SETUP,%d,%zu,%d,%d,%u,%zu,%zu,%u,%u\n",
++            itry, std::size_t(net_id), num_sinks, dieroute_setup_action,
++            unsigned(dieroute_had_tree), dieroute_old_remaining,
++            tree->get_remaining_isinks().size(), unsigned(itry == 1), unsigned(ripup_high_fanout_nets));
+     // completed constructing the partial route tree and updated all other data structures to match
+ }
+ 

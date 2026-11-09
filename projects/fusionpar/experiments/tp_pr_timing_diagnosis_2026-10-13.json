@@ -1,0 +1,172 @@
+{
+  "schema": "FUSIONPAR_FULL_REROUTE_TIMING_DIAGNOSIS_V1",
+  "designs": {
+    "ex5p": {
+      "edge_delay_model": "VPR buffered local T_linear (ps), pass switch local RC approximation",
+      "connections": 1916,
+      "nonzero_initial_criticalities": 1916,
+      "min_criticality": 12191,
+      "max_criticality": 65535,
+      "moved_instances": 0,
+      "CPD_change_from_TP_ns": 1.02055,
+      "WL_change_from_TP": -50,
+      "groups": {
+        "unchanged_endpoints_path_changed": {
+          "connections": 1748,
+          "delay_increased": 908,
+          "delay_decreased": 628,
+          "positive_delay_ps": 172111,
+          "negative_delay_ps": -13473,
+          "connection_path_wire_delta": 4289
+        },
+        "unchanged_endpoints_same_path": {
+          "connections": 168,
+          "delay_increased": 0,
+          "delay_decreased": 0,
+          "positive_delay_ps": 0,
+          "negative_delay_ps": 0,
+          "connection_path_wire_delta": 0
+        }
+      },
+      "sources": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/ex5p_tp_pr_delay_attribution_2026-10-13.json",
+          "sha256": "99ae039a734d8fd651b2812671bf1c6825990b8782d1b794fd850cd9455b9005"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/ex5p_frozen_tp_pr_v2/routing/audit.json",
+          "sha256": "47bc048f8f5166bfe81bd6d70bb827a043a6058f69e4b61f1d450fa792713aa6"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/ex5p_frozen_tp_pr_v2/routing/bundle/manifest.json",
+          "sha256": "834360dea60f311f8b7719dc3330d99cc493d79e05ccb989f69aedcf33c0906d"
+        }
+      ]
+    },
+    "alu4": {
+      "edge_delay_model": "VPR buffered local T_linear (ps), pass switch local RC approximation",
+      "connections": 2331,
+      "nonzero_initial_criticalities": 2331,
+      "min_criticality": 19182,
+      "max_criticality": 65535,
+      "moved_instances": 0,
+      "CPD_change_from_TP_ns": 0.8343499999999997,
+      "WL_change_from_TP": 69,
+      "groups": {
+        "unchanged_endpoints_path_changed": {
+          "connections": 2159,
+          "delay_increased": 1340,
+          "delay_decreased": 619,
+          "positive_delay_ps": 363530,
+          "negative_delay_ps": -14224,
+          "connection_path_wire_delta": 9228
+        },
+        "unchanged_endpoints_same_path": {
+          "connections": 172,
+          "delay_increased": 0,
+          "delay_decreased": 0,
+          "positive_delay_ps": 0,
+          "negative_delay_ps": 0,
+          "connection_path_wire_delta": 0
+        }
+      },
+      "sources": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/alu4_tp_pr_delay_attribution_2026-10-13.json",
+          "sha256": "d4a45372e284ff293ed0923808fffd21e38e7ce61c745d756fefa13d7471f8dd"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/alu4_frozen_tp_pr_v2/routing/audit.json",
+          "sha256": "4557c9d6dddf2e955447791bf5670e147290f8d013938ffea0df899d7b3d057e"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/alu4_frozen_tp_pr_v2/routing/bundle/manifest.json",
+          "sha256": "38193ae2499de10214191af76377f5e124ef85112b163e62b431d0f135c2f66e"
+        }
+      ]
+    },
+    "misex3": {
+      "edge_delay_model": "VPR buffered local T_linear (ps), pass switch local RC approximation",
+      "connections": 2365,
+      "nonzero_initial_criticalities": 2365,
+      "min_criticality": 27194,
+      "max_criticality": 65535,
+      "moved_instances": 0,
+      "CPD_change_from_TP_ns": 0.9189699999999998,
+      "WL_change_from_TP": 36,
+      "groups": {
+        "unchanged_endpoints_path_changed": {
+          "connections": 2151,
+          "delay_increased": 1212,
+          "delay_decreased": 697,
+          "positive_delay_ps": 258332,
+          "negative_delay_ps": -18962,
+          "connection_path_wire_delta": 6461
+        },
+        "unchanged_endpoints_same_path": {
+          "connections": 214,
+          "delay_increased": 0,
+          "delay_decreased": 0,
+          "positive_delay_ps": 0,
+          "negative_delay_ps": 0,
+          "connection_path_wire_delta": 0
+        }
+      },
+      "sources": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/misex3_tp_pr_delay_attribution_2026-10-13.json",
+          "sha256": "11e49d6aa0456249db1d409a48cc1f197e4833cf4d4d0184c98da057f2520782"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/misex3_frozen_tp_pr_v2/routing/audit.json",
+          "sha256": "9b34e165e80892280929adc388a5d309c8aac9912c102944dc28ae3bbc3d3985"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/misex3_frozen_tp_pr_v2/routing/bundle/manifest.json",
+          "sha256": "bbfdac946e10944b73dd50f38cd03288e494d718e60402049fff80f39f63bee0"
+        }
+      ]
+    }
+  },
+  "code_observations": {
+    "route_tree_timing_weight_q": 0,
+    "source": "PathfinderConfig default; joint_host sets only max_iterations=30",
+    "effect": "Existing tree attachment seeds have zero upstream timing cost even for nonzero criticality; new edge delay is still weighted by criticality",
+    "inner_iteration_STA": false,
+    "initial_STA_consumed": true,
+    "graph_model_limit": "Imported local edge delay approximation is not the final native route-tree RC analysis"
+  },
+  "hypotheses_not_proven": [
+    "Zero upstream seed timing charge can favor attachment to long existing prefixes",
+    "Frozen criticality within a PR epoch may miss critical-path changes",
+    "Local edge-delay cost omits full route-tree load interactions"
+  ],
+  "followup": "Preregister paired timing-weight/STA controls for all affected modes before new comparisons; retain weight-zero results. This diagnosis does not establish that changing one weight will meet the native QoR gate.",
+  "source_bindings": [
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/ex5p_frozen_tp_pr_v2/routing/sources/fusionpar/host/joint_host.cpp",
+      "sha256": "1ed6fb693a506c256e85db4ed980ef57f4c18ec749a50a3f6731c6d4d3e20c78",
+      "executed_source_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/host/joint_host.cpp"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/ex5p_frozen_tp_pr_v2/routing/sources/persistroute/include/pathfinder.hpp",
+      "sha256": "d3255e6a6f60163119ff38166c213ca200ebee8257256274b5c8338ec6eba1c6",
+      "executed_source_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/include/pathfinder.hpp"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/ex5p_frozen_tp_pr_v2/routing/sources/persistroute/src/accelerated_pathfinder.cpp",
+      "sha256": "bc02685f60db5ee761454a086bd80074d0d55cfed1acc451dd642352b71c80e7",
+      "executed_source_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/src/accelerated_pathfinder.cpp"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/ex5p_frozen_tp_pr_v2/routing/sources/persistroute/src/search_hbm.cpp",
+      "sha256": "bd5a1dd33c9ac1482dc48675fc8de7b6106881e1bf598afdf074a57a69838810",
+      "executed_source_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/src/search_hbm.cpp"
+    }
+  ],
+  "limits": [
+    "Descriptive analysis of repeat0; repeated route/state equality established separately",
+    "Connection-delay sums cannot be interpreted as CPD",
+    "No upstream code edits or parameter changes applied"
+  ]
+}

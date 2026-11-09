@@ -1,0 +1,24 @@
+{
+  "schema": "FUSIONPAR_TREE_REUSE_IO_FIX_REVALIDATION_V1",
+  "parent": "tree_reuse_protocol_2026-10-13.json",
+  "regression": "io_pad_regression_2026-10-13.json",
+  "designs": [
+    "ex5p",
+    "alu4",
+    "misex3"
+  ],
+  "modes": [
+    "interleaved",
+    "interleaved_tree_control",
+    "interleaved_tree_reuse"
+  ],
+  "repeats": 2,
+  "primary_attempts": 3,
+  "acceptance_and_routing_policy": "unchanged",
+  "implementation_changes": [
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/run_development.py",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/tools/validate_candidate.py"
+  ],
+  "scope": "Focused rerun of PR, empty-tree and retained-tree comparison after native IO serialization fix; previous six-mode study remains archived separately",
+  "failure_policy": "Archive every outcome; do not drop slow samples or rejected candidates"
+}

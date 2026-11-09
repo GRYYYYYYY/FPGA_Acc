@@ -1,0 +1,18 @@
+{
+  "schema": "FUSIONPAR_INDEPENDENT_PUBLICATION_AUDIT_V1",
+  "pass": true,
+  "suite": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/ex5p_sequential_retained_v1",
+  "suite_audit_sha256": "bb1a6aeef2fe1d5a68f44cf927e1d797cc53c87f2e08669bc09f519bb34bc2dd",
+  "auditor_sha256": "b6d1bbdaefd4c6c98a714da1fb49ec39b3c601512fa37bb7f2ebc086d3974c02",
+  "counts": {
+    "runs": 15,
+    "qor_commits": 15,
+    "protocol_commits": 0,
+    "aborts": 10,
+    "timing_barriers": 30,
+    "placement_repairs": 0,
+    "native_feedback_checks": 0,
+    "baseline_route_commits": 0
+  },
+  "scope": "full serialized state/version/timing reconstruction and archived native bindings; not independent P&R performance replication"
+}

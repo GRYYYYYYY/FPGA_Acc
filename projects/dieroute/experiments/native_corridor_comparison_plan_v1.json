@@ -1,0 +1,78 @@
+{
+  "schema": "dieroute.native_corridor_comparison_plan.v1",
+  "baseline": "flat",
+  "cases": {
+    "flat": {
+      "run": "work/u280_native_corridor_flat_v4_20261013",
+      "cohort_audit": "work/u280_native_corridor_flat_cohort_audit_v4_20261013"
+    },
+    "greedy": {
+      "run": "work/u280_native_corridor_greedy_v2_20261013",
+      "cohort_audit": "work/u280_native_corridor_greedy_cohort_audit_v2_20261013",
+      "protocol_audit": "work/u280_native_corridor_greedy_protocol_audit_v4_20261013"
+    },
+    "reentry": {
+      "run": "work/u280_native_corridor_reentry_v2_20261013",
+      "cohort_audit": "work/u280_native_corridor_reentry_cohort_audit_v2_20261013",
+      "protocol_audit": "work/u280_native_corridor_reentry_protocol_audit_v3_20261013"
+    },
+    "reentry_shadow3": {
+      "run": "work/u280_native_corridor_reentry_shadow3_v2_20261013",
+      "cohort_audit": "work/u280_native_corridor_reentry_shadow3_cohort_audit_v2_20261013",
+      "protocol_audit": "work/u280_native_corridor_reentry_shadow3_protocol_audit_v3_20261013"
+    },
+    "bounded_full_quotient": {
+      "run": "work/u280_native_corridor_bounded_v3_20261013",
+      "cohort_audit": "work/u280_native_corridor_bounded_cohort_audit_v3_20261013",
+      "protocol_audit": "work/u280_native_corridor_bounded_protocol_audit_v3_20261013"
+    },
+    "bounded_full_quotient_shadow3": {
+      "run": "work/u280_native_corridor_bounded_shadow3_v3_20261013",
+      "cohort_audit": "work/u280_native_corridor_bounded_shadow3_cohort_audit_v3_20261013",
+      "protocol_audit": "work/u280_native_corridor_bounded_shadow3_protocol_audit_v3_20261013"
+    },
+    "bounded_radius": {
+      "run": "work/u280_native_corridor_bounded_v4_20261013",
+      "cohort_audit": "work/u280_native_corridor_bounded_cohort_audit_v4_20261013",
+      "protocol_audit": "work/u280_native_corridor_bounded_protocol_audit_v4_20261013"
+    },
+    "bounded_radius_shadow3": {
+      "run": "work/u280_native_corridor_bounded_shadow3_v4_20261013",
+      "cohort_audit": "work/u280_native_corridor_bounded_shadow3_cohort_audit_v4_20261013",
+      "protocol_audit": "work/u280_native_corridor_bounded_shadow3_protocol_audit_v4_20261013"
+    }
+  },
+  "required_equal_routes": [
+    [
+      "greedy",
+      "reentry"
+    ],
+    [
+      "reentry",
+      "reentry_shadow3"
+    ],
+    [
+      "bounded_full_quotient",
+      "bounded_full_quotient_shadow3"
+    ],
+    [
+      "bounded_full_quotient",
+      "bounded_radius"
+    ],
+    [
+      "bounded_radius",
+      "bounded_radius_shadow3"
+    ]
+  ],
+  "quotient_radius_pairs": [
+    [
+      "bounded_full_quotient",
+      "bounded_radius"
+    ],
+    [
+      "bounded_full_quotient_shadow3",
+      "bounded_radius_shadow3"
+    ]
+  ],
+  "development_only": true
+}

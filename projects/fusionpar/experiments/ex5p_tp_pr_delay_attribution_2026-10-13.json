@@ -1,0 +1,254 @@
+{
+  "schema": "FUSIONPAR_REJECTION_ATTRIBUTION_V1",
+  "suite": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/ex5p_frozen_tp_pr_v2/routing",
+  "run": "route_only_0",
+  "baseline": {
+    "wirelength": 9868,
+    "cpd_ns": 5.61423
+  },
+  "candidates": [
+    {
+      "candidate": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/ex5p_frozen_tp_pr_v2/routing/route_only_0/validation_1",
+      "moved_instances": [],
+      "hpwl_delta": 0,
+      "native_WL_delta": -50,
+      "native_CPD_delta_ns": 1.02055,
+      "groups": {
+        "unchanged_endpoints_path_changed": {
+          "connections": 1748,
+          "delay_increased": 908,
+          "delay_decreased": 628,
+          "positive_delay_ps": 172111,
+          "negative_delay_ps": -13473,
+          "connection_path_wire_delta": 4289
+        },
+        "unchanged_endpoints_same_path": {
+          "connections": 168,
+          "delay_increased": 0,
+          "delay_decreased": 0,
+          "positive_delay_ps": 0,
+          "negative_delay_ps": 0,
+          "connection_path_wire_delta": 0
+        }
+      },
+      "rerouted_nets": 678,
+      "positive_net_WL_delta_sum": 514,
+      "negative_net_WL_delta_sum": -564,
+      "largest_WL_increases": [
+        {
+          "net": 68,
+          "name": "n_n12",
+          "wire_before": 82,
+          "wire_after": 120,
+          "wire_delta": 38,
+          "connections": 41,
+          "endpoint_changed": 0,
+          "max_native_delay_delta_ps": 759
+        },
+        {
+          "net": 0,
+          "name": "i_6_",
+          "wire_before": 114,
+          "wire_after": 151,
+          "wire_delta": 37,
+          "connections": 73,
+          "endpoint_changed": 0,
+          "max_native_delay_delta_ps": 423
+        },
+        {
+          "net": 13,
+          "name": "n_n2",
+          "wire_before": 85,
+          "wire_after": 111,
+          "wire_delta": 26,
+          "connections": 34,
+          "endpoint_changed": 0,
+          "max_native_delay_delta_ps": 788
+        },
+        {
+          "net": 193,
+          "name": "n_n9",
+          "wire_before": 69,
+          "wire_after": 87,
+          "wire_delta": 18,
+          "connections": 27,
+          "endpoint_changed": 0,
+          "max_native_delay_delta_ps": 565
+        },
+        {
+          "net": 12,
+          "name": "n_n7",
+          "wire_before": 76,
+          "wire_after": 92,
+          "wire_delta": 16,
+          "connections": 35,
+          "endpoint_changed": 0,
+          "max_native_delay_delta_ps": 842
+        },
+        {
+          "net": 11,
+          "name": "i_7_",
+          "wire_before": 125,
+          "wire_after": 136,
+          "wire_delta": 11,
+          "connections": 73,
+          "endpoint_changed": 0,
+          "max_native_delay_delta_ps": 967
+        },
+        {
+          "net": 34,
+          "name": "[71]",
+          "wire_before": 25,
+          "wire_after": 36,
+          "wire_delta": 11,
+          "connections": 7,
+          "endpoint_changed": 0,
+          "max_native_delay_delta_ps": 145
+        },
+        {
+          "net": 3,
+          "name": "n_n427",
+          "wire_before": 22,
+          "wire_after": 31,
+          "wire_delta": 9,
+          "connections": 5,
+          "endpoint_changed": 0,
+          "max_native_delay_delta_ps": 308
+        },
+        {
+          "net": 50,
+          "name": "n_n1197",
+          "wire_before": 16,
+          "wire_after": 24,
+          "wire_delta": 8,
+          "connections": 4,
+          "endpoint_changed": 0,
+          "max_native_delay_delta_ps": 276
+        },
+        {
+          "net": 166,
+          "name": "[209]",
+          "wire_before": 14,
+          "wire_after": 22,
+          "wire_delta": 8,
+          "connections": 3,
+          "endpoint_changed": 0,
+          "max_native_delay_delta_ps": 139
+        }
+      ],
+      "critical_delay_increases": [
+        {
+          "connection": 57,
+          "net": 0,
+          "group": "unchanged_endpoints_path_changed",
+          "criticality_q_before": 65535,
+          "native_delay_delta_ps": 385
+        },
+        {
+          "connection": 1361,
+          "net": 343,
+          "group": "unchanged_endpoints_path_changed",
+          "criticality_q_before": 65535,
+          "native_delay_delta_ps": 236
+        },
+        {
+          "connection": 619,
+          "net": 89,
+          "group": "unchanged_endpoints_path_changed",
+          "criticality_q_before": 65535,
+          "native_delay_delta_ps": 222
+        },
+        {
+          "connection": 84,
+          "net": 3,
+          "group": "unchanged_endpoints_path_changed",
+          "criticality_q_before": 65535,
+          "native_delay_delta_ps": 145
+        },
+        {
+          "connection": 181,
+          "net": 11,
+          "group": "unchanged_endpoints_path_changed",
+          "criticality_q_before": 65385,
+          "native_delay_delta_ps": 431
+        },
+        {
+          "connection": 711,
+          "net": 110,
+          "group": "unchanged_endpoints_path_changed",
+          "criticality_q_before": 65146,
+          "native_delay_delta_ps": 357
+        },
+        {
+          "connection": 463,
+          "net": 67,
+          "group": "unchanged_endpoints_path_changed",
+          "criticality_q_before": 65146,
+          "native_delay_delta_ps": 287
+        },
+        {
+          "connection": 1052,
+          "net": 209,
+          "group": "unchanged_endpoints_path_changed",
+          "criticality_q_before": 65146,
+          "native_delay_delta_ps": 25
+        },
+        {
+          "connection": 665,
+          "net": 97,
+          "group": "unchanged_endpoints_path_changed",
+          "criticality_q_before": 65133,
+          "native_delay_delta_ps": 136
+        },
+        {
+          "connection": 716,
+          "net": 111,
+          "group": "unchanged_endpoints_path_changed",
+          "criticality_q_before": 65120,
+          "native_delay_delta_ps": 232
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/ex5p_frozen_tp_pr_v2/routing/bundle/graph.nodes",
+      "sha256": "125ce0072c98cb6056a6a6c355e1922285e0c1ab05ab0688d6bffed3e8bc409f"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/ex5p_frozen_tp_pr_v2/routing/bundle/manifest.json",
+      "sha256": "834360dea60f311f8b7719dc3330d99cc493d79e05ccb989f69aedcf33c0906d"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/ex5p_frozen_tp_pr_v2/routing/route_only_0/validation_0/candidate.state",
+      "sha256": "4cbb52c8d41ef8befe72f2ff2a0294f0d7c2970dec1ea60f0ac067ee62994a5c"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/ex5p_frozen_tp_pr_v2/routing/route_only_0/validation_0/timing.output.csv",
+      "sha256": "1e78c9ccf4c44b9461026a89e5c30b5bb221ece86f772251fb36cea639208c25"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/ex5p_frozen_tp_pr_v2/routing/route_only_0/validation_0/validation.json",
+      "sha256": "4724bd8560b29eb3a87db9ad2b1090f2b8d3d47be1524a4cb8aba2556e0c8ac2"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/ex5p_frozen_tp_pr_v2/routing/route_only_0/validation_1/candidate.state",
+      "sha256": "7a109a3a7332505ade28175f167d608bf3aa61057d673a9590bb056699280850"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/ex5p_frozen_tp_pr_v2/routing/route_only_0/validation_1/timing.output.csv",
+      "sha256": "80274adb5209df47190b15c32ca126c58c22597c4cc52aa04172cbdd40893311"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/ex5p_frozen_tp_pr_v2/routing/route_only_0/validation_1/validation.json",
+      "sha256": "d811d7e38e94da69d33b5b4258640bdbadf56c4b535a01fc10bca701f58ad93b"
+    }
+  ],
+  "analyzer_sha256": "33a8e5d58be394ca23a8530f82c8ea9285941e95838dc5cca7e7f0294af31361",
+  "limits": [
+    "descriptive attribution, not causal ablation",
+    "per-connection wire/delay sums double-count shared prefixes and are not net WL or CPD",
+    "same-path delay may change through another branch of its net tree",
+    "archived development candidates; no new validation-set performance claim"
+  ]
+}

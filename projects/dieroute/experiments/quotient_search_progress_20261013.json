@@ -1,0 +1,364 @@
+{
+  "schema": "dieroute.quotient_search_progress.v1",
+  "captured_utc": "2026-10-13T12:44:52.463623+00:00",
+  "research_status": "active_incomplete",
+  "board_result": false,
+  "previous_goal_turn": "progress: sparse labels and full-native bounded connectivity probes",
+  "implemented": [
+    "Exact native tile/intent quotient, reverse CSR and independent every-node/every-arc verifier",
+    "Optional consistent A* potential in shared SparseSearch; zero guidance preserves existing RR semantics",
+    "Full reverse distances and source-distance-clamped lower bound with explicit preprocessing counters",
+    "Fixed-task and expanded native probes, raw PIP/net-permission audits and honest single-run repeat metadata"
+  ],
+  "quotient": {
+    "schema": "dieroute.native_quotient_audit.v1",
+    "passed": true,
+    "nodes": 91975782,
+    "native_arcs": 253648514,
+    "groups": 951990,
+    "quotient_arcs": 6878474,
+    "intra_group_native_arcs": 6247774,
+    "scope": "exact directed quotient checked against every native node/edge; reverse hop distances are consistent lower bounds, not calibrated delays"
+  },
+  "fixed_task_comparison": {
+    "schema": "dieroute.quotient_probe_comparison.v1",
+    "same_fixed_tasks_and_limits": true,
+    "zero_guidance_matches_previous_paths_and_search_counts": true,
+    "all_previous_completed_tasks_retain_optimal_hops": true,
+    "modes": {
+      "zero": {
+        "expanded": 80282535,
+        "edge_visits": 312427870,
+        "quotient_expanded": 0,
+        "quotient_edge_visits": 0,
+        "found": 35,
+        "budget_exhausted": 55,
+        "maximum_search_workspace_bytes": 134217728,
+        "maximum_quotient_workspace_bytes": 0,
+        "derived_quotient_distance_slots_initialized": 0
+      },
+      "quotient": {
+        "expanded": 7017615,
+        "edge_visits": 30855765,
+        "quotient_expanded": 77943115,
+        "quotient_edge_visits": 578197235,
+        "found": 90,
+        "budget_exhausted": 0,
+        "maximum_search_workspace_bytes": 134217728,
+        "maximum_quotient_workspace_bytes": 8002264,
+        "derived_quotient_distance_slots_initialized": 85679100
+      },
+      "source_radius": {
+        "expanded": 7027940,
+        "edge_visits": 30903520,
+        "quotient_expanded": 25469325,
+        "quotient_edge_visits": 190184935,
+        "found": 90,
+        "budget_exhausted": 0,
+        "maximum_search_workspace_bytes": 134217728,
+        "maximum_quotient_workspace_bytes": 8002264,
+        "derived_quotient_distance_slots_initialized": 85679100
+      }
+    },
+    "scope": "Same 18 tasks, five repeats, two-million-label cap. Quotient preprocessing counted separately. Different completion counts; not equal-work runtime, physical timing or board acceleration evidence.",
+    "inputs": {
+      "work/u280_sparse_search_probe_v2_20261013/probe_output/results.csv": "f69cf314909f722aea1f2137c3b6c0b175c6b69ecb6e2eb569b0ebc33256999c",
+      "work/u280_guided_zero_control_20261013/probe_output/results.csv": "1f4cfc5ddb1880398827a3943e8cb42121d82bd5c701cc688e8c3b0e4d0c727e",
+      "work/u280_guided_probe_v1_20261013/probe_output/results.csv": "174879be5516c497e9148d4a08402743172ce9a7d08a217ca61cd0b169c4cc86",
+      "work/u280_guided_radius_v1_20261013/probe_output/results.csv": "aaa5508c308db542736765e993c3dc72bf0d8ef2896fead0c82e3a600d0b5460"
+    },
+    "source_radius_preserves_all_full_guidance_hop_counts": true,
+    "static_quotient_binary_bytes": 410649128
+  },
+  "expanded_task_comparison": {
+    "schema": "dieroute.quotient_expanded_comparison.v1",
+    "tasks": 144,
+    "repeats": 1,
+    "selection": "First sixteen original tasks per SLR source/sink pair, including the original eighteen; not a held-out design cohort",
+    "status_changes": [],
+    "same_hops_on_all_common_completed_tasks": true,
+    "modes": {
+      "full": {
+        "expanded": 15377107,
+        "edge_visits": 68215291,
+        "quotient_expanded": 131127818,
+        "quotient_edge_visits": 972731852,
+        "found": 140,
+        "budget_exhausted_task_ids": [
+          213,
+          216,
+          220,
+          221
+        ]
+      },
+      "source_radius": {
+        "expanded": 15422129,
+        "edge_visits": 68412744,
+        "quotient_expanded": 43688071,
+        "quotient_edge_visits": 327309362,
+        "found": 140,
+        "budget_exhausted_task_ids": [
+          213,
+          216,
+          220,
+          221
+        ]
+      }
+    }
+  },
+  "path_audits": {
+    "fixed_full": {
+      "schema": "dieroute.native_sparse_probe_audit.v1",
+      "passed": true,
+      "inputs_unchanged": true,
+      "selected_tasks": 18,
+      "repeats": 5,
+      "counts": {
+        "found": 90
+      },
+      "slr_pairs": {
+        "2->2": {
+          "found": 10
+        },
+        "2->1": {
+          "found": 10
+        },
+        "0->0": {
+          "found": 10
+        },
+        "2->0": {
+          "found": 10
+        },
+        "1->1": {
+          "found": 10
+        },
+        "0->1": {
+          "found": 10
+        },
+        "0->2": {
+          "found": 10
+        },
+        "1->0": {
+          "found": 10
+        },
+        "1->2": {
+          "found": 10
+        }
+      },
+      "resolved_pip_occurrences": 2250,
+      "cross_slr_paths": 60,
+      "maximum_retained_workspace_bytes": 134217728,
+      "maximum_touched_labels": 1283557,
+      "repeated_paths_and_search_counts_identical": true,
+      "scope": "Raw PIP identity, net permission, exact selected CSR arcs, simple paths and repeat equality; no physical timing, negotiated routing, optimality proof or native DCP legality"
+    },
+    "fixed_source_radius": {
+      "schema": "dieroute.native_sparse_probe_audit.v1",
+      "passed": true,
+      "inputs_unchanged": true,
+      "selected_tasks": 18,
+      "repeats": 5,
+      "counts": {
+        "found": 90
+      },
+      "slr_pairs": {
+        "2->2": {
+          "found": 10
+        },
+        "2->1": {
+          "found": 10
+        },
+        "0->0": {
+          "found": 10
+        },
+        "2->0": {
+          "found": 10
+        },
+        "1->1": {
+          "found": 10
+        },
+        "0->1": {
+          "found": 10
+        },
+        "0->2": {
+          "found": 10
+        },
+        "1->0": {
+          "found": 10
+        },
+        "1->2": {
+          "found": 10
+        }
+      },
+      "resolved_pip_occurrences": 2250,
+      "cross_slr_paths": 60,
+      "maximum_retained_workspace_bytes": 134217728,
+      "maximum_touched_labels": 1284250,
+      "repeated_paths_and_search_counts_identical": true,
+      "scope": "Raw PIP identity, net permission, exact selected CSR arcs, simple paths and repeat equality; no physical timing, negotiated routing, optimality proof or native DCP legality"
+    },
+    "expanded_full": {
+      "schema": "dieroute.native_sparse_probe_audit.v1",
+      "passed": true,
+      "inputs_unchanged": true,
+      "selected_tasks": 144,
+      "repeats": 1,
+      "counts": {
+        "found": 140,
+        "budget_exhausted": 4
+      },
+      "slr_pairs": {
+        "2->2": {
+          "found": 16
+        },
+        "2->1": {
+          "found": 16
+        },
+        "0->0": {
+          "found": 16
+        },
+        "2->0": {
+          "found": 12,
+          "budget_exhausted": 4
+        },
+        "1->1": {
+          "found": 16
+        },
+        "0->1": {
+          "found": 16
+        },
+        "0->2": {
+          "found": 16
+        },
+        "1->0": {
+          "found": 16
+        },
+        "1->2": {
+          "found": 16
+        }
+      },
+      "resolved_pip_occurrences": 3566,
+      "cross_slr_paths": 92,
+      "maximum_retained_workspace_bytes": 167772160,
+      "maximum_touched_labels": 2000000,
+      "repeat_comparison_performed": false,
+      "repeated_paths_and_search_counts_identical": null,
+      "scope": "Raw PIP identity, net permission, exact selected CSR arcs, simple paths and repeat equality; no physical timing, negotiated routing, optimality proof or native DCP legality"
+    },
+    "expanded_source_radius": {
+      "schema": "dieroute.native_sparse_probe_audit.v1",
+      "passed": true,
+      "inputs_unchanged": true,
+      "selected_tasks": 144,
+      "repeats": 1,
+      "counts": {
+        "found": 140,
+        "budget_exhausted": 4
+      },
+      "slr_pairs": {
+        "2->2": {
+          "found": 16
+        },
+        "2->1": {
+          "found": 16
+        },
+        "0->0": {
+          "found": 16
+        },
+        "2->0": {
+          "found": 12,
+          "budget_exhausted": 4
+        },
+        "1->1": {
+          "found": 16
+        },
+        "0->1": {
+          "found": 16
+        },
+        "0->2": {
+          "found": 16
+        },
+        "1->0": {
+          "found": 16
+        },
+        "1->2": {
+          "found": 16
+        }
+      },
+      "resolved_pip_occurrences": 3566,
+      "cross_slr_paths": 92,
+      "maximum_retained_workspace_bytes": 167772160,
+      "maximum_touched_labels": 2000000,
+      "repeat_comparison_performed": false,
+      "repeated_paths_and_search_counts_identical": null,
+      "scope": "Raw PIP identity, net permission, exact selected CSR arcs, simple paths and repeat equality; no physical timing, negotiated routing, optimality proof or native DCP legality"
+    }
+  },
+  "validation": {
+    "ctest": "20/20 pass",
+    "asan_ubsan": "7/7 pass",
+    "tsan": "3/3 pass",
+    "weighted_Bellman_Ford_comparisons": 1500,
+    "zero_potential_dense_comparisons": 3000,
+    "quotient_fixture_cases": 10,
+    "potential_source_sink_pairs": 49,
+    "legacy_cases": [
+      "diffeq",
+      "alu4",
+      "ex5p"
+    ],
+    "legacy_semantic_artifacts_per_case": 7,
+    "legacy_non_wall_counters_equal": true
+  },
+  "SDK_timing_inspection": {
+    "reference_sha256": {
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/third_party/cufr/src/com/xilinx/rapidwright/rwroute/RouterHelper.java": "88a2a54fd6dd4bb400c1becc6391267801d351bcab3e7f93fea11899435a35a3",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/third_party/cufr/src/com/xilinx/rapidwright/rwroute/RouteNodeGraphTimingDriven.java": "eb5e921bd2b5597774cd7886da4e755f248b67a2c982dbdf27e5db8510e285ad",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/third_party/cufr/src/com/xilinx/rapidwright/timing/delayestimator/DelayEstimatorBase.java": "fbef7d56aa175084ab9902e313dfd9d66ada7ff41ebecb19c48d3c4bf6654b06"
+    },
+    "finding": "RouterHelper.computeNodeDelay applies DelayEstimatorBase only to exit nodes; modeled edge timing also adds getExtraDelay(child,isLong(parent)). This is SDK estimation, not calibrated vendor timing or a complete timing adapter."
+  },
+  "verification_directory": "work/quotient_search_verification_20261013",
+  "evidence": {
+    "work/u280_native_quotient_v1_20261013/manifest.json": "5a22a273755e109b9cb28b90825e38dc2c564967622cfb4bde8245e935f7c30e",
+    "work/quotient_probe_comparison_20261013.json": "91e3558b51dcf7069a29a169f5010245ed7d205b28015b8c2daf354dea43b279",
+    "work/quotient_expanded_comparison_20261013.json": "97bc75fbfe0cfa6698946a38fc10b683e023f45b3a1f705ad58366e366185621",
+    "work/quotient_build_20261013/ctest_radius_final.log": "7f7b583561f79588dcc10d75d11c04ee6bbc9a47d01d1312d76849d5b5323d3b",
+    "work/quotient_asan_20261013/ctest_radius_final.log": "ba1d7dcf0d109819b0c8dea4592cca466d89c6a64a4c35a78084ec4de7046a47",
+    "work/quotient_tsan_20261013/ctest.log": "34b8b9d2cbf915ea85f7a0a8716a0f859fd7605aa3f030c18a359d3b2ff0ffbc",
+    "work/quotient_legacy_20261013/audit.json": "18995a7064f2926d83aaacd3b2dd630ecfcf6f9eec203c4534cb5fbb0b10b9a0",
+    "work/native_quotient_final_fixture_20261013/tests.json": "b39de6f5e320838730c69219d62ca882d9780ef2af388f17b154a2c38e9c8409",
+    "work/u280_guided_probe_v1_20261013/manifest.json": "91edc24ffcc078fa3569dd1f68745680c2c81413924b9836f948332d05dc1bfe",
+    "work/u280_guided_zero_control_20261013/manifest.json": "5a4fa2f05c17f2156505804e20cc5fb7ecc7c0daf110d90d0b65bb54af7c3d50",
+    "work/u280_guided_radius_v1_20261013/manifest.json": "61b4d58f0d946afdde71180cb1ff4223f1d385924ea0069405d54985d80a151d",
+    "work/u280_guided_expanded_v1_20261013/manifest.json": "819f9c90c285468c7249b53ef9ec7950fa8836b7840d22787eaa05acb19fdb1a",
+    "work/u280_guided_expanded_radius_v1_20261013/manifest.json": "3b3c456da67bc7f2753c6aad9f85a93a0d3be691f9d9fa31f341da52a0793f98",
+    "work/u280_guided_probe_v1_audit_20261013/audit.json": "cc83e40ff81cb7d01d75ef68b3014513aee15da2b6900cbe3eb4731dd3193fda",
+    "work/u280_guided_radius_v1_audit_20261013/audit.json": "0f871798ae80b1bd39e5fbc57115971708411575d6b7b45c03377f400ed6d62a",
+    "work/u280_guided_expanded_v2_audit_20261013/audit.json": "560a9fc2a8e36f74766518e8c7d33eb13fdade17d8f3d31a6ea256ff4d028dea",
+    "work/u280_guided_expanded_radius_v2_audit_20261013/audit.json": "e3ddf07ef203fb76893b437b8fa6c46a4fd484b00d22a4a2f8910bee2d57419b"
+  },
+  "limits": [
+    "Unit increment measures native PIP hops only; potential cannot be applied unchanged to physical/congestion costs with possibly zero edges",
+    "Fixed eighteen tasks pass five repeats, but expanded 144-task cohort has only one run and is not a held-out design cohort",
+    "Expanded task IDs 213,216,220,221 still exhaust two-million-label cap in both guidance variants",
+    "Every preprocessing call still initializes 951990 distance entries; logical arc counts omit those stores and artifact construction/hash/loading",
+    "Static quotient storage 410649128 bytes is additional to the native CSR; workspace figures are not process RSS or HBM feasibility",
+    "No complete design occupancy negotiation, calibrated capacity/delay, DCP writeback, native legality or QoR result",
+    "No HLS/HBM/physical-board result"
+  ],
+  "report_correction": {
+    "previous_single_run_audits": [
+      "work/u280_guided_expanded_v1_audit_20261013/audit.json",
+      "work/u280_guided_expanded_radius_v1_audit_20261013/audit.json"
+    ],
+    "issue": "A repeat equality field was vacuously true for one run; revised audits explicitly mark comparison not performed and equality null. Original diagnostic records retained."
+  },
+  "next_work": [
+    "Diagnose four expanded-task budget exhaustions without changing the declared sample",
+    "Export and validate native timing/cost metadata, including predecessor-dependent correction, before weighted guidance",
+    "Integrate native shared route trees and exact occupancy/version controller with fixed pin access",
+    "Complete full-design native legality/QoR and remaining research gates"
+  ],
+  "active_processes": []
+}

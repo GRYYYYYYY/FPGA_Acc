@@ -1,0 +1,25 @@
+{
+  "status": "actual_authority_cmodel_to_resource_lookup_rtl_passed",
+  "verified_ns": 1791988114661423991,
+  "authority_snapshots": 4,
+  "full_node_checks": 48,
+  "additional_present_check": 1,
+  "rejection_checks": 2,
+  "inputs": {
+    "include/native_search_hbm_resource.hpp": "4cfa2b8f6e259a172132e0780a07b1544cc82f15c6f4dbbeb1c06e3986ef9e5e",
+    "tb/native_search_hbm_resource_tb.cpp": "a219dc7913d1f85eeab3f53593a9dff3dc147f4b271e0889d5373d828999d80b",
+    "tb/net_commit_fixture.hpp": "9312545be2f939b5f32e0f5a03dfdca43b5e026c8103819bd31c937f30b2377b",
+    "src/net_commit_hbm.cpp": "84d5550636cd7bfd12b34176294ca29bd57c0cc15e2a17e11a3c6de32252260c"
+  },
+  "scope": "Read-only native owner shard adapter against actual net_commit C-model initialization, proposal sharing and negotiation; exclusive handoff only, no asynchronous snapshot, HLS/RTL or live native search proof",
+  "remaining": [
+    "Native resource snapshot and search cost integration",
+    "Version/revision validation at authority commit",
+    "Asynchronous owner handoff protocol"
+  ],
+  "board_result": false,
+  "research_complete": false,
+  "hls_rtl": "work/native_search_resource_hls_v1_20261014/audit.json",
+  "resource_worker_commit_pipeline": "experiments/native_search_resource_worker_commit_progress_20261014.json",
+  "shared_bo_interface_hls_rtl": "work/native_search_resource_hls_v2_20261014/audit.json"
+}

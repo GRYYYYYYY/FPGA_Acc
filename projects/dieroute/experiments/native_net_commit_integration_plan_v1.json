@@ -1,0 +1,37 @@
+{
+  "schema": "dieroute.native_net_commit_integration_plan.v1",
+  "status": "verified_c_model_online_integration",
+  "entrypoint": "tools/route_native_parallel.cpp",
+  "current_mutation_sites": [
+    "state.start",
+    "state.ripup",
+    "native_commit_net",
+    "state.negotiate"
+  ],
+  "snapshot_export": "Decode only device-produced resource/tree/net records and construct a read-only search snapshot with NativeRouteState::checkpoint, retaining the same NativeOwnerLayout instance; no NativeRouteState API change is required",
+  "graph": "Build source-bound immutable u64 policy and CSR arrays from validated native node/policy/search files; independently verify all permissions and destination/PIP encodings; reserve realistic memory capacities with explicit fail-closed overflow",
+  "proposals": "Pack the complete canonical read footprint and observed versions from the hardware-derived search snapshot, every consumed shadow tuple, and all successful branch results including zero-length already-connected sinks; retain proposal-generation identity separately from current launch revision",
+  "decisions": "Every initial and replay proposal must actually call the kernel; CPU validation must not suppress hardware launches or decide hardware-mode acceptance. Compare hardware status/counters with a separately maintained CPU oracle and abort on divergence",
+  "mutations": "Initialize/start/ripup/negotiate all execute through the kernel; replace the search view with a decoded hardware snapshot after accepted mutation. CPU oracle may perform its own operations only for differential checking",
+  "publication": "Feed unchanged hardware-derived resource deltas into the publisher, filtering only non-boundary nodes; bind each published tuple to the accepted kernel launch rather than recomputing post-commit values from CPU authority",
+  "reproduction": "Fresh 70-net cohort, three configurations, five repeats; compare canonical output to prior CPU-authority runs, plus source-bound command/result evidence and independent replay. Small XRT fixtures must execute the actual online router without linking the CPU kernel",
+  "open_hardware_constraints": [
+    "Standalone component uses 3 masters; the previous six-CU owner/receiver configuration already uses 30, so naive composition may exceed the platform connection budget",
+    "Full immutable graph policy/offsets/arcs occupy multiple GB and need verified bank/range placement, unlike the tiny standalone fixture",
+    "Resource tombstones preserve versions; final development-set record count is not a full-design capacity guarantee",
+    "Single authority master is not die-local physical placement or distributed strict SLL capacity arbitration"
+  ],
+  "research_complete": false,
+  "matrix_plan": "experiments/native_net_commit_matrix_v1.json",
+  "completed_checks": [
+    "48 CTests passed",
+    "Four fresh online cases, three repeats each, exact CPU-authority output parity",
+    "Independent command/state/publication replay and 40 valid-CRC semantic corruptions rejected",
+    "ASan/UBSan online fixtures passed",
+    "Joint XRT host compiled; no joint device execution yet",
+    "Three fresh real 70-net configurations, five repeats each, all 24 canonical outputs byte-equal CPU authority",
+    "Independent native and kernel replay passed; every proposal really invoked the kernel",
+    "All normalized kernel and publication records repeat identically"
+  ],
+  "progress": "experiments/native_net_commit_progress_20261014.json"
+}

@@ -15,14 +15,18 @@ extern "C" void fusionpar_kernel(Move moves[MAX_MOVES],const AffectedConnection 
 #pragma HLS INTERFACE s_axilite port=return bundle=control
 #endif
  Metrics out{};if(move_count>MAX_MOVES||affected_total>MAX_AFFECTED||resource_count>MAX_RESOURCES){*metrics=out;return;}
- for(std::uint32_t i=0;i<move_count;++i){const Move m=moves[i];MoveResult r{0,0,m.place_version,0xffffffffU};if(m.predicted_overflow_q>sketch_reject_q){r.status=2;++out.rejected;results[i]=r;continue;}bool valid=true,repair=false;
-  for(std::uint32_t j=0;j<m.affected_count;++j){
+ for(std::uint32_t i=0;i<move_count;++i){const Move m=moves[i];MoveResult r{0,0,m.place_version,0xffffffffU};if(m.predicted_overflow_q>sketch_reject_q){r.status=2;++out.rejected;results[i]=r;continue;}bool valid=m.place_version!=0xffffffffU,repair=false;
+  std::int32_t deltas[MAX_RESOURCES]{};
+  bool touched[MAX_RESOURCES]{};
+  if(static_cast<std::uint64_t>(m.affected_begin)+m.affected_count>affected_total)valid=false;
+  for(std::uint32_t j=0;valid&&j<m.affected_count;++j){
 #ifdef __SYNTHESIS__
 #pragma HLS PIPELINE II=1
 #endif
-   const std::uint32_t idx=m.affected_begin+j;if(idx>=affected_total){valid=false;break;}const AffectedConnection a=affected[idx];if(a.resource_id>=resource_count||resources[a.resource_id].version!=a.resource_version){valid=false;r.conflict_connection=a.connection_id;break;}const int next=static_cast<int>(resources[a.resource_id].occupancy)+a.occupancy_delta;if(next<0||next>resources[a.resource_id].capacity){valid=false;r.conflict_connection=a.connection_id;break;}if(a.detour_q>detour_repair_q)repair=true;}
+   const std::uint32_t idx=m.affected_begin+j;const AffectedConnection a=affected[idx];if(a.resource_id>=resource_count||resources[a.resource_id].version!=a.resource_version||a.resource_version==0xffffffffU){valid=false;r.conflict_connection=a.connection_id;break;}deltas[a.resource_id]+=a.occupancy_delta;touched[a.resource_id]=true;if(a.detour_q>detour_repair_q)repair=true;}
+  for(std::uint32_t j=0;valid&&j<m.affected_count;++j){const auto a=affected[m.affected_begin+j];const auto next=static_cast<std::int32_t>(resources[a.resource_id].occupancy)+deltas[a.resource_id];if(next<0||next>resources[a.resource_id].capacity){valid=false;r.conflict_connection=a.connection_id;}}
   if(!valid){r.status=3;++out.conflicts;if(m.repair_budget){r.repair_action=1;++out.repair_tasks;}results[i]=r;continue;}
-  for(std::uint32_t j=0;j<m.affected_count;++j){const AffectedConnection a=affected[m.affected_begin+j];Resource& s=resources[a.resource_id];s.occupancy=static_cast<std::uint16_t>(static_cast<int>(s.occupancy)+a.occupancy_delta);++s.version;}
+  for(std::uint32_t j=0;j<m.affected_count;++j){const AffectedConnection a=affected[m.affected_begin+j];if(!touched[a.resource_id])continue;Resource& s=resources[a.resource_id];s.occupancy=static_cast<std::uint16_t>(static_cast<std::int32_t>(s.occupancy)+deltas[a.resource_id]);++s.version;touched[a.resource_id]=false;}
   ++moves[i].place_version;r.new_place_version=moves[i].place_version;r.status=1;if(repair&&m.repair_budget){r.repair_action=2;++out.repair_tasks;}++out.committed;out.reused_state_bytes+=static_cast<std::uint64_t>(m.affected_count)*sizeof(AffectedConnection);results[i]=r;}
  *metrics=out;
 }

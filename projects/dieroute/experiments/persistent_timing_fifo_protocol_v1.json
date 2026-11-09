@@ -1,0 +1,35 @@
+{
+  "schema": "dieroute.persistent_timing_fifo.v1",
+  "status": "frozen_interface_design",
+  "objective": "Amortize repeated native timing initialization while preserving per-requestSTA and supportingactualonlinecallbacks.",
+  "parent_source_bound_build": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/vpr_source_bound_timing_build_20261015",
+  "patch": "experiments/vpr_persistent_timing_fifo_v1.patch",
+  "source_evidence_sha256": {
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/vpr_source_bound_timing_build_20261015/source_vtr/vpr/src/base/vpr_api.cpp": "1a38b93dd9a7ab2f75c6a32f962f606dcd0a7ab4da759fc15a7df34ee8e6718b",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/tools/vpr_persistent_timing_wrapper.inc": "1412a0856dec95f2c50590712e1e55726c17d7cd24c1d3a77e7a12a060db9af6",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/rr_timing_process_overhead_20261015.json": "76afddd9879d99be863a435afd81a069c9c767e0695db888dbbf9f9ed7522572",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/experiments/vpr_persistent_timing_fifo_v1.patch": "3dde602f6fd164aeaf160cb1c1534dc1229fa00ca915af520d3e87ab9d8dc1ba"
+  },
+  "native_contract": {
+    "optional_env": [
+      "PERSISTROUTE_VPR_TIMING_REQUEST_FIFO",
+      "PERSISTROUTE_VPR_TIMING_RESPONSE_FIFO"
+    ],
+    "ready": "READY<TAB>1",
+    "request": "ANALYZE<TAB>monotonic_seq<TAB>absolute_input_csv<TAB>absolute_output_csv",
+    "response": "DONE<TAB>same_seq<TAB>native_request_elapsed_us",
+    "stop": "STOP<TAB>next_seq -> STOPPED<TAB>completed_count",
+    "semantics": "Initialized netlist/graph/baseline routecontext retained. Everyrequest freshly loadsbaseline netdelays,overrides routedconnections and constructs newdelaycalculator/timinganalyzer;request-dependentobjects destroyedafterresponse. Single-shotbehavior unchangedwithoutFIFOenv."
+  },
+  "online_integration": "Python daemon owns oneVPR/FIFO session andserves localIPC;client preserves existing <iteration,input.csv,output.csv> callbacksignature. Pin graph/task identity,serialize requests,validate input/output hashes andresponsesequence,write structuredreceipts. MustintegrateactualC++router;offlinebatchaloneisincomplete.",
+  "validation": [
+    "Cleanbuild/compiler/link/runtimeaudit;5canonicalnative baseline runsunchanged.",
+    "Single-shot matchesarchivedinputs;actualFIFO chronological/reverse/repeated requestsbyte-equalSTA;malformed/sequenceframesrejected.",
+    "Actualonlinecontroller:canonicalpaths,versions,costs,epochhashes,timingCSV unchangedagainstfresh-processcontrol.",
+    "FivepairedCPU runs alternatingorder,samecompiledtimingbinary;startup/shutdownchargedinouterwall;environment/load/structuredreceiptsarchived.",
+    "PhysicalG7unchanged;noFPGAor>=3xendtoendclaimwithoutboardevidence."
+  ],
+  "scope": "VTRhosttiminginterfaceoptimization;not routingalgorithmnovelty,all-inputequivalence,asyncownerprotocolorboardperformance. Sharedtimingcontextisnotauthoritativeroutepublication.",
+  "board_result": false,
+  "research_complete": false
+}

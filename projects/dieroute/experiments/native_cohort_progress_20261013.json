@@ -1,0 +1,309 @@
+{
+  "schema": "dieroute.native_cohort_progress.v1",
+  "captured_utc": "2026-10-13T13:43:05.527505+00:00",
+  "research_status": "active_incomplete",
+  "board_result": false,
+  "previous_goal_turn": "no progress: dependency/status explanation only; this turn implements and verifies commercial shared-tree writeback and native checks",
+  "implemented": [
+    "Serial sparse native shared-tree/owner/history/version authority with checked-error atomic updates",
+    "Whole-net task closure and frozen occupancy of all unselected nets, including candidate nets",
+    "Negotiated electrical-node congestion and same-cap deferred sink retries after shared-tree growth",
+    "Independent complete-tree/PIP/occupancy/five-repeat audit",
+    "SDK PIP conversion, DCP writeback, physical snapshot/reload, full leaf/endpoint connectivity comparison",
+    "Native Vivado route/DRC/timing/utilization audit and independent SLL count comparison"
+  ],
+  "cohort": {
+    "seed_tasks": 144,
+    "selected_nets": 70,
+    "all_selected_net_tasks": 298,
+    "source": "single existing PersistRoute/U280 implementation development design",
+    "held_out": false,
+    "label_limit": 2000000,
+    "repeats": 5,
+    "converged_repeats": 5,
+    "iterations_per_repeat": 3,
+    "frozen_unselected_nodes": 12198732,
+    "cross_slr_paths_per_repeat": 242,
+    "detailed_pip_tree_edges_per_repeat": 2528,
+    "independent_repeat_audit": {
+      "schema": "dieroute.native_cohort_audit.v1",
+      "passed": true,
+      "inputs_unchanged": true,
+      "selected_nets": 70,
+      "tasks": 298,
+      "repeats": 5,
+      "electrical_model_converged_repeats": 5,
+      "frozen_unselected_nodes": 12198732,
+      "tree_PIPs_resolved": 12640,
+      "path_PIP_occurrences": 68185,
+      "cross_slr_paths": 1210,
+      "repeat_comparison_performed": true,
+      "repeated_trees_ownership_paths_and_counters_equal": true,
+      "scope": "Whole-net task closure, frozen outside ownership, directed native PIPs, complete shared-tree paths and exact distinct-net occupancy; no DCP writeback, full native design legality or timing/QoR"
+    },
+    "iteration_counts": [
+      {
+        "repeat": 0,
+        "iteration": 0,
+        "present": 1,
+        "pending_nets": 70,
+        "routed_tasks": 298,
+        "failed_tasks": 0,
+        "overused_nodes": 2,
+        "expanded": 6611910,
+        "edge_visits": 27314943,
+        "quotient_expanded": 141433695,
+        "quotient_edge_visits": 1051889927,
+        "max_labels": 2000000,
+        "deferred_retries": 2
+      },
+      {
+        "repeat": 0,
+        "iteration": 1,
+        "present": 2,
+        "pending_nets": 2,
+        "routed_tasks": 298,
+        "failed_tasks": 0,
+        "overused_nodes": 1,
+        "expanded": 537488,
+        "edge_visits": 2212954,
+        "quotient_expanded": 3274101,
+        "quotient_edge_visits": 24288616,
+        "max_labels": 922104,
+        "deferred_retries": 0
+      },
+      {
+        "repeat": 0,
+        "iteration": 2,
+        "present": 4,
+        "pending_nets": 2,
+        "routed_tasks": 298,
+        "failed_tasks": 0,
+        "overused_nodes": 0,
+        "expanded": 691884,
+        "edge_visits": 2742437,
+        "quotient_expanded": 3274101,
+        "quotient_edge_visits": 24288616,
+        "max_labels": 921952,
+        "deferred_retries": 0
+      }
+    ],
+    "totals_per_repeat": {
+      "expanded": 7841282,
+      "edge_visits": 32270334,
+      "quotient_expanded": 147981897,
+      "quotient_edge_visits": 1100467159,
+      "deferred_retries": 2
+    }
+  },
+  "native": {
+    "checks": {
+      "fully_routed_without_errors": true,
+      "no_drc_errors_or_critical_warnings": true,
+      "same_design_size_as_noop": true,
+      "same_primitive_utilization_as_noop": true,
+      "independent_original_and_new_sll_match_native": true,
+      "same_routable_count_as_original": true
+    },
+    "changed_nets": 44,
+    "selected_nets": 70,
+    "native_runs": 1,
+    "old_selected_pips": 2516,
+    "new_selected_pips": 2528,
+    "fully_routed_nets": 640797,
+    "route_errors": 0,
+    "baseline_timing": {
+      "wns_ns": 0.016,
+      "tns_ns": 0.0,
+      "setup_failing_endpoints": 0,
+      "setup_total_endpoints": 1186883,
+      "whs_ns": 0.006,
+      "ths_ns": 0.0,
+      "hold_failing_endpoints": 0,
+      "hold_total_endpoints": 1183318,
+      "wpws_ns": 0.0,
+      "tpws_ns": 0.0,
+      "pulse_failing_endpoints": 0,
+      "pulse_total_endpoints": 462165
+    },
+    "routed_timing": {
+      "wns_ns": 0.016,
+      "tns_ns": 0.0,
+      "setup_failing_endpoints": 0,
+      "setup_total_endpoints": 1186883,
+      "whs_ns": 0.004,
+      "ths_ns": 0.0,
+      "hold_failing_endpoints": 0,
+      "hold_total_endpoints": 1183318,
+      "wpws_ns": 0.0,
+      "tpws_ns": 0.0,
+      "pulse_failing_endpoints": 0,
+      "pulse_total_endpoints": 462165
+    },
+    "timing_delta": {
+      "wns_ns": 0.0,
+      "tns_ns": 0.0,
+      "whs_ns": -0.002,
+      "ths_ns": 0.0
+    },
+    "drc": {
+      "rules": {
+        "DPIP-2": {
+          "severity": "Warning",
+          "count": 28
+        },
+        "DPOP-3": {
+          "severity": "Warning",
+          "count": 36
+        },
+        "DPOP-4": {
+          "severity": "Warning",
+          "count": 96
+        },
+        "FLBO-1": {
+          "severity": "Warning",
+          "count": 5
+        },
+        "LOCE-1": {
+          "severity": "Warning",
+          "count": 3
+        },
+        "PDCN-1569": {
+          "severity": "Warning",
+          "count": 27
+        },
+        "REQP-1774": {
+          "severity": "Warning",
+          "count": 2
+        },
+        "REQP-1776": {
+          "severity": "Warning",
+          "count": 2
+        },
+        "REQP-1858": {
+          "severity": "Warning",
+          "count": 22
+        },
+        "RPBF-3": {
+          "severity": "Warning",
+          "count": 216
+        },
+        "RTSTAT-10": {
+          "severity": "Warning",
+          "count": 1
+        },
+        "HDPRA-51": {
+          "severity": "Advisory",
+          "count": 1
+        },
+        "HDPRA-53": {
+          "severity": "Advisory",
+          "count": 1
+        },
+        "HDPRA-55": {
+          "severity": "Advisory",
+          "count": 1
+        },
+        "HDPRA-57": {
+          "severity": "Advisory",
+          "count": 2
+        }
+      },
+      "severities": {
+        "Warning": 438,
+        "Advisory": 5
+      },
+      "total": 443
+    },
+    "drc_signature_unchanged": true,
+    "sll_utilization": {
+      "SLR2 <-> SLR1": 5755,
+      "SLR1 <-> SLR0": 9747,
+      "Total SLLs Used": 15502
+    },
+    "unchanged_physical_fields": {
+      "part": true,
+      "nets": true,
+      "sites": true,
+      "cell_occurrences": true,
+      "pins": true,
+      "outside_routes": true,
+      "sites_state": true,
+      "cells_state": true,
+      "partition_pins": true
+    },
+    "logical_connectivity": {
+      "schema": "dieroute.native_cohort_connectivity.v1",
+      "passed": true,
+      "strict_exported_terminal_and_leaf_equality": true,
+      "leaf_instances": 774385,
+      "endpoints": 4537722,
+      "source_archive_member_sha256": "ece532d73a8cdab20bb680d6d586c08067e796e216ae4609782f0ff5155de47b",
+      "writeback_manifest": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_cohort_writeback_v3_20261013/manifest.json",
+      "writeback_manifest_sha256": "3453d261e51417b0930e3626301448d1c5fdd2c5f677e0c85ecbaaf2b3bac953",
+      "parent_manifests": {
+        "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_edif_connectivity_v2_20261013/manifest.json": "b26e0d4e52a2245fe31829f939f9985421f4935439782c4e72a81fc054eb62c4",
+        "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/u280_native_cohort_edif_v1_20261013/manifest.json": "5668160e9c74bfa2efddbba7b3f2cd8babf8c18dd4217587ffc27d6bcbec0ec4"
+      },
+      "comparison_sha256": "ba7dcd829d223327f83c6b00243a9e5db580269baa616e12eaf7c62ef1273816",
+      "scope": "all declared leaf and top-level bits, component membership, leaf instance/type/port properties; primitive and opaque cell boundaries",
+      "not_proven": [
+        "encrypted cell internal equivalence"
+      ]
+    },
+    "constraints_and_hwdef_and_stubs_byte_equal": true
+  },
+  "validation": {
+    "ctest": "23/23 passed",
+    "new_native_state_and_consumer_asan_ubsan": "2/2 passed",
+    "native_consumer_cases": 5,
+    "snapshot_selftest": "passed",
+    "checkpoint_member_normalization_adverse_cases": "passed",
+    "edif_adverse_fixture_checks": "hand-specified connectivity oracle plus rename/dead constant/swap/loaded constant/property/disconnected-bit mutations passed",
+    "new_tsan_run": false,
+    "legacy_workload_rerun_this_turn": false
+  },
+  "failures_retained": [
+    "Initial whole-net run stagnated at 296/298 for twelve epochs (tasks 210/211 of net 288522); deferred sink retries after tree growth repair this without increasing the label cap.",
+    "First writeback runner expected a runtime_data field absent from the footprint manifest; fixed by checking SDK paths and freezing the isolated runtime database directly.",
+    "First actual writeback attempt rejected nested snapshot fields before any mutation; unambiguous escaping and field-boundary regression checks fixed the fingerprint serializer.",
+    "Embedded EDIF remains textually unequal even after timestamp normalization because SDK legal identifiers differ; strict full leaf/endpoint comparison passes without identifier-substitution heuristics."
+  ],
+  "scope": "Whole selected-net routing closure on a real commercial design with other routes frozen; serial hop/congestion model, not a complete native DieRoute corridor/shadow/HBM implementation",
+  "limits": [
+    "New-node cost is hop/history/present congestion, not calibrated physical delay or wirelength.",
+    "Quotient distance initialization, input loading/hashing and graph/index construction are outside logical edge counters; no speedup inference.",
+    "Only 70 of 418310 candidate nets rerouted; not a representative design cohort or full candidate-design reroute.",
+    "Setup WNS unchanged but hold margin decreases by 2 ps; no joint physical wirelength/CPD proof.",
+    "Default DRC does not replace bus-skew checks or bitstream acceptance.",
+    "Readable EDIF boundary connectivity equivalence is not encrypted cell internal formal equivalence.",
+    "No new hardware implementation, board runtime or energy evidence."
+  ],
+  "next_work": [
+    "Complete bus-skew and stronger native implementation checks for the rerouted checkpoint.",
+    "Integrate native corridor/shadow control and calibrated timing/length costs, then expand complete-net cohorts toward full-design routing.",
+    "Resolve failed joint QoR gate on the declared development set before opening reserved validation designs.",
+    "Complete representative workloads, topology scaling, all five ablations, HLS/HBM implementation, physical-board measurements and paper."
+  ],
+  "verification_directory": "work/native_cohort_verification_20261013",
+  "active_processes": [],
+  "evidence": {
+    "work/u280_native_cohort_v1_20261013/manifest.json": "2c4415eb02671e9cda26e633985b7f935fa0e9aeeb59101168b2d366f93db96e",
+    "work/u280_native_cohort_v2_20261013/manifest.json": "82a1434d483e10428ebaec950f687dbfcb48121872176a7c9e2689ab86f00026",
+    "work/u280_native_cohort_v2_audit_20261013/audit.json": "bfbb1345b5aa027f94c4744e2745e983552b2c799d498d053d91dabb4ec18628",
+    "work/u280_native_cohort_repeat_v1_20261013/manifest.json": "83ef84d57d2a1db9b52562865b2e79b81647183b979dcc28c7f82f73dac0b749",
+    "work/u280_native_cohort_repeat_v1_audit_20261013/audit.json": "8a47656d8f58afc601e26da82cdaa40a5672f4025d1b5b9a852be8e161c78bf3",
+    "work/u280_native_cohort_writeback_v2_20261013/manifest.json": "2964d4ab8baaf5b3d9444528770ea1b18cc4a35c7b7081376b48b3ccd691ba85",
+    "work/u280_native_cohort_writeback_v3_20261013/manifest.json": "3453d261e51417b0930e3626301448d1c5fdd2c5f677e0c85ecbaaf2b3bac953",
+    "work/u280_native_cohort_native_v1_20261013/manifest.json": "c3b071ab23b10674e1898dcc4952b2a02f379ff8a6054c443d8b5fa40fb216cd",
+    "work/u280_native_cohort_edif_v1_20261013/manifest.json": "5668160e9c74bfa2efddbba7b3f2cd8babf8c18dd4217587ffc27d6bcbec0ec4",
+    "work/u280_native_cohort_connectivity_audit_v1_20261013/provenance.json": "8ad4085111a5beef64f8c0788c12e33cb0b82fdf70e66c4a7240f837853ce47d",
+    "work/u280_native_cohort_dcp_audit_v1_20261013.json": "afb58d7b23378ac2d1d52bb4edbd6a30cbb2edbf3592d018e87fc4ba8479be66",
+    "work/u280_native_cohort_sll_audit_v2_20261013.json": "dbdf10fd829bf479cb1a13fc05bc28db8c5c7354b474e12b91adc52808ba468f",
+    "work/u280_native_cohort_members_audit_v1_20261013.json": "774d16a4276de0e0f6a0f663c4aa7b49c146ef24d43f49bceb1b99331d83af4b",
+    "work/native_cohort_build_20261013/ctest_writeback.log": "8cdb773127cafd2f19911830357da9c1bc018c1892f4edbe890ec7e1f1bdf151",
+    "work/native_cohort_asan_20261013/ctest.log": "940cc86874c6898bcd740cd87ed67c0ee2f00f8cf4d6d23741b03a2fe5af2e4e",
+    "work/native_cohort_fixture_20261013.log": "07cffd88ce06e5d563423d31d37ea93afbccb964d73e9712961d1820b1129c72",
+    "work/native_cohort_edif_fixture_checks_20261013/tests.json": "1797007ccee16ba1ecd4a4ca7c4e142e1582c1aa2d7981649866f2b024772b08"
+  }
+}

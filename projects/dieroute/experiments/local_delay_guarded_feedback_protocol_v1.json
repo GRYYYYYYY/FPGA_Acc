@@ -1,0 +1,50 @@
+{
+  "schema": "dieroute.local_delay_guarded_feedback_protocol.v1",
+  "status": "design_frozen_implementation_pending",
+  "objective": "Test whether local delay regression is a useful additional condition for bounded criticality-feedback requeue; retain full research gates.",
+  "hypothesis": "Cap crossings without local path-delay increases may include unnecessary or harmful supplemental reroutes. This is not established by observed local outcomes.",
+  "source_evidence_sha256": {
+    "work/rr_critical_feedback_variant_20261014/feedback_comparison.json": "83fef47133e0d6173e8477ab20f5f0285266ba7247ed0cd30c788c2e44bbe8cf",
+    "work/rr_critical_feedback_variant_20261014/local_outcome_profile.json": "d8dbaea37ab37221bd175a27eb078f918520757c414b1a025410ccc3a5ed6dbf",
+    "work/rr_critical_feedback_variant_20261014/trigger_delay_profile.json": "b5288c43bf2a62f75b93bc89006c007651ff6fdcb20cbff4c0bcdc0419f6eef8"
+  },
+  "rule": {
+    "enabled_condition": "At least one connection of the net crosses old criticality below64880 to new criticality at least64880 AND that same connection is routed in consecutive STA inputs AND current path delay_ps strictly exceeds previous path delay_ps.",
+    "comparison": "Integer picoseconds as provided by existing STA input; strict greater-than with no tuned tolerance.",
+    "coalescing": "Keep smallest task ID among qualifying crossings. A nonqualifying crossing must not consume the per-net allowance.",
+    "ordinary_pending": "Existing minimum-iteration, failure and overuse pending reasons remain authoritative. Supplemental allowance consumed only when actually scheduled.",
+    "allowance": "At most one supplemental requeue per net, unchanged from parent.",
+    "budget": "Never invalidate retained legal routing solely because feedback remains unserved at iteration budget.",
+    "disabled": "Guard disabled reproduces unguarded feedback parent; threshold0 reproduces disabled parent."
+  },
+  "experiment": {
+    "development_case": "ex5p only",
+    "reserved_cases": "apex2/frisc/elliptic remain unopened for algorithm selection",
+    "repeats": 5,
+    "groups": [
+      "same-source threshold0",
+      "same-source threshold64880 unguarded",
+      "same-source threshold64880 local-delay-guarded"
+    ],
+    "fixed": {
+      "route_tree_timing_weight_q": 128,
+      "cost_scale": 1,
+      "task_order": "preserve",
+      "cost_state_bits": 64,
+      "max_iterations": 30,
+      "cleanup_passes": 0
+    },
+    "matching": "All sources/inputs/config/environments identical across groups except threshold and guard flag. Separate isolated source copy; production PR and original net_commit unchanged."
+  },
+  "validation": [
+    "Component checks for strict local increase, equality, decrease, unrouted prior state, qualifying nonrepresentative connection, ordinary-pending precedence, allowance, budget, disabled compatibility.",
+    "Five-repeat native legality, output determinism and joint QoR audit.",
+    "Independent guard-event and pending replay using all crossing connections; validate source/input hashes.",
+    "Full attachment and serial epoch/final version replay.",
+    "Semantic auditor corruption checks with refreshed fixture hashes, clearly separate from empirical runs."
+  ],
+  "acceptance": "Do not adopt unless native legality and original joint baseline quality gates pass. Improvements against the negative parent alone are insufficient. No threshold sweep or heldout tuning.",
+  "limitations": "Local delay outcomes from parent are trajectory observations, not causal or counterfactual evidence; global STA criticality changes can be meaningful even without local delay increases. No novelty, timing closure or board-performance claim.",
+  "research_complete": false,
+  "board_result": false
+}

@@ -1,0 +1,84 @@
+{
+  "schema": "dieroute.edif_connectivity_progress.v1",
+  "captured_utc": "2026-10-13T09:05:49.430058+00:00",
+  "research_status": "active_incomplete",
+  "board_result": false,
+  "routes_recomputed": false,
+  "implemented": [
+    "Hierarchical EDIF alias flattening by numeric port-member identity, including wire-only modules and repeated type instances.",
+    "All declared leaf/top bits retained, including disconnected bits; no static-net merging.",
+    "Sorted complete endpoint component fingerprints plus leaf instance/type/interface property hashes.",
+    "Narrow acceptance of deleted hdi_primitives VCC/GND instances only when the sole output had a one-terminal component; no arbitrary deletion exemption.",
+    "Frozen three-input native export runner and independent directed positive/negative fixtures."
+  ],
+  "results": {
+    "rw_embedded_vs_original_all_exports_byte_equal": true,
+    "native_reload_retained_leaf_records_equal": 774378,
+    "native_reload_retained_endpoint_records_equal": 4537715,
+    "changed_retained_leaves": 0,
+    "changed_retained_endpoints": 0,
+    "isolated_vcc_deletions": 7,
+    "empty_components_removed": 5,
+    "unconnected_declared_bits_retained": 183251,
+    "raw_native_report_equality": false,
+    "leaf_boundary_connectivity_preserved_except_isolated_constants": true,
+    "complete_research_gate_G1": false
+  },
+  "validation": {
+    "hand_specified_oracle": "21 endpoints, 12 components; three hierarchy levels, repeated instances, wire-only module, ascending/descending nonzero buses, INOUT and disconnected bits",
+    "positive_cases": [
+      "net renaming",
+      "isolated constant deletion"
+    ],
+    "negative_cases_rejected": [
+      "bus connection swap",
+      "loaded constant deletion",
+      "leaf property mutation",
+      "declared disconnected input removal"
+    ],
+    "first_failed_oracle_retained": "SDK bit-name helper returned A[-2]/A[-1] for ascending nonzero A[2:3]; adapter fixed with numeric member identity, oracle and upstream SDK unchanged.",
+    "same_failed_input_recheck": true,
+    "full_u280_corrected_exports_match_prior_version": true,
+    "all_final_producer_artifact_hashes_verified": true
+  },
+  "scope": "Connectivity and leaf metadata of readable EDIF with primitive/opaque boundaries. The previous full DCP physical/native reports supply independent route/timing/DRC evidence. This is unmodified serialization, not DieRoute routing.",
+  "not_proven": [
+    "encrypted cell internals formal equivalence",
+    "native bus-skew and bitstream acceptance",
+    "complete commercial RR graph and delay/task integration",
+    "actual commercial DieRoute rerouting or QoR",
+    "new hardware implementation or physical board speed/energy"
+  ],
+  "evidence": {
+    "work/u280_edif_connectivity_v2_20261013/manifest.json": "b26e0d4e52a2245fe31829f939f9985421f4935439782c4e72a81fc054eb62c4",
+    "work/u280_edif_connectivity_native_audit_v2_20261013/audit.json": "06763c29b40ad4e98b45bdbf8447d2c897c84eb14b5807be1b5a6c0e80a2f885",
+    "work/u280_edif_connectivity_native_audit_v2_20261013/leaf_differences.jsonl": "3adf0af994995725eea9d0abf89846fba405585bb98eb930ddcb5f050b40eed2",
+    "work/u280_edif_connectivity_native_audit_v2_20261013/endpoint_differences.jsonl": "005f49fd9950947bc5fb602b0caa53f7b376698551b37f332cdf41f81668dbc4",
+    "work/edif_connectivity_fixture_v2_20261013/manifest.json": "342d963363d020f512aeb6a829a4d03eaede3ed2a664ee687d38f17429546709",
+    "work/edif_connectivity_fixture_checks_v2_20261013/tests.json": "1797007ccee16ba1ecd4a4ca7c4e142e1582c1aa2d7981649866f2b024772b08",
+    "work/edif_connectivity_fixture_checks_20261013/failure.json": "1af2ad655c6127d41ab26229ec17abb18ac6d37e64441cf8613d05c07543c8b6",
+    "work/edif_connectivity_verification_20261013/source_sha256.json": "5c50d581867b0bdebeee72332bd16e42ccc9e16fd8bfa899fdaf07b3982e003d",
+    "work/edif_connectivity_verification_20261013/verification.json": "0d8d7db8bb5c992fe7e473a3f103e8e6033ac194ccff9f60de1cdaea6454e40a",
+    "work/u280_dcp_native_comparison_20261013.json": "9ffbbc343be075865f22a72897a945c0fda44288b47a8518680814d83a0dc4c6",
+    "work/u280_dcp_roundtrip_comparison_v2_20261013/audit.json": "9d482fe821122f287e829351a157fa246217c38200989b69c5639dbf8021a33d",
+    "work/u280_sll_delay_entry_probe_20261013/manifest.json": "cc4b34e740a2038acad7804e3520c53047ec23d59db91511f54214be017eefa9",
+    "work/u280_sll_delay_entry_probe_20261013/probe.log": "50870339a923fe7ee018321593c1d5686eff09764b4582cb9ea969a054d83f71"
+  },
+  "verification_directory": "work/edif_connectivity_verification_20261013",
+  "active_processes": [],
+  "next_action": "Export complete commercial routing input with true SLR/PIP identities, task endpoints and background occupancy; validate SLL delay evidence before adopting a commercial timing model.",
+  "remaining_research": [
+    "Complete commercial RR integration and real native rerouting.",
+    "Joint wirelength/CPD gate, reserved validation cohort and topology/capacity scaling.",
+    "All reservation, HBM mapping, shadow, migration and topology ablations.",
+    "HLS/cosim/HBM/U280 implementation.",
+    "Physical board end-to-end speedup and energy.",
+    "Paper, claim matrix, reproducible complete artifact and final audit."
+  ],
+  "timing_frontend_observation": {
+    "probe": "work/u280_sll_delay_entry_probe_20261013/manifest.json",
+    "fact": "For native LAG_LAG_X4Y539/UBUMP0 (NODE_LAGUNA_DATA), this SDK RouteNode.isExitNode returns false and RouterHelper.computeNodeDelay takes its zero-return branch.",
+    "interpretation": "This one entrypoint cannot by itself supply a validated SLL delay. Do not assume zero physical delay; inspect the complete timing composition and calibrate against native timing before commercial graph QoR runs.",
+    "scope": "single API entrypoint, not a verdict on the complete RWRoute timing model"
+  }
+}

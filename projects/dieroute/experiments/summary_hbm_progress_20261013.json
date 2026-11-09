@@ -1,0 +1,345 @@
+{
+  "schema": "dieroute.summary_hbm_progress.v1",
+  "finished_ns": 1791932563826086484,
+  "research_complete": false,
+  "board_result": false,
+  "full_router_in_hardware": false,
+  "active_owned_experiment_processes": [],
+  "hls": {
+    "clock_target_ns": 4.0,
+    "effective_budget_ns": 2.92,
+    "estimated_period_ns": 2.92,
+    "estimated_resources": {
+      "BRAM_18K": 0,
+      "DSP": 3,
+      "FF": 27252,
+      "LUT": 25192,
+      "URAM": 0
+    },
+    "axi_data_widths": {
+      "M_AXI_INGRESS": 512,
+      "M_AXI_DIRECTORY": 64,
+      "M_AXI_OWNER_STATE": 512,
+      "M_AXI_SHADOW_STATE": 512,
+      "M_AXI_EGRESS": 512
+    },
+    "directed_rtl_launches": 15,
+    "physical_timing_verified": false
+  },
+  "real_capture_replay": {
+    "sync1": {
+      "passed": true,
+      "repeats": 5,
+      "boundary_slots": 46848,
+      "receiver_deliveries": 100600,
+      "cache_inspections": 100600,
+      "source_fetch_requests": 100065,
+      "kernel_launches": 100598,
+      "cache_bytes_per_die": 11993088,
+      "scope": "C-model receiver/lookup replay of independently audited capture; owner fetch/validation tested separately; no hardware throughput claim"
+    },
+    "sync3": {
+      "passed": true,
+      "repeats": 5,
+      "boundary_slots": 46848,
+      "receiver_deliveries": 100575,
+      "cache_inspections": 100575,
+      "source_fetch_requests": 100065,
+      "kernel_launches": 100573,
+      "cache_bytes_per_die": 11993088,
+      "scope": "C-model receiver/lookup replay of independently audited capture; owner fetch/validation tested separately; no hardware throughput claim"
+    },
+    "serial3": {
+      "passed": true,
+      "repeats": 5,
+      "boundary_slots": 46848,
+      "receiver_deliveries": 44340,
+      "cache_inspections": 44340,
+      "source_fetch_requests": 44135,
+      "kernel_launches": 44341,
+      "cache_bytes_per_die": 2998272,
+      "scope": "C-model receiver/lookup replay of independently audited capture; owner fetch/validation tested separately; no hardware throughput claim"
+    }
+  },
+  "hw_emulation": {
+    "passed": true,
+    "cu_banks": {
+      "0": {
+        "commands": "HBM[0]",
+        "topology": "HBM[1]",
+        "owners": "HBM[2]",
+        "shadows": "HBM[3]",
+        "responses": "HBM[4]",
+        "completion": "HBM[4]"
+      },
+      "1": {
+        "commands": "HBM[8]",
+        "topology": "HBM[9]",
+        "owners": "HBM[10]",
+        "shadows": "HBM[11]",
+        "responses": "HBM[12]",
+        "completion": "HBM[12]"
+      },
+      "2": {
+        "commands": "HBM[16]",
+        "topology": "HBM[17]",
+        "owners": "HBM[18]",
+        "shadows": "HBM[19]",
+        "responses": "HBM[20]",
+        "completion": "HBM[20]"
+      }
+    },
+    "clock_metadata": {
+      "clock_freq_topology": {
+        "m_count": "2",
+        "m_clock_freq": [
+          {
+            "m_freq_Mhz": "300",
+            "m_type": "DATA",
+            "m_name": "DATA_CLK"
+          },
+          {
+            "m_freq_Mhz": "300",
+            "m_type": "KERNEL",
+            "m_name": "KERNEL_CLK"
+          }
+        ]
+      }
+    },
+    "xrt_launches": 15,
+    "launches_without_state_upload": 12,
+    "xclbin_sha256": "830e92db66705b000b0d92328b743c91c2bd443aea89c5f2e485091eca373e56",
+    "physical_placement_verified": false
+  },
+  "tests": {
+    "ctest": 38,
+    "asan_ubsan_component": true,
+    "asan_ubsan_real_capture": true
+  },
+  "evidence": [
+    {
+      "path": "work/summary_hbm_hls_audit_20261013/audit.json",
+      "sha256": "257564e76d75b09e74eff5a202954e91c0eceaec421118924d87d8dc01dae4ee"
+    },
+    {
+      "path": "work/summary_hbm_hls_v4_20261013/manifest.json",
+      "sha256": "5e5c4f4fb24242fa2f5e08634a15f0a4b8979af2f10a61b09ffb12356a3b6176"
+    },
+    {
+      "path": "work/summary_hbm_hls_v4_20261013/run.log",
+      "sha256": "2a128e0e253f8dee8d8535e2834dae60a88197b9878ff4bdd902ab8142b796d1"
+    },
+    {
+      "path": "work/summary_hbm_hls_v4_20261013/project/u280/syn/report/dieroute_summary_hbm_csynth.xml",
+      "sha256": "00614eb0044fce4f541f300d84147403c25149c8db731a4e39aa981a2629fa5e"
+    },
+    {
+      "path": "work/summary_hbm_hls_v4_20261013/project/u280/syn/report/dieroute_summary_hbm_csynth.rpt",
+      "sha256": "4d3f863342e8436f5647f4dfb238f6106b204b9bfd58fd31147c160c2ea900a7"
+    },
+    {
+      "path": "work/summary_hbm_hls_v4_20261013/project/u280/sim/report/dieroute_summary_hbm_cosim.rpt",
+      "sha256": "88b728bb1f2a6dd2a563fb32527b4d024afd9601388343d155a44cc7fc7b5ce3"
+    },
+    {
+      "path": "work/summary_hbm_hls_v4_20261013/project/dieroute_summary_hbm.xo",
+      "sha256": "abf9882957373f73f212b13e06aa52ea889866f23c45da1f362c8e07b349578a"
+    },
+    {
+      "path": "work/summary_hbm_hls_v4_20261013/project/u280/syn/verilog/dieroute_summary_hbm.v",
+      "sha256": "c6e3231a0d6c2ee9972105f65d4cd9da53adf0a351a97243c89fe9844c396e6e"
+    },
+    {
+      "path": "work/summary_hbm_replay_v4_20261013/comparison.json",
+      "sha256": "f52458352dbd603bdae7b90a9df2e1d6a315945adf9b2661cb5235a6ce6299c8"
+    },
+    {
+      "path": "work/u280_native_persistent_shadow_sync1_v1_20261013/manifest.json",
+      "sha256": "ea53e39f9225b9a4789fad8396e8c3b27cdfa13a41c7300872c017ca953ea810"
+    },
+    {
+      "path": "work/u280_native_persistent_shadow_sync1_v1_20261013/route/worker_shadow_messages.bin",
+      "sha256": "a077f1c7f69a01c631ada4c6a538f67b9faa74977b40c2c6a48296750f38f46d"
+    },
+    {
+      "path": "work/u280_native_persistent_shadow_sync1_protocol_audit_v1_20261013/audit.json",
+      "sha256": "4fc99bc7ffdde85cbc277daa8456c6acb9070f76a5762c4ff2b1998276b56d21"
+    },
+    {
+      "path": "work/u280_native_persistent_shadow_sync1_v1_20261013/route/owner_usage.csv",
+      "sha256": "2f59ccbfaf07766a25ddadcfc99c8c70c1c63a85539806f9417e26ae87ba22aa"
+    },
+    {
+      "path": "work/u280_native_device_graph_v2_20261013/graph/nodes.bin",
+      "sha256": "2e53cd404b39cac016ccc76d28bd636e14f1bac35c1989fccaac19c9cb371201"
+    },
+    {
+      "path": "work/summary_hbm_replay_v4_20261013/sync1/manifest.json",
+      "sha256": "5ba4c8012562905b109889aa8d064db774a8521ad041aff429e64d28809b3884"
+    },
+    {
+      "path": "work/summary_hbm_replay_v4_20261013/sync1/cache.csv",
+      "sha256": "5d0938234f2c465ce43648dd0c1afc3143e848c476af51241d4c380e60f90690"
+    },
+    {
+      "path": "work/summary_hbm_replay_v4_20261013/sync1/stdout.log",
+      "sha256": "89ccad3c78cf0e345056119cde695c4dc4cfa79fe6d3261cead543a6598d2b18"
+    },
+    {
+      "path": "work/summary_hbm_replay_v4_20261013/sync1/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "work/u280_native_persistent_shadow_sync3_v1_20261013/manifest.json",
+      "sha256": "1232170dbf01f3203707665bf38a34b5b1be9234bfe6943fa0ad326482ac7901"
+    },
+    {
+      "path": "work/u280_native_persistent_shadow_sync3_v1_20261013/route/worker_shadow_messages.bin",
+      "sha256": "63782b4fc02351be7823671b2ff53c1a15bb3d9df93547e48db43305e9f31e95"
+    },
+    {
+      "path": "work/u280_native_persistent_shadow_sync3_protocol_audit_v1_20261013/audit.json",
+      "sha256": "48de28a0567f8d924b1083e2ab249968f670f03546f0efd8ceaaf4cfe97ee37c"
+    },
+    {
+      "path": "work/u280_native_persistent_shadow_sync3_v1_20261013/route/owner_usage.csv",
+      "sha256": "2f59ccbfaf07766a25ddadcfc99c8c70c1c63a85539806f9417e26ae87ba22aa"
+    },
+    {
+      "path": "work/summary_hbm_replay_v4_20261013/sync3/manifest.json",
+      "sha256": "21e84148d667653e5995bb97d96efb3784c9fd13da16b29cb45f07a099abe9eb"
+    },
+    {
+      "path": "work/summary_hbm_replay_v4_20261013/sync3/cache.csv",
+      "sha256": "5d0938234f2c465ce43648dd0c1afc3143e848c476af51241d4c380e60f90690"
+    },
+    {
+      "path": "work/summary_hbm_replay_v4_20261013/sync3/stdout.log",
+      "sha256": "da56af3a1bd0c8581993077c80e0e57b150d10cef99e44b8a4429be1c17f4542"
+    },
+    {
+      "path": "work/summary_hbm_replay_v4_20261013/sync3/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "work/u280_native_persistent_shadow_serial3_v1_20261013/manifest.json",
+      "sha256": "117d33229f1aa44fc581daefb6e98db2a164f19769304f02823417bd26b628e3"
+    },
+    {
+      "path": "work/u280_native_persistent_shadow_serial3_v1_20261013/route/worker_shadow_messages.bin",
+      "sha256": "2fde1a74bd8c5b55fa25c6202f14c59e2606cce75de7064d203e49959a194785"
+    },
+    {
+      "path": "work/u280_native_persistent_shadow_serial3_protocol_audit_v1_20261013/audit.json",
+      "sha256": "625091fa234090e6e9f9b97535a1abe7a15152bfae961cc845f26473790fc1cb"
+    },
+    {
+      "path": "work/u280_native_persistent_shadow_serial3_v1_20261013/route/owner_usage.csv",
+      "sha256": "2f59ccbfaf07766a25ddadcfc99c8c70c1c63a85539806f9417e26ae87ba22aa"
+    },
+    {
+      "path": "work/summary_hbm_replay_v4_20261013/serial3/manifest.json",
+      "sha256": "92c33f1df03ce0fd0e72731601290e397d601ff16528d2620d2129473a3fcbec"
+    },
+    {
+      "path": "work/summary_hbm_replay_v4_20261013/serial3/cache.csv",
+      "sha256": "5fc8c89479478208afe1108dec8d3c738e4319614e6d742f8320578da00d6ffb"
+    },
+    {
+      "path": "work/summary_hbm_replay_v4_20261013/serial3/stdout.log",
+      "sha256": "d1396ba358e50f02d20f523ff01d05377a40cc804a649a6ecf15aa7b0d952580"
+    },
+    {
+      "path": "work/summary_hbm_replay_v4_20261013/serial3/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "work/summary_hbm_scripts_20261013/ctest.log",
+      "sha256": "c656b56bc335c1d25bbbdd2e803d5599f3ea652845c3bbbfa037352c10648fbe"
+    },
+    {
+      "path": "work/summary_hbm_scripts_20261013/ctest_v4.log",
+      "sha256": "e77eb0fceb7a399ebcf9df8fc46b67d9793ca5c6cbd62c0a0237d2f9dfa9a0f0"
+    },
+    {
+      "path": "work/summary_hbm_scripts_20261013/sanitize_ctest.log",
+      "sha256": "36cbd1e97769aeed378f622dd44953fe290274b333fb0ce05bebcaf14d383451"
+    },
+    {
+      "path": "work/summary_hbm_hw_emu_link_v1_20261013/manifest.json",
+      "sha256": "942639b2b282955d2a40b4cc79766a5c9178d6d0b3829e8517b8466a5a0a5959"
+    },
+    {
+      "path": "work/summary_hbm_hw_emu_link_v1_20261013/dieroute_summary_hbm.xo",
+      "sha256": "abf9882957373f73f212b13e06aa52ea889866f23c45da1f362c8e07b349578a"
+    },
+    {
+      "path": "work/summary_hbm_hw_emu_link_v1_20261013/connectivity.cfg",
+      "sha256": "a8cc38ed4134090d442b36ceeff9c9cddfe32d6ca6c06712d0e0784b5ba918d1"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/U280_2022.2/dev_platform/opt/xilinx/platforms/xilinx_u280_gen3x16_xdma_1_202211_1/xilinx_u280_gen3x16_xdma_1_202211_1.xpfm",
+      "sha256": "33ffbb50935e524e4feafd0cb3b8c39429a7f911b0c42dff065e2f3097fe2bc6"
+    },
+    {
+      "path": "work/summary_hbm_hw_emu_link_v1_20261013/summary.xclbin",
+      "sha256": "830e92db66705b000b0d92328b743c91c2bd443aea89c5f2e485091eca373e56"
+    },
+    {
+      "path": "work/summary_hbm_platform_audit_v3_20261013/audit.json",
+      "sha256": "5b9e9bc237b878c2c7b44e4714f192ad3ce4fd6c96188277592a18f654681b46"
+    },
+    {
+      "path": "work/summary_hbm_scripts_20261013/platforminfo.json",
+      "sha256": "9600087ea5d44d2a8c709159708af07c347158cc17badb7ad74c7caa9cd8dae4"
+    },
+    {
+      "path": "work/summary_hbm_hw_emu_run_v2_20261013/manifest.json",
+      "sha256": "ca149c53a52f7834f1f797dfd9bc1d4a0996172ed4992afa8e9d67fd0abd5805"
+    },
+    {
+      "path": "host/summary_hbm_xrt.cpp",
+      "sha256": "7580a0de7cd2e6465b9685f9719a17cb9ae137b1df08dc4e00b9f1c93f471092"
+    },
+    {
+      "path": "include/summary_hbm.hpp",
+      "sha256": "55177ca09b0b07e2e23b38d8430052b405ff9617b6049613663baf3eeb3e401c"
+    },
+    {
+      "path": "tb/summary_hbm_tb.cpp",
+      "sha256": "9fe1e53916d63fd4020d952a4ce140a5e98042bf7dee8fcd7447a4952d97819a"
+    },
+    {
+      "path": "tools/build_summary_xrt.sh",
+      "sha256": "b62e57f1bdc73e7409a8a37f2c6162e9a0a872611af5cee8ba0b01d6a81d2aac"
+    },
+    {
+      "path": "work/summary_hbm_build_20261013/summary_hbm_xrt_tb",
+      "sha256": "d9c995c10652399a29c4e2c24bec2674558c8edc657018826015d0bac8575f34"
+    },
+    {
+      "path": "work/summary_hbm_hw_emu_run_v2_20261013/run.log",
+      "sha256": "4382ec81284bd10da5b1f26ad1510ec58810a9607aad45a9d602afc7d6731cb9"
+    },
+    {
+      "path": "work/summary_hbm_hw_emu_run_v2_20261013/emconfig.json",
+      "sha256": "7a896fd919c9baa7fc2aa1079eb1a78b7ca08ce3414f600a1499ee5a97ad99d5"
+    },
+    {
+      "path": "config/summary_hbm_u280.cfg",
+      "sha256": "a8cc38ed4134090d442b36ceeff9c9cddfe32d6ca6c06712d0e0784b5ba918d1"
+    },
+    {
+      "path": "experiments/summary_hbm_schema_v1.json",
+      "sha256": "13385e2047d03a3723e5a2f198623f66d9603dcf9b4eafceef12867b973a3b95"
+    }
+  ],
+  "limits": [
+    "No full router or whole-net hardware commit",
+    "No autonomous subscription scanner or inter-CU network scheduler",
+    "No simultaneous host producer/device consumer memory-coherence claim",
+    "No board performance, energy, or routed platform timing claim from HLS/cosim/hw_emu",
+    "C-model real-trace replay covers receiver/lookup; owner operations have separate directed RTL fixtures"
+  ],
+  "next_work": "Integrate descriptor scheduling and HBM records with the native search/commit pipeline; implement whole-net ownership publication, autonomous queue/coherence protocol and mapping/migration ablations; then full platform implementation and physical QoR/board evaluation."
+}

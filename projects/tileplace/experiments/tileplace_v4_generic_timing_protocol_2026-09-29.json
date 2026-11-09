@@ -1,0 +1,326 @@
+{
+  "cache_policy": "Natural warm filesystem cache following hash verification and one complete warmup; do not drop system caches",
+  "case": "diffeq",
+  "command": [
+    "taskset",
+    "-c",
+    "31",
+    "/usr/bin/python3",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/run_tileplace_v2.py",
+    "--contract",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/diffeq_seed1_cw200_endpoints",
+    "--input-place",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/diffeq_seed1_cw200/diffeq.golden.place",
+    "--baseline-closure",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/diffeq_seed1_cw200/vpr_native_closure.json",
+    "--rr-graph",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/diffeq_seed1/rr_graph.xml",
+    "--preregistration",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_v4_preregistration_2026-09-03.json",
+    "--seed",
+    "1",
+    "--channel-width",
+    "200",
+    "--epochs",
+    "4",
+    "--max-closures",
+    "24",
+    "--timing-weight",
+    "2",
+    "--routed-timing-weight",
+    "2",
+    "--congestion-weight",
+    "1",
+    "--critical-distance-guard-q",
+    "0",
+    "--timing-feedback-paths",
+    "20",
+    "--work",
+    "{run_dir}/work",
+    "--output-place",
+    "{run_dir}/final.place",
+    "--report",
+    "{run_dir}/report.json",
+    "--timing-report",
+    "{run_dir}/timing.json",
+    "--vpr",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+    "--architecture",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+    "--circuit",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/diffeq.blif",
+    "--netlist",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/diffeq_seed1_cw200/diffeq.net",
+    "--implementation-manifest",
+    "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_v4_generic_implementation_2026-09-29.json"
+  ],
+  "cpu": 31,
+  "cwd": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc",
+  "failure_policy": "Stop and retain failed artifacts; no automatic retries or selective sample removal",
+  "files": [
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/diffeq_seed1_cw200/diffeq.net",
+      "sha256": "1ceb244ed8861bbeaecdcc961ca48c131ce5182dfc279a074854ab5fcbaab043"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/diffeq_seed1/rr_graph.xml",
+      "sha256": "62d7b83281be59af216d789f9ec592c315af23519bd97260da4f131401306b96"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/diffeq_seed1_cw200/diffeq.golden.place",
+      "sha256": "39286aa43ccc35b67178c2e3741b47c786c8b0b1597309d5b93ffa50f2ed77be"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/diffeq_seed1_cw200/vpr_native_closure.json",
+      "sha256": "ce820fff98151225b9f38d710481e9f2e1cc2dc4d0db2356438280c33208c00d"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/diffeq_seed1_cw200_endpoints/blocks.jsonl",
+      "sha256": "34331d8e9595e2bd5ad8b10249c92c0599ba10b076554ad69aef5bf44c51bfb0"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/diffeq_seed1_cw200_endpoints/manifest.json",
+      "sha256": "4d6681c6afa7f4aec68100854b764ccb85e3287ad184667846fc8c526b85f0c0"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/diffeq_seed1_cw200_endpoints/nets.jsonl",
+      "sha256": "342156c60c71b5e82319ee7ad645e4cf0de98ebf84c15ed12cf2ec7c79cdeeae"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/diffeq_seed1_cw200_endpoints/sites.jsonl",
+      "sha256": "0e73bdbfb6b08e9fd04b271f57d127dc7859615b03f99d750b8814ef6c48c53a"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_v4_dev/diffeq/report.json",
+      "sha256": "7280b1e4176115abde199621f6129c19d6eefc0196282cc0d3de2a8bb6eb9f43"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_v4_generic_implementation_2026-09-29.json",
+      "sha256": "b61708adbef695c3d7975acabc6dd07fe6ba7f46e2425cb72ed6a50dfd207d08"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_v4_preregistration_2026-09-03.json",
+      "sha256": "75dce71634d613f17db59a0af923d258cf5b95fe795566a37596486656cfa3ca"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_v4_timing_diffeq_2026-09-29/run_00/report.json",
+      "sha256": "79b4fd8058093cf228d3eef1d5eb2e1542e52115cb80bc5367c598d624311e46"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+      "sha256": "a90dc1b3380ebda705e85f176db0cc3d6be1b71ab9ee887db819febc8b62bafc"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+      "sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/diffeq.blif",
+      "sha256": "507978af7a0c09efa0baada34e55a7d3e635619b6dd9a18a7fa47aed7903ecf7"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/audit_v4_timing_parser.py",
+      "sha256": "686a9e39dd379154d2456433522373d2630b341ffe6958d74ee2b640d8aff554"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/benchmark_tileplace_research.py",
+      "sha256": "8cb86050cdd4cd7b92368b2c3b2030f608dedcf8638e4565787e9ef73af631cd"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/capture_vpr_macros.py",
+      "sha256": "9909c4c532020f6e90c1034801399a3de14e1fcc91d23d46afc3d0701b741b50"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_constrained_qor_matrix.py",
+      "sha256": "7f80b3d02013e0f581371ba13a3fd50d7c1efc816de0b874c638faf938b73722"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_correctness_matrix.py",
+      "sha256": "10497661897dffbca82c4fc6f489eca2c1d0e26bbfb9de32da2ae3017a9886e1"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_cpu_runtime_sixcase_matrix.py",
+      "sha256": "acd23522fc5cdecc4b7266ddda45c8212ae5bdc5a6e314b4e2a09d210cdeeeeb"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_external_constraint_matrix.py",
+      "sha256": "2f62279ffa2e71fbab46c3022446eb3f5fa94dbfce19790a978a54016d94acf6"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_oracle_rr_cache.py",
+      "sha256": "73bd10f4adfa544efce60c943f18d158b590d6e3a3baf99da5fee3c3511735be"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_page_incremental_probe.py",
+      "sha256": "e8446fa222dd45fab5d5a0312873aa70dc96085cb26d28431285f23a0555b4b0"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_page_size_ablation.py",
+      "sha256": "5d9ffcd7f9c71862fc665243c916ded998f0b54ccbf8fbeae6bd9c3a492da6c5"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_parallel_proposal_matrix.py",
+      "sha256": "4532dedf34bb5ddd476e260878d292fcce41b19f8ae1de5fe308ce8d0abe03ee"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_reference_timing_input.py",
+      "sha256": "9f80a16c934ce4b0f513852350d85570ad31d4f340fa8fd9d19af4ef5dc29451"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_route_feedback.py",
+      "sha256": "eaf3198dadf5d7c860a42b0134872f3553028ea74d82b9a46294e48af58c3353"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_runtime_ablation.py",
+      "sha256": "e59f41335f7ee550c486bc62aaa1289723d5d211fc75c8af709d7a3317ea6868"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_tileplace_blif_case.py",
+      "sha256": "2c775107ded42276db574f74a21581221f8ff269ba829ced7d159c3badfe7b98"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_tileplace_v4_development_matrix.py",
+      "sha256": "d32701dcbb9d000cb9a56b1c8d0e3764014e1daa696f08f777aa1e7e5ce8f7cb"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_tileplace_v4_heldout_matrix.py",
+      "sha256": "43691cfbd17cc6dc0203afc817fa1eac183182428da616dc688907e35cc4eee4"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_timing_extended_matrix.py",
+      "sha256": "c7b81508df074bf761eec87f74f864e0f737f5c07fe79a1665356dbfbdbba252"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_timing_feedback.py",
+      "sha256": "ff830e3d30bfaf3d48517a8c547f64d76ee76e77efb8225ee0bad64689639627"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_timing_guard_ablation.py",
+      "sha256": "735a8a418c6fb0c8b9bf74297debb3cc4ef85e71ad9baf7cd600e4e1c0c52ebb"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_timing_macro_extended_matrix.py",
+      "sha256": "1d0aa7c7f69ae954f6eb44c9de7b6bd4ae26bff83d261f7c56de78c4797fabe1"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_timing_multicase_matrix.py",
+      "sha256": "a7d35056d8d284268add3e1cabe9860f822f16501b4d20243080512f467a9647"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_timing_titan_extended_matrix.py",
+      "sha256": "5c7160dbad1f30d48e520824c72b9454a7783ddc30365fe9478c2c1355d8fc96"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_timing_titan_stereo_extended_matrix.py",
+      "sha256": "25caa788801ff7f2f3a12c78a0b67f96446edd8dda8fce0b10226412f1f91063"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_titan23_stereo_input_capture.py",
+      "sha256": "0be245a8d03d6586f0b9cd3593b8c406c24ca5d9588c6c226e2e90a043e55cd2"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_v4_oracle_cost_audit.py",
+      "sha256": "152f1db9ad73fe2bba2d5101feada12f5f2771b6efff9eca6180d29206792378"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_vpr_placement_baseline_matrix.py",
+      "sha256": "c7b503c401d6c7c02f55254008057f4c0c5b4551445f3251bc80475672716aeb"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/run_external_constraint_case.py",
+      "sha256": "42b62fc4179fb87ccafa24b3ba81abfcd6ddd5d8b402805d8570fde074ebb48c"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/run_external_constraint_probe.py",
+      "sha256": "f94614e86fc606f1f04032f072edcd28f1ac31e5872cca5c674e38723285af09"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/run_real_legalization_probe.py",
+      "sha256": "a3bb0df85d35a9e4677cf698f073e336f4fa93e8e9f0f1c059dddc6f1c3e0142"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/run_tileplace_v2.py",
+      "sha256": "b9843d5e3eab9171463ba312bb0e4cd45c9fb262b18dc63552ea4218538ed2bf"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/run_v4_timing_protocol.py",
+      "sha256": "e04ee21625ccddb14845e38511fb7dfec6e0315e6bbe3e852d88303931d23a6c"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/run_vpr_closure.py",
+      "sha256": "012cc3570765f2abd420c5144ee066e1161c8338efd67e2b6cc592c06940da34"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/run_vpr_placement_baseline.py",
+      "sha256": "562304add41abf9106e3c7323ac9d37faa061834e1594d38c76562b7c621da40"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/run_vpr_placement_baseline_suite.py",
+      "sha256": "fff350ccbda6a89ca8dc45f46b90ac1a1dedf7e8f3d315862e994b72a5887854"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/tileplace_provenance.py",
+      "sha256": "4952b986d2fd1d22261c3045e5fda54462b4dfd1af5c84c2d7831c06c579af43"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/tileplace_research.py",
+      "sha256": "2441c4b8c8e01ed50371e1fc9749cec4fab23f732203bcd92c914db178f5c8e3"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/tileplace_v2.py",
+      "sha256": "143a818d6d5e42dd98385e34e227f50f515950c626f1c12e8f1d9ebdc8b927c7"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/tileplace_vpr.py",
+      "sha256": "355535e49a0ec47b485e8c374e34fa35ee323fbf406b731b920ca40ab582d364"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/diffeq_seed1_cw200_native_closure_v2/place_macros.echo",
+      "sha256": "0efcfecb18fd7b26f5fff38f8e7afb45d3da42b7febc428ec4b045c63b7c93ee"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/diffeq_seed1_cw200_native_closure_v2/report_timing.setup.rpt",
+      "sha256": "a29557cd9c8479e16bf3538e96b5e42fc1773daadbe86f901be9c2def9abac75"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/diffeq_seed1_cw200_native_closure_v2/vpr.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/diffeq_seed1_cw200_native_closure_v2/vpr.stdout.log",
+      "sha256": "f18d6a65dfe8405deb490e0bb2f1c0d401a8959bb86a40df67a919f30869e58b"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/diffeq_seed1_cw200_native_closure_v2/vpr_input.net",
+      "sha256": "1ceb244ed8861bbeaecdcc961ca48c131ce5182dfc279a074854ab5fcbaab043"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/diffeq_seed1_cw200_native_closure_v2/vpr_input.net.post_routing",
+      "sha256": "98786562136ffc3ae552f5391608669feaa1c79724fff497cfc4913eafade789"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/diffeq_seed1_cw200_native_closure_v2/vpr_input.place",
+      "sha256": "e4c5c5eff70b37aad1e520ef802e9e9e839fc4c0d76aaf483da986bb8a45449d"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/diffeq_seed1_cw200_native_closure_v2/vpr_output.route",
+      "sha256": "23a31a26cb089a197b549eb1382578f32b5fbcf61eadc4f08a533c53d9e46890"
+    }
+  ],
+  "implementation_sha256": "dc0d7b31b411a03057597d4f215f46cfb4f29a7a2fb1a265185ca9d321996f6d",
+  "limitations": [
+    "Single small development design, diagnostic only; not representative throughput",
+    "Three measured runs, no independent equal-time comparator or speedup claim",
+    "Baseline/input generation excluded; external process duration includes startup and output",
+    "Held-out QoR cohort unchanged",
+    "Generic-port implementation; historical restricted-port V4 development aggregate is not a comparator or validation target"
+  ],
+  "load_policy": "Shared host, sequential pinned runs, no exclusive CPU reservation; retain all measured runs and report sample CV",
+  "measured_runs": 3,
+  "output_root": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_v4_generic_timing_diffeq_2026-09-29",
+  "purpose": "Current fixed generic-port implementation repeatability and diagnostic timing; previously observed diffeq only",
+  "reference_report": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_v4_timing_diffeq_2026-09-29/run_00/report.json",
+  "schema": "TILEPLACE_V4_DEVELOPMENT_TIMING_PROTOCOL_V1",
+  "sealed_utc": "2026-09-29T20:19:57.227305+00:00",
+  "warmups": 1
+}

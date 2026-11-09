@@ -1,0 +1,13 @@
+{
+  "status": "pass",
+  "compile": "g++ -std=c++17 -O2 -Wall -Wextra -Werror test_commit_words.cpp",
+  "binary": "/tmp/tileplace-commit-selection-test",
+  "random_map_references": 3000,
+  "atomic_faults": 5,
+  "composition": "actual conflict selector -> commit: shared net rejection and disjoint acceptance, signed/layer full-bit coordinates",
+  "scope": "CPU only; no search commit integration or RTL",
+  "sources": {
+    "test_commit_words.cpp": "e211a599f213a9933cd457f197f653af569df6358d71f0bc334c417f33ab8ccf",
+    "commit_words.hpp": "619975bf458182fe6b2c30b4e668845747aa590877d63f300f2fd88f830e241f"
+  }
+}

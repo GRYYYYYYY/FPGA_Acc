@@ -1,0 +1,17 @@
+{
+  "status": "pass",
+  "scope": "array guards integrated into CPU candidate generation alongside array roots, legality and macro translation; STL buffers/control remain; native guard version not yet run",
+  "fixtures": 12,
+  "nonempty_guard_unit_sets": 60,
+  "nonempty_guard_color_sets": 48,
+  "resident_adapter_calls": 144,
+  "filter_effect_receipt": "array_guard_filter_coverage_2026-09-30.json",
+  "files": {
+    "array_guard_proposals.hpp": "4ef3e93beb8b1fad3421f00597f3c819fc6cdb38af29db2ec4ba44799d045b90",
+    "array_guard_search.hpp": "bce8b417dbb4dd607063f0e956619623df4a829809cbb610d36141e259cc80ba",
+    "array_guard_feedback_search.hpp": "065e5c58a6739f43828e15fc815f862db591b96599877c6ee6c58be866389ec4",
+    "array_guard_native_server.cpp": "6bfb31a618e61563ac40a1ce0268d1f998bbc8600f4a7cbb2efb15ce5a055a4b",
+    "test_array_guard_search.py": "c50f44099e844e082c26a3d07d2ba375f5b322cff0aa9df2b9007478471c57ed",
+    "test_array_guard_adapter.py": "740e350f4b327dede744c61716cbf482389d03a57007971cf0d53635b24e7c8e"
+  }
+}

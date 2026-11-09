@@ -1,0 +1,113 @@
+{
+  "schema": "TILEPLACE_V2_PREREGISTRATION_V1",
+  "status": "sealed_before_held_out_candidate_execution",
+  "sealed_utc": "2026-09-03",
+  "purpose": "Timing-first evaluation of deterministic exchange/chain placement transactions with routed congestion feedback.",
+  "implementation": {
+    "epochs": 4,
+    "colors_per_epoch": 4,
+    "page_width": 2,
+    "page_height": 2,
+    "candidate_limit": 64,
+    "chain_candidate_limit": 16,
+    "critical_distance_guard_q": 60000,
+    "critical_distance_slack": 0,
+    "transaction_kinds": [
+      "move",
+      "swap",
+      "chain2",
+      "chain3",
+      "macro_swap"
+    ],
+    "real_color_phase_barriers": true,
+    "deterministic_single_worker_oracle": true,
+    "routed_feedback_refresh": "after_every_accepted_closure",
+    "development_weight_configs": [
+      {"timing_weight": 2, "congestion_weight": 0},
+      {"timing_weight": 2, "congestion_weight": 1},
+      {"timing_weight": 4, "congestion_weight": 1}
+    ],
+    "development_selection": "Select one configuration by lowest development-set CPD geometric mean ratio; break exact ties by wirelength geometric mean ratio, then lexicographic (timing_weight, congestion_weight). Freeze it before any held-out candidate closure.",
+    "held_out_policy": "Run only the frozen development-selected configuration. Do not tune on held-out outcomes."
+  },
+  "oracle": {
+    "vpr_path": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+    "vpr_sha256": "a90dc1b3380ebda705e85f176db0cc3d6be1b71ab9ee887db819febc8b62bafc",
+    "maximum_route_analysis_closures_per_case": 24,
+    "rejection_policy": "Deterministically bisect a rejected multi-transaction batch into stable first and second halves while budget remains; reject a failed singleton.",
+    "wirelength_cap_relative_to_cpu_baseline": 1.005,
+    "acceptance": "The native closure must be legal and at or below 100.5% of baseline routed wirelength. Relative to the current incumbent it must improve reported CPD by at least 0.001 ns, or have exactly equal reported CPD and strictly lower routed wirelength.",
+    "failure_policy": "A failed, malformed, illegal, or feedback-unreadable closure is rejected, rolled back, and counts against the budget."
+  },
+  "development_cases": [
+    {"name": "diffeq", "suite": "VTR", "seed": 1, "channel_width": 200},
+    {"name": "frisc", "suite": "VTR", "seed": 1, "channel_width": 200},
+    {"name": "elliptic", "suite": "VTR", "seed": 1, "channel_width": 200},
+    {"name": "clma", "suite": "VTR", "seed": 1, "channel_width": 200}
+  ],
+  "held_out_cases": [
+    {
+      "name": "pdc",
+      "suite": "VTR",
+      "seed": 1,
+      "channel_width": 200,
+      "circuit": {"path": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/pdc.blif", "sha256": "7acf26624af9a5707cc9b050aabc896dd912f964f5912c41518c3d8ba72fcf37"},
+      "architecture": {"path": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml", "sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179"}
+    },
+    {
+      "name": "dsip",
+      "suite": "VTR",
+      "seed": 1,
+      "channel_width": 200,
+      "circuit": {"path": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/dsip.blif", "sha256": "b1b31c2927edc180f3b311536a1422444df9c430a08c4df7ab722b15cc6e7d85"},
+      "architecture": {"path": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml", "sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179"}
+    },
+    {
+      "name": "bnn",
+      "suite": "Koios",
+      "seed": 1,
+      "channel_width": 300,
+      "circuit": {"path": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/verilog/koios/bnn.v", "sha256": "ad907fd254c16636c4895646f9cb58f716ecadf537210e4753a93ba863246f89"},
+      "architecture": {"path": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml", "sha256": "9738371dbd8b3ca5c138150e6f78ed6186e315882edb38b5d302547de4f36c2c"}
+    },
+    {
+      "name": "gemm_layer",
+      "suite": "Koios",
+      "seed": 1,
+      "channel_width": 300,
+      "circuit": {"path": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/verilog/koios/gemm_layer.v", "sha256": "74b3fea66e330c5d061c7cd69e73a92706d55872b1c6f8a38f625c7c982f2e10"},
+      "architecture": {"path": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml", "sha256": "9738371dbd8b3ca5c138150e6f78ed6186e315882edb38b5d302547de4f36c2c"}
+    },
+    {
+      "name": "tdarknet_like.small",
+      "suite": "Koios",
+      "seed": 1,
+      "channel_width": 300,
+      "circuit": {"path": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/verilog/koios/tdarknet_like.small.v", "sha256": "d69c6812405410eec58f62805c827ef4ff3a52da9d2363003be927fa031e7c16"},
+      "architecture": {"path": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/COFFE_22nm/k6FracN10LB_mem20K_complexDSP_customSB_22nm.xml", "sha256": "9738371dbd8b3ca5c138150e6f78ed6186e315882edb38b5d302547de4f36c2c"}
+    },
+    {
+      "name": "ucsb_152_tap_fir",
+      "suite": "Titan23",
+      "seed": 3,
+      "channel_width": 300,
+      "circuit": {"path": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/titan_blif/other_benchmarks/stratixiv/ucsb_152_tap_fir_stratixiv_arch_timing.blif", "sha256": "cda05653b278035eed8969ae2fa4f947ee0564a9abb3ca960a0d8e5afd83a085"},
+      "sdc": {"path": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/titan_blif/other_benchmarks/stratixiv/ucsb_152_tap_fir_stratixiv_arch_timing.sdc", "sha256": "75f6c551f029195e7ef91a8fa99b146ef3a880f222a203615ab325e3a20f422a"},
+      "architecture": {"path": "projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/titan/stratixiv_arch.timing.xml", "sha256": "0d3a4f0459af9a883329b934dea81f6a025c18a0ad10c63cbed3d2f8cac4c12b"},
+      "timing_constraints": "Use the original archived SDC without edits."
+    }
+  ],
+  "publication_gate": {
+    "all_held_out_native_legal_and_deterministic": true,
+    "cpd_geomean_ratio_maximum": 0.99,
+    "minimum_strict_cpd_improvements": 3,
+    "wirelength_geomean_ratio_maximum": 1.0025,
+    "per_case_wirelength_ratio_maximum": 1.005
+  },
+  "prohibitions": [
+    "Do not add cases after sealing.",
+    "Do not retune method parameters from held-out results.",
+    "Do not replace the listed source, architecture, SDC, VPR binary, seed, or channel width.",
+    "Do not overwrite frozen TilePlace V1 evidence."
+  ]
+}

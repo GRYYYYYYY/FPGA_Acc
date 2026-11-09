@@ -1,0 +1,48 @@
+{
+  "schema": "TILEPLACE_NEW_COHORT_PAPER_BUILD_V1",
+  "status": "pass",
+  "pages": 9,
+  "body_pages": 8,
+  "make_exit_code": 0,
+  "checks": [
+    "all nine pages visually reviewed before final external-validity paragraph update",
+    "complete make regenerated audited tables and PDF",
+    "final log has no overfull boxes or undefined references/citations",
+    "README historical blindness claim corrected",
+    "claim matrix includes successful subset and all failures"
+  ],
+  "files": [
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/paper/dac/main.tex",
+      "sha256": "956f6d81638a77adbe11c6e6ec6a59bf5a7b4542bf4807a8c2c555e839f64f28"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/paper/dac/main.pdf",
+      "sha256": "f522a3ab16f62ab95f8fa42d57618e3b8c1c920471d079da6718d6906d2d48df"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/paper/dac/Makefile",
+      "sha256": "fbce656c2d4e459d2c7274d05ca2fe126e94511ebf5f4c5e02c41f4005f8f521"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/paper/prepare_new_cohort_table.py",
+      "sha256": "456cfcbedf1be2a4d1842e8ace9799d005227f382a9d1e0827ffae5ccb05bae6"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/paper/generated/new_cohort_table.tex",
+      "sha256": "eb88423e779daee494d12e07a67c6206b7c6e4adc618e52d5a460c032ee6183d"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/final_audit.json",
+      "sha256": "44de874899185b89542181be6201164c793e5d989751dc23f0490a409ed6aeaa"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/README.md",
+      "sha256": "d7055585e375a8e288b2c0e3f1685d10053bbf4370eccaca702b783cd50295ec"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/paper/CLAIM_MATRIX.md",
+      "sha256": "cd8ad1e0b94477238629dbe4f2f3b3536a7beec34bd559030f69012ed0669980"
+    }
+  ]
+}

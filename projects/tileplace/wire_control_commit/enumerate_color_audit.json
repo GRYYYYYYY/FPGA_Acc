@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "compile": "g++ -std=c++17 -O2 -Wall -Wextra -Werror test_enumerate_color.cpp",
+  "binary": "/tmp/tileplace-enumerate-color-test",
+  "coverage": "two triple-member macro units in eligible list; full variable descriptor pools and group boundaries compared against original callback enumerator; fixed unit keeps empty group; group capacity and invalid eligible index reject before emission",
+  "scope": "CPU adapter differential only; externally supplied eligibility, not integrated full color/evaluate/rank or RTL/native. Reference shares original branch algorithm.",
+  "sources": {
+    "enumerate_color_words.hpp": "30679c7b1dbb4f7ec51edb6ac5cbec383ba701b29c899c7d14ca9b190009f670",
+    "test_enumerate_color.cpp": "df3789db08b27954ec835b6704a713c4c4dbdede078f058966eaeaf82cf3db57",
+    "enumerate_descriptors.hpp": "cf21f5c0170e09dd0bd68939208e758009c51c901c15b14da0dd2653cc728da0"
+  }
+}

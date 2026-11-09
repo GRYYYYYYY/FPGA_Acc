@@ -1,0 +1,41 @@
+{
+  "observed_ns": 1793424280668481397,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_PREPARE_BUILDER_LIFETIME.json",
+    "sha256": "72a0ade10f11302ed457b9f4a8001c02eff9130f2bd11bcbc34d69dc2ec35c8e"
+  },
+  "progress": {
+    "report": "work/resident_delimiter_exit_cleanup_20261031/review.json",
+    "report_sha256": "1a7fd78dc8759d61b04fbdd7b078b3077a8c6682cdf4e51472db138c27bdaec1",
+    "independent_review": "work/resident_delimiter_exit_cleanup_20261031/independent_review.json",
+    "independent_review_sha256": "1d68d9c34d02377de11615a15380e7a2bce86e7246825521d53383860d1e2b82",
+    "local_queries_unsat": 8,
+    "capture_truth_cases": 1024,
+    "normal_exit_cleanup_traces": 7936,
+    "fresh_start_old_cache_cases": 15872,
+    "initial_startup_cleanup_proved": false,
+    "complete_delimiter_caller_lifetime_proved": false,
+    "HDL_simulation_executed": false,
+    "scope": "Source-bound reverse/portal delimiter post-exit forwarding/cleanup lemmas,not a whole caller-lifetime model. Eight feasible QF_BV queries cover arbitrary binary live exit/predicate bits and arbitrary old short-circuit registers. At72the live exit OR equals the postcapture OR,even when later flags retain stale values. Given accepted exit-ready72,parent builder in wait5with held start1,and no reset,source start-clear priority makes next start0;iter1and pending-exit become1and stage0sees the forwarded exit. On that stage0edge,the FSM holds at0while clearing both iter1and pending-exit. No internal request/read is asserted. After cleanup,with start0the idle FSM remains0and directdone0;when a fresh start1arrives,the old done-cache1is masked and the source advances to1,allowing cache clear. This supplies the correlation omitted by the earlier independent phase0hold/clear abstraction. This is conditional post-exit cleanup,not proof of initial startup with uninitialized/Xexit flags,parent remains5through every call,complete delimiter/builder coupling,reset abort semantics,full sequential/4stateHDL or intended response/pointer/data identity. Correct prior-call/adapter contracts,native acceptance,timing/watchdog and board gates remain open. No native flow,DUT/process/input/cache/guard/budget changes.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v239_20261031/matrix.json",
+    "sha256": "41478b5533c77d26cb74ca912d8cb2060a13a0f29c5b5a6e8175ffa098a84b68"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v239.json",
+    "sha256": "d4afe2211ad2d29ae15a8b6be9145bf5de1e3e0b1bc725f48bb9ae46f82025d2"
+  },
+  "next_action": "Refine delimiter/builder coupled phase0control using proved post-exit flag-forwarding/cleanup correlation;separately verify initial startup exit-flag cleanup and compose all3caller lifetimes. Current lemma is conditional normal-post-exit,not whole caller lifetime/full HDL or actual response identity. Preserve original native jobs/guards/budgets/inputs/caches.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

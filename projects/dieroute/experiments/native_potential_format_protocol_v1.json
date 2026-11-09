@@ -1,0 +1,32 @@
+{
+  "status": "design_frozen_implementation_pending",
+  "objective": "Integrate lossless8 potential format without losing original wide-value inputs or silently clipping guidance",
+  "evidence": [
+    "work/native_potential8_lossless_storage_20261015/independent_audit.json",
+    "work/native_potential8_kernel_Cmodel_20261015/independent_audit.json"
+  ],
+  "scope": "New isolated version only; do not edit existing experiments, protected PR/commit sources, live images or queues.",
+  "contract": {
+    "default_off": "Retain original nonzero-potential enable and64bit storage behavior byte-for-byte where possible.",
+    "enabled_formats": {
+      "0": "disabled potential",
+      "1": "original64bit array; all values including UINT64_MAX preserved",
+      "2": "packed8 array; permitted only if every existing clamped host value<=255"
+    },
+    "other_enabled_values": "Retain original wide interpretation for nonzero values other than explicit format2.",
+    "host": "Select compact only after checking every value; on out-of-range use complete wide data and format1. Never clip, reduce graph or change search budgets. Count any extra preprocessing and copies.",
+    "image_coherence": "Host may emit2 only for a bound image explicitly supporting this format contract; retain ABI argument list and HBM role mapping.",
+    "seed": "Worker initial heuristic remains original scalar value; packed format applies only to snapshot pointer reads.",
+    "independent_scope": "The current prototype proves fixed-task byte equality but not compatibility for all values; old directed fixtures contain UINT64_MAX and remain required."
+  },
+  "validation": [
+    "Both flags preserve original directed tests with wide1, including infinity and invalid sink guidance.",
+    "Additional packed finite-range tests cover all8byte positions,255, tail/overwrites and null disable; wide fallback covers256 andUINT64_MAX without mutation.",
+    "Same full91975782node graph,2Mlabels/2Mexpansions; both actual tops match7originalgold files, and compact input matches independently audited storage.",
+    "CPU property/ASAN/UBSAN, HLS effective timing numeric gate, generated external ABI and Verilog cosim before any newimage runtime.",
+    "No changes to original300MHz request, nativeQoR tolerances or heldout access."
+  ],
+  "adopted": false,
+  "board_result": false,
+  "research_complete": false
+}

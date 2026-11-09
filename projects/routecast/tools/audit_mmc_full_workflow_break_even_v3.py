@@ -1,0 +1,16 @@
+"""Arithmetic feasibility diagnosis on authenticated complete MMC v8 stage scope."""
+import json,hashlib,math
+from pathlib import Path
+R=Path(__file__).resolve().parents[1];D=R/'experiments/mmc_full_workflow_break_even_v3_2026-10-09';D.mkdir(exist_ok=True)
+P=R/'experiments/ultraembedded_mmc_continuous_workflow_v8_2026-10-09';V=P/'verification.json';S=P/'stage_cost_verification_v5.json';a=json.loads(V.read_text());s=json.loads(S.read_text());assert a['all_cases_both_complete_arms_authenticated'] and s['stage_accounting_pass'];cold,seed=s['rows'];assert cold['arm']=='cold' and seed['arm']=='seed'
+assert math.isclose(cold['total_seconds'],a['cold_continuous_cohort_seconds']) and math.isclose(seed['total_seconds'],a['seed_continuous_cohort_seconds'])
+for proof in [a,s]:
+ for path,digest in proof['bindings'].items():
+  assert hashlib.sha256(Path(path).read_bytes()).hexdigest()==digest,(path,'binding mismatch')
+
+def stage(row,token):
+ hits=[x['seconds'] for x in row['stages'] if token in x.get('log','') or x.get('stage')==token];assert len(hits)==1,(token,hits);return hits[0]
+model=stage(seed,'mmc_model.log');audit=sum(stage(seed,x) for x in ['mmc_initial_audit.log','mmc_sketch_audit.log','mmc_events_audit.log']);serial=stage(seed,'seed_selection_and_serialization');extra=model+audit+serial;routecold=stage(cold,'native/mmc/native.log');routeseed=stage(seed,'native/mmc/native.log')
+assert extra>routecold and seed['total_seconds']-model-audit>cold['total_seconds']
+out={'complete_trial':{'cold_seconds':cold['total_seconds'],'seed_seconds':seed['total_seconds'],'seed_over_cold':a['seed_over_cold_ratio'],'observed_net_gain':False,'printed_qor_nonregression':a['matched_printed_native_qor_nonregression_gate']},'seed_specific_recorded_costs':{'model_seconds':model,'complete_frame_and_event_audits_seconds':audit,'selection_serialization_seconds':serial,'sum_seconds':extra},'native_router_seconds':{'cold':routecold,'seed':routeseed,'difference_seed_minus_cold':routeseed-routecold},'bounds':{'seed_specific_cost_over_cold_router':extra/routecold,'hypothetical_zero_three_audits_only_seed_seconds':seed['total_seconds']-audit,'hypothetical_zero_model_only_seed_seconds':seed['total_seconds']-model,'hypothetical_zero_model_and_three_audits_seed_seconds':seed['total_seconds']-model-audit,'complete_excess_seconds':seed['total_seconds']-cold['total_seconds']},'decision':'An isolated model speedup cannot make this recorded complete trial break even. Need both low complete acquisition/validation/serialization cost and actual exact-router work reduction; preserve audits and all required connections. Investigate shared in-arm graph/context reuse and full event audit implementation before rerunning complete trial.','scope':'Arithmetic of named authenticated stage record, not independent timer reconstruction, actual optimization, reproducible speedup, HDL validation or heldout-family result. Hypothetical zero costs are bounds, never measured outcomes. Every validation cost remains included in actual totals.','hashes':{str(p.relative_to(R)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [V,S,Path(__file__)]}}
+(D/'audit.json').write_text(json.dumps(out,indent=2)+'\n');print(json.dumps({k:v for k,v in out.items() if k not in ['hashes','scope','decision']},indent=2))

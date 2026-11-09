@@ -1,0 +1,41 @@
+{
+  "observed_ns": 1793423077642075466,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_OUTER_CALL_LIFETIME.json",
+    "sha256": "7af0f7e6082b6aed85fbe2061eee86e80c3e48aa08b98487a0189a2f256cfed8"
+  },
+  "progress": {
+    "report": "work/resident_remaining_read_completion_20261031/review.json",
+    "report_sha256": "375fabb011bb9d75f2f0fb91280915ba25b4e6fb8401406cbfba2f20ace70be1",
+    "independent_review": "work/resident_remaining_read_completion_20261031/independent_review.json",
+    "independent_review_sha256": "26be79573b4428b3ed49dddef639bf3be6ffba4ed854a0e73d99e1a2c21a1a17",
+    "leaf_consumers": 3,
+    "control_model_states": 660,
+    "input_labelled_edges": 17688,
+    "all_six_leaf_local_completion_count_models_available": true,
+    "full_sequential_HDL_equivalence_proved": false,
+    "cross_call_response_identity_proved": false,
+    "HDL_simulation_executed": false,
+    "scope": "SHA-bound source-evaluated finite binary control/count models cover the three remaining install-read leaves:read64145states,prepare initial scan74states,and edge-operator363states. Source FSM guards,ARVALID/RREADY and completion guards are evaluated with typed1/2bit integer semantics;unrelated data predicate wires vary arbitrarily each edge. Edge-operator this_k_read2bit may change on every edge;its direct alias is expanded. Scan read-needed flag follows its sole source state1/start capture and otherwise holds. Actual sequential-loop done-cache equations are included for the scan;its done_reg stays0under constant continue1. Start/ARREADY/RVALID vary freely. Reset/idle initial states include arbitrary old scan-needed;no midcall reset. Closure proves at most one unmatched internal request,and every consumption follows an accepted request. Every public done has zero unmatched or newly accepted requests;registered consumption-retirement pulse may coincide with done but is cleared after that sampling edge. This is a pulse/count projection,not actual descriptor identity. Together with earlier delimiter models it covers request-count completion for all6leaf consumers locally,not their global selection/ownership over time. Not full sequential/4stateHDL equivalence,original pointer/data validity,external response identity/error handling,all parent call lifetimes or cross-call response association,native completion,watchdog/timing or board acceptance. Correct causal external responses and the prior adapter source-model contracts remain prerequisites for interpreting consumes as intended returns/credit retirement. No DUT/native process/input/cache/guard/budget changes or new HLS/Vivado flow.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v236_20261031/matrix.json",
+    "sha256": "76268099b5ca9915bcc9ede3c62919372a0724b03afc901831494bb6cade6249"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v236.json",
+    "sha256": "397cbcaff6cfbfeafd0b3127b749363dde40a0585a9db0ded7e73a8a44eaa1f7"
+  },
+  "next_action": "Verify caller lifetime/selected-port ownership for read64,prepare initial scan and edge-operator helper;compose all leaf drain and credit/source contracts into cross-call ownership. Local completion counts now cover all6leaves,but actual pointer/response identity and full sequential/native acceptance remain. Continue original tasks without guard/budget/input/cache changes.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

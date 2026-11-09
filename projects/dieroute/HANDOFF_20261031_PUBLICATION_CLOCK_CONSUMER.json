@@ -1,0 +1,53 @@
+{
+  "observed_ns": 1793452804412788751,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_ORIGINAL_INSTALLED_IMAGE_COMMAND_REPLY.json",
+    "sha256": "8ef51b4e1d4c68480d0c4ff2bcfbbc148fcaed6fda1839473dd15027afcc48e3"
+  },
+  "progress": {
+    "report": "work/resident_publication_state_20261031/review.json",
+    "report_sha256": "ae42a3341095754438164bb29052ef2a8fc231f3b22a4920eae044bf7961331d",
+    "independent_review": "work/resident_publication_state_20261031/independent_review.json",
+    "independent_review_sha256": "7c01b1f5de62e4cb0039f472ffa45ad2d18a21696d4f5f06833c8753b9264a9c",
+    "source_binding_review": "work/resident_publication_state_20261031/source_binding_review.json",
+    "source_binding_review_sha256": "ef292e22581c021e4472e64ecc9b4799947392dfc32d15d4f0a9da1aac64a5d9",
+    "final_review": "work/resident_publication_state_20261031/final_review.json",
+    "final_review_sha256": "e4b416ef88f5afd6915940d36b2bd75131dff6115bfb5d0f2326c647aee4c571",
+    "new_SMT_queries": 53,
+    "numeric_cases": 9,
+    "private_metadata_transfers": 40,
+    "projected_registers": 48,
+    "new_source192batches": 0,
+    "new_native_accepted_cases": 0,
+    "scope": "Universal feasible QFBVlocal sourceclock/frame/40metadata-vld transfer lemmas under validonehot326state binaryprojection, plus conditionaltwoedgefinish sampling. Shape/session commit ataccepted22;ready clears atprepare done25 and sets at322, not at22. SATexample shows oldready1/partialmetadataupdate while25busy, so no ready-implies-stable-array invariant asserted. Idlecontrolreset preservesmetadata;poweronINIT0 separate. StructuralvalidationCFG reachability excludes publicread/newinstall beforeterminal, but no data-looptermination or builder/validation success proved. Childvld/data and reaching322 remain premises, not actualRTLinstall execution/originalsnapshotreachability/AXILite/4state/native/board proof. Exact40producer/consumerdata-validportpairs and5finishmetadata/6outputports checked. Twoadditional localBVlemmas bind actualprepare6/index0/builderdone1 earlydictionaryvalid withprepareapdone0 toexecute25consumer. Nine separate integer-source cases replay40conditionalmetadata transfers using originalC++snapshot values,accepted22,prepareerror2/5,stale/invalid22,conditional322/323success andidlecontrolreset. LocalSATexample is not a globally reachable wholeRTLbug: reachingprojectedstates/nestedbuilderresultvalues and successfulvalidation are premises. Busy lemmas concern execute ap_done/ap_ready outputs, not AXILite sticky status/interrupts. Source arrays/allocator producercontent/all40valids-before-done/fullvalidation/termination and192chainmetadataorigin remainunproved; no fullhost/native/board/performance/gate acceptance.",
+    "research_complete": false,
+    "full_public_host_roundtrip_proved": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v290_20261031/matrix.json",
+    "sha256": "2a190f8508bc3d566bcdecae0b925634563a73ce80623546c9eef25ac392ae32"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v290.json",
+    "sha256": "6493765e48bb4d2f26510f4bd436e71f769ce5fd37461699d2e3da0e14af3869"
+  },
+  "current_runtime_observation": {
+    "path": "work/resident_publication_state_20261031/runtime_observation.json",
+    "sha256": "91f146e967ae98df7171da5db65fa9ddbe15061b58e0a96a977045883b15ca8a",
+    "scope": "Fresh30actual identities; no new native acceptance; Owner supervisor failure retained."
+  },
+  "previous_goal_turn_classification": "progress_and_verified_wait_v289",
+  "current_goal_turn_classification": "progress_and_verified_wait",
+  "next_action": "Prioritize actual native terminal audit. Prove sourceprepare/fielddictionary/rowbuilder producerdata and allrequiredmetadata validstrobe coverage beforedone, then link sourceRAMwrites and validation/publication to originalC++snapshot; currentconsumerclocking proofs alone do not justify ready-implies-stable-array or reachableinstall success. Reaching322/fullvalidator and AXILitebus/stickystatus remainopen. Preserve fullcapacity,192cases and alloriginalnativeguards. AllG1-G8 async/mapping/migration/QoR/ablations/300MHz/board/artifact/paper remainopen; retain Owner missingguard/auditor quota failure andabsentcompletion, no restart/adoption.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "owner_supervisor_failure_retained": true,
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending;820separate transitive/466root gaps;paper unchanged.",
+  "research_complete": false
+}

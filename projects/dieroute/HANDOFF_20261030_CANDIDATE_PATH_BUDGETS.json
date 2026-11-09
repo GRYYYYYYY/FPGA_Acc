@@ -1,0 +1,25 @@
+{
+  "observed_ns": 1793398992873034722,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261030_MULTIDIE_EVALUATION.json",
+    "sha256": "b495f906230675a04a68610d78cba3fa21129df6659583ee5b6424d8b95b8ddd"
+  },
+  "review": {
+    "review": "work/native_candidate_path_budget_review_20261030/review.json",
+    "review_sha256": "f7f2a89a9a5d5350c73d2ed93955aaec3dd20da5cadd40a42ca34ecf802fca5d",
+    "preflight": "work/native_candidate_path_budget_review_20261030/registration_preflight.json",
+    "preflight_sha256": "f46dde9c0095eac61949bfba5fd198c461561d657f676f76c41256886658bb31",
+    "candidate_trees": 778,
+    "paths": 3335,
+    "scope": "All saved candidate paths from the original three single development sweeps; original CSR edge-delay/hop/prefix crossing budgets. No optimal-search, incomplete-attempt, RC/STA equivalence, new QoR pass, repeat, heldout or hardware proof.",
+    "research_complete": false
+  },
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "all_eight_gates_open": true
+  },
+  "next_action": "Preserve full28878 RTL and original resource/watchdog owners. Audit terminal transitions when present; observer canary remains gated. Continue remaining original algorithm/QoR/full-design/hardware and artifact requirements. This saved-path audit does not establish the optimality of discarded or incomplete searches.",
+  "research_complete": false
+}

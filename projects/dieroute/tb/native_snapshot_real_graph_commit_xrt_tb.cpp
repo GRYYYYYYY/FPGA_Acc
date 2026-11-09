@@ -1,0 +1,66 @@
+// Actual whole-search and seed CUs on full native CSR and imported authority.
+#include "../host/xrt_device_context.hpp"
+#include "native_csr_io.hpp"
+#include "native_quotient.hpp"
+#include "native_search_hbm_labels.hpp"
+#include "native_search_hbm_queue.hpp"
+#include "native_search_hbm_cost.hpp"
+#include "summary_hbm.hpp"
+#include "net_commit_hbm.hpp"
+#include <map>
+#include <array>
+#include <cstring>
+#include <xrt/xrt_kernel.h>
+#include <xrt/xrt_bo.h>
+#include <iostream>
+#include <memory>
+using namespace dieroute;
+using namespace dieroute::native;
+using U=std::uint64_t;
+void raw(const fs::path& p,const void* data,size_t n){std::ofstream f(p,std::ios::binary);f.write(static_cast<const char*>(data),n);check(bool(f),"artifact write");}
+int main(int argc,char** argv){try{
+ check(argc==10||argc==11,"usage: native_xrt SNAP SEARCH POLICY ARCH SLOT SINK LABELS EXPANSIONS OUT [QUOTIENT]");fs::path snap=argv[1],search=argv[2],out=argv[9];check(!fs::exists(out),"output exists");auto arch=fingerprint(argv[4]);auto slot=std::stoul(argv[5]),sink=std::stoul(argv[6]),cap=std::stoul(argv[7]);auto limit=std::stoull(argv[8]);check(cap&&cap<=2097152,"label capacity");
+ Container offsets(search/"offsets.bin",offsets_type,8,arch),arcs(search/"arcs.bin",arcs_type,8,arch),policy(argv[3],0x44520026,8,arch);
+ Mapping rm(snap/"resources.raw"),tm(snap/"trees.raw"),nm(snap/"nets.raw"),cm(snap/"control.raw"),sm(snap/"tree_seeds.raw");check(cm.bytes==64&&sm.bytes%64==0&&slot<nm.bytes/64,"snapshot shape");SummaryWord control{},net{};std::memcpy(&control,cm.data,64);std::memcpy(&net,nm.data+slot*64,64);
+ auto nodes=std::uint32_t(control.w[5]),dies=std::uint32_t(control.w[5]>>32),shard=std::uint32_t(control.w[6]),tree=std::uint32_t(control.w[7]);check(offsets.count==U(nodes)+1&&policy.count==nodes&&sink<nodes&&net.w[0]==control.w[0]&&sm.bytes/64==net.w[4],"native shape");
+ std::vector<U> potential;std::unique_ptr<QuotientPotential> quotient;
+ if(argc==11){quotient=std::make_unique<QuotientPotential>(argv[10],arch,nodes);quotient->prepare(sink,std::uint32_t(le64(sm.data+8)));potential.resize(nodes);for(std::uint32_t n=0;n<nodes;++n)potential[n]=std::min<U>((*quotient)(n),nodes);check(potential[sink]==0,"sink potential");
+  auto allowed=[&](std::uint32_t n){check(n<nodes,"CSR destination");auto p=le64(policy.data+U(n)*8);return !(p&(U(1)<<40))&&(std::uint32_t(p)==UINT32_MAX||std::uint32_t(p)==net.w[1]);};U checked=0;
+  for(std::uint32_t n=0;n<nodes;++n)if(allowed(n))for(auto i=offsets.offset(n);i<offsets.offset(n+1);++i){auto dst=arcs.dst(i);if(allowed(dst)){check(potential[n]<=potential[dst]+1,"potential consistency");++checked;}}std::cerr<<"potential consistency edges="<<checked<<'\n';
+ }
+ auto& ctx=xrt_host::device_context("DIEROUTE_NET_COMMIT_XCLBIN");xrt::kernel snapshot(ctx.device,ctx.uuid,"dieroute_native_snapshot_search_hbm:{snapshot_search}",xrt::kernel::cu_access_mode::exclusive),worker(ctx.device,ctx.uuid,"dieroute_native_search_worker_hbm:{search_worker}",xrt::kernel::cu_access_mode::exclusive),commit(ctx.device,ctx.uuid,"dieroute_net_commit_hbm:{net_commit}",xrt::kernel::cu_access_mode::exclusive);
+ const unsigned qcap=std::max<unsigned>(1024,cap*4),jcap=std::max<unsigned>(1024,cap*16);std::array<xrt::bo,13> b;std::array<U,13> sizes={offsets.payload,arcs.payload,policy.payload,rm.bytes,64,potential.empty()?64:potential.size()*8,U(cap)*64,U(qcap)*64,U(jcap)*64,64,128,64,64};
+ for(unsigned i=0;i<13;++i)b[i]=xrt::bo(ctx.device,sizes[i],snapshot.group_id(i));
+ for(auto [s,c]:std::array<std::pair<unsigned,unsigned>,5>{{{0,2},{1,3},{2,1},{3,8},{4,11}}})check(snapshot.group_id(s)==commit.group_id(c),"commit shared groups");
+ for(auto [w,s]:std::array<std::pair<unsigned,unsigned>,4>{{{0,6},{1,7},{2,8},{5,9}}})check(worker.group_id(w)==snapshot.group_id(s),"seed shared groups");
+ xrt::bo trees(ctx.device,tm.bytes,commit.group_id(9)),nets(ctx.device,nm.bytes,commit.group_id(10)),parent(ctx.device,64,worker.group_id(3)),observation(ctx.device,64,worker.group_id(4)),frontier(ctx.device,64,worker.group_id(17));
+ constexpr U chunk=16*(1<<20);std::vector<unsigned char> buffer(chunk);U transferred=0;
+ auto transfer=[&](xrt::bo& bo,const unsigned char* data,U bytes,bool verify){for(U off=0;off<bytes;off+=chunk){auto n=std::min(chunk,bytes-off);bo.write(data+off,n,off);bo.sync(XCL_BO_SYNC_BO_TO_DEVICE,n,off);}if(verify)for(U off=0;off<bytes;off+=chunk){auto n=std::min(chunk,bytes-off);bo.sync(XCL_BO_SYNC_BO_FROM_DEVICE,n,off);bo.read(buffer.data(),n,off);check(!std::memcmp(buffer.data(),data+off,n),"native upload readback");transferred+=n;}};
+ transfer(b[0],offsets.data,sizes[0],true);transfer(b[1],arcs.data,sizes[1],true);transfer(b[2],policy.data,sizes[2],true);if(!potential.empty())transfer(b[5],reinterpret_cast<const unsigned char*>(potential.data()),sizes[5],true);else{std::array<U,8> z{};transfer(b[5],reinterpret_cast<const unsigned char*>(z.data()),64,false);}
+ transfer(b[3],rm.data,rm.bytes,true);transfer(b[4],cm.data,64,true);transfer(trees,tm.data,tm.bytes,true);transfer(nets,nm.data,nm.bytes,true);std::cerr<<"native initialization verified_bytes="<<transferred<<" authority_imports=1\n";
+ std::fill(buffer.begin(),buffer.end(),0);for(unsigned i:{6u,7u,8u,9u,10u,11u,12u})for(U off=0;off<sizes[i];off+=chunk){auto n=std::min(chunk,sizes[i]-off);b[i].write(buffer.data(),n,off);b[i].sync(XCL_BO_SYNC_BO_TO_DEVICE,n,off);}observation.write(buffer.data(),64,0);observation.sync(XCL_BO_SYNC_BO_TO_DEVICE);
+ std::array<U,8> meta{},result{},goal{};unsigned calls=0;
+ for(U i=0;i<sm.bytes/64;++i){auto seednode=std::uint32_t(le64(sm.data+i*64+8)),depth=std::uint32_t(le64(sm.data+i*64+40));NativeSearchLabelSlot seed{};seed.epoch=1;seed.cost=0;seed.node=seednode;seed.hops=depth;parent.write(&seed,64,0);parent.sync(XCL_BO_SYNC_BO_TO_DEVICE);
+  auto run=worker(b[6],b[7],b[8],parent,observation,b[9],unsigned(cap),qcap,jcap,0u,0u,control.w[0],0u,control.w[2],potential.empty()?U(0):potential[seednode],UINT64_MAX,1u,frontier,4u);check(run.wait()==ERT_CMD_STATE_COMPLETED,"seed completion");++calls;b[9].sync(XCL_BO_SYNC_BO_FROM_DEVICE);b[9].read(meta.data());check(meta[2]==0&&meta[0]==i+1,"complete tree seed initialization");
+ }
+ meta[2]=sm.bytes/64;b[9].write(meta.data());b[9].sync(XCL_BO_SYNC_BO_TO_DEVICE);std::array<U,16> cfg={nodes,arcs.count,dies,shard,tree,net.w[1],sink,control.w[0],control.w[1],1,limit,UINT32_MAX,cap,qcap,jcap,U(!potential.empty())};b[10].write(cfg.data());b[10].sync(XCL_BO_SYNC_BO_TO_DEVICE);
+ auto run=snapshot(b[0],b[1],b[2],b[3],b[4],b[5],b[6],b[7],b[8],b[9],b[10],b[11],b[12]);check(run.wait()==ERT_CMD_STATE_COMPLETED,"native search completion");b[11].sync(XCL_BO_SYNC_BO_FROM_DEVICE);b[11].read(result.data());b[12].sync(XCL_BO_SYNC_BO_FROM_DEVICE);b[12].read(goal.data());b[9].sync(XCL_BO_SYNC_BO_FROM_DEVICE);b[9].read(meta.data());check(meta[1]<=jcap&&result[0]<=6,"result bounds");
+ auto preserved=[&](xrt::bo& bo,const unsigned char* data,U bytes){for(U off=0;off<bytes;off+=chunk){auto n=std::min(chunk,bytes-off);bo.sync(XCL_BO_SYNC_BO_FROM_DEVICE,n,off);bo.read(buffer.data(),n,off);check(!std::memcmp(buffer.data(),data+off,n),"native search mutated authority");}};preserved(b[3],rm.data,rm.bytes);preserved(b[4],cm.data,64);preserved(trees,tm.data,tm.bytes);preserved(nets,nm.data,nm.bytes);
+ fs::create_directories(out);raw(out/"result.raw",result.data(),64);raw(out/"goal.raw",goal.data(),64);raw(out/"metadata.raw",meta.data(),64);std::vector<NativeSearchResourceObservation> journal(meta[1]);if(meta[1]){b[8].sync(XCL_BO_SYNC_BO_FROM_DEVICE,meta[1]*64,0);b[8].read(journal.data(),meta[1]*64,0);}raw(out/"observations.raw",journal.data(),journal.size()*64);
+ std::vector<std::uint32_t> published_path,published_pips;U published_attachment=UINT64_MAX;
+ if(result[0]==0){std::vector<NativeSearchLabelSlot> labels(cap);b[6].sync(XCL_BO_SYNC_BO_FROM_DEVICE);b[6].read(labels.data());std::vector<std::uint32_t> path,pips;auto n=unsigned(sink);for(U i=0;;++i){check(i<=meta[2],"trace cycle");auto loc=native_search_label_lookup<33554432>(labels.data(),cap,1,n);check(loc.status==NativeLabelLookup::found,"trace missing");auto l=labels[loc.slot];if(l.parent==UINT32_MAX){U attachment=n;published_attachment=n;raw(out/"attachment.raw",&attachment,8);break;}path.push_back(n);pips.push_back(l.edge);n=l.parent;}std::reverse(path.begin(),path.end());std::reverse(pips.begin(),pips.end());raw(out/"path_nodes.raw",path.data(),path.size()*4);raw(out/"path_pips.raw",pips.data(),pips.size()*4);published_path=path;published_pips=pips;}
+ check(result[0]==0&&!published_path.empty(),"closed loop requires found nonempty path");
+ std::map<U,U> consumed;for(auto o:journal){auto inserted=consumed.emplace(o.node,o.version);check(inserted.second||inserted.first->second==o.version,"mixed read versions");}
+ std::vector<U> reads,path_words;for(auto [n,v]:consumed){reads.push_back(n);reads.push_back(v);}for(unsigned i=0;i<published_path.size();++i){path_words.push_back(published_path[i]|(U(published_pips[i])<<32));path_words.push_back(0);}
+ check(!reads.empty()&&consumed.size()<=4194304&&published_path.size()<=16384,"commit bounded traffic");
+ unsigned scratch_cap=std::max<unsigned>(256,published_path.size()*4+16),delta_cap=std::max<unsigned>(64,published_path.size());check(scratch_cap<=65536&&delta_cap<=65536,"commit scratch bounds");
+ std::array<xrt::bo,15> c;c[1]=b[2];c[2]=b[0];c[3]=b[1];c[8]=b[3];c[9]=trees;c[10]=nets;c[11]=b[4];std::array<U,15> cb={128,0,0,0,reads.size()*8,64,64,path_words.size()*8,0,0,0,0,U(scratch_cap)*128,U(delta_cap)*64,64};
+ for(unsigned i:{0u,4u,5u,6u,7u,12u,13u,14u}){c[i]=xrt::bo(ctx.device,cb[i],commit.group_id(i));std::fill(buffer.begin(),buffer.end(),0);for(U off=0;off<cb[i];off+=chunk){auto n=std::min(chunk,cb[i]-off);c[i].write(buffer.data(),n,off);c[i].sync(XCL_BO_SYNC_BO_TO_DEVICE,n,off);}}
+ SummaryWord command[2]{},branch{{published_attachment,goal[3],0,published_path.size(),goal[4],goal[1],0,0}},done{};unsigned commit_calls=0,query_calls=0;auto old_revision=control.w[1];
+ auto invoke=[&](){c[0].write(command,128,0);c[0].sync(XCL_BO_SYNC_BO_TO_DEVICE);auto transaction=commit(c[0],c[1],c[2],c[3],c[4],c[5],c[6],c[7],c[8],c[9],c[10],c[11],c[12],c[13],c[14],nodes,arcs.count,dies,shard,unsigned(nm.bytes/64),tree,unsigned(consumed.size()),1u,1u,unsigned(published_path.size()),scratch_cap,delta_cap);check(transaction.wait()==ERT_CMD_STATE_COMPLETED,"native commit CU completion");c[14].sync(XCL_BO_SYNC_BO_FROM_DEVICE);c[14].read(&done,64,0);c[11].sync(XCL_BO_SYNC_BO_FROM_DEVICE);c[11].read(&control,64,0);nets.sync(XCL_BO_SYNC_BO_FROM_DEVICE,64,slot*64);nets.read(&net,64,slot*64);check(done.w[0]==commit_ok,"native commit status");std::cerr<<"native commit op="<<command[0].w[1]<<" status="<<done.w[0]<<" revision="<<control.w[1]<<'\n';};
+ command[0]={{control.w[0],commit_proposal,control.w[1],slot,net.w[1],net.w[5],control.w[2],0}};command[1].w[0]=consumed.size();command[1].w[2]=1;command[1].w[3]=published_path.size();
+ c[4].write(reads.data(),cb[4],0);c[4].sync(XCL_BO_SYNC_BO_TO_DEVICE);c[6].write(&branch,64,0);c[6].sync(XCL_BO_SYNC_BO_TO_DEVICE);c[7].write(path_words.data(),cb[7],0);c[7].sync(XCL_BO_SYNC_BO_TO_DEVICE);invoke();++commit_calls;check(control.w[1]==old_revision+1&&done.w[2]==consumed.size()&&!done.w[3]&&!done.w[4],"commit version footprint");auto proposal_done=done;
+ for(auto n:published_path){command[0]={{control.w[0],commit_query,control.w[1],slot,net.w[1],net.w[5],control.w[2],n}};command[1]={};invoke();++query_calls;SummaryWord delta{};c[13].sync(XCL_BO_SYNC_BO_FROM_DEVICE,64,0);c[13].read(&delta,64,0);check(done.w[7]==1&&delta.w[7]==1&&std::uint32_t(delta.w[1])==n,"published native membership");}
+ fs::create_directories(out/"commit");auto dump=[&](const char* name,xrt::bo& bo,U bytes){std::ofstream file(out/"commit"/name,std::ios::binary);for(U off=0;off<bytes;off+=chunk){auto n=std::min(chunk,bytes-off);bo.sync(XCL_BO_SYNC_BO_FROM_DEVICE,n,off);bo.read(buffer.data(),n,off);file.write(reinterpret_cast<const char*>(buffer.data()),n);}check(bool(file),"authority artifact write");};dump("resources.raw",c[8],rm.bytes);dump("trees.raw",trees,tm.bytes);dump("nets.raw",nets,nm.bytes);dump("control.raw",c[11],64);raw(out/"commit/proposal_completion.raw",&proposal_done,64);raw(out/"commit/canonical_reads.raw",reads.data(),reads.size()*8);
+ std::cout<<"{\"commit_calls\":"<<commit_calls<<",\"query_calls\":"<<query_calls<<",\"status\":\"executed\",\"search_status\":"<<result[0]<<",\"seed_calls\":"<<calls<<",\"snapshot_calls\":1,\"expanded\":"<<result[1]<<",\"observations\":"<<meta[1]<<",\"cost\":"<<goal[1]<<",\"verified_upload_bytes\":"<<transferred<<",\"authority_imports\":1,\"authority_reuploads\":0,\"scope\":\"Actual native whole-search CU on imported immutable authority; actual commit/query CUs with shared authority; no full routing or board claim\"}\n";
+}catch(const std::exception& e){std::cerr<<e.what()<<'\n';return 1;}}

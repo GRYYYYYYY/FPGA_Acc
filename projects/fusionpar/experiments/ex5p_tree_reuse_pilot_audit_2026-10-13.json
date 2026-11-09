@@ -1,0 +1,17 @@
+{
+  "schema": "FUSIONPAR_INDEPENDENT_PUBLICATION_AUDIT_V1",
+  "pass": true,
+  "suite": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/ex5p_tree_reuse_pilot_v2",
+  "suite_audit_sha256": "c6bc695069495111641c2c314153100f9df56e752860355958c4a2598c8e1cfc",
+  "auditor_sha256": "907dd63202f8472f1d639f8aaa6e2369db1bd5f38684ed83a0376b3c583f043f",
+  "counts": {
+    "runs": 6,
+    "qor_commits": 1,
+    "protocol_commits": 0,
+    "aborts": 13,
+    "timing_barriers": 7,
+    "placement_repairs": 0,
+    "native_feedback_checks": 0
+  },
+  "scope": "full serialized state/version/timing reconstruction and archived native bindings; not independent P&R performance replication"
+}

@@ -1,0 +1,50 @@
+{
+  "observed_ns": 1793429795136729475,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_REVERSE_GET_VALUE_BRIDGE.json",
+    "sha256": "a0530ee3dd394412c04ce465795cc1f67208cb1c18a5208201364847234973c4"
+  },
+  "progress": {
+    "report": "work/resident_unary_reference_semantics_20261031/review.json",
+    "report_sha256": "cc91422610fc37493e75a434435c4f7060dcbca5ea5041cf0169b377657f08c9",
+    "independent_review": "work/resident_unary_reference_semantics_20261031/independent_review.json",
+    "independent_review_sha256": "024afe13688cbbff84eb516414686a95eee04ee4143356d42b30b7b98190a1b2",
+    "supplement": "work/resident_unary_reference_semantics_20261031/population_final_mask.json",
+    "supplement_sha256": "7443e807076ef34e8a033f97f0dc2b434f5d9b33f9018837e3641619cf5169e5",
+    "primary_feasible_UNSAT_queries": 33,
+    "supplementary_feasible_UNSAT_queries": 1,
+    "small_valid_encodings": 1715,
+    "small_valid_selects": 10724,
+    "independent_population_cases": 4230,
+    "independent_boundary_encodings": 79,
+    "independent_boundary_selects": 8804,
+    "independent_empty_prefix_blocks": 33,
+    "cap_sized_queried_ordinals": 1034,
+    "actual_RTL_select_semantics_proved": false,
+    "actual_encoded_memory_contract_proved": false,
+    "reverse_get_delimiter_value_provenance_proved": false,
+    "HDL_simulation_executed": false,
+    "full_sequential_HDL_equivalence_proved": false,
+    "scope": "Frozen rows.hppencoding/search control and population expressions are SHA-bound. Conditional mathematical reference contract:accepted offsets0=0,offsetn=e,nondecreasing within0..eproduce n+1strictly ordered markers at i+offsetiinside n+e+1bits. Cleared words remove padding/old bits;exclusive cumulative prefix counts fituint32for actual shape caps. Local feasible SMTlemmas show upper-bound midpoint/shrink/sentinel bounds and block residual rank,word-skip residual preservation,no all-word failure with rank inside population,and six lower/upper half rank invariants ending at a set bit/rank0. Six staged64bit BVpopulation lane/fold equalities connect frozen SWAR arithmetic to bit counts without rerunning old monolithic timeout queries. Their composition supports reference select(i)=i+offsetiand offsetrecovers value under exact encoding/count memories and legal ordinal. This is a source-checked reference algorithm/mathematical decomposition,not generated RTLsequential equivalence or proof actual runtime memory contents satisfy that contract. Marker/prefix/list mathematical invariants and staged query composition require the stated ordered-offset/cleared-word/exact-count premises;individual SMTchecks are local lemmas,not a monolithic wholealgorithm proof. Small valid encoding enumeration complements them. RTL selector search/word/bit-helpertiming,successful prepare encoding delivery,readmemory identity,argument lifetimes,command/ROMload and whole reverse getprovenance remain open. No .dat/TV/trace reads,new HDL/HLS/native flow,DUT/process/input/cache/guard/budget changes.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v252_20261031/matrix.json",
+    "sha256": "761237ac0c790150296c5c1fb033d28acc8e20ebc995e0fdb18353e93258fdb0"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v252.json",
+    "sha256": "81a65434418b794afff9b9fa5ef4913ccce8010ed6a89f1ed24c553f0c2d44c7"
+  },
+  "next_action": "Match generated select_r prefix-search/word/bit-helper state and data transitions to the now-explicit frozen-C conditional rank-select contract. Separately establish actual successful reverse build produces and preserves exact marker/prefix memory contents. Reference semantics/34local lemmas do not prove these RTL/runtime premises;execute still ignores get success. Poll original handles first and preserve all guards/budgets/inputs/caches/retained failures.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

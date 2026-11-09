@@ -1,0 +1,90 @@
+{
+  "schema": "dieroute.native_device_graph_progress.v1",
+  "captured_utc": "2026-10-13T10:00:39.337271+00:00",
+  "research_status": "active_incomplete",
+  "board_result": false,
+  "routes_recomputed": false,
+  "implemented": [
+    "Exhaustive wire-to-native-node grouping for the complete xcu280 device, including unused resources",
+    "Cross-check against every nonempty native member list; retain and mark 336 empty-list nodes",
+    "Full raw native PIP catalog with explicit null endpoint and route-through classification",
+    "Independent C++ full topology verification and complete DCP node/wire/PIP remapping",
+    "Background owner and partition-pin metadata retained in mapped occupancy table"
+  ],
+  "verified_counts": {
+    "schema": "dieroute.native_device_graph_audit.v1",
+    "structural_checks_passed": true,
+    "tiles": 615440,
+    "tile_wires": 269838154,
+    "nodes": 91975782,
+    "member_wires": 269570361,
+    "null_wires": 267793,
+    "pips": 427282568,
+    "pips_with_missing_node": 321,
+    "bidirectional_pips": 432576,
+    "routethru_pips": 15945120,
+    "duplicate_catalog_pips": 0,
+    "empty_native_member_nodes": 336,
+    "empty_member_nodes_incident_to_pips": 0,
+    "cross_slr_laguna_nodes": 46080,
+    "used_nodes_mapped": 12201318,
+    "used_member_wires_mapped": 34653665,
+    "used_pips_mapped": 11500192,
+    "used_empty_member_nodes": 0,
+    "ambiguous_used_pip_catalog_matches": 0,
+    "used_sll_nodes": 15502,
+    "background_nodes": 5303529,
+    "candidate_nodes": 6897789,
+    "protected_partition_nodes": 261,
+    "sll_membership_counts": {
+      "3": 23040,
+      "6": 23040
+    },
+    "scope": "complete raw topology and original DCP identity mapping; not design-eligible adjacency, capacity, timing or rerouting validation"
+  },
+  "schema_reference": "experiments/native_device_graph_schema_v2.json",
+  "fixtures": [
+    {
+      "path": "work/native_device_graph_fixture_v2_20261013/tests.json",
+      "sha256": "545969064baeb84b122115bfd367548feb11395e5857abd4e9a34b2d1c291206",
+      "cases": 10
+    },
+    {
+      "path": "work/native_device_graph_fixture_sanitizer_20261013/tests.json",
+      "sha256": "545969064baeb84b122115bfd367548feb11395e5857abd4e9a34b2d1c291206",
+      "cases": 10
+    }
+  ],
+  "source_snapshot": "work/native_device_graph_verification_20261013/source",
+  "prior_evidence": "experiments/dcp_footprint_progress_20261013.json",
+  "native_sdk_findings": {
+    "empty_instance_member_lists": 336,
+    "fallback_static_member_getter": "rejected; native probe includes members resolving to other nodes or null",
+    "reconstruction": "exhaustive wire-to-node identity enumeration; all nonempty instance member lists agree",
+    "no_pip_incidence_or_DCP_use_for_empty_list_nodes": true,
+    "missing_endpoint_pips": 321,
+    "missing_endpoint_policy": "retain absent IDs; not qualified for routing"
+  },
+  "evidence": {
+    "work/u280_native_device_graph_v2_20261013/manifest.json": "1af8370410649b1379839bd646f7cd3068c2be8d7dd4b05ada023452f61e065a",
+    "work/u280_native_device_graph_v2_20261013/graph/summary.json": "4ec19525d66d5364a5890e7b008fc7da0c44f13a1d27adb1111728e13aa54a7a",
+    "work/u280_native_device_graph_audit_v1_20261013/manifest.json": "e7e3ebc36d8224f558da0906be4de4bf0c584fc0162dd88850adf3e1947612b9",
+    "work/u280_native_device_graph_audit_v1_20261013/binary_audit/audit.json": "27fccacf1e730e737441664f20c968e6e10f358b0e1b797670bba806e769afd8",
+    "work/native_device_graph_verification_20261013/source_sha256.json": "4b75b7b43cac656f101396864783716b7d10f24a75b3293d8331751eb7822cb2",
+    "work/native_device_graph_verification_20261013/final_checks.json": "aae6f5e98c4ed21936ffc82643269bfc1b427107bf7a1f81795845986b14438c",
+    "work/native_device_graph_verification_20261013/native_exception_probe_sha256.json": "a4097eecd42edd91923a53ad7a0cbdc16f3f5162364b543cc212bc6e63324359",
+    "experiments/native_device_graph_schema_v2.json": "018f5c94353d516441acd5a67e91f2c24c74b079721e1c8a97071df9fee31ccb",
+    "work/native_device_verifier_build_v1_20261013/verify": "d29089c7acaae618546534714948ba4b26f54f3e2279ff3116a43d2600a4a1f7",
+    "work/native_device_verifier_sanitizer_20261013/verify": "b074bd2bcca14a062c118b59cb9abb1151d01bef70b5f85041c756152445aab9",
+    "work/u280_native_device_graph_v1_20261013/manifest.json": "295734c64ca40132e830b2e10d78747e5993e89ebd195a103ca1d0d201095125"
+  },
+  "remaining": [
+    "Design-eligible adjacency including native clock, route-through and site-pin restrictions",
+    "Explicit parallel-PIP edge identity in search and route outputs",
+    "Compressed/indexed graph compatible with HBM capacity and controller integration",
+    "Calibrated native commercial delay and resource capacity semantics",
+    "Controller background protection and actual DieRoute DCP rerouting, native legality/QoR",
+    "G2-G8 requirements including cohort, ablations, hardware, board measurements and paper"
+  ],
+  "active_processes": []
+}

@@ -1,0 +1,67 @@
+{
+  "schema": "dieroute.audited_slr_census.v1",
+  "manifest": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/dieroute/work/slr_node_census_v2_20261013/manifest.json",
+  "manifest_sha256": "0d2a437d1a1b182234bbd1aee683159bb26de9b0f49e8340ffd033cab4f5aec9",
+  "scope": "nodes touching exact native LAG_LAG tile type only",
+  "board_result": false,
+  "unique_electrical_nodes": 2041620,
+  "member_wires": 17847840,
+  "multi_slr_nodes": 46100,
+  "multi_slr_by_intent": {
+    "NODE_GLOBAL_VDISTR": 10,
+    "NODE_GLOBAL_VROUTE": 10,
+    "NODE_LAGUNA_DATA": 46080
+  },
+  "multi_slr_by_membership": {
+    "0;1": 23050,
+    "1;2": 23050
+  },
+  "examples": [
+    {
+      "canonical_tile": "LAG_LAG_X4Y539",
+      "canonical_wire": "UBUMP0",
+      "intent": "NODE_LAGUNA_DATA",
+      "representative_slr": "2",
+      "member_slrs": "1;2",
+      "wire_count": "2"
+    },
+    {
+      "canonical_tile": "LAG_LAG_X4Y539",
+      "canonical_wire": "UBUMP10",
+      "intent": "NODE_LAGUNA_DATA",
+      "representative_slr": "2",
+      "member_slrs": "1;2",
+      "wire_count": "2"
+    },
+    {
+      "canonical_tile": "LAG_LAG_X4Y539",
+      "canonical_wire": "UBUMP11",
+      "intent": "NODE_LAGUNA_DATA",
+      "representative_slr": "2",
+      "member_slrs": "1;2",
+      "wire_count": "2"
+    },
+    {
+      "canonical_tile": "LAG_LAG_X4Y539",
+      "canonical_wire": "UBUMP12",
+      "intent": "NODE_LAGUNA_DATA",
+      "representative_slr": "2",
+      "member_slrs": "1;2",
+      "wire_count": "2"
+    },
+    {
+      "canonical_tile": "LAG_LAG_X4Y539",
+      "canonical_wire": "UBUMP13",
+      "intent": "NODE_LAGUNA_DATA",
+      "representative_slr": "2",
+      "member_slrs": "1;2",
+      "wire_count": "2"
+    }
+  ],
+  "limitations": [
+    "Partial device census, not a complete routing graph",
+    "Membership counts do not establish independent SLL capacity",
+    "No routed design or DCP round-trip validation",
+    "No physical board execution"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "observed_ns": 1793427950645829755,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_READ64_REFERENCE.json",
+    "sha256": "1944b79a195c34d28787ffa3b65c959b2c9000619e750ce4f9aa1d866e660bcc"
+  },
+  "progress": {
+    "report": "work/resident_read64_caller_offsets_20261031/review.json",
+    "report_sha256": "7d36dde5e439073c983a2ecaff3b75a3c2044e072ad84a4d22e8d55e49c3ba06",
+    "independent_review": "work/resident_read64_caller_offsets_20261031/independent_review.json",
+    "independent_review_sha256": "26bbd8a33f56ca9563aaee0c0d7f157f7d14ff8a22ad32251f2dd3bd245abb62",
+    "feasible_UNSAT_queries": 8,
+    "writer_capture_certificates": 8,
+    "source_CFG_states": 326,
+    "tag_model_states": 989,
+    "tag_model_edges": 1548,
+    "independent_may_dataflow_nodes": 326,
+    "offset_RAM_values_equal_C_layout_proved": false,
+    "RTL_loop_index_bounds_proved": false,
+    "actual_RTL_caller_offsets_equal_C_slots_proved": false,
+    "HDL_simulation_executed": false,
+    "full_sequential_HDL_equivalence_proved": false,
+    "scope": "SHA-bound source execute326state CFG overapproximation retains all syntactic successors,including infeasible branches,and models synchronous read-first offsetRAM q0/q1holding plus reg_1797nonblocking captures. It proves selected memory address tags1/2/4/7at read64first offset writers35/43/134/143 across repeated calls from reset,with no RAM data-value assumptions. Six shared-register capture sites get the expected oldq tag;port0writes are confined to layout helper waits14/19. Source bound RAM instance64x9/address4,read-hold clauses and address/enable muxes are checked. Eight writer states dominate their selected waits;source binary guard enumeration proves every entry captures its offset,with143->144->145handled explicitly. Eight feasible QFBV UNSAT queries match actual combinational offset cones to 8*row,8*(row+1),offsetWord+16*edge(+8),offsetWord+8*meta/reverse,and offsetWord+16*portal(+8),using actual20/18bit zeroextension widths and local register snapshots;first row upper-bit capture plus constant low3zeros is exact because8*rowalready aligned. Paired offsets use last captured first+8,with sole dynamic first writers checked. This closes local offset arithmetic/address-selection freshness,not the values stored in offsetsRAM,layout writer recurrence/multiplier/ROM initialization,loop index/Citeration correspondence or index bounds. Thus actual whole RTL caller offsets equal C layout remains unproved. External base stability,intended ordered return words,valid memory objects and previous helper contracts remain requirements. No full sequential/4state RTL simulation/equivalence,native success,watchdog/timing/board claim or original DUT/process/input/cache/guard/budget changes.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v246_20261031/matrix.json",
+    "sha256": "7c126a9a659e546bfbb36b6fed4ab2b89602b2a965649ee6df8e493f204b47bd"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v246.json",
+    "sha256": "26f44e53469c44ebd70a8737872402e77a39dc767ca85a312d8a8e1a36b904cf"
+  },
+  "next_action": "Audit actual counts/offsets initialization helpers and sequential layout recurrence,including sizes ROM source binding and multiplier latency,then establish execute loop-index initialization/update/bounds correspondence. Current evidence closes local eight read64 offset cones,selected RAMaddress transport and capture freshness only;RAMword values/C-layout still open. First poll original native handles;preserve all inputs/caches/guards/budgets and retained failures.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

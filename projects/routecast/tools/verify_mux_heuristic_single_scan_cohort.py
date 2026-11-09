@@ -1,0 +1,14 @@
+"""Prospective whole-result parity to the independently audited frozen cohort."""
+import json
+from pathlib import Path
+from pre_route_endpoints import sha
+ROOT=Path(__file__).resolve().parents[1];out=ROOT/'experiments/mux_heuristic_single_scan_cohort_2026-10-07';old=ROOT/'experiments/mux_heuristic_budget_cohort_2026-10-07';read=lambda f:json.loads(f.read_text());p=read(out/'protocol.json');r=read(out/'receipt.json');op=read(old/'protocol.json');orig=read(old/'receipt.json');assert r['protocol_sha256']==sha(out/'protocol.json') and p['cases']==op['cases'];assert p['binary_sha256']==op['binary_sha256'];assert all(sha(f)==h for f,h in p['sources'].items());fixture=ROOT/'experiments/single_scan_residual_frontier_contract_2026-10-07/verification.json';assert read(fixture)['helper_sha256']==sha(ROOT/'tools/single_scan_residual_frontier.py');rows=[];bindings={str(f):sha(f) for f in (out/'protocol.json',out/'receipt.json',old/'receipt.json',old/'final_evidence.json',fixture)}
+for nr,br,case in zip(r['rows'],orig['rows'],p['cases']):
+ w,i=nr['width'],nr['index'];assert (w,i)==(br['width'],br['index'])==(case['width'],case['index']);assert nr['status']==br['status'];assert all(sha(f)==h for f,h in case['inputs'].items())
+ if nr['status']=='PRIOR_ALLOCATION_SKIP':assert nr==br;rows.append(dict(width=w,index=i,status=nr['status']));continue
+ nw=out/f'w{w}_m{i}';bw=old/f'w{w}_m{i}';assert (nw/'result.json').read_bytes()==(bw/'result.json').read_bytes();assert sha(nw/'result.json')==nr['result_sha256']==br['result_sha256'];assert (nw/'cache_stats.json').read_bytes()==(bw/'cache_stats.json').read_bytes()
+ for name in ('control_timing','observation','choice','floor','physical_budget','history_cost'):
+  af=bw/f'{name}_verification.json';assert read(af)['result_sha256']==nr['result_sha256'];bindings[str(af)]=sha(af)
+ for f in (nw/'result.json',nw/'cache_stats.json',nw/'phase_times.json'):bindings[str(f)]=sha(f)
+ rows.append(dict(width=w,index=i,status=nr['status'],result_sha256=nr['result_sha256'],loop_seconds=nr['loop_seconds'],baseline_loop_seconds=br['loop_seconds'],scope='Exact whole-result/cache parity and six archived audit bindings; no new independent case audit/native execution.'))
+(out/'parity_verification.json').write_text(json.dumps(dict(source_sha256=sha(Path(__file__)),bindings=bindings,rows=rows,complete=len(rows)==12,scope='Identical frozen cases/searchbinary; new single-scan residual closure helper. Byte-identical all allocations/actual answers/paths/history/releases/decisions and cache statistics, existing six proofs cover identical result bytes. Baseline native content remains historical, no fresh native run/publication. Single concurrent timings, not paired accepted end-to-end gain.'),indent=2)+'\n');print('Verified',len(rows),'committed cases; complete',len(rows)==12,flush=True)

@@ -1,0 +1,109 @@
+{
+  "schema": "TILEPLACE_BASELINE_CHARACTERIZATION_V1",
+  "observed_at_utc": "2026-10-13T05:54:17.213819+00:00",
+  "five": {
+    "package": "work/full_color_trial_volatile_address_stage_2026-10-04",
+    "transactions": 5,
+    "full_typed_comparisons": 150,
+    "latency_cycles": [
+      11424699,
+      3548089,
+      3281728,
+      14121019,
+      10800940
+    ],
+    "interval_cycles": [
+      11424694,
+      3548084,
+      3281723,
+      14121014
+    ],
+    "latency_min": 3281728,
+    "latency_max": 14121019,
+    "latency_integer_average": 8635295,
+    "total_execution_cycles": 43176455,
+    "simulation_clock_period_ns": 4.0,
+    "source_hashes": {
+      "work/full_color_trial_volatile_address_stage_2026-10-04/rtl_attempt_01_terminal_audit.json": "b50746cd61ccf7cff0a6e37d2219dba08fd297bd4740e70af357e4647aed3a3d",
+      "work/full_color_trial_volatile_address_stage_2026-10-04/manifest.json": "83f88f8488ae2f1c9321c94e6df8e70562542a7a876d6bcf7605ac6531365e93",
+      "work/full_color_trial_volatile_address_stage_2026-10-04/rtl_attempt_01.log": "f6407fed326bc647f12eef4634f297adf84544702e62193b6c27c6486e775617",
+      "work/full_color_trial_volatile_address_stage_2026-10-04/full_project/u280/sim/report/verilog/result.transaction.rpt": "c1d49f4950e5db563436e6d70dbfad30ade42b080adf8adef6e3df62c1eb97ac",
+      "work/full_color_trial_volatile_address_stage_2026-10-04/full_project/u280/sim/verilog/full_color_top.result.lat.rb": "6f4c5b000ac0df63b3afbf453cc26d786fd1a74661842c923da62d844f9b0d0c",
+      "work/full_color_trial_volatile_address_stage_2026-10-04/full_project/u280/sim/report/full_color_top_cosim.rpt": "3a78a26ecd9c0689fce60183723bf0ca80013468583b423a30bb376989f66306",
+      "work/full_color_trial_volatile_address_stage_2026-10-04/full_project/u280/sim/verilog/full_color_top.autotb.v": "b98d9ba6979ba01de6f17817644c7ed003708aac11d7b880538881eee39f2605",
+      "work/full_color_trial_volatile_address_stage_2026-10-04/full_tb.cpp": "582e57cb41dce5cb85f4796a5023a342dd598bfca45fc10a1e3f005698039ec0"
+    }
+  },
+  "four": {
+    "package": "work/full_color_optimized_four_rtl_2026-10-04",
+    "transactions": 4,
+    "full_typed_comparisons": 120,
+    "latency_cycles": [
+      654891,
+      657049,
+      720319,
+      705556
+    ],
+    "interval_cycles": [
+      654886,
+      657044,
+      720314
+    ],
+    "latency_min": 654891,
+    "latency_max": 720319,
+    "latency_integer_average": 684453,
+    "total_execution_cycles": 2737800,
+    "simulation_clock_period_ns": 4.0,
+    "source_hashes": {
+      "work/full_color_optimized_four_rtl_2026-10-04/rtl_attempt_01_terminal_audit.json": "e15693d3bb5a6304c194d7619f522e4ff56aea9c9eacc9316f3ec63d6411a2cb",
+      "work/full_color_optimized_four_rtl_2026-10-04/manifest.json": "4500fbd6d064898b90fac69e46f36bbca96e83aaf6a4a5ec449b9d0c5476e4f2",
+      "work/full_color_optimized_four_rtl_2026-10-04/rtl_attempt_01.log": "c20fbcb5baf242b46f0ebc6685db92395e89a35961d01965708451a371640702",
+      "work/full_color_optimized_four_rtl_2026-10-04/full_project/u280/sim/report/verilog/result.transaction.rpt": "2403f479c68e7bf6b58c9b75491d925021e9991f5c479cc871b677ab6a6c424f",
+      "work/full_color_optimized_four_rtl_2026-10-04/full_project/u280/sim/verilog/full_color_top.result.lat.rb": "2084b98d79d99bcfa1629a44c225d0808ab37fca54d70d3a508696a0c6ebcddc",
+      "work/full_color_optimized_four_rtl_2026-10-04/full_project/u280/sim/report/full_color_top_cosim.rpt": "84db883885f41dd5c3748a7acfb3152a45797028a974e1ec99c20aa8bae075d1",
+      "work/full_color_optimized_four_rtl_2026-10-04/full_project/u280/sim/verilog/full_color_top.autotb.v": "68641a12d53f3d173ea7242bfda7f302ee7d3cba49ca042e701d97c0496a2c76",
+      "work/full_color_optimized_four_rtl_2026-10-04/full_tb.cpp": "5da31623be4ab72ce354137cce673bd14977ff3ea5dd560d3d6f36b160f24262"
+    }
+  },
+  "resources": {
+    "CLB LUTs": {
+      "used": 180887.0,
+      "capacity": 1303680,
+      "utilization_percent": 13.88
+    },
+    "CLB Registers": {
+      "used": 223917.0,
+      "capacity": 2607360,
+      "utilization_percent": 8.59
+    },
+    "Block RAM Tile": {
+      "used": 68.5,
+      "capacity": 2016,
+      "utilization_percent": 3.4
+    },
+    "DSPs": {
+      "used": 46.0,
+      "capacity": 9024,
+      "utilization_percent": 0.51
+    },
+    "URAM": {
+      "used": 0.0,
+      "capacity": 960,
+      "utilization_percent": 0.0
+    }
+  },
+  "timing_wns_ns": -0.66,
+  "routed_package": "work/optimized_clocked_synth_ooc_2026-10-09",
+  "utilization_report_sha256": "e12d8294407d7be7a2a49b8626b423dcb22c7713e278722b9d1d90a769ca33cb",
+  "routed_terminal_sha256": "a97f72879e1ecc0a05384bf3cce138b32abf82793267fc359cc07f6856da5709",
+  "routed_manifest_sha256": "6855179ecdc0218c7f53d313961d9f54b97a9ee39677713d8a353ac58a551876",
+  "generator_sha256": "af7638aec238ea517181194f9726be852d94ece134441c1fbcfc498cd6a2c6fe",
+  "table_sha256": "a863c8a708496a1da816861359662d1c00df7fd0a6521604bc1d69af94e2ef0e",
+  "scope": "Archival XSim fixture latency and implemented baseline resource use; newly extracted with source/output/terminal consistency checks",
+  "limitations": [
+    "Latency includes the generated AXI simulation model.",
+    "Fixture minima/maxima are not workload or candidate bounds.",
+    "The 4 ns simulation clock is not achieved physical timing.",
+    "No board runtime, throughput, transfer cost, power, energy or speedup."
+  ]
+}

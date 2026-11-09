@@ -1,0 +1,17 @@
+# DieRoute 恢复入口：显式sha上下文与RR图流式核验 — 2026-10-30
+
+原目标未完成；矩阵仍v169/314条，关键路径 experiments/critical_path_20261030_v169.md，八门槛均开放。11语料/311096搜索、45正式槽及原预算保持；正式45终态37通过/8存储失败不替换。原要求见 HANDOFF_20261021.md；10实际仿真/监控及最新rank成员检查见 HANDOFF_20261030_RANK_MEMBERSHIP_RTL.md；先前hash角色计数见 HANDOFF_20261030_CROSSCASE_HASH_AUDIT.md；原401路径批次见 HANDOFF_20261030_PATH_COHORT_AUDIT.md；论文/文献背景见 HANDOFF_20261030_PAPER.md。
+
+本轮在 work/research_artifact_dependency_inventory_20261030 处理原9968 hash形值中3348个字面字段名sha256。它们常用review/audit/evidence/matrix/physical/file等路径字段，而原通用识别器只自动关联path。新resolve_explicit_sha_contexts.py按固定显式角色解析：有physical时优先物理搬迁目的地；file配合logical_path时使用实际file，不把逻辑源误当物理副本。其余明确路径字段作为候选，按已有冻结期望digest检查；本轮2993条匹配均只有一个匹配目标，角色候选及结果完整保留。短basename/缺显式基准等352条未强行猜测。
+
+该阶段核验2993条字段，读取376个路径中的373个不同有界文件，共148441181bytes；3个RR XML超过8MiB，原报告保持deferred。没有任何已读候选的期望哈希不匹配被计为通过；最终JSON源SHA逐一匹配原冻结census。输出 explicit_sha_context_resolution.json，固定总读取256MiB/单文件8MiB限制保持在此报告中。
+
+3个明确的ODR搬迁副本RR图另由stream_check_deferred_rr_graphs.py流式核验：seq_seed1/seq_seed2各484910160bytes，apex2_seed6为96711202bytes，总1066531522bytes。限定仅这3个已声明regular、非稀疏、非symlink rr_graph.xml，单文件<=512MiB/总量<=1280MiB，1MiBchunk，不整文件载入。原manifest指针/physical file/期望digest和前后inode/size/mtime均核验，3项全部匹配；不是巨大稀疏TV读取或实验预算变更，没有解包/覆盖/新路由运行。见deferred_rr_graph_stream_checks.json；原小文件阶段的deferred状态仍留存。
+
+新发现两个原468未绑定根路径的明确冻结来源：work/completed_seed9_native_review_20261020/audit.json 与 work/second_full_policy_repeat_review_v2_20261020/audit.json，各有43处旧plan上下文匹配同一期望SHA，目标文件已独立新鲜重哈希。43是快照重复引用，不是43次新实验。先前468集合现在有2个新增current-compatible binding、余466在此阶段尚无绑定；旧root审计文件不修改，不把来源核对当语义验收。
+
+独立 explicit_sha_context_resolution_review.json 重解全部3348指针与候选路径、检查2993+3新关联字段与先前3202无交集，并复核3图当前身份和2根目标哈希。原9968 hash形值累计6198已关联，剩3770尚未由这些阶段关联；其中未必全是文件digest，后续仍须按schema解释。上一轮820新传递字段继续单列，原401路径批次完成也不是完整来源闭包。所有历史结果/失败/预算/分母不变；新候选和报告不继承旧1753路径库存覆盖。
+
+10仿真、5终态监控和2后续队列仍按实际PID/startticks核验live，六候选资源心跳正常，暂无新增完整RTL accepted。最新poll：python3 -B work/resident_rank_membership_candidate_20261030/poll_existing_jobs.py；共享可更新记录仍CSR目录latest_all_jobs_verified_wait.json。禁止因静默/观察超时重启/停止；完整原图、28878、十亿周期、正向后负向及资源守卫保持。
+
+后续仍需实际终态复核、其余3770字段/466根路径和完整递归依赖闭包，以及原全部研究门槛。rank模块75cycle局部HLS估计不等于完整周期预算通过。U280实卡速度/能耗验收仍缺，平台fit/300MHz未证明。文献稿仍独立32页文献更新/22October评测快照，不是最终全实验稿。无commit/push。

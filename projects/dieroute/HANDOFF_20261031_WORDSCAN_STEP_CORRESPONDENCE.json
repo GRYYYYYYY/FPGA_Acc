@@ -1,0 +1,40 @@
+{
+  "observed_ns": 1793415035237788168,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_WORDSCAN_CAPTURE_COHERENCE.json",
+    "sha256": "4a3ccb2906bd6291bd7375c25c279d96982a541265f41429bfc64e4dbe1eeab8"
+  },
+  "progress": {
+    "report": "work/resident_wordscan_step_correspondence_20261031/review.json",
+    "report_sha256": "0568e23a9d2b2518b0e1ba7b045e4880c61944d6af2b767cfe42cf313a78bae5",
+    "independent_review": "work/resident_wordscan_step_correspondence_20261031/independent_review.json",
+    "independent_review_sha256": "d01bfcddb6fcdab909eebace3655d4bcac5d6d54b2c86b8eab3185e5d08c444f",
+    "local_queries_unsat": 7,
+    "independent_state9_truth_assignments": 36,
+    "global_runtime_predicate_correspondence_proved": false,
+    "global_sequential_RTL_equivalence_proved": false,
+    "whole_program_lower_bound_certified": false,
+    "watchdog_failure_verdict": null,
+    "scope": "Local source-bound word-scan transition/finite-width proof obligations for two existing2022.2 helpers. Assume admitted initial0<=k<=773272,scan w in0..8,valid block bounds,correctly latched address-valid predicate and the same C/RTL7bit count. No independent claim that count is a population count is needed by these transition obligations. Prove the33bit signed extension preserves admitted k; state9stop/break/continue/found decision equals C under these premises; continuation subtraction and4bit increment preserve k/w bounds; narrowed word address bus does not lose valid block/scan bits and an admitted address is inside allocated words. The k bound, graph contents/build, initial block/mul/limit/operand delivery, all dynamic predicate correspondences, global call reachability/serialization and runtime counts remain premises. Invalid/end control passes are not counted as admitted memory-word visits; no claim every control pass reads a valid RAM element. Does not establish global sequential RTL equivalence, whole-program latency/watchdog outcome or hardware performance. No original program/trace/TV/.dat access, HLS/simulator execution, DUT edit, process control, guard/watchdog change or adoption; prior three bit_sum UNKNOWNs retained.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v207_20261031/matrix.json",
+    "sha256": "c55a928315a793928fc1e43cf6eb94f181810da0121d49ba18df5a5dcfa41948"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v207.json",
+    "sha256": "c0f1cb1c347a3d85131cf9b7a258f301a9d7f9631c3d952ef4b37c838761a44d"
+  },
+  "next_action": "Local scan transitions/width preservation checked under admitted k<=N,w<=8,valid block/address/operand premises. Establish those premises from prefix/build/caller state and actual runtime call mapping before composing all iterations or watchdog bounds. Keep three bit_sum UNKNOWNs and actual full-terminal requirement; no change to original jobs/guards/budgets.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

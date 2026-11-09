@@ -1,0 +1,297 @@
+{
+  "schema": "FUSIONPAR_PLACEMENT_REPAIR_STATUS_V1",
+  "date": "2026-10-13",
+  "unit_checks": 79,
+  "research_benefit": "not_demonstrated",
+  "designs": {
+    "ex5p": {
+      "repeats": 1,
+      "instances": 150,
+      "connections": 1916,
+      "nets": 678,
+      "deterministic": null,
+      "cold_shared_equivalent": true,
+      "counts": {
+        "runs": 5,
+        "qor_commits": 0,
+        "protocol_commits": 0,
+        "aborts": 14,
+        "timing_barriers": 5,
+        "placement_repairs": 3,
+        "native_feedback_checks": 3
+      },
+      "modes": {
+        "interleaved": {
+          "runs": 1,
+          "commits": 0,
+          "aborts": 3,
+          "placement_repairs": 0,
+          "median_process_wall_s": 15.54846528,
+          "median_charged_wall_s": 17.778085801,
+          "median_routing_s": 3.68878989,
+          "median_native_validation_s": 10.067915108,
+          "final_wirelength": 9857,
+          "final_cpd_ns": 5.8858
+        },
+        "interleaved_placement_repair": {
+          "runs": 1,
+          "commits": 0,
+          "aborts": 6,
+          "placement_repairs": 3,
+          "median_process_wall_s": 27.961281298,
+          "median_charged_wall_s": 30.190901819,
+          "median_routing_s": 6.973827219,
+          "median_native_validation_s": 18.00509429,
+          "final_wirelength": 9857,
+          "final_cpd_ns": 5.8858
+        },
+        "interleaved_repair": {
+          "runs": 1,
+          "commits": 0,
+          "aborts": 3,
+          "placement_repairs": 0,
+          "median_process_wall_s": 15.252662838,
+          "median_charged_wall_s": 17.482283359,
+          "median_routing_s": 3.614212545,
+          "median_native_validation_s": 10.011039268,
+          "final_wirelength": 9857,
+          "final_cpd_ns": 5.8858
+        },
+        "sequential": {
+          "runs": 1,
+          "commits": 0,
+          "aborts": 1,
+          "placement_repairs": 0,
+          "median_process_wall_s": 8.518115953,
+          "median_charged_wall_s": 10.747736474,
+          "median_routing_s": 3.067595411,
+          "median_native_validation_s": 5.025251914,
+          "final_wirelength": 9857,
+          "final_cpd_ns": 5.8858
+        },
+        "sequential_shared": {
+          "runs": 1,
+          "commits": 0,
+          "aborts": 1,
+          "placement_repairs": 0,
+          "median_process_wall_s": 8.588900121,
+          "median_charged_wall_s": 10.818520642,
+          "median_routing_s": 3.126472225,
+          "median_native_validation_s": 5.03424757,
+          "final_wirelength": 9857,
+          "final_cpd_ns": 5.8858
+        }
+      }
+    },
+    "alu4": {
+      "repeats": 2,
+      "instances": 131,
+      "connections": 2331,
+      "nets": 706,
+      "deterministic": true,
+      "cold_shared_equivalent": true,
+      "counts": {
+        "runs": 10,
+        "qor_commits": 0,
+        "protocol_commits": 0,
+        "aborts": 30,
+        "timing_barriers": 10,
+        "placement_repairs": 8,
+        "native_feedback_checks": 6
+      },
+      "modes": {
+        "interleaved": {
+          "runs": 2,
+          "commits": 0,
+          "aborts": 6,
+          "placement_repairs": 0,
+          "median_process_wall_s": 24.187802205,
+          "median_charged_wall_s": 27.229275796,
+          "median_routing_s": 9.0134731305,
+          "median_native_validation_s": 13.7525566515,
+          "final_wirelength": 9580,
+          "final_cpd_ns": 5.96812
+        },
+        "interleaved_placement_repair": {
+          "runs": 2,
+          "commits": 0,
+          "aborts": 14,
+          "placement_repairs": 8,
+          "median_process_wall_s": 51.0230714515,
+          "median_charged_wall_s": 54.0645450425,
+          "median_routing_s": 20.661297202500002,
+          "median_native_validation_s": 27.700944608,
+          "final_wirelength": 9580,
+          "final_cpd_ns": 5.96812
+        },
+        "interleaved_repair": {
+          "runs": 2,
+          "commits": 0,
+          "aborts": 6,
+          "placement_repairs": 0,
+          "median_process_wall_s": 24.5921450075,
+          "median_charged_wall_s": 27.6336185985,
+          "median_routing_s": 8.996751704000001,
+          "median_native_validation_s": 14.177138777,
+          "final_wirelength": 9580,
+          "final_cpd_ns": 5.96812
+        },
+        "sequential": {
+          "runs": 2,
+          "commits": 0,
+          "aborts": 2,
+          "placement_repairs": 0,
+          "median_process_wall_s": 11.530795229999999,
+          "median_charged_wall_s": 14.572268821,
+          "median_routing_s": 4.5499584755,
+          "median_native_validation_s": 6.5794613349999995,
+          "final_wirelength": 9580,
+          "final_cpd_ns": 5.96812
+        },
+        "sequential_shared": {
+          "runs": 2,
+          "commits": 0,
+          "aborts": 2,
+          "placement_repairs": 0,
+          "median_process_wall_s": 12.1432722825,
+          "median_charged_wall_s": 15.184745873499999,
+          "median_routing_s": 4.8744890304999995,
+          "median_native_validation_s": 6.8781308705,
+          "final_wirelength": 9580,
+          "final_cpd_ns": 5.96812
+        }
+      }
+    },
+    "misex3": {
+      "repeats": 2,
+      "instances": 126,
+      "connections": 2365,
+      "nets": 743,
+      "deterministic": true,
+      "cold_shared_equivalent": true,
+      "counts": {
+        "runs": 10,
+        "qor_commits": 0,
+        "protocol_commits": 0,
+        "aborts": 32,
+        "timing_barriers": 10,
+        "placement_repairs": 10,
+        "native_feedback_checks": 6
+      },
+      "modes": {
+        "interleaved": {
+          "runs": 2,
+          "commits": 0,
+          "aborts": 6,
+          "placement_repairs": 0,
+          "median_process_wall_s": 20.926990102,
+          "median_charged_wall_s": 23.699683269,
+          "median_routing_s": 7.587015796,
+          "median_native_validation_s": 12.183414099,
+          "final_wirelength": 10323,
+          "final_cpd_ns": 5.08031
+        },
+        "interleaved_placement_repair": {
+          "runs": 2,
+          "commits": 0,
+          "aborts": 16,
+          "placement_repairs": 10,
+          "median_process_wall_s": 46.156976060999995,
+          "median_charged_wall_s": 48.929669227999995,
+          "median_routing_s": 16.3088554805,
+          "median_native_validation_s": 27.7213903515,
+          "final_wirelength": 10323,
+          "final_cpd_ns": 5.08031
+        },
+        "interleaved_repair": {
+          "runs": 2,
+          "commits": 0,
+          "aborts": 6,
+          "placement_repairs": 0,
+          "median_process_wall_s": 21.734918183,
+          "median_charged_wall_s": 24.50761135,
+          "median_routing_s": 7.8853964224999995,
+          "median_native_validation_s": 12.681925889999999,
+          "final_wirelength": 10323,
+          "final_cpd_ns": 5.08031
+        },
+        "sequential": {
+          "runs": 2,
+          "commits": 0,
+          "aborts": 2,
+          "placement_repairs": 0,
+          "median_process_wall_s": 11.148260033500001,
+          "median_charged_wall_s": 13.920953200500001,
+          "median_routing_s": 4.810511464999999,
+          "median_native_validation_s": 6.011066008,
+          "final_wirelength": 10323,
+          "final_cpd_ns": 5.08031
+        },
+        "sequential_shared": {
+          "runs": 2,
+          "commits": 0,
+          "aborts": 2,
+          "placement_repairs": 0,
+          "median_process_wall_s": 11.3974112015,
+          "median_charged_wall_s": 14.1701043685,
+          "median_routing_s": 5.0272713085,
+          "median_native_validation_s": 6.050697571000001,
+          "final_wirelength": 10323,
+          "final_cpd_ns": 5.08031
+        }
+      }
+    }
+  },
+  "totals": {
+    "runs": 25,
+    "qor_commits": 0,
+    "protocol_commits": 0,
+    "aborts": 76,
+    "timing_barriers": 25,
+    "placement_repairs": 21,
+    "native_feedback_checks": 15
+  },
+  "evidence": [
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/ex5p_placement_repair_pilot_v1/audit.json",
+      "sha256": "921a8b32469ca6c0e35de8bbe8b05df5fd56e9560c608d1765fdcd41368ee88e"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/ex5p_placement_repair_audit_2026-10-13.json",
+      "sha256": "241afff4f09ca9aca7d7816885ed4dcdbb0f4bf685fdec05a6480f2bd60113b6"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/alu4_placement_repair_development_v1/audit.json",
+      "sha256": "1cad862303aa86915c570eabb60c1480a1e18e61747b94c5aa1499a41110cb02"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/alu4_placement_repair_audit_2026-10-13.json",
+      "sha256": "d57b3167c1414361cb10bdd0112e177eec0f37fccec502675220b6b27b4029f5"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/work/misex3_placement_repair_development_v1/audit.json",
+      "sha256": "584e34adb87b74bac80be24a8a10e44d0bb9f6171cd17f200bf8a175a990a6a6"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/misex3_placement_repair_audit_2026-10-13.json",
+      "sha256": "fdbbfe856f51b8a6858fc3373b618d73204197c754abf6ccad7f1343a2b4cdd1"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/placement_repair_protocol_2026-10-13.json",
+      "sha256": "df2c223a014d818389f4a9c8a56b8e5a01bdedd93915b0d2083da7c5e84ae9d1"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/ex5p_rejection_attribution_2026-10-13.json",
+      "sha256": "a10148713e8282a9c7d34773dcc1d6fd9d7eef81dc639d319141dfbaa49e155c"
+    }
+  ],
+  "limits": [
+    "All three designs are development cases, not held-out validation",
+    "One ex5p pilot repeat; two repeats each for alu4/misex3",
+    "Modes have different search budgets; no speedup or feedback-benefit claim",
+    "All observed native repair triggers are quality_rejected; route_failed trigger is unit-fixture evidence",
+    "No physical FPGA execution or full P&R from packed input",
+    "Best placer + PR and effort-matched blind repair controls remain required"
+  ],
+  "same_source_hashes_across_suites": true
+}

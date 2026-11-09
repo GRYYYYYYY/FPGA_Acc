@@ -1,0 +1,29 @@
+#include "enumerate_descriptors.hpp"
+#include "evaluate_batch_words.hpp"
+#include "encode_rank_words.hpp"
+#include <cassert>
+#include <iostream>
+std::uint64_t unit_data[2][12]={{0ULL,1ULL,0ULL,0ULL,1ULL,1ULL,0ULL,0ULL,2ULL,1ULL,0ULL,0ULL},{0ULL,2ULL,0ULL,0ULL,2ULL,2ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL}};
+std::uint32_t members[2][4]={{2ULL,5ULL,8ULL,0ULL},{2ULL,5ULL,8ULL,11ULL}};
+std::uint64_t blocks[2][32]={{2ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,5ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,4294967296ULL,8ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,8589934592ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL},{2ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,5ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,8ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,4294967296ULL,11ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,4294967296ULL}};
+std::uint64_t positions[2][8]={{0ULL,0ULL,1ULL,0ULL,2ULL,0ULL,0ULL,0ULL},{0ULL,0ULL,1ULL,0ULL,4ULL,0ULL,5ULL,0ULL}};
+std::uint64_t sites[2][32]={{0ULL,0ULL,0ULL,0ULL,1ULL,0ULL,0ULL,0ULL,2ULL,0ULL,0ULL,0ULL,3ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL},{0ULL,0ULL,0ULL,0ULL,1ULL,0ULL,0ULL,0ULL,2ULL,0ULL,0ULL,0ULL,3ULL,0ULL,0ULL,0ULL,4ULL,0ULL,0ULL,0ULL,5ULL,0ULL,0ULL,0ULL,6ULL,0ULL,0ULL,0ULL,7ULL,0ULL,0ULL,0ULL}};
+std::uint64_t config[2][8]={{3ULL,3ULL,4ULL,8ULL,8ULL,4ULL,4ULL,0ULL},{2ULL,4ULL,8ULL,8ULL,8ULL,8ULL,8ULL,0ULL}};
+std::uint64_t expected[2][1152]={{0ULL,1ULL,0ULL,0ULL,0ULL,1ULL,2ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,1ULL,2ULL,0ULL,1ULL,0ULL,2ULL,2ULL,1ULL,0ULL,5ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,4ULL,3ULL,0ULL,1ULL,2ULL,3ULL,2ULL,1ULL,0ULL,5ULL,2ULL,0ULL,8ULL,0ULL,0ULL,0ULL,0ULL,0ULL,3ULL,2ULL,0ULL,1ULL,0ULL,2ULL,2ULL,1ULL,0ULL,5ULL,3ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,1ULL,2ULL,0ULL,2ULL,0ULL,2ULL,2ULL,2ULL,0ULL,8ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,4ULL,3ULL,0ULL,2ULL,1ULL,3ULL,2ULL,2ULL,0ULL,5ULL,0ULL,0ULL,8ULL,1ULL,0ULL,0ULL,0ULL,0ULL,3ULL,2ULL,0ULL,2ULL,0ULL,2ULL,2ULL,2ULL,0ULL,8ULL,3ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,1ULL,0ULL,0ULL,0ULL,1ULL,2ULL,3ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL},{0ULL,1ULL,0ULL,0ULL,0ULL,2ULL,2ULL,0ULL,0ULL,5ULL,1ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,1ULL,0ULL,0ULL,0ULL,2ULL,2ULL,1ULL,0ULL,5ULL,2ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,1ULL,0ULL,0ULL,0ULL,2ULL,2ULL,2ULL,0ULL,5ULL,3ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,2ULL,2ULL,0ULL,1ULL,0ULL,4ULL,2ULL,4ULL,0ULL,5ULL,5ULL,0ULL,8ULL,0ULL,0ULL,11ULL,1ULL,0ULL,2ULL,2ULL,0ULL,1ULL,0ULL,4ULL,2ULL,4ULL,0ULL,5ULL,5ULL,0ULL,8ULL,0ULL,0ULL,11ULL,1ULL,0ULL,2ULL,2ULL,0ULL,1ULL,0ULL,4ULL,2ULL,4ULL,0ULL,5ULL,5ULL,0ULL,8ULL,0ULL,0ULL,11ULL,1ULL,0ULL,0ULL,1ULL,0ULL,0ULL,0ULL,2ULL,2ULL,6ULL,0ULL,5ULL,7ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,1ULL,0ULL,0ULL,0ULL,2ULL,2ULL,7ULL,0ULL,5ULL,8ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL,0ULL}};
+
+int main(){for(unsigned f=0;f<2;++f){
+ std::uint64_t roots[16],chain_roots[16],first[12],second[12],merged[12],descriptors[384],trials[768];std::uint32_t owners[192];unsigned count=0,owner_used=0,trial_used=0,status;bool overflow=false;
+ tileplace_wire_descriptor_enumerator::enumerate(0,unit_data[f],config[f][0],members[f],blocks[f],positions[f],config[f][1],sites[f],config[f][2],8,8,config[f][5],config[f][6],roots,8,chain_roots,8,first,second,merged,4,descriptors,64,owners,192,trials,256,count,owner_used,trial_used,overflow,status);
+ assert(!status&&!overflow&&count==8);
+ for(unsigned i=0;i<count;++i){auto d=descriptors+6*i,e=expected[f]+18*i;assert(d[1]==e[0]&&d[3]==e[1]&&d[5]==e[5]);for(unsigned j=0;j<d[3];++j)assert(owners[d[2]+j]==e[2+j]);for(unsigned j=0;j<3*d[5];++j)assert(trials[3*d[4]+j]==e[6+j]);}
+ // Independent analytic all-block net: singleton permutation has no HPWL gain;
+ // macro owner translated to x=2 or x=6 gives HPWL 3 vs 5; identity picks x=2.
+ std::uint64_t net[6]={7,0,0,config[f][1],0,0},scored[384],conflicts[384],writes[512];std::uint32_t touched[64],diagnostics[256];std::int32_t weights[3]={0,0,0};
+ auto evaluated=tileplace_wire_control_commit::evaluate_batch(blocks[f],positions[f],config[f][1],sites[f],config[f][2],nullptr,0,nullptr,0,net,1,members[f],config[f][1],nullptr,0,nullptr,0,nullptr,0,nullptr,0,weights,descriptors,count,trials,trial_used,owner_used,scored,conflicts,64,writes,256,touched,64,diagnostics);
+ assert(!evaluated.stage&&!evaluated.status);
+ std::uint64_t candidates[448],records[832],identity_units[384],identity_trials[768],blocked[384],best7[448],compact13[832],groups[2]={0,count};std::uint8_t kinds[640];std::uint32_t order[64],selected[64],gi[64],gathered[64],unique[64];
+ auto result=tileplace_wire_control_commit::encode_rank(scored,count,owners,owner_used,unit_data[f],config[f][0],members[f],config[f][1],trials,trial_used,conflicts,writes,evaluated.writes,touched,evaluated.touched,owners,owner_used,blocks[f],config[f][1],positions[f],candidates,records,64,kinds,640,identity_units,192,identity_trials,256,order,selected,64,groups,1,nullptr,0,blocked,best7,compact13,gi,gathered,unique);
+ assert(!result.stage&&!result.status);
+ if(f==0){assert(result.selected==0&&result.moved==0&&positions[f][0]==0&&positions[f][2]==1&&positions[f][4]==2);}
+ else{assert(result.selected==1&&selected[0]==2&&result.moved==2&&positions[f][0]==2&&positions[f][2]==3&&positions[f][4]==4&&positions[f][6]==5);assert(scored[12]==std::uint64_t(-419431));}
+ }std::cout<<"16 frozen Python five-kind trials + analytic enumeration/evaluate/identity/rank/commit composition PASS\n";}

@@ -1,0 +1,109 @@
+"""Private archive replacement: analysis trace conversion with explicit NET state."""
+import json,shlex,shutil,subprocess,hashlib
+from pathlib import Path
+root=Path.cwd();shared=root.parent/'tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07';out=root/'build/native_timing_restore_v2_2026-10-06';out.mkdir();src=out/'source';src.mkdir()
+sha=lambda p:hashlib.sha256(Path(p).read_bytes()).hexdigest()
+protocol=json.loads((root/'build/native_seed_import_v2_2026-10-06/protocol.json').read_text()); original={p:sha(p) for p in protocol['inputs_sha256']}
+read=(shared/'vpr/src/base/read_route.cpp').read_text();needle='route_ctx.route_trees[inet] = TracebackCompat::traceback_to_route_tree(head_ptr);';assert read.count(needle)==1
+read=read.replace(needle,'routecast_import_net = inet;\n    '+needle+'\n    routecast_import_net = ParentNetId::INVALID();');read='extern thread_local ParentNetId routecast_import_net;\n'+read if False else read
+# Declare after includes, where ParentNetId is visible.
+read=read.replace('bool read_route(', 'extern thread_local ParentNetId routecast_import_net;\n\nbool read_route(',1)
+old=(shared/'vpr/src/base/old_traceback.cpp').read_text();old=old.replace('/** Build a route tree from a traceback */','thread_local ParentNetId routecast_import_net = ParentNetId::INVALID();\n\n/** Build a route tree from a traceback */',1)
+old=old.replace('RouteTree tree(RRNodeId(head->index));','RouteTree tree = routecast_import_net.is_valid() ? RouteTree(routecast_import_net) : RouteTree(RRNodeId(head->index));\n    if (routecast_import_net.is_valid() && tree.root().inode != RRNodeId(head->index)) throw std::runtime_error("seed SOURCE mismatch");')
+old=old.replace('tree.add_node(parent, new_node);\n    new_node->net_pin_index = trace->net_pin_index;','new_node->net_pin_index = trace->net_pin_index;\n    if (tree._net_id.is_valid() && new_node->net_pin_index > 0) {\n        int pin = new_node->net_pin_index;\n        if (size_t(pin) > tree._num_sinks || tree._is_isink_reached.get(pin) || g_vpr_ctx.routing().net_rr_terminals[tree._net_id][pin] != inode) throw std::runtime_error("invalid imported sink identity");\n        tree._is_isink_reached.set(pin, true);\n    }\n    tree.add_node(parent, new_node);')
+old='#include <stdexcept>\n#include \"vpr_error.h\"\n'+old
+old=old.replace('throw std::runtime_error(\"seed SOURCE mismatch\")','vpr_throw(VPR_ERROR_ROUTE,__FILE__,__LINE__,\"seed SOURCE mismatch\")').replace('throw std::runtime_error(\"invalid imported sink identity\")','vpr_throw(VPR_ERROR_ROUTE,__FILE__,__LINE__,\"invalid imported sink identity\")')
+(src/'read_route.cpp').write_text(read);(src/'old_traceback.cpp').write_text(old);shutil.copyfile(root/'tools/native_seed_import/hook.cpp',src/'hook.cpp');shutil.copyfile(__file__,src/'build.py')
+compilebase=protocol['compile'][:-4] # drop -c source -o object
+route=(shared/'vpr/src/route/route.cpp').read_text()
+route='#include <cstdlib>\n#include <stdexcept>\n'+route
+needle="""    init_route_structs(net_list,
+                       router_opts.bb_factor,
+                       router_opts.has_choke_point,
+                       is_flat);"""
+assert route.count(needle)==1
+route=route.replace(needle,needle+"""
+    const char* routecast_seed = std::getenv("ROUTECAST_NATIVE_SEED");
+    if (routecast_seed && *routecast_seed) {
+        if (is_flat) throw std::runtime_error("search seed rejects flat mode");
+        bool feasible = read_route(routecast_seed, router_opts, true, is_flat);
+        VTR_LOG("ROUTECAST NET-aware seed imported feasible=%d with actual router options\\n", int(feasible));
+    }
+""")
+needle='        //Run STA to get estimated criticalities'
+assert route.count(needle)==1
+route=route.replace(needle,"""        if (routecast_seed && *routecast_seed) {
+            for (auto net : net_list.nets()) {
+                if (!route_ctx.route_trees[net]) continue;
+                const auto& tree = route_ctx.route_trees[net].value();
+                for (size_t pin=1; pin<net_list.net_pins(net).size(); ++pin) {
+                    auto sink = tree.find_by_isink(pin);
+                    if (!sink) throw std::runtime_error("incomplete seed delay map");
+                    net_delay[net][pin] = sink->Tdel;
+                }
+            }
+            VTR_LOG("ROUTECAST initialized net_delay from seed before STA\\n");
+        }
+"""+needle)
+# Populate imported delays also when LOOKAHEAD initialization is not selected.
+marker='    /* Get initial criticalities from the lookahead */'
+assert route.count(marker)==1
+route=route.replace(marker,"""    if (routecast_seed && *routecast_seed && router_opts.initial_timing != e_router_initial_timing::LOOKAHEAD) {
+        for (auto net : net_list.nets()) {
+            if (!route_ctx.route_trees[net]) continue;
+            const auto& tree = route_ctx.route_trees[net].value();
+            for (size_t pin=1; pin<net_list.net_pins(net).size(); ++pin) {
+                auto sink = tree.find_by_isink(pin);
+                if (!sink) throw std::runtime_error("incomplete seed delay map");
+                net_delay[net][pin] = sink->Tdel;
+            }
+        }
+        VTR_LOG("ROUTECAST initialized seed delays for non-lookahead timing\\n");
+    }
+"""+marker)
+route='#include "RoutingDelayCalculator.h"\n#include "vpr_error.h"\n#include <tuple>\n'+route
+marker='    std::unique_ptr<NetlistRouter> netlist_router = make_netlist_router('
+assert route.count(marker)==1
+probe="""    if (std::getenv("ROUTECAST_TIMING_RESTORE_PROBE")) {
+        auto refresh=[&]() {
+            delay_calc->clear_cache();
+            for(auto edge:g_vpr_ctx.timing().graph->edges())timing_info->invalidate_delay(edge);
+            timing_info->update();
+        };
+        auto metrics=[&]() {return std::make_tuple(timing_info->least_slack_critical_path().delay(),timing_info->setup_total_negative_slack(),timing_info->setup_worst_negative_slack());};
+        auto edges=[&]() {
+            std::vector<std::pair<float,float>> result;
+            for(auto edge:g_vpr_ctx.timing().graph->edges()) { const auto& graph=*g_vpr_ctx.timing().graph; if(graph.edge_type(edge)==tatum::EdgeType::PRIMITIVE_CLOCK_CAPTURE)result.emplace_back(float(delay_calc->setup_time(graph,edge)),float(delay_calc->hold_time(graph,edge))); else result.emplace_back(float(delay_calc->max_edge_delay(graph,edge)),float(delay_calc->min_edge_delay(graph,edge))); }
+            return result;
+        };
+        refresh();auto before=metrics();auto before_edges=edges();
+        std::vector<std::tuple<ParentNetId,size_t,float>> saved;
+        for(auto net:net_list.nets())for(size_t pin=1;pin<net_list.net_pins(net).size();++pin)saved.emplace_back(net,pin,net_delay[net][pin]);
+        bool rejected=false;bool mutation=false;
+        try {
+            for(const auto& row:saved)net_delay[std::get<0>(row)][std::get<1>(row)]=std::get<2>(row)+1.e-9f;
+            refresh();mutation=(metrics()!=before);
+            VTR_LOG("ROUTECAST timing mutation observed=%d before_cpd_ns=%g candidate_cpd_ns=%g\\n",int(mutation),1.e9*std::get<0>(before),1.e9*std::get<0>(metrics()));
+            vpr_throw(VPR_ERROR_ROUTE,__FILE__,__LINE__,"injected failure after candidate STA");
+        } catch(const VprError&) {
+            rejected=true;
+            for(const auto& row:saved)net_delay[std::get<0>(row)][std::get<1>(row)]=std::get<2>(row);
+            refresh();
+        }
+        if(!rejected || !mutation || metrics()!=before || edges()!=before_edges)throw std::runtime_error("timing recovery mismatch");
+        VTR_LOG("ROUTECAST restored delay matrix and all edge-delay/STA metric observations\\n");
+    }
+"""
+route=route.replace(marker,probe+marker)
+(src/'route.cpp').write_text(route)
+objects=[]
+for n in ('read_route','old_traceback','route'):
+ obj=out/(n+'.o');cmd=[*compilebase,'-I'+str(shared/'vpr/src/base'),'-c',str(src/(n+'.cpp')),'-o',str(obj)]
+ with (out/(n+'.log')).open('w') as f:result=subprocess.run(cmd,stdout=f,stderr=subprocess.STDOUT,timeout=120)
+ if result.returncode:raise SystemExit(n+' failed')
+ objects.append(str(obj))
+archive=out/'libvpr.a';shutil.copyfile(shared/'build_tileplace_vpr/vpr/libvpr.a',archive);subprocess.run(['ar','d',str(archive),'read_route.cpp.o','old_traceback.cpp.o','route.cpp.o'],check=True)
+link=protocol['link'];link=[str(archive) if p.endswith('/libvpr.a') else str(out/'routecast_search_seed_vpr') if p.endswith('/routecast_seed_vpr') else p for p in link];link=[p for p in link if not p.endswith('/hook.o') and not p.startswith('-Wl,--wrap=')];link[1:1]=objects
+with (out/'link.log').open('w') as f:res=subprocess.run(link,stdout=f,stderr=subprocess.STDOUT,timeout=120)
+assert all(sha(p)==h for p,h in original.items())
+(out/'receipt.json').write_text(json.dumps({'exit_code':res.returncode,'shared_inputs_sha256':original,'sources_sha256':{str(p):sha(p) for p in src.iterdir()},'binary_sha256':sha(out/'routecast_search_seed_vpr') if res.returncode==0 else None,'scope':'Private read_route/traceback object replacement; explicit NET constructor and sink tables. Importer factors remain prototype constants.'},indent=2)+'\n');print(res.returncode)

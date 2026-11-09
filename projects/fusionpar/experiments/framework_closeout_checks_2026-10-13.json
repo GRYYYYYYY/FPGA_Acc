@@ -1,0 +1,30 @@
+{
+  "schema": "FUSIONPAR_FRAMEWORK_CLOSEOUT_CHECKS_V1",
+  "observed_utc": "2026-10-13T13:20:03.697441+00:00",
+  "pass": true,
+  "python_files_parsed": 23,
+  "experiment_json_files_parsed": 58,
+  "local_document_links_checked": 56,
+  "acceptance_and_terminal_bindings_checked": 47,
+  "frozen_protocol_unchanged": true,
+  "git_diff_check_exit_status": 0,
+  "acceptance": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/framework_acceptance_2026-10-13.json",
+    "sha256": "5baea451aae76bebf90f34d92b96e0f4bf75f46f6addd22d2269a63811913631"
+  },
+  "plan": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/framework_plan.json",
+    "sha256": "d552131b135bb32ea94679dc374b95158764f26353fc55136486fa8cba021034"
+  },
+  "manifest": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/experiments/manifest.json",
+    "sha256": "23d3ca20b79a935e6aca6b149b07bf58143462b88eac93b4553a3ff3c20955fc"
+  },
+  "readme": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/fusionpar/README.md",
+    "sha256": "e03414cd74ad157589dbf282dbb68619f15aee4577abcc95ece1feda3220e83a"
+  },
+  "limits": [
+    "Syntax, document consistency and binding checks; native and regression evidence is in framework_evidence_recheck_2026-10-13.json"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "status": "pass",
+  "differential_cases": 3000,
+  "scope": "typed translation comparison including coordinate overflow, unknown IDs and unchanged error outputs; scaling fault checked. No HLS/native integration yet.",
+  "sha256": {
+    "translation_words.hpp": "d06d0dd5b0ec1c259a77e910c126a0ee1f0cb7699d6817b18405e92c25f8ae56",
+    "test_translation_words.cpp": "76f3e112477e389355344657118b8e89b1bfb4d340a3608f11fb933248fe1204"
+  }
+}

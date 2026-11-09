@@ -1,0 +1,41 @@
+{
+  "observed_ns": 1793411541024886366,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_SELECTOR_READY_INTERVAL.json",
+    "sha256": "2a61bb3a2f16e9c58b0151b7397284c9f7fe1c83e749398a76fcb84a1f48c6ff"
+  },
+  "progress": {
+    "report": "work/resident_selector_iteration_spacing_20261031/review.json",
+    "report_sha256": "fc163ffea78c6168fc1ab81a607f3a6646ea0ede109e9a4c502e58fa2b7b4865",
+    "independent_review": "work/resident_selector_iteration_spacing_20261031/independent_review.json",
+    "independent_review_sha256": "f7a87a416ae76a92400f72564641b4c18239948bf8a938335d3af595bc4d1a03",
+    "helper_modules": 4,
+    "prefix_continuation_spacing": 4,
+    "word_continuation_spacing": 8,
+    "source_to_RTL_dynamic_count_correspondence_proved": false,
+    "whole_program_lower_bound_certified": false,
+    "watchdog_failure_verdict": null,
+    "scope": "Read-only state-graph audit of four SHA-bound native2022.2 RTL loop helpers and existing synthesis reports. Within a single accepted, noncompleted invocation with legal one-hot control, no mid-call reset and admitted body iterations, the prefix continuation ring has4edges and word scan ring8edges, matching reported II. The associated expressions4*(T-Q) and8*(W-Q) are conditional first-to-last iteration-control-point distances if host T/W/Q equal the corresponding admitted RTL iteration and invocation counts. False prefix exit tests and invalid/end word-control passes are not host body/word visits. Idle, early-return and new-invocation transitions are not continuing-iteration rings. This does not prove the host-to-RTL count correspondence, datapath/memory correctness, disjointness from bit helper or parent intervals, serialization across calls/instances, integrated start/done latency, whole-program bound or actual watchdog failure. No new execution/tool flow, DUT edit, original program/trace/TV access, guard/budget change or adoption.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v200_20261031/matrix.json",
+    "sha256": "b9d8ae5e36fff7e8ddc02720a487b176533f18dc7dbe9ed51946a3e645f7bc31"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v200.json",
+    "sha256": "f6c7955cc08ebfec4fbf5c77825303729af4227140074168dabc0d6547f4e5a8"
+  },
+  "next_action": "Source/RTL admitted-iteration and invocation count correspondence remains open; local4/8spacing alone does not close it. Establish build/select validity, count correspondence, interval disjointness and serial composition before any full watchdog claim; preserve actual ongoing execution.",
+  "runtime": "Fresh poll confirmed30exact live handles, all five terminal-watchers empty,63.368GiB global. Original queue headroom unmet; no new owner or control changes.",
+  "artifact_ledger_unchanged": "v24:9878/9968associated,90pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

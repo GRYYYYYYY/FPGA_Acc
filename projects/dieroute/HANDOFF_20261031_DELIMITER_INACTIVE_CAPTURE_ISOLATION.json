@@ -1,0 +1,42 @@
+{
+  "observed_ns": 1793419579899155236,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_DELIMITER_INTERNAL_READ_STALLS.json",
+    "sha256": "3fc9f7849dd2b2dc659a0079e04ed4e6588806e16bb6895d4804400b9ac71ab7"
+  },
+  "progress": {
+    "report": "work/resident_delimiter_inactive_capture_isolation_20261031/review.json",
+    "report_sha256": "542b0ef8a1a108a35569d407909de00399b97ed74270cfe152b2826149e4118d",
+    "independent_review": "work/resident_delimiter_inactive_capture_isolation_20261031/independent_review.json",
+    "independent_review_sha256": "38568cd2fe676208f93605a2614bfac4e791bde1db7cb7ee38bf7959882bd154",
+    "local_models": 3,
+    "finite_states": 3660,
+    "finite_transitions": 4587,
+    "bad_states": 0,
+    "inactive_capture_isolated_from_read_dependent_writes_in_model": true,
+    "actual_global_HDL_equivalence_or_response_identity_proved": false,
+    "HDL_simulation_executed": false,
+    "watchdog_failure_verdict": null,
+    "scope": "SHA-bound conservative finite control/provenance model for three delimiter loops,not HDL simulation or complete extracted Verilog equivalence. State tracks73phases,read/write enables,working/pending read-needed descriptors,and whether the last capture was from an active iter0with internal RVALID. Source binds iter0updates only at0,iter1can load only at72from preedge iter0,and clears atwrite3/4. Linear phase traversal and stalls at1/71are checked. Phase0hold/advance,start/read-needed changes,and optional iteration disabling are overapproximated;initial controls are reset/idle with arbitrary old data freshness/descriptors. No mid-run reset is assumed. Actual source-active capture predicate at71comes from the previous stall audit. Inactive71capture may replace data freshness with false,but subsequent72cannot arm a read-dependent write from inactive iter0. A later active needed read must capture with RVALID before its72enable can arm. The finite model exhaustively establishes e1&&pending_read_needed implies active-valid capture,and e1zero afterwrite until72. RAM write and non-initial cache-data update require e1;this isolates the retained inactive-capture cases from read-dependent observations within the model. Read-needed descriptors/predicate alignment and the source abstraction remain assumptions,not a global HDL proof. No-read forward terminal callback and invalid-exit write exclusion rely on earlier local predicate contracts. Fresh capture means internally active/valid,not a verified intended AXI request identity. Top adapter association,full operands/cache correctness,actual complete delimiter/prefix contents,global timing/watchdog and eight gates remain open. No .dat/trace/TV reads,native/HLS flow,DUT edits,process controls,guards/budgets changed or adoption.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v223_20261031/matrix.json",
+    "sha256": "add61ce5ba9411c7df6bba5a1399d88a98ddc06cc83871aabede5bc74918de39"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v223.json",
+    "sha256": "29835b465b1a954b3a8b99c5e86d6e0e80c9eac926069dabc7450c479ab61431"
+  },
+  "next_action": "Trace intended request/return identity through top adapter and caller ownership,then previous-offset/cache invariant and full delimiter coverage. Inactive capture cases are isolated only by the stated finite abstraction;do not claim full HDL/global closure. Preserve original full jobs,guards,budgets and eight gates.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

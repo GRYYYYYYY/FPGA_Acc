@@ -1,0 +1,17 @@
+# DieRoute 恢复入口：行终点复用候选实际全28878 RTL运行 — 2026-10-30
+
+原目标未完成。原要求见 HANDOFF_20261021.md；当前权威矩阵仍v169/314条，关键路径 experiments/critical_path_20261030_v169.md。八门槛均开放，11语料/311096搜索、45正式槽及原成本/周期预算保持。正式45终态仍37通过/8存储失败，失败记录不替换。完整论文/文献及制品审计恢复背景见 HANDOFF_20261030_PAPER.md；此前主机/综合候选证据见不变的 HANDOFF_20261030_ROW_CURSOR.md。
+
+本轮把 `work/resident_install_row_cursor_candidate_20261030` 推进到实际原始全28878 RTL，不继承父候选验收。原生2022.2 cosim -setup使用312字节单次配置bootstrap，只生成配置/监控，exit0/24.071秒/峰值1029197824bytes/无资源守卫触发。独立核验95DUT文件与新综合输出逐字相同、155端口匹配；13监控文件来自本次原生生成，Cpost只应用两处cursor代码及私有路径变更并逆变换核对，实际重新编译exit0。未重新生成完整TV，不复制/哈希巨大稀疏install_words输入。
+
+实际启动协议绑定253文件、8缓存inode/size/mtime身份；完整原图N773272/E973552/P170628、5752357安装words、原28878调用、原十亿累计周期watchdog、xelab -O0/-mt off、12GiB自身/72GiB全局/20GiB启动资源守卫不变。启动前实测23.145GiB余量。实际运行日志有3个time0零初始化、3个known-write绑定、原1/28878进度。这个1只证明安装前unavailable读取完成，完整图安装及全部正向未证明；独立accepted仍0。见 actual_RTL_launch_binding_review_20261030.json 和 actual_RTL_runtime_receipt_20261030.json。
+
+新候选精确句柄：supervisor1576009/start1764165193；pipeline1576112/start1764165203；xsim1607361/start1764168988。终态监控1662010/start1764176088，只拥有本候选；其协议 terminal_watcher_protocol.json 绑定原同字节v2审计器（SHA4e37f23e8f3683bedcd6651189eb3a2d7545df06bb5db15e138e5056635ffea0）。等三句柄实际退出后，成功终态才执行全部28878回复/Cpost/完整性能行/observer独立审计；失败或资源守卫终态保留，不自动重试或采用候选。
+
+原7条仿真/2终态监控/2队列均保持，现共8仿真/3终态监控/2队列。共享可变观察记录仍 `work/resident_CSR_membership_validation_candidate_20261029/latest_all_jobs_verified_wait.json`，已加入新xsim和监控身份；更新工具可运行 `python3 -B work/resident_install_row_cursor_candidate_20261030/poll_existing_jobs.py`，会逐一核验13个实际进程与四候选的额外supervisor/pipeline身份及资源心跳。不得以日志静默/观察超时重启或停止。
+
+preparation.json中复制父fixture阶段的一个dataflow_monitor.sv哈希已被本次原生生成覆盖；该历史表不是最终库存。最终protocol、native_configuration_generation_review与实际文件哈希一致。说明见 preparation_metadata_clarification_20261030.json；活动绑定文件没有被修改。
+
+负向fixture已准备且只改reply观察器数据与banner，可逆回正向。通用 `work/full28878_observer_canary_tools_20261030/prepare_and_run.py` 的本候选只读门控检查返回75，缺完整正向证明时未创建任何负向执行目录。之后必须等完整正向v2通过、三句柄消失和资源核验，再显式 --run；不继承其他候选的正负向结果。
+
+下一步等待各原生实际终态并独立复核；继续完成原研究制品完整传递依赖/文献创新性/QoR/实现门槛。候选的主机13.1%调用减少与综合资源不等于RTL加速；总延迟undef，不能承诺何时达到十亿周期。U280无实卡，不能宣称实卡速度/能耗、平台fit或300MHz通过。文献稿仍32页独立30October文献更新/22October评测快照，不是最终全实验稿。所有原失败及分母保留，无commit/push。

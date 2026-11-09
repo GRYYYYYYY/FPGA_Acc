@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "random_wire_queries": 2000,
+  "reference": "typed array core and original C++ net cost;500 nonempty/empty prefix fixtures with trial overlays",
+  "scope": "CPU external ABI words net cost; no HLS/RTL yet",
+  "sources": {
+    "net_cost_words.hpp": "5b85bf984617b87b86523c1e8cc969e7a8e6ce697a4bb2a5f25e1a814b2c3473",
+    "test_net_words.cpp": "8095132bb222b5c355be0c7ed344d734bff5c0c4af3cab46b190b76b0b442f2a"
+  },
+  "atomic_wire_errors": 10,
+  "wire_extreme_cases": 1
+}

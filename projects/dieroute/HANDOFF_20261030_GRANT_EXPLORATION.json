@@ -1,0 +1,23 @@
+{
+  "objective": "Complete DieRoute research under the existing five-paper protocol",
+  "previous_recovery": {
+    "path": "HANDOFF_20261030_TIMING_METHOD_REVIEW.json",
+    "sha256": "410536fc5222ceec2b59b52326dc3c0cf037b2d2da02339723516065eeb2832f"
+  },
+  "progress": {
+    "review": "work/native_grant_linearization_exploration_20261030/verification_review.json",
+    "review_sha256": "578012b07b25861571fd06e5de66c8a09b57f140386d2de9ccd59d335d91f3cd",
+    "scope": "Bounded native CPU arbiter-serialization verification, not hardware/concurrent-DMA/full-routing proof. No main source or benchmark budget changed.",
+    "history_node_visits": 231472,
+    "acquire_probes": 2083248,
+    "research_complete": false
+  },
+  "runtime_poll": "python3 -B work/resident_rank_membership_candidate_20261030/poll_existing_jobs.py",
+  "next_actions": [
+    "Keep all existing positive RTL simulations/watchers/physical queues intact; audit actual successful full terminal before canary or adoption.",
+    "Continue strict grant/authority integration under shared arbiter; bounded CPU proof does not close hardware concurrency.",
+    "Preserve original11workloads/311096searches,45formal slots,37passes/8failures,watchdogs and guards."
+  ],
+  "all_eight_gates_open": true,
+  "research_complete": false
+}

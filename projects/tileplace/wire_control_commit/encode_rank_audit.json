@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "compile": "g++ -std=c++17 -O2 -Wall -Wextra -Werror test_encode_rank.cpp",
+  "binary": "/tmp/tileplace-encode-rank-forbidden-test",
+  "cases": 30,
+  "scope": "CPU scored descriptors -> exact identities -> indexed forbidden -> per-group best -> dedup -> conflict select -> atomic commit; no enumeration/evaluation/RTL/native integration",
+  "sha256": {
+    "test_control_commit.cpp": "b071e93818d78640201fd5e4cdb4a56d490a4e27c472229a20f32a02f4b64749",
+    "encode_rank_words.hpp": "3c9128d41236a5e7be1c9cd77ece957a93577328acd046808061ca9e46b683a4",
+    "rank_commit_words.hpp": "c842bec811f91e2b5ead5205c58cd257f4a1af86180fd37246bf05d3487762d6",
+    "test_rank_commit.cpp": "b047aa45279548cad1e9d6b83e03dbf4665bcc4e014721cfa1c54382ae61cf96",
+    "test_encode_rank.cpp": "c31cd8574fb9e5ad7186d741603f77e7c5de86307e3c49c9819fc51da72c5c19",
+    "test_rank_reference.cpp": "9efae96d37b56a639f05a0e7c2d41f1c14bf9d241cd98e9019e1f5bc310cb64f",
+    "control_commit_words.hpp": "d0fb7cebea0872fc6662e0adde0b5cbf1d216546de2d7cef13e78c6843160f2e"
+  }
+}

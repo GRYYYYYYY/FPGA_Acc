@@ -1,0 +1,22 @@
+{
+  "status": "pass",
+  "scope": "CPU host proposal-to-array encoding feeding allocation-free complete-identity ordering and conflict selection; not yet integrated into full candidate search or HLS",
+  "transaction_sets": 1000,
+  "set_sizes": "0 through 64",
+  "roundtrip_fields": [
+    "kind",
+    "sorted nested units",
+    "trial IDs and four-dimensional coordinates"
+  ],
+  "selected_fields": [
+    "complete identity",
+    "score",
+    "touched nets",
+    "write sites"
+  ],
+  "macro_unit_members": 2,
+  "files": {
+    "encoder.hpp": "32aedd7146ee2a3b3c2ddca35861986e574677a47d2a485dd22c928fc80f9925",
+    "encoder_test.cpp": "1b005caf434f1d33a0397f4faa8eef48e86bd7348997fa094736cc6be00b9418"
+  }
+}

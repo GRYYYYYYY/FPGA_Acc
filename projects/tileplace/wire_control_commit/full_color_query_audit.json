@@ -1,0 +1,14 @@
+{
+  "status": "pass",
+  "build": "g++ -std=c++17 -O2 -Wall -Wextra -Werror full_color_query.cpp -o /tmp/tileplace-full-color-query",
+  "snapshots": 12,
+  "colors_per_snapshot": 4,
+  "reference": "original Python engine.propose_color, forbidden first selected identity if present; full selected identity and Q20 score exact",
+  "scope": "strict binary snapshot -> complete integer pipeline selected query; no resident commit/feedback/stat protocol or native VPR loop",
+  "sources": {
+    "host_scratch_words.hpp": "712f0080e2a4939dde95d63668fc0765a07ff7a770f06a88184fd5bfd0ea0de5",
+    "host_propose.hpp": "bca9f2cbe8b09edfa16d297657d5a8cc7147fe7b65d727d28673406daa682401",
+    "full_color_query.cpp": "c6a15eb2694ce1d205da5f37bdc2550983686ef22f9a624a346d73f8e964eb57",
+    "host_snapshot_words.hpp": "62805260a0868e26e1fc054d494daba9e8d16906cb2d3a736c9987e6a73779ed"
+  }
+}

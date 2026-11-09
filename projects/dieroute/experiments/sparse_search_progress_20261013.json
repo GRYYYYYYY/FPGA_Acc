@@ -1,0 +1,147 @@
+{
+  "schema": "dieroute.sparse_search_progress.v1",
+  "captured_utc": "2026-10-13T12:17:17.298587+00:00",
+  "research_status": "active_incomplete",
+  "board_result": false,
+  "previous_goal_turn": "progress: full fixed-access search CSR and SDK-independent audit",
+  "implemented": [
+    "Epoch-tagged sparse label/priority-queue workspace shared by RR forward search and mapped native CSR consumer",
+    "Sparse reverse labels, portal-entry costs and read-set deduplication in RRBackend",
+    "Stable cost/hops/node/parent/edge ordering, lazy resource reads and incremental exception-path work accounting",
+    "Bounded native shortest-hop connectivity probes with net permissions and explicit budget-exhausted status"
+  ],
+  "validation": {
+    "ctest": "19/19 pass",
+    "asan_ubsan": "7/7 pass",
+    "tsan": "3/3 pass",
+    "dense_algorithm_differential_graphs": 3000,
+    "table_reset_epochs": 600,
+    "table_wrap_epoch_type": "uint8_t fixture; production uint32_t",
+    "native_consumer_fixtures": 5,
+    "legacy_cases": [
+      "diffeq",
+      "alu4",
+      "ex5p"
+    ],
+    "legacy_semantic_artifacts_per_case": 7,
+    "legacy_all_non_wall_counters_equal": true
+  },
+  "full_native_probe": {
+    "schema": "dieroute.native_sparse_search_probe.v1",
+    "nodes": 91975782,
+    "arcs": 253648514,
+    "selected_tasks": 18,
+    "slr_pairs": 9,
+    "repeats": 5,
+    "found": 35,
+    "budget_exhausted": 55,
+    "exhausted": 0,
+    "maximum_touched_labels": 2000000,
+    "maximum_retained_workspace_bytes": 125829120,
+    "scope": "full native CSR shortest-hop connectivity probes with net permission and sparse labels; budget exhaustion is inconclusive, not unroutable; no occupancy negotiation, physical costs, full-design routing or QoR"
+  },
+  "independent_probe_audit": {
+    "schema": "dieroute.native_sparse_probe_audit.v1",
+    "passed": true,
+    "inputs_unchanged": true,
+    "selected_tasks": 18,
+    "repeats": 5,
+    "counts": {
+      "found": 35,
+      "budget_exhausted": 55
+    },
+    "slr_pairs": {
+      "2->2": {
+        "found": 10
+      },
+      "2->1": {
+        "budget_exhausted": 10
+      },
+      "0->0": {
+        "found": 10
+      },
+      "2->0": {
+        "budget_exhausted": 10
+      },
+      "1->1": {
+        "found": 10
+      },
+      "0->1": {
+        "budget_exhausted": 10
+      },
+      "0->2": {
+        "budget_exhausted": 10
+      },
+      "1->0": {
+        "budget_exhausted": 10
+      },
+      "1->2": {
+        "found": 5,
+        "budget_exhausted": 5
+      }
+    },
+    "resolved_pip_occurrences": 340,
+    "cross_slr_paths": 5,
+    "maximum_retained_workspace_bytes": 125829120,
+    "maximum_touched_labels": 2000000,
+    "repeated_paths_and_search_counts_identical": true,
+    "scope": "Raw PIP identity, net permission, exact selected CSR arcs, simple paths and repeat equality; no physical timing, negotiated routing, optimality proof or native DCP legality"
+  },
+  "unique_probe_outcomes": {
+    "tasks": 18,
+    "found": 7,
+    "budget_exhausted": 11,
+    "exhausted": 0,
+    "cross_slr_tasks_found": 1,
+    "repeats": 5
+  },
+  "retained_failure": {
+    "path": "work/sparse_search_build_20261013/ctest_initial.log",
+    "cause": "Initial conversion deferred counter publication until normal return, dropping search work on arithmetic overflow; preserved exception-path counters and reran atomicity/stale-overflow tests"
+  },
+  "CPU_observations": [
+    {
+      "case": "diffeq",
+      "historical_wall_ms": 6970.68,
+      "current_wall_ms": 7699.29
+    },
+    {
+      "case": "alu4",
+      "historical_wall_ms": 11141.9,
+      "current_wall_ms": 13136.7
+    },
+    {
+      "case": "ex5p",
+      "historical_wall_ms": 10816,
+      "current_wall_ms": 12783.9
+    }
+  ],
+  "CPU_observation_scope": "One run against historical records, with concurrent work; slower observed CPU wall times are disclosed, no controlled speedup or hardware claim",
+  "verification_directory": "work/sparse_search_verification_20261013",
+  "evidence": {
+    "work/sparse_search_build_20261013/ctest_final.log": "9856fc0c76bde26d4bb4e2978fa08b11f03d09eee64cf2d05f6b7f22a97a72cf",
+    "work/sparse_search_asan_20261013/ctest_final.log": "5139516632a3b6d56c31e2c9fd5330a97795cf3ca7690e31318ab30baeb3a483",
+    "work/sparse_search_tsan_20261013/ctest.log": "2586eae4cd337d35b4425474a480a1f435bc850b83e55893489b8f5cf35daba8",
+    "work/sparse_search_legacy_20261013/audit.json": "2c60ff813d6f58582d3dbd0e8412244cdb19a35db1ecc47014931de27ceb426c",
+    "work/u280_sparse_search_probe_v1_20261013/manifest.json": "97a06214978ad67df2a4494668bc8c89d8d21c426c85b06cad60bed255f682d1",
+    "work/u280_sparse_search_probe_v2_20261013/manifest.json": "f7d29a102d802ea159e21d85019cca6bcb88a2f6ef05fc183a73aadc066eb333",
+    "work/u280_sparse_search_probe_v2_audit_20261013/audit.json": "320955a6e243a397fd878d42993e646fb6711332eac49515316da43f949941a3",
+    "work/native_sparse_probe_fixture_20261013/tests.json": "ae13458e7cd78a78fb6ad5dbee503297baa09e7d36df09ff97ac0d8dec236f37"
+  },
+  "limits": [
+    "Native probes use hop count only; no invented physical delays or capacities",
+    "Only 7 of 18 fixed tasks completed within two-million-label budget; 11 remain inconclusive, no changed cohort or success denominator",
+    "Single-label cost-first search retains old finite-hop behavior, not a resource-constrained Pareto solver",
+    "Workspace bytes include retained forward labels/hash/heap only; no graph maps, RR journals, trees, authority, shadows or total process RSS",
+    "Legacy worker snapshots and topology/boundary storage remain dense; no complete native net-sharing/occupancy controller yet",
+    "Shared source-to-many-sink trees, native cost calibration, full DCP rerouting, writeback and joint QoR gate remain open",
+    "No new HLS/HBM or board result"
+  ],
+  "next_work": [
+    "Investigate native physical cost/timing metadata and guided search to resolve large cross-SLR exploration without changing net permissions",
+    "Integrate sparse native search with shared route trees and exact mutable occupancy/version state",
+    "Avoid whole-resource per-worker copies while preserving verified journal/replay semantics",
+    "Complete commercial routing/legality/QoR before hardware and final paper claims"
+  ],
+  "active_processes": []
+}

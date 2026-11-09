@@ -1,0 +1,8 @@
+import sys,json
+from pathlib import Path
+R=Path(__file__).resolve().parents[1];sys.path[:0]=[str(R/'tools'),str(R/'tools/native_resume_prototype')]
+from pending_owner_swap_proposals_v1 import propose
+from nonzero_rc_endpoint_context import load_endpoints
+from pre_route_endpoints import sha
+from source_binding_v2 import closure
+parent=R/'experiments/misex_owner_swap_v1_2026-10-07';proof=json.loads((parent/'fallback_verification.json').read_text());receipt=json.loads((parent/'receipt.json').read_text());bindings={**proof['bindings'],**closure([Path(__file__)]),str(parent/'fallback_verification.json'):sha(parent/'fallback_verification.json')};assert all(sha(k)==v for k,v in bindings.items());out=R/'experiments/owner_swap_proposal_parity_v1_2026-10-07';out.mkdir();(out/'protocol.json').write_text(json.dumps(dict(bindings=bindings,scope='Generic helper compared with actual independently certified component selection, no new joint or timing proof.'))+'\n');ep=Path(next(k for k in receipt['bindings'] if k.endswith('/misex3/endpoints.json')));eventfile=Path(next(k for k in receipt['bindings'] if k.endswith('/misex3/batch8.json')));graph,digest,nodes,f,rc,_=load_endpoints(ep);event=json.loads(eventfile.read_text());actual=propose(f,rc,event['before_records'],event['released_net_ids'],event['owner_repair']['attempts'][0]['branches']);reference=json.loads((parent/'screening.json').read_text());normalized=json.loads(json.dumps(actual));assert all(normalized[k]==reference[k] for k in ('domains','checks','proposed'));assert all(sha(k)==v for k,v in bindings.items());(out/'receipt.json').write_text(json.dumps(dict(bindings=bindings,domains_equal=4,checks_equal=32,proposed_equal=4,scope=actual['scope']),indent=2)+'\n');print('PASS generic swap parity')

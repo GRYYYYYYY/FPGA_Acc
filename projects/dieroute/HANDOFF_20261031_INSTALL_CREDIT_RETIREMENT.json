@@ -1,0 +1,43 @@
+{
+  "observed_ns": 1793420939747100992,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_INSTALL_REGSLICE_TRANSPORT.json",
+    "sha256": "0a5a236d08529748257dd9cbb71e6cae867b5b238944eca95bad11c8978e4f99"
+  },
+  "progress": {
+    "report": "work/resident_install_credit_retirement_20261031/review.json",
+    "report_sha256": "6c03948a9ebaea65fd4b424dcb3003c6d9bcb372e8443b3422816584d26093da",
+    "independent_review": "work/resident_install_credit_retirement_20261031/independent_review.json",
+    "independent_review_sha256": "2d4c6e01c15b9e78be06ad8e2a90ea56c51f1dba875e583200326f449d2c8747",
+    "credit_lemmas_unsat": 2,
+    "coupled_model_runs": 4,
+    "coupled_model_clocks": 17487,
+    "credit_reservations_and_retirements": 4000,
+    "saturating_runs": 3,
+    "intended_external_response_identity_proved": false,
+    "all_coupled_schedules_or_full_HDL_equivalence_proved": false,
+    "HDL_simulation_executed": false,
+    "watchdog_failure_verdict": null,
+    "scope": "SHA-bound conditional coupled source-model audit of default64bit singleword install-read credit retirement. Models three-slot address core,response register slice,depth256block response FIFO,and paired depth16SRL descriptor FIFOs with one-cycle internal-consumption retirement pulse. Descriptor IDs are proof ghost labels;actual descriptor bit is1. Assume reset/empty state,binary controls,no reset thereafter,only singleword requests,ordered one-beat RLAST1responses generated strictly after outward request acceptance,and consumer RREADYonly when internal data valid. The last condition follows locally for the earlier audited delimiter children,but global caller ownership remains unproved. Two feasible integer queries prove the FIFO empty-head bound and that companion occupancy<=credit occupancy makes credit-ready issuance unable to push a full companion FIFO. Four1000request coupled projections exercise credit saturation,consumer/AR/Rresponse stalls and exact registered FIFO behavior. Reservation,bus acceptance,return buffering,internal consumption and credit retirement tags/counters are checked in order;all drain without lost pulses or ignored companion pushes in these runs. This is not HDL/native execution or full Verilog equivalence. Ordered/correct external response generation is an explicit premise,not an outcome. Mixed bursts,response IDs/errors,unowned/empty-ready consumers,all possible coupled schedules/global reachability,actual offset/delimiter/prefix contents,timing/watchdog and gates remain open. No .dat/trace/TV reads,native/HLS flow,DUT edits,process controls,guard/budget changes or adoption.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v228_20261031/matrix.json",
+    "sha256": "4cdb464e883b3bfa6da3fd7a0494a8eadaf1c9f930aaa5dea50a266ff7233023"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v228.json",
+    "sha256": "ab787748458990efa5947c781c778fa4094586dd3ed9ff986bc2f2dbe70254c4"
+  },
+  "next_action": "Verify caller ownership/no-empty-read enforcement and original pointer/iteration association. Coupled credit results assume correct ordered external returns and only singleword traffic;all-schedule credit/head-gap proof and mixed-traffic/global/full HDL requirements remain. Continue previous-offset/cache/delimiter work and original terminal monitoring without changing jobs/guards/budgets.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

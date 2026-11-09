@@ -1,0 +1,27 @@
+"""Freeze a cross-study evidence matrix, preserving original acceptance scope."""
+import json,os
+from pathlib import Path
+from datetime import datetime,timezone
+from pre_route_endpoints import sha
+R=Path(__file__).resolve().parents[1]
+def read(p):return json.loads(p.read_text())
+def main():
+ out=R/'experiments/mmc_frequency_study_consolidation_v1_2026-10-19';out.mkdir(exist_ok=False);specs=[('frequency216','mmc_resource_probability_quality_v1_2026-10-19','mmc_resource_probability_development_v1_2026-10-19'),('owner3456','mmc_owner_frequency_quality_v1_2026-10-19','mmc_owner_frequency_development_v1_2026-10-19'),('topology13824','mmc_topology_frequency_quality_v1_2026-10-19','mmc_topology_frequency_development_v1_2026-10-19')];rows=[];bindings={str(Path(__file__).resolve()):sha(__file__)}
+ for name,quality,producer in specs:
+  qp=R/'experiments'/quality/'results.json';vp=qp.with_name('independent_metric_verification_v1.json');q=read(qp);v=read(vp);assert v['bindings'][str(qp)]==sha(qp);decision=R/'experiments'/producer/'research_decision_v1.json';rp=decision.with_name('receipt.json');ip=decision.with_name('independent_verification_v1.json');ind=read(ip);assert ind['bindings'][str(rp)]==sha(rp);relevant=[r for r in q['rows'] if name!='frequency216' or r['arm']==q['primary_arm']];assert len(relevant)==3
+  for row in relevant:
+   comp=row['comparisons'];metrics=row['metrics'];prev=comp['previous_native'];rows.append(dict(model=name,case=row['case'],previous_native_pass=prev['pass_comparison'],raw_min_on_pass=comp['raw_min_on']['pass_comparison'],resource_spearman=metrics['concrete']['spearman'],resource_topK_hits=round(metrics['concrete']['precision_at_k']*12936),spatial_spearman=metrics['spatial']['spearman'],spatial_topK_hits=round(metrics['spatial']['precision_at_k']*20),full_overflow_units=row.get('overflow_units'),previous_native_regressions=[c for c in prev['checks'] if not c['nonregression']]))
+  bindings.update({str(p):sha(p) for p in [qp,vp,decision,rp,ip]})
+ assert len(rows)==9 and all(not all(r['previous_native_pass'] and r['raw_min_on_pass'] for r in rows if r['model']==m) for m,_,_ in specs)
+ costs=R/'experiments/mmc_all_NET_feedback_v1_2026-10-18/cost_boundary_audit_v1.json';c=read(costs);assert not c['accepted_matched_complete_time_gain'];bindings[str(costs)]=sha(costs)
+ external={}
+ for label,rel in [('family_history','prospective_external_family_admission_review_v2_2026-10-18/verification.json'),('packed_FF','prospective_external_family_packed_FF_v1_2026-10-18/verification.json'),('packed_LUT','prospective_external_family_packed_LUT_pins_v1_2026-10-18/verification.json')]:
+  p=R/'experiments'/rel;z=read(p);external[label]=dict(status=z['status'],source=str(p));bindings[str(p)]=sha(p)
+ pid=990092;proc=Path('/proc')/str(pid);live=None
+ if proc.exists():
+  cmd=(proc/'cmdline').read_bytes().replace(b'\0',b' ').decode();stat=(proc/'stat').read_text();tail=stat[stat.rfind(')')+2:].split();assert 'prospective_external_family_source_equivalence_v1_2026-10-18/commands.ys' in cmd;live=dict(pid=pid,state=tail[0],start_ticks=tail[19],user_ticks=tail[11],system_ticks=tail[12],command=cmd,verified_utc=datetime.now(timezone.utc).isoformat())
+ requirements=[dict(requirement='Transaction, physical RR and uniqueNET accounting',state='Scoped component evidence exists',remaining='Do not extrapolate old interface/golden checks to all new predictors or hardware.'),dict(requirement='Original full-domain quality gates all3',state='Not achieved',remaining='All three frozen learned frequency variants fail at least one case.'),dict(requirement='Strict unseen design-family evaluation',state='Not achieved',remaining='External history and full source-semantics admission unresolved; no strict-test outcomes claimed.'),dict(requirement='Fixed placement native route failure/RRR/wirelength/CPD',state='Not achieved for these variants',remaining='Quality gate failures prevent promotion; physical candidate validity is not utility.'),dict(requirement='Matched complete-flow net time gain',state='Not achieved',remaining='Account prefix, A/B banks, graph, conversion, training, validation and exact native routing for both arms.'),dict(requirement='Hardware synthesis/implementation and physical-board claims',state='Not achieved for current learned mechanism',remaining='Old scoped RTL evidence does not transfer. Physical U280 unavailable per environment; no real-board claim.')]
+ result=dict(status='NINE_FROZEN_MODEL_CASES_ORIGINAL_GATES_COST_BOUNDARY_AND_READINESS_CONSOLIDATED',created_utc=datetime.now(timezone.utc).isoformat(),rows=rows,requirements=requirements,external_readiness=external,source_equivalence_live_observation=live,bindings=bindings,decision='No model promotion or category/radius scans. Keep full research objective active. Next concrete readiness work: inspect current source-equivalence phase and existing defined-state/property-coverage certificates, identify exact remaining source-to-lowered obligation without restarting the live job or admitting an unknown-history family.',scope='Current evidence matrix, not a claim of completed research or permanent blocker. Archived statuses kept separate from freshly verified live process.')
+ with (out/'results.json').open('x') as f:json.dump(result,f,indent=2)
+ print('Consolidated9cases; all3models fail complete quality gate; source job live:',live is not None)
+if __name__=='__main__':main()

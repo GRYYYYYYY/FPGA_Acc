@@ -1,0 +1,248 @@
+{
+  "schema": "dieroute.snapshot_claim_evidence.v1",
+  "recorded_ns": 1792005976482275044,
+  "status": "partial_research_evidence",
+  "research_complete": false,
+  "evidence": {
+    "rtl": {
+      "path": "work/native_snapshot_search_hls_v1_20261014/audit.json",
+      "sha256": "e5f7e92b796ca71fde4e473df850079b14d0475ac2c7674ae7b8b04b54280865",
+      "status": "passed",
+      "scope": "Whole single-worker scratch search loop in RTL, seeded by testbench and using commit C-model snapshots. Nine small directed reference differential cases; no full native graph, async ownership, implementation timing or board proof"
+    },
+    "failure_rtl": {
+      "path": "work/native_snapshot_search_failure_hls_v1_20261014/audit.json",
+      "sha256": "0b9a7bbe92ad6354a8685ef444d4963d20faeebc72ab921cf43a904ed88626d4",
+      "status": "passed",
+      "scope": "Directed failure branches of controller RTL; producer C-model for valid/overflow states, explicit fault injection for malformed inputs. No full native or asynchronous protocol proof"
+    },
+    "random_cmodel": {
+      "path": "work/native_snapshot_search_random_top_v1_20261014/audit.json",
+      "sha256": "e5205eaae8edcc4d3f45ee3021cd71d860d74674dd351c13c3a4f29345d5b395",
+      "status": "passed",
+      "scope": "Randomized CPU differential only; no random RTL, native full graph or asynchronous authority proof"
+    },
+    "joint_fixture_xrt": {
+      "path": "work/native_snapshot_joint_xrt_v2_20261014/independent_audit.json",
+      "sha256": "133997e98da765dcaac77743c3e7064bc5c8bd395e89b4559e92954b67c6c730",
+      "status": "passed",
+      "scope": "Whole-search CU using actual commit-owned resources, device authority byte preservation checks, consumed-read invalidation and path publication; serialized small fixture with negotiated overuse, not legal full-design route, asynchronous protocol or board proof"
+    },
+    "native_cross_cmodel": {
+      "path": "work/native_cross_die_snapshot_guided_v1_20261014/independent_audit.json",
+      "sha256": "5bfdc1ec389e95c158efe65061bb1e5be40d96d65babc0a6d6e66b72532300c7",
+      "status": "passed",
+      "scope": "Native actual-top C-model execution with independent dictionary resource costs and internal exact path/ordered-read assertions; auditor checks provenance and completion, does not independently replay exported paths"
+    },
+    "multiseed_cmodel": {
+      "path": "work/native_post_multiseed_guided_v2_20261014/independent_audit.json",
+      "sha256": "b6366dec6116601df6624cb22f4f92923f8e03c3aa2808b9a18b18e342d3eeeb",
+      "status": "passed",
+      "scope": "Native actual-top C-model execution with independent dictionary resource costs and internal exact path/ordered-read assertions; auditor checks provenance and completion, does not independently replay exported paths"
+    },
+    "native_commit": {
+      "path": "work/native_cross_die_path_commit_v1_20261014/independent_audit.json",
+      "sha256": "1d169258657ffbd515242e9c1a2f1ae65032c3cac8beb3fe620a34c9eee20370",
+      "status": "passed",
+      "scope": "Independent complete tree/membership, resource occupancy/history/version and revision replay of native path commit; no concurrency or board claim"
+    },
+    "atomic_rejection": {
+      "path": "work/native_cross_die_rejection_v1_20261014/independent_audit.json",
+      "sha256": "13720ed15c7954a9f3569b71fe63d998f1487d940316317ddfea498319c0c00f",
+      "status": "passed",
+      "scope": "Injected version mismatch and invalid PIP rejected with full authority byte assertions; corrected replay byte-equal to independently audited clean native commit"
+    },
+    "group_metadata": {
+      "path": "work/native_snapshot_full_graph_link_v1_20261014/group_audit/audit.json",
+      "sha256": "b5c21621fe957f0366594271144cb903aff2030c0ce9bc287becef0cf65fa8c2",
+      "status": "group_metadata_verified_runtime_allocation_pending",
+      "scope": "Actual final memory and allocation group metadata, not host BO allocation or native XRT search execution"
+    },
+    "allocation": {
+      "path": "work/native_snapshot_full_graph_allocation_v1_20261014/independent_audit.json",
+      "sha256": "08cddbf0056565b17669cead530b553e747e156fe1c383894877b7b15a1979dc",
+      "status": "passed",
+      "scope": "Actual XRT runtime groups, simultaneous full bounded BO allocations and synthetic cross-bank readbacks; no native payload upload or CU execution"
+    },
+    "native_smoke_xrt": {
+      "path": "work/native_snapshot_full_graph_xrt_pipeline_v2_20261014/native_smoke/independent_audit.json",
+      "sha256": "39f4c97897774e317abe1075618b776e42417795092289c79ff92bbdeb049818",
+      "status": "passed",
+      "scope": "Actual seed/search CU execution on full native graph and imported audited authority; byte-identical to C-model path/observations with independent path replay"
+    },
+    "sharded_commit_rtl": {
+      "path": "work/net_commit_sharded_hls_v3_20261014/audit.json",
+      "sha256": "58e82fb3183ca11161d84668254716dc27a37227782ccded88a79c3923f3452e",
+      "status": "passed",
+      "scope": "Three-owner resource pointer commit RTL byte-differential against unchanged flat C-model, with logical capacity1 and guarded padded physical test backing; no platform bank allocation, concurrent owners or routed timing claim"
+    },
+    "sharded_read_rtl": {
+      "path": "work/native_resource_sharded_hls_v1_20261014/audit.json",
+      "sha256": "79c58c01786682554722314418b42a00833b629409734ebbeed439b091e9502d",
+      "status": "passed",
+      "scope": "Distinct owner pointer reader RTL with actual banked-commit C-model snapshot producer; no physical bank placement, concurrent coherence, full-capacity RTL or routed timing proof"
+    },
+    "sharded_joint_xrt": {
+      "path": "work/native_snapshot_sharded_joint_xrt_v3_20261014/independent_audit.json",
+      "sha256": "1d6a733c7b71cd567353bc17e639ebb2fe16057cede7c1e1e9c4fb990f5a7885",
+      "status": "passed",
+      "scope": "Actual banked commit/seed/whole-search CUs, shared owner BOs, runtime group checks, full authority preservation assertions and stale-read rejection/path publication; serialized small fixture with negotiated overuse"
+    }
+  },
+  "claims": [
+    {
+      "id": "S1",
+      "claim": "Single-worker search correctness under exclusive immutable authority handoff",
+      "status": "verified_with_bounded_scope",
+      "evidence": [
+        "rtl",
+        "failure_rtl",
+        "random_cmodel",
+        "native_cross_cmodel",
+        "native_smoke_xrt"
+      ],
+      "limits": [
+        "Directed RTL fixtures and randomized CPU graphs",
+        "Native cross-die229746-expansion proof is C-model",
+        "Actual native search CU proof currently only two-expanded-node case",
+        "Not concurrent snapshot consistency"
+      ]
+    },
+    {
+      "id": "S2",
+      "claim": "Complete consumed-read validation and atomic net path publication",
+      "status": "verified_with_bounded_scope",
+      "evidence": [
+        "native_commit",
+        "atomic_rejection",
+        "joint_fixture_xrt"
+      ],
+      "limits": [
+        "Native42-PIP path publication is C-model",
+        "Joint actual search/commit CU proof is small serialized fixture",
+        "Native shared-BO search/commit pipeline queued",
+        "Not concurrent DMA atomicity or lock-free publication"
+      ]
+    },
+    {
+      "id": "S3",
+      "claim": "Full native graph fits and transfers through actual U280 allocation groups",
+      "status": "verified_with_bounded_scope",
+      "evidence": [
+        "group_metadata",
+        "allocation",
+        "native_smoke_xrt"
+      ],
+      "limits": [
+        "GraphHBM16:31, scratchHBM0:11, authorityHBM12",
+        "All three logical owner shards share one physical authority group",
+        "Allocation and payload integrity do not prove bandwidth or latency",
+        "Not per-die owner-local HBM mapping ablation"
+      ]
+    },
+    {
+      "id": "S4",
+      "claim": "Complete current-net tree protection with congestion observations",
+      "status": "verified_cmodel_special_case",
+      "evidence": [
+        "multiseed_cmodel"
+      ],
+      "limits": [
+        "521 seeds, synthetic one-edge foreign-occupied target on actual committed authority",
+        "Finite clamped consistent quotient potential checked over all permitted arcs",
+        "Not original next workload task or RTL multi-seed coverage"
+      ]
+    },
+    {
+      "id": "S5",
+      "claim": "Asynchronous multi-worker owner/shadow coherence and global admission",
+      "status": "not_established",
+      "evidence": [],
+      "limits": [
+        "Current complete search controller is single-worker",
+        "Separate primitive/packet tests are insufficient for asynchronous integration"
+      ]
+    },
+    {
+      "id": "S6",
+      "claim": "Routed300MHz U280 implementation and resource closure of this prototype",
+      "status": "hardware_build_running",
+      "evidence": [],
+      "manifest": "work/native_snapshot_full_graph_hw_v2_20261014/manifest.json",
+      "limits": [
+        "Target clock is not achieved routed timing",
+        "Three-CU prototype is not final multi-worker architecture"
+      ]
+    },
+    {
+      "id": "S7",
+      "claim": "Final native legality and joint SLL/wirelength/CPD acceptance against strong baselines",
+      "status": "not_established",
+      "evidence": [],
+      "limits": [
+        "Full research gateG4 remains in_progress_gate_failed",
+        "Workload hold repair or standalone bitstream does not implement accelerator or prove joint QoR"
+      ]
+    },
+    {
+      "id": "S8",
+      "claim": "Board end-to-end speedup at least3x with energy and repeated statistical evidence",
+      "status": "pending_external_hardware",
+      "evidence": [],
+      "limits": [
+        "No enumerated physical U280",
+        "CPU, simulation time and logical packet counts are not board measurements"
+      ]
+    },
+    {
+      "id": "S9",
+      "claim": "Three isolated resource pointer interfaces preserve flat authority semantics",
+      "status": "component_rtl_verified",
+      "evidence": [
+        "sharded_commit_rtl",
+        "sharded_read_rtl"
+      ],
+      "limits": [
+        "Commit75 and reader52 directed RTL calls with three512-bit owner ports",
+        "Actual HBM bank mapping, whole-search integration and concurrent owner coordination remain open",
+        "Max3 logical dies; no full-capacity RTL or routed timing proof"
+      ]
+    },
+    {
+      "id": "S10",
+      "claim": "Three separate runtime owner banks shared by actual commit and whole-search CUs",
+      "status": "serialized_fixture_verified",
+      "evidence": [
+        "sharded_joint_xrt"
+      ],
+      "limits": [
+        "16 actual CU calls and zero authority reuploads in small fixture",
+        "Negotiated overuse fixture, not final legal native route",
+        "Full native banked graph, mapping benefit, concurrency and physical timing remain open"
+      ]
+    }
+  ],
+  "research_gate_states": {
+    "G1": "in_progress",
+    "G2": "in_progress",
+    "G3": "in_progress",
+    "G4": "in_progress_gate_failed",
+    "G5": "in_progress",
+    "G6": "in_progress",
+    "G7": "pending_external_hardware",
+    "G8": "in_progress"
+  },
+  "open_ablation_groups": [
+    "E-DR1 reservation",
+    "E-DR2 mapping",
+    "E-DR3 shadow",
+    "E-DR4 migration",
+    "E-DR5 topology"
+  ],
+  "active_runs": [
+    "work/native_snapshot_full_graph_xrt_pipeline_v2_20261014/manifest.json",
+    "work/native_snapshot_search_commit_xrt_pipeline_v1_20261014/manifest.json",
+    "work/native_snapshot_full_graph_hw_v2_20261014/manifest.json"
+  ],
+  "retained_hardware_failure": "work/native_snapshot_full_graph_hw_v1_20261014/manifest.json"
+}

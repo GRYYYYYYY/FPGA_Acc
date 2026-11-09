@@ -1,0 +1,39 @@
+{
+  "observed_ns": 1793415320228410115,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_WORDSCAN_STEP_CORRESPONDENCE.json",
+    "sha256": "60f12ecf5312488449ef782a6fbad2e33c8bfb0ed376548c2e3f545122679605"
+  },
+  "progress": {
+    "report": "work/resident_prefix_k_bound_induction_20261031/review.json",
+    "report_sha256": "d215b0cd251f7d44393d4461b5b6da6b7aa870dd1028097f71a3697ea8d1f401",
+    "independent_review": "work/resident_prefix_k_bound_induction_20261031/independent_review.json",
+    "independent_review_sha256": "68e10ad39d55cb862fcb73160ac232a0cb5f900238e80b243ca64074d4770bc2",
+    "conditional_induction_queries_unsat": 6,
+    "non_native_abstract_oracle_cases": 789,
+    "running_RTL_prefix_premises_proved": false,
+    "whole_program_lower_bound_certified": false,
+    "watchdog_failure_verdict": null,
+    "scope": "Source-bound mathematical induction obligations for the C prefix upper-bound search, using integer arithmetic whose local finite-width counterpart was separately checked. Assume the delivered prefix array is nondecreasing, prefix[0]=0,prefix[B]=n+1,0<=ordinal<=n<=773272,and correct per-iteration prefix values. For arbitrary index j, prove both branches preserve the lower<=ordinal/upper>ordinal partitions, ordered bounds and strict interval shrink. Finite nonnegative interval size gives termination; sentinel instantiations force1<=lo<=B. Thus block=lo-1 is valid and k=ordinal-prefix[block] lies in0..ordinal<=n. The arbitrary-j proof obligations express universal partition preservation without assuming a concrete array or reading graph data. This reduces the local word-scan k-range premise to prefix data/sentinel/delivery premises; it does not establish those premises in the running RTL, prefix build/content correctness, complete sequential/caller equivalence, all dynamic counts, full timing/watchdog or research gate completion. No original program/trace/TV/.dat read, HLS/simulator/native execution, DUT edit, job control, guard/watchdog change or adoption. Prior bit_sum UNKNOWNs remain retained.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v208_20261031/matrix.json",
+    "sha256": "44ee0ae003f15588d32a0646475b42d8eacfb7c3c7a9c367379b07decbac76a4"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v208.json",
+    "sha256": "92a66057822fa58524091f78beb6bbca150131bb24fbecdc1a27daaf89d50d5a"
+  },
+  "next_action": "The local k-range premise reduces to nondecreasing correctly delivered prefix with0/n+1sentinels and admitted ordinal. Establish actual prefix build/content/operand correctness and whole call/control composition before runtime count/timing claims. Do not promote conditional proof to actual watchdog failure; preserve all original jobs/guards/budgets.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

@@ -1,0 +1,52 @@
+{
+  "observed_ns": 1793446075969664681,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_PUBLIC_REPLY_HANDOFF.json",
+    "sha256": "47fde03b73452e61afbd698631d6028ccea0229d9173690e01c07021ca37e0ae"
+  },
+  "progress": {
+    "report": "work/resident_reply_write_adapter_20261031/review.json",
+    "report_sha256": "f787acf7adfd0f5fb78fedf710fe903949ddc9b1b06161113116d976d565210e",
+    "independent_review": "work/resident_reply_write_adapter_20261031/independent_review.json",
+    "independent_review_sha256": "dc4931ad36fccfd63e1aa32505dba4e69e49b75bfef09a84913f475553d3de9a",
+    "final_review": "work/resident_reply_write_adapter_20261031/final_review.json",
+    "final_review_sha256": "51c70369a0d0eeb93f724332f002224620501789d35a076650cc298ee6607f88",
+    "new_feasible_UNSAT_queries": 10,
+    "source_event_requests": 192,
+    "physical_bursts": 195,
+    "physical_W_beats": 384,
+    "physical_B": 195,
+    "logical_B": 192,
+    "full_write_adapter_RTL_proved": false,
+    "public_host_roundtrip_proved": false,
+    "scope": "Actual reply USER/BUS512,CONSERVATIVE1,MAX16,69userrequests/16outstanding,block frontWbuffer specialization. GenericFIFO/slice/SRL/mem bodies byte-identical to prior control contracts after module-name-only rename. Source store/core/conservative-throttle equations bind event projection.10feasibleBV local lemmas cover128byte geometry/only4032cross, oneMAX16loop per section, W elastic count/datahold, final physical response tag. Ordered successful external AW/W/B and binary common-reset/clk_en1, source-to-RTL component refinement are premises. Local lemmas do not prove entire adapter; companion finite source-event audit covers all64page slots/three address ranges/schedules. Core ignores BID/BRESP; no error detection, fullRTL/X/native/board/liveness proof. Coupled source-event projection of front69requestFIFO/store-slot/96bitrequestslice,block16Wbuffer,core128byte4KiB/sectionloop/16burst+16responsetag queues/elasticWslot,CONSERVATIVE1throttle16request+16dataFIFO/AWslice/flying/lastcounter,physicalBslice,front16wrsp+69userresponseFIFOs.192drained sequential requests retain adapter state across all64page slots at low/high/neartop addresses under3backpressure schedules. Independent AW/W rendezvous oracle permits W before externalAW and emits exactly one successful ordered B after each complete burst.195physicalbursts/384full-strobe512W/195B produce192logical completions with exact128byte reply images and WLAST patterns. Every generic FIFO checked against independent deque and stalled AW/W outputs stable. Uses shared source-event/component helpers and admitted internal2packet stream; not actual writer/top combined simulation, universal wholeadapter RTL refinement, error handling, liveness, native/X/timing/board proof. Correct ordered external successful responses remain a premise; BID/BRESP ignored by core.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v281_20261031/matrix.json",
+    "sha256": "c8895487886b5c609e9495333aa047f528e78845cc31a6626871bd6664c7f45d"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v281.json",
+    "sha256": "4765abf59f8d6f8a99505c704c669f4cb4dd68fd7529b9e8ade58160bb97ec94"
+  },
+  "current_runtime_observation": {
+    "path": "work/resident_reply_write_adapter_20261031/runtime_observation.json",
+    "sha256": "139da4a5279c83882c83f79cdfe870429dfdf89aa78f6f4f1e8826f30098c8a5",
+    "scope": "Fresh actual identities; no native acceptance; Owner supervisor loss retained."
+  },
+  "previous_goal_turn_classification": "progress_and_verified_wait_v280",
+  "current_goal_turn_classification": "progress_and_verified_wait",
+  "next_action": "Replace admitted two-packet input of reply-adapter event audit with actual source reply writer/flow control and top75/76/144 handoff across repeated commands; check byte/strobe/WLAST and parentdone only after required physicalB. Track drainedwriter and active-topdone0 entry conditions, rather than assuming a whole-parent reachability proof. Preserve explicit valid aligned128byte object/stablecommand/currentget-success/componentrefinement/correctordered successful externalresponse premises. Review original native actual terminal outputs when they appear; retain Owner supervisor quota failure and absent negative/guard completion, no restart/adoption. All eight gates, full install/prepare, strict capacity/async/mapping/migration, representative QoR/ablations,300MHz/board/artifact/paper objectives remain open.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "owner_supervisor_failure_retained": true,
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending;820separate transitive/466root gaps;paper unchanged.",
+  "research_complete": false
+}

@@ -1,0 +1,40 @@
+{
+  "observed_ns": 1793424717443756692,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_DELIMITER_EXIT_CLEANUP.json",
+    "sha256": "50f9d4392864921acfe8e8a004154f66abd4d5d52d0ce02f3354e4b5510389df"
+  },
+  "progress": {
+    "report": "work/resident_delimiter_startup_20261031/review.json",
+    "report_sha256": "a739ae9e3f4090ff64ec172d63251591252a9e3637efc23adae349d9c6cbbae9",
+    "independent_review": "work/resident_delimiter_startup_20261031/independent_review.json",
+    "independent_review_sha256": "51969878b9b9cc086ca59bbc87bc34ee26d2c2b6cf204fab8f37bc52e2f5d6d8",
+    "startup_prefix_states": 445,
+    "unique_transitions": 590,
+    "independent_first_launch_traces": 380,
+    "binary_startup_prefix_proved": true,
+    "whole_delimiter_caller_lifetime_proved": false,
+    "HDL_simulation_executed": false,
+    "scope": "Source-bound binary reset-startup prefix proof for all3delimiter loops,ending at first enabled iteration. Common asserted internal reset places parentFSM1/loopstage0,start0,E0reg0,E1=0,donecache0. Reverse/portal pending-exit has arbitrary binary old0/1;forward has no such flag. Full source parent target graphs show launch state4cannot be reached before3edges,and its registered start cannot assert beforeedge4,even if clear-loop done/data guards choose fastest targets. Before first arm,E0reg=E1=0;source transfer/stall contracts imply no internal request/consume and no exit-ready72. With pending1,reverse/portal idle phase0advances through the inactive pipeline and clears pending at4/3respectively,or at72;with pending0it idles at0until start. Parent start holds after assertion because exit-ready remains0before arm. Source clock/phase0truth checks validate the projection. Reset-reachable closure shows public done is0whenever first start is asserted,and first enabled iteration begins at1with pending-exit0/donecache0. Maximum prefix arming-edge counts are abstract local bounds,not runtime/throughput/watchdog measurements. This supplies binary first-call initialization for later loop/builder lifetime composition. It does not model X/Zor missing reset,whole active call/cross-call lifetime,intended response/pointer/data identity,full sequential/4stateHDL equivalence,native completion,timing or board results. Normal post-exit cleanup remains a separate earlier conditional lemma. No native flow,DUT/process/input/cache/guard/budget changes.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v240_20261031/matrix.json",
+    "sha256": "8edbcec64befe78b0a360bdd653867a2aae2acb3336470bd75dbacc561cfb160"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v240.json",
+    "sha256": "48c83f2ba95c593ad7946fa0fb77210c50db5f435d89da1fa832794c95891598"
+  },
+  "next_action": "Compose binary startup base and normal-post-exit flag-cleanup lemma with delimiter/builder call/transfer models for all3families. First-call initialization is now covered for arbitrary binary pending flags,not X/Z or full active/cross-call lifetime. Intended pointer/data/response identity and full sequential/native acceptance remain;preserve original jobs/guards/budgets/inputs/caches.",
+  "artifact_ledger_unchanged": "v26:9890/9968associated,78pending plus820separate transitive/466root gaps;34page draft unchanged.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

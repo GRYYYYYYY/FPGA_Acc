@@ -1,0 +1,560 @@
+{
+  "schema": "dieroute.native_corridor_progress.v1",
+  "finished_ns": 1791919289552120874,
+  "research_complete": false,
+  "board_result": false,
+  "native_design_legal": null,
+  "active_owned_experiment_processes": [],
+  "protocol": "experiments/native_corridor_schema_v1.json",
+  "comparison_plan": "experiments/native_corridor_comparison_plan_v1.json",
+  "evidence": [
+    {
+      "path": "work/native_corridor_comparison_v1_20261013/comparison.json",
+      "sha256": "83589b6c909e8b63b2355009459792e17c7d014a00a359172e3758b0ac676c64"
+    },
+    {
+      "path": "work/native_corridor_comparison_v1_20261013/summary.csv",
+      "sha256": "3615551f051105509208983b27e02774817bf3308142d5770a7c58811661ba9d"
+    },
+    {
+      "path": "work/native_corridor_baseline_regression_20261013/audit.json",
+      "sha256": "127fe27b28d23bc8dce1a7cb6dc7b4b2e14130eadb5d3c3c7e823a8f80e1423d"
+    },
+    {
+      "path": "work/native_corridor_build_20261013/ctest_final.log",
+      "sha256": "d1d67d089627db00b4de4f05462ad9cc443b1296eaa2def7be2f2b0fcc350bbf"
+    },
+    {
+      "path": "work/native_corridor_sanitize_20261013/ctest_final.log",
+      "sha256": "18f24259c7986ad43f97da18d444f972e87c5415181489a5179bdf0685ff8441"
+    },
+    {
+      "path": "work/u280_native_corridor_flat_v4_20261013/manifest.json",
+      "sha256": "86e1346a78430f5467e2a8ba8892cf43e6b3b113618d5cd4f8c9e10d00a69f7b"
+    },
+    {
+      "path": "work/u280_native_corridor_flat_cohort_audit_v4_20261013/audit.json",
+      "sha256": "e9236d1a732976760fd8c59330b0eb7c785d7659f8b6011cd399c9006cbf18dc"
+    },
+    {
+      "path": "work/u280_native_corridor_greedy_v2_20261013/manifest.json",
+      "sha256": "5e98586f78682d1c53bc317a3d93cef05147f9ccab7686517ed0c14275b221c4"
+    },
+    {
+      "path": "work/u280_native_corridor_greedy_cohort_audit_v2_20261013/audit.json",
+      "sha256": "aa701efe99da88202805bdfd3dc12ae4726661a7f9c3e8ffa50addffcd99f8bf"
+    },
+    {
+      "path": "work/u280_native_corridor_greedy_protocol_audit_v4_20261013/audit.json",
+      "sha256": "8acb3d5f14ee5e66496880065b39ad8e94ff79ce7ad16fa5bfb1b8ded2aa9ce7"
+    },
+    {
+      "path": "work/u280_native_corridor_reentry_v2_20261013/manifest.json",
+      "sha256": "36f69293c8f496eb1511c311ae9f79dac9d95f640781791a703e507043403c18"
+    },
+    {
+      "path": "work/u280_native_corridor_reentry_cohort_audit_v2_20261013/audit.json",
+      "sha256": "840fc6ee42cfe7cd05fe2fff8826ad98d812ae37eec39f26c97f0938ad8d19e1"
+    },
+    {
+      "path": "work/u280_native_corridor_reentry_protocol_audit_v3_20261013/audit.json",
+      "sha256": "baad09ac6f773e6db46c394a67a7a3bda225e5c9ffe7d100067c1e6e3a2ba241"
+    },
+    {
+      "path": "work/u280_native_corridor_reentry_shadow3_v2_20261013/manifest.json",
+      "sha256": "fe3dfe2877b5ad583a4fffef503053ffa624a1a462069c0d2c8669e27c56687a"
+    },
+    {
+      "path": "work/u280_native_corridor_reentry_shadow3_cohort_audit_v2_20261013/audit.json",
+      "sha256": "3a4028e626a08a44837490c745855c0328eb155e422b95b1841e9e1ed1272a66"
+    },
+    {
+      "path": "work/u280_native_corridor_reentry_shadow3_protocol_audit_v3_20261013/audit.json",
+      "sha256": "46842513e57c6f4a97a87f42fac4c1d0b43d317bf79f1a8975e99ea612a563bb"
+    },
+    {
+      "path": "work/u280_native_corridor_bounded_v3_20261013/manifest.json",
+      "sha256": "70f2ea5dd15f69648d483926f6aab8684ba3328c3e3f9fbd9c046e9ca42dc81c"
+    },
+    {
+      "path": "work/u280_native_corridor_bounded_cohort_audit_v3_20261013/audit.json",
+      "sha256": "0c551dc69f1d21799a5b6b181163e68bac3c4ae75a2462d382ab3a7573bbe3d7"
+    },
+    {
+      "path": "work/u280_native_corridor_bounded_protocol_audit_v3_20261013/audit.json",
+      "sha256": "51362f4868a33017fd9b9cbffa387fa3d0004e77fee171f3d1cacbe62b8ab1b9"
+    },
+    {
+      "path": "work/u280_native_corridor_bounded_shadow3_v3_20261013/manifest.json",
+      "sha256": "1dbb08baf483e4facdc3fe6fdc9f304a3545fa1d1db248103cbc8a12792e5f29"
+    },
+    {
+      "path": "work/u280_native_corridor_bounded_shadow3_cohort_audit_v3_20261013/audit.json",
+      "sha256": "0bc61934ba7a05e9196497983d8e4e14086da8e9969e328eb1095d46b60948c5"
+    },
+    {
+      "path": "work/u280_native_corridor_bounded_shadow3_protocol_audit_v3_20261013/audit.json",
+      "sha256": "b7a9cb94c9a9a2193c93a585ded9f96edf971f8bb44f12259307770174419b8e"
+    },
+    {
+      "path": "work/u280_native_corridor_bounded_v4_20261013/manifest.json",
+      "sha256": "fe7d4fd21897355a5bc947ff932b5178f1d8f2c84393111958ecb8dd3900fd42"
+    },
+    {
+      "path": "work/u280_native_corridor_bounded_cohort_audit_v4_20261013/audit.json",
+      "sha256": "6e93bc69bf9be5527e768c7da1ebab0b153641511001f957b4aefc25234b5104"
+    },
+    {
+      "path": "work/u280_native_corridor_bounded_protocol_audit_v4_20261013/audit.json",
+      "sha256": "01664b94ead966baa2859a225f6491c477e60ee6b7cf860e7de0fab0e90801f2"
+    },
+    {
+      "path": "work/u280_native_corridor_bounded_shadow3_v4_20261013/manifest.json",
+      "sha256": "6e4caa3f9fb16cc114029e31ea760b43455adbcb9718a7f09c2d4d00b68eed4a"
+    },
+    {
+      "path": "work/u280_native_corridor_bounded_shadow3_cohort_audit_v4_20261013/audit.json",
+      "sha256": "6ca2816562dd082a82b6660c3302a4384277de390356fb7421ff1fbc0add6b3c"
+    },
+    {
+      "path": "work/u280_native_corridor_bounded_shadow3_protocol_audit_v4_20261013/audit.json",
+      "sha256": "9bd325d6285583a8b3e22bfadd0c4827b5a0394c40a8176551a8fd0da3abd2d3"
+    }
+  ],
+  "cohort": {
+    "nets": 70,
+    "connections": 298,
+    "compared_configurations": 8,
+    "repeats_per_configuration": 5,
+    "development_only": true,
+    "all_converged": true,
+    "frozen_unselected_nodes": 12198732
+  },
+  "implementation": [
+    "Native electrical-node corridor proposals, physical-PIP die-constrained segment searches and bounded repair/full-graph fallback.",
+    "Candidate-local reservation unions, shared-tree reuse, complete-candidate comparisons and exception-safe release, including saved alternatives and multi-SLR endpoints.",
+    "Integration with immutable boundary summaries, complete remote decision-read validation and serial replay.",
+    "Inclusive complete-candidate cost ceiling in SparseSearch; quotient BFS stops at min(source distance,C+1) while preserving every admitted label.",
+    "Independent replay reconstructs authority, publication snapshots, candidate costs/PIPs, release accounting and final trees/history/versions."
+  ],
+  "results": {
+    "flat": {
+      "tree_pips": 2528,
+      "selected_sll": {
+        "6": 17,
+        "3": 19
+      },
+      "iterations": 3,
+      "overuse_by_epoch": [
+        2,
+        1,
+        0
+      ],
+      "expanded": 7841282,
+      "edge_visits": 32270334,
+      "quotient_expanded": 147981897,
+      "quotient_edge_visits": 1100467159,
+      "shadow_replays": 0,
+      "logical_deliveries": 0,
+      "complete_routing_and_five_repeats_verified": true,
+      "tree_pip_delta_vs_flat_percent": 0.0,
+      "expanded_delta_vs_flat_percent": 0.0
+    },
+    "greedy": {
+      "tree_pips": 2745,
+      "selected_sll": {
+        "6": 17,
+        "3": 19
+      },
+      "iterations": 2,
+      "overuse_by_epoch": [
+        12,
+        0
+      ],
+      "expanded": 8217524,
+      "edge_visits": 31787172,
+      "quotient_expanded": 163621135,
+      "quotient_edge_visits": 1218071246,
+      "shadow_replays": 0,
+      "logical_deliveries": 0,
+      "complete_routing_and_five_repeats_verified": true,
+      "corridor_metrics": {
+        "plans": 323,
+        "local_searches": 370,
+        "flat_searches": 0,
+        "repairs": 4,
+        "fallbacks": 0,
+        "reserved": 51,
+        "released": 4,
+        "retained": 47,
+        "overcapacity": 5,
+        "ranked": 774662,
+        "expanded": 8217524,
+        "edge_visits": 31787172,
+        "cost_prunes": 0
+      },
+      "better_reentry_candidates": 0,
+      "tree_pip_delta_vs_flat_percent": 8.583860759493668,
+      "expanded_delta_vs_flat_percent": 4.798220495066996
+    },
+    "reentry": {
+      "tree_pips": 2745,
+      "selected_sll": {
+        "6": 17,
+        "3": 19
+      },
+      "iterations": 2,
+      "overuse_by_epoch": [
+        12,
+        0
+      ],
+      "expanded": 79429148,
+      "edge_visits": 275510298,
+      "quotient_expanded": 439479789,
+      "quotient_edge_visits": 3267195171,
+      "shadow_replays": 0,
+      "logical_deliveries": 0,
+      "complete_routing_and_five_repeats_verified": true,
+      "corridor_metrics": {
+        "plans": 591,
+        "local_searches": 906,
+        "flat_searches": 0,
+        "repairs": 53,
+        "fallbacks": 0,
+        "reserved": 319,
+        "released": 272,
+        "retained": 47,
+        "overcapacity": 20,
+        "ranked": 4585253,
+        "expanded": 79429148,
+        "edge_visits": 275510298,
+        "cost_prunes": 0
+      },
+      "better_reentry_candidates": 0,
+      "tree_pip_delta_vs_flat_percent": 8.583860759493668,
+      "expanded_delta_vs_flat_percent": 912.9612479183888
+    },
+    "reentry_shadow3": {
+      "tree_pips": 2745,
+      "selected_sll": {
+        "6": 17,
+        "3": 19
+      },
+      "iterations": 2,
+      "overuse_by_epoch": [
+        12,
+        0
+      ],
+      "expanded": 87565144,
+      "edge_visits": 307065939,
+      "quotient_expanded": 451379671,
+      "quotient_edge_visits": 3356071527,
+      "shadow_replays": 15,
+      "logical_deliveries": 112,
+      "complete_routing_and_five_repeats_verified": true,
+      "corridor_metrics": {
+        "plans": 611,
+        "local_searches": 942,
+        "flat_searches": 0,
+        "repairs": 57,
+        "fallbacks": 0,
+        "reserved": 339,
+        "released": 277,
+        "retained": 62,
+        "overcapacity": 30,
+        "ranked": 4879412,
+        "expanded": 87565144,
+        "edge_visits": 307065939,
+        "cost_prunes": 0
+      },
+      "better_reentry_candidates": 0,
+      "tree_pip_delta_vs_flat_percent": 8.583860759493668,
+      "expanded_delta_vs_flat_percent": 1016.7197404710097
+    },
+    "bounded_full_quotient": {
+      "tree_pips": 2745,
+      "selected_sll": {
+        "6": 17,
+        "3": 19
+      },
+      "iterations": 2,
+      "overuse_by_epoch": [
+        12,
+        0
+      ],
+      "expanded": 8358857,
+      "edge_visits": 32369913,
+      "quotient_expanded": 1042931121,
+      "quotient_edge_visits": 7755289627,
+      "shadow_replays": 0,
+      "logical_deliveries": 0,
+      "complete_routing_and_five_repeats_verified": true,
+      "corridor_metrics": {
+        "plans": 1905,
+        "local_searches": 2016,
+        "flat_searches": 0,
+        "repairs": 1586,
+        "fallbacks": 0,
+        "reserved": 1633,
+        "released": 1586,
+        "retained": 47,
+        "overcapacity": 21,
+        "ranked": 23531648,
+        "expanded": 8358857,
+        "edge_visits": 32369913,
+        "cost_prunes": 1582
+      },
+      "better_reentry_candidates": 0,
+      "tree_pip_delta_vs_flat_percent": 8.583860759493668,
+      "expanded_delta_vs_flat_percent": 6.600642599003592
+    },
+    "bounded_full_quotient_shadow3": {
+      "tree_pips": 2745,
+      "selected_sll": {
+        "6": 17,
+        "3": 19
+      },
+      "iterations": 2,
+      "overuse_by_epoch": [
+        12,
+        0
+      ],
+      "expanded": 16488955,
+      "edge_visits": 63898054,
+      "quotient_expanded": 1056328398,
+      "quotient_edge_visits": 7855780473,
+      "shadow_replays": 15,
+      "logical_deliveries": 112,
+      "complete_routing_and_five_repeats_verified": true,
+      "corridor_metrics": {
+        "plans": 1931,
+        "local_searches": 2057,
+        "flat_searches": 0,
+        "repairs": 1597,
+        "fallbacks": 0,
+        "reserved": 1659,
+        "released": 1597,
+        "retained": 62,
+        "overcapacity": 31,
+        "ranked": 23929592,
+        "expanded": 16488955,
+        "edge_visits": 63898054,
+        "cost_prunes": 1589
+      },
+      "better_reentry_candidates": 0,
+      "tree_pip_delta_vs_flat_percent": 8.583860759493668,
+      "expanded_delta_vs_flat_percent": 110.28391785935003
+    },
+    "bounded_radius": {
+      "tree_pips": 2745,
+      "selected_sll": {
+        "6": 17,
+        "3": 19
+      },
+      "iterations": 2,
+      "overuse_by_epoch": [
+        12,
+        0
+      ],
+      "expanded": 8358857,
+      "edge_visits": 32369913,
+      "quotient_expanded": 174492512,
+      "quotient_edge_visits": 1304570555,
+      "shadow_replays": 0,
+      "logical_deliveries": 0,
+      "complete_routing_and_five_repeats_verified": true,
+      "corridor_metrics": {
+        "plans": 1905,
+        "local_searches": 2016,
+        "flat_searches": 0,
+        "repairs": 1586,
+        "fallbacks": 0,
+        "reserved": 1633,
+        "released": 1586,
+        "retained": 47,
+        "overcapacity": 21,
+        "ranked": 23531648,
+        "expanded": 8358857,
+        "edge_visits": 32369913,
+        "cost_prunes": 1582
+      },
+      "better_reentry_candidates": 0,
+      "tree_pip_delta_vs_flat_percent": 8.583860759493668,
+      "expanded_delta_vs_flat_percent": 6.600642599003592
+    },
+    "bounded_radius_shadow3": {
+      "tree_pips": 2745,
+      "selected_sll": {
+        "6": 17,
+        "3": 19
+      },
+      "iterations": 2,
+      "overuse_by_epoch": [
+        12,
+        0
+      ],
+      "expanded": 16488955,
+      "edge_visits": 63898054,
+      "quotient_expanded": 185357794,
+      "quotient_edge_visits": 1385810394,
+      "shadow_replays": 15,
+      "logical_deliveries": 112,
+      "complete_routing_and_five_repeats_verified": true,
+      "corridor_metrics": {
+        "plans": 1931,
+        "local_searches": 2057,
+        "flat_searches": 0,
+        "repairs": 1597,
+        "fallbacks": 0,
+        "reserved": 1659,
+        "released": 1597,
+        "retained": 62,
+        "overcapacity": 31,
+        "ranked": 23929592,
+        "expanded": 16488955,
+        "edge_visits": 63898054,
+        "cost_prunes": 1589
+      },
+      "better_reentry_candidates": 0,
+      "tree_pip_delta_vs_flat_percent": 8.583860759493668,
+      "expanded_delta_vs_flat_percent": 110.28391785935003
+    }
+  },
+  "quotient_radius_comparisons": [
+    {
+      "before": "bounded_full_quotient",
+      "after": "bounded_radius",
+      "complete_corridor_and_shadow_journals_equal": true,
+      "quotient_expanded_reduction_percent": 83.269028175831,
+      "quotient_edge_visits_reduction_percent": 83.17831289681116
+    },
+    {
+      "before": "bounded_full_quotient_shadow3",
+      "after": "bounded_radius_shadow3",
+      "complete_corridor_and_shadow_journals_equal": true,
+      "quotient_expanded_reduction_percent": 82.4526355297323,
+      "quotient_edge_visits_reduction_percent": 82.35935437907189
+    }
+  ],
+  "exact_route_equalities": [
+    [
+      "greedy",
+      "reentry"
+    ],
+    [
+      "reentry",
+      "reentry_shadow3"
+    ],
+    [
+      "bounded_full_quotient",
+      "bounded_full_quotient_shadow3"
+    ],
+    [
+      "bounded_full_quotient",
+      "bounded_radius"
+    ],
+    [
+      "bounded_radius",
+      "bounded_radius_shadow3"
+    ]
+  ],
+  "quality_diagnostic": {
+    "changed_sll_net_ids": [
+      287909,
+      288522,
+      293543,
+      300291,
+      303554,
+      303555,
+      303556,
+      303557,
+      303558,
+      303559,
+      303560,
+      303561,
+      303562,
+      303565,
+      303585,
+      303589,
+      303590,
+      303594,
+      303643,
+      303653,
+      454074,
+      454075,
+      454076,
+      454077,
+      454078,
+      454079,
+      454080,
+      454081,
+      454082,
+      454083
+    ],
+    "larger_trees_with_same_sll_ids": [],
+    "largest_pip_increases": [
+      [
+        "300291",
+        48
+      ],
+      [
+        "303554",
+        19
+      ],
+      [
+        "288522",
+        15
+      ],
+      [
+        "303585",
+        13
+      ],
+      [
+        "303562",
+        12
+      ],
+      [
+        "303589",
+        11
+      ],
+      [
+        "303653",
+        10
+      ],
+      [
+        "303590",
+        8
+      ],
+      [
+        "454075",
+        7
+      ],
+      [
+        "454080",
+        7
+      ]
+    ],
+    "interpretation": "Counts and same-SLL comparisons identify development cases for further diagnosis; they do not establish the causal source of physical wirelength or timing changes."
+  },
+  "checks": {
+    "ctest_passed": 31,
+    "ctest_total": 31,
+    "asan_ubsan_passed": 6,
+    "asan_ubsan_total": 6,
+    "prior_direct_outputs_and_iteration_counters_unchanged": true
+  },
+  "diagnostic_correction": "The new all-pairs cost-radius test initially exposed an unclamped unreachable component when reverse BFS exhausted before its horizon. The final implementation initializes the clamp to C+1 and passes all source/sink/radius consistency checks before v4 native runs.",
+  "conclusions": [
+    "All tested corridor modes are electrically legal in the qualified native graph and repeat deterministically; none uses the flat fallback on this cohort.",
+    "All corridor final trees have 2745 PIPs versus direct baseline 2528 (+8.58%); selected SLL count stays 36. These counts do not establish physical wirelength or timing QoR.",
+    "Unbounded new-entry comparison finds zero better candidates and expands 79429148 nodes per repeat. Cost bounds reduce this to 8358857, but preparing uncapped quotient potentials is expensive.",
+    "Quotient cost-radius truncation reduces that preparation from 1042931121 to 174492512 expanded groups (83.27%) with complete candidate/shadow journals unchanged. Even the final mode does not establish a speedup over the direct baseline.",
+    "Current reservations are serial candidate-local records with negotiated overuse, not strict concurrent hardware grants."
+  ],
+  "remaining": [
+    "Improve native corridor/entry ranking and shared-tree quality; physical length/timing costs and joint QoR remain open.",
+    "Fresh native DCP/connectivity/DRC/STA/bus-skew/bitstream checks are required for changed corridor trees; this turn did not run them.",
+    "Die-local partitioned authority, concurrent native workers, strict distributed reservation/publication, representative full-design workloads and all required ablations.",
+    "DieRoute accelerator HLS/RTL/HBM implementation, physical-board performance/energy, paper and full research audit."
+  ]
+}

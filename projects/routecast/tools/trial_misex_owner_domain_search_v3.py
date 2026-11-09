@@ -1,0 +1,23 @@
+"""All single-extra-owner alternatives under unchanged four-owner cap."""
+import json,sys,heapq,time
+from pathlib import Path
+from collections import Counter,defaultdict
+R=Path(__file__).resolve().parents[1];sys.path[:0]=[str(R/'tools'),str(R/'tools/native_resume_prototype')]
+from pre_route_endpoints import sha
+from source_binding_v2 import closure
+from budget_owner_screen_v2 import screen,witness_in_domain
+from nonzero_rc_endpoint_context import load_endpoints
+parent=R/'experiments/mcnc_bounded_owner_joint_v8_2026-10-07';base=R/'experiments/mcnc_prospective_v1_2026-10-07/misex3';out=R/'experiments/misex_owner_domain_search_v3_2026-10-07';out.mkdir();eventfile=parent/'misex3/batch7.json';ep=base/'endpoints.json';reference=R/'experiments/misex_owner_limit_alternatives_v1_2026-10-07/receipt.json';inputs={str(p):sha(p) for p in (eventfile,ep,parent/'receipt.json',reference)};inputs.update({v['path']:v['sha256'] for v in json.loads(ep.read_text())['inputs'].values()});sources=closure([Path(__file__)]);(out/'protocol.json').write_text(json.dumps(dict(inputs=inputs,sources=sources,policy='Original forbidden-node budget envelope, saturated-node owners only, ordered by complete connection count then NET, one extra release; each failed child query retains forbidden node and original budget. Forward Dijkstra with budget cutoff, independent reverse counterpart. No joint commit, no maxowner relaxation.',scope='Development exhaustive single-extra-owner path feasibility, not complete joint routing or native/global proof.'))+'\n');begin=time.perf_counter();graph,digest,nodes,f,rc,queries=load_endpoints(ep);event=json.loads(eventfile.read_text());attempt=event['repair_attempts'][0];release=set(attempt['released_net_ids']);assert len(release)==3;kept=[r for r in event['before_records'] if r['net_id'] not in release];owners=defaultdict(set);counts=Counter(r['net_id'] for r in kept);slots={e:s for s,e in enumerate(f['edge_ids'])}
+for r in kept:owners[r['net_id']].add(r['source']);owners[r['net_id']].update(f['dest_ranks'][slots[e]] for e in r['answer']['physical_edge_ids'])
+reverse=[[] for _ in nodes]
+for u in range(len(nodes)):
+ for s in range(f['row_offsets'][u],f['row_offsets'][u+1]):reverse[f['dest_ranks'][s]].append((u,s))
+rows=[]
+for branch in attempt['branches']:
+ for netstr,failure in branch['failures'].items():
+  if failure is None:continue
+  q=failure['query'];budget=failure['budget_integer'];forbidden={n for net,n in branch['constraints'] if net==q['net_id']};other=Counter(n for net,own in owners.items() if net!=q['net_id'] for n in own);tests=[];start=time.perf_counter();filtered=screen(f,rc,q,forbidden,owners,budget);screen_seconds=time.perf_counter()-start;start=time.perf_counter()
+  for extra in [None]+sorted(filtered['candidates'],key=lambda net:(counts[net],net)):
+   answer=witness_in_domain(f,rc,q,filtered,other,set() if extra is None else owners[extra],budget);tests.append(dict(extra_net=extra,removed_connection_count=0 if extra is None else counts[extra],minimum_within_budget_integer=None if answer is None else answer['minimum_integer'],physical_edge_ids=None if answer is None else answer['physical_edge_ids'],method='screened-domain A*; compared to historical independent forward/reverse condition'))
+  scan_seconds=time.perf_counter()-start;old=next(row for row in json.loads(reference.read_text())['rows'] if row['query']==q);old_by={c['extra_net']:c for c in old['candidates']};assert old_by[None]['minimum_within_budget_integer'] is None;assert all(old_by[c['extra_net']]['minimum_within_budget_integer']==c['minimum_within_budget_integer'] for c in tests);assert {c['extra_net'] for c in old['candidates'] if c['minimum_within_budget_integer'] is not None}<=set(filtered['candidates']);(out/f"screen_NET{q['net_id']}.json").write_text(json.dumps(filtered)+'\n');rows.append(dict(screen_seconds=screen_seconds,scan_seconds=scan_seconds,original_condition_count=len(old['candidates']),retained_condition_count=len(tests),all_reference_successes_retained=True,query=q,budget_integer=budget,forbidden_nodes=sorted(forbidden),candidates=tests));print(q['net_id'],'tested',len(tests),'feasible',[(x['extra_net'],x['minimum_within_budget_integer']) for x in tests if x['minimum_within_budget_integer'] is not None],flush=True)
+assert all(sha(p)==h for p,h in {**inputs,**sources}.items());(out/'receipt.json').write_text(json.dumps(dict(protocol_sha256=sha(out/'protocol.json'),initial_release=sorted(release),max_owner_nets=4,total_seconds=time.perf_counter()-begin,rows=rows,scope='Null means no path within budget under that condition, not necessarily unreachable.'),indent=2)+'\n')

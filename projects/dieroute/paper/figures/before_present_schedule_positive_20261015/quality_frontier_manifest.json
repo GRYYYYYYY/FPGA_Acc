@@ -1,0 +1,766 @@
+{
+  "status": "observed_completed_native_quality_frontier_exported",
+  "rows": [
+    {
+      "label": "Original downstream",
+      "wirelength": 10762,
+      "cpd_ns": 9.81893
+    },
+    {
+      "label": "Entry stop",
+      "wirelength": 10749,
+      "cpd_ns": 9.67608
+    },
+    {
+      "label": "Local first",
+      "wirelength": 10954,
+      "cpd_ns": 9.65946
+    },
+    {
+      "label": "Cleanup",
+      "wirelength": 10684,
+      "cpd_ns": 9.67608
+    },
+    {
+      "label": "Fine flat",
+      "wirelength": 10771,
+      "cpd_ns": 9.69287
+    },
+    {
+      "label": "Fine entry",
+      "wirelength": 10722,
+      "cpd_ns": 9.91429
+    },
+    {
+      "label": "Zero seed",
+      "wirelength": 9521,
+      "cpd_ns": 10.2293
+    },
+    {
+      "label": "Half seed",
+      "wirelength": 9929,
+      "cpd_ns": 9.63263
+    },
+    {
+      "label": "Span price",
+      "wirelength": 10529,
+      "cpd_ns": 9.81527
+    },
+    {
+      "label": "Feedback: control",
+      "wirelength": 9929,
+      "cpd_ns": 9.63263
+    },
+    {
+      "label": "Feedback: candidate",
+      "wirelength": 9809,
+      "cpd_ns": 9.78317
+    },
+    {
+      "label": "Local guard: disabled",
+      "wirelength": 9929,
+      "cpd_ns": 9.63263
+    },
+    {
+      "label": "Local guard: unguarded",
+      "wirelength": 9809,
+      "cpd_ns": 9.78317
+    },
+    {
+      "label": "Local guard: guarded",
+      "wirelength": 9762,
+      "cpd_ns": 10.06
+    },
+    {
+      "label": "Whole net: parent",
+      "wirelength": 9762,
+      "cpd_ns": 10.06
+    },
+    {
+      "label": "Whole net: staged",
+      "wirelength": 9902,
+      "cpd_ns": 9.6313
+    },
+    {
+      "label": "Whole net: guarded",
+      "wirelength": 9919,
+      "cpd_ns": 9.63263
+    },
+    {
+      "label": "Ordinary: bulk",
+      "wirelength": 9929,
+      "cpd_ns": 9.63263
+    },
+    {
+      "label": "Ordinary: dispatch",
+      "wirelength": 10026,
+      "cpd_ns": 10.0142
+    },
+    {
+      "label": "Ordinary: serial",
+      "wirelength": 9443,
+      "cpd_ns": 10.2508
+    }
+  ],
+  "unique_points": [
+    {
+      "wirelength": 9443,
+      "cpd_ns": 10.2508,
+      "labels": [
+        "Ordinary: serial"
+      ],
+      "dominated_by": [],
+      "nondominated": true,
+      "baseline": false,
+      "wire_percent": -2.2868377483443725,
+      "cpd_percent": 6.775051378228136
+    },
+    {
+      "wirelength": 9521,
+      "cpd_ns": 10.2293,
+      "labels": [
+        "Zero seed"
+      ],
+      "dominated_by": [],
+      "nondominated": true,
+      "baseline": false,
+      "wire_percent": -1.47971854304636,
+      "cpd_percent": 6.551101676289561
+    },
+    {
+      "wirelength": 9664,
+      "cpd_ns": 9.60037,
+      "labels": [
+        "Frozen baseline"
+      ],
+      "dominated_by": [],
+      "nondominated": true,
+      "baseline": true,
+      "wire_percent": 0.0,
+      "cpd_percent": 0.0
+    },
+    {
+      "wirelength": 9762,
+      "cpd_ns": 10.06,
+      "labels": [
+        "Local guard: guarded",
+        "Whole net: parent"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9664,
+          "cpd_ns": 9.60037,
+          "labels": [
+            "Frozen baseline"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": 1.0140728476821126,
+      "cpd_percent": 4.7876279768384045
+    },
+    {
+      "wirelength": 9809,
+      "cpd_ns": 9.78317,
+      "labels": [
+        "Feedback: candidate",
+        "Local guard: unguarded"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9664,
+          "cpd_ns": 9.60037,
+          "labels": [
+            "Frozen baseline"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": 1.50041390728477,
+      "cpd_percent": 1.9040932797381727
+    },
+    {
+      "wirelength": 9902,
+      "cpd_ns": 9.6313,
+      "labels": [
+        "Whole net: staged"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9664,
+          "cpd_ns": 9.60037,
+          "labels": [
+            "Frozen baseline"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": 2.4627483443708575,
+      "cpd_percent": 0.3221750828353409
+    },
+    {
+      "wirelength": 9919,
+      "cpd_ns": 9.63263,
+      "labels": [
+        "Whole net: guarded"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9664,
+          "cpd_ns": 9.60037,
+          "labels": [
+            "Frozen baseline"
+          ]
+        },
+        {
+          "wirelength": 9902,
+          "cpd_ns": 9.6313,
+          "labels": [
+            "Whole net: staged"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": 2.6386589403973426,
+      "cpd_percent": 0.33602871555993286
+    },
+    {
+      "wirelength": 9929,
+      "cpd_ns": 9.63263,
+      "labels": [
+        "Half seed",
+        "Feedback: control",
+        "Local guard: disabled",
+        "Ordinary: bulk"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9664,
+          "cpd_ns": 9.60037,
+          "labels": [
+            "Frozen baseline"
+          ]
+        },
+        {
+          "wirelength": 9902,
+          "cpd_ns": 9.6313,
+          "labels": [
+            "Whole net: staged"
+          ]
+        },
+        {
+          "wirelength": 9919,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Whole net: guarded"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": 2.742135761589415,
+      "cpd_percent": 0.33602871555993286
+    },
+    {
+      "wirelength": 10026,
+      "cpd_ns": 10.0142,
+      "labels": [
+        "Ordinary: dispatch"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9664,
+          "cpd_ns": 9.60037,
+          "labels": [
+            "Frozen baseline"
+          ]
+        },
+        {
+          "wirelength": 9929,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Half seed",
+            "Feedback: control",
+            "Local guard: disabled",
+            "Ordinary: bulk"
+          ]
+        },
+        {
+          "wirelength": 9809,
+          "cpd_ns": 9.78317,
+          "labels": [
+            "Feedback: candidate",
+            "Local guard: unguarded"
+          ]
+        },
+        {
+          "wirelength": 9902,
+          "cpd_ns": 9.6313,
+          "labels": [
+            "Whole net: staged"
+          ]
+        },
+        {
+          "wirelength": 9919,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Whole net: guarded"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": 3.7458609271523224,
+      "cpd_percent": 4.310563030383219
+    },
+    {
+      "wirelength": 10529,
+      "cpd_ns": 9.81527,
+      "labels": [
+        "Span price"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9664,
+          "cpd_ns": 9.60037,
+          "labels": [
+            "Frozen baseline"
+          ]
+        },
+        {
+          "wirelength": 9929,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Half seed",
+            "Feedback: control",
+            "Local guard: disabled",
+            "Ordinary: bulk"
+          ]
+        },
+        {
+          "wirelength": 9809,
+          "cpd_ns": 9.78317,
+          "labels": [
+            "Feedback: candidate",
+            "Local guard: unguarded"
+          ]
+        },
+        {
+          "wirelength": 9902,
+          "cpd_ns": 9.6313,
+          "labels": [
+            "Whole net: staged"
+          ]
+        },
+        {
+          "wirelength": 9919,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Whole net: guarded"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": 8.950745033112572,
+      "cpd_percent": 2.2384553928650686
+    },
+    {
+      "wirelength": 10684,
+      "cpd_ns": 9.67608,
+      "labels": [
+        "Cleanup"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9664,
+          "cpd_ns": 9.60037,
+          "labels": [
+            "Frozen baseline"
+          ]
+        },
+        {
+          "wirelength": 9929,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Half seed",
+            "Feedback: control",
+            "Local guard: disabled",
+            "Ordinary: bulk"
+          ]
+        },
+        {
+          "wirelength": 9902,
+          "cpd_ns": 9.6313,
+          "labels": [
+            "Whole net: staged"
+          ]
+        },
+        {
+          "wirelength": 9919,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Whole net: guarded"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": 10.554635761589415,
+      "cpd_percent": 0.7886154387799715
+    },
+    {
+      "wirelength": 10722,
+      "cpd_ns": 9.91429,
+      "labels": [
+        "Fine entry"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9664,
+          "cpd_ns": 9.60037,
+          "labels": [
+            "Frozen baseline"
+          ]
+        },
+        {
+          "wirelength": 10684,
+          "cpd_ns": 9.67608,
+          "labels": [
+            "Cleanup"
+          ]
+        },
+        {
+          "wirelength": 9929,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Half seed",
+            "Feedback: control",
+            "Local guard: disabled",
+            "Ordinary: bulk"
+          ]
+        },
+        {
+          "wirelength": 10529,
+          "cpd_ns": 9.81527,
+          "labels": [
+            "Span price"
+          ]
+        },
+        {
+          "wirelength": 9809,
+          "cpd_ns": 9.78317,
+          "labels": [
+            "Feedback: candidate",
+            "Local guard: unguarded"
+          ]
+        },
+        {
+          "wirelength": 9902,
+          "cpd_ns": 9.6313,
+          "labels": [
+            "Whole net: staged"
+          ]
+        },
+        {
+          "wirelength": 9919,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Whole net: guarded"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": 10.947847682119205,
+      "cpd_percent": 3.2698739736072735
+    },
+    {
+      "wirelength": 10749,
+      "cpd_ns": 9.67608,
+      "labels": [
+        "Entry stop"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9664,
+          "cpd_ns": 9.60037,
+          "labels": [
+            "Frozen baseline"
+          ]
+        },
+        {
+          "wirelength": 10684,
+          "cpd_ns": 9.67608,
+          "labels": [
+            "Cleanup"
+          ]
+        },
+        {
+          "wirelength": 9929,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Half seed",
+            "Feedback: control",
+            "Local guard: disabled",
+            "Ordinary: bulk"
+          ]
+        },
+        {
+          "wirelength": 9902,
+          "cpd_ns": 9.6313,
+          "labels": [
+            "Whole net: staged"
+          ]
+        },
+        {
+          "wirelength": 9919,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Whole net: guarded"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": 11.22723509933774,
+      "cpd_percent": 0.7886154387799715
+    },
+    {
+      "wirelength": 10762,
+      "cpd_ns": 9.81893,
+      "labels": [
+        "Original downstream"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9664,
+          "cpd_ns": 9.60037,
+          "labels": [
+            "Frozen baseline"
+          ]
+        },
+        {
+          "wirelength": 10749,
+          "cpd_ns": 9.67608,
+          "labels": [
+            "Entry stop"
+          ]
+        },
+        {
+          "wirelength": 10684,
+          "cpd_ns": 9.67608,
+          "labels": [
+            "Cleanup"
+          ]
+        },
+        {
+          "wirelength": 9929,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Half seed",
+            "Feedback: control",
+            "Local guard: disabled",
+            "Ordinary: bulk"
+          ]
+        },
+        {
+          "wirelength": 10529,
+          "cpd_ns": 9.81527,
+          "labels": [
+            "Span price"
+          ]
+        },
+        {
+          "wirelength": 9809,
+          "cpd_ns": 9.78317,
+          "labels": [
+            "Feedback: candidate",
+            "Local guard: unguarded"
+          ]
+        },
+        {
+          "wirelength": 9902,
+          "cpd_ns": 9.6313,
+          "labels": [
+            "Whole net: staged"
+          ]
+        },
+        {
+          "wirelength": 9919,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Whole net: guarded"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": 11.361754966887428,
+      "cpd_percent": 2.276578923520667
+    },
+    {
+      "wirelength": 10771,
+      "cpd_ns": 9.69287,
+      "labels": [
+        "Fine flat"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9664,
+          "cpd_ns": 9.60037,
+          "labels": [
+            "Frozen baseline"
+          ]
+        },
+        {
+          "wirelength": 10749,
+          "cpd_ns": 9.67608,
+          "labels": [
+            "Entry stop"
+          ]
+        },
+        {
+          "wirelength": 10684,
+          "cpd_ns": 9.67608,
+          "labels": [
+            "Cleanup"
+          ]
+        },
+        {
+          "wirelength": 9929,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Half seed",
+            "Feedback: control",
+            "Local guard: disabled",
+            "Ordinary: bulk"
+          ]
+        },
+        {
+          "wirelength": 9902,
+          "cpd_ns": 9.6313,
+          "labels": [
+            "Whole net: staged"
+          ]
+        },
+        {
+          "wirelength": 9919,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Whole net: guarded"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": 11.454884105960272,
+      "cpd_percent": 0.963504531596171
+    },
+    {
+      "wirelength": 10954,
+      "cpd_ns": 9.65946,
+      "labels": [
+        "Local first"
+      ],
+      "dominated_by": [
+        {
+          "wirelength": 9664,
+          "cpd_ns": 9.60037,
+          "labels": [
+            "Frozen baseline"
+          ]
+        },
+        {
+          "wirelength": 9929,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Half seed",
+            "Feedback: control",
+            "Local guard: disabled",
+            "Ordinary: bulk"
+          ]
+        },
+        {
+          "wirelength": 9902,
+          "cpd_ns": 9.6313,
+          "labels": [
+            "Whole net: staged"
+          ]
+        },
+        {
+          "wirelength": 9919,
+          "cpd_ns": 9.63263,
+          "labels": [
+            "Whole net: guarded"
+          ]
+        }
+      ],
+      "nondominated": false,
+      "baseline": false,
+      "wire_percent": 13.348509933774832,
+      "cpd_percent": 0.6154971110488461
+    }
+  ],
+  "frontier": [
+    {
+      "wirelength": 9443,
+      "cpd_ns": 10.2508,
+      "labels": [
+        "Ordinary: serial"
+      ],
+      "dominated_by": [],
+      "nondominated": true,
+      "baseline": false,
+      "wire_percent": -2.2868377483443725,
+      "cpd_percent": 6.775051378228136
+    },
+    {
+      "wirelength": 9521,
+      "cpd_ns": 10.2293,
+      "labels": [
+        "Zero seed"
+      ],
+      "dominated_by": [],
+      "nondominated": true,
+      "baseline": false,
+      "wire_percent": -1.47971854304636,
+      "cpd_percent": 6.551101676289561
+    },
+    {
+      "wirelength": 9664,
+      "cpd_ns": 9.60037,
+      "labels": [
+        "Frozen baseline"
+      ],
+      "dominated_by": [],
+      "nondominated": true,
+      "baseline": true,
+      "wire_percent": 0.0,
+      "cpd_percent": 0.0
+    }
+  ],
+  "source_sha256": {
+    "experiments/wide_timing_cohort_audit_20261013.json": "41f486d41a35b10fc1e1bf6f5fe130b8938ea3b4322d28fe3f6d3fc61cc9dac5",
+    "work/rr_upstream_target_stop_variant_20261014/independent_audit.json": "f1f9c18f62602799211034444f92ed29850451b232d1590fafeed207df6af618",
+    "work/rr_local_task_order_variant_20261014/independent_audit.json": "e9d629762c098adef9a5b2a0bc26805eec3325e00b53b917bd7c91b5ebfb9a6a",
+    "work/rr_wide_cleanup_variant_20261014/independent_audit.json": "4e8e88c2c9eacf307b31f7eb313e8735957f2f635029e9110d6fdd24432a9ee4",
+    "work/rr_cost_precision_variant_20261014/independent_audit.json": "9a7a2e1f998b9b6ff0350d0c6a1a3429cbe6e4d7a837585c46a5c3c0443beb7b",
+    "work/rr_tree_seed_zero_variant_20261014/tree_seed_comparison.json": "c6dbc3fbe7c89ab5e7e1f145c28057eba794594927d1fbc41095e4915e8e6275",
+    "work/rr_tree_seed_midpoint_variant_20261014/tree_seed_midpoint_comparison.json": "9db0a15729a6b51a08803007fea20c7da1e35b1fe027af0e6b77da996e526a30",
+    "work/rr_main_span_cost_variant_20261014/span_price_comparison.json": "21a0394d8232488ebc0b02bff7198842b4a767745eac898e85dd8a3c2d281421",
+    "work/rr_critical_feedback_variant_20261014/feedback_comparison.json": "83fef47133e0d6173e8477ab20f5f0285266ba7247ed0cd30c788c2e44bbe8cf",
+    "work/rr_local_delay_feedback_variant_20261014/three_arm_comparison.json": "32f7f9242ba5e4eeba44834b06c6686dc480925404f1bb9df2c065880459ccea",
+    "work/rr_supplemental_net_transaction_variant_20261015/three_arm_comparison.json": "678dd538facfe99bdc9df86548f702493af46fe2be5b9276eff7884003a0cd55",
+    "work/rr_ordinary_schedule_variant_20261015/three_arm_comparison.json": "cc7b2d11b53b27fcde74897a3fcc92a4b38aeed51e01b7a58e88e8413918ca0c",
+    "work/native_ex5p_stratix2die_cw80_20261013/vpr.log": "332abcd445b4a59c8ce7236dde733c0b29f832bdf78097ec4915c58ba2b413d6",
+    "tools/export_rr_quality_frontier.py": "7f2d6d5942b8e9b863d82d381b3479162c70d1f18c43c7d1a5cdecad85d073d6"
+  },
+  "scope": "Completed legal five-repeat ex5p variants only, duplicate coordinates grouped. Two-metric observed-set dominance, not a global optimum, policy causal comparison, SLL acceptance, heldout generalization, physical performance or research completion.",
+  "board_result": false,
+  "research_complete": false
+}

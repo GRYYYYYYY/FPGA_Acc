@@ -1,0 +1,30 @@
+{
+  "schema": "dieroute.native_parallel_schema.v1",
+  "transaction_unit": "One whole net including all sink branches, tree-growth retries and budget rescue",
+  "execution": "Distinct nets in a window search concurrently on one immutable authority snapshot. Each CPU proposal owns a private scratch state and per-lane search/quotient workspaces. All futures join before validation/publication begins.",
+  "order": "Original net order: increasing first native task ID. Window width affects speculation only, not logical commit order.",
+  "reads": "Every dynamic resource cost query, absent resources and off-path observations included; candidate portal occupancy and every written node also included. Sorted unique canonical node IDs refer to the initial window snapshot, before the proposal's own private tree growth.",
+  "validation": "Same owner layout and present factor; exact input net tree; same resource version/history/net set for every recorded read. Changes outside the complete footprint do not invalidate a proposal.",
+  "publication": "Recompute branch costs and validate read/write coverage and physical branches on a private copy of current authority. Apply all accepted branches there, then swap once. Late errors leave authority untouched. Stale proposals, including stale overflow, replay against current authority.",
+  "capacity": "Negotiated-congestion semantics permit intermediate overuse; final convergence still requires zero overuse. This is not a strict concurrent capacity-grant protocol.",
+  "artifacts": {
+    "transactions.csv": "One row per initial/replayed whole-net proposal, immutable read range, conflict count, overflow, commit decision and all work counters",
+    "readsets.bin": "FPGAACCP shared 64-byte header, schema 0.1, object type 0x44520021, architecture fingerprint, CRC64-ECMA; 16-byte LE records {node:u32,reserved_zero:u32,snapshot_version:u64}",
+    "proposals.csv": "Every completed branch search, task/sink/pass/rescue, status, attachment, cost/hops and work",
+    "proposal_paths.csv": "Ordered canonical electrical nodes and directed PIP keys for every complete branch candidate",
+    "transaction_passes.csv": "Private shared-tree growth, failures and budget rescue/retry decisions",
+    "conflicts.csv": "All mismatching read nodes and snapshot/current versions, in canonical order",
+    "execution.csv": "Steady-clock begin/end for initial native proposals; analyzed for actual overlap, excluded from repeat byte equality",
+    "accepted_work.csv": "Only accepted proposal work, compared against serial baseline",
+    "iterations.csv": "All initial/discarded/replayed work, plus unchanged convergence statistics",
+    "canonical_outputs": "Same selection/trees/paths/connections/usage/owner_usage tables as serial native driver"
+  },
+  "limits": [
+    "Mutable publication remains serial; no simultaneous writers or asynchronous owner service",
+    "Proposal scratch copies are CPU rollback buffers, not a hardware/HBM storage design",
+    "Die label RPC is unchanged within each proposal; this driver records its aggregate count, not a second per-packet capture",
+    "Recorded read/version replay is not an independent re-execution of search or proof of off-path read completeness",
+    "Thread intervals prove overlap only; no board, energy or isolated end-to-end speedup claim",
+    "Persistent delayed worker shadows, HBM/migration and full representative QoR remain open"
+  ]
+}

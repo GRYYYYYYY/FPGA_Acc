@@ -1,0 +1,38 @@
+{
+  "observed_ns": 1793409232050539576,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261031_SELECTOR_CONTROL_STRUCTURE.json",
+    "sha256": "3dc7fcfa7de0c6df326a528fb3e9d3b991d2b203e987663025c8c874bbf80967"
+  },
+  "progress": {
+    "report": "work/resident_selector_conditional_waits_20261031/review.json",
+    "report_sha256": "d3f47b4ae2e4ff1b40dacaecbc29b16cc584c216bf13f0e2e8f6ffd84bd22630",
+    "independent_review": "work/resident_selector_conditional_waits_20261031/independent_conditional_review.json",
+    "independent_review_sha256": "f66fa3f53c088cfc871ceb8493ef0ab320e6e5b8bbc545247bb6c507fb8af703",
+    "conditional_links_checked": 2,
+    "put_assignments_checked": 128,
+    "get_start_valuations_checked": 2,
+    "complete_netlist_serialization_proven": false,
+    "whole_program_timing_bound_proven": false,
+    "scope": "Source-bound two-state conditional control linkage, with legal one-hot FSM operation and no mid-call reset/state corruption assumed.128assignments exhaust six state238 predicate inputs plus prior latch value; accepted path implies latch enable, invariant predicate1 through239/240/241/242, and mandatory put-done wait. Two get-start valuations link actual start244 to wait245; bypass does not start get. Source assignment uniqueness establishes local register stability on the path. This is not four-state/X-propagation, complete RTL formal verification, full-program call-count correspondence, pipeline drain/latency proof, liveness/deadlock diagnosis, watchdog verdict or ETA. No new synthesis/simulation/observer/canary, DUT edit, restart or acceptance.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/current_research_claim_matrix_v193_20261031/matrix.json",
+    "sha256": "e641d7e0fff1a30a6297862632b839591154645b5a1e6e16faa529184c0952cb"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261031_v193.json",
+    "sha256": "d3b5f55286d27e71c8f1a5adf4dbd6060d9d04a9303146232207c10f1f76e38d"
+  },
+  "next_action": "Two previously path-sensitive get/put links now reconciled under two-state/legal-FSM/no-midcall-reset assumptions,128put assignments and2get valuations. This augments18direct outer waits, not a complete four-state netlist serialization proof. Next meaningful timing work needs C-to-RTL count correspondence and child drain/loop timing before any watchdog bound. Preserve30watched handles, sole strict-native queue owner, all original workloads/guards/watchdogs/failures; actual complete terminal before canaries/adoption. Ledger v23 stays9865/9968associated,103pending plus820separate transitive/466root gaps; integrated34page draft unchanged. No new tool flow, observer, DUT edit or huge trace/sparseTV read. Physical board absent; optional board-host question pending.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}

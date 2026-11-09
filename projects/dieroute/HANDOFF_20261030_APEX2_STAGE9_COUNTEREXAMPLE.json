@@ -1,0 +1,38 @@
+{
+  "recorded_ns": 1793404268036652296,
+  "previous_recovery_handoff": {
+    "path": "HANDOFF_20261030_MATRIX_V170_RECONCILIATION.json",
+    "sha256": "2f3c51eaa23d53c08f0436bd4097255124aee0c830722e6e80b37179adbffd47"
+  },
+  "progress": {
+    "review": "work/apex2_stage9_terminal_reconciliation_20261030/review.json",
+    "review_sha256": "903f1d51334e44769cac3ca8548173905b2dbd1c4cf068a775ca49e09ff62c5b",
+    "independent_review": "work/apex2_stage9_terminal_reconciliation_20261030/independent_registration_review.json",
+    "independent_review_sha256": "5a98ab7d5f814da646c6eb913451119a0a7d38531cabd878550afff2fc72f2fe",
+    "status": "native_legal_joint_quality_failed_not_adopted",
+    "wirelength": 19373,
+    "baseline_wirelength": 19372,
+    "cpd_ns": "10.8635",
+    "baseline_cpd_ns": "10.8372",
+    "scope": "Reconciliation of one already completed posterior heldout seed1 private exchange, not a new search, native rerun or parameter selection. Candidate legality/capacity and lower modeled transitions do not meet the original joint frozen-baseline WL/CPD gate. Preserve original15reserved baselines/five refinements and formal45 outcomes; no tolerance change, heldout tuning, generalization or hardware/board claim.",
+    "research_complete": false
+  },
+  "current_matrix": {
+    "path": "work/apex2_stage9_terminal_reconciliation_20261030/matrix_v171.json",
+    "sha256": "4ea0c3e5b79c1a94d1142b6814a9167fabd5d7c583de9a8288d0c95d2386aa6d"
+  },
+  "current_critical_path": {
+    "path": "experiments/critical_path_20261030_v171.json",
+    "sha256": "984a3ed3ecd51a5401227f36acfb94a07b16cdf2b6039c8fb7c88b1b07390c9a"
+  },
+  "next_action": "Original stage9 posterior exchange is terminal and failed joint frozen-baseline quality; do not wait or rerun2276477/2276478. Keep WL+1/CPD+26.3ps failure and original15reserved/five-refinement/formal45 cohorts unchanged. No heldout tuning/adoption. Current matrix327claims, prior326retained. Preserve30current watched identities, original RTL/canary/resource gates and strict-native20GiB waiting owner; no new experiment accepted. Artifact ledger unchangedv11:9697/9968,271remaining,820separate transitive/466root gaps.",
+  "scope_unchanged": {
+    "workloads": 11,
+    "searches": 311096,
+    "formal_slots": 45,
+    "formal_passes": 37,
+    "retained_failures": 8,
+    "all_eight_gates_open": true
+  },
+  "research_complete": false
+}
