@@ -1,0 +1,75 @@
+{
+  "evidence_base": "2019e8fc5bb410cb2a4b1d9bb5f557dc5682b08e",
+  "frozen_reference_directory": "../phase2_A/source",
+  "reference_seven_file_sha256": "f8d785d370921d232653d59055df3269c8fa94e2db22c8b92a4ce2ce374eee24",
+  "reference_files": [
+    {
+      "name": "prepare_route_feedback.py",
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_DAC_AUDIT_20261110/DAC_AUDIT/phase2_A/source/prepare_route_feedback.py",
+      "sha256": "eaf3198dadf5d7c860a42b0134872f3553028ea74d82b9a46294e48af58c3353"
+    },
+    {
+      "name": "prepare_timing_feedback.py",
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_DAC_AUDIT_20261110/DAC_AUDIT/phase2_A/source/prepare_timing_feedback.py",
+      "sha256": "ff830e3d30bfaf3d48517a8c547f64d76ee76e77efb8225ee0bad64689639627"
+    },
+    {
+      "name": "run_tileplace_v2.py",
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_DAC_AUDIT_20261110/DAC_AUDIT/phase2_A/source/run_tileplace_v2.py",
+      "sha256": "4c9942d35fd00b5f038f93da13094a46822b731da6855f431e7ef91cb640271b"
+    },
+    {
+      "name": "run_vpr_closure.py",
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_DAC_AUDIT_20261110/DAC_AUDIT/phase2_A/source/run_vpr_closure.py",
+      "sha256": "012cc3570765f2abd420c5144ee066e1161c8338efd67e2b6cc592c06940da34"
+    },
+    {
+      "name": "tileplace_provenance.py",
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_DAC_AUDIT_20261110/DAC_AUDIT/phase2_A/source/tileplace_provenance.py",
+      "sha256": "4952b986d2fd1d22261c3045e5fda54462b4dfd1af5c84c2d7831c06c579af43"
+    },
+    {
+      "name": "tileplace_v2.py",
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_DAC_AUDIT_20261110/DAC_AUDIT/phase2_A/source/tileplace_v2.py",
+      "sha256": "57494434f43a779921d8d60145931fe162d3f04e623a1bda76283d916bfcf455"
+    },
+    {
+      "name": "tileplace_vpr.py",
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_DAC_AUDIT_20261110/DAC_AUDIT/phase2_A/source/tileplace_vpr.py",
+      "sha256": "355535e49a0ec47b485e8c374e34fa35ee323fbf406b731b920ca40ab582d364"
+    }
+  ],
+  "effective_algorithm_identity": "reference SHA + entry.py + reuse.py SHA, not the reference seven-file hash alone",
+  "files": [
+    {
+      "path": "PROTOCOL.json",
+      "bytes": 9011,
+      "sha256": "dae636e4b91ce4606da12876b6c9d05d0b3dd1e195c37f40220d2f8f1c237454"
+    },
+    {
+      "path": "baseline.py",
+      "bytes": 3472,
+      "sha256": "cc235429bb6302ecbff8d7d9ce2a9e827b8640f64f0f9f6ff6a0c6cffed7d000"
+    },
+    {
+      "path": "entry.py",
+      "bytes": 5366,
+      "sha256": "89de8df6b9b8745e1520697459a01118e9751d0fc7d1310a48ee38e9a10800df"
+    },
+    {
+      "path": "reuse.py",
+      "bytes": 1376,
+      "sha256": "1521778f63b1ccaa9e65f12619fe7aba194e93b1c14ae120e00c030d369b9274"
+    },
+    {
+      "path": "supervise.py",
+      "bytes": 4247,
+      "sha256": "f1f261e10b912a3fbe6180e2834eee536d9687ba8414102bf1388f8b17e02265"
+    },
+    {
+      "path": "unit.py",
+      "bytes": 2988,
+      "sha256": "66357b75f9f29fe1ea1bc496b9830b4db5f5677ec33ecd8c238587476c591f52"
+    }
+  ]
+}
