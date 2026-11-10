@@ -1,0 +1,134 @@
+--- original/tileplace_v2.py
++++ source/tileplace_v2.py
+@@ -8,6 +8,8 @@
+ 
+ from __future__ import annotations
+ 
++import os
++import time
+ import argparse
+ import json
+ from bisect import bisect_left
+@@ -143,6 +145,8 @@
+         self.contract = contract.resolve()
+         self.input_place = input_place.resolve()
+         self.config = config
++        self.pressure_prefix = os.environ.get("TILEPLACE_PRESSURE_PREFIX", "1") == "1"
++        self.profile = {"index_build_s": 0.0, "index_builds": 0, "cache_hits": 0, "cache_misses": 0, "cache_invalidations": 0, "path_queries": 0}
+         self.pressure_q16 = pressure_q16 or {}
+         self.path_edges_q16, self.focus_blocks = timing_feedback or ({}, set())
+         self.manifest, self.blocks, self.sites, self.nets = load_contract(self.contract)
+@@ -248,7 +252,16 @@
+     def pressure_q16(self, values):
+         # Feedback is one immutable snapshot. Replacing it rebuilds the indexes
+         # and invalidates net costs, including on accepted oracle refreshes.
++        build_start = time.perf_counter()
+         pressure_snapshot = MappingProxyType(dict(values))
++        if not self.pressure_prefix:
++            self._pressure_q16 = pressure_snapshot
++            self._horizontal_pressure = self._vertical_pressure = {}
++            if hasattr(self, "_net_cost_cache"):
++                self._invalidate_cost_cache()
++            self.profile["index_build_s"] += time.perf_counter() - build_start
++            self.profile["index_builds"] += 1
++            return
+         horizontal, vertical = defaultdict(list), defaultdict(list)
+         for (x0, y0, x1, y1), weight in pressure_snapshot.items():
+             if y0 == y1 and x1 == x0 + 1:
+@@ -272,8 +285,16 @@
+         self._pressure_q16 = pressure_snapshot
+         self._horizontal_pressure = horizontal_prefix
+         self._vertical_pressure = vertical_prefix
++        self.profile["index_build_s"] += time.perf_counter() - build_start
++        self.profile["index_builds"] += 1
+         if hasattr(self, "_net_cost_cache"):
+-            self._net_cost_cache.clear()
++            self._invalidate_cost_cache()
++
++    def _invalidate_cost_cache(self):
++        t = time.perf_counter()
++        self._net_cost_cache.clear()
++        self.profile["cache_invalidations"] += 1
++        self.profile["cache_invalidation_s"] = self.profile.get("cache_invalidation_s", 0.0) + time.perf_counter() - t
+ 
+     @staticmethod
+     def _segment_pressure(lines, line, start, end):
+@@ -283,7 +304,39 @@
+         low, high = sorted((start, end))
+         return sums[bisect_left(coordinates, high)] - sums[bisect_left(coordinates, low)]
+ 
++    def _path_pressure_edgewalk(self, a: tuple[int, int], b: tuple[int, int], horizontal_first: bool) -> int:
++        x, y = a
++        target_x, target_y = b
++        total = 0
++
++        def horizontal() -> None:
++            nonlocal x, total
++            step = 1 if target_x >= x else -1
++            while x != target_x:
++                nx = x + step
++                total += PRESSURE_ONE + self.pressure_q16.get(_edge_key(x, y, nx, y), 0)
++                x = nx
++
++        def vertical() -> None:
++            nonlocal y, total
++            step = 1 if target_y >= y else -1
++            while y != target_y:
++                ny = y + step
++                total += PRESSURE_ONE + self.pressure_q16.get(_edge_key(x, y, x, ny), 0)
++                y = ny
++
++        if horizontal_first:
++            horizontal()
++            vertical()
++        else:
++            vertical()
++            horizontal()
++        return total
++
+     def _path_pressure(self, a: tuple[int, int], b: tuple[int, int], horizontal_first: bool) -> int:
++        self.profile["path_queries"] += 1
++        if not self.pressure_prefix:
++            return self._path_pressure_edgewalk(a, b, horizontal_first)
+         x, y = a
+         target_x, target_y = b
+         horizontal_y = y if horizontal_first else target_y
+@@ -313,7 +366,9 @@
+     ) -> tuple[int, int, int]:
+         cached = self._net_cost_cache.get(net_id)
+         if cached is not None:
++            self.profile["cache_hits"] += 1
+             return cached
++        self.profile["cache_misses"] += 1
+         wire = self.hpwl(self.net_members[net_id], positions)
+         timing = congestion = 0
+         for source, sink, criticality in self.connections.get(net_id, []):
+@@ -619,7 +674,7 @@
+     def apply(self, transactions: Iterable[Transaction]) -> None:
+         for transaction in transactions:
+             self.positions.update(transaction.trial)
+-        self._net_cost_cache.clear()
++        self._invalidate_cost_cache()
+ 
+     def snapshot(self) -> dict[int, tuple[int, int, int, int]]:
+         return dict(self.positions)
+@@ -628,7 +683,7 @@
+         if set(positions) != set(self.positions):
+             raise ContractError("V2 snapshot block set differs")
+         self.positions = dict(positions)
+-        self._net_cost_cache.clear()
++        self._invalidate_cost_cache()
+ 
+     def write_place(self, path: Path) -> None:
+         lines: list[str] = []
+--- original/run_tileplace_v2.py
++++ source/run_tileplace_v2.py
+@@ -517,6 +517,8 @@
+                 "output_wall_s": measured_end - search_start - search_wall_s,
+                 "search_stage_wall_s": totals,
+                 "search_other_wall_s": search_wall_s - sum(totals.values()),
++                "pressure_prefix": engine.pressure_prefix,
++                "mechanism_profile": engine.profile,
+                 "events": timings.events,
+                 "report": {"path": str(args.report.resolve()), "sha256": sha256(args.report.resolve())},
+                 "limitations": "Single observation; externally time the command for full process wall time. oracle_driver includes validation, VPR, hashes and serialization; not just routing.",

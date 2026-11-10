@@ -1,0 +1,54 @@
+VPR FPGA Placement and Routing.
+Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07
+Revision: 8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07
+Compiled: 2026-08-31T14:57:12
+Compiler: GNU 11.4.0 on Linux-5.15.0-119-generic x86_64
+Build Info: Release VTR_ASSERT_LEVEL=2
+Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07
+Revision: 8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07
+Compiled: 2026-08-31T14:57:12
+Compiler: GNU 11.4.0 on Linux-5.15.0-119-generic x86_64
+Build Info: Release VTR_ASSERT_LEVEL=2
+
+       [--version] [--device DEVICE_NAME] [-j NUM_WORKERS] 
+       [--timing_analysis {on, off}] [--disable_errors DISABLE_ERRORS] 
+       [--suppress_warnings SUPPRESS_WARNINGS] 
+       [--terminate_if_timing_fails {on, off}] 
+       [--route_chan_width CHANNEL_WIDTH] [OTHER_OPTIONS ...]
+
+                    satisfies the circuit's resource requirements. (Default: auto)
+  -j NUM_WORKERS, --num_workers NUM_WORKERS
+                    Controls how many parallel workers VPR may use:
+                     *  1 implies VPR will execute serially,
+                     * >1 implies VPR may execute in parallel with up to the
+                          specified concurrency, and
+                    default is used. (Default: 1)
+  --timing_analysis {on, off}
+                    Controls whether timing analysis (and timing driven 
+                    optimizations) are enabled. (Default: on)
+  --timing_update_type {auto, full, incremental}
+                    Controls how timing analysis updates are performed:
+                    algorithm to the specified file
+  --read_initial_place_file INITIAL_PLACE_FILE
+                    Reads the initial placement and continues the rest of the 
+                    placement process from there.
+  --read_vpr_constraints READ_VPR_CONSTRAINTS
+                    Reads the floorplanning constraints that packing and 
+                    with block locations specified).
+  --place_algorithm {bounding_box, criticality_timing, slack_timing}
+                    Controls which placement algorithm is used. Valid options:
+                     * bounding_box: Focuses purely on minimizing the bounding 
+                    box wirelength of the circuit. Turns off timing analysis if 
+                    specified.
+                    quench.
+                    If specified, it overrides the option --place_algorithm 
+                    during placement quench.
+                    Valid options:
+                     * bounding_box: Focuses purely on minimizing the bounding 
+                    box wirelength of the circuit. Turns off timing analysis if 
+                    NoC links in SAT routing. (Default: 16384)
+  --noc_sat_routing_num_workers NOC_SAT_ROUTING_NUM_WORKERS
+                    The maximum number of parallel threads that the SAT solver 
+                    can use to explore the solution space.
+                    If not explicitly specified by the user, VPR will set the 
+                    number parallel SAT solver workers to the value specified by 

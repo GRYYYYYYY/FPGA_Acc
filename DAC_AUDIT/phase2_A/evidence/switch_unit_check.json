@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "comparisons": 8000,
+  "feedback_epochs": 8,
+  "covers": [
+    "reverse directions",
+    "zero-length",
+    "empty/sparse lines",
+    "large integer weights",
+    "feedback replacement",
+    "immutable source snapshot",
+    "cost cache invalidation"
+  ],
+  "wall_s": 0.08409660309553146,
+  "not_claimed": "Full controller equivalence; tested by frozen native pilot"
+}

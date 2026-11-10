@@ -1,0 +1,48 @@
+{
+  "parser": {
+    "mode": "generic-indexed-port-v1",
+    "path_flags": 32,
+    "path_pattern": "^#Path\\s+(\\d+)\\s*$",
+    "point_flags": 32,
+    "point_pattern": "^\\s*(\\S+)\\.[^\\s.\\[]+\\[\\d+\\]"
+  },
+  "schema": "TILEPLACE_IMPLEMENTATION_V1",
+  "sha256": "f8d785d370921d232653d59055df3269c8fa94e2db22c8b92a4ce2ce374eee24",
+  "sources": [
+    {
+      "name": "prepare_route_feedback.py",
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_DAC_AUDIT_20261110/DAC_AUDIT/phase2_A/source/prepare_route_feedback.py",
+      "sha256": "eaf3198dadf5d7c860a42b0134872f3553028ea74d82b9a46294e48af58c3353"
+    },
+    {
+      "name": "prepare_timing_feedback.py",
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_DAC_AUDIT_20261110/DAC_AUDIT/phase2_A/source/prepare_timing_feedback.py",
+      "sha256": "ff830e3d30bfaf3d48517a8c547f64d76ee76e77efb8225ee0bad64689639627"
+    },
+    {
+      "name": "run_tileplace_v2.py",
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_DAC_AUDIT_20261110/DAC_AUDIT/phase2_A/source/run_tileplace_v2.py",
+      "sha256": "4c9942d35fd00b5f038f93da13094a46822b731da6855f431e7ef91cb640271b"
+    },
+    {
+      "name": "run_vpr_closure.py",
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_DAC_AUDIT_20261110/DAC_AUDIT/phase2_A/source/run_vpr_closure.py",
+      "sha256": "012cc3570765f2abd420c5144ee066e1161c8338efd67e2b6cc592c06940da34"
+    },
+    {
+      "name": "tileplace_provenance.py",
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_DAC_AUDIT_20261110/DAC_AUDIT/phase2_A/source/tileplace_provenance.py",
+      "sha256": "4952b986d2fd1d22261c3045e5fda54462b4dfd1af5c84c2d7831c06c579af43"
+    },
+    {
+      "name": "tileplace_v2.py",
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_DAC_AUDIT_20261110/DAC_AUDIT/phase2_A/source/tileplace_v2.py",
+      "sha256": "57494434f43a779921d8d60145931fe162d3f04e623a1bda76283d916bfcf455"
+    },
+    {
+      "name": "tileplace_vpr.py",
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_DAC_AUDIT_20261110/DAC_AUDIT/phase2_A/source/tileplace_vpr.py",
+      "sha256": "355535e49a0ec47b485e8c374e34fa35ee323fbf406b731b920ca40ab582d364"
+    }
+  ]
+}
