@@ -1,0 +1,224 @@
+{
+  "cross_arm_checks": [
+    {
+      "all_equal": true,
+      "case": "diffeq",
+      "cross_arm_comparisons": 4
+    },
+    {
+      "all_equal": true,
+      "case": "clma",
+      "cross_arm_comparisons": 4
+    },
+    {
+      "all_equal": true,
+      "case": "spla",
+      "cross_arm_comparisons": 4
+    }
+  ],
+  "history": {
+    "cases": 13,
+    "failures": 4,
+    "native_trials": 404,
+    "successes": 9
+  },
+  "native_output_binding": [
+    {
+      "all_placement_fields_equal": true,
+      "native_input_sha_matches_final": true,
+      "placement_rows_compared": 202,
+      "run_id": "diffeq_warmup_0_A"
+    },
+    {
+      "all_placement_fields_equal": true,
+      "native_input_sha_matches_final": true,
+      "placement_rows_compared": 202,
+      "run_id": "diffeq_warmup_0_B"
+    },
+    {
+      "all_placement_fields_equal": true,
+      "native_input_sha_matches_final": true,
+      "placement_rows_compared": 202,
+      "run_id": "diffeq_measured_1_A"
+    },
+    {
+      "all_placement_fields_equal": true,
+      "native_input_sha_matches_final": true,
+      "placement_rows_compared": 202,
+      "run_id": "diffeq_measured_1_B"
+    },
+    {
+      "all_placement_fields_equal": true,
+      "native_input_sha_matches_final": true,
+      "placement_rows_compared": 202,
+      "run_id": "diffeq_measured_2_B"
+    },
+    {
+      "all_placement_fields_equal": true,
+      "native_input_sha_matches_final": true,
+      "placement_rows_compared": 202,
+      "run_id": "diffeq_measured_2_A"
+    },
+    {
+      "all_placement_fields_equal": true,
+      "native_input_sha_matches_final": true,
+      "placement_rows_compared": 202,
+      "run_id": "diffeq_measured_3_A"
+    },
+    {
+      "all_placement_fields_equal": true,
+      "native_input_sha_matches_final": true,
+      "placement_rows_compared": 202,
+      "run_id": "diffeq_measured_3_B"
+    },
+    {
+      "all_placement_fields_equal": true,
+      "native_input_sha_matches_final": true,
+      "placement_rows_compared": 719,
+      "run_id": "clma_warmup_0_A"
+    },
+    {
+      "all_placement_fields_equal": true,
+      "native_input_sha_matches_final": true,
+      "placement_rows_compared": 719,
+      "run_id": "clma_warmup_0_B"
+    },
+    {
+      "all_placement_fields_equal": true,
+      "native_input_sha_matches_final": true,
+      "placement_rows_compared": 719,
+      "run_id": "clma_measured_1_A"
+    },
+    {
+      "all_placement_fields_equal": true,
+      "native_input_sha_matches_final": true,
+      "placement_rows_compared": 719,
+      "run_id": "clma_measured_1_B"
+    },
+    {
+      "all_placement_fields_equal": true,
+      "native_input_sha_matches_final": true,
+      "placement_rows_compared": 719,
+      "run_id": "clma_measured_2_B"
+    },
+    {
+      "all_placement_fields_equal": true,
+      "native_input_sha_matches_final": true,
+      "placement_rows_compared": 719,
+      "run_id": "clma_measured_2_A"
+    },
+    {
+      "all_placement_fields_equal": true,
+      "native_input_sha_matches_final": true,
+      "placement_rows_compared": 719,
+      "run_id": "clma_measured_3_A"
+    },
+    {
+      "all_placement_fields_equal": true,
+      "native_input_sha_matches_final": true,
+      "placement_rows_compared": 719,
+      "run_id": "clma_measured_3_B"
+    },
+    {
+      "all_placement_fields_equal": true,
+      "native_input_sha_matches_final": true,
+      "placement_rows_compared": 345,
+      "run_id": "spla_warmup_0_A"
+    },
+    {
+      "all_placement_fields_equal": true,
+      "native_input_sha_matches_final": true,
+      "placement_rows_compared": 345,
+      "run_id": "spla_warmup_0_B"
+    },
+    {
+      "all_placement_fields_equal": true,
+      "native_input_sha_matches_final": true,
+      "placement_rows_compared": 345,
+      "run_id": "spla_measured_1_A"
+    },
+    {
+      "all_placement_fields_equal": true,
+      "native_input_sha_matches_final": true,
+      "placement_rows_compared": 345,
+      "run_id": "spla_measured_1_B"
+    },
+    {
+      "all_placement_fields_equal": true,
+      "native_input_sha_matches_final": true,
+      "placement_rows_compared": 345,
+      "run_id": "spla_measured_2_B"
+    },
+    {
+      "all_placement_fields_equal": true,
+      "native_input_sha_matches_final": true,
+      "placement_rows_compared": 345,
+      "run_id": "spla_measured_2_A"
+    },
+    {
+      "all_placement_fields_equal": true,
+      "native_input_sha_matches_final": true,
+      "placement_rows_compared": 345,
+      "run_id": "spla_measured_3_A"
+    },
+    {
+      "all_placement_fields_equal": true,
+      "native_input_sha_matches_final": true,
+      "placement_rows_compared": 345,
+      "run_id": "spla_measured_3_B"
+    }
+  ],
+  "normalization": "VPR may rewrite Netlist_File, comment divider and tab padding; all parsed placement fields and exact native input SHA are checked.",
+  "offline_delivery_verification_s": 4.246054127812386,
+  "package_bytes_before_validation_receipt": 17784794,
+  "protocol_precedes_runs": {
+    "output_root": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110",
+    "pre_run_commit": "027f0107ee623441689621d3283fa1c812b2b69f",
+    "protocol_sha256": "889be475ed327e5072e4c781f065fdf096b512a74b8e03db4bfed1318bb12208",
+    "started_utc": "2026-11-10T06:45:16.982555+00:00"
+  },
+  "source_files": [
+    {
+      "file": "prepare_route_feedback.py",
+      "matches_pre_run_commit": true,
+      "sha256": "eaf3198dadf5d7c860a42b0134872f3553028ea74d82b9a46294e48af58c3353"
+    },
+    {
+      "file": "prepare_timing_feedback.py",
+      "matches_pre_run_commit": true,
+      "sha256": "ff830e3d30bfaf3d48517a8c547f64d76ee76e77efb8225ee0bad64689639627"
+    },
+    {
+      "file": "run_tileplace_v2.py",
+      "matches_pre_run_commit": true,
+      "sha256": "4c9942d35fd00b5f038f93da13094a46822b731da6855f431e7ef91cb640271b"
+    },
+    {
+      "file": "run_v4_timing_protocol.py",
+      "matches_pre_run_commit": true,
+      "sha256": "b84785c6f59297bbfb88685bfa0a735395b165d4f7180840395b5a219589e24d"
+    },
+    {
+      "file": "run_vpr_closure.py",
+      "matches_pre_run_commit": true,
+      "sha256": "012cc3570765f2abd420c5144ee066e1161c8338efd67e2b6cc592c06940da34"
+    },
+    {
+      "file": "tileplace_provenance.py",
+      "matches_pre_run_commit": true,
+      "sha256": "4952b986d2fd1d22261c3045e5fda54462b4dfd1af5c84c2d7831c06c579af43"
+    },
+    {
+      "file": "tileplace_v2.py",
+      "matches_pre_run_commit": true,
+      "sha256": "57494434f43a779921d8d60145931fe162d3f04e623a1bda76283d916bfcf455"
+    },
+    {
+      "file": "tileplace_vpr.py",
+      "matches_pre_run_commit": true,
+      "sha256": "355535e49a0ec47b485e8c374e34fa35ee323fbf406b731b920ca40ab582d364"
+    }
+  ],
+  "status": "pass",
+  "timing_partitions_verified": 43
+}

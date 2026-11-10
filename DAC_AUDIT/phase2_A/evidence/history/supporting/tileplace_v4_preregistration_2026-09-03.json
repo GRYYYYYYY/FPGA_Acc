@@ -1,0 +1,69 @@
+{
+  "schema": "TILEPLACE_V2_PREREGISTRATION_V1",
+  "method_version": "TilePlace-V4 oracle no-good frontier",
+  "status": "sealed_before_v4_candidate_closure_execution",
+  "sealed_utc": "2026-09-03",
+  "parent_preregistration": {
+    "path": "projects/tileplace/experiments/tileplace_v3_preregistration_2026-09-03.json",
+    "sha256": "5659f3bbc6bab1787e44ab691c34fb74cbf581956eb0372ac720da573841aa0e",
+    "inherited_without_change": [
+      "development_cases",
+      "held_out_cases",
+      "source_and_architecture_hashes",
+      "oracle_binary",
+      "seeds",
+      "channel_widths",
+      "acceptance_rule",
+      "publication_gate",
+      "routed_timing_feedback_definition"
+    ]
+  },
+  "diagnostic_basis": {
+    "development_evidence_only": "On diffeq, V3 routed_timing_weight 2, 4, and 8 produced identical placements and outcomes: CPD 6.59759 ns and routed wirelength 9018 versus baseline 9103.",
+    "identified_failure_mode": "After the first acceptance, every weight repeatedly proposed the same rejected surrogate-best atomic transactions and stopped after eight closures, leaving sixteen preregistered closure slots unused.",
+    "held_out_results_observed": false
+  },
+  "implementation": {
+    "epochs": 4,
+    "colors_per_epoch": 4,
+    "page_width": 2,
+    "page_height": 2,
+    "candidate_limit": 64,
+    "chain_candidate_limit": 16,
+    "transaction_kinds": ["move", "swap", "chain2", "chain3", "macro_swap"],
+    "focus_policy": "Initiating units are clustered blocks on the 20 worst current routed setup paths; helper units may participate in atomic swaps/chains.",
+    "feedback_refresh": "Refresh routed top-path timing and routed congestion after every accepted closure.",
+    "no_good_policy": "When an atomic transaction is rejected by the native oracle, blacklist its deterministic transaction ID for the current incumbent. Select the next-ranked non-blacklisted transaction for that unit on later color visits. Clear all no-goods only after an accepted placement change.",
+    "termination": "Stop at four epochs, 24 closures, exhausted candidate frontier, or a frontier round that adds no no-good and accepts no transaction.",
+    "development_configs": [
+      {
+        "timing_weight": 2,
+        "routed_timing_weight": 2,
+        "congestion_weight": 1,
+        "critical_distance_guard_q": 0,
+        "timing_feedback_paths": 20
+      }
+    ],
+    "configuration_rationale": "Fix routed_timing_weight 2, the least aggressive value, because all three V3 values were exactly tied on the observed development case.",
+    "development_gate": "Run the fixed configuration on all four inherited development cases. Proceed to held-out only if development CPD geometric mean improves and no case violates the wirelength cap.",
+    "held_out_policy": "No further method or parameter changes after the four-case development gate; run the fixed configuration once on each inherited held-out case."
+  },
+  "oracle": {
+    "vpr_sha256": "a90dc1b3380ebda705e85f176db0cc3d6be1b71ab9ee887db819febc8b62bafc",
+    "maximum_route_analysis_closures_per_case_configuration": 24,
+    "acceptance": "Native legal closure, routed wirelength at most 100.5% of CPU baseline, and incumbent CPD improvement of at least 0.001 ns or exactly equal CPD with strictly lower routed wirelength.",
+    "rejection": "Rollback; deterministically bisect multi-transaction batches; add a rejected atomic transaction to the current-incumbent no-good set."
+  },
+  "publication_gate": {
+    "all_six_held_out_native_legal_and_deterministic": true,
+    "cpd_geomean_ratio_maximum": 0.99,
+    "minimum_strict_cpd_improvements": 3,
+    "wirelength_geomean_ratio_maximum": 1.0025,
+    "per_case_wirelength_ratio_maximum": 1.005
+  },
+  "prohibitions": [
+    "Do not change inherited cases, inputs, hashes, seeds, channel widths, or oracle binary.",
+    "Do not tune from held-out outcomes.",
+    "Do not overwrite prior TilePlace evidence."
+  ]
+}

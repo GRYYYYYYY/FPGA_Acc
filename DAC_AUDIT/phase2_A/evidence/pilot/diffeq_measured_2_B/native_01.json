@@ -1,0 +1,103 @@
+{
+  "channel_width": 200,
+  "command": [
+    "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+    "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+    "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/diffeq.blif",
+    "--net_file",
+    "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/diffeq_measured_2_B/work/trial_02/vpr/vpr_input.net",
+    "--place_file",
+    "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/diffeq_measured_2_B/work/trial_02/vpr/vpr_input.place",
+    "--route_file",
+    "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/diffeq_measured_2_B/work/trial_02/vpr/vpr_output.route",
+    "--seed",
+    "1",
+    "--num_workers",
+    "1",
+    "--route_chan_width",
+    "200",
+    "--echo_file",
+    "on",
+    "--read_rr_graph",
+    "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/diffeq_seed1/rr_graph.xml",
+    "--route",
+    "--analysis"
+  ],
+  "cpd_ns": 6.59759,
+  "inputs": {
+    "architecture": {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+      "sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179"
+    },
+    "circuit": {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/diffeq.blif",
+      "sha256": "507978af7a0c09efa0baada34e55a7d3e635619b6dd9a18a7fa47aed7903ecf7"
+    },
+    "golden_place": {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/diffeq_measured_2_B/work/trial_02/candidate.place",
+      "sha256": "0e3759850cfe5446b99fbc3967bcf3af25bafaf33b467e98397b174b5267a4dd"
+    },
+    "netlist": {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/diffeq_seed1_cw200/diffeq.net",
+      "sha256": "1ceb244ed8861bbeaecdcc961ca48c131ce5182dfc279a074854ab5fcbaab043"
+    },
+    "vpr": {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+      "sha256": "a90dc1b3380ebda705e85f176db0cc3d6be1b71ab9ee887db819febc8b62bafc"
+    }
+  },
+  "legal": true,
+  "max_router_iterations": null,
+  "max_rss_mib": 74.3,
+  "outputs": {
+    "native_macros": {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/diffeq_measured_2_B/work/trial_02/vpr/place_macros.echo",
+      "sha256": "0efcfecb18fd7b26f5fff38f8e7afb45d3da42b7febc428ec4b045c63b7c93ee"
+    },
+    "post_routing_netlist": {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/diffeq_measured_2_B/work/trial_02/vpr/vpr_input.net.post_routing",
+      "sha256": "b38aacd0d7110a3ccd4cfeb89fbb4083294947320808054f8f6227fe56c252c0"
+    },
+    "route": {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/diffeq_measured_2_B/work/trial_02/vpr/vpr_output.route",
+      "sha256": "3cd99e736b1189063cbaaf7e27f2db7c0af554ac241f891e6b89f472c20a6b74"
+    },
+    "stderr": {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/diffeq_measured_2_B/work/trial_02/vpr/vpr.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/diffeq_measured_2_B/work/trial_02/vpr/vpr.stdout.log",
+      "sha256": "bae496429e2f36ca445f2bb59aa7e821981350c4375838849a959190b2fe0a4f"
+    },
+    "timing_setup_report": {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/diffeq_measured_2_B/work/trial_02/vpr/report_timing.setup.rpt",
+      "sha256": "6cf6f8243abc61427f4b298055ad38c149277328ead3cbc395172137d25e6df6"
+    },
+    "vpr_netlist_copy": {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/diffeq_measured_2_B/work/trial_02/vpr/vpr_input.net",
+      "sha256": "1ceb244ed8861bbeaecdcc961ca48c131ce5182dfc279a074854ab5fcbaab043"
+    },
+    "vpr_place_copy": {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/diffeq_measured_2_B/work/trial_02/vpr/vpr_input.place",
+      "sha256": "bac8528d89c757973741807d07b25e34f34d3dd13b372a2e95e8b7cf05cca39f"
+    }
+  },
+  "placement_validation": {
+    "blocks": 202,
+    "legal": true,
+    "macros": 0,
+    "occupied_sites": 202,
+    "placement_sha256": "bac8528d89c757973741807d07b25e34f34d3dd13b372a2e95e8b7cf05cca39f",
+    "schema": "TILEPLACE_CPU_GOLDEN_V1"
+  },
+  "returncode": 0,
+  "routing_iterations": 13,
+  "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+  "seed": 1,
+  "status": "pass",
+  "vpr_revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+  "vpr_version": "9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+  "wall_s": 1.1844384334981441,
+  "wirelength": 9114
+}

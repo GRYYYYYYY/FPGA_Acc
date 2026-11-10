@@ -1,0 +1,21 @@
+{
+  "full_success_trace_equal": true,
+  "implementation_sha256": "2fa6e2324a971d8489bba12d49115f91d0a56874c0ee5200224d72e4f8a9f689",
+  "matrix_sha256": "ca096a1f9729d4d3779785af476fbbb816840e099bb2555235ab85c65c24d622",
+  "protocol_sha256": "bf8af8b87a53ecc47c44dec916ea0f861757618182728304c8fa8a53c6c50504",
+  "reference_report_sha256": "30c7748cea11cba7df56c3a252c952477893ae7ea3d9cc2cbbfa65452f43ce99",
+  "reports": [
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_feedback_rollback_validation_2026-09-29/diffeq/run_00/report.json",
+      "sha256": "137f60d316fbd6055085e03cb62eab656866e8bc5cb2923a804bd96ea37c1917"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_feedback_rollback_validation_2026-09-29/diffeq/run_01/report.json",
+      "sha256": "b2dda4e7a08067d899545a09d91d54e696e23b7b486c62834cec488baeada2ee"
+    }
+  ],
+  "schema": "TILEPLACE_FEEDBACK_ROLLBACK_REGRESSION_AUDIT_V1",
+  "scope": "Two native diffeq success-path regressions; partial-feedback failure recovery tested by unit injection, not native fault injection",
+  "status": "pass",
+  "verified_native_trials": 32
+}

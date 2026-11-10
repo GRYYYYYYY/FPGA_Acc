@@ -1,0 +1,103 @@
+{
+  "channel_width": 200,
+  "command": [
+    "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+    "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+    "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/spla.blif",
+    "--net_file",
+    "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/spla_warmup_0_B/work/trial_22/vpr/vpr_input.net",
+    "--place_file",
+    "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/spla_warmup_0_B/work/trial_22/vpr/vpr_input.place",
+    "--route_file",
+    "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/spla_warmup_0_B/work/trial_22/vpr/vpr_output.route",
+    "--seed",
+    "1",
+    "--num_workers",
+    "1",
+    "--route_chan_width",
+    "200",
+    "--echo_file",
+    "on",
+    "--read_rr_graph",
+    "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/spla/baseline/rr_graph.xml",
+    "--route",
+    "--analysis"
+  ],
+  "cpd_ns": 7.65287,
+  "inputs": {
+    "architecture": {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+      "sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179"
+    },
+    "circuit": {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/spla.blif",
+      "sha256": "f92d5b5cbd7c9daefefddbf6488ea97d5ce9c018d542f9c7c2c54bd2b478d9f1"
+    },
+    "golden_place": {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/spla_warmup_0_B/work/trial_22/candidate.place",
+      "sha256": "c6e43737b3e6b248c77235a3874023fac804b32368a3745d0ad26ca43d668647"
+    },
+    "netlist": {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/spla/baseline/spla.net",
+      "sha256": "318edd3caac74b266d84eb86a6033e340283255a234cfd5c15cb99dd7a4367da"
+    },
+    "vpr": {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+      "sha256": "a90dc1b3380ebda705e85f176db0cc3d6be1b71ab9ee887db819febc8b62bafc"
+    }
+  },
+  "legal": true,
+  "max_router_iterations": null,
+  "max_rss_mib": 171.7,
+  "outputs": {
+    "native_macros": {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/spla_warmup_0_B/work/trial_22/vpr/place_macros.echo",
+      "sha256": "0efcfecb18fd7b26f5fff38f8e7afb45d3da42b7febc428ec4b045c63b7c93ee"
+    },
+    "post_routing_netlist": {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/spla_warmup_0_B/work/trial_22/vpr/vpr_input.net.post_routing",
+      "sha256": "39e70679134d4b66466a2d715189f58ac719c09f510f55fcd8d67a44c5a5858e"
+    },
+    "route": {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/spla_warmup_0_B/work/trial_22/vpr/vpr_output.route",
+      "sha256": "e7caf1f7bff2c061fc2ccca15ff9a5caa093af2280517e0b39da717020e8a05c"
+    },
+    "stderr": {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/spla_warmup_0_B/work/trial_22/vpr/vpr.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/spla_warmup_0_B/work/trial_22/vpr/vpr.stdout.log",
+      "sha256": "94a2452df06322972be29d636420c49cacd9bccbcdfb72600dc7b74ba73ccdde"
+    },
+    "timing_setup_report": {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/spla_warmup_0_B/work/trial_22/vpr/report_timing.setup.rpt",
+      "sha256": "e8991c305b875a716e4f49daa8f2f73d070786d77b31d2c1881294b89e8759df"
+    },
+    "vpr_netlist_copy": {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/spla_warmup_0_B/work/trial_22/vpr/vpr_input.net",
+      "sha256": "318edd3caac74b266d84eb86a6033e340283255a234cfd5c15cb99dd7a4367da"
+    },
+    "vpr_place_copy": {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/spla_warmup_0_B/work/trial_22/vpr/vpr_input.place",
+      "sha256": "fb58cc85c8ee8b0c70d65ef47d4bb0b2d393976d5d6c4c6e1451918448df34e9"
+    }
+  },
+  "placement_validation": {
+    "blocks": 345,
+    "legal": true,
+    "macros": 0,
+    "occupied_sites": 345,
+    "placement_sha256": "fb58cc85c8ee8b0c70d65ef47d4bb0b2d393976d5d6c4c6e1451918448df34e9",
+    "schema": "TILEPLACE_CPU_GOLDEN_V1"
+  },
+  "returncode": 0,
+  "routing_iterations": 15,
+  "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+  "seed": 1,
+  "status": "pass",
+  "vpr_revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+  "vpr_version": "9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+  "wall_s": 2.6401890628039837,
+  "wirelength": 36580
+}

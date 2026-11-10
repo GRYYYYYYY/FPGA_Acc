@@ -1,5 +1,16 @@
 {
   "accepted_audit_commit": "ec1c5634ea9cbb6f8baf55e94c75cff988bb7b16",
+  "baseline_csv_identity_note": "For B1 timing rows, implementation_sha256 identifies baseline_smoke.py; the native VPR binary SHA and reported revision are independently bound in the native report.",
+  "edgewalk_reference": {
+    "archive_capture": "Engine reconstructed from optimization delta and verified against exact pre-optimization digest; remaining sources copied with digest verification",
+    "bytes": 27942,
+    "function_AST_identical_except_name": true,
+    "historical_source_commit": "unknown",
+    "implementation_sha256": "dc0d7b31b411a03057597d4f215f46cfb4f29a7a2fb1a265185ca9d321996f6d",
+    "matches_archive": true,
+    "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/implementation_sources/dc0d7b31b411a03057597d4f215f46cfb4f29a7a2fb1a265185ca9d321996f6d/tileplace_v2.py",
+    "sha256": "143a818d6d5e42dd98385e34e227f50f515950c626f1c12e8f1d9ebdc8b927c7"
+  },
   "files": [
     {
       "bytes": 5376,
@@ -71,7 +82,8 @@
       "rehashed_this_round": true,
       "role": "--implementation-manifest",
       "sha256": "31d311c9be7c7edd7e5784fe528e270dbc1694c35c1cfd8d7765ccbc08348a78",
-      "uploaded": false
+      "uploaded": true,
+      "uploaded_relative_path": "implementation.json"
     },
     {
       "bytes": 4191,
@@ -391,7 +403,8 @@
       "rehashed_this_round": true,
       "role": "source",
       "sha256": "57494434f43a779921d8d60145931fe162d3f04e623a1bda76283d916bfcf455",
-      "uploaded": false
+      "uploaded": true,
+      "uploaded_relative_path": "source/tileplace_v2.py"
     },
     {
       "bytes": 10129,
@@ -399,7 +412,8 @@
       "rehashed_this_round": true,
       "role": "source",
       "sha256": "012cc3570765f2abd420c5144ee066e1161c8338efd67e2b6cc592c06940da34",
-      "uploaded": false
+      "uploaded": true,
+      "uploaded_relative_path": "source/run_vpr_closure.py"
     },
     {
       "bytes": 6569,
@@ -407,7 +421,8 @@
       "rehashed_this_round": true,
       "role": "source",
       "sha256": "b84785c6f59297bbfb88685bfa0a735395b165d4f7180840395b5a219589e24d",
-      "uploaded": false
+      "uploaded": true,
+      "uploaded_relative_path": "source/run_v4_timing_protocol.py"
     },
     {
       "bytes": 5365,
@@ -415,7 +430,8 @@
       "rehashed_this_round": true,
       "role": "source",
       "sha256": "ff830e3d30bfaf3d48517a8c547f64d76ee76e77efb8225ee0bad64689639627",
-      "uploaded": false
+      "uploaded": true,
+      "uploaded_relative_path": "source/prepare_timing_feedback.py"
     },
     {
       "bytes": 27099,
@@ -423,7 +439,8 @@
       "rehashed_this_round": true,
       "role": "source",
       "sha256": "4c9942d35fd00b5f038f93da13094a46822b731da6855f431e7ef91cb640271b",
-      "uploaded": false
+      "uploaded": true,
+      "uploaded_relative_path": "source/run_tileplace_v2.py"
     },
     {
       "bytes": 53642,
@@ -431,7 +448,8 @@
       "rehashed_this_round": true,
       "role": "source",
       "sha256": "355535e49a0ec47b485e8c374e34fa35ee323fbf406b731b920ca40ab582d364",
-      "uploaded": false
+      "uploaded": true,
+      "uploaded_relative_path": "source/tileplace_vpr.py"
     },
     {
       "bytes": 1747,
@@ -439,7 +457,8 @@
       "rehashed_this_round": true,
       "role": "source",
       "sha256": "4952b986d2fd1d22261c3045e5fda54462b4dfd1af5c84c2d7831c06c579af43",
-      "uploaded": false
+      "uploaded": true,
+      "uploaded_relative_path": "source/tileplace_provenance.py"
     },
     {
       "bytes": 5265,
@@ -447,7 +466,8 @@
       "rehashed_this_round": true,
       "role": "source",
       "sha256": "eaf3198dadf5d7c860a42b0134872f3553028ea74d82b9a46294e48af58c3353",
-      "uploaded": false
+      "uploaded": true,
+      "uploaded_relative_path": "source/prepare_route_feedback.py"
     }
   ],
   "historical_implementation": {
@@ -499,6 +519,26 @@
     ]
   },
   "historical_source_commit": "unknown",
+  "measurement_drivers": [
+    {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_DAC_AUDIT_20261110/DAC_AUDIT/phase2_A/run_pilot.py",
+      "relative_path": "run_pilot.py",
+      "sha256": "464a51498527ecceb7556ae3621f471e9d9eebd995b1eb03f767123917b77231",
+      "source_commit": "027f0107ee623441689621d3283fa1c812b2b69f"
+    },
+    {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_DAC_AUDIT_20261110/DAC_AUDIT/phase2_A/baseline_smoke.py",
+      "relative_path": "baseline_smoke.py",
+      "sha256": "446cb56f2f07428231e135d0d564d3a7c40794854159bdc412c51416327e75aa",
+      "source_commit": "027f0107ee623441689621d3283fa1c812b2b69f"
+    },
+    {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_DAC_AUDIT_20261110/DAC_AUDIT/phase2_A/test_pressure_switch.py",
+      "relative_path": "test_pressure_switch.py",
+      "sha256": "119a9ab7aef055a4de187be400b7b468ac7df45a3b3096ac69d38a62d0125387",
+      "source_commit": "027f0107ee623441689621d3283fa1c812b2b69f"
+    }
+  ],
   "modifications": "instrumentation.patch; isolated source only; per-edge reference copied verbatim from dc0d7b archive",
   "new_implementation": {
     "parser": {
@@ -548,5 +588,21 @@
       }
     ]
   },
+  "new_source_commit": "027f0107ee623441689621d3283fa1c812b2b69f",
+  "protocol_uploaded_field_note": "PILOT_PROTOCOL records preparation-time upload state; this manifest records final package locations.",
+  "runtime_executables": [
+    {
+      "bytes": 5937672,
+      "path": "/usr/bin/python3.10",
+      "rehashed_this_round": true,
+      "sha256": "94df6ff4b32aafdba90e38c0aed70880fe44ee4cf88ecdf411641158f120c1af"
+    },
+    {
+      "bytes": 22912,
+      "path": "/usr/bin/taskset",
+      "rehashed_this_round": true,
+      "sha256": "075b3368cae9db1a1fc1bca1de3e0f45ffd428d0d3cac0e34274817fe035fbfa"
+    }
+  ],
   "source_baseline_commit": "b32afa4303a5574dde7171b4ae6e3d07aeb8a06c"
 }

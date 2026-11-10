@@ -1,0 +1,86 @@
+{
+  "checks": [
+    {
+      "run_id": "diffeq_warmup_0_A",
+      "actual_final_sha256": "af5a34eb05456b5a37a3889526000141d75e14c64516bc0782c5eea2fd168310",
+      "matches_report": true,
+      "matches_native_input_candidate": true,
+      "matches_native_placement_rows": true,
+      "rows_compared": 202,
+      "native_legal": true,
+      "native_copy_sha256": "cd3bc1ace1b02d5b75775e5272a2617a9ee3ccb4acffb0c1f0e8e99a0290d84b"
+    },
+    {
+      "run_id": "diffeq_warmup_0_B",
+      "actual_final_sha256": "af5a34eb05456b5a37a3889526000141d75e14c64516bc0782c5eea2fd168310",
+      "matches_report": true,
+      "matches_native_input_candidate": true,
+      "matches_native_placement_rows": true,
+      "rows_compared": 202,
+      "native_legal": true,
+      "native_copy_sha256": "4d9d3e979efb6e1425909b0547311100eaf39294c14f0b9197413bc8ede2caed"
+    },
+    {
+      "run_id": "diffeq_measured_1_A",
+      "actual_final_sha256": "af5a34eb05456b5a37a3889526000141d75e14c64516bc0782c5eea2fd168310",
+      "matches_report": true,
+      "matches_native_input_candidate": true,
+      "matches_native_placement_rows": true,
+      "rows_compared": 202,
+      "native_legal": true,
+      "native_copy_sha256": "35054325aaa8f344064cf4bc2bf3c28526b8185719e3d4c36e461e09ef9ff94a"
+    },
+    {
+      "run_id": "diffeq_measured_1_B",
+      "actual_final_sha256": "af5a34eb05456b5a37a3889526000141d75e14c64516bc0782c5eea2fd168310",
+      "matches_report": true,
+      "matches_native_input_candidate": true,
+      "matches_native_placement_rows": true,
+      "rows_compared": 202,
+      "native_legal": true,
+      "native_copy_sha256": "ec7cda8c15d914be9d314f1072f9d8db1f2595ffdedfdeec4ed03dc527ab4a16"
+    },
+    {
+      "run_id": "diffeq_measured_2_B",
+      "actual_final_sha256": "af5a34eb05456b5a37a3889526000141d75e14c64516bc0782c5eea2fd168310",
+      "matches_report": true,
+      "matches_native_input_candidate": true,
+      "matches_native_placement_rows": true,
+      "rows_compared": 202,
+      "native_legal": true,
+      "native_copy_sha256": "eface1fc7c0ff9548f4b5efa7e89971b479c6230b0d90f51306ab64574a4cc48"
+    },
+    {
+      "run_id": "diffeq_measured_2_A",
+      "actual_final_sha256": "af5a34eb05456b5a37a3889526000141d75e14c64516bc0782c5eea2fd168310",
+      "matches_report": true,
+      "matches_native_input_candidate": true,
+      "matches_native_placement_rows": true,
+      "rows_compared": 202,
+      "native_legal": true,
+      "native_copy_sha256": "105bfce067a941ee11e8a26107484e609afb2c62f1b5276f95027b76066087bf"
+    },
+    {
+      "run_id": "diffeq_measured_3_A",
+      "actual_final_sha256": "af5a34eb05456b5a37a3889526000141d75e14c64516bc0782c5eea2fd168310",
+      "matches_report": true,
+      "matches_native_input_candidate": true,
+      "matches_native_placement_rows": true,
+      "rows_compared": 202,
+      "native_legal": true,
+      "native_copy_sha256": "05cfd1ee1ea399ae442854788b1e410e60cc8616d5a6087984758fbc474ce97b"
+    },
+    {
+      "run_id": "diffeq_measured_3_B",
+      "actual_final_sha256": "af5a34eb05456b5a37a3889526000141d75e14c64516bc0782c5eea2fd168310",
+      "matches_report": true,
+      "matches_native_input_candidate": true,
+      "matches_native_placement_rows": true,
+      "rows_compared": 202,
+      "native_legal": true,
+      "native_copy_sha256": "ebd2c50de6a7a0fbb5d51bac4e37d5336cc426a9a9d5f02da02ae052f691186f"
+    }
+  ],
+  "initial_raw_byte_comparison": "different: VPR rewrites Netlist_File to each run path, adds column-divider comment and tab padding; no placement field difference",
+  "comparison": "All parsed rows including name, x,y,subtile,layer,block_number exact; final bytes equal recorded native golden input SHA"
+}

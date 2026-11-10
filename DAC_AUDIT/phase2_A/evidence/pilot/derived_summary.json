@@ -1,0 +1,76 @@
+{
+  "baseline_smoke_s": 2.017749213,
+  "cases": [
+    {
+      "A_count": 3,
+      "A_median_s": 71.383644544,
+      "A_proposal_fraction_mean": 0.7056387844073672,
+      "A_proposal_median_s": 50.301286805421114,
+      "B_count": 3,
+      "B_median_s": 103.90691576,
+      "B_over_A": 1.4556123664427507,
+      "B_proposal_fraction_mean": 0.7973066162803519,
+      "B_proposal_median_s": 83.11524586379528,
+      "case": "diffeq",
+      "cpd_ns": 6.59759,
+      "exact_all": true,
+      "exposure": "development",
+      "paired_ratios": [
+        1.4447041905382776,
+        1.464464286781597,
+        1.4564312069978005
+      ],
+      "wl": 9098
+    },
+    {
+      "A_count": 3,
+      "A_median_s": 379.336520282,
+      "A_proposal_fraction_mean": 0.568300230831965,
+      "A_proposal_median_s": 214.9239881299436,
+      "B_count": 3,
+      "B_median_s": 645.804936393,
+      "B_over_A": 1.7024591671608802,
+      "B_proposal_fraction_mean": 0.7394819425358929,
+      "B_proposal_median_s": 474.3462853580713,
+      "case": "clma",
+      "cpd_ns": 11.5929,
+      "exact_all": true,
+      "exposure": "development",
+      "paired_ratios": [
+        1.604531957357443,
+        1.7555959386949684,
+        1.7024591671608802
+      ],
+      "wl": 79926
+    },
+    {
+      "A_count": 3,
+      "A_median_s": 238.922894983,
+      "A_proposal_fraction_mean": 0.6735285057496438,
+      "A_proposal_median_s": 161.26464888080955,
+      "B_count": 3,
+      "B_median_s": 395.851177837,
+      "B_over_A": 1.6568155926001396,
+      "B_proposal_fraction_mean": 0.8056807485783675,
+      "B_proposal_median_s": 319.4092507250607,
+      "case": "spla",
+      "cpd_ns": 7.64733,
+      "exact_all": true,
+      "exposure": "development",
+      "paired_ratios": [
+        1.6568155926001396,
+        1.661147916414277,
+        1.6769916768087199
+      ],
+      "wl": 36373
+    }
+  ],
+  "measured_s": 5512.947121253999,
+  "offline_audit_s": 0.2066824771463871,
+  "status_counts": {
+    "completed": 25
+  },
+  "supervisor_elapsed_s": 7342.769502904266,
+  "total_process_wall_s": 7342.197440957,
+  "warmup_s": 1827.23257049
+}

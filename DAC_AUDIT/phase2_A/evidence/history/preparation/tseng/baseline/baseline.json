@@ -1,0 +1,80 @@
+{
+  "cpd_ns": 6.64179,
+  "inputs": [
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+      "sha256": "a90dc1b3380ebda705e85f176db0cc3d6be1b71ab9ee887db819febc8b62bafc"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+      "sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179"
+    },
+    {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/tseng.blif",
+      "sha256": "1943b838df8ad3a1aa45fd0b201d0a21764870e57034c5c4f924f23a7c91523c"
+    }
+  ],
+  "legal": true,
+  "metrics": {
+    "cpd_ns": 6.64179,
+    "max_rss_mib": 61.7,
+    "routing_iterations": 12,
+    "stage_times_s": {
+      "analytic_placement": null,
+      "initial_placement": 0.0,
+      "placement": 0.58,
+      "placement_quench": 0.01,
+      "routing": 0.1,
+      "timing_analysis": 0.185384,
+      "vpr_entire_flow": 2.97
+    },
+    "wirelength": 5260
+  },
+  "outputs": {
+    "command": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/tseng/baseline/command.json",
+      "sha256": "a6ebfd168729489035558fe9a50c5d6ecf8dd8c8340b71d676232120c886e2e3"
+    },
+    "native_macros": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/tseng/baseline/place_macros.echo",
+      "sha256": "0efcfecb18fd7b26f5fff38f8e7afb45d3da42b7febc428ec4b045c63b7c93ee"
+    },
+    "netlist": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/tseng/baseline/tseng.net",
+      "sha256": "e0b1f26cdc9006f8a511a85831aebac6be3052d9b76812b7c6b6d7cfae854939"
+    },
+    "place": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/tseng/baseline/tseng.place",
+      "sha256": "4a5ddde79b84734edcd841eca4a6827219e6bcfc8457df7be91d820c168009d9"
+    },
+    "process": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/tseng/baseline/process.json",
+      "sha256": "52e029e870f82499493b2fba9637fbff74e7008257c910ec89ae11d98a75ef8b"
+    },
+    "route": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/tseng/baseline/tseng.route",
+      "sha256": "690fdd0b423c1a88f5a414d99b46cd0b2a4aefaeb600c1bea08e1ae2c70ca6ec"
+    },
+    "rr_graph": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/tseng/baseline/rr_graph.xml",
+      "sha256": "cbcf784b9d3fef1efdc4d3527320d9fca5c73e4175cb162c167d1f0fc39ef483"
+    },
+    "stderr": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/tseng/baseline/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/tseng/baseline/stdout.log",
+      "sha256": "a9ad2428b3dccbc55d99e1b2616ee63fe1d44b56ab73939ecd4754cf53c70b83"
+    },
+    "timing_setup_report": {
+      "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/tseng/baseline/report_timing.setup.rpt",
+      "sha256": "0a3dae4214876409fbf2d2ac58e4092cfe680b3417b8d7eabfcb6cddcdb4d371"
+    }
+  },
+  "returncode": 0,
+  "schema": "TILEPLACE_NEW_COHORT_NATIVE_BASELINE_V1",
+  "scope": "Native baseline only; no refinement outcome",
+  "status": "pass",
+  "wirelength": 5260
+}

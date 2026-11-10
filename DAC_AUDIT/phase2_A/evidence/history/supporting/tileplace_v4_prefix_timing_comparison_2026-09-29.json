@@ -1,0 +1,43 @@
+{
+  "all_full_traces_and_feedback_equal": true,
+  "baseline": {
+    "implementation_sha256": "dc0d7b31b411a03057597d4f215f46cfb4f29a7a2fb1a265185ca9d321996f6d",
+    "median_process_wall_s": 88.74074210971594,
+    "median_proposal_wall_s": 66.76797059364617,
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_v4_generic_timing_summary_2026-09-29.json",
+    "sha256": "cb221c496293f1f91fca9740f7f8b68b61c5684e633ead8f4dd10f3f2bce30d9"
+  },
+  "case": "diffeq",
+  "final": {
+    "cpd_ns": 6.59759,
+    "legal": true,
+    "wirelength": 9098
+  },
+  "final_place_sha256": "af5a34eb05456b5a37a3889526000141d75e14c64516bc0782c5eea2fd168310",
+  "limitations": [
+    "Single previously observed small development case; shared host; warm cache",
+    "Only implementation scoring cost changes; all sample decisions and feedback must match baseline",
+    "Paired runtime ratio is CPU prototype evidence, not FPGA acceleration or broad throughput",
+    "Historical mixed-parser QoR cohort remains unchanged",
+    "Measurements sequential, not randomized/interleaved; natural cache on shared host",
+    "Complete process boundary excludes precomputed inputs and baseline generation"
+  ],
+  "optimized": {
+    "implementation_sha256": "0f8a684ae7dc745fceb257d62a71bd8f34f61bf41db5cc515dfb641b6557d2a3",
+    "median_process_wall_s": 69.04422548040748,
+    "median_proposal_wall_s": 47.72387492284179,
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_v4_prefix_timing_diffeq_2026-09-29/summary.json",
+    "process_wall_samples_s": [
+      69.24346699938178,
+      68.67366019450128,
+      69.04422548040748
+    ],
+    "sample_cv_pct": 0.41915680879779976,
+    "sha256": "c64131706c7d42bc783b1ada567da683f54f3248fbb6dfacd901a158d08a5450"
+  },
+  "process_median_ratio": 1.2852739167144065,
+  "proposal_median_ratio": 1.399047556418966,
+  "protocol_sha256": "a74f8a943c876bccf385e169d67b253e39d0a3bae825146b57b09283196ade89",
+  "schema": "TILEPLACE_V4_PREFIX_PAIRED_TIMING_V1",
+  "status": "pass"
+}

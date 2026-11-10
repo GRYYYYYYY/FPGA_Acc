@@ -1,0 +1,70 @@
+{
+  "historical_cases": 13,
+  "historical_failures": [
+    "adder",
+    "ex1010",
+    "s298",
+    "s38417"
+  ],
+  "historical_implementation": [
+    "2fa6e2324a971d8489bba12d49115f91d0a56874c0ee5200224d72e4f8a9f689"
+  ],
+  "historical_native_trials": 404,
+  "historical_success_subset_geomean_change_pct": {
+    "cpd_ns": -1.9442463124749731,
+    "wirelength": -0.21317236843360066
+  },
+  "historical_successes": 9,
+  "limits": "Verifies compact evidence consistency, not an independent native rerun. Raw routes, inputs, and binaries remain local.",
+  "observed_process_wall_sum_s": 7342.197440957,
+  "pilot": [
+    {
+      "case": "diffeq",
+      "cross_arm_exact": true,
+      "measured_A_s": [
+        71.430711232,
+        71.383644544,
+        71.343510947
+      ],
+      "measured_B_s": [
+        103.19624785,
+        104.538798095,
+        103.90691576
+      ],
+      "median_B_over_A": 1.4556123664427507
+    },
+    {
+      "case": "clma",
+      "cross_arm_exact": true,
+      "measured_A_s": [
+        390.906359366,
+        377.489272872,
+        379.336520282
+      ],
+      "measured_B_s": [
+        627.221745937,
+        662.718634355,
+        645.804936393
+      ],
+      "median_B_over_A": 1.7024591671608802
+    },
+    {
+      "case": "spla",
+      "cross_arm_exact": true,
+      "measured_A_s": [
+        238.922894983,
+        235.467371821,
+        239.926874058
+      ],
+      "measured_B_s": [
+        395.851177837,
+        391.146134084,
+        402.355370838
+      ],
+      "median_B_over_A": 1.6568155926001396
+    }
+  ],
+  "status_counts": {
+    "completed": 25
+  }
+}

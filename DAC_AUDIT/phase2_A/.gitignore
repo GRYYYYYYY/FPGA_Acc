@@ -1,0 +1,3 @@
+# Only the compact failure/error logs explicitly selected for this evidence package.
+!evidence/history/failures/**/*.log
+!evidence/pilot/**/*.log

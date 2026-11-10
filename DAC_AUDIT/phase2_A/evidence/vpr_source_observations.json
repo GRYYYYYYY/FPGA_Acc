@@ -1,0 +1,34 @@
+[
+  {
+    "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vpr/src/base/read_options.cpp",
+    "sha256": "b3c76ade5e0ac15710652b398e9b54eb713e3ce839d194bfd5a91fe38ce014cb",
+    "source_revision_reported": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+    "line_start": 1630,
+    "line_end": 1640,
+    "observation": "registers --read_initial_place_file"
+  },
+  {
+    "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vpr/src/place/initial_placement.cpp",
+    "sha256": "76f6e17fc4b86e11a7e98f4a6fe865ad8be7f2780bb70feed78eed689bc1d277",
+    "source_revision_reported": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+    "line_start": 1184,
+    "line_end": 1215,
+    "observation": "reads supplied placement then loads movable blocks and checks legality"
+  },
+  {
+    "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vpr/src/place/placer.cpp",
+    "sha256": "faf415cf539b6182a455f0c13a669816becc429ef0f8c80c94419024633be018",
+    "source_revision_reported": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+    "line_start": 104,
+    "line_end": 145,
+    "observation": "initializes costs and constructs new PlacementAnnealer"
+  },
+  {
+    "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vpr/src/place/place_timing_update.cpp",
+    "sha256": "55733aceeb98e1def7b9a2c3ff96ff8f0d63c68c08ccaf7b210471837693f10d",
+    "source_revision_reported": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+    "line_start": 237,
+    "line_end": 280,
+    "observation": "updates changed criticalities and consistent summation order"
+  }
+]

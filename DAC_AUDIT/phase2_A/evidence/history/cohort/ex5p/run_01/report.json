@@ -1,0 +1,4729 @@
+{
+  "accepted_transactions": 13,
+  "baseline": {
+    "cpd_ns": 5.8858,
+    "legal": true,
+    "returncode": 0,
+    "schema": "TILEPLACE_NEW_COHORT_NATIVE_BASELINE_V1",
+    "status": "pass",
+    "wirelength": 9857
+  },
+  "closure_budget": 24,
+  "closure_calls": 24,
+  "config": {
+    "candidate_limit": 64,
+    "chain_candidate_limit": 16,
+    "congestion_weight": 1,
+    "critical_distance_guard_q": 0,
+    "critical_distance_slack": 0,
+    "page_height": 2,
+    "page_width": 2,
+    "routed_timing_weight": 2,
+    "timing_weight": 2
+  },
+  "epochs_completed": 2,
+  "final": {
+    "cpd_ns": 5.61423,
+    "legal": true,
+    "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_21/vpr_native_closure.json",
+    "report_sha256": "5874309f45299471194f6be93366ec648f860c61b2d11aa4c2fd45306bca73ea",
+    "returncode": 0,
+    "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+    "status": "pass",
+    "wirelength": 9868
+  },
+  "final_rejected_singletons": 2,
+  "initial_route_feedback": {
+    "edge_count": 240,
+    "route_sha256": "0db7f32e69b1d73e698a3e1753ae1d689100dfe0422cb1064fc1efb0620331c0",
+    "rr_graph_sha256": "50be5bcb318c60923ef60aae2a5619c2535657070cbdc521878d140d176d5768"
+  },
+  "initial_timing_feedback": {
+    "edge_count": 68,
+    "focus_blocks": 62,
+    "parsed_paths": 20,
+    "timing_report_sha256": "ac9c4ed9b41948ec89904a3720c34a3393a84bb2dc356668b7e90bc4a830767f"
+  },
+  "input_place": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/baseline/ex5p.place",
+    "sha256": "26d529055cf05083c1dfeb247847989ce159f906eee563383d8abf9cd23a862c"
+  },
+  "output_place": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/final.place",
+    "sha256": "b30bc9c47b239310b1bd2648c4a10df325ac9ffec24e80f5442f2decb4a64b73"
+  },
+  "phases": [
+    {
+      "accepted": 6,
+      "accepted_kinds": {
+        "chain3": 2,
+        "move": 4
+      },
+      "closure_calls_after": 1,
+      "closure_calls_before": 0,
+      "color": 0,
+      "eligible_units": 23,
+      "epoch": 0,
+      "forbidden_transactions": 0,
+      "oracle_accepted_transactions": 6,
+      "proposals": 19,
+      "rejected_conflicts": 13
+    },
+    {
+      "accepted": 2,
+      "accepted_kinds": {
+        "chain3": 1,
+        "move": 1
+      },
+      "closure_calls_after": 4,
+      "closure_calls_before": 1,
+      "color": 1,
+      "eligible_units": 17,
+      "epoch": 0,
+      "forbidden_transactions": 0,
+      "oracle_accepted_transactions": 0,
+      "proposals": 16,
+      "rejected_conflicts": 14
+    },
+    {
+      "accepted": 6,
+      "accepted_kinds": {
+        "chain2": 1,
+        "move": 4,
+        "swap": 1
+      },
+      "closure_calls_after": 11,
+      "closure_calls_before": 4,
+      "color": 2,
+      "eligible_units": 21,
+      "epoch": 0,
+      "forbidden_transactions": 2,
+      "oracle_accepted_transactions": 3,
+      "proposals": 20,
+      "rejected_conflicts": 14
+    },
+    {
+      "accepted": 1,
+      "accepted_kinds": {
+        "swap": 1
+      },
+      "closure_calls_after": 12,
+      "closure_calls_before": 11,
+      "color": 3,
+      "eligible_units": 9,
+      "epoch": 0,
+      "forbidden_transactions": 3,
+      "oracle_accepted_transactions": 1,
+      "proposals": 9,
+      "rejected_conflicts": 8
+    },
+    {
+      "accepted": 4,
+      "accepted_kinds": {
+        "chain2": 1,
+        "chain3": 2,
+        "swap": 1
+      },
+      "closure_calls_after": 19,
+      "closure_calls_before": 12,
+      "color": 0,
+      "eligible_units": 24,
+      "epoch": 1,
+      "forbidden_transactions": 0,
+      "oracle_accepted_transactions": 1,
+      "proposals": 22,
+      "rejected_conflicts": 18
+    },
+    {
+      "accepted": 4,
+      "accepted_kinds": {
+        "chain2": 1,
+        "chain3": 1,
+        "move": 2
+      },
+      "closure_calls_after": 24,
+      "closure_calls_before": 19,
+      "color": 1,
+      "eligible_units": 20,
+      "epoch": 1,
+      "forbidden_transactions": 2,
+      "oracle_accepted_transactions": 2,
+      "proposals": 19,
+      "rejected_conflicts": 15
+    }
+  ],
+  "preregistration": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_v4_preregistration_2026-09-03.json",
+    "sha256": "75dce71634d613f17db59a0af923d258cf5b95fe795566a37596486656cfa3ca"
+  },
+  "provenance": {
+    "feedback_refreshes": [
+      {
+        "candidate_route_sha256": "d6de34ed577f5dee7b67ca586dcab9ac5f24f01e6f0791b52e06bb8e19579116",
+        "parser": {
+          "mode": "generic-indexed-port-v1",
+          "path_flags": 32,
+          "path_pattern": "^#Path\\s+(\\d+)\\s*$",
+          "point_flags": 32,
+          "point_pattern": "^\\s*(\\S+)\\.[^\\s.\\[]+\\[\\d+\\]"
+        },
+        "route_feedback_sha256": "20024d4781f4cd7f9678526ee2d87d58b722188cef5c00f2647f5a5b00bb0f77",
+        "timing_feedback_sha256": "07ccfaf7fb188363ef51e545a7f3b54ea0278641b629192540c86426387162ec",
+        "timing_report_sha256": "6cfb02d93de626febf6fd98eb9ba1c0ff613b34a0f47cce17fb0ac7afd39173a"
+      },
+      {
+        "candidate_route_sha256": "e2d89166b0b77f6af091a8475b98606e6239b4c697ad25316fb399136719765b",
+        "parser": {
+          "mode": "generic-indexed-port-v1",
+          "path_flags": 32,
+          "path_pattern": "^#Path\\s+(\\d+)\\s*$",
+          "point_flags": 32,
+          "point_pattern": "^\\s*(\\S+)\\.[^\\s.\\[]+\\[\\d+\\]"
+        },
+        "route_feedback_sha256": "5f2c6f52566ac1d21e3c772ca2ab33b7fba4b5784c85e184b45d82790d7a3bb9",
+        "timing_feedback_sha256": "9ecdc083d6551f433b79d3722e101fd22e005795b95d80c5d8c3b040ba11d09b",
+        "timing_report_sha256": "457d09447e914e7d4a7b0b6c1e979744804c3fa98d95368ac3814f699bf7029f"
+      },
+      {
+        "candidate_route_sha256": "0b71fabf7c9a2fb08851897998a5cd7a593bb7a95ae52041a30a40abfc281573",
+        "parser": {
+          "mode": "generic-indexed-port-v1",
+          "path_flags": 32,
+          "path_pattern": "^#Path\\s+(\\d+)\\s*$",
+          "point_flags": 32,
+          "point_pattern": "^\\s*(\\S+)\\.[^\\s.\\[]+\\[\\d+\\]"
+        },
+        "route_feedback_sha256": "6b8c4d4886978efbabbae6772d8efe9c6242478b03ea4a37ce3a3a9afd3419da",
+        "timing_feedback_sha256": "6beef1ae8370609afd804302554216011e06ac08a1bf220ef9bde7e6ebc5c05c",
+        "timing_report_sha256": "ad142b02dacc38284c956b635400381fde8b6fbd7239547bd9d7aa95d1b8a27e"
+      },
+      {
+        "candidate_route_sha256": "4853c060e5851bc8562a9fc533171af1d2283dd934a5bdc356b1e2465602855f",
+        "parser": {
+          "mode": "generic-indexed-port-v1",
+          "path_flags": 32,
+          "path_pattern": "^#Path\\s+(\\d+)\\s*$",
+          "point_flags": 32,
+          "point_pattern": "^\\s*(\\S+)\\.[^\\s.\\[]+\\[\\d+\\]"
+        },
+        "route_feedback_sha256": "3fd8994a9acc31471c247a2a7aa8b064598ee3ca167e11ea129c2e9f194c2d68",
+        "timing_feedback_sha256": "6beef1ae8370609afd804302554216011e06ac08a1bf220ef9bde7e6ebc5c05c",
+        "timing_report_sha256": "eb46465ebd4d83ff7d83277ba5a0ecc69bcbd8cae814cf1ed10a0e61b5d89880"
+      },
+      {
+        "candidate_route_sha256": "2684ff07d655d98f43102557d9d70a678e71a0e90d1fd0e93b50da1a41f9ccbc",
+        "parser": {
+          "mode": "generic-indexed-port-v1",
+          "path_flags": 32,
+          "path_pattern": "^#Path\\s+(\\d+)\\s*$",
+          "point_flags": 32,
+          "point_pattern": "^\\s*(\\S+)\\.[^\\s.\\[]+\\[\\d+\\]"
+        },
+        "route_feedback_sha256": "b27aeb049200d129f49a9d5486762f12c0bac79e9457ac6263fb116c895add80",
+        "timing_feedback_sha256": "976434caf1043437d074a5e4bb0f8444a4161f738299237dea69088bbbb1bec0",
+        "timing_report_sha256": "36051513f1dfe7f7a06365132d1870b6b70f3bfaf5ed580b6570af1ab2dd3912"
+      }
+    ],
+    "implementation": {
+      "parser": {
+        "mode": "generic-indexed-port-v1",
+        "path_flags": 32,
+        "path_pattern": "^#Path\\s+(\\d+)\\s*$",
+        "point_flags": 32,
+        "point_pattern": "^\\s*(\\S+)\\.[^\\s.\\[]+\\[\\d+\\]"
+      },
+      "schema": "TILEPLACE_IMPLEMENTATION_V1",
+      "sha256": "2fa6e2324a971d8489bba12d49115f91d0a56874c0ee5200224d72e4f8a9f689",
+      "sources": [
+        {
+          "name": "prepare_route_feedback.py",
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_route_feedback.py",
+          "sha256": "eaf3198dadf5d7c860a42b0134872f3553028ea74d82b9a46294e48af58c3353"
+        },
+        {
+          "name": "prepare_timing_feedback.py",
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_timing_feedback.py",
+          "sha256": "ff830e3d30bfaf3d48517a8c547f64d76ee76e77efb8225ee0bad64689639627"
+        },
+        {
+          "name": "run_tileplace_v2.py",
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/run_tileplace_v2.py",
+          "sha256": "bfbe7f38db1f37ab98416fcd6c2c79176c2bcfa428ad3fb6b02988ce61a0cfcf"
+        },
+        {
+          "name": "run_vpr_closure.py",
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/run_vpr_closure.py",
+          "sha256": "012cc3570765f2abd420c5144ee066e1161c8338efd67e2b6cc592c06940da34"
+        },
+        {
+          "name": "tileplace_provenance.py",
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/tileplace_provenance.py",
+          "sha256": "4952b986d2fd1d22261c3045e5fda54462b4dfd1af5c84c2d7831c06c579af43"
+        },
+        {
+          "name": "tileplace_v2.py",
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/tileplace_v2.py",
+          "sha256": "bf7a24da1a342175e4e14096d7f21e6611fd362e634aa0d0e105d82ffad58f9a"
+        },
+        {
+          "name": "tileplace_vpr.py",
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/tileplace_vpr.py",
+          "sha256": "355535e49a0ec47b485e8c374e34fa35ee323fbf406b731b920ca40ab582d364"
+        }
+      ]
+    },
+    "initial_route_feedback_sha256": "2e1f09f83c4556325110e1ce38764c1a9a91266cbb5523a8e5a134a512f1b010",
+    "initial_timing_feedback_sha256": "1f77b39ef94f2dd779c74f32bb09528eb02dcbfa73e4b631facdcc15bb322739",
+    "inputs": [
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/baseline/baseline.json",
+        "sha256": "95dc8263c8b4170177f30f3681f051e1afcee3b365d7b2731a8c49fbb769411e"
+      },
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/baseline/ex5p.net",
+        "sha256": "45620b7e1eb7daa6b305d159eafa0116413fb28683560b8a79ddc08aeded5603"
+      },
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/baseline/ex5p.place",
+        "sha256": "26d529055cf05083c1dfeb247847989ce159f906eee563383d8abf9cd23a862c"
+      },
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/baseline/ex5p.route",
+        "sha256": "0db7f32e69b1d73e698a3e1753ae1d689100dfe0422cb1064fc1efb0620331c0"
+      },
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/baseline/place_macros.echo",
+        "sha256": "0efcfecb18fd7b26f5fff38f8e7afb45d3da42b7febc428ec4b045c63b7c93ee"
+      },
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/baseline/report_timing.setup.rpt",
+        "sha256": "ac9c4ed9b41948ec89904a3720c34a3393a84bb2dc356668b7e90bc4a830767f"
+      },
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/baseline/rr_graph.xml",
+        "sha256": "50be5bcb318c60923ef60aae2a5619c2535657070cbdc521878d140d176d5768"
+      },
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/inputs/connections.csv",
+        "sha256": "3ad84c6006ea23fa1040103b24104ad4ae636c67009e1551efd4615e6a1d371b"
+      },
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/inputs/contract/blocks.jsonl",
+        "sha256": "646b3f3624d900305eb9c47cce4c91b8b3516609747fbc21af7e6375fc95e306"
+      },
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/inputs/contract/manifest.json",
+        "sha256": "da4050980a677d4f5043986cdce1747c1dd23ef129699cd72c714732c01327bc"
+      },
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/inputs/contract/nets.jsonl",
+        "sha256": "9b2046a049b9704c5c8172fa775e132f1d031bf9e35ea2699b969088ae539685"
+      },
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/inputs/contract/sites.jsonl",
+        "sha256": "fb714bca03da3d456d21b6affc5fb4fc68d58987a3351a8a0885a32142fea1bf"
+      },
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/inputs/timing.output.csv",
+        "sha256": "2d9c096d6ac7c89b9ad795bb0e37f2c1a6aecb5043664ae1beddbcff142ea300"
+      },
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_v4_preregistration_2026-09-03.json",
+        "sha256": "75dce71634d613f17db59a0af923d258cf5b95fe795566a37596486656cfa3ca"
+      },
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "sha256": "a90dc1b3380ebda705e85f176db0cc3d6be1b71ab9ee887db819febc8b62bafc"
+      },
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179"
+      },
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/ex5p.blif",
+        "sha256": "4efbea0113705c5a9375c2e2664150521465f6647dd60023d53203311aa06a63"
+      }
+    ],
+    "schema": "TILEPLACE_SEARCH_PROVENANCE_V1",
+    "settings": {
+      "epochs": 4,
+      "extra_vpr_args": [],
+      "max_closures": 24,
+      "rebuild_oracle_rr_graph": false,
+      "timing_feedback_paths": 20,
+      "use_no_goods": true
+    },
+    "source_and_input_hashes_unchanged_at_completion": true
+  },
+  "schema": "TILEPLACE_V2_ROUTED_SEARCH_V1",
+  "status": "pass",
+  "stop_reason": "closure_budget_exhausted",
+  "trials": [
+    {
+      "accepted": true,
+      "bisection_depth": 0,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_01/candidate.place",
+        "sha256": "fd1d3a6157f004e3bde026e6988856f1557c848832f3c49ae3fca0efa9539d0a"
+      },
+      "closure": {
+        "cpd_ns": 5.62862,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_01/vpr_native_closure.json",
+        "report_sha256": "a370e57da66cca54680972b9eb0c1959a6bf0537977bc558c86d81d5a8703d98",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9836
+      },
+      "color": 0,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.8858,
+        "legal": true,
+        "returncode": 0,
+        "schema": "TILEPLACE_NEW_COHORT_NATIVE_BASELINE_V1",
+        "status": "pass",
+        "wirelength": 9857
+      },
+      "reason": "cpd_improved_at_least_1ps",
+      "transaction_count": 6,
+      "transaction_ids": [
+        "('move', ((98,),), ((98, (0, 3, 0, 0)),))",
+        "('move', ((91,),), ((91, (12, 8, 0, 0)),))",
+        "('move', ((83,),), ((83, (8, 12, 4, 0)),))",
+        "('move', ((82,),), ((82, (7, 12, 1, 0)),))",
+        "('chain3', ((19,), (36,), (51,)), ((19, (4, 6, 0, 0)), (36, (4, 9, 0, 0)), (51, (3, 8, 0, 0))))",
+        "('chain3', ((100,), (105,), (132,)), ((100, (6, 0, 4, 0)), (105, (5, 0, 7, 0)), (132, (6, 0, 7, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -131960,
+          "id": "('move', ((98,),), ((98, (0, 3, 0, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": -39320,
+          "score_q20": -3146192,
+          "timing_delta": -111838,
+          "touched_nets": [
+            618
+          ],
+          "trial": {
+            "98": [
+              0,
+              3,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              98
+            ]
+          ],
+          "wire_delta": -2,
+          "write_sites": [
+            [
+              0,
+              3,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              7,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -65536,
+          "id": "('move', ((91,),), ((91, (12, 8, 0, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": -26214,
+          "score_q20": -3145728,
+          "timing_delta": -57687,
+          "touched_nets": [
+            173
+          ],
+          "trial": {
+            "91": [
+              12,
+              8,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              91
+            ]
+          ],
+          "wire_delta": -1,
+          "write_sites": [
+            [
+              12,
+              8,
+              0,
+              0
+            ],
+            [
+              12,
+              9,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -65536,
+          "id": "('move', ((83,),), ((83, (8, 12, 4, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": -49151,
+          "score_q20": -2093142,
+          "timing_delta": -61596,
+          "touched_nets": [
+            275
+          ],
+          "trial": {
+            "83": [
+              8,
+              12,
+              4,
+              0
+            ]
+          },
+          "units": [
+            [
+              83
+            ]
+          ],
+          "wire_delta": -1,
+          "write_sites": [
+            [
+              8,
+              12,
+              4,
+              0
+            ],
+            [
+              9,
+              12,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -65536,
+          "id": "('move', ((82,),), ((82, (7, 12, 1, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": -62258,
+          "score_q20": -2090926,
+          "timing_delta": -61616,
+          "touched_nets": [
+            119
+          ],
+          "trial": {
+            "82": [
+              7,
+              12,
+              1,
+              0
+            ]
+          },
+          "units": [
+            [
+              82
+            ]
+          ],
+          "wire_delta": -1,
+          "write_sites": [
+            [
+              7,
+              12,
+              1,
+              0
+            ],
+            [
+              8,
+              12,
+              2,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -894306,
+          "id": "('chain3', ((19,), (36,), (51,)), ((19, (4, 6, 0, 0)), (36, (4, 9, 0, 0)), (51, (3, 8, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -3204636,
+          "score_q20": -1248052,
+          "timing_delta": -860405,
+          "touched_nets": [
+            0,
+            11,
+            12,
+            13,
+            20,
+            33,
+            34,
+            41,
+            42,
+            44,
+            46,
+            47,
+            49,
+            58,
+            68,
+            76,
+            79,
+            94,
+            96,
+            97,
+            98,
+            101,
+            109,
+            110,
+            111,
+            121,
+            131,
+            144,
+            148,
+            153,
+            154,
+            182,
+            188,
+            193,
+            222,
+            233,
+            257,
+            263,
+            265,
+            273,
+            274,
+            290,
+            318,
+            326,
+            334,
+            343,
+            347,
+            353,
+            354,
+            356,
+            375,
+            390,
+            399,
+            400,
+            401,
+            402,
+            403,
+            404,
+            405,
+            408,
+            421,
+            423,
+            447,
+            453,
+            455,
+            463,
+            483,
+            490,
+            525,
+            530,
+            533,
+            539,
+            540,
+            541,
+            542,
+            543,
+            544,
+            545,
+            546,
+            547,
+            584,
+            616,
+            623,
+            626,
+            631,
+            632,
+            633,
+            634
+          ],
+          "trial": {
+            "19": [
+              4,
+              6,
+              0,
+              0
+            ],
+            "36": [
+              4,
+              9,
+              0,
+              0
+            ],
+            "51": [
+              3,
+              8,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              19
+            ],
+            [
+              36
+            ],
+            [
+              51
+            ]
+          ],
+          "wire_delta": 18,
+          "write_sites": [
+            [
+              3,
+              8,
+              0,
+              0
+            ],
+            [
+              4,
+              6,
+              0,
+              0
+            ],
+            [
+              4,
+              9,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": 0,
+          "id": "('chain3', ((100,), (105,), (132,)), ((100, (6, 0, 4, 0)), (105, (5, 0, 7, 0)), (132, (6, 0, 7, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -6553,
+          "score_q20": -122222,
+          "timing_delta": 765,
+          "touched_nets": [
+            228,
+            574,
+            644
+          ],
+          "trial": {
+            "100": [
+              6,
+              0,
+              4,
+              0
+            ],
+            "105": [
+              5,
+              0,
+              7,
+              0
+            ],
+            "132": [
+              6,
+              0,
+              7,
+              0
+            ]
+          },
+          "units": [
+            [
+              100
+            ],
+            [
+              105
+            ],
+            [
+              132
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              5,
+              0,
+              7,
+              0
+            ],
+            [
+              6,
+              0,
+              4,
+              0
+            ],
+            [
+              6,
+              0,
+              7,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 1
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 0,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_02/candidate.place",
+        "sha256": "6522ec811a107ed5b1a9b361572c815a71c1901811a95921fa2ae831e7b053ea"
+      },
+      "closure": {
+        "cpd_ns": 5.75248,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_02/vpr_native_closure.json",
+        "report_sha256": "d6d65ff0391558d1595ac0a7ccaf1bc96f7dbeb6b06a3a0117ab615a49171356",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9803
+      },
+      "color": 1,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.62862,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_01/vpr_native_closure.json",
+        "report_sha256": "a370e57da66cca54680972b9eb0c1959a6bf0537977bc558c86d81d5a8703d98",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9836
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 2,
+      "transaction_ids": [
+        "('move', ((98,),), ((98, (0, 4, 0, 0)),))",
+        "('chain3', ((19,), (24,), (62,)), ((19, (5, 8, 0, 0)), (24, (4, 6, 0, 0)), (62, (7, 9, 0, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -65955,
+          "id": "('move', ((98,),), ((98, (0, 4, 0, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": -26214,
+          "score_q20": -3147399,
+          "timing_delta": -55919,
+          "touched_nets": [
+            618
+          ],
+          "trial": {
+            "98": [
+              0,
+              4,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              98
+            ]
+          ],
+          "wire_delta": -1,
+          "write_sites": [
+            [
+              0,
+              3,
+              0,
+              0
+            ],
+            [
+              0,
+              4,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -158543,
+          "id": "('chain3', ((19,), (24,), (62,)), ((19, (5, 8, 0, 0)), (24, (4, 6, 0, 0)), (62, (7, 9, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -766752,
+          "score_q20": -1432310,
+          "timing_delta": -244715,
+          "touched_nets": [
+            0,
+            3,
+            11,
+            12,
+            13,
+            33,
+            34,
+            41,
+            44,
+            46,
+            47,
+            68,
+            74,
+            76,
+            79,
+            94,
+            97,
+            98,
+            110,
+            111,
+            121,
+            131,
+            133,
+            139,
+            144,
+            154,
+            182,
+            193,
+            219,
+            247,
+            263,
+            282,
+            317,
+            318,
+            333,
+            338,
+            343,
+            356,
+            362,
+            363,
+            368,
+            382,
+            386,
+            387,
+            399,
+            400,
+            401,
+            402,
+            403,
+            404,
+            405,
+            406,
+            408,
+            417,
+            428,
+            432,
+            433,
+            434,
+            435,
+            521,
+            534,
+            548,
+            557,
+            566,
+            579,
+            585,
+            607,
+            653
+          ],
+          "trial": {
+            "19": [
+              5,
+              8,
+              0,
+              0
+            ],
+            "24": [
+              4,
+              6,
+              0,
+              0
+            ],
+            "62": [
+              7,
+              9,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              19
+            ],
+            [
+              24
+            ],
+            [
+              62
+            ]
+          ],
+          "wire_delta": 4,
+          "write_sites": [
+            [
+              4,
+              6,
+              0,
+              0
+            ],
+            [
+              5,
+              8,
+              0,
+              0
+            ],
+            [
+              7,
+              9,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 2
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 1,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_03/candidate.place",
+        "sha256": "01e0664436f400ed66a665eedb057ef799030284d4afc0fb361e2f03642b24ef"
+      },
+      "closure": {
+        "cpd_ns": 5.62862,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_03/vpr_native_closure.json",
+        "report_sha256": "dc2aa6c3070b9a086bbee37902237958c7914f8ab4c843a2ce6de25e340d474d",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9836
+      },
+      "color": 1,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.62862,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_01/vpr_native_closure.json",
+        "report_sha256": "a370e57da66cca54680972b9eb0c1959a6bf0537977bc558c86d81d5a8703d98",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9836
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('move', ((98,),), ((98, (0, 4, 0, 0)),))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -65955,
+          "id": "('move', ((98,),), ((98, (0, 4, 0, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": -26214,
+          "score_q20": -3147399,
+          "timing_delta": -55919,
+          "touched_nets": [
+            618
+          ],
+          "trial": {
+            "98": [
+              0,
+              4,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              98
+            ]
+          ],
+          "wire_delta": -1,
+          "write_sites": [
+            [
+              0,
+              3,
+              0,
+              0
+            ],
+            [
+              0,
+              4,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 3
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 1,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_04/candidate.place",
+        "sha256": "4638501f1c6226271bd9951af23de7431c75d6166a5cc66e544c0e3f9ace0cc8"
+      },
+      "closure": {
+        "cpd_ns": 5.75248,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_04/vpr_native_closure.json",
+        "report_sha256": "d5f4a738132979d7f2a6725d4132222e5c6eef3df643b8babe69fbc12b43f918",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9803
+      },
+      "color": 1,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.62862,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_01/vpr_native_closure.json",
+        "report_sha256": "a370e57da66cca54680972b9eb0c1959a6bf0537977bc558c86d81d5a8703d98",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9836
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('chain3', ((19,), (24,), (62,)), ((19, (5, 8, 0, 0)), (24, (4, 6, 0, 0)), (62, (7, 9, 0, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -158543,
+          "id": "('chain3', ((19,), (24,), (62,)), ((19, (5, 8, 0, 0)), (24, (4, 6, 0, 0)), (62, (7, 9, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -766752,
+          "score_q20": -1432310,
+          "timing_delta": -244715,
+          "touched_nets": [
+            0,
+            3,
+            11,
+            12,
+            13,
+            33,
+            34,
+            41,
+            44,
+            46,
+            47,
+            68,
+            74,
+            76,
+            79,
+            94,
+            97,
+            98,
+            110,
+            111,
+            121,
+            131,
+            133,
+            139,
+            144,
+            154,
+            182,
+            193,
+            219,
+            247,
+            263,
+            282,
+            317,
+            318,
+            333,
+            338,
+            343,
+            356,
+            362,
+            363,
+            368,
+            382,
+            386,
+            387,
+            399,
+            400,
+            401,
+            402,
+            403,
+            404,
+            405,
+            406,
+            408,
+            417,
+            428,
+            432,
+            433,
+            434,
+            435,
+            521,
+            534,
+            548,
+            557,
+            566,
+            579,
+            585,
+            607,
+            653
+          ],
+          "trial": {
+            "19": [
+              5,
+              8,
+              0,
+              0
+            ],
+            "24": [
+              4,
+              6,
+              0,
+              0
+            ],
+            "62": [
+              7,
+              9,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              19
+            ],
+            [
+              24
+            ],
+            [
+              62
+            ]
+          ],
+          "wire_delta": 4,
+          "write_sites": [
+            [
+              4,
+              6,
+              0,
+              0
+            ],
+            [
+              5,
+              8,
+              0,
+              0
+            ],
+            [
+              7,
+              9,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 4
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 0,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_05/candidate.place",
+        "sha256": "48442761bbde8ee25af209ed13ce6c8a3bc59c67fd5042064322ae647e71cafa"
+      },
+      "closure": {
+        "cpd_ns": 5.88248,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_05/vpr_native_closure.json",
+        "report_sha256": "a514f53ca41e697180e06dcc1a0c063034ae3e8edf25ea9bd05455366d3db9c4",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9752
+      },
+      "color": 2,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.62862,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_01/vpr_native_closure.json",
+        "report_sha256": "a370e57da66cca54680972b9eb0c1959a6bf0537977bc558c86d81d5a8703d98",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9836
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 6,
+      "transaction_ids": [
+        "('chain2', ((110,), (120,)), ((110, (9, 12, 6, 0)), (120, (8, 12, 2, 0))))",
+        "('move', ((100,),), ((100, (5, 0, 2, 0)),))",
+        "('move', ((96,),), ((96, (12, 10, 0, 0)),))",
+        "('swap', ((19,), (24,)), ((19, (7, 9, 0, 0)), (24, (4, 6, 0, 0))))",
+        "('move', ((97,),), ((97, (7, 0, 0, 0)),))",
+        "('move', ((85,),), ((85, (0, 3, 1, 0)),))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -131072,
+          "id": "('chain2', ((110,), (120,)), ((110, (9, 12, 6, 0)), (120, (8, 12, 2, 0))))",
+          "kind": "chain2",
+          "routed_timing_delta": -19660,
+          "score_q20": -2313215,
+          "timing_delta": -83250,
+          "touched_nets": [
+            32,
+            659
+          ],
+          "trial": {
+            "110": [
+              9,
+              12,
+              6,
+              0
+            ],
+            "120": [
+              8,
+              12,
+              2,
+              0
+            ]
+          },
+          "units": [
+            [
+              110
+            ],
+            [
+              120
+            ]
+          ],
+          "wire_delta": -2,
+          "write_sites": [
+            [
+              8,
+              12,
+              2,
+              0
+            ],
+            [
+              9,
+              12,
+              6,
+              0
+            ],
+            [
+              10,
+              12,
+              7,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -69742,
+          "id": "('move', ((100,),), ((100, (5, 0, 2, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": -13107,
+          "score_q20": -1578842,
+          "timing_delta": -57408,
+          "touched_nets": [
+            644
+          ],
+          "trial": {
+            "100": [
+              5,
+              0,
+              2,
+              0
+            ]
+          },
+          "units": [
+            [
+              100
+            ]
+          ],
+          "wire_delta": -1,
+          "write_sites": [
+            [
+              5,
+              0,
+              2,
+              0
+            ],
+            [
+              6,
+              0,
+              4,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -65830,
+          "id": "('move', ((96,),), ((96, (12, 10, 0, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": -22937,
+          "score_q20": -1573746,
+          "timing_delta": -59673,
+          "touched_nets": [
+            176
+          ],
+          "trial": {
+            "96": [
+              12,
+              10,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              96
+            ]
+          ],
+          "wire_delta": -1,
+          "write_sites": [
+            [
+              11,
+              12,
+              1,
+              0
+            ],
+            [
+              12,
+              10,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -323444,
+          "id": "('swap', ((19,), (24,)), ((19, (7, 9, 0, 0)), (24, (4, 6, 0, 0))))",
+          "kind": "swap",
+          "routed_timing_delta": -766752,
+          "score_q20": -1406385,
+          "timing_delta": -81962,
+          "touched_nets": [
+            0,
+            11,
+            12,
+            13,
+            33,
+            34,
+            41,
+            44,
+            46,
+            47,
+            68,
+            76,
+            79,
+            94,
+            97,
+            98,
+            110,
+            111,
+            121,
+            144,
+            154,
+            182,
+            193,
+            219,
+            247,
+            263,
+            318,
+            333,
+            338,
+            343,
+            356,
+            362,
+            363,
+            368,
+            382,
+            386,
+            387,
+            399,
+            400,
+            401,
+            402,
+            403,
+            404,
+            405,
+            417,
+            432,
+            433,
+            434,
+            435
+          ],
+          "trial": {
+            "19": [
+              7,
+              9,
+              0,
+              0
+            ],
+            "24": [
+              4,
+              6,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              19
+            ],
+            [
+              24
+            ]
+          ],
+          "wire_delta": 17,
+          "write_sites": [
+            [
+              4,
+              6,
+              0,
+              0
+            ],
+            [
+              7,
+              9,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -64258,
+          "id": "('move', ((97,),), ((97, (7, 0, 0, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": -16383,
+          "score_q20": -1034861,
+          "timing_delta": -55599,
+          "touched_nets": [
+            583
+          ],
+          "trial": {
+            "97": [
+              7,
+              0,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              97
+            ]
+          ],
+          "wire_delta": -1,
+          "write_sites": [
+            [
+              6,
+              0,
+              5,
+              0
+            ],
+            [
+              7,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -25924,
+          "id": "('move', ((85,),), ((85, (0, 3, 1, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": 0,
+          "score_q20": -63852,
+          "timing_delta": 0,
+          "touched_nets": [
+            255
+          ],
+          "trial": {
+            "85": [
+              0,
+              3,
+              1,
+              0
+            ]
+          },
+          "units": [
+            [
+              85
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              0,
+              3,
+              1,
+              0
+            ],
+            [
+              3,
+              0,
+              4,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 5
+    },
+    {
+      "accepted": true,
+      "bisection_depth": 1,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_06/candidate.place",
+        "sha256": "b01d762445f722a71d97077a6a78b1ee81f3fef2cce22622e5aea254768fbee5"
+      },
+      "closure": {
+        "cpd_ns": 5.62862,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_06/vpr_native_closure.json",
+        "report_sha256": "c26c9fa1ce0f66fb04d034b74167e9a8de16e434ec25760ee8f503333ac95aa9",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9826
+      },
+      "color": 2,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.62862,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_01/vpr_native_closure.json",
+        "report_sha256": "a370e57da66cca54680972b9eb0c1959a6bf0537977bc558c86d81d5a8703d98",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9836
+      },
+      "reason": "equal_cpd_wirelength_improved",
+      "transaction_count": 3,
+      "transaction_ids": [
+        "('chain2', ((110,), (120,)), ((110, (9, 12, 6, 0)), (120, (8, 12, 2, 0))))",
+        "('move', ((100,),), ((100, (5, 0, 2, 0)),))",
+        "('move', ((96,),), ((96, (12, 10, 0, 0)),))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -131072,
+          "id": "('chain2', ((110,), (120,)), ((110, (9, 12, 6, 0)), (120, (8, 12, 2, 0))))",
+          "kind": "chain2",
+          "routed_timing_delta": -19660,
+          "score_q20": -2313215,
+          "timing_delta": -83250,
+          "touched_nets": [
+            32,
+            659
+          ],
+          "trial": {
+            "110": [
+              9,
+              12,
+              6,
+              0
+            ],
+            "120": [
+              8,
+              12,
+              2,
+              0
+            ]
+          },
+          "units": [
+            [
+              110
+            ],
+            [
+              120
+            ]
+          ],
+          "wire_delta": -2,
+          "write_sites": [
+            [
+              8,
+              12,
+              2,
+              0
+            ],
+            [
+              9,
+              12,
+              6,
+              0
+            ],
+            [
+              10,
+              12,
+              7,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -69742,
+          "id": "('move', ((100,),), ((100, (5, 0, 2, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": -13107,
+          "score_q20": -1578842,
+          "timing_delta": -57408,
+          "touched_nets": [
+            644
+          ],
+          "trial": {
+            "100": [
+              5,
+              0,
+              2,
+              0
+            ]
+          },
+          "units": [
+            [
+              100
+            ]
+          ],
+          "wire_delta": -1,
+          "write_sites": [
+            [
+              5,
+              0,
+              2,
+              0
+            ],
+            [
+              6,
+              0,
+              4,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -65830,
+          "id": "('move', ((96,),), ((96, (12, 10, 0, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": -22937,
+          "score_q20": -1573746,
+          "timing_delta": -59673,
+          "touched_nets": [
+            176
+          ],
+          "trial": {
+            "96": [
+              12,
+              10,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              96
+            ]
+          ],
+          "wire_delta": -1,
+          "write_sites": [
+            [
+              11,
+              12,
+              1,
+              0
+            ],
+            [
+              12,
+              10,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 6
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 1,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_07/candidate.place",
+        "sha256": "48442761bbde8ee25af209ed13ce6c8a3bc59c67fd5042064322ae647e71cafa"
+      },
+      "closure": {
+        "cpd_ns": 5.88248,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_07/vpr_native_closure.json",
+        "report_sha256": "df9d6dc607e7d175cc92a8629c0022d97e9cc59e1a47c54ae64966fe46b23aa9",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9752
+      },
+      "color": 2,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.62862,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_06/vpr_native_closure.json",
+        "report_sha256": "c26c9fa1ce0f66fb04d034b74167e9a8de16e434ec25760ee8f503333ac95aa9",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9826
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 3,
+      "transaction_ids": [
+        "('swap', ((19,), (24,)), ((19, (7, 9, 0, 0)), (24, (4, 6, 0, 0))))",
+        "('move', ((97,),), ((97, (7, 0, 0, 0)),))",
+        "('move', ((85,),), ((85, (0, 3, 1, 0)),))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -323444,
+          "id": "('swap', ((19,), (24,)), ((19, (7, 9, 0, 0)), (24, (4, 6, 0, 0))))",
+          "kind": "swap",
+          "routed_timing_delta": -766752,
+          "score_q20": -1406385,
+          "timing_delta": -81962,
+          "touched_nets": [
+            0,
+            11,
+            12,
+            13,
+            33,
+            34,
+            41,
+            44,
+            46,
+            47,
+            68,
+            76,
+            79,
+            94,
+            97,
+            98,
+            110,
+            111,
+            121,
+            144,
+            154,
+            182,
+            193,
+            219,
+            247,
+            263,
+            318,
+            333,
+            338,
+            343,
+            356,
+            362,
+            363,
+            368,
+            382,
+            386,
+            387,
+            399,
+            400,
+            401,
+            402,
+            403,
+            404,
+            405,
+            417,
+            432,
+            433,
+            434,
+            435
+          ],
+          "trial": {
+            "19": [
+              7,
+              9,
+              0,
+              0
+            ],
+            "24": [
+              4,
+              6,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              19
+            ],
+            [
+              24
+            ]
+          ],
+          "wire_delta": 17,
+          "write_sites": [
+            [
+              4,
+              6,
+              0,
+              0
+            ],
+            [
+              7,
+              9,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -64258,
+          "id": "('move', ((97,),), ((97, (7, 0, 0, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": -16383,
+          "score_q20": -1034861,
+          "timing_delta": -55599,
+          "touched_nets": [
+            583
+          ],
+          "trial": {
+            "97": [
+              7,
+              0,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              97
+            ]
+          ],
+          "wire_delta": -1,
+          "write_sites": [
+            [
+              6,
+              0,
+              5,
+              0
+            ],
+            [
+              7,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -25924,
+          "id": "('move', ((85,),), ((85, (0, 3, 1, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": 0,
+          "score_q20": -63852,
+          "timing_delta": 0,
+          "touched_nets": [
+            255
+          ],
+          "trial": {
+            "85": [
+              0,
+              3,
+              1,
+              0
+            ]
+          },
+          "units": [
+            [
+              85
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              0,
+              3,
+              1,
+              0
+            ],
+            [
+              3,
+              0,
+              4,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 7
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 2,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_08/candidate.place",
+        "sha256": "cd052c8e9874db69e16f6c081bdcd2245ddd3a2cd5553d91987582f72e04fe27"
+      },
+      "closure": {
+        "cpd_ns": 5.88248,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_08/vpr_native_closure.json",
+        "report_sha256": "bbf301a3e5083f38217622dadea7c4a49ec52706a15fd055a944e0b3171deaa3",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9829
+      },
+      "color": 2,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.62862,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_06/vpr_native_closure.json",
+        "report_sha256": "c26c9fa1ce0f66fb04d034b74167e9a8de16e434ec25760ee8f503333ac95aa9",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9826
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('swap', ((19,), (24,)), ((19, (7, 9, 0, 0)), (24, (4, 6, 0, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -323444,
+          "id": "('swap', ((19,), (24,)), ((19, (7, 9, 0, 0)), (24, (4, 6, 0, 0))))",
+          "kind": "swap",
+          "routed_timing_delta": -766752,
+          "score_q20": -1406385,
+          "timing_delta": -81962,
+          "touched_nets": [
+            0,
+            11,
+            12,
+            13,
+            33,
+            34,
+            41,
+            44,
+            46,
+            47,
+            68,
+            76,
+            79,
+            94,
+            97,
+            98,
+            110,
+            111,
+            121,
+            144,
+            154,
+            182,
+            193,
+            219,
+            247,
+            263,
+            318,
+            333,
+            338,
+            343,
+            356,
+            362,
+            363,
+            368,
+            382,
+            386,
+            387,
+            399,
+            400,
+            401,
+            402,
+            403,
+            404,
+            405,
+            417,
+            432,
+            433,
+            434,
+            435
+          ],
+          "trial": {
+            "19": [
+              7,
+              9,
+              0,
+              0
+            ],
+            "24": [
+              4,
+              6,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              19
+            ],
+            [
+              24
+            ]
+          ],
+          "wire_delta": 17,
+          "write_sites": [
+            [
+              4,
+              6,
+              0,
+              0
+            ],
+            [
+              7,
+              9,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 8
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 2,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_09/candidate.place",
+        "sha256": "10df757ad18d2f310e8e95eaa9f427cfff57b84fe76c51688c1b6a11aa5a7167"
+      },
+      "closure": {
+        "cpd_ns": 5.62862,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_09/vpr_native_closure.json",
+        "report_sha256": "388b4d08ab76c42f61ecc6f934b768846795e7622d2bd3d2fa1f9783445b9046",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9879
+      },
+      "color": 2,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.62862,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_06/vpr_native_closure.json",
+        "report_sha256": "c26c9fa1ce0f66fb04d034b74167e9a8de16e434ec25760ee8f503333ac95aa9",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9826
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 2,
+      "transaction_ids": [
+        "('move', ((97,),), ((97, (7, 0, 0, 0)),))",
+        "('move', ((85,),), ((85, (0, 3, 1, 0)),))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -64258,
+          "id": "('move', ((97,),), ((97, (7, 0, 0, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": -16383,
+          "score_q20": -1034861,
+          "timing_delta": -55599,
+          "touched_nets": [
+            583
+          ],
+          "trial": {
+            "97": [
+              7,
+              0,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              97
+            ]
+          ],
+          "wire_delta": -1,
+          "write_sites": [
+            [
+              6,
+              0,
+              5,
+              0
+            ],
+            [
+              7,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -25924,
+          "id": "('move', ((85,),), ((85, (0, 3, 1, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": 0,
+          "score_q20": -63852,
+          "timing_delta": 0,
+          "touched_nets": [
+            255
+          ],
+          "trial": {
+            "85": [
+              0,
+              3,
+              1,
+              0
+            ]
+          },
+          "units": [
+            [
+              85
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              0,
+              3,
+              1,
+              0
+            ],
+            [
+              3,
+              0,
+              4,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 9
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 3,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_10/candidate.place",
+        "sha256": "30efef614398e8be4b0588e3ecc222279644117307be467ccdda564a60488c52"
+      },
+      "closure": {
+        "cpd_ns": 5.62862,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_10/vpr_native_closure.json",
+        "report_sha256": "9c8f26bbd11b4ffed0a9a1833a1f7b488689a8e479b45c8d014e15e7f1accb8b",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9844
+      },
+      "color": 2,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.62862,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_06/vpr_native_closure.json",
+        "report_sha256": "c26c9fa1ce0f66fb04d034b74167e9a8de16e434ec25760ee8f503333ac95aa9",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9826
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('move', ((97,),), ((97, (7, 0, 0, 0)),))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -64258,
+          "id": "('move', ((97,),), ((97, (7, 0, 0, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": -16383,
+          "score_q20": -1034861,
+          "timing_delta": -55599,
+          "touched_nets": [
+            583
+          ],
+          "trial": {
+            "97": [
+              7,
+              0,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              97
+            ]
+          ],
+          "wire_delta": -1,
+          "write_sites": [
+            [
+              6,
+              0,
+              5,
+              0
+            ],
+            [
+              7,
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 10
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 3,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_11/candidate.place",
+        "sha256": "a9ce7875555e5046fe86dff4e60613f908e6342df03b698e1effa14650a0b0b2"
+      },
+      "closure": {
+        "cpd_ns": 5.62862,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_11/vpr_native_closure.json",
+        "report_sha256": "6e89a42bbf80a51ddfdfc9b13232fb13b0662ea4f4f6f52de2c88eb76b912a01",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9872
+      },
+      "color": 2,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.62862,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_06/vpr_native_closure.json",
+        "report_sha256": "c26c9fa1ce0f66fb04d034b74167e9a8de16e434ec25760ee8f503333ac95aa9",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9826
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('move', ((85,),), ((85, (0, 3, 1, 0)),))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -25924,
+          "id": "('move', ((85,),), ((85, (0, 3, 1, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": 0,
+          "score_q20": -63852,
+          "timing_delta": 0,
+          "touched_nets": [
+            255
+          ],
+          "trial": {
+            "85": [
+              0,
+              3,
+              1,
+              0
+            ]
+          },
+          "units": [
+            [
+              85
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              0,
+              3,
+              1,
+              0
+            ],
+            [
+              3,
+              0,
+              4,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 11
+    },
+    {
+      "accepted": true,
+      "bisection_depth": 0,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_12/candidate.place",
+        "sha256": "01ffbbc8fec40c898b1b3bb236dd26ced29d4b3a8c68aafa1c6d3cc5670b82e7"
+      },
+      "closure": {
+        "cpd_ns": 5.61423,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_12/vpr_native_closure.json",
+        "report_sha256": "fe433254f71da700b1f9cec1f2bce7e399d2d903fff419fd8f642f2566237099",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9876
+      },
+      "color": 3,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.62862,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_06/vpr_native_closure.json",
+        "report_sha256": "c26c9fa1ce0f66fb04d034b74167e9a8de16e434ec25760ee8f503333ac95aa9",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9826
+      },
+      "reason": "cpd_improved_at_least_1ps",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('swap', ((11,), (30,)), ((11, (5, 5, 0, 0)), (30, (7, 6, 0, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": 1660449,
+          "id": "('swap', ((11,), (30,)), ((11, (5, 5, 0, 0)), (30, (7, 6, 0, 0))))",
+          "kind": "swap",
+          "routed_timing_delta": -196602,
+          "score_q20": -1115609,
+          "timing_delta": 1148299,
+          "touched_nets": [
+            0,
+            3,
+            10,
+            11,
+            13,
+            18,
+            25,
+            38,
+            54,
+            62,
+            67,
+            68,
+            74,
+            75,
+            76,
+            85,
+            116,
+            131,
+            135,
+            144,
+            154,
+            158,
+            166,
+            167,
+            168,
+            182,
+            193,
+            213,
+            219,
+            220,
+            221,
+            223,
+            228,
+            282,
+            283,
+            284,
+            285,
+            286,
+            287,
+            288,
+            289,
+            290,
+            291,
+            292,
+            293,
+            294,
+            295,
+            296,
+            297,
+            343,
+            372,
+            376,
+            391,
+            417,
+            442,
+            475,
+            483,
+            484,
+            485,
+            486,
+            487,
+            488,
+            489,
+            490,
+            491,
+            492,
+            493,
+            494
+          ],
+          "trial": {
+            "11": [
+              5,
+              5,
+              0,
+              0
+            ],
+            "30": [
+              7,
+              6,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              11
+            ],
+            [
+              30
+            ]
+          ],
+          "wire_delta": 23,
+          "write_sites": [
+            [
+              5,
+              5,
+              0,
+              0
+            ],
+            [
+              7,
+              6,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 12
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 0,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_13/candidate.place",
+        "sha256": "05f598518027c5269e1cdb02936e4c2c534da6f07bf0636e5e0cc74de4969a05"
+      },
+      "closure": {
+        "cpd_ns": 5.69286,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_13/vpr_native_closure.json",
+        "report_sha256": "f7cf9ddd41a5d8611f05f9f8a979b37dec4bed495167af1e84414f6f2fa91689",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9907
+      },
+      "color": 0,
+      "epoch": 1,
+      "incumbent_before": {
+        "cpd_ns": 5.61423,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_12/vpr_native_closure.json",
+        "report_sha256": "fe433254f71da700b1f9cec1f2bce7e399d2d903fff419fd8f642f2566237099",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9876
+      },
+      "reason": "baseline_wirelength_cap_exceeded",
+      "transaction_count": 4,
+      "transaction_ids": [
+        "('chain3', ((1,), (48,), (50,)), ((1, (7, 8, 0, 0)), (48, (8, 6, 0, 0)), (50, (5, 9, 0, 0))))",
+        "('chain2', ((83,), (92,)), ((83, (8, 12, 1, 0)), (92, (7, 12, 2, 0))))",
+        "('swap', ((88,), (105,)), ((88, (5, 0, 7, 0)), (105, (7, 0, 4, 0))))",
+        "('chain3', ((107,), (112,), (146,)), ((107, (3, 0, 1, 0)), (112, (4, 0, 3, 0)), (146, (4, 0, 5, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": 904433,
+          "id": "('chain3', ((1,), (48,), (50,)), ((1, (7, 8, 0, 0)), (48, (8, 6, 0, 0)), (50, (5, 9, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -537378,
+          "score_q20": -1396003,
+          "timing_delta": 583099,
+          "touched_nets": [
+            0,
+            1,
+            4,
+            10,
+            11,
+            12,
+            13,
+            20,
+            22,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            76,
+            79,
+            92,
+            93,
+            98,
+            107,
+            109,
+            121,
+            122,
+            127,
+            131,
+            132,
+            148,
+            153,
+            156,
+            157,
+            165,
+            169,
+            182,
+            224,
+            228,
+            243,
+            250,
+            265,
+            274,
+            287,
+            309,
+            329,
+            331,
+            332,
+            334,
+            335,
+            340,
+            341,
+            362,
+            363,
+            365,
+            368,
+            431,
+            461,
+            477,
+            484,
+            508,
+            518,
+            534,
+            548,
+            549,
+            557,
+            559,
+            562,
+            563,
+            581,
+            604,
+            607,
+            625,
+            626,
+            629,
+            630
+          ],
+          "trial": {
+            "1": [
+              7,
+              8,
+              0,
+              0
+            ],
+            "48": [
+              8,
+              6,
+              0,
+              0
+            ],
+            "50": [
+              5,
+              9,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              1
+            ],
+            [
+              48
+            ],
+            [
+              50
+            ]
+          ],
+          "wire_delta": 29,
+          "write_sites": [
+            [
+              5,
+              9,
+              0,
+              0
+            ],
+            [
+              7,
+              8,
+              0,
+              0
+            ],
+            [
+              8,
+              6,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -65536,
+          "id": "('chain2', ((83,), (92,)), ((83, (8, 12, 1, 0)), (92, (7, 12, 2, 0))))",
+          "kind": "chain2",
+          "routed_timing_delta": 0,
+          "score_q20": -820218,
+          "timing_delta": -56457,
+          "touched_nets": [
+            117,
+            275
+          ],
+          "trial": {
+            "83": [
+              8,
+              12,
+              1,
+              0
+            ],
+            "92": [
+              7,
+              12,
+              2,
+              0
+            ]
+          },
+          "units": [
+            [
+              83
+            ],
+            [
+              92
+            ]
+          ],
+          "wire_delta": -1,
+          "write_sites": [
+            [
+              7,
+              12,
+              2,
+              0
+            ],
+            [
+              8,
+              12,
+              1,
+              0
+            ],
+            [
+              8,
+              12,
+              4,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": 0,
+          "id": "('swap', ((88,), (105,)), ((88, (5, 0, 7, 0)), (105, (7, 0, 4, 0))))",
+          "kind": "swap",
+          "routed_timing_delta": -26214,
+          "score_q20": -434432,
+          "timing_delta": -1262,
+          "touched_nets": [
+            297,
+            574
+          ],
+          "trial": {
+            "105": [
+              7,
+              0,
+              4,
+              0
+            ],
+            "88": [
+              5,
+              0,
+              7,
+              0
+            ]
+          },
+          "units": [
+            [
+              88
+            ],
+            [
+              105
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              5,
+              0,
+              7,
+              0
+            ],
+            [
+              7,
+              0,
+              4,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -117305,
+          "id": "('chain3', ((107,), (112,), (146,)), ((107, (3, 0, 1, 0)), (112, (4, 0, 3, 0)), (146, (4, 0, 5, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -328170,
+          "timing_delta": -91108,
+          "touched_nets": [
+            472,
+            633,
+            672
+          ],
+          "trial": {
+            "107": [
+              3,
+              0,
+              1,
+              0
+            ],
+            "112": [
+              4,
+              0,
+              3,
+              0
+            ],
+            "146": [
+              4,
+              0,
+              5,
+              0
+            ]
+          },
+          "units": [
+            [
+              107
+            ],
+            [
+              112
+            ],
+            [
+              146
+            ]
+          ],
+          "wire_delta": -2,
+          "write_sites": [
+            [
+              3,
+              0,
+              1,
+              0
+            ],
+            [
+              4,
+              0,
+              3,
+              0
+            ],
+            [
+              4,
+              0,
+              5,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 13
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 1,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_14/candidate.place",
+        "sha256": "1734750b46b35564f2f60fa88ac49429ac9ded7abfb873d413fcb104e2660883"
+      },
+      "closure": {
+        "cpd_ns": 5.69286,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_14/vpr_native_closure.json",
+        "report_sha256": "25e8314fbc5b44f4806b2cde7ed552271429a280cfb8d5740776fd40fdcb20af",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9935
+      },
+      "color": 0,
+      "epoch": 1,
+      "incumbent_before": {
+        "cpd_ns": 5.61423,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_12/vpr_native_closure.json",
+        "report_sha256": "fe433254f71da700b1f9cec1f2bce7e399d2d903fff419fd8f642f2566237099",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9876
+      },
+      "reason": "baseline_wirelength_cap_exceeded",
+      "transaction_count": 2,
+      "transaction_ids": [
+        "('chain3', ((1,), (48,), (50,)), ((1, (7, 8, 0, 0)), (48, (8, 6, 0, 0)), (50, (5, 9, 0, 0))))",
+        "('chain2', ((83,), (92,)), ((83, (8, 12, 1, 0)), (92, (7, 12, 2, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": 904433,
+          "id": "('chain3', ((1,), (48,), (50,)), ((1, (7, 8, 0, 0)), (48, (8, 6, 0, 0)), (50, (5, 9, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -537378,
+          "score_q20": -1396003,
+          "timing_delta": 583099,
+          "touched_nets": [
+            0,
+            1,
+            4,
+            10,
+            11,
+            12,
+            13,
+            20,
+            22,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            76,
+            79,
+            92,
+            93,
+            98,
+            107,
+            109,
+            121,
+            122,
+            127,
+            131,
+            132,
+            148,
+            153,
+            156,
+            157,
+            165,
+            169,
+            182,
+            224,
+            228,
+            243,
+            250,
+            265,
+            274,
+            287,
+            309,
+            329,
+            331,
+            332,
+            334,
+            335,
+            340,
+            341,
+            362,
+            363,
+            365,
+            368,
+            431,
+            461,
+            477,
+            484,
+            508,
+            518,
+            534,
+            548,
+            549,
+            557,
+            559,
+            562,
+            563,
+            581,
+            604,
+            607,
+            625,
+            626,
+            629,
+            630
+          ],
+          "trial": {
+            "1": [
+              7,
+              8,
+              0,
+              0
+            ],
+            "48": [
+              8,
+              6,
+              0,
+              0
+            ],
+            "50": [
+              5,
+              9,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              1
+            ],
+            [
+              48
+            ],
+            [
+              50
+            ]
+          ],
+          "wire_delta": 29,
+          "write_sites": [
+            [
+              5,
+              9,
+              0,
+              0
+            ],
+            [
+              7,
+              8,
+              0,
+              0
+            ],
+            [
+              8,
+              6,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -65536,
+          "id": "('chain2', ((83,), (92,)), ((83, (8, 12, 1, 0)), (92, (7, 12, 2, 0))))",
+          "kind": "chain2",
+          "routed_timing_delta": 0,
+          "score_q20": -820218,
+          "timing_delta": -56457,
+          "touched_nets": [
+            117,
+            275
+          ],
+          "trial": {
+            "83": [
+              8,
+              12,
+              1,
+              0
+            ],
+            "92": [
+              7,
+              12,
+              2,
+              0
+            ]
+          },
+          "units": [
+            [
+              83
+            ],
+            [
+              92
+            ]
+          ],
+          "wire_delta": -1,
+          "write_sites": [
+            [
+              7,
+              12,
+              2,
+              0
+            ],
+            [
+              8,
+              12,
+              1,
+              0
+            ],
+            [
+              8,
+              12,
+              4,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 14
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 2,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_15/candidate.place",
+        "sha256": "bb57050766a45d244e90ff97961428fc7441a70b8f0706b9197011541479df80"
+      },
+      "closure": {
+        "cpd_ns": 5.69286,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_15/vpr_native_closure.json",
+        "report_sha256": "3f61e7112f709f4efab9579d18993e7c3dc81113d29b4e7cae0f3ba07b25ad2d",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9930
+      },
+      "color": 0,
+      "epoch": 1,
+      "incumbent_before": {
+        "cpd_ns": 5.61423,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_12/vpr_native_closure.json",
+        "report_sha256": "fe433254f71da700b1f9cec1f2bce7e399d2d903fff419fd8f642f2566237099",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9876
+      },
+      "reason": "baseline_wirelength_cap_exceeded",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('chain3', ((1,), (48,), (50,)), ((1, (7, 8, 0, 0)), (48, (8, 6, 0, 0)), (50, (5, 9, 0, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": 904433,
+          "id": "('chain3', ((1,), (48,), (50,)), ((1, (7, 8, 0, 0)), (48, (8, 6, 0, 0)), (50, (5, 9, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -537378,
+          "score_q20": -1396003,
+          "timing_delta": 583099,
+          "touched_nets": [
+            0,
+            1,
+            4,
+            10,
+            11,
+            12,
+            13,
+            20,
+            22,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            76,
+            79,
+            92,
+            93,
+            98,
+            107,
+            109,
+            121,
+            122,
+            127,
+            131,
+            132,
+            148,
+            153,
+            156,
+            157,
+            165,
+            169,
+            182,
+            224,
+            228,
+            243,
+            250,
+            265,
+            274,
+            287,
+            309,
+            329,
+            331,
+            332,
+            334,
+            335,
+            340,
+            341,
+            362,
+            363,
+            365,
+            368,
+            431,
+            461,
+            477,
+            484,
+            508,
+            518,
+            534,
+            548,
+            549,
+            557,
+            559,
+            562,
+            563,
+            581,
+            604,
+            607,
+            625,
+            626,
+            629,
+            630
+          ],
+          "trial": {
+            "1": [
+              7,
+              8,
+              0,
+              0
+            ],
+            "48": [
+              8,
+              6,
+              0,
+              0
+            ],
+            "50": [
+              5,
+              9,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              1
+            ],
+            [
+              48
+            ],
+            [
+              50
+            ]
+          ],
+          "wire_delta": 29,
+          "write_sites": [
+            [
+              5,
+              9,
+              0,
+              0
+            ],
+            [
+              7,
+              8,
+              0,
+              0
+            ],
+            [
+              8,
+              6,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 15
+    },
+    {
+      "accepted": true,
+      "bisection_depth": 2,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_16/candidate.place",
+        "sha256": "acb759188c18a66a1940ba8cf6be15d0c0cdd3e65029f803e8107ce023a89ae9"
+      },
+      "closure": {
+        "cpd_ns": 5.61423,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_16/vpr_native_closure.json",
+        "report_sha256": "907a3f2ef0026e46fdc88209ee9064ab05f02501a2a9647fbab3976c9b0c3432",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9872
+      },
+      "color": 0,
+      "epoch": 1,
+      "incumbent_before": {
+        "cpd_ns": 5.61423,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_12/vpr_native_closure.json",
+        "report_sha256": "fe433254f71da700b1f9cec1f2bce7e399d2d903fff419fd8f642f2566237099",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9876
+      },
+      "reason": "equal_cpd_wirelength_improved",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('chain2', ((83,), (92,)), ((83, (8, 12, 1, 0)), (92, (7, 12, 2, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -65536,
+          "id": "('chain2', ((83,), (92,)), ((83, (8, 12, 1, 0)), (92, (7, 12, 2, 0))))",
+          "kind": "chain2",
+          "routed_timing_delta": 0,
+          "score_q20": -820218,
+          "timing_delta": -56457,
+          "touched_nets": [
+            117,
+            275
+          ],
+          "trial": {
+            "83": [
+              8,
+              12,
+              1,
+              0
+            ],
+            "92": [
+              7,
+              12,
+              2,
+              0
+            ]
+          },
+          "units": [
+            [
+              83
+            ],
+            [
+              92
+            ]
+          ],
+          "wire_delta": -1,
+          "write_sites": [
+            [
+              7,
+              12,
+              2,
+              0
+            ],
+            [
+              8,
+              12,
+              1,
+              0
+            ],
+            [
+              8,
+              12,
+              4,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 16
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 1,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_17/candidate.place",
+        "sha256": "4da1019e067f6bb9493ef8aa88f411b8aa178392c3842a8e7b7fd1ab970f9092"
+      },
+      "closure": {
+        "cpd_ns": 5.61943,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_17/vpr_native_closure.json",
+        "report_sha256": "8a4c726cc8fb575cfdaa370423d8c0444fd36695acd5cacc6873e9f8fcd7c057",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9827
+      },
+      "color": 0,
+      "epoch": 1,
+      "incumbent_before": {
+        "cpd_ns": 5.61423,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_16/vpr_native_closure.json",
+        "report_sha256": "907a3f2ef0026e46fdc88209ee9064ab05f02501a2a9647fbab3976c9b0c3432",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9872
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 2,
+      "transaction_ids": [
+        "('swap', ((88,), (105,)), ((88, (5, 0, 7, 0)), (105, (7, 0, 4, 0))))",
+        "('chain3', ((107,), (112,), (146,)), ((107, (3, 0, 1, 0)), (112, (4, 0, 3, 0)), (146, (4, 0, 5, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": 0,
+          "id": "('swap', ((88,), (105,)), ((88, (5, 0, 7, 0)), (105, (7, 0, 4, 0))))",
+          "kind": "swap",
+          "routed_timing_delta": -26214,
+          "score_q20": -434432,
+          "timing_delta": -1262,
+          "touched_nets": [
+            297,
+            574
+          ],
+          "trial": {
+            "105": [
+              7,
+              0,
+              4,
+              0
+            ],
+            "88": [
+              5,
+              0,
+              7,
+              0
+            ]
+          },
+          "units": [
+            [
+              88
+            ],
+            [
+              105
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              5,
+              0,
+              7,
+              0
+            ],
+            [
+              7,
+              0,
+              4,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -117305,
+          "id": "('chain3', ((107,), (112,), (146,)), ((107, (3, 0, 1, 0)), (112, (4, 0, 3, 0)), (146, (4, 0, 5, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -328170,
+          "timing_delta": -91108,
+          "touched_nets": [
+            472,
+            633,
+            672
+          ],
+          "trial": {
+            "107": [
+              3,
+              0,
+              1,
+              0
+            ],
+            "112": [
+              4,
+              0,
+              3,
+              0
+            ],
+            "146": [
+              4,
+              0,
+              5,
+              0
+            ]
+          },
+          "units": [
+            [
+              107
+            ],
+            [
+              112
+            ],
+            [
+              146
+            ]
+          ],
+          "wire_delta": -2,
+          "write_sites": [
+            [
+              3,
+              0,
+              1,
+              0
+            ],
+            [
+              4,
+              0,
+              3,
+              0
+            ],
+            [
+              4,
+              0,
+              5,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 17
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 2,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_18/candidate.place",
+        "sha256": "73372b0e9dde68fd1caf4da8043ed2bdcd27e544c9085dd613eb496999f0fe50"
+      },
+      "closure": {
+        "cpd_ns": 5.61644,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_18/vpr_native_closure.json",
+        "report_sha256": "365ddae205e4a9b009b6112d3b06ed3dac8072be4efc71752e3a95672ca84796",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9855
+      },
+      "color": 0,
+      "epoch": 1,
+      "incumbent_before": {
+        "cpd_ns": 5.61423,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_16/vpr_native_closure.json",
+        "report_sha256": "907a3f2ef0026e46fdc88209ee9064ab05f02501a2a9647fbab3976c9b0c3432",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9872
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('swap', ((88,), (105,)), ((88, (5, 0, 7, 0)), (105, (7, 0, 4, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": 0,
+          "id": "('swap', ((88,), (105,)), ((88, (5, 0, 7, 0)), (105, (7, 0, 4, 0))))",
+          "kind": "swap",
+          "routed_timing_delta": -26214,
+          "score_q20": -434432,
+          "timing_delta": -1262,
+          "touched_nets": [
+            297,
+            574
+          ],
+          "trial": {
+            "105": [
+              7,
+              0,
+              4,
+              0
+            ],
+            "88": [
+              5,
+              0,
+              7,
+              0
+            ]
+          },
+          "units": [
+            [
+              88
+            ],
+            [
+              105
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              5,
+              0,
+              7,
+              0
+            ],
+            [
+              7,
+              0,
+              4,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 18
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 2,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_19/candidate.place",
+        "sha256": "b21bcf7b8d36f04750c4d7920141f917b66df8eb299b030187650ef377b63f54"
+      },
+      "closure": {
+        "cpd_ns": 5.61943,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_19/vpr_native_closure.json",
+        "report_sha256": "453dc7c69118b7038f808b3847510cf1bf16cec072cb2e4195c35e02e7e977ca",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9811
+      },
+      "color": 0,
+      "epoch": 1,
+      "incumbent_before": {
+        "cpd_ns": 5.61423,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_16/vpr_native_closure.json",
+        "report_sha256": "907a3f2ef0026e46fdc88209ee9064ab05f02501a2a9647fbab3976c9b0c3432",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9872
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('chain3', ((107,), (112,), (146,)), ((107, (3, 0, 1, 0)), (112, (4, 0, 3, 0)), (146, (4, 0, 5, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -117305,
+          "id": "('chain3', ((107,), (112,), (146,)), ((107, (3, 0, 1, 0)), (112, (4, 0, 3, 0)), (146, (4, 0, 5, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -328170,
+          "timing_delta": -91108,
+          "touched_nets": [
+            472,
+            633,
+            672
+          ],
+          "trial": {
+            "107": [
+              3,
+              0,
+              1,
+              0
+            ],
+            "112": [
+              4,
+              0,
+              3,
+              0
+            ],
+            "146": [
+              4,
+              0,
+              5,
+              0
+            ]
+          },
+          "units": [
+            [
+              107
+            ],
+            [
+              112
+            ],
+            [
+              146
+            ]
+          ],
+          "wire_delta": -2,
+          "write_sites": [
+            [
+              3,
+              0,
+              1,
+              0
+            ],
+            [
+              4,
+              0,
+              3,
+              0
+            ],
+            [
+              4,
+              0,
+              5,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 19
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 0,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_20/candidate.place",
+        "sha256": "18bdfc6e4da15d6315645ba4ba1074f8cc52a2a4c91bf0e564513b6fe966224d"
+      },
+      "closure": {
+        "cpd_ns": 5.62862,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_20/vpr_native_closure.json",
+        "report_sha256": "a63aa27f60cbf9a3dceec0fce88e561516829859cbaafc08dd2670f00977a44c",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9918
+      },
+      "color": 1,
+      "epoch": 1,
+      "incumbent_before": {
+        "cpd_ns": 5.61423,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_16/vpr_native_closure.json",
+        "report_sha256": "907a3f2ef0026e46fdc88209ee9064ab05f02501a2a9647fbab3976c9b0c3432",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9872
+      },
+      "reason": "baseline_wirelength_cap_exceeded",
+      "transaction_count": 4,
+      "transaction_ids": [
+        "('move', ((96,),), ((96, (12, 8, 2, 0)),))",
+        "('move', ((98,),), ((98, (0, 4, 0, 0)),))",
+        "('chain3', ((24,), (50,), (62,)), ((24, (5, 8, 0, 0)), (50, (7, 9, 0, 0)), (62, (8, 6, 0, 0))))",
+        "('chain2', ((89,), (137,)), ((89, (0, 7, 3, 0)), (137, (0, 6, 0, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -131072,
+          "id": "('move', ((96,),), ((96, (12, 8, 2, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": -117962,
+          "score_q20": -4194306,
+          "timing_delta": -119346,
+          "touched_nets": [
+            176
+          ],
+          "trial": {
+            "96": [
+              12,
+              8,
+              2,
+              0
+            ]
+          },
+          "units": [
+            [
+              96
+            ]
+          ],
+          "wire_delta": -2,
+          "write_sites": [
+            [
+              12,
+              8,
+              2,
+              0
+            ],
+            [
+              12,
+              10,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -66028,
+          "id": "('move', ((98,),), ((98, (0, 4, 0, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": -42597,
+          "score_q20": -3147689,
+          "timing_delta": -55919,
+          "touched_nets": [
+            618
+          ],
+          "trial": {
+            "98": [
+              0,
+              4,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              98
+            ]
+          ],
+          "wire_delta": -1,
+          "write_sites": [
+            [
+              0,
+              3,
+              0,
+              0
+            ],
+            [
+              0,
+              4,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -2705008,
+          "id": "('chain3', ((24,), (50,), (62,)), ((24, (5, 8, 0, 0)), (50, (7, 9, 0, 0)), (62, (8, 6, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -340776,
+          "score_q20": -1132355,
+          "timing_delta": -1751411,
+          "touched_nets": [
+            0,
+            1,
+            3,
+            10,
+            11,
+            12,
+            13,
+            22,
+            33,
+            34,
+            44,
+            47,
+            58,
+            68,
+            74,
+            76,
+            79,
+            97,
+            98,
+            110,
+            111,
+            121,
+            122,
+            127,
+            131,
+            133,
+            139,
+            144,
+            148,
+            153,
+            169,
+            182,
+            193,
+            219,
+            224,
+            228,
+            243,
+            247,
+            250,
+            265,
+            282,
+            309,
+            317,
+            329,
+            331,
+            332,
+            333,
+            334,
+            335,
+            338,
+            340,
+            341,
+            343,
+            362,
+            363,
+            365,
+            368,
+            382,
+            386,
+            387,
+            400,
+            401,
+            406,
+            408,
+            417,
+            428,
+            432,
+            433,
+            434,
+            435,
+            508,
+            521,
+            534,
+            548,
+            549,
+            557,
+            559,
+            566,
+            579,
+            581,
+            585,
+            604,
+            607,
+            629,
+            630,
+            653
+          ],
+          "trial": {
+            "24": [
+              5,
+              8,
+              0,
+              0
+            ],
+            "50": [
+              7,
+              9,
+              0,
+              0
+            ],
+            "62": [
+              8,
+              6,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              24
+            ],
+            [
+              50
+            ],
+            [
+              62
+            ]
+          ],
+          "wire_delta": 10,
+          "write_sites": [
+            [
+              5,
+              8,
+              0,
+              0
+            ],
+            [
+              7,
+              9,
+              0,
+              0
+            ],
+            [
+              8,
+              6,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -67505,
+          "id": "('chain2', ((89,), (137,)), ((89, (0, 7, 3, 0)), (137, (0, 6, 0, 0))))",
+          "kind": "chain2",
+          "routed_timing_delta": 0,
+          "score_q20": -230125,
+          "timing_delta": -18915,
+          "touched_nets": [
+            315,
+            354
+          ],
+          "trial": {
+            "137": [
+              0,
+              6,
+              0,
+              0
+            ],
+            "89": [
+              0,
+              7,
+              3,
+              0
+            ]
+          },
+          "units": [
+            [
+              89
+            ],
+            [
+              137
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              0,
+              6,
+              0,
+              0
+            ],
+            [
+              0,
+              7,
+              3,
+              0
+            ],
+            [
+              0,
+              7,
+              5,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 20
+    },
+    {
+      "accepted": true,
+      "bisection_depth": 1,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_21/candidate.place",
+        "sha256": "b30bc9c47b239310b1bd2648c4a10df325ac9ffec24e80f5442f2decb4a64b73"
+      },
+      "closure": {
+        "cpd_ns": 5.61423,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_21/vpr_native_closure.json",
+        "report_sha256": "5874309f45299471194f6be93366ec648f860c61b2d11aa4c2fd45306bca73ea",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9868
+      },
+      "color": 1,
+      "epoch": 1,
+      "incumbent_before": {
+        "cpd_ns": 5.61423,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_16/vpr_native_closure.json",
+        "report_sha256": "907a3f2ef0026e46fdc88209ee9064ab05f02501a2a9647fbab3976c9b0c3432",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9872
+      },
+      "reason": "equal_cpd_wirelength_improved",
+      "transaction_count": 2,
+      "transaction_ids": [
+        "('move', ((96,),), ((96, (12, 8, 2, 0)),))",
+        "('move', ((98,),), ((98, (0, 4, 0, 0)),))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -131072,
+          "id": "('move', ((96,),), ((96, (12, 8, 2, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": -117962,
+          "score_q20": -4194306,
+          "timing_delta": -119346,
+          "touched_nets": [
+            176
+          ],
+          "trial": {
+            "96": [
+              12,
+              8,
+              2,
+              0
+            ]
+          },
+          "units": [
+            [
+              96
+            ]
+          ],
+          "wire_delta": -2,
+          "write_sites": [
+            [
+              12,
+              8,
+              2,
+              0
+            ],
+            [
+              12,
+              10,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -66028,
+          "id": "('move', ((98,),), ((98, (0, 4, 0, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": -42597,
+          "score_q20": -3147689,
+          "timing_delta": -55919,
+          "touched_nets": [
+            618
+          ],
+          "trial": {
+            "98": [
+              0,
+              4,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              98
+            ]
+          ],
+          "wire_delta": -1,
+          "write_sites": [
+            [
+              0,
+              3,
+              0,
+              0
+            ],
+            [
+              0,
+              4,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 21
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 1,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_22/candidate.place",
+        "sha256": "18bdfc6e4da15d6315645ba4ba1074f8cc52a2a4c91bf0e564513b6fe966224d"
+      },
+      "closure": {
+        "cpd_ns": 5.62862,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_22/vpr_native_closure.json",
+        "report_sha256": "250bc7738a1d3a35e5c7ea976f3bb6a4c93b73110a7ee8001e35408ec8b4ca1e",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9918
+      },
+      "color": 1,
+      "epoch": 1,
+      "incumbent_before": {
+        "cpd_ns": 5.61423,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_21/vpr_native_closure.json",
+        "report_sha256": "5874309f45299471194f6be93366ec648f860c61b2d11aa4c2fd45306bca73ea",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9868
+      },
+      "reason": "baseline_wirelength_cap_exceeded",
+      "transaction_count": 2,
+      "transaction_ids": [
+        "('chain3', ((24,), (50,), (62,)), ((24, (5, 8, 0, 0)), (50, (7, 9, 0, 0)), (62, (8, 6, 0, 0))))",
+        "('chain2', ((89,), (137,)), ((89, (0, 7, 3, 0)), (137, (0, 6, 0, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -2705008,
+          "id": "('chain3', ((24,), (50,), (62,)), ((24, (5, 8, 0, 0)), (50, (7, 9, 0, 0)), (62, (8, 6, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -340776,
+          "score_q20": -1132355,
+          "timing_delta": -1751411,
+          "touched_nets": [
+            0,
+            1,
+            3,
+            10,
+            11,
+            12,
+            13,
+            22,
+            33,
+            34,
+            44,
+            47,
+            58,
+            68,
+            74,
+            76,
+            79,
+            97,
+            98,
+            110,
+            111,
+            121,
+            122,
+            127,
+            131,
+            133,
+            139,
+            144,
+            148,
+            153,
+            169,
+            182,
+            193,
+            219,
+            224,
+            228,
+            243,
+            247,
+            250,
+            265,
+            282,
+            309,
+            317,
+            329,
+            331,
+            332,
+            333,
+            334,
+            335,
+            338,
+            340,
+            341,
+            343,
+            362,
+            363,
+            365,
+            368,
+            382,
+            386,
+            387,
+            400,
+            401,
+            406,
+            408,
+            417,
+            428,
+            432,
+            433,
+            434,
+            435,
+            508,
+            521,
+            534,
+            548,
+            549,
+            557,
+            559,
+            566,
+            579,
+            581,
+            585,
+            604,
+            607,
+            629,
+            630,
+            653
+          ],
+          "trial": {
+            "24": [
+              5,
+              8,
+              0,
+              0
+            ],
+            "50": [
+              7,
+              9,
+              0,
+              0
+            ],
+            "62": [
+              8,
+              6,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              24
+            ],
+            [
+              50
+            ],
+            [
+              62
+            ]
+          ],
+          "wire_delta": 10,
+          "write_sites": [
+            [
+              5,
+              8,
+              0,
+              0
+            ],
+            [
+              7,
+              9,
+              0,
+              0
+            ],
+            [
+              8,
+              6,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -67505,
+          "id": "('chain2', ((89,), (137,)), ((89, (0, 7, 3, 0)), (137, (0, 6, 0, 0))))",
+          "kind": "chain2",
+          "routed_timing_delta": 0,
+          "score_q20": -230125,
+          "timing_delta": -18915,
+          "touched_nets": [
+            315,
+            354
+          ],
+          "trial": {
+            "137": [
+              0,
+              6,
+              0,
+              0
+            ],
+            "89": [
+              0,
+              7,
+              3,
+              0
+            ]
+          },
+          "units": [
+            [
+              89
+            ],
+            [
+              137
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              0,
+              6,
+              0,
+              0
+            ],
+            [
+              0,
+              7,
+              3,
+              0
+            ],
+            [
+              0,
+              7,
+              5,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 22
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 2,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_23/candidate.place",
+        "sha256": "f3fe365cb143f94b43e17eda21b619e316dddee0e07ef44a8f3eb4132fdfaafc"
+      },
+      "closure": {
+        "cpd_ns": 5.62862,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_23/vpr_native_closure.json",
+        "report_sha256": "4c5bbbcf8790b42ad050e64797c4c8c004a8d1fded63961b09bb89236dcaf489",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9914
+      },
+      "color": 1,
+      "epoch": 1,
+      "incumbent_before": {
+        "cpd_ns": 5.61423,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_21/vpr_native_closure.json",
+        "report_sha256": "5874309f45299471194f6be93366ec648f860c61b2d11aa4c2fd45306bca73ea",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9868
+      },
+      "reason": "baseline_wirelength_cap_exceeded",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('chain3', ((24,), (50,), (62,)), ((24, (5, 8, 0, 0)), (50, (7, 9, 0, 0)), (62, (8, 6, 0, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -2705008,
+          "id": "('chain3', ((24,), (50,), (62,)), ((24, (5, 8, 0, 0)), (50, (7, 9, 0, 0)), (62, (8, 6, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -340776,
+          "score_q20": -1132355,
+          "timing_delta": -1751411,
+          "touched_nets": [
+            0,
+            1,
+            3,
+            10,
+            11,
+            12,
+            13,
+            22,
+            33,
+            34,
+            44,
+            47,
+            58,
+            68,
+            74,
+            76,
+            79,
+            97,
+            98,
+            110,
+            111,
+            121,
+            122,
+            127,
+            131,
+            133,
+            139,
+            144,
+            148,
+            153,
+            169,
+            182,
+            193,
+            219,
+            224,
+            228,
+            243,
+            247,
+            250,
+            265,
+            282,
+            309,
+            317,
+            329,
+            331,
+            332,
+            333,
+            334,
+            335,
+            338,
+            340,
+            341,
+            343,
+            362,
+            363,
+            365,
+            368,
+            382,
+            386,
+            387,
+            400,
+            401,
+            406,
+            408,
+            417,
+            428,
+            432,
+            433,
+            434,
+            435,
+            508,
+            521,
+            534,
+            548,
+            549,
+            557,
+            559,
+            566,
+            579,
+            581,
+            585,
+            604,
+            607,
+            629,
+            630,
+            653
+          ],
+          "trial": {
+            "24": [
+              5,
+              8,
+              0,
+              0
+            ],
+            "50": [
+              7,
+              9,
+              0,
+              0
+            ],
+            "62": [
+              8,
+              6,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              24
+            ],
+            [
+              50
+            ],
+            [
+              62
+            ]
+          ],
+          "wire_delta": 10,
+          "write_sites": [
+            [
+              5,
+              8,
+              0,
+              0
+            ],
+            [
+              7,
+              9,
+              0,
+              0
+            ],
+            [
+              8,
+              6,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 23
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 2,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_24/candidate.place",
+        "sha256": "20507c1841ea193f299ddb7390b27e6aa066c42d76efbbf8c2f9c244fc2ab0da"
+      },
+      "closure": {
+        "cpd_ns": 5.61423,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_24/vpr_native_closure.json",
+        "report_sha256": "3908662f6ab3082c7e93764d81485751293e9a1536ae141ac72efd86cf2c7233",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9872
+      },
+      "color": 1,
+      "epoch": 1,
+      "incumbent_before": {
+        "cpd_ns": 5.61423,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/work/trial_21/vpr_native_closure.json",
+        "report_sha256": "5874309f45299471194f6be93366ec648f860c61b2d11aa4c2fd45306bca73ea",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9868
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('chain2', ((89,), (137,)), ((89, (0, 7, 3, 0)), (137, (0, 6, 0, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -67505,
+          "id": "('chain2', ((89,), (137,)), ((89, (0, 7, 3, 0)), (137, (0, 6, 0, 0))))",
+          "kind": "chain2",
+          "routed_timing_delta": 0,
+          "score_q20": -230125,
+          "timing_delta": -18915,
+          "touched_nets": [
+            315,
+            354
+          ],
+          "trial": {
+            "137": [
+              0,
+              6,
+              0,
+              0
+            ],
+            "89": [
+              0,
+              7,
+              3,
+              0
+            ]
+          },
+          "units": [
+            [
+              89
+            ],
+            [
+              137
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              0,
+              6,
+              0,
+              0
+            ],
+            [
+              0,
+              7,
+              3,
+              0
+            ],
+            [
+              0,
+              7,
+              5,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 24
+    }
+  ]
+}

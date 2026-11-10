@@ -1,0 +1,103 @@
+{
+  "accepted_transactions": 1,
+  "all_search_and_feedback_identities_equal": true,
+  "case": "diffeq",
+  "closure_calls": 16,
+  "final": {
+    "cpd_ns": 6.59759,
+    "legal": true,
+    "wirelength": 9098
+  },
+  "final_place_sha256": "af5a34eb05456b5a37a3889526000141d75e14c64516bc0782c5eea2fd168310",
+  "implementation_sha256": "dc0d7b31b411a03057597d4f215f46cfb4f29a7a2fb1a265185ca9d321996f6d",
+  "limitations": [
+    "Single small development design, diagnostic only; not representative throughput",
+    "Three measured runs, no independent equal-time comparator or speedup claim",
+    "Baseline/input generation excluded; external process duration includes startup and output",
+    "Held-out QoR cohort unchanged",
+    "Generic-port implementation; historical restricted-port V4 development aggregate is not a comparator or validation target",
+    "Comparator amendment excludes path-bearing raw artifact hashes; all three measured observations retained"
+  ],
+  "median_process_wall_s": 88.74074210971594,
+  "median_stage_fraction_of_process": {
+    "feedback_refresh": 0.0047831319495503285,
+    "oracle_driver": 0.22571349441819327,
+    "proposal": 0.7579068600268175
+  },
+  "median_stage_wall_s": {
+    "feedback_refresh": 0.42445867881178856,
+    "oracle_driver": 20.06676066853106,
+    "proposal": 66.76797059364617
+  },
+  "protocols": [
+    {
+      "file": "tileplace_v4_generic_timing_protocol_2026-09-29.json",
+      "sha256": "295d41a8ac371b65c1961cb7f85b77a060fb95398a1f4a2fd7b6334a048b9517"
+    },
+    {
+      "file": "tileplace_v4_generic_timing_continuation_protocol_2026-09-29.json",
+      "sha256": "3b129ba72e7d855dfdf8990a3892aeff51d12a7c2f349f1002da945168741165"
+    }
+  ],
+  "runs": [
+    {
+      "directory": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_v4_generic_timing_diffeq_2026-09-29/run_00",
+      "flow_wall_s": 89.6704382263124,
+      "preparation_wall_s": 0.6672291047871113,
+      "process_wall_s": 89.78831317089498,
+      "report_sha256": "83243982db742d09571fcb3fd17a76b22904e6106d7fb597429333471d2ca0c8",
+      "search_stage_wall_s": {
+        "feedback_refresh": 0.45057807490229607,
+        "oracle_driver": 19.726244177669287,
+        "proposal": 68.42520061507821
+      },
+      "timing_sha256": "be801783f08b27dc5f86984640a0db3698f129ebd337d416a1ccb69d4997a6d2",
+      "warmup": true
+    },
+    {
+      "directory": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_v4_generic_timing_diffeq_2026-09-29/run_01",
+      "flow_wall_s": 88.63413170352578,
+      "preparation_wall_s": 0.5175359807908535,
+      "process_wall_s": 88.74074210971594,
+      "report_sha256": "73167c9b24f8a0987e86d54e4c791a563ed1e8bb8062a394859ed725f19d6cd6",
+      "search_stage_wall_s": {
+        "feedback_refresh": 0.42445867881178856,
+        "oracle_driver": 20.503809930756688,
+        "proposal": 66.76797059364617
+      },
+      "timing_sha256": "ee592c26d322c0e3056c42a9762c538b40661d50b0f20263e7b8c9931155fd30",
+      "warmup": false
+    },
+    {
+      "directory": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_v4_generic_timing_diffeq_continuation_2026-09-29/run_00",
+      "flow_wall_s": 89.5182780828327,
+      "preparation_wall_s": 0.5169758200645447,
+      "process_wall_s": 89.6547483522445,
+      "report_sha256": "153bd0af5ac22ababa6680d1c0e68adf4599639a2dda701860007bd4603bcaa5",
+      "search_stage_wall_s": {
+        "feedback_refresh": 0.4403456151485443,
+        "oracle_driver": 20.06676066853106,
+        "proposal": 68.08709595352411
+      },
+      "timing_sha256": "7140902deb45b8c1e39f23abade62311578297b052688e11233aba21cbdcb278",
+      "warmup": false
+    },
+    {
+      "directory": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_v4_generic_timing_diffeq_continuation_2026-09-29/run_01",
+      "flow_wall_s": 87.55081950128078,
+      "preparation_wall_s": 0.509037347510457,
+      "process_wall_s": 87.6562021933496,
+      "report_sha256": "02ab21fe682f931c0ae84f85d090fd010642d7435cd7bbbdba2b42aa3cd81ba6",
+      "search_stage_wall_s": {
+        "feedback_refresh": 0.4167950637638569,
+        "oracle_driver": 19.785187704488635,
+        "proposal": 66.43523696623743
+      },
+      "timing_sha256": "7c38b6187c3bc36f172a9d2f013f14edf0fdcd0516160e3de9c15fcc4e7ab4f4",
+      "warmup": false
+    }
+  ],
+  "sample_cv_pct": 1.1281472652774025,
+  "schema": "TILEPLACE_V4_GENERIC_DEVELOPMENT_TIMING_COMBINED_V1",
+  "status": "pass"
+}

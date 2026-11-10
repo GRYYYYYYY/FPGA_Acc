@@ -1,0 +1,831 @@
+{
+  "cases": [
+    {
+      "design": "adder",
+      "end_to_end_s": 0.21958340518176556,
+      "error": "stage failed: baseline exit 1",
+      "failed_stage": "baseline",
+      "repeats": [],
+      "stages": [],
+      "status": "fail"
+    },
+    {
+      "baseline": {
+        "cpd_ns": 5.96812,
+        "legal": true,
+        "returncode": 0,
+        "schema": "TILEPLACE_NEW_COHORT_NATIVE_BASELINE_V1",
+        "status": "pass",
+        "wirelength": 9580
+      },
+      "cpd_ratio": 1.0,
+      "design": "alu4",
+      "end_to_end_s": 183.62491169571877,
+      "final": {
+        "cpd_ns": 5.96812,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/alu4/run_00/work/trial_13/vpr_native_closure.json",
+        "report_sha256": "595badec460b4d8e4f61446030fd0fe9e26139e84a0c62de5200655647d6e900",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9561
+      },
+      "repeats": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/alu4/run_00/report.json",
+          "process": {
+            "elapsed_s": 82.87020622752607,
+            "returncode": 0
+          },
+          "sha256": "ae52fc034b1976ce14b3784f9e171d5043df2d7dbeba520c2c194e09b041a364",
+          "verified_native_trials": 24
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/alu4/run_01/report.json",
+          "process": {
+            "elapsed_s": 84.42542349919677,
+            "returncode": 0
+          },
+          "sha256": "619f24f63635764f05d08ccaafa58872fcfd06d595e09f9265c08e734bbf91ab",
+          "verified_native_trials": 24
+        }
+      ],
+      "stages": [
+        {
+          "elapsed_s": 5.515540644526482,
+          "name": "baseline",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 0.12080299481749535,
+          "name": "connections",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 3.514547074213624,
+          "name": "pack",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 4.276334932073951,
+          "name": "paths",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 0.2902673967182636,
+          "name": "proxy",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 0.9526357296854258,
+          "name": "timing",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 0.6268209163099527,
+          "name": "contract",
+          "returncode": 0
+        }
+      ],
+      "status": "pass",
+      "wirelength_ratio": 0.9980167014613779
+    },
+    {
+      "baseline": {
+        "cpd_ns": 6.69869,
+        "legal": true,
+        "returncode": 0,
+        "schema": "TILEPLACE_NEW_COHORT_NATIVE_BASELINE_V1",
+        "status": "pass",
+        "wirelength": 16101
+      },
+      "cpd_ratio": 0.9600892114726909,
+      "design": "apex2",
+      "end_to_end_s": 194.0420862045139,
+      "final": {
+        "cpd_ns": 6.43134,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/apex2/run_00/work/trial_11/vpr_native_closure.json",
+        "report_sha256": "98a61bc70f2e1d3e12ee266d0bfaf1d1d55d950ecf3b49bd048a5bd3de73a5c8",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 16129
+      },
+      "repeats": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/apex2/run_00/report.json",
+          "process": {
+            "elapsed_s": 87.23571439646184,
+            "returncode": 0
+          },
+          "sha256": "a6b8cd5aa0c223db0fccacacffed75e1b9ab1f9385d407a1e1f94f69f8aa9004",
+          "verified_native_trials": 18
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/apex2/run_01/report.json",
+          "process": {
+            "elapsed_s": 86.10610507801175,
+            "returncode": 0
+          },
+          "sha256": "df6583289058cc5f1f5867378735b381c316f47c5246266488e4f32fb477b5f9",
+          "verified_native_trials": 18
+        }
+      ],
+      "stages": [
+        {
+          "elapsed_s": 6.8952149003744125,
+          "name": "baseline",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 0.1366481315344572,
+          "name": "connections",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 3.883092887699604,
+          "name": "pack",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 6.786792002618313,
+          "name": "paths",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 0.3917855005711317,
+          "name": "proxy",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 1.0881207920610905,
+          "name": "timing",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 0.734238289296627,
+          "name": "contract",
+          "returncode": 0
+        }
+      ],
+      "status": "pass",
+      "wirelength_ratio": 1.0017390224209677
+    },
+    {
+      "baseline": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "returncode": 0,
+        "schema": "TILEPLACE_NEW_COHORT_NATIVE_BASELINE_V1",
+        "status": "pass",
+        "wirelength": 12974
+      },
+      "cpd_ratio": 1.0,
+      "design": "des",
+      "end_to_end_s": 137.58527447283268,
+      "final": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_22/vpr_native_closure.json",
+        "report_sha256": "48b37a4f30188e0fe629f350ccecd9210c64ee1f62427488325516cce566116d",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 12915
+      },
+      "repeats": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/report.json",
+          "process": {
+            "elapsed_s": 58.30318647809327,
+            "returncode": 0
+          },
+          "sha256": "e07b4bd0c6e9edebf8316378f0d0db57ba173376c29d261bab6b0b1bdd42b283",
+          "verified_native_trials": 24
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_01/report.json",
+          "process": {
+            "elapsed_s": 57.17749818041921,
+            "returncode": 0
+          },
+          "sha256": "a14b2cb5c376d2983a71f3df6183dd9013dcb3273d69d6e5e3357294731f608e",
+          "verified_native_trials": 24
+        }
+      ],
+      "stages": [
+        {
+          "elapsed_s": 6.1675579231232405,
+          "name": "baseline",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 0.11289886571466923,
+          "name": "connections",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 5.1524205096066,
+          "name": "pack",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 7.336323406547308,
+          "name": "paths",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 0.31788465194404125,
+          "name": "proxy",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 1.2117511052638292,
+          "name": "timing",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 0.75846410356462,
+          "name": "contract",
+          "returncode": 0
+        }
+      ],
+      "status": "pass",
+      "wirelength_ratio": 0.9954524433482349
+    },
+    {
+      "design": "ex1010",
+      "end_to_end_s": 62.63642551191151,
+      "error": "stage failed: paths exit 3",
+      "failed_stage": "paths",
+      "repeats": [],
+      "stages": [
+        {
+          "elapsed_s": 15.194797275587916,
+          "name": "baseline",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 0.19401082210242748,
+          "name": "connections",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 8.82075459882617,
+          "name": "pack",
+          "returncode": 0
+        }
+      ],
+      "status": "fail"
+    },
+    {
+      "baseline": {
+        "cpd_ns": 5.8858,
+        "legal": true,
+        "returncode": 0,
+        "schema": "TILEPLACE_NEW_COHORT_NATIVE_BASELINE_V1",
+        "status": "pass",
+        "wirelength": 9857
+      },
+      "cpd_ratio": 0.953860137959156,
+      "design": "ex5p",
+      "end_to_end_s": 168.28215596452355,
+      "final": {
+        "cpd_ns": 5.61423,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_00/work/trial_21/vpr_native_closure.json",
+        "report_sha256": "4ddda28870ff05ec1a624a9bd46cc2182157df29d474e0872beb456ff3cb1c59",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 9868
+      },
+      "repeats": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_00/report.json",
+          "process": {
+            "elapsed_s": 78.43551354855299,
+            "returncode": 0
+          },
+          "sha256": "3aae022cfc05104d03c8d61be517d836ce77f79d19fad543f1bda26623f1d1bb",
+          "verified_native_trials": 24
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex5p/run_01/report.json",
+          "process": {
+            "elapsed_s": 78.31277651526034,
+            "returncode": 0
+          },
+          "sha256": "79874ab4395d70b4cc05b9468cd742948de59881ffb2470152ca0bb991aff8f6",
+          "verified_native_trials": 24
+        }
+      ],
+      "stages": [
+        {
+          "elapsed_s": 3.822615224868059,
+          "name": "baseline",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 0.12472051940858364,
+          "name": "connections",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 2.5343155078589916,
+          "name": "pack",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 2.5690053049474955,
+          "name": "paths",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 0.24139922857284546,
+          "name": "proxy",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 0.8493590038269758,
+          "name": "timing",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 0.4947720319032669,
+          "name": "contract",
+          "returncode": 0
+        }
+      ],
+      "status": "pass",
+      "wirelength_ratio": 1.0011159582022928
+    },
+    {
+      "baseline": {
+        "cpd_ns": 5.08031,
+        "legal": true,
+        "returncode": 0,
+        "schema": "TILEPLACE_NEW_COHORT_NATIVE_BASELINE_V1",
+        "status": "pass",
+        "wirelength": 10323
+      },
+      "cpd_ratio": 0.9916717680613979,
+      "design": "misex3",
+      "end_to_end_s": 267.63262709602714,
+      "final": {
+        "cpd_ns": 5.038,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/misex3/run_00/work/trial_07/vpr_native_closure.json",
+        "report_sha256": "e5e2687294eac9d09fadd03975eef2b7efce2aae6886ac788295b6cc08767f19",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 10269
+      },
+      "repeats": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/misex3/run_00/report.json",
+          "process": {
+            "elapsed_s": 127.20584614574909,
+            "returncode": 0
+          },
+          "sha256": "e0d05d699c1feb54909ee089a78b3555c542e1401a82bc638859eb6168132a0d",
+          "verified_native_trials": 24
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/misex3/run_01/report.json",
+          "process": {
+            "elapsed_s": 125.06204598210752,
+            "returncode": 0
+          },
+          "sha256": "b602fef4e101e172ec823fd471000d9116ab86c070921e280f810ce88c6b7b60",
+          "verified_native_trials": 24
+        }
+      ],
+      "stages": [
+        {
+          "elapsed_s": 4.315333556383848,
+          "name": "baseline",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 0.1373524945229292,
+          "name": "connections",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 2.978634724393487,
+          "name": "pack",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 4.9264365546405315,
+          "name": "paths",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 0.2700311876833439,
+          "name": "proxy",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 0.9732895847409964,
+          "name": "timing",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 0.6792611237615347,
+          "name": "contract",
+          "returncode": 0
+        }
+      ],
+      "status": "pass",
+      "wirelength_ratio": 0.994768962510898
+    },
+    {
+      "design": "s298",
+      "end_to_end_s": 14.614779945462942,
+      "error": "stage failed: paths exit 3",
+      "failed_stage": "paths",
+      "repeats": [],
+      "stages": [
+        {
+          "elapsed_s": 4.384705226868391,
+          "name": "baseline",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 0.1221690233796835,
+          "name": "connections",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 3.467161938548088,
+          "name": "pack",
+          "returncode": 0
+        }
+      ],
+      "status": "fail"
+    },
+    {
+      "design": "s38417",
+      "end_to_end_s": 65.9492402933538,
+      "error": "stage failed: paths exit 3",
+      "failed_stage": "paths",
+      "repeats": [],
+      "stages": [
+        {
+          "elapsed_s": 19.613661164417863,
+          "name": "baseline",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 0.18527092598378658,
+          "name": "connections",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 11.249018406495452,
+          "name": "pack",
+          "returncode": 0
+        }
+      ],
+      "status": "fail"
+    },
+    {
+      "baseline": {
+        "cpd_ns": 6.90921,
+        "legal": true,
+        "returncode": 0,
+        "schema": "TILEPLACE_NEW_COHORT_NATIVE_BASELINE_V1",
+        "status": "pass",
+        "wirelength": 34858
+      },
+      "cpd_ratio": 0.9791032549307374,
+      "design": "s38584.1",
+      "end_to_end_s": 496.66167625039816,
+      "final": {
+        "cpd_ns": 6.76483,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/s38584.1/run_00/work/trial_23/vpr_native_closure.json",
+        "report_sha256": "c07c702b43c35d74284bce2d86ad5ae963ebae02c20dd9ba577fe538d617c97b",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 34785
+      },
+      "repeats": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/s38584.1/run_00/report.json",
+          "process": {
+            "elapsed_s": 210.4680545758456,
+            "returncode": 0
+          },
+          "sha256": "5be6f0ef56c3f3985bdd04aa0e164a70cddb0ece2c5dd640015a8273134b2092",
+          "verified_native_trials": 24
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/s38584.1/run_01/report.json",
+          "process": {
+            "elapsed_s": 211.52199908345938,
+            "returncode": 0
+          },
+          "sha256": "c70df35a016500f083be66edfefc09e7f71050c3f898aca72262d16a2da72b18",
+          "verified_native_trials": 24
+        }
+      ],
+      "stages": [
+        {
+          "elapsed_s": 18.832429284229875,
+          "name": "baseline",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 0.18598476238548756,
+          "name": "connections",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 11.289462549611926,
+          "name": "pack",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 35.95248348638415,
+          "name": "paths",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 0.5903389696031809,
+          "name": "proxy",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 2.998668635264039,
+          "name": "timing",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 1.7941048797219992,
+          "name": "contract",
+          "returncode": 0
+        }
+      ],
+      "status": "pass",
+      "wirelength_ratio": 0.9979057892019049
+    },
+    {
+      "baseline": {
+        "cpd_ns": 5.45825,
+        "legal": true,
+        "returncode": 0,
+        "schema": "TILEPLACE_NEW_COHORT_NATIVE_BASELINE_V1",
+        "status": "pass",
+        "wirelength": 14194
+      },
+      "cpd_ratio": 0.9997984702056522,
+      "design": "seq",
+      "end_to_end_s": 318.33458712510765,
+      "final": {
+        "cpd_ns": 5.45715,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/seq/run_00/work/trial_23/vpr_native_closure.json",
+        "report_sha256": "4329c30ea6d6507004752c9bd9c136546f01fbdd45af6d90e42044ea5822b477",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 14175
+      },
+      "repeats": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/seq/run_00/report.json",
+          "process": {
+            "elapsed_s": 151.13197249546647,
+            "returncode": 0
+          },
+          "sha256": "e4912c719a1ee535ebad4f566c428f4d8fced11f29aca5171a3ba17b38623965",
+          "verified_native_trials": 24
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/seq/run_01/report.json",
+          "process": {
+            "elapsed_s": 149.02108428813517,
+            "returncode": 0
+          },
+          "sha256": "44abcfb15321fc8b1a2e5adb72368775fa742aae0847cb9651c13e3673f0a56a",
+          "verified_native_trials": 24
+        }
+      ],
+      "stages": [
+        {
+          "elapsed_s": 5.993049439042807,
+          "name": "baseline",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 0.13831476867198944,
+          "name": "connections",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 3.5500613898038864,
+          "name": "pack",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 5.150465205311775,
+          "name": "paths",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 0.3054347187280655,
+          "name": "proxy",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 1.1314757075160742,
+          "name": "timing",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 0.6252833101898432,
+          "name": "contract",
+          "returncode": 0
+        }
+      ],
+      "status": "pass",
+      "wirelength_ratio": 0.9986614062279836
+    },
+    {
+      "baseline": {
+        "cpd_ns": 7.65176,
+        "legal": true,
+        "returncode": 0,
+        "schema": "TILEPLACE_NEW_COHORT_NATIVE_BASELINE_V1",
+        "status": "pass",
+        "wirelength": 36337
+      },
+      "cpd_ratio": 0.9994210482294269,
+      "design": "spla",
+      "end_to_end_s": 711.3146816622466,
+      "final": {
+        "cpd_ns": 7.64733,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/spla/run_00/work/trial_20/vpr_native_closure.json",
+        "report_sha256": "a3c08cca74e0cc8d530271a1295e21591f5db5a3b9ef60926f16b5aed42f76c7",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 36373
+      },
+      "repeats": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/spla/run_00/report.json",
+          "process": {
+            "elapsed_s": 328.2703794911504,
+            "returncode": 0
+          },
+          "sha256": "35bb870903c00f98998fa9b20dcd1b788bfe689c60d0a55cc90ebf94f23f58b4",
+          "verified_native_trials": 24
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/spla/run_01/report.json",
+          "process": {
+            "elapsed_s": 330.28592753596604,
+            "returncode": 0
+          },
+          "sha256": "e54094cff6f6e0da6b9d017a05761b037a30c9769403debf285cc9ee1aae9282",
+          "verified_native_trials": 24
+        }
+      ],
+      "stages": [
+        {
+          "elapsed_s": 12.785409517586231,
+          "name": "baseline",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 0.17563852109014988,
+          "name": "connections",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 7.890211850404739,
+          "name": "pack",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 25.426266649737954,
+          "name": "paths",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 0.4758863840252161,
+          "name": "proxy",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 2.074015384539962,
+          "name": "timing",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 1.4062522556632757,
+          "name": "contract",
+          "returncode": 0
+        }
+      ],
+      "status": "pass",
+      "wirelength_ratio": 1.00099072570658
+    },
+    {
+      "baseline": {
+        "cpd_ns": 6.64179,
+        "legal": true,
+        "returncode": 0,
+        "schema": "TILEPLACE_NEW_COHORT_NATIVE_BASELINE_V1",
+        "status": "pass",
+        "wirelength": 5260
+      },
+      "cpd_ratio": 0.9432005528630083,
+      "design": "tseng",
+      "end_to_end_s": 106.12347870692611,
+      "final": {
+        "cpd_ns": 6.26454,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/tseng/run_00/work/trial_05/vpr_native_closure.json",
+        "report_sha256": "f80726a625388fff2200aeaf2d18f0e18d6cde5a762c914817ce9e825aa4ce16",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 5219
+      },
+      "repeats": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/tseng/run_00/report.json",
+          "process": {
+            "elapsed_s": 48.90963635593653,
+            "returncode": 0
+          },
+          "sha256": "c162521a1625b6fcfe2dc1f641fd8556ffeb065bbd23ef1796d7c8fb1d1c5a50",
+          "verified_native_trials": 16
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/tseng/run_01/report.json",
+          "process": {
+            "elapsed_s": 48.8226875346154,
+            "returncode": 0
+          },
+          "sha256": "23fba356cb92a99eab8b352c6e5cadcc8a42ce1c913944520b70c8bc5c39cfcd",
+          "verified_native_trials": 16
+        }
+      ],
+      "stages": [
+        {
+          "elapsed_s": 2.98435721360147,
+          "name": "baseline",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 0.116405563428998,
+          "name": "connections",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 1.8025747332721949,
+          "name": "pack",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 1.4389160256832838,
+          "name": "paths",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 0.20034112595021725,
+          "name": "proxy",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 0.6637033149600029,
+          "name": "timing",
+          "returncode": 0
+        },
+        {
+          "elapsed_s": 0.44964858144521713,
+          "name": "contract",
+          "returncode": 0
+        }
+      ],
+      "status": "pass",
+      "wirelength_ratio": 0.9922053231939163
+    }
+  ],
+  "expected_cases": 13,
+  "protocol_sha256": "c548ad1e181551cdfb0bbbf5409a49f833bd994b177110675d5ca77574b8df72",
+  "schema": "TILEPLACE_NEW_COHORT_MATRIX_V1",
+  "scope": "Prospective source-sealed local logic-oriented cohort; exposure review has limitations, strict historical blindness and architecture generalization not established",
+  "successful_cases": 9
+}

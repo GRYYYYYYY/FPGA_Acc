@@ -1,0 +1,11 @@
+# Interpretation limits
+
+Only A is active in this round. E's accepted search-only 69.1169→42.1519 seconds (about 1.640×) and its complete-cost gap remain in the phase1 audit. E receives no new run. B/C/D, including DieRoute, receive no new experiment or process manipulation.
+
+The frozen switch has an exact algebraic specification: for canonical unit edges, a horizontal/vertical segment contributes its edge count times PRESSURE_ONE plus the sum of sparse weights in the half-open interval [min, max). Prefix subtraction computes precisely that integer sum. The two L-shaped traversal orders use the same fixed row and column as the edge-walk reference. This explains expected equivalence but is not a proof about route/STA invariance. Native closure still checks each submitted candidate.
+
+The 8,000 pre-run checks exercise that specification and feedback snapshot replacement. Full-flow evidence compares every submitted candidate placement SHA, transaction integer costs, controller phases/decisions, feedback numerical identities and generic-parser identity, and final native legality/CPD/WL. Internal alternatives not submitted to native closure are represented by phase counts rather than a complete score trace; no claim of exhaustive internal-state equivalence is made. A future new dependency-reuse mechanism needs stronger per-candidate instrumentation.
+
+The supervisor's initial `git status` pathspec was inadvertently relative to the phase2 directory and emitted a harmless nonexistent-directory warning. It was not treated as source verification. The run's seven-source implementation fingerprint is independently compared with the frozen protocol after completion, and the runner verifies source/input hashes at exit. The final delivery also verifies all frozen source files against the pre-run commit. No mid-pilot source or parameter changes are made. The protocol-byte comparison uses `git show` and is valid. This warning and its limited scope are retained instead of suppressing it.
+
+The old workflow has not been rewritten. Existing research results remain untouched; all source instrumentation and reports are confined to this audit subtree and new isolated runtime outputs. The historical parser problem, failed inputs, timing failure and negative ablation remain explicit.

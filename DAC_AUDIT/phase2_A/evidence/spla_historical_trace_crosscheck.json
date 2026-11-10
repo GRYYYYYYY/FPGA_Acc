@@ -1,0 +1,15 @@
+{
+  "case": "spla",
+  "historical_implementation_sha256": "2fa6e2324a971d8489bba12d49115f91d0a56874c0ee5200224d72e4f8a9f689",
+  "new_implementation_sha256": "f8d785d370921d232653d59055df3269c8fa94e2db22c8b92a4ce2ce374eee24",
+  "historical_report_sha256": "35bb870903c00f98998fa9b20dcd1b788bfe689c60d0a55cc90ebf94f23f58b4",
+  "new_report_sha256": "004bf9d1000ba9f3fd3381e7f3ccd2224d3545f475c2826d03d59406580e2b69",
+  "checks": {
+    "submitted_candidates_and_decisions": true,
+    "numerical_feedback": true,
+    "phases": true,
+    "transaction_costs": true
+  },
+  "native_closures_both": 24,
+  "interpretation": "Same recorded search trajectory and QoR; cross-date timing difference is not a pressure-prefix ablation and its cause was not measured. Historical and current timings remain separate."
+}

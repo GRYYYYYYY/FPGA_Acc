@@ -1,0 +1,5840 @@
+{
+  "accepted_transactions": 5,
+  "baseline": {
+    "cpd_ns": 5.0153,
+    "legal": true,
+    "returncode": 0,
+    "schema": "TILEPLACE_NEW_COHORT_NATIVE_BASELINE_V1",
+    "status": "pass",
+    "wirelength": 12974
+  },
+  "closure_budget": 24,
+  "closure_calls": 24,
+  "config": {
+    "candidate_limit": 64,
+    "chain_candidate_limit": 16,
+    "congestion_weight": 1,
+    "critical_distance_guard_q": 0,
+    "critical_distance_slack": 0,
+    "page_height": 2,
+    "page_width": 2,
+    "routed_timing_weight": 2,
+    "timing_weight": 2
+  },
+  "epochs_completed": 1,
+  "final": {
+    "cpd_ns": 5.0153,
+    "legal": true,
+    "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_22/vpr_native_closure.json",
+    "report_sha256": "48b37a4f30188e0fe629f350ccecd9210c64ee1f62427488325516cce566116d",
+    "returncode": 0,
+    "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+    "status": "pass",
+    "wirelength": 12915
+  },
+  "final_rejected_singletons": 1,
+  "initial_route_feedback": {
+    "edge_count": 510,
+    "route_sha256": "c2407eb65625e283e377258aa6513992026e8e8d759223090ed2dff60b1b87fb",
+    "rr_graph_sha256": "39cd308da95002a429dbc4ef017a3bc27a7398fef1076f3226e38ae857fd4225"
+  },
+  "initial_timing_feedback": {
+    "edge_count": 77,
+    "focus_blocks": 76,
+    "parsed_paths": 20,
+    "timing_report_sha256": "9aad2f1a6030f6b197e349573dca58c8f7f1e8e2bec9cc9d7139154eaa4f878b"
+  },
+  "input_place": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/baseline/des.place",
+    "sha256": "5a7cccf108aa6e4f2e9db077311cd349da64f0b7e88c48c2fb8ed3439d90515b"
+  },
+  "output_place": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/final.place",
+    "sha256": "b752736a86853e49a98d474207fb980a2ff1be6e2a28f1e9ed09a1dacb463475"
+  },
+  "phases": [
+    {
+      "accepted": 15,
+      "accepted_kinds": {
+        "chain2": 1,
+        "chain3": 13,
+        "swap": 1
+      },
+      "closure_calls_after": 24,
+      "closure_calls_before": 0,
+      "color": 0,
+      "eligible_units": 39,
+      "epoch": 0,
+      "forbidden_transactions": 0,
+      "oracle_accepted_transactions": 5,
+      "proposals": 36,
+      "rejected_conflicts": 21
+    }
+  ],
+  "preregistration": {
+    "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_v4_preregistration_2026-09-03.json",
+    "sha256": "75dce71634d613f17db59a0af923d258cf5b95fe795566a37596486656cfa3ca"
+  },
+  "provenance": {
+    "feedback_refreshes": [
+      {
+        "candidate_route_sha256": "e73f13ffc18f82df16e06ce117699b61ca2530ca418fca4cb77d6c9f5305a28e",
+        "parser": {
+          "mode": "generic-indexed-port-v1",
+          "path_flags": 32,
+          "path_pattern": "^#Path\\s+(\\d+)\\s*$",
+          "point_flags": 32,
+          "point_pattern": "^\\s*(\\S+)\\.[^\\s.\\[]+\\[\\d+\\]"
+        },
+        "route_feedback_sha256": "dd0529110dde62f77aa6718ecd816a2f4766ad5564665eea579c2479cf4e5c66",
+        "timing_feedback_sha256": "2c844639ce1b03a022f6fbcc2caa629e94419e235d232eac2f00cc2613a60d3b",
+        "timing_report_sha256": "9a3dd16a3ec3f6416a1ee831a648663023b22c1b6f18fdd7b9af945d68a90009"
+      },
+      {
+        "candidate_route_sha256": "32bdf672b927517d9112896ee6bd7b4d4eb22449e5e25c67efabbfdb6d9905a5",
+        "parser": {
+          "mode": "generic-indexed-port-v1",
+          "path_flags": 32,
+          "path_pattern": "^#Path\\s+(\\d+)\\s*$",
+          "point_flags": 32,
+          "point_pattern": "^\\s*(\\S+)\\.[^\\s.\\[]+\\[\\d+\\]"
+        },
+        "route_feedback_sha256": "65feabc5aebb451c54a92b934cdf679d942015fe4ce20b6a3a5dbd55671f3f93",
+        "timing_feedback_sha256": "13710633dc2dc2fad414c24dcc1ef482d878ed8656598f6464167346fda0a902",
+        "timing_report_sha256": "abf1310cc3638cd31227dea509fa99e78e91f5dd8e908dee4127b6fbcde38eed"
+      },
+      {
+        "candidate_route_sha256": "6a87360b06a0f8b2a1b6e9820010a58286053e8f417f39d38c6bc8326c5a25c8",
+        "parser": {
+          "mode": "generic-indexed-port-v1",
+          "path_flags": 32,
+          "path_pattern": "^#Path\\s+(\\d+)\\s*$",
+          "point_flags": 32,
+          "point_pattern": "^\\s*(\\S+)\\.[^\\s.\\[]+\\[\\d+\\]"
+        },
+        "route_feedback_sha256": "58457c8373205fda5a0ab056aa0f27a86d014a921e5a3e0cfd3b41a3adfa6c4d",
+        "timing_feedback_sha256": "42336071294c89cae732175e59ad88b5ff5984b90de50e3a9df1d325c7e8aa0e",
+        "timing_report_sha256": "650294453f4aa348d4fc2bf324c500a2788ca78fcc1fc21bf0babd7f12a4c118"
+      }
+    ],
+    "implementation": {
+      "parser": {
+        "mode": "generic-indexed-port-v1",
+        "path_flags": 32,
+        "path_pattern": "^#Path\\s+(\\d+)\\s*$",
+        "point_flags": 32,
+        "point_pattern": "^\\s*(\\S+)\\.[^\\s.\\[]+\\[\\d+\\]"
+      },
+      "schema": "TILEPLACE_IMPLEMENTATION_V1",
+      "sha256": "2fa6e2324a971d8489bba12d49115f91d0a56874c0ee5200224d72e4f8a9f689",
+      "sources": [
+        {
+          "name": "prepare_route_feedback.py",
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_route_feedback.py",
+          "sha256": "eaf3198dadf5d7c860a42b0134872f3553028ea74d82b9a46294e48af58c3353"
+        },
+        {
+          "name": "prepare_timing_feedback.py",
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/prepare_timing_feedback.py",
+          "sha256": "ff830e3d30bfaf3d48517a8c547f64d76ee76e77efb8225ee0bad64689639627"
+        },
+        {
+          "name": "run_tileplace_v2.py",
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/run_tileplace_v2.py",
+          "sha256": "bfbe7f38db1f37ab98416fcd6c2c79176c2bcfa428ad3fb6b02988ce61a0cfcf"
+        },
+        {
+          "name": "run_vpr_closure.py",
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/run_vpr_closure.py",
+          "sha256": "012cc3570765f2abd420c5144ee066e1161c8338efd67e2b6cc592c06940da34"
+        },
+        {
+          "name": "tileplace_provenance.py",
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/tileplace_provenance.py",
+          "sha256": "4952b986d2fd1d22261c3045e5fda54462b4dfd1af5c84c2d7831c06c579af43"
+        },
+        {
+          "name": "tileplace_v2.py",
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/tileplace_v2.py",
+          "sha256": "bf7a24da1a342175e4e14096d7f21e6611fd362e634aa0d0e105d82ffad58f9a"
+        },
+        {
+          "name": "tileplace_vpr.py",
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/tools/tileplace_vpr.py",
+          "sha256": "355535e49a0ec47b485e8c374e34fa35ee323fbf406b731b920ca40ab582d364"
+        }
+      ]
+    },
+    "initial_route_feedback_sha256": "a2fbe25d25864b2b7e4fb5a588d3411f0c530eadfd372bfb2cddf73bf2954b57",
+    "initial_timing_feedback_sha256": "629bcca830bb8c39b6944b5ee605f1a104743d6ce0b18e0fb13ea14deb34f527",
+    "inputs": [
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/baseline/baseline.json",
+        "sha256": "7d31cd5692dfced5cdeab78cebf66c56d1c1008445b71953b32b131b88cb4774"
+      },
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/baseline/des.net",
+        "sha256": "0dc9a0c3642cdfde886a9dc47f2f8cee738362da7a598e68b84b32da616936be"
+      },
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/baseline/des.place",
+        "sha256": "5a7cccf108aa6e4f2e9db077311cd349da64f0b7e88c48c2fb8ed3439d90515b"
+      },
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/baseline/des.route",
+        "sha256": "c2407eb65625e283e377258aa6513992026e8e8d759223090ed2dff60b1b87fb"
+      },
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/baseline/place_macros.echo",
+        "sha256": "0efcfecb18fd7b26f5fff38f8e7afb45d3da42b7febc428ec4b045c63b7c93ee"
+      },
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/baseline/report_timing.setup.rpt",
+        "sha256": "9aad2f1a6030f6b197e349573dca58c8f7f1e8e2bec9cc9d7139154eaa4f878b"
+      },
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/baseline/rr_graph.xml",
+        "sha256": "39cd308da95002a429dbc4ef017a3bc27a7398fef1076f3226e38ae857fd4225"
+      },
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/inputs/connections.csv",
+        "sha256": "efce361e1d5404d3a5680d516ab2360fbdaca3226e59695e72b56ae8be556c3a"
+      },
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/inputs/contract/blocks.jsonl",
+        "sha256": "e5c855746d6146b739c2ee7e930b93cb62b0cfbc29fe8175ee10d606242c0a20"
+      },
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/inputs/contract/manifest.json",
+        "sha256": "c9f59c87824a238113e24c6d8e387da82b0930730e702bcc49be30b4e44ed780"
+      },
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/inputs/contract/nets.jsonl",
+        "sha256": "0392f05812229ec8c74b1b3094c1ccb58850c517d5411f28eab8a98200864079"
+      },
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/inputs/contract/sites.jsonl",
+        "sha256": "f09dfd80ec912ab44594a7808c919f9c886612abc8b3e0a7fdab3ed1253118e2"
+      },
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/inputs/timing.output.csv",
+        "sha256": "cd21cbd6d56dd4187d9d123d9a8233424ff933f620d2ffda9c618ee4e5b7131f"
+      },
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_v4_preregistration_2026-09-03.json",
+        "sha256": "75dce71634d613f17db59a0af923d258cf5b95fe795566a37596486656cfa3ca"
+      },
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "sha256": "a90dc1b3380ebda705e85f176db0cc3d6be1b71ab9ee887db819febc8b62bafc"
+      },
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179"
+      },
+      {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/des.blif",
+        "sha256": "b7f4517e93cdfe974918de8462e2ab0abcf794d5e62438a80ee5738442364d4f"
+      }
+    ],
+    "schema": "TILEPLACE_SEARCH_PROVENANCE_V1",
+    "settings": {
+      "epochs": 4,
+      "extra_vpr_args": [],
+      "max_closures": 24,
+      "rebuild_oracle_rr_graph": false,
+      "timing_feedback_paths": 20,
+      "use_no_goods": true
+    },
+    "source_and_input_hashes_unchanged_at_completion": true
+  },
+  "schema": "TILEPLACE_V2_ROUTED_SEARCH_V1",
+  "status": "pass",
+  "stop_reason": "closure_budget_exhausted",
+  "trials": [
+    {
+      "accepted": false,
+      "bisection_depth": 0,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_01/candidate.place",
+        "sha256": "f754ce24aa8587d645dab40020b94678545f031b05982f5233b7d9685f3fb93a"
+      },
+      "closure": {
+        "cpd_ns": 4.9762,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_01/vpr_native_closure.json",
+        "report_sha256": "e798a8d9c09f72133e6ff2a7167fc771f7b2c6d48cd95182a4ff4fae3bba4bb4",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 13127
+      },
+      "color": 0,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "returncode": 0,
+        "schema": "TILEPLACE_NEW_COHORT_NATIVE_BASELINE_V1",
+        "status": "pass",
+        "wirelength": 12974
+      },
+      "reason": "baseline_wirelength_cap_exceeded",
+      "transaction_count": 15,
+      "transaction_ids": [
+        "('chain3', ((392,), (400,), (464,)), ((392, (17, 6, 6, 0)), (400, (17, 5, 7, 0)), (464, (17, 6, 1, 0))))",
+        "('chain3', ((424,), (580,), (601,)), ((424, (17, 2, 2, 0)), (580, (17, 3, 5, 0)), (601, (17, 5, 3, 0))))",
+        "('chain2', ((50,), (51,)), ((50, (11, 15, 0, 0)), (51, (11, 16, 0, 0))))",
+        "('chain3', ((481,), (486,), (544,)), ((481, (0, 4, 4, 0)), (486, (0, 7, 2, 0)), (544, (0, 7, 3, 0))))",
+        "('chain3', ((134,), (389,), (578,)), ((134, (0, 12, 5, 0)), (389, (0, 13, 7, 0)), (578, (0, 11, 7, 0))))",
+        "('swap', ((375,), (607,)), ((375, (3, 0, 6, 0)), (607, (4, 0, 3, 0))))",
+        "('chain3', ((161,), (292,), (566,)), ((161, (13, 0, 3, 0)), (292, (12, 0, 4, 0)), (566, (13, 0, 2, 0))))",
+        "('chain3', ((122,), (313,), (609,)), ((122, (17, 9, 1, 0)), (313, (17, 9, 4, 0)), (609, (17, 8, 1, 0))))",
+        "('chain3', ((153,), (342,), (468,)), ((153, (4, 17, 0, 0)), (342, (3, 17, 4, 0)), (468, (4, 17, 5, 0))))",
+        "('chain3', ((151,), (326,), (499,)), ((151, (0, 5, 7, 0)), (326, (0, 4, 6, 0)), (499, (0, 5, 4, 0))))",
+        "('chain3', ((144,), (170,), (570,)), ((144, (13, 17, 6, 0)), (170, (13, 17, 2, 0)), (570, (12, 17, 4, 0))))",
+        "('chain3', ((137,), (444,), (595,)), ((137, (12, 0, 5, 0)), (444, (12, 0, 6, 0)), (595, (11, 0, 5, 0))))",
+        "('chain3', ((156,), (218,), (296,)), ((156, (8, 17, 6, 0)), (218, (8, 17, 7, 0)), (296, (7, 17, 0, 0))))",
+        "('chain3', ((149,), (388,), (411,)), ((149, (9, 0, 4, 0)), (388, (8, 0, 4, 0)), (411, (9, 0, 2, 0))))",
+        "('chain3', ((124,), (576,), (577,)), ((124, (5, 17, 4, 0)), (576, (4, 17, 3, 0)), (577, (5, 17, 3, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -262349,
+          "id": "('chain3', ((392,), (400,), (464,)), ((392, (17, 6, 6, 0)), (400, (17, 5, 7, 0)), (464, (17, 6, 1, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -22937,
+          "score_q20": -1218156,
+          "timing_delta": -120104,
+          "touched_nets": [
+            161,
+            252,
+            685
+          ],
+          "trial": {
+            "392": [
+              17,
+              6,
+              6,
+              0
+            ],
+            "400": [
+              17,
+              5,
+              7,
+              0
+            ],
+            "464": [
+              17,
+              6,
+              1,
+              0
+            ]
+          },
+          "units": [
+            [
+              392
+            ],
+            [
+              400
+            ],
+            [
+              464
+            ]
+          ],
+          "wire_delta": 1,
+          "write_sites": [
+            [
+              17,
+              5,
+              7,
+              0
+            ],
+            [
+              17,
+              6,
+              1,
+              0
+            ],
+            [
+              17,
+              6,
+              6,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -785075,
+          "id": "('chain3', ((424,), (580,), (601,)), ((424, (17, 2, 2, 0)), (580, (17, 3, 5, 0)), (601, (17, 5, 3, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -131066,
+          "score_q20": -1111010,
+          "timing_delta": -261122,
+          "touched_nets": [
+            155,
+            511,
+            600
+          ],
+          "trial": {
+            "424": [
+              17,
+              2,
+              2,
+              0
+            ],
+            "580": [
+              17,
+              3,
+              5,
+              0
+            ],
+            "601": [
+              17,
+              5,
+              3,
+              0
+            ]
+          },
+          "units": [
+            [
+              424
+            ],
+            [
+              580
+            ],
+            [
+              601
+            ]
+          ],
+          "wire_delta": -2,
+          "write_sites": [
+            [
+              17,
+              2,
+              2,
+              0
+            ],
+            [
+              17,
+              3,
+              5,
+              0
+            ],
+            [
+              17,
+              5,
+              3,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": 1233928,
+          "id": "('chain2', ((50,), (51,)), ((50, (11, 15, 0, 0)), (51, (11, 16, 0, 0))))",
+          "kind": "chain2",
+          "routed_timing_delta": -140898,
+          "score_q20": -997866,
+          "timing_delta": 753019,
+          "touched_nets": [
+            0,
+            46,
+            176,
+            177,
+            178,
+            179,
+            180,
+            181,
+            183,
+            184,
+            186,
+            188,
+            189,
+            190,
+            191,
+            193,
+            194,
+            195,
+            197,
+            199,
+            239,
+            257,
+            266,
+            267,
+            315,
+            316,
+            318,
+            320,
+            321,
+            326,
+            327,
+            328,
+            332,
+            336,
+            337,
+            338,
+            340,
+            341,
+            346,
+            360,
+            432,
+            434,
+            435,
+            439,
+            440,
+            441,
+            442,
+            510,
+            578,
+            579,
+            580,
+            581,
+            582,
+            583,
+            584,
+            585,
+            586,
+            587,
+            588,
+            589
+          ],
+          "trial": {
+            "50": [
+              11,
+              15,
+              0,
+              0
+            ],
+            "51": [
+              11,
+              16,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              50
+            ],
+            [
+              51
+            ]
+          ],
+          "wire_delta": 18,
+          "write_sites": [
+            [
+              11,
+              15,
+              0,
+              0
+            ],
+            [
+              11,
+              16,
+              0,
+              0
+            ],
+            [
+              12,
+              13,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": 202493,
+          "id": "('chain3', ((481,), (486,), (544,)), ((481, (0, 4, 4, 0)), (486, (0, 7, 2, 0)), (544, (0, 7, 3, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -39321,
+          "score_q20": -502707,
+          "timing_delta": 110256,
+          "touched_nets": [
+            352,
+            463,
+            986
+          ],
+          "trial": {
+            "481": [
+              0,
+              4,
+              4,
+              0
+            ],
+            "486": [
+              0,
+              7,
+              2,
+              0
+            ],
+            "544": [
+              0,
+              7,
+              3,
+              0
+            ]
+          },
+          "units": [
+            [
+              481
+            ],
+            [
+              486
+            ],
+            [
+              544
+            ]
+          ],
+          "wire_delta": 3,
+          "write_sites": [
+            [
+              0,
+              4,
+              4,
+              0
+            ],
+            [
+              0,
+              7,
+              2,
+              0
+            ],
+            [
+              0,
+              7,
+              3,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -483190,
+          "id": "('chain3', ((134,), (389,), (578,)), ((134, (0, 12, 5, 0)), (389, (0, 13, 7, 0)), (578, (0, 11, 7, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -101578,
+          "score_q20": -305590,
+          "timing_delta": -348532,
+          "touched_nets": [
+            72,
+            322,
+            436
+          ],
+          "trial": {
+            "134": [
+              0,
+              12,
+              5,
+              0
+            ],
+            "389": [
+              0,
+              13,
+              7,
+              0
+            ],
+            "578": [
+              0,
+              11,
+              7,
+              0
+            ]
+          },
+          "units": [
+            [
+              134
+            ],
+            [
+              389
+            ],
+            [
+              578
+            ]
+          ],
+          "wire_delta": 1,
+          "write_sites": [
+            [
+              0,
+              11,
+              7,
+              0
+            ],
+            [
+              0,
+              12,
+              5,
+              0
+            ],
+            [
+              0,
+              13,
+              7,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -79603,
+          "id": "('swap', ((375,), (607,)), ((375, (3, 0, 6, 0)), (607, (4, 0, 3, 0))))",
+          "kind": "swap",
+          "routed_timing_delta": -58981,
+          "score_q20": -228546,
+          "timing_delta": 59660,
+          "touched_nets": [
+            232,
+            728
+          ],
+          "trial": {
+            "375": [
+              3,
+              0,
+              6,
+              0
+            ],
+            "607": [
+              4,
+              0,
+              3,
+              0
+            ]
+          },
+          "units": [
+            [
+              375
+            ],
+            [
+              607
+            ]
+          ],
+          "wire_delta": -1,
+          "write_sites": [
+            [
+              3,
+              0,
+              6,
+              0
+            ],
+            [
+              4,
+              0,
+              3,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -133192,
+          "id": "('chain3', ((161,), (292,), (566,)), ((161, (13, 0, 3, 0)), (292, (12, 0, 4, 0)), (566, (13, 0, 2, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -181251,
+          "timing_delta": -33948,
+          "touched_nets": [
+            539,
+            692,
+            725
+          ],
+          "trial": {
+            "161": [
+              13,
+              0,
+              3,
+              0
+            ],
+            "292": [
+              12,
+              0,
+              4,
+              0
+            ],
+            "566": [
+              13,
+              0,
+              2,
+              0
+            ]
+          },
+          "units": [
+            [
+              161
+            ],
+            [
+              292
+            ],
+            [
+              566
+            ]
+          ],
+          "wire_delta": -1,
+          "write_sites": [
+            [
+              12,
+              0,
+              4,
+              0
+            ],
+            [
+              13,
+              0,
+              2,
+              0
+            ],
+            [
+              13,
+              0,
+              3,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -65536,
+          "id": "('chain3', ((122,), (313,), (609,)), ((122, (17, 9, 1, 0)), (313, (17, 9, 4, 0)), (609, (17, 8, 1, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -164089,
+          "timing_delta": -25523,
+          "touched_nets": [
+            751,
+            757,
+            782
+          ],
+          "trial": {
+            "122": [
+              17,
+              9,
+              1,
+              0
+            ],
+            "313": [
+              17,
+              9,
+              4,
+              0
+            ],
+            "609": [
+              17,
+              8,
+              1,
+              0
+            ]
+          },
+          "units": [
+            [
+              122
+            ],
+            [
+              313
+            ],
+            [
+              609
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              17,
+              8,
+              1,
+              0
+            ],
+            [
+              17,
+              9,
+              1,
+              0
+            ],
+            [
+              17,
+              9,
+              4,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -66430,
+          "id": "('chain3', ((153,), (342,), (468,)), ((153, (4, 17, 0, 0)), (342, (3, 17, 4, 0)), (468, (4, 17, 5, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -133296,
+          "timing_delta": -27686,
+          "touched_nets": [
+            210,
+            438,
+            667
+          ],
+          "trial": {
+            "153": [
+              4,
+              17,
+              0,
+              0
+            ],
+            "342": [
+              3,
+              17,
+              4,
+              0
+            ],
+            "468": [
+              4,
+              17,
+              5,
+              0
+            ]
+          },
+          "units": [
+            [
+              153
+            ],
+            [
+              342
+            ],
+            [
+              468
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              3,
+              17,
+              4,
+              0
+            ],
+            [
+              4,
+              17,
+              0,
+              0
+            ],
+            [
+              4,
+              17,
+              5,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -68488,
+          "id": "('chain3', ((151,), (326,), (499,)), ((151, (0, 5, 7, 0)), (326, (0, 4, 6, 0)), (499, (0, 5, 4, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -84054,
+          "timing_delta": -26280,
+          "touched_nets": [
+            649,
+            771,
+            943
+          ],
+          "trial": {
+            "151": [
+              0,
+              5,
+              7,
+              0
+            ],
+            "326": [
+              0,
+              4,
+              6,
+              0
+            ],
+            "499": [
+              0,
+              5,
+              4,
+              0
+            ]
+          },
+          "units": [
+            [
+              151
+            ],
+            [
+              326
+            ],
+            [
+              499
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              0,
+              4,
+              6,
+              0
+            ],
+            [
+              0,
+              5,
+              4,
+              0
+            ],
+            [
+              0,
+              5,
+              7,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -127352,
+          "id": "('chain3', ((144,), (170,), (570,)), ((144, (13, 17, 6, 0)), (170, (13, 17, 2, 0)), (570, (12, 17, 4, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -82155,
+          "timing_delta": -28094,
+          "touched_nets": [
+            182,
+            198,
+            784
+          ],
+          "trial": {
+            "144": [
+              13,
+              17,
+              6,
+              0
+            ],
+            "170": [
+              13,
+              17,
+              2,
+              0
+            ],
+            "570": [
+              12,
+              17,
+              4,
+              0
+            ]
+          },
+          "units": [
+            [
+              144
+            ],
+            [
+              170
+            ],
+            [
+              570
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              12,
+              17,
+              4,
+              0
+            ],
+            [
+              13,
+              17,
+              2,
+              0
+            ],
+            [
+              13,
+              17,
+              6,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -69120,
+          "id": "('chain3', ((137,), (444,), (595,)), ((137, (12, 0, 5, 0)), (444, (12, 0, 6, 0)), (595, (11, 0, 5, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -70782,
+          "timing_delta": -77181,
+          "touched_nets": [
+            238,
+            602,
+            724
+          ],
+          "trial": {
+            "137": [
+              12,
+              0,
+              5,
+              0
+            ],
+            "444": [
+              12,
+              0,
+              6,
+              0
+            ],
+            "595": [
+              11,
+              0,
+              5,
+              0
+            ]
+          },
+          "units": [
+            [
+              137
+            ],
+            [
+              444
+            ],
+            [
+              595
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              11,
+              0,
+              5,
+              0
+            ],
+            [
+              12,
+              0,
+              5,
+              0
+            ],
+            [
+              12,
+              0,
+              6,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -443,
+          "id": "('chain3', ((156,), (218,), (296,)), ((156, (8, 17, 6, 0)), (218, (8, 17, 7, 0)), (296, (7, 17, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -58087,
+          "timing_delta": -18063,
+          "touched_nets": [
+            701,
+            885,
+            901
+          ],
+          "trial": {
+            "156": [
+              8,
+              17,
+              6,
+              0
+            ],
+            "218": [
+              8,
+              17,
+              7,
+              0
+            ],
+            "296": [
+              7,
+              17,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              156
+            ],
+            [
+              218
+            ],
+            [
+              296
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              7,
+              17,
+              0,
+              0
+            ],
+            [
+              8,
+              17,
+              6,
+              0
+            ],
+            [
+              8,
+              17,
+              7,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -197026,
+          "id": "('chain3', ((149,), (388,), (411,)), ((149, (9, 0, 4, 0)), (388, (8, 0, 4, 0)), (411, (9, 0, 2, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -57083,
+          "timing_delta": -45806,
+          "touched_nets": [
+            228,
+            277,
+            716
+          ],
+          "trial": {
+            "149": [
+              9,
+              0,
+              4,
+              0
+            ],
+            "388": [
+              8,
+              0,
+              4,
+              0
+            ],
+            "411": [
+              9,
+              0,
+              2,
+              0
+            ]
+          },
+          "units": [
+            [
+              149
+            ],
+            [
+              388
+            ],
+            [
+              411
+            ]
+          ],
+          "wire_delta": 1,
+          "write_sites": [
+            [
+              8,
+              0,
+              4,
+              0
+            ],
+            [
+              9,
+              0,
+              2,
+              0
+            ],
+            [
+              9,
+              0,
+              4,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -72616,
+          "id": "('chain3', ((124,), (576,), (577,)), ((124, (5, 17, 4, 0)), (576, (4, 17, 3, 0)), (577, (5, 17, 3, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -9224,
+          "timing_delta": 4175,
+          "touched_nets": [
+            23,
+            662,
+            747
+          ],
+          "trial": {
+            "124": [
+              5,
+              17,
+              4,
+              0
+            ],
+            "576": [
+              4,
+              17,
+              3,
+              0
+            ],
+            "577": [
+              5,
+              17,
+              3,
+              0
+            ]
+          },
+          "units": [
+            [
+              124
+            ],
+            [
+              576
+            ],
+            [
+              577
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              4,
+              17,
+              3,
+              0
+            ],
+            [
+              5,
+              17,
+              3,
+              0
+            ],
+            [
+              5,
+              17,
+              4,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 1
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 1,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_02/candidate.place",
+        "sha256": "3b0640542b89df01554f890369cb7406b6e1762fb8696d028c836f1f4ef3cb5e"
+      },
+      "closure": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_02/vpr_native_closure.json",
+        "report_sha256": "1f34544ce135da3934ff34ace411e694014ca541e7a6655033123ade73757e37",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 13143
+      },
+      "color": 0,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "returncode": 0,
+        "schema": "TILEPLACE_NEW_COHORT_NATIVE_BASELINE_V1",
+        "status": "pass",
+        "wirelength": 12974
+      },
+      "reason": "baseline_wirelength_cap_exceeded",
+      "transaction_count": 7,
+      "transaction_ids": [
+        "('chain3', ((392,), (400,), (464,)), ((392, (17, 6, 6, 0)), (400, (17, 5, 7, 0)), (464, (17, 6, 1, 0))))",
+        "('chain3', ((424,), (580,), (601,)), ((424, (17, 2, 2, 0)), (580, (17, 3, 5, 0)), (601, (17, 5, 3, 0))))",
+        "('chain2', ((50,), (51,)), ((50, (11, 15, 0, 0)), (51, (11, 16, 0, 0))))",
+        "('chain3', ((481,), (486,), (544,)), ((481, (0, 4, 4, 0)), (486, (0, 7, 2, 0)), (544, (0, 7, 3, 0))))",
+        "('chain3', ((134,), (389,), (578,)), ((134, (0, 12, 5, 0)), (389, (0, 13, 7, 0)), (578, (0, 11, 7, 0))))",
+        "('swap', ((375,), (607,)), ((375, (3, 0, 6, 0)), (607, (4, 0, 3, 0))))",
+        "('chain3', ((161,), (292,), (566,)), ((161, (13, 0, 3, 0)), (292, (12, 0, 4, 0)), (566, (13, 0, 2, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -262349,
+          "id": "('chain3', ((392,), (400,), (464,)), ((392, (17, 6, 6, 0)), (400, (17, 5, 7, 0)), (464, (17, 6, 1, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -22937,
+          "score_q20": -1218156,
+          "timing_delta": -120104,
+          "touched_nets": [
+            161,
+            252,
+            685
+          ],
+          "trial": {
+            "392": [
+              17,
+              6,
+              6,
+              0
+            ],
+            "400": [
+              17,
+              5,
+              7,
+              0
+            ],
+            "464": [
+              17,
+              6,
+              1,
+              0
+            ]
+          },
+          "units": [
+            [
+              392
+            ],
+            [
+              400
+            ],
+            [
+              464
+            ]
+          ],
+          "wire_delta": 1,
+          "write_sites": [
+            [
+              17,
+              5,
+              7,
+              0
+            ],
+            [
+              17,
+              6,
+              1,
+              0
+            ],
+            [
+              17,
+              6,
+              6,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -785075,
+          "id": "('chain3', ((424,), (580,), (601,)), ((424, (17, 2, 2, 0)), (580, (17, 3, 5, 0)), (601, (17, 5, 3, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -131066,
+          "score_q20": -1111010,
+          "timing_delta": -261122,
+          "touched_nets": [
+            155,
+            511,
+            600
+          ],
+          "trial": {
+            "424": [
+              17,
+              2,
+              2,
+              0
+            ],
+            "580": [
+              17,
+              3,
+              5,
+              0
+            ],
+            "601": [
+              17,
+              5,
+              3,
+              0
+            ]
+          },
+          "units": [
+            [
+              424
+            ],
+            [
+              580
+            ],
+            [
+              601
+            ]
+          ],
+          "wire_delta": -2,
+          "write_sites": [
+            [
+              17,
+              2,
+              2,
+              0
+            ],
+            [
+              17,
+              3,
+              5,
+              0
+            ],
+            [
+              17,
+              5,
+              3,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": 1233928,
+          "id": "('chain2', ((50,), (51,)), ((50, (11, 15, 0, 0)), (51, (11, 16, 0, 0))))",
+          "kind": "chain2",
+          "routed_timing_delta": -140898,
+          "score_q20": -997866,
+          "timing_delta": 753019,
+          "touched_nets": [
+            0,
+            46,
+            176,
+            177,
+            178,
+            179,
+            180,
+            181,
+            183,
+            184,
+            186,
+            188,
+            189,
+            190,
+            191,
+            193,
+            194,
+            195,
+            197,
+            199,
+            239,
+            257,
+            266,
+            267,
+            315,
+            316,
+            318,
+            320,
+            321,
+            326,
+            327,
+            328,
+            332,
+            336,
+            337,
+            338,
+            340,
+            341,
+            346,
+            360,
+            432,
+            434,
+            435,
+            439,
+            440,
+            441,
+            442,
+            510,
+            578,
+            579,
+            580,
+            581,
+            582,
+            583,
+            584,
+            585,
+            586,
+            587,
+            588,
+            589
+          ],
+          "trial": {
+            "50": [
+              11,
+              15,
+              0,
+              0
+            ],
+            "51": [
+              11,
+              16,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              50
+            ],
+            [
+              51
+            ]
+          ],
+          "wire_delta": 18,
+          "write_sites": [
+            [
+              11,
+              15,
+              0,
+              0
+            ],
+            [
+              11,
+              16,
+              0,
+              0
+            ],
+            [
+              12,
+              13,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": 202493,
+          "id": "('chain3', ((481,), (486,), (544,)), ((481, (0, 4, 4, 0)), (486, (0, 7, 2, 0)), (544, (0, 7, 3, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -39321,
+          "score_q20": -502707,
+          "timing_delta": 110256,
+          "touched_nets": [
+            352,
+            463,
+            986
+          ],
+          "trial": {
+            "481": [
+              0,
+              4,
+              4,
+              0
+            ],
+            "486": [
+              0,
+              7,
+              2,
+              0
+            ],
+            "544": [
+              0,
+              7,
+              3,
+              0
+            ]
+          },
+          "units": [
+            [
+              481
+            ],
+            [
+              486
+            ],
+            [
+              544
+            ]
+          ],
+          "wire_delta": 3,
+          "write_sites": [
+            [
+              0,
+              4,
+              4,
+              0
+            ],
+            [
+              0,
+              7,
+              2,
+              0
+            ],
+            [
+              0,
+              7,
+              3,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -483190,
+          "id": "('chain3', ((134,), (389,), (578,)), ((134, (0, 12, 5, 0)), (389, (0, 13, 7, 0)), (578, (0, 11, 7, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -101578,
+          "score_q20": -305590,
+          "timing_delta": -348532,
+          "touched_nets": [
+            72,
+            322,
+            436
+          ],
+          "trial": {
+            "134": [
+              0,
+              12,
+              5,
+              0
+            ],
+            "389": [
+              0,
+              13,
+              7,
+              0
+            ],
+            "578": [
+              0,
+              11,
+              7,
+              0
+            ]
+          },
+          "units": [
+            [
+              134
+            ],
+            [
+              389
+            ],
+            [
+              578
+            ]
+          ],
+          "wire_delta": 1,
+          "write_sites": [
+            [
+              0,
+              11,
+              7,
+              0
+            ],
+            [
+              0,
+              12,
+              5,
+              0
+            ],
+            [
+              0,
+              13,
+              7,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -79603,
+          "id": "('swap', ((375,), (607,)), ((375, (3, 0, 6, 0)), (607, (4, 0, 3, 0))))",
+          "kind": "swap",
+          "routed_timing_delta": -58981,
+          "score_q20": -228546,
+          "timing_delta": 59660,
+          "touched_nets": [
+            232,
+            728
+          ],
+          "trial": {
+            "375": [
+              3,
+              0,
+              6,
+              0
+            ],
+            "607": [
+              4,
+              0,
+              3,
+              0
+            ]
+          },
+          "units": [
+            [
+              375
+            ],
+            [
+              607
+            ]
+          ],
+          "wire_delta": -1,
+          "write_sites": [
+            [
+              3,
+              0,
+              6,
+              0
+            ],
+            [
+              4,
+              0,
+              3,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -133192,
+          "id": "('chain3', ((161,), (292,), (566,)), ((161, (13, 0, 3, 0)), (292, (12, 0, 4, 0)), (566, (13, 0, 2, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -181251,
+          "timing_delta": -33948,
+          "touched_nets": [
+            539,
+            692,
+            725
+          ],
+          "trial": {
+            "161": [
+              13,
+              0,
+              3,
+              0
+            ],
+            "292": [
+              12,
+              0,
+              4,
+              0
+            ],
+            "566": [
+              13,
+              0,
+              2,
+              0
+            ]
+          },
+          "units": [
+            [
+              161
+            ],
+            [
+              292
+            ],
+            [
+              566
+            ]
+          ],
+          "wire_delta": -1,
+          "write_sites": [
+            [
+              12,
+              0,
+              4,
+              0
+            ],
+            [
+              13,
+              0,
+              2,
+              0
+            ],
+            [
+              13,
+              0,
+              3,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 2
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 2,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_03/candidate.place",
+        "sha256": "0cbb1e05f01098cea85aca6fe08956da546f8d5a8691893be1b46c9be02205e6"
+      },
+      "closure": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_03/vpr_native_closure.json",
+        "report_sha256": "f9b2cd1cc0480d915fc0700094b1b0b4d249d5684cb9ff97c75995b6f8717c05",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 13111
+      },
+      "color": 0,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "returncode": 0,
+        "schema": "TILEPLACE_NEW_COHORT_NATIVE_BASELINE_V1",
+        "status": "pass",
+        "wirelength": 12974
+      },
+      "reason": "baseline_wirelength_cap_exceeded",
+      "transaction_count": 3,
+      "transaction_ids": [
+        "('chain3', ((392,), (400,), (464,)), ((392, (17, 6, 6, 0)), (400, (17, 5, 7, 0)), (464, (17, 6, 1, 0))))",
+        "('chain3', ((424,), (580,), (601,)), ((424, (17, 2, 2, 0)), (580, (17, 3, 5, 0)), (601, (17, 5, 3, 0))))",
+        "('chain2', ((50,), (51,)), ((50, (11, 15, 0, 0)), (51, (11, 16, 0, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -262349,
+          "id": "('chain3', ((392,), (400,), (464,)), ((392, (17, 6, 6, 0)), (400, (17, 5, 7, 0)), (464, (17, 6, 1, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -22937,
+          "score_q20": -1218156,
+          "timing_delta": -120104,
+          "touched_nets": [
+            161,
+            252,
+            685
+          ],
+          "trial": {
+            "392": [
+              17,
+              6,
+              6,
+              0
+            ],
+            "400": [
+              17,
+              5,
+              7,
+              0
+            ],
+            "464": [
+              17,
+              6,
+              1,
+              0
+            ]
+          },
+          "units": [
+            [
+              392
+            ],
+            [
+              400
+            ],
+            [
+              464
+            ]
+          ],
+          "wire_delta": 1,
+          "write_sites": [
+            [
+              17,
+              5,
+              7,
+              0
+            ],
+            [
+              17,
+              6,
+              1,
+              0
+            ],
+            [
+              17,
+              6,
+              6,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -785075,
+          "id": "('chain3', ((424,), (580,), (601,)), ((424, (17, 2, 2, 0)), (580, (17, 3, 5, 0)), (601, (17, 5, 3, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -131066,
+          "score_q20": -1111010,
+          "timing_delta": -261122,
+          "touched_nets": [
+            155,
+            511,
+            600
+          ],
+          "trial": {
+            "424": [
+              17,
+              2,
+              2,
+              0
+            ],
+            "580": [
+              17,
+              3,
+              5,
+              0
+            ],
+            "601": [
+              17,
+              5,
+              3,
+              0
+            ]
+          },
+          "units": [
+            [
+              424
+            ],
+            [
+              580
+            ],
+            [
+              601
+            ]
+          ],
+          "wire_delta": -2,
+          "write_sites": [
+            [
+              17,
+              2,
+              2,
+              0
+            ],
+            [
+              17,
+              3,
+              5,
+              0
+            ],
+            [
+              17,
+              5,
+              3,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": 1233928,
+          "id": "('chain2', ((50,), (51,)), ((50, (11, 15, 0, 0)), (51, (11, 16, 0, 0))))",
+          "kind": "chain2",
+          "routed_timing_delta": -140898,
+          "score_q20": -997866,
+          "timing_delta": 753019,
+          "touched_nets": [
+            0,
+            46,
+            176,
+            177,
+            178,
+            179,
+            180,
+            181,
+            183,
+            184,
+            186,
+            188,
+            189,
+            190,
+            191,
+            193,
+            194,
+            195,
+            197,
+            199,
+            239,
+            257,
+            266,
+            267,
+            315,
+            316,
+            318,
+            320,
+            321,
+            326,
+            327,
+            328,
+            332,
+            336,
+            337,
+            338,
+            340,
+            341,
+            346,
+            360,
+            432,
+            434,
+            435,
+            439,
+            440,
+            441,
+            442,
+            510,
+            578,
+            579,
+            580,
+            581,
+            582,
+            583,
+            584,
+            585,
+            586,
+            587,
+            588,
+            589
+          ],
+          "trial": {
+            "50": [
+              11,
+              15,
+              0,
+              0
+            ],
+            "51": [
+              11,
+              16,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              50
+            ],
+            [
+              51
+            ]
+          ],
+          "wire_delta": 18,
+          "write_sites": [
+            [
+              11,
+              15,
+              0,
+              0
+            ],
+            [
+              11,
+              16,
+              0,
+              0
+            ],
+            [
+              12,
+              13,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 3
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 3,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_04/candidate.place",
+        "sha256": "5ab0c1b81af4261b37b0f3c0ac22a9cfe6202e7df928389b1515c1fc72087f85"
+      },
+      "closure": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_04/vpr_native_closure.json",
+        "report_sha256": "19fd41cd0b906acebfef75d8aed674d06b134d86d29a7473653a5c828efb59ab",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 13049
+      },
+      "color": 0,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "returncode": 0,
+        "schema": "TILEPLACE_NEW_COHORT_NATIVE_BASELINE_V1",
+        "status": "pass",
+        "wirelength": 12974
+      },
+      "reason": "baseline_wirelength_cap_exceeded",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('chain3', ((392,), (400,), (464,)), ((392, (17, 6, 6, 0)), (400, (17, 5, 7, 0)), (464, (17, 6, 1, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -262349,
+          "id": "('chain3', ((392,), (400,), (464,)), ((392, (17, 6, 6, 0)), (400, (17, 5, 7, 0)), (464, (17, 6, 1, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -22937,
+          "score_q20": -1218156,
+          "timing_delta": -120104,
+          "touched_nets": [
+            161,
+            252,
+            685
+          ],
+          "trial": {
+            "392": [
+              17,
+              6,
+              6,
+              0
+            ],
+            "400": [
+              17,
+              5,
+              7,
+              0
+            ],
+            "464": [
+              17,
+              6,
+              1,
+              0
+            ]
+          },
+          "units": [
+            [
+              392
+            ],
+            [
+              400
+            ],
+            [
+              464
+            ]
+          ],
+          "wire_delta": 1,
+          "write_sites": [
+            [
+              17,
+              5,
+              7,
+              0
+            ],
+            [
+              17,
+              6,
+              1,
+              0
+            ],
+            [
+              17,
+              6,
+              6,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 4
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 3,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_05/candidate.place",
+        "sha256": "786492e1ed4ead4bd26705802dedb128ef622f87709be0c8fc591e24b464d63d"
+      },
+      "closure": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_05/vpr_native_closure.json",
+        "report_sha256": "b08be8862e932ddc1147d0f9a35cc8ef43403fb993eb62fc439cd0291186e8bc",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 13079
+      },
+      "color": 0,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "returncode": 0,
+        "schema": "TILEPLACE_NEW_COHORT_NATIVE_BASELINE_V1",
+        "status": "pass",
+        "wirelength": 12974
+      },
+      "reason": "baseline_wirelength_cap_exceeded",
+      "transaction_count": 2,
+      "transaction_ids": [
+        "('chain3', ((424,), (580,), (601,)), ((424, (17, 2, 2, 0)), (580, (17, 3, 5, 0)), (601, (17, 5, 3, 0))))",
+        "('chain2', ((50,), (51,)), ((50, (11, 15, 0, 0)), (51, (11, 16, 0, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -785075,
+          "id": "('chain3', ((424,), (580,), (601,)), ((424, (17, 2, 2, 0)), (580, (17, 3, 5, 0)), (601, (17, 5, 3, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -131066,
+          "score_q20": -1111010,
+          "timing_delta": -261122,
+          "touched_nets": [
+            155,
+            511,
+            600
+          ],
+          "trial": {
+            "424": [
+              17,
+              2,
+              2,
+              0
+            ],
+            "580": [
+              17,
+              3,
+              5,
+              0
+            ],
+            "601": [
+              17,
+              5,
+              3,
+              0
+            ]
+          },
+          "units": [
+            [
+              424
+            ],
+            [
+              580
+            ],
+            [
+              601
+            ]
+          ],
+          "wire_delta": -2,
+          "write_sites": [
+            [
+              17,
+              2,
+              2,
+              0
+            ],
+            [
+              17,
+              3,
+              5,
+              0
+            ],
+            [
+              17,
+              5,
+              3,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": 1233928,
+          "id": "('chain2', ((50,), (51,)), ((50, (11, 15, 0, 0)), (51, (11, 16, 0, 0))))",
+          "kind": "chain2",
+          "routed_timing_delta": -140898,
+          "score_q20": -997866,
+          "timing_delta": 753019,
+          "touched_nets": [
+            0,
+            46,
+            176,
+            177,
+            178,
+            179,
+            180,
+            181,
+            183,
+            184,
+            186,
+            188,
+            189,
+            190,
+            191,
+            193,
+            194,
+            195,
+            197,
+            199,
+            239,
+            257,
+            266,
+            267,
+            315,
+            316,
+            318,
+            320,
+            321,
+            326,
+            327,
+            328,
+            332,
+            336,
+            337,
+            338,
+            340,
+            341,
+            346,
+            360,
+            432,
+            434,
+            435,
+            439,
+            440,
+            441,
+            442,
+            510,
+            578,
+            579,
+            580,
+            581,
+            582,
+            583,
+            584,
+            585,
+            586,
+            587,
+            588,
+            589
+          ],
+          "trial": {
+            "50": [
+              11,
+              15,
+              0,
+              0
+            ],
+            "51": [
+              11,
+              16,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              50
+            ],
+            [
+              51
+            ]
+          ],
+          "wire_delta": 18,
+          "write_sites": [
+            [
+              11,
+              15,
+              0,
+              0
+            ],
+            [
+              11,
+              16,
+              0,
+              0
+            ],
+            [
+              12,
+              13,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 5
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 4,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_06/candidate.place",
+        "sha256": "9e39fc8be21d90f3a2d5806cccfced093c486bf6af772cd321b63107b54b5c3a"
+      },
+      "closure": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_06/vpr_native_closure.json",
+        "report_sha256": "0bc604b545ee91f289730a2db14763d38ad1b0a6995f4454af36b59b1fdb021d",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 12987
+      },
+      "color": 0,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "returncode": 0,
+        "schema": "TILEPLACE_NEW_COHORT_NATIVE_BASELINE_V1",
+        "status": "pass",
+        "wirelength": 12974
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('chain3', ((424,), (580,), (601,)), ((424, (17, 2, 2, 0)), (580, (17, 3, 5, 0)), (601, (17, 5, 3, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -785075,
+          "id": "('chain3', ((424,), (580,), (601,)), ((424, (17, 2, 2, 0)), (580, (17, 3, 5, 0)), (601, (17, 5, 3, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -131066,
+          "score_q20": -1111010,
+          "timing_delta": -261122,
+          "touched_nets": [
+            155,
+            511,
+            600
+          ],
+          "trial": {
+            "424": [
+              17,
+              2,
+              2,
+              0
+            ],
+            "580": [
+              17,
+              3,
+              5,
+              0
+            ],
+            "601": [
+              17,
+              5,
+              3,
+              0
+            ]
+          },
+          "units": [
+            [
+              424
+            ],
+            [
+              580
+            ],
+            [
+              601
+            ]
+          ],
+          "wire_delta": -2,
+          "write_sites": [
+            [
+              17,
+              2,
+              2,
+              0
+            ],
+            [
+              17,
+              3,
+              5,
+              0
+            ],
+            [
+              17,
+              5,
+              3,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 6
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 4,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_07/candidate.place",
+        "sha256": "a128fab77be4b073f0392f1ffa02b0e69bde24054c5b70d6e95fefb38d5e4f59"
+      },
+      "closure": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_07/vpr_native_closure.json",
+        "report_sha256": "13eeec5af0f47dbb8ed421ba5e9e6ae5f7e0c0a0a6ea674d7470e30e9df813f7",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 13118
+      },
+      "color": 0,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "returncode": 0,
+        "schema": "TILEPLACE_NEW_COHORT_NATIVE_BASELINE_V1",
+        "status": "pass",
+        "wirelength": 12974
+      },
+      "reason": "baseline_wirelength_cap_exceeded",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('chain2', ((50,), (51,)), ((50, (11, 15, 0, 0)), (51, (11, 16, 0, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": 1233928,
+          "id": "('chain2', ((50,), (51,)), ((50, (11, 15, 0, 0)), (51, (11, 16, 0, 0))))",
+          "kind": "chain2",
+          "routed_timing_delta": -140898,
+          "score_q20": -997866,
+          "timing_delta": 753019,
+          "touched_nets": [
+            0,
+            46,
+            176,
+            177,
+            178,
+            179,
+            180,
+            181,
+            183,
+            184,
+            186,
+            188,
+            189,
+            190,
+            191,
+            193,
+            194,
+            195,
+            197,
+            199,
+            239,
+            257,
+            266,
+            267,
+            315,
+            316,
+            318,
+            320,
+            321,
+            326,
+            327,
+            328,
+            332,
+            336,
+            337,
+            338,
+            340,
+            341,
+            346,
+            360,
+            432,
+            434,
+            435,
+            439,
+            440,
+            441,
+            442,
+            510,
+            578,
+            579,
+            580,
+            581,
+            582,
+            583,
+            584,
+            585,
+            586,
+            587,
+            588,
+            589
+          ],
+          "trial": {
+            "50": [
+              11,
+              15,
+              0,
+              0
+            ],
+            "51": [
+              11,
+              16,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              50
+            ],
+            [
+              51
+            ]
+          ],
+          "wire_delta": 18,
+          "write_sites": [
+            [
+              11,
+              15,
+              0,
+              0
+            ],
+            [
+              11,
+              16,
+              0,
+              0
+            ],
+            [
+              12,
+              13,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 7
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 2,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_08/candidate.place",
+        "sha256": "bb366d9899499772195682efea93df0e52d3ce5ef7c14911c7ab036c0d6b879d"
+      },
+      "closure": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_08/vpr_native_closure.json",
+        "report_sha256": "cec33c16fc7ca96585917b2eb15a67753f3ced97a3b3d3187786f1cd9b4e2536",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 13023
+      },
+      "color": 0,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "returncode": 0,
+        "schema": "TILEPLACE_NEW_COHORT_NATIVE_BASELINE_V1",
+        "status": "pass",
+        "wirelength": 12974
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 4,
+      "transaction_ids": [
+        "('chain3', ((481,), (486,), (544,)), ((481, (0, 4, 4, 0)), (486, (0, 7, 2, 0)), (544, (0, 7, 3, 0))))",
+        "('chain3', ((134,), (389,), (578,)), ((134, (0, 12, 5, 0)), (389, (0, 13, 7, 0)), (578, (0, 11, 7, 0))))",
+        "('swap', ((375,), (607,)), ((375, (3, 0, 6, 0)), (607, (4, 0, 3, 0))))",
+        "('chain3', ((161,), (292,), (566,)), ((161, (13, 0, 3, 0)), (292, (12, 0, 4, 0)), (566, (13, 0, 2, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": 202493,
+          "id": "('chain3', ((481,), (486,), (544,)), ((481, (0, 4, 4, 0)), (486, (0, 7, 2, 0)), (544, (0, 7, 3, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -39321,
+          "score_q20": -502707,
+          "timing_delta": 110256,
+          "touched_nets": [
+            352,
+            463,
+            986
+          ],
+          "trial": {
+            "481": [
+              0,
+              4,
+              4,
+              0
+            ],
+            "486": [
+              0,
+              7,
+              2,
+              0
+            ],
+            "544": [
+              0,
+              7,
+              3,
+              0
+            ]
+          },
+          "units": [
+            [
+              481
+            ],
+            [
+              486
+            ],
+            [
+              544
+            ]
+          ],
+          "wire_delta": 3,
+          "write_sites": [
+            [
+              0,
+              4,
+              4,
+              0
+            ],
+            [
+              0,
+              7,
+              2,
+              0
+            ],
+            [
+              0,
+              7,
+              3,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -483190,
+          "id": "('chain3', ((134,), (389,), (578,)), ((134, (0, 12, 5, 0)), (389, (0, 13, 7, 0)), (578, (0, 11, 7, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -101578,
+          "score_q20": -305590,
+          "timing_delta": -348532,
+          "touched_nets": [
+            72,
+            322,
+            436
+          ],
+          "trial": {
+            "134": [
+              0,
+              12,
+              5,
+              0
+            ],
+            "389": [
+              0,
+              13,
+              7,
+              0
+            ],
+            "578": [
+              0,
+              11,
+              7,
+              0
+            ]
+          },
+          "units": [
+            [
+              134
+            ],
+            [
+              389
+            ],
+            [
+              578
+            ]
+          ],
+          "wire_delta": 1,
+          "write_sites": [
+            [
+              0,
+              11,
+              7,
+              0
+            ],
+            [
+              0,
+              12,
+              5,
+              0
+            ],
+            [
+              0,
+              13,
+              7,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -79603,
+          "id": "('swap', ((375,), (607,)), ((375, (3, 0, 6, 0)), (607, (4, 0, 3, 0))))",
+          "kind": "swap",
+          "routed_timing_delta": -58981,
+          "score_q20": -228546,
+          "timing_delta": 59660,
+          "touched_nets": [
+            232,
+            728
+          ],
+          "trial": {
+            "375": [
+              3,
+              0,
+              6,
+              0
+            ],
+            "607": [
+              4,
+              0,
+              3,
+              0
+            ]
+          },
+          "units": [
+            [
+              375
+            ],
+            [
+              607
+            ]
+          ],
+          "wire_delta": -1,
+          "write_sites": [
+            [
+              3,
+              0,
+              6,
+              0
+            ],
+            [
+              4,
+              0,
+              3,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -133192,
+          "id": "('chain3', ((161,), (292,), (566,)), ((161, (13, 0, 3, 0)), (292, (12, 0, 4, 0)), (566, (13, 0, 2, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -181251,
+          "timing_delta": -33948,
+          "touched_nets": [
+            539,
+            692,
+            725
+          ],
+          "trial": {
+            "161": [
+              13,
+              0,
+              3,
+              0
+            ],
+            "292": [
+              12,
+              0,
+              4,
+              0
+            ],
+            "566": [
+              13,
+              0,
+              2,
+              0
+            ]
+          },
+          "units": [
+            [
+              161
+            ],
+            [
+              292
+            ],
+            [
+              566
+            ]
+          ],
+          "wire_delta": -1,
+          "write_sites": [
+            [
+              12,
+              0,
+              4,
+              0
+            ],
+            [
+              13,
+              0,
+              2,
+              0
+            ],
+            [
+              13,
+              0,
+              3,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 8
+    },
+    {
+      "accepted": true,
+      "bisection_depth": 3,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_09/candidate.place",
+        "sha256": "444d69c5730833899ab1d7b82cf01078416207e01faff11cb57f5cc120367f47"
+      },
+      "closure": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_09/vpr_native_closure.json",
+        "report_sha256": "389063833dccb7527d502234192e82495a4296b0184d71ca873075a84b1cab5c",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 12972
+      },
+      "color": 0,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "returncode": 0,
+        "schema": "TILEPLACE_NEW_COHORT_NATIVE_BASELINE_V1",
+        "status": "pass",
+        "wirelength": 12974
+      },
+      "reason": "equal_cpd_wirelength_improved",
+      "transaction_count": 2,
+      "transaction_ids": [
+        "('chain3', ((481,), (486,), (544,)), ((481, (0, 4, 4, 0)), (486, (0, 7, 2, 0)), (544, (0, 7, 3, 0))))",
+        "('chain3', ((134,), (389,), (578,)), ((134, (0, 12, 5, 0)), (389, (0, 13, 7, 0)), (578, (0, 11, 7, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": 202493,
+          "id": "('chain3', ((481,), (486,), (544,)), ((481, (0, 4, 4, 0)), (486, (0, 7, 2, 0)), (544, (0, 7, 3, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -39321,
+          "score_q20": -502707,
+          "timing_delta": 110256,
+          "touched_nets": [
+            352,
+            463,
+            986
+          ],
+          "trial": {
+            "481": [
+              0,
+              4,
+              4,
+              0
+            ],
+            "486": [
+              0,
+              7,
+              2,
+              0
+            ],
+            "544": [
+              0,
+              7,
+              3,
+              0
+            ]
+          },
+          "units": [
+            [
+              481
+            ],
+            [
+              486
+            ],
+            [
+              544
+            ]
+          ],
+          "wire_delta": 3,
+          "write_sites": [
+            [
+              0,
+              4,
+              4,
+              0
+            ],
+            [
+              0,
+              7,
+              2,
+              0
+            ],
+            [
+              0,
+              7,
+              3,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -483190,
+          "id": "('chain3', ((134,), (389,), (578,)), ((134, (0, 12, 5, 0)), (389, (0, 13, 7, 0)), (578, (0, 11, 7, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -101578,
+          "score_q20": -305590,
+          "timing_delta": -348532,
+          "touched_nets": [
+            72,
+            322,
+            436
+          ],
+          "trial": {
+            "134": [
+              0,
+              12,
+              5,
+              0
+            ],
+            "389": [
+              0,
+              13,
+              7,
+              0
+            ],
+            "578": [
+              0,
+              11,
+              7,
+              0
+            ]
+          },
+          "units": [
+            [
+              134
+            ],
+            [
+              389
+            ],
+            [
+              578
+            ]
+          ],
+          "wire_delta": 1,
+          "write_sites": [
+            [
+              0,
+              11,
+              7,
+              0
+            ],
+            [
+              0,
+              12,
+              5,
+              0
+            ],
+            [
+              0,
+              13,
+              7,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 9
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 3,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_10/candidate.place",
+        "sha256": "bb366d9899499772195682efea93df0e52d3ce5ef7c14911c7ab036c0d6b879d"
+      },
+      "closure": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_10/vpr_native_closure.json",
+        "report_sha256": "adb6b455f6647a702b01b2949de623acfdb0b442184b9daa225bb0ed6a1e4a36",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 13023
+      },
+      "color": 0,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_09/vpr_native_closure.json",
+        "report_sha256": "389063833dccb7527d502234192e82495a4296b0184d71ca873075a84b1cab5c",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 12972
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 2,
+      "transaction_ids": [
+        "('swap', ((375,), (607,)), ((375, (3, 0, 6, 0)), (607, (4, 0, 3, 0))))",
+        "('chain3', ((161,), (292,), (566,)), ((161, (13, 0, 3, 0)), (292, (12, 0, 4, 0)), (566, (13, 0, 2, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -79603,
+          "id": "('swap', ((375,), (607,)), ((375, (3, 0, 6, 0)), (607, (4, 0, 3, 0))))",
+          "kind": "swap",
+          "routed_timing_delta": -58981,
+          "score_q20": -228546,
+          "timing_delta": 59660,
+          "touched_nets": [
+            232,
+            728
+          ],
+          "trial": {
+            "375": [
+              3,
+              0,
+              6,
+              0
+            ],
+            "607": [
+              4,
+              0,
+              3,
+              0
+            ]
+          },
+          "units": [
+            [
+              375
+            ],
+            [
+              607
+            ]
+          ],
+          "wire_delta": -1,
+          "write_sites": [
+            [
+              3,
+              0,
+              6,
+              0
+            ],
+            [
+              4,
+              0,
+              3,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -133192,
+          "id": "('chain3', ((161,), (292,), (566,)), ((161, (13, 0, 3, 0)), (292, (12, 0, 4, 0)), (566, (13, 0, 2, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -181251,
+          "timing_delta": -33948,
+          "touched_nets": [
+            539,
+            692,
+            725
+          ],
+          "trial": {
+            "161": [
+              13,
+              0,
+              3,
+              0
+            ],
+            "292": [
+              12,
+              0,
+              4,
+              0
+            ],
+            "566": [
+              13,
+              0,
+              2,
+              0
+            ]
+          },
+          "units": [
+            [
+              161
+            ],
+            [
+              292
+            ],
+            [
+              566
+            ]
+          ],
+          "wire_delta": -1,
+          "write_sites": [
+            [
+              12,
+              0,
+              4,
+              0
+            ],
+            [
+              13,
+              0,
+              2,
+              0
+            ],
+            [
+              13,
+              0,
+              3,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 10
+    },
+    {
+      "accepted": true,
+      "bisection_depth": 4,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_11/candidate.place",
+        "sha256": "19abac2edf86fa23894c1faaf47532b2b21ddce85ab9820ab23b035a90410123"
+      },
+      "closure": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_11/vpr_native_closure.json",
+        "report_sha256": "f470a3274158d7b5fcd91638e2f678bcc8558dca28922c40af5bed4909f545fc",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 12936
+      },
+      "color": 0,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_09/vpr_native_closure.json",
+        "report_sha256": "389063833dccb7527d502234192e82495a4296b0184d71ca873075a84b1cab5c",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 12972
+      },
+      "reason": "equal_cpd_wirelength_improved",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('swap', ((375,), (607,)), ((375, (3, 0, 6, 0)), (607, (4, 0, 3, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -79603,
+          "id": "('swap', ((375,), (607,)), ((375, (3, 0, 6, 0)), (607, (4, 0, 3, 0))))",
+          "kind": "swap",
+          "routed_timing_delta": -58981,
+          "score_q20": -228546,
+          "timing_delta": 59660,
+          "touched_nets": [
+            232,
+            728
+          ],
+          "trial": {
+            "375": [
+              3,
+              0,
+              6,
+              0
+            ],
+            "607": [
+              4,
+              0,
+              3,
+              0
+            ]
+          },
+          "units": [
+            [
+              375
+            ],
+            [
+              607
+            ]
+          ],
+          "wire_delta": -1,
+          "write_sites": [
+            [
+              3,
+              0,
+              6,
+              0
+            ],
+            [
+              4,
+              0,
+              3,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 11
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 4,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_12/candidate.place",
+        "sha256": "bb366d9899499772195682efea93df0e52d3ce5ef7c14911c7ab036c0d6b879d"
+      },
+      "closure": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_12/vpr_native_closure.json",
+        "report_sha256": "648fb844a88db6572f49ecac32e226998a3cd61aceb9aa4cb8fff3483e1eed34",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 13023
+      },
+      "color": 0,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_11/vpr_native_closure.json",
+        "report_sha256": "f470a3274158d7b5fcd91638e2f678bcc8558dca28922c40af5bed4909f545fc",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 12936
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('chain3', ((161,), (292,), (566,)), ((161, (13, 0, 3, 0)), (292, (12, 0, 4, 0)), (566, (13, 0, 2, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -133192,
+          "id": "('chain3', ((161,), (292,), (566,)), ((161, (13, 0, 3, 0)), (292, (12, 0, 4, 0)), (566, (13, 0, 2, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -181251,
+          "timing_delta": -33948,
+          "touched_nets": [
+            539,
+            692,
+            725
+          ],
+          "trial": {
+            "161": [
+              13,
+              0,
+              3,
+              0
+            ],
+            "292": [
+              12,
+              0,
+              4,
+              0
+            ],
+            "566": [
+              13,
+              0,
+              2,
+              0
+            ]
+          },
+          "units": [
+            [
+              161
+            ],
+            [
+              292
+            ],
+            [
+              566
+            ]
+          ],
+          "wire_delta": -1,
+          "write_sites": [
+            [
+              12,
+              0,
+              4,
+              0
+            ],
+            [
+              13,
+              0,
+              2,
+              0
+            ],
+            [
+              13,
+              0,
+              3,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 12
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 1,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_13/candidate.place",
+        "sha256": "02090d5840b728f8aa95f71bdaa06046ecdf05e2e69ecd384749099ccee09c99"
+      },
+      "closure": {
+        "cpd_ns": 4.91735,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_13/vpr_native_closure.json",
+        "report_sha256": "fd617b7125ea146f73ce88866d1ab2ce5578c1993219dbc1b7a0b7a87f6d9f9d",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 13138
+      },
+      "color": 0,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_11/vpr_native_closure.json",
+        "report_sha256": "f470a3274158d7b5fcd91638e2f678bcc8558dca28922c40af5bed4909f545fc",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 12936
+      },
+      "reason": "baseline_wirelength_cap_exceeded",
+      "transaction_count": 8,
+      "transaction_ids": [
+        "('chain3', ((122,), (313,), (609,)), ((122, (17, 9, 1, 0)), (313, (17, 9, 4, 0)), (609, (17, 8, 1, 0))))",
+        "('chain3', ((153,), (342,), (468,)), ((153, (4, 17, 0, 0)), (342, (3, 17, 4, 0)), (468, (4, 17, 5, 0))))",
+        "('chain3', ((151,), (326,), (499,)), ((151, (0, 5, 7, 0)), (326, (0, 4, 6, 0)), (499, (0, 5, 4, 0))))",
+        "('chain3', ((144,), (170,), (570,)), ((144, (13, 17, 6, 0)), (170, (13, 17, 2, 0)), (570, (12, 17, 4, 0))))",
+        "('chain3', ((137,), (444,), (595,)), ((137, (12, 0, 5, 0)), (444, (12, 0, 6, 0)), (595, (11, 0, 5, 0))))",
+        "('chain3', ((156,), (218,), (296,)), ((156, (8, 17, 6, 0)), (218, (8, 17, 7, 0)), (296, (7, 17, 0, 0))))",
+        "('chain3', ((149,), (388,), (411,)), ((149, (9, 0, 4, 0)), (388, (8, 0, 4, 0)), (411, (9, 0, 2, 0))))",
+        "('chain3', ((124,), (576,), (577,)), ((124, (5, 17, 4, 0)), (576, (4, 17, 3, 0)), (577, (5, 17, 3, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -65536,
+          "id": "('chain3', ((122,), (313,), (609,)), ((122, (17, 9, 1, 0)), (313, (17, 9, 4, 0)), (609, (17, 8, 1, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -164089,
+          "timing_delta": -25523,
+          "touched_nets": [
+            751,
+            757,
+            782
+          ],
+          "trial": {
+            "122": [
+              17,
+              9,
+              1,
+              0
+            ],
+            "313": [
+              17,
+              9,
+              4,
+              0
+            ],
+            "609": [
+              17,
+              8,
+              1,
+              0
+            ]
+          },
+          "units": [
+            [
+              122
+            ],
+            [
+              313
+            ],
+            [
+              609
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              17,
+              8,
+              1,
+              0
+            ],
+            [
+              17,
+              9,
+              1,
+              0
+            ],
+            [
+              17,
+              9,
+              4,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -66430,
+          "id": "('chain3', ((153,), (342,), (468,)), ((153, (4, 17, 0, 0)), (342, (3, 17, 4, 0)), (468, (4, 17, 5, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -133296,
+          "timing_delta": -27686,
+          "touched_nets": [
+            210,
+            438,
+            667
+          ],
+          "trial": {
+            "153": [
+              4,
+              17,
+              0,
+              0
+            ],
+            "342": [
+              3,
+              17,
+              4,
+              0
+            ],
+            "468": [
+              4,
+              17,
+              5,
+              0
+            ]
+          },
+          "units": [
+            [
+              153
+            ],
+            [
+              342
+            ],
+            [
+              468
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              3,
+              17,
+              4,
+              0
+            ],
+            [
+              4,
+              17,
+              0,
+              0
+            ],
+            [
+              4,
+              17,
+              5,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -68488,
+          "id": "('chain3', ((151,), (326,), (499,)), ((151, (0, 5, 7, 0)), (326, (0, 4, 6, 0)), (499, (0, 5, 4, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -84054,
+          "timing_delta": -26280,
+          "touched_nets": [
+            649,
+            771,
+            943
+          ],
+          "trial": {
+            "151": [
+              0,
+              5,
+              7,
+              0
+            ],
+            "326": [
+              0,
+              4,
+              6,
+              0
+            ],
+            "499": [
+              0,
+              5,
+              4,
+              0
+            ]
+          },
+          "units": [
+            [
+              151
+            ],
+            [
+              326
+            ],
+            [
+              499
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              0,
+              4,
+              6,
+              0
+            ],
+            [
+              0,
+              5,
+              4,
+              0
+            ],
+            [
+              0,
+              5,
+              7,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -127352,
+          "id": "('chain3', ((144,), (170,), (570,)), ((144, (13, 17, 6, 0)), (170, (13, 17, 2, 0)), (570, (12, 17, 4, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -82155,
+          "timing_delta": -28094,
+          "touched_nets": [
+            182,
+            198,
+            784
+          ],
+          "trial": {
+            "144": [
+              13,
+              17,
+              6,
+              0
+            ],
+            "170": [
+              13,
+              17,
+              2,
+              0
+            ],
+            "570": [
+              12,
+              17,
+              4,
+              0
+            ]
+          },
+          "units": [
+            [
+              144
+            ],
+            [
+              170
+            ],
+            [
+              570
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              12,
+              17,
+              4,
+              0
+            ],
+            [
+              13,
+              17,
+              2,
+              0
+            ],
+            [
+              13,
+              17,
+              6,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -69120,
+          "id": "('chain3', ((137,), (444,), (595,)), ((137, (12, 0, 5, 0)), (444, (12, 0, 6, 0)), (595, (11, 0, 5, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -70782,
+          "timing_delta": -77181,
+          "touched_nets": [
+            238,
+            602,
+            724
+          ],
+          "trial": {
+            "137": [
+              12,
+              0,
+              5,
+              0
+            ],
+            "444": [
+              12,
+              0,
+              6,
+              0
+            ],
+            "595": [
+              11,
+              0,
+              5,
+              0
+            ]
+          },
+          "units": [
+            [
+              137
+            ],
+            [
+              444
+            ],
+            [
+              595
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              11,
+              0,
+              5,
+              0
+            ],
+            [
+              12,
+              0,
+              5,
+              0
+            ],
+            [
+              12,
+              0,
+              6,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -443,
+          "id": "('chain3', ((156,), (218,), (296,)), ((156, (8, 17, 6, 0)), (218, (8, 17, 7, 0)), (296, (7, 17, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -58087,
+          "timing_delta": -18063,
+          "touched_nets": [
+            701,
+            885,
+            901
+          ],
+          "trial": {
+            "156": [
+              8,
+              17,
+              6,
+              0
+            ],
+            "218": [
+              8,
+              17,
+              7,
+              0
+            ],
+            "296": [
+              7,
+              17,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              156
+            ],
+            [
+              218
+            ],
+            [
+              296
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              7,
+              17,
+              0,
+              0
+            ],
+            [
+              8,
+              17,
+              6,
+              0
+            ],
+            [
+              8,
+              17,
+              7,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -197026,
+          "id": "('chain3', ((149,), (388,), (411,)), ((149, (9, 0, 4, 0)), (388, (8, 0, 4, 0)), (411, (9, 0, 2, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -57083,
+          "timing_delta": -45806,
+          "touched_nets": [
+            228,
+            277,
+            716
+          ],
+          "trial": {
+            "149": [
+              9,
+              0,
+              4,
+              0
+            ],
+            "388": [
+              8,
+              0,
+              4,
+              0
+            ],
+            "411": [
+              9,
+              0,
+              2,
+              0
+            ]
+          },
+          "units": [
+            [
+              149
+            ],
+            [
+              388
+            ],
+            [
+              411
+            ]
+          ],
+          "wire_delta": 1,
+          "write_sites": [
+            [
+              8,
+              0,
+              4,
+              0
+            ],
+            [
+              9,
+              0,
+              2,
+              0
+            ],
+            [
+              9,
+              0,
+              4,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -72616,
+          "id": "('chain3', ((124,), (576,), (577,)), ((124, (5, 17, 4, 0)), (576, (4, 17, 3, 0)), (577, (5, 17, 3, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -9224,
+          "timing_delta": 4175,
+          "touched_nets": [
+            23,
+            662,
+            747
+          ],
+          "trial": {
+            "124": [
+              5,
+              17,
+              4,
+              0
+            ],
+            "576": [
+              4,
+              17,
+              3,
+              0
+            ],
+            "577": [
+              5,
+              17,
+              3,
+              0
+            ]
+          },
+          "units": [
+            [
+              124
+            ],
+            [
+              576
+            ],
+            [
+              577
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              4,
+              17,
+              3,
+              0
+            ],
+            [
+              5,
+              17,
+              3,
+              0
+            ],
+            [
+              5,
+              17,
+              4,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 13
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 2,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_14/candidate.place",
+        "sha256": "f58e7e9dccdaaf55b63295736c404aa97a913e47cd3d1ae31c61ae5b774eab3d"
+      },
+      "closure": {
+        "cpd_ns": 4.91735,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_14/vpr_native_closure.json",
+        "report_sha256": "52969e54fd93e84132f2adcc2058741bacb0e0291450eac006ad54b03366fad4",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 13101
+      },
+      "color": 0,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_11/vpr_native_closure.json",
+        "report_sha256": "f470a3274158d7b5fcd91638e2f678bcc8558dca28922c40af5bed4909f545fc",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 12936
+      },
+      "reason": "baseline_wirelength_cap_exceeded",
+      "transaction_count": 4,
+      "transaction_ids": [
+        "('chain3', ((122,), (313,), (609,)), ((122, (17, 9, 1, 0)), (313, (17, 9, 4, 0)), (609, (17, 8, 1, 0))))",
+        "('chain3', ((153,), (342,), (468,)), ((153, (4, 17, 0, 0)), (342, (3, 17, 4, 0)), (468, (4, 17, 5, 0))))",
+        "('chain3', ((151,), (326,), (499,)), ((151, (0, 5, 7, 0)), (326, (0, 4, 6, 0)), (499, (0, 5, 4, 0))))",
+        "('chain3', ((144,), (170,), (570,)), ((144, (13, 17, 6, 0)), (170, (13, 17, 2, 0)), (570, (12, 17, 4, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -65536,
+          "id": "('chain3', ((122,), (313,), (609,)), ((122, (17, 9, 1, 0)), (313, (17, 9, 4, 0)), (609, (17, 8, 1, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -164089,
+          "timing_delta": -25523,
+          "touched_nets": [
+            751,
+            757,
+            782
+          ],
+          "trial": {
+            "122": [
+              17,
+              9,
+              1,
+              0
+            ],
+            "313": [
+              17,
+              9,
+              4,
+              0
+            ],
+            "609": [
+              17,
+              8,
+              1,
+              0
+            ]
+          },
+          "units": [
+            [
+              122
+            ],
+            [
+              313
+            ],
+            [
+              609
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              17,
+              8,
+              1,
+              0
+            ],
+            [
+              17,
+              9,
+              1,
+              0
+            ],
+            [
+              17,
+              9,
+              4,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -66430,
+          "id": "('chain3', ((153,), (342,), (468,)), ((153, (4, 17, 0, 0)), (342, (3, 17, 4, 0)), (468, (4, 17, 5, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -133296,
+          "timing_delta": -27686,
+          "touched_nets": [
+            210,
+            438,
+            667
+          ],
+          "trial": {
+            "153": [
+              4,
+              17,
+              0,
+              0
+            ],
+            "342": [
+              3,
+              17,
+              4,
+              0
+            ],
+            "468": [
+              4,
+              17,
+              5,
+              0
+            ]
+          },
+          "units": [
+            [
+              153
+            ],
+            [
+              342
+            ],
+            [
+              468
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              3,
+              17,
+              4,
+              0
+            ],
+            [
+              4,
+              17,
+              0,
+              0
+            ],
+            [
+              4,
+              17,
+              5,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -68488,
+          "id": "('chain3', ((151,), (326,), (499,)), ((151, (0, 5, 7, 0)), (326, (0, 4, 6, 0)), (499, (0, 5, 4, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -84054,
+          "timing_delta": -26280,
+          "touched_nets": [
+            649,
+            771,
+            943
+          ],
+          "trial": {
+            "151": [
+              0,
+              5,
+              7,
+              0
+            ],
+            "326": [
+              0,
+              4,
+              6,
+              0
+            ],
+            "499": [
+              0,
+              5,
+              4,
+              0
+            ]
+          },
+          "units": [
+            [
+              151
+            ],
+            [
+              326
+            ],
+            [
+              499
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              0,
+              4,
+              6,
+              0
+            ],
+            [
+              0,
+              5,
+              4,
+              0
+            ],
+            [
+              0,
+              5,
+              7,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -127352,
+          "id": "('chain3', ((144,), (170,), (570,)), ((144, (13, 17, 6, 0)), (170, (13, 17, 2, 0)), (570, (12, 17, 4, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -82155,
+          "timing_delta": -28094,
+          "touched_nets": [
+            182,
+            198,
+            784
+          ],
+          "trial": {
+            "144": [
+              13,
+              17,
+              6,
+              0
+            ],
+            "170": [
+              13,
+              17,
+              2,
+              0
+            ],
+            "570": [
+              12,
+              17,
+              4,
+              0
+            ]
+          },
+          "units": [
+            [
+              144
+            ],
+            [
+              170
+            ],
+            [
+              570
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              12,
+              17,
+              4,
+              0
+            ],
+            [
+              13,
+              17,
+              2,
+              0
+            ],
+            [
+              13,
+              17,
+              6,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 14
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 3,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_15/candidate.place",
+        "sha256": "f506a773f8c8a1f4ea87140c068ec716816a839662177310af50ab741d78be4a"
+      },
+      "closure": {
+        "cpd_ns": 4.91735,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_15/vpr_native_closure.json",
+        "report_sha256": "29a39eed28c56f35bde60e86dcf32e67ad12a38db104ee709341659ee81cafaf",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 13065
+      },
+      "color": 0,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_11/vpr_native_closure.json",
+        "report_sha256": "f470a3274158d7b5fcd91638e2f678bcc8558dca28922c40af5bed4909f545fc",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 12936
+      },
+      "reason": "baseline_wirelength_cap_exceeded",
+      "transaction_count": 2,
+      "transaction_ids": [
+        "('chain3', ((122,), (313,), (609,)), ((122, (17, 9, 1, 0)), (313, (17, 9, 4, 0)), (609, (17, 8, 1, 0))))",
+        "('chain3', ((153,), (342,), (468,)), ((153, (4, 17, 0, 0)), (342, (3, 17, 4, 0)), (468, (4, 17, 5, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -65536,
+          "id": "('chain3', ((122,), (313,), (609,)), ((122, (17, 9, 1, 0)), (313, (17, 9, 4, 0)), (609, (17, 8, 1, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -164089,
+          "timing_delta": -25523,
+          "touched_nets": [
+            751,
+            757,
+            782
+          ],
+          "trial": {
+            "122": [
+              17,
+              9,
+              1,
+              0
+            ],
+            "313": [
+              17,
+              9,
+              4,
+              0
+            ],
+            "609": [
+              17,
+              8,
+              1,
+              0
+            ]
+          },
+          "units": [
+            [
+              122
+            ],
+            [
+              313
+            ],
+            [
+              609
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              17,
+              8,
+              1,
+              0
+            ],
+            [
+              17,
+              9,
+              1,
+              0
+            ],
+            [
+              17,
+              9,
+              4,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -66430,
+          "id": "('chain3', ((153,), (342,), (468,)), ((153, (4, 17, 0, 0)), (342, (3, 17, 4, 0)), (468, (4, 17, 5, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -133296,
+          "timing_delta": -27686,
+          "touched_nets": [
+            210,
+            438,
+            667
+          ],
+          "trial": {
+            "153": [
+              4,
+              17,
+              0,
+              0
+            ],
+            "342": [
+              3,
+              17,
+              4,
+              0
+            ],
+            "468": [
+              4,
+              17,
+              5,
+              0
+            ]
+          },
+          "units": [
+            [
+              153
+            ],
+            [
+              342
+            ],
+            [
+              468
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              3,
+              17,
+              4,
+              0
+            ],
+            [
+              4,
+              17,
+              0,
+              0
+            ],
+            [
+              4,
+              17,
+              5,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 15
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 4,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_16/candidate.place",
+        "sha256": "bd6d276d72a4bc8e329ab4e78ed6b6315c5175c7c16e12ebce546fc733ff6e8f"
+      },
+      "closure": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_16/vpr_native_closure.json",
+        "report_sha256": "6f9cc3c14a19bdca6714e4c43eeba83702d0a6a59213728d0b3e4e28724321fd",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 13015
+      },
+      "color": 0,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_11/vpr_native_closure.json",
+        "report_sha256": "f470a3274158d7b5fcd91638e2f678bcc8558dca28922c40af5bed4909f545fc",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 12936
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('chain3', ((122,), (313,), (609,)), ((122, (17, 9, 1, 0)), (313, (17, 9, 4, 0)), (609, (17, 8, 1, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -65536,
+          "id": "('chain3', ((122,), (313,), (609,)), ((122, (17, 9, 1, 0)), (313, (17, 9, 4, 0)), (609, (17, 8, 1, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -164089,
+          "timing_delta": -25523,
+          "touched_nets": [
+            751,
+            757,
+            782
+          ],
+          "trial": {
+            "122": [
+              17,
+              9,
+              1,
+              0
+            ],
+            "313": [
+              17,
+              9,
+              4,
+              0
+            ],
+            "609": [
+              17,
+              8,
+              1,
+              0
+            ]
+          },
+          "units": [
+            [
+              122
+            ],
+            [
+              313
+            ],
+            [
+              609
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              17,
+              8,
+              1,
+              0
+            ],
+            [
+              17,
+              9,
+              1,
+              0
+            ],
+            [
+              17,
+              9,
+              4,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 16
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 4,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_17/candidate.place",
+        "sha256": "055fb2fb3cc1f73025c37e3b0a249253e0e171a539cca92cbeb138243c1fea6f"
+      },
+      "closure": {
+        "cpd_ns": 4.91735,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_17/vpr_native_closure.json",
+        "report_sha256": "df2bd085d66528d5710bb9711ac93a779754d78578dd3ee14485c3e69a4bb71c",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 13056
+      },
+      "color": 0,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_11/vpr_native_closure.json",
+        "report_sha256": "f470a3274158d7b5fcd91638e2f678bcc8558dca28922c40af5bed4909f545fc",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 12936
+      },
+      "reason": "baseline_wirelength_cap_exceeded",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('chain3', ((153,), (342,), (468,)), ((153, (4, 17, 0, 0)), (342, (3, 17, 4, 0)), (468, (4, 17, 5, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -66430,
+          "id": "('chain3', ((153,), (342,), (468,)), ((153, (4, 17, 0, 0)), (342, (3, 17, 4, 0)), (468, (4, 17, 5, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -133296,
+          "timing_delta": -27686,
+          "touched_nets": [
+            210,
+            438,
+            667
+          ],
+          "trial": {
+            "153": [
+              4,
+              17,
+              0,
+              0
+            ],
+            "342": [
+              3,
+              17,
+              4,
+              0
+            ],
+            "468": [
+              4,
+              17,
+              5,
+              0
+            ]
+          },
+          "units": [
+            [
+              153
+            ],
+            [
+              342
+            ],
+            [
+              468
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              3,
+              17,
+              4,
+              0
+            ],
+            [
+              4,
+              17,
+              0,
+              0
+            ],
+            [
+              4,
+              17,
+              5,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 17
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 3,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_18/candidate.place",
+        "sha256": "fd33249561de979410b055fedffb31be68f61fd8bc5de62b0de8b9a0afbbf027"
+      },
+      "closure": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_18/vpr_native_closure.json",
+        "report_sha256": "69bf0cbf8d418735c5435f54cc9f77758af8f04f476b6b668a294fe812b4ff0b",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 12966
+      },
+      "color": 0,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_11/vpr_native_closure.json",
+        "report_sha256": "f470a3274158d7b5fcd91638e2f678bcc8558dca28922c40af5bed4909f545fc",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 12936
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 2,
+      "transaction_ids": [
+        "('chain3', ((151,), (326,), (499,)), ((151, (0, 5, 7, 0)), (326, (0, 4, 6, 0)), (499, (0, 5, 4, 0))))",
+        "('chain3', ((144,), (170,), (570,)), ((144, (13, 17, 6, 0)), (170, (13, 17, 2, 0)), (570, (12, 17, 4, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -68488,
+          "id": "('chain3', ((151,), (326,), (499,)), ((151, (0, 5, 7, 0)), (326, (0, 4, 6, 0)), (499, (0, 5, 4, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -84054,
+          "timing_delta": -26280,
+          "touched_nets": [
+            649,
+            771,
+            943
+          ],
+          "trial": {
+            "151": [
+              0,
+              5,
+              7,
+              0
+            ],
+            "326": [
+              0,
+              4,
+              6,
+              0
+            ],
+            "499": [
+              0,
+              5,
+              4,
+              0
+            ]
+          },
+          "units": [
+            [
+              151
+            ],
+            [
+              326
+            ],
+            [
+              499
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              0,
+              4,
+              6,
+              0
+            ],
+            [
+              0,
+              5,
+              4,
+              0
+            ],
+            [
+              0,
+              5,
+              7,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -127352,
+          "id": "('chain3', ((144,), (170,), (570,)), ((144, (13, 17, 6, 0)), (170, (13, 17, 2, 0)), (570, (12, 17, 4, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -82155,
+          "timing_delta": -28094,
+          "touched_nets": [
+            182,
+            198,
+            784
+          ],
+          "trial": {
+            "144": [
+              13,
+              17,
+              6,
+              0
+            ],
+            "170": [
+              13,
+              17,
+              2,
+              0
+            ],
+            "570": [
+              12,
+              17,
+              4,
+              0
+            ]
+          },
+          "units": [
+            [
+              144
+            ],
+            [
+              170
+            ],
+            [
+              570
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              12,
+              17,
+              4,
+              0
+            ],
+            [
+              13,
+              17,
+              2,
+              0
+            ],
+            [
+              13,
+              17,
+              6,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 18
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 4,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_19/candidate.place",
+        "sha256": "12b1497f26d61735ca2d078daa379c2688211b64b26cb8ea5b033f631663609f"
+      },
+      "closure": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_19/vpr_native_closure.json",
+        "report_sha256": "70446fb0d03479cb7c7e41bf6643ecbef0c79b95ee9cc1fc44b57ae6400f204f",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 12946
+      },
+      "color": 0,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_11/vpr_native_closure.json",
+        "report_sha256": "f470a3274158d7b5fcd91638e2f678bcc8558dca28922c40af5bed4909f545fc",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 12936
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('chain3', ((151,), (326,), (499,)), ((151, (0, 5, 7, 0)), (326, (0, 4, 6, 0)), (499, (0, 5, 4, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -68488,
+          "id": "('chain3', ((151,), (326,), (499,)), ((151, (0, 5, 7, 0)), (326, (0, 4, 6, 0)), (499, (0, 5, 4, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -84054,
+          "timing_delta": -26280,
+          "touched_nets": [
+            649,
+            771,
+            943
+          ],
+          "trial": {
+            "151": [
+              0,
+              5,
+              7,
+              0
+            ],
+            "326": [
+              0,
+              4,
+              6,
+              0
+            ],
+            "499": [
+              0,
+              5,
+              4,
+              0
+            ]
+          },
+          "units": [
+            [
+              151
+            ],
+            [
+              326
+            ],
+            [
+              499
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              0,
+              4,
+              6,
+              0
+            ],
+            [
+              0,
+              5,
+              4,
+              0
+            ],
+            [
+              0,
+              5,
+              7,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 19
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 4,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_20/candidate.place",
+        "sha256": "0cc040e91d45b33ca91ec827b5fb95ad4f147f062106265997195c9ee7c77696"
+      },
+      "closure": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_20/vpr_native_closure.json",
+        "report_sha256": "16da8eab13c25762bc726fde59b9f4749a67f1552362059309f6fa081f2f97fb",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 12970
+      },
+      "color": 0,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_11/vpr_native_closure.json",
+        "report_sha256": "f470a3274158d7b5fcd91638e2f678bcc8558dca28922c40af5bed4909f545fc",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 12936
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('chain3', ((144,), (170,), (570,)), ((144, (13, 17, 6, 0)), (170, (13, 17, 2, 0)), (570, (12, 17, 4, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -127352,
+          "id": "('chain3', ((144,), (170,), (570,)), ((144, (13, 17, 6, 0)), (170, (13, 17, 2, 0)), (570, (12, 17, 4, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -82155,
+          "timing_delta": -28094,
+          "touched_nets": [
+            182,
+            198,
+            784
+          ],
+          "trial": {
+            "144": [
+              13,
+              17,
+              6,
+              0
+            ],
+            "170": [
+              13,
+              17,
+              2,
+              0
+            ],
+            "570": [
+              12,
+              17,
+              4,
+              0
+            ]
+          },
+          "units": [
+            [
+              144
+            ],
+            [
+              170
+            ],
+            [
+              570
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              12,
+              17,
+              4,
+              0
+            ],
+            [
+              13,
+              17,
+              2,
+              0
+            ],
+            [
+              13,
+              17,
+              6,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 20
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 2,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_21/candidate.place",
+        "sha256": "52752e6fe4fc820e1a9e9018736059d1820c48ce460a695647cafe3d23d48c51"
+      },
+      "closure": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_21/vpr_native_closure.json",
+        "report_sha256": "8ce6ee3478df07386f0b46a268134b0d1dfaaa94dfc2c9c4e3ee37e62351b5a4",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 13086
+      },
+      "color": 0,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_11/vpr_native_closure.json",
+        "report_sha256": "f470a3274158d7b5fcd91638e2f678bcc8558dca28922c40af5bed4909f545fc",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 12936
+      },
+      "reason": "baseline_wirelength_cap_exceeded",
+      "transaction_count": 4,
+      "transaction_ids": [
+        "('chain3', ((137,), (444,), (595,)), ((137, (12, 0, 5, 0)), (444, (12, 0, 6, 0)), (595, (11, 0, 5, 0))))",
+        "('chain3', ((156,), (218,), (296,)), ((156, (8, 17, 6, 0)), (218, (8, 17, 7, 0)), (296, (7, 17, 0, 0))))",
+        "('chain3', ((149,), (388,), (411,)), ((149, (9, 0, 4, 0)), (388, (8, 0, 4, 0)), (411, (9, 0, 2, 0))))",
+        "('chain3', ((124,), (576,), (577,)), ((124, (5, 17, 4, 0)), (576, (4, 17, 3, 0)), (577, (5, 17, 3, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -69120,
+          "id": "('chain3', ((137,), (444,), (595,)), ((137, (12, 0, 5, 0)), (444, (12, 0, 6, 0)), (595, (11, 0, 5, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -70782,
+          "timing_delta": -77181,
+          "touched_nets": [
+            238,
+            602,
+            724
+          ],
+          "trial": {
+            "137": [
+              12,
+              0,
+              5,
+              0
+            ],
+            "444": [
+              12,
+              0,
+              6,
+              0
+            ],
+            "595": [
+              11,
+              0,
+              5,
+              0
+            ]
+          },
+          "units": [
+            [
+              137
+            ],
+            [
+              444
+            ],
+            [
+              595
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              11,
+              0,
+              5,
+              0
+            ],
+            [
+              12,
+              0,
+              5,
+              0
+            ],
+            [
+              12,
+              0,
+              6,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -443,
+          "id": "('chain3', ((156,), (218,), (296,)), ((156, (8, 17, 6, 0)), (218, (8, 17, 7, 0)), (296, (7, 17, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -58087,
+          "timing_delta": -18063,
+          "touched_nets": [
+            701,
+            885,
+            901
+          ],
+          "trial": {
+            "156": [
+              8,
+              17,
+              6,
+              0
+            ],
+            "218": [
+              8,
+              17,
+              7,
+              0
+            ],
+            "296": [
+              7,
+              17,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              156
+            ],
+            [
+              218
+            ],
+            [
+              296
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              7,
+              17,
+              0,
+              0
+            ],
+            [
+              8,
+              17,
+              6,
+              0
+            ],
+            [
+              8,
+              17,
+              7,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -197026,
+          "id": "('chain3', ((149,), (388,), (411,)), ((149, (9, 0, 4, 0)), (388, (8, 0, 4, 0)), (411, (9, 0, 2, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -57083,
+          "timing_delta": -45806,
+          "touched_nets": [
+            228,
+            277,
+            716
+          ],
+          "trial": {
+            "149": [
+              9,
+              0,
+              4,
+              0
+            ],
+            "388": [
+              8,
+              0,
+              4,
+              0
+            ],
+            "411": [
+              9,
+              0,
+              2,
+              0
+            ]
+          },
+          "units": [
+            [
+              149
+            ],
+            [
+              388
+            ],
+            [
+              411
+            ]
+          ],
+          "wire_delta": 1,
+          "write_sites": [
+            [
+              8,
+              0,
+              4,
+              0
+            ],
+            [
+              9,
+              0,
+              2,
+              0
+            ],
+            [
+              9,
+              0,
+              4,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -72616,
+          "id": "('chain3', ((124,), (576,), (577,)), ((124, (5, 17, 4, 0)), (576, (4, 17, 3, 0)), (577, (5, 17, 3, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -9224,
+          "timing_delta": 4175,
+          "touched_nets": [
+            23,
+            662,
+            747
+          ],
+          "trial": {
+            "124": [
+              5,
+              17,
+              4,
+              0
+            ],
+            "576": [
+              4,
+              17,
+              3,
+              0
+            ],
+            "577": [
+              5,
+              17,
+              3,
+              0
+            ]
+          },
+          "units": [
+            [
+              124
+            ],
+            [
+              576
+            ],
+            [
+              577
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              4,
+              17,
+              3,
+              0
+            ],
+            [
+              5,
+              17,
+              3,
+              0
+            ],
+            [
+              5,
+              17,
+              4,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 21
+    },
+    {
+      "accepted": true,
+      "bisection_depth": 3,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_22/candidate.place",
+        "sha256": "b752736a86853e49a98d474207fb980a2ff1be6e2a28f1e9ed09a1dacb463475"
+      },
+      "closure": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_22/vpr_native_closure.json",
+        "report_sha256": "48b37a4f30188e0fe629f350ccecd9210c64ee1f62427488325516cce566116d",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 12915
+      },
+      "color": 0,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_11/vpr_native_closure.json",
+        "report_sha256": "f470a3274158d7b5fcd91638e2f678bcc8558dca28922c40af5bed4909f545fc",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 12936
+      },
+      "reason": "equal_cpd_wirelength_improved",
+      "transaction_count": 2,
+      "transaction_ids": [
+        "('chain3', ((137,), (444,), (595,)), ((137, (12, 0, 5, 0)), (444, (12, 0, 6, 0)), (595, (11, 0, 5, 0))))",
+        "('chain3', ((156,), (218,), (296,)), ((156, (8, 17, 6, 0)), (218, (8, 17, 7, 0)), (296, (7, 17, 0, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -69120,
+          "id": "('chain3', ((137,), (444,), (595,)), ((137, (12, 0, 5, 0)), (444, (12, 0, 6, 0)), (595, (11, 0, 5, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -70782,
+          "timing_delta": -77181,
+          "touched_nets": [
+            238,
+            602,
+            724
+          ],
+          "trial": {
+            "137": [
+              12,
+              0,
+              5,
+              0
+            ],
+            "444": [
+              12,
+              0,
+              6,
+              0
+            ],
+            "595": [
+              11,
+              0,
+              5,
+              0
+            ]
+          },
+          "units": [
+            [
+              137
+            ],
+            [
+              444
+            ],
+            [
+              595
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              11,
+              0,
+              5,
+              0
+            ],
+            [
+              12,
+              0,
+              5,
+              0
+            ],
+            [
+              12,
+              0,
+              6,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -443,
+          "id": "('chain3', ((156,), (218,), (296,)), ((156, (8, 17, 6, 0)), (218, (8, 17, 7, 0)), (296, (7, 17, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -58087,
+          "timing_delta": -18063,
+          "touched_nets": [
+            701,
+            885,
+            901
+          ],
+          "trial": {
+            "156": [
+              8,
+              17,
+              6,
+              0
+            ],
+            "218": [
+              8,
+              17,
+              7,
+              0
+            ],
+            "296": [
+              7,
+              17,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              156
+            ],
+            [
+              218
+            ],
+            [
+              296
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              7,
+              17,
+              0,
+              0
+            ],
+            [
+              8,
+              17,
+              6,
+              0
+            ],
+            [
+              8,
+              17,
+              7,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 22
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 3,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_23/candidate.place",
+        "sha256": "52752e6fe4fc820e1a9e9018736059d1820c48ce460a695647cafe3d23d48c51"
+      },
+      "closure": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_23/vpr_native_closure.json",
+        "report_sha256": "87bc860a7862f5f18b545ee7dc9c6fab4c52722c9ecaf556efbc499ffefd0e64",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 13086
+      },
+      "color": 0,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_22/vpr_native_closure.json",
+        "report_sha256": "48b37a4f30188e0fe629f350ccecd9210c64ee1f62427488325516cce566116d",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 12915
+      },
+      "reason": "baseline_wirelength_cap_exceeded",
+      "transaction_count": 2,
+      "transaction_ids": [
+        "('chain3', ((149,), (388,), (411,)), ((149, (9, 0, 4, 0)), (388, (8, 0, 4, 0)), (411, (9, 0, 2, 0))))",
+        "('chain3', ((124,), (576,), (577,)), ((124, (5, 17, 4, 0)), (576, (4, 17, 3, 0)), (577, (5, 17, 3, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -197026,
+          "id": "('chain3', ((149,), (388,), (411,)), ((149, (9, 0, 4, 0)), (388, (8, 0, 4, 0)), (411, (9, 0, 2, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -57083,
+          "timing_delta": -45806,
+          "touched_nets": [
+            228,
+            277,
+            716
+          ],
+          "trial": {
+            "149": [
+              9,
+              0,
+              4,
+              0
+            ],
+            "388": [
+              8,
+              0,
+              4,
+              0
+            ],
+            "411": [
+              9,
+              0,
+              2,
+              0
+            ]
+          },
+          "units": [
+            [
+              149
+            ],
+            [
+              388
+            ],
+            [
+              411
+            ]
+          ],
+          "wire_delta": 1,
+          "write_sites": [
+            [
+              8,
+              0,
+              4,
+              0
+            ],
+            [
+              9,
+              0,
+              2,
+              0
+            ],
+            [
+              9,
+              0,
+              4,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -72616,
+          "id": "('chain3', ((124,), (576,), (577,)), ((124, (5, 17, 4, 0)), (576, (4, 17, 3, 0)), (577, (5, 17, 3, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -9224,
+          "timing_delta": 4175,
+          "touched_nets": [
+            23,
+            662,
+            747
+          ],
+          "trial": {
+            "124": [
+              5,
+              17,
+              4,
+              0
+            ],
+            "576": [
+              4,
+              17,
+              3,
+              0
+            ],
+            "577": [
+              5,
+              17,
+              3,
+              0
+            ]
+          },
+          "units": [
+            [
+              124
+            ],
+            [
+              576
+            ],
+            [
+              577
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              4,
+              17,
+              3,
+              0
+            ],
+            [
+              5,
+              17,
+              3,
+              0
+            ],
+            [
+              5,
+              17,
+              4,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 23
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 4,
+      "candidate_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_24/candidate.place",
+        "sha256": "16b8afa2b36266ca5ffd423ae167c9602b7b6fcfacf181b76a3cdf44b471518f"
+      },
+      "closure": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_24/vpr_native_closure.json",
+        "report_sha256": "1c907e371a8f6ce80d353a166171844eee7197bb9b69df4fe9d2aab07324ccb0",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 12939
+      },
+      "color": 0,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 5.0153,
+        "legal": true,
+        "report_path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/run_00/work/trial_22/vpr_native_closure.json",
+        "report_sha256": "48b37a4f30188e0fe629f350ccecd9210c64ee1f62427488325516cce566116d",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 12915
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('chain3', ((149,), (388,), (411,)), ((149, (9, 0, 4, 0)), (388, (8, 0, 4, 0)), (411, (9, 0, 2, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -197026,
+          "id": "('chain3', ((149,), (388,), (411,)), ((149, (9, 0, 4, 0)), (388, (8, 0, 4, 0)), (411, (9, 0, 2, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -57083,
+          "timing_delta": -45806,
+          "touched_nets": [
+            228,
+            277,
+            716
+          ],
+          "trial": {
+            "149": [
+              9,
+              0,
+              4,
+              0
+            ],
+            "388": [
+              8,
+              0,
+              4,
+              0
+            ],
+            "411": [
+              9,
+              0,
+              2,
+              0
+            ]
+          },
+          "units": [
+            [
+              149
+            ],
+            [
+              388
+            ],
+            [
+              411
+            ]
+          ],
+          "wire_delta": 1,
+          "write_sites": [
+            [
+              8,
+              0,
+              4,
+              0
+            ],
+            [
+              9,
+              0,
+              2,
+              0
+            ],
+            [
+              9,
+              0,
+              4,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 24
+    }
+  ]
+}

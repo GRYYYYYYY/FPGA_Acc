@@ -1,0 +1,506 @@
+run_id,case,stage,parent,wall_s,status,scope,exclusive_partition,evidence
+adder_historical_prep,adder,baseline,historical_cohort_aggregate,0.1918704230338335,failed,failed stage retained,,
+alu4_historical_prep,alu4,baseline,historical_cohort_aggregate,5.515540644526482,completed,"historical stage subprocess, not new cold timer",,
+alu4_historical_prep,alu4,connections,historical_cohort_aggregate,0.12080299481749535,completed,"historical stage subprocess, not new cold timer",,
+alu4_historical_prep,alu4,pack,historical_cohort_aggregate,3.514547074213624,completed,"historical stage subprocess, not new cold timer",,
+alu4_historical_prep,alu4,paths,historical_cohort_aggregate,4.276334932073951,completed,"historical stage subprocess, not new cold timer",,
+alu4_historical_prep,alu4,proxy,historical_cohort_aggregate,0.2902673967182636,completed,"historical stage subprocess, not new cold timer",,
+alu4_historical_prep,alu4,timing,historical_cohort_aggregate,0.9526357296854258,completed,"historical stage subprocess, not new cold timer",,
+alu4_historical_prep,alu4,contract,historical_cohort_aggregate,0.6268209163099527,completed,"historical stage subprocess, not new cold timer",,
+apex2_historical_prep,apex2,baseline,historical_cohort_aggregate,6.8952149003744125,completed,"historical stage subprocess, not new cold timer",,
+apex2_historical_prep,apex2,connections,historical_cohort_aggregate,0.1366481315344572,completed,"historical stage subprocess, not new cold timer",,
+apex2_historical_prep,apex2,pack,historical_cohort_aggregate,3.883092887699604,completed,"historical stage subprocess, not new cold timer",,
+apex2_historical_prep,apex2,paths,historical_cohort_aggregate,6.786792002618313,completed,"historical stage subprocess, not new cold timer",,
+apex2_historical_prep,apex2,proxy,historical_cohort_aggregate,0.3917855005711317,completed,"historical stage subprocess, not new cold timer",,
+apex2_historical_prep,apex2,timing,historical_cohort_aggregate,1.0881207920610905,completed,"historical stage subprocess, not new cold timer",,
+apex2_historical_prep,apex2,contract,historical_cohort_aggregate,0.734238289296627,completed,"historical stage subprocess, not new cold timer",,
+des_historical_prep,des,baseline,historical_cohort_aggregate,6.1675579231232405,completed,"historical stage subprocess, not new cold timer",,
+des_historical_prep,des,connections,historical_cohort_aggregate,0.11289886571466923,completed,"historical stage subprocess, not new cold timer",,
+des_historical_prep,des,pack,historical_cohort_aggregate,5.1524205096066,completed,"historical stage subprocess, not new cold timer",,
+des_historical_prep,des,paths,historical_cohort_aggregate,7.336323406547308,completed,"historical stage subprocess, not new cold timer",,
+des_historical_prep,des,proxy,historical_cohort_aggregate,0.31788465194404125,completed,"historical stage subprocess, not new cold timer",,
+des_historical_prep,des,timing,historical_cohort_aggregate,1.2117511052638292,completed,"historical stage subprocess, not new cold timer",,
+des_historical_prep,des,contract,historical_cohort_aggregate,0.75846410356462,completed,"historical stage subprocess, not new cold timer",,
+ex1010_historical_prep,ex1010,baseline,historical_cohort_aggregate,15.194797275587916,completed,"historical stage subprocess, not new cold timer",,
+ex1010_historical_prep,ex1010,connections,historical_cohort_aggregate,0.19401082210242748,completed,"historical stage subprocess, not new cold timer",,
+ex1010_historical_prep,ex1010,pack,historical_cohort_aggregate,8.82075459882617,completed,"historical stage subprocess, not new cold timer",,
+ex1010_historical_prep,ex1010,paths,historical_cohort_aggregate,38.120526952669024,failed,failed stage retained,,
+ex5p_historical_prep,ex5p,baseline,historical_cohort_aggregate,3.822615224868059,completed,"historical stage subprocess, not new cold timer",,
+ex5p_historical_prep,ex5p,connections,historical_cohort_aggregate,0.12472051940858364,completed,"historical stage subprocess, not new cold timer",,
+ex5p_historical_prep,ex5p,pack,historical_cohort_aggregate,2.5343155078589916,completed,"historical stage subprocess, not new cold timer",,
+ex5p_historical_prep,ex5p,paths,historical_cohort_aggregate,2.5690053049474955,completed,"historical stage subprocess, not new cold timer",,
+ex5p_historical_prep,ex5p,proxy,historical_cohort_aggregate,0.24139922857284546,completed,"historical stage subprocess, not new cold timer",,
+ex5p_historical_prep,ex5p,timing,historical_cohort_aggregate,0.8493590038269758,completed,"historical stage subprocess, not new cold timer",,
+ex5p_historical_prep,ex5p,contract,historical_cohort_aggregate,0.4947720319032669,completed,"historical stage subprocess, not new cold timer",,
+misex3_historical_prep,misex3,baseline,historical_cohort_aggregate,4.315333556383848,completed,"historical stage subprocess, not new cold timer",,
+misex3_historical_prep,misex3,connections,historical_cohort_aggregate,0.1373524945229292,completed,"historical stage subprocess, not new cold timer",,
+misex3_historical_prep,misex3,pack,historical_cohort_aggregate,2.978634724393487,completed,"historical stage subprocess, not new cold timer",,
+misex3_historical_prep,misex3,paths,historical_cohort_aggregate,4.9264365546405315,completed,"historical stage subprocess, not new cold timer",,
+misex3_historical_prep,misex3,proxy,historical_cohort_aggregate,0.2700311876833439,completed,"historical stage subprocess, not new cold timer",,
+misex3_historical_prep,misex3,timing,historical_cohort_aggregate,0.9732895847409964,completed,"historical stage subprocess, not new cold timer",,
+misex3_historical_prep,misex3,contract,historical_cohort_aggregate,0.6792611237615347,completed,"historical stage subprocess, not new cold timer",,
+s298_historical_prep,s298,baseline,historical_cohort_aggregate,4.384705226868391,completed,"historical stage subprocess, not new cold timer",,
+s298_historical_prep,s298,connections,historical_cohort_aggregate,0.1221690233796835,completed,"historical stage subprocess, not new cold timer",,
+s298_historical_prep,s298,pack,historical_cohort_aggregate,3.467161938548088,completed,"historical stage subprocess, not new cold timer",,
+s298_historical_prep,s298,paths,historical_cohort_aggregate,6.465220469981432,failed,failed stage retained,,
+s38417_historical_prep,s38417,baseline,historical_cohort_aggregate,19.613661164417863,completed,"historical stage subprocess, not new cold timer",,
+s38417_historical_prep,s38417,connections,historical_cohort_aggregate,0.18527092598378658,completed,"historical stage subprocess, not new cold timer",,
+s38417_historical_prep,s38417,pack,historical_cohort_aggregate,11.249018406495452,completed,"historical stage subprocess, not new cold timer",,
+s38417_historical_prep,s38417,paths,historical_cohort_aggregate,34.53836726397276,failed,failed stage retained,,
+s38584.1_historical_prep,s38584.1,baseline,historical_cohort_aggregate,18.832429284229875,completed,"historical stage subprocess, not new cold timer",,
+s38584.1_historical_prep,s38584.1,connections,historical_cohort_aggregate,0.18598476238548756,completed,"historical stage subprocess, not new cold timer",,
+s38584.1_historical_prep,s38584.1,pack,historical_cohort_aggregate,11.289462549611926,completed,"historical stage subprocess, not new cold timer",,
+s38584.1_historical_prep,s38584.1,paths,historical_cohort_aggregate,35.95248348638415,completed,"historical stage subprocess, not new cold timer",,
+s38584.1_historical_prep,s38584.1,proxy,historical_cohort_aggregate,0.5903389696031809,completed,"historical stage subprocess, not new cold timer",,
+s38584.1_historical_prep,s38584.1,timing,historical_cohort_aggregate,2.998668635264039,completed,"historical stage subprocess, not new cold timer",,
+s38584.1_historical_prep,s38584.1,contract,historical_cohort_aggregate,1.7941048797219992,completed,"historical stage subprocess, not new cold timer",,
+seq_historical_prep,seq,baseline,historical_cohort_aggregate,5.993049439042807,completed,"historical stage subprocess, not new cold timer",,
+seq_historical_prep,seq,connections,historical_cohort_aggregate,0.13831476867198944,completed,"historical stage subprocess, not new cold timer",,
+seq_historical_prep,seq,pack,historical_cohort_aggregate,3.5500613898038864,completed,"historical stage subprocess, not new cold timer",,
+seq_historical_prep,seq,paths,historical_cohort_aggregate,5.150465205311775,completed,"historical stage subprocess, not new cold timer",,
+seq_historical_prep,seq,proxy,historical_cohort_aggregate,0.3054347187280655,completed,"historical stage subprocess, not new cold timer",,
+seq_historical_prep,seq,timing,historical_cohort_aggregate,1.1314757075160742,completed,"historical stage subprocess, not new cold timer",,
+seq_historical_prep,seq,contract,historical_cohort_aggregate,0.6252833101898432,completed,"historical stage subprocess, not new cold timer",,
+spla_historical_prep,spla,baseline,historical_cohort_aggregate,12.785409517586231,completed,"historical stage subprocess, not new cold timer",,
+spla_historical_prep,spla,connections,historical_cohort_aggregate,0.17563852109014988,completed,"historical stage subprocess, not new cold timer",,
+spla_historical_prep,spla,pack,historical_cohort_aggregate,7.890211850404739,completed,"historical stage subprocess, not new cold timer",,
+spla_historical_prep,spla,paths,historical_cohort_aggregate,25.426266649737954,completed,"historical stage subprocess, not new cold timer",,
+spla_historical_prep,spla,proxy,historical_cohort_aggregate,0.4758863840252161,completed,"historical stage subprocess, not new cold timer",,
+spla_historical_prep,spla,timing,historical_cohort_aggregate,2.074015384539962,completed,"historical stage subprocess, not new cold timer",,
+spla_historical_prep,spla,contract,historical_cohort_aggregate,1.4062522556632757,completed,"historical stage subprocess, not new cold timer",,
+tseng_historical_prep,tseng,baseline,historical_cohort_aggregate,2.98435721360147,completed,"historical stage subprocess, not new cold timer",,
+tseng_historical_prep,tseng,connections,historical_cohort_aggregate,0.116405563428998,completed,"historical stage subprocess, not new cold timer",,
+tseng_historical_prep,tseng,pack,historical_cohort_aggregate,1.8025747332721949,completed,"historical stage subprocess, not new cold timer",,
+tseng_historical_prep,tseng,paths,historical_cohort_aggregate,1.4389160256832838,completed,"historical stage subprocess, not new cold timer",,
+tseng_historical_prep,tseng,proxy,historical_cohort_aggregate,0.20034112595021725,completed,"historical stage subprocess, not new cold timer",,
+tseng_historical_prep,tseng,timing,historical_cohort_aggregate,0.6637033149600029,completed,"historical stage subprocess, not new cold timer",,
+tseng_historical_prep,tseng,contract,historical_cohort_aggregate,0.44964858144521713,completed,"historical stage subprocess, not new cold timer",,
+alu4_historical_0,alu4,outer_total,none,82.87020622752607,,,False,evidence/history/cohort/alu4/run_00/timing.json
+alu4_historical_0,alu4,preparation,outer_total,0.7247019410133362,,,True,evidence/history/cohort/alu4/run_00/timing.json
+alu4_historical_0,alu4,feedback_refresh,outer_total,1.8540273420512676,,,True,evidence/history/cohort/alu4/run_00/timing.json
+alu4_historical_0,alu4,oracle_driver,outer_total,34.13094915449619,,,True,evidence/history/cohort/alu4/run_00/timing.json
+alu4_historical_0,alu4,proposal,outer_total,45.29552510008216,,,True,evidence/history/cohort/alu4/run_00/timing.json
+alu4_historical_0,alu4,search_other,outer_total,0.6279658023267984,,,True,evidence/history/cohort/alu4/run_00/timing.json
+alu4_historical_0,alu4,output,outer_total,0.0936471689492464,,,True,evidence/history/cohort/alu4/run_00/timing.json
+alu4_historical_0,alu4,external_unattributed,outer_total,0.14338971860706806,,,True,evidence/history/cohort/alu4/run_00/timing.json
+alu4_historical_0,alu4,native_vpr_sum,oracle_driver,30.205820232629776,,,False,evidence/history/cohort/alu4/run_00/timing.json
+alu4_historical_1,alu4,outer_total,none,84.42542349919677,,,False,evidence/history/cohort/alu4/run_01/timing.json
+alu4_historical_1,alu4,preparation,outer_total,0.7162955440580845,,,True,evidence/history/cohort/alu4/run_01/timing.json
+alu4_historical_1,alu4,feedback_refresh,outer_total,1.8848618511110544,,,True,evidence/history/cohort/alu4/run_01/timing.json
+alu4_historical_1,alu4,oracle_driver,outer_total,35.30070924758911,,,True,evidence/history/cohort/alu4/run_01/timing.json
+alu4_historical_1,alu4,proposal,outer_total,45.68484445288777,,,True,evidence/history/cohort/alu4/run_01/timing.json
+alu4_historical_1,alu4,search_other,outer_total,0.6239152029156685,,,True,evidence/history/cohort/alu4/run_01/timing.json
+alu4_historical_1,alu4,output,outer_total,0.08705984428524971,,,True,evidence/history/cohort/alu4/run_01/timing.json
+alu4_historical_1,alu4,external_unattributed,outer_total,0.12773735634982586,,,True,evidence/history/cohort/alu4/run_01/timing.json
+alu4_historical_1,alu4,native_vpr_sum,oracle_driver,31.30674002878368,,,False,evidence/history/cohort/alu4/run_01/timing.json
+apex2_historical_0,apex2,outer_total,none,87.23571439646184,,,False,evidence/history/cohort/apex2/run_00/timing.json
+apex2_historical_0,apex2,preparation,outer_total,0.8443084433674812,,,True,evidence/history/cohort/apex2/run_00/timing.json
+apex2_historical_0,apex2,feedback_refresh,outer_total,2.4612905625253916,,,True,evidence/history/cohort/apex2/run_00/timing.json
+apex2_historical_0,apex2,oracle_driver,outer_total,32.243302991613746,,,True,evidence/history/cohort/apex2/run_00/timing.json
+apex2_historical_0,apex2,proposal,outer_total,50.915899412706494,,,True,evidence/history/cohort/apex2/run_00/timing.json
+apex2_historical_0,apex2,search_other,outer_total,0.5291850566864014,,,True,evidence/history/cohort/apex2/run_00/timing.json
+apex2_historical_0,apex2,output,outer_total,0.09920579008758068,,,True,evidence/history/cohort/apex2/run_00/timing.json
+apex2_historical_0,apex2,external_unattributed,outer_total,0.14252213947474957,,,True,evidence/history/cohort/apex2/run_00/timing.json
+apex2_historical_0,apex2,native_vpr_sum,oracle_driver,28.990177573636174,,,False,evidence/history/cohort/apex2/run_00/timing.json
+apex2_historical_1,apex2,outer_total,none,86.10610507801175,,,False,evidence/history/cohort/apex2/run_01/timing.json
+apex2_historical_1,apex2,preparation,outer_total,0.8871603291481733,,,True,evidence/history/cohort/apex2/run_01/timing.json
+apex2_historical_1,apex2,feedback_refresh,outer_total,2.2803344670683146,,,True,evidence/history/cohort/apex2/run_01/timing.json
+apex2_historical_1,apex2,oracle_driver,outer_total,31.078545534983277,,,True,evidence/history/cohort/apex2/run_01/timing.json
+apex2_historical_1,apex2,proposal,outer_total,51.05858832411468,,,True,evidence/history/cohort/apex2/run_01/timing.json
+apex2_historical_1,apex2,search_other,outer_total,0.5363300759345293,,,True,evidence/history/cohort/apex2/run_01/timing.json
+apex2_historical_1,apex2,output,outer_total,0.11748365126550198,,,True,evidence/history/cohort/apex2/run_01/timing.json
+apex2_historical_1,apex2,external_unattributed,outer_total,0.1476626954972744,,,True,evidence/history/cohort/apex2/run_01/timing.json
+apex2_historical_1,apex2,native_vpr_sum,oracle_driver,27.838737435638905,,,False,evidence/history/cohort/apex2/run_01/timing.json
+des_historical_0,des,outer_total,none,58.30318647809327,,,False,evidence/history/cohort/des/run_00/timing.json
+des_historical_0,des,preparation,outer_total,1.1500903461128473,,,True,evidence/history/cohort/des/run_00/timing.json
+des_historical_0,des,feedback_refresh,outer_total,2.63199751265347,,,True,evidence/history/cohort/des/run_00/timing.json
+des_historical_0,des,oracle_driver,outer_total,44.5241737999022,,,True,evidence/history/cohort/des/run_00/timing.json
+des_historical_0,des,proposal,outer_total,8.731892576441169,,,True,evidence/history/cohort/des/run_00/timing.json
+des_historical_0,des,search_other,outer_total,1.010206324979663,,,True,evidence/history/cohort/des/run_00/timing.json
+des_historical_0,des,output,outer_total,0.12266344390809536,,,True,evidence/history/cohort/des/run_00/timing.json
+des_historical_0,des,external_unattributed,outer_total,0.13216247409582138,,,True,evidence/history/cohort/des/run_00/timing.json
+des_historical_0,des,native_vpr_sum,oracle_driver,39.85144026950002,,,False,evidence/history/cohort/des/run_00/timing.json
+des_historical_1,des,outer_total,none,57.17749818041921,,,False,evidence/history/cohort/des/run_01/timing.json
+des_historical_1,des,preparation,outer_total,1.0217742398381233,,,True,evidence/history/cohort/des/run_01/timing.json
+des_historical_1,des,feedback_refresh,outer_total,2.5835432950407267,,,True,evidence/history/cohort/des/run_01/timing.json
+des_historical_1,des,oracle_driver,outer_total,43.78795012831688,,,True,evidence/history/cohort/des/run_01/timing.json
+des_historical_1,des,proposal,outer_total,8.559965047985315,,,True,evidence/history/cohort/des/run_01/timing.json
+des_historical_1,des,search_other,outer_total,0.9441548697650433,,,True,evidence/history/cohort/des/run_01/timing.json
+des_historical_1,des,output,outer_total,0.12869706936180592,,,True,evidence/history/cohort/des/run_01/timing.json
+des_historical_1,des,external_unattributed,outer_total,0.15141353011131287,,,True,evidence/history/cohort/des/run_01/timing.json
+des_historical_1,des,native_vpr_sum,oracle_driver,39.40074144862592,,,False,evidence/history/cohort/des/run_01/timing.json
+ex5p_historical_0,ex5p,outer_total,none,78.43551354855299,,,False,evidence/history/cohort/ex5p/run_00/timing.json
+ex5p_historical_0,ex5p,preparation,outer_total,0.5517865978181362,,,True,evidence/history/cohort/ex5p/run_00/timing.json
+ex5p_historical_0,ex5p,feedback_refresh,outer_total,2.352669294923544,,,True,evidence/history/cohort/ex5p/run_00/timing.json
+ex5p_historical_0,ex5p,oracle_driver,outer_total,27.970347611233592,,,True,evidence/history/cohort/ex5p/run_00/timing.json
+ex5p_historical_0,ex5p,proposal,outer_total,46.80759992450476,,,True,evidence/history/cohort/ex5p/run_00/timing.json
+ex5p_historical_0,ex5p,search_other,outer_total,0.5207189917564392,,,True,evidence/history/cohort/ex5p/run_00/timing.json
+ex5p_historical_0,ex5p,output,outer_total,0.07960804551839828,,,True,evidence/history/cohort/ex5p/run_00/timing.json
+ex5p_historical_0,ex5p,external_unattributed,outer_total,0.15278308279812336,,,True,evidence/history/cohort/ex5p/run_00/timing.json
+ex5p_historical_0,ex5p,native_vpr_sum,oracle_driver,24.439627362415195,,,False,evidence/history/cohort/ex5p/run_00/timing.json
+ex5p_historical_1,ex5p,outer_total,none,78.31277651526034,,,False,evidence/history/cohort/ex5p/run_01/timing.json
+ex5p_historical_1,ex5p,preparation,outer_total,0.5465500801801682,,,True,evidence/history/cohort/ex5p/run_01/timing.json
+ex5p_historical_1,ex5p,feedback_refresh,outer_total,2.400778004899621,,,True,evidence/history/cohort/ex5p/run_01/timing.json
+ex5p_historical_1,ex5p,oracle_driver,outer_total,27.93688376247883,,,True,evidence/history/cohort/ex5p/run_01/timing.json
+ex5p_historical_1,ex5p,proposal,outer_total,46.69317745231092,,,True,evidence/history/cohort/ex5p/run_01/timing.json
+ex5p_historical_1,ex5p,search_other,outer_total,0.5325722619891167,,,True,evidence/history/cohort/ex5p/run_01/timing.json
+ex5p_historical_1,ex5p,output,outer_total,0.0760729443281889,,,True,evidence/history/cohort/ex5p/run_01/timing.json
+ex5p_historical_1,ex5p,external_unattributed,outer_total,0.12674200907349586,,,True,evidence/history/cohort/ex5p/run_01/timing.json
+ex5p_historical_1,ex5p,native_vpr_sum,oracle_driver,24.236537620425224,,,False,evidence/history/cohort/ex5p/run_01/timing.json
+misex3_historical_0,misex3,outer_total,none,127.20584614574909,,,False,evidence/history/cohort/misex3/run_00/timing.json
+misex3_historical_0,misex3,preparation,outer_total,0.6593541838228703,,,True,evidence/history/cohort/misex3/run_00/timing.json
+misex3_historical_0,misex3,feedback_refresh,outer_total,1.0982970781624317,,,True,evidence/history/cohort/misex3/run_00/timing.json
+misex3_historical_0,misex3,oracle_driver,outer_total,32.163539275527,,,True,evidence/history/cohort/misex3/run_00/timing.json
+misex3_historical_0,misex3,proposal,outer_total,92.38453247584403,,,True,evidence/history/cohort/misex3/run_00/timing.json
+misex3_historical_0,misex3,search_other,outer_total,0.6560360547155142,,,True,evidence/history/cohort/misex3/run_00/timing.json
+misex3_historical_0,misex3,output,outer_total,0.09394504874944687,,,True,evidence/history/cohort/misex3/run_00/timing.json
+misex3_historical_0,misex3,external_unattributed,outer_total,0.15014202892780304,,,True,evidence/history/cohort/misex3/run_00/timing.json
+misex3_historical_0,misex3,native_vpr_sum,oracle_driver,28.342358510941267,,,False,evidence/history/cohort/misex3/run_00/timing.json
+misex3_historical_1,misex3,outer_total,none,125.06204598210752,,,False,evidence/history/cohort/misex3/run_01/timing.json
+misex3_historical_1,misex3,preparation,outer_total,0.6453604511916637,,,True,evidence/history/cohort/misex3/run_01/timing.json
+misex3_historical_1,misex3,feedback_refresh,outer_total,1.167745590209961,,,True,evidence/history/cohort/misex3/run_01/timing.json
+misex3_historical_1,misex3,oracle_driver,outer_total,32.00922306254506,,,True,evidence/history/cohort/misex3/run_01/timing.json
+misex3_historical_1,misex3,proposal,outer_total,90.43703411892056,,,True,evidence/history/cohort/misex3/run_01/timing.json
+misex3_historical_1,misex3,search_other,outer_total,0.5902318097651005,,,True,evidence/history/cohort/misex3/run_01/timing.json
+misex3_historical_1,misex3,output,outer_total,0.07632448524236679,,,True,evidence/history/cohort/misex3/run_01/timing.json
+misex3_historical_1,misex3,external_unattributed,outer_total,0.1361264642328024,,,True,evidence/history/cohort/misex3/run_01/timing.json
+misex3_historical_1,misex3,native_vpr_sum,oracle_driver,28.364829521626234,,,False,evidence/history/cohort/misex3/run_01/timing.json
+s38584.1_historical_0,s38584.1,outer_total,none,210.4680545758456,,,False,evidence/history/cohort/s38584.1/run_00/timing.json
+s38584.1_historical_0,s38584.1,preparation,outer_total,2.3420659136027098,,,True,evidence/history/cohort/s38584.1/run_00/timing.json
+s38584.1_historical_0,s38584.1,feedback_refresh,outer_total,8.110921155661345,,,True,evidence/history/cohort/s38584.1/run_00/timing.json
+s38584.1_historical_0,s38584.1,oracle_driver,outer_total,112.05105584301054,,,True,evidence/history/cohort/s38584.1/run_00/timing.json
+s38584.1_historical_0,s38584.1,proposal,outer_total,85.36596068926156,,,True,evidence/history/cohort/s38584.1/run_00/timing.json
+s38584.1_historical_0,s38584.1,search_other,outer_total,2.0814836844801903,,,True,evidence/history/cohort/s38584.1/run_00/timing.json
+s38584.1_historical_0,s38584.1,output,outer_total,0.3365542031824589,,,True,evidence/history/cohort/s38584.1/run_00/timing.json
+s38584.1_historical_0,s38584.1,external_unattributed,outer_total,0.18001308664679527,,,True,evidence/history/cohort/s38584.1/run_00/timing.json
+s38584.1_historical_0,s38584.1,native_vpr_sum,oracle_driver,104.28384807892144,,,False,evidence/history/cohort/s38584.1/run_00/timing.json
+s38584.1_historical_1,s38584.1,outer_total,none,211.52199908345938,,,False,evidence/history/cohort/s38584.1/run_01/timing.json
+s38584.1_historical_1,s38584.1,preparation,outer_total,2.30003653280437,,,True,evidence/history/cohort/s38584.1/run_01/timing.json
+s38584.1_historical_1,s38584.1,feedback_refresh,outer_total,8.163055187091231,,,True,evidence/history/cohort/s38584.1/run_01/timing.json
+s38584.1_historical_1,s38584.1,oracle_driver,outer_total,112.92733393609524,,,True,evidence/history/cohort/s38584.1/run_01/timing.json
+s38584.1_historical_1,s38584.1,proposal,outer_total,85.5857034381479,,,True,evidence/history/cohort/s38584.1/run_01/timing.json
+s38584.1_historical_1,s38584.1,search_other,outer_total,2.113090293481946,,,True,evidence/history/cohort/s38584.1/run_01/timing.json
+s38584.1_historical_1,s38584.1,output,outer_total,0.2596666067838669,,,True,evidence/history/cohort/s38584.1/run_01/timing.json
+s38584.1_historical_1,s38584.1,external_unattributed,outer_total,0.17311308905482292,,,True,evidence/history/cohort/s38584.1/run_01/timing.json
+s38584.1_historical_1,s38584.1,native_vpr_sum,oracle_driver,105.17716410569847,,,False,evidence/history/cohort/s38584.1/run_01/timing.json
+seq_historical_0,seq,outer_total,none,151.13197249546647,,,False,evidence/history/cohort/seq/run_00/timing.json
+seq_historical_0,seq,preparation,outer_total,0.7617156244814396,,,True,evidence/history/cohort/seq/run_00/timing.json
+seq_historical_0,seq,feedback_refresh,outer_total,1.9768084809184074,,,True,evidence/history/cohort/seq/run_00/timing.json
+seq_historical_0,seq,oracle_driver,outer_total,38.343372294679284,,,True,evidence/history/cohort/seq/run_00/timing.json
+seq_historical_0,seq,proposal,outer_total,109.02931571565568,,,True,evidence/history/cohort/seq/run_00/timing.json
+seq_historical_0,seq,search_other,outer_total,0.7556556556373835,,,True,evidence/history/cohort/seq/run_00/timing.json
+seq_historical_0,seq,output,outer_total,0.13110771775245667,,,True,evidence/history/cohort/seq/run_00/timing.json
+seq_historical_0,seq,external_unattributed,outer_total,0.133997006341815,,,True,evidence/history/cohort/seq/run_00/timing.json
+seq_historical_0,seq,native_vpr_sum,oracle_driver,34.31632309034467,,,False,evidence/history/cohort/seq/run_00/timing.json
+seq_historical_1,seq,outer_total,none,149.02108428813517,,,False,evidence/history/cohort/seq/run_01/timing.json
+seq_historical_1,seq,preparation,outer_total,0.7904352732002735,,,True,evidence/history/cohort/seq/run_01/timing.json
+seq_historical_1,seq,feedback_refresh,outer_total,1.9257737509906292,,,True,evidence/history/cohort/seq/run_01/timing.json
+seq_historical_1,seq,oracle_driver,outer_total,37.02730296365917,,,True,evidence/history/cohort/seq/run_01/timing.json
+seq_historical_1,seq,proposal,outer_total,108.31801604479551,,,True,evidence/history/cohort/seq/run_01/timing.json
+seq_historical_1,seq,search_other,outer_total,0.6933374982327223,,,True,evidence/history/cohort/seq/run_01/timing.json
+seq_historical_1,seq,output,outer_total,0.10264117643237114,,,True,evidence/history/cohort/seq/run_01/timing.json
+seq_historical_1,seq,external_unattributed,outer_total,0.16357758082449436,,,True,evidence/history/cohort/seq/run_01/timing.json
+seq_historical_1,seq,native_vpr_sum,oracle_driver,33.12678454071283,,,False,evidence/history/cohort/seq/run_01/timing.json
+spla_historical_0,spla,outer_total,none,328.2703794911504,,,False,evidence/history/cohort/spla/run_00/timing.json
+spla_historical_0,spla,preparation,outer_total,1.6412920132279396,,,True,evidence/history/cohort/spla/run_00/timing.json
+spla_historical_0,spla,feedback_refresh,outer_total,6.9302389938384295,,,True,evidence/history/cohort/spla/run_00/timing.json
+spla_historical_0,spla,oracle_driver,outer_total,74.95696562901139,,,True,evidence/history/cohort/spla/run_00/timing.json
+spla_historical_0,spla,proposal,outer_total,242.9857543297112,,,True,evidence/history/cohort/spla/run_00/timing.json
+spla_historical_0,spla,search_other,outer_total,1.3301066625863314,,,True,evidence/history/cohort/spla/run_00/timing.json
+spla_historical_0,spla,output,outer_total,0.2504898477345705,,,True,evidence/history/cohort/spla/run_00/timing.json
+spla_historical_0,spla,external_unattributed,outer_total,0.17553201504051685,,,True,evidence/history/cohort/spla/run_00/timing.json
+spla_historical_0,spla,native_vpr_sum,oracle_driver,69.3647246118635,,,False,evidence/history/cohort/spla/run_00/timing.json
+spla_historical_1,spla,outer_total,none,330.28592753596604,,,False,evidence/history/cohort/spla/run_01/timing.json
+spla_historical_1,spla,preparation,outer_total,1.6504360791295767,,,True,evidence/history/cohort/spla/run_01/timing.json
+spla_historical_1,spla,feedback_refresh,outer_total,6.9134095292538404,,,True,evidence/history/cohort/spla/run_01/timing.json
+spla_historical_1,spla,oracle_driver,outer_total,75.61351015791297,,,True,evidence/history/cohort/spla/run_01/timing.json
+spla_historical_1,spla,proposal,outer_total,244.26172239892185,,,True,evidence/history/cohort/spla/run_01/timing.json
+spla_historical_1,spla,search_other,outer_total,1.4016852788627148,,,True,evidence/history/cohort/spla/run_01/timing.json
+spla_historical_1,spla,output,outer_total,0.2670005392283201,,,True,evidence/history/cohort/spla/run_01/timing.json
+spla_historical_1,spla,external_unattributed,outer_total,0.17816355265676975,,,True,evidence/history/cohort/spla/run_01/timing.json
+spla_historical_1,spla,native_vpr_sum,oracle_driver,69.9135568253696,,,False,evidence/history/cohort/spla/run_01/timing.json
+tseng_historical_0,tseng,outer_total,none,48.90963635593653,,,False,evidence/history/cohort/tseng/run_00/timing.json
+tseng_historical_0,tseng,preparation,outer_total,0.45440421998500824,,,True,evidence/history/cohort/tseng/run_00/timing.json
+tseng_historical_0,tseng,feedback_refresh,outer_total,1.5197163466364145,,,True,evidence/history/cohort/tseng/run_00/timing.json
+tseng_historical_0,tseng,oracle_driver,outer_total,16.423229482024908,,,True,evidence/history/cohort/tseng/run_00/timing.json
+tseng_historical_0,tseng,proposal,outer_total,29.964652689173818,,,True,evidence/history/cohort/tseng/run_00/timing.json
+tseng_historical_0,tseng,search_other,outer_total,0.32325493171811104,,,True,evidence/history/cohort/tseng/run_00/timing.json
+tseng_historical_0,tseng,output,outer_total,0.07299843057990074,,,True,evidence/history/cohort/tseng/run_00/timing.json
+tseng_historical_0,tseng,external_unattributed,outer_total,0.151380255818367,,,True,evidence/history/cohort/tseng/run_00/timing.json
+tseng_historical_0,tseng,native_vpr_sum,oracle_driver,14.179985189810395,,,False,evidence/history/cohort/tseng/run_00/timing.json
+tseng_historical_1,tseng,outer_total,none,48.8226875346154,,,False,evidence/history/cohort/tseng/run_01/timing.json
+tseng_historical_1,tseng,preparation,outer_total,0.4517620038241148,,,True,evidence/history/cohort/tseng/run_01/timing.json
+tseng_historical_1,tseng,feedback_refresh,outer_total,1.5412099156528711,,,True,evidence/history/cohort/tseng/run_01/timing.json
+tseng_historical_1,tseng,oracle_driver,outer_total,16.515854317694902,,,True,evidence/history/cohort/tseng/run_01/timing.json
+tseng_historical_1,tseng,proposal,outer_total,29.76038109511137,,,True,evidence/history/cohort/tseng/run_01/timing.json
+tseng_historical_1,tseng,search_other,outer_total,0.32603881135582924,,,True,evidence/history/cohort/tseng/run_01/timing.json
+tseng_historical_1,tseng,output,outer_total,0.07235964387655258,,,True,evidence/history/cohort/tseng/run_01/timing.json
+tseng_historical_1,tseng,external_unattributed,outer_total,0.1550817470997572,,,True,evidence/history/cohort/tseng/run_01/timing.json
+tseng_historical_1,tseng,native_vpr_sum,oracle_driver,14.181430842727423,,,False,evidence/history/cohort/tseng/run_01/timing.json
+diffeq_warmup_0_A,diffeq,outer_total,none,72.140225828,,,False,evidence/pilot/diffeq_warmup_0_A/timing.json
+diffeq_warmup_0_A,diffeq,preparation,outer_total,0.5614695958793163,,,True,evidence/pilot/diffeq_warmup_0_A/timing.json
+diffeq_warmup_0_A,diffeq,feedback_refresh,outer_total,0.41532187908887863,,,True,evidence/pilot/diffeq_warmup_0_A/timing.json
+diffeq_warmup_0_A,diffeq,oracle_driver,outer_total,19.988464668393135,,,True,evidence/pilot/diffeq_warmup_0_A/timing.json
+diffeq_warmup_0_A,diffeq,proposal,outer_total,50.57823010534048,,,True,evidence/pilot/diffeq_warmup_0_A/timing.json
+diffeq_warmup_0_A,diffeq,search_other,outer_total,0.33741969615221024,,,True,evidence/pilot/diffeq_warmup_0_A/timing.json
+diffeq_warmup_0_A,diffeq,output,outer_total,0.10764113068580627,,,True,evidence/pilot/diffeq_warmup_0_A/timing.json
+diffeq_warmup_0_A,diffeq,external_unattributed,outer_total,0.15167875246017104,,,True,evidence/pilot/diffeq_warmup_0_A/timing.json
+diffeq_warmup_0_A,diffeq,native_vpr_sum,oracle_driver,17.623235318809748,,,False,evidence/pilot/diffeq_warmup_0_A/timing.json
+diffeq_warmup_0_A,diffeq,index_build_s,diagnostic_nested_across_phases,0.00020146742463111877,,,False,evidence/pilot/diffeq_warmup_0_A/timing.json
+diffeq_warmup_0_A,diffeq,cache_invalidation_s,diagnostic_nested_across_phases,0.0008454211056232452,,,False,evidence/pilot/diffeq_warmup_0_A/timing.json
+diffeq_warmup_0_B,diffeq,outer_total,none,104.588176816,,,False,evidence/pilot/diffeq_warmup_0_B/timing.json
+diffeq_warmup_0_B,diffeq,preparation,outer_total,0.5414089374244213,,,True,evidence/pilot/diffeq_warmup_0_B/timing.json
+diffeq_warmup_0_B,diffeq,feedback_refresh,outer_total,0.41193440183997154,,,True,evidence/pilot/diffeq_warmup_0_B/timing.json
+diffeq_warmup_0_B,diffeq,oracle_driver,outer_total,19.28124225139618,,,True,evidence/pilot/diffeq_warmup_0_B/timing.json
+diffeq_warmup_0_B,diffeq,proposal,outer_total,83.8058524504304,,,True,evidence/pilot/diffeq_warmup_0_B/timing.json
+diffeq_warmup_0_B,diffeq,search_other,outer_total,0.30437807366251945,,,True,evidence/pilot/diffeq_warmup_0_B/timing.json
+diffeq_warmup_0_B,diffeq,output,outer_total,0.14097120612859726,,,True,evidence/pilot/diffeq_warmup_0_B/timing.json
+diffeq_warmup_0_B,diffeq,external_unattributed,outer_total,0.10238949511791873,,,True,evidence/pilot/diffeq_warmup_0_B/timing.json
+diffeq_warmup_0_B,diffeq,native_vpr_sum,oracle_driver,16.787927567958832,,,False,evidence/pilot/diffeq_warmup_0_B/timing.json
+diffeq_warmup_0_B,diffeq,index_build_s,diagnostic_nested_across_phases,1.7229467630386353e-05,,,False,evidence/pilot/diffeq_warmup_0_B/timing.json
+diffeq_warmup_0_B,diffeq,cache_invalidation_s,diagnostic_nested_across_phases,0.0007710717618465424,,,False,evidence/pilot/diffeq_warmup_0_B/timing.json
+diffeq_measured_1_A,diffeq,outer_total,none,71.430711232,,,False,evidence/pilot/diffeq_measured_1_A/timing.json
+diffeq_measured_1_A,diffeq,preparation,outer_total,0.5293814577162266,,,True,evidence/pilot/diffeq_measured_1_A/timing.json
+diffeq_measured_1_A,diffeq,feedback_refresh,outer_total,0.416809257119894,,,True,evidence/pilot/diffeq_measured_1_A/timing.json
+diffeq_measured_1_A,diffeq,oracle_driver,outer_total,19.67786391824484,,,True,evidence/pilot/diffeq_measured_1_A/timing.json
+diffeq_measured_1_A,diffeq,proposal,outer_total,50.22441813349724,,,True,evidence/pilot/diffeq_measured_1_A/timing.json
+diffeq_measured_1_A,diffeq,search_other,outer_total,0.36471738666296005,,,True,evidence/pilot/diffeq_measured_1_A/timing.json
+diffeq_measured_1_A,diffeq,output,outer_total,0.10468132048845291,,,True,evidence/pilot/diffeq_measured_1_A/timing.json
+diffeq_measured_1_A,diffeq,external_unattributed,outer_total,0.11283975827038262,,,True,evidence/pilot/diffeq_measured_1_A/timing.json
+diffeq_measured_1_A,diffeq,native_vpr_sum,oracle_driver,17.052927054464817,,,False,evidence/pilot/diffeq_measured_1_A/timing.json
+diffeq_measured_1_A,diffeq,index_build_s,diagnostic_nested_across_phases,0.00019726157188415527,,,False,evidence/pilot/diffeq_measured_1_A/timing.json
+diffeq_measured_1_A,diffeq,cache_invalidation_s,diagnostic_nested_across_phases,0.0007607787847518921,,,False,evidence/pilot/diffeq_measured_1_A/timing.json
+diffeq_measured_1_B,diffeq,outer_total,none,103.19624785,,,False,evidence/pilot/diffeq_measured_1_B/timing.json
+diffeq_measured_1_B,diffeq,preparation,outer_total,0.5275055281817913,,,True,evidence/pilot/diffeq_measured_1_B/timing.json
+diffeq_measured_1_B,diffeq,feedback_refresh,outer_total,0.4093249663710594,,,True,evidence/pilot/diffeq_measured_1_B/timing.json
+diffeq_measured_1_B,diffeq,oracle_driver,outer_total,19.69101208075881,,,True,evidence/pilot/diffeq_measured_1_B/timing.json
+diffeq_measured_1_B,diffeq,proposal,outer_total,81.94897520914674,,,True,evidence/pilot/diffeq_measured_1_B/timing.json
+diffeq_measured_1_B,diffeq,search_other,outer_total,0.3428819179534912,,,True,evidence/pilot/diffeq_measured_1_B/timing.json
+diffeq_measured_1_B,diffeq,output,outer_total,0.16587290167808533,,,True,evidence/pilot/diffeq_measured_1_B/timing.json
+diffeq_measured_1_B,diffeq,external_unattributed,outer_total,0.11067524591003064,,,True,evidence/pilot/diffeq_measured_1_B/timing.json
+diffeq_measured_1_B,diffeq,native_vpr_sum,oracle_driver,17.26276307925582,,,False,evidence/pilot/diffeq_measured_1_B/timing.json
+diffeq_measured_1_B,diffeq,index_build_s,diagnostic_nested_across_phases,2.0097941160202026e-05,,,False,evidence/pilot/diffeq_measured_1_B/timing.json
+diffeq_measured_1_B,diffeq,cache_invalidation_s,diagnostic_nested_across_phases,0.0007593967020511627,,,False,evidence/pilot/diffeq_measured_1_B/timing.json
+diffeq_measured_2_B,diffeq,outer_total,none,104.538798095,,,False,evidence/pilot/diffeq_measured_2_B/timing.json
+diffeq_measured_2_B,diffeq,preparation,outer_total,0.5638820864260197,,,True,evidence/pilot/diffeq_measured_2_B/timing.json
+diffeq_measured_2_B,diffeq,feedback_refresh,outer_total,0.4195867218077183,,,True,evidence/pilot/diffeq_measured_2_B/timing.json
+diffeq_measured_2_B,diffeq,oracle_driver,outer_total,19.589923195540905,,,True,evidence/pilot/diffeq_measured_2_B/timing.json
+diffeq_measured_2_B,diffeq,proposal,outer_total,83.41263174265623,,,True,evidence/pilot/diffeq_measured_2_B/timing.json
+diffeq_measured_2_B,diffeq,search_other,outer_total,0.3134477473795414,,,True,evidence/pilot/diffeq_measured_2_B/timing.json
+diffeq_measured_2_B,diffeq,output,outer_total,0.11029079556465149,,,True,evidence/pilot/diffeq_measured_2_B/timing.json
+diffeq_measured_2_B,diffeq,external_unattributed,outer_total,0.12903580562493744,,,True,evidence/pilot/diffeq_measured_2_B/timing.json
+diffeq_measured_2_B,diffeq,native_vpr_sum,oracle_driver,17.19569155946374,,,False,evidence/pilot/diffeq_measured_2_B/timing.json
+diffeq_measured_2_B,diffeq,index_build_s,diagnostic_nested_across_phases,2.0138919353485107e-05,,,False,evidence/pilot/diffeq_measured_2_B/timing.json
+diffeq_measured_2_B,diffeq,cache_invalidation_s,diagnostic_nested_across_phases,0.0008132718503475189,,,False,evidence/pilot/diffeq_measured_2_B/timing.json
+diffeq_measured_2_A,diffeq,outer_total,none,71.383644544,,,False,evidence/pilot/diffeq_measured_2_A/timing.json
+diffeq_measured_2_A,diffeq,preparation,outer_total,0.5447386540472507,,,True,evidence/pilot/diffeq_measured_2_A/timing.json
+diffeq_measured_2_A,diffeq,feedback_refresh,outer_total,0.415706317871809,,,True,evidence/pilot/diffeq_measured_2_A/timing.json
+diffeq_measured_2_A,diffeq,oracle_driver,outer_total,19.56588229164481,,,True,evidence/pilot/diffeq_measured_2_A/timing.json
+diffeq_measured_2_A,diffeq,proposal,outer_total,50.301286805421114,,,True,evidence/pilot/diffeq_measured_2_A/timing.json
+diffeq_measured_2_A,diffeq,search_other,outer_total,0.32543472573161125,,,True,evidence/pilot/diffeq_measured_2_A/timing.json
+diffeq_measured_2_A,diffeq,output,outer_total,0.1261100359261036,,,True,evidence/pilot/diffeq_measured_2_A/timing.json
+diffeq_measured_2_A,diffeq,external_unattributed,outer_total,0.10448571335730605,,,True,evidence/pilot/diffeq_measured_2_A/timing.json
+diffeq_measured_2_A,diffeq,native_vpr_sum,oracle_driver,17.172770649194717,,,False,evidence/pilot/diffeq_measured_2_A/timing.json
+diffeq_measured_2_A,diffeq,index_build_s,diagnostic_nested_across_phases,0.00020746886730194092,,,False,evidence/pilot/diffeq_measured_2_A/timing.json
+diffeq_measured_2_A,diffeq,cache_invalidation_s,diagnostic_nested_across_phases,0.0008638612926006317,,,False,evidence/pilot/diffeq_measured_2_A/timing.json
+diffeq_measured_3_A,diffeq,outer_total,none,71.343510947,,,False,evidence/pilot/diffeq_measured_3_A/timing.json
+diffeq_measured_3_A,diffeq,preparation,outer_total,0.5347590260207653,,,True,evidence/pilot/diffeq_measured_3_A/timing.json
+diffeq_measured_3_A,diffeq,feedback_refresh,outer_total,0.41403641924262047,,,True,evidence/pilot/diffeq_measured_3_A/timing.json
+diffeq_measured_3_A,diffeq,oracle_driver,outer_total,19.23984695598483,,,True,evidence/pilot/diffeq_measured_3_A/timing.json
+diffeq_measured_3_A,diffeq,proposal,outer_total,50.59213300421834,,,True,evidence/pilot/diffeq_measured_3_A/timing.json
+diffeq_measured_3_A,diffeq,search_other,outer_total,0.3179485499858856,,,True,evidence/pilot/diffeq_measured_3_A/timing.json
+diffeq_measured_3_A,diffeq,output,outer_total,0.11886130645871162,,,True,evidence/pilot/diffeq_measured_3_A/timing.json
+diffeq_measured_3_A,diffeq,external_unattributed,outer_total,0.12592568508884483,,,True,evidence/pilot/diffeq_measured_3_A/timing.json
+diffeq_measured_3_A,diffeq,native_vpr_sum,oracle_driver,16.977751575410366,,,False,evidence/pilot/diffeq_measured_3_A/timing.json
+diffeq_measured_3_A,diffeq,index_build_s,diagnostic_nested_across_phases,0.0002076365053653717,,,False,evidence/pilot/diffeq_measured_3_A/timing.json
+diffeq_measured_3_A,diffeq,cache_invalidation_s,diagnostic_nested_across_phases,0.0008339621126651764,,,False,evidence/pilot/diffeq_measured_3_A/timing.json
+diffeq_measured_3_B,diffeq,outer_total,none,103.90691576,,,False,evidence/pilot/diffeq_measured_3_B/timing.json
+diffeq_measured_3_B,diffeq,preparation,outer_total,0.740307055413723,,,True,evidence/pilot/diffeq_measured_3_B/timing.json
+diffeq_measured_3_B,diffeq,feedback_refresh,outer_total,0.4152388460934162,,,True,evidence/pilot/diffeq_measured_3_B/timing.json
+diffeq_measured_3_B,diffeq,oracle_driver,outer_total,19.087632797658443,,,True,evidence/pilot/diffeq_measured_3_B/timing.json
+diffeq_measured_3_B,diffeq,proposal,outer_total,83.11524586379528,,,True,evidence/pilot/diffeq_measured_3_B/timing.json
+diffeq_measured_3_B,diffeq,search_other,outer_total,0.3074435479938984,,,True,evidence/pilot/diffeq_measured_3_B/timing.json
+diffeq_measured_3_B,diffeq,output,outer_total,0.13786514848470688,,,True,evidence/pilot/diffeq_measured_3_B/timing.json
+diffeq_measured_3_B,diffeq,external_unattributed,outer_total,0.10318250056053557,,,True,evidence/pilot/diffeq_measured_3_B/timing.json
+diffeq_measured_3_B,diffeq,native_vpr_sum,oracle_driver,16.85987438261509,,,False,evidence/pilot/diffeq_measured_3_B/timing.json
+diffeq_measured_3_B,diffeq,index_build_s,diagnostic_nested_across_phases,2.0194798707962036e-05,,,False,evidence/pilot/diffeq_measured_3_B/timing.json
+diffeq_measured_3_B,diffeq,cache_invalidation_s,diagnostic_nested_across_phases,0.0008689612150192261,,,False,evidence/pilot/diffeq_measured_3_B/timing.json
+clma_warmup_0_A,clma,outer_total,none,386.399849933,,,False,evidence/pilot/clma_warmup_0_A/timing.json
+clma_warmup_0_A,clma,preparation,outer_total,4.175468999892473,,,True,evidence/pilot/clma_warmup_0_A/timing.json
+clma_warmup_0_A,clma,feedback_refresh,outer_total,18.42999793961644,,,True,evidence/pilot/clma_warmup_0_A/timing.json
+clma_warmup_0_A,clma,oracle_driver,outer_total,144.68490594625473,,,True,evidence/pilot/clma_warmup_0_A/timing.json
+clma_warmup_0_A,clma,proposal,outer_total,215.96355564892292,,,True,evidence/pilot/clma_warmup_0_A/timing.json
+clma_warmup_0_A,clma,search_other,outer_total,2.5514435656368732,,,True,evidence/pilot/clma_warmup_0_A/timing.json
+clma_warmup_0_A,clma,output,outer_total,0.48782550916075706,,,True,evidence/pilot/clma_warmup_0_A/timing.json
+clma_warmup_0_A,clma,external_unattributed,outer_total,0.1066523235157888,,,True,evidence/pilot/clma_warmup_0_A/timing.json
+clma_warmup_0_A,clma,native_vpr_sum,oracle_driver,135.58244758099318,,,False,evidence/pilot/clma_warmup_0_A/timing.json
+clma_warmup_0_A,clma,index_build_s,diagnostic_nested_across_phases,0.005632329732179642,,,False,evidence/pilot/clma_warmup_0_A/timing.json
+clma_warmup_0_A,clma,cache_invalidation_s,diagnostic_nested_across_phases,0.004228942096233368,,,False,evidence/pilot/clma_warmup_0_A/timing.json
+clma_warmup_0_B,clma,outer_total,none,625.066298291,,,False,evidence/pilot/clma_warmup_0_B/timing.json
+clma_warmup_0_B,clma,preparation,outer_total,2.627389807254076,,,True,evidence/pilot/clma_warmup_0_B/timing.json
+clma_warmup_0_B,clma,feedback_refresh,outer_total,18.537630643695593,,,True,evidence/pilot/clma_warmup_0_B/timing.json
+clma_warmup_0_B,clma,oracle_driver,outer_total,142.65291356667876,,,True,evidence/pilot/clma_warmup_0_B/timing.json
+clma_warmup_0_B,clma,proposal,outer_total,457.9936382435262,,,True,evidence/pilot/clma_warmup_0_B/timing.json
+clma_warmup_0_B,clma,search_other,outer_total,2.4963721558451653,,,True,evidence/pilot/clma_warmup_0_B/timing.json
+clma_warmup_0_B,clma,output,outer_total,0.6189877539873123,,,True,evidence/pilot/clma_warmup_0_B/timing.json
+clma_warmup_0_B,clma,external_unattributed,outer_total,0.13936612001282356,,,True,evidence/pilot/clma_warmup_0_B/timing.json
+clma_warmup_0_B,clma,native_vpr_sum,oracle_driver,133.59648313373327,,,False,evidence/pilot/clma_warmup_0_B/timing.json
+clma_warmup_0_B,clma,index_build_s,diagnostic_nested_across_phases,0.00040555745363235474,,,False,evidence/pilot/clma_warmup_0_B/timing.json
+clma_warmup_0_B,clma,cache_invalidation_s,diagnostic_nested_across_phases,0.00398680567741394,,,False,evidence/pilot/clma_warmup_0_B/timing.json
+clma_measured_1_A,clma,outer_total,none,390.906359366,,,False,evidence/pilot/clma_measured_1_A/timing.json
+clma_measured_1_A,clma,preparation,outer_total,2.5920873545110226,,,True,evidence/pilot/clma_measured_1_A/timing.json
+clma_measured_1_A,clma,feedback_refresh,outer_total,18.778711326420307,,,True,evidence/pilot/clma_measured_1_A/timing.json
+clma_measured_1_A,clma,oracle_driver,outer_total,143.7634568810463,,,True,evidence/pilot/clma_measured_1_A/timing.json
+clma_measured_1_A,clma,proposal,outer_total,222.57967446744442,,,True,evidence/pilot/clma_measured_1_A/timing.json
+clma_measured_1_A,clma,search_other,outer_total,2.5658878535032272,,,True,evidence/pilot/clma_measured_1_A/timing.json
+clma_measured_1_A,clma,output,outer_total,0.4933025985956192,,,True,evidence/pilot/clma_measured_1_A/timing.json
+clma_measured_1_A,clma,external_unattributed,outer_total,0.13323888447911258,,,True,evidence/pilot/clma_measured_1_A/timing.json
+clma_measured_1_A,clma,native_vpr_sum,oracle_driver,134.66000562161207,,,False,evidence/pilot/clma_measured_1_A/timing.json
+clma_measured_1_A,clma,index_build_s,diagnostic_nested_across_phases,0.005791142582893372,,,False,evidence/pilot/clma_measured_1_A/timing.json
+clma_measured_1_A,clma,cache_invalidation_s,diagnostic_nested_across_phases,0.004299577325582504,,,False,evidence/pilot/clma_measured_1_A/timing.json
+clma_measured_1_B,clma,outer_total,none,627.221745937,,,False,evidence/pilot/clma_measured_1_B/timing.json
+clma_measured_1_B,clma,preparation,outer_total,2.594470951706171,,,True,evidence/pilot/clma_measured_1_B/timing.json
+clma_measured_1_B,clma,feedback_refresh,outer_total,18.549010049551725,,,True,evidence/pilot/clma_measured_1_B/timing.json
+clma_measured_1_B,clma,oracle_driver,outer_total,141.4821187481284,,,True,evidence/pilot/clma_measured_1_B/timing.json
+clma_measured_1_B,clma,proposal,outer_total,461.4304557554424,,,True,evidence/pilot/clma_measured_1_B/timing.json
+clma_measured_1_B,clma,search_other,outer_total,2.466651614755392,,,True,evidence/pilot/clma_measured_1_B/timing.json
+clma_measured_1_B,clma,output,outer_total,0.5876174978911877,,,True,evidence/pilot/clma_measured_1_B/timing.json
+clma_measured_1_B,clma,external_unattributed,outer_total,0.11142131952476575,,,True,evidence/pilot/clma_measured_1_B/timing.json
+clma_measured_1_B,clma,native_vpr_sum,oracle_driver,132.45009046792984,,,False,evidence/pilot/clma_measured_1_B/timing.json
+clma_measured_1_B,clma,index_build_s,diagnostic_nested_across_phases,0.00038664788007736206,,,False,evidence/pilot/clma_measured_1_B/timing.json
+clma_measured_1_B,clma,cache_invalidation_s,diagnostic_nested_across_phases,0.004191070795059204,,,False,evidence/pilot/clma_measured_1_B/timing.json
+clma_measured_2_B,clma,outer_total,none,662.718634355,,,False,evidence/pilot/clma_measured_2_B/timing.json
+clma_measured_2_B,clma,preparation,outer_total,2.6809632144868374,,,True,evidence/pilot/clma_measured_2_B/timing.json
+clma_measured_2_B,clma,feedback_refresh,outer_total,18.575505830347538,,,True,evidence/pilot/clma_measured_2_B/timing.json
+clma_measured_2_B,clma,oracle_driver,outer_total,142.3252347111702,,,True,evidence/pilot/clma_measured_2_B/timing.json
+clma_measured_2_B,clma,proposal,outer_total,495.8913476318121,,,True,evidence/pilot/clma_measured_2_B/timing.json
+clma_measured_2_B,clma,search_other,outer_total,2.4996182173490524,,,True,evidence/pilot/clma_measured_2_B/timing.json
+clma_measured_2_B,clma,output,outer_total,0.6040314920246601,,,True,evidence/pilot/clma_measured_2_B/timing.json
+clma_measured_2_B,clma,external_unattributed,outer_total,0.1419332578095691,,,True,evidence/pilot/clma_measured_2_B/timing.json
+clma_measured_2_B,clma,native_vpr_sum,oracle_driver,133.4639768153429,,,False,evidence/pilot/clma_measured_2_B/timing.json
+clma_measured_2_B,clma,index_build_s,diagnostic_nested_across_phases,0.0003937631845474243,,,False,evidence/pilot/clma_measured_2_B/timing.json
+clma_measured_2_B,clma,cache_invalidation_s,diagnostic_nested_across_phases,0.003952555358409882,,,False,evidence/pilot/clma_measured_2_B/timing.json
+clma_measured_2_A,clma,outer_total,none,377.489272872,,,False,evidence/pilot/clma_measured_2_A/timing.json
+clma_measured_2_A,clma,preparation,outer_total,2.5586577504873276,,,True,evidence/pilot/clma_measured_2_A/timing.json
+clma_measured_2_A,clma,feedback_refresh,outer_total,18.257848527282476,,,True,evidence/pilot/clma_measured_2_A/timing.json
+clma_measured_2_A,clma,oracle_driver,outer_total,138.84094485640526,,,True,evidence/pilot/clma_measured_2_A/timing.json
+clma_measured_2_A,clma,proposal,outer_total,214.76427759602666,,,True,evidence/pilot/clma_measured_2_A/timing.json
+clma_measured_2_A,clma,search_other,outer_total,2.4360187463462353,,,True,evidence/pilot/clma_measured_2_A/timing.json
+clma_measured_2_A,clma,output,outer_total,0.46407579630613327,,,True,evidence/pilot/clma_measured_2_A/timing.json
+clma_measured_2_A,clma,external_unattributed,outer_total,0.16744959914592528,,,True,evidence/pilot/clma_measured_2_A/timing.json
+clma_measured_2_A,clma,native_vpr_sum,oracle_driver,130.0472543016076,,,False,evidence/pilot/clma_measured_2_A/timing.json
+clma_measured_2_A,clma,index_build_s,diagnostic_nested_across_phases,0.006704099476337433,,,False,evidence/pilot/clma_measured_2_A/timing.json
+clma_measured_2_A,clma,cache_invalidation_s,diagnostic_nested_across_phases,0.004083026200532913,,,False,evidence/pilot/clma_measured_2_A/timing.json
+clma_measured_3_A,clma,outer_total,none,379.336520282,,,False,evidence/pilot/clma_measured_3_A/timing.json
+clma_measured_3_A,clma,preparation,outer_total,2.5168947391211987,,,True,evidence/pilot/clma_measured_3_A/timing.json
+clma_measured_3_A,clma,feedback_refresh,outer_total,18.277398496866226,,,True,evidence/pilot/clma_measured_3_A/timing.json
+clma_measured_3_A,clma,oracle_driver,outer_total,140.5711683407426,,,True,evidence/pilot/clma_measured_3_A/timing.json
+clma_measured_3_A,clma,proposal,outer_total,214.9239881299436,,,True,evidence/pilot/clma_measured_3_A/timing.json
+clma_measured_3_A,clma,search_other,outer_total,2.484227705746889,,,True,evidence/pilot/clma_measured_3_A/timing.json
+clma_measured_3_A,clma,output,outer_total,0.45017244666814804,,,True,evidence/pilot/clma_measured_3_A/timing.json
+clma_measured_3_A,clma,external_unattributed,outer_total,0.11267042291132157,,,True,evidence/pilot/clma_measured_3_A/timing.json
+clma_measured_3_A,clma,native_vpr_sum,oracle_driver,131.2764685638249,,,False,evidence/pilot/clma_measured_3_A/timing.json
+clma_measured_3_A,clma,index_build_s,diagnostic_nested_across_phases,0.006254889070987701,,,False,evidence/pilot/clma_measured_3_A/timing.json
+clma_measured_3_A,clma,cache_invalidation_s,diagnostic_nested_across_phases,0.003981325775384903,,,False,evidence/pilot/clma_measured_3_A/timing.json
+clma_measured_3_B,clma,outer_total,none,645.804936393,,,False,evidence/pilot/clma_measured_3_B/timing.json
+clma_measured_3_B,clma,preparation,outer_total,2.55507268384099,,,True,evidence/pilot/clma_measured_3_B/timing.json
+clma_measured_3_B,clma,feedback_refresh,outer_total,18.815817330032587,,,True,evidence/pilot/clma_measured_3_B/timing.json
+clma_measured_3_B,clma,oracle_driver,outer_total,146.94184811413288,,,True,evidence/pilot/clma_measured_3_B/timing.json
+clma_measured_3_B,clma,proposal,outer_total,474.3462853580713,,,True,evidence/pilot/clma_measured_3_B/timing.json
+clma_measured_3_B,clma,search_other,outer_total,2.516187198460102,,,True,evidence/pilot/clma_measured_3_B/timing.json
+clma_measured_3_B,clma,output,outer_total,0.5178882591426373,,,True,evidence/pilot/clma_measured_3_B/timing.json
+clma_measured_3_B,clma,external_unattributed,outer_total,0.11183744931952333,,,True,evidence/pilot/clma_measured_3_B/timing.json
+clma_measured_3_B,clma,native_vpr_sum,oracle_driver,137.9683056138456,,,False,evidence/pilot/clma_measured_3_B/timing.json
+clma_measured_3_B,clma,index_build_s,diagnostic_nested_across_phases,0.0004226304590702057,,,False,evidence/pilot/clma_measured_3_B/timing.json
+clma_measured_3_B,clma,cache_invalidation_s,diagnostic_nested_across_phases,0.003913179039955139,,,False,evidence/pilot/clma_measured_3_B/timing.json
+spla_warmup_0_A,spla,outer_total,none,235.919947851,,,False,evidence/pilot/spla_warmup_0_A/timing.json
+spla_warmup_0_A,spla,preparation,outer_total,1.7862526178359985,,,True,evidence/pilot/spla_warmup_0_A/timing.json
+spla_warmup_0_A,spla,feedback_refresh,outer_total,5.2595199868083,,,True,evidence/pilot/spla_warmup_0_A/timing.json
+spla_warmup_0_A,spla,oracle_driver,outer_total,68.70391526818275,,,True,evidence/pilot/spla_warmup_0_A/timing.json
+spla_warmup_0_A,spla,proposal,outer_total,158.67261267453432,,,True,evidence/pilot/spla_warmup_0_A/timing.json
+spla_warmup_0_A,spla,search_other,outer_total,1.1553525999188423,,,True,evidence/pilot/spla_warmup_0_A/timing.json
+spla_warmup_0_A,spla,output,outer_total,0.23970267176628113,,,True,evidence/pilot/spla_warmup_0_A/timing.json
+spla_warmup_0_A,spla,external_unattributed,outer_total,0.10259203195349187,,,True,evidence/pilot/spla_warmup_0_A/timing.json
+spla_warmup_0_A,spla,native_vpr_sum,oracle_driver,63.41675503924489,,,False,evidence/pilot/spla_warmup_0_A/timing.json
+spla_warmup_0_A,spla,index_build_s,diagnostic_nested_across_phases,0.0016109123826026917,,,False,evidence/pilot/spla_warmup_0_A/timing.json
+spla_warmup_0_A,spla,cache_invalidation_s,diagnostic_nested_across_phases,0.0015218593180179596,,,False,evidence/pilot/spla_warmup_0_A/timing.json
+spla_warmup_0_B,spla,outer_total,none,403.118071771,,,False,evidence/pilot/spla_warmup_0_B/timing.json
+spla_warmup_0_B,spla,preparation,outer_total,1.3288802206516266,,,True,evidence/pilot/spla_warmup_0_B/timing.json
+spla_warmup_0_B,spla,feedback_refresh,outer_total,5.187461793422699,,,True,evidence/pilot/spla_warmup_0_B/timing.json
+spla_warmup_0_B,spla,oracle_driver,outer_total,68.81106055527925,,,True,evidence/pilot/spla_warmup_0_B/timing.json
+spla_warmup_0_B,spla,proposal,outer_total,326.19559544324875,,,True,evidence/pilot/spla_warmup_0_B/timing.json
+spla_warmup_0_B,spla,search_other,outer_total,1.161630529910326,,,True,evidence/pilot/spla_warmup_0_B/timing.json
+spla_warmup_0_B,spla,output,outer_total,0.31123002618551254,,,True,evidence/pilot/spla_warmup_0_B/timing.json
+spla_warmup_0_B,spla,external_unattributed,outer_total,0.12221320230185029,,,True,evidence/pilot/spla_warmup_0_B/timing.json
+spla_warmup_0_B,spla,native_vpr_sum,oracle_driver,63.37158491462469,,,False,evidence/pilot/spla_warmup_0_B/timing.json
+spla_warmup_0_B,spla,index_build_s,diagnostic_nested_across_phases,0.00014118477702140808,,,False,evidence/pilot/spla_warmup_0_B/timing.json
+spla_warmup_0_B,spla,cache_invalidation_s,diagnostic_nested_across_phases,0.0015086084604263306,,,False,evidence/pilot/spla_warmup_0_B/timing.json
+spla_measured_1_A,spla,outer_total,none,238.922894983,,,False,evidence/pilot/spla_measured_1_A/timing.json
+spla_measured_1_A,spla,preparation,outer_total,1.3364383056759834,,,True,evidence/pilot/spla_measured_1_A/timing.json
+spla_measured_1_A,spla,feedback_refresh,outer_total,5.235782526433468,,,True,evidence/pilot/spla_measured_1_A/timing.json
+spla_measured_1_A,spla,oracle_driver,outer_total,69.533586807549,,,True,evidence/pilot/spla_measured_1_A/timing.json
+spla_measured_1_A,spla,proposal,outer_total,161.26464888080955,,,True,evidence/pilot/spla_measured_1_A/timing.json
+spla_measured_1_A,spla,search_other,outer_total,1.1758054979145527,,,True,evidence/pilot/spla_measured_1_A/timing.json
+spla_measured_1_A,spla,output,outer_total,0.23575516045093536,,,True,evidence/pilot/spla_measured_1_A/timing.json
+spla_measured_1_A,spla,external_unattributed,outer_total,0.1408778041665073,,,True,evidence/pilot/spla_measured_1_A/timing.json
+spla_measured_1_A,spla,native_vpr_sum,oracle_driver,64.07763674110174,,,False,evidence/pilot/spla_measured_1_A/timing.json
+spla_measured_1_A,spla,index_build_s,diagnostic_nested_across_phases,0.0016939230263233185,,,False,evidence/pilot/spla_measured_1_A/timing.json
+spla_measured_1_A,spla,cache_invalidation_s,diagnostic_nested_across_phases,0.0018566027283668518,,,False,evidence/pilot/spla_measured_1_A/timing.json
+spla_measured_1_B,spla,outer_total,none,395.851177837,,,False,evidence/pilot/spla_measured_1_B/timing.json
+spla_measured_1_B,spla,preparation,outer_total,1.325277604162693,,,True,evidence/pilot/spla_measured_1_B/timing.json
+spla_measured_1_B,spla,feedback_refresh,outer_total,5.1589822471141815,,,True,evidence/pilot/spla_measured_1_B/timing.json
+spla_measured_1_B,spla,oracle_driver,outer_total,68.34881570190191,,,True,evidence/pilot/spla_measured_1_B/timing.json
+spla_measured_1_B,spla,proposal,outer_total,319.4092507250607,,,True,evidence/pilot/spla_measured_1_B/timing.json
+spla_measured_1_B,spla,search_other,outer_total,1.166843470185995,,,True,evidence/pilot/spla_measured_1_B/timing.json
+spla_measured_1_B,spla,output,outer_total,0.31789766252040863,,,True,evidence/pilot/spla_measured_1_B/timing.json
+spla_measured_1_B,spla,external_unattributed,outer_total,0.12411042605413058,,,True,evidence/pilot/spla_measured_1_B/timing.json
+spla_measured_1_B,spla,native_vpr_sum,oracle_driver,62.82936508953571,,,False,evidence/pilot/spla_measured_1_B/timing.json
+spla_measured_1_B,spla,index_build_s,diagnostic_nested_across_phases,0.00013546645641326904,,,False,evidence/pilot/spla_measured_1_B/timing.json
+spla_measured_1_B,spla,cache_invalidation_s,diagnostic_nested_across_phases,0.001523096114397049,,,False,evidence/pilot/spla_measured_1_B/timing.json
+spla_measured_2_B,spla,outer_total,none,391.146134084,,,False,evidence/pilot/spla_measured_2_B/timing.json
+spla_measured_2_B,spla,preparation,outer_total,1.3889684677124023,,,True,evidence/pilot/spla_measured_2_B/timing.json
+spla_measured_2_B,spla,feedback_refresh,outer_total,5.386780235916376,,,True,evidence/pilot/spla_measured_2_B/timing.json
+spla_measured_2_B,spla,oracle_driver,outer_total,67.97395479679108,,,True,evidence/pilot/spla_measured_2_B/timing.json
+spla_measured_2_B,spla,proposal,outer_total,314.8245520181954,,,True,evidence/pilot/spla_measured_2_B/timing.json
+spla_measured_2_B,spla,search_other,outer_total,1.1414155773818493,,,True,evidence/pilot/spla_measured_2_B/timing.json
+spla_measured_2_B,spla,output,outer_total,0.2923843115568161,,,True,evidence/pilot/spla_measured_2_B/timing.json
+spla_measured_2_B,spla,external_unattributed,outer_total,0.13807867644607086,,,True,evidence/pilot/spla_measured_2_B/timing.json
+spla_measured_2_B,spla,native_vpr_sum,oracle_driver,62.67215950042009,,,False,evidence/pilot/spla_measured_2_B/timing.json
+spla_measured_2_B,spla,index_build_s,diagnostic_nested_across_phases,0.0001392364501953125,,,False,evidence/pilot/spla_measured_2_B/timing.json
+spla_measured_2_B,spla,cache_invalidation_s,diagnostic_nested_across_phases,0.001497521996498108,,,False,evidence/pilot/spla_measured_2_B/timing.json
+spla_measured_2_A,spla,outer_total,none,235.467371821,,,False,evidence/pilot/spla_measured_2_A/timing.json
+spla_measured_2_A,spla,preparation,outer_total,1.2921946607530117,,,True,evidence/pilot/spla_measured_2_A/timing.json
+spla_measured_2_A,spla,feedback_refresh,outer_total,5.078862719237804,,,True,evidence/pilot/spla_measured_2_A/timing.json
+spla_measured_2_A,spla,oracle_driver,outer_total,69.37082823365927,,,True,evidence/pilot/spla_measured_2_A/timing.json
+spla_measured_2_A,spla,proposal,outer_total,158.1839161142707,,,True,evidence/pilot/spla_measured_2_A/timing.json
+spla_measured_2_A,spla,search_other,outer_total,1.169123761355877,,,True,evidence/pilot/spla_measured_2_A/timing.json
+spla_measured_2_A,spla,output,outer_total,0.24263525381684303,,,True,evidence/pilot/spla_measured_2_A/timing.json
+spla_measured_2_A,spla,external_unattributed,outer_total,0.1298110779065098,,,True,evidence/pilot/spla_measured_2_A/timing.json
+spla_measured_2_A,spla,native_vpr_sum,oracle_driver,63.561733566224575,,,False,evidence/pilot/spla_measured_2_A/timing.json
+spla_measured_2_A,spla,index_build_s,diagnostic_nested_across_phases,0.0015392899513244629,,,False,evidence/pilot/spla_measured_2_A/timing.json
+spla_measured_2_A,spla,cache_invalidation_s,diagnostic_nested_across_phases,0.001551121473312378,,,False,evidence/pilot/spla_measured_2_A/timing.json
+spla_measured_3_A,spla,outer_total,none,239.926874058,,,False,evidence/pilot/spla_measured_3_A/timing.json
+spla_measured_3_A,spla,preparation,outer_total,1.3476607985794544,,,True,evidence/pilot/spla_measured_3_A/timing.json
+spla_measured_3_A,spla,feedback_refresh,outer_total,5.266109317541122,,,True,evidence/pilot/spla_measured_3_A/timing.json
+spla_measured_3_A,spla,oracle_driver,outer_total,70.0625074468553,,,True,evidence/pilot/spla_measured_3_A/timing.json
+spla_measured_3_A,spla,proposal,outer_total,161.67071538046002,,,True,evidence/pilot/spla_measured_3_A/timing.json
+spla_measured_3_A,spla,search_other,outer_total,1.1952749378979206,,,True,evidence/pilot/spla_measured_3_A/timing.json
+spla_measured_3_A,spla,output,outer_total,0.24888147041201591,,,True,evidence/pilot/spla_measured_3_A/timing.json
+spla_measured_3_A,spla,external_unattributed,outer_total,0.135724706254166,,,True,evidence/pilot/spla_measured_3_A/timing.json
+spla_measured_3_A,spla,native_vpr_sum,oracle_driver,64.44156751036644,,,False,evidence/pilot/spla_measured_3_A/timing.json
+spla_measured_3_A,spla,index_build_s,diagnostic_nested_across_phases,0.001654457300901413,,,False,evidence/pilot/spla_measured_3_A/timing.json
+spla_measured_3_A,spla,cache_invalidation_s,diagnostic_nested_across_phases,0.0015693418681621552,,,False,evidence/pilot/spla_measured_3_A/timing.json
+spla_measured_3_B,spla,outer_total,none,402.355370838,,,False,evidence/pilot/spla_measured_3_B/timing.json
+spla_measured_3_B,spla,preparation,outer_total,1.3480082638561726,,,True,evidence/pilot/spla_measured_3_B/timing.json
+spla_measured_3_B,spla,feedback_refresh,outer_total,5.1988158375024796,,,True,evidence/pilot/spla_measured_3_B/timing.json
+spla_measured_3_B,spla,oracle_driver,outer_total,70.2987512126565,,,True,evidence/pilot/spla_measured_3_B/timing.json
+spla_measured_3_B,spla,proposal,outer_total,324.0058858245611,,,True,evidence/pilot/spla_measured_3_B/timing.json
+spla_measured_3_B,spla,search_other,outer_total,1.1679127924144268,,,True,evidence/pilot/spla_measured_3_B/timing.json
+spla_measured_3_B,spla,output,outer_total,0.23002344742417336,,,True,evidence/pilot/spla_measured_3_B/timing.json
+spla_measured_3_B,spla,external_unattributed,outer_total,0.1059734595851296,,,True,evidence/pilot/spla_measured_3_B/timing.json
+spla_measured_3_B,spla,native_vpr_sum,oracle_driver,64.81371706724167,,,False,evidence/pilot/spla_measured_3_B/timing.json
+spla_measured_3_B,spla,index_build_s,diagnostic_nested_across_phases,0.00014466047286987305,,,False,evidence/pilot/spla_measured_3_B/timing.json
+spla_measured_3_B,spla,cache_invalidation_s,diagnostic_nested_across_phases,0.00208890438079834,,,False,evidence/pilot/spla_measured_3_B/timing.json
+diffeq_baseline_smoke,diffeq,outer_total,none,2.017749213,,,False,
+diffeq_baseline_smoke,diffeq,native_place_route_analysis,outer_total,1.6991721205413342,,,True,
+diffeq_baseline_smoke,diffeq,preparation_check_write_startup,outer_total,0.31857709245866594,,,True,

@@ -1,0 +1,10 @@
+[
+  "taskset",
+  "-c",
+  "31",
+  "python3",
+  "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/tools/vpr_timing_analyzer.py",
+  "0",
+  "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/inputs/timing.input.csv",
+  "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/des/inputs/timing.output.csv"
+]

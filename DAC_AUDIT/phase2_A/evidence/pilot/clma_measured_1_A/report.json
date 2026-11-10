@@ -1,0 +1,5146 @@
+{
+  "accepted_transactions": 14,
+  "baseline": {
+    "cpd_ns": 11.6084,
+    "legal": true,
+    "returncode": 0,
+    "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+    "status": "pass",
+    "wirelength": 79857
+  },
+  "closure_budget": 24,
+  "closure_calls": 24,
+  "config": {
+    "candidate_limit": 64,
+    "chain_candidate_limit": 16,
+    "congestion_weight": 1,
+    "critical_distance_guard_q": 0,
+    "critical_distance_slack": 0,
+    "page_height": 2,
+    "page_width": 2,
+    "routed_timing_weight": 2,
+    "timing_weight": 2
+  },
+  "epochs_completed": 4,
+  "final": {
+    "cpd_ns": 11.5929,
+    "legal": true,
+    "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_22/vpr_native_closure.json",
+    "report_sha256": "8d58e799d7c22db1e650066744b49df4da254c075a49e9d527f0825b2cfc116b",
+    "returncode": 0,
+    "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+    "status": "pass",
+    "wirelength": 79926
+  },
+  "final_rejected_singletons": 1,
+  "initial_route_feedback": {
+    "edge_count": 1566,
+    "route_sha256": "462601bfa7cca643df97fff37779c4ba653d9ec7ec614b000649670c7258598b",
+    "rr_graph_sha256": "9a5b08b40eed9f5edb25529cb53dfe1dede68bd33ae3cffee24ce9450b797fb1"
+  },
+  "initial_timing_feedback": {
+    "edge_count": 124,
+    "focus_blocks": 99,
+    "parsed_paths": 20,
+    "timing_report_sha256": "e8218cf9f6d9cdd672fef4711c6c39ea62ca3c9955a89171922e54e6bfcab0a9"
+  },
+  "input_place": {
+    "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/clma_seed1_cw200/clma.golden.place",
+    "sha256": "19ad5018d2a1c6c78bdc41111b454c6dd62536e82cb3a1df0979500b753c14b2"
+  },
+  "output_place": {
+    "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/final.place",
+    "sha256": "9c7f091b2b6d6bd5767391c14d96f36fb451464fd8f85c26b4e1c6b1c700d2ae"
+  },
+  "phases": [
+    {
+      "accepted": 4,
+      "accepted_kinds": {
+        "chain3": 4
+      },
+      "closure_calls_after": 1,
+      "closure_calls_before": 0,
+      "color": 0,
+      "eligible_units": 38,
+      "epoch": 0,
+      "forbidden_transactions": 0,
+      "oracle_accepted_transactions": 4,
+      "proposals": 38,
+      "rejected_conflicts": 34
+    },
+    {
+      "accepted": 1,
+      "accepted_kinds": {
+        "chain3": 1
+      },
+      "closure_calls_after": 2,
+      "closure_calls_before": 1,
+      "color": 1,
+      "eligible_units": 31,
+      "epoch": 0,
+      "forbidden_transactions": 0,
+      "oracle_accepted_transactions": 1,
+      "proposals": 31,
+      "rejected_conflicts": 30
+    },
+    {
+      "accepted": 2,
+      "accepted_kinds": {
+        "chain3": 1,
+        "move": 1
+      },
+      "closure_calls_after": 5,
+      "closure_calls_before": 2,
+      "color": 2,
+      "eligible_units": 21,
+      "epoch": 0,
+      "forbidden_transactions": 0,
+      "oracle_accepted_transactions": 1,
+      "proposals": 21,
+      "rejected_conflicts": 19
+    },
+    {
+      "accepted": 1,
+      "accepted_kinds": {
+        "chain3": 1
+      },
+      "closure_calls_after": 6,
+      "closure_calls_before": 5,
+      "color": 3,
+      "eligible_units": 10,
+      "epoch": 0,
+      "forbidden_transactions": 0,
+      "oracle_accepted_transactions": 1,
+      "proposals": 10,
+      "rejected_conflicts": 9
+    },
+    {
+      "accepted": 2,
+      "accepted_kinds": {
+        "chain3": 1,
+        "swap": 1
+      },
+      "closure_calls_after": 7,
+      "closure_calls_before": 6,
+      "color": 0,
+      "eligible_units": 39,
+      "epoch": 1,
+      "forbidden_transactions": 0,
+      "oracle_accepted_transactions": 2,
+      "proposals": 36,
+      "rejected_conflicts": 34
+    },
+    {
+      "accepted": 3,
+      "accepted_kinds": {
+        "chain3": 1,
+        "move": 2
+      },
+      "closure_calls_after": 12,
+      "closure_calls_before": 7,
+      "color": 1,
+      "eligible_units": 34,
+      "epoch": 1,
+      "forbidden_transactions": 0,
+      "oracle_accepted_transactions": 1,
+      "proposals": 34,
+      "rejected_conflicts": 31
+    },
+    {
+      "accepted": 1,
+      "accepted_kinds": {
+        "chain3": 1
+      },
+      "closure_calls_after": 13,
+      "closure_calls_before": 12,
+      "color": 2,
+      "eligible_units": 17,
+      "epoch": 1,
+      "forbidden_transactions": 2,
+      "oracle_accepted_transactions": 0,
+      "proposals": 17,
+      "rejected_conflicts": 16
+    },
+    {
+      "accepted": 1,
+      "accepted_kinds": {
+        "chain3": 1
+      },
+      "closure_calls_after": 14,
+      "closure_calls_before": 13,
+      "color": 3,
+      "eligible_units": 14,
+      "epoch": 1,
+      "forbidden_transactions": 3,
+      "oracle_accepted_transactions": 0,
+      "proposals": 14,
+      "rejected_conflicts": 13
+    },
+    {
+      "accepted": 1,
+      "accepted_kinds": {
+        "chain3": 1
+      },
+      "closure_calls_after": 15,
+      "closure_calls_before": 14,
+      "color": 0,
+      "eligible_units": 37,
+      "epoch": 2,
+      "forbidden_transactions": 4,
+      "oracle_accepted_transactions": 1,
+      "proposals": 34,
+      "rejected_conflicts": 33
+    },
+    {
+      "accepted": 4,
+      "accepted_kinds": {
+        "chain3": 2,
+        "move": 2
+      },
+      "closure_calls_after": 20,
+      "closure_calls_before": 15,
+      "color": 1,
+      "eligible_units": 29,
+      "epoch": 2,
+      "forbidden_transactions": 0,
+      "oracle_accepted_transactions": 2,
+      "proposals": 29,
+      "rejected_conflicts": 25
+    },
+    {
+      "accepted": 1,
+      "accepted_kinds": {
+        "chain3": 1
+      },
+      "closure_calls_after": 21,
+      "closure_calls_before": 20,
+      "color": 2,
+      "eligible_units": 17,
+      "epoch": 2,
+      "forbidden_transactions": 2,
+      "oracle_accepted_transactions": 0,
+      "proposals": 17,
+      "rejected_conflicts": 16
+    },
+    {
+      "accepted": 1,
+      "accepted_kinds": {
+        "chain3": 1
+      },
+      "closure_calls_after": 22,
+      "closure_calls_before": 21,
+      "color": 3,
+      "eligible_units": 13,
+      "epoch": 2,
+      "forbidden_transactions": 3,
+      "oracle_accepted_transactions": 1,
+      "proposals": 13,
+      "rejected_conflicts": 12
+    },
+    {
+      "accepted": 2,
+      "accepted_kinds": {
+        "chain3": 1,
+        "move": 1
+      },
+      "closure_calls_after": 24,
+      "closure_calls_before": 22,
+      "color": 0,
+      "eligible_units": 43,
+      "epoch": 3,
+      "forbidden_transactions": 0,
+      "oracle_accepted_transactions": 0,
+      "proposals": 39,
+      "rejected_conflicts": 37
+    }
+  ],
+  "preregistration": {
+    "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_v4_preregistration_2026-09-03.json",
+    "sha256": "75dce71634d613f17db59a0af923d258cf5b95fe795566a37596486656cfa3ca"
+  },
+  "provenance": {
+    "feedback_refreshes": [
+      {
+        "candidate_route_sha256": "99e64a3f560803ae312a5f7d456632fff9f63d07afdba33132f5d647c0cfc0ce",
+        "parser": {
+          "mode": "generic-indexed-port-v1",
+          "path_flags": 32,
+          "path_pattern": "^#Path\\s+(\\d+)\\s*$",
+          "point_flags": 32,
+          "point_pattern": "^\\s*(\\S+)\\.[^\\s.\\[]+\\[\\d+\\]"
+        },
+        "route_feedback_sha256": "23a722328dff87bb3d81b13afec23bf1fb039dbb65e2417e952d45c1bc5a2ca3",
+        "timing_feedback_sha256": "7f66e22baabeacec8c8d592e7562749d717a72695823317abee6f7613f1e724b",
+        "timing_report_sha256": "56fb3cb72e2d4e001dc1cdf0ced1d1323021bc62e6c4c2bf5aaa8c43193fbfc4"
+      },
+      {
+        "candidate_route_sha256": "882ed374ef3d2906e490cec3e5a862cdc0a0d884623739906ddd565a80ba181d",
+        "parser": {
+          "mode": "generic-indexed-port-v1",
+          "path_flags": 32,
+          "path_pattern": "^#Path\\s+(\\d+)\\s*$",
+          "point_flags": 32,
+          "point_pattern": "^\\s*(\\S+)\\.[^\\s.\\[]+\\[\\d+\\]"
+        },
+        "route_feedback_sha256": "afe42af4478ae47fe54c29d0a31ecdb41cc7cf0a7c191b36a4ca734ff103b421",
+        "timing_feedback_sha256": "4234350558f3b1dc51a97ca4617fe4d6994cf8cb3e51c51fb204a9b4a738fd01",
+        "timing_report_sha256": "0a2176a7b5163ac71eb071c6e5354a716fb563ba75dc4580fdbe9b5c466187da"
+      },
+      {
+        "candidate_route_sha256": "8576d40845cb744eee6726b56625fa5984590c15d1fd80083e4d849f3577ae39",
+        "parser": {
+          "mode": "generic-indexed-port-v1",
+          "path_flags": 32,
+          "path_pattern": "^#Path\\s+(\\d+)\\s*$",
+          "point_flags": 32,
+          "point_pattern": "^\\s*(\\S+)\\.[^\\s.\\[]+\\[\\d+\\]"
+        },
+        "route_feedback_sha256": "19c86158e710a5d2511990f87ab80527df0e5f579cd684b8fc93354d5eca7218",
+        "timing_feedback_sha256": "6f93b58c7a8b38347c5e2db8e73e19ba8bc0ad5b46827839ba105a9536c3fc3f",
+        "timing_report_sha256": "08c42cc8ec5d844646de523491d904a2b009e27a9a738ff66011b3634d9c9c9b"
+      },
+      {
+        "candidate_route_sha256": "0c786c6ba1f74b99da58f41adeefae0b2ca93374b5acc1f5e00d6a1a47efcbbd",
+        "parser": {
+          "mode": "generic-indexed-port-v1",
+          "path_flags": 32,
+          "path_pattern": "^#Path\\s+(\\d+)\\s*$",
+          "point_flags": 32,
+          "point_pattern": "^\\s*(\\S+)\\.[^\\s.\\[]+\\[\\d+\\]"
+        },
+        "route_feedback_sha256": "d0056c3de08d23ad96dcc845d53f953f5bc32c6cea38182ca039dfc0a1c484be",
+        "timing_feedback_sha256": "200d57da7cb69e1195bf18af0fabfd7241c5043afc7e30bb8963b816c6906970",
+        "timing_report_sha256": "d0829ac71a8eb88d0eba1f56b1f43d47eac55e1778e6d4007f3de7a7ad6bf813"
+      },
+      {
+        "candidate_route_sha256": "3354558692a3415219fa5b889e2e43bc9248ccd763179f79cbae3c7c0c3d2dbb",
+        "parser": {
+          "mode": "generic-indexed-port-v1",
+          "path_flags": 32,
+          "path_pattern": "^#Path\\s+(\\d+)\\s*$",
+          "point_flags": 32,
+          "point_pattern": "^\\s*(\\S+)\\.[^\\s.\\[]+\\[\\d+\\]"
+        },
+        "route_feedback_sha256": "9fc147e5bac409fa08e36b40babd56b29ab19ff14b9df55784553beba8cf4ff5",
+        "timing_feedback_sha256": "fa9b15fd0044fc342d679fe184cc55743b57460f06a3182fa23ff3a8026f5727",
+        "timing_report_sha256": "264a35572951033b0647e9c4b656aea0a378557917a84e6e466fff38ba8d5c0f"
+      },
+      {
+        "candidate_route_sha256": "f8b05bd955d8b3e87bc65f661b0d5f13b7d73fc4057331d478558aa0ba6875af",
+        "parser": {
+          "mode": "generic-indexed-port-v1",
+          "path_flags": 32,
+          "path_pattern": "^#Path\\s+(\\d+)\\s*$",
+          "point_flags": 32,
+          "point_pattern": "^\\s*(\\S+)\\.[^\\s.\\[]+\\[\\d+\\]"
+        },
+        "route_feedback_sha256": "2a2d80ee1ac8616202b846972f93887791ca2d84ce1514d83f3b331fd6529bb6",
+        "timing_feedback_sha256": "9acfefd2a6649a1c8438ab69212b152b284162503b1f65d0f1cdf3a109045a07",
+        "timing_report_sha256": "38384b735ef1d07f8fedf0a7434d78052c4306b381a32b1a6a3d41bbc07a31c3"
+      },
+      {
+        "candidate_route_sha256": "261c3f5d654265e6f70b1aa8349f290cf5a7249474061486eeba55691f0c3de5",
+        "parser": {
+          "mode": "generic-indexed-port-v1",
+          "path_flags": 32,
+          "path_pattern": "^#Path\\s+(\\d+)\\s*$",
+          "point_flags": 32,
+          "point_pattern": "^\\s*(\\S+)\\.[^\\s.\\[]+\\[\\d+\\]"
+        },
+        "route_feedback_sha256": "e11eaadbe96e64c749d4c5b19a22018bcce960097d69e60ff840d85fe277abb0",
+        "timing_feedback_sha256": "60b8d83a3820b9f44d240b523ce6e98966f259b5f84d16509055b8c9bc19e6c9",
+        "timing_report_sha256": "4e016f491b634153ad54c3a49eb23e34fca82abb816b5085a9310fb638238fe1"
+      },
+      {
+        "candidate_route_sha256": "536d0802ba2ef4ab00f05df081cd387a3eef4dddce8a824691882808579a5991",
+        "parser": {
+          "mode": "generic-indexed-port-v1",
+          "path_flags": 32,
+          "path_pattern": "^#Path\\s+(\\d+)\\s*$",
+          "point_flags": 32,
+          "point_pattern": "^\\s*(\\S+)\\.[^\\s.\\[]+\\[\\d+\\]"
+        },
+        "route_feedback_sha256": "bdd971f9b9e20f3e08c4866e6dc39396c4e6600a15ae3454c5fa35e983ce4d78",
+        "timing_feedback_sha256": "0e00344bd1c426f3e26b18623462719711b2508e0e956fe444b1cddf0f11e1a9",
+        "timing_report_sha256": "54c0786a00f6a8136b870db47ad7d600083d1c133d78a5d8dcba8ea8cbbe1e10"
+      },
+      {
+        "candidate_route_sha256": "729f8b494eaa3a3111100cb56e65db324e0cfc022ff89807272355d5bc555ae6",
+        "parser": {
+          "mode": "generic-indexed-port-v1",
+          "path_flags": 32,
+          "path_pattern": "^#Path\\s+(\\d+)\\s*$",
+          "point_flags": 32,
+          "point_pattern": "^\\s*(\\S+)\\.[^\\s.\\[]+\\[\\d+\\]"
+        },
+        "route_feedback_sha256": "b37bdf61bb2adb6e01e7e710001386330b61bf99c253615d9924b47d76bc419f",
+        "timing_feedback_sha256": "4f16a4a6a045b7877ad7b2da48cd5471ac8b39f8346992989dffcd8288bc0d2e",
+        "timing_report_sha256": "3b1b20719683ae1bba367dfc24280e6afb8da5701e844026a0adfa6b5bbfdfd0"
+      }
+    ],
+    "implementation": {
+      "parser": {
+        "mode": "generic-indexed-port-v1",
+        "path_flags": 32,
+        "path_pattern": "^#Path\\s+(\\d+)\\s*$",
+        "point_flags": 32,
+        "point_pattern": "^\\s*(\\S+)\\.[^\\s.\\[]+\\[\\d+\\]"
+      },
+      "schema": "TILEPLACE_IMPLEMENTATION_V1",
+      "sha256": "f8d785d370921d232653d59055df3269c8fa94e2db22c8b92a4ce2ce374eee24",
+      "sources": [
+        {
+          "name": "prepare_route_feedback.py",
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_DAC_AUDIT_20261110/DAC_AUDIT/phase2_A/source/prepare_route_feedback.py",
+          "sha256": "eaf3198dadf5d7c860a42b0134872f3553028ea74d82b9a46294e48af58c3353"
+        },
+        {
+          "name": "prepare_timing_feedback.py",
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_DAC_AUDIT_20261110/DAC_AUDIT/phase2_A/source/prepare_timing_feedback.py",
+          "sha256": "ff830e3d30bfaf3d48517a8c547f64d76ee76e77efb8225ee0bad64689639627"
+        },
+        {
+          "name": "run_tileplace_v2.py",
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_DAC_AUDIT_20261110/DAC_AUDIT/phase2_A/source/run_tileplace_v2.py",
+          "sha256": "4c9942d35fd00b5f038f93da13094a46822b731da6855f431e7ef91cb640271b"
+        },
+        {
+          "name": "run_vpr_closure.py",
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_DAC_AUDIT_20261110/DAC_AUDIT/phase2_A/source/run_vpr_closure.py",
+          "sha256": "012cc3570765f2abd420c5144ee066e1161c8338efd67e2b6cc592c06940da34"
+        },
+        {
+          "name": "tileplace_provenance.py",
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_DAC_AUDIT_20261110/DAC_AUDIT/phase2_A/source/tileplace_provenance.py",
+          "sha256": "4952b986d2fd1d22261c3045e5fda54462b4dfd1af5c84c2d7831c06c579af43"
+        },
+        {
+          "name": "tileplace_v2.py",
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_DAC_AUDIT_20261110/DAC_AUDIT/phase2_A/source/tileplace_v2.py",
+          "sha256": "57494434f43a779921d8d60145931fe162d3f04e623a1bda76283d916bfcf455"
+        },
+        {
+          "name": "tileplace_vpr.py",
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_DAC_AUDIT_20261110/DAC_AUDIT/phase2_A/source/tileplace_vpr.py",
+          "sha256": "355535e49a0ec47b485e8c374e34fa35ee323fbf406b731b920ca40ab582d364"
+        }
+      ]
+    },
+    "initial_route_feedback_sha256": "b2805c84e36e49bce451d2133b039338451af9166563b8dac3e0037ec0c77c72",
+    "initial_timing_feedback_sha256": "2178cfaec28ccf63a4568764826c4491edad50dcf51c0c763de2e53b433cadae",
+    "inputs": [
+      {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/clma_seed1_cw200/input/connections.csv",
+        "sha256": "bbca6740588cc6d9e43181a50fca7657cf2aac75b68592ad00af50bb8f702058"
+      },
+      {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/clma_seed1_cw200/run/clma.timing_iteration_0.output.csv",
+        "sha256": "0c1a4acda75e269a6b5c72583873d082d6a9b7b7ab65e579dbd8dc1403df480a"
+      },
+      {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/clma_seed1_cw200/clma.net",
+        "sha256": "6095191f2407b45f0d23bc5bfd75380d9a0ce5b4b325f9ec5901fca26a9fce9c"
+      },
+      {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/clma_seed1_cw200/clma.place",
+        "sha256": "35f2d02d8381684e58c0c51fcf21bab5dbe60c2fc6be6ced990aad57cca1bf07"
+      },
+      {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/clma_seed1/rr_graph.xml",
+        "sha256": "9a5b08b40eed9f5edb25529cb53dfe1dede68bd33ae3cffee24ce9450b797fb1"
+      },
+      {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/clma_seed1_cw200/vpr_place_macros.echo",
+        "sha256": "0efcfecb18fd7b26f5fff38f8e7afb45d3da42b7febc428ec4b045c63b7c93ee"
+      },
+      {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179"
+      },
+      {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/clma_seed1_cw200_native_closure_v2/vpr_output.route",
+        "sha256": "462601bfa7cca643df97fff37779c4ba653d9ec7ec614b000649670c7258598b"
+      },
+      {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/clma_seed1_cw200/clma.net",
+        "sha256": "6095191f2407b45f0d23bc5bfd75380d9a0ce5b4b325f9ec5901fca26a9fce9c"
+      },
+      {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/clma_seed1/rr_graph.xml",
+        "sha256": "9a5b08b40eed9f5edb25529cb53dfe1dede68bd33ae3cffee24ce9450b797fb1"
+      },
+      {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/clma_seed1_cw200/clma.golden.place",
+        "sha256": "19ad5018d2a1c6c78bdc41111b454c6dd62536e82cb3a1df0979500b753c14b2"
+      },
+      {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/clma_seed1_cw200/vpr_native_closure.json",
+        "sha256": "6e70359008e84857a7e61bb0c9c80e4b5bd0068bf2e79bcb07eb539aadde74bf"
+      },
+      {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/clma_seed1_cw200_endpoints/blocks.jsonl",
+        "sha256": "b005593926034f8dc1964c23088a7110f69396728c7c83bbc41cb1efdd9181fd"
+      },
+      {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/clma_seed1_cw200_endpoints/manifest.json",
+        "sha256": "fb74851b449fc4fb68db6cebbaba1dec7a3f61073e22d97319340ba7ed3b1d27"
+      },
+      {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/clma_seed1_cw200_endpoints/nets.jsonl",
+        "sha256": "d386a1cca1397ed72135c1e1e296c6fb459b48592e4d770e164a94dc26b93b14"
+      },
+      {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/clma_seed1_cw200_endpoints/sites.jsonl",
+        "sha256": "bad122b5b06c6a5800e4871394628a6f603bc885f01f614f7850ff04987f5d4a"
+      },
+      {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_v4_preregistration_2026-09-03.json",
+        "sha256": "75dce71634d613f17db59a0af923d258cf5b95fe795566a37596486656cfa3ca"
+      },
+      {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "sha256": "a90dc1b3380ebda705e85f176db0cc3d6be1b71ab9ee887db819febc8b62bafc"
+      },
+      {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179"
+      },
+      {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "sha256": "3151ef9596486448557a91f2b892d207dcd3a13d508ce72ba1d9946ce18d096e"
+      },
+      {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/clma_seed1_cw200_native_closure_v2/report_timing.setup.rpt",
+        "sha256": "e8218cf9f6d9cdd672fef4711c6c39ea62ca3c9955a89171922e54e6bfcab0a9"
+      }
+    ],
+    "schema": "TILEPLACE_SEARCH_PROVENANCE_V1",
+    "settings": {
+      "epochs": 4,
+      "extra_vpr_args": [],
+      "max_closures": 24,
+      "rebuild_oracle_rr_graph": false,
+      "timing_feedback_paths": 20,
+      "use_no_goods": true
+    },
+    "source_and_input_hashes_unchanged_at_completion": true
+  },
+  "schema": "TILEPLACE_V2_ROUTED_SEARCH_V1",
+  "status": "pass",
+  "stop_reason": "closure_budget_exhausted",
+  "trials": [
+    {
+      "accepted": true,
+      "bisection_depth": 0,
+      "candidate_place": {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_01/candidate.place",
+        "sha256": "5419b4fec423b8ee632c256e84fdc737040cdd531c7277c43f2cb6beac388cfa"
+      },
+      "closure": {
+        "cpd_ns": 11.5973,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_01/vpr_native_closure.json",
+        "report_sha256": "fbc0c94d73a3d8e6d427a79a0c3ce039988febb7f8c32e04dd88c342a3f111ae",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79755
+      },
+      "color": 0,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 11.6084,
+        "legal": true,
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79857
+      },
+      "reason": "cpd_improved_at_least_1ps",
+      "transaction_count": 4,
+      "transaction_ids": [
+        "('chain3', ((231,), (250,), (311,)), ((231, (17, 18, 0, 0)), (250, (19, 19, 0, 0)), (311, (16, 20, 0, 0))))",
+        "('chain3', ((575,), (611,), (709,)), ((575, (5, 29, 2, 0)), (611, (5, 29, 5, 0)), (709, (4, 29, 2, 0))))",
+        "('chain3', ((576,), (658,), (716,)), ((576, (5, 0, 1, 0)), (658, (4, 0, 6, 0)), (716, (5, 0, 5, 0))))",
+        "('chain3', ((581,), (588,), (685,)), ((581, (9, 0, 4, 0)), (588, (9, 0, 0, 0)), (685, (8, 0, 1, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": 6308808,
+          "id": "('chain3', ((231,), (250,), (311,)), ((231, (17, 18, 0, 0)), (250, (19, 19, 0, 0)), (311, (16, 20, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -334224,
+          "score_q20": -1362010,
+          "timing_delta": 4144571,
+          "touched_nets": [
+            22,
+            33,
+            43,
+            61,
+            94,
+            146,
+            155,
+            166,
+            172,
+            186,
+            196,
+            215,
+            219,
+            220,
+            221,
+            226,
+            231,
+            282,
+            291,
+            298,
+            310,
+            318,
+            319,
+            501,
+            502,
+            506,
+            507,
+            508,
+            518,
+            672,
+            692,
+            1398,
+            1446,
+            1448,
+            1449,
+            1450,
+            1451,
+            1497,
+            1807,
+            1808,
+            1813,
+            1819,
+            1820,
+            1821,
+            1823,
+            2731,
+            2732,
+            2848,
+            2854,
+            3051,
+            3052,
+            3053,
+            3054,
+            3055,
+            3056,
+            3057,
+            3058,
+            3059,
+            3060,
+            3061,
+            3062,
+            3063,
+            3064,
+            3065,
+            3215,
+            3216,
+            3217,
+            3218,
+            3219,
+            3220,
+            3221,
+            3222,
+            3223,
+            3224,
+            3225,
+            3226,
+            3321,
+            3615,
+            3619,
+            3639,
+            3657,
+            3717,
+            3746,
+            3747,
+            3750,
+            3792,
+            3793,
+            3794,
+            3795,
+            3796,
+            3797
+          ],
+          "trial": {
+            "231": [
+              17,
+              18,
+              0,
+              0
+            ],
+            "250": [
+              19,
+              19,
+              0,
+              0
+            ],
+            "311": [
+              16,
+              20,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              231
+            ],
+            [
+              250
+            ],
+            [
+              311
+            ]
+          ],
+          "wire_delta": 51,
+          "write_sites": [
+            [
+              16,
+              20,
+              0,
+              0
+            ],
+            [
+              17,
+              18,
+              0,
+              0
+            ],
+            [
+              19,
+              19,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": 0,
+          "id": "('chain3', ((575,), (611,), (709,)), ((575, (5, 29, 2, 0)), (611, (5, 29, 5, 0)), (709, (4, 29, 2, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -252582,
+          "timing_delta": -11251,
+          "touched_nets": [
+            412,
+            4706,
+            4711
+          ],
+          "trial": {
+            "575": [
+              5,
+              29,
+              2,
+              0
+            ],
+            "611": [
+              5,
+              29,
+              5,
+              0
+            ],
+            "709": [
+              4,
+              29,
+              2,
+              0
+            ]
+          },
+          "units": [
+            [
+              575
+            ],
+            [
+              611
+            ],
+            [
+              709
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              4,
+              29,
+              2,
+              0
+            ],
+            [
+              5,
+              29,
+              2,
+              0
+            ],
+            [
+              5,
+              29,
+              5,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -3765814,
+          "id": "('chain3', ((576,), (658,), (716,)), ((576, (5, 0, 1, 0)), (658, (4, 0, 6, 0)), (716, (5, 0, 5, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -48877,
+          "timing_delta": -753429,
+          "touched_nets": [
+            24,
+            4674,
+            4766
+          ],
+          "trial": {
+            "576": [
+              5,
+              0,
+              1,
+              0
+            ],
+            "658": [
+              4,
+              0,
+              6,
+              0
+            ],
+            "716": [
+              5,
+              0,
+              5,
+              0
+            ]
+          },
+          "units": [
+            [
+              576
+            ],
+            [
+              658
+            ],
+            [
+              716
+            ]
+          ],
+          "wire_delta": 1,
+          "write_sites": [
+            [
+              4,
+              0,
+              6,
+              0
+            ],
+            [
+              5,
+              0,
+              1,
+              0
+            ],
+            [
+              5,
+              0,
+              5,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": 0,
+          "id": "('chain3', ((581,), (588,), (685,)), ((581, (9, 0, 4, 0)), (588, (9, 0, 0, 0)), (685, (8, 0, 1, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": 0,
+          "score_q20": -14020,
+          "timing_delta": -8074,
+          "touched_nets": [
+            4691,
+            4732,
+            4763
+          ],
+          "trial": {
+            "581": [
+              9,
+              0,
+              4,
+              0
+            ],
+            "588": [
+              9,
+              0,
+              0,
+              0
+            ],
+            "685": [
+              8,
+              0,
+              1,
+              0
+            ]
+          },
+          "units": [
+            [
+              581
+            ],
+            [
+              588
+            ],
+            [
+              685
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              8,
+              0,
+              1,
+              0
+            ],
+            [
+              9,
+              0,
+              0,
+              0
+            ],
+            [
+              9,
+              0,
+              4,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 1
+    },
+    {
+      "accepted": true,
+      "bisection_depth": 0,
+      "candidate_place": {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_02/candidate.place",
+        "sha256": "a6d63642efbb791a5bc3c04cff5287b32d7fa2246561bef0670e82d4af0dcab8"
+      },
+      "closure": {
+        "cpd_ns": 11.5973,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_02/vpr_native_closure.json",
+        "report_sha256": "b8fa2d2a423170e06042ef56c0cb254f666ea1e1590bdc9e8beb3ce6822cdbc1",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79692
+      },
+      "color": 1,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 11.5973,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_01/vpr_native_closure.json",
+        "report_sha256": "fbc0c94d73a3d8e6d427a79a0c3ce039988febb7f8c32e04dd88c342a3f111ae",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79755
+      },
+      "reason": "equal_cpd_wirelength_improved",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('chain3', ((13,), (265,), (530,)), ((13, (21, 13, 0, 0)), (265, (20, 12, 0, 0)), (530, (20, 15, 0, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": 1793883,
+          "id": "('chain3', ((13,), (265,), (530,)), ((13, (21, 13, 0, 0)), (265, (20, 12, 0, 0)), (530, (20, 15, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -176943,
+          "score_q20": -1560168,
+          "timing_delta": 1700942,
+          "touched_nets": [
+            12,
+            22,
+            24,
+            33,
+            43,
+            61,
+            130,
+            146,
+            151,
+            154,
+            155,
+            157,
+            166,
+            172,
+            186,
+            196,
+            206,
+            209,
+            215,
+            219,
+            221,
+            226,
+            231,
+            282,
+            294,
+            311,
+            312,
+            313,
+            314,
+            315,
+            316,
+            317,
+            318,
+            319,
+            320,
+            321,
+            322,
+            323,
+            324,
+            325,
+            326,
+            327,
+            328,
+            329,
+            330,
+            331,
+            332,
+            333,
+            334,
+            566,
+            589,
+            644,
+            1343,
+            1344,
+            1575,
+            1580,
+            1822,
+            1947,
+            2826,
+            2845,
+            2888,
+            2893,
+            3053,
+            3060,
+            3261,
+            3403,
+            3404,
+            3405,
+            3406,
+            3407,
+            3408,
+            3598,
+            3600,
+            4463,
+            4466,
+            4543,
+            8459
+          ],
+          "trial": {
+            "13": [
+              21,
+              13,
+              0,
+              0
+            ],
+            "265": [
+              20,
+              12,
+              0,
+              0
+            ],
+            "530": [
+              20,
+              15,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              13
+            ],
+            [
+              265
+            ],
+            [
+              530
+            ]
+          ],
+          "wire_delta": 21,
+          "write_sites": [
+            [
+              20,
+              12,
+              0,
+              0
+            ],
+            [
+              20,
+              15,
+              0,
+              0
+            ],
+            [
+              21,
+              13,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 2
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 0,
+      "candidate_place": {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_03/candidate.place",
+        "sha256": "76e94833a77a49418b9ad5d6707069ae0680708616e3fa687cbde411da37cacd"
+      },
+      "closure": {
+        "cpd_ns": 11.5973,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_03/vpr_native_closure.json",
+        "report_sha256": "4e2f84f5dbd862f0d86e2855a78eb3f67ad93d1fe74c09b45d087f1c20ba7d50",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79988
+      },
+      "color": 2,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 11.5973,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_02/vpr_native_closure.json",
+        "report_sha256": "b8fa2d2a423170e06042ef56c0cb254f666ea1e1590bdc9e8beb3ce6822cdbc1",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79692
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 2,
+      "transaction_ids": [
+        "('chain3', ((212,), (484,), (492,)), ((212, (15, 27, 0, 0)), (484, (15, 28, 0, 0)), (492, (16, 26, 0, 0))))",
+        "('move', ((577,),), ((577, (0, 3, 0, 0)),))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": 2600356,
+          "id": "('chain3', ((212,), (484,), (492,)), ((212, (15, 27, 0, 0)), (484, (15, 28, 0, 0)), (492, (16, 26, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -117963,
+          "score_q20": -1543635,
+          "timing_delta": 1691396,
+          "touched_nets": [
+            33,
+            43,
+            61,
+            94,
+            146,
+            154,
+            155,
+            157,
+            164,
+            166,
+            172,
+            186,
+            196,
+            200,
+            219,
+            220,
+            221,
+            226,
+            231,
+            282,
+            318,
+            319,
+            452,
+            453,
+            454,
+            456,
+            458,
+            461,
+            462,
+            463,
+            465,
+            522,
+            524,
+            561,
+            564,
+            579,
+            870,
+            1813,
+            2822,
+            2827,
+            2834,
+            2836,
+            2845,
+            2846,
+            2847,
+            2848,
+            2849,
+            2850,
+            2851,
+            2852,
+            2853,
+            2854,
+            2855,
+            2856,
+            2857,
+            2858,
+            2859,
+            2860,
+            3007,
+            3018,
+            3048,
+            3709,
+            4129,
+            4133,
+            4284,
+            4285,
+            4488,
+            4567,
+            4571,
+            4580,
+            4581,
+            4660,
+            4661,
+            4664,
+            4665,
+            4666,
+            4667
+          ],
+          "trial": {
+            "212": [
+              15,
+              27,
+              0,
+              0
+            ],
+            "484": [
+              15,
+              28,
+              0,
+              0
+            ],
+            "492": [
+              16,
+              26,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              212
+            ],
+            [
+              484
+            ],
+            [
+              492
+            ]
+          ],
+          "wire_delta": 39,
+          "write_sites": [
+            [
+              15,
+              27,
+              0,
+              0
+            ],
+            [
+              15,
+              28,
+              0,
+              0
+            ],
+            [
+              16,
+              26,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -152071,
+          "id": "('move', ((577,),), ((577, (0, 3, 0, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": 0,
+          "score_q20": -87414,
+          "timing_delta": 0,
+          "touched_nets": [
+            4731
+          ],
+          "trial": {
+            "577": [
+              0,
+              3,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              577
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              0,
+              3,
+              0,
+              0
+            ],
+            [
+              3,
+              0,
+              3,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 3
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 1,
+      "candidate_place": {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_04/candidate.place",
+        "sha256": "ed0b22b9afeb2123fbdd03fbea0f2c91f898f3ab12257e91bfaf5722d4afd743"
+      },
+      "closure": {
+        "cpd_ns": 11.5973,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_04/vpr_native_closure.json",
+        "report_sha256": "cdc18825d3b61115d47c026746acdfbe64acfb843c298a66d4590c26052a51c0",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79995
+      },
+      "color": 2,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 11.5973,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_02/vpr_native_closure.json",
+        "report_sha256": "b8fa2d2a423170e06042ef56c0cb254f666ea1e1590bdc9e8beb3ce6822cdbc1",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79692
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('chain3', ((212,), (484,), (492,)), ((212, (15, 27, 0, 0)), (484, (15, 28, 0, 0)), (492, (16, 26, 0, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": 2600356,
+          "id": "('chain3', ((212,), (484,), (492,)), ((212, (15, 27, 0, 0)), (484, (15, 28, 0, 0)), (492, (16, 26, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -117963,
+          "score_q20": -1543635,
+          "timing_delta": 1691396,
+          "touched_nets": [
+            33,
+            43,
+            61,
+            94,
+            146,
+            154,
+            155,
+            157,
+            164,
+            166,
+            172,
+            186,
+            196,
+            200,
+            219,
+            220,
+            221,
+            226,
+            231,
+            282,
+            318,
+            319,
+            452,
+            453,
+            454,
+            456,
+            458,
+            461,
+            462,
+            463,
+            465,
+            522,
+            524,
+            561,
+            564,
+            579,
+            870,
+            1813,
+            2822,
+            2827,
+            2834,
+            2836,
+            2845,
+            2846,
+            2847,
+            2848,
+            2849,
+            2850,
+            2851,
+            2852,
+            2853,
+            2854,
+            2855,
+            2856,
+            2857,
+            2858,
+            2859,
+            2860,
+            3007,
+            3018,
+            3048,
+            3709,
+            4129,
+            4133,
+            4284,
+            4285,
+            4488,
+            4567,
+            4571,
+            4580,
+            4581,
+            4660,
+            4661,
+            4664,
+            4665,
+            4666,
+            4667
+          ],
+          "trial": {
+            "212": [
+              15,
+              27,
+              0,
+              0
+            ],
+            "484": [
+              15,
+              28,
+              0,
+              0
+            ],
+            "492": [
+              16,
+              26,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              212
+            ],
+            [
+              484
+            ],
+            [
+              492
+            ]
+          ],
+          "wire_delta": 39,
+          "write_sites": [
+            [
+              15,
+              27,
+              0,
+              0
+            ],
+            [
+              15,
+              28,
+              0,
+              0
+            ],
+            [
+              16,
+              26,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 4
+    },
+    {
+      "accepted": true,
+      "bisection_depth": 1,
+      "candidate_place": {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_05/candidate.place",
+        "sha256": "fd916e94f6d07449390a02f2c8293b56bb05895305962d64ab3becfb65ba1aac"
+      },
+      "closure": {
+        "cpd_ns": 11.5973,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_05/vpr_native_closure.json",
+        "report_sha256": "b43bb10945334c4f5d227a70f444cee7169c2bc4323691d8367d83cc62b8de99",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79655
+      },
+      "color": 2,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 11.5973,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_02/vpr_native_closure.json",
+        "report_sha256": "b8fa2d2a423170e06042ef56c0cb254f666ea1e1590bdc9e8beb3ce6822cdbc1",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79692
+      },
+      "reason": "equal_cpd_wirelength_improved",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('move', ((577,),), ((577, (0, 3, 0, 0)),))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -152071,
+          "id": "('move', ((577,),), ((577, (0, 3, 0, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": 0,
+          "score_q20": -87414,
+          "timing_delta": 0,
+          "touched_nets": [
+            4731
+          ],
+          "trial": {
+            "577": [
+              0,
+              3,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              577
+            ]
+          ],
+          "wire_delta": 0,
+          "write_sites": [
+            [
+              0,
+              3,
+              0,
+              0
+            ],
+            [
+              3,
+              0,
+              3,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 5
+    },
+    {
+      "accepted": true,
+      "bisection_depth": 0,
+      "candidate_place": {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_06/candidate.place",
+        "sha256": "95d164e2a0b1fa40083f28a4b786167c6e202b046262ebba50db6f6cd8c9f001"
+      },
+      "closure": {
+        "cpd_ns": 11.5962,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_06/vpr_native_closure.json",
+        "report_sha256": "29edc96033d9a739c98679c7a5aa376ab11ca8b3d3dd86af9f5d67403b23db30",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79938
+      },
+      "color": 3,
+      "epoch": 0,
+      "incumbent_before": {
+        "cpd_ns": 11.5973,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_05/vpr_native_closure.json",
+        "report_sha256": "b43bb10945334c4f5d227a70f444cee7169c2bc4323691d8367d83cc62b8de99",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79655
+      },
+      "reason": "cpd_improved_at_least_1ps",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('chain3', ((14,), (322,), (358,)), ((14, (12, 12, 0, 0)), (322, (13, 12, 0, 0)), (358, (15, 15, 0, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": 6842785,
+          "id": "('chain3', ((14,), (322,), (358,)), ((14, (12, 12, 0, 0)), (322, (13, 12, 0, 0)), (358, (15, 15, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -1186170,
+          "score_q20": -526567,
+          "timing_delta": 3902687,
+          "touched_nets": [
+            1,
+            27,
+            43,
+            61,
+            94,
+            104,
+            124,
+            127,
+            130,
+            135,
+            137,
+            146,
+            151,
+            157,
+            196,
+            204,
+            212,
+            271,
+            282,
+            316,
+            318,
+            319,
+            335,
+            336,
+            337,
+            338,
+            339,
+            340,
+            341,
+            342,
+            343,
+            344,
+            345,
+            346,
+            347,
+            348,
+            349,
+            350,
+            351,
+            352,
+            353,
+            354,
+            355,
+            356,
+            357,
+            358,
+            359,
+            360,
+            361,
+            362,
+            429,
+            577,
+            589,
+            615,
+            644,
+            669,
+            670,
+            753,
+            842,
+            877,
+            1065,
+            1363,
+            1389,
+            1390,
+            1574,
+            1701,
+            1706,
+            1707,
+            1713,
+            1947,
+            2244,
+            2496,
+            2546,
+            2547,
+            2548,
+            2555,
+            2556,
+            2564,
+            2574,
+            2581,
+            2685,
+            2753,
+            3041,
+            3327,
+            3525,
+            3863,
+            3864,
+            3871,
+            3914,
+            4147,
+            4148,
+            4149,
+            8459
+          ],
+          "trial": {
+            "14": [
+              12,
+              12,
+              0,
+              0
+            ],
+            "322": [
+              13,
+              12,
+              0,
+              0
+            ],
+            "358": [
+              15,
+              15,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              14
+            ],
+            [
+              322
+            ],
+            [
+              358
+            ]
+          ],
+          "wire_delta": 4,
+          "write_sites": [
+            [
+              12,
+              12,
+              0,
+              0
+            ],
+            [
+              13,
+              12,
+              0,
+              0
+            ],
+            [
+              15,
+              15,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 6
+    },
+    {
+      "accepted": true,
+      "bisection_depth": 0,
+      "candidate_place": {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_07/candidate.place",
+        "sha256": "7752e2219d127d0b5cbeac9ceaa4b47e87e1af0d99471c98595eef44574ecafc"
+      },
+      "closure": {
+        "cpd_ns": 11.5962,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_07/vpr_native_closure.json",
+        "report_sha256": "dd680019a6256875372d3b8088de39d3c7a53e362addca7caca0e1dd253c53c0",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79738
+      },
+      "color": 0,
+      "epoch": 1,
+      "incumbent_before": {
+        "cpd_ns": 11.5962,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_06/vpr_native_closure.json",
+        "report_sha256": "29edc96033d9a739c98679c7a5aa376ab11ca8b3d3dd86af9f5d67403b23db30",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79938
+      },
+      "reason": "equal_cpd_wirelength_improved",
+      "transaction_count": 2,
+      "transaction_ids": [
+        "('chain3', ((317,), (319,), (396,)), ((317, (23, 26, 0, 0)), (319, (20, 25, 0, 0)), (396, (21, 25, 0, 0))))",
+        "('swap', ((590,), (696,)), ((590, (12, 0, 6, 0)), (696, (15, 0, 3, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": 582867,
+          "id": "('chain3', ((317,), (319,), (396,)), ((317, (23, 26, 0, 0)), (319, (20, 25, 0, 0)), (396, (21, 25, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -314568,
+          "score_q20": -958072,
+          "timing_delta": 763141,
+          "touched_nets": [
+            22,
+            43,
+            61,
+            104,
+            125,
+            126,
+            130,
+            132,
+            144,
+            146,
+            157,
+            186,
+            192,
+            195,
+            196,
+            215,
+            219,
+            226,
+            420,
+            507,
+            514,
+            577,
+            579,
+            644,
+            774,
+            1811,
+            1816,
+            1822,
+            2611,
+            2615,
+            2827,
+            2831,
+            2836,
+            2845,
+            2946,
+            2951,
+            3371,
+            3373,
+            3537,
+            3541,
+            3542,
+            3543,
+            3553,
+            3557,
+            3563,
+            3564,
+            3566,
+            3573,
+            3601,
+            3603,
+            3604,
+            3610,
+            3621,
+            3625,
+            3628,
+            3630,
+            3633,
+            3635,
+            3654,
+            3802,
+            3804,
+            3805,
+            3809,
+            3810,
+            3813,
+            3814,
+            3815,
+            3817,
+            3832,
+            3835,
+            3836,
+            3837,
+            3838,
+            3839,
+            3840,
+            3841,
+            3842,
+            3843,
+            3855,
+            3856,
+            3857,
+            3858,
+            3859,
+            3921,
+            3953,
+            4338,
+            4339
+          ],
+          "trial": {
+            "317": [
+              23,
+              26,
+              0,
+              0
+            ],
+            "319": [
+              20,
+              25,
+              0,
+              0
+            ],
+            "396": [
+              21,
+              25,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              317
+            ],
+            [
+              319
+            ],
+            [
+              396
+            ]
+          ],
+          "wire_delta": 12,
+          "write_sites": [
+            [
+              20,
+              25,
+              0,
+              0
+            ],
+            [
+              21,
+              25,
+              0,
+              0
+            ],
+            [
+              23,
+              26,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -3951402,
+          "id": "('swap', ((590,), (696,)), ((590, (12, 0, 6, 0)), (696, (15, 0, 3, 0))))",
+          "kind": "swap",
+          "routed_timing_delta": -167112,
+          "score_q20": -632551,
+          "timing_delta": -1679278,
+          "touched_nets": [
+            282,
+            4797
+          ],
+          "trial": {
+            "590": [
+              12,
+              0,
+              6,
+              0
+            ],
+            "696": [
+              15,
+              0,
+              3,
+              0
+            ]
+          },
+          "units": [
+            [
+              590
+            ],
+            [
+              696
+            ]
+          ],
+          "wire_delta": -1,
+          "write_sites": [
+            [
+              12,
+              0,
+              6,
+              0
+            ],
+            [
+              15,
+              0,
+              3,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 7
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 0,
+      "candidate_place": {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_08/candidate.place",
+        "sha256": "06831fd21a6b8abab1f58c7d3ac7f35adeb281935ed690f0339a9277d861122e"
+      },
+      "closure": {
+        "cpd_ns": 11.5962,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_08/vpr_native_closure.json",
+        "report_sha256": "76b4aa0c150a8a5af1331d9b8be161a0061d4f96475fb1bc09b9a350efcd9efd",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79743
+      },
+      "color": 1,
+      "epoch": 1,
+      "incumbent_before": {
+        "cpd_ns": 11.5962,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_07/vpr_native_closure.json",
+        "report_sha256": "dd680019a6256875372d3b8088de39d3c7a53e362addca7caca0e1dd253c53c0",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79738
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 3,
+      "transaction_ids": [
+        "('chain3', ((105,), (468,), (476,)), ((105, (20, 13, 0, 0)), (468, (20, 11, 0, 0)), (476, (19, 15, 0, 0))))",
+        "('move', ((577,),), ((577, (0, 5, 0, 0)),))",
+        "('move', ((692,),), ((692, (0, 9, 0, 0)),))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": 4712643,
+          "id": "('chain3', ((105,), (468,), (476,)), ((105, (20, 13, 0, 0)), (468, (20, 11, 0, 0)), (476, (19, 15, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -117962,
+          "score_q20": -1396410,
+          "timing_delta": 3542419,
+          "touched_nets": [
+            22,
+            33,
+            43,
+            61,
+            66,
+            94,
+            104,
+            125,
+            130,
+            146,
+            155,
+            166,
+            172,
+            211,
+            215,
+            219,
+            220,
+            221,
+            226,
+            231,
+            234,
+            251,
+            282,
+            291,
+            298,
+            310,
+            318,
+            319,
+            321,
+            327,
+            328,
+            329,
+            331,
+            423,
+            429,
+            467,
+            644,
+            753,
+            877,
+            1326,
+            1353,
+            1363,
+            1434,
+            1436,
+            1462,
+            1463,
+            1465,
+            1575,
+            1576,
+            1577,
+            1578,
+            1579,
+            1580,
+            1581,
+            1880,
+            2762,
+            2763,
+            2764,
+            2767,
+            2768,
+            3090,
+            3338,
+            3414,
+            3424,
+            3614,
+            3616,
+            4159,
+            4160,
+            4162,
+            4163,
+            4164,
+            4185,
+            4368,
+            4427,
+            4469,
+            4576,
+            4617,
+            4618
+          ],
+          "trial": {
+            "105": [
+              20,
+              13,
+              0,
+              0
+            ],
+            "468": [
+              20,
+              11,
+              0,
+              0
+            ],
+            "476": [
+              19,
+              15,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              105
+            ],
+            [
+              468
+            ],
+            [
+              476
+            ]
+          ],
+          "wire_delta": -6,
+          "write_sites": [
+            [
+              19,
+              15,
+              0,
+              0
+            ],
+            [
+              20,
+              11,
+              0,
+              0
+            ],
+            [
+              20,
+              13,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -131331,
+          "id": "('move', ((577,),), ((577, (0, 5, 0, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": -13106,
+          "score_q20": -501975,
+          "timing_delta": -59420,
+          "touched_nets": [
+            4731
+          ],
+          "trial": {
+            "577": [
+              0,
+              5,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              577
+            ]
+          ],
+          "wire_delta": -2,
+          "write_sites": [
+            [
+              0,
+              3,
+              0,
+              0
+            ],
+            [
+              0,
+              5,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": 0,
+          "id": "('move', ((692,),), ((692, (0, 9, 0, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": -3738734,
+          "score_q20": -274286,
+          "timing_delta": 0,
+          "touched_nets": [
+            8459
+          ],
+          "trial": {
+            "692": [
+              0,
+              9,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              692
+            ]
+          ],
+          "wire_delta": -2,
+          "write_sites": [
+            [
+              0,
+              6,
+              6,
+              0
+            ],
+            [
+              0,
+              9,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 8
+    },
+    {
+      "accepted": true,
+      "bisection_depth": 1,
+      "candidate_place": {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_09/candidate.place",
+        "sha256": "74876dd1e5e013b2ce90cc695e03c62285bd788c1ad81aca5d5b25116fdbcdf6"
+      },
+      "closure": {
+        "cpd_ns": 11.5962,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_09/vpr_native_closure.json",
+        "report_sha256": "4cbb836c98e327fbecbf5a42168131b9e02bfcfd2098d104cfa7d2c95cc213c0",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79729
+      },
+      "color": 1,
+      "epoch": 1,
+      "incumbent_before": {
+        "cpd_ns": 11.5962,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_07/vpr_native_closure.json",
+        "report_sha256": "dd680019a6256875372d3b8088de39d3c7a53e362addca7caca0e1dd253c53c0",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79738
+      },
+      "reason": "equal_cpd_wirelength_improved",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('chain3', ((105,), (468,), (476,)), ((105, (20, 13, 0, 0)), (468, (20, 11, 0, 0)), (476, (19, 15, 0, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": 4712643,
+          "id": "('chain3', ((105,), (468,), (476,)), ((105, (20, 13, 0, 0)), (468, (20, 11, 0, 0)), (476, (19, 15, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -117962,
+          "score_q20": -1396410,
+          "timing_delta": 3542419,
+          "touched_nets": [
+            22,
+            33,
+            43,
+            61,
+            66,
+            94,
+            104,
+            125,
+            130,
+            146,
+            155,
+            166,
+            172,
+            211,
+            215,
+            219,
+            220,
+            221,
+            226,
+            231,
+            234,
+            251,
+            282,
+            291,
+            298,
+            310,
+            318,
+            319,
+            321,
+            327,
+            328,
+            329,
+            331,
+            423,
+            429,
+            467,
+            644,
+            753,
+            877,
+            1326,
+            1353,
+            1363,
+            1434,
+            1436,
+            1462,
+            1463,
+            1465,
+            1575,
+            1576,
+            1577,
+            1578,
+            1579,
+            1580,
+            1581,
+            1880,
+            2762,
+            2763,
+            2764,
+            2767,
+            2768,
+            3090,
+            3338,
+            3414,
+            3424,
+            3614,
+            3616,
+            4159,
+            4160,
+            4162,
+            4163,
+            4164,
+            4185,
+            4368,
+            4427,
+            4469,
+            4576,
+            4617,
+            4618
+          ],
+          "trial": {
+            "105": [
+              20,
+              13,
+              0,
+              0
+            ],
+            "468": [
+              20,
+              11,
+              0,
+              0
+            ],
+            "476": [
+              19,
+              15,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              105
+            ],
+            [
+              468
+            ],
+            [
+              476
+            ]
+          ],
+          "wire_delta": -6,
+          "write_sites": [
+            [
+              19,
+              15,
+              0,
+              0
+            ],
+            [
+              20,
+              11,
+              0,
+              0
+            ],
+            [
+              20,
+              13,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 9
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 1,
+      "candidate_place": {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_10/candidate.place",
+        "sha256": "06831fd21a6b8abab1f58c7d3ac7f35adeb281935ed690f0339a9277d861122e"
+      },
+      "closure": {
+        "cpd_ns": 11.5962,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_10/vpr_native_closure.json",
+        "report_sha256": "174e1e92d5a2c5abadd33355cf2b13331e5c8dbead12866bf0c5968ac8470f51",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79743
+      },
+      "color": 1,
+      "epoch": 1,
+      "incumbent_before": {
+        "cpd_ns": 11.5962,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_09/vpr_native_closure.json",
+        "report_sha256": "4cbb836c98e327fbecbf5a42168131b9e02bfcfd2098d104cfa7d2c95cc213c0",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79729
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 2,
+      "transaction_ids": [
+        "('move', ((577,),), ((577, (0, 5, 0, 0)),))",
+        "('move', ((692,),), ((692, (0, 9, 0, 0)),))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -131331,
+          "id": "('move', ((577,),), ((577, (0, 5, 0, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": -13106,
+          "score_q20": -501975,
+          "timing_delta": -59420,
+          "touched_nets": [
+            4731
+          ],
+          "trial": {
+            "577": [
+              0,
+              5,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              577
+            ]
+          ],
+          "wire_delta": -2,
+          "write_sites": [
+            [
+              0,
+              3,
+              0,
+              0
+            ],
+            [
+              0,
+              5,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": 0,
+          "id": "('move', ((692,),), ((692, (0, 9, 0, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": -3738734,
+          "score_q20": -274286,
+          "timing_delta": 0,
+          "touched_nets": [
+            8459
+          ],
+          "trial": {
+            "692": [
+              0,
+              9,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              692
+            ]
+          ],
+          "wire_delta": -2,
+          "write_sites": [
+            [
+              0,
+              6,
+              6,
+              0
+            ],
+            [
+              0,
+              9,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 10
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 2,
+      "candidate_place": {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_11/candidate.place",
+        "sha256": "0000d07538f86497c26bd7eda23cb4308c03daa1cc184446a538be7fc2ee71a0"
+      },
+      "closure": {
+        "cpd_ns": 11.5962,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_11/vpr_native_closure.json",
+        "report_sha256": "243f23822de050c59ba993eff1a0144a7f7ce7553b4670a3f166c0c1263e8ea0",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79743
+      },
+      "color": 1,
+      "epoch": 1,
+      "incumbent_before": {
+        "cpd_ns": 11.5962,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_09/vpr_native_closure.json",
+        "report_sha256": "4cbb836c98e327fbecbf5a42168131b9e02bfcfd2098d104cfa7d2c95cc213c0",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79729
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('move', ((577,),), ((577, (0, 5, 0, 0)),))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": -131331,
+          "id": "('move', ((577,),), ((577, (0, 5, 0, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": -13106,
+          "score_q20": -501975,
+          "timing_delta": -59420,
+          "touched_nets": [
+            4731
+          ],
+          "trial": {
+            "577": [
+              0,
+              5,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              577
+            ]
+          ],
+          "wire_delta": -2,
+          "write_sites": [
+            [
+              0,
+              3,
+              0,
+              0
+            ],
+            [
+              0,
+              5,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 11
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 2,
+      "candidate_place": {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_12/candidate.place",
+        "sha256": "180c77c63fdfd946691bd369d259900c00a48fe0f2708e0783302fb6a2a4c628"
+      },
+      "closure": {
+        "cpd_ns": 11.5962,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_12/vpr_native_closure.json",
+        "report_sha256": "b0970ac0f11f132f4628b3268f3fa3a4bdc30f670a87f99b3dee4360e03dcd2f",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79729
+      },
+      "color": 1,
+      "epoch": 1,
+      "incumbent_before": {
+        "cpd_ns": 11.5962,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_09/vpr_native_closure.json",
+        "report_sha256": "4cbb836c98e327fbecbf5a42168131b9e02bfcfd2098d104cfa7d2c95cc213c0",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79729
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('move', ((692,),), ((692, (0, 9, 0, 0)),))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": 0,
+          "id": "('move', ((692,),), ((692, (0, 9, 0, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": -3738734,
+          "score_q20": -274286,
+          "timing_delta": 0,
+          "touched_nets": [
+            8459
+          ],
+          "trial": {
+            "692": [
+              0,
+              9,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              692
+            ]
+          ],
+          "wire_delta": -2,
+          "write_sites": [
+            [
+              0,
+              6,
+              6,
+              0
+            ],
+            [
+              0,
+              9,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 12
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 0,
+      "candidate_place": {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_13/candidate.place",
+        "sha256": "ff8fb3a2e1f8871f25be77a355cd48d32104ba5ffddf33d049e18469dacbab94"
+      },
+      "closure": {
+        "cpd_ns": 11.5962,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_13/vpr_native_closure.json",
+        "report_sha256": "d3c6354619e0bba8209d5d9ad4338ff2a8efa8e281cca716ae5323f2d2278e5c",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79802
+      },
+      "color": 2,
+      "epoch": 1,
+      "incumbent_before": {
+        "cpd_ns": 11.5962,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_09/vpr_native_closure.json",
+        "report_sha256": "4cbb836c98e327fbecbf5a42168131b9e02bfcfd2098d104cfa7d2c95cc213c0",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79729
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('chain3', ((212,), (484,), (492,)), ((212, (15, 27, 0, 0)), (484, (15, 28, 0, 0)), (492, (16, 26, 0, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": 2689535,
+          "id": "('chain3', ((212,), (484,), (492,)), ((212, (15, 27, 0, 0)), (484, (15, 28, 0, 0)), (492, (16, 26, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -117963,
+          "score_q20": -1543608,
+          "timing_delta": 1691396,
+          "touched_nets": [
+            33,
+            43,
+            61,
+            94,
+            146,
+            154,
+            155,
+            157,
+            164,
+            166,
+            172,
+            186,
+            196,
+            200,
+            219,
+            220,
+            221,
+            226,
+            231,
+            282,
+            318,
+            319,
+            452,
+            453,
+            454,
+            456,
+            458,
+            461,
+            462,
+            463,
+            465,
+            522,
+            524,
+            561,
+            564,
+            579,
+            870,
+            1813,
+            2822,
+            2827,
+            2834,
+            2836,
+            2845,
+            2846,
+            2847,
+            2848,
+            2849,
+            2850,
+            2851,
+            2852,
+            2853,
+            2854,
+            2855,
+            2856,
+            2857,
+            2858,
+            2859,
+            2860,
+            3007,
+            3018,
+            3048,
+            3709,
+            4129,
+            4133,
+            4284,
+            4285,
+            4488,
+            4567,
+            4571,
+            4580,
+            4581,
+            4660,
+            4661,
+            4664,
+            4665,
+            4666,
+            4667
+          ],
+          "trial": {
+            "212": [
+              15,
+              27,
+              0,
+              0
+            ],
+            "484": [
+              15,
+              28,
+              0,
+              0
+            ],
+            "492": [
+              16,
+              26,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              212
+            ],
+            [
+              484
+            ],
+            [
+              492
+            ]
+          ],
+          "wire_delta": 39,
+          "write_sites": [
+            [
+              15,
+              27,
+              0,
+              0
+            ],
+            [
+              15,
+              28,
+              0,
+              0
+            ],
+            [
+              16,
+              26,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 13
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 0,
+      "candidate_place": {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_14/candidate.place",
+        "sha256": "8e09d9a00d3baabdec30484dbd206110ee27c088e13bc8e7ea86ede0c2e7eb4a"
+      },
+      "closure": {
+        "cpd_ns": 11.5962,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_14/vpr_native_closure.json",
+        "report_sha256": "9c71354c48e4a1319183edf399629c7f78464e6fd18abc1cdfcec2dcbcc1f25e",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79750
+      },
+      "color": 3,
+      "epoch": 1,
+      "incumbent_before": {
+        "cpd_ns": 11.5962,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_09/vpr_native_closure.json",
+        "report_sha256": "4cbb836c98e327fbecbf5a42168131b9e02bfcfd2098d104cfa7d2c95cc213c0",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79729
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('chain3', ((266,), (465,), (469,)), ((266, (27, 15, 0, 0)), (465, (24, 15, 0, 0)), (469, (25, 14, 0, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": 2771637,
+          "id": "('chain3', ((266,), (465,), (469,)), ((266, (27, 15, 0, 0)), (465, (24, 15, 0, 0)), (469, (25, 14, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -157284,
+          "score_q20": -1575448,
+          "timing_delta": 1991746,
+          "touched_nets": [
+            22,
+            33,
+            43,
+            47,
+            61,
+            66,
+            94,
+            104,
+            118,
+            125,
+            130,
+            146,
+            157,
+            196,
+            211,
+            220,
+            226,
+            231,
+            234,
+            251,
+            282,
+            429,
+            466,
+            589,
+            644,
+            672,
+            674,
+            1063,
+            1353,
+            1363,
+            1432,
+            1578,
+            1660,
+            1684,
+            1686,
+            1687,
+            1690,
+            1694,
+            3090,
+            3094,
+            3343,
+            3409,
+            3410,
+            3411,
+            3412,
+            3413,
+            3414,
+            3415,
+            3416,
+            3417,
+            3418,
+            3419,
+            3420,
+            3421,
+            3422,
+            3423,
+            3424,
+            3676,
+            4125,
+            4138,
+            4205,
+            4207,
+            4209,
+            4214,
+            4216,
+            4230,
+            4231,
+            4330,
+            4331,
+            4434,
+            4527,
+            4535,
+            4548,
+            4552,
+            4585,
+            4594,
+            4596,
+            4628,
+            4629
+          ],
+          "trial": {
+            "266": [
+              27,
+              15,
+              0,
+              0
+            ],
+            "465": [
+              24,
+              15,
+              0,
+              0
+            ],
+            "469": [
+              25,
+              14,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              266
+            ],
+            [
+              465
+            ],
+            [
+              469
+            ]
+          ],
+          "wire_delta": -9,
+          "write_sites": [
+            [
+              24,
+              15,
+              0,
+              0
+            ],
+            [
+              25,
+              14,
+              0,
+              0
+            ],
+            [
+              27,
+              15,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 14
+    },
+    {
+      "accepted": true,
+      "bisection_depth": 0,
+      "candidate_place": {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_15/candidate.place",
+        "sha256": "6cf29f2c88639e18fabe9f3a1f5991859bb6886104704277324bf67c441323eb"
+      },
+      "closure": {
+        "cpd_ns": 11.5962,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_15/vpr_native_closure.json",
+        "report_sha256": "0606553ec4ed10e997ce0baf4b85f430b24c2abd6627ac8229ad005c17781783",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79582
+      },
+      "color": 0,
+      "epoch": 2,
+      "incumbent_before": {
+        "cpd_ns": 11.5962,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_09/vpr_native_closure.json",
+        "report_sha256": "4cbb836c98e327fbecbf5a42168131b9e02bfcfd2098d104cfa7d2c95cc213c0",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79729
+      },
+      "reason": "equal_cpd_wirelength_improved",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('chain3', ((401,), (408,), (463,)), ((401, (27, 19, 0, 0)), (408, (25, 18, 0, 0)), (463, (25, 16, 0, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": 3907089,
+          "id": "('chain3', ((401,), (408,), (463,)), ((401, (27, 19, 0, 0)), (408, (25, 18, 0, 0)), (463, (25, 16, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -314568,
+          "score_q20": -1252420,
+          "timing_delta": 2507738,
+          "touched_nets": [
+            22,
+            43,
+            47,
+            61,
+            82,
+            95,
+            104,
+            106,
+            110,
+            112,
+            121,
+            124,
+            125,
+            130,
+            135,
+            146,
+            151,
+            157,
+            181,
+            196,
+            212,
+            226,
+            234,
+            251,
+            271,
+            282,
+            291,
+            298,
+            310,
+            327,
+            387,
+            429,
+            476,
+            644,
+            753,
+            774,
+            872,
+            882,
+            1016,
+            1353,
+            1506,
+            1524,
+            1960,
+            2185,
+            2612,
+            2618,
+            2904,
+            2908,
+            3090,
+            3378,
+            3416,
+            3482,
+            3532,
+            3655,
+            3796,
+            3869,
+            3881,
+            4021,
+            4022,
+            4029,
+            4032,
+            4103,
+            4148,
+            4205,
+            4208,
+            4214,
+            4217,
+            4307,
+            4311,
+            4315,
+            4335,
+            4357,
+            4374,
+            4375,
+            4376,
+            4377,
+            4378,
+            4379,
+            4380,
+            4407,
+            4408,
+            4412,
+            4415,
+            4416,
+            4435,
+            4436,
+            4437,
+            4438,
+            4439,
+            4505,
+            4508,
+            4514,
+            4595,
+            4615,
+            4621
+          ],
+          "trial": {
+            "401": [
+              27,
+              19,
+              0,
+              0
+            ],
+            "408": [
+              25,
+              18,
+              0,
+              0
+            ],
+            "463": [
+              25,
+              16,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              401
+            ],
+            [
+              408
+            ],
+            [
+              463
+            ]
+          ],
+          "wire_delta": 5,
+          "write_sites": [
+            [
+              25,
+              16,
+              0,
+              0
+            ],
+            [
+              25,
+              18,
+              0,
+              0
+            ],
+            [
+              27,
+              19,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 15
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 0,
+      "candidate_place": {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_16/candidate.place",
+        "sha256": "a5fc8dbc82bc5f53eddc12c69d2c8b50e554c47e18d1ef919ca9849f11f3e5c9"
+      },
+      "closure": {
+        "cpd_ns": 11.5962,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_16/vpr_native_closure.json",
+        "report_sha256": "1a2f8e0e3beeeba3865d81e6f64e3e44b97f37931bb18ca031fbf1bb4c9ea939",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79824
+      },
+      "color": 1,
+      "epoch": 2,
+      "incumbent_before": {
+        "cpd_ns": 11.5962,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_15/vpr_native_closure.json",
+        "report_sha256": "0606553ec4ed10e997ce0baf4b85f430b24c2abd6627ac8229ad005c17781783",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79582
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 4,
+      "transaction_ids": [
+        "('chain3', ((62,), (155,), (299,)), ((62, (7, 6, 0, 0)), (155, (7, 7, 0, 0)), (299, (5, 7, 0, 0))))",
+        "('move', ((577,),), ((577, (0, 5, 0, 0)),))",
+        "('chain3', ((116,), (117,), (556,)), ((116, (9, 24, 0, 0)), (117, (9, 27, 0, 0)), (556, (11, 24, 0, 0))))",
+        "('move', ((692,),), ((692, (0, 9, 0, 0)),))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": 2215307,
+          "id": "('chain3', ((62,), (155,), (299,)), ((62, (7, 6, 0, 0)), (155, (7, 7, 0, 0)), (299, (5, 7, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -124516,
+          "score_q20": -810350,
+          "timing_delta": 1664196,
+          "touched_nets": [
+            22,
+            43,
+            61,
+            130,
+            146,
+            157,
+            196,
+            282,
+            572,
+            589,
+            679,
+            735,
+            753,
+            758,
+            762,
+            763,
+            793,
+            794,
+            822,
+            840,
+            844,
+            849,
+            855,
+            877,
+            1010,
+            1033,
+            1035,
+            1040,
+            1041,
+            1043,
+            1044,
+            1045,
+            1049,
+            1050,
+            1072,
+            1107,
+            1108,
+            1109,
+            1110,
+            1111,
+            1112,
+            1113,
+            1114,
+            1115,
+            1116,
+            1117,
+            1118,
+            1119,
+            1120,
+            1121,
+            1122,
+            1123,
+            1149,
+            1150,
+            1169,
+            1170,
+            1233,
+            1234,
+            1313,
+            1317,
+            1366,
+            1369,
+            1376,
+            1384,
+            1388,
+            1506,
+            1508,
+            1515,
+            1576,
+            1717,
+            1903,
+            2065,
+            2250,
+            2251,
+            2252,
+            2253,
+            2254,
+            2255,
+            2256,
+            2257,
+            2453,
+            2694,
+            2711,
+            3106,
+            3702,
+            3703,
+            3704,
+            3705
+          ],
+          "trial": {
+            "155": [
+              7,
+              7,
+              0,
+              0
+            ],
+            "299": [
+              5,
+              7,
+              0,
+              0
+            ],
+            "62": [
+              7,
+              6,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              62
+            ],
+            [
+              155
+            ],
+            [
+              299
+            ]
+          ],
+          "wire_delta": 30,
+          "write_sites": [
+            [
+              5,
+              7,
+              0,
+              0
+            ],
+            [
+              7,
+              6,
+              0,
+              0
+            ],
+            [
+              7,
+              7,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -131262,
+          "id": "('move', ((577,),), ((577, (0, 5, 0, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": -13106,
+          "score_q20": -501929,
+          "timing_delta": -59420,
+          "touched_nets": [
+            4731
+          ],
+          "trial": {
+            "577": [
+              0,
+              5,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              577
+            ]
+          ],
+          "wire_delta": -2,
+          "write_sites": [
+            [
+              0,
+              3,
+              0,
+              0
+            ],
+            [
+              0,
+              5,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": 5888397,
+          "id": "('chain3', ((116,), (117,), (556,)), ((116, (9, 24, 0, 0)), (117, (9, 27, 0, 0)), (556, (11, 24, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -458740,
+          "score_q20": -454837,
+          "timing_delta": 5892741,
+          "touched_nets": [
+            1,
+            12,
+            24,
+            114,
+            118,
+            124,
+            127,
+            135,
+            137,
+            154,
+            186,
+            215,
+            219,
+            226,
+            231,
+            318,
+            319,
+            381,
+            408,
+            423,
+            1728,
+            1731,
+            1732,
+            1736,
+            1741,
+            1747,
+            1748,
+            1749,
+            1750,
+            1751,
+            1752,
+            1753,
+            1754,
+            1755,
+            1756,
+            1757,
+            1758,
+            1759,
+            1760,
+            1761,
+            1762,
+            1763,
+            1764,
+            1765,
+            1766,
+            1767,
+            1768,
+            1769,
+            1770,
+            1771,
+            1772,
+            1773,
+            1774,
+            1775,
+            1776,
+            1777,
+            1778,
+            1779,
+            1780,
+            1781,
+            4302,
+            4388,
+            4389,
+            4752,
+            4753,
+            4754,
+            4755,
+            4756,
+            4757,
+            4758,
+            4759,
+            4760,
+            4761,
+            4762,
+            4763,
+            4764,
+            4765
+          ],
+          "trial": {
+            "116": [
+              9,
+              24,
+              0,
+              0
+            ],
+            "117": [
+              9,
+              27,
+              0,
+              0
+            ],
+            "556": [
+              11,
+              24,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              116
+            ],
+            [
+              117
+            ],
+            [
+              556
+            ]
+          ],
+          "wire_delta": 42,
+          "write_sites": [
+            [
+              9,
+              24,
+              0,
+              0
+            ],
+            [
+              9,
+              27,
+              0,
+              0
+            ],
+            [
+              11,
+              24,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": 0,
+          "id": "('move', ((692,),), ((692, (0, 9, 0, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": -3538855,
+          "score_q20": -281994,
+          "timing_delta": 0,
+          "touched_nets": [
+            8459
+          ],
+          "trial": {
+            "692": [
+              0,
+              9,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              692
+            ]
+          ],
+          "wire_delta": -2,
+          "write_sites": [
+            [
+              0,
+              6,
+              6,
+              0
+            ],
+            [
+              0,
+              9,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 16
+    },
+    {
+      "accepted": true,
+      "bisection_depth": 1,
+      "candidate_place": {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_17/candidate.place",
+        "sha256": "4c39784a8753f70692e31cc02d373957f1340b7c75620e1f37520d2595706acc"
+      },
+      "closure": {
+        "cpd_ns": 11.594,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_17/vpr_native_closure.json",
+        "report_sha256": "914f3359aee07a3994aef66b42a5288ba95c2ab702452c40b7a7d0384a390c4a",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79828
+      },
+      "color": 1,
+      "epoch": 2,
+      "incumbent_before": {
+        "cpd_ns": 11.5962,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_15/vpr_native_closure.json",
+        "report_sha256": "0606553ec4ed10e997ce0baf4b85f430b24c2abd6627ac8229ad005c17781783",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79582
+      },
+      "reason": "cpd_improved_at_least_1ps",
+      "transaction_count": 2,
+      "transaction_ids": [
+        "('chain3', ((62,), (155,), (299,)), ((62, (7, 6, 0, 0)), (155, (7, 7, 0, 0)), (299, (5, 7, 0, 0))))",
+        "('move', ((577,),), ((577, (0, 5, 0, 0)),))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": 2215307,
+          "id": "('chain3', ((62,), (155,), (299,)), ((62, (7, 6, 0, 0)), (155, (7, 7, 0, 0)), (299, (5, 7, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -124516,
+          "score_q20": -810350,
+          "timing_delta": 1664196,
+          "touched_nets": [
+            22,
+            43,
+            61,
+            130,
+            146,
+            157,
+            196,
+            282,
+            572,
+            589,
+            679,
+            735,
+            753,
+            758,
+            762,
+            763,
+            793,
+            794,
+            822,
+            840,
+            844,
+            849,
+            855,
+            877,
+            1010,
+            1033,
+            1035,
+            1040,
+            1041,
+            1043,
+            1044,
+            1045,
+            1049,
+            1050,
+            1072,
+            1107,
+            1108,
+            1109,
+            1110,
+            1111,
+            1112,
+            1113,
+            1114,
+            1115,
+            1116,
+            1117,
+            1118,
+            1119,
+            1120,
+            1121,
+            1122,
+            1123,
+            1149,
+            1150,
+            1169,
+            1170,
+            1233,
+            1234,
+            1313,
+            1317,
+            1366,
+            1369,
+            1376,
+            1384,
+            1388,
+            1506,
+            1508,
+            1515,
+            1576,
+            1717,
+            1903,
+            2065,
+            2250,
+            2251,
+            2252,
+            2253,
+            2254,
+            2255,
+            2256,
+            2257,
+            2453,
+            2694,
+            2711,
+            3106,
+            3702,
+            3703,
+            3704,
+            3705
+          ],
+          "trial": {
+            "155": [
+              7,
+              7,
+              0,
+              0
+            ],
+            "299": [
+              5,
+              7,
+              0,
+              0
+            ],
+            "62": [
+              7,
+              6,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              62
+            ],
+            [
+              155
+            ],
+            [
+              299
+            ]
+          ],
+          "wire_delta": 30,
+          "write_sites": [
+            [
+              5,
+              7,
+              0,
+              0
+            ],
+            [
+              7,
+              6,
+              0,
+              0
+            ],
+            [
+              7,
+              7,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -131262,
+          "id": "('move', ((577,),), ((577, (0, 5, 0, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": -13106,
+          "score_q20": -501929,
+          "timing_delta": -59420,
+          "touched_nets": [
+            4731
+          ],
+          "trial": {
+            "577": [
+              0,
+              5,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              577
+            ]
+          ],
+          "wire_delta": -2,
+          "write_sites": [
+            [
+              0,
+              3,
+              0,
+              0
+            ],
+            [
+              0,
+              5,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 17
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 1,
+      "candidate_place": {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_18/candidate.place",
+        "sha256": "a5fc8dbc82bc5f53eddc12c69d2c8b50e554c47e18d1ef919ca9849f11f3e5c9"
+      },
+      "closure": {
+        "cpd_ns": 11.5962,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_18/vpr_native_closure.json",
+        "report_sha256": "113e9b6d4c5d153bae005793223c528ad00e5ff77d7c3fd27666d537f3c12309",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79824
+      },
+      "color": 1,
+      "epoch": 2,
+      "incumbent_before": {
+        "cpd_ns": 11.594,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_17/vpr_native_closure.json",
+        "report_sha256": "914f3359aee07a3994aef66b42a5288ba95c2ab702452c40b7a7d0384a390c4a",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79828
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 2,
+      "transaction_ids": [
+        "('chain3', ((116,), (117,), (556,)), ((116, (9, 24, 0, 0)), (117, (9, 27, 0, 0)), (556, (11, 24, 0, 0))))",
+        "('move', ((692,),), ((692, (0, 9, 0, 0)),))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": 5888397,
+          "id": "('chain3', ((116,), (117,), (556,)), ((116, (9, 24, 0, 0)), (117, (9, 27, 0, 0)), (556, (11, 24, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -458740,
+          "score_q20": -454837,
+          "timing_delta": 5892741,
+          "touched_nets": [
+            1,
+            12,
+            24,
+            114,
+            118,
+            124,
+            127,
+            135,
+            137,
+            154,
+            186,
+            215,
+            219,
+            226,
+            231,
+            318,
+            319,
+            381,
+            408,
+            423,
+            1728,
+            1731,
+            1732,
+            1736,
+            1741,
+            1747,
+            1748,
+            1749,
+            1750,
+            1751,
+            1752,
+            1753,
+            1754,
+            1755,
+            1756,
+            1757,
+            1758,
+            1759,
+            1760,
+            1761,
+            1762,
+            1763,
+            1764,
+            1765,
+            1766,
+            1767,
+            1768,
+            1769,
+            1770,
+            1771,
+            1772,
+            1773,
+            1774,
+            1775,
+            1776,
+            1777,
+            1778,
+            1779,
+            1780,
+            1781,
+            4302,
+            4388,
+            4389,
+            4752,
+            4753,
+            4754,
+            4755,
+            4756,
+            4757,
+            4758,
+            4759,
+            4760,
+            4761,
+            4762,
+            4763,
+            4764,
+            4765
+          ],
+          "trial": {
+            "116": [
+              9,
+              24,
+              0,
+              0
+            ],
+            "117": [
+              9,
+              27,
+              0,
+              0
+            ],
+            "556": [
+              11,
+              24,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              116
+            ],
+            [
+              117
+            ],
+            [
+              556
+            ]
+          ],
+          "wire_delta": 42,
+          "write_sites": [
+            [
+              9,
+              24,
+              0,
+              0
+            ],
+            [
+              9,
+              27,
+              0,
+              0
+            ],
+            [
+              11,
+              24,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": 0,
+          "id": "('move', ((692,),), ((692, (0, 9, 0, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": -3538855,
+          "score_q20": -281994,
+          "timing_delta": 0,
+          "touched_nets": [
+            8459
+          ],
+          "trial": {
+            "692": [
+              0,
+              9,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              692
+            ]
+          ],
+          "wire_delta": -2,
+          "write_sites": [
+            [
+              0,
+              6,
+              6,
+              0
+            ],
+            [
+              0,
+              9,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 18
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 2,
+      "candidate_place": {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_19/candidate.place",
+        "sha256": "b6edce1e9b5456045ea5aa18ab2018b46a802be41af458086a4740ab4619369f"
+      },
+      "closure": {
+        "cpd_ns": 11.5962,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_19/vpr_native_closure.json",
+        "report_sha256": "3e4274ffeee813ef6edbc7c983003be3c02c7f061598b6de5d215317a0f5feb2",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79824
+      },
+      "color": 1,
+      "epoch": 2,
+      "incumbent_before": {
+        "cpd_ns": 11.594,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_17/vpr_native_closure.json",
+        "report_sha256": "914f3359aee07a3994aef66b42a5288ba95c2ab702452c40b7a7d0384a390c4a",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79828
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('chain3', ((116,), (117,), (556,)), ((116, (9, 24, 0, 0)), (117, (9, 27, 0, 0)), (556, (11, 24, 0, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": 5888397,
+          "id": "('chain3', ((116,), (117,), (556,)), ((116, (9, 24, 0, 0)), (117, (9, 27, 0, 0)), (556, (11, 24, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -458740,
+          "score_q20": -454837,
+          "timing_delta": 5892741,
+          "touched_nets": [
+            1,
+            12,
+            24,
+            114,
+            118,
+            124,
+            127,
+            135,
+            137,
+            154,
+            186,
+            215,
+            219,
+            226,
+            231,
+            318,
+            319,
+            381,
+            408,
+            423,
+            1728,
+            1731,
+            1732,
+            1736,
+            1741,
+            1747,
+            1748,
+            1749,
+            1750,
+            1751,
+            1752,
+            1753,
+            1754,
+            1755,
+            1756,
+            1757,
+            1758,
+            1759,
+            1760,
+            1761,
+            1762,
+            1763,
+            1764,
+            1765,
+            1766,
+            1767,
+            1768,
+            1769,
+            1770,
+            1771,
+            1772,
+            1773,
+            1774,
+            1775,
+            1776,
+            1777,
+            1778,
+            1779,
+            1780,
+            1781,
+            4302,
+            4388,
+            4389,
+            4752,
+            4753,
+            4754,
+            4755,
+            4756,
+            4757,
+            4758,
+            4759,
+            4760,
+            4761,
+            4762,
+            4763,
+            4764,
+            4765
+          ],
+          "trial": {
+            "116": [
+              9,
+              24,
+              0,
+              0
+            ],
+            "117": [
+              9,
+              27,
+              0,
+              0
+            ],
+            "556": [
+              11,
+              24,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              116
+            ],
+            [
+              117
+            ],
+            [
+              556
+            ]
+          ],
+          "wire_delta": 42,
+          "write_sites": [
+            [
+              9,
+              24,
+              0,
+              0
+            ],
+            [
+              9,
+              27,
+              0,
+              0
+            ],
+            [
+              11,
+              24,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 19
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 2,
+      "candidate_place": {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_20/candidate.place",
+        "sha256": "ddec086adf287a6c3ec35246c748cfe06f224ed4ab36a6f04363a8d79d1d090d"
+      },
+      "closure": {
+        "cpd_ns": 11.594,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_20/vpr_native_closure.json",
+        "report_sha256": "e4ddbf80d994e4c3a830e7bb5bf98a6658dd8b878d129756982bff7156c567ed",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79828
+      },
+      "color": 1,
+      "epoch": 2,
+      "incumbent_before": {
+        "cpd_ns": 11.594,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_17/vpr_native_closure.json",
+        "report_sha256": "914f3359aee07a3994aef66b42a5288ba95c2ab702452c40b7a7d0384a390c4a",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79828
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('move', ((692,),), ((692, (0, 9, 0, 0)),))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": 0,
+          "id": "('move', ((692,),), ((692, (0, 9, 0, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": -3538855,
+          "score_q20": -281994,
+          "timing_delta": 0,
+          "touched_nets": [
+            8459
+          ],
+          "trial": {
+            "692": [
+              0,
+              9,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              692
+            ]
+          ],
+          "wire_delta": -2,
+          "write_sites": [
+            [
+              0,
+              6,
+              6,
+              0
+            ],
+            [
+              0,
+              9,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 20
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 0,
+      "candidate_place": {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_21/candidate.place",
+        "sha256": "a5285400017e0a8aa852870498c096eb0689d1db80fdb64184dd20b621c4902d"
+      },
+      "closure": {
+        "cpd_ns": 11.594,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_21/vpr_native_closure.json",
+        "report_sha256": "8902bac9e2d86f3e4eee92a78031fc4dd1a9adee914e6c5dc37cb456270c9f51",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79914
+      },
+      "color": 2,
+      "epoch": 2,
+      "incumbent_before": {
+        "cpd_ns": 11.594,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_17/vpr_native_closure.json",
+        "report_sha256": "914f3359aee07a3994aef66b42a5288ba95c2ab702452c40b7a7d0384a390c4a",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79828
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('chain3', ((212,), (484,), (492,)), ((212, (15, 27, 0, 0)), (484, (15, 28, 0, 0)), (492, (16, 26, 0, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": 2676843,
+          "id": "('chain3', ((212,), (484,), (492,)), ((212, (15, 27, 0, 0)), (484, (15, 28, 0, 0)), (492, (16, 26, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -108132,
+          "score_q20": -1543613,
+          "timing_delta": 1691396,
+          "touched_nets": [
+            33,
+            43,
+            61,
+            94,
+            146,
+            154,
+            155,
+            157,
+            164,
+            166,
+            172,
+            186,
+            196,
+            200,
+            219,
+            220,
+            221,
+            226,
+            231,
+            282,
+            318,
+            319,
+            452,
+            453,
+            454,
+            456,
+            458,
+            461,
+            462,
+            463,
+            465,
+            522,
+            524,
+            561,
+            564,
+            579,
+            870,
+            1813,
+            2822,
+            2827,
+            2834,
+            2836,
+            2845,
+            2846,
+            2847,
+            2848,
+            2849,
+            2850,
+            2851,
+            2852,
+            2853,
+            2854,
+            2855,
+            2856,
+            2857,
+            2858,
+            2859,
+            2860,
+            3007,
+            3018,
+            3048,
+            3709,
+            4129,
+            4133,
+            4284,
+            4285,
+            4488,
+            4567,
+            4571,
+            4580,
+            4581,
+            4660,
+            4661,
+            4664,
+            4665,
+            4666,
+            4667
+          ],
+          "trial": {
+            "212": [
+              15,
+              27,
+              0,
+              0
+            ],
+            "484": [
+              15,
+              28,
+              0,
+              0
+            ],
+            "492": [
+              16,
+              26,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              212
+            ],
+            [
+              484
+            ],
+            [
+              492
+            ]
+          ],
+          "wire_delta": 39,
+          "write_sites": [
+            [
+              15,
+              27,
+              0,
+              0
+            ],
+            [
+              15,
+              28,
+              0,
+              0
+            ],
+            [
+              16,
+              26,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 21
+    },
+    {
+      "accepted": true,
+      "bisection_depth": 0,
+      "candidate_place": {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_22/candidate.place",
+        "sha256": "9c7f091b2b6d6bd5767391c14d96f36fb451464fd8f85c26b4e1c6b1c700d2ae"
+      },
+      "closure": {
+        "cpd_ns": 11.5929,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_22/vpr_native_closure.json",
+        "report_sha256": "8d58e799d7c22db1e650066744b49df4da254c075a49e9d527f0825b2cfc116b",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79926
+      },
+      "color": 3,
+      "epoch": 2,
+      "incumbent_before": {
+        "cpd_ns": 11.594,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_17/vpr_native_closure.json",
+        "report_sha256": "914f3359aee07a3994aef66b42a5288ba95c2ab702452c40b7a7d0384a390c4a",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79828
+      },
+      "reason": "cpd_improved_at_least_1ps",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('chain3', ((300,), (313,), (398,)), ((300, (23, 24, 0, 0)), (313, (23, 27, 0, 0)), (398, (23, 25, 0, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": 214075,
+          "id": "('chain3', ((300,), (313,), (398,)), ((300, (23, 24, 0, 0)), (313, (23, 27, 0, 0)), (398, (23, 25, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -334224,
+          "score_q20": -735531,
+          "timing_delta": 54785,
+          "touched_nets": [
+            33,
+            43,
+            61,
+            94,
+            130,
+            146,
+            151,
+            155,
+            157,
+            186,
+            192,
+            196,
+            213,
+            215,
+            220,
+            221,
+            226,
+            231,
+            282,
+            420,
+            436,
+            466,
+            539,
+            579,
+            589,
+            636,
+            870,
+            1813,
+            2584,
+            2613,
+            2615,
+            2616,
+            2618,
+            2620,
+            2622,
+            2626,
+            2718,
+            2827,
+            2831,
+            2836,
+            2855,
+            2946,
+            3156,
+            3364,
+            3430,
+            3435,
+            3437,
+            3438,
+            3572,
+            3581,
+            3585,
+            3595,
+            3604,
+            3611,
+            3612,
+            3624,
+            3628,
+            3665,
+            3666,
+            3667,
+            3668,
+            3670,
+            3706,
+            3707,
+            3708,
+            3709,
+            3710,
+            3711,
+            3712,
+            3713,
+            3714,
+            3715,
+            3748,
+            3749,
+            3808,
+            3810,
+            3811,
+            3812,
+            3813,
+            3814,
+            3815,
+            3816,
+            3817,
+            3865,
+            3872,
+            3882,
+            3951,
+            4351,
+            4352,
+            4353,
+            4354,
+            4355
+          ],
+          "trial": {
+            "300": [
+              23,
+              24,
+              0,
+              0
+            ],
+            "313": [
+              23,
+              27,
+              0,
+              0
+            ],
+            "398": [
+              23,
+              25,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              300
+            ],
+            [
+              313
+            ],
+            [
+              398
+            ]
+          ],
+          "wire_delta": 8,
+          "write_sites": [
+            [
+              23,
+              24,
+              0,
+              0
+            ],
+            [
+              23,
+              25,
+              0,
+              0
+            ],
+            [
+              23,
+              27,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 22
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 0,
+      "candidate_place": {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_23/candidate.place",
+        "sha256": "e51f59c3da03a74012cbd42387686e8e47080b24d27bfe75c0788d58987d993c"
+      },
+      "closure": {
+        "cpd_ns": 11.5962,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_23/vpr_native_closure.json",
+        "report_sha256": "5d330f39660c122b9dcf56557de8981a8c53175d35c1bbe6911c9e4022231f4b",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 80192
+      },
+      "color": 0,
+      "epoch": 3,
+      "incumbent_before": {
+        "cpd_ns": 11.5929,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_22/vpr_native_closure.json",
+        "report_sha256": "8d58e799d7c22db1e650066744b49df4da254c075a49e9d527f0825b2cfc116b",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79926
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 2,
+      "transaction_ids": [
+        "('chain3', ((24,), (126,), (128,)), ((24, (11, 23, 0, 0)), (126, (11, 22, 0, 0)), (128, (13, 21, 0, 0))))",
+        "('move', ((577,),), ((577, (0, 7, 0, 0)),))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": 3286585,
+          "id": "('chain3', ((24,), (126,), (128,)), ((24, (11, 23, 0, 0)), (126, (11, 22, 0, 0)), (128, (13, 21, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -183496,
+          "score_q20": -698070,
+          "timing_delta": 2435277,
+          "touched_nets": [
+            22,
+            24,
+            33,
+            61,
+            66,
+            94,
+            124,
+            155,
+            157,
+            172,
+            186,
+            215,
+            220,
+            226,
+            231,
+            260,
+            271,
+            282,
+            319,
+            320,
+            332,
+            336,
+            359,
+            362,
+            367,
+            370,
+            377,
+            381,
+            405,
+            408,
+            409,
+            415,
+            423,
+            434,
+            435,
+            438,
+            492,
+            493,
+            494,
+            495,
+            496,
+            589,
+            692,
+            780,
+            1283,
+            1290,
+            1490,
+            1493,
+            1727,
+            1729,
+            1731,
+            1733,
+            1735,
+            1739,
+            1740,
+            1750,
+            1753,
+            1771,
+            1781,
+            1784,
+            1786,
+            1787,
+            1798,
+            1799,
+            1800,
+            1804,
+            1827,
+            1840,
+            1842,
+            1846,
+            1850,
+            1875,
+            1876,
+            1877,
+            1878,
+            1879,
+            1887,
+            1888,
+            1889,
+            1890,
+            1891,
+            1892,
+            1893,
+            1894,
+            1895,
+            1896,
+            8459
+          ],
+          "trial": {
+            "126": [
+              11,
+              22,
+              0,
+              0
+            ],
+            "128": [
+              13,
+              21,
+              0,
+              0
+            ],
+            "24": [
+              11,
+              23,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              24
+            ],
+            [
+              126
+            ],
+            [
+              128
+            ]
+          ],
+          "wire_delta": -6,
+          "write_sites": [
+            [
+              11,
+              22,
+              0,
+              0
+            ],
+            [
+              11,
+              23,
+              0,
+              0
+            ],
+            [
+              13,
+              21,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "congestion_delta": -132333,
+          "id": "('move', ((577,),), ((577, (0, 7, 0, 0)),))",
+          "kind": "move",
+          "routed_timing_delta": -19660,
+          "score_q20": -545941,
+          "timing_delta": -59420,
+          "touched_nets": [
+            4731
+          ],
+          "trial": {
+            "577": [
+              0,
+              7,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              577
+            ]
+          ],
+          "wire_delta": -2,
+          "write_sites": [
+            [
+              0,
+              5,
+              0,
+              0
+            ],
+            [
+              0,
+              7,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 23
+    },
+    {
+      "accepted": false,
+      "bisection_depth": 1,
+      "candidate_place": {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_24/candidate.place",
+        "sha256": "473ea61e13c3230b64616166355c0ad89bfad6574550a459cc337ba2c6465c96"
+      },
+      "closure": {
+        "cpd_ns": 11.5962,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_24/vpr_native_closure.json",
+        "report_sha256": "26a3f3ad975a607d71e5706d3121d5347fb914d96ce512b1bb1c9799dbeb144a",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 80163
+      },
+      "color": 0,
+      "epoch": 3,
+      "incumbent_before": {
+        "cpd_ns": 11.5929,
+        "legal": true,
+        "report_path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2A_RUNS_20261110/clma_measured_1_A/work/trial_22/vpr_native_closure.json",
+        "report_sha256": "8d58e799d7c22db1e650066744b49df4da254c075a49e9d527f0825b2cfc116b",
+        "returncode": 0,
+        "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+        "status": "pass",
+        "wirelength": 79926
+      },
+      "reason": "timing_first_acceptance_not_met",
+      "transaction_count": 1,
+      "transaction_ids": [
+        "('chain3', ((24,), (126,), (128,)), ((24, (11, 23, 0, 0)), (126, (11, 22, 0, 0)), (128, (13, 21, 0, 0))))"
+      ],
+      "transactions": [
+        {
+          "congestion_delta": 3286585,
+          "id": "('chain3', ((24,), (126,), (128,)), ((24, (11, 23, 0, 0)), (126, (11, 22, 0, 0)), (128, (13, 21, 0, 0))))",
+          "kind": "chain3",
+          "routed_timing_delta": -183496,
+          "score_q20": -698070,
+          "timing_delta": 2435277,
+          "touched_nets": [
+            22,
+            24,
+            33,
+            61,
+            66,
+            94,
+            124,
+            155,
+            157,
+            172,
+            186,
+            215,
+            220,
+            226,
+            231,
+            260,
+            271,
+            282,
+            319,
+            320,
+            332,
+            336,
+            359,
+            362,
+            367,
+            370,
+            377,
+            381,
+            405,
+            408,
+            409,
+            415,
+            423,
+            434,
+            435,
+            438,
+            492,
+            493,
+            494,
+            495,
+            496,
+            589,
+            692,
+            780,
+            1283,
+            1290,
+            1490,
+            1493,
+            1727,
+            1729,
+            1731,
+            1733,
+            1735,
+            1739,
+            1740,
+            1750,
+            1753,
+            1771,
+            1781,
+            1784,
+            1786,
+            1787,
+            1798,
+            1799,
+            1800,
+            1804,
+            1827,
+            1840,
+            1842,
+            1846,
+            1850,
+            1875,
+            1876,
+            1877,
+            1878,
+            1879,
+            1887,
+            1888,
+            1889,
+            1890,
+            1891,
+            1892,
+            1893,
+            1894,
+            1895,
+            1896,
+            8459
+          ],
+          "trial": {
+            "126": [
+              11,
+              22,
+              0,
+              0
+            ],
+            "128": [
+              13,
+              21,
+              0,
+              0
+            ],
+            "24": [
+              11,
+              23,
+              0,
+              0
+            ]
+          },
+          "units": [
+            [
+              24
+            ],
+            [
+              126
+            ],
+            [
+              128
+            ]
+          ],
+          "wire_delta": -6,
+          "write_sites": [
+            [
+              11,
+              22,
+              0,
+              0
+            ],
+            [
+              11,
+              23,
+              0,
+              0
+            ],
+            [
+              13,
+              21,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "trial": 24
+    }
+  ]
+}

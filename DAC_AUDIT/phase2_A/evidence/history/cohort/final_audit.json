@@ -1,0 +1,176 @@
+{
+  "cases": [
+    {
+      "design": "adder",
+      "error": "stage failed: baseline exit 1",
+      "failed_stage": "baseline",
+      "logs": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/adder/baseline/stdout.log",
+          "sha256": "772ef480b660093fad064fed1788d99f2527364422da645c6376ec3286531595"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/adder/baseline/stderr.log",
+          "sha256": "04d779ecccc363b39e239d97feae41569b4752ca898d2b14a5fd762820ad6b35"
+        }
+      ],
+      "process": {
+        "elapsed_s": 0.1918704230338335,
+        "returncode": 1
+      },
+      "process_sha256": "658b885cd65816c56513d9df03d742a625f7d9e4eb5f57fbb163fc73171f6ef8",
+      "retained_native_trials": 0,
+      "status": "fail"
+    },
+    {
+      "cpd_change_pct": 0.0,
+      "design": "alu4",
+      "repeats_exact": true,
+      "status": "pass",
+      "verified_native_trials": 48,
+      "wirelength_change_pct": -0.19832985386221136
+    },
+    {
+      "cpd_change_pct": -3.9910788527309116,
+      "design": "apex2",
+      "repeats_exact": true,
+      "status": "pass",
+      "verified_native_trials": 36,
+      "wirelength_change_pct": 0.1739022420967684
+    },
+    {
+      "cpd_change_pct": 0.0,
+      "design": "des",
+      "repeats_exact": true,
+      "status": "pass",
+      "verified_native_trials": 48,
+      "wirelength_change_pct": -0.45475566517650945
+    },
+    {
+      "design": "ex1010",
+      "error": "stage failed: paths exit 3",
+      "failed_stage": "paths",
+      "logs": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex1010/inputs/paths.stdout.log",
+          "sha256": "2f94463ca3f69bbd9a5a1e32802d5584714571aa79a8c8ee5355c50756c9bee5"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/ex1010/inputs/paths.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "process": {
+        "elapsed_s": 38.120526952669024,
+        "returncode": 3
+      },
+      "process_sha256": "491f643966a3d2ffb967bf543d2b440b31fad8c53cd7d3fa3b81cfd312f601c3",
+      "retained_native_trials": 0,
+      "status": "fail"
+    },
+    {
+      "cpd_change_pct": -4.613986204084397,
+      "design": "ex5p",
+      "repeats_exact": true,
+      "status": "pass",
+      "verified_native_trials": 48,
+      "wirelength_change_pct": 0.11159582022928216
+    },
+    {
+      "cpd_change_pct": -0.8328231938602104,
+      "design": "misex3",
+      "repeats_exact": true,
+      "status": "pass",
+      "verified_native_trials": 48,
+      "wirelength_change_pct": -0.5231037489102031
+    },
+    {
+      "design": "s298",
+      "error": "stage failed: paths exit 3",
+      "failed_stage": "paths",
+      "logs": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/s298/inputs/paths.stdout.log",
+          "sha256": "cf9886b4c9a15271c7c094433c11d23bc4b88534e904ece0c9e44de87cdeb4d6"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/s298/inputs/paths.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "process": {
+        "elapsed_s": 6.465220469981432,
+        "returncode": 3
+      },
+      "process_sha256": "3dd4017e634c717c951f1e8b8bb02b2e909f50aabb55061d9104da332a0c5f69",
+      "retained_native_trials": 0,
+      "status": "fail"
+    },
+    {
+      "design": "s38417",
+      "error": "stage failed: paths exit 3",
+      "failed_stage": "paths",
+      "logs": [
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/s38417/inputs/paths.stdout.log",
+          "sha256": "ffbe46d1df4da5a5acff5935cd07feee0f690bc3498e2fef7b0caea1da1e18f4"
+        },
+        {
+          "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/tileplace_new_cohort_2026-09-29/s38417/inputs/paths.stderr.log",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "process": {
+        "elapsed_s": 34.53836726397276,
+        "returncode": 3
+      },
+      "process_sha256": "0bef52bba2c461390fe57d5edd7c76218bd4f63a34bd6a95e5f7da9d770bb5fe",
+      "retained_native_trials": 0,
+      "status": "fail"
+    },
+    {
+      "cpd_change_pct": -2.0896745069262646,
+      "design": "s38584.1",
+      "repeats_exact": true,
+      "status": "pass",
+      "verified_native_trials": 48,
+      "wirelength_change_pct": -0.20942107980951308
+    },
+    {
+      "cpd_change_pct": -0.020152979434784335,
+      "design": "seq",
+      "repeats_exact": true,
+      "status": "pass",
+      "verified_native_trials": 48,
+      "wirelength_change_pct": -0.13385937720163943
+    },
+    {
+      "cpd_change_pct": -0.057895177057309954,
+      "design": "spla",
+      "repeats_exact": true,
+      "status": "pass",
+      "verified_native_trials": 48,
+      "wirelength_change_pct": 0.09907257065799868
+    },
+    {
+      "cpd_change_pct": -5.67994471369917,
+      "design": "tseng",
+      "repeats_exact": true,
+      "status": "pass",
+      "verified_native_trials": 32,
+      "wirelength_change_pct": -0.77946768060837
+    }
+  ],
+  "completed_cases": 13,
+  "expected_cases": 13,
+  "matrix_sha256": "4398a64b04d1caafe269b86375503778b5436743dbbe68cdda55313a03451b1b",
+  "protocol_sha256": "c548ad1e181551cdfb0bbbf5409a49f833bd994b177110675d5ca77574b8df72",
+  "schema": "TILEPLACE_NEW_COHORT_AUDIT_V1",
+  "scope": "Successful subset metrics; all failures retained in denominator. Prospective source-sealed local logic-oriented cohort; exposure review has limitations, strict historical blindness and architecture generalization not established",
+  "status": "pass",
+  "successful_cases": 9,
+  "successful_subset_geomean_change_pct": {
+    "cpd": -1.9442463124749731,
+    "wirelength": -0.21317236843360066
+  }
+}
