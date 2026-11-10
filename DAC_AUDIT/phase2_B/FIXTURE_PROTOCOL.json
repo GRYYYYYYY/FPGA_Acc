@@ -1,0 +1,8 @@
+{
+  "script_sha256": "8b33bbd31d170133da69021c9b8243fd9a31fb8381557ce087b05c2d4a39acd3",
+  "run_once_after_supervisor": true,
+  "timeout_s": 30,
+  "shared_total_budget_s": 7200,
+  "no_retry": true,
+  "purpose": "close dedicated macro/chain/guard/no-good synthetic coverage without changing any production algorithm or parameters"
+}
