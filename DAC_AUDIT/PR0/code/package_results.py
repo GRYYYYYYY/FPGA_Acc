@@ -3,7 +3,7 @@ import csv,json,pathlib,hashlib,shutil,collections
 root=pathlib.Path(__file__).resolve().parents[3];dest=root/'DAC_AUDIT/PR0';runtime=root.parent/'FPGA_Acc_PR0_RUNS_20261110';original=root.parent/'FPGA_Acc'
 def writecsv(p,rows):
  if not rows:return
- with p.open('w',newline='') as f:w=csv.DictWriter(f,fieldnames=list(rows[0]));w.writeheader();w.writerows(rows)
+ with p.open('w',newline='') as f:w=csv.DictWriter(f,fieldnames=list(rows[0]),lineterminator="\n");w.writeheader();w.writerows(rows)
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 rows=[];times=[];inspections=[];summary={};e=dest/'evidence';e.mkdir(exist_ok=True)
 for case in ['diffeq','clma']:
