@@ -1,0 +1,255 @@
+[
+  {
+    "name": "generate",
+    "argv": [
+      "/usr/bin/python3",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_20261110/DAC_AUDIT/PR0/code/generate_reference.py",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_20261110/projects/persistroute/src/search_hbm.cpp",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_RUNS_20261110/wide_search.cpp"
+    ],
+    "start_unix": 1794345365.0486667,
+    "wall_s": 0.03423723578453064,
+    "exit_code": 0,
+    "status": "completed",
+    "cpu_affinity": [
+      0,
+      2,
+      3,
+      4
+    ],
+    "peak_rss_kib_time_file": "generate.time",
+    "budget_used_s": 0.03423723578453064
+  },
+  {
+    "name": "compile",
+    "argv": [
+      "g++",
+      "-std=c++17",
+      "-O2",
+      "-pthread",
+      "-I/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_20261110/DAC_AUDIT/PR0/code",
+      "-I/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_20261110/projects/persistroute/include",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_20261110/DAC_AUDIT/PR0/code/pr0.cpp",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_RUNS_20261110/wide_search.cpp",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_20261110/projects/persistroute/src/search_hbm.cpp",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_20261110/projects/persistroute/src/commit_hbm.cpp",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_20261110/projects/persistroute/src/multiqueue.cpp",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_20261110/projects/persistroute/src/hbm_cmodel_backend.cpp",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_20261110/projects/persistroute/src/accelerated_pathfinder.cpp",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_20261110/projects/persistroute/src/pathfinder.cpp",
+      "-o",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_RUNS_20261110/pr0"
+    ],
+    "start_unix": 1794345365.083485,
+    "wall_s": 9.580521382391453,
+    "exit_code": 0,
+    "status": "completed",
+    "cpu_affinity": [
+      0,
+      2,
+      3,
+      4
+    ],
+    "peak_rss_kib_time_file": "compile.time",
+    "budget_used_s": 9.614758618175983
+  },
+  {
+    "name": "synthetic",
+    "argv": [
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_RUNS_20261110/pr0",
+      "synthetic",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_RUNS_20261110/counterexamples"
+    ],
+    "start_unix": 1794345374.6670818,
+    "wall_s": 0.06584243103861809,
+    "exit_code": 0,
+    "status": "completed",
+    "cpu_affinity": [
+      0,
+      2,
+      3,
+      4
+    ],
+    "peak_rss_kib_time_file": "synthetic.time",
+    "budget_used_s": 9.680601049214602
+  },
+  {
+    "name": "diffeq_capture",
+    "argv": [
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_RUNS_20261110/pr0",
+      "capture",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/diffeq_seed1_cw200/input/vpr_input",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_RUNS_20261110/diffeq"
+    ],
+    "start_unix": 1794345374.733561,
+    "wall_s": 0.21635059267282486,
+    "exit_code": 0,
+    "status": "completed",
+    "cpu_affinity": [
+      0,
+      2,
+      3,
+      4
+    ],
+    "peak_rss_kib_time_file": "diffeq_capture.time",
+    "budget_used_s": 9.896951641887426
+  },
+  {
+    "name": "clma_capture",
+    "argv": [
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_RUNS_20261110/pr0",
+      "capture",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/clma_seed1_cw200/input/vpr_input",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_RUNS_20261110/clma"
+    ],
+    "start_unix": 1794345374.950538,
+    "wall_s": 0.7670807205140591,
+    "exit_code": 0,
+    "status": "completed",
+    "cpu_affinity": [
+      0,
+      2,
+      3,
+      4
+    ],
+    "peak_rss_kib_time_file": "clma_capture.time",
+    "budget_used_s": 10.664032362401485
+  },
+  {
+    "name": "diffeq_performance",
+    "argv": [
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_RUNS_20261110/pr0",
+      "performance",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/diffeq_seed1_cw200/input/vpr_input",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_RUNS_20261110/diffeq"
+    ],
+    "start_unix": 1794345375.718372,
+    "wall_s": 0.11598683521151543,
+    "exit_code": 0,
+    "status": "completed",
+    "cpu_affinity": [
+      0,
+      2,
+      3,
+      4
+    ],
+    "peak_rss_kib_time_file": "diffeq_performance.time",
+    "budget_used_s": 10.780019197613
+  },
+  {
+    "name": "clma_performance",
+    "argv": [
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_RUNS_20261110/pr0",
+      "performance",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/clma_seed1_cw200/input/vpr_input",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_RUNS_20261110/clma"
+    ],
+    "start_unix": 1794345375.8351364,
+    "wall_s": 0.3662024214863777,
+    "exit_code": 0,
+    "status": "completed",
+    "cpu_affinity": [
+      0,
+      2,
+      3,
+      4
+    ],
+    "peak_rss_kib_time_file": "clma_performance.time",
+    "budget_used_s": 11.146221619099379
+  },
+  {
+    "name": "supplement_compile",
+    "argv": [
+      "g++",
+      "-std=c++17",
+      "-O2",
+      "-pthread",
+      "-I/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_20261110/DAC_AUDIT/PR0/code",
+      "-I/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_20261110/projects/persistroute/include",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_20261110/DAC_AUDIT/PR0/code/pr0.cpp",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_RUNS_20261110/wide_search.cpp",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_20261110/projects/persistroute/src/search_hbm.cpp",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_20261110/projects/persistroute/src/commit_hbm.cpp",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_20261110/projects/persistroute/src/multiqueue.cpp",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_20261110/projects/persistroute/src/hbm_cmodel_backend.cpp",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_20261110/projects/persistroute/src/accelerated_pathfinder.cpp",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_20261110/projects/persistroute/src/pathfinder.cpp",
+      "-o",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_RUNS_20261110/pr0_supplement"
+    ],
+    "start_unix": 1794345509.8109818,
+    "wall_s": 9.329751219600439,
+    "exit_code": 0,
+    "status": "completed",
+    "cpu_affinity": [
+      4,
+      7,
+      16,
+      19
+    ],
+    "peak_rss_kib_time_file": "supplement_compile.time",
+    "budget_used_s": 20.475972838699818
+  },
+  {
+    "name": "supplement_shared_trunk",
+    "argv": [
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_RUNS_20261110/pr0_supplement",
+      "shared_trunk",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_RUNS_20261110/counterexamples"
+    ],
+    "start_unix": 1794345519.1472003,
+    "wall_s": 0.009764764457941055,
+    "exit_code": 0,
+    "status": "completed",
+    "cpu_affinity": [
+      4,
+      7,
+      16,
+      19
+    ],
+    "peak_rss_kib_time_file": "supplement_shared_trunk.time",
+    "budget_used_s": 20.48573760315776
+  },
+  {
+    "name": "diffeq_inspection",
+    "argv": [
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_RUNS_20261110/pr0_supplement",
+      "inspect",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/diffeq_seed1_cw200/input/vpr_input",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_RUNS_20261110/diffeq"
+    ],
+    "start_unix": 1794345519.1577566,
+    "wall_s": 0.06560143828392029,
+    "exit_code": 0,
+    "status": "completed",
+    "cpu_affinity": [
+      4,
+      7,
+      16,
+      19
+    ],
+    "peak_rss_kib_time_file": "diffeq_inspection.time",
+    "budget_used_s": 20.55133904144168
+  },
+  {
+    "name": "clma_inspection",
+    "argv": [
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_RUNS_20261110/pr0_supplement",
+      "inspect",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/clma_seed1_cw200/input/vpr_input",
+      "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PR0_RUNS_20261110/clma"
+    ],
+    "start_unix": 1794345519.2240458,
+    "wall_s": 0.21690494194626808,
+    "exit_code": 0,
+    "status": "completed",
+    "cpu_affinity": [
+      4,
+      7,
+      16,
+      19
+    ],
+    "peak_rss_kib_time_file": "clma_inspection.time",
+    "budget_used_s": 20.768243983387947
+  }
+]

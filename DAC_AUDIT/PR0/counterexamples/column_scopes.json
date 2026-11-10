@@ -1,0 +1,96 @@
+{
+  "off_path_decrease": {
+    "commit_observation_executed": true,
+    "placeholder_columns_if_no_commit": []
+  },
+  "off_path_increase": {
+    "commit_observation_executed": true,
+    "placeholder_columns_if_no_commit": []
+  },
+  "on_path_version": {
+    "commit_observation_executed": true,
+    "placeholder_columns_if_no_commit": []
+  },
+  "other_net_full": {
+    "commit_observation_executed": true,
+    "placeholder_columns_if_no_commit": []
+  },
+  "same_net_owned": {
+    "commit_observation_executed": true,
+    "placeholder_columns_if_no_commit": []
+  },
+  "ripup_decrease": {
+    "commit_observation_executed": true,
+    "placeholder_columns_if_no_commit": []
+  },
+  "tree_seed_change": {
+    "commit_observation_executed": true,
+    "placeholder_columns_if_no_commit": []
+  },
+  "same_net_repeat": {
+    "commit_observation_executed": true,
+    "placeholder_columns_if_no_commit": []
+  },
+  "integer_commit_boundary": {
+    "commit_observation_executed": true,
+    "placeholder_columns_if_no_commit": []
+  },
+  "failed_rollback": {
+    "commit_observation_executed": true,
+    "placeholder_columns_if_no_commit": []
+  },
+  "cost_saturation": {
+    "commit_observation_executed": false,
+    "placeholder_columns_if_no_commit": [
+      "F_valid",
+      "P_status",
+      "N_status",
+      "PN_state_consistent"
+    ]
+  },
+  "path_pool_boundary": {
+    "commit_observation_executed": false,
+    "placeholder_columns_if_no_commit": [
+      "F_valid",
+      "P_status",
+      "N_status",
+      "PN_state_consistent"
+    ]
+  },
+  "full_read_boundary": {
+    "commit_observation_executed": false,
+    "placeholder_columns_if_no_commit": [
+      "F_valid",
+      "P_status",
+      "N_status",
+      "PN_state_consistent"
+    ]
+  },
+  "queue_boundary": {
+    "commit_observation_executed": false,
+    "placeholder_columns_if_no_commit": [
+      "F_valid",
+      "P_status",
+      "N_status",
+      "PN_state_consistent"
+    ]
+  },
+  "path_count_boundary": {
+    "commit_observation_executed": false,
+    "placeholder_columns_if_no_commit": [
+      "F_valid",
+      "P_status",
+      "N_status",
+      "PN_state_consistent"
+    ]
+  },
+  "unreachable_known_graph": {
+    "commit_observation_executed": false,
+    "placeholder_columns_if_no_commit": [
+      "F_valid",
+      "P_status",
+      "N_status",
+      "PN_state_consistent"
+    ]
+  }
+}

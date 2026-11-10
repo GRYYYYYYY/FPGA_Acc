@@ -1,0 +1,134 @@
+[
+  {
+    "case": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_adaptive1_matrix_2026-08-28/clma_seed1_cw200",
+    "source_commit": "unknown",
+    "executable_sha256": "unknown",
+    "exact_queue_depth": "unknown",
+    "exact_transaction_capacity": "unknown",
+    "per_query_flags": "unknown",
+    "evidence_files": [
+      {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_adaptive1_matrix_2026-08-28/clma_seed1_cw200/case_result.json",
+        "bytes": 5425,
+        "sha256": "d4503ba7997c9737dff38c3afc93ab7faad77a103df74a01cdba0c19c59ad799",
+        "rehashed_this_run": true
+      },
+      {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_adaptive1_matrix_2026-08-28/clma_seed1_cw200/run/host_result.json",
+        "bytes": 1061,
+        "sha256": "0290e51283bd84ebe1b38d570b3f598e5ed726f96ff81608012b1e70fd00659a",
+        "rehashed_this_run": true
+      },
+      {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_adaptive1_matrix_2026-08-28/clma_seed1_cw200/run/clma.accelerated_iterations.csv",
+        "bytes": 1874,
+        "sha256": "ebf18f0469604027623a89b6331f56937c2cf1e507c08715910e95d26d579e3f",
+        "rehashed_this_run": true
+      },
+      {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_adaptive1_matrix_2026-08-28/clma_seed1_cw200/run/clma.performance_iterations.csv",
+        "bytes": 1205,
+        "sha256": "4700cfc3c26b01573ac6c5d5cb2e17b975be918b7fada1b2af16246bea98584d",
+        "rehashed_this_run": true
+      }
+    ],
+    "host_summary": {
+      "iterations": 30,
+      "tasks": 13458,
+      "routed_tasks": 12493,
+      "searches": 194299,
+      "overused_resources": 0,
+      "exit_status": 3,
+      "legal": false,
+      "wall_s_measured": 1099.557208528,
+      "search_ms": 521405,
+      "commit_ms": 919.404
+    },
+    "summed_iteration_failed": 28945,
+    "failure_classes": {
+      "count_overflow": "unknown",
+      "pool_overflow": "unknown",
+      "queue_overflow": "unknown",
+      "unreachable": "unknown",
+      "version_conflict": "unknown",
+      "budget_or_iteration_cap": "30_iterations"
+    },
+    "last_iteration": {
+      "iteration": "29",
+      "issue_width": "1",
+      "waves": "306",
+      "launched": "5626",
+      "committed": "4661",
+      "failed": "965",
+      "overused_resources": "0",
+      "resource_hash": "77e19c8490e9e067",
+      "route_hash": "e00b1f8a7d85c592"
+    }
+  },
+  {
+    "case": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/clma_seed1_cw200",
+    "source_commit": "unknown",
+    "executable_sha256": "unknown",
+    "exact_queue_depth": "unknown",
+    "exact_transaction_capacity": "unknown",
+    "per_query_flags": "unknown",
+    "evidence_files": [
+      {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/clma_seed1_cw200/case_result.json",
+        "bytes": 7068,
+        "sha256": "58b126b41ca051c31ad919209e3378854d339fcd1f668d3ef1aade74438c26e8",
+        "rehashed_this_run": true
+      },
+      {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/clma_seed1_cw200/run/host_result.json",
+        "bytes": 1054,
+        "sha256": "02ef0d6b67c3ecea27f1ad0992e91cdde7b75d14f5599a57af86562d3350d1ff",
+        "rehashed_this_run": true
+      },
+      {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/clma_seed1_cw200/run/clma.accelerated_iterations.csv",
+        "bytes": 528,
+        "sha256": "dc5d54aa421b5f29f30be6d30716e969464b02b9064b3b15f272b0a906717e3f",
+        "rehashed_this_run": true
+      },
+      {
+        "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/clma_seed1_cw200/run/clma.performance_iterations.csv",
+        "bytes": 311,
+        "sha256": "606c3122cbcc1c849d89d1fd35e364e1e8ce54c660faf6ad1ba4c90038aac1f2",
+        "rehashed_this_run": true
+      }
+    ],
+    "host_summary": {
+      "iterations": 8,
+      "tasks": 13458,
+      "routed_tasks": 13458,
+      "searches": 41467,
+      "overused_resources": 0,
+      "exit_status": 0,
+      "legal": true,
+      "wall_s_measured": 154.6889530490007,
+      "search_ms": 81415.5,
+      "commit_ms": 4.60969
+    },
+    "summed_iteration_failed": 0,
+    "failure_classes": {
+      "count_overflow": "unknown",
+      "pool_overflow": "unknown",
+      "queue_overflow": "unknown",
+      "unreachable": "unknown",
+      "version_conflict": "unknown",
+      "budget_or_iteration_cap": "not_terminal_failure"
+    },
+    "last_iteration": {
+      "iteration": "7",
+      "issue_width": "8",
+      "waves": "1",
+      "launched": "2",
+      "committed": "2",
+      "failed": "0",
+      "overused_resources": "0",
+      "resource_hash": "fe32ef58df8c506f",
+      "route_hash": "897097860e25517b"
+    }
+  }
+]

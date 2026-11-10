@@ -1,0 +1,124 @@
+{
+  "diffeq": {
+    "queries": 16,
+    "N_committed": 16,
+    "P_committed": 8,
+    "P_rejection_reasons": {
+      "version": 8
+    },
+    "F_replays": 14,
+    "N_path_differences_from_S": 5,
+    "N_current_cost_differences_from_S": 5,
+    "N_new_overuse_candidates": 5,
+    "score_unique_range": [
+      1692,
+      18048
+    ],
+    "full_dependency_range": [
+      1693,
+      18049
+    ],
+    "path_read_range": [
+      5,
+      7
+    ],
+    "queue_peak_max": 10386,
+    "repeat_mismatches": 0,
+    "state_mismatches": 0,
+    "performance_ms": {
+      "S": {
+        "search_total_ms": 16.512731,
+        "search_kernel_ms": 10.479917,
+        "validation_ms": 0.0,
+        "commit_total_ms": 0.012398,
+        "commit_kernel_ms": 0.003048
+      },
+      "F": {
+        "search_total_ms": 29.390084,
+        "search_kernel_ms": 21.186677,
+        "validation_ms": 0.306138,
+        "commit_total_ms": 0.009779,
+        "commit_kernel_ms": 0.0029
+      },
+      "P": {
+        "search_total_ms": 13.745306,
+        "search_kernel_ms": 10.218031,
+        "validation_ms": 0.0,
+        "commit_total_ms": 0.01254,
+        "commit_kernel_ms": 0.002525
+      },
+      "N": {
+        "search_total_ms": 13.486626,
+        "search_kernel_ms": 10.048157,
+        "validation_ms": 0.0,
+        "commit_total_ms": 0.008549,
+        "commit_kernel_ms": 0.002398
+      }
+    }
+  },
+  "clma": {
+    "queries": 16,
+    "N_committed": 16,
+    "P_committed": 6,
+    "P_rejection_reasons": {
+      "version": 10
+    },
+    "F_replays": 13,
+    "N_path_differences_from_S": 5,
+    "N_current_cost_differences_from_S": 5,
+    "N_new_overuse_candidates": 5,
+    "score_unique_range": [
+      2630,
+      38950
+    ],
+    "full_dependency_range": [
+      2631,
+      38951
+    ],
+    "path_read_range": [
+      5,
+      7
+    ],
+    "queue_peak_max": 24830,
+    "repeat_mismatches": 0,
+    "state_mismatches": 0,
+    "performance_ms": {
+      "S": {
+        "search_total_ms": 64.357713,
+        "search_kernel_ms": 34.557102,
+        "validation_ms": 0.0,
+        "commit_total_ms": 0.017155,
+        "commit_kernel_ms": 0.004551
+      },
+      "F": {
+        "search_total_ms": 108.804268,
+        "search_kernel_ms": 68.550794,
+        "validation_ms": 0.902558,
+        "commit_total_ms": 0.014831,
+        "commit_kernel_ms": 0.004237
+      },
+      "P": {
+        "search_total_ms": 52.102499,
+        "search_kernel_ms": 33.687248,
+        "validation_ms": 0.0,
+        "commit_total_ms": 0.016947,
+        "commit_kernel_ms": 0.002521
+      },
+      "N": {
+        "search_total_ms": 51.637261,
+        "search_kernel_ms": 34.102061,
+        "validation_ms": 0.0,
+        "commit_total_ms": 0.013542,
+        "commit_kernel_ms": 0.004098
+      }
+    }
+  },
+  "resources": {
+    "subprocess_wall_s": 20.768243983387947,
+    "diagnostic_wall_excluding_compiles_s": 1.8579713813960552,
+    "max_rss_kib": 237176,
+    "timeouts": 0,
+    "failed_subprocesses": 0,
+    "note": "outer monotonic subprocess wall including compiler; peak RSS max child not sum; RLIMIT_AS 8 GiB each sequential job"
+  }
+}

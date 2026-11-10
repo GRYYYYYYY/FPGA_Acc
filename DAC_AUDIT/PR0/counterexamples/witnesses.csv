@@ -1,0 +1,17 @@
+id,old_status,current_status,old_path_fnv,current_path_fnv,old_cost,current_cost,full_reads,queue_peak,F_valid,P_status,N_status,PN_state_consistent,note
+off_path_decrease,1,1,7619304702698333527,490191056644053076,5,2,4,2,0,4,4,1,legal_stale_path_fresh_optimum_changes
+off_path_increase,1,1,7619304702698333527,7619304702698333527,5,5,4,2,0,4,4,1,F_rejects_but_same_path
+on_path_version,1,1,7619304702698333527,7619304702698333527,5,5,4,2,0,2,4,1,P_rejects_N_accepts
+other_net_full,1,1,7619304702698333527,7619304702698333527,5,5,4,2,0,2,4,1,negotiated_intermediate_overuse_not_final_illegality
+same_net_owned,1,1,7619304702698333527,7619304702698333527,5,2,4,2,0,4,4,1,P_bypasses_version_same_net_no_increment
+ripup_decrease,1,1,7619304702698333527,490191056644053076,5,2,4,2,0,4,4,1,modeled_event_not_historical_trace
+tree_seed_change,1,1,7619304702698333527,17086694953553481862,5,1,4,2,0,4,4,1,resource_versions_alone_do_not_bind_tree
+same_net_repeat,1,1,0,0,2,2,2,1,0,4,4,1,occupancy_trunk=1;same_owner_bypass
+integer_commit_boundary,1,1,0,0,0,0,2,1,0,0,4,1,occupancy=65535;version=0;outside_valid_unique_owner_range
+failed_rollback,1,1,0,0,0,0,2,1,0,0,2,1,out_of_bounds_last_path_no_partial_writes
+cost_saturation,1,1,0,0,4294967295,4294967295,3,1,1,0,0,1,uint64_intermediate_uint32_saturation
+path_pool_boundary,3,1,0,0,0,0,0,0,0,0,0,1,one_entry_capacity_insufficient
+full_read_boundary,3,1,0,0,0,102,65538,65535,0,0,0,1,full_read_count_limit
+queue_boundary,3,1,0,0,0,0,4,3,0,0,0,1,queue_capacity
+path_count_boundary,3,1,0,0,0,65535,65536,1,0,0,0,1,65536_path_entries_including_attachment
+unreachable_known_graph,3,3,0,0,0,0,0,1,0,0,0,1,exhausted_under_hop_bound
