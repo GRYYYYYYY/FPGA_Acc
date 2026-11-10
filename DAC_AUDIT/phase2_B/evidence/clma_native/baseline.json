@@ -1,0 +1,2981 @@
+{
+  "case": "clma",
+  "budget_s": 450,
+  "b0": {
+    "channel_width": 200,
+    "command": [
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+      "--net_file",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/clma_seed1_cw200_native_closure_v2/vpr_input.net",
+      "--place_file",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/clma_seed1_cw200_native_closure_v2/vpr_input.place",
+      "--route_file",
+      "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/clma_seed1_cw200_native_closure_v2/vpr_output.route",
+      "--seed",
+      "1",
+      "--num_workers",
+      "1",
+      "--route_chan_width",
+      "200",
+      "--echo_file",
+      "on",
+      "--route",
+      "--analysis"
+    ],
+    "cpd_ns": 11.6084,
+    "inputs": {
+      "architecture": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "sha256": "01d513d8084e3a099f7941ee2b99eb23ac55b6df6f717dad9585de8a8736b179"
+      },
+      "circuit": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "sha256": "3151ef9596486448557a91f2b892d207dcd3a13d508ce72ba1d9946ce18d096e"
+      },
+      "golden_place": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/clma_seed1_cw200/clma.golden.place",
+        "sha256": "19ad5018d2a1c6c78bdc41111b454c6dd62536e82cb3a1df0979500b753c14b2"
+      },
+      "netlist": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/vpr9/baseline_runs/vpr_serial/clma_seed1_cw200/clma.net",
+        "sha256": "6095191f2407b45f0d23bc5bfd75380d9a0ce5b4b325f9ec5901fca26a9fce9c"
+      },
+      "vpr": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "sha256": "a90dc1b3380ebda705e85f176db0cc3d6be1b71ab9ee887db819febc8b62bafc"
+      }
+    },
+    "legal": true,
+    "max_router_iterations": null,
+    "max_rss_mib": 134.9,
+    "outputs": {
+      "native_macros": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/clma_seed1_cw200_native_closure_v2/place_macros.echo",
+        "sha256": "0efcfecb18fd7b26f5fff38f8e7afb45d3da42b7febc428ec4b045c63b7c93ee"
+      },
+      "post_routing_netlist": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/clma_seed1_cw200_native_closure_v2/vpr_input.net.post_routing",
+        "sha256": "d0e3c536317ce9ad46d2ff3bca15858ca6fdd03fa0428d7dc417d20e8a800a8b"
+      },
+      "route": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/clma_seed1_cw200_native_closure_v2/vpr_output.route",
+        "sha256": "462601bfa7cca643df97fff37779c4ba653d9ec7ec614b000649670c7258598b"
+      },
+      "stderr": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/clma_seed1_cw200_native_closure_v2/vpr.stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/clma_seed1_cw200_native_closure_v2/vpr.stdout.log",
+        "sha256": "4e60c18f2e4420309627713696e91f68b97847b17abdf0179cd5368ac0b5814c"
+      },
+      "vpr_netlist_copy": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/clma_seed1_cw200_native_closure_v2/vpr_input.net",
+        "sha256": "6095191f2407b45f0d23bc5bfd75380d9a0ce5b4b325f9ec5901fca26a9fce9c"
+      },
+      "vpr_place_copy": {
+        "path": "/inspire/hdd/global_user/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/work/clma_seed1_cw200_native_closure_v2/vpr_input.place",
+        "sha256": "28e5bc4e56a8e0d6932366e3dd65fb64e04a256f4b8b7279c4a660294806be71"
+      }
+    },
+    "placement_validation": {
+      "blocks": 719,
+      "legal": true,
+      "macros": 0,
+      "occupied_sites": 719,
+      "placement_sha256": "28e5bc4e56a8e0d6932366e3dd65fb64e04a256f4b8b7279c4a660294806be71",
+      "schema": "TILEPLACE_CPU_GOLDEN_V1"
+    },
+    "returncode": 0,
+    "routing_iterations": 15,
+    "schema": "TILEPLACE_VPR_NATIVE_CLOSURE_V1",
+    "seed": 1,
+    "status": "pass",
+    "vpr_revision": "8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+    "vpr_version": "9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+    "wall_s": 13.11129181087017,
+    "wirelength": 79857
+  },
+  "incumbent": {
+    "status": "pass",
+    "legal": true,
+    "cpd_ns": 11.4244,
+    "wirelength": 78815
+  },
+  "trials": [
+    {
+      "seed": 1,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_001/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/clma_seed1_cw200/clma.golden.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_001/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_001/output.route",
+        "--seed",
+        "1",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 0.07528465241193771,
+      "returncode": 0,
+      "native_s": 9.885246627032757,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.7439,
+      "wirelength": 79116,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_001/output.place",
+          "bytes": 16992,
+          "sha256": "b994effca18b2b89e00750533da1e38287c03962e080cb0f55b27c0a5ae3eb10"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_001/output.route",
+          "bytes": 4170320,
+          "sha256": "460c0cd80212e4f61f2291af69bd3e495d3bb6f6df969a72d4a69ba28639c4a5"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_001/stdout.log",
+          "bytes": 35076,
+          "sha256": "95c4f2c8d0f5fb929391cbdf3e411ba63a01015e181c5d6a0f6704f64ce60498"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_001/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 10.132988903671503,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 2,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_002/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/clma_seed1_cw200/clma.golden.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_002/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_002/output.route",
+        "--seed",
+        "2",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 10.14661993086338,
+      "returncode": 0,
+      "native_s": 10.085899285972118,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.7462,
+      "wirelength": 78813,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_002/output.place",
+          "bytes": 16995,
+          "sha256": "3a127aec10a0579ad360071dc8c12f14ca7c648b0c91cd0da9f03ab5c2fccffb"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_002/output.route",
+          "bytes": 4165670,
+          "sha256": "3edc3c08c70fce7a463f70c77585742e0d3023dda4cbfb4fbff97e26e2cb0f05"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_002/stdout.log",
+          "bytes": 34887,
+          "sha256": "139f4024e1098c90588d6a0db2b7722eeb6a0bfa8c222717791ac20c5c5d88ea"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_002/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 20.351072762161493,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 3,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_003/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/clma_seed1_cw200/clma.golden.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_003/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_003/output.route",
+        "--seed",
+        "3",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 20.359391424804926,
+      "returncode": 0,
+      "native_s": 10.135854326188564,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.8671,
+      "wirelength": 79091,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_003/output.place",
+          "bytes": 16991,
+          "sha256": "70e927b2b00ff13e2617c088f770a719edd41ed02d15cfce510f31db39f1a477"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_003/output.route",
+          "bytes": 4169446,
+          "sha256": "cb048680b78ba0155d8b17508e3ae80b3567b03173db07b122b6f705c20ec5cf"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_003/stdout.log",
+          "bytes": 35146,
+          "sha256": "86974957f6e8ca15c03d675239766fc67b6eff2e4d244f5b7d789eee0c1b71de"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_003/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 30.606981594115496,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 4,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_004/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/clma_seed1_cw200/clma.golden.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_004/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_004/output.route",
+        "--seed",
+        "4",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 30.615483622998,
+      "returncode": 0,
+      "native_s": 9.835643734782934,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.7417,
+      "wirelength": 78913,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_004/output.place",
+          "bytes": 16994,
+          "sha256": "9df0d7afb01e27573c693adfd5a13dfb82d51e73dd4873bd0b8a83d04ed2f646"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_004/output.route",
+          "bytes": 4165897,
+          "sha256": "57494b563503238770be48aea5fd74d91b3ce8627b09bf347695ff31c23a0831"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_004/stdout.log",
+          "bytes": 35011,
+          "sha256": "f55bc45ba766fedba18a49d460f2ad04ce539f5d9074c5577ad3727bc6f5013b"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_004/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 40.56292052194476,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 5,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_005/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/clma_seed1_cw200/clma.golden.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_005/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_005/output.route",
+        "--seed",
+        "5",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 40.571219589561224,
+      "returncode": 0,
+      "native_s": 10.035634599626064,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.7371,
+      "wirelength": 78581,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_005/output.place",
+          "bytes": 16987,
+          "sha256": "3801113fa28cbee1dcf06e769be0d0658390f658dda0d086e4030380c9b607fd"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_005/output.route",
+          "bytes": 4161924,
+          "sha256": "d003cd9f9e7611c7f0d3da1642669cca53f95b71154347d4ecfc2ff7012622ce"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_005/stdout.log",
+          "bytes": 35024,
+          "sha256": "6f758268cdb130efda58a4df3078818b16eb66894b12667b1317fcee338541cb"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_005/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 50.7129512578249,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 6,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_006/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/clma_seed1_cw200/clma.golden.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_006/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_006/output.route",
+        "--seed",
+        "6",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 50.72183379530907,
+      "returncode": 0,
+      "native_s": 9.834317740052938,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.8882,
+      "wirelength": 78649,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_006/output.place",
+          "bytes": 16995,
+          "sha256": "d6e19237ff907d68dc98b51a0be56eed5a923370fb0fca0b60f86967ed318c59"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_006/output.route",
+          "bytes": 4163211,
+          "sha256": "a184b7a3ddfd76eaef171fba4530fc87b1b35b5d7f34ab3d973c571755ded6c6"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_006/stdout.log",
+          "bytes": 34857,
+          "sha256": "177d9fabec8a0badbdc0416e314e75ed9980824a84658ab9d6f2cc9be609d2cf"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_006/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 60.66461953148246,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 7,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_007/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/clma_seed1_cw200/clma.golden.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_007/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_007/output.route",
+        "--seed",
+        "7",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 60.672690108418465,
+      "returncode": 0,
+      "native_s": 9.984712455421686,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.8716,
+      "wirelength": 78795,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_007/output.place",
+          "bytes": 16989,
+          "sha256": "4f3a8e0a9ad63fe59de6feb582743f6cc5c24a474184dd378acd3bf9abe14f1b"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_007/output.route",
+          "bytes": 4164492,
+          "sha256": "efe26325b4e3a6ba02eccc44bfb6fb4f9fe07aa51dcda5013f19e6bd0d8c4b6b"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_007/stdout.log",
+          "bytes": 35196,
+          "sha256": "07dfc1e79e6378ea11a8b8faa77ae75607e9edaa132546f4fedc6c77ebdcd2c3"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_007/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 70.76581984385848,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 8,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_008/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/clma_seed1_cw200/clma.golden.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_008/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_008/output.route",
+        "--seed",
+        "8",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 70.77486998960376,
+      "returncode": 0,
+      "native_s": 9.934093974530697,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.866,
+      "wirelength": 78706,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_008/output.place",
+          "bytes": 16994,
+          "sha256": "e204d466bc4c0051b39c6f57297586a7fedea6124eece06beaf584bb40500e79"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_008/output.route",
+          "bytes": 4164140,
+          "sha256": "f3c9c33cd041fef00e0b291e2d5a143196450ebc4d1d3ec6487bd8b4feb160e7"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_008/stdout.log",
+          "bytes": 34864,
+          "sha256": "ae8c72dc8a2bfee89ef056270fdac3b9f2a1ff6a0cfd3844d9e500d6c58dc16e"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_008/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 80.80879471451044,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 9,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_009/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/clma_seed1_cw200/clma.golden.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_009/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_009/output.route",
+        "--seed",
+        "9",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 80.8171219304204,
+      "returncode": 0,
+      "native_s": 9.985223047435284,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.885,
+      "wirelength": 78350,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_009/output.place",
+          "bytes": 16990,
+          "sha256": "0f014fedaf85a442d56371bb189f2ff11888a0386f3dba35ffaed1c911801f3f"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_009/output.route",
+          "bytes": 4157783,
+          "sha256": "dfd71a30f3f0c260fdc8f4d7861bdfefc1a75fc555666dfc279d424fe258d539"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_009/stdout.log",
+          "bytes": 34721,
+          "sha256": "efe000a69d7031fb4de307bd2eba7e83e69e959c26229b95690345cd2a8dc0da"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_009/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 90.90791783854365,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 10,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_010/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/experiments/clma_seed1_cw200/clma.golden.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_010/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_010/output.route",
+        "--seed",
+        "10",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 90.91605350002646,
+      "returncode": 0,
+      "native_s": 9.93429035693407,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.5929,
+      "wirelength": 79070,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_010/output.place",
+          "bytes": 16987,
+          "sha256": "d65cd4bab6fab40c59a8dfe47628dabee5b1f01b14f37dfa817806df5cfda55d"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_010/output.route",
+          "bytes": 4169021,
+          "sha256": "681b8bf0c0850d3502fb265bafe9f8236694592de9177af9fb2ddd7cbb9dc962"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_010/stdout.log",
+          "bytes": 34987,
+          "sha256": "8917cdf5c094063cd7b13b9fb659c6c637496dde6dc23cb83c92723149464158"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_010/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 100.95414158701897,
+      "accepted": true,
+      "reason": "cpd_improved_at_least_1ps"
+    },
+    {
+      "seed": 11,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_011/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_010/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_011/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_011/output.route",
+        "--seed",
+        "11",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 100.9616833627224,
+      "returncode": 0,
+      "native_s": 9.233999237418175,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.885,
+      "wirelength": 78614,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_011/output.place",
+          "bytes": 16998,
+          "sha256": "88040f88ce1c754e156e96878260d66d24dd11474f7ab3df5e575092aaab0f11"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_011/output.route",
+          "bytes": 4162450,
+          "sha256": "6d36ecafe977ee9e8a8ad6802afdc1cd8c3249b0315d028f73c6f8265c4f1563"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_011/stdout.log",
+          "bytes": 33244,
+          "sha256": "eca35a5bc1c665d583bcccce5e33c342e9c59b787eb5a3ca5135f611771b420f"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_011/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 110.3021426834166,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 12,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_012/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_010/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_012/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_012/output.route",
+        "--seed",
+        "12",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 110.31094806268811,
+      "returncode": 0,
+      "native_s": 10.284811928868294,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.5896,
+      "wirelength": 78669,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_012/output.place",
+          "bytes": 16989,
+          "sha256": "eba14aec400ba2ebec3af4a053f15d5eea6e3a107fbaf8ebc4c4be0deb29c5d8"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_012/output.route",
+          "bytes": 4162408,
+          "sha256": "bfa70f09d09b4d2b7d03f494aa6c1670f817804765faf1aabd44a3c76e646747"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_012/stdout.log",
+          "bytes": 34179,
+          "sha256": "593753262a45fb1722d719c91704e1f812739ac5232cd095bae7106c0f0ec83d"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_012/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 120.69445922225714,
+      "accepted": true,
+      "reason": "cpd_improved_at_least_1ps"
+    },
+    {
+      "seed": 13,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_013/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_012/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_013/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_013/output.route",
+        "--seed",
+        "13",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 120.70190090686083,
+      "returncode": 0,
+      "native_s": 9.843606550246477,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.5951,
+      "wirelength": 78584,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_013/output.place",
+          "bytes": 16988,
+          "sha256": "0248bead08338ebd448a8c5bf6c10e644f422282183c7cd45f3ed64cbdd5115c"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_013/output.route",
+          "bytes": 4160404,
+          "sha256": "0cde68715f09c39ef857fa60ccf3b30a882f60f68a17dbe779d8af33efd5e39e"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_013/stdout.log",
+          "bytes": 34548,
+          "sha256": "688010daef3961438edd30e2cdd3d1c5162532fa01b02741b85b49d584d7b80d"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_013/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 130.6481065750122,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 14,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_014/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_012/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_014/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_014/output.route",
+        "--seed",
+        "14",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 130.65701923891902,
+      "returncode": 0,
+      "native_s": 10.435505524277687,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.594,
+      "wirelength": 78937,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_014/output.place",
+          "bytes": 16986,
+          "sha256": "cfa42617b54f541c56dc6d550aee0ede9cc35695e54910f4f8d53ff6c7e8769b"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_014/output.route",
+          "bytes": 4167464,
+          "sha256": "6a2224bf1d0fbf08be177b2fe2aaebb09d9caa03455826f1b44745b15cdcd6e8"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_014/stdout.log",
+          "bytes": 34664,
+          "sha256": "0c09a4d52bc4b5111b0cbf00cd3efba2d31778ff8ef00c134c6a4e51786371eb"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_014/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 141.20108258351684,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 15,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_015/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_012/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_015/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_015/output.route",
+        "--seed",
+        "15",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 141.2110212817788,
+      "returncode": 0,
+      "native_s": 9.935622461140156,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.5983,
+      "wirelength": 78945,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_015/output.place",
+          "bytes": 16989,
+          "sha256": "f7fb00431f446309c3c5d659a0e58bca97d31c0c3f3d4fa19ec33e42757c7cbc"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_015/output.route",
+          "bytes": 4166436,
+          "sha256": "95442ebe134e799571ca5240773feea617697767d18a59e1b1d5fdd7c329a30c"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_015/stdout.log",
+          "bytes": 34476,
+          "sha256": "7ae3f6703a8698c15f4e8bed2885c6c665fee55e691b4f9eecfd0001c98eccf0"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_015/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 151.24635158479214,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 16,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_016/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_012/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_016/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_016/output.route",
+        "--seed",
+        "16",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 151.25603940710425,
+      "returncode": 0,
+      "native_s": 9.785553105175495,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.5511,
+      "wirelength": 78607,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_016/output.place",
+          "bytes": 16989,
+          "sha256": "5a76d66c0598dfa6328142243949a75e659ee61350994ff03e17d528ee94d7f4"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_016/output.route",
+          "bytes": 4161175,
+          "sha256": "c0d16c02deb9dbf426f4fd461f924f7d0e778f93b1255f15d610a7d9efd4dd91"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_016/stdout.log",
+          "bytes": 34411,
+          "sha256": "af4701c4f1d770be3c4efa83c48655e95b6c586aecaf7972f756a1f3a703184a"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_016/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 161.145848184824,
+      "accepted": true,
+      "reason": "cpd_improved_at_least_1ps"
+    },
+    {
+      "seed": 17,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_017/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_016/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_017/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_017/output.route",
+        "--seed",
+        "17",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 161.15600008890033,
+      "returncode": 0,
+      "native_s": 9.483460288494825,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.5677,
+      "wirelength": 78693,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_017/output.place",
+          "bytes": 16991,
+          "sha256": "f3a14d29718238883324146cc9e1226e831948481274f321a267e8605121dee1"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_017/output.route",
+          "bytes": 4163393,
+          "sha256": "96a7d630a6d69c6c62737e3950af92b4dd4412ff051ce5a46121888c5d80cb99"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_017/stdout.log",
+          "bytes": 34153,
+          "sha256": "1eceb088e7949d4467b538389647729b1d0ccd1538ca85626d67e409983402fb"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_017/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 170.75134598836303,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 18,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_018/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_016/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_018/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_018/output.route",
+        "--seed",
+        "18",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 170.76117084175348,
+      "returncode": 0,
+      "native_s": 9.63314113765955,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.5577,
+      "wirelength": 79103,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_018/output.place",
+          "bytes": 16996,
+          "sha256": "d675b85fa59b813c3000cc38d3dca862950d640be963812322c7e449d0a0be7c"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_018/output.route",
+          "bytes": 4169569,
+          "sha256": "b6700979f4b77f96bc1f78bb5856e38121d2aceb14a1d53ca742519bb3e58bb5"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_018/stdout.log",
+          "bytes": 34281,
+          "sha256": "ac50ccaa6456e5492c97a342e544a047c774e60d2b4e7c384dea50870b41518b"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_018/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 180.49664052203298,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 19,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_019/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_016/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_019/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_019/output.route",
+        "--seed",
+        "19",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 180.50469562783837,
+      "returncode": 0,
+      "native_s": 9.232319496572018,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.8695,
+      "wirelength": 78734,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_019/output.place",
+          "bytes": 16999,
+          "sha256": "6469fd4c9f850872d325dad2ae51bc65828fa0bb305a56f177f585a35db7ced3"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_019/output.route",
+          "bytes": 4163764,
+          "sha256": "05673246831a4525c245c2fba91d22ad525c183200422934a843421842734b49"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_019/stdout.log",
+          "bytes": 32960,
+          "sha256": "cc744c07cc9860a6eaa8308f48d6cfd08c014247cb0c4e13595b0aab0e3bafed"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_019/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 189.83331695571542,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 20,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_020/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_016/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_020/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_020/output.route",
+        "--seed",
+        "20",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 189.84198305755854,
+      "returncode": 0,
+      "native_s": 9.232434593141079,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.5905,
+      "wirelength": 78781,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_020/output.place",
+          "bytes": 16991,
+          "sha256": "0b54a2e3f5660c9a7840e3aebdafbff920f8f1a13dd4bbfb36b670e8e08d9644"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_020/output.route",
+          "bytes": 4163276,
+          "sha256": "9b329c3ff849fda66e634174a2ebb33155602768dc0d042348f896b1243910e8"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_020/stdout.log",
+          "bytes": 33283,
+          "sha256": "dbf3d0c86f2aa48dd5f4253a1df91a0c7f71c0791a0b01e9bb9fcf18cd41b323"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_020/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 199.17477997019887,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 21,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_021/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_016/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_021/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_021/output.route",
+        "--seed",
+        "21",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 199.20129986479878,
+      "returncode": 0,
+      "native_s": 9.032610353082418,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.7107,
+      "wirelength": 78386,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_021/output.place",
+          "bytes": 17000,
+          "sha256": "23724f2950daba919e60dcb0de25db6813eb30ef9a33cd5dc9e7e3674b3042d8"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_021/output.route",
+          "bytes": 4157890,
+          "sha256": "c3a1f8d3d7695e97b9cd0be9b77f1bb482f110fbe68038c33c35d1330d07fb40"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_021/stdout.log",
+          "bytes": 32933,
+          "sha256": "b222e953c7de83c26de57a3cdb6cd58b7ddb9f6073144c18f04ee53e48d7bc5c"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_021/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 208.3374908864498,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 22,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_022/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_016/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_022/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_022/output.route",
+        "--seed",
+        "22",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 208.3460157699883,
+      "returncode": 0,
+      "native_s": 9.282434228807688,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.54,
+      "wirelength": 78906,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_022/output.place",
+          "bytes": 16997,
+          "sha256": "624612661bfdca89d2c07b5a498f5892478d8f74dc3e4520c20f466cd8c0702f"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_022/output.route",
+          "bytes": 4167175,
+          "sha256": "97f163da599b00777d80fddce9702b056412227d976a4e389d0a86897bb0c3c1"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_022/stdout.log",
+          "bytes": 33105,
+          "sha256": "1ead8b5d41d3a649b0f2ab986df0789841f482a7182dbd21826724814b7776bb"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_022/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 217.72211579978466,
+      "accepted": true,
+      "reason": "cpd_improved_at_least_1ps"
+    },
+    {
+      "seed": 23,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_023/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_022/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_023/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_023/output.route",
+        "--seed",
+        "23",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 217.73075909167528,
+      "returncode": 0,
+      "native_s": 9.282588880509138,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.8466,
+      "wirelength": 78542,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_023/output.place",
+          "bytes": 17001,
+          "sha256": "0e7d8978c76480ef1b7c1cbb072ffbad2be4cd5510ca2a78611522a2bdccf6b8"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_023/output.route",
+          "bytes": 4161946,
+          "sha256": "cfd73c4433bb68ec339c06c77db1d79da917c3d0970699dd3011f571164db839"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_023/stdout.log",
+          "bytes": 32803,
+          "sha256": "9886ca21b8b108ef21856e674db058816777d542cd54f59537fc3dcdc0620283"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_023/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 227.11173050105572,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 24,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_024/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_022/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_024/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_024/output.route",
+        "--seed",
+        "24",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 227.12025652080774,
+      "returncode": 0,
+      "native_s": 9.18275074660778,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.8551,
+      "wirelength": 78886,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_024/output.place",
+          "bytes": 16997,
+          "sha256": "e98b179a9c4cbe0951299dea49183b8b0175cc4caefd413420f0e808464ffd19"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_024/output.route",
+          "bytes": 4165948,
+          "sha256": "10a560ec0fcc5599fd2df419ae5ea22cf3c41e5c3ddbc131cfb34619e0444c18"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_024/stdout.log",
+          "bytes": 32958,
+          "sha256": "938a95567de98dbf0eb73c3c019329d5b7dbb8eeced0069d8d50c01cc8996ab5"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_024/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 236.40157334506512,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 25,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_025/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_022/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_025/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_025/output.route",
+        "--seed",
+        "25",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 236.41099375486374,
+      "returncode": 0,
+      "native_s": 9.132418256253004,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.9755,
+      "wirelength": 78641,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_025/output.place",
+          "bytes": 17002,
+          "sha256": "7f3f33971b0f63db8a06c12e4f578a301ea2e06de8b9a73e43a856073008336e"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_025/output.route",
+          "bytes": 4162176,
+          "sha256": "a4bf2b0693050bd381d90c0df1705b9a950660d8e7e6d31809c1e8c9e8590b58"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_025/stdout.log",
+          "bytes": 32959,
+          "sha256": "b6fd609c94c5fecca7d46d1898bb15f3834d5d1065c43a0382d8ab94f88f138f"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_025/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 245.6424055546522,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 26,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_026/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_022/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_026/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_026/output.route",
+        "--seed",
+        "26",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 245.65042316168547,
+      "returncode": 0,
+      "native_s": 9.032036826014519,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.8795,
+      "wirelength": 79044,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_026/output.place",
+          "bytes": 17002,
+          "sha256": "efd30995a339b1d88009c055bc0d4fda36aa32fb092cf0e8a11f231080941746"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_026/output.route",
+          "bytes": 4168292,
+          "sha256": "10fe6af9584b99950684ff787d242097110ba6f074da28356d955c381ecbe51f"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_026/stdout.log",
+          "bytes": 32973,
+          "sha256": "8d3bee2e750236b476a949cc0fb05a422da81013274469742eb24738c5c9e962"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_026/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 254.77674082666636,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 27,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_027/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_022/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_027/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_027/output.route",
+        "--seed",
+        "27",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 254.78539910539985,
+      "returncode": 0,
+      "native_s": 9.283149614930153,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.465,
+      "wirelength": 79051,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_027/output.place",
+          "bytes": 16992,
+          "sha256": "ff73cd22ef3906f2f25e0a5bf44dc932e6972ce407771dc859e6d1603c030876"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_027/output.route",
+          "bytes": 4168008,
+          "sha256": "241d5ebabf5dceeaa540322e507d010f1a5050600a4b0308dabb0626e8e78aee"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_027/stdout.log",
+          "bytes": 33416,
+          "sha256": "4669cd353fa0f2b8103196ad6a7470c885ad72c7abb009d00381aacad7b92e38"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_027/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 264.16750767081976,
+      "accepted": true,
+      "reason": "cpd_improved_at_least_1ps"
+    },
+    {
+      "seed": 28,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_028/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_027/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_028/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_028/output.route",
+        "--seed",
+        "28",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 264.3004390746355,
+      "returncode": 0,
+      "native_s": 9.884731780737638,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.4244,
+      "wirelength": 78815,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_028/output.place",
+          "bytes": 16992,
+          "sha256": "58c00ebdf5e4b4dd1f03934fadd6222653841e837e1c1636d1f81256fc2a0c48"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_028/output.route",
+          "bytes": 4165504,
+          "sha256": "69a2e408ab1054eaae022e555450b5dedca89aee408c75531dfc6ed0efe40158"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_028/stdout.log",
+          "bytes": 34900,
+          "sha256": "5253ea1b1f821ac5b5ed637bf53eddb1031ff4411b9cc4d9915414510cb77836"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_028/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 274.287880115211,
+      "accepted": true,
+      "reason": "cpd_improved_at_least_1ps"
+    },
+    {
+      "seed": 29,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_029/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_028/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_029/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_029/output.route",
+        "--seed",
+        "29",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 274.29672388732433,
+      "returncode": 0,
+      "native_s": 9.933499813079834,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 12.1122,
+      "wirelength": 78393,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_029/output.place",
+          "bytes": 16994,
+          "sha256": "41206693bfe82fac2cba50e66253dceae37a9b909975acafcbfc0c68a710eb59"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_029/output.route",
+          "bytes": 4159265,
+          "sha256": "d83b31b62c180a0f0b3bcfb2d6b2fd0ebce58a834e15c0e83dfe1cfcb44f38b6"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_029/stdout.log",
+          "bytes": 35119,
+          "sha256": "4f8250566806faffec691133378ecb4a30ae261aa2e206957922ae8fd1b2d41d"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_029/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 284.34201507642865,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 30,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_030/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_028/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_030/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_030/output.route",
+        "--seed",
+        "30",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 284.35062946751714,
+      "returncode": 0,
+      "native_s": 9.333907149732113,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.616,
+      "wirelength": 78535,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_030/output.place",
+          "bytes": 17005,
+          "sha256": "d3322eee90202084051432a5ed0949217dcba00516a2571ba1c2288d4ed2180a"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_030/output.route",
+          "bytes": 4161050,
+          "sha256": "53eee595c87950af8b65d49369ee6ecce248a69320ec300bdb47eb4a6dbd22c1"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_030/stdout.log",
+          "bytes": 33271,
+          "sha256": "8debe608031a57835d844502daba95ad472ea66cb679175618a1bf735ef62e1e"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_030/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 293.78115893155336,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 31,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_031/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_028/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_031/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_031/output.route",
+        "--seed",
+        "31",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 293.79124212637544,
+      "returncode": 0,
+      "native_s": 9.633729424327612,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.5833,
+      "wirelength": 78782,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_031/output.place",
+          "bytes": 16994,
+          "sha256": "32aaccb378bfdd8ac6620a765196f8ebe20472099b84ef1c1d3dec98a687e13f"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_031/output.route",
+          "bytes": 4163157,
+          "sha256": "6d60c7f36ff784f9ff0c8efc3e3a4bce1fd6700214945dcd8b059868377ecc53"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_031/stdout.log",
+          "bytes": 34310,
+          "sha256": "a9fa2edf481bf26c7ee1984f9c2075a1edee487cb8b58f7c5d5a0c56cac0dbdc"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_031/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 303.526603333652,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 32,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_032/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_028/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_032/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_032/output.route",
+        "--seed",
+        "32",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 303.54018004238605,
+      "returncode": 0,
+      "native_s": 9.183242619037628,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.549,
+      "wirelength": 78680,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_032/output.place",
+          "bytes": 17006,
+          "sha256": "021d598e81509c15775fddf1019ea5617e2b439fda522f2eb0ee1874f88ff101"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_032/output.route",
+          "bytes": 4163063,
+          "sha256": "f4fc0f766bdf752d869b30e6a93eaef4f0002361c3eb0d50ab29d58225352353"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_032/stdout.log",
+          "bytes": 33007,
+          "sha256": "9a66a70bca7907499e984597f25643018ecdc1e0a7917374037af406a50b6907"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_032/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 312.81636864319444,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 33,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_033/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_028/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_033/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_033/output.route",
+        "--seed",
+        "33",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 312.8250214792788,
+      "returncode": 0,
+      "native_s": 9.734666679054499,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.4266,
+      "wirelength": 79210,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_033/output.place",
+          "bytes": 16996,
+          "sha256": "29bc9a5f1d0c47efb3efdd568a1b4f36bf900d5c4f3637cf010fcc49e391e25a"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_033/output.route",
+          "bytes": 4172100,
+          "sha256": "aaec222e179d9581be7389282e33bf0b596ad458415f889e80c33553f600a85f"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_033/stdout.log",
+          "bytes": 34573,
+          "sha256": "feef4880fe99bca5eb8e8c3094059ed539844eb31717611c80547fd43181256b"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_033/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 322.6556643806398,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 34,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_034/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_028/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_034/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_034/output.route",
+        "--seed",
+        "34",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 322.6646521613002,
+      "returncode": 0,
+      "native_s": 10.136359758675098,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.5632,
+      "wirelength": 78956,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_034/output.place",
+          "bytes": 16993,
+          "sha256": "690fd11d176907348931478848c379e787e9dadb530ed72b4bd4b70f8ba60808"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_034/output.route",
+          "bytes": 4166518,
+          "sha256": "7a8306c2fee1860384bd219f3ff1b2b9d05bec313586e7b04047785f4a07bfae"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_034/stdout.log",
+          "bytes": 35197,
+          "sha256": "bb38c45bc629adab6ca61ce7d635a2db59420031a0717f74f46c4b46140b7b89"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_034/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 332.9012550339103,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 35,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_035/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_028/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_035/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_035/output.route",
+        "--seed",
+        "35",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 332.91126856952906,
+      "returncode": 0,
+      "native_s": 9.232865422964096,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.6116,
+      "wirelength": 78660,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_035/output.place",
+          "bytes": 17001,
+          "sha256": "2d68e8e41e379bb56da3cc7d81ea8d2fc5e70472b1d891552f00d9ecbb23d304"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_035/output.route",
+          "bytes": 4162478,
+          "sha256": "8d66e6beb2fbff72eb35e8099927f831bcb6e9c13e24c6a5e71f12e272144ce5"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_035/stdout.log",
+          "bytes": 33172,
+          "sha256": "56f259d79afaaf7d5e7b12994b8265cbebd8b6d210085045c631f31707586552"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_035/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 342.2630913965404,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 36,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_036/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_028/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_036/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_036/output.route",
+        "--seed",
+        "36",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 342.272876534611,
+      "returncode": 0,
+      "native_s": 10.685792461037636,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.5632,
+      "wirelength": 78960,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_036/output.place",
+          "bytes": 16994,
+          "sha256": "17532fd7d314de25f164a0cedfd7689dce464af2e2e2b4cef32959fc57828332"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_036/output.route",
+          "bytes": 4167184,
+          "sha256": "46071bd2d40db86e8f605c45dd901d7f8d20d8a7968f22c42e9fa39d9de2abe7"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_036/stdout.log",
+          "bytes": 34452,
+          "sha256": "1edb647fc79fc1508a1be84d2f482e9910fd4db0389916b9152d572e199b44af"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_036/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 353.05469050630927,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 37,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_037/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_028/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_037/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_037/output.route",
+        "--seed",
+        "37",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 353.0639788620174,
+      "returncode": 0,
+      "native_s": 9.887433592230082,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.5745,
+      "wirelength": 78989,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_037/output.place",
+          "bytes": 16988,
+          "sha256": "7d639875371ad698c526d638f4daf832a8ec9d058fd21bf01bd98ed3a1083c45"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_037/output.route",
+          "bytes": 4169003,
+          "sha256": "1f436b0c0fd178bc7531ba8cdb5a26c60465855a7858932c98c6f993df3db51a"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_037/stdout.log",
+          "bytes": 34987,
+          "sha256": "b6fae44bcf478003f2f0d618e92c9d486fbc539b4e8b1cf438b883af71df111a"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_037/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 363.0497963614762,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 38,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_038/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_028/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_038/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_038/output.route",
+        "--seed",
+        "38",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 363.05923131108284,
+      "returncode": 0,
+      "native_s": 9.986059285700321,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.5656,
+      "wirelength": 78632,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_038/output.place",
+          "bytes": 16993,
+          "sha256": "f80d294af872653b45c076297dfea7d3367e196a42d72c548ac28d87cf6491ad"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_038/output.route",
+          "bytes": 4162170,
+          "sha256": "c7821eb83b5e79626c47bf6049cd38d6857b917d219d35c1aaec55362bcfc3a7"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_038/stdout.log",
+          "bytes": 34155,
+          "sha256": "45e5b42d4583d0f9e0074de46e6367115a0ec5148237873404a0d4f6b360982b"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_038/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 373.1481487303972,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 39,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_039/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_028/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_039/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_039/output.route",
+        "--seed",
+        "39",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 373.1583929210901,
+      "returncode": 0,
+      "native_s": 10.035582274198532,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 12.1099,
+      "wirelength": 78289,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_039/output.place",
+          "bytes": 16989,
+          "sha256": "a0327369a7aebf242f052ced4d8a02cb1749df40a2fe3450cab0d105c72fc60b"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_039/output.route",
+          "bytes": 4156041,
+          "sha256": "1d252f34d65d955d436063d89e9422f235f3526efc723596ac2ee7d992d91228"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_039/stdout.log",
+          "bytes": 34799,
+          "sha256": "6ee0f777bbc069d8ec4bd60f92acabcdbbe360e92b145adf68c04d939e69d336"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_039/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 383.28583531826735,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 40,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_040/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_028/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_040/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_040/output.route",
+        "--seed",
+        "40",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 383.2943398989737,
+      "returncode": 0,
+      "native_s": 9.884343404322863,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.4333,
+      "wirelength": 79186,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_040/output.place",
+          "bytes": 16991,
+          "sha256": "be41e88502fd988b696624e3977fc521f431b7ffb670f2a3cf535e41d5b7e72a"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_040/output.route",
+          "bytes": 4170844,
+          "sha256": "49928f8738640889a0faaee3bd0892bdcb6371f34346fb63857b619d81f35cd2"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_040/stdout.log",
+          "bytes": 34949,
+          "sha256": "de5dd0516567e0d7d719189125478c33294d9a94ef21c2f62f070eea3c41f7d0"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_040/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 393.2755695283413,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 41,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_041/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_028/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_041/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_041/output.route",
+        "--seed",
+        "41",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 393.2855927310884,
+      "returncode": 0,
+      "native_s": 9.283868826925755,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.4716,
+      "wirelength": 78858,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_041/output.place",
+          "bytes": 16997,
+          "sha256": "35f9bdf7c821f776267ce619dcaff9bc693524c23c2fa67e8dc709b259eb18c9"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_041/output.route",
+          "bytes": 4165600,
+          "sha256": "86575451c2b17043dbca38fa09e63cd6ac779905d7a6e89714d107587b7fed93"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_041/stdout.log",
+          "bytes": 33145,
+          "sha256": "c3d902c9c662ff58707db186987610f3e0dddb1e2e4575bc98df809599062757"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_041/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 402.6686206012964,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 42,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_042/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_028/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_042/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_042/output.route",
+        "--seed",
+        "42",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 402.6773078739643,
+      "returncode": 0,
+      "native_s": 9.734169717878103,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.5745,
+      "wirelength": 78340,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_042/output.place",
+          "bytes": 16992,
+          "sha256": "e88557d9bd2a90a24e5c2349064de4519e8b0b6734258533b5f2e51a798ba286"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_042/output.route",
+          "bytes": 4157514,
+          "sha256": "154395b66bb1ceed6faaf936ee8fc3f30f687273ac7e31f713fd62e0419daa68"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_042/stdout.log",
+          "bytes": 33996,
+          "sha256": "27dcebf2cb02f652e8d1e8b332f652d3f09f73c20754ed6c41baa34367a5f83e"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_042/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 412.5052727125585,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 43,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_043/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_028/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_043/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_043/output.route",
+        "--seed",
+        "43",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 412.51459899544716,
+      "returncode": 0,
+      "native_s": 9.783494610339403,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.5545,
+      "wirelength": 78742,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_043/output.place",
+          "bytes": 16990,
+          "sha256": "e750437c69b1ac87cd5a8c15fb6972b2c8370dfa76a009a2646eb59d0ea32653"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_043/output.route",
+          "bytes": 4164025,
+          "sha256": "d1ea93f77dc988f50a84a96f49f41bb11a449f699c8b68efc83f93c1c63fa252"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_043/stdout.log",
+          "bytes": 34938,
+          "sha256": "aa292453b9d8b0c457d4a1421a9bb56b0533784bfc00865ebeb77e31d27eb342"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_043/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 422.3920216560364,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 44,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_044/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_028/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_044/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_044/output.route",
+        "--seed",
+        "44",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 422.4015309214592,
+      "returncode": 0,
+      "native_s": 9.181458473205566,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.455,
+      "wirelength": 79182,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_044/output.place",
+          "bytes": 16999,
+          "sha256": "5c61908855c2a99565fd66a2dcd1bcb9d5ef4dd7a0eb9e3cdfb759cac4a839b1"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_044/output.route",
+          "bytes": 4171050,
+          "sha256": "4490ba784c34c87da8084392def8e46e42a4fbe71648ab5825c9d04f9487f8cc"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_044/stdout.log",
+          "bytes": 33008,
+          "sha256": "fd2034822bce8186d5de52893e4c876750ea0c525114a42cc0ac630ce9c2d05d"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_044/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 431.6818777285516,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 45,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_045/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_028/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_045/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_045/output.route",
+        "--seed",
+        "45",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 431.69186109676957,
+      "returncode": 0,
+      "native_s": 8.98255841434002,
+      "status": "pass",
+      "legal": true,
+      "cpd_ns": 11.9755,
+      "wirelength": 78587,
+      "outputs": {
+        "output.place": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_045/output.place",
+          "bytes": 17000,
+          "sha256": "afee04eff064d22ea0943d471a81239e78a5096d6c7fe20e1d1d9cdace33109c"
+        },
+        "output.route": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_045/output.route",
+          "bytes": 4162043,
+          "sha256": "cb1de76e0e4905868a17cf0f5992960f381aef2a37dceb753628f02425750aec"
+        },
+        "stdout.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_045/stdout.log",
+          "bytes": 32943,
+          "sha256": "dbe16db697b042ce400f775b5f22d82d5494df2fe7b91c787cbabf18736f100b"
+        },
+        "stderr.log": {
+          "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_045/stderr.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "validated_s": 440.78007800132036,
+      "accepted": false,
+      "reason": "timing_first_acceptance_not_met"
+    },
+    {
+      "seed": 46,
+      "command": [
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/build_tileplace_vpr/vpr/vpr",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/arch/timing/k6_frac_N10_mem32K_40nm.xml",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/tileplace/third_party/vtr-verilog-to-routing-8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07/vtr_flow/benchmarks/blif/clma.blif",
+        "--net_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_046/input.net",
+        "--read_initial_place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_028/output.place",
+        "--place_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_046/output.place",
+        "--route_file",
+        "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_046/output.route",
+        "--seed",
+        "46",
+        "--num_workers",
+        "1",
+        "--route_chan_width",
+        "200",
+        "--place_algorithm",
+        "criticality_timing",
+        "--timing_analysis",
+        "on",
+        "--echo_file",
+        "on",
+        "--place",
+        "--route",
+        "--analysis"
+      ],
+      "started_s": 440.7904333844781,
+      "status": "deadline_interrupted",
+      "accepted": false,
+      "returncode": -9,
+      "elapsed_s": 450.00910709425807
+    }
+  ],
+  "elapsed_s": 450.01342628896236
+}

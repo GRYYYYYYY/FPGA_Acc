@@ -1,0 +1,197 @@
+{
+  "events": [
+    {
+      "stage": "proposal",
+      "succeeded": true,
+      "wall_s": 1.8682196289300919
+    },
+    {
+      "stage": "oracle_driver",
+      "succeeded": true,
+      "wall_s": 1.173975795507431
+    },
+    {
+      "stage": "proposal",
+      "succeeded": true,
+      "wall_s": 2.1652260199189186
+    },
+    {
+      "stage": "oracle_driver",
+      "succeeded": true,
+      "wall_s": 1.1972839832305908
+    },
+    {
+      "stage": "proposal",
+      "succeeded": true,
+      "wall_s": 1.0904406160116196
+    },
+    {
+      "stage": "oracle_driver",
+      "succeeded": true,
+      "wall_s": 1.2083835825324059
+    },
+    {
+      "stage": "proposal",
+      "succeeded": true,
+      "wall_s": 1.7149466089904308
+    },
+    {
+      "stage": "oracle_driver",
+      "succeeded": true,
+      "wall_s": 1.1801481507718563
+    },
+    {
+      "stage": "proposal",
+      "succeeded": true,
+      "wall_s": 1.781842179596424
+    },
+    {
+      "stage": "oracle_driver",
+      "succeeded": true,
+      "wall_s": 1.1953205093741417
+    },
+    {
+      "stage": "feedback_refresh",
+      "succeeded": true,
+      "wall_s": 0.4109703414142132
+    },
+    {
+      "stage": "proposal",
+      "succeeded": true,
+      "wall_s": 2.257441185414791
+    },
+    {
+      "stage": "oracle_driver",
+      "succeeded": true,
+      "wall_s": 1.1980881355702877
+    },
+    {
+      "stage": "proposal",
+      "succeeded": true,
+      "wall_s": 1.0518414452672005
+    },
+    {
+      "stage": "oracle_driver",
+      "succeeded": true,
+      "wall_s": 1.8568410128355026
+    },
+    {
+      "stage": "proposal",
+      "succeeded": true,
+      "wall_s": 1.881495390087366
+    },
+    {
+      "stage": "oracle_driver",
+      "succeeded": true,
+      "wall_s": 1.2087952978909016
+    },
+    {
+      "stage": "proposal",
+      "succeeded": true,
+      "wall_s": 1.7196033708751202
+    },
+    {
+      "stage": "oracle_driver",
+      "succeeded": true,
+      "wall_s": 1.2133266404271126
+    },
+    {
+      "stage": "proposal",
+      "succeeded": true,
+      "wall_s": 2.248557236045599
+    },
+    {
+      "stage": "oracle_driver",
+      "succeeded": true,
+      "wall_s": 1.168594777584076
+    },
+    {
+      "stage": "proposal",
+      "succeeded": true,
+      "wall_s": 1.0387892462313175
+    },
+    {
+      "stage": "oracle_driver",
+      "succeeded": true,
+      "wall_s": 1.1699566878378391
+    },
+    {
+      "stage": "proposal",
+      "succeeded": true,
+      "wall_s": 1.8705302625894547
+    },
+    {
+      "stage": "oracle_driver",
+      "succeeded": true,
+      "wall_s": 1.204865027219057
+    },
+    {
+      "stage": "proposal",
+      "succeeded": true,
+      "wall_s": 1.7221292667090893
+    },
+    {
+      "stage": "oracle_driver",
+      "succeeded": true,
+      "wall_s": 1.1767241060733795
+    },
+    {
+      "stage": "proposal",
+      "succeeded": true,
+      "wall_s": 2.181628029793501
+    },
+    {
+      "stage": "oracle_driver",
+      "succeeded": true,
+      "wall_s": 1.2024842724204063
+    },
+    {
+      "stage": "proposal",
+      "succeeded": true,
+      "wall_s": 1.0424019880592823
+    },
+    {
+      "stage": "oracle_driver",
+      "succeeded": true,
+      "wall_s": 1.1870234571397305
+    },
+    {
+      "stage": "proposal",
+      "succeeded": true,
+      "wall_s": 1.8685092143714428
+    },
+    {
+      "stage": "oracle_driver",
+      "succeeded": true,
+      "wall_s": 1.1884428225457668
+    }
+  ],
+  "flow_wall_s": 48.62978387251496,
+  "limitations": "Single observation; externally time the command for full process wall time. oracle_driver includes validation, VPR, hashes and serialization; not just routing.",
+  "mechanism_profile": {
+    "cache_hits": 3208170,
+    "cache_invalidation_s": 0.0008904188871383667,
+    "cache_invalidations": 32,
+    "cache_misses": 13978,
+    "index_build_s": 0.00022895261645317078,
+    "index_builds": 2,
+    "path_queries": 42856
+  },
+  "output_wall_s": 0.10261516645550728,
+  "preparation_wall_s": 0.5530748702585697,
+  "pressure_prefix": true,
+  "report": {
+    "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/diffeq_p2_R1/report.json",
+    "sha256": "d92edc7f2ce599cb47236e1a64e251f930ff683939d32f440f53af7f2d4e9925"
+  },
+  "schema": "TILEPLACE_V4_FLOW_TIMING_V1",
+  "scope": "After CLI parsing through deterministic report write; excludes interpreter/import startup, precomputed inputs/baseline, timing JSON write and stdout",
+  "search_other_wall_s": 0.32926754653453827,
+  "search_stage_wall_s": {
+    "feedback_refresh": 0.4109703414142132,
+    "oracle_driver": 19.730254258960485,
+    "proposal": 27.50360168889165
+  },
+  "search_wall_s": 47.974093835800886,
+  "status": "pass"
+}

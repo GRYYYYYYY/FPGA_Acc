@@ -1,0 +1,45 @@
+{
+  "arm": "R1",
+  "mode": "performance",
+  "count": 0,
+  "counts": {},
+  "chunks": [],
+  "examples": [],
+  "reuse": [
+    {
+      "stats": {
+        "invalidation_s": 0.0007439777255058289,
+        "invalidations": 3,
+        "queries": 10531010,
+        "misses": 21428,
+        "peak_entries": 10714,
+        "hits": 10509582
+      },
+      "epochs": [
+        {
+          "version": 0,
+          "lifetime_s": 4.861503839492798e-06,
+          "distinct_keys": 0,
+          "calls": 0,
+          "roles": {}
+        },
+        {
+          "version": 1,
+          "lifetime_s": 15.146724045276642,
+          "distinct_keys": 0,
+          "calls": 0,
+          "roles": {}
+        },
+        {
+          "version": 2,
+          "lifetime_s": 32.98203978314996,
+          "distinct_keys": 0,
+          "calls": 0,
+          "roles": {}
+        }
+      ]
+    }
+  ],
+  "maxrss_kib": 71664,
+  "wall_s": 48.667849846184254
+}

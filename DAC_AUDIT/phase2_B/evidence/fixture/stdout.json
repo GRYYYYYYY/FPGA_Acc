@@ -1,0 +1,479 @@
+{
+  "negative_control_witness": {
+    "endpoints": [
+      [
+        0,
+        0
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "changed_edges": [
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "new_weight": 1208925819614629174706176,
+    "stale_without_invalidation": 262144,
+    "reference": 1208925819614629174968320,
+    "after_invalidation": 1208925819614629174968320
+  },
+  "finite_reference_vectors": [
+    [
+      "move",
+      [
+        [
+          0,
+          1
+        ]
+      ],
+      [
+        [
+          0,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          1,
+          [
+            0,
+            1,
+            0,
+            0
+          ]
+        ]
+      ],
+      [
+        [
+          8,
+          450,
+          28,
+          1179648
+        ],
+        [
+          8,
+          450,
+          28,
+          1179648
+        ]
+      ],
+      null
+    ],
+    [
+      "swap",
+      [
+        [
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      [
+        [
+          4,
+          [
+            5,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          5,
+          [
+            4,
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      [
+        [
+          8,
+          450,
+          28,
+          1179648
+        ],
+        [
+          8,
+          440,
+          35,
+          1179648
+        ]
+      ],
+      {
+        "id": "('swap', ((4,), (5,)), ((4, (5, 0, 0, 0)), (5, (4, 0, 0, 0))))",
+        "kind": "swap",
+        "units": [
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "trial": {
+          "4": [
+            5,
+            0,
+            0,
+            0
+          ],
+          "5": [
+            4,
+            0,
+            0,
+            0
+          ]
+        },
+        "touched_nets": [
+          0
+        ],
+        "write_sites": [
+          [
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            5,
+            0,
+            0,
+            0
+          ]
+        ],
+        "score_q20": -46604,
+        "wire_delta": 0,
+        "timing_delta": -10,
+        "routed_timing_delta": 7,
+        "congestion_delta": 0
+      }
+    ],
+    [
+      "macro_swap",
+      [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      [
+        [
+          0,
+          [
+            3,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          1,
+          [
+            3,
+            1,
+            0,
+            0
+          ]
+        ],
+        [
+          2,
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          3,
+          [
+            0,
+            1,
+            0,
+            0
+          ]
+        ]
+      ],
+      [
+        [
+          8,
+          450,
+          28,
+          1179648
+        ],
+        [
+          8,
+          570,
+          7,
+          1179648
+        ]
+      ],
+      null
+    ],
+    [
+      "chain2",
+      [
+        [
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      [
+        [
+          4,
+          [
+            5,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          5,
+          [
+            5,
+            1,
+            0,
+            0
+          ]
+        ]
+      ],
+      [
+        [
+          8,
+          450,
+          28,
+          1179648
+        ],
+        [
+          8,
+          440,
+          35,
+          1179648
+        ]
+      ],
+      {
+        "id": "('chain2', ((4,), (5,)), ((4, (5, 0, 0, 0)), (5, (5, 1, 0, 0))))",
+        "kind": "chain2",
+        "units": [
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "trial": {
+          "4": [
+            5,
+            0,
+            0,
+            0
+          ],
+          "5": [
+            5,
+            1,
+            0,
+            0
+          ]
+        },
+        "touched_nets": [
+          0
+        ],
+        "write_sites": [
+          [
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            5,
+            0,
+            0,
+            0
+          ],
+          [
+            5,
+            1,
+            0,
+            0
+          ]
+        ],
+        "score_q20": -46604,
+        "wire_delta": 0,
+        "timing_delta": -10,
+        "routed_timing_delta": 7,
+        "congestion_delta": 0
+      }
+    ],
+    [
+      "chain3",
+      [
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ]
+      ],
+      [
+        [
+          4,
+          [
+            5,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          5,
+          [
+            6,
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          6,
+          [
+            4,
+            0,
+            0,
+            0
+          ]
+        ]
+      ],
+      [
+        [
+          8,
+          450,
+          28,
+          1179648
+        ],
+        [
+          8,
+          420,
+          35,
+          1179648
+        ]
+      ],
+      {
+        "id": "('chain3', ((4,), (5,), (6,)), ((4, (5, 0, 0, 0)), (5, (6, 0, 0, 0)), (6, (4, 0, 0, 0))))",
+        "kind": "chain3",
+        "units": [
+          [
+            4
+          ],
+          [
+            5
+          ],
+          [
+            6
+          ]
+        ],
+        "trial": {
+          "4": [
+            5,
+            0,
+            0,
+            0
+          ],
+          "5": [
+            6,
+            0,
+            0,
+            0
+          ],
+          "6": [
+            4,
+            0,
+            0,
+            0
+          ]
+        },
+        "touched_nets": [
+          0
+        ],
+        "write_sites": [
+          [
+            4,
+            0,
+            0,
+            0
+          ],
+          [
+            5,
+            0,
+            0,
+            0
+          ],
+          [
+            6,
+            0,
+            0,
+            0
+          ]
+        ],
+        "score_q20": -139812,
+        "wire_delta": 0,
+        "timing_delta": -30,
+        "routed_timing_delta": 7,
+        "congestion_delta": 0
+      }
+    ]
+  ],
+  "status": "pass",
+  "transaction_attempts": 1237,
+  "kind_counts": {
+    "move": 349,
+    "macro_swap": 24,
+    "swap": 72,
+    "chain3": 144,
+    "chain2": 648
+  },
+  "batch_comparisons": 24,
+  "covers": [
+    "macro whole-member translation and macro_swap",
+    "swap",
+    "chain2",
+    "chain3",
+    "no-good filtering and tie/conflict selection",
+    "apply/restore",
+    "pressure replacement and previous snapshot restoration",
+    "routed/criticality update",
+    "guard rejection",
+    "duplicate-site legality rejection"
+  ],
+  "scope": "synthetic legal-site enumerator, not VPR legality or full design coverage"
+}

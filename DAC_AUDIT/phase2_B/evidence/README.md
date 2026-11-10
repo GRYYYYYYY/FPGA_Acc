@@ -1,0 +1,7 @@
+# New evidence only
+
+This subtree references frozen phase2_A at 2019e8fc5bb410cb2a4b1d9bb5f557dc5682b08e; it does not duplicate that package. Each TP run has command/process, report/timing, observations and original native closure receipts. Correctness runs add first-proposal profile JSON. The baseline folders preserve every seed command, legal metric, rejection, acceptance, and cutoff; baseline_log_validation.json independently checks all 94 completed native logs and retains concise markers/metrics. Full routes, placements, netlists and logs remain at paths recorded in raw_local_artifacts.csv and the native receipts. No raw corpus/tool binaries are uploaded.
+
+source_manifest.json and PRE_RUN_COMMITS.json bind the effective wrapper algorithm as well as the old frozen reference. PROTOCOL.json was pushed before execution; MICRO_PROTOCOL.json and the final FIXTURE_PROTOCOL.json were likewise pushed before their sole executions. The earlier fixture revision was never run. Unit failures were deliberately induced only in the stale-key negative control; all actual comparison runs passed. Each native window retains one deadline-interrupted attempt.
+
+Portable check: `PYTHONDONTWRITEBYTECODE=1 python3 DAC_AUDIT/phase2_B/verify.py`. It verifies compact hashes, source seals, cross-arm signatures and enumeration digests, and independently replays the native acceptance/cutoff/incumbent rules. It does not rerun native VPR or reconstruct unrecorded full traces; native replication still requires the server inputs/toolchain.

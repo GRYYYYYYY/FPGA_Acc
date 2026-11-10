@@ -1,0 +1,11 @@
+case,arm,budget_s,source_run,legal,cpd_ns,wl,completed_candidates,accepted,charged_outer_s,time_boundary,interrupted
+diffeq,R0,90,diffeq_p1_R0,True,6.59759,9098,16,1,73.6794179752469,reused performance run; startup+finalization residual conservatively added to acceptance timestamp; not paired against native loop,
+diffeq,R1,90,diffeq_p1_R1,True,6.59759,9098,16,1,49.75073939561844,reused performance run; startup+finalization residual conservatively added to acceptance timestamp; not paired against native loop,
+diffeq,R1,90,diffeq_p2_R1,True,6.59759,9098,16,1,48.74269958585501,reused performance run; startup+finalization residual conservatively added to acceptance timestamp; not paired against native loop,
+diffeq,R0,90,diffeq_p2_R0,True,6.59759,9098,16,1,71.9811178483069,reused performance run; startup+finalization residual conservatively added to acceptance timestamp; not paired against native loop,
+clma,R0,450,clma_p1_R0,True,11.5929,79926,24,9,386.2080636136234,reused performance run; startup+finalization residual conservatively added to acceptance timestamp; not paired against native loop,
+clma,R1,450,clma_p1_R1,True,11.5929,79926,24,9,321.9778252094984,reused performance run; startup+finalization residual conservatively added to acceptance timestamp; not paired against native loop,
+clma,R1,450,clma_p2_R1,True,11.5929,79926,24,9,311.7980758920312,reused performance run; startup+finalization residual conservatively added to acceptance timestamp; not paired against native loop,
+clma,R0,450,clma_p2_R0,True,11.5929,79926,24,9,378.49848817661405,reused performance run; startup+finalization residual conservatively added to acceptance timestamp; not paired against native loop,
+diffeq,native_fresh_SA,90,diffeq_native,True,6.59759,8900,49,7,90.04495169594884,outer monotonic; full validation before cutoff,1
+clma,native_fresh_SA,450,clma_native,True,11.4244,78815,45,6,450.0490302182734,outer monotonic; full validation before cutoff,1

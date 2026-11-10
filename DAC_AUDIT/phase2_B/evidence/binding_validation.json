@@ -1,0 +1,21 @@
+{
+  "status": "pass",
+  "completed_runs_with_frozen_input_and_reference_identity": [
+    "diffeq_correctness_R0",
+    "diffeq_correctness_R1",
+    "clma_correctness_R0",
+    "clma_correctness_R1",
+    "diffeq_p1_R0",
+    "diffeq_p1_R1",
+    "diffeq_p2_R1",
+    "diffeq_p2_R0",
+    "clma_p1_R0",
+    "clma_p1_R1",
+    "clma_p2_R1",
+    "clma_p2_R0"
+  ],
+  "effective_wrapper_files_unchanged_from_pre_run_commit": true,
+  "reference_source_unchanged": true,
+  "all_completed_runs_match_frozen_phase2A_native_trajectory": true,
+  "limits": "Uses frozen direct-input identities and completed-run unchanged checks; no broad raw-file rehash."
+}

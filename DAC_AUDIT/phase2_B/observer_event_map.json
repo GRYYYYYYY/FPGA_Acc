@@ -1,0 +1,492 @@
+{
+  "_guard_ok:505:Return": {
+    "function": "_guard_ok",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 505,
+    "source_text": "return all(",
+    "syntax": "Return"
+  },
+  "_make_transaction:518:If": {
+    "function": "_make_transaction",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 518,
+    "source_text": "if all(self.positions[block_id] == target for block_id, target in trial.items()):",
+    "syntax": "If"
+  },
+  "_make_transaction:519:Return": {
+    "function": "_make_transaction",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 519,
+    "source_text": "return None",
+    "syntax": "Return"
+  },
+  "_make_transaction:520:If": {
+    "function": "_make_transaction",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 520,
+    "source_text": "if not self._guard_ok(trial):",
+    "syntax": "If"
+  },
+  "_make_transaction:522:Assign": {
+    "function": "_make_transaction",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 522,
+    "source_text": "changed_blocks = frozenset(trial)",
+    "syntax": "Assign"
+  },
+  "_make_transaction:526:Assign": {
+    "function": "_make_transaction",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 526,
+    "source_text": "before, after = self._cost_pair(touched, changed_blocks, candidate)",
+    "syntax": "Assign"
+  },
+  "_make_transaction:527:Assign": {
+    "function": "_make_transaction",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 527,
+    "source_text": "deltas = tuple(after[index] - before[index] for index in range(4))",
+    "syntax": "Assign"
+  },
+  "_make_transaction:528:Assign": {
+    "function": "_make_transaction",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 528,
+    "source_text": "normalized = tuple((deltas[index] * Q20) // max(1, before[index]) for index in range(4))",
+    "syntax": "Assign"
+  },
+  "_make_transaction:529:Assign": {
+    "function": "_make_transaction",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 529,
+    "source_text": "score = (",
+    "syntax": "Assign"
+  },
+  "_make_transaction:535:If": {
+    "function": "_make_transaction",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 535,
+    "source_text": "if score >= 0:",
+    "syntax": "If"
+  },
+  "_make_transaction:536:Return": {
+    "function": "_make_transaction",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 536,
+    "source_text": "return None",
+    "syntax": "Return"
+  },
+  "_make_transaction:537:Assign": {
+    "function": "_make_transaction",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 537,
+    "source_text": "sites = frozenset(",
+    "syntax": "Assign"
+  },
+  "_make_transaction:541:Assign": {
+    "function": "_make_transaction",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 541,
+    "source_text": "identity = (",
+    "syntax": "Assign"
+  },
+  "_make_transaction:546:Return": {
+    "function": "_make_transaction",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 546,
+    "source_text": "return Transaction(identity, kind, tuple(sorted(units)), trial, touched, sites, score, *deltas)",
+    "syntax": "Return"
+  },
+  "_transactions_for_unit:553:If": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 553,
+    "source_text": "if unit in self.fixed_units:",
+    "syntax": "If"
+  },
+  "_transactions_for_unit:556:For": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 556,
+    "source_text": "for target_root in self._candidate_roots(unit):",
+    "syntax": "For"
+  },
+  "_transactions_for_unit:557:Assign": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 557,
+    "source_text": "direct = self._translated(unit, target_root)",
+    "syntax": "Assign"
+  },
+  "_transactions_for_unit:558:Assign": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 558,
+    "source_text": "owners = {",
+    "syntax": "Assign"
+  },
+  "_transactions_for_unit:563:If": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 563,
+    "source_text": "if not owners:",
+    "syntax": "If"
+  },
+  "_transactions_for_unit:565:If": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 565,
+    "source_text": "if self._valid_trial(direct, changed, occupied):",
+    "syntax": "If"
+  },
+  "_transactions_for_unit:566:Assign": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 566,
+    "source_text": "transaction = self._make_transaction(\"move\", (unit,), direct)",
+    "syntax": "Assign"
+  },
+  "_transactions_for_unit:567:If": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 567,
+    "source_text": "if transaction:",
+    "syntax": "If"
+  },
+  "_transactions_for_unit:569:Continue": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 569,
+    "source_text": "continue",
+    "syntax": "Continue"
+  },
+  "_transactions_for_unit:570:If": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 570,
+    "source_text": "if len(owners) != 1:",
+    "syntax": "If"
+  },
+  "_transactions_for_unit:573:If": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 573,
+    "source_text": "if other == unit or other in self.fixed_units:",
+    "syntax": "If"
+  },
+  "_transactions_for_unit:575:If": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 575,
+    "source_text": "if len(unit) == len(other) and self._shape_signature(unit) == self._shape_signature(other):",
+    "syntax": "If"
+  },
+  "_transactions_for_unit:576:Assign": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 576,
+    "source_text": "trial = self._translated(unit, self.positions[other[0]])",
+    "syntax": "Assign"
+  },
+  "_transactions_for_unit:579:If": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 579,
+    "source_text": "if self._valid_trial(trial, changed, occupied):",
+    "syntax": "If"
+  },
+  "_transactions_for_unit:580:Assign": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 580,
+    "source_text": "transaction = self._make_transaction(",
+    "syntax": "Assign"
+  },
+  "_transactions_for_unit:583:If": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 583,
+    "source_text": "if transaction:",
+    "syntax": "If"
+  },
+  "_transactions_for_unit:585:If": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 585,
+    "source_text": "if len(unit) != 1 or len(other) != 1:",
+    "syntax": "If"
+  },
+  "_transactions_for_unit:587:For": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 587,
+    "source_text": "for second_target in self._candidate_roots(other, self.config.chain_candidate_limit):",
+    "syntax": "For"
+  },
+  "_transactions_for_unit:588:If": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 588,
+    "source_text": "if second_target == self.positions[other[0]]:",
+    "syntax": "If"
+  },
+  "_transactions_for_unit:589:Continue": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 589,
+    "source_text": "continue",
+    "syntax": "Continue"
+  },
+  "_transactions_for_unit:591:If": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 591,
+    "source_text": "if second_owner_block is None:",
+    "syntax": "If"
+  },
+  "_transactions_for_unit:592:Assign": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 592,
+    "source_text": "trial = {unit[0]: target_root, other[0]: second_target}",
+    "syntax": "Assign"
+  },
+  "_transactions_for_unit:593:Assign": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 593,
+    "source_text": "changed = frozenset(trial)",
+    "syntax": "Assign"
+  },
+  "_transactions_for_unit:594:If": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 594,
+    "source_text": "if self._valid_trial(trial, changed, occupied):",
+    "syntax": "If"
+  },
+  "_transactions_for_unit:595:Assign": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 595,
+    "source_text": "transaction = self._make_transaction(\"chain2\", (unit, other), trial)",
+    "syntax": "Assign"
+  },
+  "_transactions_for_unit:596:If": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 596,
+    "source_text": "if transaction:",
+    "syntax": "If"
+  },
+  "_transactions_for_unit:598:Continue": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 598,
+    "source_text": "continue",
+    "syntax": "Continue"
+  },
+  "_transactions_for_unit:600:If": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 600,
+    "source_text": "if len(third) != 1 or third in (unit, other) or third in self.fixed_units:",
+    "syntax": "If"
+  },
+  "_transactions_for_unit:601:Continue": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 601,
+    "source_text": "continue",
+    "syntax": "Continue"
+  },
+  "_transactions_for_unit:602:Assign": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 602,
+    "source_text": "trial = {",
+    "syntax": "Assign"
+  },
+  "_transactions_for_unit:607:Assign": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 607,
+    "source_text": "changed = frozenset(trial)",
+    "syntax": "Assign"
+  },
+  "_transactions_for_unit:608:If": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 608,
+    "source_text": "if self._valid_trial(trial, changed, occupied):",
+    "syntax": "If"
+  },
+  "_transactions_for_unit:609:Assign": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 609,
+    "source_text": "transaction = self._make_transaction(\"chain3\", (unit, other, third), trial)",
+    "syntax": "Assign"
+  },
+  "_transactions_for_unit:610:If": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 610,
+    "source_text": "if transaction:",
+    "syntax": "If"
+  },
+  "_transactions_for_unit:612:Return": {
+    "function": "_transactions_for_unit",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 612,
+    "source_text": "return result",
+    "syntax": "Return"
+  },
+  "_valid_trial:486:If": {
+    "function": "_valid_trial",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 486,
+    "source_text": "if len(set(trial.values())) != len(trial):",
+    "syntax": "If"
+  },
+  "_valid_trial:488:For": {
+    "function": "_valid_trial",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 488,
+    "source_text": "for block_id, target in trial.items():",
+    "syntax": "For"
+  },
+  "_valid_trial:492:If": {
+    "function": "_valid_trial",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 492,
+    "source_text": "if (",
+    "syntax": "If"
+  },
+  "_valid_trial:500:Return": {
+    "function": "_valid_trial",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 500,
+    "source_text": "return True",
+    "syntax": "Return"
+  },
+  "apply:675:For": {
+    "function": "apply",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 675,
+    "source_text": "for transaction in transactions:",
+    "syntax": "For"
+  },
+  "propose_color:619:If": {
+    "function": "propose_color",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 619,
+    "source_text": "if not 0 <= color < 4:",
+    "syntax": "If"
+  },
+  "propose_color:633:For": {
+    "function": "propose_color",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 633,
+    "source_text": "for unit in color_units:",
+    "syntax": "For"
+  },
+  "propose_color:634:Assign": {
+    "function": "propose_color",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 634,
+    "source_text": "candidates = [",
+    "syntax": "Assign"
+  },
+  "propose_color:639:If": {
+    "function": "propose_color",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 639,
+    "source_text": "if not candidates:",
+    "syntax": "If"
+  },
+  "propose_color:640:Continue": {
+    "function": "propose_color",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 640,
+    "source_text": "continue",
+    "syntax": "Continue"
+  },
+  "propose_color:641:Assign": {
+    "function": "propose_color",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 641,
+    "source_text": "best = min(candidates, key=lambda value: (value.score_q20, value.transaction_id))",
+    "syntax": "Assign"
+  },
+  "propose_color:642:Assign": {
+    "function": "propose_color",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 642,
+    "source_text": "old = best_by_id.get(best.transaction_id)",
+    "syntax": "Assign"
+  },
+  "propose_color:643:If": {
+    "function": "propose_color",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 643,
+    "source_text": "if old is None or (best.score_q20, best.transaction_id) < (old.score_q20, old.transaction_id):",
+    "syntax": "If"
+  },
+  "propose_color:644:Assign": {
+    "function": "propose_color",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 644,
+    "source_text": "best_by_id[best.transaction_id] = best",
+    "syntax": "Assign"
+  },
+  "propose_color:645:Assign": {
+    "function": "propose_color",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 645,
+    "source_text": "proposals = sorted(best_by_id.values(), key=lambda value: (value.score_q20, value.transaction_id))",
+    "syntax": "Assign"
+  },
+  "propose_color:651:For": {
+    "function": "propose_color",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 651,
+    "source_text": "for transaction in proposals:",
+    "syntax": "For"
+  },
+  "propose_color:652:If": {
+    "function": "propose_color",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 652,
+    "source_text": "if (",
+    "syntax": "If"
+  },
+  "propose_color:658:Continue": {
+    "function": "propose_color",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 658,
+    "source_text": "continue",
+    "syntax": "Continue"
+  },
+  "propose_color:664:Return": {
+    "function": "propose_color",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 664,
+    "source_text": "return accepted, {",
+    "syntax": "Return"
+  },
+  "restore:683:If": {
+    "function": "restore",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 683,
+    "source_text": "if set(positions) != set(self.positions):",
+    "syntax": "If"
+  },
+  "update_timing_feedback:424:If": {
+    "function": "update_timing_feedback",
+    "reference": "../phase2_A/source/tileplace_v2.py",
+    "source_line": 424,
+    "source_text": "if unknown or not edges or not focus:",
+    "syntax": "If"
+  }
+}

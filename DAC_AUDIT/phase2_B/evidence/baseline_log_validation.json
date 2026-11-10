@@ -1,0 +1,1631 @@
+{
+  "status": "pass",
+  "completed_points": 94,
+  "offline_check_s": 0.06538495793938637,
+  "checks": [
+    {
+      "case": "diffeq",
+      "seed": 1,
+      "sha256": "fef45c82a0ca60279274aae15f7d1f8667427a28008ba7d2b022fa7f66802811",
+      "cpd_ns": 6.61216,
+      "wl": 9097,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "450: Completed routing consistency check successfully.",
+        "453: Circuit successfully routed with a channel width factor of 200.",
+        "482: \tTotal wirelength: 9097, average net length: 10.2099",
+        "580: Final critical path delay (least slack): 6.61216 ns, Fmax: 151.236 MHz",
+        "605: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 2,
+      "sha256": "1600afa526a4576fe1f0dbee478c095bc39d85449c2defd0be1cd48f48e3007a",
+      "cpd_ns": 6.88654,
+      "wl": 9064,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "448: Completed routing consistency check successfully.",
+        "451: Circuit successfully routed with a channel width factor of 200.",
+        "480: \tTotal wirelength: 9064, average net length: 10.1728",
+        "578: Final critical path delay (least slack): 6.88654 ns, Fmax: 145.211 MHz",
+        "603: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 3,
+      "sha256": "b118019e1336da6b93b5954249747a8bc063d0be6a40f33060be57159befc271",
+      "cpd_ns": 6.76756,
+      "wl": 9007,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "449: Completed routing consistency check successfully.",
+        "452: Circuit successfully routed with a channel width factor of 200.",
+        "481: \tTotal wirelength: 9007, average net length: 10.1089",
+        "579: Final critical path delay (least slack): 6.76756 ns, Fmax: 147.764 MHz",
+        "604: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 4,
+      "sha256": "22e76c5ba9aaeaed11d6454ce957df458ac927d01d120a60faa6fdaa727b62f5",
+      "cpd_ns": 6.76977,
+      "wl": 9102,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "449: Completed routing consistency check successfully.",
+        "452: Circuit successfully routed with a channel width factor of 200.",
+        "481: \tTotal wirelength: 9102, average net length: 10.2155",
+        "579: Final critical path delay (least slack): 6.76977 ns, Fmax: 147.715 MHz",
+        "604: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 5,
+      "sha256": "0bbe2ae5802b1e774eb43f3a953fd43882f7a2c3bfc8f1e618f8e56d7fda2314",
+      "cpd_ns": 6.61216,
+      "wl": 9121,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "449: Completed routing consistency check successfully.",
+        "452: Circuit successfully routed with a channel width factor of 200.",
+        "481: \tTotal wirelength: 9121, average net length: 10.2368",
+        "579: Final critical path delay (least slack): 6.61216 ns, Fmax: 151.236 MHz",
+        "604: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 6,
+      "sha256": "0ba87bd468ecda0f6f46ac72ba945350f888a9534775e1cc4984fc1bc7a66f62",
+      "cpd_ns": 6.59759,
+      "wl": 9064,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "449: Completed routing consistency check successfully.",
+        "452: Circuit successfully routed with a channel width factor of 200.",
+        "481: \tTotal wirelength: 9064, average net length: 10.1728",
+        "579: Final critical path delay (least slack): 6.59759 ns, Fmax: 151.571 MHz",
+        "604: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 7,
+      "sha256": "2437e4cfc2fd68fcd2ab7f4990d16c1323d5dacb2efc87d5503527991f560373",
+      "cpd_ns": 6.653,
+      "wl": 9107,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "448: Completed routing consistency check successfully.",
+        "451: Circuit successfully routed with a channel width factor of 200.",
+        "480: \tTotal wirelength: 9107, average net length: 10.2211",
+        "578: Final critical path delay (least slack): 6.653 ns, Fmax: 150.308 MHz",
+        "603: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 8,
+      "sha256": "9eecbb4294f921f63215d6affb3b7cb3a425530758ece7c6d290ae4f9ef835f2",
+      "cpd_ns": 6.59759,
+      "wl": 9008,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "449: Completed routing consistency check successfully.",
+        "452: Circuit successfully routed with a channel width factor of 200.",
+        "481: \tTotal wirelength: 9008, average net length: 10.1100",
+        "579: Final critical path delay (least slack): 6.59759 ns, Fmax: 151.571 MHz",
+        "604: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 9,
+      "sha256": "77c0c0f615f0f5fcd106078b9ac3954cd40d340a70679c0e70573098ae5f4db8",
+      "cpd_ns": 6.62288,
+      "wl": 8985,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "449: Completed routing consistency check successfully.",
+        "452: Circuit successfully routed with a channel width factor of 200.",
+        "481: \tTotal wirelength: 8985, average net length: 10.0842",
+        "579: Final critical path delay (least slack): 6.62288 ns, Fmax: 150.992 MHz",
+        "604: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 10,
+      "sha256": "8e375e22d696ded8a19ea2e3a0d29144c363a14f5178eb998d657e89bb88a1f9",
+      "cpd_ns": 6.6265,
+      "wl": 9107,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "449: Completed routing consistency check successfully.",
+        "452: Circuit successfully routed with a channel width factor of 200.",
+        "481: \tTotal wirelength: 9107, average net length: 10.2211",
+        "579: Final critical path delay (least slack): 6.6265 ns, Fmax: 150.909 MHz",
+        "604: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 11,
+      "sha256": "88187c1e4377c117ca901be957439ae0f3c0f217c8573e3c3980172ae2077098",
+      "cpd_ns": 6.64968,
+      "wl": 8979,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "337: Completed placement consistency check successfully.",
+        "455: Completed routing consistency check successfully.",
+        "458: Circuit successfully routed with a channel width factor of 200.",
+        "487: \tTotal wirelength: 8979, average net length: 10.0774",
+        "585: Final critical path delay (least slack): 6.64968 ns, Fmax: 150.383 MHz",
+        "610: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 12,
+      "sha256": "471fe55581bc76a2b86bea9edc5fae5477c400c0f26c8cebf9914c0280eb4724",
+      "cpd_ns": 6.59759,
+      "wl": 9064,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "450: Completed routing consistency check successfully.",
+        "453: Circuit successfully routed with a channel width factor of 200.",
+        "482: \tTotal wirelength: 9064, average net length: 10.1728",
+        "580: Final critical path delay (least slack): 6.59759 ns, Fmax: 151.571 MHz",
+        "605: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 13,
+      "sha256": "0303b67f365cf3c212dc8340f202967d085f511e8675500bf0f85cc0888dd477",
+      "cpd_ns": 6.62288,
+      "wl": 8992,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "449: Completed routing consistency check successfully.",
+        "452: Circuit successfully routed with a channel width factor of 200.",
+        "481: \tTotal wirelength: 8992, average net length: 10.0920",
+        "579: Final critical path delay (least slack): 6.62288 ns, Fmax: 150.992 MHz",
+        "604: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 14,
+      "sha256": "0c37ac58015981bef17e6e9e9c093f3ca7d1f0d4146792119d9d5ee89ce64ad7",
+      "cpd_ns": 6.62539,
+      "wl": 8965,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "449: Completed routing consistency check successfully.",
+        "452: Circuit successfully routed with a channel width factor of 200.",
+        "481: \tTotal wirelength: 8965, average net length: 10.0617",
+        "579: Final critical path delay (least slack): 6.62539 ns, Fmax: 150.935 MHz",
+        "604: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 15,
+      "sha256": "0bd70a29611d4c61bdb7dd60c1e4ba14c2400953819d4c68c0150b2a8d074f36",
+      "cpd_ns": 6.59759,
+      "wl": 8994,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "449: Completed routing consistency check successfully.",
+        "452: Circuit successfully routed with a channel width factor of 200.",
+        "481: \tTotal wirelength: 8994, average net length: 10.0943",
+        "579: Final critical path delay (least slack): 6.59759 ns, Fmax: 151.571 MHz",
+        "604: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 16,
+      "sha256": "ce4e1d16399a1880b6fdcf994de5ea3f3ab4bb9271e45df9a9099ea99c94435f",
+      "cpd_ns": 6.64857,
+      "wl": 8987,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "449: Completed routing consistency check successfully.",
+        "452: Circuit successfully routed with a channel width factor of 200.",
+        "481: \tTotal wirelength: 8987, average net length: 10.0864",
+        "579: Final critical path delay (least slack): 6.64857 ns, Fmax: 150.408 MHz",
+        "604: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 17,
+      "sha256": "8bfb3009f9c9a0ce3f6b869a486d339f98fc39196b13fdb53b9e1f6eae7daa10",
+      "cpd_ns": 6.59759,
+      "wl": 8949,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "450: Completed routing consistency check successfully.",
+        "453: Circuit successfully routed with a channel width factor of 200.",
+        "482: \tTotal wirelength: 8949, average net length: 10.0438",
+        "580: Final critical path delay (least slack): 6.59759 ns, Fmax: 151.571 MHz",
+        "605: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 18,
+      "sha256": "4718712e2ddc3a19dac9e0e41bd5d564f1aa47be9039c414f8d41215bbbefebe",
+      "cpd_ns": 6.64643,
+      "wl": 8944,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "449: Completed routing consistency check successfully.",
+        "452: Circuit successfully routed with a channel width factor of 200.",
+        "481: \tTotal wirelength: 8944, average net length: 10.0382",
+        "579: Final critical path delay (least slack): 6.64643 ns, Fmax: 150.457 MHz",
+        "604: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 19,
+      "sha256": "b932dca85b92a5c62bb269bc477861bef93b0af9a83c3bcc05d9440748a988e5",
+      "cpd_ns": 6.59759,
+      "wl": 9010,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "449: Completed routing consistency check successfully.",
+        "452: Circuit successfully routed with a channel width factor of 200.",
+        "481: \tTotal wirelength: 9010, average net length: 10.1122",
+        "579: Final critical path delay (least slack): 6.59759 ns, Fmax: 151.571 MHz",
+        "604: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 20,
+      "sha256": "59983ad3f9c8cc22010959a039e85413f329c5eb506f3273c90d51f5752c1a20",
+      "cpd_ns": 6.59759,
+      "wl": 9052,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "448: Completed routing consistency check successfully.",
+        "451: Circuit successfully routed with a channel width factor of 200.",
+        "480: \tTotal wirelength: 9052, average net length: 10.1594",
+        "578: Final critical path delay (least slack): 6.59759 ns, Fmax: 151.571 MHz",
+        "603: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 21,
+      "sha256": "02fcf504b4c2448f7b7f543368034217080880b17afec894f7ebcfa163d886a9",
+      "cpd_ns": 6.59759,
+      "wl": 9007,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "449: Completed routing consistency check successfully.",
+        "452: Circuit successfully routed with a channel width factor of 200.",
+        "481: \tTotal wirelength: 9007, average net length: 10.1089",
+        "579: Final critical path delay (least slack): 6.59759 ns, Fmax: 151.571 MHz",
+        "604: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 22,
+      "sha256": "2fb091fbc70a2592ac23808f736b675530a7c9cf34f65bda75d350eebc269dc5",
+      "cpd_ns": 6.59759,
+      "wl": 8925,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "449: Completed routing consistency check successfully.",
+        "452: Circuit successfully routed with a channel width factor of 200.",
+        "481: \tTotal wirelength: 8925, average net length: 10.0168",
+        "579: Final critical path delay (least slack): 6.59759 ns, Fmax: 151.571 MHz",
+        "604: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 23,
+      "sha256": "bd759816cb6a1fac3d54f2b1e48bd6301c212727b928f8da2ee2f541081d81c7",
+      "cpd_ns": 6.74968,
+      "wl": 8989,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "330: Completed placement consistency check successfully.",
+        "451: Completed routing consistency check successfully.",
+        "454: Circuit successfully routed with a channel width factor of 200.",
+        "483: \tTotal wirelength: 8989, average net length: 10.0887",
+        "581: Final critical path delay (least slack): 6.74968 ns, Fmax: 148.155 MHz",
+        "606: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 24,
+      "sha256": "f40a2ed37b9b7b07e615945d0767f10b464ac5e2e0b92461e208950a5d1ac674",
+      "cpd_ns": 6.62399,
+      "wl": 8826,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "449: Completed routing consistency check successfully.",
+        "452: Circuit successfully routed with a channel width factor of 200.",
+        "481: \tTotal wirelength: 8826, average net length: 9.90572",
+        "579: Final critical path delay (least slack): 6.62399 ns, Fmax: 150.967 MHz",
+        "604: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 25,
+      "sha256": "1a30aa7a205c74a550f4224b70bbede746dd8ee35f068cf9c67357fc62b86a64",
+      "cpd_ns": 6.59759,
+      "wl": 8955,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "448: Completed routing consistency check successfully.",
+        "451: Circuit successfully routed with a channel width factor of 200.",
+        "480: \tTotal wirelength: 8955, average net length: 10.0505",
+        "578: Final critical path delay (least slack): 6.59759 ns, Fmax: 151.571 MHz",
+        "603: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 26,
+      "sha256": "f1d3c83832bc7959d7b650867c17f13635af45011f3f588c98bf4098c12b45de",
+      "cpd_ns": 6.59759,
+      "wl": 8987,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "449: Completed routing consistency check successfully.",
+        "452: Circuit successfully routed with a channel width factor of 200.",
+        "481: \tTotal wirelength: 8987, average net length: 10.0864",
+        "579: Final critical path delay (least slack): 6.59759 ns, Fmax: 151.571 MHz",
+        "604: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 27,
+      "sha256": "aca46ce57e769d87d75fbf9fc0138482672d95c99e62d9a230a80537292dfe4a",
+      "cpd_ns": 6.74437,
+      "wl": 8985,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "448: Completed routing consistency check successfully.",
+        "451: Circuit successfully routed with a channel width factor of 200.",
+        "480: \tTotal wirelength: 8985, average net length: 10.0842",
+        "578: Final critical path delay (least slack): 6.74437 ns, Fmax: 148.272 MHz",
+        "603: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 28,
+      "sha256": "50274bca7b80e0fba732367263fde6cbda6846180f84bf7b76a0b400b40cbea7",
+      "cpd_ns": 6.59759,
+      "wl": 8905,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "449: Completed routing consistency check successfully.",
+        "452: Circuit successfully routed with a channel width factor of 200.",
+        "481: \tTotal wirelength: 8905, average net length: 9.99439",
+        "579: Final critical path delay (least slack): 6.59759 ns, Fmax: 151.571 MHz",
+        "604: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 29,
+      "sha256": "de5455d60a8a1932e73fbea4d820683b855c0597e668a8733bb1a45e2f0a9c58",
+      "cpd_ns": 6.76092,
+      "wl": 8963,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "449: Completed routing consistency check successfully.",
+        "452: Circuit successfully routed with a channel width factor of 200.",
+        "481: \tTotal wirelength: 8963, average net length: 10.0595",
+        "579: Final critical path delay (least slack): 6.76092 ns, Fmax: 147.909 MHz",
+        "604: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 30,
+      "sha256": "129cc15e8c03afb83316d75981c324edd6f06785cbbec4bdbc4ce2a16f23082a",
+      "cpd_ns": 6.6454,
+      "wl": 8867,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "449: Completed routing consistency check successfully.",
+        "452: Circuit successfully routed with a channel width factor of 200.",
+        "481: \tTotal wirelength: 8867, average net length: 9.95174",
+        "579: Final critical path delay (least slack): 6.6454 ns, Fmax: 150.48 MHz",
+        "604: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 31,
+      "sha256": "835397ec8846676997489002c979790de99167533a82e51b975cd0c3b3998675",
+      "cpd_ns": 6.59759,
+      "wl": 8908,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "449: Completed routing consistency check successfully.",
+        "452: Circuit successfully routed with a channel width factor of 200.",
+        "481: \tTotal wirelength: 8908, average net length: 9.99776",
+        "579: Final critical path delay (least slack): 6.59759 ns, Fmax: 151.571 MHz",
+        "604: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 32,
+      "sha256": "6034b34ecbbaa6662f807e2432795fd4e3811a6aed0c2160e0a2e77e6b93d002",
+      "cpd_ns": 6.59759,
+      "wl": 8900,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "449: Completed routing consistency check successfully.",
+        "452: Circuit successfully routed with a channel width factor of 200.",
+        "481: \tTotal wirelength: 8900, average net length: 9.98878",
+        "579: Final critical path delay (least slack): 6.59759 ns, Fmax: 151.571 MHz",
+        "604: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 33,
+      "sha256": "6c51193d1253a142133325e44601946cbee3c8d7ee21153f241e2413c13da708",
+      "cpd_ns": 6.59759,
+      "wl": 8938,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "449: Completed routing consistency check successfully.",
+        "452: Circuit successfully routed with a channel width factor of 200.",
+        "481: \tTotal wirelength: 8938, average net length: 10.0314",
+        "579: Final critical path delay (least slack): 6.59759 ns, Fmax: 151.571 MHz",
+        "604: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 34,
+      "sha256": "262ffe93ff06cee4ab57e4c35dd384cb302aeaed03aa6e3c1e216b7dcb0ac8ec",
+      "cpd_ns": 6.59759,
+      "wl": 8910,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "449: Completed routing consistency check successfully.",
+        "452: Circuit successfully routed with a channel width factor of 200.",
+        "481: \tTotal wirelength: 8910, average net length: 10.0000",
+        "579: Final critical path delay (least slack): 6.59759 ns, Fmax: 151.571 MHz",
+        "604: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 35,
+      "sha256": "7fe647ca7bdbd3a1548ea766c8d811d57e64d3a617cc472cf7e66a93e406a3a7",
+      "cpd_ns": 6.59759,
+      "wl": 8902,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "449: Completed routing consistency check successfully.",
+        "452: Circuit successfully routed with a channel width factor of 200.",
+        "481: \tTotal wirelength: 8902, average net length: 9.99102",
+        "579: Final critical path delay (least slack): 6.59759 ns, Fmax: 151.571 MHz",
+        "604: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 36,
+      "sha256": "8b9bfac47128aada13a79017e8baf11a1d708a7b1d81bf332a0768391fbf7166",
+      "cpd_ns": 6.59759,
+      "wl": 8943,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "449: Completed routing consistency check successfully.",
+        "452: Circuit successfully routed with a channel width factor of 200.",
+        "481: \tTotal wirelength: 8943, average net length: 10.0370",
+        "579: Final critical path delay (least slack): 6.59759 ns, Fmax: 151.571 MHz",
+        "604: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 37,
+      "sha256": "c917bd20fa3b85c9a2a1405215b72562487d86bb9e680c643ba9ee22854ce428",
+      "cpd_ns": 6.59759,
+      "wl": 8963,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "448: Completed routing consistency check successfully.",
+        "451: Circuit successfully routed with a channel width factor of 200.",
+        "480: \tTotal wirelength: 8963, average net length: 10.0595",
+        "578: Final critical path delay (least slack): 6.59759 ns, Fmax: 151.571 MHz",
+        "603: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 38,
+      "sha256": "8eedfaebb83abc0a8e2799764dce6e3fd45c0a8febf4309575926d578b6d6e6d",
+      "cpd_ns": 6.74437,
+      "wl": 8965,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "448: Completed routing consistency check successfully.",
+        "451: Circuit successfully routed with a channel width factor of 200.",
+        "480: \tTotal wirelength: 8965, average net length: 10.0617",
+        "578: Final critical path delay (least slack): 6.74437 ns, Fmax: 148.272 MHz",
+        "603: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 39,
+      "sha256": "0aa04e0f2b4559aad6073828e8575a50c5dcc2bcd9100803f1b7a06f7df6f5ac",
+      "cpd_ns": 6.81701,
+      "wl": 8916,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "337: Completed placement consistency check successfully.",
+        "457: Completed routing consistency check successfully.",
+        "460: Circuit successfully routed with a channel width factor of 200.",
+        "489: \tTotal wirelength: 8916, average net length: 10.0067",
+        "587: Final critical path delay (least slack): 6.81701 ns, Fmax: 146.692 MHz",
+        "612: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 40,
+      "sha256": "5d1510a0ce14f9e0dc595eb7a97d9464e69188d71a8b53ef09e17163124f311e",
+      "cpd_ns": 6.6454,
+      "wl": 8848,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "449: Completed routing consistency check successfully.",
+        "452: Circuit successfully routed with a channel width factor of 200.",
+        "481: \tTotal wirelength: 8848, average net length: 9.93042",
+        "579: Final critical path delay (least slack): 6.6454 ns, Fmax: 150.48 MHz",
+        "604: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 41,
+      "sha256": "7597a7c205e7b2f781f82dcec3b07b0e7c3529b3ecc9371542086bf560e216ed",
+      "cpd_ns": 6.59759,
+      "wl": 8938,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "449: Completed routing consistency check successfully.",
+        "452: Circuit successfully routed with a channel width factor of 200.",
+        "481: \tTotal wirelength: 8938, average net length: 10.0314",
+        "579: Final critical path delay (least slack): 6.59759 ns, Fmax: 151.571 MHz",
+        "604: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 42,
+      "sha256": "acba5b6a541728ee1b496ccc4d87cbcabcf1661f6e04b54f6d8c8cf513a9fe34",
+      "cpd_ns": 6.59759,
+      "wl": 8907,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "450: Completed routing consistency check successfully.",
+        "453: Circuit successfully routed with a channel width factor of 200.",
+        "482: \tTotal wirelength: 8907, average net length: 9.99663",
+        "580: Final critical path delay (least slack): 6.59759 ns, Fmax: 151.571 MHz",
+        "605: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 43,
+      "sha256": "294d2f8d6143a61b95b917b0f805a8347c5db608f977f90c53ecb92bae66e559",
+      "cpd_ns": 6.59759,
+      "wl": 8904,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "450: Completed routing consistency check successfully.",
+        "453: Circuit successfully routed with a channel width factor of 200.",
+        "482: \tTotal wirelength: 8904, average net length: 9.99327",
+        "580: Final critical path delay (least slack): 6.59759 ns, Fmax: 151.571 MHz",
+        "605: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 44,
+      "sha256": "9b4d1598d4c19252e1b993076f43f4e857642df93c207ddf8e6465470892f066",
+      "cpd_ns": 6.59759,
+      "wl": 8986,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "448: Completed routing consistency check successfully.",
+        "451: Circuit successfully routed with a channel width factor of 200.",
+        "480: \tTotal wirelength: 8986, average net length: 10.0853",
+        "578: Final critical path delay (least slack): 6.59759 ns, Fmax: 151.571 MHz",
+        "603: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 45,
+      "sha256": "42541b27659eecb9831e706ce13c88c9481ebb257d78142cd2e68fb0429b914c",
+      "cpd_ns": 6.74437,
+      "wl": 8952,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "448: Completed routing consistency check successfully.",
+        "451: Circuit successfully routed with a channel width factor of 200.",
+        "480: \tTotal wirelength: 8952, average net length: 10.0471",
+        "578: Final critical path delay (least slack): 6.74437 ns, Fmax: 148.272 MHz",
+        "603: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 46,
+      "sha256": "6878fba05fdbe659797e756eae02de7562bcb7ebb8262ddd494550c82036f08a",
+      "cpd_ns": 6.7488,
+      "wl": 8928,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "448: Completed routing consistency check successfully.",
+        "451: Circuit successfully routed with a channel width factor of 200.",
+        "480: \tTotal wirelength: 8928, average net length: 10.0202",
+        "578: Final critical path delay (least slack): 6.7488 ns, Fmax: 148.175 MHz",
+        "603: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 47,
+      "sha256": "79e18963c4521db257763106787540ab283f83f246dde991925bd70141e6774d",
+      "cpd_ns": 6.59759,
+      "wl": 8996,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "449: Completed routing consistency check successfully.",
+        "452: Circuit successfully routed with a channel width factor of 200.",
+        "481: \tTotal wirelength: 8996, average net length: 10.0965",
+        "579: Final critical path delay (least slack): 6.59759 ns, Fmax: 151.571 MHz",
+        "604: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 48,
+      "sha256": "cb8980fb9830a063dbfe5e3fb5ba1095370ed1a79b62cdd2c35d59f428f7a227",
+      "cpd_ns": 6.59759,
+      "wl": 9017,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "449: Completed routing consistency check successfully.",
+        "452: Circuit successfully routed with a channel width factor of 200.",
+        "481: \tTotal wirelength: 9017, average net length: 10.1201",
+        "579: Final critical path delay (least slack): 6.59759 ns, Fmax: 151.571 MHz",
+        "604: VPR succeeded"
+      ]
+    },
+    {
+      "case": "diffeq",
+      "seed": 49,
+      "sha256": "2f378a7e62e9f99596892c7f86e4db5b7c506c2ca33846e965a584e7694d3909",
+      "cpd_ns": 6.74437,
+      "wl": 8927,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "295: Completed placement consistency check successfully.",
+        "328: Completed placement consistency check successfully.",
+        "448: Completed routing consistency check successfully.",
+        "451: Circuit successfully routed with a channel width factor of 200.",
+        "480: \tTotal wirelength: 8927, average net length: 10.0191",
+        "578: Final critical path delay (least slack): 6.74437 ns, Fmax: 148.272 MHz",
+        "603: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 1,
+      "sha256": "95c4f2c8d0f5fb929391cbdf3e411ba63a01015e181c5d6a0f6704f64ce60498",
+      "cpd_ns": 11.7439,
+      "wl": 79116,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "354: Completed placement consistency check successfully.",
+        "476: Completed routing consistency check successfully.",
+        "479: Circuit successfully routed with a channel width factor of 200.",
+        "508: \tTotal wirelength: 79116, average net length: 16.4517",
+        "638: Final critical path delay (least slack): 11.7439 ns, Fmax: 85.1503 MHz",
+        "663: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 2,
+      "sha256": "139f4024e1098c90588d6a0db2b7722eeb6a0bfa8c222717791ac20c5c5d88ea",
+      "cpd_ns": 11.7462,
+      "wl": 78813,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "353: Completed placement consistency check successfully.",
+        "475: Completed routing consistency check successfully.",
+        "478: Circuit successfully routed with a channel width factor of 200.",
+        "507: \tTotal wirelength: 78813, average net length: 16.3886",
+        "637: Final critical path delay (least slack): 11.7462 ns, Fmax: 85.1343 MHz",
+        "662: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 3,
+      "sha256": "86974957f6e8ca15c03d675239766fc67b6eff2e4d244f5b7d789eee0c1b71de",
+      "cpd_ns": 11.8671,
+      "wl": 79091,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "355: Completed placement consistency check successfully.",
+        "477: Completed routing consistency check successfully.",
+        "480: Circuit successfully routed with a channel width factor of 200.",
+        "509: \tTotal wirelength: 79091, average net length: 16.4465",
+        "639: Final critical path delay (least slack): 11.8671 ns, Fmax: 84.2663 MHz",
+        "664: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 4,
+      "sha256": "f55bc45ba766fedba18a49d460f2ad04ce539f5d9074c5577ad3727bc6f5013b",
+      "cpd_ns": 11.7417,
+      "wl": 78913,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "352: Completed placement consistency check successfully.",
+        "476: Completed routing consistency check successfully.",
+        "479: Circuit successfully routed with a channel width factor of 200.",
+        "508: \tTotal wirelength: 78913, average net length: 16.4094",
+        "638: Final critical path delay (least slack): 11.7417 ns, Fmax: 85.1664 MHz",
+        "663: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 5,
+      "sha256": "6f758268cdb130efda58a4df3078818b16eb66894b12667b1317fcee338541cb",
+      "cpd_ns": 11.7371,
+      "wl": 78581,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "355: Completed placement consistency check successfully.",
+        "478: Completed routing consistency check successfully.",
+        "481: Circuit successfully routed with a channel width factor of 200.",
+        "510: \tTotal wirelength: 78581, average net length: 16.3404",
+        "640: Final critical path delay (least slack): 11.7371 ns, Fmax: 85.1996 MHz",
+        "665: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 6,
+      "sha256": "177d9fabec8a0badbdc0416e314e75ed9980824a84658ab9d6f2cc9be609d2cf",
+      "cpd_ns": 11.8882,
+      "wl": 78649,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "353: Completed placement consistency check successfully.",
+        "476: Completed routing consistency check successfully.",
+        "479: Circuit successfully routed with a channel width factor of 200.",
+        "508: \tTotal wirelength: 78649, average net length: 16.3545",
+        "638: Final critical path delay (least slack): 11.8882 ns, Fmax: 84.1172 MHz",
+        "663: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 7,
+      "sha256": "07dfc1e79e6378ea11a8b8faa77ae75607e9edaa132546f4fedc6c77ebdcd2c3",
+      "cpd_ns": 11.8716,
+      "wl": 78795,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "353: Completed placement consistency check successfully.",
+        "478: Completed routing consistency check successfully.",
+        "481: Circuit successfully routed with a channel width factor of 200.",
+        "510: \tTotal wirelength: 78795, average net length: 16.3849",
+        "640: Final critical path delay (least slack): 11.8716 ns, Fmax: 84.2349 MHz",
+        "665: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 8,
+      "sha256": "ae8c72dc8a2bfee89ef056270fdac3b9f2a1ff6a0cfd3844d9e500d6c58dc16e",
+      "cpd_ns": 11.866,
+      "wl": 78706,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "353: Completed placement consistency check successfully.",
+        "475: Completed routing consistency check successfully.",
+        "478: Circuit successfully routed with a channel width factor of 200.",
+        "507: \tTotal wirelength: 78706, average net length: 16.3664",
+        "637: Final critical path delay (least slack): 11.866 ns, Fmax: 84.2741 MHz",
+        "662: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 9,
+      "sha256": "efe000a69d7031fb4de307bd2eba7e83e69e959c26229b95690345cd2a8dc0da",
+      "cpd_ns": 11.885,
+      "wl": 78350,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "354: Completed placement consistency check successfully.",
+        "476: Completed routing consistency check successfully.",
+        "479: Circuit successfully routed with a channel width factor of 200.",
+        "508: \tTotal wirelength: 78350, average net length: 16.2924",
+        "638: Final critical path delay (least slack): 11.885 ns, Fmax: 84.1397 MHz",
+        "663: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 10,
+      "sha256": "8917cdf5c094063cd7b13b9fb659c6c637496dde6dc23cb83c92723149464158",
+      "cpd_ns": 11.5929,
+      "wl": 79070,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "352: Completed placement consistency check successfully.",
+        "475: Completed routing consistency check successfully.",
+        "478: Circuit successfully routed with a channel width factor of 200.",
+        "507: \tTotal wirelength: 79070, average net length: 16.4421",
+        "637: Final critical path delay (least slack): 11.5929 ns, Fmax: 86.2596 MHz",
+        "662: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 11,
+      "sha256": "eca35a5bc1c665d583bcccce5e33c342e9c59b787eb5a3ca5135f611771b420f",
+      "cpd_ns": 11.885,
+      "wl": 78614,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "335: Completed placement consistency check successfully.",
+        "460: Completed routing consistency check successfully.",
+        "463: Circuit successfully routed with a channel width factor of 200.",
+        "492: \tTotal wirelength: 78614, average net length: 16.3473",
+        "622: Final critical path delay (least slack): 11.885 ns, Fmax: 84.1397 MHz",
+        "647: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 12,
+      "sha256": "593753262a45fb1722d719c91704e1f812739ac5232cd095bae7106c0f0ec83d",
+      "cpd_ns": 11.5896,
+      "wl": 78669,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "346: Completed placement consistency check successfully.",
+        "469: Completed routing consistency check successfully.",
+        "472: Circuit successfully routed with a channel width factor of 200.",
+        "501: \tTotal wirelength: 78669, average net length: 16.3587",
+        "631: Final critical path delay (least slack): 11.5896 ns, Fmax: 86.2843 MHz",
+        "656: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 13,
+      "sha256": "688010daef3961438edd30e2cdd3d1c5162532fa01b02741b85b49d584d7b80d",
+      "cpd_ns": 11.5951,
+      "wl": 78584,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "349: Completed placement consistency check successfully.",
+        "472: Completed routing consistency check successfully.",
+        "475: Circuit successfully routed with a channel width factor of 200.",
+        "504: \tTotal wirelength: 78584, average net length: 16.3410",
+        "634: Final critical path delay (least slack): 11.5951 ns, Fmax: 86.2431 MHz",
+        "659: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 14,
+      "sha256": "0c09a4d52bc4b5111b0cbf00cd3efba2d31778ff8ef00c134c6a4e51786371eb",
+      "cpd_ns": 11.594,
+      "wl": 78937,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "351: Completed placement consistency check successfully.",
+        "473: Completed routing consistency check successfully.",
+        "476: Circuit successfully routed with a channel width factor of 200.",
+        "505: \tTotal wirelength: 78937, average net length: 16.4144",
+        "635: Final critical path delay (least slack): 11.594 ns, Fmax: 86.2514 MHz",
+        "660: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 15,
+      "sha256": "7ae3f6703a8698c15f4e8bed2885c6c665fee55e691b4f9eecfd0001c98eccf0",
+      "cpd_ns": 11.5983,
+      "wl": 78945,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "348: Completed placement consistency check successfully.",
+        "471: Completed routing consistency check successfully.",
+        "474: Circuit successfully routed with a channel width factor of 200.",
+        "503: \tTotal wirelength: 78945, average net length: 16.4161",
+        "633: Final critical path delay (least slack): 11.5983 ns, Fmax: 86.2195 MHz",
+        "658: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 16,
+      "sha256": "af4701c4f1d770be3c4efa83c48655e95b6c586aecaf7972f756a1f3a703184a",
+      "cpd_ns": 11.5511,
+      "wl": 78607,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "347: Completed placement consistency check successfully.",
+        "471: Completed routing consistency check successfully.",
+        "474: Circuit successfully routed with a channel width factor of 200.",
+        "503: \tTotal wirelength: 78607, average net length: 16.3458",
+        "633: Final critical path delay (least slack): 11.5511 ns, Fmax: 86.5721 MHz",
+        "658: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 17,
+      "sha256": "1eceb088e7949d4467b538389647729b1d0ccd1538ca85626d67e409983402fb",
+      "cpd_ns": 11.5677,
+      "wl": 78693,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "346: Completed placement consistency check successfully.",
+        "469: Completed routing consistency check successfully.",
+        "472: Circuit successfully routed with a channel width factor of 200.",
+        "501: \tTotal wirelength: 78693, average net length: 16.3637",
+        "631: Final critical path delay (least slack): 11.5677 ns, Fmax: 86.4478 MHz",
+        "656: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 18,
+      "sha256": "ac50ccaa6456e5492c97a342e544a047c774e60d2b4e7c384dea50870b41518b",
+      "cpd_ns": 11.5577,
+      "wl": 79103,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "350: Completed placement consistency check successfully.",
+        "472: Completed routing consistency check successfully.",
+        "475: Circuit successfully routed with a channel width factor of 200.",
+        "504: \tTotal wirelength: 79103, average net length: 16.4489",
+        "634: Final critical path delay (least slack): 11.5577 ns, Fmax: 86.5223 MHz",
+        "659: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 19,
+      "sha256": "cc744c07cc9860a6eaa8308f48d6cfd08c014247cb0c4e13595b0aab0e3bafed",
+      "cpd_ns": 11.8695,
+      "wl": 78734,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "335: Completed placement consistency check successfully.",
+        "459: Completed routing consistency check successfully.",
+        "462: Circuit successfully routed with a channel width factor of 200.",
+        "491: \tTotal wirelength: 78734, average net length: 16.3722",
+        "621: Final critical path delay (least slack): 11.8695 ns, Fmax: 84.2495 MHz",
+        "646: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 20,
+      "sha256": "dbf3d0c86f2aa48dd5f4253a1df91a0c7f71c0791a0b01e9bb9fcf18cd41b323",
+      "cpd_ns": 11.5905,
+      "wl": 78781,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "339: Completed placement consistency check successfully.",
+        "461: Completed routing consistency check successfully.",
+        "464: Circuit successfully routed with a channel width factor of 200.",
+        "493: \tTotal wirelength: 78781, average net length: 16.3820",
+        "623: Final critical path delay (least slack): 11.5905 ns, Fmax: 86.2772 MHz",
+        "648: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 21,
+      "sha256": "b222e953c7de83c26de57a3cdb6cd58b7ddb9f6073144c18f04ee53e48d7bc5c",
+      "cpd_ns": 11.7107,
+      "wl": 78386,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "335: Completed placement consistency check successfully.",
+        "459: Completed routing consistency check successfully.",
+        "462: Circuit successfully routed with a channel width factor of 200.",
+        "491: \tTotal wirelength: 78386, average net length: 16.2999",
+        "621: Final critical path delay (least slack): 11.7107 ns, Fmax: 85.3918 MHz",
+        "646: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 22,
+      "sha256": "1ead8b5d41d3a649b0f2ab986df0789841f482a7182dbd21826724814b7776bb",
+      "cpd_ns": 11.54,
+      "wl": 78906,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "335: Completed placement consistency check successfully.",
+        "460: Completed routing consistency check successfully.",
+        "463: Circuit successfully routed with a channel width factor of 200.",
+        "492: \tTotal wirelength: 78906, average net length: 16.4080",
+        "622: Final critical path delay (least slack): 11.54 ns, Fmax: 86.6551 MHz",
+        "647: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 23,
+      "sha256": "9886ca21b8b108ef21856e674db058816777d542cd54f59537fc3dcdc0620283",
+      "cpd_ns": 11.8466,
+      "wl": 78542,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "335: Completed placement consistency check successfully.",
+        "458: Completed routing consistency check successfully.",
+        "461: Circuit successfully routed with a channel width factor of 200.",
+        "490: \tTotal wirelength: 78542, average net length: 16.3323",
+        "620: Final critical path delay (least slack): 11.8466 ns, Fmax: 84.4122 MHz",
+        "645: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 24,
+      "sha256": "938a95567de98dbf0eb73c3c019329d5b7dbb8eeced0069d8d50c01cc8996ab5",
+      "cpd_ns": 11.8551,
+      "wl": 78886,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "335: Completed placement consistency check successfully.",
+        "459: Completed routing consistency check successfully.",
+        "462: Circuit successfully routed with a channel width factor of 200.",
+        "491: \tTotal wirelength: 78886, average net length: 16.4038",
+        "621: Final critical path delay (least slack): 11.8551 ns, Fmax: 84.3518 MHz",
+        "646: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 25,
+      "sha256": "b6fd609c94c5fecca7d46d1898bb15f3834d5d1065c43a0382d8ab94f88f138f",
+      "cpd_ns": 11.9755,
+      "wl": 78641,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "335: Completed placement consistency check successfully.",
+        "459: Completed routing consistency check successfully.",
+        "462: Circuit successfully routed with a channel width factor of 200.",
+        "491: \tTotal wirelength: 78641, average net length: 16.3529",
+        "621: Final critical path delay (least slack): 11.9755 ns, Fmax: 83.5037 MHz",
+        "646: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 26,
+      "sha256": "8d3bee2e750236b476a949cc0fb05a422da81013274469742eb24738c5c9e962",
+      "cpd_ns": 11.8795,
+      "wl": 79044,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "335: Completed placement consistency check successfully.",
+        "459: Completed routing consistency check successfully.",
+        "462: Circuit successfully routed with a channel width factor of 200.",
+        "491: \tTotal wirelength: 79044, average net length: 16.4367",
+        "621: Final critical path delay (least slack): 11.8795 ns, Fmax: 84.1789 MHz",
+        "646: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 27,
+      "sha256": "4669cd353fa0f2b8103196ad6a7470c885ad72c7abb009d00381aacad7b92e38",
+      "cpd_ns": 11.465,
+      "wl": 79051,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "339: Completed placement consistency check successfully.",
+        "462: Completed routing consistency check successfully.",
+        "465: Circuit successfully routed with a channel width factor of 200.",
+        "494: \tTotal wirelength: 79051, average net length: 16.4381",
+        "624: Final critical path delay (least slack): 11.465 ns, Fmax: 87.2221 MHz",
+        "649: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 28,
+      "sha256": "5253ea1b1f821ac5b5ed637bf53eddb1031ff4411b9cc4d9915414510cb77836",
+      "cpd_ns": 11.4244,
+      "wl": 78815,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "353: Completed placement consistency check successfully.",
+        "475: Completed routing consistency check successfully.",
+        "478: Circuit successfully routed with a channel width factor of 200.",
+        "507: \tTotal wirelength: 78815, average net length: 16.3891",
+        "637: Final critical path delay (least slack): 11.4244 ns, Fmax: 87.532 MHz",
+        "662: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 29,
+      "sha256": "4f8250566806faffec691133378ecb4a30ae261aa2e206957922ae8fd1b2d41d",
+      "cpd_ns": 12.1122,
+      "wl": 78393,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "358: Completed placement consistency check successfully.",
+        "479: Completed routing consistency check successfully.",
+        "482: Circuit successfully routed with a channel width factor of 200.",
+        "511: \tTotal wirelength: 78393, average net length: 16.3013",
+        "641: Final critical path delay (least slack): 12.1122 ns, Fmax: 82.5612 MHz",
+        "666: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 30,
+      "sha256": "8debe608031a57835d844502daba95ad472ea66cb679175618a1bf735ef62e1e",
+      "cpd_ns": 11.616,
+      "wl": 78535,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "335: Completed placement consistency check successfully.",
+        "461: Completed routing consistency check successfully.",
+        "464: Circuit successfully routed with a channel width factor of 200.",
+        "493: \tTotal wirelength: 78535, average net length: 16.3308",
+        "623: Final critical path delay (least slack): 11.616 ns, Fmax: 86.0881 MHz",
+        "648: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 31,
+      "sha256": "a9fa2edf481bf26c7ee1984f9c2075a1edee487cb8b58f7c5d5a0c56cac0dbdc",
+      "cpd_ns": 11.5833,
+      "wl": 78782,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "348: Completed placement consistency check successfully.",
+        "470: Completed routing consistency check successfully.",
+        "473: Circuit successfully routed with a channel width factor of 200.",
+        "502: \tTotal wirelength: 78782, average net length: 16.3822",
+        "632: Final critical path delay (least slack): 11.5833 ns, Fmax: 86.331 MHz",
+        "657: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 32,
+      "sha256": "9a66a70bca7907499e984597f25643018ecdc1e0a7917374037af406a50b6907",
+      "cpd_ns": 11.549,
+      "wl": 78680,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "335: Completed placement consistency check successfully.",
+        "459: Completed routing consistency check successfully.",
+        "462: Circuit successfully routed with a channel width factor of 200.",
+        "491: \tTotal wirelength: 78680, average net length: 16.3610",
+        "621: Final critical path delay (least slack): 11.549 ns, Fmax: 86.5876 MHz",
+        "646: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 33,
+      "sha256": "feef4880fe99bca5eb8e8c3094059ed539844eb31717611c80547fd43181256b",
+      "cpd_ns": 11.4266,
+      "wl": 79210,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "348: Completed placement consistency check successfully.",
+        "472: Completed routing consistency check successfully.",
+        "475: Circuit successfully routed with a channel width factor of 200.",
+        "504: \tTotal wirelength: 79210, average net length: 16.4712",
+        "634: Final critical path delay (least slack): 11.4266 ns, Fmax: 87.515 MHz",
+        "659: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 34,
+      "sha256": "bb38c45bc629adab6ca61ce7d635a2db59420031a0717f74f46c4b46140b7b89",
+      "cpd_ns": 11.5632,
+      "wl": 78956,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "353: Completed placement consistency check successfully.",
+        "477: Completed routing consistency check successfully.",
+        "480: Circuit successfully routed with a channel width factor of 200.",
+        "509: \tTotal wirelength: 78956, average net length: 16.4184",
+        "639: Final critical path delay (least slack): 11.5632 ns, Fmax: 86.4809 MHz",
+        "664: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 35,
+      "sha256": "56f259d79afaaf7d5e7b12994b8265cbebd8b6d210085045c631f31707586552",
+      "cpd_ns": 11.6116,
+      "wl": 78660,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "335: Completed placement consistency check successfully.",
+        "460: Completed routing consistency check successfully.",
+        "463: Circuit successfully routed with a channel width factor of 200.",
+        "492: \tTotal wirelength: 78660, average net length: 16.3568",
+        "622: Final critical path delay (least slack): 11.6116 ns, Fmax: 86.1209 MHz",
+        "647: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 36,
+      "sha256": "1edb647fc79fc1508a1be84d2f482e9910fd4db0389916b9152d572e199b44af",
+      "cpd_ns": 11.5632,
+      "wl": 78960,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "349: Completed placement consistency check successfully.",
+        "471: Completed routing consistency check successfully.",
+        "474: Circuit successfully routed with a channel width factor of 200.",
+        "503: \tTotal wirelength: 78960, average net length: 16.4192",
+        "633: Final critical path delay (least slack): 11.5632 ns, Fmax: 86.4809 MHz",
+        "658: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 37,
+      "sha256": "b6fae44bcf478003f2f0d618e92c9d486fbc539b4e8b1cf438b883af71df111a",
+      "cpd_ns": 11.5745,
+      "wl": 78989,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "352: Completed placement consistency check successfully.",
+        "476: Completed routing consistency check successfully.",
+        "479: Circuit successfully routed with a channel width factor of 200.",
+        "508: \tTotal wirelength: 78989, average net length: 16.4252",
+        "638: Final critical path delay (least slack): 11.5745 ns, Fmax: 86.3971 MHz",
+        "663: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 38,
+      "sha256": "45e5b42d4583d0f9e0074de46e6367115a0ec5148237873404a0d4f6b360982b",
+      "cpd_ns": 11.5656,
+      "wl": 78632,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "347: Completed placement consistency check successfully.",
+        "469: Completed routing consistency check successfully.",
+        "472: Circuit successfully routed with a channel width factor of 200.",
+        "501: \tTotal wirelength: 78632, average net length: 16.3510",
+        "631: Final critical path delay (least slack): 11.5656 ns, Fmax: 86.4632 MHz",
+        "656: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 39,
+      "sha256": "6ee0f777bbc069d8ec4bd60f92acabcdbbe360e92b145adf68c04d939e69d336",
+      "cpd_ns": 12.1099,
+      "wl": 78289,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "352: Completed placement consistency check successfully.",
+        "474: Completed routing consistency check successfully.",
+        "477: Circuit successfully routed with a channel width factor of 200.",
+        "506: \tTotal wirelength: 78289, average net length: 16.2797",
+        "636: Final critical path delay (least slack): 12.1099 ns, Fmax: 82.5768 MHz",
+        "661: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 40,
+      "sha256": "de5dd0516567e0d7d719189125478c33294d9a94ef21c2f62f070eea3c41f7d0",
+      "cpd_ns": 11.4333,
+      "wl": 79186,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "352: Completed placement consistency check successfully.",
+        "475: Completed routing consistency check successfully.",
+        "478: Circuit successfully routed with a channel width factor of 200.",
+        "507: \tTotal wirelength: 79186, average net length: 16.4662",
+        "637: Final critical path delay (least slack): 11.4333 ns, Fmax: 87.4642 MHz",
+        "662: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 41,
+      "sha256": "c3d902c9c662ff58707db186987610f3e0dddb1e2e4575bc98df809599062757",
+      "cpd_ns": 11.4716,
+      "wl": 78858,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "335: Completed placement consistency check successfully.",
+        "460: Completed routing consistency check successfully.",
+        "463: Circuit successfully routed with a channel width factor of 200.",
+        "492: \tTotal wirelength: 78858, average net length: 16.3980",
+        "622: Final critical path delay (least slack): 11.4716 ns, Fmax: 87.1716 MHz",
+        "647: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 42,
+      "sha256": "27dcebf2cb02f652e8d1e8b332f652d3f09f73c20754ed6c41baa34367a5f83e",
+      "cpd_ns": 11.5745,
+      "wl": 78340,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "344: Completed placement consistency check successfully.",
+        "467: Completed routing consistency check successfully.",
+        "470: Circuit successfully routed with a channel width factor of 200.",
+        "499: \tTotal wirelength: 78340, average net length: 16.2903",
+        "629: Final critical path delay (least slack): 11.5745 ns, Fmax: 86.3971 MHz",
+        "654: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 43,
+      "sha256": "aa292453b9d8b0c457d4a1421a9bb56b0533784bfc00865ebeb77e31d27eb342",
+      "cpd_ns": 11.5545,
+      "wl": 78742,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "351: Completed placement consistency check successfully.",
+        "475: Completed routing consistency check successfully.",
+        "478: Circuit successfully routed with a channel width factor of 200.",
+        "507: \tTotal wirelength: 78742, average net length: 16.3739",
+        "637: Final critical path delay (least slack): 11.5545 ns, Fmax: 86.5461 MHz",
+        "662: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 44,
+      "sha256": "fd2034822bce8186d5de52893e4c876750ea0c525114a42cc0ac630ce9c2d05d",
+      "cpd_ns": 11.455,
+      "wl": 79182,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "335: Completed placement consistency check successfully.",
+        "459: Completed routing consistency check successfully.",
+        "462: Circuit successfully routed with a channel width factor of 200.",
+        "491: \tTotal wirelength: 79182, average net length: 16.4654",
+        "621: Final critical path delay (least slack): 11.455 ns, Fmax: 87.298 MHz",
+        "646: VPR succeeded"
+      ]
+    },
+    {
+      "case": "clma",
+      "seed": 45,
+      "sha256": "dbe16db697b042ce400f775b5f22d82d5494df2fe7b91c787cbabf18736f100b",
+      "cpd_ns": 11.9755,
+      "wl": 78587,
+      "excerpt": [
+        "2: Version: 9.0.0-dev+8cb20aa5293b5ce5f6a05c88b37b38e1305d9b07",
+        "302: Completed placement consistency check successfully.",
+        "335: Completed placement consistency check successfully.",
+        "459: Completed routing consistency check successfully.",
+        "462: Circuit successfully routed with a channel width factor of 200.",
+        "491: \tTotal wirelength: 78587, average net length: 16.3417",
+        "621: Final critical path delay (least slack): 11.9755 ns, Fmax: 83.5037 MHz",
+        "646: VPR succeeded"
+      ]
+    }
+  ],
+  "interrupted_logs": [
+    {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/diffeq_native/seed_050/stdout.log",
+      "bytes": 14607,
+      "sha256": "99922038e7201203bdca3193ae2e465434ce63fe94d07e8632075f0b1f33f4a2",
+      "role": "deadline interrupted native log"
+    },
+    {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/diffeq_native/seed_050/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "deadline interrupted native log"
+    },
+    {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_046/stdout.log",
+      "bytes": 25598,
+      "sha256": "a20b74c97da3695c4681150544eeb37a68f3ab8510ed44ff83eeeec4b76e4baa",
+      "role": "deadline interrupted native log"
+    },
+    {
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native/seed_046/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "deadline interrupted native log"
+    }
+  ]
+}

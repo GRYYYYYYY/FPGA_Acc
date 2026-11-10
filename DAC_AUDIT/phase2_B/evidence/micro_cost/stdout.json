@@ -1,0 +1,59 @@
+{
+  "cases": [
+    {
+      "case": "diffeq",
+      "N": 20000,
+      "pair_count": 1973,
+      "initial_position_count": 202,
+      "seconds": {
+        "loop_control": 0.001608195,
+        "key_construct": 0.004551641,
+        "dictionary_lookup": 0.002820914,
+        "prefix_scalar_compute": 0.060821055,
+        "position_dict_copy": 0.015429961,
+        "memo_cold_fill": 0.005883466,
+        "memo_hit_path_including_key_counters_return": 0.015319893,
+        "fifo_2000_evictions": 0.001282957,
+        "clear_131072_entries": 0.000744152
+      },
+      "memo_stats": {
+        "invalidation_s": 3.777444362640381e-06,
+        "invalidations": 1,
+        "queries": 21973,
+        "misses": 1252,
+        "peak_entries": 1252,
+        "hits": 20721
+      },
+      "pressure_edges": 286
+    },
+    {
+      "case": "clma",
+      "N": 20000,
+      "pair_count": 2048,
+      "initial_position_count": 719,
+      "seconds": {
+        "loop_control": 0.001662075,
+        "key_construct": 0.005019824,
+        "dictionary_lookup": 0.002612453,
+        "prefix_scalar_compute": 0.066015874,
+        "position_dict_copy": 0.096488709,
+        "memo_cold_fill": 0.008188628,
+        "memo_hit_path_including_key_counters_return": 0.015695407,
+        "fifo_2000_evictions": 0.001162629,
+        "clear_131072_entries": 0.000631785
+      },
+      "memo_stats": {
+        "invalidation_s": 3.762543201446533e-06,
+        "invalidations": 1,
+        "queries": 22048,
+        "misses": 1815,
+        "peak_entries": 1815,
+        "hits": 20233
+      },
+      "pressure_edges": 1566
+    }
+  ],
+  "wall_s": 2.4684996120631695,
+  "maxrss_kib": 102492,
+  "limits": "Initial real endpoint microdiagnostic; loops include Python dispatch, not a complete workload distribution. Do not multiply into full proposal or subtract diagnostic timers from performance."
+}

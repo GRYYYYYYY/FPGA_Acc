@@ -1,0 +1,19 @@
+{
+  "case": "clma",
+  "command": [
+    "taskset",
+    "-c",
+    "31",
+    "/usr/bin/python3",
+    "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_DAC_AUDIT_20261110/DAC_AUDIT/phase2_B/baseline.py",
+    "clma",
+    "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/clma_native"
+  ],
+  "id": "clma_native",
+  "mode": "baseline",
+  "outer_s": 450.0490302182734,
+  "pid": 3073234,
+  "returncode": 0,
+  "start_ticks": "1857855765",
+  "status": "completed"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "fixture",
+  "command": [
+    "taskset",
+    "-c",
+    "31",
+    "/usr/bin/python3",
+    "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_DAC_AUDIT_20261110/DAC_AUDIT/phase2_B/fixture.py"
+  ],
+  "pre_run_commit": "c19468aaa696a85c23662b566f290e3307bedb13",
+  "protocol_commit": "c19468aaa696a85c23662b566f290e3307bedb13",
+  "protocol_sha256": "65c05e5d89c9f201f82fbbbe640e7fc3a14b53cf73302a70bf76192fb7a9ac55",
+  "status": "completed",
+  "returncode": 0,
+  "outer_s": 0.21917138248682022
+}

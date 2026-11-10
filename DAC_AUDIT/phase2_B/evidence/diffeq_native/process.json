@@ -1,0 +1,19 @@
+{
+  "case": "diffeq",
+  "command": [
+    "taskset",
+    "-c",
+    "31",
+    "/usr/bin/python3",
+    "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_DAC_AUDIT_20261110/DAC_AUDIT/phase2_B/baseline.py",
+    "diffeq",
+    "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc_PHASE2B_RUNS_20261110/diffeq_native"
+  ],
+  "id": "diffeq_native",
+  "mode": "baseline",
+  "outer_s": 90.04495169594884,
+  "pid": 3027435,
+  "returncode": 0,
+  "start_ticks": "1857846760",
+  "status": "completed"
+}

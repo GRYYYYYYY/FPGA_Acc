@@ -1,0 +1,102 @@
+{
+  "arm": "R1",
+  "mode": "performance",
+  "count": 0,
+  "counts": {},
+  "chunks": [],
+  "examples": [],
+  "reuse": [
+    {
+      "stats": {
+        "invalidation_s": 0.02266962081193924,
+        "invalidations": 11,
+        "queries": 32230752,
+        "misses": 1028491,
+        "peak_entries": 131072,
+        "hits": 31202261,
+        "evictions": 478
+      },
+      "epochs": [
+        {
+          "version": 0,
+          "lifetime_s": 5.967915058135986e-06,
+          "distinct_keys": 0,
+          "calls": 0,
+          "roles": {}
+        },
+        {
+          "version": 1,
+          "lifetime_s": 23.269377693533897,
+          "distinct_keys": 0,
+          "calls": 0,
+          "roles": {}
+        },
+        {
+          "version": 2,
+          "lifetime_s": 19.66486082226038,
+          "distinct_keys": 0,
+          "calls": 0,
+          "roles": {}
+        },
+        {
+          "version": 3,
+          "lifetime_s": 30.27181102335453,
+          "distinct_keys": 0,
+          "calls": 0,
+          "roles": {}
+        },
+        {
+          "version": 4,
+          "lifetime_s": 13.773156378418207,
+          "distinct_keys": 0,
+          "calls": 0,
+          "roles": {}
+        },
+        {
+          "version": 5,
+          "lifetime_s": 23.149035211652517,
+          "distinct_keys": 0,
+          "calls": 0,
+          "roles": {}
+        },
+        {
+          "version": 6,
+          "lifetime_s": 27.59231388196349,
+          "distinct_keys": 0,
+          "calls": 0,
+          "roles": {}
+        },
+        {
+          "version": 7,
+          "lifetime_s": 68.57178792729974,
+          "distinct_keys": 0,
+          "calls": 0,
+          "roles": {}
+        },
+        {
+          "version": 8,
+          "lifetime_s": 25.44835599884391,
+          "distinct_keys": 0,
+          "calls": 0,
+          "roles": {}
+        },
+        {
+          "version": 9,
+          "lifetime_s": 48.30022069066763,
+          "distinct_keys": 0,
+          "calls": 0,
+          "roles": {}
+        },
+        {
+          "version": 10,
+          "lifetime_s": 29.23827900737524,
+          "distinct_keys": 0,
+          "calls": 0,
+          "roles": {}
+        }
+      ]
+    }
+  ],
+  "maxrss_kib": 149472,
+  "wall_s": 311.6770825088024
+}
