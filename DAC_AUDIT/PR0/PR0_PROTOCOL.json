@@ -1,0 +1,103 @@
+{
+  "schema": 1,
+  "task": "PR0 CPU semantics diagnostic only",
+  "source_manifest": "source_manifest.json",
+  "production_commit": "b32afa4303a5574dde7171b4ae6e3d07aeb8a06c",
+  "closure_commit": "1b60aa6ae31a6b6f567afc02509d3c965b28deff",
+  "cases": [
+    {
+      "name": "diffeq",
+      "exposed": true,
+      "input_prefix": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/diffeq_seed1_cw200/input/vpr_input"
+    },
+    {
+      "name": "clma",
+      "exposed": true,
+      "input_prefix": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/clma_seed1_cw200/input/vpr_input"
+    }
+  ],
+  "sample": {
+    "rule": "first 16 queries in actual controller execution order; first two issue-width-8 batches; no replacements",
+    "iteration": 0,
+    "wave": 1,
+    "max_queries_per_case": 16,
+    "capture": "new capture from initial packed resources through production controller; not reconstructed historical snapshots",
+    "not_covered": [
+      "later waves",
+      "ripup iterations",
+      "timing feedback",
+      "final QoR"
+    ]
+  },
+  "controller": {
+    "max_iterations": 1,
+    "issue_width": 8,
+    "pe_count": 4,
+    "adaptive_issue": false,
+    "present_start_q": 256,
+    "present_multiplier_q": 512,
+    "history_increment_q": 256,
+    "route_tree_timing_weight_q": 0,
+    "external_STA": false,
+    "cleanup_passes": 0,
+    "actual_allow_overuse": true,
+    "queue_depth": "max(256,node_count)",
+    "transaction_capacity": "production backend node_count * partition_tasks; diagnostic one query node_count"
+  },
+  "modes": {
+    "S": "reexecute production same search on canonical current state then negotiated commit",
+    "F": "wide same search on batch snapshot; full actually loaded Resource fields plus path dependencies; bind immutable graph/task/all seeds; conservative field equality; on mismatch replay S; negotiated commit",
+    "P": "original path read checks and commit allow_overuse=0; changed contract vs normal controller; not equal-algorithm speed baseline",
+    "N": "original path reads and actual controller allow_overuse=1"
+  },
+  "canonical_replay": "apply original batch candidates in priority/id commit order; each mode starts from same canonical pre-commit state; only N feeds canonical progression; compare canonical batch state to actual backend and next controller batch",
+  "capacity_reference": "mechanical wide uint32 PathResult and no 65535 path count guard; same production heap/order/arith/tie; bounded vectors; optional 65535 exploration-record guard only for synthetic counterfactual; production ABI unchanged",
+  "synthetic": [
+    "off_path_decrease",
+    "off_path_increase",
+    "on_path_version",
+    "other_net_full",
+    "same_net_owned",
+    "ripup_decrease",
+    "tree_seed_change",
+    "same_net_repeat",
+    "integer_commit_boundary",
+    "failed_rollback",
+    "cost_saturation",
+    "path_pool_boundary",
+    "full_read_boundary",
+    "queue_boundary",
+    "path_count_boundary",
+    "unreachable_known_graph"
+  ],
+  "timing": {
+    "correctness": "full state comparison/independent four replicas/hashes; diagnostic overhead included in subprocess ledger, not performance comparisons",
+    "performance": "separate invocation; one S F P N pass per frozen snapshot; no full state audit or hashes in timed sections; allocation included search_total; F fallback charged; input loading/state copy not in component times but included outer wall",
+    "logical_bytes": "F unique*(uint32 id + Resource16)=20; P/N unique ReadEntry8; no measured HBM bytes",
+    "no_speedup_claim": true
+  },
+  "resources": {
+    "cumulative_subprocess_wall_s": 3600,
+    "address_space_limit_bytes": 8589934592,
+    "max_concurrent_own_processes": 1,
+    "threads": 4,
+    "per_case_capture_timeout_s": 600,
+    "per_case_performance_timeout_s": 600,
+    "compile_timeout_s": 180,
+    "synthetic_timeout_s": 120,
+    "priority": "nice +10; four relatively idle available CPUs"
+  },
+  "stops": [
+    "any state/candidate/reference inconsistency: retain evidence; no performance interpretation",
+    "timeout or partial is not final legality",
+    "no result-driven resampling or parameter rescue",
+    "no automatic next method experiment"
+  ],
+  "decision_rules": {
+    "RESEARCH_GAP_SUPPORTED": "all next-method admission conditions in task supported, including real overhead after capacity confound removal and concrete nontrivial ability",
+    "ENGINEERING_LIMIT_ONLY": "capacity attribution supported on relevant traces and no additional bottleneck; do not extrapolate synthetic guard to old failures",
+    "CORRECTNESS_BLOCKED": "actual declared input/controller contract state correctness failure",
+    "INSUFFICIENT_TRACE": "old failure attribution or real bottleneck unresolved in fixed bounded traces; stop current submission-protocol hypothesis; no automatic extension"
+  },
+  "pre_run_commit": "git commit containing this protocol and code; exact SHA recorded after commit in RUN_IDENTITY.json; do not self-substitute source SHA"
+}

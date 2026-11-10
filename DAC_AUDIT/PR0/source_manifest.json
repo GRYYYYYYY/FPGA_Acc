@@ -1,0 +1,178 @@
+{
+  "production_commit": "b32afa4303a5574dde7171b4ae6e3d07aeb8a06c",
+  "closure_commit": "1b60aa6ae31a6b6f567afc02509d3c965b28deff",
+  "files": [
+    {
+      "path": "projects/persistroute/src/search_hbm.cpp",
+      "bytes": 7340,
+      "sha256": "bd5a1dd33c9ac1482dc48675fc8de7b6106881e1bf598afdf074a57a69838810",
+      "matches_b32": true
+    },
+    {
+      "path": "projects/persistroute/src/commit_hbm.cpp",
+      "bytes": 2785,
+      "sha256": "e2990cbfd1854bc7ff1d4c514a24977672445ea150e645e4e3c53049a22c85c4",
+      "matches_b32": true
+    },
+    {
+      "path": "projects/persistroute/src/multiqueue.cpp",
+      "bytes": 4600,
+      "sha256": "2af6dca4e109a734985b9f0f0f6330308bcb8448496215a5dde3199764ae178f",
+      "matches_b32": true
+    },
+    {
+      "path": "projects/persistroute/src/hbm_cmodel_backend.cpp",
+      "bytes": 6301,
+      "sha256": "2a1ef300e702bdc148d8ed71455bc0d76fde690e048fbee3b50145dbbab7e072",
+      "matches_b32": true
+    },
+    {
+      "path": "projects/persistroute/src/accelerated_pathfinder.cpp",
+      "bytes": 27010,
+      "sha256": "bc02685f60db5ee761454a086bd80074d0d55cfed1acc451dd642352b71c80e7",
+      "matches_b32": true
+    },
+    {
+      "path": "projects/persistroute/src/pathfinder.cpp",
+      "bytes": 22066,
+      "sha256": "bbe9bb0b0b87a510b5be533cb615d486efc70fe6e942d13d6014c62b8cb23042",
+      "matches_b32": true
+    },
+    {
+      "path": "projects/persistroute/include/persistroute.hpp",
+      "bytes": 2413,
+      "sha256": "7d56cca124ef08139b8e6899a9d43eb164cb3035b34df6d5e02cb097ba9dea10",
+      "matches_b32": true
+    },
+    {
+      "path": "projects/persistroute/include/multiqueue.hpp",
+      "bytes": 686,
+      "sha256": "5bd106d9839fa4fc0785c786a17f16143a21b723f3400a710b3425847b69b4f0",
+      "matches_b32": true
+    },
+    {
+      "path": "projects/persistroute/include/pathfinder.hpp",
+      "bytes": 2991,
+      "sha256": "d3255e6a6f60163119ff38166c213ca200ebee8257256274b5c8338ec6eba1c6",
+      "matches_b32": true
+    },
+    {
+      "path": "projects/persistroute/include/accelerated_pathfinder.hpp",
+      "bytes": 2945,
+      "sha256": "8731c05e46af02ef643589e76a0b249156a8f473bc148dcf5f20617387b47f65",
+      "matches_b32": true
+    },
+    {
+      "path": "projects/persistroute/host/accelerated_xrt_host.cpp",
+      "bytes": 19703,
+      "sha256": "2adaadec85d979b72b2c2b229913619e91813357ea06fc9aca404c3c15c3de94",
+      "matches_b32": true
+    },
+    {
+      "path": "DAC_AUDIT/PR0/code/diagnostic.hpp",
+      "bytes": 947,
+      "sha256": "16733d8b447fb57bb77b98bc9677bc6f9e43d3031b643a51d6803e3276079494",
+      "identity": "pre_run_diagnostic_source"
+    },
+    {
+      "path": "DAC_AUDIT/PR0/code/generate_reference.py",
+      "bytes": 1410,
+      "sha256": "205dd059c39d1d4ea9d3790671df18e2e39ca9cb1a0de316004e5478b0dcef39",
+      "identity": "pre_run_diagnostic_source"
+    },
+    {
+      "path": "DAC_AUDIT/PR0/code/pr0.cpp",
+      "bytes": 17847,
+      "sha256": "859b567b846b0996c25b3e61275d1550b4566d425ed8202d5b2ffff672124e7c",
+      "identity": "pre_run_diagnostic_source"
+    },
+    {
+      "path": "DAC_AUDIT/PR0/code/run_bounded.py",
+      "bytes": 3246,
+      "sha256": "298656e63fe1ae771d617ef7fdbe2683e8267df809a063ddce6f8126e01039b5",
+      "identity": "pre_run_diagnostic_source"
+    }
+  ],
+  "inputs": [
+    {
+      "case": "diffeq",
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/diffeq_seed1_cw200/input/vpr_input.nodes",
+      "bytes": 263360,
+      "prior_sha256": "4957ec0a0ac3be18d9708d26e83c93f8a0f9469048b5c4031c3c4fe99d9284c4",
+      "sha256": "4957ec0a0ac3be18d9708d26e83c93f8a0f9469048b5c4031c3c4fe99d9284c4",
+      "rehashed_this_run": true,
+      "uploaded": false,
+      "historical_source_commit": "unknown"
+    },
+    {
+      "case": "diffeq",
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/diffeq_seed1_cw200/input/vpr_input.edges",
+      "bytes": 2758560,
+      "prior_sha256": "6fec396362a5995b247eb5cdedf9dc72a6552a1cfa25d179988ea18486a55c4a",
+      "sha256": "6fec396362a5995b247eb5cdedf9dc72a6552a1cfa25d179988ea18486a55c4a",
+      "rehashed_this_run": true,
+      "uploaded": false,
+      "historical_source_commit": "unknown"
+    },
+    {
+      "case": "diffeq",
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/diffeq_seed1_cw200/input/vpr_input.resources",
+      "bytes": 526720,
+      "prior_sha256": "aaf4bb84073a37356e8f46b6c7233b75d8284c7ac66fb1edca8c5d2eae6362c0",
+      "sha256": "aaf4bb84073a37356e8f46b6c7233b75d8284c7ac66fb1edca8c5d2eae6362c0",
+      "rehashed_this_run": true,
+      "uploaded": false,
+      "historical_source_commit": "unknown"
+    },
+    {
+      "case": "diffeq",
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/diffeq_seed1_cw200/input/vpr_input.tasks",
+      "bytes": 63136,
+      "prior_sha256": "a69b4bd35c1145bd966c60da2f07617e5280a2a457648f08d913f7b52c994842",
+      "sha256": "a69b4bd35c1145bd966c60da2f07617e5280a2a457648f08d913f7b52c994842",
+      "rehashed_this_run": true,
+      "uploaded": false,
+      "historical_source_commit": "unknown"
+    },
+    {
+      "case": "clma",
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/clma_seed1_cw200/input/vpr_input.nodes",
+      "bytes": 1242240,
+      "prior_sha256": "dc11f3ac72f624d50b99ca41c2642c758ec0de209e3a31f818f841a22ba2f58c",
+      "sha256": "dc11f3ac72f624d50b99ca41c2642c758ec0de209e3a31f818f841a22ba2f58c",
+      "rehashed_this_run": true,
+      "uploaded": false,
+      "historical_source_commit": "unknown"
+    },
+    {
+      "case": "clma",
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/clma_seed1_cw200/input/vpr_input.edges",
+      "bytes": 14426624,
+      "prior_sha256": "ebd906513105a54ff1cbe6eaa8acf42f19b165cf3c665e18fd257b27e2bb6611",
+      "sha256": "ebd906513105a54ff1cbe6eaa8acf42f19b165cf3c665e18fd257b27e2bb6611",
+      "rehashed_this_run": true,
+      "uploaded": false,
+      "historical_source_commit": "unknown"
+    },
+    {
+      "case": "clma",
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/clma_seed1_cw200/input/vpr_input.resources",
+      "bytes": 2484480,
+      "prior_sha256": "8b64acbfb2d6a4c8ca17dd8cab1e430bf6b16f5ac6acb207c6e33335cc1b32ff",
+      "sha256": "8b64acbfb2d6a4c8ca17dd8cab1e430bf6b16f5ac6acb207c6e33335cc1b32ff",
+      "rehashed_this_run": true,
+      "uploaded": false,
+      "historical_source_commit": "unknown"
+    },
+    {
+      "case": "clma",
+      "path": "/inspire/hdd/project/siinovarch-fpga-chip/guoruiyuan-253208540291/FPGA_Acc/projects/persistroute/experiments/balanced_pathreads_matrix_2026-08-28/clma_seed1_cw200/input/vpr_input.tasks",
+      "bytes": 430656,
+      "prior_sha256": "206e0e7a1e2b5189ea59ff9f0620a276875d443b4f907b6203c26403e619af0a",
+      "sha256": "206e0e7a1e2b5189ea59ff9f0620a276875d443b4f907b6203c26403e619af0a",
+      "rehashed_this_run": true,
+      "uploaded": false,
+      "historical_source_commit": "unknown"
+    }
+  ]
+}
