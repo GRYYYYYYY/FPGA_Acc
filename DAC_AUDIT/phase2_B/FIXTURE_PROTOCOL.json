@@ -1,8 +1,10 @@
 {
-  "script_sha256": "8b33bbd31d170133da69021c9b8243fd9a31fb8381557ce087b05c2d4a39acd3",
+  "script_sha256": "9862eebd52efafe21fea83dd70a336ecf1b07ca0fa741e18a5ecfe470aeba37b",
   "run_once_after_supervisor": true,
   "timeout_s": 30,
   "shared_total_budget_s": 7200,
   "no_retry": true,
-  "purpose": "close dedicated macro/chain/guard/no-good synthetic coverage without changing any production algorithm or parameters"
+  "purpose": "close dedicated macro/chain/guard/no-good synthetic coverage without changing any production algorithm or parameters",
+  "revision": "2: add finite reference vectors and actual stale-key numerical witness before first execution",
+  "supersedes_unexecuted_commit": "1964e40a0e2ea37d2478b7083eeb53da3e2d70dd"
 }
