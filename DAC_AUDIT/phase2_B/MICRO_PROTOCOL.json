@@ -1,0 +1,18 @@
+{
+  "purpose": "disaggregate key, lookup/hit, exact prefix compute, position copy, eviction and invalidation through aggregate loops; not flow efficacy",
+  "script_sha256": "bfc6608ecfa78585a28cde2e7735dbf64f76c55c2d481bec477f313bf16001cf",
+  "cases": [
+    "diffeq",
+    "clma"
+  ],
+  "iterations": 20000,
+  "max_pairs": 2048,
+  "run_once_after_main_supervisor": true,
+  "timeout_s": 60,
+  "shared_total_budget_s": 7200,
+  "start_only_if_remaining_at_least_s": 60,
+  "no_retry": true,
+  "source_reference_commit": "2019e8fc5bb410cb2a4b1d9bb5f557dc5682b08e",
+  "input_protocol": "PROTOCOL.json",
+  "pressure": "actual initial native route feedback"
+}
