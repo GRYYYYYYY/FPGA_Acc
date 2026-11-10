@@ -111,4 +111,31 @@ void synthetic(const std::string& out){std::filesystem::create_directories(out);
  Graph longpath(65536);for(unsigned i=0;i<65535;++i)longpath.set(i,{{i+1,1,0}});auto lt=task_for(65535);auto lw=search(longpath.n,longpath.e,longpath.r,lt,seed,true);auto ln=search(longpath.n,longpath.e,longpath.r,lt,seed,false);f<<"path_count_boundary,"<<ln.c.search_status<<','<<lw.c.search_status<<",0,0,0,"<<lw.cost<<','<<lw.full.size()<<','<<lw.peak<<",0,0,0,1,65536_path_entries_including_attachment\n";
  Graph disconnected(2);auto u=search(disconnected.n,disconnected.e,disconnected.r,task_for(1),seed,true);f<<"unreachable_known_graph,"<<u.c.search_status<<",3,0,0,0,0,0,"<<u.peak<<",0,0,0,1,"<<u.reason<<"\n";
 }
-int main(int argc,char** argv){try{if(argc==3&&std::string(argv[1])=="synthetic")synthetic(argv[2]);else if(argc==4&&std::string(argv[1])=="capture")capture(argv[2],argv[3]);else if(argc==4&&std::string(argv[1])=="performance")performance(argv[2],argv[3]);else throw std::runtime_error("usage: pr0 synthetic out | capture/performance prefix out");return 0;}catch(const std::exception& e){std::cerr<<e.what()<<'\n';return 2;}}
+uint32_t path_cost(const Answer& a,const std::vector<Node>& nodes,const std::vector<Edge>& edges,const std::vector<Resource>& r,const std::vector<SearchSeed>& seeds){
+ uint64_t cost=0;bool found=false;uint32_t prev=a.c.attachment;
+ for(auto seed:seeds)if(seed.node==prev){cost=seed.cost_q;found=true;break;}if(!found)throw std::runtime_error("missing attachment seed");
+ for(auto id:a.c.path){const Edge* chosen=nullptr;for(uint32_t j=0;j<nodes[prev].edge_count;++j){auto& edge=edges[nodes[prev].edge_begin+j];if(edge.dst==id){if(chosen)throw std::runtime_error("parallel edge requires predecessor-edge identity");chosen=&edge;}}if(!chosen)throw std::runtime_error("missing edge");
+  const auto& state=r[id];bool other=state.owner!=a.c.task.net_id;uint32_t projected=uint32_t(state.occupancy)+(other?1U:0U);uint32_t over=projected>state.capacity?projected-state.capacity:0;
+  uint64_t add=uint64_t(chosen->base_cost_q)+(other?uint64_t(state.history_cost_q)+uint64_t(state.present_cost_q)*over:0)+uint64_t(chosen->delay_q)*a.c.task.criticality_q/65535;
+  cost=std::min<uint64_t>(0xffffffffULL,cost+add);prev=id;
+ }return cost;
+}
+std::string path_text(const Answer& a){std::string s=std::to_string(a.c.attachment);for(auto id:a.c.path)s+=";"+std::to_string(id);return s;}
+void inspect_frozen(const std::string& prefix,const std::string& out){
+ auto nodes=load<Node>(prefix+".nodes");auto edges=load<Edge>(prefix+".edges");std::ofstream f(out+"/current_cost_inspection.csv");
+ f<<"query,old_path,current_S_path,old_snapshot_cost,old_path_current_cost,current_S_cost,old_path_current_capacity_legal,current_cost_diff,dependency_changed_ids,path_changed_ids,graph_structure_ok\n";
+ for(unsigned i=0;i<16;++i){auto stem=out+"/q"+std::to_string(i);auto task=load<Task>(stem+".task")[0];auto seeds=load<SearchSeed>(stem+".seeds");auto now=load<Resource>(stem+".resources");auto batch=load<uint32_t>(stem+".batch")[0];auto old=load<Resource>(out+"/batch"+std::to_string(batch)+".resources");auto a=search(nodes,edges,old,task,seeds,true);auto b=search(nodes,edges,now,task,seeds,true);
+  if(a.c.search_status!=1||b.c.search_status!=1)throw std::runtime_error("inspection requires successful frozen query");
+  uint32_t oc=path_cost(a,nodes,edges,old,seeds),nc=path_cost(a,nodes,edges,now,seeds),sc=path_cost(b,nodes,edges,now,seeds);
+  if(oc!=a.cost||sc!=b.cost)throw std::runtime_error("path cost reconstruction mismatch");bool legal=true;std::string changed,pathchanged;
+  for(auto id:a.full)if(std::memcmp(&old[id],&now[id],sizeof(Resource)))changed+=(changed.empty()?"":";")+std::to_string(id);
+  for(auto id:a.c.path){legal&=now[id].owner==task.net_id||now[id].occupancy<now[id].capacity;if(std::memcmp(&old[id],&now[id],sizeof(Resource)))pathchanged+=(pathchanged.empty()?"":";")+std::to_string(id);}
+  f<<i<<','<<path_text(a)<<','<<path_text(b)<<','<<oc<<','<<nc<<','<<sc<<','<<legal<<','<<(nc!=sc)<<','<<changed<<','<<pathchanged<<','<<structural(a,nodes,edges,seeds)<<'\n';
+ }
+}
+void shared_trunk(const std::string& out){
+ Graph g(4);g.set(0,{{1,1,0}});g.set(1,{{2,1,0},{3,1,0}});std::vector<SearchSeed> source{{0,0,0}};auto t=task_for(2);auto first=search(g.n,g.e,g.r,t,source,true);auto first_commit=commit(g.r,first.c,false,true);auto next=t;next.id=2;next.sink=3;std::vector<SearchSeed> tree{{0,0,0},{1,1,0},{2,2,0}};auto second=search(g.n,g.e,g.r,next,tree,true);auto second_commit=commit(g.r,second.c,false,true);
+ std::ofstream f(out+"/shared_trunk.json");f<<"{\"first_status\":"<<first_commit.status<<",\"second_status\":"<<second_commit.status<<",\"first_path\":\""<<path_text(first)<<"\",\"second_path\":\""<<path_text(second)<<"\",\"trunk_occupancy\":"<<g.r[1].occupancy<<",\"trunk_owner\":"<<g.r[1].owner<<",\"four_replicas_equal\":"<<(first_commit.consistent&&second_commit.consistent?"true":"false")<<"}\n";
+ if(g.r[1].occupancy!=1||g.r[1].owner!=7||!first_commit.consistent||!second_commit.consistent)throw std::runtime_error("shared trunk state mismatch");
+}
+int main(int argc,char** argv){try{if(argc==4&&std::string(argv[1])=="inspect")inspect_frozen(argv[2],argv[3]);else if(argc==3&&std::string(argv[1])=="shared_trunk")shared_trunk(argv[2]);else if(argc==3&&std::string(argv[1])=="synthetic")synthetic(argv[2]);else if(argc==4&&std::string(argv[1])=="capture")capture(argv[2],argv[3]);else if(argc==4&&std::string(argv[1])=="performance")performance(argv[2],argv[3]);else throw std::runtime_error("usage: pr0 synthetic out | capture/performance prefix out");return 0;}catch(const std::exception& e){std::cerr<<e.what()<<'\n';return 2;}}

@@ -1,0 +1,13 @@
+{
+  "protocol_commit": "b5518828a14c61211bcd0f49600166b04ea48bcc",
+  "reason": "Original cost_diff_S compares search objective values from different snapshots. Preserve raw rows and supplement current-state revaluation and explicit paths; no timing reuse. Also test distinct sinks sharing an authoritative trunk.",
+  "scope": "existing 32 frozen queries once; no resampling, no controller recapture, no new performance observations; one four-node same-net multi-sink test",
+  "budget": "same cumulative 3600 s /8 GiB; previous run 11.146221619099379 s; compile <=180 s, each inspection <=120 s, shared trunk <=30 s",
+  "failures": "retain failure; no retry or parameter change; stop interpretation if cost/path/replica mismatch",
+  "files": [
+    {
+      "path": "code/pr0.cpp",
+      "sha256": "d3022b9399f28eae511ffc1dff2ea9551f70ac27f4336cadfeb16d7b96f029a9"
+    }
+  ]
+}
